@@ -297,6 +297,30 @@ public class Port  {
     
     private String dnsName;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="binding:vif_details")
+    
+    private Object bindingVifDetails = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="binding:profile")
+    
+    private Object bindingProfile = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_id")
+    
+    private String instanceId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_type")
+    
+    private String instanceType;
+
     public Port withId(String id) {
         this.id = id;
         return this;
@@ -671,6 +695,86 @@ public class Port  {
     public void setDnsName(String dnsName) {
         this.dnsName = dnsName;
     }
+
+    public Port withBindingVifDetails(Object bindingVifDetails) {
+        this.bindingVifDetails = bindingVifDetails;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：vif的详细信息，  \"ovs_hybrid_plug\": 是否为ovs/bridge混合模式 约束：管理员权限，普通租户不可指定
+     * @return bindingVifDetails
+     */
+    public Object getBindingVifDetails() {
+        return bindingVifDetails;
+    }
+
+    public void setBindingVifDetails(Object bindingVifDetails) {
+        this.bindingVifDetails = bindingVifDetails;
+    }
+
+    public Port withBindingProfile(Object bindingProfile) {
+        this.bindingProfile = bindingProfile;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：提供用户设置自定义信息(扩展属性)
+     * @return bindingProfile
+     */
+    public Object getBindingProfile() {
+        return bindingProfile;
+    }
+
+    public void setBindingProfile(Object bindingProfile) {
+        this.bindingProfile = bindingProfile;
+    }
+
+    public Port withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：端口所属实例ID，例如RDS实例ID 约束：不支持设置和更新，由系统自动维护
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public Port withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：端口所属实例类型，例如“RDS” 约束：不支持设置和更新，由系统自动维护
+     * @return instanceType
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -695,11 +799,15 @@ public class Port  {
             Objects.equals(this.extraDhcpOpts, port.extraDhcpOpts) &&
             Objects.equals(this.bindingVnicType, port.bindingVnicType) &&
             Objects.equals(this.dnsAssignment, port.dnsAssignment) &&
-            Objects.equals(this.dnsName, port.dnsName);
+            Objects.equals(this.dnsName, port.dnsName) &&
+            Objects.equals(this.bindingVifDetails, port.bindingVifDetails) &&
+            Objects.equals(this.bindingProfile, port.bindingProfile) &&
+            Objects.equals(this.instanceId, port.instanceId) &&
+            Objects.equals(this.instanceType, port.instanceType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, networkId, adminStateUp, macAddress, fixedIps, deviceId, deviceOwner, tenantId, status, securityGroups, allowedAddressPairs, extraDhcpOpts, bindingVnicType, dnsAssignment, dnsName);
+        return Objects.hash(id, name, networkId, adminStateUp, macAddress, fixedIps, deviceId, deviceOwner, tenantId, status, securityGroups, allowedAddressPairs, extraDhcpOpts, bindingVnicType, dnsAssignment, dnsName, bindingVifDetails, bindingProfile, instanceId, instanceType);
     }
     @Override
     public String toString() {
@@ -721,6 +829,10 @@ public class Port  {
             sb.append("    bindingVnicType: ").append(toIndentedString(bindingVnicType)).append("\n");
             sb.append("    dnsAssignment: ").append(toIndentedString(dnsAssignment)).append("\n");
             sb.append("    dnsName: ").append(toIndentedString(dnsName)).append("\n");
+            sb.append("    bindingVifDetails: ").append(toIndentedString(bindingVifDetails)).append("\n");
+            sb.append("    bindingProfile: ").append(toIndentedString(bindingProfile)).append("\n");
+            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+            sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

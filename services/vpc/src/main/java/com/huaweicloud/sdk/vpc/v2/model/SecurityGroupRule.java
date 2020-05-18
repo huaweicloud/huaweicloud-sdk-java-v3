@@ -76,6 +76,12 @@ public class SecurityGroupRule  {
     
     private String remoteGroupId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tenant_id")
+    
+    private String tenantId;
+
     public SecurityGroupRule withId(String id) {
         this.id = id;
         return this;
@@ -275,6 +281,26 @@ public class SecurityGroupRule  {
     public void setRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
     }
+
+    public SecurityGroupRule withTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 安全组所属项目ID
+     * @return tenantId
+     */
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -293,11 +319,12 @@ public class SecurityGroupRule  {
             Objects.equals(this.portRangeMin, securityGroupRule.portRangeMin) &&
             Objects.equals(this.portRangeMax, securityGroupRule.portRangeMax) &&
             Objects.equals(this.remoteIpPrefix, securityGroupRule.remoteIpPrefix) &&
-            Objects.equals(this.remoteGroupId, securityGroupRule.remoteGroupId);
+            Objects.equals(this.remoteGroupId, securityGroupRule.remoteGroupId) &&
+            Objects.equals(this.tenantId, securityGroupRule.tenantId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, securityGroupId, direction, ethertype, protocol, portRangeMin, portRangeMax, remoteIpPrefix, remoteGroupId);
+        return Objects.hash(id, description, securityGroupId, direction, ethertype, protocol, portRangeMin, portRangeMax, remoteIpPrefix, remoteGroupId, tenantId);
     }
     @Override
     public String toString() {
@@ -313,6 +340,7 @@ public class SecurityGroupRule  {
             sb.append("    portRangeMax: ").append(toIndentedString(portRangeMax)).append("\n");
             sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
             sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
+            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -55,7 +55,7 @@ public class CreatePortOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private String adminStateUp;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -203,7 +203,7 @@ public class CreatePortOption  {
         this.securityGroups = securityGroups;
     }
 
-    public CreatePortOption withAdminStateUp(String adminStateUp) {
+    public CreatePortOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
@@ -215,11 +215,11 @@ public class CreatePortOption  {
      * 功能说明：管理状态 取值范围：只支持true，默认为true
      * @return adminStateUp
      */
-    public String getAdminStateUp() {
+    public Boolean getAdminStateUp() {
         return adminStateUp;
     }
 
-    public void setAdminStateUp(String adminStateUp) {
+    public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
 

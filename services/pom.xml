@@ -18,17 +18,18 @@
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
 
     <modules>
-        <module>ces</module>
-        <module>as</module>
+        <module>image</module>
+        <module>moderation</module>
         <module>fgs</module>
-        <module>evs</module>
-        <module>vpc</module>
+        <module>classroom</module>
         <module>ecs</module>
+        <module>as</module>
+        <module>dds</module>
+        <module>evs</module>
+        <module>ces</module>
         <module>cts</module>
         <module>ims</module>
-        <module>moderation</module>
+        <module>vpc</module>
         <module>iam</module>
-        <module>image</module>
-        <module>dds</module>
     </modules>
 </project>
