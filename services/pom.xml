@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.huaweicloud.sdk</groupId>
+        <version>3.0.1-beta</version>
+        <artifactId>huaweicloud-sdk</artifactId>
+    </parent>
+    <groupId>com.huaweicloud.sdk</groupId>
+    <artifactId>huaweicloud-sdk-services</artifactId>
+    <version>3.0.1-beta</version>
+    <packaging>pom</packaging>
+    <name>Huaweicloud SDK for Java Services</name>
+    <description>Services code for Huaweicloud SDK for Java</description>
+    <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
+
+    <modules>
+        <module>ces</module>
+        <module>as</module>
+        <module>fgs</module>
+        <module>evs</module>
+        <module>vpc</module>
+        <module>ecs</module>
+        <module>cts</module>
+        <module>ims</module>
+        <module>moderation</module>
+        <module>iam</module>
+        <module>image</module>
+        <module>dds</module>
+    </modules>
+</project>
