@@ -79,7 +79,7 @@ BasicCredentials auth = new BasicCredentials()
 	.withProjectId(projectId);
 
 VpcClient vpcClient = VpcClient.newBuilder()
-	.withConfig(config)
+	.withHttpConfig(config)
 	.withCredential(auth)
 	.withEndpoint(endpoint)
 	.build();
@@ -137,7 +137,7 @@ public class Application {
             
         // 创建VpcClient实例并初始化
         VpcClient vpcClient = VpcClient.newBuilder()
-            .withConfig(config)
+            .withHttpConfig(config)
             .withCredential(auth)
             .withEndpoint(endpoint)
             .build();

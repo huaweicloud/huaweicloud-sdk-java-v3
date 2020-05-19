@@ -47,7 +47,7 @@ public class ClientBuilder<T> {
         return this;
     }
 
-    public ClientBuilder<T> withConfig(HttpConfig httpConfig) {
+    public ClientBuilder<T> withHttpConfig(HttpConfig httpConfig) {
         this.httpConfig = httpConfig;
         return this;
     }

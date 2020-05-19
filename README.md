@@ -73,7 +73,7 @@ It is recommended to use Maven to declare dependencies to use our Java SDK. At f
    	.withProjectId(projectId);
    
    VpcClient vpcClient = VpcClient.newBuilder()
-   	.withConfig(config)
+   	.withHttpConfig(config)
    	.withCredential(auth)
    	.withEndpoint(endpoint)
    	.build();
@@ -124,7 +124,7 @@ public class Application {
             .withProjectId(projectId);
             
         VpcClient vpcClient = VpcClient.newBuilder()
-            .withConfig(config)
+            .withHttpConfig(config)
             .withCredential(auth)
             .withEndpoint(endpoint)
             .build();
