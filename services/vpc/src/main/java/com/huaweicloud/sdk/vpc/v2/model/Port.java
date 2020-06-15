@@ -321,6 +321,12 @@ public class Port  {
     
     private String instanceType;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="port_security_enabled")
+    
+    private Boolean portSecurityEnabled;
+
     public Port withId(String id) {
         this.id = id;
         return this;
@@ -775,6 +781,26 @@ public class Port  {
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
+
+    public Port withPortSecurityEnabled(Boolean portSecurityEnabled) {
+        this.portSecurityEnabled = portSecurityEnabled;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：端口安全使能标记，如果不使能则安全组和dhcp防欺骗不生效 取值范围：启用（true）或禁用（false）
+     * @return portSecurityEnabled
+     */
+    public Boolean getPortSecurityEnabled() {
+        return portSecurityEnabled;
+    }
+
+    public void setPortSecurityEnabled(Boolean portSecurityEnabled) {
+        this.portSecurityEnabled = portSecurityEnabled;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -803,11 +829,12 @@ public class Port  {
             Objects.equals(this.bindingVifDetails, port.bindingVifDetails) &&
             Objects.equals(this.bindingProfile, port.bindingProfile) &&
             Objects.equals(this.instanceId, port.instanceId) &&
-            Objects.equals(this.instanceType, port.instanceType);
+            Objects.equals(this.instanceType, port.instanceType) &&
+            Objects.equals(this.portSecurityEnabled, port.portSecurityEnabled);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, networkId, adminStateUp, macAddress, fixedIps, deviceId, deviceOwner, tenantId, status, securityGroups, allowedAddressPairs, extraDhcpOpts, bindingVnicType, dnsAssignment, dnsName, bindingVifDetails, bindingProfile, instanceId, instanceType);
+        return Objects.hash(id, name, networkId, adminStateUp, macAddress, fixedIps, deviceId, deviceOwner, tenantId, status, securityGroups, allowedAddressPairs, extraDhcpOpts, bindingVnicType, dnsAssignment, dnsName, bindingVifDetails, bindingProfile, instanceId, instanceType, portSecurityEnabled);
     }
     @Override
     public String toString() {
@@ -833,6 +860,7 @@ public class Port  {
             sb.append("    bindingProfile: ").append(toIndentedString(bindingProfile)).append("\n");
             sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
             sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+            sb.append("    portSecurityEnabled: ").append(toIndentedString(portSecurityEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

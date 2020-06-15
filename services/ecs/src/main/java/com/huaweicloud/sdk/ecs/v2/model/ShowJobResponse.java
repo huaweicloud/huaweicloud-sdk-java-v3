@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ecs.v2.model.JobEntities;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.*;
@@ -24,7 +23,7 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="begin_time")
     
-    private OffsetDateTime beginTime = null;
+    private String beginTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,7 +35,7 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private String endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -172,7 +171,7 @@ public class ShowJobResponse extends SdkResponse {
     
     private StatusEnum status;
 
-    public ShowJobResponse withBeginTime(OffsetDateTime beginTime) {
+    public ShowJobResponse withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
@@ -184,11 +183,11 @@ public class ShowJobResponse extends SdkResponse {
      * 开始时间。
      * @return beginTime
      */
-    public OffsetDateTime getBeginTime() {
+    public String getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(OffsetDateTime beginTime) {
+    public void setBeginTime(String beginTime) {
         this.beginTime = beginTime;
     }
 
@@ -212,7 +211,7 @@ public class ShowJobResponse extends SdkResponse {
         this.code = code;
     }
 
-    public ShowJobResponse withEndTime(OffsetDateTime endTime) {
+    public ShowJobResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -224,11 +223,11 @@ public class ShowJobResponse extends SdkResponse {
      * 结束时间。
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

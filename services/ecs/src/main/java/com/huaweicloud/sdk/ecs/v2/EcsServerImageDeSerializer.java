@@ -2,12 +2,13 @@ package com.huaweicloud.sdk.ecs.v2;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.ecs.v2.model.ServerImage;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class EcsServerImageDeSerializer extends StdDeserializer<ServerImage> {
 
@@ -21,11 +22,15 @@ public class EcsServerImageDeSerializer extends StdDeserializer<ServerImage> {
 
     @Override
     public ServerImage deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-        throws IOException {
+            throws IOException {
         if (StringUtils.isEmpty(jsonParser.getText())) {
             return null;
         }
-        String msg = String.format("Cannot construct instance of %s", ServerImage.class.getName());
-        throw new SdkException(msg);
+
+        JsonNode jsonNode = jsonParser.readValueAsTree();
+
+        return new ServerImage().withId(Objects.isNull(jsonNode.get("id")) || jsonNode.get("id").isNull()
+                ? null : jsonNode.get("id").asText());
+
     }
 }

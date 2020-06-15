@@ -161,6 +161,89 @@ public class PostPaidServerDataVolume  {
     @JsonProperty(value="extendparam")
     
     private PostPaidServerDataVolumeExtendParam extendparam = null;
+    /**
+     * 云服务器数据盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
+     */
+    public static class ClusterTypeEnum {
+
+        
+        /**
+         * Enum DSS for value: "DSS"
+         */
+        public static final ClusterTypeEnum DSS = new ClusterTypeEnum("DSS");
+
+        
+
+        public static Map<String, ClusterTypeEnum> staticFields =
+                new HashMap<String, ClusterTypeEnum>() {
+                    { 
+                        put("DSS", DSS);
+                    }
+                };
+
+        private String value;
+
+        ClusterTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ClusterTypeEnum fromValue(String value) {
+           if( value == null ){
+                return null;
+            }
+            ClusterTypeEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new ClusterTypeEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static ClusterTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ClusterTypeEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ClusterTypeEnum) {
+                return this.value.equals(((ClusterTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cluster_type")
+    
+    private ClusterTypeEnum clusterType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cluster_id")
+    
+    private String clusterId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -302,6 +385,46 @@ public class PostPaidServerDataVolume  {
         this.extendparam = extendparam;
     }
 
+    public PostPaidServerDataVolume withClusterType(ClusterTypeEnum clusterType) {
+        this.clusterType = clusterType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云服务器数据盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
+     * @return clusterType
+     */
+    public ClusterTypeEnum getClusterType() {
+        return clusterType;
+    }
+
+    public void setClusterType(ClusterTypeEnum clusterType) {
+        this.clusterType = clusterType;
+    }
+
+    public PostPaidServerDataVolume withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云服务器数据盘对应的存储池的ID。
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     public PostPaidServerDataVolume withMetadata(PostPaidServerDataVolumeMetadata metadata) {
         this.metadata = metadata;
         return this;
@@ -362,12 +485,14 @@ public class PostPaidServerDataVolume  {
             Objects.equals(this.multiattach, postPaidServerDataVolume.multiattach) &&
             Objects.equals(this.hwPassthrough, postPaidServerDataVolume.hwPassthrough) &&
             Objects.equals(this.extendparam, postPaidServerDataVolume.extendparam) &&
+            Objects.equals(this.clusterType, postPaidServerDataVolume.clusterType) &&
+            Objects.equals(this.clusterId, postPaidServerDataVolume.clusterId) &&
             Objects.equals(this.metadata, postPaidServerDataVolume.metadata) &&
             Objects.equals(this.dataImageId, postPaidServerDataVolume.dataImageId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(volumetype, size, shareable, multiattach, hwPassthrough, extendparam, metadata, dataImageId);
+        return Objects.hash(volumetype, size, shareable, multiattach, hwPassthrough, extendparam, clusterType, clusterId, metadata, dataImageId);
     }
     @Override
     public String toString() {
@@ -379,6 +504,8 @@ public class PostPaidServerDataVolume  {
             sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
             sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");
             sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
+            sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
+            sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
             sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
             sb.append("    dataImageId: ").append(toIndentedString(dataImageId)).append("\n");
         sb.append("}");

@@ -21,10 +21,15 @@
 
 package com.huaweicloud.sdk.core.auth;
 
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 
 public interface ICredential {
 
-    HttpRequest processAuthRequest(HttpRequest httpRequest);
+    CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient);
 
+    List<String> getSensitiveHeaders();
 }

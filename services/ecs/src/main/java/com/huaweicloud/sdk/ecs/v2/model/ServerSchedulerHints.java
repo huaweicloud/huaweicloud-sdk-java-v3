@@ -36,18 +36,6 @@ public class ServerSchedulerHints  {
     
     private List<String> sameHost = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
-    private List<String> cidr = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="build_near_host_ip")
-    
-    private List<String> buildNearHostIp = null;
-    
     public ServerSchedulerHints withGroup(List<String> group) {
         this.group = group;
         return this;
@@ -149,74 +137,6 @@ public class ServerSchedulerHints  {
     public void setSameHost(List<String> sameHost) {
         this.sameHost = sameHost;
     }
-
-    public ServerSchedulerHints withCidr(List<String> cidr) {
-        this.cidr = cidr;
-        return this;
-    }
-
-    
-    public ServerSchedulerHints addCidrItem(String cidrItem) {
-        if (this.cidr == null) {
-            this.cidr = new ArrayList<>();
-        }
-        this.cidr.add(cidrItem);
-        return this;
-    }
-
-    public ServerSchedulerHints withCidr(Consumer<List<String>> cidrSetter) {
-        if(this.cidr == null ){
-            this.cidr = new ArrayList<>();
-        }
-        cidrSetter.accept(this.cidr);
-        return this;
-    }
-
-    /**
-     * 将弹性云服务器scheduler到指定网段的host上，host网段的cidr。当前不支持该功能。
-     * @return cidr
-     */
-    public List<String> getCidr() {
-        return cidr;
-    }
-
-    public void setCidr(List<String> cidr) {
-        this.cidr = cidr;
-    }
-
-    public ServerSchedulerHints withBuildNearHostIp(List<String> buildNearHostIp) {
-        this.buildNearHostIp = buildNearHostIp;
-        return this;
-    }
-
-    
-    public ServerSchedulerHints addBuildNearHostIpItem(String buildNearHostIpItem) {
-        if (this.buildNearHostIp == null) {
-            this.buildNearHostIp = new ArrayList<>();
-        }
-        this.buildNearHostIp.add(buildNearHostIpItem);
-        return this;
-    }
-
-    public ServerSchedulerHints withBuildNearHostIp(Consumer<List<String>> buildNearHostIpSetter) {
-        if(this.buildNearHostIp == null ){
-            this.buildNearHostIp = new ArrayList<>();
-        }
-        buildNearHostIpSetter.accept(this.buildNearHostIp);
-        return this;
-    }
-
-    /**
-     * 预留字段，当前不支持该功能。
-     * @return buildNearHostIp
-     */
-    public List<String> getBuildNearHostIp() {
-        return buildNearHostIp;
-    }
-
-    public void setBuildNearHostIp(List<String> buildNearHostIp) {
-        this.buildNearHostIp = buildNearHostIp;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -228,13 +148,11 @@ public class ServerSchedulerHints  {
         ServerSchedulerHints serverSchedulerHints = (ServerSchedulerHints) o;
         return Objects.equals(this.group, serverSchedulerHints.group) &&
             Objects.equals(this.differentHost, serverSchedulerHints.differentHost) &&
-            Objects.equals(this.sameHost, serverSchedulerHints.sameHost) &&
-            Objects.equals(this.cidr, serverSchedulerHints.cidr) &&
-            Objects.equals(this.buildNearHostIp, serverSchedulerHints.buildNearHostIp);
+            Objects.equals(this.sameHost, serverSchedulerHints.sameHost);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(group, differentHost, sameHost, cidr, buildNearHostIp);
+        return Objects.hash(group, differentHost, sameHost);
     }
     @Override
     public String toString() {
@@ -243,8 +161,6 @@ public class ServerSchedulerHints  {
             sb.append("    group: ").append(toIndentedString(group)).append("\n");
             sb.append("    differentHost: ").append(toIndentedString(differentHost)).append("\n");
             sb.append("    sameHost: ").append(toIndentedString(sameHost)).append("\n");
-            sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
-            sb.append("    buildNearHostIp: ").append(toIndentedString(buildNearHostIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

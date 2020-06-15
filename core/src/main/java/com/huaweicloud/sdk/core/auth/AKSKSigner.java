@@ -24,6 +24,7 @@ package com.huaweicloud.sdk.core.auth;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
@@ -33,7 +34,6 @@ import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -44,6 +44,7 @@ import java.util.Objects;
 import java.util.SimpleTimeZone;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 /**
  * signature certification with AK/SK
@@ -51,17 +52,26 @@ import java.util.TreeMap;
 public class AKSKSigner {
     public static class Constants {
         public static final String LINE_SEPARATOR = "\n";
+
         public static final String SDK_NAME = "SDK";
+
         public static final String SDK_TERMINATOR = "sdk_request";
+
         public static final String SDK_SIGNING_ALGORITHM = "SDK-HMAC-SHA256";
+
         public static final String X_SDK_DATE = "X-Sdk-Date";
-        public static final String X_SDK_CONTENT_SHA256 = "x-sdk-content-sha256";
+
+        public static final String X_SDK_CONTENT_SHA256 = "X-Sdk-Content-Sha256";
+
         public static final String AUTHORIZATION = "Authorization";
+
         public static final String HOST = "Host";
+
         public static final String CONTENT_TYPE = "Content-Type";
+
         public static final String CONTENT_LENGTH = "Content-Length";
-        // sorted to be signed headers
-        public static final List<String> TO_SIGNED_HEADERS = Arrays.asList(HOST, X_SDK_DATE);
+
+        public static final String UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
     }
 
     // /** SHA256 hash of an empty request body **/
@@ -71,6 +81,7 @@ public class AKSKSigner {
      * format strings for the date/time and date stamps required during signing
      **/
     public static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
+
     protected static final SimpleDateFormat ISO_DATE_FORMAT = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
 
     public static Map<String, String> sign(HttpRequest request, BasicCredentials credential) {
@@ -88,13 +99,19 @@ public class AKSKSigner {
 
         // Step 1.2: Add X-Sdk-Date
         String dateTimeStamp = null;
-        if (!request.getHeaders().containsKey(Constants.X_SDK_DATE)) {
+        if (!request.haveHeader(Constants.X_SDK_DATE)) {
             ISO_DATE_FORMAT.setTimeZone(new SimpleTimeZone(0, "UTC"));
             dateTimeStamp = ISO_DATE_FORMAT.format(now);
             authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
         } else {
-            dateTimeStamp = request.getHeaders().get(Constants.X_SDK_DATE).toString();
+            dateTimeStamp = request.getHeader(Constants.X_SDK_DATE).toString();
         }
+
+        // Step 1.3 combine all headers
+        Map<String, String> allHeaders = new TreeMap<String, String>();
+        allHeaders.putAll(request.getHeaders().entrySet().stream()
+                .collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue().get(0))));
+        allHeaders.putAll(authenticationHeaders);
 
         // Step 2: Create Canonical URI -- the part of the URI from domain to query
         String pathOld = url.getPath();
@@ -109,7 +126,7 @@ public class AKSKSigner {
         // be URL-encoded (space=%20). The parameters must be sorted by name.
         // For this example, the query string is pre-formatted in the request_parameters variable.
         String query = url.getQuery();
-        Map<String, List<Object>> parameters = request.getQueryParams();
+        Map<String, List<String>> parameters = request.getQueryParams();
         String canonicalQueryString = buildCanonicalQueryString(query, parameters);
 
         // Step 4: Create the list of signed headers. This lists the headers
@@ -118,12 +135,12 @@ public class AKSKSigner {
         // signed_headers lists those that you want to be included in the
         // hash of the request. "Host" and "x-sdk-date" are always required.
         // In V4 signer, we only use required header - host & x-sdk-date.
-        String signedHeaderNames = String.join(";", Constants.TO_SIGNED_HEADERS).toLowerCase(Locale.ROOT);
+        String signedHeaderNames = String.join(";", allHeaders.keySet()).toLowerCase(Locale.ROOT);
 
         // Step 5: Create the canonical headers and signed headers. Header names
         // and value must be trimmed and lower-case, and sorted in ASCII order.
         // Note that there is a trailing \n.
-        String canonicalHeaders = buildCanonicalHeaders(authenticationHeaders);
+        String canonicalHeaders = buildCanonicalHeaders(allHeaders);
 
         // Step 6: Create payload hash (hash of the request body content). For GET
         // requests, the payload is an empty string ("").
@@ -131,12 +148,11 @@ public class AKSKSigner {
 
         // Step 7: Combine elements to create canonical request
         String canonicalRequest = buildCanonicalRequest(request.getMethod().name(), canonicalURI, canonicalQueryString,
-            canonicalHeaders, signedHeaderNames, payloadHash);
+                canonicalHeaders, signedHeaderNames, payloadHash);
         String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
         // ************* TASK 2: CREATE THE STRING TO SIGN*************
         // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256 (recommended)
-        String stringToSign = getStringToSign(Constants.SDK_SIGNING_ALGORITHM, dateTimeStamp,
-            canonicalRequestHash);
+        String stringToSign = getStringToSign(Constants.SDK_SIGNING_ALGORITHM, dateTimeStamp, canonicalRequestHash);
 
         // ************* TASK 3: CALCULATE THE SIGNATURE *************
         // Create the signing key using the function defined above.
@@ -155,7 +171,7 @@ public class AKSKSigner {
         return authenticationHeaders;
     }
 
-    private static String buildCanonicalQueryString(String query, Map<String, List<Object>> parameters) {
+    private static String buildCanonicalQueryString(String query, Map<String, List<String>> parameters) {
         SortedMap<String, String> sorted = new TreeMap<String, String>();
 
         // get parameters from path query string
@@ -170,19 +186,18 @@ public class AKSKSigner {
         }
 
         if (parameters != null && !parameters.isEmpty()) {
-            Iterator<Map.Entry<String, List<Object>>> iterator = parameters.entrySet().iterator();
+            Iterator<Map.Entry<String, List<String>>> iterator = parameters.entrySet().iterator();
             while (iterator.hasNext()) {
-                Map.Entry<String, List<Object>> pair = iterator.next();
+                Map.Entry<String, List<String>> pair = iterator.next();
                 String key = pair.getKey();
-                List<Object> values = pair.getValue();
+                List<String> values = pair.getValue();
                 for (Object value : values) {
                     String valueString = value.toString();
                     if ("tags".equals(key) || "metadata".equals(key)) {
-                        if (valueString.contains("%7B") || valueString.contains("%7D")
-                            || valueString.contains("%7b") || valueString.contains("%7d")) {
-                            valueString = valueString
-                                .replace("%7B", "{").replace("%7b", "{")
-                                .replace("%7D", "}").replace("%7d", "}");
+                        if (valueString.contains("%7B") || valueString.contains("%7D") || valueString.contains("%7b")
+                                || valueString.contains("%7d")) {
+                            valueString = valueString.replace("%7B", "{").replace("%7b", "{").replace("%7D", "}")
+                                    .replace("%7d", "}");
                         }
                     }
                     sorted.put(urlEncode(key), urlEncode(valueString));
@@ -210,15 +225,15 @@ public class AKSKSigner {
      * and value must be trimmed and lowercase, and sorted in ASCII order.
      * Note that there is a trailing \n.
      *
-     * @param authenticationHeaders
+     * @param heads
      * @return
      */
-    private static String buildCanonicalHeaders(Map<String, String> authenticationHeaders) {
+    private static String buildCanonicalHeaders(Map<String, String> heads) {
         StringBuilder sb = new StringBuilder();
-        for (String sortedKey : Constants.TO_SIGNED_HEADERS) {
-            sb.append(sortedKey.toLowerCase(Locale.ROOT)).append(":").append(authenticationHeaders.get(sortedKey));
+        heads.forEach((key, value) -> {
+            sb.append(key.toLowerCase(Locale.ROOT)).append(":").append(value);
             sb.append(Constants.LINE_SEPARATOR);
-        }
+        });
         return sb.toString();
     }
 
@@ -227,6 +242,9 @@ public class AKSKSigner {
      * @return
      */
     private static String buildPayloadHash(HttpRequest request) {
+        if (request.haveHeader(Constants.X_SDK_CONTENT_SHA256)) {
+            return request.getHeader(Constants.X_SDK_CONTENT_SHA256);
+        }
         if (Objects.nonNull(request.getBodyAsString()) && !request.getBodyAsString().isEmpty()) {
             return BinaryUtils.toHex(sha256(request.getBodyAsString()));
         }
@@ -279,8 +297,7 @@ public class AKSKSigner {
 
     public static String urlEncode(String url) {
         try {
-            return URLEncoder.encode(url, "UTF-8")
-                .replace("+", "%20").replace("*", "%2A");
+            return URLEncoder.encode(url, "UTF-8").replace("+", "%20").replace("*", "%2A");
         } catch (UnsupportedEncodingException e) {
             throw new SdkException("UTF-8 encoding is not supported.", e);
         }

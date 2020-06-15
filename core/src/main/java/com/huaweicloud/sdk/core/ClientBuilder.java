@@ -25,7 +25,6 @@ import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpConfig;
-import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 
 import java.util.Objects;
 import java.util.function.Function;
@@ -35,6 +34,7 @@ public class ClientBuilder<T> {
     private ICredential credential;
     private HttpConfig httpConfig;
     private String endpoint;
+    private boolean enableHttpLog = false;
 
     private static final String CUSTOMIZATION = "Customization";
 
@@ -57,15 +57,20 @@ public class ClientBuilder<T> {
         return this;
     }
 
+    public ClientBuilder<T> withEnableHttpLog(boolean enableHttpLog) {
+        this.enableHttpLog = false;
+        return this;
+    }
+
     public T build() {
-        HcClient hcClient = new HcClient(
-            new DefaultHttpClient(Objects.nonNull(this.httpConfig)
-                ? this.httpConfig : HttpConfig.getDefaultHttpConfig()));
+        HcClient hcClient = new HcClient(Objects.nonNull(this.httpConfig)
+                ? this.httpConfig : HttpConfig.getDefaultHttpConfig());
         // apply credential to hcClient
         if (Objects.isNull(this.credential)) {
             loadCredentialsFromEnvVar();
         }
-        hcClient.withEndpoint(this.endpoint).withCredential(this.credential);
+        hcClient.withEndpoint(this.endpoint)
+            .withCredential(this.credential);
 
         T t = creator.apply(hcClient);
         ClientCustomization clientCustomization = loadClientCustomization(t);
@@ -118,5 +123,9 @@ public class ClientBuilder<T> {
 
     public String getEndpoint() {
         return endpoint;
+    }
+
+    public boolean isEnableHttpLog() {
+        return enableHttpLog;
     }
 }

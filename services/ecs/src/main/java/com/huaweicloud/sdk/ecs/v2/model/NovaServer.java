@@ -9,12 +9,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ecs.v2.model.NovaLink;
 import com.huaweicloud.sdk.ecs.v2.model.NovaNetwork;
-import com.huaweicloud.sdk.ecs.v2.model.NovaSecurityGroup;
 import com.huaweicloud.sdk.ecs.v2.model.NovaServerFault;
 import com.huaweicloud.sdk.ecs.v2.model.NovaServerFlavor;
 import com.huaweicloud.sdk.ecs.v2.model.NovaServerImage;
+import com.huaweicloud.sdk.ecs.v2.model.NovaServerSecurityGroup;
 import com.huaweicloud.sdk.ecs.v2.model.NovaServerVolume;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -212,13 +211,13 @@ public class NovaServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created")
     
-    private OffsetDateTime created = null;
+    private String created;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated")
     
-    private OffsetDateTime updated = null;
+    private String updated;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -272,7 +271,7 @@ public class NovaServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<NovaSecurityGroup> securityGroups = new ArrayList<>();
+    private List<NovaServerSecurityGroup> securityGroups = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -982,7 +981,7 @@ public class NovaServer  {
         this.status = status;
     }
 
-    public NovaServer withCreated(OffsetDateTime created) {
+    public NovaServer withCreated(String created) {
         this.created = created;
         return this;
     }
@@ -994,15 +993,15 @@ public class NovaServer  {
      * 云服务器创建时间。 时间格式例如：2019-05-22T07:48:53Z
      * @return created
      */
-    public OffsetDateTime getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(OffsetDateTime created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 
-    public NovaServer withUpdated(OffsetDateTime updated) {
+    public NovaServer withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
@@ -1014,11 +1013,11 @@ public class NovaServer  {
      * 云服务器上一次更新时间。时间格式例如：2019-05-22T07:48:53Z
      * @return updated
      */
-    public OffsetDateTime getUpdated() {
+    public String getUpdated() {
         return updated;
     }
 
-    public void setUpdated(OffsetDateTime updated) {
+    public void setUpdated(String updated) {
         this.updated = updated;
     }
 
@@ -1216,18 +1215,18 @@ public class NovaServer  {
         this.addresses = addresses;
     }
 
-    public NovaServer withSecurityGroups(List<NovaSecurityGroup> securityGroups) {
+    public NovaServer withSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
     
-    public NovaServer addSecurityGroupsItem(NovaSecurityGroup securityGroupsItem) {
+    public NovaServer addSecurityGroupsItem(NovaServerSecurityGroup securityGroupsItem) {
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
-    public NovaServer withSecurityGroups(Consumer<List<NovaSecurityGroup>> securityGroupsSetter) {
+    public NovaServer withSecurityGroups(Consumer<List<NovaServerSecurityGroup>> securityGroupsSetter) {
         if(this.securityGroups == null ){
             this.securityGroups = new ArrayList<>();
         }
@@ -1239,11 +1238,11 @@ public class NovaServer  {
      * 云服务器所属安全组列表。
      * @return securityGroups
      */
-    public List<NovaSecurityGroup> getSecurityGroups() {
+    public List<NovaServerSecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<NovaSecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

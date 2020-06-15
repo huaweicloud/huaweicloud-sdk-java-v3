@@ -21,19 +21,21 @@
 
 package com.huaweicloud.sdk.core.http;
 
+import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
+
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-
 
 public interface HttpRequest {
 
@@ -64,6 +66,9 @@ public interface HttpRequest {
 
         public HttpRequestBuilder withContentType(String contentType) {
             httpRequest.contentType = contentType;
+            if (Objects.nonNull(contentType)) {
+                addHeader(Constants.CONTENT_TYPE, contentType);
+            }
             return this;
         }
 
@@ -77,17 +82,21 @@ public interface HttpRequest {
             return this;
         }
 
-        public HttpRequestBuilder addHeader(String key, Object value) {
-            httpRequest.headers.putIfAbsent(key, value);
+        public HttpRequestBuilder addHeader(String key, String value) {
+            if (httpRequest.headers.containsKey(key) && Objects.nonNull(httpRequest.headers.get(key))) {
+                httpRequest.headers.get(key).add(value);
+            } else {
+                httpRequest.headers.put(key, Arrays.asList(value));
+            }
             return this;
         }
 
         public HttpRequestBuilder addHeaders(Map<String, String> headers) {
-            httpRequest.headers.putAll(headers);
+            headers.entrySet().forEach(entry -> this.addHeader(entry.getKey(), entry.getValue()));
             return this;
         }
 
-        public HttpRequestBuilder addQueryParam(String key, List<Object> value) {
+        public HttpRequestBuilder addQueryParam(String key, List<String> value) {
             httpRequest.queryParams.putIfAbsent(key, value);
             return this;
         }
@@ -103,27 +112,42 @@ public interface HttpRequest {
         }
 
         public HttpRequest build() {
-
             return httpRequest.buildPathParamsString().buildQueryParamsString().buildUrl();
         }
     }
 
-    class Impl implements HttpRequest {
+    class Impl implements HttpRequest, Cloneable {
         private static final Logger LOG = LoggerFactory.getLogger(Impl.class);
+
         private String endpoint;
+
         private String path;
+
         private HttpMethod method = HttpMethod.GET;
-        private Map<String, List<Object>> queryParams = new LinkedHashMap<>();
-        private Map<String, Object> headers = new HashMap();
+
+        private Map<String, List<String>> queryParams = new LinkedHashMap<>();
+
+        private Map<String, List<String>> headers = new HashMap();
+
         private Map<String, Object> pathParams = new LinkedHashMap<>();
-        private String contentType = "application/json";
+
+        private String contentType = Constants.MEDIATYPE.APPLICATION_JSON;
+
         private String bodyAsString;
+
         private String queryParamsString;
+
         private String pathParamsString;
+
         private URL url;
 
+        @Override
         public HttpRequestBuilder builder() {
-            return new HttpRequestBuilder(this);
+            try {
+                return new HttpRequestBuilder(this.clone());
+            } catch (CloneNotSupportedException e) {
+                throw new SdkException("Can not create a new builder", e);
+            }
         }
 
         @Override
@@ -142,13 +166,30 @@ public interface HttpRequest {
         }
 
         @Override
-        public Map<String, List<Object>> getQueryParams() {
+        public Map<String, List<String>> getQueryParams() {
             return queryParams;
         }
 
         @Override
-        public Map<String, Object> getHeaders() {
+        public Map<String, List<String>> getHeaders() {
             return headers;
+        }
+
+        @Override
+        public Boolean haveHeader(String name) {
+            if (Objects.isNull(headers)) {
+                return false;
+            }
+            return headers.containsKey(name);
+        }
+
+        @Override
+        public String getHeader(String name) {
+            if (Objects.isNull(headers)) {
+                return null;
+            }
+            List<String> values = headers.get(name);
+            return Objects.isNull(values) || values.isEmpty() ? null : values.get(0);
         }
 
         @Override
@@ -176,11 +217,24 @@ public interface HttpRequest {
             return url;
         }
 
+        @Override
+        public Impl clone() throws CloneNotSupportedException {
+            Impl impl = (Impl) super.clone();
+            impl.method = this.method;
+            impl.bodyAsString = this.bodyAsString;
+            impl.contentType = this.contentType;
+            impl.endpoint = this.endpoint;
+            impl.path = this.path;
+            impl.pathParams = new HashMap<>(this.pathParams);
+            impl.queryParams = new HashMap<>(this.queryParams);
+            impl.headers = new HashMap<>(this.headers);
+            return impl.buildPathParamsString().buildQueryParamsString().buildUrl();
+        }
+
         private Impl buildPathParamsString() {
             this.pathParamsString = Objects.isNull(path) ? "" : path;
-            pathParams.forEach((key, value) ->
-                pathParamsString =
-                    pathParamsString.replace(String.format("{%s}", key), value.toString()));
+            pathParams.forEach((key, value) -> pathParamsString = pathParamsString
+                    .replace(String.format("{%s}", key), value.toString()));
             return this;
         }
 
@@ -216,9 +270,13 @@ public interface HttpRequest {
 
     HttpMethod getMethod();
 
-    Map<String, List<Object>> getQueryParams();
+    Map<String, List<String>> getQueryParams();
 
-    Map<String, Object> getHeaders();
+    Map<String, List<String>> getHeaders();
+
+    Boolean haveHeader(String name);
+
+    String getHeader(String name);
 
     String getContentType();
 

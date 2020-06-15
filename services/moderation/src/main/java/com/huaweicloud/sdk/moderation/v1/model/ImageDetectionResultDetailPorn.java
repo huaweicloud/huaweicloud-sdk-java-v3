@@ -11,22 +11,16 @@ import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 /**
- * 
+ * ImageDetectionResultDetailPorn
  */
-public class CheckResultDetailBody  {
+public class ImageDetectionResultDetailPorn  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="confidence")
     
-    private Double confidence;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="face_detail")
-    
-    private Object faceDetail = null;
+    private Object confidence = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,7 +28,7 @@ public class CheckResultDetailBody  {
     
     private String label;
 
-    public CheckResultDetailBody withConfidence(Double confidence) {
+    public ImageDetectionResultDetailPorn withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
     }
@@ -43,38 +37,18 @@ public class CheckResultDetailBody  {
 
 
     /**
-     * 请参见[表2](https://support.huaweicloud.com/api-moderation/moderation_03_0019.html#moderation_03_0019__zh-cn_topic_0087142444_table663805019540)中confidence字段说明。
+     * Get confidence
      * @return confidence
      */
-    public Double getConfidence() {
+    public Object getConfidence() {
         return confidence;
     }
 
-    public void setConfidence(Double confidence) {
+    public void setConfidence(Object confidence) {
         this.confidence = confidence;
     }
 
-    public CheckResultDetailBody withFaceDetail(Object faceDetail) {
-        this.faceDetail = faceDetail;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 请参见[表2](https://support.huaweicloud.com/api-moderation/moderation_03_0019.html#moderation_03_0019__zh-cn_topic_0087142444_table663805019540)中face_detail字段说明。
-     * @return faceDetail
-     */
-    public Object getFaceDetail() {
-        return faceDetail;
-    }
-
-    public void setFaceDetail(Object faceDetail) {
-        this.faceDetail = faceDetail;
-    }
-
-    public CheckResultDetailBody withLabel(String label) {
+    public ImageDetectionResultDetailPorn withLabel(String label) {
         this.label = label;
         return this;
     }
@@ -83,7 +57,7 @@ public class CheckResultDetailBody  {
 
 
     /**
-     * 请参见[表2](https://support.huaweicloud.com/api-moderation/moderation_03_0019.html#moderation_03_0019__zh-cn_topic_0087142444_table663805019540)中label字段说明。
+     * Get label
      * @return label
      */
     public String getLabel() {
@@ -101,21 +75,19 @@ public class CheckResultDetailBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CheckResultDetailBody checkResultDetailBody = (CheckResultDetailBody) o;
-        return Objects.equals(this.confidence, checkResultDetailBody.confidence) &&
-            Objects.equals(this.faceDetail, checkResultDetailBody.faceDetail) &&
-            Objects.equals(this.label, checkResultDetailBody.label);
+        ImageDetectionResultDetailPorn imageDetectionResultDetailPorn = (ImageDetectionResultDetailPorn) o;
+        return Objects.equals(this.confidence, imageDetectionResultDetailPorn.confidence) &&
+            Objects.equals(this.label, imageDetectionResultDetailPorn.label);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(confidence, faceDetail, label);
+        return Objects.hash(confidence, label);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CheckResultDetailBody {\n");
+        sb.append("class ImageDetectionResultDetailPorn {\n");
             sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-            sb.append("    faceDetail: ").append(toIndentedString(faceDetail)).append("\n");
             sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("}");
         return sb.toString();

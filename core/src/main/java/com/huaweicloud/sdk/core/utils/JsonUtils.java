@@ -36,6 +36,7 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.json.SensitiveStringSerializer;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,6 +67,13 @@ public class JsonUtils {
      */
     private static ObjectMapper objectMapperIgnoreUnknown = initializeBaseMapper();
 
+    private static ObjectMapper objectMapperHideSensitive =
+        objectMapperIgnoreUnknown.copy().setConfig(
+            objectMapperIgnoreUnknown.getSerializationConfig()
+                .with(objectMapperIgnoreUnknown.getSerializationConfig().getAttributes()
+                    .withSharedAttribute(SensitiveStringSerializer.SENSITIVE_SWITCH, true))
+        );
+
     private static ObjectMapper initializeBaseMapper() {
         ObjectMapper mapper = new ObjectMapper()
             //反序列化时未知字段忽略
@@ -90,6 +98,9 @@ public class JsonUtils {
         return objectMapperIgnoreUnknown;
     }
 
+    public static ObjectMapper getSecureMapperWithoutSensitive() {
+        return objectMapperHideSensitive;
+    }
 
     /**
      * To json string.
@@ -100,6 +111,21 @@ public class JsonUtils {
     public static String toJSON(Object object) {
         try {
             return objectMapperIgnoreUnknown.writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            logger.error("[Method toJSON] Occur Internal Error {}", e);
+            throw new SdkException(e);
+        }
+    }
+
+    /**
+     * Safe method, mask all fields annotated with @JsonSensitive
+     *
+     * @param object the object
+     * @return the string
+     */
+    public static String toJsonWithoutSensitive(Object object) {
+        try {
+            return objectMapperHideSensitive.writeValueAsString(object);
         } catch (JsonProcessingException e) {
             logger.error("[Method toJSON] Occur Internal Error {}", e);
             throw new SdkException(e);
@@ -150,10 +176,10 @@ public class JsonUtils {
     }
 
     /**
-     * @param json
-     * @param clazz
-     * @param <T>
-     * @return
+     * @param json  the json string
+     * @param clazz the clazz
+     * @param <T>   the type t
+     * @return the t
      */
     public static <T> Map<String, T> toMapObject(String json, Class<T> clazz) {
         try {
@@ -169,8 +195,8 @@ public class JsonUtils {
     /**
      * 将一个对象转换成为一个通用的map对象结构
      *
-     * @param o
-     * @return
+     * @param o the object
+     * @return the map<String, Object>
      */
     public static Map<String, Object> objectToMap(Object o) {
         return objectToMap(objectMapperIgnoreUnknown, o);
@@ -179,8 +205,8 @@ public class JsonUtils {
     /**
      * 将一个对象转换成为一个通用的map对象结构
      *
-     * @param o
-     * @return
+     * @param o the object
+     * @return the map<String, Object>
      */
     public static Map<String, Object> objectToMap(ObjectMapper mapper, Object o) {
         Objects.requireNonNull(o, "input of objectToMap cannot be null");
@@ -195,11 +221,11 @@ public class JsonUtils {
     }
 
     /**
-     * @param json
-     * @param clazz
-     * @param <T>
-     * @return
-     * @throws
+     * @param json  the json string
+     * @param clazz the clazz
+     * @param <T>   the type t
+     * @return the t
+     * @throws SdkException
      */
     public static <T> List<T> toListObject(String json, Class<T> clazz) {
         try {
@@ -250,10 +276,10 @@ public class JsonUtils {
     //------------------below method is strict mode ------------------------
 
     /**
-     * @param json
-     * @param clazz
-     * @param <T>
-     * @return
+     * @param <T>   the type parameter
+     * @param json  the json
+     * @param clazz the clazz
+     * @return the t
      */
     public static <T> T toObjectByStrict(String json, Class<T> clazz) {
         try {
@@ -265,10 +291,10 @@ public class JsonUtils {
     }
 
     /**
-     * @param json
-     * @param type
-     * @param <T>
-     * @return
+     * @param json the json
+     * @param type the type
+     * @param <T>  the type parameter
+     * @return the t
      */
     public static <T> T toObjectByStrict(String json, TypeReference<T> type) {
         try {
@@ -324,7 +350,7 @@ public class JsonUtils {
     public static <T> List<T> toListObjectIgnoreUnknownByStrict(String json, Class<T> clazz) {
         try {
             return StringUtils.isEmpty(json) ? null : objectMapperIgnoreUnknown.readValue(json,
-                    objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
+                objectMapperIgnoreUnknown.getTypeFactory().constructParametricType(List.class, clazz));
         } catch (JsonProcessingException e) {
             logger.error("[Method toListObjectIgnoreUnknownByStrict] Occur Internal Error {}", e);
             throw new SdkException(e);
@@ -347,17 +373,17 @@ public class JsonUtils {
      *
      * @param mapperFilterName the mapper filter name
      * @param resultMapper     the result mapper
-     * @param exceptPropertys  the except propertys
+     * @param exceptProperties the except properties
      * @return the string
      */
-    public static String toJSON(String mapperFilterName, Object resultMapper, Set<String> exceptPropertys) {
+    public static String toJSON(String mapperFilterName, Object resultMapper, Set<String> exceptProperties) {
         try {
-            if (exceptPropertys == null) {
+            if (exceptProperties == null) {
                 return objectMapperIgnoreUnknown.writeValueAsString(resultMapper);
             } else {
                 SimpleBeanPropertyFilter simpleBeanPropertyFilter
                     = SimpleBeanPropertyFilter
-                    .serializeAllExcept(exceptPropertys.toArray(new String[exceptPropertys.size()]));//NOPMD
+                    .serializeAllExcept(exceptProperties.toArray(new String[exceptProperties.size()]));//NOPMD
                 FilterProvider filterProvider
                     = new SimpleFilterProvider().addFilter(mapperFilterName, simpleBeanPropertyFilter);
                 return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsString(resultMapper);
@@ -369,8 +395,8 @@ public class JsonUtils {
     }
 
     /**
-     * @param resultMapper
-     * @return
+     * @param resultMapper the object
+     * @return the byte[]
      */
     public static byte[] toJSONAsBytes(Object resultMapper) {
         try {
@@ -386,17 +412,17 @@ public class JsonUtils {
      *
      * @param mapperFilterName the mapper filter name
      * @param resultMapper     the result mapper
-     * @param exceptPropertys  the except propertys
+     * @param exceptProperties the except properties
      * @return the byte [ ]
      */
-    public static byte[] toJSONAsBytes(String mapperFilterName, Object resultMapper, Set<String> exceptPropertys) {
+    public static byte[] toJSONAsBytes(String mapperFilterName, Object resultMapper, Set<String> exceptProperties) {
         try {
-            if (exceptPropertys == null) {
+            if (exceptProperties == null) {
                 return objectMapperIgnoreUnknown.writeValueAsBytes(resultMapper);
             } else {
                 SimpleBeanPropertyFilter simpleBeanPropertyFilter
                     = SimpleBeanPropertyFilter
-                    .serializeAllExcept(exceptPropertys.toArray(new String[exceptPropertys.size()]));//NOPMD
+                    .serializeAllExcept(exceptProperties.toArray(new String[exceptProperties.size()]));//NOPMD
                 FilterProvider filterProvider
                     = new SimpleFilterProvider().addFilter(mapperFilterName, simpleBeanPropertyFilter);
                 return objectMapperIgnoreUnknown.writer(filterProvider).writeValueAsBytes(resultMapper);

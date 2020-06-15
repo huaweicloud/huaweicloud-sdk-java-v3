@@ -27,8 +27,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
 public class DefaultHttpResponse implements HttpResponse {
 
@@ -61,9 +62,14 @@ public class DefaultHttpResponse implements HttpResponse {
     }
 
     @Override
-    public Map<String, String> getHeaders() {
-        return response.headers().toMultimap().entrySet().stream()
-            .collect(Collectors.toMap(Map.Entry::getKey, values -> values.getValue().get(0)));
+    public long getContentLength() {
+        return Objects.isNull(this.response.body()) || this.response.body().contentLength() < 0
+                ? 0 : this.response.body().contentLength();
+    }
+
+    @Override
+    public Map<String, List<String>> getHeaders() {
+        return DefaultHttpUtils.headersToMap(response.headers());
     }
 
     @Override

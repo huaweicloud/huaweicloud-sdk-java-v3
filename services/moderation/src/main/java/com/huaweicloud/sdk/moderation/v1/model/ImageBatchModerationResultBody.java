@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
+import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetail;
 import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
@@ -33,25 +33,13 @@ public class ImageBatchModerationResultBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private Object detail = null;
+    private ImageDetectionResultDetail detail = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
+    @JsonProperty(value="category_suggestion")
     
-    private BigDecimal confidence = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="face_detail")
-    
-    private Object faceDetail = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
-    private String label;
+    private Object categorySuggestion = null;
 
     public ImageBatchModerationResultBody withUrl(String url) {
         this.url = url;
@@ -93,28 +81,34 @@ public class ImageBatchModerationResultBody  {
         this.suggestion = suggestion;
     }
 
-    public ImageBatchModerationResultBody withDetail(Object detail) {
+    public ImageBatchModerationResultBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
         return this;
     }
 
-    
+    public ImageBatchModerationResultBody withDetail(Consumer<ImageDetectionResultDetail> detailSetter) {
+        if(this.detail == null ){
+            this.detail = new ImageDetectionResultDetail();
+        }
+        detailSetter.accept(this.detail);
+        return this;
+    }
 
 
     /**
-     * 请参见[表2](https://support.huaweicloud.com/api-moderation/moderation_03_0019.html#moderation_03_0019__zh-cn_topic_0087142444_table663805019540)中detail字段说明
+     * Get detail
      * @return detail
      */
-    public Object getDetail() {
+    public ImageDetectionResultDetail getDetail() {
         return detail;
     }
 
-    public void setDetail(Object detail) {
+    public void setDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
     }
 
-    public ImageBatchModerationResultBody withConfidence(BigDecimal confidence) {
-        this.confidence = confidence;
+    public ImageBatchModerationResultBody withCategorySuggestion(Object categorySuggestion) {
+        this.categorySuggestion = categorySuggestion;
         return this;
     }
 
@@ -122,55 +116,15 @@ public class ImageBatchModerationResultBody  {
 
 
     /**
-     * 请参见[表2](https://support.huaweicloud.com/api-moderation/moderation_03_0019.html#moderation_03_0019__zh-cn_topic_0087142444_table663805019540)中confidence字段说明。
-     * @return confidence
+     * 具体每个场景的检测结果。  block：包含敏感信息，不通过  pass：不包含敏感信息，通过  review：需要人工复检 
+     * @return categorySuggestion
      */
-    public BigDecimal getConfidence() {
-        return confidence;
+    public Object getCategorySuggestion() {
+        return categorySuggestion;
     }
 
-    public void setConfidence(BigDecimal confidence) {
-        this.confidence = confidence;
-    }
-
-    public ImageBatchModerationResultBody withFaceDetail(Object faceDetail) {
-        this.faceDetail = faceDetail;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 请参见[表2](https://support.huaweicloud.com/api-moderation/moderation_03_0019.html#moderation_03_0019__zh-cn_topic_0087142444_table663805019540)中face_detail字段说明。
-     * @return faceDetail
-     */
-    public Object getFaceDetail() {
-        return faceDetail;
-    }
-
-    public void setFaceDetail(Object faceDetail) {
-        this.faceDetail = faceDetail;
-    }
-
-    public ImageBatchModerationResultBody withLabel(String label) {
-        this.label = label;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 请参见[表2](https://support.huaweicloud.com/api-moderation/moderation_03_0019.html#moderation_03_0019__zh-cn_topic_0087142444_table663805019540)中label字段说明。
-     * @return label
-     */
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
+    public void setCategorySuggestion(Object categorySuggestion) {
+        this.categorySuggestion = categorySuggestion;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -184,13 +138,11 @@ public class ImageBatchModerationResultBody  {
         return Objects.equals(this.url, imageBatchModerationResultBody.url) &&
             Objects.equals(this.suggestion, imageBatchModerationResultBody.suggestion) &&
             Objects.equals(this.detail, imageBatchModerationResultBody.detail) &&
-            Objects.equals(this.confidence, imageBatchModerationResultBody.confidence) &&
-            Objects.equals(this.faceDetail, imageBatchModerationResultBody.faceDetail) &&
-            Objects.equals(this.label, imageBatchModerationResultBody.label);
+            Objects.equals(this.categorySuggestion, imageBatchModerationResultBody.categorySuggestion);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(url, suggestion, detail, confidence, faceDetail, label);
+        return Objects.hash(url, suggestion, detail, categorySuggestion);
     }
     @Override
     public String toString() {
@@ -199,9 +151,7 @@ public class ImageBatchModerationResultBody  {
             sb.append("    url: ").append(toIndentedString(url)).append("\n");
             sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
             sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-            sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-            sb.append("    faceDetail: ").append(toIndentedString(faceDetail)).append("\n");
-            sb.append("    label: ").append(toIndentedString(label)).append("\n");
+            sb.append("    categorySuggestion: ").append(toIndentedString(categorySuggestion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

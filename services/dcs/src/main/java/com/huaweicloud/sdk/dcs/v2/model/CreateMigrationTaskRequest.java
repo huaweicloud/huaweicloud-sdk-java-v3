@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.ecs.v2.model;
+package com.huaweicloud.sdk.dcs.v2.model;
 
 import java.util.Objects;
 import java.util.ArrayList;
@@ -7,39 +7,46 @@ import java.util.function.Consumer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskBody;
 import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 /**
- * 
+ * Request Object
  */
-public class NovaSecurityGroupCommonIpRange  {
+public class CreateMigrationTaskRequest  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
+    @JsonProperty(value="body")
     
-    private String cidr;
+    private CreateMigrationTaskBody body = null;
 
-    public NovaSecurityGroupCommonIpRange withCidr(String cidr) {
-        this.cidr = cidr;
+    public CreateMigrationTaskRequest withBody(CreateMigrationTaskBody body) {
+        this.body = body;
         return this;
     }
 
-    
+    public CreateMigrationTaskRequest withBody(Consumer<CreateMigrationTaskBody> bodySetter) {
+        if(this.body == null ){
+            this.body = new CreateMigrationTaskBody();
+        }
+        bodySetter.accept(this.body);
+        return this;
+    }
 
 
     /**
-     * 对端IP网段，cidr格式。
-     * @return cidr
+     * Get body
+     * @return body
      */
-    public String getCidr() {
-        return cidr;
+    public CreateMigrationTaskBody getBody() {
+        return body;
     }
 
-    public void setCidr(String cidr) {
-        this.cidr = cidr;
+    public void setBody(CreateMigrationTaskBody body) {
+        this.body = body;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -49,18 +56,18 @@ public class NovaSecurityGroupCommonIpRange  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        NovaSecurityGroupCommonIpRange novaSecurityGroupCommonIpRange = (NovaSecurityGroupCommonIpRange) o;
-        return Objects.equals(this.cidr, novaSecurityGroupCommonIpRange.cidr);
+        CreateMigrationTaskRequest createMigrationTaskRequest = (CreateMigrationTaskRequest) o;
+        return Objects.equals(this.body, createMigrationTaskRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(cidr);
+        return Objects.hash(body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class NovaSecurityGroupCommonIpRange {\n");
-            sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
+        sb.append("class CreateMigrationTaskRequest {\n");
+            sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

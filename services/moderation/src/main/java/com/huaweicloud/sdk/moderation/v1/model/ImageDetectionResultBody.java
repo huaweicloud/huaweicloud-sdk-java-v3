@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetail;
 import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
@@ -20,7 +21,7 @@ public class ImageDetectionResultBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private Object detail = null;
+    private ImageDetectionResultDetail detail = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,23 +35,29 @@ public class ImageDetectionResultBody  {
     
     private Object categorySuggestion = null;
 
-    public ImageDetectionResultBody withDetail(Object detail) {
+    public ImageDetectionResultBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
         return this;
     }
 
-    
+    public ImageDetectionResultBody withDetail(Consumer<ImageDetectionResultDetail> detailSetter) {
+        if(this.detail == null ){
+            this.detail = new ImageDetectionResultDetail();
+        }
+        detailSetter.accept(this.detail);
+        return this;
+    }
 
 
     /**
-     * 针对选定的每个检测场景列出结果列表，politics为涉政敏感人物检测结果，terrorism为涉政暴恐检测结果，porn为涉黄检测结果。如果检测场景中的最高置信度也未达到threshold则结果列表为空。 
+     * Get detail
      * @return detail
      */
-    public Object getDetail() {
+    public ImageDetectionResultDetail getDetail() {
         return detail;
     }
 
-    public void setDetail(Object detail) {
+    public void setDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
     }
 

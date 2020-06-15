@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.moderation.v1.model.CheckResultDetailBody;
+import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetail;
 import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
@@ -33,7 +33,7 @@ public class CheckResultItemsBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
-    private CheckResultDetailBody detail = null;
+    private ImageDetectionResultDetail detail = null;
 
     public CheckResultItemsBody withUrl(String url) {
         this.url = url;
@@ -75,14 +75,14 @@ public class CheckResultItemsBody  {
         this.suggestion = suggestion;
     }
 
-    public CheckResultItemsBody withDetail(CheckResultDetailBody detail) {
+    public CheckResultItemsBody withDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
         return this;
     }
 
-    public CheckResultItemsBody withDetail(Consumer<CheckResultDetailBody> detailSetter) {
+    public CheckResultItemsBody withDetail(Consumer<ImageDetectionResultDetail> detailSetter) {
         if(this.detail == null ){
-            this.detail = new CheckResultDetailBody();
+            this.detail = new ImageDetectionResultDetail();
         }
         detailSetter.accept(this.detail);
         return this;
@@ -93,11 +93,11 @@ public class CheckResultItemsBody  {
      * Get detail
      * @return detail
      */
-    public CheckResultDetailBody getDetail() {
+    public ImageDetectionResultDetail getDetail() {
         return detail;
     }
 
-    public void setDetail(CheckResultDetailBody detail) {
+    public void setDetail(ImageDetectionResultDetail detail) {
         this.detail = detail;
     }
     @Override

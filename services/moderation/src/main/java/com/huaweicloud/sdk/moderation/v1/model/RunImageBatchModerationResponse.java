@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.moderation.v1.model.ImageBatchModerationResultBody;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
@@ -21,31 +23,39 @@ public class RunImageBatchModerationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private ImageBatchModerationResultBody result = null;
-
-    public RunImageBatchModerationResponse withResult(ImageBatchModerationResultBody result) {
+    private List<ImageBatchModerationResultBody> result = null;
+    
+    public RunImageBatchModerationResponse withResult(List<ImageBatchModerationResultBody> result) {
         this.result = result;
         return this;
     }
 
-    public RunImageBatchModerationResponse withResult(Consumer<ImageBatchModerationResultBody> resultSetter) {
+    
+    public RunImageBatchModerationResponse addResultItem(ImageBatchModerationResultBody resultItem) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
+        }
+        this.result.add(resultItem);
+        return this;
+    }
+
+    public RunImageBatchModerationResponse withResult(Consumer<List<ImageBatchModerationResultBody>> resultSetter) {
         if(this.result == null ){
-            this.result = new ImageBatchModerationResultBody();
+            this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);
         return this;
     }
 
-
     /**
-     * Get result
+     * 调用成功时表示调用结果。 调用失败时无此字段。 
      * @return result
      */
-    public ImageBatchModerationResultBody getResult() {
+    public List<ImageBatchModerationResultBody> getResult() {
         return result;
     }
 
-    public void setResult(ImageBatchModerationResultBody result) {
+    public void setResult(List<ImageBatchModerationResultBody> result) {
         this.result = result;
     }
     @Override

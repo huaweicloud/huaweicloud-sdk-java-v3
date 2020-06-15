@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.ecs.v2.model;
+package com.huaweicloud.sdk.dcs.v2.model;
 
 import java.util.Objects;
 import java.util.ArrayList;
@@ -11,10 +11,16 @@ import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 /**
- * 
+ * 目标实例信息。
  */
-public class NovaSecurityGroupCommonGroup  {
+public class TargetInstanceBody  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,11 +30,31 @@ public class NovaSecurityGroupCommonGroup  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
+    @JsonProperty(value="password")
     
-    private String tenantId;
+    private String password;
 
-    public NovaSecurityGroupCommonGroup withName(String name) {
+    public TargetInstanceBody withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Redis实例ID（target_instance信息中必须填写）。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public TargetInstanceBody withName(String name) {
         this.name = name;
         return this;
     }
@@ -37,7 +63,7 @@ public class NovaSecurityGroupCommonGroup  {
 
 
     /**
-     * 对端安全组的名称
+     * Redis实例名称(target_instance信息中填写)。
      * @return name
      */
     public String getName() {
@@ -48,8 +74,8 @@ public class NovaSecurityGroupCommonGroup  {
         this.name = name;
     }
 
-    public NovaSecurityGroupCommonGroup withTenantId(String tenantId) {
-        this.tenantId = tenantId;
+    public TargetInstanceBody withPassword(String password) {
+        this.password = password;
         return this;
     }
 
@@ -57,15 +83,15 @@ public class NovaSecurityGroupCommonGroup  {
 
 
     /**
-     * 对端安全组所属租户的租户ID
-     * @return tenantId
+     * Redis密码，如果设置了密码，则必须填写。
+     * @return password
      */
-    public String getTenantId() {
-        return tenantId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
+    public void setPassword(String password) {
+        this.password = password;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,20 +101,22 @@ public class NovaSecurityGroupCommonGroup  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        NovaSecurityGroupCommonGroup novaSecurityGroupCommonGroup = (NovaSecurityGroupCommonGroup) o;
-        return Objects.equals(this.name, novaSecurityGroupCommonGroup.name) &&
-            Objects.equals(this.tenantId, novaSecurityGroupCommonGroup.tenantId);
+        TargetInstanceBody targetInstanceBody = (TargetInstanceBody) o;
+        return Objects.equals(this.id, targetInstanceBody.id) &&
+            Objects.equals(this.name, targetInstanceBody.name) &&
+            Objects.equals(this.password, targetInstanceBody.password);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, tenantId);
+        return Objects.hash(id, name, password);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class NovaSecurityGroupCommonGroup {\n");
+        sb.append("class TargetInstanceBody {\n");
+            sb.append("    id: ").append(toIndentedString(id)).append("\n");
             sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+            sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("}");
         return sb.toString();
     }

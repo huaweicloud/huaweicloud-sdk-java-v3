@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.*;
 import com.huaweicloud.sdk.core.SdkResponse;
 
@@ -38,7 +39,7 @@ public class ClassroomCard  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit")
     
-    private String credit;
+    private BigDecimal credit = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,7 +107,7 @@ public class ClassroomCard  {
         this.description = description;
     }
 
-    public ClassroomCard withCredit(String credit) {
+    public ClassroomCard withCredit(BigDecimal credit) {
         this.credit = credit;
         return this;
     }
@@ -118,11 +119,11 @@ public class ClassroomCard  {
      * 课堂学分
      * @return credit
      */
-    public String getCredit() {
+    public BigDecimal getCredit() {
         return credit;
     }
 
-    public void setCredit(String credit) {
+    public void setCredit(BigDecimal credit) {
         this.credit = credit;
     }
 

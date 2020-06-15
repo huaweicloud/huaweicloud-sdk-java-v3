@@ -34,6 +34,12 @@ public class NovaServerFault  {
     
     private String message;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="details")
+    
+    private String details;
+
     public NovaServerFault withCode(Integer code) {
         this.code = code;
         return this;
@@ -93,6 +99,26 @@ public class NovaServerFault  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public NovaServerFault withDetails(String details) {
+        this.details = details;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 异常详情信息。
+     * @return details
+     */
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,11 +130,12 @@ public class NovaServerFault  {
         NovaServerFault novaServerFault = (NovaServerFault) o;
         return Objects.equals(this.code, novaServerFault.code) &&
             Objects.equals(this.created, novaServerFault.created) &&
-            Objects.equals(this.message, novaServerFault.message);
+            Objects.equals(this.message, novaServerFault.message) &&
+            Objects.equals(this.details, novaServerFault.details);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(code, created, message);
+        return Objects.hash(code, created, message, details);
     }
     @Override
     public String toString() {
@@ -117,6 +144,7 @@ public class NovaServerFault  {
             sb.append("    code: ").append(toIndentedString(code)).append("\n");
             sb.append("    created: ").append(toIndentedString(created)).append("\n");
             sb.append("    message: ").append(toIndentedString(message)).append("\n");
+            sb.append("    details: ").append(toIndentedString(details)).append("\n");
         sb.append("}");
         return sb.toString();
     }

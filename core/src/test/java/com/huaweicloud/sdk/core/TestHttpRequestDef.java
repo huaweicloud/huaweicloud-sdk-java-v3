@@ -11,11 +11,12 @@ import org.junit.Test;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class TestHttpRequestDef {
 
-    public class TestRequest {
+    public static class TestRequest {
         private String id;
         private String body;
 
@@ -36,6 +37,18 @@ public class TestHttpRequestDef {
         }
     }
 
+    public static class TestNoBodyRequest {
+        private String id;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+    }
+
     public static class InnerResponse {
         private String ires;
         private String jres;
@@ -48,6 +61,11 @@ public class TestHttpRequestDef {
             this.ires = ires;
         }
 
+        public InnerResponse withIres(String ires) {
+            this.ires = ires;
+            return this;
+        }
+
         public String getJres() {
             return jres;
         }
@@ -55,6 +73,27 @@ public class TestHttpRequestDef {
         public void setJres(String jres) {
             this.jres = jres;
         }
+
+        public InnerResponse withJres(String jres) {
+            this.jres = jres;
+            return this;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof InnerResponse) {
+                return ires.equals(((InnerResponse) obj).ires) && jres.equals(((InnerResponse) obj).jres);
+            } else {
+                return false;
+            }
+
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(ires, jres);
+        }
+
     }
 
     public static class TestResponse {
@@ -78,12 +117,11 @@ public class TestHttpRequestDef {
         }
     }
 
-    @Test
-    public void testHttpRequestDef() throws IllegalAccessException, InstantiationException {
+    public static HttpRequestDef<TestRequest, TestResponse> buildHttpRequestDef() {
         HttpRequestDef.Builder<TestRequest, TestResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, TestRequest.class, TestResponse.class)
-                .withUri("/v2.1/{project_id}/servers")
-                .withContentType("application/json;charset=UTF-8");
+                HttpRequestDef.builder(HttpMethod.GET, TestRequest.class, TestResponse.class)
+                        .withUri("/v2.1/{project_id}/servers")
+                        .withContentType("application/json;charset=UTF-8");
 
         builder.withResponseField("body", LocationType.Body, FieldExistence.NULL_IGNORE, List.class,
             f -> f.withMarshaller(TestResponse::getBody, (req, v) -> {
@@ -91,6 +129,28 @@ public class TestHttpRequestDef {
             }).withInnerContainerType(InnerResponse.class));
 
         HttpRequestDef<TestRequest, TestResponse> requestDef = builder.build();
+        return requestDef;
+    }
+
+    public static HttpRequestDef<TestNoBodyRequest, TestResponse> buildHttpRequestNoRequestBodyDef() {
+        HttpRequestDef.Builder<TestNoBodyRequest, TestResponse> builder =
+                HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)
+                        .withUri("/v2.1/{project_id}/servers")
+                        .withContentType("application/json;charset=UTF-8");
+
+        builder.withResponseField("body", LocationType.Body, FieldExistence.NULL_IGNORE, List.class,
+            f -> f.withMarshaller(TestResponse::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(InnerResponse.class));
+
+        HttpRequestDef<TestNoBodyRequest, TestResponse> requestDef = builder.build();
+        return requestDef;
+    }
+
+    @Test
+    public void testHttpRequestDef() throws IllegalAccessException, InstantiationException {
+
+        HttpRequestDef<TestRequest, TestResponse> requestDef = buildHttpRequestDef();
         requestDef.getResponseType();
 
         String result = "[{\"ires\": \"1\", \"jres\": \"2\"}, {\"ires\": \"2\", \"jres\": \"3\"}]";

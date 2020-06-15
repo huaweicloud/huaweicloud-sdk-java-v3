@@ -37,6 +37,7 @@ public class KeystoneListUsersRequest  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password_expires_at")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
     
     private String passwordExpiresAt;
 
@@ -144,7 +145,7 @@ public class KeystoneListUsersRequest  {
             sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
             sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
             sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    passwordExpiresAt: ").append("******").append("\n");
+            sb.append("    passwordExpiresAt: ").append(toIndentedString("******")).append("\n");
         sb.append("}");
         return sb.toString();
     }

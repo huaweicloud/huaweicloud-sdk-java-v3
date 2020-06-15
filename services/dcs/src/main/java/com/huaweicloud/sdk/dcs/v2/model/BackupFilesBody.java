@@ -1,0 +1,221 @@
+package com.huaweicloud.sdk.dcs.v2.model;
+
+import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.dcs.v2.model.Files;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.*;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+/**
+ * 备份文件列表的结构体
+ */
+public class BackupFilesBody  {
+
+    /**
+     * 数据来源，当前仅支持OBS桶方式，取值为：self_build_obs。
+     */
+    public static class FileSourceEnum {
+
+        
+        /**
+         * Enum SELF_BUILD_OBS for value: "self_build_obs"
+         */
+        public static final FileSourceEnum SELF_BUILD_OBS = new FileSourceEnum("self_build_obs");
+
+        
+
+        public static Map<String, FileSourceEnum> staticFields =
+                new HashMap<String, FileSourceEnum>() {
+                    { 
+                        put("self_build_obs", SELF_BUILD_OBS);
+                    }
+                };
+
+        private String value;
+
+        FileSourceEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FileSourceEnum fromValue(String value) {
+           if( value == null ){
+                return null;
+            }
+            FileSourceEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new FileSourceEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static FileSourceEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            FileSourceEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof FileSourceEnum) {
+                return this.value.equals(((FileSourceEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="file_source")
+    
+    private FileSourceEnum fileSource;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bucket_name")
+    
+    private String bucketName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="files")
+    
+    private List<Files> files = new ArrayList<>();
+    
+    public BackupFilesBody withFileSource(FileSourceEnum fileSource) {
+        this.fileSource = fileSource;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据来源，当前仅支持OBS桶方式，取值为：self_build_obs。
+     * @return fileSource
+     */
+    public FileSourceEnum getFileSource() {
+        return fileSource;
+    }
+
+    public void setFileSource(FileSourceEnum fileSource) {
+        this.fileSource = fileSource;
+    }
+
+    public BackupFilesBody withBucketName(String bucketName) {
+        this.bucketName = bucketName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * OBS桶名。
+     * @return bucketName
+     */
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
+
+    public BackupFilesBody withFiles(List<Files> files) {
+        this.files = files;
+        return this;
+    }
+
+    
+    public BackupFilesBody addFilesItem(Files filesItem) {
+        this.files.add(filesItem);
+        return this;
+    }
+
+    public BackupFilesBody withFiles(Consumer<List<Files>> filesSetter) {
+        if(this.files == null ){
+            this.files = new ArrayList<>();
+        }
+        filesSetter.accept(this.files);
+        return this;
+    }
+
+    /**
+     * 导入的备份文件文件列表。
+     * @return files
+     */
+    public List<Files> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<Files> files) {
+        this.files = files;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BackupFilesBody backupFilesBody = (BackupFilesBody) o;
+        return Objects.equals(this.fileSource, backupFilesBody.fileSource) &&
+            Objects.equals(this.bucketName, backupFilesBody.bucketName) &&
+            Objects.equals(this.files, backupFilesBody.files);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(fileSource, bucketName, files);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BackupFilesBody {\n");
+            sb.append("    fileSource: ").append(toIndentedString(fileSource)).append("\n");
+            sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
+            sb.append("    files: ").append(toIndentedString(files)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+}
+

@@ -21,18 +21,28 @@
 
 package com.huaweicloud.sdk.core.auth;
 
+import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
+
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
 public class BasicCredentials implements ICredential {
 
     private String ak;
+
     private String sk;
+
     private String projectId;
+
     private String domainId;
 
     public String getAk() {
@@ -90,30 +100,43 @@ public class BasicCredentials implements ICredential {
     private Map<String, Object> getPathParams() {
         Map<String, Object> pathParam = new LinkedHashMap<>();
         if (Objects.nonNull(projectId)) {
-            pathParam.put("project_id", projectId);
+            pathParam.put(Constants.PROJECT_ID, projectId);
         }
         if (Objects.nonNull(domainId)) {
-            pathParam.put("domain_id", domainId);
+            pathParam.put(Constants.DOMAIN_ID, domainId);
         }
         return pathParam;
     }
 
     @Override
-    public HttpRequest processAuthRequest(HttpRequest httpRequest) {
-        HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addPathParam(getPathParams());
+    public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
+        return CompletableFuture.supplyAsync(() -> {
+            HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addPathParam(getPathParams());
 
-        if (!StringUtils.isEmpty(projectId)) {
-            builder.addHeader("X-Project-Id", projectId);
-        }
+            if (!StringUtils.isEmpty(projectId)) {
+                builder.addHeader(Constants.X_PROJECT_ID, projectId);
+            }
 
-        if (!StringUtils.isEmpty(domainId)) {
-            builder.addHeader("X-Domain-Id", domainId);
-        }
+            if (!StringUtils.isEmpty(domainId)) {
+                builder.addHeader(Constants.X_DOMAIN_ID, domainId);
+            }
 
-        Map<String, String> header = AKSKSigner.sign(builder.build(), this);
-        builder.addHeaders(header);
+            if (Objects.nonNull(httpRequest.getContentType())
+                    && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+                builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
+            }
 
+            Map<String, String> header = AKSKSigner.sign(builder.build(), this);
+            builder.addHeaders(header);
 
-        return builder.build();
+            return builder.build();
+        });
+    }
+
+    @Override
+    public List<String> getSensitiveHeaders() {
+        String[] sensitives = new String[]{"authorization", "x-auth-token", "x-subject-token", "x-service-token"};
+        List<String> sensitiveHeaders = new ArrayList<>(Arrays.asList(sensitives));
+        return sensitiveHeaders;
     }
 }

@@ -21,6 +21,13 @@
 
 package com.huaweicloud.sdk.core.http;
 
+import com.huaweicloud.sdk.core.HttpListener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+
 public class HttpConfig {
 
     private int timeout = 60;
@@ -34,6 +41,8 @@ public class HttpConfig {
     private String proxyHost;
 
     private int proxyPort;
+
+    private List<HttpListener> httpListeners = new ArrayList<>();
 
     public int getTimeout() {
         return timeout;
@@ -116,4 +125,26 @@ public class HttpConfig {
     public static HttpConfig getDefaultHttpConfig() {
         return new HttpConfig();
     }
+
+    public List<HttpListener> getHttpListeners() {
+        return httpListeners;
+    }
+
+    public void setHttpListeners(List<HttpListener> httpListeners) {
+        this.httpListeners = httpListeners;
+    }
+
+    public HttpConfig withHttpListeners(List<HttpListener> httpListeners) {
+        this.httpListeners = httpListeners;
+        return this;
+    }
+
+    public HttpConfig addHttpListener(HttpListener httpListener) {
+        if (Objects.isNull(httpListener)) {
+            return this;
+        }
+        httpListeners.add(httpListener);
+        return this;
+    }
+
 }
