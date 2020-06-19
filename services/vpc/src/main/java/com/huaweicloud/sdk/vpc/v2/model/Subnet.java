@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -114,29 +112,25 @@ public class Subnet  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-
         
         /**
          * Enum UNKNOWN for value: "UNKNOWN"
          */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("UNKNOWN", UNKNOWN);
-                        put("ERROR", ERROR);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("UNKNOWN", UNKNOWN);
+                put("ERROR", ERROR);
+            }
+        };
 
         private String value;
 
@@ -152,7 +146,7 @@ public class Subnet  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -658,25 +652,25 @@ public class Subnet  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Subnet {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
-            sb.append("    gatewayIp: ").append(toIndentedString(gatewayIp)).append("\n");
-            sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
-            sb.append("    cidrV6: ").append(toIndentedString(cidrV6)).append("\n");
-            sb.append("    gatewayIpV6: ").append(toIndentedString(gatewayIpV6)).append("\n");
-            sb.append("    dhcpEnable: ").append(toIndentedString(dhcpEnable)).append("\n");
-            sb.append("    primaryDns: ").append(toIndentedString(primaryDns)).append("\n");
-            sb.append("    secondaryDns: ").append(toIndentedString(secondaryDns)).append("\n");
-            sb.append("    dnsList: ").append(toIndentedString(dnsList)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    neutronNetworkId: ").append(toIndentedString(neutronNetworkId)).append("\n");
-            sb.append("    neutronSubnetId: ").append(toIndentedString(neutronSubnetId)).append("\n");
-            sb.append("    neutronSubnetIdV6: ").append(toIndentedString(neutronSubnetIdV6)).append("\n");
-            sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
+        sb.append("    gatewayIp: ").append(toIndentedString(gatewayIp)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    cidrV6: ").append(toIndentedString(cidrV6)).append("\n");
+        sb.append("    gatewayIpV6: ").append(toIndentedString(gatewayIpV6)).append("\n");
+        sb.append("    dhcpEnable: ").append(toIndentedString(dhcpEnable)).append("\n");
+        sb.append("    primaryDns: ").append(toIndentedString(primaryDns)).append("\n");
+        sb.append("    secondaryDns: ").append(toIndentedString(secondaryDns)).append("\n");
+        sb.append("    dnsList: ").append(toIndentedString(dnsList)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    neutronNetworkId: ").append(toIndentedString(neutronNetworkId)).append("\n");
+        sb.append("    neutronSubnetId: ").append(toIndentedString(neutronSubnetId)).append("\n");
+        sb.append("    neutronSubnetIdV6: ").append(toIndentedString(neutronSubnetIdV6)).append("\n");
+        sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -690,5 +684,6 @@ public class Subnet  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import com.huaweicloud.sdk.as.v1.model.ScheduledPolicy;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 伸缩策略
@@ -48,29 +46,25 @@ public class ScalingPolicyDetail  {
          * Enum ALARM for value: "ALARM"
          */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
-
         
         /**
          * Enum SCHEDULED for value: "SCHEDULED"
          */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
-
         
         /**
          * Enum RECURRENCE for value: "RECURRENCE"
          */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
-
         
 
-        public static Map<String, ScalingPolicyTypeEnum> staticFields =
-                new HashMap<String, ScalingPolicyTypeEnum>() {
-                    { 
-                        put("ALARM", ALARM);
-                        put("SCHEDULED", SCHEDULED);
-                        put("RECURRENCE", RECURRENCE);
-                    }
-                };
+        public static final Map<String, ScalingPolicyTypeEnum> staticFields = new HashMap<String, ScalingPolicyTypeEnum>() {
+            { 
+                put("ALARM", ALARM);
+                put("SCHEDULED", SCHEDULED);
+                put("RECURRENCE", RECURRENCE);
+            }
+        };
 
         private String value;
 
@@ -86,7 +80,7 @@ public class ScalingPolicyDetail  {
 
         @JsonCreator
         public static ScalingPolicyTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ScalingPolicyTypeEnum result = staticFields.get(value);
@@ -380,15 +374,15 @@ public class ScalingPolicyDetail  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScalingPolicyDetail {\n");
-            sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
-            sb.append("    scalingPolicyName: ").append(toIndentedString(scalingPolicyName)).append("\n");
-            sb.append("    scalingPolicyId: ").append(toIndentedString(scalingPolicyId)).append("\n");
-            sb.append("    scalingPolicyType: ").append(toIndentedString(scalingPolicyType)).append("\n");
-            sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
-            sb.append("    scheduledPolicy: ").append(toIndentedString(scheduledPolicy)).append("\n");
-            sb.append("    scalingPolicyAction: ").append(toIndentedString(scalingPolicyAction)).append("\n");
-            sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
-            sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    scalingPolicyName: ").append(toIndentedString(scalingPolicyName)).append("\n");
+        sb.append("    scalingPolicyId: ").append(toIndentedString(scalingPolicyId)).append("\n");
+        sb.append("    scalingPolicyType: ").append(toIndentedString(scalingPolicyType)).append("\n");
+        sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
+        sb.append("    scheduledPolicy: ").append(toIndentedString(scheduledPolicy)).append("\n");
+        sb.append("    scalingPolicyAction: ").append(toIndentedString(scalingPolicyAction)).append("\n");
+        sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -402,5 +396,6 @@ public class ScalingPolicyDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

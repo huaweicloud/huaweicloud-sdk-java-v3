@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 带宽信息
@@ -33,22 +31,19 @@ public class Bandwidth  {
          * Enum PER for value: "PER"
          */
         public static final ShareTypeEnum PER = new ShareTypeEnum("PER");
-
         
         /**
          * Enum WHOLE for value: "WHOLE"
          */
         public static final ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
-
         
 
-        public static Map<String, ShareTypeEnum> staticFields =
-                new HashMap<String, ShareTypeEnum>() {
-                    { 
-                        put("PER", PER);
-                        put("WHOLE", WHOLE);
-                    }
-                };
+        public static final Map<String, ShareTypeEnum> staticFields = new HashMap<String, ShareTypeEnum>() {
+            { 
+                put("PER", PER);
+                put("WHOLE", WHOLE);
+            }
+        };
 
         private String value;
 
@@ -64,7 +59,7 @@ public class Bandwidth  {
 
         @JsonCreator
         public static ShareTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ShareTypeEnum result = staticFields.get(value);
@@ -117,22 +112,19 @@ public class Bandwidth  {
          * Enum BANDWIDTH for value: "bandwidth"
          */
         public static final ChargingModeEnum BANDWIDTH = new ChargingModeEnum("bandwidth");
-
         
         /**
          * Enum TRAFFIC for value: "traffic"
          */
         public static final ChargingModeEnum TRAFFIC = new ChargingModeEnum("traffic");
-
         
 
-        public static Map<String, ChargingModeEnum> staticFields =
-                new HashMap<String, ChargingModeEnum>() {
-                    { 
-                        put("bandwidth", BANDWIDTH);
-                        put("traffic", TRAFFIC);
-                    }
-                };
+        public static final Map<String, ChargingModeEnum> staticFields = new HashMap<String, ChargingModeEnum>() {
+            { 
+                put("bandwidth", BANDWIDTH);
+                put("traffic", TRAFFIC);
+            }
+        };
 
         private String value;
 
@@ -148,7 +140,7 @@ public class Bandwidth  {
 
         @JsonCreator
         public static ChargingModeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ChargingModeEnum result = staticFields.get(value);
@@ -301,10 +293,10 @@ public class Bandwidth  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Bandwidth {\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    shareType: ").append(toIndentedString(shareType)).append("\n");
-            sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    shareType: ").append(toIndentedString(shareType)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -318,5 +310,6 @@ public class Bandwidth  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

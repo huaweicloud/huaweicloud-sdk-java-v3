@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ecs.v2.model.ServerInterfaceFixedIp;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * InterfaceAttachment
@@ -185,11 +183,11 @@ public class InterfaceAttachment  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InterfaceAttachment {\n");
-            sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
-            sb.append("    macAddr: ").append(toIndentedString(macAddr)).append("\n");
-            sb.append("    netId: ").append(toIndentedString(netId)).append("\n");
-            sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
-            sb.append("    portState: ").append(toIndentedString(portState)).append("\n");
+        sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
+        sb.append("    macAddr: ").append(toIndentedString(macAddr)).append("\n");
+        sb.append("    netId: ").append(toIndentedString(netId)).append("\n");
+        sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
+        sb.append("    portState: ").append(toIndentedString(portState)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -203,5 +201,6 @@ public class InterfaceAttachment  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 伸缩活动日志列表。
@@ -28,29 +26,25 @@ public class ScalingActivityLogList  {
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-
         
         /**
          * Enum FAIL for value: "FAIL"
          */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-
         
         /**
          * Enum DING for value: "DING"
          */
         public static final StatusEnum DING = new StatusEnum("DING");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("SUCCESS", SUCCESS);
-                        put("FAIL", FAIL);
-                        put("DING", DING);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("SUCCESS", SUCCESS);
+                put("FAIL", FAIL);
+                put("DING", DING);
+            }
+        };
 
         private String value;
 
@@ -66,7 +60,7 @@ public class ScalingActivityLogList  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -418,17 +412,17 @@ public class ScalingActivityLogList  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScalingActivityLogList {\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    instanceRemovedList: ").append(toIndentedString(instanceRemovedList)).append("\n");
-            sb.append("    instanceDeletedList: ").append(toIndentedString(instanceDeletedList)).append("\n");
-            sb.append("    instanceAddedList: ").append(toIndentedString(instanceAddedList)).append("\n");
-            sb.append("    scalingValue: ").append(toIndentedString(scalingValue)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    instanceValue: ").append(toIndentedString(instanceValue)).append("\n");
-            sb.append("    desireValue: ").append(toIndentedString(desireValue)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    instanceRemovedList: ").append(toIndentedString(instanceRemovedList)).append("\n");
+        sb.append("    instanceDeletedList: ").append(toIndentedString(instanceDeletedList)).append("\n");
+        sb.append("    instanceAddedList: ").append(toIndentedString(instanceAddedList)).append("\n");
+        sb.append("    scalingValue: ").append(toIndentedString(scalingValue)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    instanceValue: ").append(toIndentedString(instanceValue)).append("\n");
+        sb.append("    desireValue: ").append(toIndentedString(desireValue)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -442,5 +436,6 @@ public class ScalingActivityLogList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

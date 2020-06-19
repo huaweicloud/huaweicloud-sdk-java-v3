@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -33,15 +31,13 @@ public class CinderListQuotasRequest  {
          * Enum TRUE for value: "true"
          */
         public static final UsageEnum TRUE = new UsageEnum("true");
-
         
 
-        public static Map<String, UsageEnum> staticFields =
-                new HashMap<String, UsageEnum>() {
-                    { 
-                        put("true", TRUE);
-                    }
-                };
+        public static final Map<String, UsageEnum> staticFields = new HashMap<String, UsageEnum>() {
+            { 
+                put("true", TRUE);
+            }
+        };
 
         private String value;
 
@@ -57,7 +53,7 @@ public class CinderListQuotasRequest  {
 
         @JsonCreator
         public static UsageEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             UsageEnum result = staticFields.get(value);
@@ -160,8 +156,8 @@ public class CinderListQuotasRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CinderListQuotasRequest {\n");
-            sb.append("    targetProjectId: ").append(toIndentedString(targetProjectId)).append("\n");
-            sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
+        sb.append("    targetProjectId: ").append(toIndentedString(targetProjectId)).append("\n");
+        sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -175,5 +171,6 @@ public class CinderListQuotasRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,16 +1,16 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -33,36 +33,31 @@ public class UpdatePasswordResponse extends SdkResponse {
          * Enum SUCCESS for value: "success"
          */
         public static final ResultEnum SUCCESS = new ResultEnum("success");
-
         
         /**
          * Enum PASSWORDFAILED for value: "passwordFailed"
          */
         public static final ResultEnum PASSWORDFAILED = new ResultEnum("passwordFailed");
-
         
         /**
          * Enum LOCKED for value: "locked"
          */
         public static final ResultEnum LOCKED = new ResultEnum("locked");
-
         
         /**
          * Enum FAILED for value: "failed"
          */
         public static final ResultEnum FAILED = new ResultEnum("failed");
-
         
 
-        public static Map<String, ResultEnum> staticFields =
-                new HashMap<String, ResultEnum>() {
-                    { 
-                        put("success", SUCCESS);
-                        put("passwordFailed", PASSWORDFAILED);
-                        put("locked", LOCKED);
-                        put("failed", FAILED);
-                    }
-                };
+        public static final Map<String, ResultEnum> staticFields = new HashMap<String, ResultEnum>() {
+            { 
+                put("success", SUCCESS);
+                put("passwordFailed", PASSWORDFAILED);
+                put("locked", LOCKED);
+                put("failed", FAILED);
+            }
+        };
 
         private String value;
 
@@ -78,7 +73,7 @@ public class UpdatePasswordResponse extends SdkResponse {
 
         @JsonCreator
         public static ResultEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ResultEnum result = staticFields.get(value);
@@ -262,11 +257,11 @@ public class UpdatePasswordResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePasswordResponse {\n");
-            sb.append("    lockTime: ").append(toIndentedString(lockTime)).append("\n");
-            sb.append("    result: ").append(toIndentedString(result)).append("\n");
-            sb.append("    lockTimeLeft: ").append(toIndentedString(lockTimeLeft)).append("\n");
-            sb.append("    retryTimesLeft: ").append(toIndentedString(retryTimesLeft)).append("\n");
-            sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    lockTime: ").append(toIndentedString(lockTime)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    lockTimeLeft: ").append(toIndentedString(lockTimeLeft)).append("\n");
+        sb.append("    retryTimesLeft: ").append(toIndentedString(retryTimesLeft)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -280,5 +275,6 @@ public class UpdatePasswordResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

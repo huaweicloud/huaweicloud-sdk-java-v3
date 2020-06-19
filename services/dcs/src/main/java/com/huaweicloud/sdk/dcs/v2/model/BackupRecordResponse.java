@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例备份信息。
@@ -57,22 +55,19 @@ public class BackupRecordResponse  {
          * Enum MANUAL for value: "manual"
          */
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("manual");
-
         
         /**
          * Enum AUTO for value: "auto"
          */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("auto");
-
         
 
-        public static Map<String, BackupTypeEnum> staticFields =
-                new HashMap<String, BackupTypeEnum>() {
-                    { 
-                        put("manual", MANUAL);
-                        put("auto", AUTO);
-                    }
-                };
+        public static final Map<String, BackupTypeEnum> staticFields = new HashMap<String, BackupTypeEnum>() {
+            { 
+                put("manual", MANUAL);
+                put("auto", AUTO);
+            }
+        };
 
         private String value;
 
@@ -88,7 +83,7 @@ public class BackupRecordResponse  {
 
         @JsonCreator
         public static BackupTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             BackupTypeEnum result = staticFields.get(value);
@@ -171,50 +166,43 @@ public class BackupRecordResponse  {
          * Enum WAITING for value: "waiting"
          */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-
         
         /**
          * Enum BACKUPING for value: "backuping"
          */
         public static final StatusEnum BACKUPING = new StatusEnum("backuping");
-
         
         /**
          * Enum SUCCEED for value: "succeed"
          */
         public static final StatusEnum SUCCEED = new StatusEnum("succeed");
-
         
         /**
          * Enum FAILED for value: "failed"
          */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-
         
         /**
          * Enum EXPIRED for value: "expired"
          */
         public static final StatusEnum EXPIRED = new StatusEnum("expired");
-
         
         /**
          * Enum DELETED for value: "deleted"
          */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("waiting", WAITING);
-                        put("backuping", BACKUPING);
-                        put("succeed", SUCCEED);
-                        put("failed", FAILED);
-                        put("expired", EXPIRED);
-                        put("deleted", DELETED);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("waiting", WAITING);
+                put("backuping", BACKUPING);
+                put("succeed", SUCCEED);
+                put("failed", FAILED);
+                put("expired", EXPIRED);
+                put("deleted", DELETED);
+            }
+        };
 
         private String value;
 
@@ -230,7 +218,7 @@ public class BackupRecordResponse  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -570,19 +558,19 @@ public class BackupRecordResponse  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BackupRecordResponse {\n");
-            sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
-            sb.append("    period: ").append(toIndentedString(period)).append("\n");
-            sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-            sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
-            sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-            sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    isSupportRestore: ").append(toIndentedString(isSupportRestore)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    isSupportRestore: ").append(toIndentedString(isSupportRestore)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -596,5 +584,6 @@ public class BackupRecordResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

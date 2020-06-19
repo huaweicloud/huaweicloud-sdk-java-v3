@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例节点信息。
@@ -249,14 +247,14 @@ public class ListInstancesNodeResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesNodeResult {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    role: ").append(toIndentedString(role)).append("\n");
-            sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
-            sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
-            sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -270,5 +268,6 @@ public class ListInstancesNodeResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

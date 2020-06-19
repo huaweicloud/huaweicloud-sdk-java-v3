@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 磁盘组信息，系统盘必选，数据盘可选。
@@ -33,43 +31,37 @@ public class Disk  {
          * Enum SATA for value: "SATA"
          */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
-
         
         /**
          * Enum SAS for value: "SAS"
          */
         public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
-
         
         /**
          * Enum SSD for value: "SSD"
          */
         public static final VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
-
         
         /**
          * Enum CO_PL for value: "co-pl"
          */
         public static final VolumeTypeEnum CO_PL = new VolumeTypeEnum("co-pl");
-
         
         /**
          * Enum UH_11 for value: "uh-11"
          */
         public static final VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
-
         
 
-        public static Map<String, VolumeTypeEnum> staticFields =
-                new HashMap<String, VolumeTypeEnum>() {
-                    { 
-                        put("SATA", SATA);
-                        put("SAS", SAS);
-                        put("SSD", SSD);
-                        put("co-pl", CO_PL);
-                        put("uh-11", UH_11);
-                    }
-                };
+        public static final Map<String, VolumeTypeEnum> staticFields = new HashMap<String, VolumeTypeEnum>() {
+            { 
+                put("SATA", SATA);
+                put("SAS", SAS);
+                put("SSD", SSD);
+                put("co-pl", CO_PL);
+                put("uh-11", UH_11);
+            }
+        };
 
         private String value;
 
@@ -85,7 +77,7 @@ public class Disk  {
 
         @JsonCreator
         public static VolumeTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             VolumeTypeEnum result = staticFields.get(value);
@@ -138,22 +130,19 @@ public class Disk  {
          * Enum SYS for value: "SYS"
          */
         public static final DiskTypeEnum SYS = new DiskTypeEnum("SYS");
-
         
         /**
          * Enum DATA for value: "DATA"
          */
         public static final DiskTypeEnum DATA = new DiskTypeEnum("DATA");
-
         
 
-        public static Map<String, DiskTypeEnum> staticFields =
-                new HashMap<String, DiskTypeEnum>() {
-                    { 
-                        put("SYS", SYS);
-                        put("DATA", DATA);
-                    }
-                };
+        public static final Map<String, DiskTypeEnum> staticFields = new HashMap<String, DiskTypeEnum>() {
+            { 
+                put("SYS", SYS);
+                put("DATA", DATA);
+            }
+        };
 
         private String value;
 
@@ -169,7 +158,7 @@ public class Disk  {
 
         @JsonCreator
         public static DiskTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DiskTypeEnum result = staticFields.get(value);
@@ -376,12 +365,12 @@ public class Disk  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Disk {\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
-            sb.append("    diskType: ").append(toIndentedString(diskType)).append("\n");
-            sb.append("    dedicateStorageId: ").append(toIndentedString(dedicateStorageId)).append("\n");
-            sb.append("    dataDiskImageId: ").append(toIndentedString(dataDiskImageId)).append("\n");
-            sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    diskType: ").append(toIndentedString(diskType)).append("\n");
+        sb.append("    dedicateStorageId: ").append(toIndentedString(dedicateStorageId)).append("\n");
+        sb.append("    dataDiskImageId: ").append(toIndentedString(dataDiskImageId)).append("\n");
+        sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -395,5 +384,6 @@ public class Disk  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

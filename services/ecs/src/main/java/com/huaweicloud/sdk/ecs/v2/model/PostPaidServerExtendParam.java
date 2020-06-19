@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -224,13 +222,13 @@ public class PostPaidServerExtendParam  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServerExtendParam {\n");
-            sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
-            sb.append("    regionID: ").append(toIndentedString(regionID)).append("\n");
-            sb.append("    supportAutoRecovery: ").append(toIndentedString(supportAutoRecovery)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
-            sb.append("    spotPrice: ").append(toIndentedString(spotPrice)).append("\n");
-            sb.append("    diskPrior: ").append(toIndentedString(diskPrior)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    regionID: ").append(toIndentedString(regionID)).append("\n");
+        sb.append("    supportAutoRecovery: ").append(toIndentedString(supportAutoRecovery)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
+        sb.append("    spotPrice: ").append(toIndentedString(spotPrice)).append("\n");
+        sb.append("    diskPrior: ").append(toIndentedString(diskPrior)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -244,5 +242,6 @@ public class PostPaidServerExtendParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,8 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * MetricAlarms
@@ -68,22 +66,19 @@ public class MetricAlarms  {
          * Enum EVENT_SYS for value: "EVENT.SYS"
          */
         public static final AlarmTypeEnum EVENT_SYS = new AlarmTypeEnum("EVENT.SYS");
-
         
         /**
          * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
          */
         public static final AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
-
         
 
-        public static Map<String, AlarmTypeEnum> staticFields =
-                new HashMap<String, AlarmTypeEnum>() {
-                    { 
-                        put("EVENT.SYS", EVENT_SYS);
-                        put("EVENT.CUSTOM", EVENT_CUSTOM);
-                    }
-                };
+        public static final Map<String, AlarmTypeEnum> staticFields = new HashMap<String, AlarmTypeEnum>() {
+            { 
+                put("EVENT.SYS", EVENT_SYS);
+                put("EVENT.CUSTOM", EVENT_CUSTOM);
+            }
+        };
 
         private String value;
 
@@ -99,7 +94,7 @@ public class MetricAlarms  {
 
         @JsonCreator
         public static AlarmTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             AlarmTypeEnum result = staticFields.get(value);
@@ -509,19 +504,19 @@ public class MetricAlarms  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetricAlarms {\n");
-            sb.append("    alarmName: ").append(toIndentedString(alarmName)).append("\n");
-            sb.append("    alarmDescription: ").append(toIndentedString(alarmDescription)).append("\n");
-            sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
-            sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
-            sb.append("    alarmEnabled: ").append(toIndentedString(alarmEnabled)).append("\n");
-            sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
-            sb.append("    alarmType: ").append(toIndentedString(alarmType)).append("\n");
-            sb.append("    alarmActionEnabled: ").append(toIndentedString(alarmActionEnabled)).append("\n");
-            sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
-            sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
-            sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
-            sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-            sb.append("    alarmState: ").append(toIndentedString(alarmState)).append("\n");
+        sb.append("    alarmName: ").append(toIndentedString(alarmName)).append("\n");
+        sb.append("    alarmDescription: ").append(toIndentedString(alarmDescription)).append("\n");
+        sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
+        sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
+        sb.append("    alarmEnabled: ").append(toIndentedString(alarmEnabled)).append("\n");
+        sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
+        sb.append("    alarmType: ").append(toIndentedString(alarmType)).append("\n");
+        sb.append("    alarmActionEnabled: ").append(toIndentedString(alarmActionEnabled)).append("\n");
+        sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
+        sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
+        sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    alarmState: ").append(toIndentedString(alarmState)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -535,5 +530,6 @@ public class MetricAlarms  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

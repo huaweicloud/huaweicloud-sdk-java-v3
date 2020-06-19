@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 增强版实例的存储池空间信息，仅针对增强版实例有效。
@@ -60,7 +58,7 @@ public class CreateInstanceStorageOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceStorageOption {\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -74,5 +72,6 @@ public class CreateInstanceStorageOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

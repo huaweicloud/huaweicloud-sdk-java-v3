@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 维护时间窗结构体
@@ -141,10 +139,10 @@ public class MaintainWindows  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MaintainWindows {\n");
-            sb.append("    seq: ").append(toIndentedString(seq)).append("\n");
-            sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
-            sb.append("    begin: ").append(toIndentedString(begin)).append("\n");
-            sb.append("    end: ").append(toIndentedString(end)).append("\n");
+        sb.append("    seq: ").append(toIndentedString(seq)).append("\n");
+        sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
+        sb.append("    begin: ").append(toIndentedString(begin)).append("\n");
+        sb.append("    end: ").append(toIndentedString(end)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -158,5 +156,6 @@ public class MaintainWindows  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

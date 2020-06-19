@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
  */
 public class KeystoneAssociateGroupWithDomainPermissionRequest  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    private String domainId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,26 +25,6 @@ public class KeystoneAssociateGroupWithDomainPermissionRequest  {
     @JsonProperty(value="role_id")
     
     private String roleId;
-
-    public KeystoneAssociateGroupWithDomainPermissionRequest withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get domainId
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
 
     public KeystoneAssociateGroupWithDomainPermissionRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -102,21 +74,19 @@ public class KeystoneAssociateGroupWithDomainPermissionRequest  {
             return false;
         }
         KeystoneAssociateGroupWithDomainPermissionRequest keystoneAssociateGroupWithDomainPermissionRequest = (KeystoneAssociateGroupWithDomainPermissionRequest) o;
-        return Objects.equals(this.domainId, keystoneAssociateGroupWithDomainPermissionRequest.domainId) &&
-            Objects.equals(this.groupId, keystoneAssociateGroupWithDomainPermissionRequest.groupId) &&
+        return Objects.equals(this.groupId, keystoneAssociateGroupWithDomainPermissionRequest.groupId) &&
             Objects.equals(this.roleId, keystoneAssociateGroupWithDomainPermissionRequest.roleId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, groupId, roleId);
+        return Objects.hash(groupId, roleId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneAssociateGroupWithDomainPermissionRequest {\n");
-            sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-            sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-            sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -130,5 +100,6 @@ public class KeystoneAssociateGroupWithDomainPermissionRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

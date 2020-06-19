@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import com.huaweicloud.sdk.dcs.v2.model.AttrsObject;
 import com.huaweicloud.sdk.dcs.v2.model.FlavorAzObject;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * FlavorsItems
@@ -525,22 +523,22 @@ public class FlavorsItems  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class FlavorsItems {\n");
-            sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
-            sb.append("    cloudServiceTypeCode: ").append(toIndentedString(cloudServiceTypeCode)).append("\n");
-            sb.append("    cloudResourceTypeCode: ").append(toIndentedString(cloudResourceTypeCode)).append("\n");
-            sb.append("    cacheMode: ").append(toIndentedString(cacheMode)).append("\n");
-            sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
-            sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
-            sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
-            sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
-            sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
-            sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
-            sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
-            sb.append("    tenantIpCount: ").append(toIndentedString(tenantIpCount)).append("\n");
-            sb.append("    pricingType: ").append(toIndentedString(pricingType)).append("\n");
-            sb.append("    isDec: ").append(toIndentedString(isDec)).append("\n");
-            sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
-            sb.append("    flavorsAvailableZones: ").append(toIndentedString(flavorsAvailableZones)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    cloudServiceTypeCode: ").append(toIndentedString(cloudServiceTypeCode)).append("\n");
+        sb.append("    cloudResourceTypeCode: ").append(toIndentedString(cloudResourceTypeCode)).append("\n");
+        sb.append("    cacheMode: ").append(toIndentedString(cacheMode)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
+        sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+        sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
+        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
+        sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
+        sb.append("    tenantIpCount: ").append(toIndentedString(tenantIpCount)).append("\n");
+        sb.append("    pricingType: ").append(toIndentedString(pricingType)).append("\n");
+        sb.append("    isDec: ").append(toIndentedString(isDec)).append("\n");
+        sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
+        sb.append("    flavorsAvailableZones: ").append(toIndentedString(flavorsAvailableZones)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -554,5 +552,6 @@ public class FlavorsItems  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

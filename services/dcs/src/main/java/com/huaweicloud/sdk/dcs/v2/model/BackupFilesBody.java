@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 备份文件列表的结构体
@@ -30,15 +28,13 @@ public class BackupFilesBody  {
          * Enum SELF_BUILD_OBS for value: "self_build_obs"
          */
         public static final FileSourceEnum SELF_BUILD_OBS = new FileSourceEnum("self_build_obs");
-
         
 
-        public static Map<String, FileSourceEnum> staticFields =
-                new HashMap<String, FileSourceEnum>() {
-                    { 
-                        put("self_build_obs", SELF_BUILD_OBS);
-                    }
-                };
+        public static final Map<String, FileSourceEnum> staticFields = new HashMap<String, FileSourceEnum>() {
+            { 
+                put("self_build_obs", SELF_BUILD_OBS);
+            }
+        };
 
         private String value;
 
@@ -54,7 +50,7 @@ public class BackupFilesBody  {
 
         @JsonCreator
         public static FileSourceEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             FileSourceEnum result = staticFields.get(value);
@@ -201,9 +197,9 @@ public class BackupFilesBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BackupFilesBody {\n");
-            sb.append("    fileSource: ").append(toIndentedString(fileSource)).append("\n");
-            sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
-            sb.append("    files: ").append(toIndentedString(files)).append("\n");
+        sb.append("    fileSource: ").append(toIndentedString(fileSource)).append("\n");
+        sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
+        sb.append("    files: ").append(toIndentedString(files)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -217,5 +213,6 @@ public class BackupFilesBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

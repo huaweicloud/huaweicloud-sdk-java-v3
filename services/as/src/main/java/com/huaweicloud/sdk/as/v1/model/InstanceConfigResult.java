@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,8 +12,8 @@ import com.huaweicloud.sdk.as.v1.model.PublicIp;
 import com.huaweicloud.sdk.as.v1.model.SecurityGroups;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例配置信息
@@ -491,21 +489,21 @@ public class InstanceConfigResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceConfigResult {\n");
-            sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
-            sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
-            sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
-            sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
-            sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
-            sb.append("    personality: ").append(toIndentedString(personality)).append("\n");
-            sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
-            sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    serverGroupId: ").append(toIndentedString(serverGroupId)).append("\n");
-            sb.append("    tenancy: ").append(toIndentedString(tenancy)).append("\n");
-            sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
+        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+        sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
+        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
+        sb.append("    personality: ").append(toIndentedString(personality)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    serverGroupId: ").append(toIndentedString(serverGroupId)).append("\n");
+        sb.append("    tenancy: ").append(toIndentedString(tenancy)).append("\n");
+        sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -519,5 +517,6 @@ public class InstanceConfigResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

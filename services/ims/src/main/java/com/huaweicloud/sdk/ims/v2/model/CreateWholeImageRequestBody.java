@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ims.v2.model.TagKeyValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * CreateWholeImageRequestBody
@@ -361,17 +359,17 @@ public class CreateWholeImageRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateWholeImageRequestBody {\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
-            sb.append("    wholeImageType: ").append(toIndentedString(wholeImageType)).append("\n");
-            sb.append("    maxRam: ").append(toIndentedString(maxRam)).append("\n");
-            sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
-            sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    wholeImageType: ").append(toIndentedString(wholeImageType)).append("\n");
+        sb.append("    maxRam: ").append(toIndentedString(maxRam)).append("\n");
+        sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
+        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -385,5 +383,6 @@ public class CreateWholeImageRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

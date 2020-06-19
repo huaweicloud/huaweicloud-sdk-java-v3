@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.cts.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cts.v1.model.LogFileValidate;
 import com.huaweicloud.sdk.cts.v1.model.Lts;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * CreateTrackerRequestBody
@@ -236,13 +234,13 @@ public class CreateTrackerRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTrackerRequestBody {\n");
-            sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
-            sb.append("    filePrefixName: ").append(toIndentedString(filePrefixName)).append("\n");
-            sb.append("    isObsCreated: ").append(toIndentedString(isObsCreated)).append("\n");
-            sb.append("    isSupportTraceFilesEncryption: ").append(toIndentedString(isSupportTraceFilesEncryption)).append("\n");
-            sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
-            sb.append("    lts: ").append(toIndentedString(lts)).append("\n");
-            sb.append("    logFileValidate: ").append(toIndentedString(logFileValidate)).append("\n");
+        sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
+        sb.append("    filePrefixName: ").append(toIndentedString(filePrefixName)).append("\n");
+        sb.append("    isObsCreated: ").append(toIndentedString(isObsCreated)).append("\n");
+        sb.append("    isSupportTraceFilesEncryption: ").append(toIndentedString(isSupportTraceFilesEncryption)).append("\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
+        sb.append("    lts: ").append(toIndentedString(lts)).append("\n");
+        sb.append("    logFileValidate: ").append(toIndentedString(logFileValidate)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -256,5 +254,6 @@ public class CreateTrackerRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

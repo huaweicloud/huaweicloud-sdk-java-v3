@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 镜像导出请求体
@@ -33,36 +31,31 @@ public class ExportImageRequestBody  {
          * Enum QCOW2 for value: "qcow2"
          */
         public static final FileFormatEnum QCOW2 = new FileFormatEnum("qcow2");
-
         
         /**
          * Enum VHD for value: "vhd"
          */
         public static final FileFormatEnum VHD = new FileFormatEnum("vhd");
-
         
         /**
          * Enum ZVHD for value: "zvhd"
          */
         public static final FileFormatEnum ZVHD = new FileFormatEnum("zvhd");
-
         
         /**
          * Enum VMDK for value: "vmdk"
          */
         public static final FileFormatEnum VMDK = new FileFormatEnum("vmdk");
-
         
 
-        public static Map<String, FileFormatEnum> staticFields =
-                new HashMap<String, FileFormatEnum>() {
-                    { 
-                        put("qcow2", QCOW2);
-                        put("vhd", VHD);
-                        put("zvhd", ZVHD);
-                        put("vmdk", VMDK);
-                    }
-                };
+        public static final Map<String, FileFormatEnum> staticFields = new HashMap<String, FileFormatEnum>() {
+            { 
+                put("qcow2", QCOW2);
+                put("vhd", VHD);
+                put("zvhd", ZVHD);
+                put("vmdk", VMDK);
+            }
+        };
 
         private String value;
 
@@ -78,7 +71,7 @@ public class ExportImageRequestBody  {
 
         @JsonCreator
         public static FileFormatEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             FileFormatEnum result = staticFields.get(value);
@@ -181,8 +174,8 @@ public class ExportImageRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExportImageRequestBody {\n");
-            sb.append("    bucketUrl: ").append(toIndentedString(bucketUrl)).append("\n");
-            sb.append("    fileFormat: ").append(toIndentedString(fileFormat)).append("\n");
+        sb.append("    bucketUrl: ").append(toIndentedString(bucketUrl)).append("\n");
+        sb.append("    fileFormat: ").append(toIndentedString(fileFormat)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -196,5 +189,6 @@ public class ExportImageRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

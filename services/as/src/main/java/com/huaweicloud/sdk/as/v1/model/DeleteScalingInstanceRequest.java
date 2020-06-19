@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -33,22 +31,19 @@ public class DeleteScalingInstanceRequest  {
          * Enum YES for value: "yes"
          */
         public static final InstanceDeleteEnum YES = new InstanceDeleteEnum("yes");
-
         
         /**
          * Enum NO for value: "no"
          */
         public static final InstanceDeleteEnum NO = new InstanceDeleteEnum("no");
-
         
 
-        public static Map<String, InstanceDeleteEnum> staticFields =
-                new HashMap<String, InstanceDeleteEnum>() {
-                    { 
-                        put("yes", YES);
-                        put("no", NO);
-                    }
-                };
+        public static final Map<String, InstanceDeleteEnum> staticFields = new HashMap<String, InstanceDeleteEnum>() {
+            { 
+                put("yes", YES);
+                put("no", NO);
+            }
+        };
 
         private String value;
 
@@ -64,7 +59,7 @@ public class DeleteScalingInstanceRequest  {
 
         @JsonCreator
         public static InstanceDeleteEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             InstanceDeleteEnum result = staticFields.get(value);
@@ -167,8 +162,8 @@ public class DeleteScalingInstanceRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteScalingInstanceRequest {\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    instanceDelete: ").append(toIndentedString(instanceDelete)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceDelete: ").append(toIndentedString(instanceDelete)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -182,5 +177,6 @@ public class DeleteScalingInstanceRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

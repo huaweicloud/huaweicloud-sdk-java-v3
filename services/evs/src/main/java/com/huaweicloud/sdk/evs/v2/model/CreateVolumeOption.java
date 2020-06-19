@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  *  
@@ -401,19 +399,19 @@ public class CreateVolumeOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateVolumeOption {\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
-            sb.append("    count: ").append(toIndentedString(count)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
-            sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -427,5 +425,6 @@ public class CreateVolumeOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

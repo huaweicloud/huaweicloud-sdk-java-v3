@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -114,9 +112,9 @@ public class Links  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Links {\n");
-            sb.append("    self: ").append(toIndentedString(self)).append("\n");
-            sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
-            sb.append("    next: ").append(toIndentedString(next)).append("\n");
+        sb.append("    self: ").append(toIndentedString(self)).append("\n");
+        sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
+        sb.append("    next: ").append(toIndentedString(next)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -130,5 +128,6 @@ public class Links  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

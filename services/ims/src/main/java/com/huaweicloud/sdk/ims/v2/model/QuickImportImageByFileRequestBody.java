@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 快速通道创建镜像的请求体
@@ -66,29 +64,25 @@ public class QuickImportImageByFileRequestBody  {
          * Enum ECS for value: "ECS"
          */
         public static final TypeEnum ECS = new TypeEnum("ECS");
-
         
         /**
          * Enum BMS for value: "BMS"
          */
         public static final TypeEnum BMS = new TypeEnum("BMS");
-
         
         /**
          * Enum DATAIMAGE for value: "DataImage"
          */
         public static final TypeEnum DATAIMAGE = new TypeEnum("DataImage");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("ECS", ECS);
-                        put("BMS", BMS);
-                        put("DataImage", DATAIMAGE);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("ECS", ECS);
+                put("BMS", BMS);
+                put("DataImage", DATAIMAGE);
+            }
+        };
 
         private String value;
 
@@ -104,7 +98,7 @@ public class QuickImportImageByFileRequestBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -163,22 +157,19 @@ public class QuickImportImageByFileRequestBody  {
          * Enum X86 for value: "x86"
          */
         public static final ArchitectureEnum X86 = new ArchitectureEnum("x86");
-
         
         /**
          * Enum ARM for value: "arm"
          */
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
-
         
 
-        public static Map<String, ArchitectureEnum> staticFields =
-                new HashMap<String, ArchitectureEnum>() {
-                    { 
-                        put("x86", X86);
-                        put("arm", ARM);
-                    }
-                };
+        public static final Map<String, ArchitectureEnum> staticFields = new HashMap<String, ArchitectureEnum>() {
+            { 
+                put("x86", X86);
+                put("arm", ARM);
+            }
+        };
 
         private String value;
 
@@ -194,7 +185,7 @@ public class QuickImportImageByFileRequestBody  {
 
         @JsonCreator
         public static ArchitectureEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ArchitectureEnum result = staticFields.get(value);
@@ -247,22 +238,19 @@ public class QuickImportImageByFileRequestBody  {
          * Enum LINUX for value: "Linux"
          */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-
         
         /**
          * Enum WINDOWS for value: "Windows"
          */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-
         
 
-        public static Map<String, OsTypeEnum> staticFields =
-                new HashMap<String, OsTypeEnum>() {
-                    { 
-                        put("Linux", LINUX);
-                        put("Windows", WINDOWS);
-                    }
-                };
+        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
+            { 
+                put("Linux", LINUX);
+                put("Windows", WINDOWS);
+            }
+        };
 
         private String value;
 
@@ -278,7 +266,7 @@ public class QuickImportImageByFileRequestBody  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsTypeEnum result = staticFields.get(value);
@@ -606,17 +594,17 @@ public class QuickImportImageByFileRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QuickImportImageByFileRequestBody {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
-            sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-            sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -630,5 +618,6 @@ public class QuickImportImageByFileRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.moderation.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -35,43 +33,37 @@ public class ImageBatchModerationReq  {
          * Enum POLITICS for value: "politics"
          */
         public static final CategoriesEnum POLITICS = new CategoriesEnum("politics");
-
         
         /**
          * Enum TERRORISM for value: "terrorism"
          */
         public static final CategoriesEnum TERRORISM = new CategoriesEnum("terrorism");
-
         
         /**
          * Enum PORN for value: "porn"
          */
         public static final CategoriesEnum PORN = new CategoriesEnum("porn");
-
         
         /**
          * Enum AD for value: "ad"
          */
         public static final CategoriesEnum AD = new CategoriesEnum("ad");
-
         
         /**
          * Enum ALL for value: "all"
          */
         public static final CategoriesEnum ALL = new CategoriesEnum("all");
-
         
 
-        public static Map<String, CategoriesEnum> staticFields =
-                new HashMap<String, CategoriesEnum>() {
-                    { 
-                        put("politics", POLITICS);
-                        put("terrorism", TERRORISM);
-                        put("porn", PORN);
-                        put("ad", AD);
-                        put("all", ALL);
-                    }
-                };
+        public static final Map<String, CategoriesEnum> staticFields = new HashMap<String, CategoriesEnum>() {
+            { 
+                put("politics", POLITICS);
+                put("terrorism", TERRORISM);
+                put("porn", PORN);
+                put("ad", AD);
+                put("all", ALL);
+            }
+        };
 
         private String value;
 
@@ -87,7 +79,7 @@ public class ImageBatchModerationReq  {
 
         @JsonCreator
         public static CategoriesEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             CategoriesEnum result = staticFields.get(value);
@@ -242,9 +234,9 @@ public class ImageBatchModerationReq  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImageBatchModerationReq {\n");
-            sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
-            sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
-            sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+        sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
+        sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+        sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -258,5 +250,6 @@ public class ImageBatchModerationReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

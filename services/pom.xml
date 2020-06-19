@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.3-beta</version>
+        <version>3.0.4-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.3-beta</version>
+    <version>3.0.4-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -27,6 +27,7 @@
         <module>dds</module>
         <module>evs</module>
         <module>ces</module>
+        <module>meeting</module>
         <module>cts</module>
         <module>ims</module>
         <module>dcs</module>

@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.cts.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 事件文件检验。
@@ -60,7 +58,7 @@ public class LogFileValidate  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LogFileValidate {\n");
-            sb.append("    isSupportValidate: ").append(toIndentedString(isSupportValidate)).append("\n");
+        sb.append("    isSupportValidate: ").append(toIndentedString(isSupportValidate)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -74,5 +72,6 @@ public class LogFileValidate  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

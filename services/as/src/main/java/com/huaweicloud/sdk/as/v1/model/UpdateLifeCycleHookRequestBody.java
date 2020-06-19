@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 修改生命周期挂钩
@@ -27,22 +25,19 @@ public class UpdateLifeCycleHookRequestBody  {
          * Enum INSTANCE_TERMINATING for value: "INSTANCE_TERMINATING"
          */
         public static final LifecycleHookTypeEnum INSTANCE_TERMINATING = new LifecycleHookTypeEnum("INSTANCE_TERMINATING");
-
         
         /**
          * Enum INSTANCE_LAUNCHING for value: "INSTANCE_LAUNCHING"
          */
         public static final LifecycleHookTypeEnum INSTANCE_LAUNCHING = new LifecycleHookTypeEnum("INSTANCE_LAUNCHING");
-
         
 
-        public static Map<String, LifecycleHookTypeEnum> staticFields =
-                new HashMap<String, LifecycleHookTypeEnum>() {
-                    { 
-                        put("INSTANCE_TERMINATING", INSTANCE_TERMINATING);
-                        put("INSTANCE_LAUNCHING", INSTANCE_LAUNCHING);
-                    }
-                };
+        public static final Map<String, LifecycleHookTypeEnum> staticFields = new HashMap<String, LifecycleHookTypeEnum>() {
+            { 
+                put("INSTANCE_TERMINATING", INSTANCE_TERMINATING);
+                put("INSTANCE_LAUNCHING", INSTANCE_LAUNCHING);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class UpdateLifeCycleHookRequestBody  {
 
         @JsonCreator
         public static LifecycleHookTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             LifecycleHookTypeEnum result = staticFields.get(value);
@@ -111,22 +106,19 @@ public class UpdateLifeCycleHookRequestBody  {
          * Enum ABANDON for value: "ABANDON"
          */
         public static final DefaultResultEnum ABANDON = new DefaultResultEnum("ABANDON");
-
         
         /**
          * Enum CONTINUE for value: "CONTINUE"
          */
         public static final DefaultResultEnum CONTINUE = new DefaultResultEnum("CONTINUE");
-
         
 
-        public static Map<String, DefaultResultEnum> staticFields =
-                new HashMap<String, DefaultResultEnum>() {
-                    { 
-                        put("ABANDON", ABANDON);
-                        put("CONTINUE", CONTINUE);
-                    }
-                };
+        public static final Map<String, DefaultResultEnum> staticFields = new HashMap<String, DefaultResultEnum>() {
+            { 
+                put("ABANDON", ABANDON);
+                put("CONTINUE", CONTINUE);
+            }
+        };
 
         private String value;
 
@@ -142,7 +134,7 @@ public class UpdateLifeCycleHookRequestBody  {
 
         @JsonCreator
         public static DefaultResultEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DefaultResultEnum result = staticFields.get(value);
@@ -328,11 +320,11 @@ public class UpdateLifeCycleHookRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateLifeCycleHookRequestBody {\n");
-            sb.append("    lifecycleHookType: ").append(toIndentedString(lifecycleHookType)).append("\n");
-            sb.append("    defaultResult: ").append(toIndentedString(defaultResult)).append("\n");
-            sb.append("    defaultTimeout: ").append(toIndentedString(defaultTimeout)).append("\n");
-            sb.append("    notificationTopicUrn: ").append(toIndentedString(notificationTopicUrn)).append("\n");
-            sb.append("    notificationMetadata: ").append(toIndentedString(notificationMetadata)).append("\n");
+        sb.append("    lifecycleHookType: ").append(toIndentedString(lifecycleHookType)).append("\n");
+        sb.append("    defaultResult: ").append(toIndentedString(defaultResult)).append("\n");
+        sb.append("    defaultTimeout: ").append(toIndentedString(defaultTimeout)).append("\n");
+        sb.append("    notificationTopicUrn: ").append(toIndentedString(notificationTopicUrn)).append("\n");
+        sb.append("    notificationMetadata: ").append(toIndentedString(notificationMetadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -346,5 +338,6 @@ public class UpdateLifeCycleHookRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

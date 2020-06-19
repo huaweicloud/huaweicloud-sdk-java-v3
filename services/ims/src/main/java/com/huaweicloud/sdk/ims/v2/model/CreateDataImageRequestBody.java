@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 创建镜像请求体
@@ -72,22 +70,19 @@ public class CreateDataImageRequestBody  {
          * Enum WINDOWS for value: "Windows"
          */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-
         
         /**
          * Enum LINUX for value: "Linux"
          */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-
         
 
-        public static Map<String, OsTypeEnum> staticFields =
-                new HashMap<String, OsTypeEnum>() {
-                    { 
-                        put("Windows", WINDOWS);
-                        put("Linux", LINUX);
-                    }
-                };
+        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
+            { 
+                put("Windows", WINDOWS);
+                put("Linux", LINUX);
+            }
+        };
 
         private String value;
 
@@ -103,7 +98,7 @@ public class CreateDataImageRequestBody  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsTypeEnum result = staticFields.get(value);
@@ -389,15 +384,15 @@ public class CreateDataImageRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDataImageRequestBody {\n");
-            sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
-            sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
+        sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -411,5 +406,6 @@ public class CreateDataImageRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

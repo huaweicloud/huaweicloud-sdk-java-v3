@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * CopyImageCrossRegionRequestBody
@@ -168,11 +166,11 @@ public class CopyImageCrossRegionRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CopyImageCrossRegionRequestBody {\n");
-            sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
-            sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -186,5 +184,6 @@ public class CopyImageCrossRegionRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

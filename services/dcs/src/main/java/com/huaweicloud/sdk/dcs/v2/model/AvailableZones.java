@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 可用分区结构体
@@ -51,22 +49,19 @@ public class AvailableZones  {
          * Enum TRUE for value: "true"
          */
         public static final ResourceAvailabilityEnum TRUE = new ResourceAvailabilityEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final ResourceAvailabilityEnum FALSE = new ResourceAvailabilityEnum("false");
-
         
 
-        public static Map<String, ResourceAvailabilityEnum> staticFields =
-                new HashMap<String, ResourceAvailabilityEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, ResourceAvailabilityEnum> staticFields = new HashMap<String, ResourceAvailabilityEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -82,7 +77,7 @@ public class AvailableZones  {
 
         @JsonCreator
         public static ResourceAvailabilityEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ResourceAvailabilityEnum result = staticFields.get(value);
@@ -248,11 +243,11 @@ public class AvailableZones  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AvailableZones {\n");
-            sb.append("    code: ").append(toIndentedString(code)).append("\n");
-            sb.append("    port: ").append(toIndentedString(port)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    resourceAvailability: ").append(toIndentedString(resourceAvailability)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    resourceAvailability: ").append(toIndentedString(resourceAvailability)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -266,5 +261,6 @@ public class AvailableZones  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

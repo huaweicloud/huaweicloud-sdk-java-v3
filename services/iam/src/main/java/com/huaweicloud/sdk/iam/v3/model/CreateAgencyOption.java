@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -57,22 +55,19 @@ public class CreateAgencyOption  {
          * Enum FOREVER for value: "FOREVER"
          */
         public static final DurationEnum FOREVER = new DurationEnum("FOREVER");
-
         
         /**
          * Enum ONEDAY for value: "ONEDAY"
          */
         public static final DurationEnum ONEDAY = new DurationEnum("ONEDAY");
-
         
 
-        public static Map<String, DurationEnum> staticFields =
-                new HashMap<String, DurationEnum>() {
-                    { 
-                        put("FOREVER", FOREVER);
-                        put("ONEDAY", ONEDAY);
-                    }
-                };
+        public static final Map<String, DurationEnum> staticFields = new HashMap<String, DurationEnum>() {
+            { 
+                put("FOREVER", FOREVER);
+                put("ONEDAY", ONEDAY);
+            }
+        };
 
         private String value;
 
@@ -88,7 +83,7 @@ public class CreateAgencyOption  {
 
         @JsonCreator
         public static DurationEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DurationEnum result = staticFields.get(value);
@@ -275,12 +270,12 @@ public class CreateAgencyOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAgencyOption {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-            sb.append("    trustDomainId: ").append(toIndentedString(trustDomainId)).append("\n");
-            sb.append("    trustDomainName: ").append(toIndentedString(trustDomainName)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    trustDomainId: ").append(toIndentedString(trustDomainId)).append("\n");
+        sb.append("    trustDomainName: ").append(toIndentedString(trustDomainName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -294,5 +289,6 @@ public class CreateAgencyOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

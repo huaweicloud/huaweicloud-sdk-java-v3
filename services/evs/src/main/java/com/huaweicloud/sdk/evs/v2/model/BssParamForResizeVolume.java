@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 包周期扩容计费策略参数。
@@ -27,22 +25,19 @@ public class BssParamForResizeVolume  {
          * Enum FALSE for value: "false"
          */
         public static final IsAutoPayEnum FALSE = new IsAutoPayEnum("false");
-
         
         /**
          * Enum TRUE for value: "true"
          */
         public static final IsAutoPayEnum TRUE = new IsAutoPayEnum("true");
-
         
 
-        public static Map<String, IsAutoPayEnum> staticFields =
-                new HashMap<String, IsAutoPayEnum>() {
-                    { 
-                        put("false", FALSE);
-                        put("true", TRUE);
-                    }
-                };
+        public static final Map<String, IsAutoPayEnum> staticFields = new HashMap<String, IsAutoPayEnum>() {
+            { 
+                put("false", FALSE);
+                put("true", TRUE);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class BssParamForResizeVolume  {
 
         @JsonCreator
         public static IsAutoPayEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             IsAutoPayEnum result = staticFields.get(value);
@@ -140,7 +135,7 @@ public class BssParamForResizeVolume  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BssParamForResizeVolume {\n");
-            sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -154,5 +149,6 @@ public class BssParamForResizeVolume  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.moderation.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -27,36 +25,31 @@ public class RunCheckTaskJobsRequest  {
          * Enum CREATED for value: "created"
          */
         public static final StatusEnum CREATED = new StatusEnum("created");
-
         
         /**
          * Enum RUNNING for value: "running"
          */
         public static final StatusEnum RUNNING = new StatusEnum("running");
-
         
         /**
          * Enum FINISH for value: "finish"
          */
         public static final StatusEnum FINISH = new StatusEnum("finish");
-
         
         /**
          * Enum FAILED for value: "failed"
          */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("created", CREATED);
-                        put("running", RUNNING);
-                        put("finish", FINISH);
-                        put("failed", FAILED);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("created", CREATED);
+                put("running", RUNNING);
+                put("finish", FINISH);
+                put("failed", FAILED);
+            }
+        };
 
         private String value;
 
@@ -72,7 +65,7 @@ public class RunCheckTaskJobsRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -154,7 +147,7 @@ public class RunCheckTaskJobsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunCheckTaskJobsRequest {\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -168,5 +161,6 @@ public class RunCheckTaskJobsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

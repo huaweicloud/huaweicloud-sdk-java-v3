@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -27,29 +25,25 @@ public class GlanceListImagesRequest  {
          * Enum GOLD for value: "gold"
          */
         public static final ImagetypeEnum GOLD = new ImagetypeEnum("gold");
-
         
         /**
          * Enum PRIVATE for value: "private"
          */
         public static final ImagetypeEnum PRIVATE = new ImagetypeEnum("private");
-
         
         /**
          * Enum SHARED for value: "shared"
          */
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
-
         
 
-        public static Map<String, ImagetypeEnum> staticFields =
-                new HashMap<String, ImagetypeEnum>() {
-                    { 
-                        put("gold", GOLD);
-                        put("private", PRIVATE);
-                        put("shared", SHARED);
-                    }
-                };
+        public static final Map<String, ImagetypeEnum> staticFields = new HashMap<String, ImagetypeEnum>() {
+            { 
+                put("gold", GOLD);
+                put("private", PRIVATE);
+                put("shared", SHARED);
+            }
+        };
 
         private String value;
 
@@ -65,7 +59,7 @@ public class GlanceListImagesRequest  {
 
         @JsonCreator
         public static ImagetypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ImagetypeEnum result = staticFields.get(value);
@@ -124,22 +118,19 @@ public class GlanceListImagesRequest  {
          * Enum _32 for value: "32"
          */
         public static final OsBitEnum _32 = new OsBitEnum("32");
-
         
         /**
          * Enum _64 for value: "64"
          */
         public static final OsBitEnum _64 = new OsBitEnum("64");
-
         
 
-        public static Map<String, OsBitEnum> staticFields =
-                new HashMap<String, OsBitEnum>() {
-                    { 
-                        put("32", _32);
-                        put("64", _64);
-                    }
-                };
+        public static final Map<String, OsBitEnum> staticFields = new HashMap<String, OsBitEnum>() {
+            { 
+                put("32", _32);
+                put("64", _64);
+            }
+        };
 
         private String value;
 
@@ -155,7 +146,7 @@ public class GlanceListImagesRequest  {
 
         @JsonCreator
         public static OsBitEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsBitEnum result = staticFields.get(value);
@@ -208,29 +199,25 @@ public class GlanceListImagesRequest  {
          * Enum LINUX for value: "Linux"
          */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-
         
         /**
          * Enum WINDOWS for value: "Windows"
          */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-
         
         /**
          * Enum OTHER for value: "Other"
          */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
-
         
 
-        public static Map<String, OsTypeEnum> staticFields =
-                new HashMap<String, OsTypeEnum>() {
-                    { 
-                        put("Linux", LINUX);
-                        put("Windows", WINDOWS);
-                        put("Other", OTHER);
-                    }
-                };
+        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
+            { 
+                put("Linux", LINUX);
+                put("Windows", WINDOWS);
+                put("Other", OTHER);
+            }
+        };
 
         private String value;
 
@@ -246,7 +233,7 @@ public class GlanceListImagesRequest  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsTypeEnum result = staticFields.get(value);
@@ -299,92 +286,79 @@ public class GlanceListImagesRequest  {
          * Enum WINDOWS for value: "Windows"
          */
         public static final PlatformEnum WINDOWS = new PlatformEnum("Windows");
-
         
         /**
          * Enum UBUNTU for value: "Ubuntu"
          */
         public static final PlatformEnum UBUNTU = new PlatformEnum("Ubuntu");
-
         
         /**
          * Enum REDHAT for value: "RedHat"
          */
         public static final PlatformEnum REDHAT = new PlatformEnum("RedHat");
-
         
         /**
          * Enum SUSE for value: "SUSE"
          */
         public static final PlatformEnum SUSE = new PlatformEnum("SUSE");
-
         
         /**
          * Enum CENTOS for value: "CentOS"
          */
         public static final PlatformEnum CENTOS = new PlatformEnum("CentOS");
-
         
         /**
          * Enum DEBIAN for value: "Debian"
          */
         public static final PlatformEnum DEBIAN = new PlatformEnum("Debian");
-
         
         /**
          * Enum OPENSUSE for value: "OpenSUSE"
          */
         public static final PlatformEnum OPENSUSE = new PlatformEnum("OpenSUSE");
-
         
         /**
          * Enum ORACLE_LINUX for value: "Oracle Linux"
          */
         public static final PlatformEnum ORACLE_LINUX = new PlatformEnum("Oracle Linux");
-
         
         /**
          * Enum FEDORA for value: "Fedora"
          */
         public static final PlatformEnum FEDORA = new PlatformEnum("Fedora");
-
         
         /**
          * Enum OTHER for value: "Other"
          */
         public static final PlatformEnum OTHER = new PlatformEnum("Other");
-
         
         /**
          * Enum COREOS for value: "CoreOS"
          */
         public static final PlatformEnum COREOS = new PlatformEnum("CoreOS");
-
         
         /**
          * Enum EULEOS for value: "EuleOS"
          */
         public static final PlatformEnum EULEOS = new PlatformEnum("EuleOS");
-
         
 
-        public static Map<String, PlatformEnum> staticFields =
-                new HashMap<String, PlatformEnum>() {
-                    { 
-                        put("Windows", WINDOWS);
-                        put("Ubuntu", UBUNTU);
-                        put("RedHat", REDHAT);
-                        put("SUSE", SUSE);
-                        put("CentOS", CENTOS);
-                        put("Debian", DEBIAN);
-                        put("OpenSUSE", OPENSUSE);
-                        put("Oracle Linux", ORACLE_LINUX);
-                        put("Fedora", FEDORA);
-                        put("Other", OTHER);
-                        put("CoreOS", COREOS);
-                        put("EuleOS", EULEOS);
-                    }
-                };
+        public static final Map<String, PlatformEnum> staticFields = new HashMap<String, PlatformEnum>() {
+            { 
+                put("Windows", WINDOWS);
+                put("Ubuntu", UBUNTU);
+                put("RedHat", REDHAT);
+                put("SUSE", SUSE);
+                put("CentOS", CENTOS);
+                put("Debian", DEBIAN);
+                put("OpenSUSE", OPENSUSE);
+                put("Oracle Linux", ORACLE_LINUX);
+                put("Fedora", FEDORA);
+                put("Other", OTHER);
+                put("CoreOS", COREOS);
+                put("EuleOS", EULEOS);
+            }
+        };
 
         private String value;
 
@@ -400,7 +374,7 @@ public class GlanceListImagesRequest  {
 
         @JsonCreator
         public static PlatformEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             PlatformEnum result = staticFields.get(value);
@@ -513,36 +487,31 @@ public class GlanceListImagesRequest  {
          * Enum VHD for value: "vhd"
          */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
-
         
         /**
          * Enum ZVHD for value: "zvhd"
          */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
-
         
         /**
          * Enum RAW for value: "raw"
          */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
-
         
         /**
          * Enum QCOW2 for value: "qcow2"
          */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
-
         
 
-        public static Map<String, DiskFormatEnum> staticFields =
-                new HashMap<String, DiskFormatEnum>() {
-                    { 
-                        put("vhd", VHD);
-                        put("zvhd", ZVHD);
-                        put("raw", RAW);
-                        put("qcow2", QCOW2);
-                    }
-                };
+        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
+            { 
+                put("vhd", VHD);
+                put("zvhd", ZVHD);
+                put("raw", RAW);
+                put("qcow2", QCOW2);
+            }
+        };
 
         private String value;
 
@@ -558,7 +527,7 @@ public class GlanceListImagesRequest  {
 
         @JsonCreator
         public static DiskFormatEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DiskFormatEnum result = staticFields.get(value);
@@ -677,43 +646,37 @@ public class GlanceListImagesRequest  {
          * Enum QUEUED for value: "queued"
          */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
-
         
         /**
          * Enum SAVING for value: "saving"
          */
         public static final StatusEnum SAVING = new StatusEnum("saving");
-
         
         /**
          * Enum DELETED for value: "deleted"
          */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-
         
         /**
          * Enum KILLED for value: "killed"
          */
         public static final StatusEnum KILLED = new StatusEnum("killed");
-
         
         /**
          * Enum ACTIVE for value: "active"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("queued", QUEUED);
-                        put("saving", SAVING);
-                        put("deleted", DELETED);
-                        put("killed", KILLED);
-                        put("active", ACTIVE);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("queued", QUEUED);
+                put("saving", SAVING);
+                put("deleted", DELETED);
+                put("killed", KILLED);
+                put("active", ACTIVE);
+            }
+        };
 
         private String value;
 
@@ -729,7 +692,7 @@ public class GlanceListImagesRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -788,29 +751,25 @@ public class GlanceListImagesRequest  {
          * Enum PUBLIC for value: "public"
          */
         public static final VisibilityEnum PUBLIC = new VisibilityEnum("public");
-
         
         /**
          * Enum PRIVATE for value: "private"
          */
         public static final VisibilityEnum PRIVATE = new VisibilityEnum("private");
-
         
         /**
          * Enum SHARED for value: "shared"
          */
         public static final VisibilityEnum SHARED = new VisibilityEnum("shared");
-
         
 
-        public static Map<String, VisibilityEnum> staticFields =
-                new HashMap<String, VisibilityEnum>() {
-                    { 
-                        put("public", PUBLIC);
-                        put("private", PRIVATE);
-                        put("shared", SHARED);
-                    }
-                };
+        public static final Map<String, VisibilityEnum> staticFields = new HashMap<String, VisibilityEnum>() {
+            { 
+                put("public", PUBLIC);
+                put("private", PRIVATE);
+                put("shared", SHARED);
+            }
+        };
 
         private String value;
 
@@ -826,7 +785,7 @@ public class GlanceListImagesRequest  {
 
         @JsonCreator
         public static VisibilityEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             VisibilityEnum result = staticFields.get(value);
@@ -1601,38 +1560,38 @@ public class GlanceListImagesRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GlanceListImagesRequest {\n");
-            sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
-            sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
-            sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-            sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
-            sb.append("    supportDiskintensive: ").append(toIndentedString(supportDiskintensive)).append("\n");
-            sb.append("    supportHighperformance: ").append(toIndentedString(supportHighperformance)).append("\n");
-            sb.append("    supportKvm: ").append(toIndentedString(supportKvm)).append("\n");
-            sb.append("    supportKvmGpuType: ").append(toIndentedString(supportKvmGpuType)).append("\n");
-            sb.append("    supportKvmInfiniband: ").append(toIndentedString(supportKvmInfiniband)).append("\n");
-            sb.append("    supportLargememory: ").append(toIndentedString(supportLargememory)).append("\n");
-            sb.append("    supportXen: ").append(toIndentedString(supportXen)).append("\n");
-            sb.append("    supportXenGpuType: ").append(toIndentedString(supportXenGpuType)).append("\n");
-            sb.append("    supportXenHana: ").append(toIndentedString(supportXenHana)).append("\n");
-            sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
-            sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-            sb.append("    memberStatus: ").append(toIndentedString(memberStatus)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-            sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
-            sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
-            sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-            sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
+        sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
+        sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+        sb.append("    supportDiskintensive: ").append(toIndentedString(supportDiskintensive)).append("\n");
+        sb.append("    supportHighperformance: ").append(toIndentedString(supportHighperformance)).append("\n");
+        sb.append("    supportKvm: ").append(toIndentedString(supportKvm)).append("\n");
+        sb.append("    supportKvmGpuType: ").append(toIndentedString(supportKvmGpuType)).append("\n");
+        sb.append("    supportKvmInfiniband: ").append(toIndentedString(supportKvmInfiniband)).append("\n");
+        sb.append("    supportLargememory: ").append(toIndentedString(supportLargememory)).append("\n");
+        sb.append("    supportXen: ").append(toIndentedString(supportXen)).append("\n");
+        sb.append("    supportXenGpuType: ").append(toIndentedString(supportXenGpuType)).append("\n");
+        sb.append("    supportXenHana: ").append(toIndentedString(supportXenHana)).append("\n");
+        sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
+        sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    memberStatus: ").append(toIndentedString(memberStatus)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -1646,5 +1605,6 @@ public class GlanceListImagesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

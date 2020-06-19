@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -19,8 +17,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 创建弹性云服务器（按需）接口Body体。
@@ -718,27 +716,27 @@ public class PostPaidServer  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServer {\n");
-            sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    count: ").append(toIndentedString(count)).append("\n");
-            sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
-            sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
-            sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
-            sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
-            sb.append("    isAutoRename: ").append(toIndentedString(isAutoRename)).append("\n");
-            sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
-            sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");
-            sb.append("    publicip: ").append(toIndentedString(publicip)).append("\n");
-            sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    serverTags: ").append(toIndentedString(serverTags)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-            sb.append("    vpcid: ").append(toIndentedString(vpcid)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
+        sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
+        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+        sb.append("    isAutoRename: ").append(toIndentedString(isAutoRename)).append("\n");
+        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
+        sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");
+        sb.append("    publicip: ").append(toIndentedString(publicip)).append("\n");
+        sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    serverTags: ").append(toIndentedString(serverTags)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    vpcid: ").append(toIndentedString(vpcid)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -752,5 +750,6 @@ public class PostPaidServer  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

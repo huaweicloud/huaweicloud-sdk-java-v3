@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 标签列表
@@ -36,22 +34,19 @@ public class DeleteScalingTagsRequestBody  {
          * Enum DELETE for value: "delete"
          */
         public static final ActionEnum DELETE = new ActionEnum("delete");
-
         
         /**
          * Enum CREATE for value: "create"
          */
         public static final ActionEnum CREATE = new ActionEnum("create");
-
         
 
-        public static Map<String, ActionEnum> staticFields =
-                new HashMap<String, ActionEnum>() {
-                    { 
-                        put("delete", DELETE);
-                        put("create", CREATE);
-                    }
-                };
+        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
+            { 
+                put("delete", DELETE);
+                put("create", CREATE);
+            }
+        };
 
         private String value;
 
@@ -67,7 +62,7 @@ public class DeleteScalingTagsRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ActionEnum result = staticFields.get(value);
@@ -184,8 +179,8 @@ public class DeleteScalingTagsRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteScalingTagsRequestBody {\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -199,5 +194,6 @@ public class DeleteScalingTagsRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

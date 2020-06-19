@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.vpc.v2;
 
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.vpc.v2.model.*;
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
-
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-
-import com.huaweicloud.sdk.vpc.v2.model.*;
 
 @SuppressWarnings("unchecked")
 public class VpcMeta {
@@ -25,18 +23,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreatePortRequestBody.class,
-                f -> f.withMarshaller(CreatePortRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreatePortRequestBody.class,
+            f -> f.withMarshaller(CreatePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroup = genForcreateSecurityGroup();
@@ -50,18 +47,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateSecurityGroupRequestBody.class,
-                f -> f.withMarshaller(CreateSecurityGroupRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSecurityGroupRequestBody.class,
+            f -> f.withMarshaller(CreateSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRule = genForcreateSecurityGroupRule();
@@ -75,18 +71,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateSecurityGroupRuleRequestBody.class,
-                f -> f.withMarshaller(CreateSecurityGroupRuleRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSecurityGroupRuleRequestBody.class,
+            f -> f.withMarshaller(CreateSecurityGroupRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateSubnetRequest, CreateSubnetResponse> createSubnet = genForcreateSubnet();
@@ -100,18 +95,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateSubnetRequestBody.class,
-                f -> f.withMarshaller(CreateSubnetRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSubnetRequestBody.class,
+            f -> f.withMarshaller(CreateSubnetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeletePortRequest, DeletePortResponse> deletePort = genFordeletePort();
@@ -124,18 +118,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("port_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeletePortRequest::getPortId, (req, v) -> {
-                    req.setPortId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeletePortRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup = genFordeleteSecurityGroup();
@@ -148,18 +141,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("security_group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
-                    req.setSecurityGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule = genFordeleteSecurityGroupRule();
@@ -172,18 +164,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("security_group_rule_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
-                    req.setSecurityGroupRuleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
+                req.setSecurityGroupRuleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteSubnetRequest, DeleteSubnetResponse> deleteSubnet = genFordeleteSubnet();
@@ -196,26 +187,25 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("vpc_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteSubnetRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSubnetRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
         builder.withRequestField("subnet_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteSubnetRequest::getSubnetId, (req, v) -> {
-                    req.setSubnetId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSubnetRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListPortsRequest, ListPortsResponse> listPorts = genForlistPorts();
@@ -228,106 +218,105 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
         builder.withRequestField("id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getId, (req, v) -> {
-                    req.setId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListPortsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListPortsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("admin_state_up",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Boolean.class,
-                f -> f.withMarshaller(ListPortsRequest::getAdminStateUp, (req, v) -> {
-                    req.setAdminStateUp(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListPortsRequest::getAdminStateUp, (req, v) -> {
+                req.setAdminStateUp(v);
+            })
         );
         builder.withRequestField("network_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getNetworkId, (req, v) -> {
-                    req.setNetworkId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getNetworkId, (req, v) -> {
+                req.setNetworkId(v);
+            })
         );
         builder.withRequestField("mac_address",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getMacAddress, (req, v) -> {
-                    req.setMacAddress(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getMacAddress, (req, v) -> {
+                req.setMacAddress(v);
+            })
         );
         builder.withRequestField("device_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getDeviceId, (req, v) -> {
-                    req.setDeviceId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
         );
         builder.withRequestField("device_owner",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ListPortsRequest.DeviceOwnerEnum.class,
-                f -> f.withMarshaller(ListPortsRequest::getDeviceOwner, (req, v) -> {
-                    req.setDeviceOwner(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListPortsRequest.DeviceOwnerEnum.class,
+            f -> f.withMarshaller(ListPortsRequest::getDeviceOwner, (req, v) -> {
+                req.setDeviceOwner(v);
+            })
         );
         builder.withRequestField("status",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ListPortsRequest.StatusEnum.class,
-                f -> f.withMarshaller(ListPortsRequest::getStatus, (req, v) -> {
-                    req.setStatus(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListPortsRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListPortsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
         );
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("fixed_ips",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getFixedIps, (req, v) -> {
-                    req.setFixedIps(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getFixedIps, (req, v) -> {
+                req.setFixedIps(v);
+            })
         );
         builder.withRequestField("enterprise_project_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPortsRequest::getEnterpriseProjectId, (req, v) -> {
-                    req.setEnterpriseProjectId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPortsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRules = genForlistSecurityGroupRules();
@@ -340,34 +329,33 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSecurityGroupRulesRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListSecurityGroupRulesRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("security_group_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
-                    req.setSecurityGroupId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroups = genForlistSecurityGroups();
@@ -380,42 +368,41 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListSecurityGroupsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSecurityGroupsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("vpc_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSecurityGroupsRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
         builder.withRequestField("enterprise_project_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSecurityGroupsRequest::getEnterpriseProjectId, (req, v) -> {
-                    req.setEnterpriseProjectId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSecurityGroupsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListSubnetsRequest, ListSubnetsResponse> listSubnets = genForlistSubnets();
@@ -428,34 +415,33 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListSubnetsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSubnetsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSubnetsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSubnetsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("vpc_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSubnetsRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSubnetsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowPortRequest, ShowPortResponse> showPort = genForshowPort();
@@ -468,18 +454,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("port_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowPortRequest::getPortId, (req, v) -> {
-                    req.setPortId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPortRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForshowQuota();
@@ -492,18 +477,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("type",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ShowQuotaRequest.TypeEnum.class,
-                f -> f.withMarshaller(ShowQuotaRequest::getType, (req, v) -> {
-                    req.setType(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ShowQuotaRequest.TypeEnum.class,
+            f -> f.withMarshaller(ShowQuotaRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup = genForshowSecurityGroup();
@@ -516,18 +500,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("security_group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
-                    req.setSecurityGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRule = genForshowSecurityGroupRule();
@@ -540,18 +523,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("security_group_rule_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
-                    req.setSecurityGroupRuleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
+                req.setSecurityGroupRuleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowSubnetRequest, ShowSubnetResponse> showSubnet = genForshowSubnet();
@@ -564,18 +546,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("subnet_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowSubnetRequest::getSubnetId, (req, v) -> {
-                    req.setSubnetId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSubnetRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdatePortRequest, UpdatePortResponse> updatePort = genForupdatePort();
@@ -589,26 +570,25 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("port_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdatePortRequest::getPortId, (req, v) -> {
-                    req.setPortId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdatePortRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdatePortRequestBody.class,
-                f -> f.withMarshaller(UpdatePortRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdatePortRequestBody.class,
+            f -> f.withMarshaller(UpdatePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdateSubnetRequest, UpdateSubnetResponse> updateSubnet = genForupdateSubnet();
@@ -622,34 +602,33 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("vpc_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateSubnetRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSubnetRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
         builder.withRequestField("subnet_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateSubnetRequest::getSubnetId, (req, v) -> {
-                    req.setSubnetId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSubnetRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateSubnetRequestBody.class,
-                f -> f.withMarshaller(UpdateSubnetRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateSubnetRequestBody.class,
+            f -> f.withMarshaller(UpdateSubnetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreatePrivateipRequest, CreatePrivateipResponse> createPrivateip = genForcreatePrivateip();
@@ -663,18 +642,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreatePrivateipRequestBody.class,
-                f -> f.withMarshaller(CreatePrivateipRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreatePrivateipRequestBody.class,
+            f -> f.withMarshaller(CreatePrivateipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeletePrivateipRequest, DeletePrivateipResponse> deletePrivateip = genFordeletePrivateip();
@@ -687,18 +665,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("privateip_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeletePrivateipRequest::getPrivateipId, (req, v) -> {
-                    req.setPrivateipId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeletePrivateipRequest::getPrivateipId, (req, v) -> {
+                req.setPrivateipId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListPrivateipsRequest, ListPrivateipsResponse> listPrivateips = genForlistPrivateips();
@@ -711,34 +688,33 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("subnet_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListPrivateipsRequest::getSubnetId, (req, v) -> {
-                    req.setSubnetId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListPrivateipsRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListPrivateipsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListPrivateipsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListPrivateipsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPrivateipsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowPrivateipRequest, ShowPrivateipResponse> showPrivateip = genForshowPrivateip();
@@ -751,18 +727,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("privateip_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowPrivateipRequest::getPrivateipId, (req, v) -> {
-                    req.setPrivateipId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPrivateipRequest::getPrivateipId, (req, v) -> {
+                req.setPrivateipId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateVpcRequest, CreateVpcResponse> createVpc = genForcreateVpc();
@@ -776,18 +751,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateVpcRequestBody.class,
-                f -> f.withMarshaller(CreateVpcRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateVpcRequestBody.class,
+            f -> f.withMarshaller(CreateVpcRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> deleteVpc = genFordeleteVpc();
@@ -800,18 +774,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("vpc_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListVpcsRequest, ListVpcsResponse> listVpcs = genForlistVpcs();
@@ -824,42 +797,41 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListVpcsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListVpcsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVpcsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVpcsRequest::getId, (req, v) -> {
-                    req.setId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
         );
         builder.withRequestField("enterprise_project_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVpcsRequest::getEnterpriseProjectId, (req, v) -> {
-                    req.setEnterpriseProjectId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowVpcRequest, ShowVpcResponse> showVpc = genForshowVpc();
@@ -872,18 +844,17 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("vpc_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdateVpcRequest, UpdateVpcResponse> updateVpc = genForupdateVpc();
@@ -897,27 +868,25 @@ public class VpcMeta {
 
         // requests
         builder.withRequestField("vpc_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateVpcRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateVpcRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateVpcRequestBody.class,
-                f -> f.withMarshaller(UpdateVpcRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateVpcRequestBody.class,
+            f -> f.withMarshaller(UpdateVpcRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
 }
-

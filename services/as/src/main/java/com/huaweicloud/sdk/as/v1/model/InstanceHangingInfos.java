@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 挂钩实例信息
@@ -52,29 +50,25 @@ public class InstanceHangingInfos  {
          * Enum HANGING for value: "HANGING"
          */
         public static final LifecycleHookStatusEnum HANGING = new LifecycleHookStatusEnum("HANGING");
-
         
         /**
          * Enum CONTINUE for value: "CONTINUE"
          */
         public static final LifecycleHookStatusEnum CONTINUE = new LifecycleHookStatusEnum("CONTINUE");
-
         
         /**
          * Enum ABANDON for value: "ABANDON"
          */
         public static final LifecycleHookStatusEnum ABANDON = new LifecycleHookStatusEnum("ABANDON");
-
         
 
-        public static Map<String, LifecycleHookStatusEnum> staticFields =
-                new HashMap<String, LifecycleHookStatusEnum>() {
-                    { 
-                        put("HANGING", HANGING);
-                        put("CONTINUE", CONTINUE);
-                        put("ABANDON", ABANDON);
-                    }
-                };
+        public static final Map<String, LifecycleHookStatusEnum> staticFields = new HashMap<String, LifecycleHookStatusEnum>() {
+            { 
+                put("HANGING", HANGING);
+                put("CONTINUE", CONTINUE);
+                put("ABANDON", ABANDON);
+            }
+        };
 
         private String value;
 
@@ -90,7 +84,7 @@ public class InstanceHangingInfos  {
 
         @JsonCreator
         public static LifecycleHookStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             LifecycleHookStatusEnum result = staticFields.get(value);
@@ -310,13 +304,13 @@ public class InstanceHangingInfos  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceHangingInfos {\n");
-            sb.append("    lifecycleHookName: ").append(toIndentedString(lifecycleHookName)).append("\n");
-            sb.append("    lifecycleActionKey: ").append(toIndentedString(lifecycleActionKey)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
-            sb.append("    lifecycleHookStatus: ").append(toIndentedString(lifecycleHookStatus)).append("\n");
-            sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
-            sb.append("    defaultResult: ").append(toIndentedString(defaultResult)).append("\n");
+        sb.append("    lifecycleHookName: ").append(toIndentedString(lifecycleHookName)).append("\n");
+        sb.append("    lifecycleActionKey: ").append(toIndentedString(lifecycleActionKey)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    lifecycleHookStatus: ").append(toIndentedString(lifecycleHookStatus)).append("\n");
+        sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    defaultResult: ").append(toIndentedString(defaultResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -330,5 +324,6 @@ public class InstanceHangingInfos  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

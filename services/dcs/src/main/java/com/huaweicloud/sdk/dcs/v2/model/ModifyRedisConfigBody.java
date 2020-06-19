@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dcs.v2.model.RedisConfig;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 修改配置参数请求体
@@ -77,7 +75,7 @@ public class ModifyRedisConfigBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ModifyRedisConfigBody {\n");
-            sb.append("    redisConfig: ").append(toIndentedString(redisConfig)).append("\n");
+        sb.append("    redisConfig: ").append(toIndentedString(redisConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -91,5 +89,6 @@ public class ModifyRedisConfigBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

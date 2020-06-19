@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -114,9 +112,9 @@ public class SubJobEntities  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SubJobEntities {\n");
-            sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
-            sb.append("    nicId: ").append(toIndentedString(nicId)).append("\n");
-            sb.append("    errorcodeMessage: ").append(toIndentedString(errorcodeMessage)).append("\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    nicId: ").append(toIndentedString(nicId)).append("\n");
+        sb.append("    errorcodeMessage: ").append(toIndentedString(errorcodeMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -130,5 +128,6 @@ public class SubJobEntities  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

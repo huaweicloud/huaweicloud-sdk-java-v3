@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -27,22 +25,19 @@ public class Privateip  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-
         
         /**
          * Enum DOWN for value: "DOWN"
          */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("DOWN", DOWN);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("DOWN", DOWN);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class Privateip  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -129,29 +124,25 @@ public class Privateip  {
          * Enum NETWORK_DHCP for value: "network:dhcp"
          */
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
-
         
         /**
          * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
          */
         public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED = new DeviceOwnerEnum("network:router_interface_distributed");
-
         
         /**
          * Enum COMPUTE_XXX for value: "compute:xxx"
          */
         public static final DeviceOwnerEnum COMPUTE_XXX = new DeviceOwnerEnum("compute:xxx");
-
         
 
-        public static Map<String, DeviceOwnerEnum> staticFields =
-                new HashMap<String, DeviceOwnerEnum>() {
-                    { 
-                        put("network:dhcp", NETWORK_DHCP);
-                        put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
-                        put("compute:xxx", COMPUTE_XXX);
-                    }
-                };
+        public static final Map<String, DeviceOwnerEnum> staticFields = new HashMap<String, DeviceOwnerEnum>() {
+            { 
+                put("network:dhcp", NETWORK_DHCP);
+                put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
+                put("compute:xxx", COMPUTE_XXX);
+            }
+        };
 
         private String value;
 
@@ -167,7 +158,7 @@ public class Privateip  {
 
         @JsonCreator
         public static DeviceOwnerEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DeviceOwnerEnum result = staticFields.get(value);
@@ -360,12 +351,12 @@ public class Privateip  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Privateip {\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
-            sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
-            sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -379,5 +370,6 @@ public class Privateip  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

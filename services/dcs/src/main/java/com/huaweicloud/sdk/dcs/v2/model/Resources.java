@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Resources
@@ -195,12 +193,12 @@ public class Resources  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Resources {\n");
-            sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
-            sb.append("    min: ").append(toIndentedString(min)).append("\n");
-            sb.append("    max: ").append(toIndentedString(max)).append("\n");
-            sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
-            sb.append("    used: ").append(toIndentedString(used)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+        sb.append("    min: ").append(toIndentedString(min)).append("\n");
+        sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
+        sb.append("    used: ").append(toIndentedString(used)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -214,5 +212,6 @@ public class Resources  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

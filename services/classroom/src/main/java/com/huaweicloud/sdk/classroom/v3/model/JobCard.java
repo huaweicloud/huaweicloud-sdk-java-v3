@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * JobCard
@@ -303,16 +301,16 @@ public class JobCard  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobCard {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-            sb.append("    isSend: ").append(toIndentedString(isSend)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    averageScore: ").append(toIndentedString(averageScore)).append("\n");
-            sb.append("    submitJobNum: ").append(toIndentedString(submitJobNum)).append("\n");
-            sb.append("    createStatus: ").append(toIndentedString(createStatus)).append("\n");
-            sb.append("    sendType: ").append(toIndentedString(sendType)).append("\n");
-            sb.append("    isScoreVisibility: ").append(toIndentedString(isScoreVisibility)).append("\n");
-            sb.append("    sendTime: ").append(toIndentedString(sendTime)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    isSend: ").append(toIndentedString(isSend)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    averageScore: ").append(toIndentedString(averageScore)).append("\n");
+        sb.append("    submitJobNum: ").append(toIndentedString(submitJobNum)).append("\n");
+        sb.append("    createStatus: ").append(toIndentedString(createStatus)).append("\n");
+        sb.append("    sendType: ").append(toIndentedString(sendType)).append("\n");
+        sb.append("    isScoreVisibility: ").append(toIndentedString(isScoreVisibility)).append("\n");
+        sb.append("    sendTime: ").append(toIndentedString(sendTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -326,5 +324,6 @@ public class JobCard  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.cts.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cts.v1.model.UserInfo;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Traces
@@ -40,29 +38,25 @@ public class Traces  {
          * Enum NORMAL for value: "normal"
          */
         public static final TraceRatingEnum NORMAL = new TraceRatingEnum("normal");
-
         
         /**
          * Enum WARNING for value: "warning"
          */
         public static final TraceRatingEnum WARNING = new TraceRatingEnum("warning");
-
         
         /**
          * Enum INCIDENT for value: "incident"
          */
         public static final TraceRatingEnum INCIDENT = new TraceRatingEnum("incident");
-
         
 
-        public static Map<String, TraceRatingEnum> staticFields =
-                new HashMap<String, TraceRatingEnum>() {
-                    { 
-                        put("normal", NORMAL);
-                        put("warning", WARNING);
-                        put("incident", INCIDENT);
-                    }
-                };
+        public static final Map<String, TraceRatingEnum> staticFields = new HashMap<String, TraceRatingEnum>() {
+            { 
+                put("normal", NORMAL);
+                put("warning", WARNING);
+                put("incident", INCIDENT);
+            }
+        };
 
         private String value;
 
@@ -78,7 +72,7 @@ public class Traces  {
 
         @JsonCreator
         public static TraceRatingEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TraceRatingEnum result = staticFields.get(value);
@@ -698,27 +692,27 @@ public class Traces  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Traces {\n");
-            sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-            sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
-            sb.append("    traceRating: ").append(toIndentedString(traceRating)).append("\n");
-            sb.append("    traceType: ").append(toIndentedString(traceType)).append("\n");
-            sb.append("    request: ").append(toIndentedString(request)).append("\n");
-            sb.append("    response: ").append(toIndentedString(response)).append("\n");
-            sb.append("    code: ").append(toIndentedString(code)).append("\n");
-            sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
-            sb.append("    message: ").append(toIndentedString(message)).append("\n");
-            sb.append("    recordTime: ").append(toIndentedString(recordTime)).append("\n");
-            sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
-            sb.append("    time: ").append(toIndentedString(time)).append("\n");
-            sb.append("    user: ").append(toIndentedString(user)).append("\n");
-            sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
-            sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
-            sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
-            sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
-            sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-            sb.append("    locationInfo: ").append(toIndentedString(locationInfo)).append("\n");
-            sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
-            sb.append("    resourceUrl: ").append(toIndentedString(resourceUrl)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
+        sb.append("    traceRating: ").append(toIndentedString(traceRating)).append("\n");
+        sb.append("    traceType: ").append(toIndentedString(traceType)).append("\n");
+        sb.append("    request: ").append(toIndentedString(request)).append("\n");
+        sb.append("    response: ").append(toIndentedString(response)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    recordTime: ").append(toIndentedString(recordTime)).append("\n");
+        sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
+        sb.append("    user: ").append(toIndentedString(user)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    locationInfo: ").append(toIndentedString(locationInfo)).append("\n");
+        sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+        sb.append("    resourceUrl: ").append(toIndentedString(resourceUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -732,5 +726,6 @@ public class Traces  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

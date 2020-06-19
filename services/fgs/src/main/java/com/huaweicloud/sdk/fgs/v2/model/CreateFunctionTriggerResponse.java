@@ -1,17 +1,17 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -34,78 +34,67 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
          * Enum TIMER for value: "TIMER"
          */
         public static final TriggerTypeCodeEnum TIMER = new TriggerTypeCodeEnum("TIMER");
-
         
         /**
          * Enum APIG for value: "APIG"
          */
         public static final TriggerTypeCodeEnum APIG = new TriggerTypeCodeEnum("APIG");
-
         
         /**
          * Enum CTS for value: "CTS"
          */
         public static final TriggerTypeCodeEnum CTS = new TriggerTypeCodeEnum("CTS");
-
         
         /**
          * Enum DDS for value: "DDS"
          */
         public static final TriggerTypeCodeEnum DDS = new TriggerTypeCodeEnum("DDS");
-
         
         /**
          * Enum DMS for value: "DMS"
          */
         public static final TriggerTypeCodeEnum DMS = new TriggerTypeCodeEnum("DMS");
-
         
         /**
          * Enum DIS for value: "DIS"
          */
         public static final TriggerTypeCodeEnum DIS = new TriggerTypeCodeEnum("DIS");
-
         
         /**
          * Enum LTS for value: "LTS"
          */
         public static final TriggerTypeCodeEnum LTS = new TriggerTypeCodeEnum("LTS");
-
         
         /**
          * Enum OBS for value: "OBS"
          */
         public static final TriggerTypeCodeEnum OBS = new TriggerTypeCodeEnum("OBS");
-
         
         /**
          * Enum SMN for value: "SMN"
          */
         public static final TriggerTypeCodeEnum SMN = new TriggerTypeCodeEnum("SMN");
-
         
         /**
          * Enum KAFKA for value: "KAFKA"
          */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
-
         
 
-        public static Map<String, TriggerTypeCodeEnum> staticFields =
-                new HashMap<String, TriggerTypeCodeEnum>() {
-                    { 
-                        put("TIMER", TIMER);
-                        put("APIG", APIG);
-                        put("CTS", CTS);
-                        put("DDS", DDS);
-                        put("DMS", DMS);
-                        put("DIS", DIS);
-                        put("LTS", LTS);
-                        put("OBS", OBS);
-                        put("SMN", SMN);
-                        put("KAFKA", KAFKA);
-                    }
-                };
+        public static final Map<String, TriggerTypeCodeEnum> staticFields = new HashMap<String, TriggerTypeCodeEnum>() {
+            { 
+                put("TIMER", TIMER);
+                put("APIG", APIG);
+                put("CTS", CTS);
+                put("DDS", DDS);
+                put("DMS", DMS);
+                put("DIS", DIS);
+                put("LTS", LTS);
+                put("OBS", OBS);
+                put("SMN", SMN);
+                put("KAFKA", KAFKA);
+            }
+        };
 
         private String value;
 
@@ -121,7 +110,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
 
         @JsonCreator
         public static TriggerTypeCodeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TriggerTypeCodeEnum result = staticFields.get(value);
@@ -174,22 +163,19 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
-
         
         /**
          * Enum DISABLE for value: "DISABLE"
          */
         public static final TriggerStatusEnum DISABLE = new TriggerStatusEnum("DISABLE");
-
         
 
-        public static Map<String, TriggerStatusEnum> staticFields =
-                new HashMap<String, TriggerStatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("DISABLE", DISABLE);
-                    }
-                };
+        public static final Map<String, TriggerStatusEnum> staticFields = new HashMap<String, TriggerStatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("DISABLE", DISABLE);
+            }
+        };
 
         private String value;
 
@@ -205,7 +191,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
 
         @JsonCreator
         public static TriggerStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TriggerStatusEnum result = staticFields.get(value);
@@ -410,12 +396,12 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateFunctionTriggerResponse {\n");
-            sb.append("    triggerId: ").append(toIndentedString(triggerId)).append("\n");
-            sb.append("    triggerTypeCode: ").append(toIndentedString(triggerTypeCode)).append("\n");
-            sb.append("    triggerStatus: ").append(toIndentedString(triggerStatus)).append("\n");
-            sb.append("    eventData: ").append(toIndentedString(eventData)).append("\n");
-            sb.append("    lastUpdatedTime: ").append(toIndentedString(lastUpdatedTime)).append("\n");
-            sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
+        sb.append("    triggerId: ").append(toIndentedString(triggerId)).append("\n");
+        sb.append("    triggerTypeCode: ").append(toIndentedString(triggerTypeCode)).append("\n");
+        sb.append("    triggerStatus: ").append(toIndentedString(triggerStatus)).append("\n");
+        sb.append("    eventData: ").append(toIndentedString(eventData)).append("\n");
+        sb.append("    lastUpdatedTime: ").append(toIndentedString(lastUpdatedTime)).append("\n");
+        sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -429,5 +415,6 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

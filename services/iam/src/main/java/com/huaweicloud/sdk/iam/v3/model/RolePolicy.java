@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import com.huaweicloud.sdk.iam.v3.model.PolicyDepends;
 import com.huaweicloud.sdk.iam.v3.model.PolicyStatement;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -143,9 +141,9 @@ public class RolePolicy  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RolePolicy {\n");
-            sb.append("    depends: ").append(toIndentedString(depends)).append("\n");
-            sb.append("    statement: ").append(toIndentedString(statement)).append("\n");
-            sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    depends: ").append(toIndentedString(depends)).append("\n");
+        sb.append("    statement: ").append(toIndentedString(statement)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -159,5 +157,6 @@ public class RolePolicy  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

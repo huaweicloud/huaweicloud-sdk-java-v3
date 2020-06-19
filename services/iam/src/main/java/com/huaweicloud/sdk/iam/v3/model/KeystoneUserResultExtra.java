@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -27,12 +25,6 @@ public class KeystoneUserResultExtra  {
     @JsonProperty(value="pwd_status")
     
     private Boolean pwdStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="forceResetPwd")
-    
-    private Boolean forceResetPwd;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,26 +72,6 @@ public class KeystoneUserResultExtra  {
         this.pwdStatus = pwdStatus;
     }
 
-    public KeystoneUserResultExtra withForceResetPwd(Boolean forceResetPwd) {
-        this.forceResetPwd = forceResetPwd;
-        return this;
-    }
-
-    
-
-
-    /**
-     * IAM用户下次登录是否强制重置密码。
-     * @return forceResetPwd
-     */
-    public Boolean getForceResetPwd() {
-        return forceResetPwd;
-    }
-
-    public void setForceResetPwd(Boolean forceResetPwd) {
-        this.forceResetPwd = forceResetPwd;
-    }
-
     public KeystoneUserResultExtra withLastProjectId(String lastProjectId) {
         this.lastProjectId = lastProjectId;
         return this;
@@ -130,21 +102,19 @@ public class KeystoneUserResultExtra  {
         KeystoneUserResultExtra keystoneUserResultExtra = (KeystoneUserResultExtra) o;
         return Objects.equals(this.description, keystoneUserResultExtra.description) &&
             Objects.equals(this.pwdStatus, keystoneUserResultExtra.pwdStatus) &&
-            Objects.equals(this.forceResetPwd, keystoneUserResultExtra.forceResetPwd) &&
             Objects.equals(this.lastProjectId, keystoneUserResultExtra.lastProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(description, pwdStatus, forceResetPwd, lastProjectId);
+        return Objects.hash(description, pwdStatus, lastProjectId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneUserResultExtra {\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
-            sb.append("    forceResetPwd: ").append(toIndentedString(forceResetPwd)).append("\n");
-            sb.append("    lastProjectId: ").append(toIndentedString(lastProjectId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
+        sb.append("    lastProjectId: ").append(toIndentedString(lastProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -158,5 +128,6 @@ public class KeystoneUserResultExtra  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

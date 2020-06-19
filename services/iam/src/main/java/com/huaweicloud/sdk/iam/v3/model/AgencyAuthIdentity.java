@@ -1,19 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iam.v3.model.IdentityAssumerole;
+import com.huaweicloud.sdk.iam.v3.model.ServicePolicy;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -30,15 +29,13 @@ public class AgencyAuthIdentity  {
          * Enum ASSUME_ROLE for value: "assume_role"
          */
         public static final MethodsEnum ASSUME_ROLE = new MethodsEnum("assume_role");
-
         
 
-        public static Map<String, MethodsEnum> staticFields =
-                new HashMap<String, MethodsEnum>() {
-                    { 
-                        put("assume_role", ASSUME_ROLE);
-                    }
-                };
+        public static final Map<String, MethodsEnum> staticFields = new HashMap<String, MethodsEnum>() {
+            { 
+                put("assume_role", ASSUME_ROLE);
+            }
+        };
 
         private String value;
 
@@ -54,7 +51,7 @@ public class AgencyAuthIdentity  {
 
         @JsonCreator
         public static MethodsEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MethodsEnum result = staticFields.get(value);
@@ -103,6 +100,12 @@ public class AgencyAuthIdentity  {
     @JsonProperty(value="assume_role")
     
     private IdentityAssumerole assumeRole = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="policy")
+    
+    private ServicePolicy policy = null;
 
     public AgencyAuthIdentity withMethods(List<MethodsEnum> methods) {
         this.methods = methods;
@@ -160,6 +163,32 @@ public class AgencyAuthIdentity  {
     public void setAssumeRole(IdentityAssumerole assumeRole) {
         this.assumeRole = assumeRole;
     }
+
+    public AgencyAuthIdentity withPolicy(ServicePolicy policy) {
+        this.policy = policy;
+        return this;
+    }
+
+    public AgencyAuthIdentity withPolicy(Consumer<ServicePolicy> policySetter) {
+        if(this.policy == null ){
+            this.policy = new ServicePolicy();
+        }
+        policySetter.accept(this.policy);
+        return this;
+    }
+
+
+    /**
+     * Get policy
+     * @return policy
+     */
+    public ServicePolicy getPolicy() {
+        return policy;
+    }
+
+    public void setPolicy(ServicePolicy policy) {
+        this.policy = policy;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -170,18 +199,20 @@ public class AgencyAuthIdentity  {
         }
         AgencyAuthIdentity agencyAuthIdentity = (AgencyAuthIdentity) o;
         return Objects.equals(this.methods, agencyAuthIdentity.methods) &&
-            Objects.equals(this.assumeRole, agencyAuthIdentity.assumeRole);
+            Objects.equals(this.assumeRole, agencyAuthIdentity.assumeRole) &&
+            Objects.equals(this.policy, agencyAuthIdentity.policy);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(methods, assumeRole);
+        return Objects.hash(methods, assumeRole, policy);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AgencyAuthIdentity {\n");
-            sb.append("    methods: ").append(toIndentedString(methods)).append("\n");
-            sb.append("    assumeRole: ").append(toIndentedString(assumeRole)).append("\n");
+        sb.append("    methods: ").append(toIndentedString(methods)).append("\n");
+        sb.append("    assumeRole: ").append(toIndentedString(assumeRole)).append("\n");
+        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -195,5 +226,6 @@ public class AgencyAuthIdentity  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

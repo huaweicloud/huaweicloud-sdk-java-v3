@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -63,106 +61,91 @@ public class NovaListServersDetailsRequest  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-
         
         /**
          * Enum BUILD for value: "BUILD"
          */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
-
         
         /**
          * Enum DELETED for value: "DELETED"
          */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-
         
         /**
          * Enum HARD_REBOOT for value: "HARD_REBOOT"
          */
         public static final StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
-
         
         /**
          * Enum MIGRATING for value: "MIGRATING"
          */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
-
         
         /**
          * Enum REBOOT for value: "REBOOT"
          */
         public static final StatusEnum REBOOT = new StatusEnum("REBOOT");
-
         
         /**
          * Enum RESIZE for value: "RESIZE"
          */
         public static final StatusEnum RESIZE = new StatusEnum("RESIZE");
-
         
         /**
          * Enum REVERT_RESIZE for value: "REVERT_RESIZE"
          */
         public static final StatusEnum REVERT_RESIZE = new StatusEnum("REVERT_RESIZE");
-
         
         /**
          * Enum SHELVED for value: "SHELVED"
          */
         public static final StatusEnum SHELVED = new StatusEnum("SHELVED");
-
         
         /**
          * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
          */
         public static final StatusEnum SHELVED_OFFLOADED = new StatusEnum("SHELVED_OFFLOADED");
-
         
         /**
          * Enum SHUTOFF for value: "SHUTOFF"
          */
         public static final StatusEnum SHUTOFF = new StatusEnum("SHUTOFF");
-
         
         /**
          * Enum UNKNOWN for value: "UNKNOWN"
          */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
-
         
         /**
          * Enum VERIFY_RESIZE for value: "VERIFY_RESIZE"
          */
         public static final StatusEnum VERIFY_RESIZE = new StatusEnum("VERIFY_RESIZE");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("BUILD", BUILD);
-                        put("DELETED", DELETED);
-                        put("ERROR", ERROR);
-                        put("HARD_REBOOT", HARD_REBOOT);
-                        put("MIGRATING", MIGRATING);
-                        put("REBOOT", REBOOT);
-                        put("RESIZE", RESIZE);
-                        put("REVERT_RESIZE", REVERT_RESIZE);
-                        put("SHELVED", SHELVED);
-                        put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-                        put("SHUTOFF", SHUTOFF);
-                        put("UNKNOWN", UNKNOWN);
-                        put("VERIFY_RESIZE", VERIFY_RESIZE);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("BUILD", BUILD);
+                put("DELETED", DELETED);
+                put("ERROR", ERROR);
+                put("HARD_REBOOT", HARD_REBOOT);
+                put("MIGRATING", MIGRATING);
+                put("REBOOT", REBOOT);
+                put("RESIZE", RESIZE);
+                put("REVERT_RESIZE", REVERT_RESIZE);
+                put("SHELVED", SHELVED);
+                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+                put("SHUTOFF", SHUTOFF);
+                put("UNKNOWN", UNKNOWN);
+                put("VERIFY_RESIZE", VERIFY_RESIZE);
+            }
+        };
 
         private String value;
 
@@ -178,7 +161,7 @@ public class NovaListServersDetailsRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -261,85 +244,73 @@ public class NovaListServersDetailsRequest  {
          * Enum CREATED_AT for value: "created_at"
          */
         public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
-
         
         /**
          * Enum AVAILABILITY_ZONE for value: "availability_zone"
          */
         public static final SortKeyEnum AVAILABILITY_ZONE = new SortKeyEnum("availability_zone");
-
         
         /**
          * Enum DISPLAY_NAME for value: "display_name"
          */
         public static final SortKeyEnum DISPLAY_NAME = new SortKeyEnum("display_name");
-
         
         /**
          * Enum HOST for value: "host"
          */
         public static final SortKeyEnum HOST = new SortKeyEnum("host");
-
         
         /**
          * Enum INSTANCE_TYPE_ID for value: "instance_type_id"
          */
         public static final SortKeyEnum INSTANCE_TYPE_ID = new SortKeyEnum("instance_type_id");
-
         
         /**
          * Enum KEY_NAME for value: "key_name"
          */
         public static final SortKeyEnum KEY_NAME = new SortKeyEnum("key_name");
-
         
         /**
          * Enum PROJECT_ID for value: "project_id"
          */
         public static final SortKeyEnum PROJECT_ID = new SortKeyEnum("project_id");
-
         
         /**
          * Enum USER_ID for value: "user_id"
          */
         public static final SortKeyEnum USER_ID = new SortKeyEnum("user_id");
-
         
         /**
          * Enum UPDATED_AT for value: "updated_at"
          */
         public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
-
         
         /**
          * Enum UUID for value: "uuid"
          */
         public static final SortKeyEnum UUID = new SortKeyEnum("uuid");
-
         
         /**
          * Enum VM_STATE for value: "vm_state"
          */
         public static final SortKeyEnum VM_STATE = new SortKeyEnum("vm_state");
-
         
 
-        public static Map<String, SortKeyEnum> staticFields =
-                new HashMap<String, SortKeyEnum>() {
-                    { 
-                        put("created_at", CREATED_AT);
-                        put("availability_zone", AVAILABILITY_ZONE);
-                        put("display_name", DISPLAY_NAME);
-                        put("host", HOST);
-                        put("instance_type_id", INSTANCE_TYPE_ID);
-                        put("key_name", KEY_NAME);
-                        put("project_id", PROJECT_ID);
-                        put("user_id", USER_ID);
-                        put("updated_at", UPDATED_AT);
-                        put("uuid", UUID);
-                        put("vm_state", VM_STATE);
-                    }
-                };
+        public static final Map<String, SortKeyEnum> staticFields = new HashMap<String, SortKeyEnum>() {
+            { 
+                put("created_at", CREATED_AT);
+                put("availability_zone", AVAILABILITY_ZONE);
+                put("display_name", DISPLAY_NAME);
+                put("host", HOST);
+                put("instance_type_id", INSTANCE_TYPE_ID);
+                put("key_name", KEY_NAME);
+                put("project_id", PROJECT_ID);
+                put("user_id", USER_ID);
+                put("updated_at", UPDATED_AT);
+                put("uuid", UUID);
+                put("vm_state", VM_STATE);
+            }
+        };
 
         private String value;
 
@@ -355,7 +326,7 @@ public class NovaListServersDetailsRequest  {
 
         @JsonCreator
         public static SortKeyEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             SortKeyEnum result = staticFields.get(value);
@@ -691,19 +662,19 @@ public class NovaListServersDetailsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaListServersDetailsRequest {\n");
-            sb.append("    openStackAPIVersion: ").append(toIndentedString(openStackAPIVersion)).append("\n");
-            sb.append("    changesSince: ").append(toIndentedString(changesSince)).append("\n");
-            sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-            sb.append("    image: ").append(toIndentedString(image)).append("\n");
-            sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
-            sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
-            sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    openStackAPIVersion: ").append(toIndentedString(openStackAPIVersion)).append("\n");
+        sb.append("    changesSince: ").append(toIndentedString(changesSince)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
+        sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -717,5 +688,6 @@ public class NovaListServersDetailsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

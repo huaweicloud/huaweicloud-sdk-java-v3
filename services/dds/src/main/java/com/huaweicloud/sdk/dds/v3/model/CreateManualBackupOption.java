@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 备份参数对象。
@@ -114,9 +112,9 @@ public class CreateManualBackupOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateManualBackupOption {\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -130,5 +128,6 @@ public class CreateManualBackupOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

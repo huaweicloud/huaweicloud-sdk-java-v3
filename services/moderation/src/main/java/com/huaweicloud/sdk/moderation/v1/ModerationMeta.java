@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.moderation.v1;
 
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.moderation.v1.model.*;
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
-
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-
-import com.huaweicloud.sdk.moderation.v1.model.*;
 
 @SuppressWarnings("unchecked")
 public class ModerationMeta {
@@ -24,18 +22,17 @@ public class ModerationMeta {
 
         // requests
         builder.withRequestField("job_id",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RunCheckResultRequest::getJobId, (req, v) -> {
-                    req.setJobId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RunCheckResultRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> runCheckTaskJobs = genForrunCheckTaskJobs();
@@ -48,18 +45,17 @@ public class ModerationMeta {
 
         // requests
         builder.withRequestField("status",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                RunCheckTaskJobsRequest.StatusEnum.class,
-                f -> f.withMarshaller(RunCheckTaskJobsRequest::getStatus, (req, v) -> {
-                    req.setStatus(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            RunCheckTaskJobsRequest.StatusEnum.class,
+            f -> f.withMarshaller(RunCheckTaskJobsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RunImageBatchModerationRequest, RunImageBatchModerationResponse> runImageBatchModeration = genForrunImageBatchModeration();
@@ -73,18 +69,17 @@ public class ModerationMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ImageBatchModerationReq.class,
-                f -> f.withMarshaller(RunImageBatchModerationRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ImageBatchModerationReq.class,
+            f -> f.withMarshaller(RunImageBatchModerationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RunImageModerationRequest, RunImageModerationResponse> runImageModeration = genForrunImageModeration();
@@ -98,18 +93,17 @@ public class ModerationMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ImageDetectionReq.class,
-                f -> f.withMarshaller(RunImageModerationRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ImageDetectionReq.class,
+            f -> f.withMarshaller(RunImageModerationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RunTaskSumbitRequest, RunTaskSumbitResponse> runTaskSumbit = genForrunTaskSumbit();
@@ -123,18 +117,17 @@ public class ModerationMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                TaskSumbitReq.class,
-                f -> f.withMarshaller(RunTaskSumbitRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TaskSumbitReq.class,
+            f -> f.withMarshaller(RunTaskSumbitRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RunTextModerationRequest, RunTextModerationResponse> runTextModeration = genForrunTextModeration();
@@ -148,19 +141,17 @@ public class ModerationMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                TextDetectionReq.class,
-                f -> f.withMarshaller(RunTextModerationRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TextDetectionReq.class,
+            f -> f.withMarshaller(RunTextModerationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
 }
-

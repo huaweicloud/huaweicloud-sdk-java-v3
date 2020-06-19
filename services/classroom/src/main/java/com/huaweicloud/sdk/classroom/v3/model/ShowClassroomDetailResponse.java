@@ -1,15 +1,15 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -493,23 +493,23 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClassroomDetailResponse {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    announcement: ").append(toIndentedString(announcement)).append("\n");
-            sb.append("    announcementTime: ").append(toIndentedString(announcementTime)).append("\n");
-            sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-            sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-            sb.append("    teacher: ").append(toIndentedString(teacher)).append("\n");
-            sb.append("    credit: ").append(toIndentedString(credit)).append("\n");
-            sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    role: ").append(toIndentedString(role)).append("\n");
-            sb.append("    school: ").append(toIndentedString(school)).append("\n");
-            sb.append("    contentCount: ").append(toIndentedString(contentCount)).append("\n");
-            sb.append("    coursewareCount: ").append(toIndentedString(coursewareCount)).append("\n");
-            sb.append("    jobCount: ").append(toIndentedString(jobCount)).append("\n");
-            sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    announcement: ").append(toIndentedString(announcement)).append("\n");
+        sb.append("    announcementTime: ").append(toIndentedString(announcementTime)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    teacher: ").append(toIndentedString(teacher)).append("\n");
+        sb.append("    credit: ").append(toIndentedString(credit)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
+        sb.append("    school: ").append(toIndentedString(school)).append("\n");
+        sb.append("    contentCount: ").append(toIndentedString(contentCount)).append("\n");
+        sb.append("    coursewareCount: ").append(toIndentedString(coursewareCount)).append("\n");
+        sb.append("    jobCount: ").append(toIndentedString(jobCount)).append("\n");
+        sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -523,5 +523,6 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

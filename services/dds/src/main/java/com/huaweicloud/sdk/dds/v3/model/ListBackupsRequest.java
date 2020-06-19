@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -39,22 +37,19 @@ public class ListBackupsRequest  {
          * Enum AUTO for value: "Auto"
          */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("Auto");
-
         
         /**
          * Enum MANUAL for value: "Manual"
          */
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("Manual");
-
         
 
-        public static Map<String, BackupTypeEnum> staticFields =
-                new HashMap<String, BackupTypeEnum>() {
-                    { 
-                        put("Auto", AUTO);
-                        put("Manual", MANUAL);
-                    }
-                };
+        public static final Map<String, BackupTypeEnum> staticFields = new HashMap<String, BackupTypeEnum>() {
+            { 
+                put("Auto", AUTO);
+                put("Manual", MANUAL);
+            }
+        };
 
         private String value;
 
@@ -70,7 +65,7 @@ public class ListBackupsRequest  {
 
         @JsonCreator
         public static BackupTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             BackupTypeEnum result = staticFields.get(value);
@@ -147,29 +142,25 @@ public class ListBackupsRequest  {
          * Enum SHARDING for value: "Sharding"
          */
         public static final ModeEnum SHARDING = new ModeEnum("Sharding");
-
         
         /**
          * Enum REPLICASET for value: "ReplicaSet"
          */
         public static final ModeEnum REPLICASET = new ModeEnum("ReplicaSet");
-
         
         /**
          * Enum SINGLE for value: "Single"
          */
         public static final ModeEnum SINGLE = new ModeEnum("Single");
-
         
 
-        public static Map<String, ModeEnum> staticFields =
-                new HashMap<String, ModeEnum>() {
-                    { 
-                        put("Sharding", SHARDING);
-                        put("ReplicaSet", REPLICASET);
-                        put("Single", SINGLE);
-                    }
-                };
+        public static final Map<String, ModeEnum> staticFields = new HashMap<String, ModeEnum>() {
+            { 
+                put("Sharding", SHARDING);
+                put("ReplicaSet", REPLICASET);
+                put("Single", SINGLE);
+            }
+        };
 
         private String value;
 
@@ -185,7 +176,7 @@ public class ListBackupsRequest  {
 
         @JsonCreator
         public static ModeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ModeEnum result = staticFields.get(value);
@@ -417,14 +408,14 @@ public class ListBackupsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBackupsRequest {\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
-            sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
-            sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -438,5 +429,6 @@ public class ListBackupsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

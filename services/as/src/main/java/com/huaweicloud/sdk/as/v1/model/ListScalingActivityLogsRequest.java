@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -171,11 +169,11 @@ public class ListScalingActivityLogsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScalingActivityLogsRequest {\n");
-            sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
-            sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -189,5 +187,6 @@ public class ListScalingActivityLogsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

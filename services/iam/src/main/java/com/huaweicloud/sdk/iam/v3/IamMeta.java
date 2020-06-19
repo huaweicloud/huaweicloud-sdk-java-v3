@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.iam.v3;
 
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.iam.v3.model.*;
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
-
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-
-import com.huaweicloud.sdk.iam.v3.model.*;
 
 @SuppressWarnings("unchecked")
 public class IamMeta {
@@ -23,35 +21,26 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> associateAgencyWithProjectPermission = genForassociateAgencyWithProjectPermission();
@@ -64,34 +53,33 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithProjectPermissionRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> checkDomainPermissionForAgency = genForcheckDomainPermissionForAgency();
@@ -103,35 +91,26 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> checkProjectPermissionForAgency = genForcheckProjectPermissionForAgency();
@@ -144,34 +123,33 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckProjectPermissionForAgencyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForcreateAgency();
@@ -185,18 +163,65 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateAgencyRequestBody.class,
-                f -> f.withMarshaller(CreateAgencyRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateAgencyRequestBody.class,
+            f -> f.withMarshaller(CreateAgencyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> createAgencyCustomPolicy = genForcreateAgencyCustomPolicy();
+
+    private static HttpRequestDef<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> genForcreateAgencyCustomPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgencyCustomPolicyRequest.class, CreateAgencyCustomPolicyResponse.class)
+                .withUri("/v3.0/OS-ROLE/roles")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateAgencyCustomPolicyRequestBody.class,
+            f -> f.withMarshaller(CreateAgencyCustomPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> createCloudServiceCustomPolicy = genForcreateCloudServiceCustomPolicy();
+
+    private static HttpRequestDef<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> genForcreateCloudServiceCustomPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCloudServiceCustomPolicyRequest.class, CreateCloudServiceCustomPolicyResponse.class)
+                .withUri("/v3.0/OS-ROLE/roles")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateCloudServiceCustomPolicyRequestBody.class,
+            f -> f.withMarshaller(CreateCloudServiceCustomPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgency = genFordeleteAgency();
@@ -209,18 +234,40 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> deleteCustomPolicy = genFordeleteCustomPolicy();
+
+    private static HttpRequestDef<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> genFordeleteCustomPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomPolicyRequest.class, DeleteCustomPolicyResponse.class)
+                .withUri("/v3.0/OS-ROLE/roles/{role_id}");
+
+        // requests
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteCustomPolicyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> keystoneAddUserToGroup = genForkeystoneAddUserToGroup();
@@ -233,26 +280,56 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<KeystoneAssociateGroupWithAllProjectPermissionRequest, KeystoneAssociateGroupWithAllProjectPermissionResponse> keystoneAssociateGroupWithAllProjectPermission = genForkeystoneAssociateGroupWithAllProjectPermission();
+
+    private static HttpRequestDef<KeystoneAssociateGroupWithAllProjectPermissionRequest, KeystoneAssociateGroupWithAllProjectPermissionResponse> genForkeystoneAssociateGroupWithAllProjectPermission() {
+        // basic
+        HttpRequestDef.Builder<KeystoneAssociateGroupWithAllProjectPermissionRequest, KeystoneAssociateGroupWithAllProjectPermissionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, KeystoneAssociateGroupWithAllProjectPermissionRequest.class, KeystoneAssociateGroupWithAllProjectPermissionResponse.class)
+                .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithAllProjectPermissionRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithAllProjectPermissionRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> keystoneAssociateGroupWithDomainPermission = genForkeystoneAssociateGroupWithDomainPermission();
@@ -264,35 +341,26 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> keystoneAssociateGroupWithProjectPermission = genForkeystoneAssociateGroupWithProjectPermission();
@@ -305,34 +373,33 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithProjectPermissionRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> keystoneCheckDomainPermissionForGroup = genForkeystoneCheckDomainPermissionForGroup();
@@ -344,35 +411,26 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> keystoneCheckProjectPermissionForGroup = genForkeystoneCheckProjectPermissionForGroup();
@@ -385,34 +443,33 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckProjectPermissionForGroupRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> keystoneCheckUserInGroup = genForkeystoneCheckUserInGroup();
@@ -425,26 +482,25 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> keystoneCreateGroup = genForkeystoneCreateGroup();
@@ -458,43 +514,41 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                KeystoneCreateGroupRequestBody.class,
-                f -> f.withMarshaller(KeystoneCreateGroupRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateGroupRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
-    public static final HttpRequestDef<KeystoneCreateUserRequest, KeystoneCreateUserResponse> keystoneCreateUser = genForkeystoneCreateUser();
+    public static final HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> keystoneCreateProject = genForkeystoneCreateProject();
 
-    private static HttpRequestDef<KeystoneCreateUserRequest, KeystoneCreateUserResponse> genForkeystoneCreateUser() {
+    private static HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> genForkeystoneCreateProject() {
         // basic
-        HttpRequestDef.Builder<KeystoneCreateUserRequest, KeystoneCreateUserResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserRequest.class, KeystoneCreateUserResponse.class)
-                .withUri("/v3/users")
+        HttpRequestDef.Builder<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateProjectRequest.class, KeystoneCreateProjectResponse.class)
+                .withUri("/v3/projects")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                KeystoneCreateUserRequestBody.class,
-                f -> f.withMarshaller(KeystoneCreateUserRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateProjectRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateProjectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> keystoneDeleteGroup = genForkeystoneDeleteGroup();
@@ -507,42 +561,47 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneDeleteGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneDeleteGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
-    public static final HttpRequestDef<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> keystoneDeleteUser = genForkeystoneDeleteUser();
+    public static final HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> keystoneListAuthDomains = genForkeystoneListAuthDomains();
 
-    private static HttpRequestDef<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> genForkeystoneDeleteUser() {
+    private static HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> genForkeystoneListAuthDomains() {
         // basic
-        HttpRequestDef.Builder<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteUserRequest.class, KeystoneDeleteUserResponse.class)
-                .withUri("/v3/users/{user_id}");
+        HttpRequestDef.Builder<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListAuthDomainsRequest.class, KeystoneListAuthDomainsResponse.class)
+                .withUri("/v3/auth/domains");
 
         // requests
-        builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneDeleteUserRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
-        );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> keystoneListAuthProjects = genForkeystoneListAuthProjects();
+
+    private static HttpRequestDef<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> genForkeystoneListAuthProjects() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListAuthProjectsRequest.class, KeystoneListAuthProjectsResponse.class)
+                .withUri("/v3/auth/projects");
+
+        // requests
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> keystoneListDomainPermissionsForGroup = genForkeystoneListDomainPermissionsForGroup();
@@ -554,27 +613,49 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> keystoneListEndpoints = genForkeystoneListEndpoints();
+
+    private static HttpRequestDef<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> genForkeystoneListEndpoints() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListEndpointsRequest.class, KeystoneListEndpointsResponse.class)
+                .withUri("/v3/endpoints");
+
+        // requests
+        builder.withRequestField("interface",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            KeystoneListEndpointsRequest.InterfaceEnum.class,
+            f -> f.withMarshaller(KeystoneListEndpointsRequest::getInterface, (req, v) -> {
+                req.setInterface(v);
+            })
+        );
+        builder.withRequestField("service_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListEndpointsRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneListGroupsRequest, KeystoneListGroupsResponse> keystoneListGroups = genForkeystoneListGroups();
@@ -586,51 +667,18 @@ public class IamMeta {
                 .withUri("/v3/groups");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(KeystoneListGroupsRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(KeystoneListGroupsRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListGroupsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
 
         // response
 
         return builder.build();
-
-    }
-
-    public static final HttpRequestDef<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> keystoneListGroupsForUser = genForkeystoneListGroupsForUser();
-
-    private static HttpRequestDef<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> genForkeystoneListGroupsForUser() {
-        // basic
-        HttpRequestDef.Builder<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, KeystoneListGroupsForUserRequest.class, KeystoneListGroupsForUserResponse.class)
-                .withUri("/v3/users/{user_id}/groups");
-
-        // requests
-        builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneListGroupsForUserRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
-        );
-
-        // response
-
-        return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> keystoneListPermissions = genForkeystoneListPermissions();
@@ -643,26 +691,17 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(KeystoneListPermissionsRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
-        );
-        builder.withRequestField("domain_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(KeystoneListPermissionsRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> keystoneListProjectPermissionsForGroup = genForkeystoneListProjectPermissionsForGroup();
@@ -675,74 +714,149 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListProjectPermissionsForGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
-    public static final HttpRequestDef<KeystoneListUsersRequest, KeystoneListUsersResponse> keystoneListUsers = genForkeystoneListUsers();
+    public static final HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> keystoneListProjects = genForkeystoneListProjects();
 
-    private static HttpRequestDef<KeystoneListUsersRequest, KeystoneListUsersResponse> genForkeystoneListUsers() {
+    private static HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> genForkeystoneListProjects() {
         // basic
-        HttpRequestDef.Builder<KeystoneListUsersRequest, KeystoneListUsersResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, KeystoneListUsersRequest.class, KeystoneListUsersResponse.class)
-                .withUri("/v3/users");
+        HttpRequestDef.Builder<KeystoneListProjectsRequest, KeystoneListProjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListProjectsRequest.class, KeystoneListProjectsResponse.class)
+                .withUri("/v3/projects");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(KeystoneListUsersRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getParentId, (req, v) -> {
+                req.setParentId(v);
+            })
         );
         builder.withRequestField("enabled",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Boolean.class,
-                f -> f.withMarshaller(KeystoneListUsersRequest::getEnabled, (req, v) -> {
-                    req.setEnabled(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getEnabled, (req, v) -> {
+                req.setEnabled(v);
+            })
         );
-        builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(KeystoneListUsersRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+        builder.withRequestField("is_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getIsDomain, (req, v) -> {
+                req.setIsDomain(v);
+            })
         );
-        builder.withRequestField("password_expires_at",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(KeystoneListUsersRequest::getPasswordExpiresAt, (req, v) -> {
-                    req.setPasswordExpiresAt(v);
-                })
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> keystoneListProjectsForUser = genForkeystoneListProjectsForUser();
+
+    private static HttpRequestDef<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> genForkeystoneListProjectsForUser() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListProjectsForUserRequest.class, KeystoneListProjectsForUserResponse.class)
+                .withUri("/v3/users/{user_id}/projects");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListProjectsForUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> keystoneListRegions = genForkeystoneListRegions();
+
+    private static HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> genForkeystoneListRegions() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListRegionsRequest, KeystoneListRegionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListRegionsRequest.class, KeystoneListRegionsResponse.class)
+                .withUri("/v3/regions");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListServicesRequest, KeystoneListServicesResponse> keystoneListServices = genForkeystoneListServices();
+
+    private static HttpRequestDef<KeystoneListServicesRequest, KeystoneListServicesResponse> genForkeystoneListServices() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListServicesRequest, KeystoneListServicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListServicesRequest.class, KeystoneListServicesResponse.class)
+                .withUri("/v3/services");
+
+        // requests
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListServicesRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdmin = genForkeystoneListUsersForGroupByAdmin();
@@ -755,18 +869,32 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneListUsersForGroupByAdminRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListUsersForGroupByAdminRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<KeystoneListVersionsRequest, KeystoneListVersionsResponse> keystoneListVersions = genForkeystoneListVersions();
+
+    private static HttpRequestDef<KeystoneListVersionsRequest, KeystoneListVersionsResponse> genForkeystoneListVersions() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListVersionsRequest, KeystoneListVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListVersionsRequest.class, KeystoneListVersionsResponse.class)
+                .withUri("/");
+
+        // requests
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> keystoneRemoveDomainPermissionFromGroup = genForkeystoneRemoveDomainPermissionFromGroup();
@@ -778,35 +906,26 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> keystoneRemoveProjectPermissionFromGroup = genForkeystoneRemoveProjectPermissionFromGroup();
@@ -819,34 +938,33 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveProjectPermissionFromGroupRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> keystoneRemoveUserFromGroup = genForkeystoneRemoveUserFromGroup();
@@ -859,26 +977,63 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveUserFromGroupRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> keystoneShowCatalog = genForkeystoneShowCatalog();
+
+    private static HttpRequestDef<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> genForkeystoneShowCatalog() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowCatalogRequest.class, KeystoneShowCatalogResponse.class)
+                .withUri("/v3/auth/catalog");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> keystoneShowEndpoint = genForkeystoneShowEndpoint();
+
+    private static HttpRequestDef<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> genForkeystoneShowEndpoint() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowEndpointRequest.class, KeystoneShowEndpointResponse.class)
+                .withUri("/v3/endpoints/{endpoint_id}");
+
+        // requests
+        builder.withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowEndpointRequest::getEndpointId, (req, v) -> {
+                req.setEndpointId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneShowGroupRequest, KeystoneShowGroupResponse> keystoneShowGroup = genForkeystoneShowGroup();
@@ -891,18 +1046,17 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneShowGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> keystoneShowPermission = genForkeystoneShowPermission();
@@ -915,42 +1069,139 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneShowPermissionRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowPermissionRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
-    public static final HttpRequestDef<KeystoneShowUserRequest, KeystoneShowUserResponse> keystoneShowUser = genForkeystoneShowUser();
+    public static final HttpRequestDef<KeystoneShowProjectRequest, KeystoneShowProjectResponse> keystoneShowProject = genForkeystoneShowProject();
 
-    private static HttpRequestDef<KeystoneShowUserRequest, KeystoneShowUserResponse> genForkeystoneShowUser() {
+    private static HttpRequestDef<KeystoneShowProjectRequest, KeystoneShowProjectResponse> genForkeystoneShowProject() {
         // basic
-        HttpRequestDef.Builder<KeystoneShowUserRequest, KeystoneShowUserResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowUserRequest.class, KeystoneShowUserResponse.class)
-                .withUri("/v3/users/{user_id}");
+        HttpRequestDef.Builder<KeystoneShowProjectRequest, KeystoneShowProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowProjectRequest.class, KeystoneShowProjectResponse.class)
+                .withUri("/v3/projects/{project_id}");
 
         // requests
-        builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneShowUserRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowProjectRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<KeystoneShowRegionRequest, KeystoneShowRegionResponse> keystoneShowRegion = genForkeystoneShowRegion();
+
+    private static HttpRequestDef<KeystoneShowRegionRequest, KeystoneShowRegionResponse> genForkeystoneShowRegion() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowRegionRequest, KeystoneShowRegionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowRegionRequest.class, KeystoneShowRegionResponse.class)
+                .withUri("/v3/regions/{region_id}");
+
+        // requests
+        builder.withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowRegionRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> keystoneShowSecurityCompliance = genForkeystoneShowSecurityCompliance();
+
+    private static HttpRequestDef<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> genForkeystoneShowSecurityCompliance() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowSecurityComplianceRequest.class, KeystoneShowSecurityComplianceResponse.class)
+                .withUri("/v3/domains/{domain_id}/config/security_compliance");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> keystoneShowSecurityComplianceByOption = genForkeystoneShowSecurityComplianceByOption();
+
+    private static HttpRequestDef<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> genForkeystoneShowSecurityComplianceByOption() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowSecurityComplianceByOptionRequest.class, KeystoneShowSecurityComplianceByOptionResponse.class)
+                .withUri("/v3/domains/{domain_id}/config/security_compliance/{option}");
+
+        // requests
+        builder.withRequestField("option",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneShowSecurityComplianceByOptionRequest.OptionEnum.class,
+            f -> f.withMarshaller(KeystoneShowSecurityComplianceByOptionRequest::getOption, (req, v) -> {
+                req.setOption(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowServiceRequest, KeystoneShowServiceResponse> keystoneShowService = genForkeystoneShowService();
+
+    private static HttpRequestDef<KeystoneShowServiceRequest, KeystoneShowServiceResponse> genForkeystoneShowService() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowServiceRequest, KeystoneShowServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowServiceRequest.class, KeystoneShowServiceResponse.class)
+                .withUri("/v3/services/{service_id}");
+
+        // requests
+        builder.withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowServiceRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowVersionRequest, KeystoneShowVersionResponse> keystoneShowVersion = genForkeystoneShowVersion();
+
+    private static HttpRequestDef<KeystoneShowVersionRequest, KeystoneShowVersionResponse> genForkeystoneShowVersion() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowVersionRequest, KeystoneShowVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowVersionRequest.class, KeystoneShowVersionResponse.class)
+                .withUri("/v3");
+
+        // requests
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> keystoneUpdateGroup = genForkeystoneUpdateGroup();
@@ -964,92 +1215,57 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("group_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneUpdateGroupRequest::getGroupId, (req, v) -> {
-                    req.setGroupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                KeystoneUpdateGroupRequestBody.class,
-                f -> f.withMarshaller(KeystoneUpdateGroupRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneUpdateGroupRequestBody.class,
+            f -> f.withMarshaller(KeystoneUpdateGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
-    public static final HttpRequestDef<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> keystoneUpdateUserByAdmin = genForkeystoneUpdateUserByAdmin();
+    public static final HttpRequestDef<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> keystoneUpdateProject = genForkeystoneUpdateProject();
 
-    private static HttpRequestDef<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> genForkeystoneUpdateUserByAdmin() {
+    private static HttpRequestDef<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> genForkeystoneUpdateProject() {
         // basic
-        HttpRequestDef.Builder<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateUserByAdminRequest.class, KeystoneUpdateUserByAdminResponse.class)
-                .withUri("/v3/users/{user_id}")
+        HttpRequestDef.Builder<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateProjectRequest.class, KeystoneUpdateProjectResponse.class)
+                .withUri("/v3/projects/{project_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateProjectRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                KeystoneUpdateUserByAdminRequestBody.class,
-                f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneUpdateProjectRequestBody.class,
+            f -> f.withMarshaller(KeystoneUpdateProjectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
-    }
-
-    public static final HttpRequestDef<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> keystoneUpdateUserPassword = genForkeystoneUpdateUserPassword();
-
-    private static HttpRequestDef<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> genForkeystoneUpdateUserPassword() {
-        // basic
-        HttpRequestDef.Builder<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, KeystoneUpdateUserPasswordRequest.class, KeystoneUpdateUserPasswordResponse.class)
-                .withUri("/v3/users/{user_id}/password")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("user_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getUserId, (req, v) -> {
-                    req.setUserId(v);
-                })
-        );
-        builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                KeystoneUpdateUserPasswordRequestBody.class,
-                f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
-        );
-
-        // response
-
-        return builder.build();
-
     }
 
     public static final HttpRequestDef<ListAgenciesRequest, ListAgenciesResponse> listAgencies = genForlistAgencies();
@@ -1061,35 +1277,41 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/agencies");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListAgenciesRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("trust_domain_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListAgenciesRequest::getTrustDomainId, (req, v) -> {
-                    req.setTrustDomainId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAgenciesRequest::getTrustDomainId, (req, v) -> {
+                req.setTrustDomainId(v);
+            })
         );
         builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListAgenciesRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAgenciesRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<ListCustomPoliciesRequest, ListCustomPoliciesResponse> listCustomPolicies = genForlistCustomPolicies();
+
+    private static HttpRequestDef<ListCustomPoliciesRequest, ListCustomPoliciesResponse> genForlistCustomPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListCustomPoliciesRequest, ListCustomPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomPoliciesRequest.class, ListCustomPoliciesResponse.class)
+                .withUri("/v3.0/OS-ROLE/roles");
+
+        // requests
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> listDomainPermissionsForAgency = genForlistDomainPermissionsForAgency();
@@ -1101,27 +1323,18 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> listProjectPermissionsForAgency = genForlistProjectPermissionsForAgency();
@@ -1134,26 +1347,25 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListProjectPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> removeDomainPermissionFromAgency = genForremoveDomainPermissionFromAgency();
@@ -1165,35 +1377,26 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}");
 
         // requests
-        builder.withRequestField("domain_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getDomainId, (req, v) -> {
-                    req.setDomainId(v);
-                })
-        );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> removeProjectPermissionFromAgency = genForremoveProjectPermissionFromAgency();
@@ -1206,34 +1409,33 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getProjectId, (req, v) -> {
-                    req.setProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
         );
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
         builder.withRequestField("role_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getRoleId, (req, v) -> {
-                    req.setRoleId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveProjectPermissionFromAgencyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForshowAgency();
@@ -1246,18 +1448,63 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<ShowCustomPolicyRequest, ShowCustomPolicyResponse> showCustomPolicy = genForshowCustomPolicy();
+
+    private static HttpRequestDef<ShowCustomPolicyRequest, ShowCustomPolicyResponse> genForshowCustomPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomPolicyRequest, ShowCustomPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCustomPolicyRequest.class, ShowCustomPolicyResponse.class)
+                .withUri("/v3.0/OS-ROLE/roles/{role_id}");
+
+        // requests
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowCustomPolicyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> showProjectDetailsAndStatus = genForshowProjectDetailsAndStatus();
+
+    private static HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> genForshowProjectDetailsAndStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProjectDetailsAndStatusRequest.class, ShowProjectDetailsAndStatusResponse.class)
+                .withUri("/v3-ext/projects/{project_id}");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowProjectDetailsAndStatusRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<UpdateAgencyRequest, UpdateAgencyResponse> updateAgency = genForupdateAgency();
@@ -1271,26 +1518,145 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("agency_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateAgencyRequest::getAgencyId, (req, v) -> {
-                    req.setAgencyId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateAgencyRequestBody.class,
-                f -> f.withMarshaller(UpdateAgencyRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateAgencyRequestBody.class,
+            f -> f.withMarshaller(UpdateAgencyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> updateAgencyCustomPolicy = genForupdateAgencyCustomPolicy();
+
+    private static HttpRequestDef<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> genForupdateAgencyCustomPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateAgencyCustomPolicyRequest.class, UpdateAgencyCustomPolicyResponse.class)
+                .withUri("/v3.0/OS-ROLE/roles/{role_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateAgencyCustomPolicyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateAgencyCustomPolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateAgencyCustomPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> updateCloudServiceCustomPolicy = genForupdateCloudServiceCustomPolicy();
+
+    private static HttpRequestDef<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> genForupdateCloudServiceCustomPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateCloudServiceCustomPolicyRequest.class, UpdateCloudServiceCustomPolicyResponse.class)
+                .withUri("/v3.0/OS-ROLE/roles/{role_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateCloudServiceCustomPolicyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateCloudServiceCustomPolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateCloudServiceCustomPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProjectStatusRequest, UpdateProjectStatusResponse> updateProjectStatus = genForupdateProjectStatus();
+
+    private static HttpRequestDef<UpdateProjectStatusRequest, UpdateProjectStatusResponse> genForupdateProjectStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateProjectStatusRequest, UpdateProjectStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProjectStatusRequest.class, UpdateProjectStatusResponse.class)
+                .withUri("/v3-ext/projects/{project_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateProjectStatusRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateProjectStatusRequestBody.class,
+            f -> f.withMarshaller(UpdateProjectStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> createPermanentAccessKey = genForcreatePermanentAccessKey();
+
+    private static HttpRequestDef<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> genForcreatePermanentAccessKey() {
+        // basic
+        HttpRequestDef.Builder<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePermanentAccessKeyRequest.class, CreatePermanentAccessKeyResponse.class)
+                .withUri("/v3.0/OS-CREDENTIAL/credentials")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreatePermanentAccessKeyRequestBody.class,
+            f -> f.withMarshaller(CreatePermanentAccessKeyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
     public static final HttpRequestDef<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> createTemporaryAccessKeyByAgency = genForcreateTemporaryAccessKeyByAgency();
@@ -1304,18 +1670,17 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateTemporaryAccessKeyByAgencyRequestBody.class,
-                f -> f.withMarshaller(CreateTemporaryAccessKeyByAgencyRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateTemporaryAccessKeyByAgencyRequestBody.class,
+            f -> f.withMarshaller(CreateTemporaryAccessKeyByAgencyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> createTemporaryAccessKeyByToken = genForcreateTemporaryAccessKeyByToken();
@@ -1329,19 +1694,425 @@ public class IamMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateTemporaryAccessKeyByTokenRequestBody.class,
-                f -> f.withMarshaller(CreateTemporaryAccessKeyByTokenRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateTemporaryAccessKeyByTokenRequestBody.class,
+            f -> f.withMarshaller(CreateTemporaryAccessKeyByTokenRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
+    }
 
+    public static final HttpRequestDef<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> deletePermanentAccessKey = genFordeletePermanentAccessKey();
+
+    private static HttpRequestDef<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> genFordeletePermanentAccessKey() {
+        // basic
+        HttpRequestDef.Builder<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePermanentAccessKeyRequest.class, DeletePermanentAccessKeyResponse.class)
+                .withUri("/v3.0/OS-CREDENTIAL/credentials/{access_key}");
+
+        // requests
+        builder.withRequestField("access_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeletePermanentAccessKeyRequest::getAccessKey, (req, v) -> {
+                req.setAccessKey(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> listPermanentAccessKeys = genForlistPermanentAccessKeys();
+
+    private static HttpRequestDef<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> genForlistPermanentAccessKeys() {
+        // basic
+        HttpRequestDef.Builder<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPermanentAccessKeysRequest.class, ListPermanentAccessKeysResponse.class)
+                .withUri("/v3.0/OS-CREDENTIAL/credentials");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPermanentAccessKeysRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> showPermanentAccessKey = genForshowPermanentAccessKey();
+
+    private static HttpRequestDef<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> genForshowPermanentAccessKey() {
+        // basic
+        HttpRequestDef.Builder<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPermanentAccessKeyRequest.class, ShowPermanentAccessKeyResponse.class)
+                .withUri("/v3.0/OS-CREDENTIAL/credentials/{access_key}");
+
+        // requests
+        builder.withRequestField("access_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPermanentAccessKeyRequest::getAccessKey, (req, v) -> {
+                req.setAccessKey(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> updatePermanentAccessKey = genForupdatePermanentAccessKey();
+
+    private static HttpRequestDef<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> genForupdatePermanentAccessKey() {
+        // basic
+        HttpRequestDef.Builder<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePermanentAccessKeyRequest.class, UpdatePermanentAccessKeyResponse.class)
+                .withUri("/v3.0/OS-CREDENTIAL/credentials/{access_key}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("access_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdatePermanentAccessKeyRequest::getAccessKey, (req, v) -> {
+                req.setAccessKey(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdatePermanentAccessKeyRequestBody.class,
+            f -> f.withMarshaller(UpdatePermanentAccessKeyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForcreateUser();
+
+    private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForcreateUser() {
+        // basic
+        HttpRequestDef.Builder<CreateUserRequest, CreateUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateUserRequest.class, CreateUserResponse.class)
+                .withUri("/v3.0/OS-USER/users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateUserRequestBody.class,
+            f -> f.withMarshaller(CreateUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneCreateUserRequest, KeystoneCreateUserResponse> keystoneCreateUser = genForkeystoneCreateUser();
+
+    private static HttpRequestDef<KeystoneCreateUserRequest, KeystoneCreateUserResponse> genForkeystoneCreateUser() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateUserRequest, KeystoneCreateUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserRequest.class, KeystoneCreateUserResponse.class)
+                .withUri("/v3/users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateUserRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> keystoneDeleteUser = genForkeystoneDeleteUser();
+
+    private static HttpRequestDef<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> genForkeystoneDeleteUser() {
+        // basic
+        HttpRequestDef.Builder<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteUserRequest.class, KeystoneDeleteUserResponse.class)
+                .withUri("/v3/users/{user_id}");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneDeleteUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> keystoneListGroupsForUser = genForkeystoneListGroupsForUser();
+
+    private static HttpRequestDef<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> genForkeystoneListGroupsForUser() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListGroupsForUserRequest.class, KeystoneListGroupsForUserResponse.class)
+                .withUri("/v3/users/{user_id}/groups");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListGroupsForUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListUsersRequest, KeystoneListUsersResponse> keystoneListUsers = genForkeystoneListUsers();
+
+    private static HttpRequestDef<KeystoneListUsersRequest, KeystoneListUsersResponse> genForkeystoneListUsers() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListUsersRequest, KeystoneListUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListUsersRequest.class, KeystoneListUsersResponse.class)
+                .withUri("/v3/users");
+
+        // requests
+        builder.withRequestField("enabled",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(KeystoneListUsersRequest::getEnabled, (req, v) -> {
+                req.setEnabled(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListUsersRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("password_expires_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListUsersRequest::getPasswordExpiresAt, (req, v) -> {
+                req.setPasswordExpiresAt(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowUserRequest, KeystoneShowUserResponse> keystoneShowUser = genForkeystoneShowUser();
+
+    private static HttpRequestDef<KeystoneShowUserRequest, KeystoneShowUserResponse> genForkeystoneShowUser() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowUserRequest, KeystoneShowUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowUserRequest.class, KeystoneShowUserResponse.class)
+                .withUri("/v3/users/{user_id}");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> keystoneUpdateUserByAdmin = genForkeystoneUpdateUserByAdmin();
+
+    private static HttpRequestDef<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> genForkeystoneUpdateUserByAdmin() {
+        // basic
+        HttpRequestDef.Builder<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateUserByAdminRequest.class, KeystoneUpdateUserByAdminResponse.class)
+                .withUri("/v3/users/{user_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneUpdateUserByAdminRequestBody.class,
+            f -> f.withMarshaller(KeystoneUpdateUserByAdminRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> keystoneUpdateUserPassword = genForkeystoneUpdateUserPassword();
+
+    private static HttpRequestDef<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> genForkeystoneUpdateUserPassword() {
+        // basic
+        HttpRequestDef.Builder<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, KeystoneUpdateUserPasswordRequest.class, KeystoneUpdateUserPasswordResponse.class)
+                .withUri("/v3/users/{user_id}/password")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneUpdateUserPasswordRequestBody.class,
+            f -> f.withMarshaller(KeystoneUpdateUserPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserRequest, ShowUserResponse> showUser = genForshowUser();
+
+    private static HttpRequestDef<ShowUserRequest, ShowUserResponse> genForshowUser() {
+        // basic
+        HttpRequestDef.Builder<ShowUserRequest, ShowUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUserRequest.class, ShowUserResponse.class)
+                .withUri("/v3.0/OS-USER/users/{user_id}");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForupdateUser();
+
+    private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForupdateUser() {
+        // basic
+        HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
+                .withUri("/v3.0/OS-USER/users/{user_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateUserRequestBody.class,
+            f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateUserInformationRequest, UpdateUserInformationResponse> updateUserInformation = genForupdateUserInformation();
+
+    private static HttpRequestDef<UpdateUserInformationRequest, UpdateUserInformationResponse> genForupdateUserInformation() {
+        // basic
+        HttpRequestDef.Builder<UpdateUserInformationRequest, UpdateUserInformationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateUserInformationRequest.class, UpdateUserInformationResponse.class)
+                .withUri("/v3.0/OS-USER/users/{user_id}/info")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateUserInformationRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateUserInformationRequestBody.class,
+            f -> f.withMarshaller(UpdateUserInformationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
     }
 
 }
-

@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 创建镜像请求体
@@ -41,43 +39,37 @@ public class GlanceCreateImageMetadataRequestBody  {
          * Enum VHD for value: "vhd"
          */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
-
         
         /**
          * Enum ZVHD for value: "zvhd"
          */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
-
         
         /**
          * Enum ZVHD2 for value: "zvhd2"
          */
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
-
         
         /**
          * Enum RAW for value: "raw"
          */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
-
         
         /**
          * Enum QCOW2 for value: "qcow2"
          */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
-
         
 
-        public static Map<String, DiskFormatEnum> staticFields =
-                new HashMap<String, DiskFormatEnum>() {
-                    { 
-                        put("vhd", VHD);
-                        put("zvhd", ZVHD);
-                        put("zvhd2", ZVHD2);
-                        put("raw", RAW);
-                        put("qcow2", QCOW2);
-                    }
-                };
+        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
+            { 
+                put("vhd", VHD);
+                put("zvhd", ZVHD);
+                put("zvhd2", ZVHD2);
+                put("raw", RAW);
+                put("qcow2", QCOW2);
+            }
+        };
 
         private String value;
 
@@ -93,7 +85,7 @@ public class GlanceCreateImageMetadataRequestBody  {
 
         @JsonCreator
         public static DiskFormatEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DiskFormatEnum result = staticFields.get(value);
@@ -395,15 +387,15 @@ public class GlanceCreateImageMetadataRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GlanceCreateImageMetadataRequestBody {\n");
-            sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
-            sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
-            sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
+        sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -417,5 +409,6 @@ public class GlanceCreateImageMetadataRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

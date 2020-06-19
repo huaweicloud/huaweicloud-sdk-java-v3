@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.evs.v2.model.QuotaDetail;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 配额详情。
@@ -523,21 +521,21 @@ public class QuotaList  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QuotaList {\n");
-            sb.append("    backupGigabytes: ").append(toIndentedString(backupGigabytes)).append("\n");
-            sb.append("    backups: ").append(toIndentedString(backups)).append("\n");
-            sb.append("    gigabytes: ").append(toIndentedString(gigabytes)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    snapshots: ").append(toIndentedString(snapshots)).append("\n");
-            sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
-            sb.append("    volumesSSD: ").append(toIndentedString(volumesSSD)).append("\n");
-            sb.append("    volumesSAS: ").append(toIndentedString(volumesSAS)).append("\n");
-            sb.append("    volumesSATA: ").append(toIndentedString(volumesSATA)).append("\n");
-            sb.append("    gigabytesSSD: ").append(toIndentedString(gigabytesSSD)).append("\n");
-            sb.append("    gigabytesSAS: ").append(toIndentedString(gigabytesSAS)).append("\n");
-            sb.append("    gigabytesSATA: ").append(toIndentedString(gigabytesSATA)).append("\n");
-            sb.append("    snapshotsSSD: ").append(toIndentedString(snapshotsSSD)).append("\n");
-            sb.append("    snapshotsSAS: ").append(toIndentedString(snapshotsSAS)).append("\n");
-            sb.append("    snapshotsSATA: ").append(toIndentedString(snapshotsSATA)).append("\n");
+        sb.append("    backupGigabytes: ").append(toIndentedString(backupGigabytes)).append("\n");
+        sb.append("    backups: ").append(toIndentedString(backups)).append("\n");
+        sb.append("    gigabytes: ").append(toIndentedString(gigabytes)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    snapshots: ").append(toIndentedString(snapshots)).append("\n");
+        sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
+        sb.append("    volumesSSD: ").append(toIndentedString(volumesSSD)).append("\n");
+        sb.append("    volumesSAS: ").append(toIndentedString(volumesSAS)).append("\n");
+        sb.append("    volumesSATA: ").append(toIndentedString(volumesSATA)).append("\n");
+        sb.append("    gigabytesSSD: ").append(toIndentedString(gigabytesSSD)).append("\n");
+        sb.append("    gigabytesSAS: ").append(toIndentedString(gigabytesSAS)).append("\n");
+        sb.append("    gigabytesSATA: ").append(toIndentedString(gigabytesSATA)).append("\n");
+        sb.append("    snapshotsSSD: ").append(toIndentedString(snapshotsSSD)).append("\n");
+        sb.append("    snapshotsSAS: ").append(toIndentedString(snapshotsSAS)).append("\n");
+        sb.append("    snapshotsSATA: ").append(toIndentedString(snapshotsSATA)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -551,5 +549,6 @@ public class QuotaList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

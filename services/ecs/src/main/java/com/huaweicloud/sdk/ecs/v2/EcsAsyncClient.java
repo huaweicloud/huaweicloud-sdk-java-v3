@@ -55,6 +55,10 @@ public class EcsAsyncClient {
         return hcClient.asyncInvokeHttp(request, EcsMeta.createPostPaidServers);
     }
 
+    public CompletableFuture<CreateServersResponse> createServersAsync(CreateServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.createServers);
+    }
+
     public CompletableFuture<DeleteServersResponse> deleteServersAsync(DeleteServersRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.deleteServers);
     }

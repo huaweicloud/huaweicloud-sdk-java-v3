@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 定时、周期任务策略
@@ -34,29 +32,25 @@ public class ScheduledPolicy  {
          * Enum DAILY for value: "Daily"
          */
         public static final RecurrenceTypeEnum DAILY = new RecurrenceTypeEnum("Daily");
-
         
         /**
          * Enum WEEKLY for value: "Weekly"
          */
         public static final RecurrenceTypeEnum WEEKLY = new RecurrenceTypeEnum("Weekly");
-
         
         /**
          * Enum MONTHLY for value: "Monthly"
          */
         public static final RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("Monthly");
-
         
 
-        public static Map<String, RecurrenceTypeEnum> staticFields =
-                new HashMap<String, RecurrenceTypeEnum>() {
-                    { 
-                        put("Daily", DAILY);
-                        put("Weekly", WEEKLY);
-                        put("Monthly", MONTHLY);
-                    }
-                };
+        public static final Map<String, RecurrenceTypeEnum> staticFields = new HashMap<String, RecurrenceTypeEnum>() {
+            { 
+                put("Daily", DAILY);
+                put("Weekly", WEEKLY);
+                put("Monthly", MONTHLY);
+            }
+        };
 
         private String value;
 
@@ -72,7 +66,7 @@ public class ScheduledPolicy  {
 
         @JsonCreator
         public static RecurrenceTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             RecurrenceTypeEnum result = staticFields.get(value);
@@ -256,11 +250,11 @@ public class ScheduledPolicy  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScheduledPolicy {\n");
-            sb.append("    launchTime: ").append(toIndentedString(launchTime)).append("\n");
-            sb.append("    recurrenceType: ").append(toIndentedString(recurrenceType)).append("\n");
-            sb.append("    recurrenceValue: ").append(toIndentedString(recurrenceValue)).append("\n");
-            sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    launchTime: ").append(toIndentedString(launchTime)).append("\n");
+        sb.append("    recurrenceType: ").append(toIndentedString(recurrenceType)).append("\n");
+        sb.append("    recurrenceValue: ").append(toIndentedString(recurrenceValue)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -274,5 +268,6 @@ public class ScheduledPolicy  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

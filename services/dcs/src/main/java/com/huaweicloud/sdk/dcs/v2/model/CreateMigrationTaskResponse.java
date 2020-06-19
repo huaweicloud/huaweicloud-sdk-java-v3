@@ -1,16 +1,16 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -39,29 +39,25 @@ public class CreateMigrationTaskResponse extends SdkResponse {
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-
         
         /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-
         
         /**
          * Enum MIGRATING for value: "MIGRATING"
          */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("SUCCESS", SUCCESS);
-                        put("FAILED", FAILED);
-                        put("MIGRATING", MIGRATING);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("SUCCESS", SUCCESS);
+                put("FAILED", FAILED);
+                put("MIGRATING", MIGRATING);
+            }
+        };
 
         private String value;
 
@@ -77,7 +73,7 @@ public class CreateMigrationTaskResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -201,9 +197,9 @@ public class CreateMigrationTaskResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMigrationTaskResponse {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -217,5 +213,6 @@ public class CreateMigrationTaskResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

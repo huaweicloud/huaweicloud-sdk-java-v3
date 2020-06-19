@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import com.huaweicloud.sdk.ecs.v2.model.FlavorLink;
 import com.huaweicloud.sdk.ecs.v2.model.ServerAttachableQuantity;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 云服务器规格。
@@ -466,21 +464,21 @@ public class Flavor  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Flavor {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
-            sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
-            sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
-            sb.append("    swap: ").append(toIndentedString(swap)).append("\n");
-            sb.append("    osFLVEXTDATAEphemeral: ").append(toIndentedString(osFLVEXTDATAEphemeral)).append("\n");
-            sb.append("    osFLVDISABLEDDisabled: ").append(toIndentedString(osFLVDISABLEDDisabled)).append("\n");
-            sb.append("    rxtxFactor: ").append(toIndentedString(rxtxFactor)).append("\n");
-            sb.append("    rxtxQuota: ").append(toIndentedString(rxtxQuota)).append("\n");
-            sb.append("    rxtxCap: ").append(toIndentedString(rxtxCap)).append("\n");
-            sb.append("    osFlavorAccessIsPublic: ").append(toIndentedString(osFlavorAccessIsPublic)).append("\n");
-            sb.append("    links: ").append(toIndentedString(links)).append("\n");
-            sb.append("    osExtraSpecs: ").append(toIndentedString(osExtraSpecs)).append("\n");
-            sb.append("    attachableQuantity: ").append(toIndentedString(attachableQuantity)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
+        sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
+        sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
+        sb.append("    swap: ").append(toIndentedString(swap)).append("\n");
+        sb.append("    osFLVEXTDATAEphemeral: ").append(toIndentedString(osFLVEXTDATAEphemeral)).append("\n");
+        sb.append("    osFLVDISABLEDDisabled: ").append(toIndentedString(osFLVDISABLEDDisabled)).append("\n");
+        sb.append("    rxtxFactor: ").append(toIndentedString(rxtxFactor)).append("\n");
+        sb.append("    rxtxQuota: ").append(toIndentedString(rxtxQuota)).append("\n");
+        sb.append("    rxtxCap: ").append(toIndentedString(rxtxCap)).append("\n");
+        sb.append("    osFlavorAccessIsPublic: ").append(toIndentedString(osFlavorAccessIsPublic)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    osExtraSpecs: ").append(toIndentedString(osExtraSpecs)).append("\n");
+        sb.append("    attachableQuantity: ").append(toIndentedString(attachableQuantity)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -494,5 +492,6 @@ public class Flavor  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

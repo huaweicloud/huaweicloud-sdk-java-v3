@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -168,11 +166,11 @@ public class ListBackupRecordsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBackupRecordsRequest {\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -186,5 +184,6 @@ public class ListBackupRecordsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

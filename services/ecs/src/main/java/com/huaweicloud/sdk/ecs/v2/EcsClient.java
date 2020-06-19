@@ -2,8 +2,6 @@ package com.huaweicloud.sdk.ecs.v2;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.function.Function;
-
 import com.huaweicloud.sdk.ecs.v2.model.*;
 
 public class EcsClient {
@@ -51,6 +49,10 @@ public class EcsClient {
 
     public CreatePostPaidServersResponse createPostPaidServers(CreatePostPaidServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.createPostPaidServers);
+    }
+
+    public CreateServersResponse createServers(CreateServersRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.createServers);
     }
 
     public DeleteServersResponse deleteServers(DeleteServersRequest request) {

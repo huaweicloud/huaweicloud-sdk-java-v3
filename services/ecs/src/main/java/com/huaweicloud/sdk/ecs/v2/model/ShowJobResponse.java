@@ -1,17 +1,17 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ecs.v2.model.JobEntities;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -82,36 +82,31 @@ public class ShowJobResponse extends SdkResponse {
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-
         
         /**
          * Enum RUNNING for value: "RUNNING"
          */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-
         
         /**
          * Enum FAIL for value: "FAIL"
          */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-
         
         /**
          * Enum INIT for value: "INIT"
          */
         public static final StatusEnum INIT = new StatusEnum("INIT");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("SUCCESS", SUCCESS);
-                        put("RUNNING", RUNNING);
-                        put("FAIL", FAIL);
-                        put("INIT", INIT);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("SUCCESS", SUCCESS);
+                put("RUNNING", RUNNING);
+                put("FAIL", FAIL);
+                put("INIT", INIT);
+            }
+        };
 
         private String value;
 
@@ -127,7 +122,7 @@ public class ShowJobResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -404,16 +399,16 @@ public class ShowJobResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowJobResponse {\n");
-            sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
-            sb.append("    code: ").append(toIndentedString(code)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
-            sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-            sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
-            sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-            sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
-            sb.append("    message: ").append(toIndentedString(message)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -427,5 +422,6 @@ public class ShowJobResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 策略执行动作包含的具体任务
@@ -33,22 +31,19 @@ public class JobRecords  {
          * Enum API for value: "API"
          */
         public static final RecordTypeEnum API = new RecordTypeEnum("API");
-
         
         /**
          * Enum MEG for value: "MEG"
          */
         public static final RecordTypeEnum MEG = new RecordTypeEnum("MEG");
-
         
 
-        public static Map<String, RecordTypeEnum> staticFields =
-                new HashMap<String, RecordTypeEnum>() {
-                    { 
-                        put("API", API);
-                        put("MEG", MEG);
-                    }
-                };
+        public static final Map<String, RecordTypeEnum> staticFields = new HashMap<String, RecordTypeEnum>() {
+            { 
+                put("API", API);
+                put("MEG", MEG);
+            }
+        };
 
         private String value;
 
@@ -64,7 +59,7 @@ public class JobRecords  {
 
         @JsonCreator
         public static RecordTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             RecordTypeEnum result = staticFields.get(value);
@@ -147,22 +142,19 @@ public class JobRecords  {
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final JobStatusEnum SUCCESS = new JobStatusEnum("SUCCESS");
-
         
         /**
          * Enum FAIL for value: "FAIL"
          */
         public static final JobStatusEnum FAIL = new JobStatusEnum("FAIL");
-
         
 
-        public static Map<String, JobStatusEnum> staticFields =
-                new HashMap<String, JobStatusEnum>() {
-                    { 
-                        put("SUCCESS", SUCCESS);
-                        put("FAIL", FAIL);
-                    }
-                };
+        public static final Map<String, JobStatusEnum> staticFields = new HashMap<String, JobStatusEnum>() {
+            { 
+                put("SUCCESS", SUCCESS);
+                put("FAIL", FAIL);
+            }
+        };
 
         private String value;
 
@@ -178,7 +170,7 @@ public class JobRecords  {
 
         @JsonCreator
         public static JobStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             JobStatusEnum result = staticFields.get(value);
@@ -407,14 +399,14 @@ public class JobRecords  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobRecords {\n");
-            sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
-            sb.append("    recordType: ").append(toIndentedString(recordType)).append("\n");
-            sb.append("    recordTime: ").append(toIndentedString(recordTime)).append("\n");
-            sb.append("    request: ").append(toIndentedString(request)).append("\n");
-            sb.append("    response: ").append(toIndentedString(response)).append("\n");
-            sb.append("    code: ").append(toIndentedString(code)).append("\n");
-            sb.append("    message: ").append(toIndentedString(message)).append("\n");
-            sb.append("    jobStatus: ").append(toIndentedString(jobStatus)).append("\n");
+        sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
+        sb.append("    recordType: ").append(toIndentedString(recordType)).append("\n");
+        sb.append("    recordTime: ").append(toIndentedString(recordTime)).append("\n");
+        sb.append("    request: ").append(toIndentedString(request)).append("\n");
+        sb.append("    response: ").append(toIndentedString(response)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    jobStatus: ").append(toIndentedString(jobStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -428,5 +420,6 @@ public class JobRecords  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

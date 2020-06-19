@@ -1,14 +1,14 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -141,10 +141,10 @@ public class InvokeFunctionResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InvokeFunctionResponse {\n");
-            sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-            sb.append("    result: ").append(toIndentedString(result)).append("\n");
-            sb.append("    log: ").append(toIndentedString(log)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    log: ").append(toIndentedString(log)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -158,5 +158,6 @@ public class InvokeFunctionResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

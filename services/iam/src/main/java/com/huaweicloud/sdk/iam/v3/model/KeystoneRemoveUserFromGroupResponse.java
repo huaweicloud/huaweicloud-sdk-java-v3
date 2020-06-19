@@ -1,11 +1,10 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-import com.fasterxml.jackson.annotation.*;
+
 import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -33,15 +32,6 @@ public class KeystoneRemoveUserFromGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
-    private String toIndentedString(java.lang.Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n    ");
-    }
+    
 }
 

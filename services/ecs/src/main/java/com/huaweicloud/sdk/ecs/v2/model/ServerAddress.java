@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 弹性云服务器的网络属性。
@@ -39,22 +37,19 @@ public class ServerAddress  {
          * Enum FIXED for value: "fixed"
          */
         public static final OsEXTIPSTypeEnum FIXED = new OsEXTIPSTypeEnum("fixed");
-
         
         /**
          * Enum FLOATING for value: "floating"
          */
         public static final OsEXTIPSTypeEnum FLOATING = new OsEXTIPSTypeEnum("floating");
-
         
 
-        public static Map<String, OsEXTIPSTypeEnum> staticFields =
-                new HashMap<String, OsEXTIPSTypeEnum>() {
-                    { 
-                        put("fixed", FIXED);
-                        put("floating", FLOATING);
-                    }
-                };
+        public static final Map<String, OsEXTIPSTypeEnum> staticFields = new HashMap<String, OsEXTIPSTypeEnum>() {
+            { 
+                put("fixed", FIXED);
+                put("floating", FLOATING);
+            }
+        };
 
         private String value;
 
@@ -70,7 +65,7 @@ public class ServerAddress  {
 
         @JsonCreator
         public static OsEXTIPSTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsEXTIPSTypeEnum result = staticFields.get(value);
@@ -248,11 +243,11 @@ public class ServerAddress  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerAddress {\n");
-            sb.append("    version: ").append(toIndentedString(version)).append("\n");
-            sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
-            sb.append("    osEXTIPSType: ").append(toIndentedString(osEXTIPSType)).append("\n");
-            sb.append("    osEXTIPSMACMacAddr: ").append(toIndentedString(osEXTIPSMACMacAddr)).append("\n");
-            sb.append("    osEXTIPSPortId: ").append(toIndentedString(osEXTIPSPortId)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
+        sb.append("    osEXTIPSType: ").append(toIndentedString(osEXTIPSType)).append("\n");
+        sb.append("    osEXTIPSMACMacAddr: ").append(toIndentedString(osEXTIPSMACMacAddr)).append("\n");
+        sb.append("    osEXTIPSPortId: ").append(toIndentedString(osEXTIPSPortId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -266,5 +261,6 @@ public class ServerAddress  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

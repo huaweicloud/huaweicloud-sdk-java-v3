@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -494,23 +492,23 @@ public class ListVolumesDetailsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListVolumesDetailsRequest {\n");
-            sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
-            sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-            sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
-            sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
-            sb.append("    dedicatedStorageId: ").append(toIndentedString(dedicatedStorageId)).append("\n");
-            sb.append("    dedicatedStorageName: ").append(toIndentedString(dedicatedStorageName)).append("\n");
-            sb.append("    volumeTypeId: ").append(toIndentedString(volumeTypeId)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    dedicatedStorageId: ").append(toIndentedString(dedicatedStorageId)).append("\n");
+        sb.append("    dedicatedStorageName: ").append(toIndentedString(dedicatedStorageName)).append("\n");
+        sb.append("    volumeTypeId: ").append(toIndentedString(volumeTypeId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -524,5 +522,6 @@ public class ListVolumesDetailsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 配额资源
@@ -27,43 +25,37 @@ public class AllResources  {
          * Enum SCALING_GROUP for value: "scaling_group"
          */
         public static final TypeEnum SCALING_GROUP = new TypeEnum("scaling_group");
-
         
         /**
          * Enum SCALING_CONFIG for value: "scaling_config"
          */
         public static final TypeEnum SCALING_CONFIG = new TypeEnum("scaling_config");
-
         
         /**
          * Enum SCALING_POLICY for value: "scaling_Policy"
          */
         public static final TypeEnum SCALING_POLICY = new TypeEnum("scaling_Policy");
-
         
         /**
          * Enum SCALING_INSTANCE for value: "scaling_Instance"
          */
         public static final TypeEnum SCALING_INSTANCE = new TypeEnum("scaling_Instance");
-
         
         /**
          * Enum BANDWIDTH_SCALING_POLICY for value: "bandwidth_scaling_policy"
          */
         public static final TypeEnum BANDWIDTH_SCALING_POLICY = new TypeEnum("bandwidth_scaling_policy");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("scaling_group", SCALING_GROUP);
-                        put("scaling_config", SCALING_CONFIG);
-                        put("scaling_Policy", SCALING_POLICY);
-                        put("scaling_Instance", SCALING_INSTANCE);
-                        put("bandwidth_scaling_policy", BANDWIDTH_SCALING_POLICY);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("scaling_group", SCALING_GROUP);
+                put("scaling_config", SCALING_CONFIG);
+                put("scaling_Policy", SCALING_POLICY);
+                put("scaling_Instance", SCALING_INSTANCE);
+                put("bandwidth_scaling_policy", BANDWIDTH_SCALING_POLICY);
+            }
+        };
 
         private String value;
 
@@ -79,7 +71,7 @@ public class AllResources  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -242,10 +234,10 @@ public class AllResources  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AllResources {\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    used: ").append(toIndentedString(used)).append("\n");
-            sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
-            sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    used: ").append(toIndentedString(used)).append("\n");
+        sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
+        sb.append("    max: ").append(toIndentedString(max)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -259,5 +251,6 @@ public class AllResources  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

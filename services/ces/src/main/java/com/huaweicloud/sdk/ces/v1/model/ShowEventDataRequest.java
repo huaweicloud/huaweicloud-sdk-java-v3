@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -222,13 +220,13 @@ public class ShowEventDataRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEventDataRequest {\n");
-            sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
-            sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
-            sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
-            sb.append("    from: ").append(toIndentedString(from)).append("\n");
-            sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-            sb.append("    to: ").append(toIndentedString(to)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
+        sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
+        sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    to: ").append(toIndentedString(to)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -242,5 +240,6 @@ public class ShowEventDataRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

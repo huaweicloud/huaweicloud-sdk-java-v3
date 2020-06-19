@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -63,22 +61,19 @@ public class ListMetricsRequest  {
          * Enum ASC for value: "asc"
          */
         public static final OrderEnum ASC = new OrderEnum("asc");
-
         
         /**
          * Enum DESC for value: "desc"
          */
         public static final OrderEnum DESC = new OrderEnum("desc");
-
         
 
-        public static Map<String, OrderEnum> staticFields =
-                new HashMap<String, OrderEnum>() {
-                    { 
-                        put("asc", ASC);
-                        put("desc", DESC);
-                    }
-                };
+        public static final Map<String, OrderEnum> staticFields = new HashMap<String, OrderEnum>() {
+            { 
+                put("asc", ASC);
+                put("desc", DESC);
+            }
+        };
 
         private String value;
 
@@ -94,7 +89,7 @@ public class ListMetricsRequest  {
 
         @JsonCreator
         public static OrderEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OrderEnum result = staticFields.get(value);
@@ -331,14 +326,14 @@ public class ListMetricsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListMetricsRequest {\n");
-            sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
-            sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
-            sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
-            sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-            sb.append("    order: ").append(toIndentedString(order)).append("\n");
-            sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
+        sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
+        sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -352,5 +347,6 @@ public class ListMetricsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

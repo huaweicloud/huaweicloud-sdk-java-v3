@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * ClassroomMember
@@ -277,15 +275,15 @@ public class ClassroomMember  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClassroomMember {\n");
-            sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    number: ").append(toIndentedString(number)).append("\n");
-            sb.append("    className: ").append(toIndentedString(className)).append("\n");
-            sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-            sb.append("    joinTime: ").append(toIndentedString(joinTime)).append("\n");
-            sb.append("    jobReceivedCount: ").append(toIndentedString(jobReceivedCount)).append("\n");
-            sb.append("    jobFinishedCount: ").append(toIndentedString(jobFinishedCount)).append("\n");
-            sb.append("    jobFinishedRate: ").append(toIndentedString(jobFinishedRate)).append("\n");
+        sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    number: ").append(toIndentedString(number)).append("\n");
+        sb.append("    className: ").append(toIndentedString(className)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    joinTime: ").append(toIndentedString(joinTime)).append("\n");
+        sb.append("    jobReceivedCount: ").append(toIndentedString(jobReceivedCount)).append("\n");
+        sb.append("    jobFinishedCount: ").append(toIndentedString(jobFinishedCount)).append("\n");
+        sb.append("    jobFinishedRate: ").append(toIndentedString(jobFinishedRate)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -299,5 +297,6 @@ public class ClassroomMember  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

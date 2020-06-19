@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.evs.v2.model.VolumeTypeExtraSpecs;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 云硬盘类型信息。
@@ -202,12 +200,12 @@ public class VolumeType  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VolumeType {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
-            sb.append("    extraSpecs: ").append(toIndentedString(extraSpecs)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    qosSpecsId: ").append(toIndentedString(qosSpecsId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
+        sb.append("    extraSpecs: ").append(toIndentedString(extraSpecs)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    qosSpecsId: ").append(toIndentedString(qosSpecsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -221,5 +219,6 @@ public class VolumeType  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

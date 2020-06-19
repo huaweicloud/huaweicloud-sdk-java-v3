@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 查询云服务器指定磁盘挂载信息响应信息
@@ -249,14 +247,14 @@ public class ServerBlockDevice  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerBlockDevice {\n");
-            sb.append("    bootIndex: ").append(toIndentedString(bootIndex)).append("\n");
-            sb.append("    pciAddress: ").append(toIndentedString(pciAddress)).append("\n");
-            sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
-            sb.append("    device: ").append(toIndentedString(device)).append("\n");
-            sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    bus: ").append(toIndentedString(bus)).append("\n");
+        sb.append("    bootIndex: ").append(toIndentedString(bootIndex)).append("\n");
+        sb.append("    pciAddress: ").append(toIndentedString(pciAddress)).append("\n");
+        sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
+        sb.append("    device: ").append(toIndentedString(device)).append("\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    bus: ").append(toIndentedString(bus)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -270,5 +268,6 @@ public class ServerBlockDevice  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

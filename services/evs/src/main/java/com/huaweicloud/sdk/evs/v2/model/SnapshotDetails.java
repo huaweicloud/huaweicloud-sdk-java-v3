@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 快照详情。
@@ -330,17 +328,17 @@ public class SnapshotDetails  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SnapshotDetails {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    osExtendedSnapshotAttributesProjectId: ").append(toIndentedString(osExtendedSnapshotAttributesProjectId)).append("\n");
-            sb.append("    osExtendedSnapshotAttributesProgress: ").append(toIndentedString(osExtendedSnapshotAttributesProgress)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    osExtendedSnapshotAttributesProjectId: ").append(toIndentedString(osExtendedSnapshotAttributesProjectId)).append("\n");
+        sb.append("    osExtendedSnapshotAttributesProgress: ").append(toIndentedString(osExtendedSnapshotAttributesProgress)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -354,5 +352,6 @@ public class SnapshotDetails  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

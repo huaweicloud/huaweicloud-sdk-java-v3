@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * ImageMetadata
@@ -465,22 +463,22 @@ public class ImageMetadata  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImageMetadata {\n");
-            sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
-            sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
-            sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
-            sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
-            sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
-            sb.append("    imageSourceType: ").append(toIndentedString(imageSourceType)).append("\n");
-            sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
-            sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
-            sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-            sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
-            sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
+        sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
+        sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
+        sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
+        sb.append("    imageSourceType: ").append(toIndentedString(imageSourceType)).append("\n");
+        sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
+        sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
+        sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -494,5 +492,6 @@ public class ImageMetadata  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

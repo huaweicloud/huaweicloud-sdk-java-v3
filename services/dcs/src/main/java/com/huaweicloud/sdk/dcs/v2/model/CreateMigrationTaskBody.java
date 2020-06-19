@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import com.huaweicloud.sdk.dcs.v2.model.SourceInstanceBody;
 import com.huaweicloud.sdk.dcs.v2.model.TargetInstanceBody;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 创建数据迁移任务结构体
@@ -42,22 +40,19 @@ public class CreateMigrationTaskBody  {
          * Enum BACKUPFILE_IMPORT for value: "backupfile_import"
          */
         public static final MigrationTypeEnum BACKUPFILE_IMPORT = new MigrationTypeEnum("backupfile_import");
-
         
         /**
          * Enum ONLINE_MIGRATION for value: "online_migration"
          */
         public static final MigrationTypeEnum ONLINE_MIGRATION = new MigrationTypeEnum("online_migration");
-
         
 
-        public static Map<String, MigrationTypeEnum> staticFields =
-                new HashMap<String, MigrationTypeEnum>() {
-                    { 
-                        put("backupfile_import", BACKUPFILE_IMPORT);
-                        put("online_migration", ONLINE_MIGRATION);
-                    }
-                };
+        public static final Map<String, MigrationTypeEnum> staticFields = new HashMap<String, MigrationTypeEnum>() {
+            { 
+                put("backupfile_import", BACKUPFILE_IMPORT);
+                put("online_migration", ONLINE_MIGRATION);
+            }
+        };
 
         private String value;
 
@@ -73,7 +68,7 @@ public class CreateMigrationTaskBody  {
 
         @JsonCreator
         public static MigrationTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MigrationTypeEnum result = staticFields.get(value);
@@ -126,22 +121,19 @@ public class CreateMigrationTaskBody  {
          * Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration"
          */
         public static final MigrationMethodEnum FULL_AMOUNT_MIGRATION = new MigrationMethodEnum("full_amount_migration");
-
         
         /**
          * Enum INCREMENTAL_MIGRATION for value: "incremental_migration"
          */
         public static final MigrationMethodEnum INCREMENTAL_MIGRATION = new MigrationMethodEnum("incremental_migration");
-
         
 
-        public static Map<String, MigrationMethodEnum> staticFields =
-                new HashMap<String, MigrationMethodEnum>() {
-                    { 
-                        put("full_amount_migration", FULL_AMOUNT_MIGRATION);
-                        put("incremental_migration", INCREMENTAL_MIGRATION);
-                    }
-                };
+        public static final Map<String, MigrationMethodEnum> staticFields = new HashMap<String, MigrationMethodEnum>() {
+            { 
+                put("full_amount_migration", FULL_AMOUNT_MIGRATION);
+                put("incremental_migration", INCREMENTAL_MIGRATION);
+            }
+        };
 
         private String value;
 
@@ -157,7 +149,7 @@ public class CreateMigrationTaskBody  {
 
         @JsonCreator
         public static MigrationMethodEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MigrationMethodEnum result = staticFields.get(value);
@@ -216,22 +208,19 @@ public class CreateMigrationTaskBody  {
          * Enum VPC for value: "vpc"
          */
         public static final NetworkTypeEnum VPC = new NetworkTypeEnum("vpc");
-
         
         /**
          * Enum VPN for value: "vpn"
          */
         public static final NetworkTypeEnum VPN = new NetworkTypeEnum("vpn");
-
         
 
-        public static Map<String, NetworkTypeEnum> staticFields =
-                new HashMap<String, NetworkTypeEnum>() {
-                    { 
-                        put("vpc", VPC);
-                        put("vpn", VPN);
-                    }
-                };
+        public static final Map<String, NetworkTypeEnum> staticFields = new HashMap<String, NetworkTypeEnum>() {
+            { 
+                put("vpc", VPC);
+                put("vpn", VPN);
+            }
+        };
 
         private String value;
 
@@ -247,7 +236,7 @@ public class CreateMigrationTaskBody  {
 
         @JsonCreator
         public static NetworkTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             NetworkTypeEnum result = staticFields.get(value);
@@ -506,14 +495,14 @@ public class CreateMigrationTaskBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMigrationTaskBody {\n");
-            sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    migrationType: ").append(toIndentedString(migrationType)).append("\n");
-            sb.append("    migrationMethod: ").append(toIndentedString(migrationMethod)).append("\n");
-            sb.append("    backupFiles: ").append(toIndentedString(backupFiles)).append("\n");
-            sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
-            sb.append("    sourceInstance: ").append(toIndentedString(sourceInstance)).append("\n");
-            sb.append("    targetInstance: ").append(toIndentedString(targetInstance)).append("\n");
+        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    migrationType: ").append(toIndentedString(migrationType)).append("\n");
+        sb.append("    migrationMethod: ").append(toIndentedString(migrationMethod)).append("\n");
+        sb.append("    backupFiles: ").append(toIndentedString(backupFiles)).append("\n");
+        sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
+        sb.append("    sourceInstance: ").append(toIndentedString(sourceInstance)).append("\n");
+        sb.append("    targetInstance: ").append(toIndentedString(targetInstance)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -527,5 +516,6 @@ public class CreateMigrationTaskBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

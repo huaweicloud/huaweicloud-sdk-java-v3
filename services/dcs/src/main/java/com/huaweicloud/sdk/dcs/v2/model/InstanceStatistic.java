@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例的统计信息。
@@ -276,15 +274,15 @@ public class InstanceStatistic  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceStatistic {\n");
-            sb.append("    inputKbps: ").append(toIndentedString(inputKbps)).append("\n");
-            sb.append("    outputKbps: ").append(toIndentedString(outputKbps)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
-            sb.append("    usedMemory: ").append(toIndentedString(usedMemory)).append("\n");
-            sb.append("    maxMemory: ").append(toIndentedString(maxMemory)).append("\n");
-            sb.append("    cmdGetCount: ").append(toIndentedString(cmdGetCount)).append("\n");
-            sb.append("    cmdSetCount: ").append(toIndentedString(cmdSetCount)).append("\n");
-            sb.append("    usedCpu: ").append(toIndentedString(usedCpu)).append("\n");
+        sb.append("    inputKbps: ").append(toIndentedString(inputKbps)).append("\n");
+        sb.append("    outputKbps: ").append(toIndentedString(outputKbps)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
+        sb.append("    usedMemory: ").append(toIndentedString(usedMemory)).append("\n");
+        sb.append("    maxMemory: ").append(toIndentedString(maxMemory)).append("\n");
+        sb.append("    cmdGetCount: ").append(toIndentedString(cmdGetCount)).append("\n");
+        sb.append("    cmdSetCount: ").append(toIndentedString(cmdSetCount)).append("\n");
+        sb.append("    usedCpu: ").append(toIndentedString(usedCpu)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -298,5 +296,6 @@ public class InstanceStatistic  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

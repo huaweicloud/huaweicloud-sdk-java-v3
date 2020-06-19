@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import com.huaweicloud.sdk.dcs.v2.model.BssParam;
 import com.huaweicloud.sdk.dcs.v2.model.ResourceTag;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * CreateInstanceBody
@@ -807,33 +805,33 @@ public class CreateInstanceBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceBody {\n");
-            sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
-            sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-            sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
-            sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
-            sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
-            sb.append("    instanceNum: ").append(toIndentedString(instanceNum)).append("\n");
-            sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
-            sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
-            sb.append("    password: ").append(toIndentedString(password)).append("\n");
-            sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
-            sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
-            sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
-            sb.append("    noPasswordAccess: ").append(toIndentedString(noPasswordAccess)).append("\n");
-            sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
-            sb.append("    instanceBackupPolicy: ").append(toIndentedString(instanceBackupPolicy)).append("\n");
-            sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
-            sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-            sb.append("    port: ").append(toIndentedString(port)).append("\n");
-            sb.append("    renameCommands: ").append(toIndentedString(renameCommands)).append("\n");
+        sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    instanceNum: ").append(toIndentedString(instanceNum)).append("\n");
+        sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
+        sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    noPasswordAccess: ").append(toIndentedString(noPasswordAccess)).append("\n");
+        sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
+        sb.append("    instanceBackupPolicy: ").append(toIndentedString(instanceBackupPolicy)).append("\n");
+        sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
+        sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    renameCommands: ").append(toIndentedString(renameCommands)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -847,5 +845,6 @@ public class CreateInstanceBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

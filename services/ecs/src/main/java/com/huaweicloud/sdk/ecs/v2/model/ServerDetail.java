@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -19,8 +17,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 云服务器详情。
@@ -1329,50 +1327,50 @@ public class ServerDetail  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerDetail {\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-            sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-            sb.append("    osEXTSRVATTRHost: ").append(toIndentedString(osEXTSRVATTRHost)).append("\n");
-            sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
-            sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
-            sb.append("    image: ").append(toIndentedString(image)).append("\n");
-            sb.append("    osEXTSTSTaskState: ").append(toIndentedString(osEXTSTSTaskState)).append("\n");
-            sb.append("    osEXTSTSVmState: ").append(toIndentedString(osEXTSTSVmState)).append("\n");
-            sb.append("    osEXTSRVATTRInstanceName: ").append(toIndentedString(osEXTSRVATTRInstanceName)).append("\n");
-            sb.append("    osEXTSRVATTRHypervisorHostname: ").append(toIndentedString(osEXTSRVATTRHypervisorHostname)).append("\n");
-            sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    osEXTAZAvailabilityZone: ").append(toIndentedString(osEXTAZAvailabilityZone)).append("\n");
-            sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    created: ").append(toIndentedString(created)).append("\n");
-            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
-            sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
-            sb.append("    accessIPv4: ").append(toIndentedString(accessIPv4)).append("\n");
-            sb.append("    accessIPv6: ").append(toIndentedString(accessIPv6)).append("\n");
-            sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
-            sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
-            sb.append("    osEXTSTSPowerState: ").append(toIndentedString(osEXTSTSPowerState)).append("\n");
-            sb.append("    configDrive: ").append(toIndentedString(configDrive)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    osSRVUSGLaunchedAt: ").append(toIndentedString(osSRVUSGLaunchedAt)).append("\n");
-            sb.append("    osSRVUSGTerminatedAt: ").append(toIndentedString(osSRVUSGTerminatedAt)).append("\n");
-            sb.append("    osExtendedVolumesVolumesAttached: ").append(toIndentedString(osExtendedVolumesVolumesAttached)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
-            sb.append("    osEXTSRVATTRHostname: ").append(toIndentedString(osEXTSRVATTRHostname)).append("\n");
-            sb.append("    osEXTSRVATTRReservationId: ").append(toIndentedString(osEXTSRVATTRReservationId)).append("\n");
-            sb.append("    osEXTSRVATTRLaunchIndex: ").append(toIndentedString(osEXTSRVATTRLaunchIndex)).append("\n");
-            sb.append("    osEXTSRVATTRKernelId: ").append(toIndentedString(osEXTSRVATTRKernelId)).append("\n");
-            sb.append("    osEXTSRVATTRRamdiskId: ").append(toIndentedString(osEXTSRVATTRRamdiskId)).append("\n");
-            sb.append("    osEXTSRVATTRRootDeviceName: ").append(toIndentedString(osEXTSRVATTRRootDeviceName)).append("\n");
-            sb.append("    osEXTSRVATTRUserData: ").append(toIndentedString(osEXTSRVATTRUserData)).append("\n");
-            sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    osEXTSRVATTRHost: ").append(toIndentedString(osEXTSRVATTRHost)).append("\n");
+        sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
+        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    osEXTSTSTaskState: ").append(toIndentedString(osEXTSTSTaskState)).append("\n");
+        sb.append("    osEXTSTSVmState: ").append(toIndentedString(osEXTSTSVmState)).append("\n");
+        sb.append("    osEXTSRVATTRInstanceName: ").append(toIndentedString(osEXTSRVATTRInstanceName)).append("\n");
+        sb.append("    osEXTSRVATTRHypervisorHostname: ").append(toIndentedString(osEXTSRVATTRHypervisorHostname)).append("\n");
+        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    osEXTAZAvailabilityZone: ").append(toIndentedString(osEXTAZAvailabilityZone)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
+        sb.append("    accessIPv4: ").append(toIndentedString(accessIPv4)).append("\n");
+        sb.append("    accessIPv6: ").append(toIndentedString(accessIPv6)).append("\n");
+        sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+        sb.append("    osEXTSTSPowerState: ").append(toIndentedString(osEXTSTSPowerState)).append("\n");
+        sb.append("    configDrive: ").append(toIndentedString(configDrive)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    osSRVUSGLaunchedAt: ").append(toIndentedString(osSRVUSGLaunchedAt)).append("\n");
+        sb.append("    osSRVUSGTerminatedAt: ").append(toIndentedString(osSRVUSGTerminatedAt)).append("\n");
+        sb.append("    osExtendedVolumesVolumesAttached: ").append(toIndentedString(osExtendedVolumesVolumesAttached)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
+        sb.append("    osEXTSRVATTRHostname: ").append(toIndentedString(osEXTSRVATTRHostname)).append("\n");
+        sb.append("    osEXTSRVATTRReservationId: ").append(toIndentedString(osEXTSRVATTRReservationId)).append("\n");
+        sb.append("    osEXTSRVATTRLaunchIndex: ").append(toIndentedString(osEXTSRVATTRLaunchIndex)).append("\n");
+        sb.append("    osEXTSRVATTRKernelId: ").append(toIndentedString(osEXTSRVATTRKernelId)).append("\n");
+        sb.append("    osEXTSRVATTRRamdiskId: ").append(toIndentedString(osEXTSRVATTRRamdiskId)).append("\n");
+        sb.append("    osEXTSRVATTRRootDeviceName: ").append(toIndentedString(osEXTSRVATTRRootDeviceName)).append("\n");
+        sb.append("    osEXTSRVATTRUserData: ").append(toIndentedString(osEXTSRVATTRUserData)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -1386,5 +1384,6 @@ public class ServerDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

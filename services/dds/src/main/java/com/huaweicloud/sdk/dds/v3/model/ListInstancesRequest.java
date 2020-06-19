@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -39,29 +37,25 @@ public class ListInstancesRequest  {
          * Enum SHARDING for value: "Sharding"
          */
         public static final ModeEnum SHARDING = new ModeEnum("Sharding");
-
         
         /**
          * Enum REPLICASET for value: "ReplicaSet"
          */
         public static final ModeEnum REPLICASET = new ModeEnum("ReplicaSet");
-
         
         /**
          * Enum SINGLE for value: "Single"
          */
         public static final ModeEnum SINGLE = new ModeEnum("Single");
-
         
 
-        public static Map<String, ModeEnum> staticFields =
-                new HashMap<String, ModeEnum>() {
-                    { 
-                        put("Sharding", SHARDING);
-                        put("ReplicaSet", REPLICASET);
-                        put("Single", SINGLE);
-                    }
-                };
+        public static final Map<String, ModeEnum> staticFields = new HashMap<String, ModeEnum>() {
+            { 
+                put("Sharding", SHARDING);
+                put("ReplicaSet", REPLICASET);
+                put("Single", SINGLE);
+            }
+        };
 
         private String value;
 
@@ -77,7 +71,7 @@ public class ListInstancesRequest  {
 
         @JsonCreator
         public static ModeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ModeEnum result = staticFields.get(value);
@@ -130,22 +124,19 @@ public class ListInstancesRequest  {
          * Enum DDS_COMMUNITY for value: "DDS-Community"
          */
         public static final DatastoreTypeEnum DDS_COMMUNITY = new DatastoreTypeEnum("DDS-Community");
-
         
         /**
          * Enum DDS_ENHANCED for value: "DDS-Enhanced"
          */
         public static final DatastoreTypeEnum DDS_ENHANCED = new DatastoreTypeEnum("DDS-Enhanced");
-
         
 
-        public static Map<String, DatastoreTypeEnum> staticFields =
-                new HashMap<String, DatastoreTypeEnum>() {
-                    { 
-                        put("DDS-Community", DDS_COMMUNITY);
-                        put("DDS-Enhanced", DDS_ENHANCED);
-                    }
-                };
+        public static final Map<String, DatastoreTypeEnum> staticFields = new HashMap<String, DatastoreTypeEnum>() {
+            { 
+                put("DDS-Community", DDS_COMMUNITY);
+                put("DDS-Enhanced", DDS_ENHANCED);
+            }
+        };
 
         private String value;
 
@@ -161,7 +152,7 @@ public class ListInstancesRequest  {
 
         @JsonCreator
         public static DatastoreTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DatastoreTypeEnum result = staticFields.get(value);
@@ -414,14 +405,14 @@ public class ListInstancesRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesRequest {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-            sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
-            sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-            sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-            sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -435,5 +426,6 @@ public class ListInstancesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

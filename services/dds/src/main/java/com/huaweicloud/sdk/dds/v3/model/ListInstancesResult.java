@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -13,8 +11,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListInstancesGroupResult;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesStorageResult;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例信息。
@@ -727,30 +725,30 @@ public class ListInstancesResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesResult {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    port: ").append(toIndentedString(port)).append("\n");
-            sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-            sb.append("    region: ").append(toIndentedString(region)).append("\n");
-            sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
-            sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
-            sb.append("    created: ").append(toIndentedString(created)).append("\n");
-            sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-            sb.append("    dbUserName: ").append(toIndentedString(dbUserName)).append("\n");
-            sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
-            sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-            sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-            sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-            sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
-            sb.append("    payMode: ").append(toIndentedString(payMode)).append("\n");
-            sb.append("    maintenanceWindow: ").append(toIndentedString(maintenanceWindow)).append("\n");
-            sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
-            sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
-            sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
-            sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    dbUserName: ").append(toIndentedString(dbUserName)).append("\n");
+        sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
+        sb.append("    payMode: ").append(toIndentedString(payMode)).append("\n");
+        sb.append("    maintenanceWindow: ").append(toIndentedString(maintenanceWindow)).append("\n");
+        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+        sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
+        sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -764,5 +762,6 @@ public class ListInstancesResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

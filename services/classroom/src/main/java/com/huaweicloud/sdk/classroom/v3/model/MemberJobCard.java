@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * MemberJobCard
@@ -168,11 +166,11 @@ public class MemberJobCard  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MemberJobCard {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    averageScore: ").append(toIndentedString(averageScore)).append("\n");
-            sb.append("    score: ").append(toIndentedString(score)).append("\n");
-            sb.append("    sendTime: ").append(toIndentedString(sendTime)).append("\n");
-            sb.append("    lastSubmitTime: ").append(toIndentedString(lastSubmitTime)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    averageScore: ").append(toIndentedString(averageScore)).append("\n");
+        sb.append("    score: ").append(toIndentedString(score)).append("\n");
+        sb.append("    sendTime: ").append(toIndentedString(sendTime)).append("\n");
+        sb.append("    lastSubmitTime: ").append(toIndentedString(lastSubmitTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -186,5 +184,6 @@ public class MemberJobCard  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

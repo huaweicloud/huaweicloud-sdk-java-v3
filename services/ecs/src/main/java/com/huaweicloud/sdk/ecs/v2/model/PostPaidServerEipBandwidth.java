@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -33,22 +31,19 @@ public class PostPaidServerEipBandwidth  {
          * Enum PER for value: "PER"
          */
         public static final SharetypeEnum PER = new SharetypeEnum("PER");
-
         
         /**
          * Enum WHOLE for value: "WHOLE"
          */
         public static final SharetypeEnum WHOLE = new SharetypeEnum("WHOLE");
-
         
 
-        public static Map<String, SharetypeEnum> staticFields =
-                new HashMap<String, SharetypeEnum>() {
-                    { 
-                        put("PER", PER);
-                        put("WHOLE", WHOLE);
-                    }
-                };
+        public static final Map<String, SharetypeEnum> staticFields = new HashMap<String, SharetypeEnum>() {
+            { 
+                put("PER", PER);
+                put("WHOLE", WHOLE);
+            }
+        };
 
         private String value;
 
@@ -64,7 +59,7 @@ public class PostPaidServerEipBandwidth  {
 
         @JsonCreator
         public static SharetypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             SharetypeEnum result = staticFields.get(value);
@@ -223,10 +218,10 @@ public class PostPaidServerEipBandwidth  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServerEipBandwidth {\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    sharetype: ").append(toIndentedString(sharetype)).append("\n");
-            sb.append("    chargemode: ").append(toIndentedString(chargemode)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    sharetype: ").append(toIndentedString(sharetype)).append("\n");
+        sb.append("    chargemode: ").append(toIndentedString(chargemode)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -240,5 +235,6 @@ public class PostPaidServerEipBandwidth  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

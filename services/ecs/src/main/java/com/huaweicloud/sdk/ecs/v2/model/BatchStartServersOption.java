@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ecs.v2.model.ServerId;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -74,7 +72,7 @@ public class BatchStartServersOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchStartServersOption {\n");
-            sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
+        sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -88,5 +86,6 @@ public class BatchStartServersOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

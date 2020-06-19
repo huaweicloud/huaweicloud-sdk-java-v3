@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.evs.v2.model.VolumeTypeForExport;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * ExportToImageDetail
@@ -310,16 +308,16 @@ public class ExportToImageDetail  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExportToImageDetail {\n");
-            sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
-            sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
-            sb.append("    displayDescription: ").append(toIndentedString(displayDescription)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
-            sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-            sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
+        sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
+        sb.append("    displayDescription: ").append(toIndentedString(displayDescription)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -333,5 +331,6 @@ public class ExportToImageDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

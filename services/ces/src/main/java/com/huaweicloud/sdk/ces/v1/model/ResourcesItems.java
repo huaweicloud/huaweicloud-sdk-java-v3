@@ -1,13 +1,10 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-import java.util.Objects;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.ArrayList;
-import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.Objects;
 
 /**
  * 资源列表详情
@@ -32,10 +29,11 @@ public class ResourcesItems extends ArrayList<List>  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResourcesItems {\n");
-            sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
         sb.append("}");
         return sb.toString();
     }
+    
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -46,5 +44,6 @@ public class ResourcesItems extends ArrayList<List>  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

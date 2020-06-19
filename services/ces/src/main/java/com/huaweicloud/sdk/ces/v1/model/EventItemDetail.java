@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -51,29 +49,25 @@ public class EventItemDetail  {
          * Enum NORMAL for value: "normal"
          */
         public static final EventStateEnum NORMAL = new EventStateEnum("normal");
-
         
         /**
          * Enum WARNING for value: "warning"
          */
         public static final EventStateEnum WARNING = new EventStateEnum("warning");
-
         
         /**
          * Enum INCIDENT for value: "incident"
          */
         public static final EventStateEnum INCIDENT = new EventStateEnum("incident");
-
         
 
-        public static Map<String, EventStateEnum> staticFields =
-                new HashMap<String, EventStateEnum>() {
-                    { 
-                        put("normal", NORMAL);
-                        put("warning", WARNING);
-                        put("incident", INCIDENT);
-                    }
-                };
+        public static final Map<String, EventStateEnum> staticFields = new HashMap<String, EventStateEnum>() {
+            { 
+                put("normal", NORMAL);
+                put("warning", WARNING);
+                put("incident", INCIDENT);
+            }
+        };
 
         private String value;
 
@@ -89,7 +83,7 @@ public class EventItemDetail  {
 
         @JsonCreator
         public static EventStateEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             EventStateEnum result = staticFields.get(value);
@@ -142,36 +136,31 @@ public class EventItemDetail  {
          * Enum CRITICAL for value: "Critical"
          */
         public static final EventLevelEnum CRITICAL = new EventLevelEnum("Critical");
-
         
         /**
          * Enum MAJOR for value: "Major"
          */
         public static final EventLevelEnum MAJOR = new EventLevelEnum("Major");
-
         
         /**
          * Enum MINOR for value: "Minor"
          */
         public static final EventLevelEnum MINOR = new EventLevelEnum("Minor");
-
         
         /**
          * Enum INFO for value: "Info"
          */
         public static final EventLevelEnum INFO = new EventLevelEnum("Info");
-
         
 
-        public static Map<String, EventLevelEnum> staticFields =
-                new HashMap<String, EventLevelEnum>() {
-                    { 
-                        put("Critical", CRITICAL);
-                        put("Major", MAJOR);
-                        put("Minor", MINOR);
-                        put("Info", INFO);
-                    }
-                };
+        public static final Map<String, EventLevelEnum> staticFields = new HashMap<String, EventLevelEnum>() {
+            { 
+                put("Critical", CRITICAL);
+                put("Major", MAJOR);
+                put("Minor", MINOR);
+                put("Info", INFO);
+            }
+        };
 
         private String value;
 
@@ -187,7 +176,7 @@ public class EventItemDetail  {
 
         @JsonCreator
         public static EventLevelEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             EventLevelEnum result = staticFields.get(value);
@@ -401,13 +390,13 @@ public class EventItemDetail  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EventItemDetail {\n");
-            sb.append("    content: ").append(toIndentedString(content)).append("\n");
-            sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-            sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-            sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
-            sb.append("    eventState: ").append(toIndentedString(eventState)).append("\n");
-            sb.append("    eventLevel: ").append(toIndentedString(eventLevel)).append("\n");
-            sb.append("    eventUser: ").append(toIndentedString(eventUser)).append("\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    eventState: ").append(toIndentedString(eventState)).append("\n");
+        sb.append("    eventLevel: ").append(toIndentedString(eventLevel)).append("\n");
+        sb.append("    eventUser: ").append(toIndentedString(eventUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -421,5 +410,6 @@ public class EventItemDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

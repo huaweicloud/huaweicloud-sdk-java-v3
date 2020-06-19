@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -13,8 +11,8 @@ import com.huaweicloud.sdk.dds.v3.model.CreateInstanceFlavorOption;
 import com.huaweicloud.sdk.dds.v3.model.CreateInstanceStorageOption;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例信息。
@@ -473,21 +471,21 @@ public class CreateInstanceRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceRequestBody {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
-            sb.append("    region: ").append(toIndentedString(region)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-            sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-            sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-            sb.append("    password: ").append(toIndentedString(password)).append("\n");
-            sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
-            sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-            sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-            sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
-            sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
+        sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -501,5 +499,6 @@ public class CreateInstanceRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dcs.v2.model.BackupPlan;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * BackupPolicy
@@ -121,9 +119,9 @@ public class BackupPolicy  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BackupPolicy {\n");
-            sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
-            sb.append("    saveDays: ").append(toIndentedString(saveDays)).append("\n");
-            sb.append("    periodicalBackupPlan: ").append(toIndentedString(periodicalBackupPlan)).append("\n");
+        sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
+        sb.append("    saveDays: ").append(toIndentedString(saveDays)).append("\n");
+        sb.append("    periodicalBackupPlan: ").append(toIndentedString(periodicalBackupPlan)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -137,5 +135,6 @@ public class BackupPolicy  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

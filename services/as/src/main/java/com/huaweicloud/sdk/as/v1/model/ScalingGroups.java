@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,8 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 伸缩组详情
@@ -45,43 +43,37 @@ public class ScalingGroups  {
          * Enum INSERVICE for value: "INSERVICE"
          */
         public static final ScalingGroupStatusEnum INSERVICE = new ScalingGroupStatusEnum("INSERVICE");
-
         
         /**
          * Enum PAUSED for value: "PAUSED"
          */
         public static final ScalingGroupStatusEnum PAUSED = new ScalingGroupStatusEnum("PAUSED");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final ScalingGroupStatusEnum ERROR = new ScalingGroupStatusEnum("ERROR");
-
         
         /**
          * Enum DELETING for value: "DELETING"
          */
         public static final ScalingGroupStatusEnum DELETING = new ScalingGroupStatusEnum("DELETING");
-
         
         /**
          * Enum FREEZED for value: "FREEZED"
          */
         public static final ScalingGroupStatusEnum FREEZED = new ScalingGroupStatusEnum("FREEZED");
-
         
 
-        public static Map<String, ScalingGroupStatusEnum> staticFields =
-                new HashMap<String, ScalingGroupStatusEnum>() {
-                    { 
-                        put("INSERVICE", INSERVICE);
-                        put("PAUSED", PAUSED);
-                        put("ERROR", ERROR);
-                        put("DELETING", DELETING);
-                        put("FREEZED", FREEZED);
-                    }
-                };
+        public static final Map<String, ScalingGroupStatusEnum> staticFields = new HashMap<String, ScalingGroupStatusEnum>() {
+            { 
+                put("INSERVICE", INSERVICE);
+                put("PAUSED", PAUSED);
+                put("ERROR", ERROR);
+                put("DELETING", DELETING);
+                put("FREEZED", FREEZED);
+            }
+        };
 
         private String value;
 
@@ -97,7 +89,7 @@ public class ScalingGroups  {
 
         @JsonCreator
         public static ScalingGroupStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ScalingGroupStatusEnum result = staticFields.get(value);
@@ -246,22 +238,19 @@ public class ScalingGroups  {
          * Enum ELB_AUDIT for value: "ELB_AUDIT"
          */
         public static final HealthPeriodicAuditMethodEnum ELB_AUDIT = new HealthPeriodicAuditMethodEnum("ELB_AUDIT");
-
         
         /**
          * Enum NOVA_AUDIT for value: "NOVA_AUDIT"
          */
         public static final HealthPeriodicAuditMethodEnum NOVA_AUDIT = new HealthPeriodicAuditMethodEnum("NOVA_AUDIT");
-
         
 
-        public static Map<String, HealthPeriodicAuditMethodEnum> staticFields =
-                new HashMap<String, HealthPeriodicAuditMethodEnum>() {
-                    { 
-                        put("ELB_AUDIT", ELB_AUDIT);
-                        put("NOVA_AUDIT", NOVA_AUDIT);
-                    }
-                };
+        public static final Map<String, HealthPeriodicAuditMethodEnum> staticFields = new HashMap<String, HealthPeriodicAuditMethodEnum>() {
+            { 
+                put("ELB_AUDIT", ELB_AUDIT);
+                put("NOVA_AUDIT", NOVA_AUDIT);
+            }
+        };
 
         private String value;
 
@@ -277,7 +266,7 @@ public class ScalingGroups  {
 
         @JsonCreator
         public static HealthPeriodicAuditMethodEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             HealthPeriodicAuditMethodEnum result = staticFields.get(value);
@@ -330,50 +319,43 @@ public class ScalingGroups  {
          * Enum NUMBER_0 for value: 0
          */
         public static final HealthPeriodicAuditTimeEnum NUMBER_0 = new HealthPeriodicAuditTimeEnum(0);
-
         
         /**
          * Enum NUMBER_1 for value: 1
          */
         public static final HealthPeriodicAuditTimeEnum NUMBER_1 = new HealthPeriodicAuditTimeEnum(1);
-
         
         /**
          * Enum NUMBER_5 for value: 5
          */
         public static final HealthPeriodicAuditTimeEnum NUMBER_5 = new HealthPeriodicAuditTimeEnum(5);
-
         
         /**
          * Enum NUMBER_15 for value: 15
          */
         public static final HealthPeriodicAuditTimeEnum NUMBER_15 = new HealthPeriodicAuditTimeEnum(15);
-
         
         /**
          * Enum NUMBER_60 for value: 60
          */
         public static final HealthPeriodicAuditTimeEnum NUMBER_60 = new HealthPeriodicAuditTimeEnum(60);
-
         
         /**
          * Enum NUMBER_180 for value: 180
          */
         public static final HealthPeriodicAuditTimeEnum NUMBER_180 = new HealthPeriodicAuditTimeEnum(180);
-
         
 
-        public static Map<Integer, HealthPeriodicAuditTimeEnum> staticFields =
-                new HashMap<Integer, HealthPeriodicAuditTimeEnum>() {
-                    { 
-                        put(0, NUMBER_0);
-                        put(1, NUMBER_1);
-                        put(5, NUMBER_5);
-                        put(15, NUMBER_15);
-                        put(60, NUMBER_60);
-                        put(180, NUMBER_180);
-                    }
-                };
+        public static final Map<Integer, HealthPeriodicAuditTimeEnum> staticFields = new HashMap<Integer, HealthPeriodicAuditTimeEnum>() {
+            { 
+                put(0, NUMBER_0);
+                put(1, NUMBER_1);
+                put(5, NUMBER_5);
+                put(15, NUMBER_15);
+                put(60, NUMBER_60);
+                put(180, NUMBER_180);
+            }
+        };
 
         private Integer value;
 
@@ -389,7 +371,7 @@ public class ScalingGroups  {
 
         @JsonCreator
         public static HealthPeriodicAuditTimeEnum fromValue(Integer value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             HealthPeriodicAuditTimeEnum result = staticFields.get(value);
@@ -448,36 +430,31 @@ public class ScalingGroups  {
          * Enum OLD_CONFIG_OLD_INSTANCE for value: "OLD_CONFIG_OLD_INSTANCE"
          */
         public static final InstanceTerminatePolicyEnum OLD_CONFIG_OLD_INSTANCE = new InstanceTerminatePolicyEnum("OLD_CONFIG_OLD_INSTANCE");
-
         
         /**
          * Enum OLD_CONFIG_NEW_INSTANCE for value: "OLD_CONFIG_NEW_INSTANCE"
          */
         public static final InstanceTerminatePolicyEnum OLD_CONFIG_NEW_INSTANCE = new InstanceTerminatePolicyEnum("OLD_CONFIG_NEW_INSTANCE");
-
         
         /**
          * Enum OLD_INSTANCE for value: "OLD_INSTANCE"
          */
         public static final InstanceTerminatePolicyEnum OLD_INSTANCE = new InstanceTerminatePolicyEnum("OLD_INSTANCE");
-
         
         /**
          * Enum NEW_INSTANCE for value: "NEW_INSTANCE"
          */
         public static final InstanceTerminatePolicyEnum NEW_INSTANCE = new InstanceTerminatePolicyEnum("NEW_INSTANCE");
-
         
 
-        public static Map<String, InstanceTerminatePolicyEnum> staticFields =
-                new HashMap<String, InstanceTerminatePolicyEnum>() {
-                    { 
-                        put("OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE);
-                        put("OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE);
-                        put("OLD_INSTANCE", OLD_INSTANCE);
-                        put("NEW_INSTANCE", NEW_INSTANCE);
-                    }
-                };
+        public static final Map<String, InstanceTerminatePolicyEnum> staticFields = new HashMap<String, InstanceTerminatePolicyEnum>() {
+            { 
+                put("OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE);
+                put("OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE);
+                put("OLD_INSTANCE", OLD_INSTANCE);
+                put("NEW_INSTANCE", NEW_INSTANCE);
+            }
+        };
 
         private String value;
 
@@ -493,7 +470,7 @@ public class ScalingGroups  {
 
         @JsonCreator
         public static InstanceTerminatePolicyEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             InstanceTerminatePolicyEnum result = staticFields.get(value);
@@ -1219,33 +1196,33 @@ public class ScalingGroups  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScalingGroups {\n");
-            sb.append("    scalingGroupName: ").append(toIndentedString(scalingGroupName)).append("\n");
-            sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
-            sb.append("    scalingGroupStatus: ").append(toIndentedString(scalingGroupStatus)).append("\n");
-            sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
-            sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
-            sb.append("    currentInstanceNumber: ").append(toIndentedString(currentInstanceNumber)).append("\n");
-            sb.append("    desireInstanceNumber: ").append(toIndentedString(desireInstanceNumber)).append("\n");
-            sb.append("    minInstanceNumber: ").append(toIndentedString(minInstanceNumber)).append("\n");
-            sb.append("    maxInstanceNumber: ").append(toIndentedString(maxInstanceNumber)).append("\n");
-            sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
-            sb.append("    lbListenerId: ").append(toIndentedString(lbListenerId)).append("\n");
-            sb.append("    lbaasListeners: ").append(toIndentedString(lbaasListeners)).append("\n");
-            sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
-            sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-            sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-            sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-            sb.append("    isScaling: ").append(toIndentedString(isScaling)).append("\n");
-            sb.append("    healthPeriodicAuditMethod: ").append(toIndentedString(healthPeriodicAuditMethod)).append("\n");
-            sb.append("    healthPeriodicAuditTime: ").append(toIndentedString(healthPeriodicAuditTime)).append("\n");
-            sb.append("    healthPeriodicAuditGracePeriod: ").append(toIndentedString(healthPeriodicAuditGracePeriod)).append("\n");
-            sb.append("    instanceTerminatePolicy: ").append(toIndentedString(instanceTerminatePolicy)).append("\n");
-            sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
-            sb.append("    deletePublicip: ").append(toIndentedString(deletePublicip)).append("\n");
-            sb.append("    cloudLocationId: ").append(toIndentedString(cloudLocationId)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    scalingGroupName: ").append(toIndentedString(scalingGroupName)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    scalingGroupStatus: ").append(toIndentedString(scalingGroupStatus)).append("\n");
+        sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
+        sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
+        sb.append("    currentInstanceNumber: ").append(toIndentedString(currentInstanceNumber)).append("\n");
+        sb.append("    desireInstanceNumber: ").append(toIndentedString(desireInstanceNumber)).append("\n");
+        sb.append("    minInstanceNumber: ").append(toIndentedString(minInstanceNumber)).append("\n");
+        sb.append("    maxInstanceNumber: ").append(toIndentedString(maxInstanceNumber)).append("\n");
+        sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
+        sb.append("    lbListenerId: ").append(toIndentedString(lbListenerId)).append("\n");
+        sb.append("    lbaasListeners: ").append(toIndentedString(lbaasListeners)).append("\n");
+        sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
+        sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    isScaling: ").append(toIndentedString(isScaling)).append("\n");
+        sb.append("    healthPeriodicAuditMethod: ").append(toIndentedString(healthPeriodicAuditMethod)).append("\n");
+        sb.append("    healthPeriodicAuditTime: ").append(toIndentedString(healthPeriodicAuditTime)).append("\n");
+        sb.append("    healthPeriodicAuditGracePeriod: ").append(toIndentedString(healthPeriodicAuditGracePeriod)).append("\n");
+        sb.append("    instanceTerminatePolicy: ").append(toIndentedString(instanceTerminatePolicy)).append("\n");
+        sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
+        sb.append("    deletePublicip: ").append(toIndentedString(deletePublicip)).append("\n");
+        sb.append("    cloudLocationId: ").append(toIndentedString(cloudLocationId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -1259,5 +1236,6 @@ public class ScalingGroups  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

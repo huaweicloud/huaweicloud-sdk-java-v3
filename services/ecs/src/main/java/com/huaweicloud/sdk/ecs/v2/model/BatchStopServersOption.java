@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -36,22 +34,19 @@ public class BatchStopServersOption  {
          * Enum SOFT for value: "SOFT"
          */
         public static final TypeEnum SOFT = new TypeEnum("SOFT");
-
         
         /**
          * Enum HARD for value: "HARD"
          */
         public static final TypeEnum HARD = new TypeEnum("HARD");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("SOFT", SOFT);
-                        put("HARD", HARD);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("SOFT", SOFT);
+                put("HARD", HARD);
+            }
+        };
 
         private String value;
 
@@ -67,7 +62,7 @@ public class BatchStopServersOption  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -181,8 +176,8 @@ public class BatchStopServersOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchStopServersOption {\n");
-            sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -196,5 +191,6 @@ public class BatchStopServersOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

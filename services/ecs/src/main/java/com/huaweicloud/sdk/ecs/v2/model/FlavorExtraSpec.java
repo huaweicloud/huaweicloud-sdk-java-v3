@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 云服务器规格的扩展字段。
@@ -438,21 +436,21 @@ public class FlavorExtraSpec  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class FlavorExtraSpec {\n");
-            sb.append("    ecsPerformancetype: ").append(toIndentedString(ecsPerformancetype)).append("\n");
-            sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
-            sb.append("    quotaLocalDisk: ").append(toIndentedString(quotaLocalDisk)).append("\n");
-            sb.append("    quotaNvmeSsd: ").append(toIndentedString(quotaNvmeSsd)).append("\n");
-            sb.append("    ecsGeneration: ").append(toIndentedString(ecsGeneration)).append("\n");
-            sb.append("    ecsVirtualizationEnvTypes: ").append(toIndentedString(ecsVirtualizationEnvTypes)).append("\n");
-            sb.append("    pciPassthroughEnableGpu: ").append(toIndentedString(pciPassthroughEnableGpu)).append("\n");
-            sb.append("    pciPassthroughGpuSpecs: ").append(toIndentedString(pciPassthroughGpuSpecs)).append("\n");
-            sb.append("    pciPassthroughAlias: ").append(toIndentedString(pciPassthroughAlias)).append("\n");
-            sb.append("    condOperationStatus: ").append(toIndentedString(condOperationStatus)).append("\n");
-            sb.append("    condOperationAz: ").append(toIndentedString(condOperationAz)).append("\n");
-            sb.append("    quotaMaxRate: ").append(toIndentedString(quotaMaxRate)).append("\n");
-            sb.append("    quotaMinRate: ").append(toIndentedString(quotaMinRate)).append("\n");
-            sb.append("    quotaMaxPps: ").append(toIndentedString(quotaMaxPps)).append("\n");
-            sb.append("    condOperationCharge: ").append(toIndentedString(condOperationCharge)).append("\n");
+        sb.append("    ecsPerformancetype: ").append(toIndentedString(ecsPerformancetype)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    quotaLocalDisk: ").append(toIndentedString(quotaLocalDisk)).append("\n");
+        sb.append("    quotaNvmeSsd: ").append(toIndentedString(quotaNvmeSsd)).append("\n");
+        sb.append("    ecsGeneration: ").append(toIndentedString(ecsGeneration)).append("\n");
+        sb.append("    ecsVirtualizationEnvTypes: ").append(toIndentedString(ecsVirtualizationEnvTypes)).append("\n");
+        sb.append("    pciPassthroughEnableGpu: ").append(toIndentedString(pciPassthroughEnableGpu)).append("\n");
+        sb.append("    pciPassthroughGpuSpecs: ").append(toIndentedString(pciPassthroughGpuSpecs)).append("\n");
+        sb.append("    pciPassthroughAlias: ").append(toIndentedString(pciPassthroughAlias)).append("\n");
+        sb.append("    condOperationStatus: ").append(toIndentedString(condOperationStatus)).append("\n");
+        sb.append("    condOperationAz: ").append(toIndentedString(condOperationAz)).append("\n");
+        sb.append("    quotaMaxRate: ").append(toIndentedString(quotaMaxRate)).append("\n");
+        sb.append("    quotaMinRate: ").append(toIndentedString(quotaMinRate)).append("\n");
+        sb.append("    quotaMaxPps: ").append(toIndentedString(quotaMaxPps)).append("\n");
+        sb.append("    condOperationCharge: ").append(toIndentedString(condOperationCharge)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -466,5 +464,6 @@ public class FlavorExtraSpec  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

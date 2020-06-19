@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 策略执行具体动作
@@ -27,36 +25,31 @@ public class ScalingPolicyAction  {
          * Enum ADD for value: "ADD"
          */
         public static final OperationEnum ADD = new OperationEnum("ADD");
-
         
         /**
          * Enum REMOVE for value: "REMOVE"
          */
         public static final OperationEnum REMOVE = new OperationEnum("REMOVE");
-
         
         /**
          * Enum REDUCE for value: "REDUCE"
          */
         public static final OperationEnum REDUCE = new OperationEnum("REDUCE");
-
         
         /**
          * Enum SET for value: "SET"
          */
         public static final OperationEnum SET = new OperationEnum("SET");
-
         
 
-        public static Map<String, OperationEnum> staticFields =
-                new HashMap<String, OperationEnum>() {
-                    { 
-                        put("ADD", ADD);
-                        put("REMOVE", REMOVE);
-                        put("REDUCE", REDUCE);
-                        put("SET", SET);
-                    }
-                };
+        public static final Map<String, OperationEnum> staticFields = new HashMap<String, OperationEnum>() {
+            { 
+                put("ADD", ADD);
+                put("REMOVE", REMOVE);
+                put("REDUCE", REDUCE);
+                put("SET", SET);
+            }
+        };
 
         private String value;
 
@@ -72,7 +65,7 @@ public class ScalingPolicyAction  {
 
         @JsonCreator
         public static OperationEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OperationEnum result = staticFields.get(value);
@@ -210,9 +203,9 @@ public class ScalingPolicyAction  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScalingPolicyAction {\n");
-            sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
-            sb.append("    instanceNumber: ").append(toIndentedString(instanceNumber)).append("\n");
-            sb.append("    instancePercentage: ").append(toIndentedString(instancePercentage)).append("\n");
+        sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
+        sb.append("    instanceNumber: ").append(toIndentedString(instanceNumber)).append("\n");
+        sb.append("    instancePercentage: ").append(toIndentedString(instancePercentage)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -226,5 +219,6 @@ public class ScalingPolicyAction  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

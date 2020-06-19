@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,8 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -75,36 +73,31 @@ public class Port  {
          * Enum NETWORK_DHCP for value: "network:dhcp"
          */
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
-
         
         /**
          * Enum NETWORK_VIP_PORT for value: "network:VIP_PORT"
          */
         public static final DeviceOwnerEnum NETWORK_VIP_PORT = new DeviceOwnerEnum("network:VIP_PORT");
-
         
         /**
          * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
          */
         public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED = new DeviceOwnerEnum("network:router_interface_distributed");
-
         
         /**
          * Enum NETWORK_ROUTER_CENTRALIZED_SNAT for value: "network:router_centralized_snat"
          */
         public static final DeviceOwnerEnum NETWORK_ROUTER_CENTRALIZED_SNAT = new DeviceOwnerEnum("network:router_centralized_snat");
-
         
 
-        public static Map<String, DeviceOwnerEnum> staticFields =
-                new HashMap<String, DeviceOwnerEnum>() {
-                    { 
-                        put("network:dhcp", NETWORK_DHCP);
-                        put("network:VIP_PORT", NETWORK_VIP_PORT);
-                        put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
-                        put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
-                    }
-                };
+        public static final Map<String, DeviceOwnerEnum> staticFields = new HashMap<String, DeviceOwnerEnum>() {
+            { 
+                put("network:dhcp", NETWORK_DHCP);
+                put("network:VIP_PORT", NETWORK_VIP_PORT);
+                put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
+                put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
+            }
+        };
 
         private String value;
 
@@ -120,7 +113,7 @@ public class Port  {
 
         @JsonCreator
         public static DeviceOwnerEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DeviceOwnerEnum result = staticFields.get(value);
@@ -179,29 +172,25 @@ public class Port  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-
         
         /**
          * Enum BUILD for value: "BUILD"
          */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
-
         
         /**
          * Enum DOWN for value: "DOWN"
          */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("BUILD", BUILD);
-                        put("DOWN", DOWN);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("BUILD", BUILD);
+                put("DOWN", DOWN);
+            }
+        };
 
         private String value;
 
@@ -217,7 +206,7 @@ public class Port  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -840,27 +829,27 @@ public class Port  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Port {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
-            sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
-            sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
-            sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
-            sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-            sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
-            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
-            sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
-            sb.append("    bindingVnicType: ").append(toIndentedString(bindingVnicType)).append("\n");
-            sb.append("    dnsAssignment: ").append(toIndentedString(dnsAssignment)).append("\n");
-            sb.append("    dnsName: ").append(toIndentedString(dnsName)).append("\n");
-            sb.append("    bindingVifDetails: ").append(toIndentedString(bindingVifDetails)).append("\n");
-            sb.append("    bindingProfile: ").append(toIndentedString(bindingProfile)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
-            sb.append("    portSecurityEnabled: ").append(toIndentedString(portSecurityEnabled)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
+        sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
+        sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
+        sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
+        sb.append("    bindingVnicType: ").append(toIndentedString(bindingVnicType)).append("\n");
+        sb.append("    dnsAssignment: ").append(toIndentedString(dnsAssignment)).append("\n");
+        sb.append("    dnsName: ").append(toIndentedString(dnsName)).append("\n");
+        sb.append("    bindingVifDetails: ").append(toIndentedString(bindingVifDetails)).append("\n");
+        sb.append("    bindingProfile: ").append(toIndentedString(bindingProfile)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    portSecurityEnabled: ").append(toIndentedString(portSecurityEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -874,5 +863,6 @@ public class Port  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

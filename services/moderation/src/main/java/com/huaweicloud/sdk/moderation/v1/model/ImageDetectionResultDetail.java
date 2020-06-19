@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.moderation.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetailPolitic
 import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetailPorn;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * ImageDetectionResultDetail
@@ -201,10 +199,10 @@ public class ImageDetectionResultDetail  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImageDetectionResultDetail {\n");
-            sb.append("    politics: ").append(toIndentedString(politics)).append("\n");
-            sb.append("    porn: ").append(toIndentedString(porn)).append("\n");
-            sb.append("    terrorism: ").append(toIndentedString(terrorism)).append("\n");
-            sb.append("    ad: ").append(toIndentedString(ad)).append("\n");
+        sb.append("    politics: ").append(toIndentedString(politics)).append("\n");
+        sb.append("    porn: ").append(toIndentedString(porn)).append("\n");
+        sb.append("    terrorism: ").append(toIndentedString(terrorism)).append("\n");
+        sb.append("    ad: ").append(toIndentedString(ad)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -218,5 +216,6 @@ public class ImageDetectionResultDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

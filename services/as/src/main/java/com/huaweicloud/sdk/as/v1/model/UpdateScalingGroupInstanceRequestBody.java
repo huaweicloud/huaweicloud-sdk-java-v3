@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 批量操作实例
@@ -41,50 +39,43 @@ public class UpdateScalingGroupInstanceRequestBody  {
          * Enum ADD for value: "ADD"
          */
         public static final ActionEnum ADD = new ActionEnum("ADD");
-
         
         /**
          * Enum REMOVE for value: "REMOVE"
          */
         public static final ActionEnum REMOVE = new ActionEnum("REMOVE");
-
         
         /**
          * Enum PROTECT for value: "PROTECT"
          */
         public static final ActionEnum PROTECT = new ActionEnum("PROTECT");
-
         
         /**
          * Enum UNPROTECT for value: "UNPROTECT"
          */
         public static final ActionEnum UNPROTECT = new ActionEnum("UNPROTECT");
-
         
         /**
          * Enum ENTER_STANDBY for value: "ENTER_STANDBY"
          */
         public static final ActionEnum ENTER_STANDBY = new ActionEnum("ENTER_STANDBY");
-
         
         /**
          * Enum EXIT_STANDBY for value: "EXIT_STANDBY"
          */
         public static final ActionEnum EXIT_STANDBY = new ActionEnum("EXIT_STANDBY");
-
         
 
-        public static Map<String, ActionEnum> staticFields =
-                new HashMap<String, ActionEnum>() {
-                    { 
-                        put("ADD", ADD);
-                        put("REMOVE", REMOVE);
-                        put("PROTECT", PROTECT);
-                        put("UNPROTECT", UNPROTECT);
-                        put("ENTER_STANDBY", ENTER_STANDBY);
-                        put("EXIT_STANDBY", EXIT_STANDBY);
-                    }
-                };
+        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
+            { 
+                put("ADD", ADD);
+                put("REMOVE", REMOVE);
+                put("PROTECT", PROTECT);
+                put("UNPROTECT", UNPROTECT);
+                put("ENTER_STANDBY", ENTER_STANDBY);
+                put("EXIT_STANDBY", EXIT_STANDBY);
+            }
+        };
 
         private String value;
 
@@ -100,7 +91,7 @@ public class UpdateScalingGroupInstanceRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ActionEnum result = staticFields.get(value);
@@ -262,10 +253,10 @@ public class UpdateScalingGroupInstanceRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateScalingGroupInstanceRequestBody {\n");
-            sb.append("    instancesId: ").append(toIndentedString(instancesId)).append("\n");
-            sb.append("    instanceDelete: ").append(toIndentedString(instanceDelete)).append("\n");
-            sb.append("    action: ").append(toIndentedString(action)).append("\n");
-            sb.append("    instanceAppend: ").append(toIndentedString(instanceAppend)).append("\n");
+        sb.append("    instancesId: ").append(toIndentedString(instancesId)).append("\n");
+        sb.append("    instanceDelete: ").append(toIndentedString(instanceDelete)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    instanceAppend: ").append(toIndentedString(instanceAppend)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -279,5 +270,6 @@ public class UpdateScalingGroupInstanceRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import com.huaweicloud.sdk.vpc.v2.model.ExtraDhcpOpt;
 import com.huaweicloud.sdk.vpc.v2.model.FixedIp;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -337,15 +335,15 @@ public class CreatePortOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePortOption {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
-            sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
-            sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
-            sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
-            sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
-            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
+        sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
+        sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
+        sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -359,5 +357,6 @@ public class CreatePortOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

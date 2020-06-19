@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.image.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -114,9 +112,9 @@ public class CelebrityRecognitionReq  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CelebrityRecognitionReq {\n");
-            sb.append("    image: ").append(toIndentedString(image)).append("\n");
-            sb.append("    url: ").append(toIndentedString(url)).append("\n");
-            sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+        sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -130,5 +128,6 @@ public class CelebrityRecognitionReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 弹性云服务器规格信息。
@@ -168,11 +166,11 @@ public class ServerFlavor  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerFlavor {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
-            sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
-            sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
+        sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
+        sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -186,5 +184,6 @@ public class ServerFlavor  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -39,29 +37,25 @@ public class ListTagsRequest  {
          * Enum GOLD for value: "gold"
          */
         public static final ImagetypeEnum GOLD = new ImagetypeEnum("gold");
-
         
         /**
          * Enum PRIVATE for value: "private"
          */
         public static final ImagetypeEnum PRIVATE = new ImagetypeEnum("private");
-
         
         /**
          * Enum SHARED for value: "shared"
          */
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
-
         
 
-        public static Map<String, ImagetypeEnum> staticFields =
-                new HashMap<String, ImagetypeEnum>() {
-                    { 
-                        put("gold", GOLD);
-                        put("private", PRIVATE);
-                        put("shared", SHARED);
-                    }
-                };
+        public static final Map<String, ImagetypeEnum> staticFields = new HashMap<String, ImagetypeEnum>() {
+            { 
+                put("gold", GOLD);
+                put("private", PRIVATE);
+                put("shared", SHARED);
+            }
+        };
 
         private String value;
 
@@ -77,7 +71,7 @@ public class ListTagsRequest  {
 
         @JsonCreator
         public static ImagetypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ImagetypeEnum result = staticFields.get(value);
@@ -136,43 +130,37 @@ public class ListTagsRequest  {
          * Enum QUEUED for value: "queued"
          */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
-
         
         /**
          * Enum SAVING for value: "saving"
          */
         public static final StatusEnum SAVING = new StatusEnum("saving");
-
         
         /**
          * Enum DELETED for value: "deleted"
          */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-
         
         /**
          * Enum KILLED for value: "killed"
          */
         public static final StatusEnum KILLED = new StatusEnum("killed");
-
         
         /**
          * Enum ACTIVE for value: "active"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("queued", QUEUED);
-                        put("saving", SAVING);
-                        put("deleted", DELETED);
-                        put("killed", KILLED);
-                        put("active", ACTIVE);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("queued", QUEUED);
+                put("saving", SAVING);
+                put("deleted", DELETED);
+                put("killed", KILLED);
+                put("active", ACTIVE);
+            }
+        };
 
         private String value;
 
@@ -188,7 +176,7 @@ public class ListTagsRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -259,29 +247,25 @@ public class ListTagsRequest  {
          * Enum LINUX for value: "Linux"
          */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-
         
         /**
          * Enum WINDOWS for value: "Windows"
          */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-
         
         /**
          * Enum OTHER for value: "Other"
          */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
-
         
 
-        public static Map<String, OsTypeEnum> staticFields =
-                new HashMap<String, OsTypeEnum>() {
-                    { 
-                        put("Linux", LINUX);
-                        put("Windows", WINDOWS);
-                        put("Other", OTHER);
-                    }
-                };
+        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
+            { 
+                put("Linux", LINUX);
+                put("Windows", WINDOWS);
+                put("Other", OTHER);
+            }
+        };
 
         private String value;
 
@@ -297,7 +281,7 @@ public class ListTagsRequest  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsTypeEnum result = staticFields.get(value);
@@ -350,29 +334,25 @@ public class ListTagsRequest  {
          * Enum ACCEPTED for value: "accepted"
          */
         public static final MemberStatusEnum ACCEPTED = new MemberStatusEnum("accepted");
-
         
         /**
          * Enum REJECTED for value: "rejected"
          */
         public static final MemberStatusEnum REJECTED = new MemberStatusEnum("rejected");
-
         
         /**
          * Enum PENDING for value: "pending"
          */
         public static final MemberStatusEnum PENDING = new MemberStatusEnum("pending");
-
         
 
-        public static Map<String, MemberStatusEnum> staticFields =
-                new HashMap<String, MemberStatusEnum>() {
-                    { 
-                        put("accepted", ACCEPTED);
-                        put("rejected", REJECTED);
-                        put("pending", PENDING);
-                    }
-                };
+        public static final Map<String, MemberStatusEnum> staticFields = new HashMap<String, MemberStatusEnum>() {
+            { 
+                put("accepted", ACCEPTED);
+                put("rejected", REJECTED);
+                put("pending", PENDING);
+            }
+        };
 
         private String value;
 
@@ -388,7 +368,7 @@ public class ListTagsRequest  {
 
         @JsonCreator
         public static MemberStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MemberStatusEnum result = staticFields.get(value);
@@ -441,29 +421,25 @@ public class ListTagsRequest  {
          * Enum FUSIONCOMPUTE for value: "FusionCompute"
          */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
-
         
         /**
          * Enum IRONIC for value: "Ironic"
          */
         public static final VirtualEnvTypeEnum IRONIC = new VirtualEnvTypeEnum("Ironic");
-
         
         /**
          * Enum DATAIMAGE for value: "DataImage"
          */
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
-
         
 
-        public static Map<String, VirtualEnvTypeEnum> staticFields =
-                new HashMap<String, VirtualEnvTypeEnum>() {
-                    { 
-                        put("FusionCompute", FUSIONCOMPUTE);
-                        put("Ironic", IRONIC);
-                        put("DataImage", DATAIMAGE);
-                    }
-                };
+        public static final Map<String, VirtualEnvTypeEnum> staticFields = new HashMap<String, VirtualEnvTypeEnum>() {
+            { 
+                put("FusionCompute", FUSIONCOMPUTE);
+                put("Ironic", IRONIC);
+                put("DataImage", DATAIMAGE);
+            }
+        };
 
         private String value;
 
@@ -479,7 +455,7 @@ public class ListTagsRequest  {
 
         @JsonCreator
         public static VirtualEnvTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             VirtualEnvTypeEnum result = staticFields.get(value);
@@ -538,22 +514,19 @@ public class ListTagsRequest  {
          * Enum X86 for value: "x86"
          */
         public static final ArchitectureEnum X86 = new ArchitectureEnum("x86");
-
         
         /**
          * Enum ARM for value: "arm"
          */
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
-
         
 
-        public static Map<String, ArchitectureEnum> staticFields =
-                new HashMap<String, ArchitectureEnum>() {
-                    { 
-                        put("x86", X86);
-                        put("arm", ARM);
-                    }
-                };
+        public static final Map<String, ArchitectureEnum> staticFields = new HashMap<String, ArchitectureEnum>() {
+            { 
+                put("x86", X86);
+                put("arm", ARM);
+            }
+        };
 
         private String value;
 
@@ -569,7 +542,7 @@ public class ListTagsRequest  {
 
         @JsonCreator
         public static ArchitectureEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ArchitectureEnum result = staticFields.get(value);
@@ -963,21 +936,21 @@ public class ListTagsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTagsRequest {\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    page: ").append(toIndentedString(page)).append("\n");
-            sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-            sb.append("    memberStatus: ").append(toIndentedString(memberStatus)).append("\n");
-            sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    memberStatus: ").append(toIndentedString(memberStatus)).append("\n");
+        sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -991,5 +964,6 @@ public class ListTagsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

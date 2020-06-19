@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -141,10 +139,10 @@ public class Credential  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Credential {\n");
-            sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
-            sb.append("    access: ").append(toIndentedString(access)).append("\n");
-            sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
-            sb.append("    securitytoken: ").append(toIndentedString(securitytoken)).append("\n");
+        sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+        sb.append("    access: ").append(toIndentedString(access)).append("\n");
+        sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
+        sb.append("    securitytoken: ").append(toIndentedString(securitytoken)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -158,5 +156,6 @@ public class Credential  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

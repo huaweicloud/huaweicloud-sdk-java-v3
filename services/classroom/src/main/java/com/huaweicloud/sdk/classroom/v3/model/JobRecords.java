@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * JobRecords
@@ -249,14 +247,14 @@ public class JobRecords  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobRecords {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    autoScore: ").append(toIndentedString(autoScore)).append("\n");
-            sb.append("    casePassCount: ").append(toIndentedString(casePassCount)).append("\n");
-            sb.append("    exeCaseCount: ").append(toIndentedString(exeCaseCount)).append("\n");
-            sb.append("    codeLine: ").append(toIndentedString(codeLine)).append("\n");
-            sb.append("    commitTime: ").append(toIndentedString(commitTime)).append("\n");
-            sb.append("    complexityFileAvg: ").append(toIndentedString(complexityFileAvg)).append("\n");
-            sb.append("    autoScoreUsingTime: ").append(toIndentedString(autoScoreUsingTime)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    autoScore: ").append(toIndentedString(autoScore)).append("\n");
+        sb.append("    casePassCount: ").append(toIndentedString(casePassCount)).append("\n");
+        sb.append("    exeCaseCount: ").append(toIndentedString(exeCaseCount)).append("\n");
+        sb.append("    codeLine: ").append(toIndentedString(codeLine)).append("\n");
+        sb.append("    commitTime: ").append(toIndentedString(commitTime)).append("\n");
+        sb.append("    complexityFileAvg: ").append(toIndentedString(complexityFileAvg)).append("\n");
+        sb.append("    autoScoreUsingTime: ").append(toIndentedString(autoScoreUsingTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -270,5 +268,6 @@ public class JobRecords  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

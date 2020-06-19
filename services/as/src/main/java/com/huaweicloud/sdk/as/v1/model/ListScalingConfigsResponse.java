@@ -1,17 +1,17 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.as.v1.model.ScalingConfiguration;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -162,10 +162,10 @@ public class ListScalingConfigsResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScalingConfigsResponse {\n");
-            sb.append("    totalNumber: ").append(toIndentedString(totalNumber)).append("\n");
-            sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    scalingConfigurations: ").append(toIndentedString(scalingConfigurations)).append("\n");
+        sb.append("    totalNumber: ").append(toIndentedString(totalNumber)).append("\n");
+        sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    scalingConfigurations: ").append(toIndentedString(scalingConfigurations)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -179,5 +179,6 @@ public class ListScalingConfigsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
  */
 public class KeystoneListUsersRequest  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    private String domainId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,26 +32,6 @@ public class KeystoneListUsersRequest  {
     @com.huaweicloud.sdk.core.json.JsonSensitive
     
     private String passwordExpiresAt;
-
-    public KeystoneListUsersRequest withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get domainId
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
 
     public KeystoneListUsersRequest withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -129,23 +101,21 @@ public class KeystoneListUsersRequest  {
             return false;
         }
         KeystoneListUsersRequest keystoneListUsersRequest = (KeystoneListUsersRequest) o;
-        return Objects.equals(this.domainId, keystoneListUsersRequest.domainId) &&
-            Objects.equals(this.enabled, keystoneListUsersRequest.enabled) &&
+        return Objects.equals(this.enabled, keystoneListUsersRequest.enabled) &&
             Objects.equals(this.name, keystoneListUsersRequest.name) &&
             Objects.equals(this.passwordExpiresAt, keystoneListUsersRequest.passwordExpiresAt);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, enabled, name, passwordExpiresAt);
+        return Objects.hash(enabled, name, passwordExpiresAt);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneListUsersRequest {\n");
-            sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-            sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    passwordExpiresAt: ").append(toIndentedString("******")).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    passwordExpiresAt: ").append(toIndentedString("******")).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -159,5 +129,6 @@ public class KeystoneListUsersRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

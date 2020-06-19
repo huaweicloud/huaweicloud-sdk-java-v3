@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.as.v1.model.Bandwidth;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 配置云服务器的弹性IP信息
@@ -28,36 +26,31 @@ public class Eip  {
          * Enum _5_BGP for value: "5_bgp"
          */
         public static final IpTypeEnum _5_BGP = new IpTypeEnum("5_bgp");
-
         
         /**
          * Enum _5_SBGP for value: "5_sbgp"
          */
         public static final IpTypeEnum _5_SBGP = new IpTypeEnum("5_sbgp");
-
         
         /**
          * Enum _5_TELCOM for value: "5_telcom"
          */
         public static final IpTypeEnum _5_TELCOM = new IpTypeEnum("5_telcom");
-
         
         /**
          * Enum _5_UNION for value: "5_union"
          */
         public static final IpTypeEnum _5_UNION = new IpTypeEnum("5_union");
-
         
 
-        public static Map<String, IpTypeEnum> staticFields =
-                new HashMap<String, IpTypeEnum>() {
-                    { 
-                        put("5_bgp", _5_BGP);
-                        put("5_sbgp", _5_SBGP);
-                        put("5_telcom", _5_TELCOM);
-                        put("5_union", _5_UNION);
-                    }
-                };
+        public static final Map<String, IpTypeEnum> staticFields = new HashMap<String, IpTypeEnum>() {
+            { 
+                put("5_bgp", _5_BGP);
+                put("5_sbgp", _5_SBGP);
+                put("5_telcom", _5_TELCOM);
+                put("5_union", _5_UNION);
+            }
+        };
 
         private String value;
 
@@ -73,7 +66,7 @@ public class Eip  {
 
         @JsonCreator
         public static IpTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             IpTypeEnum result = staticFields.get(value);
@@ -188,8 +181,8 @@ public class Eip  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Eip {\n");
-            sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
-            sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
+        sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
+        sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -203,5 +196,6 @@ public class Eip  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,9 @@
 package com.huaweicloud.sdk.cts.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +11,8 @@ import com.huaweicloud.sdk.cts.v1.model.LogFileValidate;
 import com.huaweicloud.sdk.cts.v1.model.Lts;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -71,22 +71,19 @@ public class ListTrackerResponse extends SdkResponse {
          * Enum ENABLED for value: "enabled"
          */
         public static final StatusEnum ENABLED = new StatusEnum("enabled");
-
         
         /**
          * Enum DISABLED for value: "disabled"
          */
         public static final StatusEnum DISABLED = new StatusEnum("disabled");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("enabled", ENABLED);
-                        put("disabled", DISABLED);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("enabled", ENABLED);
+                put("disabled", DISABLED);
+            }
+        };
 
         private String value;
 
@@ -102,7 +99,7 @@ public class ListTrackerResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -507,20 +504,20 @@ public class ListTrackerResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTrackerResponse {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-            sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-            sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-            sb.append("    trackerName: ").append(toIndentedString(trackerName)).append("\n");
-            sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
-            sb.append("    filePrefixName: ").append(toIndentedString(filePrefixName)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-            sb.append("    isObsCreated: ").append(toIndentedString(isObsCreated)).append("\n");
-            sb.append("    isSupportTraceFilesEncryption: ").append(toIndentedString(isSupportTraceFilesEncryption)).append("\n");
-            sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
-            sb.append("    lts: ").append(toIndentedString(lts)).append("\n");
-            sb.append("    logFileValidate: ").append(toIndentedString(logFileValidate)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    trackerName: ").append(toIndentedString(trackerName)).append("\n");
+        sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
+        sb.append("    filePrefixName: ").append(toIndentedString(filePrefixName)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    isObsCreated: ").append(toIndentedString(isObsCreated)).append("\n");
+        sb.append("    isSupportTraceFilesEncryption: ").append(toIndentedString(isSupportTraceFilesEncryption)).append("\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
+        sb.append("    lts: ").append(toIndentedString(lts)).append("\n");
+        sb.append("    logFileValidate: ").append(toIndentedString(logFileValidate)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -534,5 +531,6 @@ public class ListTrackerResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

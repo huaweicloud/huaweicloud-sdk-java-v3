@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 副本列表
@@ -195,12 +193,12 @@ public class InstanceReplicationListInfo  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceReplicationListInfo {\n");
-            sb.append("    replicationRole: ").append(toIndentedString(replicationRole)).append("\n");
-            sb.append("    replicationIp: ").append(toIndentedString(replicationIp)).append("\n");
-            sb.append("    isReplication: ").append(toIndentedString(isReplication)).append("\n");
-            sb.append("    replicationId: ").append(toIndentedString(replicationId)).append("\n");
-            sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    replicationRole: ").append(toIndentedString(replicationRole)).append("\n");
+        sb.append("    replicationIp: ").append(toIndentedString(replicationIp)).append("\n");
+        sb.append("    isReplication: ").append(toIndentedString(isReplication)).append("\n");
+        sb.append("    replicationId: ").append(toIndentedString(replicationId)).append("\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -214,5 +212,6 @@ public class InstanceReplicationListInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

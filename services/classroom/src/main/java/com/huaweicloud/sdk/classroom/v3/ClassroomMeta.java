@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.classroom.v3;
 
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.classroom.v3.model.*;
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
-
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-
-import com.huaweicloud.sdk.classroom.v3.model.*;
 
 @SuppressWarnings("unchecked")
 public class ClassroomMeta {
@@ -24,42 +22,41 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("classroom_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListClassroomMembersRequest::getClassroomId, (req, v) -> {
-                    req.setClassroomId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListClassroomMembersRequest::getClassroomId, (req, v) -> {
+                req.setClassroomId(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListClassroomMembersRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListClassroomMembersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListClassroomMembersRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListClassroomMembersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("filter",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListClassroomMembersRequest::getFilter, (req, v) -> {
-                    req.setFilter(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClassroomMembersRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListClassroomsRequest, ListClassroomsResponse> listClassrooms = genForlistClassrooms();
@@ -72,34 +69,33 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListClassroomsRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListClassroomsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListClassroomsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListClassroomsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("query_type",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListClassroomsRequest::getQueryType, (req, v) -> {
-                    req.setQueryType(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClassroomsRequest::getQueryType, (req, v) -> {
+                req.setQueryType(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowClassroomDetailRequest, ShowClassroomDetailResponse> showClassroomDetail = genForshowClassroomDetail();
@@ -112,18 +108,17 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("classroom_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowClassroomDetailRequest::getClassroomId, (req, v) -> {
-                    req.setClassroomId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowClassroomDetailRequest::getClassroomId, (req, v) -> {
+                req.setClassroomId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> listClassroomMemberJobs = genForlistClassroomMemberJobs();
@@ -136,42 +131,41 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("classroom_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListClassroomMemberJobsRequest::getClassroomId, (req, v) -> {
-                    req.setClassroomId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getClassroomId, (req, v) -> {
+                req.setClassroomId(v);
+            })
         );
         builder.withRequestField("member_id",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListClassroomMemberJobsRequest::getMemberId, (req, v) -> {
-                    req.setMemberId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getMemberId, (req, v) -> {
+                req.setMemberId(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListClassroomMemberJobsRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListClassroomMemberJobsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListClassroomMemberJobsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForlistJobs();
@@ -184,42 +178,41 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("source_from",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListJobsRequest::getSourceFrom, (req, v) -> {
-                    req.setSourceFrom(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListJobsRequest::getSourceFrom, (req, v) -> {
+                req.setSourceFrom(v);
+            })
         );
         builder.withRequestField("source_id",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListJobsRequest::getSourceId, (req, v) -> {
-                    req.setSourceId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListJobsRequest::getSourceId, (req, v) -> {
+                req.setSourceId(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> listMemberJobRecords = genForlistMemberJobRecords();
@@ -232,50 +225,49 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("job_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListMemberJobRecordsRequest::getJobId, (req, v) -> {
-                    req.setJobId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
         );
         builder.withRequestField("exercise_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListMemberJobRecordsRequest::getExerciseId, (req, v) -> {
-                    req.setExerciseId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getExerciseId, (req, v) -> {
+                req.setExerciseId(v);
+            })
         );
         builder.withRequestField("member_id",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListMemberJobRecordsRequest::getMemberId, (req, v) -> {
-                    req.setMemberId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getMemberId, (req, v) -> {
+                req.setMemberId(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListMemberJobRecordsRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListMemberJobRecordsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMemberJobRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail = genForshowJobDetail();
@@ -288,18 +280,17 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("job_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
-                    req.setJobId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowJobExercisesRequest, ShowJobExercisesResponse> showJobExercises = genForshowJobExercises();
@@ -312,51 +303,49 @@ public class ClassroomMeta {
 
         // requests
         builder.withRequestField("job_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowJobExercisesRequest::getJobId, (req, v) -> {
-                    req.setJobId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowJobExercisesRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
         );
         builder.withRequestField("source_from",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowJobExercisesRequest::getSourceFrom, (req, v) -> {
-                    req.setSourceFrom(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowJobExercisesRequest::getSourceFrom, (req, v) -> {
+                req.setSourceFrom(v);
+            })
         );
         builder.withRequestField("source_id",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowJobExercisesRequest::getSourceId, (req, v) -> {
-                    req.setSourceId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowJobExercisesRequest::getSourceId, (req, v) -> {
+                req.setSourceId(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ShowJobExercisesRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowJobExercisesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ShowJobExercisesRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowJobExercisesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
 }
-

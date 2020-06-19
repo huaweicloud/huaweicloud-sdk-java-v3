@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -60,29 +58,25 @@ public class Vpc  {
          * Enum CREATING for value: "CREATING"
          */
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
-
         
         /**
          * Enum OK for value: "OK"
          */
         public static final StatusEnum OK = new StatusEnum("OK");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("CREATING", CREATING);
-                        put("OK", OK);
-                        put("ERROR", ERROR);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("CREATING", CREATING);
+                put("OK", OK);
+                put("ERROR", ERROR);
+            }
+        };
 
         private String value;
 
@@ -98,7 +92,7 @@ public class Vpc  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -323,13 +317,13 @@ public class Vpc  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Vpc {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    routes: ").append(toIndentedString(routes)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    routes: ").append(toIndentedString(routes)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -343,5 +337,6 @@ public class Vpc  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

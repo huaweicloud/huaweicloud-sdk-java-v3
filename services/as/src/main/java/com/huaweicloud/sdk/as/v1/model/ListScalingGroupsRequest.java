@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -39,36 +37,31 @@ public class ListScalingGroupsRequest  {
          * Enum INSERVICE for value: "INSERVICE"
          */
         public static final ScalingGroupStatusEnum INSERVICE = new ScalingGroupStatusEnum("INSERVICE");
-
         
         /**
          * Enum PAUSED for value: "PAUSED"
          */
         public static final ScalingGroupStatusEnum PAUSED = new ScalingGroupStatusEnum("PAUSED");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final ScalingGroupStatusEnum ERROR = new ScalingGroupStatusEnum("ERROR");
-
         
         /**
          * Enum DELETING for value: "DELETING"
          */
         public static final ScalingGroupStatusEnum DELETING = new ScalingGroupStatusEnum("DELETING");
-
         
 
-        public static Map<String, ScalingGroupStatusEnum> staticFields =
-                new HashMap<String, ScalingGroupStatusEnum>() {
-                    { 
-                        put("INSERVICE", INSERVICE);
-                        put("PAUSED", PAUSED);
-                        put("ERROR", ERROR);
-                        put("DELETING", DELETING);
-                    }
-                };
+        public static final Map<String, ScalingGroupStatusEnum> staticFields = new HashMap<String, ScalingGroupStatusEnum>() {
+            { 
+                put("INSERVICE", INSERVICE);
+                put("PAUSED", PAUSED);
+                put("ERROR", ERROR);
+                put("DELETING", DELETING);
+            }
+        };
 
         private String value;
 
@@ -84,7 +77,7 @@ public class ListScalingGroupsRequest  {
 
         @JsonCreator
         public static ScalingGroupStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ScalingGroupStatusEnum result = staticFields.get(value);
@@ -262,11 +255,11 @@ public class ListScalingGroupsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScalingGroupsRequest {\n");
-            sb.append("    scalingGroupName: ").append(toIndentedString(scalingGroupName)).append("\n");
-            sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
-            sb.append("    scalingGroupStatus: ").append(toIndentedString(scalingGroupStatus)).append("\n");
-            sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    scalingGroupName: ").append(toIndentedString(scalingGroupName)).append("\n");
+        sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
+        sb.append("    scalingGroupStatus: ").append(toIndentedString(scalingGroupStatus)).append("\n");
+        sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -280,5 +273,6 @@ public class ListScalingGroupsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

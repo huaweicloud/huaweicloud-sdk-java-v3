@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -27,22 +25,19 @@ public class ListDatastoreVersionsRequest  {
          * Enum DDS_COMMUNITY for value: "DDS-Community"
          */
         public static final DatastoreNameEnum DDS_COMMUNITY = new DatastoreNameEnum("DDS-Community");
-
         
         /**
          * Enum DDS_ENHANCED for value: "DDS-Enhanced"
          */
         public static final DatastoreNameEnum DDS_ENHANCED = new DatastoreNameEnum("DDS-Enhanced");
-
         
 
-        public static Map<String, DatastoreNameEnum> staticFields =
-                new HashMap<String, DatastoreNameEnum>() {
-                    { 
-                        put("DDS-Community", DDS_COMMUNITY);
-                        put("DDS-Enhanced", DDS_ENHANCED);
-                    }
-                };
+        public static final Map<String, DatastoreNameEnum> staticFields = new HashMap<String, DatastoreNameEnum>() {
+            { 
+                put("DDS-Community", DDS_COMMUNITY);
+                put("DDS-Enhanced", DDS_ENHANCED);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class ListDatastoreVersionsRequest  {
 
         @JsonCreator
         public static DatastoreNameEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DatastoreNameEnum result = staticFields.get(value);
@@ -140,7 +135,7 @@ public class ListDatastoreVersionsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDatastoreVersionsRequest {\n");
-            sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
+        sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -154,5 +149,6 @@ public class ListDatastoreVersionsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

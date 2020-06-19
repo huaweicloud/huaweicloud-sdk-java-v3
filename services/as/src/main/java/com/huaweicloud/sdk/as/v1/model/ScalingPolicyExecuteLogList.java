@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,8 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 伸缩策略执行日志列表
@@ -32,29 +30,25 @@ public class ScalingPolicyExecuteLogList  {
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-
         
         /**
          * Enum FAIL for value: "FAIL"
          */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-
         
         /**
          * Enum EXECUTING for value: "EXECUTING"
          */
         public static final StatusEnum EXECUTING = new StatusEnum("EXECUTING");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("SUCCESS", SUCCESS);
-                        put("FAIL", FAIL);
-                        put("EXECUTING", EXECUTING);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("SUCCESS", SUCCESS);
+                put("FAIL", FAIL);
+                put("EXECUTING", EXECUTING);
+            }
+        };
 
         private String value;
 
@@ -70,7 +64,7 @@ public class ScalingPolicyExecuteLogList  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -129,36 +123,31 @@ public class ScalingPolicyExecuteLogList  {
          * Enum SCHEDULE for value: "SCHEDULE"
          */
         public static final ExecuteTypeEnum SCHEDULE = new ExecuteTypeEnum("SCHEDULE");
-
         
         /**
          * Enum RECURRENCE for value: "RECURRENCE"
          */
         public static final ExecuteTypeEnum RECURRENCE = new ExecuteTypeEnum("RECURRENCE");
-
         
         /**
          * Enum ALARM for value: "ALARM"
          */
         public static final ExecuteTypeEnum ALARM = new ExecuteTypeEnum("ALARM");
-
         
         /**
          * Enum MANUAL for value: "MANUAL"
          */
         public static final ExecuteTypeEnum MANUAL = new ExecuteTypeEnum("MANUAL");
-
         
 
-        public static Map<String, ExecuteTypeEnum> staticFields =
-                new HashMap<String, ExecuteTypeEnum>() {
-                    { 
-                        put("SCHEDULE", SCHEDULE);
-                        put("RECURRENCE", RECURRENCE);
-                        put("ALARM", ALARM);
-                        put("MANUAL", MANUAL);
-                    }
-                };
+        public static final Map<String, ExecuteTypeEnum> staticFields = new HashMap<String, ExecuteTypeEnum>() {
+            { 
+                put("SCHEDULE", SCHEDULE);
+                put("RECURRENCE", RECURRENCE);
+                put("ALARM", ALARM);
+                put("MANUAL", MANUAL);
+            }
+        };
 
         private String value;
 
@@ -174,7 +163,7 @@ public class ScalingPolicyExecuteLogList  {
 
         @JsonCreator
         public static ExecuteTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ExecuteTypeEnum result = staticFields.get(value);
@@ -251,22 +240,19 @@ public class ScalingPolicyExecuteLogList  {
          * Enum SCALING_GROUP for value: "SCALING_GROUP"
          */
         public static final ScalingResourceTypeEnum SCALING_GROUP = new ScalingResourceTypeEnum("SCALING_GROUP");
-
         
         /**
          * Enum BANDWIDTH for value: "BANDWIDTH"
          */
         public static final ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
-
         
 
-        public static Map<String, ScalingResourceTypeEnum> staticFields =
-                new HashMap<String, ScalingResourceTypeEnum>() {
-                    { 
-                        put("SCALING_GROUP", SCALING_GROUP);
-                        put("BANDWIDTH", BANDWIDTH);
-                    }
-                };
+        public static final Map<String, ScalingResourceTypeEnum> staticFields = new HashMap<String, ScalingResourceTypeEnum>() {
+            { 
+                put("SCALING_GROUP", SCALING_GROUP);
+                put("BANDWIDTH", BANDWIDTH);
+            }
+        };
 
         private String value;
 
@@ -282,7 +268,7 @@ public class ScalingPolicyExecuteLogList  {
 
         @JsonCreator
         public static ScalingResourceTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ScalingResourceTypeEnum result = staticFields.get(value);
@@ -359,29 +345,25 @@ public class ScalingPolicyExecuteLogList  {
          * Enum ADD for value: "ADD"
          */
         public static final TypeEnum ADD = new TypeEnum("ADD");
-
         
         /**
          * Enum REMOVE for value: "REMOVE"
          */
         public static final TypeEnum REMOVE = new TypeEnum("REMOVE");
-
         
         /**
          * Enum SET for value: "SET"
          */
         public static final TypeEnum SET = new TypeEnum("SET");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("ADD", ADD);
-                        put("REMOVE", REMOVE);
-                        put("SET", SET);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("ADD", ADD);
+                put("REMOVE", REMOVE);
+                put("SET", SET);
+            }
+        };
 
         private String value;
 
@@ -397,7 +379,7 @@ public class ScalingPolicyExecuteLogList  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -807,21 +789,21 @@ public class ScalingPolicyExecuteLogList  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScalingPolicyExecuteLogList {\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
-            sb.append("    executeType: ").append(toIndentedString(executeType)).append("\n");
-            sb.append("    executeTime: ").append(toIndentedString(executeTime)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-            sb.append("    scalingPolicyId: ").append(toIndentedString(scalingPolicyId)).append("\n");
-            sb.append("    scalingResourceType: ").append(toIndentedString(scalingResourceType)).append("\n");
-            sb.append("    scalingResourceId: ").append(toIndentedString(scalingResourceId)).append("\n");
-            sb.append("    oldValue: ").append(toIndentedString(oldValue)).append("\n");
-            sb.append("    desireValue: ").append(toIndentedString(desireValue)).append("\n");
-            sb.append("    limitValue: ").append(toIndentedString(limitValue)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    jobRecords: ").append(toIndentedString(jobRecords)).append("\n");
-            sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
+        sb.append("    executeType: ").append(toIndentedString(executeType)).append("\n");
+        sb.append("    executeTime: ").append(toIndentedString(executeTime)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    scalingPolicyId: ").append(toIndentedString(scalingPolicyId)).append("\n");
+        sb.append("    scalingResourceType: ").append(toIndentedString(scalingResourceType)).append("\n");
+        sb.append("    scalingResourceId: ").append(toIndentedString(scalingResourceId)).append("\n");
+        sb.append("    oldValue: ").append(toIndentedString(oldValue)).append("\n");
+        sb.append("    desireValue: ").append(toIndentedString(desireValue)).append("\n");
+        sb.append("    limitValue: ").append(toIndentedString(limitValue)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    jobRecords: ").append(toIndentedString(jobRecords)).append("\n");
+        sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -835,5 +817,6 @@ public class ScalingPolicyExecuteLogList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

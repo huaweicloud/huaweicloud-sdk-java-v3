@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -33,78 +31,67 @@ public class DeleteFunctionTriggerRequest  {
          * Enum TIMER for value: "TIMER"
          */
         public static final TriggerTypeCodeEnum TIMER = new TriggerTypeCodeEnum("TIMER");
-
         
         /**
          * Enum APIG for value: "APIG"
          */
         public static final TriggerTypeCodeEnum APIG = new TriggerTypeCodeEnum("APIG");
-
         
         /**
          * Enum CTS for value: "CTS"
          */
         public static final TriggerTypeCodeEnum CTS = new TriggerTypeCodeEnum("CTS");
-
         
         /**
          * Enum DDS for value: "DDS"
          */
         public static final TriggerTypeCodeEnum DDS = new TriggerTypeCodeEnum("DDS");
-
         
         /**
          * Enum DMS for value: "DMS"
          */
         public static final TriggerTypeCodeEnum DMS = new TriggerTypeCodeEnum("DMS");
-
         
         /**
          * Enum DIS for value: "DIS"
          */
         public static final TriggerTypeCodeEnum DIS = new TriggerTypeCodeEnum("DIS");
-
         
         /**
          * Enum LTS for value: "LTS"
          */
         public static final TriggerTypeCodeEnum LTS = new TriggerTypeCodeEnum("LTS");
-
         
         /**
          * Enum OBS for value: "OBS"
          */
         public static final TriggerTypeCodeEnum OBS = new TriggerTypeCodeEnum("OBS");
-
         
         /**
          * Enum SMN for value: "SMN"
          */
         public static final TriggerTypeCodeEnum SMN = new TriggerTypeCodeEnum("SMN");
-
         
         /**
          * Enum KAFKA for value: "KAFKA"
          */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
-
         
 
-        public static Map<String, TriggerTypeCodeEnum> staticFields =
-                new HashMap<String, TriggerTypeCodeEnum>() {
-                    { 
-                        put("TIMER", TIMER);
-                        put("APIG", APIG);
-                        put("CTS", CTS);
-                        put("DDS", DDS);
-                        put("DMS", DMS);
-                        put("DIS", DIS);
-                        put("LTS", LTS);
-                        put("OBS", OBS);
-                        put("SMN", SMN);
-                        put("KAFKA", KAFKA);
-                    }
-                };
+        public static final Map<String, TriggerTypeCodeEnum> staticFields = new HashMap<String, TriggerTypeCodeEnum>() {
+            { 
+                put("TIMER", TIMER);
+                put("APIG", APIG);
+                put("CTS", CTS);
+                put("DDS", DDS);
+                put("DMS", DMS);
+                put("DIS", DIS);
+                put("LTS", LTS);
+                put("OBS", OBS);
+                put("SMN", SMN);
+                put("KAFKA", KAFKA);
+            }
+        };
 
         private String value;
 
@@ -120,7 +107,7 @@ public class DeleteFunctionTriggerRequest  {
 
         @JsonCreator
         public static TriggerTypeCodeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TriggerTypeCodeEnum result = staticFields.get(value);
@@ -250,9 +237,9 @@ public class DeleteFunctionTriggerRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteFunctionTriggerRequest {\n");
-            sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
-            sb.append("    triggerTypeCode: ").append(toIndentedString(triggerTypeCode)).append("\n");
-            sb.append("    triggerId: ").append(toIndentedString(triggerId)).append("\n");
+        sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
+        sb.append("    triggerTypeCode: ").append(toIndentedString(triggerTypeCode)).append("\n");
+        sb.append("    triggerId: ").append(toIndentedString(triggerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -266,5 +253,6 @@ public class DeleteFunctionTriggerRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -2,8 +2,6 @@ package com.huaweicloud.sdk.devstar.v1;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.function.Function;
-
 import com.huaweicloud.sdk.devstar.v1.model.*;
 
 public class DevstarClient {

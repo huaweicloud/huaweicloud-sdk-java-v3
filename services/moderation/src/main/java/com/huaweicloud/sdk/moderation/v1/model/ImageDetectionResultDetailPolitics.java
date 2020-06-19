@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.moderation.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.moderation.v1.model.ImageDetectionResultDetailFaceDetail;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * ImageDetectionResultDetailPolitics
@@ -121,9 +119,9 @@ public class ImageDetectionResultDetailPolitics  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImageDetectionResultDetailPolitics {\n");
-            sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-            sb.append("    label: ").append(toIndentedString(label)).append("\n");
-            sb.append("    faceDetail: ").append(toIndentedString(faceDetail)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    faceDetail: ").append(toIndentedString(faceDetail)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -137,5 +135,6 @@ public class ImageDetectionResultDetailPolitics  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

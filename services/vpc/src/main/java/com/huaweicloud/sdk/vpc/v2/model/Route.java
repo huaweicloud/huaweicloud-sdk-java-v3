@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -87,8 +85,8 @@ public class Route  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Route {\n");
-            sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
-            sb.append("    nexthop: ").append(toIndentedString(nexthop)).append("\n");
+        sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
+        sb.append("    nexthop: ").append(toIndentedString(nexthop)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -102,5 +100,6 @@ public class Route  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

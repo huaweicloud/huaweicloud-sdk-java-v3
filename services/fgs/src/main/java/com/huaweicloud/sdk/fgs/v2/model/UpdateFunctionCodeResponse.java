@@ -1,9 +1,9 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -51,85 +51,73 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
          * Enum PYTHON2_7 for value: "Python2.7"
          */
         public static final RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
-
         
         /**
          * Enum PYTHON3_6 for value: "Python3.6"
          */
         public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
-
         
         /**
          * Enum GO1_8 for value: "Go1.8"
          */
         public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
-
         
         /**
          * Enum JAVA8 for value: "Java8"
          */
         public static final RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
-
         
         /**
          * Enum NODE_JS6_10 for value: "Node.js6.10"
          */
         public static final RuntimeEnum NODE_JS6_10 = new RuntimeEnum("Node.js6.10");
-
         
         /**
          * Enum NODE_JS8_10 for value: "Node.js8.10"
          */
         public static final RuntimeEnum NODE_JS8_10 = new RuntimeEnum("Node.js8.10");
-
         
         /**
          * Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)"
          */
         public static final RuntimeEnum C_NET_CORE_2_0_ = new RuntimeEnum("C#(.NET Core 2.0)");
-
         
         /**
          * Enum C_NET_CORE_2_1_ for value: "C#(.NET Core 2.1)"
          */
         public static final RuntimeEnum C_NET_CORE_2_1_ = new RuntimeEnum("C#(.NET Core 2.1)");
-
         
         /**
          * Enum C_NET_CORE_3_1_ for value: "C#(.NET Core 3.1)"
          */
         public static final RuntimeEnum C_NET_CORE_3_1_ = new RuntimeEnum("C#(.NET Core 3.1)");
-
         
         /**
          * Enum CUSTOM for value: "Custom"
          */
         public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
-
         
         /**
          * Enum PHP7_3 for value: "PHP7.3"
          */
         public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
-
         
 
-        public static Map<String, RuntimeEnum> staticFields =
-                new HashMap<String, RuntimeEnum>() {
-                    { 
-                        put("Python2.7", PYTHON2_7);
-                        put("Python3.6", PYTHON3_6);
-                        put("Go1.8", GO1_8);
-                        put("Java8", JAVA8);
-                        put("Node.js6.10", NODE_JS6_10);
-                        put("Node.js8.10", NODE_JS8_10);
-                        put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
-                        put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
-                        put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
-                        put("Custom", CUSTOM);
-                        put("PHP7.3", PHP7_3);
-                    }
-                };
+        public static final Map<String, RuntimeEnum> staticFields = new HashMap<String, RuntimeEnum>() {
+            { 
+                put("Python2.7", PYTHON2_7);
+                put("Python3.6", PYTHON3_6);
+                put("Go1.8", GO1_8);
+                put("Java8", JAVA8);
+                put("Node.js6.10", NODE_JS6_10);
+                put("Node.js8.10", NODE_JS8_10);
+                put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
+                put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
+                put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
+                put("Custom", CUSTOM);
+                put("PHP7.3", PHP7_3);
+            }
+        };
 
         private String value;
 
@@ -145,7 +133,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
 
         @JsonCreator
         public static RuntimeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             RuntimeEnum result = staticFields.get(value);
@@ -198,36 +186,31 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
          * Enum INLINE for value: "inline"
          */
         public static final CodeTypeEnum INLINE = new CodeTypeEnum("inline");
-
         
         /**
          * Enum ZIP for value: "zip"
          */
         public static final CodeTypeEnum ZIP = new CodeTypeEnum("zip");
-
         
         /**
          * Enum OBS for value: "obs"
          */
         public static final CodeTypeEnum OBS = new CodeTypeEnum("obs");
-
         
         /**
          * Enum JAR for value: "jar"
          */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
-
         
 
-        public static Map<String, CodeTypeEnum> staticFields =
-                new HashMap<String, CodeTypeEnum>() {
-                    { 
-                        put("inline", INLINE);
-                        put("zip", ZIP);
-                        put("obs", OBS);
-                        put("jar", JAR);
-                    }
-                };
+        public static final Map<String, CodeTypeEnum> staticFields = new HashMap<String, CodeTypeEnum>() {
+            { 
+                put("inline", INLINE);
+                put("zip", ZIP);
+                put("obs", OBS);
+                put("jar", JAR);
+            }
+        };
 
         private String value;
 
@@ -243,7 +226,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
 
         @JsonCreator
         public static CodeTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             CodeTypeEnum result = staticFields.get(value);
@@ -719,21 +702,21 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateFunctionCodeResponse {\n");
-            sb.append("    funcUrn: ").append(toIndentedString(funcUrn)).append("\n");
-            sb.append("    funcName: ").append(toIndentedString(funcName)).append("\n");
-            sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-            sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
-            sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
-            sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
-            sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
-            sb.append("    codeSize: ").append(toIndentedString(codeSize)).append("\n");
-            sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
-            sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-            sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
-            sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
-            sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
-            sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
-            sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
+        sb.append("    funcUrn: ").append(toIndentedString(funcUrn)).append("\n");
+        sb.append("    funcName: ").append(toIndentedString(funcName)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
+        sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
+        sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
+        sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
+        sb.append("    codeSize: ").append(toIndentedString(codeSize)).append("\n");
+        sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
+        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+        sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
+        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
+        sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
+        sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
+        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -747,5 +730,6 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

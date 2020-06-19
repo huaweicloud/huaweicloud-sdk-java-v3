@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * &gt; 说明： &gt;  &gt; 如果是从镜像创建云硬盘，则不支持传入“__system__encrypted”和“__system__cmkid”字段，创建出来的云硬盘与镜像的加密属性一致。
@@ -91,8 +89,8 @@ public class PostPaidServerDataVolumeMetadata  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServerDataVolumeMetadata {\n");
-            sb.append("    systemEncrypted: ").append(toIndentedString(systemEncrypted)).append("\n");
-            sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
+        sb.append("    systemEncrypted: ").append(toIndentedString(systemEncrypted)).append("\n");
+        sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -106,5 +104,6 @@ public class PostPaidServerDataVolumeMetadata  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

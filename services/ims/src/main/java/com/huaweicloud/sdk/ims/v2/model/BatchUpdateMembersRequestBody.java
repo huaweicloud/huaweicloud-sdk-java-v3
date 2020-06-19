@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 更新镜像成员状态请求体
@@ -41,22 +39,19 @@ public class BatchUpdateMembersRequestBody  {
          * Enum ACCEPTED for value: "accepted"
          */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
-
         
         /**
          * Enum REJECTED for value: "rejected"
          */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("accepted", ACCEPTED);
-                        put("rejected", REJECTED);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("accepted", ACCEPTED);
+                put("rejected", REJECTED);
+            }
+        };
 
         private String value;
 
@@ -72,7 +67,7 @@ public class BatchUpdateMembersRequestBody  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -234,10 +229,10 @@ public class BatchUpdateMembersRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchUpdateMembersRequestBody {\n");
-            sb.append("    images: ").append(toIndentedString(images)).append("\n");
-            sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
+        sb.append("    images: ").append(toIndentedString(images)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -251,5 +246,6 @@ public class BatchUpdateMembersRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

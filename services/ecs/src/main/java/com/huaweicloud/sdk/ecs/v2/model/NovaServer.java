@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -18,8 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  *  
@@ -48,106 +46,91 @@ public class NovaServer  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-
         
         /**
          * Enum _BUILD for value: " BUILD"
          */
         public static final StatusEnum _BUILD = new StatusEnum(" BUILD");
-
         
         /**
          * Enum DELETED for value: "DELETED"
          */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-
         
         /**
          * Enum HARD_REBOOT for value: "HARD_REBOOT"
          */
         public static final StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
-
         
         /**
          * Enum MIGRATING for value: "MIGRATING"
          */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
-
         
         /**
          * Enum REBOOT for value: "REBOOT"
          */
         public static final StatusEnum REBOOT = new StatusEnum("REBOOT");
-
         
         /**
          * Enum RESIZE for value: "RESIZE"
          */
         public static final StatusEnum RESIZE = new StatusEnum("RESIZE");
-
         
         /**
          * Enum REVERT_RESIZE for value: "REVERT_RESIZE"
          */
         public static final StatusEnum REVERT_RESIZE = new StatusEnum("REVERT_RESIZE");
-
         
         /**
          * Enum SHELVED for value: "SHELVED"
          */
         public static final StatusEnum SHELVED = new StatusEnum("SHELVED");
-
         
         /**
          * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
          */
         public static final StatusEnum SHELVED_OFFLOADED = new StatusEnum("SHELVED_OFFLOADED");
-
         
         /**
          * Enum SHUTOFF for value: "SHUTOFF"
          */
         public static final StatusEnum SHUTOFF = new StatusEnum("SHUTOFF");
-
         
         /**
          * Enum UNKNOWN for value: "UNKNOWN"
          */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
-
         
         /**
          * Enum VERIFY_RESIZE for value: "VERIFY_RESIZE"
          */
         public static final StatusEnum VERIFY_RESIZE = new StatusEnum("VERIFY_RESIZE");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put(" BUILD", _BUILD);
-                        put("DELETED", DELETED);
-                        put("ERROR", ERROR);
-                        put("HARD_REBOOT", HARD_REBOOT);
-                        put("MIGRATING", MIGRATING);
-                        put("REBOOT", REBOOT);
-                        put("RESIZE", RESIZE);
-                        put("REVERT_RESIZE", REVERT_RESIZE);
-                        put("SHELVED", SHELVED);
-                        put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-                        put("SHUTOFF", SHUTOFF);
-                        put("UNKNOWN", UNKNOWN);
-                        put("VERIFY_RESIZE", VERIFY_RESIZE);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put(" BUILD", _BUILD);
+                put("DELETED", DELETED);
+                put("ERROR", ERROR);
+                put("HARD_REBOOT", HARD_REBOOT);
+                put("MIGRATING", MIGRATING);
+                put("REBOOT", REBOOT);
+                put("RESIZE", RESIZE);
+                put("REVERT_RESIZE", REVERT_RESIZE);
+                put("SHELVED", SHELVED);
+                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+                put("SHUTOFF", SHUTOFF);
+                put("UNKNOWN", UNKNOWN);
+                put("VERIFY_RESIZE", VERIFY_RESIZE);
+            }
+        };
 
         private String value;
 
@@ -163,7 +146,7 @@ public class NovaServer  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -288,22 +271,19 @@ public class NovaServer  {
          * Enum AUTO for value: "AUTO"
          */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
-
         
         /**
          * Enum MANUAL for value: "MANUAL"
          */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
-
         
 
-        public static Map<String, OsDCFDiskConfigEnum> staticFields =
-                new HashMap<String, OsDCFDiskConfigEnum>() {
-                    { 
-                        put("AUTO", AUTO);
-                        put("MANUAL", MANUAL);
-                    }
-                };
+        public static final Map<String, OsDCFDiskConfigEnum> staticFields = new HashMap<String, OsDCFDiskConfigEnum>() {
+            { 
+                put("AUTO", AUTO);
+                put("MANUAL", MANUAL);
+            }
+        };
 
         private String value;
 
@@ -319,7 +299,7 @@ public class NovaServer  {
 
         @JsonCreator
         public static OsDCFDiskConfigEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsDCFDiskConfigEnum result = staticFields.get(value);
@@ -402,106 +382,91 @@ public class NovaServer  {
          * Enum SHOUTOFF for value: "SHOUTOFF"
          */
         public static final OsEXTSTSTaskStateEnum SHOUTOFF = new OsEXTSTSTaskStateEnum("SHOUTOFF");
-
         
         /**
          * Enum _RESIZE for value: " RESIZE"
          */
         public static final OsEXTSTSTaskStateEnum _RESIZE = new OsEXTSTSTaskStateEnum(" RESIZE");
-
         
         /**
          * Enum _REBUILD for value: " REBUILD"
          */
         public static final OsEXTSTSTaskStateEnum _REBUILD = new OsEXTSTSTaskStateEnum(" REBUILD");
-
         
         /**
          * Enum _VERIFY_RESIZE for value: " VERIFY_RESIZE"
          */
         public static final OsEXTSTSTaskStateEnum _VERIFY_RESIZE = new OsEXTSTSTaskStateEnum(" VERIFY_RESIZE");
-
         
         /**
          * Enum _REVERT_RESIZE for value: " REVERT_RESIZE"
          */
         public static final OsEXTSTSTaskStateEnum _REVERT_RESIZE = new OsEXTSTSTaskStateEnum(" REVERT_RESIZE");
-
         
         /**
          * Enum _PAUSED for value: " PAUSED"
          */
         public static final OsEXTSTSTaskStateEnum _PAUSED = new OsEXTSTSTaskStateEnum(" PAUSED");
-
         
         /**
          * Enum _MIGRATING for value: " MIGRATING"
          */
         public static final OsEXTSTSTaskStateEnum _MIGRATING = new OsEXTSTSTaskStateEnum(" MIGRATING");
-
         
         /**
          * Enum _SUSPENDED for value: " SUSPENDED"
          */
         public static final OsEXTSTSTaskStateEnum _SUSPENDED = new OsEXTSTSTaskStateEnum(" SUSPENDED");
-
         
         /**
          * Enum _RESCUE for value: " RESCUE"
          */
         public static final OsEXTSTSTaskStateEnum _RESCUE = new OsEXTSTSTaskStateEnum(" RESCUE");
-
         
         /**
          * Enum _ERROR for value: " ERROR"
          */
         public static final OsEXTSTSTaskStateEnum _ERROR = new OsEXTSTSTaskStateEnum(" ERROR");
-
         
         /**
          * Enum _DELETED for value: " DELETED"
          */
         public static final OsEXTSTSTaskStateEnum _DELETED = new OsEXTSTSTaskStateEnum(" DELETED");
-
         
         /**
          * Enum SOFT_DELETED for value: "SOFT_DELETED"
          */
         public static final OsEXTSTSTaskStateEnum SOFT_DELETED = new OsEXTSTSTaskStateEnum("SOFT_DELETED");
-
         
         /**
          * Enum SHELVED for value: "SHELVED"
          */
         public static final OsEXTSTSTaskStateEnum SHELVED = new OsEXTSTSTaskStateEnum("SHELVED");
-
         
         /**
          * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
          */
         public static final OsEXTSTSTaskStateEnum SHELVED_OFFLOADED = new OsEXTSTSTaskStateEnum("SHELVED_OFFLOADED");
-
         
 
-        public static Map<String, OsEXTSTSTaskStateEnum> staticFields =
-                new HashMap<String, OsEXTSTSTaskStateEnum>() {
-                    { 
-                        put("SHOUTOFF", SHOUTOFF);
-                        put(" RESIZE", _RESIZE);
-                        put(" REBUILD", _REBUILD);
-                        put(" VERIFY_RESIZE", _VERIFY_RESIZE);
-                        put(" REVERT_RESIZE", _REVERT_RESIZE);
-                        put(" PAUSED", _PAUSED);
-                        put(" MIGRATING", _MIGRATING);
-                        put(" SUSPENDED", _SUSPENDED);
-                        put(" RESCUE", _RESCUE);
-                        put(" ERROR", _ERROR);
-                        put(" DELETED", _DELETED);
-                        put("SOFT_DELETED", SOFT_DELETED);
-                        put("SHELVED", SHELVED);
-                        put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-                    }
-                };
+        public static final Map<String, OsEXTSTSTaskStateEnum> staticFields = new HashMap<String, OsEXTSTSTaskStateEnum>() {
+            { 
+                put("SHOUTOFF", SHOUTOFF);
+                put(" RESIZE", _RESIZE);
+                put(" REBUILD", _REBUILD);
+                put(" VERIFY_RESIZE", _VERIFY_RESIZE);
+                put(" REVERT_RESIZE", _REVERT_RESIZE);
+                put(" PAUSED", _PAUSED);
+                put(" MIGRATING", _MIGRATING);
+                put(" SUSPENDED", _SUSPENDED);
+                put(" RESCUE", _RESCUE);
+                put(" ERROR", _ERROR);
+                put(" DELETED", _DELETED);
+                put("SOFT_DELETED", SOFT_DELETED);
+                put("SHELVED", SHELVED);
+                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+            }
+        };
 
         private String value;
 
@@ -517,7 +482,7 @@ public class NovaServer  {
 
         @JsonCreator
         public static OsEXTSTSTaskStateEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsEXTSTSTaskStateEnum result = staticFields.get(value);
@@ -570,92 +535,79 @@ public class NovaServer  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final OsEXTSTSVmStateEnum ACTIVE = new OsEXTSTSVmStateEnum("ACTIVE");
-
         
         /**
          * Enum BUILDING for value: "BUILDING"
          */
         public static final OsEXTSTSVmStateEnum BUILDING = new OsEXTSTSVmStateEnum("BUILDING");
-
         
         /**
          * Enum STOPPED for value: "STOPPED"
          */
         public static final OsEXTSTSVmStateEnum STOPPED = new OsEXTSTSVmStateEnum("STOPPED");
-
         
         /**
          * Enum RESIZED for value: "RESIZED"
          */
         public static final OsEXTSTSVmStateEnum RESIZED = new OsEXTSTSVmStateEnum("RESIZED");
-
         
         /**
          * Enum PAUSED for value: "PAUSED"
          */
         public static final OsEXTSTSVmStateEnum PAUSED = new OsEXTSTSVmStateEnum("PAUSED");
-
         
         /**
          * Enum SUSPENDED for value: "SUSPENDED"
          */
         public static final OsEXTSTSVmStateEnum SUSPENDED = new OsEXTSTSVmStateEnum("SUSPENDED");
-
         
         /**
          * Enum RESCUED for value: "RESCUED"
          */
         public static final OsEXTSTSVmStateEnum RESCUED = new OsEXTSTSVmStateEnum("RESCUED");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final OsEXTSTSVmStateEnum ERROR = new OsEXTSTSVmStateEnum("ERROR");
-
         
         /**
          * Enum DELETED for value: "DELETED"
          */
         public static final OsEXTSTSVmStateEnum DELETED = new OsEXTSTSVmStateEnum("DELETED");
-
         
         /**
          * Enum SOFT_DELETED for value: "SOFT_DELETED"
          */
         public static final OsEXTSTSVmStateEnum SOFT_DELETED = new OsEXTSTSVmStateEnum("SOFT_DELETED");
-
         
         /**
          * Enum SHELVED for value: "SHELVED"
          */
         public static final OsEXTSTSVmStateEnum SHELVED = new OsEXTSTSVmStateEnum("SHELVED");
-
         
         /**
          * Enum SHELVED_OFFLOADED for value: "SHELVED_OFFLOADED"
          */
         public static final OsEXTSTSVmStateEnum SHELVED_OFFLOADED = new OsEXTSTSVmStateEnum("SHELVED_OFFLOADED");
-
         
 
-        public static Map<String, OsEXTSTSVmStateEnum> staticFields =
-                new HashMap<String, OsEXTSTSVmStateEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("BUILDING", BUILDING);
-                        put("STOPPED", STOPPED);
-                        put("RESIZED", RESIZED);
-                        put("PAUSED", PAUSED);
-                        put("SUSPENDED", SUSPENDED);
-                        put("RESCUED", RESCUED);
-                        put("ERROR", ERROR);
-                        put("DELETED", DELETED);
-                        put("SOFT_DELETED", SOFT_DELETED);
-                        put("SHELVED", SHELVED);
-                        put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-                    }
-                };
+        public static final Map<String, OsEXTSTSVmStateEnum> staticFields = new HashMap<String, OsEXTSTSVmStateEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("BUILDING", BUILDING);
+                put("STOPPED", STOPPED);
+                put("RESIZED", RESIZED);
+                put("PAUSED", PAUSED);
+                put("SUSPENDED", SUSPENDED);
+                put("RESCUED", RESCUED);
+                put("ERROR", ERROR);
+                put("DELETED", DELETED);
+                put("SOFT_DELETED", SOFT_DELETED);
+                put("SHELVED", SHELVED);
+                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+            }
+        };
 
         private String value;
 
@@ -671,7 +623,7 @@ public class NovaServer  {
 
         @JsonCreator
         public static OsEXTSTSVmStateEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsEXTSTSVmStateEnum result = staticFields.get(value);
@@ -754,36 +706,31 @@ public class NovaServer  {
          * Enum UP for value: "UP"
          */
         public static final HostStatusEnum UP = new HostStatusEnum("UP");
-
         
         /**
          * Enum UNKNOWN for value: "UNKNOWN"
          */
         public static final HostStatusEnum UNKNOWN = new HostStatusEnum("UNKNOWN");
-
         
         /**
          * Enum DOWN for value: "DOWN"
          */
         public static final HostStatusEnum DOWN = new HostStatusEnum("DOWN");
-
         
         /**
          * Enum MAINTENANCE for value: "MAINTENANCE"
          */
         public static final HostStatusEnum MAINTENANCE = new HostStatusEnum("MAINTENANCE");
-
         
 
-        public static Map<String, HostStatusEnum> staticFields =
-                new HashMap<String, HostStatusEnum>() {
-                    { 
-                        put("UP", UP);
-                        put("UNKNOWN", UNKNOWN);
-                        put("DOWN", DOWN);
-                        put("MAINTENANCE", MAINTENANCE);
-                    }
-                };
+        public static final Map<String, HostStatusEnum> staticFields = new HashMap<String, HostStatusEnum>() {
+            { 
+                put("UP", UP);
+                put("UNKNOWN", UNKNOWN);
+                put("DOWN", DOWN);
+                put("MAINTENANCE", MAINTENANCE);
+            }
+        };
 
         private String value;
 
@@ -799,7 +746,7 @@ public class NovaServer  {
 
         @JsonCreator
         public static HostStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             HostStatusEnum result = staticFields.get(value);
@@ -1906,48 +1853,48 @@ public class NovaServer  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaServer {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    created: ").append(toIndentedString(created)).append("\n");
-            sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-            sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-            sb.append("    image: ").append(toIndentedString(image)).append("\n");
-            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
-            sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
-            sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
-            sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    links: ").append(toIndentedString(links)).append("\n");
-            sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
-            sb.append("    osEXTAZAvailabilityZone: ").append(toIndentedString(osEXTAZAvailabilityZone)).append("\n");
-            sb.append("    osEXTSRVATTRHost: ").append(toIndentedString(osEXTSRVATTRHost)).append("\n");
-            sb.append("    osEXTSRVATTRHypervisorHostname: ").append(toIndentedString(osEXTSRVATTRHypervisorHostname)).append("\n");
-            sb.append("    osEXTSRVATTRInstanceName: ").append(toIndentedString(osEXTSRVATTRInstanceName)).append("\n");
-            sb.append("    osEXTSTSPowerState: ").append(toIndentedString(osEXTSTSPowerState)).append("\n");
-            sb.append("    osEXTSTSTaskState: ").append(toIndentedString(osEXTSTSTaskState)).append("\n");
-            sb.append("    osEXTSTSVmState: ").append(toIndentedString(osEXTSTSVmState)).append("\n");
-            sb.append("    osSRVUSGLaunchedAt: ").append(toIndentedString(osSRVUSGLaunchedAt)).append("\n");
-            sb.append("    osSRVUSGTerminatedAt: ").append(toIndentedString(osSRVUSGTerminatedAt)).append("\n");
-            sb.append("    osExtendedVolumesVolumesAttached: ").append(toIndentedString(osExtendedVolumesVolumesAttached)).append("\n");
-            sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
-            sb.append("    osEXTSRVATTRHostname: ").append(toIndentedString(osEXTSRVATTRHostname)).append("\n");
-            sb.append("    osEXTSRVATTRReservationId: ").append(toIndentedString(osEXTSRVATTRReservationId)).append("\n");
-            sb.append("    osEXTSRVATTRLaunchIndex: ").append(toIndentedString(osEXTSRVATTRLaunchIndex)).append("\n");
-            sb.append("    osEXTSRVATTRKernelId: ").append(toIndentedString(osEXTSRVATTRKernelId)).append("\n");
-            sb.append("    osEXTSRVATTRRamdiskId: ").append(toIndentedString(osEXTSRVATTRRamdiskId)).append("\n");
-            sb.append("    osEXTSRVATTRRootDeviceName: ").append(toIndentedString(osEXTSRVATTRRootDeviceName)).append("\n");
-            sb.append("    osEXTSRVATTRUserData: ").append(toIndentedString(osEXTSRVATTRUserData)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
-            sb.append("    accessIPv4: ").append(toIndentedString(accessIPv4)).append("\n");
-            sb.append("    accessIPv6: ").append(toIndentedString(accessIPv6)).append("\n");
-            sb.append("    configDrive: ").append(toIndentedString(configDrive)).append("\n");
-            sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
+        sb.append("    osEXTAZAvailabilityZone: ").append(toIndentedString(osEXTAZAvailabilityZone)).append("\n");
+        sb.append("    osEXTSRVATTRHost: ").append(toIndentedString(osEXTSRVATTRHost)).append("\n");
+        sb.append("    osEXTSRVATTRHypervisorHostname: ").append(toIndentedString(osEXTSRVATTRHypervisorHostname)).append("\n");
+        sb.append("    osEXTSRVATTRInstanceName: ").append(toIndentedString(osEXTSRVATTRInstanceName)).append("\n");
+        sb.append("    osEXTSTSPowerState: ").append(toIndentedString(osEXTSTSPowerState)).append("\n");
+        sb.append("    osEXTSTSTaskState: ").append(toIndentedString(osEXTSTSTaskState)).append("\n");
+        sb.append("    osEXTSTSVmState: ").append(toIndentedString(osEXTSTSVmState)).append("\n");
+        sb.append("    osSRVUSGLaunchedAt: ").append(toIndentedString(osSRVUSGLaunchedAt)).append("\n");
+        sb.append("    osSRVUSGTerminatedAt: ").append(toIndentedString(osSRVUSGTerminatedAt)).append("\n");
+        sb.append("    osExtendedVolumesVolumesAttached: ").append(toIndentedString(osExtendedVolumesVolumesAttached)).append("\n");
+        sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
+        sb.append("    osEXTSRVATTRHostname: ").append(toIndentedString(osEXTSRVATTRHostname)).append("\n");
+        sb.append("    osEXTSRVATTRReservationId: ").append(toIndentedString(osEXTSRVATTRReservationId)).append("\n");
+        sb.append("    osEXTSRVATTRLaunchIndex: ").append(toIndentedString(osEXTSRVATTRLaunchIndex)).append("\n");
+        sb.append("    osEXTSRVATTRKernelId: ").append(toIndentedString(osEXTSRVATTRKernelId)).append("\n");
+        sb.append("    osEXTSRVATTRRamdiskId: ").append(toIndentedString(osEXTSRVATTRRamdiskId)).append("\n");
+        sb.append("    osEXTSRVATTRRootDeviceName: ").append(toIndentedString(osEXTSRVATTRRootDeviceName)).append("\n");
+        sb.append("    osEXTSRVATTRUserData: ").append(toIndentedString(osEXTSRVATTRUserData)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+        sb.append("    accessIPv4: ").append(toIndentedString(accessIPv4)).append("\n");
+        sb.append("    accessIPv6: ").append(toIndentedString(accessIPv6)).append("\n");
+        sb.append("    configDrive: ").append(toIndentedString(configDrive)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -1961,5 +1908,6 @@ public class NovaServer  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

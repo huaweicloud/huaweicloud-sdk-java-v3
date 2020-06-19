@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 注入文件信息。仅支持注入文本文件，最大支持注入5个文件，每个文件最大1KB。
@@ -87,8 +85,8 @@ public class Personality  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Personality {\n");
-            sb.append("    path: ").append(toIndentedString(path)).append("\n");
-            sb.append("    content: ").append(toIndentedString(content)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -102,5 +100,6 @@ public class Personality  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

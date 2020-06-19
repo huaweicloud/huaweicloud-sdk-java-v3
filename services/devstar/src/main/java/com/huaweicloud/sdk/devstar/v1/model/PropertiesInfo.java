@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * PropertiesInfo
@@ -330,17 +328,17 @@ public class PropertiesInfo  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PropertiesInfo {\n");
-            sb.append("    key: ").append(toIndentedString(key)).append("\n");
-            sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
-            sb.append("    label: ").append(toIndentedString(label)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");
-            sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
-            sb.append("    required: ").append(toIndentedString(required)).append("\n");
-            sb.append("    regType: ").append(toIndentedString(regType)).append("\n");
-            sb.append("    regPattern: ").append(toIndentedString(regPattern)).append("\n");
-            sb.append("    regTip: ").append(toIndentedString(regTip)).append("\n");
-            sb.append("    isShow: ").append(toIndentedString(isShow)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");
+        sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
+        sb.append("    required: ").append(toIndentedString(required)).append("\n");
+        sb.append("    regType: ").append(toIndentedString(regType)).append("\n");
+        sb.append("    regPattern: ").append(toIndentedString(regPattern)).append("\n");
+        sb.append("    regTip: ").append(toIndentedString(regTip)).append("\n");
+        sb.append("    isShow: ").append(toIndentedString(isShow)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -354,5 +352,6 @@ public class PropertiesInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

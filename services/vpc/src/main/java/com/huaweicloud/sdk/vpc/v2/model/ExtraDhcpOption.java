@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 子网配置的NTP地址对象
@@ -27,15 +25,13 @@ public class ExtraDhcpOption  {
          * Enum NTP for value: "ntp"
          */
         public static final OptNameEnum NTP = new OptNameEnum("ntp");
-
         
 
-        public static Map<String, OptNameEnum> staticFields =
-                new HashMap<String, OptNameEnum>() {
-                    { 
-                        put("ntp", NTP);
-                    }
-                };
+        public static final Map<String, OptNameEnum> staticFields = new HashMap<String, OptNameEnum>() {
+            { 
+                put("ntp", NTP);
+            }
+        };
 
         private String value;
 
@@ -51,7 +47,7 @@ public class ExtraDhcpOption  {
 
         @JsonCreator
         public static OptNameEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OptNameEnum result = staticFields.get(value);
@@ -160,8 +156,8 @@ public class ExtraDhcpOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExtraDhcpOption {\n");
-            sb.append("    optName: ").append(toIndentedString(optName)).append("\n");
-            sb.append("    optValue: ").append(toIndentedString(optValue)).append("\n");
+        sb.append("    optName: ").append(toIndentedString(optName)).append("\n");
+        sb.append("    optValue: ").append(toIndentedString(optValue)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -175,5 +171,6 @@ public class ExtraDhcpOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -13,8 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  *  
@@ -49,22 +47,19 @@ public class NovaCreateServersResult  {
          * Enum MANUAL for value: "MANUAL"
          */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
-
         
         /**
          * Enum AUTO for value: "AUTO"
          */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
-
         
 
-        public static Map<String, OsDCFDiskConfigEnum> staticFields =
-                new HashMap<String, OsDCFDiskConfigEnum>() {
-                    { 
-                        put("MANUAL", MANUAL);
-                        put("AUTO", AUTO);
-                    }
-                };
+        public static final Map<String, OsDCFDiskConfigEnum> staticFields = new HashMap<String, OsDCFDiskConfigEnum>() {
+            { 
+                put("MANUAL", MANUAL);
+                put("AUTO", AUTO);
+            }
+        };
 
         private String value;
 
@@ -80,7 +75,7 @@ public class NovaCreateServersResult  {
 
         @JsonCreator
         public static OsDCFDiskConfigEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsDCFDiskConfigEnum result = staticFields.get(value);
@@ -301,12 +296,12 @@ public class NovaCreateServersResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaCreateServersResult {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    links: ").append(toIndentedString(links)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
-            sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
-            sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
+        sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
+        sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -320,5 +315,6 @@ public class NovaCreateServersResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

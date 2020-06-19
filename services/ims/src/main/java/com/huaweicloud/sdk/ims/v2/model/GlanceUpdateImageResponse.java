@@ -1,9 +1,9 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -53,22 +53,19 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum UDS for value: "uds"
          */
         public static final ImageSourceTypeEnum UDS = new ImageSourceTypeEnum("uds");
-
         
         /**
          * Enum SWIFT for value: "swift"
          */
         public static final ImageSourceTypeEnum SWIFT = new ImageSourceTypeEnum("swift");
-
         
 
-        public static Map<String, ImageSourceTypeEnum> staticFields =
-                new HashMap<String, ImageSourceTypeEnum>() {
-                    { 
-                        put("uds", UDS);
-                        put("swift", SWIFT);
-                    }
-                };
+        public static final Map<String, ImageSourceTypeEnum> staticFields = new HashMap<String, ImageSourceTypeEnum>() {
+            { 
+                put("uds", UDS);
+                put("swift", SWIFT);
+            }
+        };
 
         private String value;
 
@@ -84,7 +81,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static ImageSourceTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ImageSourceTypeEnum result = staticFields.get(value);
@@ -137,29 +134,25 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum GOLD for value: "gold"
          */
         public static final ImagetypeEnum GOLD = new ImagetypeEnum("gold");
-
         
         /**
          * Enum PRIVATE for value: "private"
          */
         public static final ImagetypeEnum PRIVATE = new ImagetypeEnum("private");
-
         
         /**
          * Enum SHARED for value: "shared"
          */
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
-
         
 
-        public static Map<String, ImagetypeEnum> staticFields =
-                new HashMap<String, ImagetypeEnum>() {
-                    { 
-                        put("gold", GOLD);
-                        put("private", PRIVATE);
-                        put("shared", SHARED);
-                    }
-                };
+        public static final Map<String, ImagetypeEnum> staticFields = new HashMap<String, ImagetypeEnum>() {
+            { 
+                put("gold", GOLD);
+                put("private", PRIVATE);
+                put("shared", SHARED);
+            }
+        };
 
         private String value;
 
@@ -175,7 +168,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static ImagetypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ImagetypeEnum result = staticFields.get(value);
@@ -228,22 +221,19 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum TRUE for value: "true"
          */
         public static final IsregisteredEnum TRUE = new IsregisteredEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final IsregisteredEnum FALSE = new IsregisteredEnum("false");
-
         
 
-        public static Map<String, IsregisteredEnum> staticFields =
-                new HashMap<String, IsregisteredEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, IsregisteredEnum> staticFields = new HashMap<String, IsregisteredEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -259,7 +249,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static IsregisteredEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             IsregisteredEnum result = staticFields.get(value);
@@ -318,22 +308,19 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum _32 for value: "32"
          */
         public static final OsBitEnum _32 = new OsBitEnum("32");
-
         
         /**
          * Enum _64 for value: "64"
          */
         public static final OsBitEnum _64 = new OsBitEnum("64");
-
         
 
-        public static Map<String, OsBitEnum> staticFields =
-                new HashMap<String, OsBitEnum>() {
-                    { 
-                        put("32", _32);
-                        put("64", _64);
-                    }
-                };
+        public static final Map<String, OsBitEnum> staticFields = new HashMap<String, OsBitEnum>() {
+            { 
+                put("32", _32);
+                put("64", _64);
+            }
+        };
 
         private String value;
 
@@ -349,7 +336,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static OsBitEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsBitEnum result = staticFields.get(value);
@@ -402,29 +389,25 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum LINUX for value: "Linux"
          */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-
         
         /**
          * Enum WINDOWS for value: "Windows"
          */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-
         
         /**
          * Enum OTHER for value: "Other"
          */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
-
         
 
-        public static Map<String, OsTypeEnum> staticFields =
-                new HashMap<String, OsTypeEnum>() {
-                    { 
-                        put("Linux", LINUX);
-                        put("Windows", WINDOWS);
-                        put("Other", OTHER);
-                    }
-                };
+        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
+            { 
+                put("Linux", LINUX);
+                put("Windows", WINDOWS);
+                put("Other", OTHER);
+            }
+        };
 
         private String value;
 
@@ -440,7 +423,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsTypeEnum result = staticFields.get(value);
@@ -499,92 +482,79 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum WINDOWS for value: "Windows"
          */
         public static final PlatformEnum WINDOWS = new PlatformEnum("Windows");
-
         
         /**
          * Enum UBUNTU for value: "Ubuntu"
          */
         public static final PlatformEnum UBUNTU = new PlatformEnum("Ubuntu");
-
         
         /**
          * Enum REDHAT for value: "RedHat"
          */
         public static final PlatformEnum REDHAT = new PlatformEnum("RedHat");
-
         
         /**
          * Enum SUSE for value: "SUSE"
          */
         public static final PlatformEnum SUSE = new PlatformEnum("SUSE");
-
         
         /**
          * Enum CENTOS for value: "CentOS"
          */
         public static final PlatformEnum CENTOS = new PlatformEnum("CentOS");
-
         
         /**
          * Enum DEBIAN for value: "Debian"
          */
         public static final PlatformEnum DEBIAN = new PlatformEnum("Debian");
-
         
         /**
          * Enum OPENSUSE for value: "OpenSUSE"
          */
         public static final PlatformEnum OPENSUSE = new PlatformEnum("OpenSUSE");
-
         
         /**
          * Enum ORACLELINUX for value: "OracleLinux"
          */
         public static final PlatformEnum ORACLELINUX = new PlatformEnum("OracleLinux");
-
         
         /**
          * Enum FEDORA for value: "Fedora"
          */
         public static final PlatformEnum FEDORA = new PlatformEnum("Fedora");
-
         
         /**
          * Enum OTHER for value: "Other"
          */
         public static final PlatformEnum OTHER = new PlatformEnum("Other");
-
         
         /**
          * Enum COREOS for value: "CoreOS"
          */
         public static final PlatformEnum COREOS = new PlatformEnum("CoreOS");
-
         
         /**
          * Enum EULEROS for value: "EulerOS"
          */
         public static final PlatformEnum EULEROS = new PlatformEnum("EulerOS");
-
         
 
-        public static Map<String, PlatformEnum> staticFields =
-                new HashMap<String, PlatformEnum>() {
-                    { 
-                        put("Windows", WINDOWS);
-                        put("Ubuntu", UBUNTU);
-                        put("RedHat", REDHAT);
-                        put("SUSE", SUSE);
-                        put("CentOS", CENTOS);
-                        put("Debian", DEBIAN);
-                        put("OpenSUSE", OPENSUSE);
-                        put("OracleLinux", ORACLELINUX);
-                        put("Fedora", FEDORA);
-                        put("Other", OTHER);
-                        put("CoreOS", COREOS);
-                        put("EulerOS", EULEROS);
-                    }
-                };
+        public static final Map<String, PlatformEnum> staticFields = new HashMap<String, PlatformEnum>() {
+            { 
+                put("Windows", WINDOWS);
+                put("Ubuntu", UBUNTU);
+                put("RedHat", REDHAT);
+                put("SUSE", SUSE);
+                put("CentOS", CENTOS);
+                put("Debian", DEBIAN);
+                put("OpenSUSE", OPENSUSE);
+                put("OracleLinux", ORACLELINUX);
+                put("Fedora", FEDORA);
+                put("Other", OTHER);
+                put("CoreOS", COREOS);
+                put("EulerOS", EULEROS);
+            }
+        };
 
         private String value;
 
@@ -600,7 +570,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static PlatformEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             PlatformEnum result = staticFields.get(value);
@@ -743,43 +713,37 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum VHD for value: "vhd"
          */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
-
         
         /**
          * Enum ZVHD for value: "zvhd"
          */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
-
         
         /**
          * Enum RAW for value: "raw"
          */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
-
         
         /**
          * Enum QCOW2 for value: "qcow2"
          */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
-
         
         /**
          * Enum ZVHD2 for value: "zvhd2"
          */
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
-
         
 
-        public static Map<String, DiskFormatEnum> staticFields =
-                new HashMap<String, DiskFormatEnum>() {
-                    { 
-                        put("vhd", VHD);
-                        put("zvhd", ZVHD);
-                        put("raw", RAW);
-                        put("qcow2", QCOW2);
-                        put("zvhd2", ZVHD2);
-                    }
-                };
+        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
+            { 
+                put("vhd", VHD);
+                put("zvhd", ZVHD);
+                put("raw", RAW);
+                put("qcow2", QCOW2);
+                put("zvhd2", ZVHD2);
+            }
+        };
 
         private String value;
 
@@ -795,7 +759,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static DiskFormatEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DiskFormatEnum result = staticFields.get(value);
@@ -908,43 +872,37 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum QUEUED for value: "queued"
          */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
-
         
         /**
          * Enum SAVING for value: "saving"
          */
         public static final StatusEnum SAVING = new StatusEnum("saving");
-
         
         /**
          * Enum DELETED for value: "deleted"
          */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-
         
         /**
          * Enum KILLED for value: "killed"
          */
         public static final StatusEnum KILLED = new StatusEnum("killed");
-
         
         /**
          * Enum ACTIVE for value: "active"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("queued", QUEUED);
-                        put("saving", SAVING);
-                        put("deleted", DELETED);
-                        put("killed", KILLED);
-                        put("active", ACTIVE);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("queued", QUEUED);
+                put("saving", SAVING);
+                put("deleted", DELETED);
+                put("killed", KILLED);
+                put("active", ACTIVE);
+            }
+        };
 
         private String value;
 
@@ -960,7 +918,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -1025,29 +983,25 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum FUSIONCOMPUTE for value: "FusionCompute"
          */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
-
         
         /**
          * Enum IRONIC for value: "Ironic"
          */
         public static final VirtualEnvTypeEnum IRONIC = new VirtualEnvTypeEnum("Ironic");
-
         
         /**
          * Enum DATAIMAGE for value: "DataImage"
          */
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
-
         
 
-        public static Map<String, VirtualEnvTypeEnum> staticFields =
-                new HashMap<String, VirtualEnvTypeEnum>() {
-                    { 
-                        put("FusionCompute", FUSIONCOMPUTE);
-                        put("Ironic", IRONIC);
-                        put("DataImage", DATAIMAGE);
-                    }
-                };
+        public static final Map<String, VirtualEnvTypeEnum> staticFields = new HashMap<String, VirtualEnvTypeEnum>() {
+            { 
+                put("FusionCompute", FUSIONCOMPUTE);
+                put("Ironic", IRONIC);
+                put("DataImage", DATAIMAGE);
+            }
+        };
 
         private String value;
 
@@ -1063,7 +1017,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static VirtualEnvTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             VirtualEnvTypeEnum result = staticFields.get(value);
@@ -1122,29 +1076,25 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum PRIVATE for value: "private"
          */
         public static final VisibilityEnum PRIVATE = new VisibilityEnum("private");
-
         
         /**
          * Enum PUBLIC for value: "public"
          */
         public static final VisibilityEnum PUBLIC = new VisibilityEnum("public");
-
         
         /**
          * Enum SHARED for value: "shared"
          */
         public static final VisibilityEnum SHARED = new VisibilityEnum("shared");
-
         
 
-        public static Map<String, VisibilityEnum> staticFields =
-                new HashMap<String, VisibilityEnum>() {
-                    { 
-                        put("private", PRIVATE);
-                        put("public", PUBLIC);
-                        put("shared", SHARED);
-                    }
-                };
+        public static final Map<String, VisibilityEnum> staticFields = new HashMap<String, VisibilityEnum>() {
+            { 
+                put("private", PRIVATE);
+                put("public", PUBLIC);
+                put("shared", SHARED);
+            }
+        };
 
         private String value;
 
@@ -1160,7 +1110,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static VisibilityEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             VisibilityEnum result = staticFields.get(value);
@@ -1213,22 +1163,19 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum TRUE for value: "true"
          */
         public static final SupportFcInjectEnum TRUE = new SupportFcInjectEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final SupportFcInjectEnum FALSE = new SupportFcInjectEnum("false");
-
         
 
-        public static Map<String, SupportFcInjectEnum> staticFields =
-                new HashMap<String, SupportFcInjectEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, SupportFcInjectEnum> staticFields = new HashMap<String, SupportFcInjectEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -1244,7 +1191,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static SupportFcInjectEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             SupportFcInjectEnum result = staticFields.get(value);
@@ -1303,22 +1250,19 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum BIOS for value: "bios"
          */
         public static final HwFirmwareTypeEnum BIOS = new HwFirmwareTypeEnum("bios");
-
         
         /**
          * Enum UEFI for value: "uefi"
          */
         public static final HwFirmwareTypeEnum UEFI = new HwFirmwareTypeEnum("uefi");
-
         
 
-        public static Map<String, HwFirmwareTypeEnum> staticFields =
-                new HashMap<String, HwFirmwareTypeEnum>() {
-                    { 
-                        put("bios", BIOS);
-                        put("uefi", UEFI);
-                    }
-                };
+        public static final Map<String, HwFirmwareTypeEnum> staticFields = new HashMap<String, HwFirmwareTypeEnum>() {
+            { 
+                put("bios", BIOS);
+                put("uefi", UEFI);
+            }
+        };
 
         private String value;
 
@@ -1334,7 +1278,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static HwFirmwareTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             HwFirmwareTypeEnum result = staticFields.get(value);
@@ -1387,22 +1331,19 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum TRUE for value: "true"
          */
         public static final SupportArmEnum TRUE = new SupportArmEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final SupportArmEnum FALSE = new SupportArmEnum("false");
-
         
 
-        public static Map<String, SupportArmEnum> staticFields =
-                new HashMap<String, SupportArmEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, SupportArmEnum> staticFields = new HashMap<String, SupportArmEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -1418,7 +1359,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static SupportArmEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             SupportArmEnum result = staticFields.get(value);
@@ -1471,22 +1412,19 @@ public class GlanceUpdateImageResponse extends SdkResponse {
          * Enum TRUE for value: "true"
          */
         public static final IsOffshelvedEnum TRUE = new IsOffshelvedEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final IsOffshelvedEnum FALSE = new IsOffshelvedEnum("false");
-
         
 
-        public static Map<String, IsOffshelvedEnum> staticFields =
-                new HashMap<String, IsOffshelvedEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, IsOffshelvedEnum> staticFields = new HashMap<String, IsOffshelvedEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -1502,7 +1440,7 @@ public class GlanceUpdateImageResponse extends SdkResponse {
 
         @JsonCreator
         public static IsOffshelvedEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             IsOffshelvedEnum result = staticFields.get(value);
@@ -2656,55 +2594,55 @@ public class GlanceUpdateImageResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GlanceUpdateImageResponse {\n");
-            sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
-            sb.append("    dataOrigin: ").append(toIndentedString(dataOrigin)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
-            sb.append("    imageSourceType: ").append(toIndentedString(imageSourceType)).append("\n");
-            sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
-            sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
-            sb.append("    originalimagename: ").append(toIndentedString(originalimagename)).append("\n");
-            sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-            sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
-            sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
-            sb.append("    productcode: ").append(toIndentedString(productcode)).append("\n");
-            sb.append("    supportDiskintensive: ").append(toIndentedString(supportDiskintensive)).append("\n");
-            sb.append("    supportHighperformance: ").append(toIndentedString(supportHighperformance)).append("\n");
-            sb.append("    supportKvm: ").append(toIndentedString(supportKvm)).append("\n");
-            sb.append("    supportKvmGpuType: ").append(toIndentedString(supportKvmGpuType)).append("\n");
-            sb.append("    supportKvmInfiniband: ").append(toIndentedString(supportKvmInfiniband)).append("\n");
-            sb.append("    supportLargememory: ").append(toIndentedString(supportLargememory)).append("\n");
-            sb.append("    supportXen: ").append(toIndentedString(supportXen)).append("\n");
-            sb.append("    supportXenGpuType: ").append(toIndentedString(supportXenGpuType)).append("\n");
-            sb.append("    supportXenHana: ").append(toIndentedString(supportXenHana)).append("\n");
-            sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
-            sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
-            sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
-            sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
-            sb.append("    file: ").append(toIndentedString(file)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-            sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
-            sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
-            sb.append("    self: ").append(toIndentedString(self)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-            sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
-            sb.append("    virtualSize: ").append(toIndentedString(virtualSize)).append("\n");
-            sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
-            sb.append("    supportFcInject: ").append(toIndentedString(supportFcInject)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
-            sb.append("    supportArm: ").append(toIndentedString(supportArm)).append("\n");
-            sb.append("    isOffshelved: ").append(toIndentedString(isOffshelved)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    dataOrigin: ").append(toIndentedString(dataOrigin)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
+        sb.append("    imageSourceType: ").append(toIndentedString(imageSourceType)).append("\n");
+        sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
+        sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
+        sb.append("    originalimagename: ").append(toIndentedString(originalimagename)).append("\n");
+        sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+        sb.append("    productcode: ").append(toIndentedString(productcode)).append("\n");
+        sb.append("    supportDiskintensive: ").append(toIndentedString(supportDiskintensive)).append("\n");
+        sb.append("    supportHighperformance: ").append(toIndentedString(supportHighperformance)).append("\n");
+        sb.append("    supportKvm: ").append(toIndentedString(supportKvm)).append("\n");
+        sb.append("    supportKvmGpuType: ").append(toIndentedString(supportKvmGpuType)).append("\n");
+        sb.append("    supportKvmInfiniband: ").append(toIndentedString(supportKvmInfiniband)).append("\n");
+        sb.append("    supportLargememory: ").append(toIndentedString(supportLargememory)).append("\n");
+        sb.append("    supportXen: ").append(toIndentedString(supportXen)).append("\n");
+        sb.append("    supportXenGpuType: ").append(toIndentedString(supportXenGpuType)).append("\n");
+        sb.append("    supportXenHana: ").append(toIndentedString(supportXenHana)).append("\n");
+        sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
+        sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+        sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
+        sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
+        sb.append("    file: ").append(toIndentedString(file)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
+        sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+        sb.append("    self: ").append(toIndentedString(self)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
+        sb.append("    virtualSize: ").append(toIndentedString(virtualSize)).append("\n");
+        sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+        sb.append("    supportFcInject: ").append(toIndentedString(supportFcInject)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
+        sb.append("    supportArm: ").append(toIndentedString(supportArm)).append("\n");
+        sb.append("    isOffshelved: ").append(toIndentedString(isOffshelved)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -2718,5 +2656,6 @@ public class GlanceUpdateImageResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

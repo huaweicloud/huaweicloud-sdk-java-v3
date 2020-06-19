@@ -1,9 +1,9 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -13,8 +13,8 @@ import com.huaweicloud.sdk.evs.v2.model.Link;
 import com.huaweicloud.sdk.evs.v2.model.VolumeMetadata;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -592,25 +592,25 @@ public class UpdateVolumeResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateVolumeResponse {\n");
-            sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    bootable: ").append(toIndentedString(bootable)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    links: ").append(toIndentedString(links)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    osVolHostAttrHost: ").append(toIndentedString(osVolHostAttrHost)).append("\n");
-            sb.append("    osVolTenantAttrTenantId: ").append(toIndentedString(osVolTenantAttrTenantId)).append("\n");
-            sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
-            sb.append("    sourceVolid: ").append(toIndentedString(sourceVolid)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    volumeImageMetadata: ").append(toIndentedString(volumeImageMetadata)).append("\n");
-            sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    bootable: ").append(toIndentedString(bootable)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    osVolHostAttrHost: ").append(toIndentedString(osVolHostAttrHost)).append("\n");
+        sb.append("    osVolTenantAttrTenantId: ").append(toIndentedString(osVolTenantAttrTenantId)).append("\n");
+        sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
+        sb.append("    sourceVolid: ").append(toIndentedString(sourceVolid)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    volumeImageMetadata: ").append(toIndentedString(volumeImageMetadata)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -624,5 +624,6 @@ public class UpdateVolumeResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

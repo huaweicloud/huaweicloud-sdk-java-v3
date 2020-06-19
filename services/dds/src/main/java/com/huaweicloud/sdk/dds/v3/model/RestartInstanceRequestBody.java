@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * RestartInstanceRequestBody
@@ -27,29 +25,25 @@ public class RestartInstanceRequestBody  {
          * Enum MONGOS for value: "mongos"
          */
         public static final TargetTypeEnum MONGOS = new TargetTypeEnum("mongos");
-
         
         /**
          * Enum SHARD for value: "shard"
          */
         public static final TargetTypeEnum SHARD = new TargetTypeEnum("shard");
-
         
         /**
          * Enum CONFIG for value: "config"
          */
         public static final TargetTypeEnum CONFIG = new TargetTypeEnum("config");
-
         
 
-        public static Map<String, TargetTypeEnum> staticFields =
-                new HashMap<String, TargetTypeEnum>() {
-                    { 
-                        put("mongos", MONGOS);
-                        put("shard", SHARD);
-                        put("config", CONFIG);
-                    }
-                };
+        public static final Map<String, TargetTypeEnum> staticFields = new HashMap<String, TargetTypeEnum>() {
+            { 
+                put("mongos", MONGOS);
+                put("shard", SHARD);
+                put("config", CONFIG);
+            }
+        };
 
         private String value;
 
@@ -65,7 +59,7 @@ public class RestartInstanceRequestBody  {
 
         @JsonCreator
         public static TargetTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TargetTypeEnum result = staticFields.get(value);
@@ -174,8 +168,8 @@ public class RestartInstanceRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RestartInstanceRequestBody {\n");
-            sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
-            sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
+        sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
+        sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -189,5 +183,6 @@ public class RestartInstanceRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

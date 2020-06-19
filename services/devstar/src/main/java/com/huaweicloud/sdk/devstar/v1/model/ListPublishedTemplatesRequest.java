@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -27,22 +25,19 @@ public class ListPublishedTemplatesRequest  {
          * Enum ZH_CN for value: "zh-cn"
          */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-
         
         /**
          * Enum EN_US for value: "en-us"
          */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-
         
 
-        public static Map<String, XLanguageEnum> staticFields =
-                new HashMap<String, XLanguageEnum>() {
-                    { 
-                        put("zh-cn", ZH_CN);
-                        put("en-us", EN_US);
-                    }
-                };
+        public static final Map<String, XLanguageEnum> staticFields = new HashMap<String, XLanguageEnum>() {
+            { 
+                put("zh-cn", ZH_CN);
+                put("en-us", EN_US);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class ListPublishedTemplatesRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             XLanguageEnum result = staticFields.get(value);
@@ -227,10 +222,10 @@ public class ListPublishedTemplatesRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPublishedTemplatesRequest {\n");
-            sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
-            sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
-            sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -244,5 +239,6 @@ public class ListPublishedTemplatesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -33,22 +31,19 @@ public class ListFlavorsRequest  {
          * Enum DDS_COMMUNITY for value: "DDS-Community"
          */
         public static final EngineNameEnum DDS_COMMUNITY = new EngineNameEnum("DDS-Community");
-
         
         /**
          * Enum DDS_ENHANCED for value: "DDS-Enhanced"
          */
         public static final EngineNameEnum DDS_ENHANCED = new EngineNameEnum("DDS-Enhanced");
-
         
 
-        public static Map<String, EngineNameEnum> staticFields =
-                new HashMap<String, EngineNameEnum>() {
-                    { 
-                        put("DDS-Community", DDS_COMMUNITY);
-                        put("DDS-Enhanced", DDS_ENHANCED);
-                    }
-                };
+        public static final Map<String, EngineNameEnum> staticFields = new HashMap<String, EngineNameEnum>() {
+            { 
+                put("DDS-Community", DDS_COMMUNITY);
+                put("DDS-Enhanced", DDS_ENHANCED);
+            }
+        };
 
         private String value;
 
@@ -64,7 +59,7 @@ public class ListFlavorsRequest  {
 
         @JsonCreator
         public static EngineNameEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             EngineNameEnum result = staticFields.get(value);
@@ -167,8 +162,8 @@ public class ListFlavorsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlavorsRequest {\n");
-            sb.append("    region: ").append(toIndentedString(region)).append("\n");
-            sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -182,5 +177,6 @@ public class ListFlavorsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

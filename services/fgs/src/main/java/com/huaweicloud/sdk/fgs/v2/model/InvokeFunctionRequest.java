@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -162,10 +160,10 @@ public class InvokeFunctionRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InvokeFunctionRequest {\n");
-            sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
-            sb.append("    xCffLogType: ").append(toIndentedString(xCffLogType)).append("\n");
-            sb.append("    xCFFRequestVersion: ").append(toIndentedString(xCFFRequestVersion)).append("\n");
-            sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
+        sb.append("    xCffLogType: ").append(toIndentedString(xCffLogType)).append("\n");
+        sb.append("    xCFFRequestVersion: ").append(toIndentedString(xCFFRequestVersion)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -179,5 +177,6 @@ public class InvokeFunctionRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

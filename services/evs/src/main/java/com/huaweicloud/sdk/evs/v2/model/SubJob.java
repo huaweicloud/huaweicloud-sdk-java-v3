@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.evs.v2.model.SubJobEntities;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Job详情。
@@ -28,36 +26,31 @@ public class SubJob  {
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-
         
         /**
          * Enum RUNNING for value: "RUNNING"
          */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-
         
         /**
          * Enum FAIL for value: "FAIL"
          */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-
         
         /**
          * Enum INIT for value: "INIT"
          */
         public static final StatusEnum INIT = new StatusEnum("INIT");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("SUCCESS", SUCCESS);
-                        put("RUNNING", RUNNING);
-                        put("FAIL", FAIL);
-                        put("INIT", INIT);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("SUCCESS", SUCCESS);
+                put("RUNNING", RUNNING);
+                put("FAIL", FAIL);
+                put("INIT", INIT);
+            }
+        };
 
         private String value;
 
@@ -73,7 +66,7 @@ public class SubJob  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -350,14 +343,14 @@ public class SubJob  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SubJob {\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
-            sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-            sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
-            sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-            sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -371,5 +364,6 @@ public class SubJob  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

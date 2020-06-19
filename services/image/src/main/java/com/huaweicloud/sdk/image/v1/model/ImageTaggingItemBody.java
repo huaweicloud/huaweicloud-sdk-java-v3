@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.image.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.image.v1.model.ImageTaggingI18nTag;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -148,10 +146,10 @@ public class ImageTaggingItemBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImageTaggingItemBody {\n");
-            sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
-            sb.append("    i18nTag: ").append(toIndentedString(i18nTag)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    i18nTag: ").append(toIndentedString(i18nTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -165,5 +163,6 @@ public class ImageTaggingItemBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,9 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -48,29 +48,25 @@ public class ListConfigurationsResponse extends SdkResponse {
          * Enum UPDATING for value: "UPDATING"
          */
         public static final ConfigStatusEnum UPDATING = new ConfigStatusEnum("UPDATING");
-
         
         /**
          * Enum FAILURE for value: "FAILURE"
          */
         public static final ConfigStatusEnum FAILURE = new ConfigStatusEnum("FAILURE");
-
         
         /**
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final ConfigStatusEnum SUCCESS = new ConfigStatusEnum("SUCCESS");
-
         
 
-        public static Map<String, ConfigStatusEnum> staticFields =
-                new HashMap<String, ConfigStatusEnum>() {
-                    { 
-                        put("UPDATING", UPDATING);
-                        put("FAILURE", FAILURE);
-                        put("SUCCESS", SUCCESS);
-                    }
-                };
+        public static final Map<String, ConfigStatusEnum> staticFields = new HashMap<String, ConfigStatusEnum>() {
+            { 
+                put("UPDATING", UPDATING);
+                put("FAILURE", FAILURE);
+                put("SUCCESS", SUCCESS);
+            }
+        };
 
         private String value;
 
@@ -86,7 +82,7 @@ public class ListConfigurationsResponse extends SdkResponse {
 
         @JsonCreator
         public static ConfigStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ConfigStatusEnum result = staticFields.get(value);
@@ -272,11 +268,11 @@ public class ListConfigurationsResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConfigurationsResponse {\n");
-            sb.append("    configTime: ").append(toIndentedString(configTime)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    redisConfig: ").append(toIndentedString(redisConfig)).append("\n");
-            sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    configTime: ").append(toIndentedString(configTime)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    redisConfig: ").append(toIndentedString(redisConfig)).append("\n");
+        sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -290,5 +286,6 @@ public class ListConfigurationsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

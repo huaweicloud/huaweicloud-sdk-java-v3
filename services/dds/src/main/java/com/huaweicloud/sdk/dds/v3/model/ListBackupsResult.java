@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dds.v3.model.ListBackupsDatastoreResult;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 备份信息。
@@ -58,36 +56,31 @@ public class ListBackupsResult  {
          * Enum AUTO for value: "auto"
          */
         public static final TypeEnum AUTO = new TypeEnum("auto");
-
         
         /**
          * Enum MANUAL for value: "manual"
          */
         public static final TypeEnum MANUAL = new TypeEnum("manual");
-
         
         /**
          * Enum FRAGMENT for value: "fragment"
          */
         public static final TypeEnum FRAGMENT = new TypeEnum("fragment");
-
         
         /**
          * Enum INCREMENTAL for value: "incremental"
          */
         public static final TypeEnum INCREMENTAL = new TypeEnum("incremental");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("auto", AUTO);
-                        put("manual", MANUAL);
-                        put("fragment", FRAGMENT);
-                        put("incremental", INCREMENTAL);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("auto", AUTO);
+                put("manual", MANUAL);
+                put("fragment", FRAGMENT);
+                put("incremental", INCREMENTAL);
+            }
+        };
 
         private String value;
 
@@ -103,7 +96,7 @@ public class ListBackupsResult  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -168,36 +161,31 @@ public class ListBackupsResult  {
          * Enum BUILDING for value: "BUILDING"
          */
         public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
-
         
         /**
          * Enum COMPLETED for value: "COMPLETED"
          */
         public static final StatusEnum COMPLETED = new StatusEnum("COMPLETED");
-
         
         /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-
         
         /**
          * Enum DELETING for value: "DELETING"
          */
         public static final StatusEnum DELETING = new StatusEnum("DELETING");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("BUILDING", BUILDING);
-                        put("COMPLETED", COMPLETED);
-                        put("FAILED", FAILED);
-                        put("DELETING", DELETING);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("BUILDING", BUILDING);
+                put("COMPLETED", COMPLETED);
+                put("FAILED", FAILED);
+                put("DELETING", DELETING);
+            }
+        };
 
         private String value;
 
@@ -213,7 +201,7 @@ public class ListBackupsResult  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -523,17 +511,17 @@ public class ListBackupsResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBackupsResult {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
-            sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
-            sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -547,5 +535,6 @@ public class ListBackupsResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

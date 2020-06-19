@@ -239,7 +239,7 @@ You could obtain and install Java SDK through following methods:
 
     In some situation, you may need to debug your http requests, original http request and response information will be needed. The SDK provides a listener function to obtain the original encrypted http request and response information.
 
-    :warning: Warning: The original http log infomation are only used in the debug stage, please do not print the original http header or body in the production environment. These log information are not encrypted and contain sensitive data such as the password of your ECS virtual machine or the password of your IAM user account, etc. When the response body is binary content, the body will be printed as "***" without detailed information.
+    > :warning:  Warning: The original http log information are used in debugging stage only, please do not print the original http header or body in the production environment. These log information are not encrypted and contain sensitive data such as the password of your ECS virtual machine or the password of your IAM user account, etc. When the response body is binary content, the body will be printed as "***" without detailed information.
 
     ``` java
     HttpConfig config = new HttpConfig().addHttpListener(HttpListener.forRequestListener(requestListener ->

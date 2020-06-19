@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.as.v1.model.Eip;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 配置云服务器的弹性IP信息
@@ -67,7 +65,7 @@ public class PublicIp  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PublicIp {\n");
-            sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
+        sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -81,5 +79,6 @@ public class PublicIp  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

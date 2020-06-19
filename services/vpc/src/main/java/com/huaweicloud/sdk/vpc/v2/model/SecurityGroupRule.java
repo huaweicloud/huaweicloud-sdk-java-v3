@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -330,17 +328,17 @@ public class SecurityGroupRule  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SecurityGroupRule {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-            sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
-            sb.append("    ethertype: ").append(toIndentedString(ethertype)).append("\n");
-            sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
-            sb.append("    portRangeMin: ").append(toIndentedString(portRangeMin)).append("\n");
-            sb.append("    portRangeMax: ").append(toIndentedString(portRangeMax)).append("\n");
-            sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
-            sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
-            sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+        sb.append("    ethertype: ").append(toIndentedString(ethertype)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    portRangeMin: ").append(toIndentedString(portRangeMin)).append("\n");
+        sb.append("    portRangeMax: ").append(toIndentedString(portRangeMax)).append("\n");
+        sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
+        sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -354,5 +352,6 @@ public class SecurityGroupRule  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

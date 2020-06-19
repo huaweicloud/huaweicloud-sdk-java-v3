@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  *  弹性云服务器调度信息。  裸金属服务器场景不支持。
@@ -198,11 +196,11 @@ public class NovaCreateServersSchedulerHint  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaCreateServersSchedulerHint {\n");
-            sb.append("    group: ").append(toIndentedString(group)).append("\n");
-            sb.append("    differentHost: ").append(toIndentedString(differentHost)).append("\n");
-            sb.append("    sameHost: ").append(toIndentedString(sameHost)).append("\n");
-            sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
-            sb.append("    buildNearHostIp: ").append(toIndentedString(buildNearHostIp)).append("\n");
+        sb.append("    group: ").append(toIndentedString(group)).append("\n");
+        sb.append("    differentHost: ").append(toIndentedString(differentHost)).append("\n");
+        sb.append("    sameHost: ").append(toIndentedString(sameHost)).append("\n");
+        sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
+        sb.append("    buildNearHostIp: ").append(toIndentedString(buildNearHostIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -216,5 +214,6 @@ public class NovaCreateServersSchedulerHint  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

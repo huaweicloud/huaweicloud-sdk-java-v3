@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 函数依赖包结构。
@@ -249,14 +247,14 @@ public class Dependency  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Dependency {\n");
-            sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-            sb.append("    link: ").append(toIndentedString(link)).append("\n");
-            sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
-            sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    link: ").append(toIndentedString(link)).append("\n");
+        sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
+        sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -270,5 +268,6 @@ public class Dependency  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

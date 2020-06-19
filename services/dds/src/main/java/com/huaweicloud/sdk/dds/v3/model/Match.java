@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Match
@@ -27,22 +25,19 @@ public class Match  {
          * Enum INSTANCE_NAME for value: "instance_name"
          */
         public static final KeyEnum INSTANCE_NAME = new KeyEnum("instance_name");
-
         
         /**
          * Enum INSTANCE_ID for value: "instance_id"
          */
         public static final KeyEnum INSTANCE_ID = new KeyEnum("instance_id");
-
         
 
-        public static Map<String, KeyEnum> staticFields =
-                new HashMap<String, KeyEnum>() {
-                    { 
-                        put("instance_name", INSTANCE_NAME);
-                        put("instance_id", INSTANCE_ID);
-                    }
-                };
+        public static final Map<String, KeyEnum> staticFields = new HashMap<String, KeyEnum>() {
+            { 
+                put("instance_name", INSTANCE_NAME);
+                put("instance_id", INSTANCE_ID);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class Match  {
 
         @JsonCreator
         public static KeyEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             KeyEnum result = staticFields.get(value);
@@ -167,8 +162,8 @@ public class Match  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Match {\n");
-            sb.append("    key: ").append(toIndentedString(key)).append("\n");
-            sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -182,5 +177,6 @@ public class Match  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

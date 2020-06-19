@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -45,43 +43,37 @@ public class ShowMetricDataRequest  {
          * Enum MAX for value: "max"
          */
         public static final FilterEnum MAX = new FilterEnum("max");
-
         
         /**
          * Enum MIN for value: "min"
          */
         public static final FilterEnum MIN = new FilterEnum("min");
-
         
         /**
          * Enum AVERAGE for value: "average"
          */
         public static final FilterEnum AVERAGE = new FilterEnum("average");
-
         
         /**
          * Enum SUM for value: "sum"
          */
         public static final FilterEnum SUM = new FilterEnum("sum");
-
         
         /**
          * Enum VARIANCE for value: "variance"
          */
         public static final FilterEnum VARIANCE = new FilterEnum("variance");
-
         
 
-        public static Map<String, FilterEnum> staticFields =
-                new HashMap<String, FilterEnum>() {
-                    { 
-                        put("max", MAX);
-                        put("min", MIN);
-                        put("average", AVERAGE);
-                        put("sum", SUM);
-                        put("variance", VARIANCE);
-                    }
-                };
+        public static final Map<String, FilterEnum> staticFields = new HashMap<String, FilterEnum>() {
+            { 
+                put("max", MAX);
+                put("min", MIN);
+                put("average", AVERAGE);
+                put("sum", SUM);
+                put("variance", VARIANCE);
+            }
+        };
 
         private String value;
 
@@ -97,7 +89,7 @@ public class ShowMetricDataRequest  {
 
         @JsonCreator
         public static FilterEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             FilterEnum result = staticFields.get(value);
@@ -377,15 +369,15 @@ public class ShowMetricDataRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMetricDataRequest {\n");
-            sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
-            sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
-            sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
-            sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
-            sb.append("    from: ").append(toIndentedString(from)).append("\n");
-            sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
-            sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-            sb.append("    period: ").append(toIndentedString(period)).append("\n");
-            sb.append("    to: ").append(toIndentedString(to)).append("\n");
+        sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
+        sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
+        sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
+        sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -399,5 +391,6 @@ public class ShowMetricDataRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

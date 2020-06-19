@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -16,8 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例配置信息
@@ -100,15 +98,13 @@ public class InstanceConfig  {
          * Enum DEDICATED for value: "dedicated"
          */
         public static final TenancyEnum DEDICATED = new TenancyEnum("dedicated");
-
         
 
-        public static Map<String, TenancyEnum> staticFields =
-                new HashMap<String, TenancyEnum>() {
-                    { 
-                        put("dedicated", DEDICATED);
-                    }
-                };
+        public static final Map<String, TenancyEnum> staticFields = new HashMap<String, TenancyEnum>() {
+            { 
+                put("dedicated", DEDICATED);
+            }
+        };
 
         private String value;
 
@@ -124,7 +120,7 @@ public class InstanceConfig  {
 
         @JsonCreator
         public static TenancyEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TenancyEnum result = staticFields.get(value);
@@ -183,22 +179,19 @@ public class InstanceConfig  {
          * Enum PICK_FIRST for value: "PICK_FIRST"
          */
         public static final MultiFlavorPriorityPolicyEnum PICK_FIRST = new MultiFlavorPriorityPolicyEnum("PICK_FIRST");
-
         
         /**
          * Enum COST_FIRST for value: "COST_FIRST"
          */
         public static final MultiFlavorPriorityPolicyEnum COST_FIRST = new MultiFlavorPriorityPolicyEnum("COST_FIRST");
-
         
 
-        public static Map<String, MultiFlavorPriorityPolicyEnum> staticFields =
-                new HashMap<String, MultiFlavorPriorityPolicyEnum>() {
-                    { 
-                        put("PICK_FIRST", PICK_FIRST);
-                        put("COST_FIRST", COST_FIRST);
-                    }
-                };
+        public static final Map<String, MultiFlavorPriorityPolicyEnum> staticFields = new HashMap<String, MultiFlavorPriorityPolicyEnum>() {
+            { 
+                put("PICK_FIRST", PICK_FIRST);
+                put("COST_FIRST", COST_FIRST);
+            }
+        };
 
         private String value;
 
@@ -214,7 +207,7 @@ public class InstanceConfig  {
 
         @JsonCreator
         public static MultiFlavorPriorityPolicyEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MultiFlavorPriorityPolicyEnum result = staticFields.get(value);
@@ -267,15 +260,13 @@ public class InstanceConfig  {
          * Enum SPOT for value: "spot"
          */
         public static final MarketTypeEnum SPOT = new MarketTypeEnum("spot");
-
         
 
-        public static Map<String, MarketTypeEnum> staticFields =
-                new HashMap<String, MarketTypeEnum>() {
-                    { 
-                        put("spot", SPOT);
-                    }
-                };
+        public static final Map<String, MarketTypeEnum> staticFields = new HashMap<String, MarketTypeEnum>() {
+            { 
+                put("spot", SPOT);
+            }
+        };
 
         private String value;
 
@@ -291,7 +282,7 @@ public class InstanceConfig  {
 
         @JsonCreator
         public static MarketTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MarketTypeEnum result = staticFields.get(value);
@@ -721,21 +712,21 @@ public class InstanceConfig  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceConfig {\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
-            sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
-            sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
-            sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
-            sb.append("    personality: ").append(toIndentedString(personality)).append("\n");
-            sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
-            sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    serverGroupId: ").append(toIndentedString(serverGroupId)).append("\n");
-            sb.append("    tenancy: ").append(toIndentedString(tenancy)).append("\n");
-            sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
-            sb.append("    multiFlavorPriorityPolicy: ").append(toIndentedString(multiFlavorPriorityPolicy)).append("\n");
-            sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
+        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+        sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
+        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    personality: ").append(toIndentedString(personality)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    serverGroupId: ").append(toIndentedString(serverGroupId)).append("\n");
+        sb.append("    tenancy: ").append(toIndentedString(tenancy)).append("\n");
+        sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
+        sb.append("    multiFlavorPriorityPolicy: ").append(toIndentedString(multiFlavorPriorityPolicy)).append("\n");
+        sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -749,5 +740,6 @@ public class InstanceConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

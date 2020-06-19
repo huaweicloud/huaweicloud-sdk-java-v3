@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 查询迁移任务列表
@@ -39,29 +37,25 @@ public class MigrationTaskList  {
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-
         
         /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-
         
         /**
          * Enum MIGRATING for value: "MIGRATING"
          */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("SUCCESS", SUCCESS);
-                        put("FAILED", FAILED);
-                        put("MIGRATING", MIGRATING);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("SUCCESS", SUCCESS);
+                put("FAILED", FAILED);
+                put("MIGRATING", MIGRATING);
+            }
+        };
 
         private String value;
 
@@ -77,7 +71,7 @@ public class MigrationTaskList  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -130,22 +124,19 @@ public class MigrationTaskList  {
          * Enum BACKUPFILE_IMPORT for value: "backupfile_import"
          */
         public static final MigrationTypeEnum BACKUPFILE_IMPORT = new MigrationTypeEnum("backupfile_import");
-
         
         /**
          * Enum ONLINE_MIGRATION for value: "online_migration"
          */
         public static final MigrationTypeEnum ONLINE_MIGRATION = new MigrationTypeEnum("online_migration");
-
         
 
-        public static Map<String, MigrationTypeEnum> staticFields =
-                new HashMap<String, MigrationTypeEnum>() {
-                    { 
-                        put("backupfile_import", BACKUPFILE_IMPORT);
-                        put("online_migration", ONLINE_MIGRATION);
-                    }
-                };
+        public static final Map<String, MigrationTypeEnum> staticFields = new HashMap<String, MigrationTypeEnum>() {
+            { 
+                put("backupfile_import", BACKUPFILE_IMPORT);
+                put("online_migration", ONLINE_MIGRATION);
+            }
+        };
 
         private String value;
 
@@ -161,7 +152,7 @@ public class MigrationTaskList  {
 
         @JsonCreator
         public static MigrationTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MigrationTypeEnum result = staticFields.get(value);
@@ -214,22 +205,19 @@ public class MigrationTaskList  {
          * Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration"
          */
         public static final MigrationMethodEnum FULL_AMOUNT_MIGRATION = new MigrationMethodEnum("full_amount_migration");
-
         
         /**
          * Enum INCREMENTAL_MIGRATION for value: "incremental_migration"
          */
         public static final MigrationMethodEnum INCREMENTAL_MIGRATION = new MigrationMethodEnum("incremental_migration");
-
         
 
-        public static Map<String, MigrationMethodEnum> staticFields =
-                new HashMap<String, MigrationMethodEnum>() {
-                    { 
-                        put("full_amount_migration", FULL_AMOUNT_MIGRATION);
-                        put("incremental_migration", INCREMENTAL_MIGRATION);
-                    }
-                };
+        public static final Map<String, MigrationMethodEnum> staticFields = new HashMap<String, MigrationMethodEnum>() {
+            { 
+                put("full_amount_migration", FULL_AMOUNT_MIGRATION);
+                put("incremental_migration", INCREMENTAL_MIGRATION);
+            }
+        };
 
         private String value;
 
@@ -245,7 +233,7 @@ public class MigrationTaskList  {
 
         @JsonCreator
         public static MigrationMethodEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             MigrationMethodEnum result = staticFields.get(value);
@@ -492,14 +480,14 @@ public class MigrationTaskList  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MigrationTaskList {\n");
-            sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-            sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    migrationType: ").append(toIndentedString(migrationType)).append("\n");
-            sb.append("    migrationMethod: ").append(toIndentedString(migrationMethod)).append("\n");
-            sb.append("    targetInstanceName: ").append(toIndentedString(targetInstanceName)).append("\n");
-            sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    migrationType: ").append(toIndentedString(migrationType)).append("\n");
+        sb.append("    migrationMethod: ").append(toIndentedString(migrationMethod)).append("\n");
+        sb.append("    targetInstanceName: ").append(toIndentedString(targetInstanceName)).append("\n");
+        sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -513,5 +501,6 @@ public class MigrationTaskList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

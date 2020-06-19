@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import com.huaweicloud.sdk.evs.v2.model.Attachment;
 import com.huaweicloud.sdk.evs.v2.model.Link;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 云硬盘详情。
@@ -869,36 +867,36 @@ public class VolumeDetail  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VolumeDetail {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    links: ").append(toIndentedString(links)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    osVolTenantAttrTenantId: ").append(toIndentedString(osVolTenantAttrTenantId)).append("\n");
-            sb.append("    volumeImageMetadata: ").append(toIndentedString(volumeImageMetadata)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    bootable: ").append(toIndentedString(bootable)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    osVolHostAttrHost: ").append(toIndentedString(osVolHostAttrHost)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-            sb.append("    osVolumeReplicationExtendedStatus: ").append(toIndentedString(osVolumeReplicationExtendedStatus)).append("\n");
-            sb.append("    replicationStatus: ").append(toIndentedString(replicationStatus)).append("\n");
-            sb.append("    osVolMigStatusAttrMigstat: ").append(toIndentedString(osVolMigStatusAttrMigstat)).append("\n");
-            sb.append("    osVolMigStatusAttrNameId: ").append(toIndentedString(osVolMigStatusAttrNameId)).append("\n");
-            sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
-            sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-            sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
-            sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
-            sb.append("    dedicatedStorageId: ").append(toIndentedString(dedicatedStorageId)).append("\n");
-            sb.append("    dedicatedStorageName: ").append(toIndentedString(dedicatedStorageName)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    wwn: ").append(toIndentedString(wwn)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    osVolTenantAttrTenantId: ").append(toIndentedString(osVolTenantAttrTenantId)).append("\n");
+        sb.append("    volumeImageMetadata: ").append(toIndentedString(volumeImageMetadata)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    bootable: ").append(toIndentedString(bootable)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    osVolHostAttrHost: ").append(toIndentedString(osVolHostAttrHost)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    osVolumeReplicationExtendedStatus: ").append(toIndentedString(osVolumeReplicationExtendedStatus)).append("\n");
+        sb.append("    replicationStatus: ").append(toIndentedString(replicationStatus)).append("\n");
+        sb.append("    osVolMigStatusAttrMigstat: ").append(toIndentedString(osVolMigStatusAttrMigstat)).append("\n");
+        sb.append("    osVolMigStatusAttrNameId: ").append(toIndentedString(osVolMigStatusAttrNameId)).append("\n");
+        sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
+        sb.append("    dedicatedStorageId: ").append(toIndentedString(dedicatedStorageId)).append("\n");
+        sb.append("    dedicatedStorageName: ").append(toIndentedString(dedicatedStorageName)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    wwn: ").append(toIndentedString(wwn)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -912,5 +910,6 @@ public class VolumeDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

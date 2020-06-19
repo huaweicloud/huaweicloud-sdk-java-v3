@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.evs.v2;
 
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.evs.v2.model.*;
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
-
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-
-import com.huaweicloud.sdk.evs.v2.model.*;
 
 @SuppressWarnings("unchecked")
 public class EvsMeta {
@@ -25,26 +23,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                BatchCreateVolumeTagsRequestBody.class,
-                f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchCreateVolumeTagsRequestBody.class,
+            f -> f.withMarshaller(BatchCreateVolumeTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> batchDeleteVolumeTags = genForbatchDeleteVolumeTags();
@@ -58,26 +55,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                BatchDeleteVolumeTagsRequestBody.class,
-                f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteVolumeTagsRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteVolumeTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CinderExportToImageRequest, CinderExportToImageResponse> cinderExportToImage = genForcinderExportToImage();
@@ -91,26 +87,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CinderExportToImageRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CinderExportToImageRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CinderExportToImageRequestBody.class,
-                f -> f.withMarshaller(CinderExportToImageRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CinderExportToImageRequestBody.class,
+            f -> f.withMarshaller(CinderExportToImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> cinderListAvailabilityZones = genForcinderListAvailabilityZones();
@@ -126,7 +121,6 @@ public class EvsMeta {
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CinderListQuotasRequest, CinderListQuotasResponse> cinderListQuotas = genForcinderListQuotas();
@@ -139,26 +133,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("target_project_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CinderListQuotasRequest::getTargetProjectId, (req, v) -> {
-                    req.setTargetProjectId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CinderListQuotasRequest::getTargetProjectId, (req, v) -> {
+                req.setTargetProjectId(v);
+            })
         );
         builder.withRequestField("usage",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CinderListQuotasRequest.UsageEnum.class,
-                f -> f.withMarshaller(CinderListQuotasRequest::getUsage, (req, v) -> {
-                    req.setUsage(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CinderListQuotasRequest.UsageEnum.class,
+            f -> f.withMarshaller(CinderListQuotasRequest::getUsage, (req, v) -> {
+                req.setUsage(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> cinderListVolumeTypes = genForcinderListVolumeTypes();
@@ -174,7 +167,6 @@ public class EvsMeta {
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot = genForcreateSnapshot();
@@ -188,18 +180,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateSnapshotRequestBody.class,
-                f -> f.withMarshaller(CreateSnapshotRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateSnapshotRequestBody.class,
+            f -> f.withMarshaller(CreateSnapshotRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateVolumeRequest, CreateVolumeResponse> createVolume = genForcreateVolume();
@@ -213,18 +204,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateVolumeRequestBody.class,
-                f -> f.withMarshaller(CreateVolumeRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateVolumeRequestBody.class,
+            f -> f.withMarshaller(CreateVolumeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshot = genFordeleteSnapshot();
@@ -237,18 +227,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("snapshot_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, (req, v) -> {
-                    req.setSnapshotId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, (req, v) -> {
+                req.setSnapshotId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteVolumeRequest, DeleteVolumeResponse> deleteVolume = genFordeleteVolume();
@@ -261,18 +250,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteVolumeRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVolumeRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListSnapshotsDetailsRequest, ListSnapshotsDetailsResponse> listSnapshotsDetails = genForlistSnapshotsDetails();
@@ -285,98 +273,97 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
         builder.withRequestField("status",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getStatus, (req, v) -> {
-                    req.setStatus(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
         );
         builder.withRequestField("volume_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
         builder.withRequestField("availability_zone",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getAvailabilityZone, (req, v) -> {
-                    req.setAvailabilityZone(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getAvailabilityZone, (req, v) -> {
+                req.setAvailabilityZone(v);
+            })
         );
         builder.withRequestField("id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getId, (req, v) -> {
-                    req.setId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
         );
         builder.withRequestField("dedicated_storage_name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getDedicatedStorageName, (req, v) -> {
-                    req.setDedicatedStorageName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getDedicatedStorageName, (req, v) -> {
+                req.setDedicatedStorageName(v);
+            })
         );
         builder.withRequestField("dedicated_storage_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getDedicatedStorageId, (req, v) -> {
-                    req.setDedicatedStorageId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getDedicatedStorageId, (req, v) -> {
+                req.setDedicatedStorageId(v);
+            })
         );
         builder.withRequestField("service_type",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getServiceType, (req, v) -> {
-                    req.setServiceType(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
+            })
         );
         builder.withRequestField("enterprise_project_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListSnapshotsDetailsRequest::getEnterpriseProjectId, (req, v) -> {
-                    req.setEnterpriseProjectId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSnapshotsDetailsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListVolumeTagsRequest, ListVolumeTagsResponse> listVolumeTags = genForlistVolumeTags();
@@ -392,7 +379,6 @@ public class EvsMeta {
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListVolumesByTagsRequest, ListVolumesByTagsResponse> listVolumesByTags = genForlistVolumesByTags();
@@ -406,18 +392,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ListVolumesByTagsRequestBody.class,
-                f -> f.withMarshaller(ListVolumesByTagsRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListVolumesByTagsRequestBody.class,
+            f -> f.withMarshaller(ListVolumesByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListVolumesDetailsRequest, ListVolumesDetailsResponse> listVolumesDetails = genForlistVolumesDetails();
@@ -430,146 +415,145 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("sort_key",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getSortKey, (req, v) -> {
-                    req.setSortKey(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("sort_dir",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getSortDir, (req, v) -> {
-                    req.setSortDir(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            })
         );
         builder.withRequestField("status",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getStatus, (req, v) -> {
-                    req.setStatus(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
         );
         builder.withRequestField("metadata",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getMetadata, (req, v) -> {
-                    req.setMetadata(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getMetadata, (req, v) -> {
+                req.setMetadata(v);
+            })
         );
         builder.withRequestField("availability_zone",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getAvailabilityZone, (req, v) -> {
-                    req.setAvailabilityZone(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getAvailabilityZone, (req, v) -> {
+                req.setAvailabilityZone(v);
+            })
         );
         builder.withRequestField("multiattach",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Boolean.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getMultiattach, (req, v) -> {
-                    req.setMultiattach(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getMultiattach, (req, v) -> {
+                req.setMultiattach(v);
+            })
         );
         builder.withRequestField("service_type",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getServiceType, (req, v) -> {
-                    req.setServiceType(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
+            })
         );
         builder.withRequestField("dedicated_storage_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getDedicatedStorageId, (req, v) -> {
-                    req.setDedicatedStorageId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getDedicatedStorageId, (req, v) -> {
+                req.setDedicatedStorageId(v);
+            })
         );
         builder.withRequestField("dedicated_storage_name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getDedicatedStorageName, (req, v) -> {
-                    req.setDedicatedStorageName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getDedicatedStorageName, (req, v) -> {
+                req.setDedicatedStorageName(v);
+            })
         );
         builder.withRequestField("volume_type_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getVolumeTypeId, (req, v) -> {
-                    req.setVolumeTypeId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getVolumeTypeId, (req, v) -> {
+                req.setVolumeTypeId(v);
+            })
         );
         builder.withRequestField("id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getId, (req, v) -> {
-                    req.setId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
         );
         builder.withRequestField("ids",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getIds, (req, v) -> {
-                    req.setIds(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getIds, (req, v) -> {
+                req.setIds(v);
+            })
         );
         builder.withRequestField("enterprise_project_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListVolumesDetailsRequest::getEnterpriseProjectId, (req, v) -> {
-                    req.setEnterpriseProjectId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumesDetailsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ResizeVolumeRequest, ResizeVolumeResponse> resizeVolume = genForresizeVolume();
@@ -583,26 +567,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ResizeVolumeRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResizeVolumeRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ResizeVolumeRequestBody.class,
-                f -> f.withMarshaller(ResizeVolumeRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResizeVolumeRequestBody.class,
+            f -> f.withMarshaller(ResizeVolumeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RollbackSnapshotRequest, RollbackSnapshotResponse> rollbackSnapshot = genForrollbackSnapshot();
@@ -616,26 +599,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("snapshot_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RollbackSnapshotRequest::getSnapshotId, (req, v) -> {
-                    req.setSnapshotId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RollbackSnapshotRequest::getSnapshotId, (req, v) -> {
+                req.setSnapshotId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                RollbackSnapshotRequestBody.class,
-                f -> f.withMarshaller(RollbackSnapshotRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RollbackSnapshotRequestBody.class,
+            f -> f.withMarshaller(RollbackSnapshotRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForshowJob();
@@ -648,18 +630,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("job_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
-                    req.setJobId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowSnapshotRequest, ShowSnapshotResponse> showSnapshot = genForshowSnapshot();
@@ -672,18 +653,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("snapshot_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowSnapshotRequest::getSnapshotId, (req, v) -> {
-                    req.setSnapshotId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSnapshotRequest::getSnapshotId, (req, v) -> {
+                req.setSnapshotId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowVolumeRequest, ShowVolumeResponse> showVolume = genForshowVolume();
@@ -696,18 +676,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowVolumeRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVolumeRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowVolumeTagsRequest, ShowVolumeTagsResponse> showVolumeTags = genForshowVolumeTags();
@@ -720,18 +699,17 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowVolumeTagsRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVolumeTagsRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdateSnapshotRequest, UpdateSnapshotResponse> updateSnapshot = genForupdateSnapshot();
@@ -745,26 +723,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("snapshot_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateSnapshotRequest::getSnapshotId, (req, v) -> {
-                    req.setSnapshotId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSnapshotRequest::getSnapshotId, (req, v) -> {
+                req.setSnapshotId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateSnapshotRequestBody.class,
-                f -> f.withMarshaller(UpdateSnapshotRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateSnapshotRequestBody.class,
+            f -> f.withMarshaller(UpdateSnapshotRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdateVolumeRequest, UpdateVolumeResponse> updateVolume = genForupdateVolume();
@@ -778,27 +755,25 @@ public class EvsMeta {
 
         // requests
         builder.withRequestField("volume_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateVolumeRequest::getVolumeId, (req, v) -> {
-                    req.setVolumeId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateVolumeRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateVolumeRequestBody.class,
-                f -> f.withMarshaller(UpdateVolumeRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateVolumeRequestBody.class,
+            f -> f.withMarshaller(UpdateVolumeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
 }
-

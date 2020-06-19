@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  *  扩展属性，指定弹性云服务器存储设备的v2接口。是存储资源的新版本接口，指定卷场景不能批创弹性云服务器。  裸金属服务器场景不支持。
@@ -27,36 +25,31 @@ public class NovaServerBlockDeviceMapping  {
          * Enum BLANK for value: "blank"
          */
         public static final SourceTypeEnum BLANK = new SourceTypeEnum("blank");
-
         
         /**
          * Enum SNAPSHOT for value: "snapshot"
          */
         public static final SourceTypeEnum SNAPSHOT = new SourceTypeEnum("snapshot");
-
         
         /**
          * Enum VOLUME for value: "volume"
          */
         public static final SourceTypeEnum VOLUME = new SourceTypeEnum("volume");
-
         
         /**
          * Enum IMAGE for value: "image"
          */
         public static final SourceTypeEnum IMAGE = new SourceTypeEnum("image");
-
         
 
-        public static Map<String, SourceTypeEnum> staticFields =
-                new HashMap<String, SourceTypeEnum>() {
-                    { 
-                        put("blank", BLANK);
-                        put("snapshot", SNAPSHOT);
-                        put("volume", VOLUME);
-                        put("image", IMAGE);
-                    }
-                };
+        public static final Map<String, SourceTypeEnum> staticFields = new HashMap<String, SourceTypeEnum>() {
+            { 
+                put("blank", BLANK);
+                put("snapshot", SNAPSHOT);
+                put("volume", VOLUME);
+                put("image", IMAGE);
+            }
+        };
 
         private String value;
 
@@ -72,7 +65,7 @@ public class NovaServerBlockDeviceMapping  {
 
         @JsonCreator
         public static SourceTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             SourceTypeEnum result = staticFields.get(value);
@@ -125,15 +118,13 @@ public class NovaServerBlockDeviceMapping  {
          * Enum VOLUME for value: "volume"
          */
         public static final DestinationTypeEnum VOLUME = new DestinationTypeEnum("volume");
-
         
 
-        public static Map<String, DestinationTypeEnum> staticFields =
-                new HashMap<String, DestinationTypeEnum>() {
-                    { 
-                        put("volume", VOLUME);
-                    }
-                };
+        public static final Map<String, DestinationTypeEnum> staticFields = new HashMap<String, DestinationTypeEnum>() {
+            { 
+                put("volume", VOLUME);
+            }
+        };
 
         private String value;
 
@@ -149,7 +140,7 @@ public class NovaServerBlockDeviceMapping  {
 
         @JsonCreator
         public static DestinationTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DestinationTypeEnum result = staticFields.get(value);
@@ -441,15 +432,15 @@ public class NovaServerBlockDeviceMapping  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaServerBlockDeviceMapping {\n");
-            sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
-            sb.append("    destinationType: ").append(toIndentedString(destinationType)).append("\n");
-            sb.append("    guestFormat: ").append(toIndentedString(guestFormat)).append("\n");
-            sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
-            sb.append("    deleteOnTermination: ").append(toIndentedString(deleteOnTermination)).append("\n");
-            sb.append("    bootIndex: ").append(toIndentedString(bootIndex)).append("\n");
-            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-            sb.append("    volumeSize: ").append(toIndentedString(volumeSize)).append("\n");
-            sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
+        sb.append("    destinationType: ").append(toIndentedString(destinationType)).append("\n");
+        sb.append("    guestFormat: ").append(toIndentedString(guestFormat)).append("\n");
+        sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
+        sb.append("    deleteOnTermination: ").append(toIndentedString(deleteOnTermination)).append("\n");
+        sb.append("    bootIndex: ").append(toIndentedString(bootIndex)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    volumeSize: ").append(toIndentedString(volumeSize)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -463,5 +454,6 @@ public class NovaServerBlockDeviceMapping  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

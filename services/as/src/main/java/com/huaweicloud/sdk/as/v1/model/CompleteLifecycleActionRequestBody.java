@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 伸缩实例生命周期回调
@@ -45,29 +43,25 @@ public class CompleteLifecycleActionRequestBody  {
          * Enum ABANDON for value: "ABANDON"
          */
         public static final LifecycleActionResultEnum ABANDON = new LifecycleActionResultEnum("ABANDON");
-
         
         /**
          * Enum CONTINUE for value: "CONTINUE"
          */
         public static final LifecycleActionResultEnum CONTINUE = new LifecycleActionResultEnum("CONTINUE");
-
         
         /**
          * Enum EXTEND for value: "EXTEND"
          */
         public static final LifecycleActionResultEnum EXTEND = new LifecycleActionResultEnum("EXTEND");
-
         
 
-        public static Map<String, LifecycleActionResultEnum> staticFields =
-                new HashMap<String, LifecycleActionResultEnum>() {
-                    { 
-                        put("ABANDON", ABANDON);
-                        put("CONTINUE", CONTINUE);
-                        put("EXTEND", EXTEND);
-                    }
-                };
+        public static final Map<String, LifecycleActionResultEnum> staticFields = new HashMap<String, LifecycleActionResultEnum>() {
+            { 
+                put("ABANDON", ABANDON);
+                put("CONTINUE", CONTINUE);
+                put("EXTEND", EXTEND);
+            }
+        };
 
         private String value;
 
@@ -83,7 +77,7 @@ public class CompleteLifecycleActionRequestBody  {
 
         @JsonCreator
         public static LifecycleActionResultEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             LifecycleActionResultEnum result = staticFields.get(value);
@@ -228,10 +222,10 @@ public class CompleteLifecycleActionRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CompleteLifecycleActionRequestBody {\n");
-            sb.append("    lifecycleActionKey: ").append(toIndentedString(lifecycleActionKey)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    lifecycleHookName: ").append(toIndentedString(lifecycleHookName)).append("\n");
-            sb.append("    lifecycleActionResult: ").append(toIndentedString(lifecycleActionResult)).append("\n");
+        sb.append("    lifecycleActionKey: ").append(toIndentedString(lifecycleActionKey)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    lifecycleHookName: ").append(toIndentedString(lifecycleHookName)).append("\n");
+        sb.append("    lifecycleActionResult: ").append(toIndentedString(lifecycleActionResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -245,5 +239,6 @@ public class CompleteLifecycleActionRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

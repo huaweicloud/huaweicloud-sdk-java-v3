@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 原生更新接口请求体
@@ -27,29 +25,25 @@ public class GlanceUpdateImageRequestBody  {
          * Enum REPLACE for value: "replace"
          */
         public static final OpEnum REPLACE = new OpEnum("replace");
-
         
         /**
          * Enum ADD for value: "add"
          */
         public static final OpEnum ADD = new OpEnum("add");
-
         
         /**
          * Enum REMOVE for value: "remove"
          */
         public static final OpEnum REMOVE = new OpEnum("remove");
-
         
 
-        public static Map<String, OpEnum> staticFields =
-                new HashMap<String, OpEnum>() {
-                    { 
-                        put("replace", REPLACE);
-                        put("add", ADD);
-                        put("remove", REMOVE);
-                    }
-                };
+        public static final Map<String, OpEnum> staticFields = new HashMap<String, OpEnum>() {
+            { 
+                put("replace", REPLACE);
+                put("add", ADD);
+                put("remove", REMOVE);
+            }
+        };
 
         private String value;
 
@@ -65,7 +59,7 @@ public class GlanceUpdateImageRequestBody  {
 
         @JsonCreator
         public static OpEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OpEnum result = staticFields.get(value);
@@ -201,9 +195,9 @@ public class GlanceUpdateImageRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GlanceUpdateImageRequestBody {\n");
-            sb.append("    op: ").append(toIndentedString(op)).append("\n");
-            sb.append("    path: ").append(toIndentedString(path)).append("\n");
-            sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    op: ").append(toIndentedString(op)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -217,5 +211,6 @@ public class GlanceUpdateImageRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

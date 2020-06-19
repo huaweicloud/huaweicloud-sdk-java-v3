@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ecs.v2.model.PostPaidServerRootVolumeExtendParam;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -28,50 +26,43 @@ public class PostPaidServerRootVolume  {
          * Enum SATA for value: "SATA"
          */
         public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
-
         
         /**
          * Enum SAS for value: "SAS"
          */
         public static final VolumetypeEnum SAS = new VolumetypeEnum("SAS");
-
         
         /**
          * Enum SSD for value: "SSD"
          */
         public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
-
         
         /**
          * Enum GPSSD for value: "GPSSD"
          */
         public static final VolumetypeEnum GPSSD = new VolumetypeEnum("GPSSD");
-
         
         /**
          * Enum CO_P1 for value: "co-p1"
          */
         public static final VolumetypeEnum CO_P1 = new VolumetypeEnum("co-p1");
-
         
         /**
          * Enum UH_L1 for value: "uh-l1"
          */
         public static final VolumetypeEnum UH_L1 = new VolumetypeEnum("uh-l1");
-
         
 
-        public static Map<String, VolumetypeEnum> staticFields =
-                new HashMap<String, VolumetypeEnum>() {
-                    { 
-                        put("SATA", SATA);
-                        put("SAS", SAS);
-                        put("SSD", SSD);
-                        put("GPSSD", GPSSD);
-                        put("co-p1", CO_P1);
-                        put("uh-l1", UH_L1);
-                    }
-                };
+        public static final Map<String, VolumetypeEnum> staticFields = new HashMap<String, VolumetypeEnum>() {
+            { 
+                put("SATA", SATA);
+                put("SAS", SAS);
+                put("SSD", SSD);
+                put("GPSSD", GPSSD);
+                put("co-p1", CO_P1);
+                put("uh-l1", UH_L1);
+            }
+        };
 
         private String value;
 
@@ -87,7 +78,7 @@ public class PostPaidServerRootVolume  {
 
         @JsonCreator
         public static VolumetypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             VolumetypeEnum result = staticFields.get(value);
@@ -152,15 +143,13 @@ public class PostPaidServerRootVolume  {
          * Enum DSS for value: "DSS"
          */
         public static final ClusterTypeEnum DSS = new ClusterTypeEnum("DSS");
-
         
 
-        public static Map<String, ClusterTypeEnum> staticFields =
-                new HashMap<String, ClusterTypeEnum>() {
-                    { 
-                        put("DSS", DSS);
-                    }
-                };
+        public static final Map<String, ClusterTypeEnum> staticFields = new HashMap<String, ClusterTypeEnum>() {
+            { 
+                put("DSS", DSS);
+            }
+        };
 
         private String value;
 
@@ -176,7 +165,7 @@ public class PostPaidServerRootVolume  {
 
         @JsonCreator
         public static ClusterTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ClusterTypeEnum result = staticFields.get(value);
@@ -383,12 +372,12 @@ public class PostPaidServerRootVolume  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServerRootVolume {\n");
-            sb.append("    volumetype: ").append(toIndentedString(volumetype)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");
-            sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
-            sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-            sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
+        sb.append("    volumetype: ").append(toIndentedString(volumetype)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");
+        sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    extendparam: ").append(toIndentedString(extendparam)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -402,5 +391,6 @@ public class PostPaidServerRootVolume  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

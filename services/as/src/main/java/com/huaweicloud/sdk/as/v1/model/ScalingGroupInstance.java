@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 伸缩组实例详情
@@ -52,43 +50,37 @@ public class ScalingGroupInstance  {
          * Enum INSERVICE for value: "INSERVICE"
          */
         public static final LifeCycleStateEnum INSERVICE = new LifeCycleStateEnum("INSERVICE");
-
         
         /**
          * Enum PENDING for value: "PENDING"
          */
         public static final LifeCycleStateEnum PENDING = new LifeCycleStateEnum("PENDING");
-
         
         /**
          * Enum REMOVING for value: "REMOVING"
          */
         public static final LifeCycleStateEnum REMOVING = new LifeCycleStateEnum("REMOVING");
-
         
         /**
          * Enum PENDING_WAIT for value: "PENDING_WAIT"
          */
         public static final LifeCycleStateEnum PENDING_WAIT = new LifeCycleStateEnum("PENDING_WAIT");
-
         
         /**
          * Enum REMOVING_WAIT for value: "REMOVING_WAIT"
          */
         public static final LifeCycleStateEnum REMOVING_WAIT = new LifeCycleStateEnum("REMOVING_WAIT");
-
         
 
-        public static Map<String, LifeCycleStateEnum> staticFields =
-                new HashMap<String, LifeCycleStateEnum>() {
-                    { 
-                        put("INSERVICE", INSERVICE);
-                        put("PENDING", PENDING);
-                        put("REMOVING", REMOVING);
-                        put("PENDING_WAIT", PENDING_WAIT);
-                        put("REMOVING_WAIT", REMOVING_WAIT);
-                    }
-                };
+        public static final Map<String, LifeCycleStateEnum> staticFields = new HashMap<String, LifeCycleStateEnum>() {
+            { 
+                put("INSERVICE", INSERVICE);
+                put("PENDING", PENDING);
+                put("REMOVING", REMOVING);
+                put("PENDING_WAIT", PENDING_WAIT);
+                put("REMOVING_WAIT", REMOVING_WAIT);
+            }
+        };
 
         private String value;
 
@@ -104,7 +96,7 @@ public class ScalingGroupInstance  {
 
         @JsonCreator
         public static LifeCycleStateEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             LifeCycleStateEnum result = staticFields.get(value);
@@ -157,29 +149,25 @@ public class ScalingGroupInstance  {
          * Enum NORMAL for value: "NORMAL"
          */
         public static final HealthStatusEnum NORMAL = new HealthStatusEnum("NORMAL");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final HealthStatusEnum ERROR = new HealthStatusEnum("ERROR");
-
         
         /**
          * Enum INITAILIZING for value: "INITAILIZING"
          */
         public static final HealthStatusEnum INITAILIZING = new HealthStatusEnum("INITAILIZING");
-
         
 
-        public static Map<String, HealthStatusEnum> staticFields =
-                new HashMap<String, HealthStatusEnum>() {
-                    { 
-                        put("NORMAL", NORMAL);
-                        put("ERROR", ERROR);
-                        put("INITAILIZING", INITAILIZING);
-                    }
-                };
+        public static final Map<String, HealthStatusEnum> staticFields = new HashMap<String, HealthStatusEnum>() {
+            { 
+                put("NORMAL", NORMAL);
+                put("ERROR", ERROR);
+                put("INITAILIZING", INITAILIZING);
+            }
+        };
 
         private String value;
 
@@ -195,7 +183,7 @@ public class ScalingGroupInstance  {
 
         @JsonCreator
         public static HealthStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             HealthStatusEnum result = staticFields.get(value);
@@ -490,16 +478,16 @@ public class ScalingGroupInstance  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScalingGroupInstance {\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
-            sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
-            sb.append("    scalingGroupName: ").append(toIndentedString(scalingGroupName)).append("\n");
-            sb.append("    lifeCycleState: ").append(toIndentedString(lifeCycleState)).append("\n");
-            sb.append("    healthStatus: ").append(toIndentedString(healthStatus)).append("\n");
-            sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
-            sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
-            sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-            sb.append("    protectFromScalingDown: ").append(toIndentedString(protectFromScalingDown)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    scalingGroupName: ").append(toIndentedString(scalingGroupName)).append("\n");
+        sb.append("    lifeCycleState: ").append(toIndentedString(lifeCycleState)).append("\n");
+        sb.append("    healthStatus: ").append(toIndentedString(healthStatus)).append("\n");
+        sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
+        sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    protectFromScalingDown: ").append(toIndentedString(protectFromScalingDown)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -513,5 +501,6 @@ public class ScalingGroupInstance  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

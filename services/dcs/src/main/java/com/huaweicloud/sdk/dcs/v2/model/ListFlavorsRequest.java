@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -51,22 +49,19 @@ public class ListFlavorsRequest  {
          * Enum X86_64 for value: "X86_64"
          */
         public static final CpuTypeEnum X86_64 = new CpuTypeEnum("X86_64");
-
         
         /**
          * Enum AARCH64 for value: "aarch64"
          */
         public static final CpuTypeEnum AARCH64 = new CpuTypeEnum("aarch64");
-
         
 
-        public static Map<String, CpuTypeEnum> staticFields =
-                new HashMap<String, CpuTypeEnum>() {
-                    { 
-                        put("X86_64", X86_64);
-                        put("aarch64", AARCH64);
-                    }
-                };
+        public static final Map<String, CpuTypeEnum> staticFields = new HashMap<String, CpuTypeEnum>() {
+            { 
+                put("X86_64", X86_64);
+                put("aarch64", AARCH64);
+            }
+        };
 
         private String value;
 
@@ -82,7 +77,7 @@ public class ListFlavorsRequest  {
 
         @JsonCreator
         public static CpuTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             CpuTypeEnum result = staticFields.get(value);
@@ -275,12 +270,12 @@ public class ListFlavorsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlavorsRequest {\n");
-            sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
-            sb.append("    cacheMode: ").append(toIndentedString(cacheMode)).append("\n");
-            sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
-            sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
-            sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
-            sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    cacheMode: ").append(toIndentedString(cacheMode)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
+        sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
+        sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -294,5 +289,6 @@ public class ListFlavorsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

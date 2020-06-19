@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.moderation.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.moderation.v1.model.CheckResultItemsBody;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -185,11 +183,11 @@ public class CheckResultResultBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckResultResultBody {\n");
-            sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-            sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-            sb.append("    items: ").append(toIndentedString(items)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -203,5 +201,6 @@ public class CheckResultResultBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -35,22 +33,19 @@ public class PolicyStatement  {
          * Enum ALLOW for value: "Allow"
          */
         public static final EffectEnum ALLOW = new EffectEnum("Allow");
-
         
         /**
          * Enum DENY for value: "Deny"
          */
         public static final EffectEnum DENY = new EffectEnum("Deny");
-
         
 
-        public static Map<String, EffectEnum> staticFields =
-                new HashMap<String, EffectEnum>() {
-                    { 
-                        put("Allow", ALLOW);
-                        put("Deny", DENY);
-                    }
-                };
+        public static final Map<String, EffectEnum> staticFields = new HashMap<String, EffectEnum>() {
+            { 
+                put("Allow", ALLOW);
+                put("Deny", DENY);
+            }
+        };
 
         private String value;
 
@@ -66,7 +61,7 @@ public class PolicyStatement  {
 
         @JsonCreator
         public static EffectEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             EffectEnum result = staticFields.get(value);
@@ -248,10 +243,10 @@ public class PolicyStatement  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyStatement {\n");
-            sb.append("    action: ").append(toIndentedString(action)).append("\n");
-            sb.append("    effect: ").append(toIndentedString(effect)).append("\n");
-            sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
-            sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    effect: ").append(toIndentedString(effect)).append("\n");
+        sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
+        sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -265,5 +260,6 @@ public class PolicyStatement  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

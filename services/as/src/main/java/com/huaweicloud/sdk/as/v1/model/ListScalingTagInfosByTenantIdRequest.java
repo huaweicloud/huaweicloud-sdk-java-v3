@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -27,15 +25,13 @@ public class ListScalingTagInfosByTenantIdRequest  {
          * Enum SCALING_GROUP_TAG for value: "scaling_group_tag"
          */
         public static final ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
-
         
 
-        public static Map<String, ResourceTypeEnum> staticFields =
-                new HashMap<String, ResourceTypeEnum>() {
-                    { 
-                        put("scaling_group_tag", SCALING_GROUP_TAG);
-                    }
-                };
+        public static final Map<String, ResourceTypeEnum> staticFields = new HashMap<String, ResourceTypeEnum>() {
+            { 
+                put("scaling_group_tag", SCALING_GROUP_TAG);
+            }
+        };
 
         private String value;
 
@@ -51,7 +47,7 @@ public class ListScalingTagInfosByTenantIdRequest  {
 
         @JsonCreator
         public static ResourceTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ResourceTypeEnum result = staticFields.get(value);
@@ -133,7 +129,7 @@ public class ListScalingTagInfosByTenantIdRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScalingTagInfosByTenantIdRequest {\n");
-            sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -147,5 +143,6 @@ public class ListScalingTagInfosByTenantIdRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,17 +1,15 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dcs.v2.model.Whitelist;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 设置IP白名单结构体
@@ -101,8 +99,8 @@ public class ModifyIpWhitelistBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ModifyIpWhitelistBody {\n");
-            sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
-            sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
+        sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
+        sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -116,5 +114,6 @@ public class ModifyIpWhitelistBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

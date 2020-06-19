@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -33,29 +31,25 @@ public class SubnetResult  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-
         
         /**
          * Enum UNKNOWN for value: "UNKNOWN"
          */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("UNKNOWN", UNKNOWN);
-                        put("ERROR", ERROR);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("UNKNOWN", UNKNOWN);
+                put("ERROR", ERROR);
+            }
+        };
 
         private String value;
 
@@ -71,7 +65,7 @@ public class SubnetResult  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -174,8 +168,8 @@ public class SubnetResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SubnetResult {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -189,5 +183,6 @@ public class SubnetResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

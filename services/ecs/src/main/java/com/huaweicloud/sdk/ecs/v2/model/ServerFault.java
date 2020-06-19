@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 弹性云服务器故障信息。
@@ -114,9 +112,9 @@ public class ServerFault  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerFault {\n");
-            sb.append("    code: ").append(toIndentedString(code)).append("\n");
-            sb.append("    created: ").append(toIndentedString(created)).append("\n");
-            sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    created: ").append(toIndentedString(created)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -130,5 +128,6 @@ public class ServerFault  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

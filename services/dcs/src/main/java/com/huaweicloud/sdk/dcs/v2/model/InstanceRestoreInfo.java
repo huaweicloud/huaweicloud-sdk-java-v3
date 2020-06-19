@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * InstanceRestoreInfo
@@ -87,36 +85,31 @@ public class InstanceRestoreInfo  {
          * Enum WAITING for value: "waiting"
          */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-
         
         /**
          * Enum RESTORING for value: "restoring"
          */
         public static final StatusEnum RESTORING = new StatusEnum("restoring");
-
         
         /**
          * Enum SUCCEED for value: "succeed"
          */
         public static final StatusEnum SUCCEED = new StatusEnum("succeed");
-
         
         /**
          * Enum FAILED for value: "failed"
          */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("waiting", WAITING);
-                        put("restoring", RESTORING);
-                        put("succeed", SUCCEED);
-                        put("failed", FAILED);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("waiting", WAITING);
+                put("restoring", RESTORING);
+                put("succeed", SUCCEED);
+                put("failed", FAILED);
+            }
+        };
 
         private String value;
 
@@ -132,7 +125,7 @@ public class InstanceRestoreInfo  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -424,17 +417,17 @@ public class InstanceRestoreInfo  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceRestoreInfo {\n");
-            sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
-            sb.append("    restoreId: ").append(toIndentedString(restoreId)).append("\n");
-            sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-            sb.append("    restoreRemark: ").append(toIndentedString(restoreRemark)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
-            sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-            sb.append("    restoreName: ").append(toIndentedString(restoreName)).append("\n");
-            sb.append("    backupRemark: ").append(toIndentedString(backupRemark)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    restoreId: ").append(toIndentedString(restoreId)).append("\n");
+        sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    restoreRemark: ").append(toIndentedString(restoreRemark)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    restoreName: ").append(toIndentedString(restoreName)).append("\n");
+        sb.append("    backupRemark: ").append(toIndentedString(backupRemark)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -448,5 +441,6 @@ public class InstanceRestoreInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

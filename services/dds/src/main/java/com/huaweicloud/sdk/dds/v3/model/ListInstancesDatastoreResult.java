@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 数据库信息。
@@ -87,8 +85,8 @@ public class ListInstancesDatastoreResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesDatastoreResult {\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -102,5 +100,6 @@ public class ListInstancesDatastoreResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

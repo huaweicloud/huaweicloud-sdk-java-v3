@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.dds.v3;
 
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.dds.v3.model.*;
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
-
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-
-import com.huaweicloud.sdk.dds.v3.model.*;
 
 @SuppressWarnings("unchecked")
 public class DdsMeta {
@@ -25,26 +23,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AddShardingNodeRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AddShardingNodeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                AddShardingNodeRequestBody.class,
-                f -> f.withMarshaller(AddShardingNodeRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AddShardingNodeRequestBody.class,
+            f -> f.withMarshaller(AddShardingNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<BatchCreateInstanceTagsRequest, BatchCreateInstanceTagsResponse> batchCreateInstanceTags = genForbatchCreateInstanceTags();
@@ -58,26 +55,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(BatchCreateInstanceTagsRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateInstanceTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                BatchCreateInstanceTagsRequestBody.class,
-                f -> f.withMarshaller(BatchCreateInstanceTagsRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchCreateInstanceTagsRequestBody.class,
+            f -> f.withMarshaller(BatchCreateInstanceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<BatchDeleteInstanceTagsRequest, BatchDeleteInstanceTagsResponse> batchDeleteInstanceTags = genForbatchDeleteInstanceTags();
@@ -91,26 +87,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(BatchDeleteInstanceTagsRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteInstanceTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                BatchDeleteInstanceTagsRequestBody.class,
-                f -> f.withMarshaller(BatchDeleteInstanceTagsRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteInstanceTagsRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteInstanceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance = genForcreateInstance();
@@ -124,18 +119,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateInstanceRequestBody.class,
-                f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateInstanceRequestBody.class,
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackup = genForcreateManualBackup();
@@ -149,18 +143,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateManualBackupRequestBody.class,
-                f -> f.withMarshaller(CreateManualBackupRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateManualBackupRequestBody.class,
+            f -> f.withMarshaller(CreateManualBackupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance = genFordeleteInstance();
@@ -173,18 +166,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackup = genFordeleteManualBackup();
@@ -197,18 +189,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("backup_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, (req, v) -> {
-                    req.setBackupId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForlistBackups();
@@ -221,74 +212,73 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListBackupsRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBackupsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("backup_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListBackupsRequest::getBackupId, (req, v) -> {
-                    req.setBackupId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBackupsRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            })
         );
         builder.withRequestField("backup_type",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ListBackupsRequest.BackupTypeEnum.class,
-                f -> f.withMarshaller(ListBackupsRequest::getBackupType, (req, v) -> {
-                    req.setBackupType(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListBackupsRequest.BackupTypeEnum.class,
+            f -> f.withMarshaller(ListBackupsRequest::getBackupType, (req, v) -> {
+                req.setBackupType(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListBackupsRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListBackupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListBackupsRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListBackupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
         builder.withRequestField("begin_time",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListBackupsRequest::getBeginTime, (req, v) -> {
-                    req.setBeginTime(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBackupsRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            })
         );
         builder.withRequestField("end_time",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListBackupsRequest::getEndTime, (req, v) -> {
-                    req.setEndTime(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBackupsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
         );
         builder.withRequestField("mode",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ListBackupsRequest.ModeEnum.class,
-                f -> f.withMarshaller(ListBackupsRequest::getMode, (req, v) -> {
-                    req.setMode(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListBackupsRequest.ModeEnum.class,
+            f -> f.withMarshaller(ListBackupsRequest::getMode, (req, v) -> {
+                req.setMode(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> listDatastoreVersions = genForlistDatastoreVersions();
@@ -301,18 +291,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("datastore_name",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ListDatastoreVersionsRequest.DatastoreNameEnum.class,
-                f -> f.withMarshaller(ListDatastoreVersionsRequest::getDatastoreName, (req, v) -> {
-                    req.setDatastoreName(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListDatastoreVersionsRequest.DatastoreNameEnum.class,
+            f -> f.withMarshaller(ListDatastoreVersionsRequest::getDatastoreName, (req, v) -> {
+                req.setDatastoreName(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
@@ -325,26 +314,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("region",
-                LocationType.Query,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListFlavorsRequest::getRegion, (req, v) -> {
-                    req.setRegion(v);
-                })
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListFlavorsRequest::getRegion, (req, v) -> {
+                req.setRegion(v);
+            })
         );
         builder.withRequestField("engine_name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ListFlavorsRequest.EngineNameEnum.class,
-                f -> f.withMarshaller(ListFlavorsRequest::getEngineName, (req, v) -> {
-                    req.setEngineName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListFlavorsRequest.EngineNameEnum.class,
+            f -> f.withMarshaller(ListFlavorsRequest::getEngineName, (req, v) -> {
+                req.setEngineName(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags = genForlistInstanceTags();
@@ -357,18 +345,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances = genForlistInstances();
@@ -381,74 +368,73 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListInstancesRequest::getId, (req, v) -> {
-                    req.setId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
         );
         builder.withRequestField("name",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
         builder.withRequestField("mode",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ListInstancesRequest.ModeEnum.class,
-                f -> f.withMarshaller(ListInstancesRequest::getMode, (req, v) -> {
-                    req.setMode(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListInstancesRequest.ModeEnum.class,
+            f -> f.withMarshaller(ListInstancesRequest::getMode, (req, v) -> {
+                req.setMode(v);
+            })
         );
         builder.withRequestField("datastore_type",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                ListInstancesRequest.DatastoreTypeEnum.class,
-                f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, (req, v) -> {
-                    req.setDatastoreType(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListInstancesRequest.DatastoreTypeEnum.class,
+            f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            })
         );
         builder.withRequestField("vpc_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListInstancesRequest::getVpcId, (req, v) -> {
-                    req.setVpcId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
         );
         builder.withRequestField("subnet_id",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListInstancesRequest::getSubnetId, (req, v) -> {
-                    req.setSubnetId(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            })
         );
         builder.withRequestField("offset",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
-                    req.setOffset(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
         );
         builder.withRequestField("limit",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                Integer.class,
-                f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
-                    req.setLimit(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTags = genForlistInstancesByTags();
@@ -462,18 +448,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ListInstancesByTagsRequestBody.class,
-                f -> f.withMarshaller(ListInstancesByTagsRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListInstancesByTagsRequestBody.class,
+            f -> f.withMarshaller(ListInstancesByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags = genForlistProjectTags();
@@ -489,7 +474,6 @@ public class DdsMeta {
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance = genForresizeInstance();
@@ -503,26 +487,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ResizeInstanceRequestBody.class,
-                f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResizeInstanceRequestBody.class,
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> resizeInstanceVolume = genForresizeInstanceVolume();
@@ -536,26 +519,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ResizeInstanceVolumeRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResizeInstanceVolumeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ResizeInstanceVolumeRequestBody.class,
-                f -> f.withMarshaller(ResizeInstanceVolumeRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResizeInstanceVolumeRequestBody.class,
+            f -> f.withMarshaller(ResizeInstanceVolumeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance = genForrestartInstance();
@@ -569,26 +551,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                RestartInstanceRequestBody.class,
-                f -> f.withMarshaller(RestartInstanceRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RestartInstanceRequestBody.class,
+            f -> f.withMarshaller(RestartInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy = genForsetBackupPolicy();
@@ -602,26 +583,25 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(SetBackupPolicyRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetBackupPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                SetBackupPolicyRequestBody.class,
-                f -> f.withMarshaller(SetBackupPolicyRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SetBackupPolicyRequestBody.class,
+            f -> f.withMarshaller(SetBackupPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicy = genForshowBackupPolicy();
@@ -634,19 +614,17 @@ public class DdsMeta {
 
         // requests
         builder.withRequestField("instance_id",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
-                    req.setInstanceId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
 }
-

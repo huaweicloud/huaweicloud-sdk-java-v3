@@ -1,9 +1,9 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -53,36 +53,31 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
          * Enum VHD for value: "vhd"
          */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
-
         
         /**
          * Enum ZVHD for value: "zvhd"
          */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
-
         
         /**
          * Enum RAW for value: "raw"
          */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
-
         
         /**
          * Enum QCOW2 for value: "qcow2"
          */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
-
         
 
-        public static Map<String, DiskFormatEnum> staticFields =
-                new HashMap<String, DiskFormatEnum>() {
-                    { 
-                        put("vhd", VHD);
-                        put("zvhd", ZVHD);
-                        put("raw", RAW);
-                        put("qcow2", QCOW2);
-                    }
-                };
+        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
+            { 
+                put("vhd", VHD);
+                put("zvhd", ZVHD);
+                put("raw", RAW);
+                put("qcow2", QCOW2);
+            }
+        };
 
         private String value;
 
@@ -98,7 +93,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static DiskFormatEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DiskFormatEnum result = staticFields.get(value);
@@ -169,43 +164,37 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
          * Enum QUEUED for value: "queued"
          */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
-
         
         /**
          * Enum SAVING for value: "saving"
          */
         public static final StatusEnum SAVING = new StatusEnum("saving");
-
         
         /**
          * Enum DELETED for value: "deleted"
          */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-
         
         /**
          * Enum KILLED for value: "killed"
          */
         public static final StatusEnum KILLED = new StatusEnum("killed");
-
         
         /**
          * Enum ACTIVE for value: "active"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("queued", QUEUED);
-                        put("saving", SAVING);
-                        put("deleted", DELETED);
-                        put("killed", KILLED);
-                        put("active", ACTIVE);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("queued", QUEUED);
+                put("saving", SAVING);
+                put("deleted", DELETED);
+                put("killed", KILLED);
+                put("active", ACTIVE);
+            }
+        };
 
         private String value;
 
@@ -221,7 +210,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -334,29 +323,25 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
          * Enum WINDOWS for value: "Windows"
          */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-
         
         /**
          * Enum LINUX for value: "Linux"
          */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-
         
         /**
          * Enum OTHER for value: "other"
          */
         public static final OsTypeEnum OTHER = new OsTypeEnum("other");
-
         
 
-        public static Map<String, OsTypeEnum> staticFields =
-                new HashMap<String, OsTypeEnum>() {
-                    { 
-                        put("Windows", WINDOWS);
-                        put("Linux", LINUX);
-                        put("other", OTHER);
-                    }
-                };
+        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
+            { 
+                put("Windows", WINDOWS);
+                put("Linux", LINUX);
+                put("other", OTHER);
+            }
+        };
 
         private String value;
 
@@ -372,7 +357,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsTypeEnum result = staticFields.get(value);
@@ -431,22 +416,19 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
          * Enum _32 for value: "32"
          */
         public static final OsBitEnum _32 = new OsBitEnum("32");
-
         
         /**
          * Enum _64 for value: "64"
          */
         public static final OsBitEnum _64 = new OsBitEnum("64");
-
         
 
-        public static Map<String, OsBitEnum> staticFields =
-                new HashMap<String, OsBitEnum>() {
-                    { 
-                        put("32", _32);
-                        put("64", _64);
-                    }
-                };
+        public static final Map<String, OsBitEnum> staticFields = new HashMap<String, OsBitEnum>() {
+            { 
+                put("32", _32);
+                put("64", _64);
+            }
+        };
 
         private String value;
 
@@ -462,7 +444,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static OsBitEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsBitEnum result = staticFields.get(value);
@@ -521,29 +503,25 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
          * Enum FUSIONCOMPUTE for value: "FusionCompute"
          */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
-
         
         /**
          * Enum IRONIC for value: "Ironic"
          */
         public static final VirtualEnvTypeEnum IRONIC = new VirtualEnvTypeEnum("Ironic");
-
         
         /**
          * Enum DATAIMAGE for value: "DataImage"
          */
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
-
         
 
-        public static Map<String, VirtualEnvTypeEnum> staticFields =
-                new HashMap<String, VirtualEnvTypeEnum>() {
-                    { 
-                        put("FusionCompute", FUSIONCOMPUTE);
-                        put("Ironic", IRONIC);
-                        put("DataImage", DATAIMAGE);
-                    }
-                };
+        public static final Map<String, VirtualEnvTypeEnum> staticFields = new HashMap<String, VirtualEnvTypeEnum>() {
+            { 
+                put("FusionCompute", FUSIONCOMPUTE);
+                put("Ironic", IRONIC);
+                put("DataImage", DATAIMAGE);
+            }
+        };
 
         private String value;
 
@@ -559,7 +537,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static VirtualEnvTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             VirtualEnvTypeEnum result = staticFields.get(value);
@@ -1237,33 +1215,33 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GlanceCreateImageMetadataResponse {\n");
-            sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
-            sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
-            sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-            sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-            sb.append("    self: ").append(toIndentedString(self)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    file: ").append(toIndentedString(file)).append("\n");
-            sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
-            sb.append("    imageSourceType: ").append(toIndentedString(imageSourceType)).append("\n");
-            sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
-            sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
-            sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-            sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
-            sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
-            sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
-            sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
-            sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-            sb.append("    virtualSize: ").append(toIndentedString(virtualSize)).append("\n");
-            sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+        sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    _protected: ").append(toIndentedString(_protected)).append("\n");
+        sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
+        sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    self: ").append(toIndentedString(self)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    file: ").append(toIndentedString(file)).append("\n");
+        sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+        sb.append("    imageSourceType: ").append(toIndentedString(imageSourceType)).append("\n");
+        sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
+        sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
+        sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
+        sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
+        sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    virtualSize: ").append(toIndentedString(virtualSize)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -1277,5 +1255,6 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

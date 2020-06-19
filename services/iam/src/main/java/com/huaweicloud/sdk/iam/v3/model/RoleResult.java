@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.iam.v3.model.Links;
 import com.huaweicloud.sdk.iam.v3.model.RolePolicy;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 
@@ -398,19 +396,19 @@ public class RoleResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RoleResult {\n");
-            sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-            sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
-            sb.append("    descriptionCn: ").append(toIndentedString(descriptionCn)).append("\n");
-            sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    links: ").append(toIndentedString(links)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
-            sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
-            sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    descriptionCn: ").append(toIndentedString(descriptionCn)).append("\n");
+        sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+        sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -424,5 +422,6 @@ public class RoleResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

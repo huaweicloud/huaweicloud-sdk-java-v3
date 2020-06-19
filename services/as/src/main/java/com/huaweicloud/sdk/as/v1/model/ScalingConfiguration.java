@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.as.v1.model.InstanceConfigResult;
 import java.time.OffsetDateTime;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 伸缩配置详情
@@ -176,11 +174,11 @@ public class ScalingConfiguration  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScalingConfiguration {\n");
-            sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
-            sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
-            sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
-            sb.append("    instanceConfig: ").append(toIndentedString(instanceConfig)).append("\n");
-            sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    scalingConfigurationId: ").append(toIndentedString(scalingConfigurationId)).append("\n");
+        sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+        sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
+        sb.append("    instanceConfig: ").append(toIndentedString(instanceConfig)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -194,5 +192,6 @@ public class ScalingConfiguration  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

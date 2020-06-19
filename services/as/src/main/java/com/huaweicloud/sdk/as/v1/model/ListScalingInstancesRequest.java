@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -33,57 +31,49 @@ public class ListScalingInstancesRequest  {
          * Enum INSERVICE for value: "INSERVICE"
          */
         public static final LifeCycleStateEnum INSERVICE = new LifeCycleStateEnum("INSERVICE");
-
         
         /**
          * Enum PENDING for value: "PENDING"
          */
         public static final LifeCycleStateEnum PENDING = new LifeCycleStateEnum("PENDING");
-
         
         /**
          * Enum REMOVING for value: "REMOVING"
          */
         public static final LifeCycleStateEnum REMOVING = new LifeCycleStateEnum("REMOVING");
-
         
         /**
          * Enum PENDING_WAIT for value: "PENDING_WAIT"
          */
         public static final LifeCycleStateEnum PENDING_WAIT = new LifeCycleStateEnum("PENDING_WAIT");
-
         
         /**
          * Enum REMOVING_WAIT for value: "REMOVING_WAIT"
          */
         public static final LifeCycleStateEnum REMOVING_WAIT = new LifeCycleStateEnum("REMOVING_WAIT");
-
         
         /**
          * Enum STANDBY for value: "STANDBY"
          */
         public static final LifeCycleStateEnum STANDBY = new LifeCycleStateEnum("STANDBY");
-
         
         /**
          * Enum ENTERING_STANDBY for value: "ENTERING_STANDBY"
          */
         public static final LifeCycleStateEnum ENTERING_STANDBY = new LifeCycleStateEnum("ENTERING_STANDBY");
-
         
 
-        public static Map<String, LifeCycleStateEnum> staticFields =
-                new HashMap<String, LifeCycleStateEnum>() {
-                    { 
-                        put("INSERVICE", INSERVICE);
-                        put("PENDING", PENDING);
-                        put("REMOVING", REMOVING);
-                        put("PENDING_WAIT", PENDING_WAIT);
-                        put("REMOVING_WAIT", REMOVING_WAIT);
-                        put("STANDBY", STANDBY);
-                        put("ENTERING_STANDBY", ENTERING_STANDBY);
-                    }
-                };
+        public static final Map<String, LifeCycleStateEnum> staticFields = new HashMap<String, LifeCycleStateEnum>() {
+            { 
+                put("INSERVICE", INSERVICE);
+                put("PENDING", PENDING);
+                put("REMOVING", REMOVING);
+                put("PENDING_WAIT", PENDING_WAIT);
+                put("REMOVING_WAIT", REMOVING_WAIT);
+                put("STANDBY", STANDBY);
+                put("ENTERING_STANDBY", ENTERING_STANDBY);
+            }
+        };
 
         private String value;
 
@@ -99,7 +89,7 @@ public class ListScalingInstancesRequest  {
 
         @JsonCreator
         public static LifeCycleStateEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             LifeCycleStateEnum result = staticFields.get(value);
@@ -152,29 +142,25 @@ public class ListScalingInstancesRequest  {
          * Enum INITIALIZING for value: "INITIALIZING"
          */
         public static final HealthStatusEnum INITIALIZING = new HealthStatusEnum("INITIALIZING");
-
         
         /**
          * Enum NORMAL for value: "NORMAL"
          */
         public static final HealthStatusEnum NORMAL = new HealthStatusEnum("NORMAL");
-
         
         /**
          * Enum ERROR for value: "ERROR"
          */
         public static final HealthStatusEnum ERROR = new HealthStatusEnum("ERROR");
-
         
 
-        public static Map<String, HealthStatusEnum> staticFields =
-                new HashMap<String, HealthStatusEnum>() {
-                    { 
-                        put("INITIALIZING", INITIALIZING);
-                        put("NORMAL", NORMAL);
-                        put("ERROR", ERROR);
-                    }
-                };
+        public static final Map<String, HealthStatusEnum> staticFields = new HashMap<String, HealthStatusEnum>() {
+            { 
+                put("INITIALIZING", INITIALIZING);
+                put("NORMAL", NORMAL);
+                put("ERROR", ERROR);
+            }
+        };
 
         private String value;
 
@@ -190,7 +176,7 @@ public class ListScalingInstancesRequest  {
 
         @JsonCreator
         public static HealthStatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             HealthStatusEnum result = staticFields.get(value);
@@ -243,22 +229,19 @@ public class ListScalingInstancesRequest  {
          * Enum TRUE for value: "true"
          */
         public static final ProtectFromScalingDownEnum TRUE = new ProtectFromScalingDownEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final ProtectFromScalingDownEnum FALSE = new ProtectFromScalingDownEnum("false");
-
         
 
-        public static Map<String, ProtectFromScalingDownEnum> staticFields =
-                new HashMap<String, ProtectFromScalingDownEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, ProtectFromScalingDownEnum> staticFields = new HashMap<String, ProtectFromScalingDownEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -274,7 +257,7 @@ public class ListScalingInstancesRequest  {
 
         @JsonCreator
         public static ProtectFromScalingDownEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ProtectFromScalingDownEnum result = staticFields.get(value);
@@ -473,12 +456,12 @@ public class ListScalingInstancesRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScalingInstancesRequest {\n");
-            sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
-            sb.append("    lifeCycleState: ").append(toIndentedString(lifeCycleState)).append("\n");
-            sb.append("    healthStatus: ").append(toIndentedString(healthStatus)).append("\n");
-            sb.append("    protectFromScalingDown: ").append(toIndentedString(protectFromScalingDown)).append("\n");
-            sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    lifeCycleState: ").append(toIndentedString(lifeCycleState)).append("\n");
+        sb.append("    healthStatus: ").append(toIndentedString(healthStatus)).append("\n");
+        sb.append("    protectFromScalingDown: ").append(toIndentedString(protectFromScalingDown)).append("\n");
+        sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -492,5 +475,6 @@ public class ListScalingInstancesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

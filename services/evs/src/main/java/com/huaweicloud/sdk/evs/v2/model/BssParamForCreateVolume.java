@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 包周期创卷的计费策略参数。
@@ -27,22 +25,19 @@ public class BssParamForCreateVolume  {
          * Enum POSTPAID for value: "postPaid"
          */
         public static final ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
-
         
         /**
          * Enum PREPAID for value: "prePaid"
          */
         public static final ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
-
         
 
-        public static Map<String, ChargingModeEnum> staticFields =
-                new HashMap<String, ChargingModeEnum>() {
-                    { 
-                        put("postPaid", POSTPAID);
-                        put("prePaid", PREPAID);
-                    }
-                };
+        public static final Map<String, ChargingModeEnum> staticFields = new HashMap<String, ChargingModeEnum>() {
+            { 
+                put("postPaid", POSTPAID);
+                put("prePaid", PREPAID);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class BssParamForCreateVolume  {
 
         @JsonCreator
         public static ChargingModeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ChargingModeEnum result = staticFields.get(value);
@@ -111,22 +106,19 @@ public class BssParamForCreateVolume  {
          * Enum TRUE for value: "true"
          */
         public static final IsAutoPayEnum TRUE = new IsAutoPayEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final IsAutoPayEnum FALSE = new IsAutoPayEnum("false");
-
         
 
-        public static Map<String, IsAutoPayEnum> staticFields =
-                new HashMap<String, IsAutoPayEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, IsAutoPayEnum> staticFields = new HashMap<String, IsAutoPayEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -142,7 +134,7 @@ public class BssParamForCreateVolume  {
 
         @JsonCreator
         public static IsAutoPayEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             IsAutoPayEnum result = staticFields.get(value);
@@ -195,22 +187,19 @@ public class BssParamForCreateVolume  {
          * Enum TRUE for value: "true"
          */
         public static final IsAutoRenewEnum TRUE = new IsAutoRenewEnum("true");
-
         
         /**
          * Enum FALSE for value: "false"
          */
         public static final IsAutoRenewEnum FALSE = new IsAutoRenewEnum("false");
-
         
 
-        public static Map<String, IsAutoRenewEnum> staticFields =
-                new HashMap<String, IsAutoRenewEnum>() {
-                    { 
-                        put("true", TRUE);
-                        put("false", FALSE);
-                    }
-                };
+        public static final Map<String, IsAutoRenewEnum> staticFields = new HashMap<String, IsAutoRenewEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
 
         private String value;
 
@@ -226,7 +215,7 @@ public class BssParamForCreateVolume  {
 
         @JsonCreator
         public static IsAutoRenewEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             IsAutoRenewEnum result = staticFields.get(value);
@@ -285,22 +274,19 @@ public class BssParamForCreateVolume  {
          * Enum MONTH for value: "month"
          */
         public static final PeriodTypeEnum MONTH = new PeriodTypeEnum("month");
-
         
         /**
          * Enum YEAR for value: "year"
          */
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
-
         
 
-        public static Map<String, PeriodTypeEnum> staticFields =
-                new HashMap<String, PeriodTypeEnum>() {
-                    { 
-                        put("month", MONTH);
-                        put("year", YEAR);
-                    }
-                };
+        public static final Map<String, PeriodTypeEnum> staticFields = new HashMap<String, PeriodTypeEnum>() {
+            { 
+                put("month", MONTH);
+                put("year", YEAR);
+            }
+        };
 
         private String value;
 
@@ -316,7 +302,7 @@ public class BssParamForCreateVolume  {
 
         @JsonCreator
         public static PeriodTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             PeriodTypeEnum result = staticFields.get(value);
@@ -482,11 +468,11 @@ public class BssParamForCreateVolume  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BssParamForCreateVolume {\n");
-            sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
-            sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
-            sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
-            sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
-            sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
+        sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
+        sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -500,5 +486,6 @@ public class BssParamForCreateVolume  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例数量统计信息。
@@ -384,19 +382,19 @@ public class StatusStatistic  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StatusStatistic {\n");
-            sb.append("    payingCount: ").append(toIndentedString(payingCount)).append("\n");
-            sb.append("    freezingCount: ").append(toIndentedString(freezingCount)).append("\n");
-            sb.append("    migratingCount: ").append(toIndentedString(migratingCount)).append("\n");
-            sb.append("    flushingCount: ").append(toIndentedString(flushingCount)).append("\n");
-            sb.append("    upgradingCount: ").append(toIndentedString(upgradingCount)).append("\n");
-            sb.append("    restoringCount: ").append(toIndentedString(restoringCount)).append("\n");
-            sb.append("    extendingCount: ").append(toIndentedString(extendingCount)).append("\n");
-            sb.append("    creatingCount: ").append(toIndentedString(creatingCount)).append("\n");
-            sb.append("    runningCount: ").append(toIndentedString(runningCount)).append("\n");
-            sb.append("    errorCount: ").append(toIndentedString(errorCount)).append("\n");
-            sb.append("    frozenCount: ").append(toIndentedString(frozenCount)).append("\n");
-            sb.append("    createfailedCount: ").append(toIndentedString(createfailedCount)).append("\n");
-            sb.append("    restartingCount: ").append(toIndentedString(restartingCount)).append("\n");
+        sb.append("    payingCount: ").append(toIndentedString(payingCount)).append("\n");
+        sb.append("    freezingCount: ").append(toIndentedString(freezingCount)).append("\n");
+        sb.append("    migratingCount: ").append(toIndentedString(migratingCount)).append("\n");
+        sb.append("    flushingCount: ").append(toIndentedString(flushingCount)).append("\n");
+        sb.append("    upgradingCount: ").append(toIndentedString(upgradingCount)).append("\n");
+        sb.append("    restoringCount: ").append(toIndentedString(restoringCount)).append("\n");
+        sb.append("    extendingCount: ").append(toIndentedString(extendingCount)).append("\n");
+        sb.append("    creatingCount: ").append(toIndentedString(creatingCount)).append("\n");
+        sb.append("    runningCount: ").append(toIndentedString(runningCount)).append("\n");
+        sb.append("    errorCount: ").append(toIndentedString(errorCount)).append("\n");
+        sb.append("    frozenCount: ").append(toIndentedString(frozenCount)).append("\n");
+        sb.append("    createfailedCount: ").append(toIndentedString(createfailedCount)).append("\n");
+        sb.append("    restartingCount: ").append(toIndentedString(restartingCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -410,5 +408,6 @@ public class StatusStatistic  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

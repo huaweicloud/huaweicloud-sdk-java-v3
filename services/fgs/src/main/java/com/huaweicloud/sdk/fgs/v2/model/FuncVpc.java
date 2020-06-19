@@ -1,14 +1,12 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 函数vpc配置。
@@ -195,12 +193,12 @@ public class FuncVpc  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class FuncVpc {\n");
-            sb.append("    vpcName: ").append(toIndentedString(vpcName)).append("\n");
-            sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-            sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
-            sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
-            sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
-            sb.append("    gateway: ").append(toIndentedString(gateway)).append("\n");
+        sb.append("    vpcName: ").append(toIndentedString(vpcName)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
+        sb.append("    gateway: ").append(toIndentedString(gateway)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -214,5 +212,6 @@ public class FuncVpc  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

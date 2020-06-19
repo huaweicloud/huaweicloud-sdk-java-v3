@@ -1,17 +1,17 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.devstar.v1.model.PropertiesInfo;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Response Object
@@ -320,16 +320,16 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTemplateDetailResponse {\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    title: ").append(toIndentedString(title)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
-            sb.append("    repostoryId: ").append(toIndentedString(repostoryId)).append("\n");
-            sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
-            sb.append("    sshUrl: ").append(toIndentedString(sshUrl)).append("\n");
-            sb.append("    projectUuid: ").append(toIndentedString(projectUuid)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    title: ").append(toIndentedString(title)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    repostoryId: ").append(toIndentedString(repostoryId)).append("\n");
+        sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
+        sb.append("    sshUrl: ").append(toIndentedString(sshUrl)).append("\n");
+        sb.append("    projectUuid: ").append(toIndentedString(projectUuid)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -343,5 +343,6 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

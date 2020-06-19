@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -39,29 +37,25 @@ public class ListScalingPoliciesRequest  {
          * Enum ALARM for value: "ALARM"
          */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
-
         
         /**
          * Enum SCHEDULED for value: "SCHEDULED"
          */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
-
         
         /**
          * Enum RECURRENCE for value: "RECURRENCE"
          */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
-
         
 
-        public static Map<String, ScalingPolicyTypeEnum> staticFields =
-                new HashMap<String, ScalingPolicyTypeEnum>() {
-                    { 
-                        put("ALARM", ALARM);
-                        put("SCHEDULED", SCHEDULED);
-                        put("RECURRENCE", RECURRENCE);
-                    }
-                };
+        public static final Map<String, ScalingPolicyTypeEnum> staticFields = new HashMap<String, ScalingPolicyTypeEnum>() {
+            { 
+                put("ALARM", ALARM);
+                put("SCHEDULED", SCHEDULED);
+                put("RECURRENCE", RECURRENCE);
+            }
+        };
 
         private String value;
 
@@ -77,7 +71,7 @@ public class ListScalingPoliciesRequest  {
 
         @JsonCreator
         public static ScalingPolicyTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ScalingPolicyTypeEnum result = staticFields.get(value);
@@ -284,12 +278,12 @@ public class ListScalingPoliciesRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScalingPoliciesRequest {\n");
-            sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
-            sb.append("    scalingPolicyName: ").append(toIndentedString(scalingPolicyName)).append("\n");
-            sb.append("    scalingPolicyType: ").append(toIndentedString(scalingPolicyType)).append("\n");
-            sb.append("    scalingPolicyId: ").append(toIndentedString(scalingPolicyId)).append("\n");
-            sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    scalingPolicyName: ").append(toIndentedString(scalingPolicyName)).append("\n");
+        sb.append("    scalingPolicyType: ").append(toIndentedString(scalingPolicyType)).append("\n");
+        sb.append("    scalingPolicyId: ").append(toIndentedString(scalingPolicyId)).append("\n");
+        sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -303,5 +297,6 @@ public class ListScalingPoliciesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

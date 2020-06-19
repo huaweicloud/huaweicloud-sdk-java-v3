@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 数据库信息。
@@ -27,22 +25,19 @@ public class CreateInstanceDatastoreResult  {
          * Enum DDS_COMMUNITY for value: "DDS-Community"
          */
         public static final TypeEnum DDS_COMMUNITY = new TypeEnum("DDS-Community");
-
         
         /**
          * Enum DDS_ENHANCED for value: "DDS-Enhanced"
          */
         public static final TypeEnum DDS_ENHANCED = new TypeEnum("DDS-Enhanced");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("DDS-Community", DDS_COMMUNITY);
-                        put("DDS-Enhanced", DDS_ENHANCED);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("DDS-Community", DDS_COMMUNITY);
+                put("DDS-Enhanced", DDS_ENHANCED);
+            }
+        };
 
         private String value;
 
@@ -58,7 +53,7 @@ public class CreateInstanceDatastoreResult  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -117,22 +112,19 @@ public class CreateInstanceDatastoreResult  {
          * Enum WIREDTIGER for value: "wiredTiger"
          */
         public static final StorageEngineEnum WIREDTIGER = new StorageEngineEnum("wiredTiger");
-
         
         /**
          * Enum ROCKSDB for value: "rocksDB"
          */
         public static final StorageEngineEnum ROCKSDB = new StorageEngineEnum("rocksDB");
-
         
 
-        public static Map<String, StorageEngineEnum> staticFields =
-                new HashMap<String, StorageEngineEnum>() {
-                    { 
-                        put("wiredTiger", WIREDTIGER);
-                        put("rocksDB", ROCKSDB);
-                    }
-                };
+        public static final Map<String, StorageEngineEnum> staticFields = new HashMap<String, StorageEngineEnum>() {
+            { 
+                put("wiredTiger", WIREDTIGER);
+                put("rocksDB", ROCKSDB);
+            }
+        };
 
         private String value;
 
@@ -148,7 +140,7 @@ public class CreateInstanceDatastoreResult  {
 
         @JsonCreator
         public static StorageEngineEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StorageEngineEnum result = staticFields.get(value);
@@ -272,9 +264,9 @@ public class CreateInstanceDatastoreResult  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceDatastoreResult {\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    version: ").append(toIndentedString(version)).append("\n");
-            sb.append("    storageEngine: ").append(toIndentedString(storageEngine)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    storageEngine: ").append(toIndentedString(storageEngine)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -288,5 +280,6 @@ public class CreateInstanceDatastoreResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

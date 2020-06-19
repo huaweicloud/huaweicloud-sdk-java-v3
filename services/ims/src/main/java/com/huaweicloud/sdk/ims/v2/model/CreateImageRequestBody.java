@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -13,8 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 创建镜像请求参数体
@@ -115,36 +113,31 @@ public class CreateImageRequestBody  {
          * Enum ECS for value: "ECS"
          */
         public static final TypeEnum ECS = new TypeEnum("ECS");
-
         
         /**
          * Enum BMS for value: "BMS"
          */
         public static final TypeEnum BMS = new TypeEnum("BMS");
-
         
         /**
          * Enum FUSIONCOMPUTE for value: "FusionCompute"
          */
         public static final TypeEnum FUSIONCOMPUTE = new TypeEnum("FusionCompute");
-
         
         /**
          * Enum IRONIC for value: "Ironic"
          */
         public static final TypeEnum IRONIC = new TypeEnum("Ironic");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("ECS", ECS);
-                        put("BMS", BMS);
-                        put("FusionCompute", FUSIONCOMPUTE);
-                        put("Ironic", IRONIC);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("ECS", ECS);
+                put("BMS", BMS);
+                put("FusionCompute", FUSIONCOMPUTE);
+                put("Ironic", IRONIC);
+            }
+        };
 
         private String value;
 
@@ -160,7 +153,7 @@ public class CreateImageRequestBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -219,22 +212,19 @@ public class CreateImageRequestBody  {
          * Enum X86 for value: "x86"
          */
         public static final ArchitectureEnum X86 = new ArchitectureEnum("x86");
-
         
         /**
          * Enum ARM for value: "arm"
          */
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
-
         
 
-        public static Map<String, ArchitectureEnum> staticFields =
-                new HashMap<String, ArchitectureEnum>() {
-                    { 
-                        put("x86", X86);
-                        put("arm", ARM);
-                    }
-                };
+        public static final Map<String, ArchitectureEnum> staticFields = new HashMap<String, ArchitectureEnum>() {
+            { 
+                put("x86", X86);
+                put("arm", ARM);
+            }
+        };
 
         private String value;
 
@@ -250,7 +240,7 @@ public class CreateImageRequestBody  {
 
         @JsonCreator
         public static ArchitectureEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ArchitectureEnum result = staticFields.get(value);
@@ -737,24 +727,24 @@ public class CreateImageRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateImageRequestBody {\n");
-            sb.append("    dataImages: ").append(toIndentedString(dataImages)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-            sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
-            sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-            sb.append("    maxRam: ").append(toIndentedString(maxRam)).append("\n");
-            sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
-            sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
-            sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
-            sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
-            sb.append("    isConfig: ").append(toIndentedString(isConfig)).append("\n");
-            sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    isQuickImport: ").append(toIndentedString(isQuickImport)).append("\n");
-            sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
-            sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
+        sb.append("    dataImages: ").append(toIndentedString(dataImages)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    maxRam: ").append(toIndentedString(maxRam)).append("\n");
+        sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+        sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    isConfig: ").append(toIndentedString(isConfig)).append("\n");
+        sb.append("    cmkId: ").append(toIndentedString(cmkId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    isQuickImport: ").append(toIndentedString(isQuickImport)).append("\n");
+        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
+        sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -768,5 +758,6 @@ public class CreateImageRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

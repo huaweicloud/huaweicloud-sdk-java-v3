@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 将云硬盘导出为镜像的请求参数。
@@ -27,43 +25,37 @@ public class CinderExportToImageOption  {
          * Enum AMI for value: "ami"
          */
         public static final ContainerFormatEnum AMI = new ContainerFormatEnum("ami");
-
         
         /**
          * Enum ARI for value: "ari"
          */
         public static final ContainerFormatEnum ARI = new ContainerFormatEnum("ari");
-
         
         /**
          * Enum AKI for value: "aki"
          */
         public static final ContainerFormatEnum AKI = new ContainerFormatEnum("aki");
-
         
         /**
          * Enum OVF for value: "ovf"
          */
         public static final ContainerFormatEnum OVF = new ContainerFormatEnum("ovf");
-
         
         /**
          * Enum BARE for value: "bare"
          */
         public static final ContainerFormatEnum BARE = new ContainerFormatEnum("bare");
-
         
 
-        public static Map<String, ContainerFormatEnum> staticFields =
-                new HashMap<String, ContainerFormatEnum>() {
-                    { 
-                        put("ami", AMI);
-                        put("ari", ARI);
-                        put("aki", AKI);
-                        put("ovf", OVF);
-                        put("bare", BARE);
-                    }
-                };
+        public static final Map<String, ContainerFormatEnum> staticFields = new HashMap<String, ContainerFormatEnum>() {
+            { 
+                put("ami", AMI);
+                put("ari", ARI);
+                put("aki", AKI);
+                put("ovf", OVF);
+                put("bare", BARE);
+            }
+        };
 
         private String value;
 
@@ -79,7 +71,7 @@ public class CinderExportToImageOption  {
 
         @JsonCreator
         public static ContainerFormatEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ContainerFormatEnum result = staticFields.get(value);
@@ -132,43 +124,37 @@ public class CinderExportToImageOption  {
          * Enum VHD for value: "vhd"
          */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
-
         
         /**
          * Enum ZVHD for value: "zvhd"
          */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
-
         
         /**
          * Enum ZVHD2 for value: "zvhd2"
          */
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
-
         
         /**
          * Enum RAW for value: "raw"
          */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
-
         
         /**
          * Enum QCOW2 for value: "qcow2"
          */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
-
         
 
-        public static Map<String, DiskFormatEnum> staticFields =
-                new HashMap<String, DiskFormatEnum>() {
-                    { 
-                        put("vhd", VHD);
-                        put("zvhd", ZVHD);
-                        put("zvhd2", ZVHD2);
-                        put("raw", RAW);
-                        put("qcow2", QCOW2);
-                    }
-                };
+        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
+            { 
+                put("vhd", VHD);
+                put("zvhd", ZVHD);
+                put("zvhd2", ZVHD2);
+                put("raw", RAW);
+                put("qcow2", QCOW2);
+            }
+        };
 
         private String value;
 
@@ -184,7 +170,7 @@ public class CinderExportToImageOption  {
 
         @JsonCreator
         public static DiskFormatEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DiskFormatEnum result = staticFields.get(value);
@@ -249,22 +235,19 @@ public class CinderExportToImageOption  {
          * Enum WINDOWS for value: "windows"
          */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("windows");
-
         
         /**
          * Enum LINUX for value: "linux"
          */
         public static final OsTypeEnum LINUX = new OsTypeEnum("linux");
-
         
 
-        public static Map<String, OsTypeEnum> staticFields =
-                new HashMap<String, OsTypeEnum>() {
-                    { 
-                        put("windows", WINDOWS);
-                        put("linux", LINUX);
-                    }
-                };
+        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
+            { 
+                put("windows", WINDOWS);
+                put("linux", LINUX);
+            }
+        };
 
         private String value;
 
@@ -280,7 +263,7 @@ public class CinderExportToImageOption  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsTypeEnum result = staticFields.get(value);
@@ -448,11 +431,11 @@ public class CinderExportToImageOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CinderExportToImageOption {\n");
-            sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
-            sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
-            sb.append("    force: ").append(toIndentedString(force)).append("\n");
-            sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
-            sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
+        sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
+        sb.append("    force: ").append(toIndentedString(force)).append("\n");
+        sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
+        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -466,5 +449,6 @@ public class CinderExportToImageOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

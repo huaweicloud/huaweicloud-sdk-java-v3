@@ -1,15 +1,13 @@
 package com.huaweicloud.sdk.fgs.v2;
 
+import com.huaweicloud.sdk.core.http.FieldExistence;
+import com.huaweicloud.sdk.core.http.HttpMethod;
+import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.fgs.v2.model.*;
 import java.util.List;
 import java.util.Map;
 import java.time.OffsetDateTime;
-
-import com.huaweicloud.sdk.core.http.HttpRequestDef;
-import com.huaweicloud.sdk.core.http.FieldExistence;
-import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.http.HttpMethod;
-
-import com.huaweicloud.sdk.fgs.v2.model.*;
 
 @SuppressWarnings("unchecked")
 public class FgsMeta {
@@ -25,26 +23,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(AsyncInvokeFunctionRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AsyncInvokeFunctionRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                Map.class,
-                f -> f.withMarshaller(AsyncInvokeFunctionRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                }).withInnerContainerType(Object.class)
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Map.class,
+            f -> f.withMarshaller(AsyncInvokeFunctionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(Object.class)
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateFunctionRequest, CreateFunctionResponse> createFunction = genForcreateFunction();
@@ -58,18 +55,17 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateFunctionRequestBody.class,
-                f -> f.withMarshaller(CreateFunctionRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateFunctionRequestBody.class,
+            f -> f.withMarshaller(CreateFunctionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateFunctionVersionRequest, CreateFunctionVersionResponse> createFunctionVersion = genForcreateFunctionVersion();
@@ -83,26 +79,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CreateFunctionVersionRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateFunctionVersionRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateFunctionVersionRequestBody.class,
-                f -> f.withMarshaller(CreateFunctionVersionRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateFunctionVersionRequestBody.class,
+            f -> f.withMarshaller(CreateFunctionVersionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateVersionAliasRequest, CreateVersionAliasResponse> createVersionAlias = genForcreateVersionAlias();
@@ -116,26 +111,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CreateVersionAliasRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateVersionAliasRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateVersionAliasRequestBody.class,
-                f -> f.withMarshaller(CreateVersionAliasRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateVersionAliasRequestBody.class,
+            f -> f.withMarshaller(CreateVersionAliasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteFunctionRequest, DeleteFunctionResponse> deleteFunction = genFordeleteFunction();
@@ -148,18 +142,17 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteFunctionRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteFunctionRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAlias = genFordeleteVersionAlias();
@@ -172,26 +165,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteVersionAliasRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVersionAliasRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("name",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteVersionAliasRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVersionAliasRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<InvokeFunctionRequest, InvokeFunctionResponse> invokeFunction = genForinvokeFunction();
@@ -205,42 +197,41 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(InvokeFunctionRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(InvokeFunctionRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("X-Cff-Log-Type",
-                LocationType.Header,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(InvokeFunctionRequest::getXCffLogType, (req, v) -> {
-                    req.setXCffLogType(v);
-                })
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(InvokeFunctionRequest::getXCffLogType, (req, v) -> {
+                req.setXCffLogType(v);
+            })
         );
         builder.withRequestField("X-CFF-Request-Version",
-                LocationType.Header,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(InvokeFunctionRequest::getXCFFRequestVersion, (req, v) -> {
-                    req.setXCFFRequestVersion(v);
-                })
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(InvokeFunctionRequest::getXCFFRequestVersion, (req, v) -> {
+                req.setXCFFRequestVersion(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                Map.class,
-                f -> f.withMarshaller(InvokeFunctionRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                }).withInnerContainerType(Object.class)
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Map.class,
+            f -> f.withMarshaller(InvokeFunctionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(Object.class)
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListFunctionVersionsRequest, ListFunctionVersionsResponse> listFunctionVersions = genForlistFunctionVersions();
@@ -253,34 +244,33 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListFunctionVersionsRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListFunctionVersionsRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListFunctionVersionsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionVersionsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("maxitems",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListFunctionVersionsRequest::getMaxitems, (req, v) -> {
-                    req.setMaxitems(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionVersionsRequest::getMaxitems, (req, v) -> {
+                req.setMaxitems(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListFunctionsRequest, ListFunctionsResponse> listFunctions = genForlistFunctions();
@@ -293,26 +283,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("marker",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListFunctionsRequest::getMarker, (req, v) -> {
-                    req.setMarker(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
         );
         builder.withRequestField("maxitems",
-                LocationType.Query,
-                FieldExistence.NULL_IGNORE,
-                String.class,
-                f -> f.withMarshaller(ListFunctionsRequest::getMaxitems, (req, v) -> {
-                    req.setMaxitems(v);
-                })
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionsRequest::getMaxitems, (req, v) -> {
+                req.setMaxitems(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListVersionAliasesRequest, ListVersionAliasesResponse> listVersionAliases = genForlistVersionAliases();
@@ -325,27 +314,26 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListVersionAliasesRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListVersionAliasesRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
 
         // response
         builder.withResponseField(
-                "body",
-                LocationType.Body,
-                FieldExistence.NULL_IGNORE,
-                List.class,
-                f -> f.withMarshaller(ListVersionAliasesResponse::getBody, (response, data)->{
-                    response.setBody(data);
-                }).withInnerContainerType(ListVersionAliasResult.class)
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListVersionAliasesResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(ListVersionAliasResult.class)
         );
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowFunctionCodeRequest, ShowFunctionCodeResponse> showFunctionCode = genForshowFunctionCode();
@@ -358,18 +346,17 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowFunctionCodeRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowFunctionCodeRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowFunctionConfigRequest, ShowFunctionConfigResponse> showFunctionConfig = genForshowFunctionConfig();
@@ -382,18 +369,17 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowFunctionConfigRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowFunctionConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowVersionAliasRequest, ShowVersionAliasResponse> showVersionAlias = genForshowVersionAlias();
@@ -406,26 +392,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowVersionAliasRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVersionAliasRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("name",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowVersionAliasRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVersionAliasRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse> updateFunctionCode = genForupdateFunctionCode();
@@ -439,26 +424,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateFunctionCodeRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateFunctionCodeRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateFunctionCodeRequestBody.class,
-                f -> f.withMarshaller(UpdateFunctionCodeRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateFunctionCodeRequestBody.class,
+            f -> f.withMarshaller(UpdateFunctionCodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdateFunctionConfigRequest, UpdateFunctionConfigResponse> updateFunctionConfig = genForupdateFunctionConfig();
@@ -472,26 +456,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateFunctionConfigRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateFunctionConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateFunctionConfigRequestBody.class,
-                f -> f.withMarshaller(UpdateFunctionConfigRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateFunctionConfigRequestBody.class,
+            f -> f.withMarshaller(UpdateFunctionConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<UpdateVersionAliasRequest, UpdateVersionAliasResponse> updateVersionAlias = genForupdateVersionAlias();
@@ -505,34 +488,33 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateVersionAliasRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateVersionAliasRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("name",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(UpdateVersionAliasRequest::getName, (req, v) -> {
-                    req.setName(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateVersionAliasRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                UpdateVersionAliasRequestBody.class,
-                f -> f.withMarshaller(UpdateVersionAliasRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateVersionAliasRequestBody.class,
+            f -> f.withMarshaller(UpdateVersionAliasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> batchDeleteFunctionTriggers = genForbatchDeleteFunctionTriggers();
@@ -545,18 +527,17 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(BatchDeleteFunctionTriggersRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteFunctionTriggersRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse> createFunctionTrigger = genForcreateFunctionTrigger();
@@ -570,26 +551,25 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(CreateFunctionTriggerRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateFunctionTriggerRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("body",
-                LocationType.Body,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                CreateFunctionTriggerRequestBody.class,
-                f -> f.withMarshaller(CreateFunctionTriggerRequest::getBody, (req, v) -> {
-                    req.setBody(v);
-                })
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateFunctionTriggerRequestBody.class,
+            f -> f.withMarshaller(CreateFunctionTriggerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> deleteFunctionTrigger = genFordeleteFunctionTrigger();
@@ -602,34 +582,33 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteFunctionTriggerRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteFunctionTriggerRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("trigger_type_code",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                DeleteFunctionTriggerRequest.TriggerTypeCodeEnum.class,
-                f -> f.withMarshaller(DeleteFunctionTriggerRequest::getTriggerTypeCode, (req, v) -> {
-                    req.setTriggerTypeCode(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DeleteFunctionTriggerRequest.TriggerTypeCodeEnum.class,
+            f -> f.withMarshaller(DeleteFunctionTriggerRequest::getTriggerTypeCode, (req, v) -> {
+                req.setTriggerTypeCode(v);
+            })
         );
         builder.withRequestField("triggerId",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(DeleteFunctionTriggerRequest::getTriggerId, (req, v) -> {
-                    req.setTriggerId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteFunctionTriggerRequest::getTriggerId, (req, v) -> {
+                req.setTriggerId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ListFunctionTriggersRequest, ListFunctionTriggersResponse> listFunctionTriggers = genForlistFunctionTriggers();
@@ -642,27 +621,26 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ListFunctionTriggersRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListFunctionTriggersRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
 
         // response
         builder.withResponseField(
-                "body",
-                LocationType.Body,
-                FieldExistence.NULL_IGNORE,
-                List.class,
-                f -> f.withMarshaller(ListFunctionTriggersResponse::getBody, (response, data)->{
-                    response.setBody(data);
-                }).withInnerContainerType(ListFunctionTriggerResult.class)
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListFunctionTriggersResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(ListFunctionTriggerResult.class)
         );
 
         return builder.build();
-
     }
 
     public static final HttpRequestDef<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> showFunctionTrigger = genForshowFunctionTrigger();
@@ -675,35 +653,33 @@ public class FgsMeta {
 
         // requests
         builder.withRequestField("function_urn",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowFunctionTriggerRequest::getFunctionUrn, (req, v) -> {
-                    req.setFunctionUrn(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowFunctionTriggerRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
         );
         builder.withRequestField("trigger_type_code",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                ShowFunctionTriggerRequest.TriggerTypeCodeEnum.class,
-                f -> f.withMarshaller(ShowFunctionTriggerRequest::getTriggerTypeCode, (req, v) -> {
-                    req.setTriggerTypeCode(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ShowFunctionTriggerRequest.TriggerTypeCodeEnum.class,
+            f -> f.withMarshaller(ShowFunctionTriggerRequest::getTriggerTypeCode, (req, v) -> {
+                req.setTriggerTypeCode(v);
+            })
         );
         builder.withRequestField("triggerId",
-                LocationType.Path,
-                FieldExistence.NON_NULL_NON_EMPTY,
-                String.class,
-                f -> f.withMarshaller(ShowFunctionTriggerRequest::getTriggerId, (req, v) -> {
-                    req.setTriggerId(v);
-                })
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowFunctionTriggerRequest::getTriggerId, (req, v) -> {
+                req.setTriggerId(v);
+            })
         );
 
         // response
 
         return builder.build();
-
     }
 
 }
-

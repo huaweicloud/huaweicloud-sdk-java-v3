@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,8 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  *  弹性云服务器信息
@@ -122,22 +120,19 @@ public class NovaCreateServersOption  {
          * Enum AUTO for value: "AUTO"
          */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
-
         
         /**
          * Enum MANUAL for value: "MANUAL"
          */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
-
         
 
-        public static Map<String, OsDCFDiskConfigEnum> staticFields =
-                new HashMap<String, OsDCFDiskConfigEnum>() {
-                    { 
-                        put("AUTO", AUTO);
-                        put("MANUAL", MANUAL);
-                    }
-                };
+        public static final Map<String, OsDCFDiskConfigEnum> staticFields = new HashMap<String, OsDCFDiskConfigEnum>() {
+            { 
+                put("AUTO", AUTO);
+                put("MANUAL", MANUAL);
+            }
+        };
 
         private String value;
 
@@ -153,7 +148,7 @@ public class NovaCreateServersOption  {
 
         @JsonCreator
         public static OsDCFDiskConfigEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             OsDCFDiskConfigEnum result = staticFields.get(value);
@@ -630,23 +625,23 @@ public class NovaCreateServersOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaCreateServersOption {\n");
-            sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
-            sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-            sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
-            sb.append("    blockDeviceMappingV2: ").append(toIndentedString(blockDeviceMappingV2)).append("\n");
-            sb.append("    configDrive: ").append(toIndentedString(configDrive)).append("\n");
-            sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
-            sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
-            sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
-            sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-            sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-            sb.append("    returnReservationId: ").append(toIndentedString(returnReservationId)).append("\n");
-            sb.append("    minCount: ").append(toIndentedString(minCount)).append("\n");
-            sb.append("    maxCount: ").append(toIndentedString(maxCount)).append("\n");
-            sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
-            sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
+        sb.append("    blockDeviceMappingV2: ").append(toIndentedString(blockDeviceMappingV2)).append("\n");
+        sb.append("    configDrive: ").append(toIndentedString(configDrive)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
+        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    returnReservationId: ").append(toIndentedString(returnReservationId)).append("\n");
+        sb.append("    minCount: ").append(toIndentedString(minCount)).append("\n");
+        sb.append("    maxCount: ").append(toIndentedString(maxCount)).append("\n");
+        sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -660,5 +655,6 @@ public class NovaCreateServersOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

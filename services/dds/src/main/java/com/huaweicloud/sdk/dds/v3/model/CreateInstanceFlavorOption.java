@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * 实例规格详情。
@@ -27,43 +25,37 @@ public class CreateInstanceFlavorOption  {
          * Enum MONGOS for value: "mongos"
          */
         public static final TypeEnum MONGOS = new TypeEnum("mongos");
-
         
         /**
          * Enum SHARD for value: "shard"
          */
         public static final TypeEnum SHARD = new TypeEnum("shard");
-
         
         /**
          * Enum CONFIG for value: "config"
          */
         public static final TypeEnum CONFIG = new TypeEnum("config");
-
         
         /**
          * Enum REPLICA for value: "replica"
          */
         public static final TypeEnum REPLICA = new TypeEnum("replica");
-
         
         /**
          * Enum SINGLE for value: "single"
          */
         public static final TypeEnum SINGLE = new TypeEnum("single");
-
         
 
-        public static Map<String, TypeEnum> staticFields =
-                new HashMap<String, TypeEnum>() {
-                    { 
-                        put("mongos", MONGOS);
-                        put("shard", SHARD);
-                        put("config", CONFIG);
-                        put("replica", REPLICA);
-                        put("single", SINGLE);
-                    }
-                };
+        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
+            { 
+                put("mongos", MONGOS);
+                put("shard", SHARD);
+                put("config", CONFIG);
+                put("replica", REPLICA);
+                put("single", SINGLE);
+            }
+        };
 
         private String value;
 
@@ -79,7 +71,7 @@ public class CreateInstanceFlavorOption  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             TypeEnum result = staticFields.get(value);
@@ -269,11 +261,11 @@ public class CreateInstanceFlavorOption  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceFlavorOption {\n");
-            sb.append("    type: ").append(toIndentedString(type)).append("\n");
-            sb.append("    num: ").append(toIndentedString(num)).append("\n");
-            sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
-            sb.append("    size: ").append(toIndentedString(size)).append("\n");
-            sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    num: ").append(toIndentedString(num)).append("\n");
+        sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -287,5 +279,6 @@ public class CreateInstanceFlavorOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

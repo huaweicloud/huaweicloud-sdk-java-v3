@@ -1,9 +1,7 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -13,8 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * ListInstancesByTagsRequestBody
@@ -43,22 +41,19 @@ public class ListInstancesByTagsRequestBody  {
          * Enum FILTER for value: "filter"
          */
         public static final ActionEnum FILTER = new ActionEnum("filter");
-
         
         /**
          * Enum COUNT for value: "count"
          */
         public static final ActionEnum COUNT = new ActionEnum("count");
-
         
 
-        public static Map<String, ActionEnum> staticFields =
-                new HashMap<String, ActionEnum>() {
-                    { 
-                        put("filter", FILTER);
-                        put("count", COUNT);
-                    }
-                };
+        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
+            { 
+                put("filter", FILTER);
+                put("count", COUNT);
+            }
+        };
 
         private String value;
 
@@ -74,7 +69,7 @@ public class ListInstancesByTagsRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             ActionEnum result = staticFields.get(value);
@@ -280,11 +275,11 @@ public class ListInstancesByTagsRequestBody  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesByTagsRequestBody {\n");
-            sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    action: ").append(toIndentedString(action)).append("\n");
-            sb.append("    matches: ").append(toIndentedString(matches)).append("\n");
-            sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    matches: ").append(toIndentedString(matches)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -298,5 +293,6 @@ public class ListInstancesByTagsRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 

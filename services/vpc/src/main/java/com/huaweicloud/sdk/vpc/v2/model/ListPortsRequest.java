@@ -1,16 +1,14 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
-import com.huaweicloud.sdk.core.SdkResponse;
+import java.util.function.Consumer;
+import java.util.Objects;
 
 /**
  * Request Object
@@ -69,36 +67,31 @@ public class ListPortsRequest  {
          * Enum NETWORK_DHCP for value: "network:dhcp"
          */
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
-
         
         /**
          * Enum NETWORK_VIP_PORT for value: "network:VIP_PORT"
          */
         public static final DeviceOwnerEnum NETWORK_VIP_PORT = new DeviceOwnerEnum("network:VIP_PORT");
-
         
         /**
          * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
          */
         public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED = new DeviceOwnerEnum("network:router_interface_distributed");
-
         
         /**
          * Enum NETWORK_ROUTER_CENTRALIZED_SNAT for value: "network:router_centralized_snat"
          */
         public static final DeviceOwnerEnum NETWORK_ROUTER_CENTRALIZED_SNAT = new DeviceOwnerEnum("network:router_centralized_snat");
-
         
 
-        public static Map<String, DeviceOwnerEnum> staticFields =
-                new HashMap<String, DeviceOwnerEnum>() {
-                    { 
-                        put("network:dhcp", NETWORK_DHCP);
-                        put("network:VIP_PORT", NETWORK_VIP_PORT);
-                        put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
-                        put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
-                    }
-                };
+        public static final Map<String, DeviceOwnerEnum> staticFields = new HashMap<String, DeviceOwnerEnum>() {
+            { 
+                put("network:dhcp", NETWORK_DHCP);
+                put("network:VIP_PORT", NETWORK_VIP_PORT);
+                put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
+                put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
+            }
+        };
 
         private String value;
 
@@ -114,7 +107,7 @@ public class ListPortsRequest  {
 
         @JsonCreator
         public static DeviceOwnerEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             DeviceOwnerEnum result = staticFields.get(value);
@@ -167,29 +160,25 @@ public class ListPortsRequest  {
          * Enum ACTIVE for value: "ACTIVE"
          */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-
         
         /**
          * Enum BUILD for value: "BUILD"
          */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
-
         
         /**
          * Enum DOWN for value: "DOWN"
          */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
-
         
 
-        public static Map<String, StatusEnum> staticFields =
-                new HashMap<String, StatusEnum>() {
-                    { 
-                        put("ACTIVE", ACTIVE);
-                        put("BUILD", BUILD);
-                        put("DOWN", DOWN);
-                    }
-                };
+        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
+            { 
+                put("ACTIVE", ACTIVE);
+                put("BUILD", BUILD);
+                put("DOWN", DOWN);
+            }
+        };
 
         private String value;
 
@@ -205,7 +194,7 @@ public class ListPortsRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-           if( value == null ){
+            if( value == null ){
                 return null;
             }
             StatusEnum result = staticFields.get(value);
@@ -536,18 +525,18 @@ public class ListPortsRequest  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPortsRequest {\n");
-            sb.append("    name: ").append(toIndentedString(name)).append("\n");
-            sb.append("    id: ").append(toIndentedString(id)).append("\n");
-            sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-            sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
-            sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
-            sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
-            sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-            sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
-            sb.append("    status: ").append(toIndentedString(status)).append("\n");
-            sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-            sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
-            sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
+        sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -561,5 +550,6 @@ public class ListPortsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
+    
 }
 
