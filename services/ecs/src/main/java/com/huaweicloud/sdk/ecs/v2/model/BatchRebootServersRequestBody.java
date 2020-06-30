@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class BatchRebootServersRequestBody  {
     public BatchRebootServersRequestBody withReboot(Consumer<BatchRebootSeversOption> rebootSetter) {
         if(this.reboot == null ){
             this.reboot = new BatchRebootSeversOption();
+            rebootSetter.accept(this.reboot);
         }
-        rebootSetter.accept(this.reboot);
+        
         return this;
     }
 

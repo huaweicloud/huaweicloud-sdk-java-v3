@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -171,8 +173,9 @@ public class QueryOrgVmrResultDTO  {
     public QueryOrgVmrResultDTO withMember(Consumer<IdMarkDTO> memberSetter) {
         if(this.member == null ){
             this.member = new IdMarkDTO();
+            memberSetter.accept(this.member);
         }
-        memberSetter.accept(this.member);
+        
         return this;
     }
 
@@ -197,8 +200,9 @@ public class QueryOrgVmrResultDTO  {
     public QueryOrgVmrResultDTO withDevice(Consumer<IdMarkDTO> deviceSetter) {
         if(this.device == null ){
             this.device = new IdMarkDTO();
+            deviceSetter.accept(this.device);
         }
-        deviceSetter.accept(this.device);
+        
         return this;
     }
 

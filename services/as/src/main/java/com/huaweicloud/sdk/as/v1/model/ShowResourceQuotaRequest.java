@@ -1,11 +1,13 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ShowResourceQuotaRequest
+ * Request Object
  */
 public class ShowResourceQuotaRequest  {
 

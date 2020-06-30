@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowQuotaResponse extends SdkResponse {
     public ShowQuotaResponse withQuotas(Consumer<Quota> quotasSetter) {
         if(this.quotas == null ){
             this.quotas = new Quota();
+            quotasSetter.accept(this.quotas);
         }
-        quotasSetter.accept(this.quotas);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -255,8 +257,9 @@ public class PostPaidServer  {
     public PostPaidServer withExtendparam(Consumer<PostPaidServerExtendParam> extendparamSetter) {
         if(this.extendparam == null ){
             this.extendparam = new PostPaidServerExtendParam();
+            extendparamSetter.accept(this.extendparam);
         }
-        extendparamSetter.accept(this.extendparam);
+        
         return this;
     }
 
@@ -446,8 +449,9 @@ public class PostPaidServer  {
     public PostPaidServer withOsSchedulerHints(Consumer<PostPaidServerSchedulerHints> osSchedulerHintsSetter) {
         if(this.osSchedulerHints == null ){
             this.osSchedulerHints = new PostPaidServerSchedulerHints();
+            osSchedulerHintsSetter.accept(this.osSchedulerHints);
         }
-        osSchedulerHintsSetter.accept(this.osSchedulerHints);
+        
         return this;
     }
 
@@ -472,8 +476,9 @@ public class PostPaidServer  {
     public PostPaidServer withPublicip(Consumer<PostPaidServerPublicip> publicipSetter) {
         if(this.publicip == null ){
             this.publicip = new PostPaidServerPublicip();
+            publicipSetter.accept(this.publicip);
         }
-        publicipSetter.accept(this.publicip);
+        
         return this;
     }
 
@@ -498,8 +503,9 @@ public class PostPaidServer  {
     public PostPaidServer withRootVolume(Consumer<PostPaidServerRootVolume> rootVolumeSetter) {
         if(this.rootVolume == null ){
             this.rootVolume = new PostPaidServerRootVolume();
+            rootVolumeSetter.accept(this.rootVolume);
         }
-        rootVolumeSetter.accept(this.rootVolume);
+        
         return this;
     }
 

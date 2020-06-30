@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class KeystoneShowSecurityComplianceByOptionResponse extends SdkResponse 
     public KeystoneShowSecurityComplianceByOptionResponse withConfig(Consumer<ConfigByOption> configSetter) {
         if(this.config == null ){
             this.config = new ConfigByOption();
+            configSetter.accept(this.config);
         }
-        configSetter.accept(this.config);
+        
         return this;
     }
 

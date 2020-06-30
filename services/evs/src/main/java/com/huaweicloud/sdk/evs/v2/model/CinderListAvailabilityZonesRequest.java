@@ -1,11 +1,13 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CinderListAvailabilityZonesRequest
+ * Request Object
  */
 public class CinderListAvailabilityZonesRequest  {
 

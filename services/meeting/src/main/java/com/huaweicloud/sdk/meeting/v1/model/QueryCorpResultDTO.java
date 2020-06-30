@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -49,8 +51,9 @@ public class QueryCorpResultDTO  {
     public QueryCorpResultDTO withBasicInfo(Consumer<QueryCorpBasicResultDTO> basicInfoSetter) {
         if(this.basicInfo == null ){
             this.basicInfo = new QueryCorpBasicResultDTO();
+            basicInfoSetter.accept(this.basicInfo);
         }
-        basicInfoSetter.accept(this.basicInfo);
+        
         return this;
     }
 
@@ -75,8 +78,9 @@ public class QueryCorpResultDTO  {
     public QueryCorpResultDTO withAdminInfo(Consumer<QueryAdminResultDTO> adminInfoSetter) {
         if(this.adminInfo == null ){
             this.adminInfo = new QueryAdminResultDTO();
+            adminInfoSetter.accept(this.adminInfo);
         }
-        adminInfoSetter.accept(this.adminInfo);
+        
         return this;
     }
 
@@ -101,8 +105,9 @@ public class QueryCorpResultDTO  {
     public QueryCorpResultDTO withResInfo(Consumer<QueryCorpResResultDTO> resInfoSetter) {
         if(this.resInfo == null ){
             this.resInfo = new QueryCorpResResultDTO();
+            resInfoSetter.accept(this.resInfo);
         }
-        resInfoSetter.accept(this.resInfo);
+        
         return this;
     }
 

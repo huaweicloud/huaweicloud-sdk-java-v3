@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class ResizePostPaidServerRequestBody  {
     public ResizePostPaidServerRequestBody withResize(Consumer<ResizePostPaidServerOption> resizeSetter) {
         if(this.resize == null ){
             this.resize = new ResizePostPaidServerOption();
+            resizeSetter.accept(this.resize);
         }
-        resizeSetter.accept(this.resize);
+        
         return this;
     }
 

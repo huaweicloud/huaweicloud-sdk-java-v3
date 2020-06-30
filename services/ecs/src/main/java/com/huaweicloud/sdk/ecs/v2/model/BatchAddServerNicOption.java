@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -150,8 +152,9 @@ public class BatchAddServerNicOption  {
     public BatchAddServerNicOption withIpv6Bandwidth(Consumer<Ipv6Bandwidth> ipv6BandwidthSetter) {
         if(this.ipv6Bandwidth == null ){
             this.ipv6Bandwidth = new Ipv6Bandwidth();
+            ipv6BandwidthSetter.accept(this.ipv6Bandwidth);
         }
-        ipv6BandwidthSetter.accept(this.ipv6Bandwidth);
+        
         return this;
     }
 

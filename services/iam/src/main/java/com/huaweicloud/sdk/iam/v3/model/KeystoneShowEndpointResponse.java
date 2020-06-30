@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class KeystoneShowEndpointResponse extends SdkResponse {
     public KeystoneShowEndpointResponse withEndpoint(Consumer<Endpoint> endpointSetter) {
         if(this.endpoint == null ){
             this.endpoint = new Endpoint();
+            endpointSetter.accept(this.endpoint);
         }
-        endpointSetter.accept(this.endpoint);
+        
         return this;
     }
 

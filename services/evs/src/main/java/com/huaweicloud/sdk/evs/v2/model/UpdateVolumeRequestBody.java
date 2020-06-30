@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class UpdateVolumeRequestBody  {
     public UpdateVolumeRequestBody withVolume(Consumer<UpdateVolumeOption> volumeSetter) {
         if(this.volume == null ){
             this.volume = new UpdateVolumeOption();
+            volumeSetter.accept(this.volume);
         }
-        volumeSetter.accept(this.volume);
+        
         return this;
     }
 

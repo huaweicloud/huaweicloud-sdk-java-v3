@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -40,8 +42,9 @@ public class KeystoneListAuthProjectsResponse extends SdkResponse {
     public KeystoneListAuthProjectsResponse withLinks(Consumer<LinksSelf> linksSetter) {
         if(this.links == null ){
             this.links = new LinksSelf();
+            linksSetter.accept(this.links);
         }
-        linksSetter.accept(this.links);
+        
         return this;
     }
 

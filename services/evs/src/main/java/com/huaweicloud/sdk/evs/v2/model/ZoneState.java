@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 可用分区的状态。
+ * 可用分区的状态
  */
 public class ZoneState  {
 
@@ -29,7 +31,7 @@ public class ZoneState  {
 
 
     /**
-     * 可用分区是否可用。
+     * 可用分区是否可用。 true表示可用 false表示不可用
      * @return available
      */
     public Boolean getAvailable() {

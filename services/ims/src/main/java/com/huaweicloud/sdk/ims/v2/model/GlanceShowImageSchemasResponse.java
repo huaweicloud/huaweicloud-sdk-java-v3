@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -52,8 +54,9 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
     public GlanceShowImageSchemasResponse withAdditionalProperties(Consumer<AdditionalProperties> additionalPropertiesSetter) {
         if(this.additionalProperties == null ){
             this.additionalProperties = new AdditionalProperties();
+            additionalPropertiesSetter.accept(this.additionalProperties);
         }
-        additionalPropertiesSetter.accept(this.additionalProperties);
+        
         return this;
     }
 

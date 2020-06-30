@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -40,8 +42,9 @@ public class ListServerBlockDevicesResponse extends SdkResponse {
     public ListServerBlockDevicesResponse withAttachableQuantity(Consumer<BlockDeviceAttachableQuantity> attachableQuantitySetter) {
         if(this.attachableQuantity == null ){
             this.attachableQuantity = new BlockDeviceAttachableQuantity();
+            attachableQuantitySetter.accept(this.attachableQuantity);
         }
-        attachableQuantitySetter.accept(this.attachableQuantity);
+        
         return this;
     }
 

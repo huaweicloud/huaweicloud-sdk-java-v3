@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class CreateUserResponse extends SdkResponse {
     public CreateUserResponse withUser(Consumer<CreateUserResult> userSetter) {
         if(this.user == null ){
             this.user = new CreateUserResult();
+            userSetter.accept(this.user);
         }
-        userSetter.accept(this.user);
+        
         return this;
     }
 

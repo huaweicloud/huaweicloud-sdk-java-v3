@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -55,8 +57,9 @@ public class CompleteLifecycleActionRequest  {
     public CompleteLifecycleActionRequest withBody(Consumer<CompleteLifecycleActionRequestBody> bodySetter) {
         if(this.body == null ){
             this.body = new CompleteLifecycleActionRequestBody();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

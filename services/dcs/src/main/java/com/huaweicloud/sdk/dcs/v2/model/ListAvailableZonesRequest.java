@@ -1,11 +1,13 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ListAvailableZonesRequest
+ * Request Object
  */
 public class ListAvailableZonesRequest  {
 

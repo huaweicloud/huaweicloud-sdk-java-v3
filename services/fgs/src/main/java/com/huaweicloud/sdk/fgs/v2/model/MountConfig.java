@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,8 +40,9 @@ public class MountConfig  {
     public MountConfig withMountUser(Consumer<MountUser> mountUserSetter) {
         if(this.mountUser == null ){
             this.mountUser = new MountUser();
+            mountUserSetter.accept(this.mountUser);
         }
-        mountUserSetter.accept(this.mountUser);
+        
         return this;
     }
 

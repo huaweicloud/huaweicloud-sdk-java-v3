@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -12,12 +14,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Job详情。
+ * 子Job的详细信息。
  */
 public class SubJob  {
 
     /**
-     * job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
+     * 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
      */
     public static class StatusEnum {
 
@@ -161,7 +163,7 @@ public class SubJob  {
 
 
     /**
-     * job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
+     * 子job的状态。SUCCESS：成功。RUNNING：运行中。FAIL：失败。INIT：正在初始化。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -180,8 +182,9 @@ public class SubJob  {
     public SubJob withEntities(Consumer<SubJobEntities> entitiesSetter) {
         if(this.entities == null ){
             this.entities = new SubJobEntities();
+            entitiesSetter.accept(this.entities);
         }
-        entitiesSetter.accept(this.entities);
+        
         return this;
     }
 
@@ -207,7 +210,7 @@ public class SubJob  {
 
 
     /**
-     * job的ID。
+     * 子job的ID。
      * @return jobId
      */
     public String getJobId() {
@@ -227,7 +230,7 @@ public class SubJob  {
 
 
     /**
-     * job的类型。createVolume：创建单个云硬盘。batchCreateVolume：批量创建云硬盘。deleteVolume：删除单个云硬盘。extendVolume：扩容云硬盘。bulkDeleteVolume：批量删除云硬盘。deleteSingleVolume：批量删除时逐个删除单个云硬盘。retypeVolume：对云硬盘做硬盘类型变更。
+     * 子job的类型。createVolume：创建单个云硬盘。batchCreateVolume：批量创建云硬盘。deleteVolume：删除单个云硬盘。extendVolume：扩容云硬盘。bulkDeleteVolume：批量删除云硬盘。deleteSingleVolume：批量删除时逐个删除单个云硬盘。retypeVolume：对云硬盘做硬盘类型变更。
      * @return jobType
      */
     public String getJobType() {
@@ -287,7 +290,7 @@ public class SubJob  {
 
 
     /**
-     * job执行失败时的错误码。
+     * 子job执行失败时的错误码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -307,7 +310,7 @@ public class SubJob  {
 
 
     /**
-     * job执行失败时的错误原因。
+     * 子job执行失败时的错误原因。
      * @return failReason
      */
     public String getFailReason() {

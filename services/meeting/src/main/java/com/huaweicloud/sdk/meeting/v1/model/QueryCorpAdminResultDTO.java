@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -263,8 +265,9 @@ public class QueryCorpAdminResultDTO  {
     public QueryCorpAdminResultDTO withDept(Consumer<DeptBasicDTO> deptSetter) {
         if(this.dept == null ){
             this.dept = new DeptBasicDTO();
+            deptSetter.accept(this.dept);
         }
-        deptSetter.accept(this.dept);
+        
         return this;
     }
 

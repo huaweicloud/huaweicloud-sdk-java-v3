@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -81,8 +83,9 @@ public class BackupPolicy  {
     public BackupPolicy withPeriodicalBackupPlan(Consumer<BackupPlan> periodicalBackupPlanSetter) {
         if(this.periodicalBackupPlan == null ){
             this.periodicalBackupPlan = new BackupPlan();
+            periodicalBackupPlanSetter.accept(this.periodicalBackupPlan);
         }
-        periodicalBackupPlanSetter.accept(this.periodicalBackupPlan);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -380,8 +382,9 @@ public class CreateMigrationTaskBody  {
     public CreateMigrationTaskBody withBackupFiles(Consumer<BackupFilesBody> backupFilesSetter) {
         if(this.backupFiles == null ){
             this.backupFiles = new BackupFilesBody();
+            backupFilesSetter.accept(this.backupFiles);
         }
-        backupFilesSetter.accept(this.backupFiles);
+        
         return this;
     }
 
@@ -426,8 +429,9 @@ public class CreateMigrationTaskBody  {
     public CreateMigrationTaskBody withSourceInstance(Consumer<SourceInstanceBody> sourceInstanceSetter) {
         if(this.sourceInstance == null ){
             this.sourceInstance = new SourceInstanceBody();
+            sourceInstanceSetter.accept(this.sourceInstance);
         }
-        sourceInstanceSetter.accept(this.sourceInstance);
+        
         return this;
     }
 
@@ -452,8 +456,9 @@ public class CreateMigrationTaskBody  {
     public CreateMigrationTaskBody withTargetInstance(Consumer<TargetInstanceBody> targetInstanceSetter) {
         if(this.targetInstance == null ){
             this.targetInstance = new TargetInstanceBody();
+            targetInstanceSetter.accept(this.targetInstance);
         }
-        targetInstanceSetter.accept(this.targetInstance);
+        
         return this;
     }
 

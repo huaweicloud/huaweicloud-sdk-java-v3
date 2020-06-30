@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * VolumeMetadata
+ * 说明： 以上表格中仅提供了部分“metadata”字段信息说明供您参考，您还可以根据创建磁盘的要求输入其他字段。 如果是从快照创建云硬盘，则不支持传入“__system__encrypted”和“__system__cmkid”字段，创建出来的云硬盘与快照源云硬盘的加密属性一致。 如果是从镜像创建云硬盘，则不支持传入“__system__encrypted”和“__system__cmkid”字段，创建出来的云硬盘与镜像的加密属性一致。 如果是从快照创建云硬盘，则不支持传入“hw:passthrough”字段，创建出来的云硬盘的设备类型与快照源云硬盘保持一致。 如果是从镜像创建云硬盘，则不支持传入“hw:passthrough”字段，创建出来的云硬盘的设备类型为VBD类型。
  */
 public class VolumeMetadata  {
 
@@ -47,7 +49,7 @@ public class VolumeMetadata  {
 
 
     /**
-     * metadata中的加密cmkid字段，与__system__encrypted配合表示需要加密，cmkid长度固定为36个字节。 > 说明： >  > 请求获取密钥ID的方法请参考：\"[查询密钥列表](https://support.huaweicloud.com/api-dew/dew_02_0017.html)\"。
+     * metadata中的加密cmkid字段，与__system__encrypted配合表示需要加密，cmkid长度固定为36个字节。  说明： 请参考 [查询密钥列表](https://support.huaweicloud.com/api-dew/dew_02_0017.html)，通过HTTPS请求获取密钥ID。
      * @return systemCmkid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +71,7 @@ public class VolumeMetadata  {
 
 
     /**
-     * metadata中的表示加密功能的字段，0代表不加密，1代表加密。 不指定该字段时，云硬盘的加密属性与数据源保持一致，如果不是从数据源创建的场景，则默认不加密。
+     * metadata中的表示加密功能的字段，0代表不加密，1代表加密。 该字段不存在时，云硬盘默认为不加密。
      * @return systemEncrypted
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,7 +113,7 @@ public class VolumeMetadata  {
 
 
     /**
-     * * true表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令。 * false表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，即为默认类型，VBD只能支持简单的SCSI读写命令。 * 该字段不存在时，云硬盘默认为VBD类型。
+     * true表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令。 false表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，即为默认类型，VBD只能支持简单的SCSI读写命令。 该字段不存在时，云硬盘默认为VBD类型。  >说明： >当shareable参数值设置为true，不指定hw:passthrough参数值时，创建的云硬盘为VBD类型共享云硬盘。
      * @return hwPassthrough
      */
     public String getHwPassthrough() {

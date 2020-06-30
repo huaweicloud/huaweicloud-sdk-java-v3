@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -331,8 +333,9 @@ public class PrePaidServer  {
     public PrePaidServer withPublicip(Consumer<PrePaidServerPublicip> publicipSetter) {
         if(this.publicip == null ){
             this.publicip = new PrePaidServerPublicip();
+            publicipSetter.accept(this.publicip);
         }
-        publicipSetter.accept(this.publicip);
+        
         return this;
     }
 
@@ -399,8 +402,9 @@ public class PrePaidServer  {
     public PrePaidServer withRootVolume(Consumer<PrePaidServerRootVolume> rootVolumeSetter) {
         if(this.rootVolume == null ){
             this.rootVolume = new PrePaidServerRootVolume();
+            rootVolumeSetter.accept(this.rootVolume);
         }
-        rootVolumeSetter.accept(this.rootVolume);
+        
         return this;
     }
 
@@ -513,8 +517,9 @@ public class PrePaidServer  {
     public PrePaidServer withExtendparam(Consumer<PrePaidServerExtendParam> extendparamSetter) {
         if(this.extendparam == null ){
             this.extendparam = new PrePaidServerExtendParam();
+            extendparamSetter.accept(this.extendparam);
         }
-        extendparamSetter.accept(this.extendparam);
+        
         return this;
     }
 
@@ -573,8 +578,9 @@ public class PrePaidServer  {
     public PrePaidServer withOsSchedulerHints(Consumer<PrePaidServerSchedulerHints> osSchedulerHintsSetter) {
         if(this.osSchedulerHints == null ){
             this.osSchedulerHints = new PrePaidServerSchedulerHints();
+            osSchedulerHintsSetter.accept(this.osSchedulerHints);
         }
-        osSchedulerHintsSetter.accept(this.osSchedulerHints);
+        
         return this;
     }
 

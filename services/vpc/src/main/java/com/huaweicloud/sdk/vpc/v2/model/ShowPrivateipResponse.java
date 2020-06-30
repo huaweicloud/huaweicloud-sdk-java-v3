@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowPrivateipResponse extends SdkResponse {
     public ShowPrivateipResponse withPrivateip(Consumer<Privateip> privateipSetter) {
         if(this.privateip == null ){
             this.privateip = new Privateip();
+            privateipSetter.accept(this.privateip);
         }
-        privateipSetter.accept(this.privateip);
+        
         return this;
     }
 

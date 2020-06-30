@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class PublicIp  {
     public PublicIp withEip(Consumer<Eip> eipSetter) {
         if(this.eip == null ){
             this.eip = new Eip();
+            eipSetter.accept(this.eip);
         }
-        eipSetter.accept(this.eip);
+        
         return this;
     }
 

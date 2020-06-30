@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -411,8 +413,9 @@ public class AddUserDTO  {
     public AddUserDTO withFunction(Consumer<UserFunctionDTO> functionSetter) {
         if(this.function == null ){
             this.function = new UserFunctionDTO();
+            functionSetter.accept(this.function);
         }
-        functionSetter.accept(this.function);
+        
         return this;
     }
 

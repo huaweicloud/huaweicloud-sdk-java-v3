@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -62,8 +64,9 @@ public class PostPaidServerEip  {
     public PostPaidServerEip withBandwidth(Consumer<PostPaidServerEipBandwidth> bandwidthSetter) {
         if(this.bandwidth == null ){
             this.bandwidth = new PostPaidServerEipBandwidth();
+            bandwidthSetter.accept(this.bandwidth);
         }
-        bandwidthSetter.accept(this.bandwidth);
+        
         return this;
     }
 
@@ -88,8 +91,9 @@ public class PostPaidServerEip  {
     public PostPaidServerEip withExtendparam(Consumer<PostPaidServerEipExtendParam> extendparamSetter) {
         if(this.extendparam == null ){
             this.extendparam = new PostPaidServerEipExtendParam();
+            extendparamSetter.accept(this.extendparam);
         }
-        extendparamSetter.accept(this.extendparam);
+        
         return this;
     }
 

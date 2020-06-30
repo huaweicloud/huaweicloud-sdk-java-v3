@@ -1,3 +1,38 @@
+# 3.0.5-beta 2020-06-30
+## HuaweiCloud SDK Core
+ - ### 新增特性
+    - 支持上传下载
+ - ### 解决问题
+    - 修复 Content-Type 为 application/json 时 AK/SK 认证失败的问题
+ - ### 特性变更
+    - 无
+    
+## HuaweiCloud SDK CTS
+ - ### 新增特性
+    - 支持云审计服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+     
+## HuaweiCloud SDK EVS
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 支持全量服务接口
+            
+## HuaweiCloud SDK IoTDA
+ - ### 新增特性
+    - 支持设备接入服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+
+
 # 3.0.4-beta 2020-06-19
 ## HuaweiCloud SDK ECS
  - ### 新增特性
@@ -14,6 +49,7 @@
     - 无
  - ### 特性变更
     - 无 
+
 
 
 # 3.0.3-beta 2020-06-15

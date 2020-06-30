@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class CreateAgencyCustomPolicyResponse extends SdkResponse {
     public CreateAgencyCustomPolicyResponse withRole(Consumer<AgencyPolicyRoleResult> roleSetter) {
         if(this.role == null ){
             this.role = new AgencyPolicyRoleResult();
+            roleSetter.accept(this.role);
         }
-        roleSetter.accept(this.role);
+        
         return this;
     }
 

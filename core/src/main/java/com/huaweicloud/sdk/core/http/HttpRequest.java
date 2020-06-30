@@ -28,6 +28,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
@@ -79,6 +80,11 @@ public interface HttpRequest {
 
         public HttpRequestBuilder withBodyAsString(String bodyAsString) {
             httpRequest.bodyAsString = bodyAsString;
+            return this;
+        }
+
+        public HttpRequestBuilder withBody(InputStream body) {
+            httpRequest.body = body;
             return this;
         }
 
@@ -140,6 +146,8 @@ public interface HttpRequest {
         private String pathParamsString;
 
         private URL url;
+
+        private InputStream body;
 
         @Override
         public HttpRequestBuilder builder() {
@@ -218,6 +226,11 @@ public interface HttpRequest {
         }
 
         @Override
+        public InputStream getBody() {
+            return body;
+        }
+
+        @Override
         public Impl clone() throws CloneNotSupportedException {
             Impl impl = (Impl) super.clone();
             impl.method = this.method;
@@ -287,4 +300,6 @@ public interface HttpRequest {
     String getPathParamsString();
 
     URL getUrl();
+
+    InputStream getBody();
 }

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowAgencyResponse extends SdkResponse {
     public ShowAgencyResponse withAgency(Consumer<AgencyResult> agencySetter) {
         if(this.agency == null ){
             this.agency = new AgencyResult();
+            agencySetter.accept(this.agency);
         }
-        agencySetter.accept(this.agency);
+        
         return this;
     }
 

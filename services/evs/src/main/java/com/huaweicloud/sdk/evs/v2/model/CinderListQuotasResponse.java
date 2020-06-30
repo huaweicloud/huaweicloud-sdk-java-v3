@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class CinderListQuotasResponse extends SdkResponse {
     public CinderListQuotasResponse withQuotaSet(Consumer<QuotaList> quotaSetSetter) {
         if(this.quotaSet == null ){
             this.quotaSet = new QuotaList();
+            quotaSetSetter.accept(this.quotaSet);
         }
-        quotaSetSetter.accept(this.quotaSet);
+        
         return this;
     }
 

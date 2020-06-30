@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -976,8 +978,9 @@ public class NovaServer  {
     public NovaServer withFlavor(Consumer<NovaServerFlavor> flavorSetter) {
         if(this.flavor == null ){
             this.flavor = new NovaServerFlavor();
+            flavorSetter.accept(this.flavor);
         }
-        flavorSetter.accept(this.flavor);
+        
         return this;
     }
 
@@ -1002,8 +1005,9 @@ public class NovaServer  {
     public NovaServer withImage(Consumer<NovaServerImage> imageSetter) {
         if(this.image == null ){
             this.image = new NovaServerImage();
+            imageSetter.accept(this.image);
         }
-        imageSetter.accept(this.image);
+        
         return this;
     }
 
@@ -1465,8 +1469,9 @@ public class NovaServer  {
     public NovaServer withFault(Consumer<NovaServerFault> faultSetter) {
         if(this.fault == null ){
             this.fault = new NovaServerFault();
+            faultSetter.accept(this.fault);
         }
-        faultSetter.accept(this.fault);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class SetBackupPolicyRequestBody  {
     public SetBackupPolicyRequestBody withBackupPolicy(Consumer<SetBackupPolicyOption> backupPolicySetter) {
         if(this.backupPolicy == null ){
             this.backupPolicy = new SetBackupPolicyOption();
+            backupPolicySetter.accept(this.backupPolicy);
         }
-        backupPolicySetter.accept(this.backupPolicy);
+        
         return this;
     }
 

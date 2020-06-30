@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -135,8 +137,9 @@ public class TemplateJobInfo  {
     public TemplateJobInfo withRepoInfo(Consumer<RepositoryInfo> repoInfoSetter) {
         if(this.repoInfo == null ){
             this.repoInfo = new RepositoryInfo();
+            repoInfoSetter.accept(this.repoInfo);
         }
-        repoInfoSetter.accept(this.repoInfo);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowVolumeResponse extends SdkResponse {
     public ShowVolumeResponse withVolume(Consumer<VolumeDetail> volumeSetter) {
         if(this.volume == null ){
             this.volume = new VolumeDetail();
+            volumeSetter.accept(this.volume);
         }
-        volumeSetter.accept(this.volume);
+        
         return this;
     }
 

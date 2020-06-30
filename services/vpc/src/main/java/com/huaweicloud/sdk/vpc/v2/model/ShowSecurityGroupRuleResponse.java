@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowSecurityGroupRuleResponse extends SdkResponse {
     public ShowSecurityGroupRuleResponse withSecurityGroupRule(Consumer<SecurityGroupRule> securityGroupRuleSetter) {
         if(this.securityGroupRule == null ){
             this.securityGroupRule = new SecurityGroupRule();
+            securityGroupRuleSetter.accept(this.securityGroupRule);
         }
-        securityGroupRuleSetter.accept(this.securityGroupRule);
+        
         return this;
     }
 

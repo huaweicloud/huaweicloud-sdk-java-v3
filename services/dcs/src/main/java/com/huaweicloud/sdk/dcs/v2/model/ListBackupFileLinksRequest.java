@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -81,8 +83,9 @@ public class ListBackupFileLinksRequest  {
     public ListBackupFileLinksRequest withBody(Consumer<DownloadBackupFilesReq> bodySetter) {
         if(this.body == null ){
             this.body = new DownloadBackupFilesReq();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class KeystoneCreateGroupResponse extends SdkResponse {
     public KeystoneCreateGroupResponse withGroup(Consumer<KeystoneGroupResult> groupSetter) {
         if(this.group == null ){
             this.group = new KeystoneGroupResult();
+            groupSetter.accept(this.group);
         }
-        groupSetter.accept(this.group);
+        
         return this;
     }
 

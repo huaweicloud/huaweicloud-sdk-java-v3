@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -180,8 +182,9 @@ public class SubJob  {
     public SubJob withEntities(Consumer<SubJobEntities> entitiesSetter) {
         if(this.entities == null ){
             this.entities = new SubJobEntities();
+            entitiesSetter.accept(this.entities);
         }
-        entitiesSetter.accept(this.entities);
+        
         return this;
     }
 

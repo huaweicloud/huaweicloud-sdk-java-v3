@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class KeystoneCreateProjectResponse extends SdkResponse {
     public KeystoneCreateProjectResponse withProject(Consumer<AuthProjectResult> projectSetter) {
         if(this.project == null ){
             this.project = new AuthProjectResult();
+            projectSetter.accept(this.project);
         }
-        projectSetter.accept(this.project);
+        
         return this;
     }
 

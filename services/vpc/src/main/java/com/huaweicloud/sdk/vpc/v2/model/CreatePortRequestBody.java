@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreatePortRequestBody  {
     public CreatePortRequestBody withPort(Consumer<CreatePortOption> portSetter) {
         if(this.port == null ){
             this.port = new CreatePortOption();
+            portSetter.accept(this.port);
         }
-        portSetter.accept(this.port);
+        
         return this;
     }
 

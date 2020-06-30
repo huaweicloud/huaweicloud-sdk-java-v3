@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -210,8 +212,9 @@ public class CreateAlarmRequestBody  {
     public CreateAlarmRequestBody withMetric(Consumer<MetricInfoExt> metricSetter) {
         if(this.metric == null ){
             this.metric = new MetricInfoExt();
+            metricSetter.accept(this.metric);
         }
-        metricSetter.accept(this.metric);
+        
         return this;
     }
 
@@ -236,8 +239,9 @@ public class CreateAlarmRequestBody  {
     public CreateAlarmRequestBody withCondition(Consumer<Condition> conditionSetter) {
         if(this.condition == null ){
             this.condition = new Condition();
+            conditionSetter.accept(this.condition);
         }
-        conditionSetter.accept(this.condition);
+        
         return this;
     }
 

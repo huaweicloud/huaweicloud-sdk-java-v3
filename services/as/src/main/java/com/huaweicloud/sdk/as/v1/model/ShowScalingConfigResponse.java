@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowScalingConfigResponse extends SdkResponse {
     public ShowScalingConfigResponse withScalingConfiguration(Consumer<ScalingConfiguration> scalingConfigurationSetter) {
         if(this.scalingConfiguration == null ){
             this.scalingConfiguration = new ScalingConfiguration();
+            scalingConfigurationSetter.accept(this.scalingConfiguration);
         }
-        scalingConfigurationSetter.accept(this.scalingConfiguration);
+        
         return this;
     }
 

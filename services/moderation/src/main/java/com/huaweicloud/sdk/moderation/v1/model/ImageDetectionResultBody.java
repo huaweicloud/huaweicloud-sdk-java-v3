@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.moderation.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -41,8 +43,9 @@ public class ImageDetectionResultBody  {
     public ImageDetectionResultBody withDetail(Consumer<ImageDetectionResultDetail> detailSetter) {
         if(this.detail == null ){
             this.detail = new ImageDetectionResultDetail();
+            detailSetter.accept(this.detail);
         }
-        detailSetter.accept(this.detail);
+        
         return this;
     }
 

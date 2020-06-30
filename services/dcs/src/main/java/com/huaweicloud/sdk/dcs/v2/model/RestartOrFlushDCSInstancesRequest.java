@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class RestartOrFlushDCSInstancesRequest  {
     public RestartOrFlushDCSInstancesRequest withBody(Consumer<ChangeInstanceStatusBody> bodySetter) {
         if(this.body == null ){
             this.body = new ChangeInstanceStatusBody();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

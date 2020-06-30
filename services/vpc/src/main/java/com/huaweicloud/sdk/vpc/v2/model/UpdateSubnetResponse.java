@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class UpdateSubnetResponse extends SdkResponse {
     public UpdateSubnetResponse withSubnet(Consumer<SubnetResult> subnetSetter) {
         if(this.subnet == null ){
             this.subnet = new SubnetResult();
+            subnetSetter.accept(this.subnet);
         }
-        subnetSetter.accept(this.subnet);
+        
         return this;
     }
 

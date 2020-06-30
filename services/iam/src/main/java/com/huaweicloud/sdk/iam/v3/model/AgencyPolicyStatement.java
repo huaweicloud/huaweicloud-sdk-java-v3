@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -240,8 +242,9 @@ public class AgencyPolicyStatement  {
     public AgencyPolicyStatement withResource(Consumer<AgencyPolicyResource> resourceSetter) {
         if(this.resource == null ){
             this.resource = new AgencyPolicyResource();
+            resourceSetter.accept(this.resource);
         }
-        resourceSetter.accept(this.resource);
+        
         return this;
     }
 

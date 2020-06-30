@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -933,8 +935,9 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public CreateFunctionVersionResponse withFuncVpc(Consumer<FuncVpc> funcVpcSetter) {
         if(this.funcVpc == null ){
             this.funcVpc = new FuncVpc();
+            funcVpcSetter.accept(this.funcVpc);
         }
-        funcVpcSetter.accept(this.funcVpc);
+        
         return this;
     }
 
@@ -959,8 +962,9 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public CreateFunctionVersionResponse withMountConfig(Consumer<MountConfig> mountConfigSetter) {
         if(this.mountConfig == null ){
             this.mountConfig = new MountConfig();
+            mountConfigSetter.accept(this.mountConfig);
         }
-        mountConfigSetter.accept(this.mountConfig);
+        
         return this;
     }
 
@@ -1039,8 +1043,9 @@ public class CreateFunctionVersionResponse extends SdkResponse {
     public CreateFunctionVersionResponse withStrategyConfig(Consumer<StrategyConfig> strategyConfigSetter) {
         if(this.strategyConfig == null ){
             this.strategyConfig = new StrategyConfig();
+            strategyConfigSetter.accept(this.strategyConfig);
         }
-        strategyConfigSetter.accept(this.strategyConfig);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class UpdateServerRequestBody  {
     public UpdateServerRequestBody withServer(Consumer<UpdateServerOption> serverSetter) {
         if(this.server == null ){
             this.server = new UpdateServerOption();
+            serverSetter.accept(this.server);
         }
-        serverSetter.accept(this.server);
+        
         return this;
     }
 

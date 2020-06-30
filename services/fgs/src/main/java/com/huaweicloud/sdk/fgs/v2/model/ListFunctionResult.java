@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -964,8 +966,9 @@ public class ListFunctionResult  {
     public ListFunctionResult withFuncCode(Consumer<FuncCode> funcCodeSetter) {
         if(this.funcCode == null ){
             this.funcCode = new FuncCode();
+            funcCodeSetter.accept(this.funcCode);
         }
-        funcCodeSetter.accept(this.funcCode);
+        
         return this;
     }
 
@@ -990,8 +993,9 @@ public class ListFunctionResult  {
     public ListFunctionResult withFuncVpc(Consumer<FuncVpc> funcVpcSetter) {
         if(this.funcVpc == null ){
             this.funcVpc = new FuncVpc();
+            funcVpcSetter.accept(this.funcVpc);
         }
-        funcVpcSetter.accept(this.funcVpc);
+        
         return this;
     }
 
@@ -1016,8 +1020,9 @@ public class ListFunctionResult  {
     public ListFunctionResult withMountConfig(Consumer<MountConfig> mountConfigSetter) {
         if(this.mountConfig == null ){
             this.mountConfig = new MountConfig();
+            mountConfigSetter.accept(this.mountConfig);
         }
-        mountConfigSetter.accept(this.mountConfig);
+        
         return this;
     }
 
@@ -1096,8 +1101,9 @@ public class ListFunctionResult  {
     public ListFunctionResult withStrategyConfig(Consumer<StrategyConfig> strategyConfigSetter) {
         if(this.strategyConfig == null ){
             this.strategyConfig = new StrategyConfig();
+            strategyConfigSetter.accept(this.strategyConfig);
         }
-        strategyConfigSetter.accept(this.strategyConfig);
+        
         return this;
     }
 

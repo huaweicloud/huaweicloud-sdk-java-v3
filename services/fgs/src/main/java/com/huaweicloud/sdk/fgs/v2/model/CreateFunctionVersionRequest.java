@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -55,8 +57,9 @@ public class CreateFunctionVersionRequest  {
     public CreateFunctionVersionRequest withBody(Consumer<CreateFunctionVersionRequestBody> bodySetter) {
         if(this.body == null ){
             this.body = new CreateFunctionVersionRequestBody();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

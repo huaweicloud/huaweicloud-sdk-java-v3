@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -112,8 +114,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withTe1080pHardCount(Consumer<ResDetailDTO> te1080pHardCountSetter) {
         if(this.te1080pHardCount == null ){
             this.te1080pHardCount = new ResDetailDTO();
+            te1080pHardCountSetter.accept(this.te1080pHardCount);
         }
-        te1080pHardCountSetter.accept(this.te1080pHardCount);
+        
         return this;
     }
 
@@ -138,8 +141,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withTe720pHardCount(Consumer<ResDetailDTO> te720pHardCountSetter) {
         if(this.te720pHardCount == null ){
             this.te720pHardCount = new ResDetailDTO();
+            te720pHardCountSetter.accept(this.te720pHardCount);
         }
-        te720pHardCountSetter.accept(this.te720pHardCount);
+        
         return this;
     }
 
@@ -164,8 +168,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withTeSoftCount(Consumer<ResDetailDTO> teSoftCountSetter) {
         if(this.teSoftCount == null ){
             this.teSoftCount = new ResDetailDTO();
+            teSoftCountSetter.accept(this.teSoftCount);
         }
-        teSoftCountSetter.accept(this.teSoftCount);
+        
         return this;
     }
 
@@ -190,8 +195,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withRoomCount(Consumer<ResDetailDTO> roomCountSetter) {
         if(this.roomCount == null ){
             this.roomCount = new ResDetailDTO();
+            roomCountSetter.accept(this.roomCount);
         }
-        roomCountSetter.accept(this.roomCount);
+        
         return this;
     }
 
@@ -216,8 +222,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withRecordCapability(Consumer<ResDetailDTO> recordCapabilitySetter) {
         if(this.recordCapability == null ){
             this.recordCapability = new ResDetailDTO();
+            recordCapabilitySetter.accept(this.recordCapability);
         }
-        recordCapabilitySetter.accept(this.recordCapability);
+        
         return this;
     }
 
@@ -242,8 +249,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withConfCallCount(Consumer<ResDetailDTO> confCallCountSetter) {
         if(this.confCallCount == null ){
             this.confCallCount = new ResDetailDTO();
+            confCallCountSetter.accept(this.confCallCount);
         }
-        confCallCountSetter.accept(this.confCallCount);
+        
         return this;
     }
 
@@ -268,8 +276,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withLiveCount(Consumer<ResDetailDTO> liveCountSetter) {
         if(this.liveCount == null ){
             this.liveCount = new ResDetailDTO();
+            liveCountSetter.accept(this.liveCount);
         }
-        liveCountSetter.accept(this.liveCount);
+        
         return this;
     }
 
@@ -294,8 +303,9 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public ShowCorpResourceResponse withThirdPartyHardCount(Consumer<ResDetailDTO> thirdPartyHardCountSetter) {
         if(this.thirdPartyHardCount == null ){
             this.thirdPartyHardCount = new ResDetailDTO();
+            thirdPartyHardCountSetter.accept(this.thirdPartyHardCount);
         }
-        thirdPartyHardCountSetter.accept(this.thirdPartyHardCount);
+        
         return this;
     }
 

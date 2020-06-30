@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -429,8 +431,9 @@ public class ServerDetail  {
     public ServerDetail withImage(Consumer<ServerImage> imageSetter) {
         if(this.image == null ){
             this.image = new ServerImage();
+            imageSetter.accept(this.image);
         }
-        imageSetter.accept(this.image);
+        
         return this;
     }
 
@@ -535,8 +538,9 @@ public class ServerDetail  {
     public ServerDetail withFlavor(Consumer<ServerFlavor> flavorSetter) {
         if(this.flavor == null ){
             this.flavor = new ServerFlavor();
+            flavorSetter.accept(this.flavor);
         }
-        flavorSetter.accept(this.flavor);
+        
         return this;
     }
 
@@ -772,8 +776,9 @@ public class ServerDetail  {
     public ServerDetail withFault(Consumer<ServerFault> faultSetter) {
         if(this.fault == null ){
             this.fault = new ServerFault();
+            faultSetter.accept(this.fault);
         }
-        faultSetter.accept(this.fault);
+        
         return this;
     }
 
@@ -1194,8 +1199,9 @@ public class ServerDetail  {
     public ServerDetail withOsSchedulerHints(Consumer<ServerSchedulerHints> osSchedulerHintsSetter) {
         if(this.osSchedulerHints == null ){
             this.osSchedulerHints = new ServerSchedulerHints();
+            osSchedulerHintsSetter.accept(this.osSchedulerHints);
         }
-        osSchedulerHintsSetter.accept(this.osSchedulerHints);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class RollbackSnapshotRequestBody  {
     public RollbackSnapshotRequestBody withRollback(Consumer<RollbackSnapshotOption> rollbackSetter) {
         if(this.rollback == null ){
             this.rollback = new RollbackSnapshotOption();
+            rollbackSetter.accept(this.rollback);
         }
-        rollbackSetter.accept(this.rollback);
+        
         return this;
     }
 

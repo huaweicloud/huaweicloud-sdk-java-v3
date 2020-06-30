@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- *  
+ * UpdateVolumeOption
  */
 public class UpdateVolumeOption  {
 
@@ -35,7 +37,7 @@ public class UpdateVolumeOption  {
 
 
     /**
-     * 新的云硬盘的描述，最大支持255个字节。
+     * 新的云硬盘的描述，name和description不能同时为null。最大支持255个字节。
      * @return description
      */
     public String getDescription() {
@@ -55,7 +57,7 @@ public class UpdateVolumeOption  {
 
 
     /**
-     * 新的云硬盘的名字，最大支持255个字节。
+     * 新的云硬盘的名字，name和description不能同时为null。最大支持255个字节。
      * @return name
      */
     public String getName() {

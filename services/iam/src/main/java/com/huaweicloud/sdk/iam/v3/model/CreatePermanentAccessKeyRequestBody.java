@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreatePermanentAccessKeyRequestBody  {
     public CreatePermanentAccessKeyRequestBody withCredential(Consumer<CreateCredentialOption> credentialSetter) {
         if(this.credential == null ){
             this.credential = new CreateCredentialOption();
+            credentialSetter.accept(this.credential);
         }
-        credentialSetter.accept(this.credential);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -146,8 +148,9 @@ public class TokenAuthIdentity  {
     public TokenAuthIdentity withToken(Consumer<IdentityToken> tokenSetter) {
         if(this.token == null ){
             this.token = new IdentityToken();
+            tokenSetter.accept(this.token);
         }
-        tokenSetter.accept(this.token);
+        
         return this;
     }
 
@@ -172,8 +175,9 @@ public class TokenAuthIdentity  {
     public TokenAuthIdentity withPolicy(Consumer<ServicePolicy> policySetter) {
         if(this.policy == null ){
             this.policy = new ServicePolicy();
+            policySetter.accept(this.policy);
         }
-        policySetter.accept(this.policy);
+        
         return this;
     }
 

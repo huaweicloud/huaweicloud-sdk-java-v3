@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -165,8 +167,9 @@ public class CheckTokenResponse extends SdkResponse {
     public CheckTokenResponse withUser(Consumer<UserInfo> userSetter) {
         if(this.user == null ){
             this.user = new UserInfo();
+            userSetter.accept(this.user);
         }
-        userSetter.accept(this.user);
+        
         return this;
     }
 

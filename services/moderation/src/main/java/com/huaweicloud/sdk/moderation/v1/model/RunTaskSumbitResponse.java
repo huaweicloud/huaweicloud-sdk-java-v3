@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.moderation.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class RunTaskSumbitResponse extends SdkResponse {
     public RunTaskSumbitResponse withResult(Consumer<TaskSumbitResultBody> resultSetter) {
         if(this.result == null ){
             this.result = new TaskSumbitResultBody();
+            resultSetter.accept(this.result);
         }
-        resultSetter.accept(this.result);
+        
         return this;
     }
 

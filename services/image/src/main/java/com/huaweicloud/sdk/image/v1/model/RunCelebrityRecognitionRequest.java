@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.image.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class RunCelebrityRecognitionRequest  {
     public RunCelebrityRecognitionRequest withBody(Consumer<CelebrityRecognitionReq> bodySetter) {
         if(this.body == null ){
             this.body = new CelebrityRecognitionReq();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

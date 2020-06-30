@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowBackupPolicyResponse extends SdkResponse {
     public ShowBackupPolicyResponse withBackupPolicy(Consumer<ShowBackupPolicyResult> backupPolicySetter) {
         if(this.backupPolicy == null ){
             this.backupPolicy = new ShowBackupPolicyResult();
+            backupPolicySetter.accept(this.backupPolicy);
         }
-        backupPolicySetter.accept(this.backupPolicy);
+        
         return this;
     }
 

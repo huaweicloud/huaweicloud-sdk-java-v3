@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -115,8 +117,9 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public ListNumberOfInstancesInDifferentStatusResponse withRedis(Consumer<StatusStatistic> redisSetter) {
         if(this.redis == null ){
             this.redis = new StatusStatistic();
+            redisSetter.accept(this.redis);
         }
-        redisSetter.accept(this.redis);
+        
         return this;
     }
 
@@ -141,8 +144,9 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     public ListNumberOfInstancesInDifferentStatusResponse withMemcached(Consumer<StatusStatistic> memcachedSetter) {
         if(this.memcached == null ){
             this.memcached = new StatusStatistic();
+            memcachedSetter.accept(this.memcached);
         }
-        memcachedSetter.accept(this.memcached);
+        
         return this;
     }
 

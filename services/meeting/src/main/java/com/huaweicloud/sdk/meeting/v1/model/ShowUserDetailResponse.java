@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -515,8 +517,9 @@ public class ShowUserDetailResponse extends SdkResponse {
     public ShowUserDetailResponse withCorp(Consumer<CorpBasicInfoDTO> corpSetter) {
         if(this.corp == null ){
             this.corp = new CorpBasicInfoDTO();
+            corpSetter.accept(this.corp);
         }
-        corpSetter.accept(this.corp);
+        
         return this;
     }
 
@@ -541,8 +544,9 @@ public class ShowUserDetailResponse extends SdkResponse {
     public ShowUserDetailResponse withFunction(Consumer<UserFunctionDTO> functionSetter) {
         if(this.function == null ){
             this.function = new UserFunctionDTO();
+            functionSetter.accept(this.function);
         }
-        functionSetter.accept(this.function);
+        
         return this;
     }
 

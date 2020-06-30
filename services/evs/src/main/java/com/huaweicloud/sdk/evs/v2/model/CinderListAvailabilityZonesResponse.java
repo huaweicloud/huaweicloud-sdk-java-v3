@@ -1,13 +1,15 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.AvailabilityZone;
+import com.huaweicloud.sdk.evs.v2.model.AzInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -23,15 +25,15 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availabilityZoneInfo")
     
-    private List<AvailabilityZone> availabilityZoneInfo = null;
+    private List<AzInfo> availabilityZoneInfo = null;
     
-    public CinderListAvailabilityZonesResponse withAvailabilityZoneInfo(List<AvailabilityZone> availabilityZoneInfo) {
+    public CinderListAvailabilityZonesResponse withAvailabilityZoneInfo(List<AzInfo> availabilityZoneInfo) {
         this.availabilityZoneInfo = availabilityZoneInfo;
         return this;
     }
 
     
-    public CinderListAvailabilityZonesResponse addAvailabilityZoneInfoItem(AvailabilityZone availabilityZoneInfoItem) {
+    public CinderListAvailabilityZonesResponse addAvailabilityZoneInfoItem(AzInfo availabilityZoneInfoItem) {
         if (this.availabilityZoneInfo == null) {
             this.availabilityZoneInfo = new ArrayList<>();
         }
@@ -39,7 +41,7 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
         return this;
     }
 
-    public CinderListAvailabilityZonesResponse withAvailabilityZoneInfo(Consumer<List<AvailabilityZone>> availabilityZoneInfoSetter) {
+    public CinderListAvailabilityZonesResponse withAvailabilityZoneInfo(Consumer<List<AzInfo>> availabilityZoneInfoSetter) {
         if(this.availabilityZoneInfo == null ){
             this.availabilityZoneInfo = new ArrayList<>();
         }
@@ -48,14 +50,14 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * 可用分区的信息。
+     * 查询请求返回的可用分区列表，请参见• [availabilityZoneInfo参数说明](https://support.huaweicloud.com/api-evs/evs_04_2081.html#evs_04_2081__li19751007201910)。
      * @return availabilityZoneInfo
      */
-    public List<AvailabilityZone> getAvailabilityZoneInfo() {
+    public List<AzInfo> getAvailabilityZoneInfo() {
         return availabilityZoneInfo;
     }
 
-    public void setAvailabilityZoneInfo(List<AvailabilityZone> availabilityZoneInfo) {
+    public void setAvailabilityZoneInfo(List<AzInfo> availabilityZoneInfo) {
         this.availabilityZoneInfo = availabilityZoneInfo;
     }
     @Override

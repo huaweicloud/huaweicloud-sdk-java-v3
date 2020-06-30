@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class CreatePermanentAccessKeyResponse extends SdkResponse {
     public CreatePermanentAccessKeyResponse withCredential(Consumer<CreateCredentialResult> credentialSetter) {
         if(this.credential == null ){
             this.credential = new CreateCredentialResult();
+            credentialSetter.accept(this.credential);
         }
-        credentialSetter.accept(this.credential);
+        
         return this;
     }
 

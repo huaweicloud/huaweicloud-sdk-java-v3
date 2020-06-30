@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -182,8 +184,9 @@ public class ShowJobResponse extends SdkResponse {
     public ShowJobResponse withEntities(Consumer<JobEntities> entitiesSetter) {
         if(this.entities == null ){
             this.entities = new JobEntities();
+            entitiesSetter.accept(this.entities);
         }
-        entitiesSetter.accept(this.entities);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreateTemporaryAccessKeyByTokenRequestBody  {
     public CreateTemporaryAccessKeyByTokenRequestBody withAuth(Consumer<TokenAuth> authSetter) {
         if(this.auth == null ){
             this.auth = new TokenAuth();
+            authSetter.accept(this.auth);
         }
-        authSetter.accept(this.auth);
+        
         return this;
     }
 

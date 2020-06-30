@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -48,7 +50,7 @@ public class CinderListVolumeTypesResponse extends SdkResponse {
     }
 
     /**
-     * 云硬盘类型列表信息。
+     * Get volumeTypes
      * @return volumeTypes
      */
     public List<VolumeType> getVolumeTypes() {

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -55,8 +57,9 @@ public class CreateScalingConfigRequestBody  {
     public CreateScalingConfigRequestBody withInstanceConfig(Consumer<InstanceConfig> instanceConfigSetter) {
         if(this.instanceConfig == null ){
             this.instanceConfig = new InstanceConfig();
+            instanceConfigSetter.accept(this.instanceConfig);
         }
-        instanceConfigSetter.accept(this.instanceConfig);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -135,6 +137,12 @@ public class UpdateVolumeResponse extends SdkResponse {
     @JsonProperty(value="description")
     
     private String description;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="os-volume-replication:extended_status")
+    
+    private String osVolumeReplicationExtendedStatus;
 
     public UpdateVolumeResponse withAttachments(List<Attachment> attachments) {
         this.attachments = attachments;
@@ -292,8 +300,9 @@ public class UpdateVolumeResponse extends SdkResponse {
     public UpdateVolumeResponse withMetadata(Consumer<VolumeMetadata> metadataSetter) {
         if(this.metadata == null ){
             this.metadata = new VolumeMetadata();
+            metadataSetter.accept(this.metadata);
         }
-        metadataSetter.accept(this.metadata);
+        
         return this;
     }
 
@@ -498,8 +507,9 @@ public class UpdateVolumeResponse extends SdkResponse {
     public UpdateVolumeResponse withVolumeImageMetadata(Consumer<ImageMetadata> volumeImageMetadataSetter) {
         if(this.volumeImageMetadata == null ){
             this.volumeImageMetadata = new ImageMetadata();
+            volumeImageMetadataSetter.accept(this.volumeImageMetadata);
         }
-        volumeImageMetadataSetter.accept(this.volumeImageMetadata);
+        
         return this;
     }
 
@@ -555,6 +565,26 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public UpdateVolumeResponse withOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
+        this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 预留属性。
+     * @return osVolumeReplicationExtendedStatus
+     */
+    public String getOsVolumeReplicationExtendedStatus() {
+        return osVolumeReplicationExtendedStatus;
+    }
+
+    public void setOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
+        this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -582,11 +612,12 @@ public class UpdateVolumeResponse extends SdkResponse {
             Objects.equals(this.status, updateVolumeResponse.status) &&
             Objects.equals(this.volumeImageMetadata, updateVolumeResponse.volumeImageMetadata) &&
             Objects.equals(this.volumeType, updateVolumeResponse.volumeType) &&
-            Objects.equals(this.description, updateVolumeResponse.description);
+            Objects.equals(this.description, updateVolumeResponse.description) &&
+            Objects.equals(this.osVolumeReplicationExtendedStatus, updateVolumeResponse.osVolumeReplicationExtendedStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(attachments, availabilityZone, bootable, createdAt, id, links, metadata, multiattach, name, osVolHostAttrHost, osVolTenantAttrTenantId, shareable, size, snapshotId, sourceVolid, status, volumeImageMetadata, volumeType, description);
+        return Objects.hash(attachments, availabilityZone, bootable, createdAt, id, links, metadata, multiattach, name, osVolHostAttrHost, osVolTenantAttrTenantId, shareable, size, snapshotId, sourceVolid, status, volumeImageMetadata, volumeType, description, osVolumeReplicationExtendedStatus);
     }
     @Override
     public String toString() {
@@ -611,6 +642,7 @@ public class UpdateVolumeResponse extends SdkResponse {
         sb.append("    volumeImageMetadata: ").append(toIndentedString(volumeImageMetadata)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    osVolumeReplicationExtendedStatus: ").append(toIndentedString(osVolumeReplicationExtendedStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

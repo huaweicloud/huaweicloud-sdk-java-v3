@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class RollbackSnapshotResponse extends SdkResponse {
     public RollbackSnapshotResponse withRollback(Consumer<RollbackInfo> rollbackSetter) {
         if(this.rollback == null ){
             this.rollback = new RollbackInfo();
+            rollbackSetter.accept(this.rollback);
         }
-        rollbackSetter.accept(this.rollback);
+        
         return this;
     }
 

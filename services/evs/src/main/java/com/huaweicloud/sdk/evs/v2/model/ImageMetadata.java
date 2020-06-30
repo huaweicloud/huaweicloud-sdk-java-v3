@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ImageMetadata
+ * 云硬盘镜像的元数据。
  */
 public class ImageMetadata  {
 

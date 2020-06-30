@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowPolicyAndInstanceQuotaResponse extends SdkResponse {
     public ShowPolicyAndInstanceQuotaResponse withAllQuotas(Consumer<PolicyInstanceQuotas> allQuotasSetter) {
         if(this.allQuotas == null ){
             this.allQuotas = new PolicyInstanceQuotas();
+            allQuotasSetter.accept(this.allQuotas);
         }
-        allQuotasSetter.accept(this.allQuotas);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowSnapshotResponse extends SdkResponse {
     public ShowSnapshotResponse withSnapshot(Consumer<SnapshotDetails> snapshotSetter) {
         if(this.snapshot == null ){
             this.snapshot = new SnapshotDetails();
+            snapshotSetter.accept(this.snapshot);
         }
-        snapshotSetter.accept(this.snapshot);
+        
         return this;
     }
 

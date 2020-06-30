@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreateScalingPolicyRequest  {
     public CreateScalingPolicyRequest withBody(Consumer<CreateScalingPolicyRequestBody> bodySetter) {
         if(this.body == null ){
             this.body = new CreateScalingPolicyRequestBody();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

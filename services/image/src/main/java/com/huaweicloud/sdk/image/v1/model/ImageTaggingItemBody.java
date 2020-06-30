@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.image.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -107,8 +109,9 @@ public class ImageTaggingItemBody  {
     public ImageTaggingItemBody withI18nTag(Consumer<ImageTaggingI18nTag> i18nTagSetter) {
         if(this.i18nTag == null ){
             this.i18nTag = new ImageTaggingI18nTag();
+            i18nTagSetter.accept(this.i18nTag);
         }
-        i18nTagSetter.accept(this.i18nTag);
+        
         return this;
     }
 

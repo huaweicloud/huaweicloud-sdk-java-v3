@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreateAgencyRequestBody  {
     public CreateAgencyRequestBody withAgency(Consumer<CreateAgencyOption> agencySetter) {
         if(this.agency == null ){
             this.agency = new CreateAgencyOption();
+            agencySetter.accept(this.agency);
         }
-        agencySetter.accept(this.agency);
+        
         return this;
     }
 

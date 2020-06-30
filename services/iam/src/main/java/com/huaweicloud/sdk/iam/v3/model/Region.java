@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -100,8 +102,9 @@ public class Region  {
     public Region withLinks(Consumer<LinksSelf> linksSetter) {
         if(this.links == null ){
             this.links = new LinksSelf();
+            linksSetter.accept(this.links);
         }
-        linksSetter.accept(this.links);
+        
         return this;
     }
 
@@ -126,8 +129,9 @@ public class Region  {
     public Region withLocales(Consumer<RegionLocales> localesSetter) {
         if(this.locales == null ){
             this.locales = new RegionLocales();
+            localesSetter.accept(this.locales);
         }
-        localesSetter.accept(this.locales);
+        
         return this;
     }
 

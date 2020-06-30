@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -210,8 +212,9 @@ public class KeystoneUserResult  {
     public KeystoneUserResult withLinks(Consumer<Links> linksSetter) {
         if(this.links == null ){
             this.links = new Links();
+            linksSetter.accept(this.links);
         }
-        linksSetter.accept(this.links);
+        
         return this;
     }
 
@@ -296,8 +299,9 @@ public class KeystoneUserResult  {
     public KeystoneUserResult withExtra(Consumer<KeystoneUserResultExtra> extraSetter) {
         if(this.extra == null ){
             this.extra = new KeystoneUserResultExtra();
+            extraSetter.accept(this.extra);
         }
-        extraSetter.accept(this.extra);
+        
         return this;
     }
 

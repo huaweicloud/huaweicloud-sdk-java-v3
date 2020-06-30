@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreateImageRequest  {
     public CreateImageRequest withBody(Consumer<CreateImageRequestBody> bodySetter) {
         if(this.body == null ){
             this.body = new CreateImageRequestBody();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

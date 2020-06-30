@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -11,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 将云硬盘导出为镜像的请求参数。
+ * 将云硬盘导出为镜像的请求参数
  */
 public class CinderExportToImageOption  {
 
@@ -218,7 +220,7 @@ public class CinderExportToImageOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="force")
     
-    private Boolean force = false;
+    private Boolean force;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -226,7 +228,7 @@ public class CinderExportToImageOption  {
     
     private String imageName;
     /**
-     * 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。
+     * 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
      */
     public static class OsTypeEnum {
 
@@ -396,7 +398,7 @@ public class CinderExportToImageOption  {
 
 
     /**
-     * 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。
+     * 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

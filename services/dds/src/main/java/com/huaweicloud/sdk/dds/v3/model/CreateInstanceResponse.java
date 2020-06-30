@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -158,8 +160,9 @@ public class CreateInstanceResponse extends SdkResponse {
     public CreateInstanceResponse withDatastore(Consumer<CreateInstanceDatastoreResult> datastoreSetter) {
         if(this.datastore == null ){
             this.datastore = new CreateInstanceDatastoreResult();
+            datastoreSetter.accept(this.datastore);
         }
-        datastoreSetter.accept(this.datastore);
+        
         return this;
     }
 
@@ -418,8 +421,9 @@ public class CreateInstanceResponse extends SdkResponse {
     public CreateInstanceResponse withStorage(Consumer<CreateInstanceStorageResult> storageSetter) {
         if(this.storage == null ){
             this.storage = new CreateInstanceStorageResult();
+            storageSetter.accept(this.storage);
         }
-        storageSetter.accept(this.storage);
+        
         return this;
     }
 
@@ -444,8 +448,9 @@ public class CreateInstanceResponse extends SdkResponse {
     public CreateInstanceResponse withBackupStrategy(Consumer<CreateInstanceBackupStrategyResult> backupStrategySetter) {
         if(this.backupStrategy == null ){
             this.backupStrategy = new CreateInstanceBackupStrategyResult();
+            backupStrategySetter.accept(this.backupStrategy);
         }
-        backupStrategySetter.accept(this.backupStrategy);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -12,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * Job的响应信息。
  */
 public class JobEntities  {
 
@@ -150,7 +152,7 @@ public class JobEntities  {
     }
 
     /**
-     * 子Job的信息。
+     * 子Job的信息。当存在子Job信息时，entities中的其他字段将不会返回。
      * @return subJobs
      */
     public List<SubJob> getSubJobs() {

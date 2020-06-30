@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class BatchStopServersRequestBody  {
     public BatchStopServersRequestBody withOsStop(Consumer<BatchStopServersOption> osStopSetter) {
         if(this.osStop == null ){
             this.osStop = new BatchStopServersOption();
+            osStopSetter.accept(this.osStop);
         }
-        osStopSetter.accept(this.osStop);
+        
         return this;
     }
 

@@ -21,12 +21,14 @@
 
 package com.huaweicloud.sdk.core.impl;
 
+import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -40,10 +42,14 @@ public class DefaultHttpResponse implements HttpResponse {
 
     private DefaultHttpResponse(Response response) {
         this.response = response;
-        try {
-            strBody = response.body().string();
-        } catch (IOException e) {
-            logger.error("Read http response body error!", e);
+        if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
+                && (response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
+                || response.body().contentType().toString().startsWith(Constants.MEDIATYPE.TEXT))) {
+            try {
+                strBody = response.body().string();
+            } catch (IOException e) {
+                logger.error("Read http response body error!", e);
+            }
         }
     }
 
@@ -75,6 +81,11 @@ public class DefaultHttpResponse implements HttpResponse {
     @Override
     public String getBodyAsString() {
         return strBody;
+    }
+
+    @Override
+    public InputStream getBody() {
+        return response.body().byteStream();
     }
 
     @Override

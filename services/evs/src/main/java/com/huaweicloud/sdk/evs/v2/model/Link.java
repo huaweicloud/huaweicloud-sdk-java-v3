@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -9,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 云硬盘uri自描述信息
+ * 卷、快照的link
  */
 public class Link  {
 
@@ -24,7 +26,7 @@ public class Link  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rel")
     
-    private String rel;
+    private String rel = "next";
 
     public Link withHref(String href) {
         this.href = href;

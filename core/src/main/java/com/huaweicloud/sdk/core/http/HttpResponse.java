@@ -21,6 +21,7 @@
 
 package com.huaweicloud.sdk.core.http;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +36,8 @@ public interface HttpResponse {
     Map<String, List<String>> getHeaders();
 
     String getBodyAsString();
+
+    InputStream getBody();
 
     String getHeader(String name);
 

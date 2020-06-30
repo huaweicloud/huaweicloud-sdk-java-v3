@@ -25,13 +25,17 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.SocketTimeoutException;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLHandshakeException;
 
+import okhttp3.Protocol;
 import okhttp3.internal.http.HttpMethod;
+import okio.BufferedSink;
+import okio.Okio;
 import org.apache.commons.lang3.StringUtils;
 
 import com.huaweicloud.sdk.core.exception.ConnectionException;
@@ -86,6 +90,7 @@ public class DefaultHttpClient implements HttpClient {
                             IgnoreSSLVerificationFactory.getTrustAllManager());
         }
 
+        clientBuilder.protocols(Arrays.asList(Protocol.HTTP_1_1));
         //set proxy
         if (!StringUtils.isEmpty(httpConfig.getProxyHost())) {
             Proxy proxy = new Proxy(Proxy.Type.HTTP,
@@ -129,17 +134,44 @@ public class DefaultHttpClient implements HttpClient {
                 values.forEach(value -> requestBuilder.header(key, value)));
 
         if (Objects.isNull(httpRequest.getBodyAsString())) {
-            if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
-                requestBuilder.method(httpRequest.getMethod().toString(),
-                        RequestBody.create(null, new byte[0]));
+            if (Objects.isNull(httpRequest.getBody())) {
+                if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
+                    requestBuilder.method(httpRequest.getMethod().toString(),
+                            RequestBody.create(null, new byte[0]));
+                } else {
+                    requestBuilder.method(httpRequest.getMethod().toString(), null);
+                }
             } else {
-                requestBuilder.method(httpRequest.getMethod().toString(), null);
+                requestBuilder.method(httpRequest.getMethod().toString(),
+                        new RequestBody() {
+
+                            @Override
+                            public MediaType contentType() {
+                                return MediaType.parse(httpRequest.getContentType());
+                            }
+
+                            @Override
+                            public void writeTo(BufferedSink bufferedSink) throws IOException {
+                                bufferedSink.writeAll(Okio.source(httpRequest.getBody()));
+                            }
+                        });
             }
         } else {
             requestBuilder.method(httpRequest.getMethod().toString(),
-                    RequestBody.create(MediaType.parse(httpRequest.getContentType()),
-                            httpRequest.getBodyAsString()));
+                    new RequestBody() {
+
+                        @Override
+                        public MediaType contentType() {
+                            return MediaType.parse(httpRequest.getContentType());
+                        }
+
+                        @Override
+                        public void writeTo(BufferedSink bufferedSink) throws IOException {
+                            bufferedSink.writeUtf8(httpRequest.getBodyAsString());
+                        }
+                    });
         }
+
         return requestBuilder.build();
     }
 

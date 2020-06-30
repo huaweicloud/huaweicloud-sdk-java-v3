@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-
 public class TestHttpRequestDef {
 
     public static class TestRequest {
@@ -130,6 +129,44 @@ public class TestHttpRequestDef {
 
         HttpRequestDef<TestRequest, TestResponse> requestDef = builder.build();
         return requestDef;
+    }
+
+
+    public static class TestUploadDownloadRequest extends SdkStreamRequest {
+        private String id;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+    }
+
+    public static class TestUploadDownloadResponse extends SdkStreamResponse {
+
+    }
+
+    public static final HttpRequestDef<TestUploadDownloadRequest, TestUploadDownloadResponse>
+        buildTestUploadDownloadRequestDef() {
+        HttpRequestDef.Builder<TestUploadDownloadRequest, TestUploadDownloadResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST,
+                TestUploadDownloadRequest.class,
+                    TestUploadDownloadResponse.class)
+                    .withUri("/uploaddownload")
+                    .withContentType("application/octet-stream");
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(TestUploadDownloadRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+
+        return builder.build();
     }
 
     public static HttpRequestDef<TestNoBodyRequest, TestResponse> buildHttpRequestNoRequestBodyDef() {

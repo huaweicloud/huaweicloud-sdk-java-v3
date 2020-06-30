@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -162,8 +164,9 @@ public class AgencyPolicyRoleResult  {
     public AgencyPolicyRoleResult withLinks(Consumer<LinksSelf> linksSetter) {
         if(this.links == null ){
             this.links = new LinksSelf();
+            linksSetter.accept(this.links);
         }
-        linksSetter.accept(this.links);
+        
         return this;
     }
 
@@ -188,8 +191,9 @@ public class AgencyPolicyRoleResult  {
     public AgencyPolicyRoleResult withPolicy(Consumer<AgencyPolicy> policySetter) {
         if(this.policy == null ){
             this.policy = new AgencyPolicy();
+            policySetter.accept(this.policy);
         }
-        policySetter.accept(this.policy);
+        
         return this;
     }
 

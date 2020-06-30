@@ -214,6 +214,11 @@ public class HcClient implements CustomizationConfigure {
                 }
             }
         }
+        //upload
+        if (request instanceof SdkStreamRequest) {
+            httpRequestBuilder.withBody(((SdkStreamRequest) request).getBody());
+        }
+
         httpRequestBuilder.addHeader(Constants.USER_AGENT, "huaweicloud-sdk-java/3.0");
 
         HttpRequest httpRequest = httpRequestBuilder.build();
@@ -226,13 +231,21 @@ public class HcClient implements CustomizationConfigure {
         try {
             String stringResult = httpResponse.getBodyAsString();
             ResT resT;
-            if (!reqDef.hasResponseField(Constants.BODY)) {
-                resT = JsonUtils.toObjectIgnoreUnknown(stringResult, reqDef.getResponseType());
-            } else {
+            if (Objects.nonNull(httpResponse.getContentType())
+                    && httpResponse.getContentType().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
                 resT = reqDef.getResponseType().newInstance();
-                Field<ResT, ?> responseField = reqDef.getResponseField(Constants.BODY);
-                Object obj = responseToObject(stringResult, responseField);
-                responseField.writeValueSafe(resT, obj, responseField.getFieldType());
+                if (resT instanceof SdkStreamResponse) {
+                    ((SdkStreamResponse)resT).setBody(httpResponse.getBody());
+                }
+            } else {
+                if (!reqDef.hasResponseField(Constants.BODY)) {
+                    resT = JsonUtils.toObjectIgnoreUnknown(stringResult, reqDef.getResponseType());
+                } else {
+                    resT = reqDef.getResponseType().newInstance();
+                    Field<ResT, ?> responseField = reqDef.getResponseField(Constants.BODY);
+                    Object obj = responseToObject(stringResult, responseField);
+                    responseField.writeValueSafe(resT, obj, responseField.getFieldType());
+                }
             }
             if (Objects.isNull(resT)) {
                 resT = reqDef.getResponseType().newInstance();

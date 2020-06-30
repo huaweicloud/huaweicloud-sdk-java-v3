@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -36,8 +38,9 @@ public class CreateVolumeRequestBody  {
     public CreateVolumeRequestBody withBssParam(Consumer<BssParamForCreateVolume> bssParamSetter) {
         if(this.bssParam == null ){
             this.bssParam = new BssParamForCreateVolume();
+            bssParamSetter.accept(this.bssParam);
         }
-        bssParamSetter.accept(this.bssParam);
+        
         return this;
     }
 
@@ -62,8 +65,9 @@ public class CreateVolumeRequestBody  {
     public CreateVolumeRequestBody withVolume(Consumer<CreateVolumeOption> volumeSetter) {
         if(this.volume == null ){
             this.volume = new CreateVolumeOption();
+            volumeSetter.accept(this.volume);
         }
-        volumeSetter.accept(this.volume);
+        
         return this;
     }
 

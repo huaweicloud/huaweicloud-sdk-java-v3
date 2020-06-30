@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -36,8 +38,9 @@ public class NovaCreateServersRequestBody  {
     public NovaCreateServersRequestBody withServer(Consumer<NovaCreateServersOption> serverSetter) {
         if(this.server == null ){
             this.server = new NovaCreateServersOption();
+            serverSetter.accept(this.server);
         }
-        serverSetter.accept(this.server);
+        
         return this;
     }
 
@@ -62,8 +65,9 @@ public class NovaCreateServersRequestBody  {
     public NovaCreateServersRequestBody withOsSchedulerHints(Consumer<NovaCreateServersSchedulerHint> osSchedulerHintsSetter) {
         if(this.osSchedulerHints == null ){
             this.osSchedulerHints = new NovaCreateServersSchedulerHint();
+            osSchedulerHintsSetter.accept(this.osSchedulerHints);
         }
-        osSchedulerHintsSetter.accept(this.osSchedulerHints);
+        
         return this;
     }
 

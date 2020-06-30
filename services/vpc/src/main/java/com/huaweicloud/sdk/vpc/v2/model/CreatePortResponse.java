@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class CreatePortResponse extends SdkResponse {
     public CreatePortResponse withPort(Consumer<Port> portSetter) {
         if(this.port == null ){
             this.port = new Port();
+            portSetter.accept(this.port);
         }
-        portSetter.accept(this.port);
+        
         return this;
     }
 

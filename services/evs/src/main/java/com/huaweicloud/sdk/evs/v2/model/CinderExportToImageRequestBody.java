@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CinderExportToImageRequestBody  {
     public CinderExportToImageRequestBody withOsVolumeUploadImage(Consumer<CinderExportToImageOption> osVolumeUploadImageSetter) {
         if(this.osVolumeUploadImage == null ){
             this.osVolumeUploadImage = new CinderExportToImageOption();
+            osVolumeUploadImageSetter.accept(this.osVolumeUploadImage);
         }
-        osVolumeUploadImageSetter.accept(this.osVolumeUploadImage);
+        
         return this;
     }
 

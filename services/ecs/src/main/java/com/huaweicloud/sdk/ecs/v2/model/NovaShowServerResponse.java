@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class NovaShowServerResponse extends SdkResponse {
     public NovaShowServerResponse withServer(Consumer<NovaServer> serverSetter) {
         if(this.server == null ){
             this.server = new NovaServer();
+            serverSetter.accept(this.server);
         }
-        serverSetter.accept(this.server);
+        
         return this;
     }
 

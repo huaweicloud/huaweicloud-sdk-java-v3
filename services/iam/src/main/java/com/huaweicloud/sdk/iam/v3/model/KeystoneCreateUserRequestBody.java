@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class KeystoneCreateUserRequestBody  {
     public KeystoneCreateUserRequestBody withUser(Consumer<KeystoneCreateUserOption> userSetter) {
         if(this.user == null ){
             this.user = new KeystoneCreateUserOption();
+            userSetter.accept(this.user);
         }
-        userSetter.accept(this.user);
+        
         return this;
     }
 

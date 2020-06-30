@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class KeystoneShowVersionResponse extends SdkResponse {
     public KeystoneShowVersionResponse withVersion(Consumer<Version> versionSetter) {
         if(this.version == null ){
             this.version = new Version();
+            versionSetter.accept(this.version);
         }
-        versionSetter.accept(this.version);
+        
         return this;
     }
 

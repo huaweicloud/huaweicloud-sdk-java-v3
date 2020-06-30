@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -36,7 +38,7 @@ public class QuotaDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allocated")
     
-    private Integer allocated;
+    private String allocated;
 
     public QuotaDetail withInUse(Integer inUse) {
         this.inUse = inUse;
@@ -98,7 +100,7 @@ public class QuotaDetail  {
         this.reserved = reserved;
     }
 
-    public QuotaDetail withAllocated(Integer allocated) {
+    public QuotaDetail withAllocated(String allocated) {
         this.allocated = allocated;
         return this;
     }
@@ -110,11 +112,11 @@ public class QuotaDetail  {
      * 预留属性。
      * @return allocated
      */
-    public Integer getAllocated() {
+    public String getAllocated() {
         return allocated;
     }
 
-    public void setAllocated(Integer allocated) {
+    public void setAllocated(String allocated) {
         this.allocated = allocated;
     }
     @Override

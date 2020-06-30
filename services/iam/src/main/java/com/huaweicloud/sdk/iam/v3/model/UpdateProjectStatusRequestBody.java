@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class UpdateProjectStatusRequestBody  {
     public UpdateProjectStatusRequestBody withProject(Consumer<UpdateProjectOption> projectSetter) {
         if(this.project == null ){
             this.project = new UpdateProjectOption();
+            projectSetter.accept(this.project);
         }
-        projectSetter.accept(this.project);
+        
         return this;
     }
 

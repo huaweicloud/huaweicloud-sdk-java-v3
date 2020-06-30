@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -36,8 +38,9 @@ public class ModCorpDTO  {
     public ModCorpDTO withBasicInfo(Consumer<ModCorpBasicDTO> basicInfoSetter) {
         if(this.basicInfo == null ){
             this.basicInfo = new ModCorpBasicDTO();
+            basicInfoSetter.accept(this.basicInfo);
         }
-        basicInfoSetter.accept(this.basicInfo);
+        
         return this;
     }
 
@@ -62,8 +65,9 @@ public class ModCorpDTO  {
     public ModCorpDTO withAdminInfo(Consumer<ModAdminDTO> adminInfoSetter) {
         if(this.adminInfo == null ){
             this.adminInfo = new ModAdminDTO();
+            adminInfoSetter.accept(this.adminInfo);
         }
-        adminInfoSetter.accept(this.adminInfo);
+        
         return this;
     }
 

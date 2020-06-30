@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -81,8 +83,9 @@ public class AddOrUpdateTagsRequestBody  {
     public AddOrUpdateTagsRequestBody withImageTag(Consumer<ResourceTag> imageTagSetter) {
         if(this.imageTag == null ){
             this.imageTag = new ResourceTag();
+            imageTagSetter.accept(this.imageTag);
         }
-        imageTagSetter.accept(this.imageTag);
+        
         return this;
     }
 

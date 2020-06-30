@@ -1,3 +1,36 @@
+# 3.0.5-beta 2020-06-30
+## HuaweiCloud SDK Core
+ - ### Features
+    - Support file upload and download.
+ - ### Bug Fix
+    - Fix AK/SK authentication failure when Content-Type is application/json.
+ - ### Change
+    - None
+
+## HuaweiCloud SDK CTS
+ - ### Features
+    - Support Cloud Trace Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+    
+## HuaweiCloud SDK EVS
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Support full service interface.
+
+## HuaweiCloud SDK IoTDA
+ - ### Features
+    - Support IoT Device Access Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
 # 3.0.4-beta 2020-06-19
 ## HuaweiCloud SDK ECS
  - ### Features

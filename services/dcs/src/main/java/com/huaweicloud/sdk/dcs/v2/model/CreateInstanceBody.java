@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -529,8 +531,9 @@ public class CreateInstanceBody  {
     public CreateInstanceBody withBssParam(Consumer<BssParam> bssParamSetter) {
         if(this.bssParam == null ){
             this.bssParam = new BssParam();
+            bssParamSetter.accept(this.bssParam);
         }
-        bssParamSetter.accept(this.bssParam);
+        
         return this;
     }
 
@@ -555,8 +558,9 @@ public class CreateInstanceBody  {
     public CreateInstanceBody withInstanceBackupPolicy(Consumer<BackupPolicy> instanceBackupPolicySetter) {
         if(this.instanceBackupPolicy == null ){
             this.instanceBackupPolicy = new BackupPolicy();
+            instanceBackupPolicySetter.accept(this.instanceBackupPolicy);
         }
-        instanceBackupPolicySetter.accept(this.instanceBackupPolicy);
+        
         return this;
     }
 

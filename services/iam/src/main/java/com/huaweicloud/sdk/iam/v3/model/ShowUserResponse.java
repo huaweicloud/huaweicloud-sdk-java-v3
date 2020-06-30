@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowUserResponse extends SdkResponse {
     public ShowUserResponse withUser(Consumer<ShowUserResult> userSetter) {
         if(this.user == null ){
             this.user = new ShowUserResult();
+            userSetter.accept(this.user);
         }
-        userSetter.accept(this.user);
+        
         return this;
     }
 

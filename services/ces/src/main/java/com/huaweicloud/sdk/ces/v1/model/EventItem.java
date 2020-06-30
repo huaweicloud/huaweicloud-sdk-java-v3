@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -107,8 +109,9 @@ public class EventItem  {
     public EventItem withDetail(Consumer<EventItemDetail> detailSetter) {
         if(this.detail == null ){
             this.detail = new EventItemDetail();
+            detailSetter.accept(this.detail);
         }
-        detailSetter.accept(this.detail);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreateSnapshotRequestBody  {
     public CreateSnapshotRequestBody withSnapshot(Consumer<CreateSnapshotOption> snapshotSetter) {
         if(this.snapshot == null ){
             this.snapshot = new CreateSnapshotOption();
+            snapshotSetter.accept(this.snapshot);
         }
-        snapshotSetter.accept(this.snapshot);
+        
         return this;
     }
 

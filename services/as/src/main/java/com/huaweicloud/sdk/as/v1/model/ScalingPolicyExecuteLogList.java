@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -739,8 +741,9 @@ public class ScalingPolicyExecuteLogList  {
     public ScalingPolicyExecuteLogList withMetaData(Consumer<MetaData> metaDataSetter) {
         if(this.metaData == null ){
             this.metaData = new MetaData();
+            metaDataSetter.accept(this.metaData);
         }
-        metaDataSetter.accept(this.metaData);
+        
         return this;
     }
 

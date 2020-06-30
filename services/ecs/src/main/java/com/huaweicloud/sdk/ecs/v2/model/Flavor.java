@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -388,8 +390,9 @@ public class Flavor  {
     public Flavor withOsExtraSpecs(Consumer<FlavorExtraSpec> osExtraSpecsSetter) {
         if(this.osExtraSpecs == null ){
             this.osExtraSpecs = new FlavorExtraSpec();
+            osExtraSpecsSetter.accept(this.osExtraSpecs);
         }
-        osExtraSpecsSetter.accept(this.osExtraSpecs);
+        
         return this;
     }
 
@@ -414,8 +417,9 @@ public class Flavor  {
     public Flavor withAttachableQuantity(Consumer<ServerAttachableQuantity> attachableQuantitySetter) {
         if(this.attachableQuantity == null ){
             this.attachableQuantity = new ServerAttachableQuantity();
+            attachableQuantitySetter.accept(this.attachableQuantity);
         }
-        attachableQuantitySetter.accept(this.attachableQuantity);
+        
         return this;
     }
 

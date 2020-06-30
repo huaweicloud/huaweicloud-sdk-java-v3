@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowScalingPolicyResponse extends SdkResponse {
     public ShowScalingPolicyResponse withScalingPolicy(Consumer<ScalingPolicyDetail> scalingPolicySetter) {
         if(this.scalingPolicy == null ){
             this.scalingPolicy = new ScalingPolicyDetail();
+            scalingPolicySetter.accept(this.scalingPolicy);
         }
-        scalingPolicySetter.accept(this.scalingPolicy);
+        
         return this;
     }
 

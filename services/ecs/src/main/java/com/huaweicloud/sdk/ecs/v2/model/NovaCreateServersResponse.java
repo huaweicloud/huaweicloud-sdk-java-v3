@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class NovaCreateServersResponse extends SdkResponse {
     public NovaCreateServersResponse withServer(Consumer<NovaCreateServersResult> serverSetter) {
         if(this.server == null ){
             this.server = new NovaCreateServersResult();
+            serverSetter.accept(this.server);
         }
-        serverSetter.accept(this.server);
+        
         return this;
     }
 

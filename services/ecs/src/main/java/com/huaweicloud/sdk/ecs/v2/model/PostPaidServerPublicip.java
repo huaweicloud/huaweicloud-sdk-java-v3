@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -55,8 +57,9 @@ public class PostPaidServerPublicip  {
     public PostPaidServerPublicip withEip(Consumer<PostPaidServerEip> eipSetter) {
         if(this.eip == null ){
             this.eip = new PostPaidServerEip();
+            eipSetter.accept(this.eip);
         }
-        eipSetter.accept(this.eip);
+        
         return this;
     }
 

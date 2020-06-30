@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -150,7 +152,7 @@ public class CreateSnapshotOption  {
 
 
     /**
-     * 云硬盘快照名称，最大支持255个字节。
+     * 云硬盘快照名称。最大支持255个字节。  > > 说明： > 对云硬盘创建备份时，同时会创建以autobk_snapshot_为名称前缀的快照，云硬盘控制台对此类快照会有操作限制。因此建议不要创建以> > autobk_snapshot_为名称前缀的快照，避免影响快照的正常使用
      * @return name
      */
     public String getName() {

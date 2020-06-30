@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -265,8 +267,9 @@ public class ShowCorpAdminResponse extends SdkResponse {
     public ShowCorpAdminResponse withDept(Consumer<DeptBasicDTO> deptSetter) {
         if(this.dept == null ){
             this.dept = new DeptBasicDTO();
+            deptSetter.accept(this.dept);
         }
-        deptSetter.accept(this.dept);
+        
         return this;
     }
 

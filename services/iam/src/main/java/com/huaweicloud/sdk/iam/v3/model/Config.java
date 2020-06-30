@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class Config  {
     public Config withSecurityCompliance(Consumer<SecurityCompliance> securityComplianceSetter) {
         if(this.securityCompliance == null ){
             this.securityCompliance = new SecurityCompliance();
+            securityComplianceSetter.accept(this.securityCompliance);
         }
-        securityComplianceSetter.accept(this.securityCompliance);
+        
         return this;
     }
 

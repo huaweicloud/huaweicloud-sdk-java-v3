@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -331,8 +333,9 @@ public class PostPaidServerRootVolume  {
     public PostPaidServerRootVolume withExtendparam(Consumer<PostPaidServerRootVolumeExtendParam> extendparamSetter) {
         if(this.extendparam == null ){
             this.extendparam = new PostPaidServerRootVolumeExtendParam();
+            extendparamSetter.accept(this.extendparam);
         }
-        extendparamSetter.accept(this.extendparam);
+        
         return this;
     }
 

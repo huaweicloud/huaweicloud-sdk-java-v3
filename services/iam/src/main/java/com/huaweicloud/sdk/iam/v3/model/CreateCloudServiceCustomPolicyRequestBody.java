@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreateCloudServiceCustomPolicyRequestBody  {
     public CreateCloudServiceCustomPolicyRequestBody withRole(Consumer<ServicePolicyRoleOption> roleSetter) {
         if(this.role == null ){
             this.role = new ServicePolicyRoleOption();
+            roleSetter.accept(this.role);
         }
-        roleSetter.accept(this.role);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -55,8 +57,9 @@ public class ResizeInstanceVolumeRequest  {
     public ResizeInstanceVolumeRequest withBody(Consumer<ResizeInstanceVolumeRequestBody> bodySetter) {
         if(this.body == null ){
             this.body = new ResizeInstanceVolumeRequestBody();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

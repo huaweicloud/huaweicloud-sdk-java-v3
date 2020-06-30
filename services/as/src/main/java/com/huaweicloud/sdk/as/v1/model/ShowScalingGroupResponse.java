@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowScalingGroupResponse extends SdkResponse {
     public ShowScalingGroupResponse withScalingGroup(Consumer<ScalingGroups> scalingGroupSetter) {
         if(this.scalingGroup == null ){
             this.scalingGroup = new ScalingGroups();
+            scalingGroupSetter.accept(this.scalingGroup);
         }
-        scalingGroupSetter.accept(this.scalingGroup);
+        
         return this;
     }
 

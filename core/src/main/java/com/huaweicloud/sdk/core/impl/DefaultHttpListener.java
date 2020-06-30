@@ -26,18 +26,18 @@ public class DefaultHttpListener implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         if (Objects.nonNull(httpListeners)) {
-            printRequestRawLog(request);
+            preRequest(request);
         }
         Response response = chain.proceed(request);
 
         if (Objects.nonNull(httpListeners)) {
-            return printResponseRawLog(response);
+            return postResponse(response);
         }
 
         return response;
     }
 
-    public void printRequestRawLog(Request request) throws IOException {
+    public void preRequest(Request request) throws IOException {
 
         String reqBody = null;
         if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())
@@ -46,8 +46,9 @@ public class DefaultHttpListener implements Interceptor {
             Buffer buffer = new Buffer();
             request.body().writeTo(buffer);
             reqBody = buffer.readUtf8();
-        } else if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())) {
-            reqBody = request.body().contentLength() > 0 ? "******" : null;
+        } else if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())
+                && request.body().contentType().toString().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+            reqBody = request.body().contentLength() > 0 || request.body().contentLength() == -1 ? "******" : null;
         } else {
             reqBody = null;
         }
@@ -79,18 +80,20 @@ public class DefaultHttpListener implements Interceptor {
 
     }
 
-    public Response printResponseRawLog(Response response) throws IOException {
+    public Response postResponse(Response response) throws IOException {
 
         Request request = response.request();
         Response.Builder responseBuilder = response.newBuilder();
         String respBody = null;
         if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
-                && response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+                && (response.body().contentType().toString().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
+                || response.body().contentType().toString().startsWith(Constants.MEDIATYPE.TEXT))) {
             respBody = response.body().string();
             responseBuilder.body(ResponseBody.create(response.body().contentType(), respBody));
         } else if (Objects.nonNull(response.body()) && Objects.nonNull(response.body().contentType())
                 && response.body().contentType().toString().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
-            respBody = response.body().contentLength() > 0 ? "******" : null;
+            respBody = response.body().contentLength() > 0 || response.body().contentLength() == -1
+                    ? "******" : null;
         } else {
             respBody = null;
         }

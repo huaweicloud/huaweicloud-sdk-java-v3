@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.4-beta</version>
+        <version>3.0.5-beta</version>
         <artifactId>huaweicloud-sdk-services</artifactId>
         <relativePath>..</relativePath>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-evs</artifactId>
-    <version>3.0.4-beta</version>
+    <version>3.0.5-beta</version>
     <name>huaweicloud sdk evs</name>
 
     <modelVersion>4.0.0</modelVersion>

@@ -1,10 +1,14 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.evs.v2.model.Tag;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- *  
+ * CreateVolumeOption
  */
 public class CreateVolumeOption  {
 
@@ -88,13 +92,106 @@ public class CreateVolumeOption  {
     @JsonProperty(value="snapshot_id")
     
     private String snapshotId;
+    /**
+     * 云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     */
+    public static class VolumeTypeEnum {
+
+        
+        /**
+         * Enum SSD for value: "SSD"
+         */
+        public static final VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
+        
+        /**
+         * Enum GPSSD for value: "GPSSD"
+         */
+        public static final VolumeTypeEnum GPSSD = new VolumeTypeEnum("GPSSD");
+        
+        /**
+         * Enum SAS for value: "SAS"
+         */
+        public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
+        
+        /**
+         * Enum SATA for value: "SATA"
+         */
+        public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
+        
+
+        public static final Map<String, VolumeTypeEnum> staticFields = new HashMap<String, VolumeTypeEnum>() {
+            { 
+                put("SSD", SSD);
+                put("GPSSD", GPSSD);
+                put("SAS", SAS);
+                put("SATA", SATA);
+            }
+        };
+
+        private String value;
+
+        VolumeTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VolumeTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            VolumeTypeEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new VolumeTypeEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static VolumeTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            VolumeTypeEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof VolumeTypeEnum) {
+                return this.value.equals(((VolumeTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
     
-    private String volumeType;
+    private VolumeTypeEnum volumeType;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private List<Tag> tags = null;
+    
     public CreateVolumeOption withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -349,7 +446,7 @@ public class CreateVolumeOption  {
         this.snapshotId = snapshotId;
     }
 
-    public CreateVolumeOption withVolumeType(String volumeType) {
+    public CreateVolumeOption withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
         return this;
     }
@@ -358,15 +455,49 @@ public class CreateVolumeOption  {
 
 
     /**
-     * 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败
+     * 云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      * @return volumeType
      */
-    public String getVolumeType() {
+    public VolumeTypeEnum getVolumeType() {
         return volumeType;
     }
 
-    public void setVolumeType(String volumeType) {
+    public void setVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
+    }
+
+    public CreateVolumeOption withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public CreateVolumeOption addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateVolumeOption withTags(Consumer<List<Tag>> tagsSetter) {
+        if(this.tags == null ){
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 云硬盘标签信息。
+     * @return tags
+     */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -389,11 +520,12 @@ public class CreateVolumeOption  {
             Objects.equals(this.shareable, createVolumeOption.shareable) &&
             Objects.equals(this.size, createVolumeOption.size) &&
             Objects.equals(this.snapshotId, createVolumeOption.snapshotId) &&
-            Objects.equals(this.volumeType, createVolumeOption.volumeType);
+            Objects.equals(this.volumeType, createVolumeOption.volumeType) &&
+            Objects.equals(this.tags, createVolumeOption.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZone, backupId, count, description, enterpriseProjectId, imageRef, metadata, multiattach, name, shareable, size, snapshotId, volumeType);
+        return Objects.hash(availabilityZone, backupId, count, description, enterpriseProjectId, imageRef, metadata, multiattach, name, shareable, size, snapshotId, volumeType, tags);
     }
     @Override
     public String toString() {
@@ -412,6 +544,7 @@ public class CreateVolumeOption  {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

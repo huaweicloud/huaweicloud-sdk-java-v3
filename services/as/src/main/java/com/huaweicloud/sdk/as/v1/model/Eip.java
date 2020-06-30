@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -144,8 +146,9 @@ public class Eip  {
     public Eip withBandwidth(Consumer<Bandwidth> bandwidthSetter) {
         if(this.bandwidth == null ){
             this.bandwidth = new Bandwidth();
+            bandwidthSetter.accept(this.bandwidth);
         }
-        bandwidthSetter.accept(this.bandwidth);
+        
         return this;
     }
 

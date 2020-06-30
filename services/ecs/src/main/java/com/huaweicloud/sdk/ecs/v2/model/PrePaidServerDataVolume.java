@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -356,8 +358,9 @@ public class PrePaidServerDataVolume  {
     public PrePaidServerDataVolume withExtendparam(Consumer<PrePaidServerDataVolumeExtendParam> extendparamSetter) {
         if(this.extendparam == null ){
             this.extendparam = new PrePaidServerDataVolumeExtendParam();
+            extendparamSetter.accept(this.extendparam);
         }
-        extendparamSetter.accept(this.extendparam);
+        
         return this;
     }
 
@@ -422,8 +425,9 @@ public class PrePaidServerDataVolume  {
     public PrePaidServerDataVolume withMetadata(Consumer<PrePaidServerDataVolumeMetadata> metadataSetter) {
         if(this.metadata == null ){
             this.metadata = new PrePaidServerDataVolumeMetadata();
+            metadataSetter.accept(this.metadata);
         }
-        metadataSetter.accept(this.metadata);
+        
         return this;
     }
 

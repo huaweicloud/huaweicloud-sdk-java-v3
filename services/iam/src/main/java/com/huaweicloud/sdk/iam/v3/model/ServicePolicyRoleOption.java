@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -133,8 +135,9 @@ public class ServicePolicyRoleOption  {
     public ServicePolicyRoleOption withPolicy(Consumer<ServicePolicy> policySetter) {
         if(this.policy == null ){
             this.policy = new ServicePolicy();
+            policySetter.accept(this.policy);
         }
-        policySetter.accept(this.policy);
+        
         return this;
     }
 

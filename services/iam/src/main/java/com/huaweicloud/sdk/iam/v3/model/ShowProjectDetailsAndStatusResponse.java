@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class ShowProjectDetailsAndStatusResponse extends SdkResponse {
     public ShowProjectDetailsAndStatusResponse withProject(Consumer<ProjectDetailsAndStatusResult> projectSetter) {
         if(this.project == null ){
             this.project = new ProjectDetailsAndStatusResult();
+            projectSetter.accept(this.project);
         }
-        projectSetter.accept(this.project);
+        
         return this;
     }
 

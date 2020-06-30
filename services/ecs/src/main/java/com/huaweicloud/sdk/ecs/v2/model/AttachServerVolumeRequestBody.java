@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class AttachServerVolumeRequestBody  {
     public AttachServerVolumeRequestBody withVolumeAttachment(Consumer<AttachServerVolumeOption> volumeAttachmentSetter) {
         if(this.volumeAttachment == null ){
             this.volumeAttachment = new AttachServerVolumeOption();
+            volumeAttachmentSetter.accept(this.volumeAttachment);
         }
-        volumeAttachmentSetter.accept(this.volumeAttachment);
+        
         return this;
     }
 

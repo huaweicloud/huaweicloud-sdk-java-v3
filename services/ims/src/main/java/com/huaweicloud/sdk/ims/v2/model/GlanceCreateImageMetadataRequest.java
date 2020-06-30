@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class GlanceCreateImageMetadataRequest  {
     public GlanceCreateImageMetadataRequest withBody(Consumer<GlanceCreateImageMetadataRequestBody> bodySetter) {
         if(this.body == null ){
             this.body = new GlanceCreateImageMetadataRequestBody();
+            bodySetter.accept(this.body);
         }
-        bodySetter.accept(this.body);
+        
         return this;
     }
 

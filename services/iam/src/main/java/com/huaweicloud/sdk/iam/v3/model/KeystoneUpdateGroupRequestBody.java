@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class KeystoneUpdateGroupRequestBody  {
     public KeystoneUpdateGroupRequestBody withGroup(Consumer<KeystoneUpdateGroupOption> groupSetter) {
         if(this.group == null ){
             this.group = new KeystoneUpdateGroupOption();
+            groupSetter.accept(this.group);
         }
-        groupSetter.accept(this.group);
+        
         return this;
     }
 

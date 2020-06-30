@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class AgencyAuth  {
     public AgencyAuth withIdentity(Consumer<AgencyAuthIdentity> identitySetter) {
         if(this.identity == null ){
             this.identity = new AgencyAuthIdentity();
+            identitySetter.accept(this.identity);
         }
-        identitySetter.accept(this.identity);
+        
         return this;
     }
 

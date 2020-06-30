@@ -1,11 +1,13 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
 
+
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * GlanceListImageMemberSchemasRequest
+ * Request Object
  */
 public class GlanceListImageMemberSchemasRequest  {
 

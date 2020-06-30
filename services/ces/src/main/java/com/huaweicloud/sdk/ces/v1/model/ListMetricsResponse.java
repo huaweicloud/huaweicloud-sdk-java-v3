@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -74,8 +76,9 @@ public class ListMetricsResponse extends SdkResponse {
     public ListMetricsResponse withMetaData(Consumer<MetaData> metaDataSetter) {
         if(this.metaData == null ){
             this.metaData = new MetaData();
+            metaDataSetter.accept(this.metaData);
         }
-        metaDataSetter.accept(this.metaData);
+        
         return this;
     }
 

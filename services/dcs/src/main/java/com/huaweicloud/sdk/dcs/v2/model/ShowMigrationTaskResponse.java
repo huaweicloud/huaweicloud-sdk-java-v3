@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -527,8 +529,9 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public ShowMigrationTaskResponse withBackupFiles(Consumer<BackupFilesBody> backupFilesSetter) {
         if(this.backupFiles == null ){
             this.backupFiles = new BackupFilesBody();
+            backupFilesSetter.accept(this.backupFiles);
         }
-        backupFilesSetter.accept(this.backupFiles);
+        
         return this;
     }
 
@@ -573,8 +576,9 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public ShowMigrationTaskResponse withSourceInstance(Consumer<SourceInstanceBody> sourceInstanceSetter) {
         if(this.sourceInstance == null ){
             this.sourceInstance = new SourceInstanceBody();
+            sourceInstanceSetter.accept(this.sourceInstance);
         }
-        sourceInstanceSetter.accept(this.sourceInstance);
+        
         return this;
     }
 
@@ -599,8 +603,9 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     public ShowMigrationTaskResponse withTargetInstance(Consumer<TargetInstanceBody> targetInstanceSetter) {
         if(this.targetInstance == null ){
             this.targetInstance = new TargetInstanceBody();
+            targetInstanceSetter.accept(this.targetInstance);
         }
-        targetInstanceSetter.accept(this.targetInstance);
+        
         return this;
     }
 

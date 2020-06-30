@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.image.v1.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class RunImageTaggingResponse extends SdkResponse {
     public RunImageTaggingResponse withResult(Consumer<ImageTaggingBody> resultSetter) {
         if(this.result == null ){
             this.result = new ImageTaggingBody();
+            resultSetter.accept(this.result);
         }
-        resultSetter.accept(this.result);
+        
         return this;
     }
 

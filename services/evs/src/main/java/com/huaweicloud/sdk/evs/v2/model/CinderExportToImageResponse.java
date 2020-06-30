@@ -1,13 +1,15 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.ExportToImageDetail;
+import com.huaweicloud.sdk.evs.v2.model.Image;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,18 +23,19 @@ public class CinderExportToImageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os-volume_upload_image")
     
-    private ExportToImageDetail osVolumeUploadImage = null;
+    private Image osVolumeUploadImage = null;
 
-    public CinderExportToImageResponse withOsVolumeUploadImage(ExportToImageDetail osVolumeUploadImage) {
+    public CinderExportToImageResponse withOsVolumeUploadImage(Image osVolumeUploadImage) {
         this.osVolumeUploadImage = osVolumeUploadImage;
         return this;
     }
 
-    public CinderExportToImageResponse withOsVolumeUploadImage(Consumer<ExportToImageDetail> osVolumeUploadImageSetter) {
+    public CinderExportToImageResponse withOsVolumeUploadImage(Consumer<Image> osVolumeUploadImageSetter) {
         if(this.osVolumeUploadImage == null ){
-            this.osVolumeUploadImage = new ExportToImageDetail();
+            this.osVolumeUploadImage = new Image();
+            osVolumeUploadImageSetter.accept(this.osVolumeUploadImage);
         }
-        osVolumeUploadImageSetter.accept(this.osVolumeUploadImage);
+        
         return this;
     }
 
@@ -41,11 +44,11 @@ public class CinderExportToImageResponse extends SdkResponse {
      * Get osVolumeUploadImage
      * @return osVolumeUploadImage
      */
-    public ExportToImageDetail getOsVolumeUploadImage() {
+    public Image getOsVolumeUploadImage() {
         return osVolumeUploadImage;
     }
 
-    public void setOsVolumeUploadImage(ExportToImageDetail osVolumeUploadImage) {
+    public void setOsVolumeUploadImage(Image osVolumeUploadImage) {
         this.osVolumeUploadImage = osVolumeUploadImage;
     }
     @Override

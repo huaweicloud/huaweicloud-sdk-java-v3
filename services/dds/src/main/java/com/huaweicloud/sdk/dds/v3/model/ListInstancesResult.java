@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -292,8 +294,9 @@ public class ListInstancesResult  {
     public ListInstancesResult withDatastore(Consumer<ListInstancesDatastoreResult> datastoreSetter) {
         if(this.datastore == null ){
             this.datastore = new ListInstancesDatastoreResult();
+            datastoreSetter.accept(this.datastore);
         }
-        datastoreSetter.accept(this.datastore);
+        
         return this;
     }
 
@@ -478,8 +481,9 @@ public class ListInstancesResult  {
     public ListInstancesResult withBackupStrategy(Consumer<ListInstancesBackupStrategyResult> backupStrategySetter) {
         if(this.backupStrategy == null ){
             this.backupStrategy = new ListInstancesBackupStrategyResult();
+            backupStrategySetter.accept(this.backupStrategy);
         }
-        backupStrategySetter.accept(this.backupStrategy);
+        
         return this;
     }
 
@@ -575,8 +579,9 @@ public class ListInstancesResult  {
     public ListInstancesResult withStorage(Consumer<ListInstancesStorageResult> storageSetter) {
         if(this.storage == null ){
             this.storage = new ListInstancesStorageResult();
+            storageSetter.accept(this.storage);
         }
-        storageSetter.accept(this.storage);
+        
         return this;
     }
 

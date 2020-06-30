@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +31,9 @@ public class CreateSecurityGroupRuleRequestBody  {
     public CreateSecurityGroupRuleRequestBody withSecurityGroupRule(Consumer<CreateSecurityGroupRuleOption> securityGroupRuleSetter) {
         if(this.securityGroupRule == null ){
             this.securityGroupRule = new CreateSecurityGroupRuleOption();
+            securityGroupRuleSetter.accept(this.securityGroupRule);
         }
-        securityGroupRuleSetter.accept(this.securityGroupRule);
+        
         return this;
     }
 

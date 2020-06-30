@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -222,8 +224,9 @@ public class MetricAlarms  {
     public MetricAlarms withMetric(Consumer<MetricInfo> metricSetter) {
         if(this.metric == null ){
             this.metric = new MetricInfo();
+            metricSetter.accept(this.metric);
         }
-        metricSetter.accept(this.metric);
+        
         return this;
     }
 
@@ -248,8 +251,9 @@ public class MetricAlarms  {
     public MetricAlarms withCondition(Consumer<Condition> conditionSetter) {
         if(this.condition == null ){
             this.condition = new Condition();
+            conditionSetter.accept(this.condition);
         }
-        conditionSetter.accept(this.condition);
+        
         return this;
     }
 

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,8 +33,9 @@ public class KeystoneShowRegionResponse extends SdkResponse {
     public KeystoneShowRegionResponse withRegion(Consumer<Region> regionSetter) {
         if(this.region == null ){
             this.region = new Region();
+            regionSetter.accept(this.region);
         }
-        regionSetter.accept(this.region);
+        
         return this;
     }
 

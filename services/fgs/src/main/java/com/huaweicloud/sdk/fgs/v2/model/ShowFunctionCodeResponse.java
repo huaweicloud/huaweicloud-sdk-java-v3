@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.fgs.v2.model;
 
 
+
+
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -538,8 +540,9 @@ public class ShowFunctionCodeResponse extends SdkResponse {
     public ShowFunctionCodeResponse withFuncCode(Consumer<FuncCode> funcCodeSetter) {
         if(this.funcCode == null ){
             this.funcCode = new FuncCode();
+            funcCodeSetter.accept(this.funcCode);
         }
-        funcCodeSetter.accept(this.funcCode);
+        
         return this;
     }
 
@@ -618,8 +621,9 @@ public class ShowFunctionCodeResponse extends SdkResponse {
     public ShowFunctionCodeResponse withStrategyConfig(Consumer<StrategyConfig> strategyConfigSetter) {
         if(this.strategyConfig == null ){
             this.strategyConfig = new StrategyConfig();
+            strategyConfigSetter.accept(this.strategyConfig);
         }
-        strategyConfigSetter.accept(this.strategyConfig);
+        
         return this;
     }
 

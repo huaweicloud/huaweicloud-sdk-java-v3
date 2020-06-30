@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.as.v1.model;
 
 
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -482,8 +484,9 @@ public class InstanceConfig  {
     public InstanceConfig withPublicIp(Consumer<PublicIp> publicIpSetter) {
         if(this.publicIp == null ){
             this.publicIp = new PublicIp();
+            publicIpSetter.accept(this.publicIp);
         }
-        publicIpSetter.accept(this.publicIp);
+        
         return this;
     }
 
@@ -528,8 +531,9 @@ public class InstanceConfig  {
     public InstanceConfig withMetadata(Consumer<MetaData> metadataSetter) {
         if(this.metadata == null ){
             this.metadata = new MetaData();
+            metadataSetter.accept(this.metadata);
         }
-        metadataSetter.accept(this.metadata);
+        
         return this;
     }
 
