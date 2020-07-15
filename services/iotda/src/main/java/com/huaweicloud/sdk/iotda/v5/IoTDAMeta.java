@@ -12,6 +12,140 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class IoTDAMeta {
 
+    public static final HttpRequestDef<AddApplicationRequest, AddApplicationResponse> addApplication = genForaddApplication();
+
+    private static HttpRequestDef<AddApplicationRequest, AddApplicationResponse> genForaddApplication() {
+        // basic
+        HttpRequestDef.Builder<AddApplicationRequest, AddApplicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddApplicationRequest.class, AddApplicationResponse.class)
+                .withUri("/v5/iot/{project_id}/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddApplicationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AddApplication.class,
+            f -> f.withMarshaller(AddApplicationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplication = genFordeleteApplication();
+
+    private static HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> genFordeleteApplication() {
+        // basic
+        HttpRequestDef.Builder<DeleteApplicationRequest, DeleteApplicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationRequest.class, DeleteApplicationResponse.class)
+                .withUri("/v5/iot/{project_id}/apps/{app_id}");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteApplicationRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteApplicationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteApplicationResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> showApplication = genForshowApplication();
+
+    private static HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> genForshowApplication() {
+        // basic
+        HttpRequestDef.Builder<ShowApplicationRequest, ShowApplicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowApplicationRequest.class, ShowApplicationResponse.class)
+                .withUri("/v5/iot/{project_id}/apps/{app_id}");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowApplicationRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowApplicationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> showApplications = genForshowApplications();
+
+    private static HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> genForshowApplications() {
+        // basic
+        HttpRequestDef.Builder<ShowApplicationsRequest, ShowApplicationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowApplicationsRequest.class, ShowApplicationsResponse.class)
+                .withUri("/v5/iot/{project_id}/apps");
+
+        // requests
+        builder.withRequestField("default_app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ShowApplicationsRequest::getDefaultApp, (req, v) -> {
+                req.setDefaultApp(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowApplicationsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateBatchTaskRequest, CreateBatchTaskResponse> createBatchTask = genForcreateBatchTask();
 
     private static HttpRequestDef<CreateBatchTaskRequest, CreateBatchTaskResponse> genForcreateBatchTask() {

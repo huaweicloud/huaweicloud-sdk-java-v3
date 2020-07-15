@@ -24,7 +24,7 @@ public class IdentityToken  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration-seconds")
+    @JsonProperty(value="duration_seconds")
     
     private Integer durationSeconds = 900;
 

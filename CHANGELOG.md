@@ -1,3 +1,69 @@
+# 3.0.6-beta 2020-07-15
+## HuaweiCloud SDK ECS
+ - ### Features
+    - Support interface of creating ECSs with Spot price billing Mode.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK EIP
+ - ### Features
+    - Support Elastic IP Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK EPS
+ - ### Features
+    - Support Enterprise Project Management Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK EVS
+ - ### Features
+    - None
+ - ### Bug Fix
+    - [Issue #3](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/issues/3): Fix call error of interface ShowVolume.
+ - ### Change
+    - None
+
+## HuaweiCloud SDK IAM
+  - ### Features
+    - None
+  - ### Bug Fix
+    - Fix parsing failure of response body of interface keystoneListVersions.
+  - ### Change
+    - None
+
+## HuaweiCloud SDK IoTDA
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Support related interfaces of application management.
+
+## HuaweiCloud SDK Meeting
+ - ### Features
+    - Support cloud meeting management and control services.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK TMS
+ - ### Features
+    - Support Tag Management Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+    
+    
 # 3.0.5-beta 2020-06-30
 ## HuaweiCloud SDK Core
  - ### Features

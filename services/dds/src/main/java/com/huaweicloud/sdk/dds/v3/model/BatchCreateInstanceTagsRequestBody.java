@@ -31,16 +31,10 @@ public class BatchCreateInstanceTagsRequestBody  {
          */
         public static final ActionEnum CREATE = new ActionEnum("create");
         
-        /**
-         * Enum DELETE for value: "delete"
-         */
-        public static final ActionEnum DELETE = new ActionEnum("delete");
-        
 
         public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
             { 
                 put("create", CREATE);
-                put("delete", DELETE);
             }
         };
 
@@ -100,7 +94,7 @@ public class BatchCreateInstanceTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action;
+    private ActionEnum action = ActionEnum.CREATE;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -39,6 +39,10 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addUser);
     }
 
+    public AllowGuestUnmuteResponse allowGuestUnmute(AllowGuestUnmuteRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.allowGuestUnmute);
+    }
+
     public AssociateVmrResponse associateVmr(AssociateVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.associateVmr);
     }
@@ -63,6 +67,14 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchUpdateUserStatus);
     }
 
+    public BroadcastParticipantResponse broadcastParticipant(BroadcastParticipantRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.broadcastParticipant);
+    }
+
+    public CancelMeetingResponse cancelMeeting(CancelMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.cancelMeeting);
+    }
+
     public CheckSlideVerifyCodeResponse checkSlideVerifyCode(CheckSlideVerifyCodeRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.checkSlideVerifyCode);
     }
@@ -79,6 +91,22 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.checkVerifyCode);
     }
 
+    public CreateAnonymousAuthRandomResponse createAnonymousAuthRandom(CreateAnonymousAuthRandomRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createAnonymousAuthRandom);
+    }
+
+    public CreateConfTokenResponse createConfToken(CreateConfTokenRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createConfToken);
+    }
+
+    public CreateMeetingResponse createMeeting(CreateMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createMeeting);
+    }
+
+    public DeleteAttendeesResponse deleteAttendees(DeleteAttendeesRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.deleteAttendees);
+    }
+
     public DeleteCorpResponse deleteCorp(DeleteCorpRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteCorp);
     }
@@ -91,12 +119,64 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteDepartment);
     }
 
+    public DeleteRecordingsResponse deleteRecordings(DeleteRecordingsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.deleteRecordings);
+    }
+
     public DeleteResourceResponse deleteResource(DeleteResourceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteResource);
     }
 
     public DisassociateVmrResponse disassociateVmr(DisassociateVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.disassociateVmr);
+    }
+
+    public EditMeetingResponse editMeeting(EditMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.editMeeting);
+    }
+
+    public HandResponse hand(HandRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.hand);
+    }
+
+    public HangUpResponse hangUp(HangUpRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.hangUp);
+    }
+
+    public InviteParticipantResponse inviteParticipant(InviteParticipantRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.inviteParticipant);
+    }
+
+    public LiveResponse live(LiveRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.live);
+    }
+
+    public LockMeetingResponse lockMeeting(LockMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.lockMeeting);
+    }
+
+    public LockViewResponse lockView(LockViewRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.lockView);
+    }
+
+    public MuteMeetingResponse muteMeeting(MuteMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.muteMeeting);
+    }
+
+    public MuteParticipantResponse muteParticipant(MuteParticipantRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.muteParticipant);
+    }
+
+    public ProlongMeetingResponse prolongMeeting(ProlongMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.prolongMeeting);
+    }
+
+    public RecordResponse record(RecordRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.record);
+    }
+
+    public RenameParticipantResponse renameParticipant(RenameParticipantRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.renameParticipant);
     }
 
     public ResetActivecodeResponse resetActivecode(ResetActivecodeRequest request) {
@@ -109,6 +189,14 @@ public class MeetingClient {
 
     public ResetPwdByAdminResponse resetPwdByAdmin(ResetPwdByAdminRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.resetPwdByAdmin);
+    }
+
+    public RollcallParticipantResponse rollcallParticipant(RollcallParticipantRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.rollcallParticipant);
+    }
+
+    public SearchAttendanceRecordsOfHisMeetingResponse searchAttendanceRecordsOfHisMeeting(SearchAttendanceRecordsOfHisMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchAttendanceRecordsOfHisMeeting);
     }
 
     public SearchCorpResponse searchCorp(SearchCorpRequest request) {
@@ -127,6 +215,10 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchCorpVmr);
     }
 
+    public SearchCtlRecordsOfHisMeetingResponse searchCtlRecordsOfHisMeeting(SearchCtlRecordsOfHisMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchCtlRecordsOfHisMeeting);
+    }
+
     public SearchDepartmentByNameResponse searchDepartmentByName(SearchDepartmentByNameRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchDepartmentByName);
     }
@@ -135,8 +227,24 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchDevices);
     }
 
+    public SearchHisMeetingsResponse searchHisMeetings(SearchHisMeetingsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchHisMeetings);
+    }
+
+    public SearchMeetingsResponse searchMeetings(SearchMeetingsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchMeetings);
+    }
+
     public SearchMemberVmrResponse searchMemberVmr(SearchMemberVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchMemberVmr);
+    }
+
+    public SearchOnlineMeetingsResponse searchOnlineMeetings(SearchOnlineMeetingsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchOnlineMeetings);
+    }
+
+    public SearchRecordingsResponse searchRecordings(SearchRecordingsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchRecordings);
     }
 
     public SearchResourceResponse searchResource(SearchResourceRequest request) {
@@ -161,6 +269,22 @@ public class MeetingClient {
 
     public SendVeriCodeForUpdateUserInfoResponse sendVeriCodeForUpdateUserInfo(SendVeriCodeForUpdateUserInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.sendVeriCodeForUpdateUserInfo);
+    }
+
+    public SetHostViewResponse setHostView(SetHostViewRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setHostView);
+    }
+
+    public SetMultiPictureResponse setMultiPicture(SetMultiPictureRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setMultiPicture);
+    }
+
+    public SetParticipantViewResponse setParticipantView(SetParticipantViewRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setParticipantView);
+    }
+
+    public SetRoleResponse setRole(SetRoleRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.setRole);
     }
 
     public ShowCorpResponse showCorp(ShowCorpRequest request) {
@@ -195,12 +319,44 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showDeviceTypes);
     }
 
+    public ShowHisMeetingDetailResponse showHisMeetingDetail(ShowHisMeetingDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showHisMeetingDetail);
+    }
+
+    public ShowMeetingDetailResponse showMeetingDetail(ShowMeetingDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showMeetingDetail);
+    }
+
     public ShowMyInfoResponse showMyInfo(ShowMyInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showMyInfo);
     }
 
+    public ShowOnlineMeetingDetailResponse showOnlineMeetingDetail(ShowOnlineMeetingDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showOnlineMeetingDetail);
+    }
+
+    public ShowRealTimeInfoOfMeetingResponse showRealTimeInfoOfMeeting(ShowRealTimeInfoOfMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showRealTimeInfoOfMeeting);
+    }
+
+    public ShowRecordingDetailResponse showRecordingDetail(ShowRecordingDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showRecordingDetail);
+    }
+
+    public ShowRegionInfoOfMeetingResponse showRegionInfoOfMeeting(ShowRegionInfoOfMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showRegionInfoOfMeeting);
+    }
+
     public ShowUserDetailResponse showUserDetail(ShowUserDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showUserDetail);
+    }
+
+    public StopMeetingResponse stopMeeting(StopMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.stopMeeting);
+    }
+
+    public SwitchModeResponse switchMode(SwitchModeRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.switchMode);
     }
 
     public UpdateContactResponse updateContact(UpdateContactRequest request) {

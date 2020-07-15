@@ -187,7 +187,7 @@ public class Attachment  {
 
 
     /**
-     * 云硬盘ID
+     * 云硬盘ID。
      * @return volumeId
      */
     public String getVolumeId() {

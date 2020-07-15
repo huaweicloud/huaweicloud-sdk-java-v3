@@ -44,7 +44,7 @@ public class ObsInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bucket_lifecycle")
     
-    private String bucketLifecycle;
+    private Long bucketLifecycle;
 
     public ObsInfo withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -126,7 +126,7 @@ public class ObsInfo  {
         this.isAuthorizedBucket = isAuthorizedBucket;
     }
 
-    public ObsInfo withBucketLifecycle(String bucketLifecycle) {
+    public ObsInfo withBucketLifecycle(Long bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
         return this;
     }
@@ -136,13 +136,15 @@ public class ObsInfo  {
 
     /**
      * 标识配置桶内对象存储周期。 当\"tracker_type\"参数值为\"data\"时该参数值有效。
+     * minimum: 0
+     * maximum: 100000
      * @return bucketLifecycle
      */
-    public String getBucketLifecycle() {
+    public Long getBucketLifecycle() {
         return bucketLifecycle;
     }
 
-    public void setBucketLifecycle(String bucketLifecycle) {
+    public void setBucketLifecycle(Long bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
     }
     @Override

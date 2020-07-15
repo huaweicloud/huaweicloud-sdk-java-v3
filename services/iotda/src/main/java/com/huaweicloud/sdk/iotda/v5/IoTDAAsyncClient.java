@@ -19,6 +19,22 @@ public class IoTDAAsyncClient {
     }
 
 
+    public CompletableFuture<AddApplicationResponse> addApplicationAsync(AddApplicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.addApplication);
+    }
+
+    public CompletableFuture<DeleteApplicationResponse> deleteApplicationAsync(DeleteApplicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteApplication);
+    }
+
+    public CompletableFuture<ShowApplicationResponse> showApplicationAsync(ShowApplicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showApplication);
+    }
+
+    public CompletableFuture<ShowApplicationsResponse> showApplicationsAsync(ShowApplicationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showApplications);
+    }
+
     public CompletableFuture<CreateBatchTaskResponse> createBatchTaskAsync(CreateBatchTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTDAMeta.createBatchTask);
     }

@@ -15,6 +15,22 @@ public class IoTDAClient {
         return new ClientBuilder<>(IoTDAClient::new);
     }
 
+    public AddApplicationResponse addApplication(AddApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.addApplication);
+    }
+
+    public DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteApplication);
+    }
+
+    public ShowApplicationResponse showApplication(ShowApplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showApplication);
+    }
+
+    public ShowApplicationsResponse showApplications(ShowApplicationsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showApplications);
+    }
+
     public CreateBatchTaskResponse createBatchTask(CreateBatchTaskRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createBatchTask);
     }

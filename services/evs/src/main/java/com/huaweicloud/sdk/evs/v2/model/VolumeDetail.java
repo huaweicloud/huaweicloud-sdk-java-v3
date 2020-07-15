@@ -7,16 +7,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.evs.v2.model.Attachment;
 import com.huaweicloud.sdk.evs.v2.model.Link;
-import com.huaweicloud.sdk.evs.v2.model.VolumeAttachment;
-import com.huaweicloud.sdk.evs.v2.model.VolumeMetadata;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * VolumeDetail
+ * 云硬盘详情。
  */
 public class VolumeDetail  {
 
@@ -49,13 +48,19 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="attachments")
     
-    private List<VolumeAttachment> attachments = null;
+    private List<Attachment> attachments = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone")
     
     private String availabilityZone;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="os-vol-host-attr:host")
+    
+    private String osVolHostAttrHost;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -77,75 +82,9 @@ public class VolumeDetail  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bootable")
-    
-    private String bootable;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
-    private Boolean encrypted;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
     private String createdAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
-    private String volumeType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication_status")
-    
-    private String replicationStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consistencygroup_id")
-    
-    private String consistencygroupId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
-    private VolumeMetadata metadata = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
-    private Integer size;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
-    private String userId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
-    private String updatedAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shareable")
-    
-    private Boolean shareable;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multiattach")
-    
-    private Boolean multiattach;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -157,13 +96,55 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_image_metadata")
     
-    private String volumeImageMetadata;
+    private Object volumeImageMetadata = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-vol-host-attr:host")
+    @JsonProperty(value="volume_type")
     
-    private String osVolHostAttrHost;
+    private String volumeType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="size")
+    
+    private String size;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="consistencygroup_id")
+    
+    private String consistencygroupId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bootable")
+    
+    private String bootable;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="metadata")
+    
+    private Object metadata = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="updated_at")
+    
+    private String updatedAt;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="encrypted")
+    
+    private String encrypted;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="replication_status")
+    
+    private String replicationStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,6 +164,60 @@ public class VolumeDetail  {
     
     private String osVolMigStatusAttrNameId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="shareable")
+    
+    private Boolean shareable;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_id")
+    
+    private String userId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="service_type")
+    
+    private String serviceType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="multiattach")
+    
+    private Boolean multiattach;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dedicated_storage_id")
+    
+    private String dedicatedStorageId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dedicated_storage_name")
+    
+    private String dedicatedStorageName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private Object tags = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="wwn")
+    
+    private String wwn;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
     public VolumeDetail withId(String id) {
         this.id = id;
         return this;
@@ -192,7 +227,7 @@ public class VolumeDetail  {
 
 
     /**
-     * 云硬盘ID。
+     * 云硬盘的ID。
      * @return id
      */
     public String getId() {
@@ -223,7 +258,7 @@ public class VolumeDetail  {
     }
 
     /**
-     * 云硬盘uri自描述信息，请参见•[links参数说明](https://support.huaweicloud.com/api-evs/evs_04_2070.html#evs_04_2070__li4929184617138)。
+     * 云硬盘URI自描述信息。请参见 [links参数说明](https://support.huaweicloud.com/api-evs/evs_04_2006.html#evs_04_2006__evs_04_2010_li1077125119136)。
      * @return links
      */
     public List<Link> getLinks() {
@@ -263,7 +298,7 @@ public class VolumeDetail  {
 
 
     /**
-     * 云硬盘状态，具体请参见[云硬盘状态](https://support.huaweicloud.com/api-evs/evs_04_0040.html)。
+     * 云硬盘状态，请参见[云硬盘状态](https://support.huaweicloud.com/api-evs/evs_04_0040.html)。
      * @return status
      */
     public String getStatus() {
@@ -274,21 +309,18 @@ public class VolumeDetail  {
         this.status = status;
     }
 
-    public VolumeDetail withAttachments(List<VolumeAttachment> attachments) {
+    public VolumeDetail withAttachments(List<Attachment> attachments) {
         this.attachments = attachments;
         return this;
     }
 
     
-    public VolumeDetail addAttachmentsItem(VolumeAttachment attachmentsItem) {
-        if (this.attachments == null) {
-            this.attachments = new ArrayList<>();
-        }
+    public VolumeDetail addAttachmentsItem(Attachment attachmentsItem) {
         this.attachments.add(attachmentsItem);
         return this;
     }
 
-    public VolumeDetail withAttachments(Consumer<List<VolumeAttachment>> attachmentsSetter) {
+    public VolumeDetail withAttachments(Consumer<List<Attachment>> attachmentsSetter) {
         if(this.attachments == null ){
             this.attachments = new ArrayList<>();
         }
@@ -297,14 +329,14 @@ public class VolumeDetail  {
     }
 
     /**
-     * 是否挂载信息。
+     * 云硬盘的挂载信息，请参见•[attachments参数说明](https://support.huaweicloud.com/api-evs/evs_04_2006.html#evs_04_2006__evs_04_2010_li12430153610291)。
      * @return attachments
      */
-    public List<VolumeAttachment> getAttachments() {
+    public List<Attachment> getAttachments() {
         return attachments;
     }
 
-    public void setAttachments(List<VolumeAttachment> attachments) {
+    public void setAttachments(List<Attachment> attachments) {
         this.attachments = attachments;
     }
 
@@ -317,7 +349,7 @@ public class VolumeDetail  {
 
 
     /**
-     * 云硬盘所属AZ。
+     * 云硬盘所属的AZ信息。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -326,6 +358,26 @@ public class VolumeDetail  {
 
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+    }
+
+    public VolumeDetail withOsVolHostAttrHost(String osVolHostAttrHost) {
+        this.osVolHostAttrHost = osVolHostAttrHost;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 预留属性。
+     * @return osVolHostAttrHost
+     */
+    public String getOsVolHostAttrHost() {
+        return osVolHostAttrHost;
+    }
+
+    public void setOsVolHostAttrHost(String osVolHostAttrHost) {
+        this.osVolHostAttrHost = osVolHostAttrHost;
     }
 
     public VolumeDetail withSourceVolid(String sourceVolid) {
@@ -337,7 +389,7 @@ public class VolumeDetail  {
 
 
     /**
-     * 源云硬盘ID，如果是从源云硬盘创建，则有值。 当前云硬盘服务不支持该字段。
+     * 源云硬盘ID，如果是从源云硬盘创建，则有值。  当前云硬盘服务不支持该字段。
      * @return sourceVolid
      */
     public String getSourceVolid() {
@@ -388,46 +440,6 @@ public class VolumeDetail  {
         this.description = description;
     }
 
-    public VolumeDetail withBootable(String bootable) {
-        this.bootable = bootable;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否为启动云硬盘。 true：表示为启动云硬盘。 false：表示为非启动云硬盘。
-     * @return bootable
-     */
-    public String getBootable() {
-        return bootable;
-    }
-
-    public void setBootable(String bootable) {
-        this.bootable = bootable;
-    }
-
-    public VolumeDetail withEncrypted(Boolean encrypted) {
-        this.encrypted = encrypted;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 当前云硬盘服务不支持该字段。
-     * @return encrypted
-     */
-    public Boolean getEncrypted() {
-        return encrypted;
-    }
-
-    public void setEncrypted(Boolean encrypted) {
-        this.encrypted = encrypted;
-    }
-
     public VolumeDetail withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -437,7 +449,7 @@ public class VolumeDetail  {
 
 
     /**
-     * 云硬盘创建时间。  时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * 云硬盘创建时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -446,193 +458,6 @@ public class VolumeDetail  {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public VolumeDetail withVolumeType(String volumeType) {
-        this.volumeType = volumeType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
-     * @return volumeType
-     */
-    public String getVolumeType() {
-        return volumeType;
-    }
-
-    public void setVolumeType(String volumeType) {
-        this.volumeType = volumeType;
-    }
-
-    public VolumeDetail withReplicationStatus(String replicationStatus) {
-        this.replicationStatus = replicationStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 预留属性。
-     * @return replicationStatus
-     */
-    public String getReplicationStatus() {
-        return replicationStatus;
-    }
-
-    public void setReplicationStatus(String replicationStatus) {
-        this.replicationStatus = replicationStatus;
-    }
-
-    public VolumeDetail withConsistencygroupId(String consistencygroupId) {
-        this.consistencygroupId = consistencygroupId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 预留属性。
-     * @return consistencygroupId
-     */
-    public String getConsistencygroupId() {
-        return consistencygroupId;
-    }
-
-    public void setConsistencygroupId(String consistencygroupId) {
-        this.consistencygroupId = consistencygroupId;
-    }
-
-    public VolumeDetail withMetadata(VolumeMetadata metadata) {
-        this.metadata = metadata;
-        return this;
-    }
-
-    public VolumeDetail withMetadata(Consumer<VolumeMetadata> metadataSetter) {
-        if(this.metadata == null ){
-            this.metadata = new VolumeMetadata();
-            metadataSetter.accept(this.metadata);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
-    public VolumeMetadata getMetadata() {
-        return metadata;
-    }
-
-    public void setMetadata(VolumeMetadata metadata) {
-        this.metadata = metadata;
-    }
-
-    public VolumeDetail withSize(Integer size) {
-        this.size = size;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 云硬盘大小，单位为GB。
-     * @return size
-     */
-    public Integer getSize() {
-        return size;
-    }
-
-    public void setSize(Integer size) {
-        this.size = size;
-    }
-
-    public VolumeDetail withUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 预留属性。
-     * @return userId
-     */
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public VolumeDetail withUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 云硬盘更新时间。  时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
-     * @return updatedAt
-     */
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public VolumeDetail withShareable(Boolean shareable) {
-        this.shareable = shareable;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否为可共享云硬盘。 说明： 该字段已经废弃，请使用multiattach。
-     * @return shareable
-     */
-    public Boolean getShareable() {
-        return shareable;
-    }
-
-    public void setShareable(Boolean shareable) {
-        this.shareable = shareable;
-    }
-
-    public VolumeDetail withMultiattach(Boolean multiattach) {
-        this.multiattach = multiattach;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否为可共享云硬盘。
-     * @return multiattach
-     */
-    public Boolean getMultiattach() {
-        return multiattach;
-    }
-
-    public void setMultiattach(Boolean multiattach) {
-        this.multiattach = multiattach;
     }
 
     public VolumeDetail withOsVolTenantAttrTenantId(String osVolTenantAttrTenantId) {
@@ -655,7 +480,7 @@ public class VolumeDetail  {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
     }
 
-    public VolumeDetail withVolumeImageMetadata(String volumeImageMetadata) {
+    public VolumeDetail withVolumeImageMetadata(Object volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
         return this;
     }
@@ -664,19 +489,59 @@ public class VolumeDetail  {
 
 
     /**
-     * 云硬盘镜像的元数据。
+     * 云硬盘镜像的元数据。 > 说明： >  > 关于“volume_image_metadata”字段的详细说明，具体请参见：\"[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\"。
      * @return volumeImageMetadata
      */
-    public String getVolumeImageMetadata() {
+    public Object getVolumeImageMetadata() {
         return volumeImageMetadata;
     }
 
-    public void setVolumeImageMetadata(String volumeImageMetadata) {
+    public void setVolumeImageMetadata(Object volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
     }
 
-    public VolumeDetail withOsVolHostAttrHost(String osVolHostAttrHost) {
-        this.osVolHostAttrHost = osVolHostAttrHost;
+    public VolumeDetail withVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘类型。 目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘
+     * @return volumeType
+     */
+    public String getVolumeType() {
+        return volumeType;
+    }
+
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+
+    public VolumeDetail withSize(String size) {
+        this.size = size;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘大小，单位为GB。
+     * @return size
+     */
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public VolumeDetail withConsistencygroupId(String consistencygroupId) {
+        this.consistencygroupId = consistencygroupId;
         return this;
     }
 
@@ -685,14 +550,114 @@ public class VolumeDetail  {
 
     /**
      * 预留属性。
-     * @return osVolHostAttrHost
+     * @return consistencygroupId
      */
-    public String getOsVolHostAttrHost() {
-        return osVolHostAttrHost;
+    public String getConsistencygroupId() {
+        return consistencygroupId;
     }
 
-    public void setOsVolHostAttrHost(String osVolHostAttrHost) {
-        this.osVolHostAttrHost = osVolHostAttrHost;
+    public void setConsistencygroupId(String consistencygroupId) {
+        this.consistencygroupId = consistencygroupId;
+    }
+
+    public VolumeDetail withBootable(String bootable) {
+        this.bootable = bootable;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为启动云硬盘。 true：表示为启动云硬盘。 false：表示为非启动云硬盘。
+     * @return bootable
+     */
+    public String getBootable() {
+        return bootable;
+    }
+
+    public void setBootable(String bootable) {
+        this.bootable = bootable;
+    }
+
+    public VolumeDetail withMetadata(Object metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘的元数据。请参见•[metadata参数说明](https://support.huaweicloud.com/api-evs/evs_04_2006.html#evs_04_2006__evs_04_2010_li29114110314)。 如果元数据中不包含hw:passthrough字段，云硬盘默认为VBD类型。 如果元数据中不包含__system__encrypted字段，云硬盘默认为不加密。
+     * @return metadata
+     */
+    public Object getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Object metadata) {
+        this.metadata = metadata;
+    }
+
+    public VolumeDetail withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘更新时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public VolumeDetail withEncrypted(String encrypted) {
+        this.encrypted = encrypted;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当前云硬盘服务不支持该字段。
+     * @return encrypted
+     */
+    public String getEncrypted() {
+        return encrypted;
+    }
+
+    public void setEncrypted(String encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    public VolumeDetail withReplicationStatus(String replicationStatus) {
+        this.replicationStatus = replicationStatus;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 预留属性。
+     * @return replicationStatus
+     */
+    public String getReplicationStatus() {
+        return replicationStatus;
+    }
+
+    public void setReplicationStatus(String replicationStatus) {
+        this.replicationStatus = replicationStatus;
     }
 
     public VolumeDetail withOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
@@ -754,6 +719,186 @@ public class VolumeDetail  {
     public void setOsVolMigStatusAttrNameId(String osVolMigStatusAttrNameId) {
         this.osVolMigStatusAttrNameId = osVolMigStatusAttrNameId;
     }
+
+    public VolumeDetail withShareable(Boolean shareable) {
+        this.shareable = shareable;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为共享云硬盘。
+     * @return shareable
+     */
+    public Boolean getShareable() {
+        return shareable;
+    }
+
+    public void setShareable(Boolean shareable) {
+        this.shareable = shareable;
+    }
+
+    public VolumeDetail withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 预留属性。
+     * @return userId
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public VolumeDetail withServiceType(String serviceType) {
+        this.serviceType = serviceType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 服务类型，结果为EVS、DSS、DESS。
+     * @return serviceType
+     */
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public VolumeDetail withMultiattach(Boolean multiattach) {
+        this.multiattach = multiattach;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为共享云硬盘。
+     * @return multiattach
+     */
+    public Boolean getMultiattach() {
+        return multiattach;
+    }
+
+    public void setMultiattach(Boolean multiattach) {
+        this.multiattach = multiattach;
+    }
+
+    public VolumeDetail withDedicatedStorageId(String dedicatedStorageId) {
+        this.dedicatedStorageId = dedicatedStorageId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘所属的专属存储池ID。
+     * @return dedicatedStorageId
+     */
+    public String getDedicatedStorageId() {
+        return dedicatedStorageId;
+    }
+
+    public void setDedicatedStorageId(String dedicatedStorageId) {
+        this.dedicatedStorageId = dedicatedStorageId;
+    }
+
+    public VolumeDetail withDedicatedStorageName(String dedicatedStorageName) {
+        this.dedicatedStorageName = dedicatedStorageName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘所属的专属存储池的名称。
+     * @return dedicatedStorageName
+     */
+    public String getDedicatedStorageName() {
+        return dedicatedStorageName;
+    }
+
+    public void setDedicatedStorageName(String dedicatedStorageName) {
+        this.dedicatedStorageName = dedicatedStorageName;
+    }
+
+    public VolumeDetail withTags(Object tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘的标签。 如果云硬盘有标签，则会有该字段，否则该字段为空。
+     * @return tags
+     */
+    public Object getTags() {
+        return tags;
+    }
+
+    public void setTags(Object tags) {
+        this.tags = tags;
+    }
+
+    public VolumeDetail withWwn(String wwn) {
+        this.wwn = wwn;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘挂载时的唯一标识。
+     * @return wwn
+     */
+    public String getWwn() {
+        return wwn;
+    }
+
+    public void setWwn(String wwn) {
+        this.wwn = wwn;
+    }
+
+    public VolumeDetail withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云硬盘上绑定的企业项目ID。 > 说明： >  > 关于企业项目ID的获取及企业项目特性的详细信息，请参见：\"[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\"。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -769,31 +914,37 @@ public class VolumeDetail  {
             Objects.equals(this.status, volumeDetail.status) &&
             Objects.equals(this.attachments, volumeDetail.attachments) &&
             Objects.equals(this.availabilityZone, volumeDetail.availabilityZone) &&
+            Objects.equals(this.osVolHostAttrHost, volumeDetail.osVolHostAttrHost) &&
             Objects.equals(this.sourceVolid, volumeDetail.sourceVolid) &&
             Objects.equals(this.snapshotId, volumeDetail.snapshotId) &&
             Objects.equals(this.description, volumeDetail.description) &&
-            Objects.equals(this.bootable, volumeDetail.bootable) &&
-            Objects.equals(this.encrypted, volumeDetail.encrypted) &&
             Objects.equals(this.createdAt, volumeDetail.createdAt) &&
-            Objects.equals(this.volumeType, volumeDetail.volumeType) &&
-            Objects.equals(this.replicationStatus, volumeDetail.replicationStatus) &&
-            Objects.equals(this.consistencygroupId, volumeDetail.consistencygroupId) &&
-            Objects.equals(this.metadata, volumeDetail.metadata) &&
-            Objects.equals(this.size, volumeDetail.size) &&
-            Objects.equals(this.userId, volumeDetail.userId) &&
-            Objects.equals(this.updatedAt, volumeDetail.updatedAt) &&
-            Objects.equals(this.shareable, volumeDetail.shareable) &&
-            Objects.equals(this.multiattach, volumeDetail.multiattach) &&
             Objects.equals(this.osVolTenantAttrTenantId, volumeDetail.osVolTenantAttrTenantId) &&
             Objects.equals(this.volumeImageMetadata, volumeDetail.volumeImageMetadata) &&
-            Objects.equals(this.osVolHostAttrHost, volumeDetail.osVolHostAttrHost) &&
+            Objects.equals(this.volumeType, volumeDetail.volumeType) &&
+            Objects.equals(this.size, volumeDetail.size) &&
+            Objects.equals(this.consistencygroupId, volumeDetail.consistencygroupId) &&
+            Objects.equals(this.bootable, volumeDetail.bootable) &&
+            Objects.equals(this.metadata, volumeDetail.metadata) &&
+            Objects.equals(this.updatedAt, volumeDetail.updatedAt) &&
+            Objects.equals(this.encrypted, volumeDetail.encrypted) &&
+            Objects.equals(this.replicationStatus, volumeDetail.replicationStatus) &&
             Objects.equals(this.osVolumeReplicationExtendedStatus, volumeDetail.osVolumeReplicationExtendedStatus) &&
             Objects.equals(this.osVolMigStatusAttrMigstat, volumeDetail.osVolMigStatusAttrMigstat) &&
-            Objects.equals(this.osVolMigStatusAttrNameId, volumeDetail.osVolMigStatusAttrNameId);
+            Objects.equals(this.osVolMigStatusAttrNameId, volumeDetail.osVolMigStatusAttrNameId) &&
+            Objects.equals(this.shareable, volumeDetail.shareable) &&
+            Objects.equals(this.userId, volumeDetail.userId) &&
+            Objects.equals(this.serviceType, volumeDetail.serviceType) &&
+            Objects.equals(this.multiattach, volumeDetail.multiattach) &&
+            Objects.equals(this.dedicatedStorageId, volumeDetail.dedicatedStorageId) &&
+            Objects.equals(this.dedicatedStorageName, volumeDetail.dedicatedStorageName) &&
+            Objects.equals(this.tags, volumeDetail.tags) &&
+            Objects.equals(this.wwn, volumeDetail.wwn) &&
+            Objects.equals(this.enterpriseProjectId, volumeDetail.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, links, name, status, attachments, availabilityZone, sourceVolid, snapshotId, description, bootable, encrypted, createdAt, volumeType, replicationStatus, consistencygroupId, metadata, size, userId, updatedAt, shareable, multiattach, osVolTenantAttrTenantId, volumeImageMetadata, osVolHostAttrHost, osVolumeReplicationExtendedStatus, osVolMigStatusAttrMigstat, osVolMigStatusAttrNameId);
+        return Objects.hash(id, links, name, status, attachments, availabilityZone, osVolHostAttrHost, sourceVolid, snapshotId, description, createdAt, osVolTenantAttrTenantId, volumeImageMetadata, volumeType, size, consistencygroupId, bootable, metadata, updatedAt, encrypted, replicationStatus, osVolumeReplicationExtendedStatus, osVolMigStatusAttrMigstat, osVolMigStatusAttrNameId, shareable, userId, serviceType, multiattach, dedicatedStorageId, dedicatedStorageName, tags, wwn, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -805,27 +956,33 @@ public class VolumeDetail  {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    osVolHostAttrHost: ").append(toIndentedString(osVolHostAttrHost)).append("\n");
         sb.append("    sourceVolid: ").append(toIndentedString(sourceVolid)).append("\n");
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    bootable: ").append(toIndentedString(bootable)).append("\n");
-        sb.append("    encrypted: ").append(toIndentedString(encrypted)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
-        sb.append("    replicationStatus: ").append(toIndentedString(replicationStatus)).append("\n");
-        sb.append("    consistencygroupId: ").append(toIndentedString(consistencygroupId)).append("\n");
-        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-        sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
-        sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
         sb.append("    osVolTenantAttrTenantId: ").append(toIndentedString(osVolTenantAttrTenantId)).append("\n");
         sb.append("    volumeImageMetadata: ").append(toIndentedString(volumeImageMetadata)).append("\n");
-        sb.append("    osVolHostAttrHost: ").append(toIndentedString(osVolHostAttrHost)).append("\n");
+        sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    consistencygroupId: ").append(toIndentedString(consistencygroupId)).append("\n");
+        sb.append("    bootable: ").append(toIndentedString(bootable)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    encrypted: ").append(toIndentedString(encrypted)).append("\n");
+        sb.append("    replicationStatus: ").append(toIndentedString(replicationStatus)).append("\n");
         sb.append("    osVolumeReplicationExtendedStatus: ").append(toIndentedString(osVolumeReplicationExtendedStatus)).append("\n");
         sb.append("    osVolMigStatusAttrMigstat: ").append(toIndentedString(osVolMigStatusAttrMigstat)).append("\n");
         sb.append("    osVolMigStatusAttrNameId: ").append(toIndentedString(osVolMigStatusAttrNameId)).append("\n");
+        sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    multiattach: ").append(toIndentedString(multiattach)).append("\n");
+        sb.append("    dedicatedStorageId: ").append(toIndentedString(dedicatedStorageId)).append("\n");
+        sb.append("    dedicatedStorageName: ").append(toIndentedString(dedicatedStorageName)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    wwn: ").append(toIndentedString(wwn)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 查询快照列表响应结果中的snapshots字段。
+ * 快照列表信息。
  */
 public class SnapshotList  {
 
@@ -71,7 +71,7 @@ public class SnapshotList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private String size;
+    private Integer size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,7 +112,7 @@ public class SnapshotList  {
 
 
     /**
-     * 云硬盘快照ID
+     * 云硬盘快照ID。
      * @return id
      */
     public String getId() {
@@ -132,7 +132,7 @@ public class SnapshotList  {
 
 
     /**
-     * 云硬盘快照的状态
+     * 云硬盘快照的状态。
      * @return status
      */
     public String getStatus() {
@@ -152,7 +152,7 @@ public class SnapshotList  {
 
 
     /**
-     * 云硬盘快照名称
+     * 云硬盘快照名称。
      * @return name
      */
     public String getName() {
@@ -172,7 +172,7 @@ public class SnapshotList  {
 
 
     /**
-     * 云硬盘快照描述信息
+     * 云硬盘快照描述信息。
      * @return description
      */
     public String getDescription() {
@@ -192,7 +192,7 @@ public class SnapshotList  {
 
 
     /**
-     * 云硬盘快照创建时间
+     * 云硬盘快照创建时间。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -212,7 +212,7 @@ public class SnapshotList  {
 
 
     /**
-     * 云硬盘快照更新时间
+     * 云硬盘快照更新时间。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -246,7 +246,7 @@ public class SnapshotList  {
         return this;
     }
     /**
-     * 云硬盘快照的元数据信息
+     * 云硬盘快照的元数据信息。
      * @return metadata
      */
     public Map<String, String> getMetadata() {
@@ -277,7 +277,7 @@ public class SnapshotList  {
         this.volumeId = volumeId;
     }
 
-    public SnapshotList withSize(String size) {
+    public SnapshotList withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -286,14 +286,14 @@ public class SnapshotList  {
 
 
     /**
-     * 云硬盘快照大小
+     * 云硬盘快照大小。
      * @return size
      */
-    public String getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -306,7 +306,7 @@ public class SnapshotList  {
 
 
     /**
-     * 租户ID
+     * 项目ID。
      * @return osExtendedSnapshotAttributesProjectId
      */
     public String getOsExtendedSnapshotAttributesProjectId() {
@@ -326,7 +326,7 @@ public class SnapshotList  {
 
 
     /**
-     * 快照进度
+     * 快照进度。
      * @return osExtendedSnapshotAttributesProgress
      */
     public String getOsExtendedSnapshotAttributesProgress() {
@@ -346,7 +346,7 @@ public class SnapshotList  {
 
 
     /**
-     * 专属存储ID
+     * 专属存储ID。
      * @return dedicatedStorageId
      */
     public String getDedicatedStorageId() {
@@ -366,7 +366,7 @@ public class SnapshotList  {
 
 
     /**
-     * 专属存储的名称
+     * 专属存储名称。
      * @return dedicatedStorageName
      */
     public String getDedicatedStorageName() {
@@ -386,7 +386,7 @@ public class SnapshotList  {
 
 
     /**
-     * 服务类型
+     * 服务类型。
      * @return serviceType
      */
     public String getServiceType() {

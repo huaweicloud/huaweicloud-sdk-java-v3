@@ -9,9 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.Version;
-import java.util.ArrayList;
-import java.util.List;
+import com.huaweicloud.sdk.iam.v3.model.Versions;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,39 +23,32 @@ public class KeystoneListVersionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="versions")
     
-    private List<Version> versions = null;
-    
-    public KeystoneListVersionsResponse withVersions(List<Version> versions) {
+    private Versions versions = null;
+
+    public KeystoneListVersionsResponse withVersions(Versions versions) {
         this.versions = versions;
         return this;
     }
 
-    
-    public KeystoneListVersionsResponse addVersionsItem(Version versionsItem) {
-        if (this.versions == null) {
-            this.versions = new ArrayList<>();
+    public KeystoneListVersionsResponse withVersions(Consumer<Versions> versionsSetter) {
+        if(this.versions == null ){
+            this.versions = new Versions();
+            versionsSetter.accept(this.versions);
         }
-        this.versions.add(versionsItem);
+        
         return this;
     }
 
-    public KeystoneListVersionsResponse withVersions(Consumer<List<Version>> versionsSetter) {
-        if(this.versions == null ){
-            this.versions = new ArrayList<>();
-        }
-        versionsSetter.accept(this.versions);
-        return this;
-    }
 
     /**
-     * Keystone API的版本信息。
+     * Get versions
      * @return versions
      */
-    public List<Version> getVersions() {
+    public Versions getVersions() {
         return versions;
     }
 
-    public void setVersions(List<Version> versions) {
+    public void setVersions(Versions versions) {
         this.versions = versions;
     }
     @Override

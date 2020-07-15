@@ -43,6 +43,10 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.addUser);
     }
 
+    public CompletableFuture<AllowGuestUnmuteResponse> allowGuestUnmuteAsync(AllowGuestUnmuteRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.allowGuestUnmute);
+    }
+
     public CompletableFuture<AssociateVmrResponse> associateVmrAsync(AssociateVmrRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.associateVmr);
     }
@@ -67,6 +71,14 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.batchUpdateUserStatus);
     }
 
+    public CompletableFuture<BroadcastParticipantResponse> broadcastParticipantAsync(BroadcastParticipantRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.broadcastParticipant);
+    }
+
+    public CompletableFuture<CancelMeetingResponse> cancelMeetingAsync(CancelMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.cancelMeeting);
+    }
+
     public CompletableFuture<CheckSlideVerifyCodeResponse> checkSlideVerifyCodeAsync(CheckSlideVerifyCodeRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.checkSlideVerifyCode);
     }
@@ -83,6 +95,22 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.checkVerifyCode);
     }
 
+    public CompletableFuture<CreateAnonymousAuthRandomResponse> createAnonymousAuthRandomAsync(CreateAnonymousAuthRandomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.createAnonymousAuthRandom);
+    }
+
+    public CompletableFuture<CreateConfTokenResponse> createConfTokenAsync(CreateConfTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.createConfToken);
+    }
+
+    public CompletableFuture<CreateMeetingResponse> createMeetingAsync(CreateMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.createMeeting);
+    }
+
+    public CompletableFuture<DeleteAttendeesResponse> deleteAttendeesAsync(DeleteAttendeesRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteAttendees);
+    }
+
     public CompletableFuture<DeleteCorpResponse> deleteCorpAsync(DeleteCorpRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteCorp);
     }
@@ -95,12 +123,64 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteDepartment);
     }
 
+    public CompletableFuture<DeleteRecordingsResponse> deleteRecordingsAsync(DeleteRecordingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteRecordings);
+    }
+
     public CompletableFuture<DeleteResourceResponse> deleteResourceAsync(DeleteResourceRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteResource);
     }
 
     public CompletableFuture<DisassociateVmrResponse> disassociateVmrAsync(DisassociateVmrRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.disassociateVmr);
+    }
+
+    public CompletableFuture<EditMeetingResponse> editMeetingAsync(EditMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.editMeeting);
+    }
+
+    public CompletableFuture<HandResponse> handAsync(HandRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.hand);
+    }
+
+    public CompletableFuture<HangUpResponse> hangUpAsync(HangUpRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.hangUp);
+    }
+
+    public CompletableFuture<InviteParticipantResponse> inviteParticipantAsync(InviteParticipantRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.inviteParticipant);
+    }
+
+    public CompletableFuture<LiveResponse> liveAsync(LiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.live);
+    }
+
+    public CompletableFuture<LockMeetingResponse> lockMeetingAsync(LockMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.lockMeeting);
+    }
+
+    public CompletableFuture<LockViewResponse> lockViewAsync(LockViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.lockView);
+    }
+
+    public CompletableFuture<MuteMeetingResponse> muteMeetingAsync(MuteMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.muteMeeting);
+    }
+
+    public CompletableFuture<MuteParticipantResponse> muteParticipantAsync(MuteParticipantRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.muteParticipant);
+    }
+
+    public CompletableFuture<ProlongMeetingResponse> prolongMeetingAsync(ProlongMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.prolongMeeting);
+    }
+
+    public CompletableFuture<RecordResponse> recordAsync(RecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.record);
+    }
+
+    public CompletableFuture<RenameParticipantResponse> renameParticipantAsync(RenameParticipantRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.renameParticipant);
     }
 
     public CompletableFuture<ResetActivecodeResponse> resetActivecodeAsync(ResetActivecodeRequest request) {
@@ -113,6 +193,14 @@ public class MeetingAsyncClient {
 
     public CompletableFuture<ResetPwdByAdminResponse> resetPwdByAdminAsync(ResetPwdByAdminRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.resetPwdByAdmin);
+    }
+
+    public CompletableFuture<RollcallParticipantResponse> rollcallParticipantAsync(RollcallParticipantRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.rollcallParticipant);
+    }
+
+    public CompletableFuture<SearchAttendanceRecordsOfHisMeetingResponse> searchAttendanceRecordsOfHisMeetingAsync(SearchAttendanceRecordsOfHisMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchAttendanceRecordsOfHisMeeting);
     }
 
     public CompletableFuture<SearchCorpResponse> searchCorpAsync(SearchCorpRequest request) {
@@ -131,6 +219,10 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchCorpVmr);
     }
 
+    public CompletableFuture<SearchCtlRecordsOfHisMeetingResponse> searchCtlRecordsOfHisMeetingAsync(SearchCtlRecordsOfHisMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchCtlRecordsOfHisMeeting);
+    }
+
     public CompletableFuture<SearchDepartmentByNameResponse> searchDepartmentByNameAsync(SearchDepartmentByNameRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchDepartmentByName);
     }
@@ -139,8 +231,24 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchDevices);
     }
 
+    public CompletableFuture<SearchHisMeetingsResponse> searchHisMeetingsAsync(SearchHisMeetingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchHisMeetings);
+    }
+
+    public CompletableFuture<SearchMeetingsResponse> searchMeetingsAsync(SearchMeetingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMeetings);
+    }
+
     public CompletableFuture<SearchMemberVmrResponse> searchMemberVmrAsync(SearchMemberVmrRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMemberVmr);
+    }
+
+    public CompletableFuture<SearchOnlineMeetingsResponse> searchOnlineMeetingsAsync(SearchOnlineMeetingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchOnlineMeetings);
+    }
+
+    public CompletableFuture<SearchRecordingsResponse> searchRecordingsAsync(SearchRecordingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchRecordings);
     }
 
     public CompletableFuture<SearchResourceResponse> searchResourceAsync(SearchResourceRequest request) {
@@ -165,6 +273,22 @@ public class MeetingAsyncClient {
 
     public CompletableFuture<SendVeriCodeForUpdateUserInfoResponse> sendVeriCodeForUpdateUserInfoAsync(SendVeriCodeForUpdateUserInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.sendVeriCodeForUpdateUserInfo);
+    }
+
+    public CompletableFuture<SetHostViewResponse> setHostViewAsync(SetHostViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setHostView);
+    }
+
+    public CompletableFuture<SetMultiPictureResponse> setMultiPictureAsync(SetMultiPictureRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setMultiPicture);
+    }
+
+    public CompletableFuture<SetParticipantViewResponse> setParticipantViewAsync(SetParticipantViewRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setParticipantView);
+    }
+
+    public CompletableFuture<SetRoleResponse> setRoleAsync(SetRoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setRole);
     }
 
     public CompletableFuture<ShowCorpResponse> showCorpAsync(ShowCorpRequest request) {
@@ -199,12 +323,44 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showDeviceTypes);
     }
 
+    public CompletableFuture<ShowHisMeetingDetailResponse> showHisMeetingDetailAsync(ShowHisMeetingDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showHisMeetingDetail);
+    }
+
+    public CompletableFuture<ShowMeetingDetailResponse> showMeetingDetailAsync(ShowMeetingDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showMeetingDetail);
+    }
+
     public CompletableFuture<ShowMyInfoResponse> showMyInfoAsync(ShowMyInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showMyInfo);
     }
 
+    public CompletableFuture<ShowOnlineMeetingDetailResponse> showOnlineMeetingDetailAsync(ShowOnlineMeetingDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showOnlineMeetingDetail);
+    }
+
+    public CompletableFuture<ShowRealTimeInfoOfMeetingResponse> showRealTimeInfoOfMeetingAsync(ShowRealTimeInfoOfMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showRealTimeInfoOfMeeting);
+    }
+
+    public CompletableFuture<ShowRecordingDetailResponse> showRecordingDetailAsync(ShowRecordingDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showRecordingDetail);
+    }
+
+    public CompletableFuture<ShowRegionInfoOfMeetingResponse> showRegionInfoOfMeetingAsync(ShowRegionInfoOfMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showRegionInfoOfMeeting);
+    }
+
     public CompletableFuture<ShowUserDetailResponse> showUserDetailAsync(ShowUserDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showUserDetail);
+    }
+
+    public CompletableFuture<StopMeetingResponse> stopMeetingAsync(StopMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.stopMeeting);
+    }
+
+    public CompletableFuture<SwitchModeResponse> switchModeAsync(SwitchModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.switchMode);
     }
 
     public CompletableFuture<UpdateContactResponse> updateContactAsync(UpdateContactRequest request) {

@@ -27,15 +27,10 @@ public class CreateScalingTagsRequestBody  {
     
     private List<TagsSingleValue> tags = null;
         /**
-     * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+     * 操作标识（区分大小写）：create：创建。若已经存在相同的key值则会覆盖对应的value值。
      */
     public static class ActionEnum {
 
-        
-        /**
-         * Enum DELETE for value: "delete"
-         */
-        public static final ActionEnum DELETE = new ActionEnum("delete");
         
         /**
          * Enum CREATE for value: "create"
@@ -45,7 +40,6 @@ public class CreateScalingTagsRequestBody  {
 
         public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
             { 
-                put("delete", DELETE);
                 put("create", CREATE);
             }
         };
@@ -106,7 +100,7 @@ public class CreateScalingTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action;
+    private ActionEnum action = ActionEnum.CREATE;
 
     public CreateScalingTagsRequestBody withTags(List<TagsSingleValue> tags) {
         this.tags = tags;
@@ -131,7 +125,7 @@ public class CreateScalingTagsRequestBody  {
     }
 
     /**
-     * 标签列表。action为delete时，tags结构体不能缺失，key不能为空，或者空字符串。
+     * 标签列表。
      * @return tags
      */
     public List<TagsSingleValue> getTags() {
@@ -151,7 +145,7 @@ public class CreateScalingTagsRequestBody  {
 
 
     /**
-     * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+     * 操作标识（区分大小写）：create：创建。若已经存在相同的key值则会覆盖对应的value值。
      * @return action
      */
     public ActionEnum getAction() {

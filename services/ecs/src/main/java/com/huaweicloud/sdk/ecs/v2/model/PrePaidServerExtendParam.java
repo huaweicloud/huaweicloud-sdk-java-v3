@@ -384,6 +384,99 @@ public class PrePaidServerExtendParam  {
     
     private String diskPrior;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="spot_duration_hours")
+    
+    private Integer spotDurationHours;
+    /**
+     * spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+     */
+    public static class InterruptionPolicyEnum {
+
+        
+        /**
+         * Enum IMMEDIATE for value: "immediate"
+         */
+        public static final InterruptionPolicyEnum IMMEDIATE = new InterruptionPolicyEnum("immediate");
+        
+        /**
+         * Enum DELAY for value: "delay"
+         */
+        public static final InterruptionPolicyEnum DELAY = new InterruptionPolicyEnum("delay");
+        
+
+        public static final Map<String, InterruptionPolicyEnum> staticFields = new HashMap<String, InterruptionPolicyEnum>() {
+            { 
+                put("immediate", IMMEDIATE);
+                put("delay", DELAY);
+            }
+        };
+
+        private String value;
+
+        InterruptionPolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static InterruptionPolicyEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            InterruptionPolicyEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new InterruptionPolicyEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static InterruptionPolicyEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            InterruptionPolicyEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof InterruptionPolicyEnum) {
+                return this.value.equals(((InterruptionPolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="interruption_policy")
+    
+    private InterruptionPolicyEnum interruptionPolicy;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="spot_duration_count")
+    
+    private Integer spotDurationCount;
+
     public PrePaidServerExtendParam withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -605,6 +698,67 @@ public class PrePaidServerExtendParam  {
     public void setDiskPrior(String diskPrior) {
         this.diskPrior = diskPrior;
     }
+
+    public PrePaidServerExtendParam withSpotDurationHours(Integer spotDurationHours) {
+        this.spotDurationHours = spotDurationHours;
+        return this;
+    }
+
+    
+
+
+    /**
+     * spot block时间。
+     * @return spotDurationHours
+     */
+    public Integer getSpotDurationHours() {
+        return spotDurationHours;
+    }
+
+    public void setSpotDurationHours(Integer spotDurationHours) {
+        this.spotDurationHours = spotDurationHours;
+    }
+
+    public PrePaidServerExtendParam withInterruptionPolicy(InterruptionPolicyEnum interruptionPolicy) {
+        this.interruptionPolicy = interruptionPolicy;
+        return this;
+    }
+
+    
+
+
+    /**
+     * spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+     * @return interruptionPolicy
+     */
+    public InterruptionPolicyEnum getInterruptionPolicy() {
+        return interruptionPolicy;
+    }
+
+    public void setInterruptionPolicy(InterruptionPolicyEnum interruptionPolicy) {
+        this.interruptionPolicy = interruptionPolicy;
+    }
+
+    public PrePaidServerExtendParam withSpotDurationCount(Integer spotDurationCount) {
+        this.spotDurationCount = spotDurationCount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * spot block时间个数。  - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于1，最大值由预测系统给出，可以从flavor的extra_specs中查询。 例如客户买5小时，就通过spot_duartion_hours=5，不传该值，默认为1. 例如客户买大于6小时，就只能买6小时倍数。spot_duartion_hours=6，spot_duartion_count=2，代表买12个小时。 
+     * minimum: 1
+     * @return spotDurationCount
+     */
+    public Integer getSpotDurationCount() {
+        return spotDurationCount;
+    }
+
+    public void setSpotDurationCount(Integer spotDurationCount) {
+        this.spotDurationCount = spotDurationCount;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -624,11 +778,14 @@ public class PrePaidServerExtendParam  {
             Objects.equals(this.supportAutoRecovery, prePaidServerExtendParam.supportAutoRecovery) &&
             Objects.equals(this.marketType, prePaidServerExtendParam.marketType) &&
             Objects.equals(this.spotPrice, prePaidServerExtendParam.spotPrice) &&
-            Objects.equals(this.diskPrior, prePaidServerExtendParam.diskPrior);
+            Objects.equals(this.diskPrior, prePaidServerExtendParam.diskPrior) &&
+            Objects.equals(this.spotDurationHours, prePaidServerExtendParam.spotDurationHours) &&
+            Objects.equals(this.interruptionPolicy, prePaidServerExtendParam.interruptionPolicy) &&
+            Objects.equals(this.spotDurationCount, prePaidServerExtendParam.spotDurationCount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(chargingMode, regionID, periodType, periodNum, isAutoRenew, isAutoPay, enterpriseProjectId, supportAutoRecovery, marketType, spotPrice, diskPrior);
+        return Objects.hash(chargingMode, regionID, periodType, periodNum, isAutoRenew, isAutoPay, enterpriseProjectId, supportAutoRecovery, marketType, spotPrice, diskPrior, spotDurationHours, interruptionPolicy, spotDurationCount);
     }
     @Override
     public String toString() {
@@ -645,6 +802,9 @@ public class PrePaidServerExtendParam  {
         sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
         sb.append("    spotPrice: ").append(toIndentedString(spotPrice)).append("\n");
         sb.append("    diskPrior: ").append(toIndentedString(diskPrior)).append("\n");
+        sb.append("    spotDurationHours: ").append(toIndentedString(spotDurationHours)).append("\n");
+        sb.append("    interruptionPolicy: ").append(toIndentedString(interruptionPolicy)).append("\n");
+        sb.append("    spotDurationCount: ").append(toIndentedString(spotDurationCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

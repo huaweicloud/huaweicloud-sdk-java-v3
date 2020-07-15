@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 可用分区的状态
+ * 可用分区的状态。
  */
 public class ZoneState  {
 
@@ -31,7 +31,7 @@ public class ZoneState  {
 
 
     /**
-     * 可用分区是否可用。 true表示可用 false表示不可用
+     * 可用分区是否可用。
      * @return available
      */
     public Boolean getAvailable() {

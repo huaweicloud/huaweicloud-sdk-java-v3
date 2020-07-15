@@ -69,27 +69,27 @@
     HttpConfig config = HttpConfig.getDefaultHttpConfig();
     ```
 
-    2.2 代理配置
+    2.2 代理配置（可选）
 
     ``` java
-    // 使用代理服务器
+    // 使用代理服务器（可选）
     config.withProxyHost("http://proxy.huaweicloud.com")
         .withProxyPort(8080)
         .withProxyUsername("test")
         .withProxyPassword("test");
     ```
 
-    2.3 连接配置
+    2.3 连接配置（可选）
 
     ``` java 
-    // 配置连接超时
+    // 配置连接超时（可选）
     config.withTimeout(3);
     ```
 
-    2.4 SSL配置
+    2.4 SSL配置（可选）
 
     ``` java
-    // 配置跳过服务端证书验证
+    // 配置跳过服务端证书验证（可选）
     config.withIgnoreSSLVerification(true);
     ```
 

@@ -10,11 +10,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.evs.v2.model.Attachment;
-import com.huaweicloud.sdk.evs.v2.model.ImageMetadata;
 import com.huaweicloud.sdk.evs.v2.model.Link;
 import com.huaweicloud.sdk.evs.v2.model.VolumeMetadata;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -89,12 +90,87 @@ public class UpdateVolumeResponse extends SdkResponse {
     @JsonProperty(value="os-vol-tenant-attr:tenant_id")
     
     private String osVolTenantAttrTenantId;
+    /**
+     * 是否为共享云硬盘。
+     */
+    public static class ShareableEnum {
+
+        
+        /**
+         * Enum TRUE for value: "true"
+         */
+        public static final ShareableEnum TRUE = new ShareableEnum("true");
+        
+        /**
+         * Enum FALSE for value: "false"
+         */
+        public static final ShareableEnum FALSE = new ShareableEnum("false");
+        
+
+        public static final Map<String, ShareableEnum> staticFields = new HashMap<String, ShareableEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
+
+        private String value;
+
+        ShareableEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ShareableEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ShareableEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new ShareableEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static ShareableEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ShareableEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ShareableEnum) {
+                return this.value.equals(((ShareableEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shareable")
     
-    private Boolean shareable;
+    private ShareableEnum shareable = ShareableEnum.FALSE;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -124,7 +200,7 @@ public class UpdateVolumeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_image_metadata")
     
-    private ImageMetadata volumeImageMetadata = null;
+    private Object volumeImageMetadata = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -399,7 +475,7 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
     }
 
-    public UpdateVolumeResponse withShareable(Boolean shareable) {
+    public UpdateVolumeResponse withShareable(ShareableEnum shareable) {
         this.shareable = shareable;
         return this;
     }
@@ -411,11 +487,11 @@ public class UpdateVolumeResponse extends SdkResponse {
      * 是否为共享云硬盘。
      * @return shareable
      */
-    public Boolean getShareable() {
+    public ShareableEnum getShareable() {
         return shareable;
     }
 
-    public void setShareable(Boolean shareable) {
+    public void setShareable(ShareableEnum shareable) {
         this.shareable = shareable;
     }
 
@@ -499,30 +575,23 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.status = status;
     }
 
-    public UpdateVolumeResponse withVolumeImageMetadata(ImageMetadata volumeImageMetadata) {
+    public UpdateVolumeResponse withVolumeImageMetadata(Object volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
         return this;
     }
 
-    public UpdateVolumeResponse withVolumeImageMetadata(Consumer<ImageMetadata> volumeImageMetadataSetter) {
-        if(this.volumeImageMetadata == null ){
-            this.volumeImageMetadata = new ImageMetadata();
-            volumeImageMetadataSetter.accept(this.volumeImageMetadata);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get volumeImageMetadata
+     * 云硬盘镜像的元数据。 > 说明： >  > 关于“volume_image_metadata”字段的详细说明，具体请参见：\"[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\"。
      * @return volumeImageMetadata
      */
-    public ImageMetadata getVolumeImageMetadata() {
+    public Object getVolumeImageMetadata() {
         return volumeImageMetadata;
     }
 
-    public void setVolumeImageMetadata(ImageMetadata volumeImageMetadata) {
+    public void setVolumeImageMetadata(Object volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
     }
 

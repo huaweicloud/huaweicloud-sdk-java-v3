@@ -27,7 +27,7 @@ public class DeleteScalingTagsRequestBody  {
     
     private List<TagsSingleValue> tags = null;
         /**
-     * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+     * 操作标识（区分大小写）：delete：删除。
      */
     public static class ActionEnum {
 
@@ -37,16 +37,10 @@ public class DeleteScalingTagsRequestBody  {
          */
         public static final ActionEnum DELETE = new ActionEnum("delete");
         
-        /**
-         * Enum CREATE for value: "create"
-         */
-        public static final ActionEnum CREATE = new ActionEnum("create");
-        
 
         public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
             { 
                 put("delete", DELETE);
-                put("create", CREATE);
             }
         };
 
@@ -106,7 +100,7 @@ public class DeleteScalingTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private ActionEnum action;
+    private ActionEnum action = ActionEnum.DELETE;
 
     public DeleteScalingTagsRequestBody withTags(List<TagsSingleValue> tags) {
         this.tags = tags;
@@ -151,7 +145,7 @@ public class DeleteScalingTagsRequestBody  {
 
 
     /**
-     * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+     * 操作标识（区分大小写）：delete：删除。
      * @return action
      */
     public ActionEnum getAction() {

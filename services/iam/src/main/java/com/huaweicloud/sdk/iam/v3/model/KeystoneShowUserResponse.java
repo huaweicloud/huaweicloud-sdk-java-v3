@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneUserResult;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneShowUserResult;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,16 +23,16 @@ public class KeystoneShowUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
-    private KeystoneUserResult user = null;
+    private KeystoneShowUserResult user = null;
 
-    public KeystoneShowUserResponse withUser(KeystoneUserResult user) {
+    public KeystoneShowUserResponse withUser(KeystoneShowUserResult user) {
         this.user = user;
         return this;
     }
 
-    public KeystoneShowUserResponse withUser(Consumer<KeystoneUserResult> userSetter) {
+    public KeystoneShowUserResponse withUser(Consumer<KeystoneShowUserResult> userSetter) {
         if(this.user == null ){
-            this.user = new KeystoneUserResult();
+            this.user = new KeystoneShowUserResult();
             userSetter.accept(this.user);
         }
         
@@ -44,11 +44,11 @@ public class KeystoneShowUserResponse extends SdkResponse {
      * Get user
      * @return user
      */
-    public KeystoneUserResult getUser() {
+    public KeystoneShowUserResult getUser() {
         return user;
     }
 
-    public void setUser(KeystoneUserResult user) {
+    public void setUser(KeystoneShowUserResult user) {
         this.user = user;
     }
     @Override

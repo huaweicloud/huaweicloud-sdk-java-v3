@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneCreateProjectResult;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneUpdateProjectResult;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,16 +23,16 @@ public class KeystoneUpdateProjectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="project")
     
-    private KeystoneCreateProjectResult project = null;
+    private KeystoneUpdateProjectResult project = null;
 
-    public KeystoneUpdateProjectResponse withProject(KeystoneCreateProjectResult project) {
+    public KeystoneUpdateProjectResponse withProject(KeystoneUpdateProjectResult project) {
         this.project = project;
         return this;
     }
 
-    public KeystoneUpdateProjectResponse withProject(Consumer<KeystoneCreateProjectResult> projectSetter) {
+    public KeystoneUpdateProjectResponse withProject(Consumer<KeystoneUpdateProjectResult> projectSetter) {
         if(this.project == null ){
-            this.project = new KeystoneCreateProjectResult();
+            this.project = new KeystoneUpdateProjectResult();
             projectSetter.accept(this.project);
         }
         
@@ -44,11 +44,11 @@ public class KeystoneUpdateProjectResponse extends SdkResponse {
      * Get project
      * @return project
      */
-    public KeystoneCreateProjectResult getProject() {
+    public KeystoneUpdateProjectResult getProject() {
         return project;
     }
 
-    public void setProject(KeystoneCreateProjectResult project) {
+    public void setProject(KeystoneUpdateProjectResult project) {
         this.project = project;
     }
     @Override

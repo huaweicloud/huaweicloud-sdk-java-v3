@@ -48,7 +48,7 @@ public class ImageInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__image_size")
     
-    private Integer imageSize;
+    private String imageSize;
     /**
      * 镜像后端存储类型，目前只支持uds
      */
@@ -1566,7 +1566,7 @@ public class ImageInfo  {
         this.imageLocation = imageLocation;
     }
 
-    public ImageInfo withImageSize(Integer imageSize) {
+    public ImageInfo withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
     }
@@ -1580,11 +1580,11 @@ public class ImageInfo  {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="")
-    public Integer getImageSize() {
+    public String getImageSize() {
         return imageSize;
     }
 
-    public void setImageSize(Integer imageSize) {
+    public void setImageSize(String imageSize) {
         this.imageSize = imageSize;
     }
 

@@ -89,24 +89,6 @@ public class ShowUserResult  {
     
     private String updateTime;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
-    private String createTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_login_time")
-    
-    private String lastLoginTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pwd_stength")
-    
-    private String pwdStength;
-
     public ShowUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -353,66 +335,6 @@ public class ShowUserResult  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
-
-    public ShowUserResult withCreateTime(String createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * IAM用户创建时间。
-     * @return createTime
-     */
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    public ShowUserResult withLastLoginTime(String lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * IAM用户最后登录时间。
-     * @return lastLoginTime
-     */
-    public String getLastLoginTime() {
-        return lastLoginTime;
-    }
-
-    public void setLastLoginTime(String lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-    }
-
-    public ShowUserResult withPwdStength(String pwdStength) {
-        this.pwdStength = pwdStength;
-        return this;
-    }
-
-    
-
-
-    /**
-     * IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
-     * @return pwdStength
-     */
-    public String getPwdStength() {
-        return pwdStength;
-    }
-
-    public void setPwdStength(String pwdStength) {
-        this.pwdStength = pwdStength;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -433,14 +355,11 @@ public class ShowUserResult  {
             Objects.equals(this.email, showUserResult.email) &&
             Objects.equals(this.phone, showUserResult.phone) &&
             Objects.equals(this.pwdStatus, showUserResult.pwdStatus) &&
-            Objects.equals(this.updateTime, showUserResult.updateTime) &&
-            Objects.equals(this.createTime, showUserResult.createTime) &&
-            Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime) &&
-            Objects.equals(this.pwdStength, showUserResult.pwdStength);
+            Objects.equals(this.updateTime, showUserResult.updateTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStength);
+        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime);
     }
     @Override
     public String toString() {
@@ -458,9 +377,6 @@ public class ShowUserResult  {
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    lastLoginTime: ").append(toIndentedString(lastLoginTime)).append("\n");
-        sb.append("    pwdStength: ").append(toIndentedString(pwdStength)).append("\n");
         sb.append("}");
         return sb.toString();
     }

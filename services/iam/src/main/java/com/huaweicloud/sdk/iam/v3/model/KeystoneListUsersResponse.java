@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneUserResult;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneListUsersResult;
 import com.huaweicloud.sdk.iam.v3.model.Links;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class KeystoneListUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="users")
     
-    private List<KeystoneUserResult> users = null;
+    private List<KeystoneListUsersResult> users = null;
     
     public KeystoneListUsersResponse withLinks(Links links) {
         this.links = links;
@@ -61,13 +61,13 @@ public class KeystoneListUsersResponse extends SdkResponse {
         this.links = links;
     }
 
-    public KeystoneListUsersResponse withUsers(List<KeystoneUserResult> users) {
+    public KeystoneListUsersResponse withUsers(List<KeystoneListUsersResult> users) {
         this.users = users;
         return this;
     }
 
     
-    public KeystoneListUsersResponse addUsersItem(KeystoneUserResult usersItem) {
+    public KeystoneListUsersResponse addUsersItem(KeystoneListUsersResult usersItem) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -75,7 +75,7 @@ public class KeystoneListUsersResponse extends SdkResponse {
         return this;
     }
 
-    public KeystoneListUsersResponse withUsers(Consumer<List<KeystoneUserResult>> usersSetter) {
+    public KeystoneListUsersResponse withUsers(Consumer<List<KeystoneListUsersResult>> usersSetter) {
         if(this.users == null ){
             this.users = new ArrayList<>();
         }
@@ -87,11 +87,11 @@ public class KeystoneListUsersResponse extends SdkResponse {
      * IAM用户信息列表。
      * @return users
      */
-    public List<KeystoneUserResult> getUsers() {
+    public List<KeystoneListUsersResult> getUsers() {
         return users;
     }
 
-    public void setUsers(List<KeystoneUserResult> users) {
+    public void setUsers(List<KeystoneListUsersResult> users) {
         this.users = users;
     }
     @Override

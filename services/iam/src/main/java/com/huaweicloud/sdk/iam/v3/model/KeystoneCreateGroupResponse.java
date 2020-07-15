@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneGroupResult;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneGroupResultWithLinksSelf;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,16 +23,16 @@ public class KeystoneCreateGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group")
     
-    private KeystoneGroupResult group = null;
+    private KeystoneGroupResultWithLinksSelf group = null;
 
-    public KeystoneCreateGroupResponse withGroup(KeystoneGroupResult group) {
+    public KeystoneCreateGroupResponse withGroup(KeystoneGroupResultWithLinksSelf group) {
         this.group = group;
         return this;
     }
 
-    public KeystoneCreateGroupResponse withGroup(Consumer<KeystoneGroupResult> groupSetter) {
+    public KeystoneCreateGroupResponse withGroup(Consumer<KeystoneGroupResultWithLinksSelf> groupSetter) {
         if(this.group == null ){
-            this.group = new KeystoneGroupResult();
+            this.group = new KeystoneGroupResultWithLinksSelf();
             groupSetter.accept(this.group);
         }
         
@@ -44,11 +44,11 @@ public class KeystoneCreateGroupResponse extends SdkResponse {
      * Get group
      * @return group
      */
-    public KeystoneGroupResult getGroup() {
+    public KeystoneGroupResultWithLinksSelf getGroup() {
         return group;
     }
 
-    public void setGroup(KeystoneGroupResult group) {
+    public void setGroup(KeystoneGroupResultWithLinksSelf group) {
         this.group = group;
     }
     @Override

@@ -1,3 +1,69 @@
+# 3.0.6-beta 2020-07-15
+## HuaweiCloud SDK ECS
+ - ### 新增特性
+    - 支持创建竞价计费弹性云服务器
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK EIP
+ - ### 新增特性
+    - 支持弹性公网IP服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK EPS
+ - ### 新增特性
+    - 支持企业管理服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+    
+## __HuaweiCloud SDK EVS__
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - [Issue #3](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/issues/3)：获取单个磁盘详情接口报错问题修复
+ - ### 特性变更
+    - 无
+     
+## HuaweiCloud SDK IAM
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 修复keystoneListVersions响应体解析失败问题
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK IoTDA
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 支持资源空间相关接口
+    
+## HuaweiCloud SDK Meeting
+ - ### 新增特性
+    - 支持云会议管理/会议控制功能
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无 
+    
+## HuaweiCloud SDK TMS
+ - ### 新增特性
+    - 支持标签管理服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+    
 # 3.0.5-beta 2020-06-30
 ## HuaweiCloud SDK Core
  - ### 新增特性
@@ -36,7 +102,7 @@
 # 3.0.4-beta 2020-06-19
 ## HuaweiCloud SDK ECS
  - ### 新增特性
-    - 支持创建包周期虚拟机
+    - 支持创建包周期计费弹性云服务器
  - ### 解决问题
     - 无
  - ### 特性变更
@@ -49,7 +115,6 @@
     - 无
  - ### 特性变更
     - 无 
-
 
 
 # 3.0.3-beta 2020-06-15

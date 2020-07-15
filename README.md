@@ -60,7 +60,7 @@ You could obtain and install Java SDK through following methods:
     HttpConfig config = HttpConfig.getDefaultHttpConfig();
     ```
 
-    2.2  Proxy
+    2.2  Proxy(Optional)
 
     ``` java
     // Use proxy if needed
@@ -70,14 +70,14 @@ You could obtain and install Java SDK through following methods:
         .withProxyPassword("test");
     ```
 
-    2.3 Connection
+    2.3 Connection(Optional)
 
     ``` java
     // seconds to wait for the server to send data before giving up
     config.withTimeout(3);
     ```
 
-    2.4 SSL Certification
+    2.4 SSL Certification(Optional)
 
     ``` java
     // Skip ssl certification checking while using https protocol if needed

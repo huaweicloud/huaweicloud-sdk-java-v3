@@ -7,8 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.Tag;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CreateVolumeOption
+ * 创建云硬盘的信息。
  */
 public class CreateVolumeOption  {
 
@@ -190,7 +188,7 @@ public class CreateVolumeOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Tag> tags = null;
+    private Map<String, String> tags = null;
     
     public CreateVolumeOption withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -466,37 +464,37 @@ public class CreateVolumeOption  {
         this.volumeType = volumeType;
     }
 
-    public CreateVolumeOption withTags(List<Tag> tags) {
+    public CreateVolumeOption withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public CreateVolumeOption addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
+
+    public CreateVolumeOption putTagsItem(String key, String tagsItem) {
+         if (this.tags == null) {
+            this.tags = new HashMap<>();
+         }
+        this.tags.put(key, tagsItem);
         return this;
     }
 
-    public CreateVolumeOption withTags(Consumer<List<Tag>> tagsSetter) {
+    public CreateVolumeOption withTags(Consumer<Map<String, String>> tagsSetter) {
         if(this.tags == null ){
-            this.tags = new ArrayList<>();
+            this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
-
     /**
      * 云硬盘标签信息。
      * @return tags
      */
-    public List<Tag> getTags() {
+    public Map<String, String> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
     @Override

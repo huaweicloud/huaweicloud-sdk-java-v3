@@ -50,7 +50,7 @@ public class UpdateImageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__image_size")
     
-    private Integer imageSize;
+    private String imageSize;
     /**
      * 镜像后端存储类型，目前只支持uds
      */
@@ -1568,7 +1568,7 @@ public class UpdateImageResponse extends SdkResponse {
         this.imageLocation = imageLocation;
     }
 
-    public UpdateImageResponse withImageSize(Integer imageSize) {
+    public UpdateImageResponse withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
     }
@@ -1582,11 +1582,11 @@ public class UpdateImageResponse extends SdkResponse {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="")
-    public Integer getImageSize() {
+    public String getImageSize() {
         return imageSize;
     }
 
-    public void setImageSize(Integer imageSize) {
+    public void setImageSize(String imageSize) {
         this.imageSize = imageSize;
     }
 

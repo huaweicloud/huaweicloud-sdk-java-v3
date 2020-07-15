@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.ListVolumesDetailsResponseBody;
+import com.huaweicloud.sdk.evs.v2.model.VolumeDetail;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +36,7 @@ public class Resource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_detail")
     
-    private ListVolumesDetailsResponseBody resourceDetail = null;
+    private VolumeDetail resourceDetail = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,14 +84,14 @@ public class Resource  {
         this.resourceName = resourceName;
     }
 
-    public Resource withResourceDetail(ListVolumesDetailsResponseBody resourceDetail) {
+    public Resource withResourceDetail(VolumeDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
 
-    public Resource withResourceDetail(Consumer<ListVolumesDetailsResponseBody> resourceDetailSetter) {
+    public Resource withResourceDetail(Consumer<VolumeDetail> resourceDetailSetter) {
         if(this.resourceDetail == null ){
-            this.resourceDetail = new ListVolumesDetailsResponseBody();
+            this.resourceDetail = new VolumeDetail();
             resourceDetailSetter.accept(this.resourceDetail);
         }
         
@@ -103,11 +103,11 @@ public class Resource  {
      * Get resourceDetail
      * @return resourceDetail
      */
-    public ListVolumesDetailsResponseBody getResourceDetail() {
+    public VolumeDetail getResourceDetail() {
         return resourceDetail;
     }
 
-    public void setResourceDetail(ListVolumesDetailsResponseBody resourceDetail) {
+    public void setResourceDetail(VolumeDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
 
