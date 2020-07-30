@@ -7,7 +7,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -159,6 +161,12 @@ public class SearchUsersRequest  {
     
     private Boolean enableRoom;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="userType")
+    
+    private List<Integer> userType = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
@@ -389,6 +397,40 @@ public class SearchUsersRequest  {
         this.enableRoom = enableRoom;
     }
 
+    public SearchUsersRequest withUserType(List<Integer> userType) {
+        this.userType = userType;
+        return this;
+    }
+
+    
+    public SearchUsersRequest addUserTypeItem(Integer userTypeItem) {
+        if (this.userType == null) {
+            this.userType = new ArrayList<>();
+        }
+        this.userType.add(userTypeItem);
+        return this;
+    }
+
+    public SearchUsersRequest withUserType(Consumer<List<Integer>> userTypeSetter) {
+        if(this.userType == null ){
+            this.userType = new ArrayList<>();
+        }
+        userTypeSetter.accept(this.userType);
+        return this;
+    }
+
+    /**
+     * Get userType
+     * @return userType
+     */
+    public List<Integer> getUserType() {
+        return userType;
+    }
+
+    public void setUserType(List<Integer> userType) {
+        this.userType = userType;
+    }
+
     public SearchUsersRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -428,11 +470,12 @@ public class SearchUsersRequest  {
             Objects.equals(this.enableSubDept, searchUsersRequest.enableSubDept) &&
             Objects.equals(this.adminType, searchUsersRequest.adminType) &&
             Objects.equals(this.enableRoom, searchUsersRequest.enableRoom) &&
+            Objects.equals(this.userType, searchUsersRequest.userType) &&
             Objects.equals(this.status, searchUsersRequest.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, sortField, isAsc, deptCode, enableSubDept, adminType, enableRoom, status);
+        return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, sortField, isAsc, deptCode, enableSubDept, adminType, enableRoom, userType, status);
     }
     @Override
     public String toString() {
@@ -449,6 +492,7 @@ public class SearchUsersRequest  {
         sb.append("    enableSubDept: ").append(toIndentedString(enableSubDept)).append("\n");
         sb.append("    adminType: ").append(toIndentedString(adminType)).append("\n");
         sb.append("    enableRoom: ").append(toIndentedString(enableRoom)).append("\n");
+        sb.append("    userType: ").append(toIndentedString(userType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

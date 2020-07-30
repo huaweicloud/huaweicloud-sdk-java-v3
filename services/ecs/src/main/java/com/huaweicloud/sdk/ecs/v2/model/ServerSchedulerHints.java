@@ -26,15 +26,15 @@ public class ServerSchedulerHints  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="different_host")
+    @JsonProperty(value="tenancy")
     
-    private List<String> differentHost = null;
+    private List<String> tenancy = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="same_host")
+    @JsonProperty(value="dedicated_host_id")
     
-    private List<String> sameHost = null;
+    private List<String> dedicatedHostId = null;
     
     public ServerSchedulerHints withGroup(List<String> group) {
         this.group = group;
@@ -70,72 +70,72 @@ public class ServerSchedulerHints  {
         this.group = group;
     }
 
-    public ServerSchedulerHints withDifferentHost(List<String> differentHost) {
-        this.differentHost = differentHost;
+    public ServerSchedulerHints withTenancy(List<String> tenancy) {
+        this.tenancy = tenancy;
         return this;
     }
 
     
-    public ServerSchedulerHints addDifferentHostItem(String differentHostItem) {
-        if (this.differentHost == null) {
-            this.differentHost = new ArrayList<>();
+    public ServerSchedulerHints addTenancyItem(String tenancyItem) {
+        if (this.tenancy == null) {
+            this.tenancy = new ArrayList<>();
         }
-        this.differentHost.add(differentHostItem);
+        this.tenancy.add(tenancyItem);
         return this;
     }
 
-    public ServerSchedulerHints withDifferentHost(Consumer<List<String>> differentHostSetter) {
-        if(this.differentHost == null ){
-            this.differentHost = new ArrayList<>();
+    public ServerSchedulerHints withTenancy(Consumer<List<String>> tenancySetter) {
+        if(this.tenancy == null ){
+            this.tenancy = new ArrayList<>();
         }
-        differentHostSetter.accept(this.differentHost);
+        tenancySetter.accept(this.tenancy);
         return this;
     }
 
     /**
-     * 与指定弹性云服务器满足反亲和性。当前不支持该功能。
-     * @return differentHost
+     * 在专属主机或共享池中创建弹性云服务器。默认为在共享池创建。值为： shared或dedicated。  - shared：表示共享池。 - dedicated:表示专属主机。  创建与查询此值均有效。
+     * @return tenancy
      */
-    public List<String> getDifferentHost() {
-        return differentHost;
+    public List<String> getTenancy() {
+        return tenancy;
     }
 
-    public void setDifferentHost(List<String> differentHost) {
-        this.differentHost = differentHost;
+    public void setTenancy(List<String> tenancy) {
+        this.tenancy = tenancy;
     }
 
-    public ServerSchedulerHints withSameHost(List<String> sameHost) {
-        this.sameHost = sameHost;
+    public ServerSchedulerHints withDedicatedHostId(List<String> dedicatedHostId) {
+        this.dedicatedHostId = dedicatedHostId;
         return this;
     }
 
     
-    public ServerSchedulerHints addSameHostItem(String sameHostItem) {
-        if (this.sameHost == null) {
-            this.sameHost = new ArrayList<>();
+    public ServerSchedulerHints addDedicatedHostIdItem(String dedicatedHostIdItem) {
+        if (this.dedicatedHostId == null) {
+            this.dedicatedHostId = new ArrayList<>();
         }
-        this.sameHost.add(sameHostItem);
+        this.dedicatedHostId.add(dedicatedHostIdItem);
         return this;
     }
 
-    public ServerSchedulerHints withSameHost(Consumer<List<String>> sameHostSetter) {
-        if(this.sameHost == null ){
-            this.sameHost = new ArrayList<>();
+    public ServerSchedulerHints withDedicatedHostId(Consumer<List<String>> dedicatedHostIdSetter) {
+        if(this.dedicatedHostId == null ){
+            this.dedicatedHostId = new ArrayList<>();
         }
-        sameHostSetter.accept(this.sameHost);
+        dedicatedHostIdSetter.accept(this.dedicatedHostId);
         return this;
     }
 
     /**
-     * 与指定的弹性云服务器满足亲和性。当前不支持该功能。
-     * @return sameHost
+     * 专属主机ID。  此属性仅在tenancy值为dedicated时有效。  不指定此属性，系统将自动分配租户可自动放置弹性云服务器的专属主机。  创建与查询此值均有效。
+     * @return dedicatedHostId
      */
-    public List<String> getSameHost() {
-        return sameHost;
+    public List<String> getDedicatedHostId() {
+        return dedicatedHostId;
     }
 
-    public void setSameHost(List<String> sameHost) {
-        this.sameHost = sameHost;
+    public void setDedicatedHostId(List<String> dedicatedHostId) {
+        this.dedicatedHostId = dedicatedHostId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -147,20 +147,20 @@ public class ServerSchedulerHints  {
         }
         ServerSchedulerHints serverSchedulerHints = (ServerSchedulerHints) o;
         return Objects.equals(this.group, serverSchedulerHints.group) &&
-            Objects.equals(this.differentHost, serverSchedulerHints.differentHost) &&
-            Objects.equals(this.sameHost, serverSchedulerHints.sameHost);
+            Objects.equals(this.tenancy, serverSchedulerHints.tenancy) &&
+            Objects.equals(this.dedicatedHostId, serverSchedulerHints.dedicatedHostId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(group, differentHost, sameHost);
+        return Objects.hash(group, tenancy, dedicatedHostId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerSchedulerHints {\n");
         sb.append("    group: ").append(toIndentedString(group)).append("\n");
-        sb.append("    differentHost: ").append(toIndentedString(differentHost)).append("\n");
-        sb.append("    sameHost: ").append(toIndentedString(sameHost)).append("\n");
+        sb.append("    tenancy: ").append(toIndentedString(tenancy)).append("\n");
+        sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

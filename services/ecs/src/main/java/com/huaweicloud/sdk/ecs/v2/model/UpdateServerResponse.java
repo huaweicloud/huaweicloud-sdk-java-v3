@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ServerDetail;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerResult;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,16 +23,16 @@ public class UpdateServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
-    private ServerDetail server = null;
+    private UpdateServerResult server = null;
 
-    public UpdateServerResponse withServer(ServerDetail server) {
+    public UpdateServerResponse withServer(UpdateServerResult server) {
         this.server = server;
         return this;
     }
 
-    public UpdateServerResponse withServer(Consumer<ServerDetail> serverSetter) {
+    public UpdateServerResponse withServer(Consumer<UpdateServerResult> serverSetter) {
         if(this.server == null ){
-            this.server = new ServerDetail();
+            this.server = new UpdateServerResult();
             serverSetter.accept(this.server);
         }
         
@@ -44,11 +44,11 @@ public class UpdateServerResponse extends SdkResponse {
      * Get server
      * @return server
      */
-    public ServerDetail getServer() {
+    public UpdateServerResult getServer() {
         return server;
     }
 
-    public void setServer(ServerDetail server) {
+    public void setServer(UpdateServerResult server) {
         this.server = server;
     }
     @Override

@@ -15,7 +15,7 @@ public class MeetingAsyncClient {
     }
 
     public static ClientBuilder<MeetingAsyncClient> newBuilder() {
-        return new ClientBuilder<>(MeetingAsyncClient::new);
+        return new ClientBuilder<>(MeetingAsyncClient::new, "MeetingCredentials");
     }
 
 
@@ -33,6 +33,14 @@ public class MeetingAsyncClient {
 
     public CompletableFuture<AddDeviceResponse> addDeviceAsync(AddDeviceRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.addDevice);
+    }
+
+    public CompletableFuture<AddProgramResponse> addProgramAsync(AddProgramRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.addProgram);
+    }
+
+    public CompletableFuture<AddPublicationResponse> addPublicationAsync(AddPublicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.addPublication);
     }
 
     public CompletableFuture<AddResourceResponse> addResourceAsync(AddResourceRequest request) {
@@ -57,6 +65,18 @@ public class MeetingAsyncClient {
 
     public CompletableFuture<BatchDeleteDevicesResponse> batchDeleteDevicesAsync(BatchDeleteDevicesRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.batchDeleteDevices);
+    }
+
+    public CompletableFuture<BatchDeleteMaterialsResponse> batchDeleteMaterialsAsync(BatchDeleteMaterialsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.batchDeleteMaterials);
+    }
+
+    public CompletableFuture<BatchDeleteProgramsResponse> batchDeleteProgramsAsync(BatchDeleteProgramsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.batchDeletePrograms);
+    }
+
+    public CompletableFuture<BatchDeletePublicationsResponse> batchDeletePublicationsAsync(BatchDeletePublicationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.batchDeletePublications);
     }
 
     public CompletableFuture<BatchDeleteUsersResponse> batchDeleteUsersAsync(BatchDeleteUsersRequest request) {
@@ -235,6 +255,10 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchHisMeetings);
     }
 
+    public CompletableFuture<SearchMaterialsResponse> searchMaterialsAsync(SearchMaterialsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMaterials);
+    }
+
     public CompletableFuture<SearchMeetingsResponse> searchMeetingsAsync(SearchMeetingsRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMeetings);
     }
@@ -245,6 +269,14 @@ public class MeetingAsyncClient {
 
     public CompletableFuture<SearchOnlineMeetingsResponse> searchOnlineMeetingsAsync(SearchOnlineMeetingsRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchOnlineMeetings);
+    }
+
+    public CompletableFuture<SearchProgramsResponse> searchProgramsAsync(SearchProgramsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchPrograms);
+    }
+
+    public CompletableFuture<SearchPublicationsResponse> searchPublicationsAsync(SearchPublicationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchPublications);
     }
 
     public CompletableFuture<SearchRecordingsResponse> searchRecordingsAsync(SearchRecordingsRequest request) {
@@ -339,6 +371,14 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showOnlineMeetingDetail);
     }
 
+    public CompletableFuture<ShowProgramResponse> showProgramAsync(ShowProgramRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showProgram);
+    }
+
+    public CompletableFuture<ShowPublicationResponse> showPublicationAsync(ShowPublicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showPublication);
+    }
+
     public CompletableFuture<ShowRealTimeInfoOfMeetingResponse> showRealTimeInfoOfMeetingAsync(ShowRealTimeInfoOfMeetingRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showRealTimeInfoOfMeeting);
     }
@@ -383,12 +423,24 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.updateDevice);
     }
 
+    public CompletableFuture<UpdateMaterialResponse> updateMaterialAsync(UpdateMaterialRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.updateMaterial);
+    }
+
     public CompletableFuture<UpdateMemberVmrResponse> updateMemberVmrAsync(UpdateMemberVmrRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.updateMemberVmr);
     }
 
     public CompletableFuture<UpdateMyInfoResponse> updateMyInfoAsync(UpdateMyInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.updateMyInfo);
+    }
+
+    public CompletableFuture<UpdateProgramResponse> updateProgramAsync(UpdateProgramRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.updateProgram);
+    }
+
+    public CompletableFuture<UpdatePublicationResponse> updatePublicationAsync(UpdatePublicationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.updatePublication);
     }
 
     public CompletableFuture<UpdatePwdResponse> updatePwdAsync(UpdatePwdRequest request) {

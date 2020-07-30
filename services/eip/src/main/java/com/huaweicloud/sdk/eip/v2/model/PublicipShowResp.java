@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.eip.v2.model.ProfileResp;
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -122,7 +123,7 @@ public class PublicipShowResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private String createTime;
+    private OffsetDateTime createTime = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -487,7 +488,7 @@ public class PublicipShowResp  {
         this.bandwidthSize = bandwidthSize;
     }
 
-    public PublicipShowResp withCreateTime(String createTime) {
+    public PublicipShowResp withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -499,11 +500,11 @@ public class PublicipShowResp  {
      * 弹性公网IP申请时间（UTC）
      * @return createTime
      */
-    public String getCreateTime() {
+    public OffsetDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
 

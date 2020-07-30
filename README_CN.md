@@ -96,16 +96,23 @@
 3. 初始化认证信息
 
     ``` java
+    //Region级服务
     BasicCredentials credentials = new BasicCredentials()
         .withAk(ak)
         .withSk(sk)
         .withProjectId(projectId)
+   
+    //Global级服务
+    GlobalCredentials credentials = new GlobalCredentials()
+        .withAk(ak)
+        .withSk(sk)
         .withDomainId(domainId);
     ```
 
     **说明**：
-
-    非全局服务仅需要提供 projectId ， domainId 无需提供。全局服务 projectId 必须为 null ， domainId 请按照实际情况填写。全局服务当前仅支持 IAM 。
+    全局服务当前仅支持IAM, TMS, EPS。
+    
+    Region级服务仅需要提供 projectId。Global级服务需要提供domainId。
 
     - `ak` 华为云账号 Access Key 。
     - `sk` 华为云账号 Secret Access Key 。

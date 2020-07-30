@@ -172,6 +172,86 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddProgramRequest, AddProgramResponse> addProgram = genForaddProgram();
+
+    private static HttpRequestDef<AddProgramRequest, AddProgramResponse> genForaddProgram() {
+        // basic
+        HttpRequestDef.Builder<AddProgramRequest, AddProgramResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddProgramRequest.class, AddProgramResponse.class)
+                .withUri("/v1/usg/sss/programs")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddProgramRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddProgramRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateProgramRequestDTO.class,
+            f -> f.withMarshaller(AddProgramRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddPublicationRequest, AddPublicationResponse> addPublication = genForaddPublication();
+
+    private static HttpRequestDef<AddPublicationRequest, AddPublicationResponse> genForaddPublication() {
+        // basic
+        HttpRequestDef.Builder<AddPublicationRequest, AddPublicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddPublicationRequest.class, AddPublicationResponse.class)
+                .withUri("/v1/usg/sss/publications")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddPublicationRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddPublicationRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreatePublicationRequestDTO.class,
+            f -> f.withMarshaller(AddPublicationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddResourceRequest, AddResourceResponse> addResource = genForaddResource();
 
     private static HttpRequestDef<AddResourceRequest, AddResourceResponse> genForaddResource() {
@@ -427,6 +507,126 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             List.class,
             f -> f.withMarshaller(BatchDeleteDevicesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> batchDeleteMaterials = genForbatchDeleteMaterials();
+
+    private static HttpRequestDef<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> genForbatchDeleteMaterials() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteMaterialsRequest.class, BatchDeleteMaterialsResponse.class)
+                .withUri("/v1/usg/sss/materials/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            List.class,
+            f -> f.withMarshaller(BatchDeleteMaterialsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> batchDeletePrograms = genForbatchDeletePrograms();
+
+    private static HttpRequestDef<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> genForbatchDeletePrograms() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteProgramsRequest.class, BatchDeleteProgramsResponse.class)
+                .withUri("/v1/usg/sss/programs/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteProgramsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteProgramsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            List.class,
+            f -> f.withMarshaller(BatchDeleteProgramsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> batchDeletePublications = genForbatchDeletePublications();
+
+    private static HttpRequestDef<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> genForbatchDeletePublications() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeletePublicationsRequest.class, BatchDeletePublicationsResponse.class)
+                .withUri("/v1/usg/sss/publications/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeletePublicationsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeletePublicationsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            List.class,
+            f -> f.withMarshaller(BatchDeletePublicationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(String.class)
         );
@@ -2597,6 +2797,61 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchMaterialsRequest, SearchMaterialsResponse> searchMaterials = genForsearchMaterials();
+
+    private static HttpRequestDef<SearchMaterialsRequest, SearchMaterialsResponse> genForsearchMaterials() {
+        // basic
+        HttpRequestDef.Builder<SearchMaterialsRequest, SearchMaterialsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchMaterialsRequest.class, SearchMaterialsResponse.class)
+                .withUri("/v1/usg/sss/materials");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchMaterialsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchMaterialsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMaterialsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMaterialsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMaterialsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchMeetingsRequest, SearchMeetingsResponse> searchMeetings = genForsearchMeetings();
 
     private static HttpRequestDef<SearchMeetingsRequest, SearchMeetingsResponse> genForsearchMeetings() {
@@ -2810,6 +3065,116 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(SearchOnlineMeetingsRequest::getXSiteId, (req, v) -> {
                 req.setXSiteId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchProgramsRequest, SearchProgramsResponse> searchPrograms = genForsearchPrograms();
+
+    private static HttpRequestDef<SearchProgramsRequest, SearchProgramsResponse> genForsearchPrograms() {
+        // basic
+        HttpRequestDef.Builder<SearchProgramsRequest, SearchProgramsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchProgramsRequest.class, SearchProgramsResponse.class)
+                .withUri("/v1/usg/sss/programs");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchProgramsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchProgramsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchProgramsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchProgramsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchProgramsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchPublicationsRequest, SearchPublicationsResponse> searchPublications = genForsearchPublications();
+
+    private static HttpRequestDef<SearchPublicationsRequest, SearchPublicationsResponse> genForsearchPublications() {
+        // basic
+        HttpRequestDef.Builder<SearchPublicationsRequest, SearchPublicationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchPublicationsRequest.class, SearchPublicationsResponse.class)
+                .withUri("/v1/usg/sss/publications");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchPublicationsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchPublicationsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchPublicationsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchPublicationsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchPublicationsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
             })
         );
 
@@ -3214,6 +3579,14 @@ public class MeetingMeta {
             Boolean.class,
             f -> f.withMarshaller(SearchUsersRequest::getEnableRoom, (req, v) -> {
                 req.setEnableRoom(v);
+            })
+        );
+        builder.withRequestField("userType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(SearchUsersRequest::getUserType, (req, v) -> {
+                req.setUserType(v);
             })
         );
         builder.withRequestField("status",
@@ -4141,6 +4514,84 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProgramRequest, ShowProgramResponse> showProgram = genForshowProgram();
+
+    private static HttpRequestDef<ShowProgramRequest, ShowProgramResponse> genForshowProgram() {
+        // basic
+        HttpRequestDef.Builder<ShowProgramRequest, ShowProgramResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProgramRequest.class, ShowProgramResponse.class)
+                .withUri("/v1/usg/sss/programs/{id}");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowProgramRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowProgramRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowProgramRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPublicationRequest, ShowPublicationResponse> showPublication = genForshowPublication();
+
+    private static HttpRequestDef<ShowPublicationRequest, ShowPublicationResponse> genForshowPublication() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicationRequest, ShowPublicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPublicationRequest.class, ShowPublicationResponse.class)
+                .withUri("/v1/usg/sss/publications/{id}");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPublicationRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPublicationRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPublicationRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> showRealTimeInfoOfMeeting = genForshowRealTimeInfoOfMeeting();
 
     private static HttpRequestDef<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> genForshowRealTimeInfoOfMeeting() {
@@ -4576,6 +5027,54 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateMaterialRequest, UpdateMaterialResponse> updateMaterial = genForupdateMaterial();
+
+    private static HttpRequestDef<UpdateMaterialRequest, UpdateMaterialResponse> genForupdateMaterial() {
+        // basic
+        HttpRequestDef.Builder<UpdateMaterialRequest, UpdateMaterialResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMaterialRequest.class, UpdateMaterialResponse.class)
+                .withUri("/v1/usg/sss/materials/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateMaterialRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateMaterialRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateMaterialRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateMaterialRequestDTO.class,
+            f -> f.withMarshaller(UpdateMaterialRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateMemberVmrRequest, UpdateMemberVmrResponse> updateMemberVmr = genForupdateMemberVmr();
 
     private static HttpRequestDef<UpdateMemberVmrRequest, UpdateMemberVmrResponse> genForupdateMemberVmr() {
@@ -4655,6 +5154,102 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ModMemberDTO.class,
             f -> f.withMarshaller(UpdateMyInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProgramRequest, UpdateProgramResponse> updateProgram = genForupdateProgram();
+
+    private static HttpRequestDef<UpdateProgramRequest, UpdateProgramResponse> genForupdateProgram() {
+        // basic
+        HttpRequestDef.Builder<UpdateProgramRequest, UpdateProgramResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProgramRequest.class, UpdateProgramResponse.class)
+                .withUri("/v1/usg/sss/programs/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateProgramRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateProgramRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateProgramRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateProgramRequestDTO.class,
+            f -> f.withMarshaller(UpdateProgramRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePublicationRequest, UpdatePublicationResponse> updatePublication = genForupdatePublication();
+
+    private static HttpRequestDef<UpdatePublicationRequest, UpdatePublicationResponse> genForupdatePublication() {
+        // basic
+        HttpRequestDef.Builder<UpdatePublicationRequest, UpdatePublicationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePublicationRequest.class, UpdatePublicationResponse.class)
+                .withUri("/v1/usg/sss/publications/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdatePublicationRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePublicationRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePublicationRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdatePublicationRequestDTO.class,
+            f -> f.withMarshaller(UpdatePublicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

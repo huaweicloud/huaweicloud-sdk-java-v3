@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.CreatePublicip;
+import com.huaweicloud.sdk.eip.v2.model.CreatePublicipRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,16 +21,16 @@ public class CreatePublicipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePublicip body = null;
+    private CreatePublicipRequestBody body = null;
 
-    public CreatePublicipRequest withBody(CreatePublicip body) {
+    public CreatePublicipRequest withBody(CreatePublicipRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreatePublicipRequest withBody(Consumer<CreatePublicip> bodySetter) {
+    public CreatePublicipRequest withBody(Consumer<CreatePublicipRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new CreatePublicip();
+            this.body = new CreatePublicipRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -42,11 +42,11 @@ public class CreatePublicipRequest  {
      * Get body
      * @return body
      */
-    public CreatePublicip getBody() {
+    public CreatePublicipRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreatePublicip body) {
+    public void setBody(CreatePublicipRequestBody body) {
         this.body = body;
     }
     @Override

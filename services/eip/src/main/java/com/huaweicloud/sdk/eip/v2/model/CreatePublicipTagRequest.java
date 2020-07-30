@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.ResourceTagReq;
+import com.huaweicloud.sdk.eip.v2.model.CreatePublicipTagRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class CreatePublicipTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ResourceTagReq body = null;
+    private CreatePublicipTagRequestBody body = null;
 
     public CreatePublicipTagRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -49,14 +49,14 @@ public class CreatePublicipTagRequest  {
         this.publicipId = publicipId;
     }
 
-    public CreatePublicipTagRequest withBody(ResourceTagReq body) {
+    public CreatePublicipTagRequest withBody(CreatePublicipTagRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreatePublicipTagRequest withBody(Consumer<ResourceTagReq> bodySetter) {
+    public CreatePublicipTagRequest withBody(Consumer<CreatePublicipTagRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ResourceTagReq();
+            this.body = new CreatePublicipTagRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class CreatePublicipTagRequest  {
      * Get body
      * @return body
      */
-    public ResourceTagReq getBody() {
+    public CreatePublicipTagRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ResourceTagReq body) {
+    public void setBody(CreatePublicipTagRequestBody body) {
         this.body = body;
     }
     @Override

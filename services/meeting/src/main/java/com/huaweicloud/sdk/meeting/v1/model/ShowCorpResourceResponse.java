@@ -72,6 +72,18 @@ public class ShowCorpResourceResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="hwVisionCount")
+    
+    private ResDetailDTO hwVisionCount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ideaHubCount")
+    
+    private ResDetailDTO ideaHubCount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vmr")
     
     private List<QueryVmrPkgResResultDTO> vmr = null;
@@ -105,6 +117,24 @@ public class ShowCorpResourceResponse extends SdkResponse {
     @JsonProperty(value="enableUc")
     
     private Boolean enableUc;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enableAiMinutes")
+    
+    private Boolean enableAiMinutes;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="singleConfCallCount")
+    
+    private Integer singleConfCallCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="confLength")
+    
+    private Integer confLength;
 
     public ShowCorpResourceResponse withTe1080pHardCount(ResDetailDTO te1080pHardCount) {
         this.te1080pHardCount = te1080pHardCount;
@@ -322,6 +352,60 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.thirdPartyHardCount = thirdPartyHardCount;
     }
 
+    public ShowCorpResourceResponse withHwVisionCount(ResDetailDTO hwVisionCount) {
+        this.hwVisionCount = hwVisionCount;
+        return this;
+    }
+
+    public ShowCorpResourceResponse withHwVisionCount(Consumer<ResDetailDTO> hwVisionCountSetter) {
+        if(this.hwVisionCount == null ){
+            this.hwVisionCount = new ResDetailDTO();
+            hwVisionCountSetter.accept(this.hwVisionCount);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get hwVisionCount
+     * @return hwVisionCount
+     */
+    public ResDetailDTO getHwVisionCount() {
+        return hwVisionCount;
+    }
+
+    public void setHwVisionCount(ResDetailDTO hwVisionCount) {
+        this.hwVisionCount = hwVisionCount;
+    }
+
+    public ShowCorpResourceResponse withIdeaHubCount(ResDetailDTO ideaHubCount) {
+        this.ideaHubCount = ideaHubCount;
+        return this;
+    }
+
+    public ShowCorpResourceResponse withIdeaHubCount(Consumer<ResDetailDTO> ideaHubCountSetter) {
+        if(this.ideaHubCount == null ){
+            this.ideaHubCount = new ResDetailDTO();
+            ideaHubCountSetter.accept(this.ideaHubCount);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get ideaHubCount
+     * @return ideaHubCount
+     */
+    public ResDetailDTO getIdeaHubCount() {
+        return ideaHubCount;
+    }
+
+    public void setIdeaHubCount(ResDetailDTO ideaHubCount) {
+        this.ideaHubCount = ideaHubCount;
+    }
+
     public ShowCorpResourceResponse withVmr(List<QueryVmrPkgResResultDTO> vmr) {
         this.vmr = vmr;
         return this;
@@ -455,6 +539,66 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setEnableUc(Boolean enableUc) {
         this.enableUc = enableUc;
     }
+
+    public ShowCorpResourceResponse withEnableAiMinutes(Boolean enableAiMinutes) {
+        this.enableAiMinutes = enableAiMinutes;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启Ai会议纪要
+     * @return enableAiMinutes
+     */
+    public Boolean getEnableAiMinutes() {
+        return enableAiMinutes;
+    }
+
+    public void setEnableAiMinutes(Boolean enableAiMinutes) {
+        this.enableAiMinutes = enableAiMinutes;
+    }
+
+    public ShowCorpResourceResponse withSingleConfCallCount(Integer singleConfCallCount) {
+        this.singleConfCallCount = singleConfCallCount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 单会议并发呼叫数
+     * @return singleConfCallCount
+     */
+    public Integer getSingleConfCallCount() {
+        return singleConfCallCount;
+    }
+
+    public void setSingleConfCallCount(Integer singleConfCallCount) {
+        this.singleConfCallCount = singleConfCallCount;
+    }
+
+    public ShowCorpResourceResponse withConfLength(Integer confLength) {
+        this.confLength = confLength;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议时长
+     * @return confLength
+     */
+    public Integer getConfLength() {
+        return confLength;
+    }
+
+    public void setConfLength(Integer confLength) {
+        this.confLength = confLength;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -472,16 +616,21 @@ public class ShowCorpResourceResponse extends SdkResponse {
             Objects.equals(this.confCallCount, showCorpResourceResponse.confCallCount) &&
             Objects.equals(this.liveCount, showCorpResourceResponse.liveCount) &&
             Objects.equals(this.thirdPartyHardCount, showCorpResourceResponse.thirdPartyHardCount) &&
+            Objects.equals(this.hwVisionCount, showCorpResourceResponse.hwVisionCount) &&
+            Objects.equals(this.ideaHubCount, showCorpResourceResponse.ideaHubCount) &&
             Objects.equals(this.vmr, showCorpResourceResponse.vmr) &&
             Objects.equals(this.enablePstn, showCorpResourceResponse.enablePstn) &&
             Objects.equals(this.enableSMS, showCorpResourceResponse.enableSMS) &&
             Objects.equals(this.enableHybridCloud, showCorpResourceResponse.enableHybridCloud) &&
             Objects.equals(this.enableCloudDisk, showCorpResourceResponse.enableCloudDisk) &&
-            Objects.equals(this.enableUc, showCorpResourceResponse.enableUc);
+            Objects.equals(this.enableUc, showCorpResourceResponse.enableUc) &&
+            Objects.equals(this.enableAiMinutes, showCorpResourceResponse.enableAiMinutes) &&
+            Objects.equals(this.singleConfCallCount, showCorpResourceResponse.singleConfCallCount) &&
+            Objects.equals(this.confLength, showCorpResourceResponse.confLength);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(te1080pHardCount, te720pHardCount, teSoftCount, roomCount, recordCapability, confCallCount, liveCount, thirdPartyHardCount, vmr, enablePstn, enableSMS, enableHybridCloud, enableCloudDisk, enableUc);
+        return Objects.hash(te1080pHardCount, te720pHardCount, teSoftCount, roomCount, recordCapability, confCallCount, liveCount, thirdPartyHardCount, hwVisionCount, ideaHubCount, vmr, enablePstn, enableSMS, enableHybridCloud, enableCloudDisk, enableUc, enableAiMinutes, singleConfCallCount, confLength);
     }
     @Override
     public String toString() {
@@ -495,12 +644,17 @@ public class ShowCorpResourceResponse extends SdkResponse {
         sb.append("    confCallCount: ").append(toIndentedString(confCallCount)).append("\n");
         sb.append("    liveCount: ").append(toIndentedString(liveCount)).append("\n");
         sb.append("    thirdPartyHardCount: ").append(toIndentedString(thirdPartyHardCount)).append("\n");
+        sb.append("    hwVisionCount: ").append(toIndentedString(hwVisionCount)).append("\n");
+        sb.append("    ideaHubCount: ").append(toIndentedString(ideaHubCount)).append("\n");
         sb.append("    vmr: ").append(toIndentedString(vmr)).append("\n");
         sb.append("    enablePstn: ").append(toIndentedString(enablePstn)).append("\n");
         sb.append("    enableSMS: ").append(toIndentedString(enableSMS)).append("\n");
         sb.append("    enableHybridCloud: ").append(toIndentedString(enableHybridCloud)).append("\n");
         sb.append("    enableCloudDisk: ").append(toIndentedString(enableCloudDisk)).append("\n");
         sb.append("    enableUc: ").append(toIndentedString(enableUc)).append("\n");
+        sb.append("    enableAiMinutes: ").append(toIndentedString(enableAiMinutes)).append("\n");
+        sb.append("    singleConfCallCount: ").append(toIndentedString(singleConfCallCount)).append("\n");
+        sb.append("    confLength: ").append(toIndentedString(confLength)).append("\n");
         sb.append("}");
         return sb.toString();
     }

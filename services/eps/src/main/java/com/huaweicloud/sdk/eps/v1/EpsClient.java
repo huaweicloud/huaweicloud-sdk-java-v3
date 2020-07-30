@@ -12,7 +12,7 @@ public class EpsClient {
     }
 
     public static ClientBuilder<EpsClient> newBuilder() {
-        return new ClientBuilder<>(EpsClient::new);
+        return new ClientBuilder<>(EpsClient::new, "GlobalCredentials");
     }
 
     public CreateEPResponse createEP(CreateEPRequest request) {

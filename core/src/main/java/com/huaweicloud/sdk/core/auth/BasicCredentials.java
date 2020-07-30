@@ -22,52 +22,28 @@
 package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
-public class BasicCredentials implements ICredential {
+public class BasicCredentials extends AbstractCredentials {
 
-    private String ak;
-
-    private String sk;
 
     private String projectId;
 
-    private String domainId;
-
-    public String getAk() {
-        return ak;
-    }
-
-    public void setAk(String ak) {
-        this.ak = ak;
-    }
 
     public BasicCredentials withAk(String ak) {
-        this.ak = ak;
+        setAk(ak);
         return this;
     }
 
-    public String getSk() {
-        return sk;
-    }
-
-    public void setSk(String sk) {
-        this.sk = sk;
-    }
-
     public BasicCredentials withSk(String sk) {
-        this.sk = sk;
+        setSk(sk);
         return this;
     }
 
@@ -84,42 +60,26 @@ public class BasicCredentials implements ICredential {
         return this;
     }
 
-    public String getDomainId() {
-        return domainId;
-    }
 
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
-
-    public BasicCredentials withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    private Map<String, Object> getPathParams() {
+    Map<String, Object> getPathParams() {
         Map<String, Object> pathParam = new LinkedHashMap<>();
         if (Objects.nonNull(projectId)) {
             pathParam.put(Constants.PROJECT_ID, projectId);
         }
-        if (Objects.nonNull(domainId)) {
-            pathParam.put(Constants.DOMAIN_ID, domainId);
-        }
         return pathParam;
     }
 
+
     @Override
     public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
+        if (Objects.isNull(getProjectId())) {
+            throw new SdkException("This is a global service and the proejct id must be provided.");
+        }
         return CompletableFuture.supplyAsync(() -> {
             HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addPathParam(getPathParams());
 
-            if (!StringUtils.isEmpty(projectId)) {
-                builder.addHeader(Constants.X_PROJECT_ID, projectId);
-            }
 
-            if (!StringUtils.isEmpty(domainId)) {
-                builder.addHeader(Constants.X_DOMAIN_ID, domainId);
-            }
+            builder.addHeader(Constants.X_PROJECT_ID, projectId);
 
             if (Objects.nonNull(httpRequest.getContentType())
                     && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
@@ -133,10 +93,5 @@ public class BasicCredentials implements ICredential {
         });
     }
 
-    @Override
-    public List<String> getSensitiveHeaders() {
-        String[] sensitives = new String[]{"authorization", "x-auth-token", "x-subject-token", "x-service-token"};
-        List<String> sensitiveHeaders = new ArrayList<>(Arrays.asList(sensitives));
-        return sensitiveHeaders;
-    }
+
 }

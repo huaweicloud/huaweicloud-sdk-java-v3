@@ -62,7 +62,7 @@ public class MeetingCredentials implements ICredential {
         return validToken.thenApply(tokenStr -> {
             HttpRequestBuilder builder = httpRequest.builder();
             if (!StringUtils.isEmpty(tokenStr)) {
-                builder.addHeader("X-Auth-Token", tokenStr);
+                builder.addHeader("X-Access-Token", tokenStr);
             }
             return builder.build();
         });

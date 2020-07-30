@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.CreatePrePaidPublicipReq;
+import com.huaweicloud.sdk.eip.v2.model.CreatePrePaidPublicipRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,16 +21,16 @@ public class CreatePrePaidPublicipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePrePaidPublicipReq body = null;
+    private CreatePrePaidPublicipRequestBody body = null;
 
-    public CreatePrePaidPublicipRequest withBody(CreatePrePaidPublicipReq body) {
+    public CreatePrePaidPublicipRequest withBody(CreatePrePaidPublicipRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreatePrePaidPublicipRequest withBody(Consumer<CreatePrePaidPublicipReq> bodySetter) {
+    public CreatePrePaidPublicipRequest withBody(Consumer<CreatePrePaidPublicipRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new CreatePrePaidPublicipReq();
+            this.body = new CreatePrePaidPublicipRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -42,11 +42,11 @@ public class CreatePrePaidPublicipRequest  {
      * Get body
      * @return body
      */
-    public CreatePrePaidPublicipReq getBody() {
+    public CreatePrePaidPublicipRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreatePrePaidPublicipReq body) {
+    public void setBody(CreatePrePaidPublicipRequestBody body) {
         this.body = body;
     }
     @Override

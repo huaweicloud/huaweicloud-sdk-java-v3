@@ -33,7 +33,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            InsertReq.class,
+            AddPublicipsIntoSharedBandwidthRequestBody.class,
             f -> f.withMarshaller(AddPublicipsIntoSharedBandwidthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -57,7 +57,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateBandwidthReq.class,
+            BatchCreateBandwidthRequestBody.class,
             f -> f.withMarshaller(BatchCreateSharedBandwidthsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -81,7 +81,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSharedBandwidhReq.class,
+            CreateSharedBandwidhRequestBody.class,
             f -> f.withMarshaller(CreateSharedBandwidthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -206,7 +206,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RemoveBandwidthReq.class,
+            RemovePublicipsFromSharedBandwidthRequestBody.class,
             f -> f.withMarshaller(RemovePublicipsFromSharedBandwidthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -261,7 +261,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateBandwidthReq.class,
+            UpdateBandwidthRequestBody.class,
             f -> f.withMarshaller(UpdateBandwidthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -293,7 +293,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePrePaidBandwidthReq.class,
+            UpdatePrePaidBandwidthRequestBody.class,
             f -> f.withMarshaller(UpdatePrePaidBandwidthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -325,7 +325,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreatePublicipTagsReq.class,
+            BatchCreatePublicipTagsRequestBody.class,
             f -> f.withMarshaller(BatchCreatePublicipTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -357,7 +357,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeletePublicipTagsReq.class,
+            BatchDeletePublicipTagsRequestBody.class,
             f -> f.withMarshaller(BatchDeletePublicipTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -381,7 +381,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePrePaidPublicipReq.class,
+            CreatePrePaidPublicipRequestBody.class,
             f -> f.withMarshaller(CreatePrePaidPublicipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -405,7 +405,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePublicip.class,
+            CreatePublicipRequestBody.class,
             f -> f.withMarshaller(CreatePublicipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -437,7 +437,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResourceTagReq.class,
+            CreatePublicipTagRequestBody.class,
             f -> f.withMarshaller(CreatePublicipTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -609,7 +609,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListPublicipsByTagsReq.class,
+            ListPublicipsByTagsRequestBody.class,
             f -> f.withMarshaller(ListPublicipsByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -687,7 +687,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePublicipsReq.class,
+            UpdatePublicipsRequestBody.class,
             f -> f.withMarshaller(UpdatePublicipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -711,7 +711,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronCreateFloatingIpReq.class,
+            NeutronCreateFloatingIpRequestBody.class,
             f -> f.withMarshaller(NeutronCreateFloatingIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -884,7 +884,7 @@ public class EipMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronUpdateFloatingIpReq.class,
+            NeutronUpdateFloatingIpRequestBody.class,
             f -> f.withMarshaller(NeutronUpdateFloatingIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

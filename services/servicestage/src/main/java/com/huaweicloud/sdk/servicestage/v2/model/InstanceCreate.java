@@ -1,0 +1,374 @@
+package com.huaweicloud.sdk.servicestage.v2.model;
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.servicestage.v2.model.ExternalAccessesCreate;
+import com.huaweicloud.sdk.servicestage.v2.model.FlavorId;
+import com.huaweicloud.sdk.servicestage.v2.model.ReferResourceCreate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * InstanceCreate
+ */
+public class InstanceCreate  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="environment_id")
+    
+    private String environmentId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="flavor_id")
+    
+    private FlavorId flavorId = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="replica")
+    
+    private Integer replica;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="artifacts")
+    
+    private Map<String, Object> artifacts = new HashMap<>();
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="version")
+    
+    private String version;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="configuration")
+    
+    private Object _configuration = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="external_accesses")
+    
+    private List<ExternalAccessesCreate> externalAccesses = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="refer_resources")
+    
+    private List<ReferResourceCreate> referResources = new ArrayList<>();
+    
+    public InstanceCreate withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用组件实例名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public InstanceCreate withEnvironmentId(String environmentId) {
+        this.environmentId = environmentId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 环境ID。
+     * @return environmentId
+     */
+    public String getEnvironmentId() {
+        return environmentId;
+    }
+
+    public void setEnvironmentId(String environmentId) {
+        this.environmentId = environmentId;
+    }
+
+    public InstanceCreate withFlavorId(FlavorId flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get flavorId
+     * @return flavorId
+     */
+    public FlavorId getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(FlavorId flavorId) {
+        this.flavorId = flavorId;
+    }
+
+    public InstanceCreate withReplica(Integer replica) {
+        this.replica = replica;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例副本数。
+     * @return replica
+     */
+    public Integer getReplica() {
+        return replica;
+    }
+
+    public void setReplica(Integer replica) {
+        this.replica = replica;
+    }
+
+    public InstanceCreate withArtifacts(Map<String, Object> artifacts) {
+        this.artifacts = artifacts;
+        return this;
+    }
+
+    
+
+    public InstanceCreate putArtifactsItem(String key, Object artifactsItem) {
+        this.artifacts.put(key, artifactsItem);
+        return this;
+    }
+
+    public InstanceCreate withArtifacts(Consumer<Map<String, Object>> artifactsSetter) {
+        if(this.artifacts == null ){
+            this.artifacts = new HashMap<>();
+        }
+        artifactsSetter.accept(this.artifacts);
+        return this;
+    }
+    /**
+     * 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
+     * @return artifacts
+     */
+    public Map<String, Object> getArtifacts() {
+        return artifacts;
+    }
+
+    public void setArtifacts(Map<String, Object> artifacts) {
+        this.artifacts = artifacts;
+    }
+
+    public InstanceCreate withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用组件版本号，满足版本语义，如1.0.0。。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public InstanceCreate withConfiguration(Object _configuration) {
+        this._configuration = _configuration;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用配置，环境变量等，如{“env”: [{“name”: “log-level”: “warn”}]}, 默认空。
+     * @return _configuration
+     */
+    public Object getConfiguration() {
+        return _configuration;
+    }
+
+    public void setConfiguration(Object _configuration) {
+        this._configuration = _configuration;
+    }
+
+    public InstanceCreate withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 描述。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public InstanceCreate withExternalAccesses(List<ExternalAccessesCreate> externalAccesses) {
+        this.externalAccesses = externalAccesses;
+        return this;
+    }
+
+    
+    public InstanceCreate addExternalAccessesItem(ExternalAccessesCreate externalAccessesItem) {
+        if (this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
+        this.externalAccesses.add(externalAccessesItem);
+        return this;
+    }
+
+    public InstanceCreate withExternalAccesses(Consumer<List<ExternalAccessesCreate>> externalAccessesSetter) {
+        if(this.externalAccesses == null ){
+            this.externalAccesses = new ArrayList<>();
+        }
+        externalAccessesSetter.accept(this.externalAccesses);
+        return this;
+    }
+
+    /**
+     * 访问方式。
+     * @return externalAccesses
+     */
+    public List<ExternalAccessesCreate> getExternalAccesses() {
+        return externalAccesses;
+    }
+
+    public void setExternalAccesses(List<ExternalAccessesCreate> externalAccesses) {
+        this.externalAccesses = externalAccesses;
+    }
+
+    public InstanceCreate withReferResources(List<ReferResourceCreate> referResources) {
+        this.referResources = referResources;
+        return this;
+    }
+
+    
+    public InstanceCreate addReferResourcesItem(ReferResourceCreate referResourcesItem) {
+        this.referResources.add(referResourcesItem);
+        return this;
+    }
+
+    public InstanceCreate withReferResources(Consumer<List<ReferResourceCreate>> referResourcesSetter) {
+        if(this.referResources == null ){
+            this.referResources = new ArrayList<>();
+        }
+        referResourcesSetter.accept(this.referResources);
+        return this;
+    }
+
+    /**
+     * 部署资源。
+     * @return referResources
+     */
+    public List<ReferResourceCreate> getReferResources() {
+        return referResources;
+    }
+
+    public void setReferResources(List<ReferResourceCreate> referResources) {
+        this.referResources = referResources;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        InstanceCreate instanceCreate = (InstanceCreate) o;
+        return Objects.equals(this.name, instanceCreate.name) &&
+            Objects.equals(this.environmentId, instanceCreate.environmentId) &&
+            Objects.equals(this.flavorId, instanceCreate.flavorId) &&
+            Objects.equals(this.replica, instanceCreate.replica) &&
+            Objects.equals(this.artifacts, instanceCreate.artifacts) &&
+            Objects.equals(this.version, instanceCreate.version) &&
+            Objects.equals(this._configuration, instanceCreate._configuration) &&
+            Objects.equals(this.description, instanceCreate.description) &&
+            Objects.equals(this.externalAccesses, instanceCreate.externalAccesses) &&
+            Objects.equals(this.referResources, instanceCreate.referResources);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, environmentId, flavorId, replica, artifacts, version, _configuration, description, externalAccesses, referResources);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class InstanceCreate {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
+        sb.append("    replica: ").append(toIndentedString(replica)).append("\n");
+        sb.append("    artifacts: ").append(toIndentedString(artifacts)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    externalAccesses: ").append(toIndentedString(externalAccesses)).append("\n");
+        sb.append("    referResources: ").append(toIndentedString(referResources)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

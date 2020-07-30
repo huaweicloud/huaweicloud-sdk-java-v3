@@ -15,7 +15,7 @@ public class TmsAsyncClient {
     }
 
     public static ClientBuilder<TmsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(TmsAsyncClient::new);
+        return new ClientBuilder<>(TmsAsyncClient::new, "GlobalCredentials");
     }
 
 

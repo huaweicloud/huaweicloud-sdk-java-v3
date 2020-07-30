@@ -18,9 +18,35 @@ public class RemovePublicipInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="publicip_type")
+    
+    private String publicipType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip_id")
     
     private String publicipId;
+
+    public RemovePublicipInfo withPublicipType(String publicipType) {
+        this.publicipType = publicipType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：若publicip_id为弹性公网IP的id，则该字段可自动忽略。若publicip_id为IPv6端口PORT的id，则该字段必填：5_dualStack(目前仅北京4局点支持)
+     * @return publicipType
+     */
+    public String getPublicipType() {
+        return publicipType;
+    }
+
+    public void setPublicipType(String publicipType) {
+        this.publicipType = publicipType;
+    }
 
     public RemovePublicipInfo withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -50,16 +76,18 @@ public class RemovePublicipInfo  {
             return false;
         }
         RemovePublicipInfo removePublicipInfo = (RemovePublicipInfo) o;
-        return Objects.equals(this.publicipId, removePublicipInfo.publicipId);
+        return Objects.equals(this.publicipType, removePublicipInfo.publicipType) &&
+            Objects.equals(this.publicipId, removePublicipInfo.publicipId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(publicipId);
+        return Objects.hash(publicipType, publicipId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RemovePublicipInfo {\n");
+        sb.append("    publicipType: ").append(toIndentedString(publicipType)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.RemoveBandwidthReq;
+import com.huaweicloud.sdk.eip.v2.model.RemovePublicipsFromSharedBandwidthRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class RemovePublicipsFromSharedBandwidthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RemoveBandwidthReq body = null;
+    private RemovePublicipsFromSharedBandwidthRequestBody body = null;
 
     public RemovePublicipsFromSharedBandwidthRequest withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
@@ -49,14 +49,14 @@ public class RemovePublicipsFromSharedBandwidthRequest  {
         this.bandwidthId = bandwidthId;
     }
 
-    public RemovePublicipsFromSharedBandwidthRequest withBody(RemoveBandwidthReq body) {
+    public RemovePublicipsFromSharedBandwidthRequest withBody(RemovePublicipsFromSharedBandwidthRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public RemovePublicipsFromSharedBandwidthRequest withBody(Consumer<RemoveBandwidthReq> bodySetter) {
+    public RemovePublicipsFromSharedBandwidthRequest withBody(Consumer<RemovePublicipsFromSharedBandwidthRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new RemoveBandwidthReq();
+            this.body = new RemovePublicipsFromSharedBandwidthRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class RemovePublicipsFromSharedBandwidthRequest  {
      * Get body
      * @return body
      */
-    public RemoveBandwidthReq getBody() {
+    public RemovePublicipsFromSharedBandwidthRequestBody getBody() {
         return body;
     }
 
-    public void setBody(RemoveBandwidthReq body) {
+    public void setBody(RemovePublicipsFromSharedBandwidthRequestBody body) {
         this.body = body;
     }
     @Override

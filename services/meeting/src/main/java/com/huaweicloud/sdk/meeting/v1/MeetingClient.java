@@ -12,7 +12,7 @@ public class MeetingClient {
     }
 
     public static ClientBuilder<MeetingClient> newBuilder() {
-        return new ClientBuilder<>(MeetingClient::new);
+        return new ClientBuilder<>(MeetingClient::new, "MeetingCredentials");
     }
 
     public AddCorpResponse addCorp(AddCorpRequest request) {
@@ -29,6 +29,14 @@ public class MeetingClient {
 
     public AddDeviceResponse addDevice(AddDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addDevice);
+    }
+
+    public AddProgramResponse addProgram(AddProgramRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.addProgram);
+    }
+
+    public AddPublicationResponse addPublication(AddPublicationRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.addPublication);
     }
 
     public AddResourceResponse addResource(AddResourceRequest request) {
@@ -53,6 +61,18 @@ public class MeetingClient {
 
     public BatchDeleteDevicesResponse batchDeleteDevices(BatchDeleteDevicesRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeleteDevices);
+    }
+
+    public BatchDeleteMaterialsResponse batchDeleteMaterials(BatchDeleteMaterialsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeleteMaterials);
+    }
+
+    public BatchDeleteProgramsResponse batchDeletePrograms(BatchDeleteProgramsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeletePrograms);
+    }
+
+    public BatchDeletePublicationsResponse batchDeletePublications(BatchDeletePublicationsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeletePublications);
     }
 
     public BatchDeleteUsersResponse batchDeleteUsers(BatchDeleteUsersRequest request) {
@@ -231,6 +251,10 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchHisMeetings);
     }
 
+    public SearchMaterialsResponse searchMaterials(SearchMaterialsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchMaterials);
+    }
+
     public SearchMeetingsResponse searchMeetings(SearchMeetingsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchMeetings);
     }
@@ -241,6 +265,14 @@ public class MeetingClient {
 
     public SearchOnlineMeetingsResponse searchOnlineMeetings(SearchOnlineMeetingsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchOnlineMeetings);
+    }
+
+    public SearchProgramsResponse searchPrograms(SearchProgramsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchPrograms);
+    }
+
+    public SearchPublicationsResponse searchPublications(SearchPublicationsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchPublications);
     }
 
     public SearchRecordingsResponse searchRecordings(SearchRecordingsRequest request) {
@@ -335,6 +367,14 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showOnlineMeetingDetail);
     }
 
+    public ShowProgramResponse showProgram(ShowProgramRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showProgram);
+    }
+
+    public ShowPublicationResponse showPublication(ShowPublicationRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showPublication);
+    }
+
     public ShowRealTimeInfoOfMeetingResponse showRealTimeInfoOfMeeting(ShowRealTimeInfoOfMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showRealTimeInfoOfMeeting);
     }
@@ -379,12 +419,24 @@ public class MeetingClient {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateDevice);
     }
 
+    public UpdateMaterialResponse updateMaterial(UpdateMaterialRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateMaterial);
+    }
+
     public UpdateMemberVmrResponse updateMemberVmr(UpdateMemberVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateMemberVmr);
     }
 
     public UpdateMyInfoResponse updateMyInfo(UpdateMyInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateMyInfo);
+    }
+
+    public UpdateProgramResponse updateProgram(UpdateProgramRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateProgram);
+    }
+
+    public UpdatePublicationResponse updatePublication(UpdatePublicationRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updatePublication);
     }
 
     public UpdatePwdResponse updatePwd(UpdatePwdRequest request) {

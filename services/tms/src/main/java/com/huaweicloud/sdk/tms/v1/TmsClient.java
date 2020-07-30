@@ -12,7 +12,7 @@ public class TmsClient {
     }
 
     public static ClientBuilder<TmsClient> newBuilder() {
-        return new ClientBuilder<>(TmsClient::new);
+        return new ClientBuilder<>(TmsClient::new, "GlobalCredentials");
     }
 
     public CreatePredefineTagsResponse createPredefineTags(CreatePredefineTagsRequest request) {

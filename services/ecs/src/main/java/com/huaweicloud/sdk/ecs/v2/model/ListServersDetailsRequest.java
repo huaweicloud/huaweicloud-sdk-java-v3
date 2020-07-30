@@ -18,9 +18,9 @@ public class ListServersDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
+    @JsonProperty(value="enterprise_project_id")
     
-    private Integer offset = 1;
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,15 +30,9 @@ public class ListServersDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="ip")
     
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
-    private String status;
+    private String ip;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +42,21 @@ public class ListServersDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not-tags")
     
     private String notTags;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Integer offset = 1;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,9 +66,9 @@ public class ListServersDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
+    @JsonProperty(value="status")
     
-    private String enterpriseProjectId;
+    private String status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,14 +76,8 @@ public class ListServersDetailsRequest  {
     
     private String tags;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
-    private String ip;
-
-    public ListServersDetailsRequest withOffset(Integer offset) {
-        this.offset = offset;
+    public ListServersDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
@@ -85,15 +85,15 @@ public class ListServersDetailsRequest  {
 
 
     /**
-     * Get offset
-     * @return offset
+     * Get enterpriseProjectId
+     * @return enterpriseProjectId
      */
-    public Integer getOffset() {
-        return offset;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setOffset(Integer offset) {
-        this.offset = offset;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ListServersDetailsRequest withFlavor(String flavor) {
@@ -116,8 +116,8 @@ public class ListServersDetailsRequest  {
         this.flavor = flavor;
     }
 
-    public ListServersDetailsRequest withName(String name) {
-        this.name = name;
+    public ListServersDetailsRequest withIp(String ip) {
+        this.ip = ip;
         return this;
     }
 
@@ -125,35 +125,15 @@ public class ListServersDetailsRequest  {
 
 
     /**
-     * Get name
-     * @return name
+     * Get ip
+     * @return ip
      */
-    public String getName() {
-        return name;
+    public String getIp() {
+        return ip;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ListServersDetailsRequest withStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get status
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public ListServersDetailsRequest withLimit(Integer limit) {
@@ -178,6 +158,26 @@ public class ListServersDetailsRequest  {
         this.limit = limit;
     }
 
+    public ListServersDetailsRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get name
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ListServersDetailsRequest withNotTags(String notTags) {
         this.notTags = notTags;
         return this;
@@ -196,6 +196,26 @@ public class ListServersDetailsRequest  {
 
     public void setNotTags(String notTags) {
         this.notTags = notTags;
+    }
+
+    public ListServersDetailsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get offset
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListServersDetailsRequest withReservationId(String reservationId) {
@@ -218,8 +238,8 @@ public class ListServersDetailsRequest  {
         this.reservationId = reservationId;
     }
 
-    public ListServersDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public ListServersDetailsRequest withStatus(String status) {
+        this.status = status;
         return this;
     }
 
@@ -227,15 +247,15 @@ public class ListServersDetailsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
-     * @return enterpriseProjectId
+     * Get status
+     * @return status
      */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
+    public String getStatus() {
+        return status;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public ListServersDetailsRequest withTags(String tags) {
@@ -257,26 +277,6 @@ public class ListServersDetailsRequest  {
     public void setTags(String tags) {
         this.tags = tags;
     }
-
-    public ListServersDetailsRequest withIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get ip
-     * @return ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -286,35 +286,35 @@ public class ListServersDetailsRequest  {
             return false;
         }
         ListServersDetailsRequest listServersDetailsRequest = (ListServersDetailsRequest) o;
-        return Objects.equals(this.offset, listServersDetailsRequest.offset) &&
+        return Objects.equals(this.enterpriseProjectId, listServersDetailsRequest.enterpriseProjectId) &&
             Objects.equals(this.flavor, listServersDetailsRequest.flavor) &&
-            Objects.equals(this.name, listServersDetailsRequest.name) &&
-            Objects.equals(this.status, listServersDetailsRequest.status) &&
+            Objects.equals(this.ip, listServersDetailsRequest.ip) &&
             Objects.equals(this.limit, listServersDetailsRequest.limit) &&
+            Objects.equals(this.name, listServersDetailsRequest.name) &&
             Objects.equals(this.notTags, listServersDetailsRequest.notTags) &&
+            Objects.equals(this.offset, listServersDetailsRequest.offset) &&
             Objects.equals(this.reservationId, listServersDetailsRequest.reservationId) &&
-            Objects.equals(this.enterpriseProjectId, listServersDetailsRequest.enterpriseProjectId) &&
-            Objects.equals(this.tags, listServersDetailsRequest.tags) &&
-            Objects.equals(this.ip, listServersDetailsRequest.ip);
+            Objects.equals(this.status, listServersDetailsRequest.status) &&
+            Objects.equals(this.tags, listServersDetailsRequest.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(offset, flavor, name, status, limit, notTags, reservationId, enterpriseProjectId, tags, ip);
+        return Objects.hash(enterpriseProjectId, flavor, ip, limit, name, notTags, offset, reservationId, status, tags);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListServersDetailsRequest {\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
-        sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

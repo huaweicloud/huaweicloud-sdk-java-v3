@@ -12,6 +12,29 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class VpcMeta {
 
+    public static final HttpRequestDef<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse> acceptVpcPeering = genForacceptVpcPeering();
+
+    private static HttpRequestDef<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse> genForacceptVpcPeering() {
+        // basic
+        HttpRequestDef.Builder<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AcceptVpcPeeringRequest.class, AcceptVpcPeeringResponse.class)
+                .withUri("/v2.0/vpc/peerings/{peering_id}/accept");
+
+        // requests
+        builder.withRequestField("peering_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AcceptVpcPeeringRequest::getPeeringId, (req, v) -> {
+                req.setPeeringId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePortRequest, CreatePortResponse> createPort = genForcreatePort();
 
     private static HttpRequestDef<CreatePortRequest, CreatePortResponse> genForcreatePort() {
@@ -99,6 +122,30 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             CreateSubnetRequestBody.class,
             f -> f.withMarshaller(CreateSubnetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateVpcPeeringRequest, CreateVpcPeeringResponse> createVpcPeering = genForcreateVpcPeering();
+
+    private static HttpRequestDef<CreateVpcPeeringRequest, CreateVpcPeeringResponse> genForcreateVpcPeering() {
+        // basic
+        HttpRequestDef.Builder<CreateVpcPeeringRequest, CreateVpcPeeringResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVpcPeeringRequest.class, CreateVpcPeeringResponse.class)
+                .withUri("/v2.0/vpc/peerings")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateVpcPeeringRequestBody.class,
+            f -> f.withMarshaller(CreateVpcPeeringRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -200,6 +247,29 @@ public class VpcMeta {
             String.class,
             f -> f.withMarshaller(DeleteSubnetRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse> deleteVpcPeering = genFordeleteVpcPeering();
+
+    private static HttpRequestDef<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse> genFordeleteVpcPeering() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcPeeringRequest.class, DeleteVpcPeeringResponse.class)
+                .withUri("/v2.0/vpc/peerings/{peering_id}");
+
+        // requests
+        builder.withRequestField("peering_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVpcPeeringRequest::getPeeringId, (req, v) -> {
+                req.setPeeringId(v);
             })
         );
 
@@ -444,6 +514,100 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListVpcPeeringsRequest, ListVpcPeeringsResponse> listVpcPeerings = genForlistVpcPeerings();
+
+    private static HttpRequestDef<ListVpcPeeringsRequest, ListVpcPeeringsResponse> genForlistVpcPeerings() {
+        // basic
+        HttpRequestDef.Builder<ListVpcPeeringsRequest, ListVpcPeeringsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpcPeeringsRequest.class, ListVpcPeeringsResponse.class)
+                .withUri("/v2.0/vpc/peerings");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListVpcPeeringsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcPeeringsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcPeeringsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcPeeringsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListVpcPeeringsRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListVpcPeeringsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcPeeringsRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            })
+        );
+        builder.withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcPeeringsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RejectVpcPeeringRequest, RejectVpcPeeringResponse> rejectVpcPeering = genForrejectVpcPeering();
+
+    private static HttpRequestDef<RejectVpcPeeringRequest, RejectVpcPeeringResponse> genForrejectVpcPeering() {
+        // basic
+        HttpRequestDef.Builder<RejectVpcPeeringRequest, RejectVpcPeeringResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RejectVpcPeeringRequest.class, RejectVpcPeeringResponse.class)
+                .withUri("/v2.0/vpc/peerings/{peering_id}/reject");
+
+        // requests
+        builder.withRequestField("peering_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RejectVpcPeeringRequest::getPeeringId, (req, v) -> {
+                req.setPeeringId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPortRequest, ShowPortResponse> showPort = genForshowPort();
 
     private static HttpRequestDef<ShowPortRequest, ShowPortResponse> genForshowPort() {
@@ -559,6 +723,29 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVpcPeeringRequest, ShowVpcPeeringResponse> showVpcPeering = genForshowVpcPeering();
+
+    private static HttpRequestDef<ShowVpcPeeringRequest, ShowVpcPeeringResponse> genForshowVpcPeering() {
+        // basic
+        HttpRequestDef.Builder<ShowVpcPeeringRequest, ShowVpcPeeringResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVpcPeeringRequest.class, ShowVpcPeeringResponse.class)
+                .withUri("/v2.0/vpc/peerings/{peering_id}");
+
+        // requests
+        builder.withRequestField("peering_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVpcPeeringRequest::getPeeringId, (req, v) -> {
+                req.setPeeringId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdatePortRequest, UpdatePortResponse> updatePort = genForupdatePort();
 
     private static HttpRequestDef<UpdatePortRequest, UpdatePortResponse> genForupdatePort() {
@@ -622,6 +809,38 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateSubnetRequestBody.class,
             f -> f.withMarshaller(UpdateSubnetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse> updateVpcPeering = genForupdateVpcPeering();
+
+    private static HttpRequestDef<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse> genForupdateVpcPeering() {
+        // basic
+        HttpRequestDef.Builder<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcPeeringRequest.class, UpdateVpcPeeringResponse.class)
+                .withUri("/v2.0/vpc/peerings/{peering_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("peering_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateVpcPeeringRequest::getPeeringId, (req, v) -> {
+                req.setPeeringId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateVpcPeeringRequestBody.class,
+            f -> f.withMarshaller(UpdateVpcPeeringRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -764,6 +983,30 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVpcRouteRequest, CreateVpcRouteResponse> createVpcRoute = genForcreateVpcRoute();
+
+    private static HttpRequestDef<CreateVpcRouteRequest, CreateVpcRouteResponse> genForcreateVpcRoute() {
+        // basic
+        HttpRequestDef.Builder<CreateVpcRouteRequest, CreateVpcRouteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVpcRouteRequest.class, CreateVpcRouteResponse.class)
+                .withUri("/v2.0/vpc/routes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateVpcRouteRequestBody.class,
+            f -> f.withMarshaller(CreateVpcRouteRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> deleteVpc = genFordeleteVpc();
 
     private static HttpRequestDef<DeleteVpcRequest, DeleteVpcResponse> genFordeleteVpc() {
@@ -779,6 +1022,100 @@ public class VpcMeta {
             String.class,
             f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpcRouteRequest, DeleteVpcRouteResponse> deleteVpcRoute = genFordeleteVpcRoute();
+
+    private static HttpRequestDef<DeleteVpcRouteRequest, DeleteVpcRouteResponse> genFordeleteVpcRoute() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpcRouteRequest, DeleteVpcRouteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcRouteRequest.class, DeleteVpcRouteResponse.class)
+                .withUri("/v2.0/vpc/routes/{route_id}");
+
+        // requests
+        builder.withRequestField("route_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVpcRouteRequest::getRouteId, (req, v) -> {
+                req.setRouteId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpcRoutesRequest, ListVpcRoutesResponse> listVpcRoutes = genForlistVpcRoutes();
+
+    private static HttpRequestDef<ListVpcRoutesRequest, ListVpcRoutesResponse> genForlistVpcRoutes() {
+        // basic
+        HttpRequestDef.Builder<ListVpcRoutesRequest, ListVpcRoutesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVpcRoutesRequest.class, ListVpcRoutesResponse.class)
+                .withUri("/v2.0/vpc/routes");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListVpcRoutesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcRoutesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcRoutesRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListVpcRoutesRequest.TypeEnum.class,
+            f -> f.withMarshaller(ListVpcRoutesRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcRoutesRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            })
+        );
+        builder.withRequestField("destination",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcRoutesRequest::getDestination, (req, v) -> {
+                req.setDestination(v);
+            })
+        );
+        builder.withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVpcRoutesRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
             })
         );
 
@@ -849,6 +1186,29 @@ public class VpcMeta {
             String.class,
             f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVpcRouteRequest, ShowVpcRouteResponse> showVpcRoute = genForshowVpcRoute();
+
+    private static HttpRequestDef<ShowVpcRouteRequest, ShowVpcRouteResponse> genForshowVpcRoute() {
+        // basic
+        HttpRequestDef.Builder<ShowVpcRouteRequest, ShowVpcRouteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVpcRouteRequest.class, ShowVpcRouteResponse.class)
+                .withUri("/v2.0/vpc/routes/{route_id}");
+
+        // requests
+        builder.withRequestField("route_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVpcRouteRequest::getRouteId, (req, v) -> {
+                req.setRouteId(v);
             })
         );
 

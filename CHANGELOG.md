@@ -1,3 +1,77 @@
+# 3.0.7-beta 2020-07-30
+## HuaweiCloud SDK APIG
+ - ### Features
+    - Support API Gateway.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK CloudBuild
+ - ### Features
+    - Support CloudBuild platform.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK DC
+ - ### Features
+    - Support Direct Connect Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK ECS
+ - ### Features
+    - Publish new interfaces, such as ChangeServerOs and ResetServerPassword.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK KMS
+ - ### Features
+    - Support Key Management Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK Meeting
+ - ### Features
+    - Add interfaces of global window module.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK MPC
+ - ### Features
+    - Support Media Processing Center.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK ServiceStage
+ - ### Features
+    - Support ServiceStage.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK VPC
+ - ### Features
+    - Support interfaces of version v3.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 # 3.0.6-beta 2020-07-15
 ## HuaweiCloud SDK ECS
  - ### Features

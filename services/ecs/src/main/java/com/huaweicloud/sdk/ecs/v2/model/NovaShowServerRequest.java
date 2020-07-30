@@ -26,7 +26,7 @@ public class NovaShowServerRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OpenStack-API-Version")
     
-    private String openStackAPIVersion = "compute 2.60";
+    private String openStackAPIVersion;
 
     public NovaShowServerRequest withServerId(String serverId) {
         this.serverId = serverId;

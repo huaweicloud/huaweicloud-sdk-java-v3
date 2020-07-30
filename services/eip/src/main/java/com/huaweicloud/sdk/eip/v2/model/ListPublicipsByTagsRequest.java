@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.ListPublicipsByTagsReq;
+import com.huaweicloud.sdk.eip.v2.model.ListPublicipsByTagsRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,16 +21,16 @@ public class ListPublicipsByTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListPublicipsByTagsReq body = null;
+    private ListPublicipsByTagsRequestBody body = null;
 
-    public ListPublicipsByTagsRequest withBody(ListPublicipsByTagsReq body) {
+    public ListPublicipsByTagsRequest withBody(ListPublicipsByTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ListPublicipsByTagsRequest withBody(Consumer<ListPublicipsByTagsReq> bodySetter) {
+    public ListPublicipsByTagsRequest withBody(Consumer<ListPublicipsByTagsRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ListPublicipsByTagsReq();
+            this.body = new ListPublicipsByTagsRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -42,11 +42,11 @@ public class ListPublicipsByTagsRequest  {
      * Get body
      * @return body
      */
-    public ListPublicipsByTagsReq getBody() {
+    public ListPublicipsByTagsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ListPublicipsByTagsReq body) {
+    public void setBody(ListPublicipsByTagsRequestBody body) {
         this.body = body;
     }
     @Override

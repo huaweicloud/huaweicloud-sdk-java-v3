@@ -12,7 +12,7 @@ public class IamClient {
     }
 
     public static ClientBuilder<IamClient> newBuilder() {
-        return new ClientBuilder<>(IamClient::new);
+        return new ClientBuilder<>(IamClient::new, "GlobalCredentials");
     }
 
     public AssociateAgencyWithDomainPermissionResponse associateAgencyWithDomainPermission(AssociateAgencyWithDomainPermissionRequest request) {

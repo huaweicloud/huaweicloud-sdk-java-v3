@@ -87,21 +87,28 @@ You could obtain and install Java SDK through following methods:
 3. Initialize Credentials
 
     ``` java
+    //Region Services
     BasicCredentials credentials = new BasicCredentials()
         .withAk(ak)
         .withSk(sk)
         .withProjectId(projectId)
+   
+    //Global Services
+    GlobalCredentials credentials = new GlobalCredentials()
+        .withAk(ak)
+        .withSk(sk)
         .withDomainId(domainId);
     ```
 
     **where:**
-
-    For project services, you only need to provide projectId, domainId is optional. While using global services, projectId must be null, and domainId should be filled in according to the actual situation. Global services only contains IAM(Identity and Access Management) currently.
+    Global services currently only support IAM, TMS, EPS.
+    
+    For Region services need to provide projectId. For global services need to provide domainId. 
 
     - `ak` is the access key ID for your account.
     - `sk` is the secret access key for your account.
     - `projectId` is the ID of your project depending on your region which you want to operate.
-    - `domainId` is the account ID of huawei cloud.
+    - `domainId` is the account ID of huaweicloud.
 
 4. Initialize the {Service}Client instance
 

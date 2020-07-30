@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.UpdatePrePaidBandwidthReq;
+import com.huaweicloud.sdk.eip.v2.model.UpdatePrePaidBandwidthRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class UpdatePrePaidBandwidthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePrePaidBandwidthReq body = null;
+    private UpdatePrePaidBandwidthRequestBody body = null;
 
     public UpdatePrePaidBandwidthRequest withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
@@ -49,14 +49,14 @@ public class UpdatePrePaidBandwidthRequest  {
         this.bandwidthId = bandwidthId;
     }
 
-    public UpdatePrePaidBandwidthRequest withBody(UpdatePrePaidBandwidthReq body) {
+    public UpdatePrePaidBandwidthRequest withBody(UpdatePrePaidBandwidthRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePrePaidBandwidthRequest withBody(Consumer<UpdatePrePaidBandwidthReq> bodySetter) {
+    public UpdatePrePaidBandwidthRequest withBody(Consumer<UpdatePrePaidBandwidthRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdatePrePaidBandwidthReq();
+            this.body = new UpdatePrePaidBandwidthRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class UpdatePrePaidBandwidthRequest  {
      * Get body
      * @return body
      */
-    public UpdatePrePaidBandwidthReq getBody() {
+    public UpdatePrePaidBandwidthRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdatePrePaidBandwidthReq body) {
+    public void setBody(UpdatePrePaidBandwidthRequestBody body) {
         this.body = body;
     }
     @Override

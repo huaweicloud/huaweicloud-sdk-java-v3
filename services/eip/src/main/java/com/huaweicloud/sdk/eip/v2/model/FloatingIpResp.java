@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -169,13 +170,13 @@ public class FloatingIpResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private String createdAt;
+    private OffsetDateTime createdAt = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private String updatedAt;
+    private OffsetDateTime updatedAt = null;
 
     public FloatingIpResp withFixedIpAddress(String fixedIpAddress) {
         this.fixedIpAddress = fixedIpAddress;
@@ -397,7 +398,7 @@ public class FloatingIpResp  {
         this.dnsDomain = dnsDomain;
     }
 
-    public FloatingIpResp withCreatedAt(String createdAt) {
+    public FloatingIpResp withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -409,15 +410,15 @@ public class FloatingIpResp  {
      * 资源创建时间  采用UTC时间  格式：YYYY-MM-DDTHH:MM:SS
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public FloatingIpResp withUpdatedAt(String updatedAt) {
+    public FloatingIpResp withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -429,11 +430,11 @@ public class FloatingIpResp  {
      * 资源更新时间  采用UTC时间  格式：YYYY-MM-DDTHH:MM:SS
      * @return updatedAt
      */
-    public String getUpdatedAt() {
+    public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
     @Override

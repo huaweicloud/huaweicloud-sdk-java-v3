@@ -15,6 +15,10 @@ public class VpcClient {
         return new ClientBuilder<>(VpcClient::new);
     }
 
+    public AcceptVpcPeeringResponse acceptVpcPeering(AcceptVpcPeeringRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.acceptVpcPeering);
+    }
+
     public CreatePortResponse createPort(CreatePortRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createPort);
     }
@@ -29,6 +33,10 @@ public class VpcClient {
 
     public CreateSubnetResponse createSubnet(CreateSubnetRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createSubnet);
+    }
+
+    public CreateVpcPeeringResponse createVpcPeering(CreateVpcPeeringRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createVpcPeering);
     }
 
     public DeletePortResponse deletePort(DeletePortRequest request) {
@@ -47,6 +55,10 @@ public class VpcClient {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteSubnet);
     }
 
+    public DeleteVpcPeeringResponse deleteVpcPeering(DeleteVpcPeeringRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteVpcPeering);
+    }
+
     public ListPortsResponse listPorts(ListPortsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listPorts);
     }
@@ -61,6 +73,14 @@ public class VpcClient {
 
     public ListSubnetsResponse listSubnets(ListSubnetsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listSubnets);
+    }
+
+    public ListVpcPeeringsResponse listVpcPeerings(ListVpcPeeringsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listVpcPeerings);
+    }
+
+    public RejectVpcPeeringResponse rejectVpcPeering(RejectVpcPeeringRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.rejectVpcPeering);
     }
 
     public ShowPortResponse showPort(ShowPortRequest request) {
@@ -83,12 +103,20 @@ public class VpcClient {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSubnet);
     }
 
+    public ShowVpcPeeringResponse showVpcPeering(ShowVpcPeeringRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showVpcPeering);
+    }
+
     public UpdatePortResponse updatePort(UpdatePortRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updatePort);
     }
 
     public UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updateSubnet);
+    }
+
+    public UpdateVpcPeeringResponse updateVpcPeering(UpdateVpcPeeringRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateVpcPeering);
     }
 
     public CreatePrivateipResponse createPrivateip(CreatePrivateipRequest request) {
@@ -111,8 +139,20 @@ public class VpcClient {
         return hcClient.syncInvokeHttp(request, VpcMeta.createVpc);
     }
 
+    public CreateVpcRouteResponse createVpcRoute(CreateVpcRouteRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createVpcRoute);
+    }
+
     public DeleteVpcResponse deleteVpc(DeleteVpcRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteVpc);
+    }
+
+    public DeleteVpcRouteResponse deleteVpcRoute(DeleteVpcRouteRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteVpcRoute);
+    }
+
+    public ListVpcRoutesResponse listVpcRoutes(ListVpcRoutesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listVpcRoutes);
     }
 
     public ListVpcsResponse listVpcs(ListVpcsRequest request) {
@@ -121,6 +161,10 @@ public class VpcClient {
 
     public ShowVpcResponse showVpc(ShowVpcRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showVpc);
+    }
+
+    public ShowVpcRouteResponse showVpcRoute(ShowVpcRouteRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showVpcRoute);
     }
 
     public UpdateVpcResponse updateVpc(UpdateVpcRequest request) {

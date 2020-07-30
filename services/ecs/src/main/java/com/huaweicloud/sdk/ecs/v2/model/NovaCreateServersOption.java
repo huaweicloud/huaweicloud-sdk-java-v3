@@ -45,7 +45,7 @@ public class NovaCreateServersOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Map<String, Object> metadata = null;
+    private Map<String, String> metadata = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -260,14 +260,14 @@ public class NovaCreateServersOption  {
         this.name = name;
     }
 
-    public NovaCreateServersOption withMetadata(Map<String, Object> metadata) {
+    public NovaCreateServersOption withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
     
 
-    public NovaCreateServersOption putMetadataItem(String key, Object metadataItem) {
+    public NovaCreateServersOption putMetadataItem(String key, String metadataItem) {
          if (this.metadata == null) {
             this.metadata = new HashMap<>();
          }
@@ -275,7 +275,7 @@ public class NovaCreateServersOption  {
         return this;
     }
 
-    public NovaCreateServersOption withMetadata(Consumer<Map<String, Object>> metadataSetter) {
+    public NovaCreateServersOption withMetadata(Consumer<Map<String, String>> metadataSetter) {
         if(this.metadata == null ){
             this.metadata = new HashMap<>();
         }
@@ -286,11 +286,11 @@ public class NovaCreateServersOption  {
      * 用户自定义字段键值对。  > - key的长度大于0小于256字节 > - value的长度大于等于0小于256字节   系统预留字段  1. admin_pass：弹性云服务器密码        Windows弹性云服务器Administrator用户的密码。     > 说明：     > 创建密码方式鉴权的Windows弹性云服务器时为必选字段。
      * @return metadata
      */
-    public Map<String, Object> getMetadata() {
+    public Map<String, String> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Map<String, Object> metadata) {
+    public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
 

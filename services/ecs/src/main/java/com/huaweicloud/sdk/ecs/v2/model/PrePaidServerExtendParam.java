@@ -390,7 +390,7 @@ public class PrePaidServerExtendParam  {
     
     private Integer spotDurationHours;
     /**
-     * spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+     * 竞价实例中断策略，当前支持immediate。  - 当interruption_policy=immediate时表示释放策略为立即释放。 
      */
     public static class InterruptionPolicyEnum {
 
@@ -400,16 +400,10 @@ public class PrePaidServerExtendParam  {
          */
         public static final InterruptionPolicyEnum IMMEDIATE = new InterruptionPolicyEnum("immediate");
         
-        /**
-         * Enum DELAY for value: "delay"
-         */
-        public static final InterruptionPolicyEnum DELAY = new InterruptionPolicyEnum("delay");
-        
 
         public static final Map<String, InterruptionPolicyEnum> staticFields = new HashMap<String, InterruptionPolicyEnum>() {
             { 
                 put("immediate", IMMEDIATE);
-                put("delay", DELAY);
             }
         };
 
@@ -469,7 +463,7 @@ public class PrePaidServerExtendParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interruption_policy")
     
-    private InterruptionPolicyEnum interruptionPolicy;
+    private InterruptionPolicyEnum interruptionPolicy = InterruptionPolicyEnum.IMMEDIATE;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -708,7 +702,7 @@ public class PrePaidServerExtendParam  {
 
 
     /**
-     * spot block时间。
+     * 购买的竞价实例时长。  - 仅interruption_policy=immediate 时该字段有效 。 - spot_duration_hours大于0。最大值由预测系统给出可以从flavor的extra_specs的cond:spot_block:operation:longest_duration_hours字段中查询。
      * @return spotDurationHours
      */
     public Integer getSpotDurationHours() {
@@ -728,7 +722,7 @@ public class PrePaidServerExtendParam  {
 
 
     /**
-     * spot实例中断策略，当前支持immediate和delay。    - immediate代表立即释放。   - delay代表延迟释放，当前延迟时间5分钟。 
+     * 竞价实例中断策略，当前支持immediate。  - 当interruption_policy=immediate时表示释放策略为立即释放。 
      * @return interruptionPolicy
      */
     public InterruptionPolicyEnum getInterruptionPolicy() {
@@ -748,8 +742,7 @@ public class PrePaidServerExtendParam  {
 
 
     /**
-     * spot block时间个数。  - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于1，最大值由预测系统给出，可以从flavor的extra_specs中查询。 例如客户买5小时，就通过spot_duartion_hours=5，不传该值，默认为1. 例如客户买大于6小时，就只能买6小时倍数。spot_duartion_hours=6，spot_duartion_count=2，代表买12个小时。 
-     * minimum: 1
+     * 表示购买的“竞价实例时长”的个数。  - 仅spot_duration_hours>0 时该字段有效。 - spot_duration_hours小于6时，spot_duration_count值必须为1。 - spot_duration_hours等于6时，spot_duration_count大于等于1。  spot_duration_count的最大值由预测系统给出可以从flavor的extra_specs的cond:spot_block:operation:longest_duration_count字段中查询。  
      * @return spotDurationCount
      */
     public Integer getSpotDurationCount() {

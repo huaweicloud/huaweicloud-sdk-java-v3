@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.UpdateBandwidthReq;
+import com.huaweicloud.sdk.eip.v2.model.UpdateBandwidthRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class UpdateBandwidthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateBandwidthReq body = null;
+    private UpdateBandwidthRequestBody body = null;
 
     public UpdateBandwidthRequest withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
@@ -49,14 +49,14 @@ public class UpdateBandwidthRequest  {
         this.bandwidthId = bandwidthId;
     }
 
-    public UpdateBandwidthRequest withBody(UpdateBandwidthReq body) {
+    public UpdateBandwidthRequest withBody(UpdateBandwidthRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateBandwidthRequest withBody(Consumer<UpdateBandwidthReq> bodySetter) {
+    public UpdateBandwidthRequest withBody(Consumer<UpdateBandwidthRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateBandwidthReq();
+            this.body = new UpdateBandwidthRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class UpdateBandwidthRequest  {
      * Get body
      * @return body
      */
-    public UpdateBandwidthReq getBody() {
+    public UpdateBandwidthRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateBandwidthReq body) {
+    public void setBody(UpdateBandwidthRequestBody body) {
         this.body = body;
     }
     @Override

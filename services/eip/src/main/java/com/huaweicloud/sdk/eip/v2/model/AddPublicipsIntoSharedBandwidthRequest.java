@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.InsertReq;
+import com.huaweicloud.sdk.eip.v2.model.AddPublicipsIntoSharedBandwidthRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class AddPublicipsIntoSharedBandwidthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private InsertReq body = null;
+    private AddPublicipsIntoSharedBandwidthRequestBody body = null;
 
     public AddPublicipsIntoSharedBandwidthRequest withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
@@ -49,14 +49,14 @@ public class AddPublicipsIntoSharedBandwidthRequest  {
         this.bandwidthId = bandwidthId;
     }
 
-    public AddPublicipsIntoSharedBandwidthRequest withBody(InsertReq body) {
+    public AddPublicipsIntoSharedBandwidthRequest withBody(AddPublicipsIntoSharedBandwidthRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public AddPublicipsIntoSharedBandwidthRequest withBody(Consumer<InsertReq> bodySetter) {
+    public AddPublicipsIntoSharedBandwidthRequest withBody(Consumer<AddPublicipsIntoSharedBandwidthRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new InsertReq();
+            this.body = new AddPublicipsIntoSharedBandwidthRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class AddPublicipsIntoSharedBandwidthRequest  {
      * Get body
      * @return body
      */
-    public InsertReq getBody() {
+    public AddPublicipsIntoSharedBandwidthRequestBody getBody() {
         return body;
     }
 
-    public void setBody(InsertReq body) {
+    public void setBody(AddPublicipsIntoSharedBandwidthRequestBody body) {
         this.body = body;
     }
     @Override

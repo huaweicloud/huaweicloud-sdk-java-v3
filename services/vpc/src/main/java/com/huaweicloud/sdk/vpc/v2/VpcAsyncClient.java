@@ -19,6 +19,10 @@ public class VpcAsyncClient {
     }
 
 
+    public CompletableFuture<AcceptVpcPeeringResponse> acceptVpcPeeringAsync(AcceptVpcPeeringRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.acceptVpcPeering);
+    }
+
     public CompletableFuture<CreatePortResponse> createPortAsync(CreatePortRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.createPort);
     }
@@ -33,6 +37,10 @@ public class VpcAsyncClient {
 
     public CompletableFuture<CreateSubnetResponse> createSubnetAsync(CreateSubnetRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.createSubnet);
+    }
+
+    public CompletableFuture<CreateVpcPeeringResponse> createVpcPeeringAsync(CreateVpcPeeringRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createVpcPeering);
     }
 
     public CompletableFuture<DeletePortResponse> deletePortAsync(DeletePortRequest request) {
@@ -51,6 +59,10 @@ public class VpcAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcMeta.deleteSubnet);
     }
 
+    public CompletableFuture<DeleteVpcPeeringResponse> deleteVpcPeeringAsync(DeleteVpcPeeringRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteVpcPeering);
+    }
+
     public CompletableFuture<ListPortsResponse> listPortsAsync(ListPortsRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.listPorts);
     }
@@ -65,6 +77,14 @@ public class VpcAsyncClient {
 
     public CompletableFuture<ListSubnetsResponse> listSubnetsAsync(ListSubnetsRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.listSubnets);
+    }
+
+    public CompletableFuture<ListVpcPeeringsResponse> listVpcPeeringsAsync(ListVpcPeeringsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listVpcPeerings);
+    }
+
+    public CompletableFuture<RejectVpcPeeringResponse> rejectVpcPeeringAsync(RejectVpcPeeringRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.rejectVpcPeering);
     }
 
     public CompletableFuture<ShowPortResponse> showPortAsync(ShowPortRequest request) {
@@ -87,12 +107,20 @@ public class VpcAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcMeta.showSubnet);
     }
 
+    public CompletableFuture<ShowVpcPeeringResponse> showVpcPeeringAsync(ShowVpcPeeringRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showVpcPeering);
+    }
+
     public CompletableFuture<UpdatePortResponse> updatePortAsync(UpdatePortRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.updatePort);
     }
 
     public CompletableFuture<UpdateSubnetResponse> updateSubnetAsync(UpdateSubnetRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.updateSubnet);
+    }
+
+    public CompletableFuture<UpdateVpcPeeringResponse> updateVpcPeeringAsync(UpdateVpcPeeringRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.updateVpcPeering);
     }
 
     public CompletableFuture<CreatePrivateipResponse> createPrivateipAsync(CreatePrivateipRequest request) {
@@ -115,8 +143,20 @@ public class VpcAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcMeta.createVpc);
     }
 
+    public CompletableFuture<CreateVpcRouteResponse> createVpcRouteAsync(CreateVpcRouteRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createVpcRoute);
+    }
+
     public CompletableFuture<DeleteVpcResponse> deleteVpcAsync(DeleteVpcRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.deleteVpc);
+    }
+
+    public CompletableFuture<DeleteVpcRouteResponse> deleteVpcRouteAsync(DeleteVpcRouteRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteVpcRoute);
+    }
+
+    public CompletableFuture<ListVpcRoutesResponse> listVpcRoutesAsync(ListVpcRoutesRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listVpcRoutes);
     }
 
     public CompletableFuture<ListVpcsResponse> listVpcsAsync(ListVpcsRequest request) {
@@ -125,6 +165,10 @@ public class VpcAsyncClient {
 
     public CompletableFuture<ShowVpcResponse> showVpcAsync(ShowVpcRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.showVpc);
+    }
+
+    public CompletableFuture<ShowVpcRouteResponse> showVpcRouteAsync(ShowVpcRouteRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showVpcRoute);
     }
 
     public CompletableFuture<UpdateVpcResponse> updateVpcAsync(UpdateVpcRequest request) {

@@ -34,6 +34,12 @@ public class ServerFault  {
     
     private String message;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="details")
+    
+    private String details;
+
     public ServerFault withCode(Integer code) {
         this.code = code;
         return this;
@@ -93,6 +99,26 @@ public class ServerFault  {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public ServerFault withDetails(String details) {
+        this.details = details;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 异常详情信息。
+     * @return details
+     */
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,11 +130,12 @@ public class ServerFault  {
         ServerFault serverFault = (ServerFault) o;
         return Objects.equals(this.code, serverFault.code) &&
             Objects.equals(this.created, serverFault.created) &&
-            Objects.equals(this.message, serverFault.message);
+            Objects.equals(this.message, serverFault.message) &&
+            Objects.equals(this.details, serverFault.details);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(code, created, message);
+        return Objects.hash(code, created, message, details);
     }
     @Override
     public String toString() {
@@ -117,6 +144,7 @@ public class ServerFault  {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    details: ").append(toIndentedString(details)).append("\n");
         sb.append("}");
         return sb.toString();
     }

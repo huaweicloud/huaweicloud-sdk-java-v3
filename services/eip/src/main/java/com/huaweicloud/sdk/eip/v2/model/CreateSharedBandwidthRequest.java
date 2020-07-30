@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.CreateSharedBandwidhReq;
+import com.huaweicloud.sdk.eip.v2.model.CreateSharedBandwidhRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,16 +21,16 @@ public class CreateSharedBandwidthRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateSharedBandwidhReq body = null;
+    private CreateSharedBandwidhRequestBody body = null;
 
-    public CreateSharedBandwidthRequest withBody(CreateSharedBandwidhReq body) {
+    public CreateSharedBandwidthRequest withBody(CreateSharedBandwidhRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateSharedBandwidthRequest withBody(Consumer<CreateSharedBandwidhReq> bodySetter) {
+    public CreateSharedBandwidthRequest withBody(Consumer<CreateSharedBandwidhRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateSharedBandwidhReq();
+            this.body = new CreateSharedBandwidhRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -42,11 +42,11 @@ public class CreateSharedBandwidthRequest  {
      * Get body
      * @return body
      */
-    public CreateSharedBandwidhReq getBody() {
+    public CreateSharedBandwidhRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateSharedBandwidhReq body) {
+    public void setBody(CreateSharedBandwidhRequestBody body) {
         this.body = body;
     }
     @Override

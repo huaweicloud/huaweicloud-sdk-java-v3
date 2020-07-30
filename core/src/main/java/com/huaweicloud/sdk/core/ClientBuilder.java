@@ -22,6 +22,7 @@
 package com.huaweicloud.sdk.core;
 
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpConfig;
@@ -35,11 +36,17 @@ public class ClientBuilder<T> {
     private HttpConfig httpConfig;
     private String endpoint;
     private boolean enableHttpLog = false;
+    private String credentialName = BasicCredentials.class.getSimpleName();
 
     private static final String CUSTOMIZATION = "Customization";
 
     public ClientBuilder(Function<HcClient, T> creator) {
         this.creator = creator;
+    }
+
+    public ClientBuilder(Function<HcClient, T> creator, String credentialName) {
+        this.creator = creator;
+        this.credentialName = credentialName;
     }
 
     public ClientBuilder<T> withCredential(ICredential credential) {
@@ -57,11 +64,6 @@ public class ClientBuilder<T> {
         return this;
     }
 
-    public ClientBuilder<T> withEnableHttpLog(boolean enableHttpLog) {
-        this.enableHttpLog = false;
-        return this;
-    }
-
     public T build() {
         HcClient hcClient = new HcClient(Objects.nonNull(this.httpConfig)
                 ? this.httpConfig : HttpConfig.getDefaultHttpConfig());
@@ -69,6 +71,11 @@ public class ClientBuilder<T> {
         if (Objects.isNull(this.credential)) {
             loadCredentialsFromEnvVar();
         }
+
+        if (Objects.nonNull(credential) && !credentialName.equals(credential.getClass().getSimpleName())) {
+            throw new SdkException("This client need input " + credentialName + " credential object");
+        }
+
         hcClient.withEndpoint(this.endpoint)
             .withCredential(this.credential);
 
@@ -102,11 +109,18 @@ public class ClientBuilder<T> {
         if (Objects.isNull(ak) || Objects.isNull(sk)) {
             return;
         }
-        this.credential = new BasicCredentials()
-            .withAk(ak)
-            .withSk(sk)
-            .withProjectId(projectId)
-            .withDomainId(domainId);
+
+        if (credentialName.equals(BasicCredentials.class.getSimpleName())) {
+            this.credential = new BasicCredentials()
+                    .withAk(ak)
+                    .withSk(sk)
+                    .withProjectId(projectId);
+        } else if (credentialName.equals(GlobalCredentials.class.getSimpleName())) {
+            this.credential = new GlobalCredentials()
+                    .withAk(ak)
+                    .withSk(sk)
+                    .withDomainId(domainId);
+        }
     }
 
     public Function<HcClient, T> getCreator() {

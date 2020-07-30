@@ -15,7 +15,7 @@ public class IamAsyncClient {
     }
 
     public static ClientBuilder<IamAsyncClient> newBuilder() {
-        return new ClientBuilder<>(IamAsyncClient::new);
+        return new ClientBuilder<>(IamAsyncClient::new, "GlobalCredentials");
     }
 
 

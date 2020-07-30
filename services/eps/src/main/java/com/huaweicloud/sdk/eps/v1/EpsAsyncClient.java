@@ -15,7 +15,7 @@ public class EpsAsyncClient {
     }
 
     public static ClientBuilder<EpsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(EpsAsyncClient::new);
+        return new ClientBuilder<>(EpsAsyncClient::new, "GlobalCredentials");
     }
 
 

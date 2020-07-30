@@ -67,12 +67,6 @@ public class AddUserDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrId")
-    
-    private String vmrId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deptCode")
     
     private String deptCode;
@@ -285,26 +279,6 @@ public class AddUserDTO  {
         this.email = email;
     }
 
-    public AddUserDTO withVmrId(String vmrId) {
-        this.vmrId = vmrId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 虚拟会议室ID，若不携带则后台默认生成。 maxLength：32 minLength：0
-     * @return vmrId
-     */
-    public String getVmrId() {
-        return vmrId;
-    }
-
-    public void setVmrId(String vmrId) {
-        this.vmrId = vmrId;
-    }
-
     public AddUserDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
@@ -508,7 +482,6 @@ public class AddUserDTO  {
             Objects.equals(this.country, addUserDTO.country) &&
             Objects.equals(this.pwd, addUserDTO.pwd) &&
             Objects.equals(this.email, addUserDTO.email) &&
-            Objects.equals(this.vmrId, addUserDTO.vmrId) &&
             Objects.equals(this.deptCode, addUserDTO.deptCode) &&
             Objects.equals(this.signature, addUserDTO.signature) &&
             Objects.equals(this.title, addUserDTO.title) &&
@@ -521,7 +494,7 @@ public class AddUserDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, englishName, account, phone, country, pwd, email, vmrId, deptCode, signature, title, desc, status, function, sendNotify, sortLevel, hidePhone);
+        return Objects.hash(id, name, englishName, account, phone, country, pwd, email, deptCode, signature, title, desc, status, function, sendNotify, sortLevel, hidePhone);
     }
     @Override
     public String toString() {
@@ -535,7 +508,6 @@ public class AddUserDTO  {
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    pwd: ").append(toIndentedString(pwd)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
-        sb.append("    vmrId: ").append(toIndentedString(vmrId)).append("\n");
         sb.append("    deptCode: ").append(toIndentedString(deptCode)).append("\n");
         sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.NeutronCreateFloatingIpReq;
+import com.huaweicloud.sdk.eip.v2.model.NeutronCreateFloatingIpRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,16 +21,16 @@ public class NeutronCreateFloatingIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NeutronCreateFloatingIpReq body = null;
+    private NeutronCreateFloatingIpRequestBody body = null;
 
-    public NeutronCreateFloatingIpRequest withBody(NeutronCreateFloatingIpReq body) {
+    public NeutronCreateFloatingIpRequest withBody(NeutronCreateFloatingIpRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public NeutronCreateFloatingIpRequest withBody(Consumer<NeutronCreateFloatingIpReq> bodySetter) {
+    public NeutronCreateFloatingIpRequest withBody(Consumer<NeutronCreateFloatingIpRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new NeutronCreateFloatingIpReq();
+            this.body = new NeutronCreateFloatingIpRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -42,11 +42,11 @@ public class NeutronCreateFloatingIpRequest  {
      * Get body
      * @return body
      */
-    public NeutronCreateFloatingIpReq getBody() {
+    public NeutronCreateFloatingIpRequestBody getBody() {
         return body;
     }
 
-    public void setBody(NeutronCreateFloatingIpReq body) {
+    public void setBody(NeutronCreateFloatingIpRequestBody body) {
         this.body = body;
     }
     @Override

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.NeutronUpdateFloatingIpReq;
+import com.huaweicloud.sdk.eip.v2.model.NeutronUpdateFloatingIpRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class NeutronUpdateFloatingIpRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private NeutronUpdateFloatingIpReq body = null;
+    private NeutronUpdateFloatingIpRequestBody body = null;
 
     public NeutronUpdateFloatingIpRequest withFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
@@ -49,14 +49,14 @@ public class NeutronUpdateFloatingIpRequest  {
         this.floatingipId = floatingipId;
     }
 
-    public NeutronUpdateFloatingIpRequest withBody(NeutronUpdateFloatingIpReq body) {
+    public NeutronUpdateFloatingIpRequest withBody(NeutronUpdateFloatingIpRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public NeutronUpdateFloatingIpRequest withBody(Consumer<NeutronUpdateFloatingIpReq> bodySetter) {
+    public NeutronUpdateFloatingIpRequest withBody(Consumer<NeutronUpdateFloatingIpRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new NeutronUpdateFloatingIpReq();
+            this.body = new NeutronUpdateFloatingIpRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class NeutronUpdateFloatingIpRequest  {
      * Get body
      * @return body
      */
-    public NeutronUpdateFloatingIpReq getBody() {
+    public NeutronUpdateFloatingIpRequestBody getBody() {
         return body;
     }
 
-    public void setBody(NeutronUpdateFloatingIpReq body) {
+    public void setBody(NeutronUpdateFloatingIpRequestBody body) {
         this.body = body;
     }
     @Override

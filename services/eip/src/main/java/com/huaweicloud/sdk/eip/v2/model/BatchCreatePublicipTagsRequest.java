@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.BatchCreatePublicipTagsReq;
+import com.huaweicloud.sdk.eip.v2.model.BatchCreatePublicipTagsRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class BatchCreatePublicipTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchCreatePublicipTagsReq body = null;
+    private BatchCreatePublicipTagsRequestBody body = null;
 
     public BatchCreatePublicipTagsRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -49,14 +49,14 @@ public class BatchCreatePublicipTagsRequest  {
         this.publicipId = publicipId;
     }
 
-    public BatchCreatePublicipTagsRequest withBody(BatchCreatePublicipTagsReq body) {
+    public BatchCreatePublicipTagsRequest withBody(BatchCreatePublicipTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchCreatePublicipTagsRequest withBody(Consumer<BatchCreatePublicipTagsReq> bodySetter) {
+    public BatchCreatePublicipTagsRequest withBody(Consumer<BatchCreatePublicipTagsRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new BatchCreatePublicipTagsReq();
+            this.body = new BatchCreatePublicipTagsRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class BatchCreatePublicipTagsRequest  {
      * Get body
      * @return body
      */
-    public BatchCreatePublicipTagsReq getBody() {
+    public BatchCreatePublicipTagsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchCreatePublicipTagsReq body) {
+    public void setBody(BatchCreatePublicipTagsRequestBody body) {
         this.body = body;
     }
     @Override

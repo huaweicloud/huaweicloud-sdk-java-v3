@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.UpdatePublicipsReq;
+import com.huaweicloud.sdk.eip.v2.model.UpdatePublicipsRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class UpdatePublicipRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdatePublicipsReq body = null;
+    private UpdatePublicipsRequestBody body = null;
 
     public UpdatePublicipRequest withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -49,14 +49,14 @@ public class UpdatePublicipRequest  {
         this.publicipId = publicipId;
     }
 
-    public UpdatePublicipRequest withBody(UpdatePublicipsReq body) {
+    public UpdatePublicipRequest withBody(UpdatePublicipsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePublicipRequest withBody(Consumer<UpdatePublicipsReq> bodySetter) {
+    public UpdatePublicipRequest withBody(Consumer<UpdatePublicipsRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdatePublicipsReq();
+            this.body = new UpdatePublicipsRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class UpdatePublicipRequest  {
      * Get body
      * @return body
      */
-    public UpdatePublicipsReq getBody() {
+    public UpdatePublicipsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdatePublicipsReq body) {
+    public void setBody(UpdatePublicipsRequestBody body) {
         this.body = body;
     }
     @Override

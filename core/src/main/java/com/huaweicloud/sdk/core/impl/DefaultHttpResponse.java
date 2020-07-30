@@ -64,7 +64,8 @@ public class DefaultHttpResponse implements HttpResponse {
 
     @Override
     public String getContentType() {
-        return response.body().contentType().toString();
+        return Objects.isNull(response.body()) || Objects.isNull(response.body().contentType())
+                ? null : response.body().contentType().toString();
     }
 
     @Override

@@ -20,27 +20,9 @@ public class NovaListServersDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OpenStack-API-Version")
-    
-    private String openStackAPIVersion = "compute 2.60";
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="changes-since")
     
     private String changesSince;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
-    private String ip;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image")
-    
-    private String image;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,9 +32,180 @@ public class NovaListServersDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="image")
+    
+    private String image;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ip")
+    
+    private String ip;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit = 25;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="marker")
+    
+    private String marker;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="not-tags")
+    
+    private String notTags;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="reservation_id")
+    
+    private String reservationId;
+    /**
+     * Gets or Sets sortKey
+     */
+    public static class SortKeyEnum {
+
+        
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
+        public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
+        
+        /**
+         * Enum AVAILABILITY_ZONE for value: "availability_zone"
+         */
+        public static final SortKeyEnum AVAILABILITY_ZONE = new SortKeyEnum("availability_zone");
+        
+        /**
+         * Enum DISPLAY_NAME for value: "display_name"
+         */
+        public static final SortKeyEnum DISPLAY_NAME = new SortKeyEnum("display_name");
+        
+        /**
+         * Enum HOST for value: "host"
+         */
+        public static final SortKeyEnum HOST = new SortKeyEnum("host");
+        
+        /**
+         * Enum INSTANCE_TYPE_ID for value: "instance_type_id"
+         */
+        public static final SortKeyEnum INSTANCE_TYPE_ID = new SortKeyEnum("instance_type_id");
+        
+        /**
+         * Enum KEY_NAME for value: "key_name"
+         */
+        public static final SortKeyEnum KEY_NAME = new SortKeyEnum("key_name");
+        
+        /**
+         * Enum PROJECT_ID for value: "project_id"
+         */
+        public static final SortKeyEnum PROJECT_ID = new SortKeyEnum("project_id");
+        
+        /**
+         * Enum USER_ID for value: "user_id"
+         */
+        public static final SortKeyEnum USER_ID = new SortKeyEnum("user_id");
+        
+        /**
+         * Enum UPDATED_AT for value: "updated_at"
+         */
+        public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
+        
+        /**
+         * Enum UUID for value: "uuid"
+         */
+        public static final SortKeyEnum UUID = new SortKeyEnum("uuid");
+        
+        /**
+         * Enum VM_STATE for value: "vm_state"
+         */
+        public static final SortKeyEnum VM_STATE = new SortKeyEnum("vm_state");
+        
+
+        public static final Map<String, SortKeyEnum> staticFields = new HashMap<String, SortKeyEnum>() {
+            { 
+                put("created_at", CREATED_AT);
+                put("availability_zone", AVAILABILITY_ZONE);
+                put("display_name", DISPLAY_NAME);
+                put("host", HOST);
+                put("instance_type_id", INSTANCE_TYPE_ID);
+                put("key_name", KEY_NAME);
+                put("project_id", PROJECT_ID);
+                put("user_id", USER_ID);
+                put("updated_at", UPDATED_AT);
+                put("uuid", UUID);
+                put("vm_state", VM_STATE);
+            }
+        };
+
+        private String value;
+
+        SortKeyEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortKeyEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            SortKeyEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new SortKeyEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static SortKeyEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            SortKeyEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof SortKeyEnum) {
+                return this.value.equals(((SortKeyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sort_key")
+    
+    private SortKeyEnum sortKey = SortKeyEnum.CREATED_AT;
     /**
      * Gets or Sets status
      */
@@ -209,188 +362,15 @@ public class NovaListServersDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit = 25;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
-    private String marker;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
     private String tags;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not-tags")
+    @JsonProperty(value="OpenStack-API-Version")
     
-    private String notTags;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reservation_id")
-    
-    private String reservationId;
-    /**
-     * Gets or Sets sortKey
-     */
-    public static class SortKeyEnum {
-
-        
-        /**
-         * Enum CREATED_AT for value: "created_at"
-         */
-        public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
-        
-        /**
-         * Enum AVAILABILITY_ZONE for value: "availability_zone"
-         */
-        public static final SortKeyEnum AVAILABILITY_ZONE = new SortKeyEnum("availability_zone");
-        
-        /**
-         * Enum DISPLAY_NAME for value: "display_name"
-         */
-        public static final SortKeyEnum DISPLAY_NAME = new SortKeyEnum("display_name");
-        
-        /**
-         * Enum HOST for value: "host"
-         */
-        public static final SortKeyEnum HOST = new SortKeyEnum("host");
-        
-        /**
-         * Enum INSTANCE_TYPE_ID for value: "instance_type_id"
-         */
-        public static final SortKeyEnum INSTANCE_TYPE_ID = new SortKeyEnum("instance_type_id");
-        
-        /**
-         * Enum KEY_NAME for value: "key_name"
-         */
-        public static final SortKeyEnum KEY_NAME = new SortKeyEnum("key_name");
-        
-        /**
-         * Enum PROJECT_ID for value: "project_id"
-         */
-        public static final SortKeyEnum PROJECT_ID = new SortKeyEnum("project_id");
-        
-        /**
-         * Enum USER_ID for value: "user_id"
-         */
-        public static final SortKeyEnum USER_ID = new SortKeyEnum("user_id");
-        
-        /**
-         * Enum UPDATED_AT for value: "updated_at"
-         */
-        public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
-        
-        /**
-         * Enum UUID for value: "uuid"
-         */
-        public static final SortKeyEnum UUID = new SortKeyEnum("uuid");
-        
-        /**
-         * Enum VM_STATE for value: "vm_state"
-         */
-        public static final SortKeyEnum VM_STATE = new SortKeyEnum("vm_state");
-        
-
-        public static final Map<String, SortKeyEnum> staticFields = new HashMap<String, SortKeyEnum>() {
-            { 
-                put("created_at", CREATED_AT);
-                put("availability_zone", AVAILABILITY_ZONE);
-                put("display_name", DISPLAY_NAME);
-                put("host", HOST);
-                put("instance_type_id", INSTANCE_TYPE_ID);
-                put("key_name", KEY_NAME);
-                put("project_id", PROJECT_ID);
-                put("user_id", USER_ID);
-                put("updated_at", UPDATED_AT);
-                put("uuid", UUID);
-                put("vm_state", VM_STATE);
-            }
-        };
-
-        private String value;
-
-        SortKeyEnum(String value) {
-            this.value = value;
-        }
-
-        @Override
-        @JsonValue
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SortKeyEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            SortKeyEnum result = staticFields.get(value);
-            if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortKeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
-            }
-            return result;
-        }
-
-        public static SortKeyEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            SortKeyEnum result = staticFields.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortKeyEnum) {
-                return this.value.equals(((SortKeyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_key")
-    
-    private SortKeyEnum sortKey = SortKeyEnum.CREATED_AT;
-
-    public NovaListServersDetailsRequest withOpenStackAPIVersion(String openStackAPIVersion) {
-        this.openStackAPIVersion = openStackAPIVersion;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get openStackAPIVersion
-     * @return openStackAPIVersion
-     */
-    public String getOpenStackAPIVersion() {
-        return openStackAPIVersion;
-    }
-
-    public void setOpenStackAPIVersion(String openStackAPIVersion) {
-        this.openStackAPIVersion = openStackAPIVersion;
-    }
+    private String openStackAPIVersion;
 
     public NovaListServersDetailsRequest withChangesSince(String changesSince) {
         this.changesSince = changesSince;
@@ -410,46 +390,6 @@ public class NovaListServersDetailsRequest  {
 
     public void setChangesSince(String changesSince) {
         this.changesSince = changesSince;
-    }
-
-    public NovaListServersDetailsRequest withIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get ip
-     * @return ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
-
-    public NovaListServersDetailsRequest withImage(String image) {
-        this.image = image;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get image
-     * @return image
-     */
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public NovaListServersDetailsRequest withFlavor(String flavor) {
@@ -472,8 +412,8 @@ public class NovaListServersDetailsRequest  {
         this.flavor = flavor;
     }
 
-    public NovaListServersDetailsRequest withName(String name) {
-        this.name = name;
+    public NovaListServersDetailsRequest withImage(String image) {
+        this.image = image;
         return this;
     }
 
@@ -481,19 +421,19 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get name
-     * @return name
+     * Get image
+     * @return image
      */
-    public String getName() {
-        return name;
+    public String getImage() {
+        return image;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public NovaListServersDetailsRequest withStatus(StatusEnum status) {
-        this.status = status;
+    public NovaListServersDetailsRequest withIp(String ip) {
+        this.ip = ip;
         return this;
     }
 
@@ -501,15 +441,15 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get status
-     * @return status
+     * Get ip
+     * @return ip
      */
-    public StatusEnum getStatus() {
-        return status;
+    public String getIp() {
+        return ip;
     }
 
-    public void setStatus(StatusEnum status) {
-        this.status = status;
+    public void setIp(String ip) {
+        this.ip = ip;
     }
 
     public NovaListServersDetailsRequest withLimit(Integer limit) {
@@ -554,8 +494,8 @@ public class NovaListServersDetailsRequest  {
         this.marker = marker;
     }
 
-    public NovaListServersDetailsRequest withTags(String tags) {
-        this.tags = tags;
+    public NovaListServersDetailsRequest withName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -563,15 +503,15 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get tags
-     * @return tags
+     * Get name
+     * @return name
      */
-    public String getTags() {
-        return tags;
+    public String getName() {
+        return name;
     }
 
-    public void setTags(String tags) {
-        this.tags = tags;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public NovaListServersDetailsRequest withNotTags(String notTags) {
@@ -633,6 +573,66 @@ public class NovaListServersDetailsRequest  {
     public void setSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
     }
+
+    public NovaListServersDetailsRequest withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get status
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
+    public NovaListServersDetailsRequest withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get tags
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    public NovaListServersDetailsRequest withOpenStackAPIVersion(String openStackAPIVersion) {
+        this.openStackAPIVersion = openStackAPIVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get openStackAPIVersion
+     * @return openStackAPIVersion
+     */
+    public String getOpenStackAPIVersion() {
+        return openStackAPIVersion;
+    }
+
+    public void setOpenStackAPIVersion(String openStackAPIVersion) {
+        this.openStackAPIVersion = openStackAPIVersion;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -642,41 +642,41 @@ public class NovaListServersDetailsRequest  {
             return false;
         }
         NovaListServersDetailsRequest novaListServersDetailsRequest = (NovaListServersDetailsRequest) o;
-        return Objects.equals(this.openStackAPIVersion, novaListServersDetailsRequest.openStackAPIVersion) &&
-            Objects.equals(this.changesSince, novaListServersDetailsRequest.changesSince) &&
-            Objects.equals(this.ip, novaListServersDetailsRequest.ip) &&
-            Objects.equals(this.image, novaListServersDetailsRequest.image) &&
+        return Objects.equals(this.changesSince, novaListServersDetailsRequest.changesSince) &&
             Objects.equals(this.flavor, novaListServersDetailsRequest.flavor) &&
-            Objects.equals(this.name, novaListServersDetailsRequest.name) &&
-            Objects.equals(this.status, novaListServersDetailsRequest.status) &&
+            Objects.equals(this.image, novaListServersDetailsRequest.image) &&
+            Objects.equals(this.ip, novaListServersDetailsRequest.ip) &&
             Objects.equals(this.limit, novaListServersDetailsRequest.limit) &&
             Objects.equals(this.marker, novaListServersDetailsRequest.marker) &&
-            Objects.equals(this.tags, novaListServersDetailsRequest.tags) &&
+            Objects.equals(this.name, novaListServersDetailsRequest.name) &&
             Objects.equals(this.notTags, novaListServersDetailsRequest.notTags) &&
             Objects.equals(this.reservationId, novaListServersDetailsRequest.reservationId) &&
-            Objects.equals(this.sortKey, novaListServersDetailsRequest.sortKey);
+            Objects.equals(this.sortKey, novaListServersDetailsRequest.sortKey) &&
+            Objects.equals(this.status, novaListServersDetailsRequest.status) &&
+            Objects.equals(this.tags, novaListServersDetailsRequest.tags) &&
+            Objects.equals(this.openStackAPIVersion, novaListServersDetailsRequest.openStackAPIVersion);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(openStackAPIVersion, changesSince, ip, image, flavor, name, status, limit, marker, tags, notTags, reservationId, sortKey);
+        return Objects.hash(changesSince, flavor, image, ip, limit, marker, name, notTags, reservationId, sortKey, status, tags, openStackAPIVersion);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaListServersDetailsRequest {\n");
-        sb.append("    openStackAPIVersion: ").append(toIndentedString(openStackAPIVersion)).append("\n");
         sb.append("    changesSince: ").append(toIndentedString(changesSince)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-        sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
         sb.append("    reservationId: ").append(toIndentedString(reservationId)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    openStackAPIVersion: ").append(toIndentedString(openStackAPIVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

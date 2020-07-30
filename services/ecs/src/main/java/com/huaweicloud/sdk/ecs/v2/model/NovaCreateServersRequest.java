@@ -21,7 +21,7 @@ public class NovaCreateServersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OpenStack-API-Version")
     
-    private String openStackAPIVersion = "compute 2.60";
+    private String openStackAPIVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
