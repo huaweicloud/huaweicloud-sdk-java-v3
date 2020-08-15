@@ -63,6 +63,10 @@ public class KmsAsyncClient {
         return hcClient.asyncInvokeHttp(request, KmsMeta.createRandom);
     }
 
+    public CompletableFuture<DecryptDataResponse> decryptDataAsync(DecryptDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.decryptData);
+    }
+
     public CompletableFuture<DecryptDatakeyResponse> decryptDatakeyAsync(DecryptDatakeyRequest request) {
         return hcClient.asyncInvokeHttp(request, KmsMeta.decryptDatakey);
     }
@@ -93,6 +97,10 @@ public class KmsAsyncClient {
 
     public CompletableFuture<EnableKeyRotationResponse> enableKeyRotationAsync(EnableKeyRotationRequest request) {
         return hcClient.asyncInvokeHttp(request, KmsMeta.enableKeyRotation);
+    }
+
+    public CompletableFuture<EncryptDataResponse> encryptDataAsync(EncryptDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.encryptData);
     }
 
     public CompletableFuture<EncryptDatakeyResponse> encryptDatakeyAsync(EncryptDatakeyRequest request) {
@@ -143,32 +151,24 @@ public class KmsAsyncClient {
         return hcClient.asyncInvokeHttp(request, KmsMeta.showUserQuotas);
     }
 
-    public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
-        return hcClient.asyncInvokeHttp(request, KmsMeta.showVersion);
-    }
-
-    public CompletableFuture<ShowVersionsResponse> showVersionsAsync(ShowVersionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, KmsMeta.showVersions);
-    }
-
-    public CompletableFuture<UpdateKeyRotationIntervalResponse> updateKeyRotationIntervalAsync(UpdateKeyRotationIntervalRequest request) {
-        return hcClient.asyncInvokeHttp(request, KmsMeta.updateKeyRotationInterval);
-    }
-
-    public CompletableFuture<DecryptDataResponse> decryptDataAsync(DecryptDataRequest request) {
-        return hcClient.asyncInvokeHttp(request, KmsMeta.decryptData);
-    }
-
-    public CompletableFuture<EncryptDataResponse> encryptDataAsync(EncryptDataRequest request) {
-        return hcClient.asyncInvokeHttp(request, KmsMeta.encryptData);
-    }
-
     public CompletableFuture<UpdateKeyAliasResponse> updateKeyAliasAsync(UpdateKeyAliasRequest request) {
         return hcClient.asyncInvokeHttp(request, KmsMeta.updateKeyAlias);
     }
 
     public CompletableFuture<UpdateKeyDescriptionResponse> updateKeyDescriptionAsync(UpdateKeyDescriptionRequest request) {
         return hcClient.asyncInvokeHttp(request, KmsMeta.updateKeyDescription);
+    }
+
+    public CompletableFuture<UpdateKeyRotationIntervalResponse> updateKeyRotationIntervalAsync(UpdateKeyRotationIntervalRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.updateKeyRotationInterval);
+    }
+
+    public CompletableFuture<ShowVersionResponse> showVersionAsync(ShowVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.showVersion);
+    }
+
+    public CompletableFuture<ShowVersionsResponse> showVersionsAsync(ShowVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.showVersions);
     }
 
 }

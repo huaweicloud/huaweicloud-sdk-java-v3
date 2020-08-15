@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.OperateKeyReq;
+import com.huaweicloud.sdk.kms.v1.model.OperateKeyRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class CancelKeyDeletionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private OperateKeyReq body = null;
+    private OperateKeyRequestBody body = null;
 
     public CancelKeyDeletionRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class CancelKeyDeletionRequest  {
         this.versionId = versionId;
     }
 
-    public CancelKeyDeletionRequest withBody(OperateKeyReq body) {
+    public CancelKeyDeletionRequest withBody(OperateKeyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CancelKeyDeletionRequest withBody(Consumer<OperateKeyReq> bodySetter) {
+    public CancelKeyDeletionRequest withBody(Consumer<OperateKeyRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new OperateKeyReq();
+            this.body = new OperateKeyRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class CancelKeyDeletionRequest  {
      * Get body
      * @return body
      */
-    public OperateKeyReq getBody() {
+    public OperateKeyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(OperateKeyReq body) {
+    public void setBody(OperateKeyRequestBody body) {
         this.body = body;
     }
     @Override

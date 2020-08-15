@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.UpdateKeyDescriptionReq;
+import com.huaweicloud.sdk.kms.v1.model.UpdateKeyDescriptionRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class UpdateKeyDescriptionRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateKeyDescriptionReq body = null;
+    private UpdateKeyDescriptionRequestBody body = null;
 
     public UpdateKeyDescriptionRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class UpdateKeyDescriptionRequest  {
         this.versionId = versionId;
     }
 
-    public UpdateKeyDescriptionRequest withBody(UpdateKeyDescriptionReq body) {
+    public UpdateKeyDescriptionRequest withBody(UpdateKeyDescriptionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateKeyDescriptionRequest withBody(Consumer<UpdateKeyDescriptionReq> bodySetter) {
+    public UpdateKeyDescriptionRequest withBody(Consumer<UpdateKeyDescriptionRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateKeyDescriptionReq();
+            this.body = new UpdateKeyDescriptionRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class UpdateKeyDescriptionRequest  {
      * Get body
      * @return body
      */
-    public UpdateKeyDescriptionReq getBody() {
+    public UpdateKeyDescriptionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateKeyDescriptionReq body) {
+    public void setBody(UpdateKeyDescriptionRequestBody body) {
         this.body = body;
     }
     @Override

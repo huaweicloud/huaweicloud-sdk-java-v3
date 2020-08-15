@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.apig.v2.model.AuthResultResp;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -130,7 +132,100 @@ public class AppAuthResp  {
     @JsonProperty(value="auth_role")
     
     private AuthRoleEnum authRole;
+    /**
+     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
+     */
+    public static class AuthTunnelEnum {
 
+        
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final AuthTunnelEnum NORMAL = new AuthTunnelEnum("NORMAL");
+        
+        /**
+         * Enum GREEN for value: "GREEN"
+         */
+        public static final AuthTunnelEnum GREEN = new AuthTunnelEnum("GREEN");
+        
+
+        public static final Map<String, AuthTunnelEnum> staticFields = new HashMap<String, AuthTunnelEnum>() {
+            { 
+                put("NORMAL", NORMAL);
+                put("GREEN", GREEN);
+            }
+        };
+
+        private String value;
+
+        AuthTunnelEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AuthTunnelEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            AuthTunnelEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new AuthTunnelEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static AuthTunnelEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            AuthTunnelEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof AuthTunnelEnum) {
+                return this.value.equals(((AuthTunnelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auth_tunnel")
+    
+    private AuthTunnelEnum authTunnel;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auth_whitelist")
+    
+    private List<String> authWhitelist = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auth_blacklist")
+    
+    private List<String> authBlacklist = null;
+    
     public AppAuthResp withApiId(String apiId) {
         this.apiId = apiId;
         return this;
@@ -257,6 +352,94 @@ public class AppAuthResp  {
     public void setAuthRole(AuthRoleEnum authRole) {
         this.authRole = authRole;
     }
+
+    public AppAuthResp withAuthTunnel(AuthTunnelEnum authTunnel) {
+        this.authTunnel = authTunnel;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
+     * @return authTunnel
+     */
+    public AuthTunnelEnum getAuthTunnel() {
+        return authTunnel;
+    }
+
+    public void setAuthTunnel(AuthTunnelEnum authTunnel) {
+        this.authTunnel = authTunnel;
+    }
+
+    public AppAuthResp withAuthWhitelist(List<String> authWhitelist) {
+        this.authWhitelist = authWhitelist;
+        return this;
+    }
+
+    
+    public AppAuthResp addAuthWhitelistItem(String authWhitelistItem) {
+        if (this.authWhitelist == null) {
+            this.authWhitelist = new ArrayList<>();
+        }
+        this.authWhitelist.add(authWhitelistItem);
+        return this;
+    }
+
+    public AppAuthResp withAuthWhitelist(Consumer<List<String>> authWhitelistSetter) {
+        if(this.authWhitelist == null ){
+            this.authWhitelist = new ArrayList<>();
+        }
+        authWhitelistSetter.accept(this.authWhitelist);
+        return this;
+    }
+
+    /**
+     * 绿色通道的白名单配置
+     * @return authWhitelist
+     */
+    public List<String> getAuthWhitelist() {
+        return authWhitelist;
+    }
+
+    public void setAuthWhitelist(List<String> authWhitelist) {
+        this.authWhitelist = authWhitelist;
+    }
+
+    public AppAuthResp withAuthBlacklist(List<String> authBlacklist) {
+        this.authBlacklist = authBlacklist;
+        return this;
+    }
+
+    
+    public AppAuthResp addAuthBlacklistItem(String authBlacklistItem) {
+        if (this.authBlacklist == null) {
+            this.authBlacklist = new ArrayList<>();
+        }
+        this.authBlacklist.add(authBlacklistItem);
+        return this;
+    }
+
+    public AppAuthResp withAuthBlacklist(Consumer<List<String>> authBlacklistSetter) {
+        if(this.authBlacklist == null ){
+            this.authBlacklist = new ArrayList<>();
+        }
+        authBlacklistSetter.accept(this.authBlacklist);
+        return this;
+    }
+
+    /**
+     * 绿色通道的黑名单配置
+     * @return authBlacklist
+     */
+    public List<String> getAuthBlacklist() {
+        return authBlacklist;
+    }
+
+    public void setAuthBlacklist(List<String> authBlacklist) {
+        this.authBlacklist = authBlacklist;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -271,11 +454,14 @@ public class AppAuthResp  {
             Objects.equals(this.authTime, appAuthResp.authTime) &&
             Objects.equals(this.id, appAuthResp.id) &&
             Objects.equals(this.appId, appAuthResp.appId) &&
-            Objects.equals(this.authRole, appAuthResp.authRole);
+            Objects.equals(this.authRole, appAuthResp.authRole) &&
+            Objects.equals(this.authTunnel, appAuthResp.authTunnel) &&
+            Objects.equals(this.authWhitelist, appAuthResp.authWhitelist) &&
+            Objects.equals(this.authBlacklist, appAuthResp.authBlacklist);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiId, authResult, authTime, id, appId, authRole);
+        return Objects.hash(apiId, authResult, authTime, id, appId, authRole, authTunnel, authWhitelist, authBlacklist);
     }
     @Override
     public String toString() {
@@ -287,6 +473,9 @@ public class AppAuthResp  {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    authRole: ").append(toIndentedString(authRole)).append("\n");
+        sb.append("    authTunnel: ").append(toIndentedString(authTunnel)).append("\n");
+        sb.append("    authWhitelist: ").append(toIndentedString(authWhitelist)).append("\n");
+        sb.append("    authBlacklist: ").append(toIndentedString(authBlacklist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

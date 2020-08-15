@@ -7,14 +7,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.ApiBaseInfo;
 import com.huaweicloud.sdk.apig.v2.model.ApiFunc;
 import com.huaweicloud.sdk.apig.v2.model.ApiMock;
 import com.huaweicloud.sdk.apig.v2.model.ApiPolicyFunctionResp;
 import com.huaweicloud.sdk.apig.v2.model.ApiPolicyMockResp;
+import com.huaweicloud.sdk.apig.v2.model.ApiRespBaseInfo;
 import com.huaweicloud.sdk.apig.v2.model.AuthOpt;
 import com.huaweicloud.sdk.apig.v2.model.BackendParam;
 import com.huaweicloud.sdk.apig.v2.model.ReqParam;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -597,6 +598,66 @@ public class ApiCommon  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    private Integer status;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="arrange_necessary")
+    
+    private Integer arrangeNecessary;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="register_time")
+    
+    private OffsetDateTime registerTime = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="update_time")
+    
+    private OffsetDateTime updateTime = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="group_name")
+    
+    private String groupName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="group_version")
+    
+    private String groupVersion = "V1";
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="run_env_id")
+    
+    private String runEnvId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="run_env_name")
+    
+    private String runEnvName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="publish_id")
+    
+    private String publishId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_info")
     
     private ApiFunc funcInfo = null;
@@ -1001,7 +1062,7 @@ public class ApiCommon  {
     }
 
     /**
-     * 标签。  包含一个服务名称标签和若干其它标签服务名称标签非必填，必须以APIG-SN-开头其它标签非必填，且不能以APIG-SN-开头 
+     * 标签。  支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。 
      * @return tags
      */
     public List<String> getTags() {
@@ -1090,6 +1151,206 @@ public class ApiCommon  {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public ApiCommon withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API编号
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ApiCommon withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API的状态
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public ApiCommon withArrangeNecessary(Integer arrangeNecessary) {
+        this.arrangeNecessary = arrangeNecessary;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否需要编排
+     * @return arrangeNecessary
+     */
+    public Integer getArrangeNecessary() {
+        return arrangeNecessary;
+    }
+
+    public void setArrangeNecessary(Integer arrangeNecessary) {
+        this.arrangeNecessary = arrangeNecessary;
+    }
+
+    public ApiCommon withRegisterTime(OffsetDateTime registerTime) {
+        this.registerTime = registerTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API注册时间
+     * @return registerTime
+     */
+    public OffsetDateTime getRegisterTime() {
+        return registerTime;
+    }
+
+    public void setRegisterTime(OffsetDateTime registerTime) {
+        this.registerTime = registerTime;
+    }
+
+    public ApiCommon withUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API修改时间
+     * @return updateTime
+     */
+    public OffsetDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public ApiCommon withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API所属分组的名称
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public ApiCommon withGroupVersion(String groupVersion) {
+        this.groupVersion = groupVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API所属分组的版本  默认V1，其他版本暂不支持
+     * @return groupVersion
+     */
+    public String getGroupVersion() {
+        return groupVersion;
+    }
+
+    public void setGroupVersion(String groupVersion) {
+        this.groupVersion = groupVersion;
+    }
+
+    public ApiCommon withRunEnvId(String runEnvId) {
+        this.runEnvId = runEnvId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 发布的环境id
+     * @return runEnvId
+     */
+    public String getRunEnvId() {
+        return runEnvId;
+    }
+
+    public void setRunEnvId(String runEnvId) {
+        this.runEnvId = runEnvId;
+    }
+
+    public ApiCommon withRunEnvName(String runEnvName) {
+        this.runEnvName = runEnvName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 发布的环境名称
+     * @return runEnvName
+     */
+    public String getRunEnvName() {
+        return runEnvName;
+    }
+
+    public void setRunEnvName(String runEnvName) {
+        this.runEnvName = runEnvName;
+    }
+
+    public ApiCommon withPublishId(String publishId) {
+        this.publishId = publishId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 发布记录编号  存在多个发布记录时，编号之间用|隔开
+     * @return publishId
+     */
+    public String getPublishId() {
+        return publishId;
+    }
+
+    public void setPublishId(String publishId) {
+        this.publishId = publishId;
     }
 
     public ApiCommon withFuncInfo(ApiFunc funcInfo) {
@@ -1312,6 +1573,16 @@ public class ApiCommon  {
             Objects.equals(this.romaAppId, apiCommon.romaAppId) &&
             Objects.equals(this.domainName, apiCommon.domainName) &&
             Objects.equals(this.tag, apiCommon.tag) &&
+            Objects.equals(this.id, apiCommon.id) &&
+            Objects.equals(this.status, apiCommon.status) &&
+            Objects.equals(this.arrangeNecessary, apiCommon.arrangeNecessary) &&
+            Objects.equals(this.registerTime, apiCommon.registerTime) &&
+            Objects.equals(this.updateTime, apiCommon.updateTime) &&
+            Objects.equals(this.groupName, apiCommon.groupName) &&
+            Objects.equals(this.groupVersion, apiCommon.groupVersion) &&
+            Objects.equals(this.runEnvId, apiCommon.runEnvId) &&
+            Objects.equals(this.runEnvName, apiCommon.runEnvName) &&
+            Objects.equals(this.publishId, apiCommon.publishId) &&
             Objects.equals(this.funcInfo, apiCommon.funcInfo) &&
             Objects.equals(this.mockInfo, apiCommon.mockInfo) &&
             Objects.equals(this.reqParams, apiCommon.reqParams) &&
@@ -1321,7 +1592,7 @@ public class ApiCommon  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, funcInfo, mockInfo, reqParams, backendParams, policyFunctions, policyMocks);
+        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, id, status, arrangeNecessary, registerTime, updateTime, groupName, groupVersion, runEnvId, runEnvName, publishId, funcInfo, mockInfo, reqParams, backendParams, policyFunctions, policyMocks);
     }
     @Override
     public String toString() {
@@ -1349,6 +1620,16 @@ public class ApiCommon  {
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    arrangeNecessary: ").append(toIndentedString(arrangeNecessary)).append("\n");
+        sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    groupVersion: ").append(toIndentedString(groupVersion)).append("\n");
+        sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
+        sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");
+        sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
         sb.append("    funcInfo: ").append(toIndentedString(funcInfo)).append("\n");
         sb.append("    mockInfo: ").append(toIndentedString(mockInfo)).append("\n");
         sb.append("    reqParams: ").append(toIndentedString(reqParams)).append("\n");

@@ -59,6 +59,10 @@ public class KmsClient {
         return hcClient.syncInvokeHttp(request, KmsMeta.createRandom);
     }
 
+    public DecryptDataResponse decryptData(DecryptDataRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.decryptData);
+    }
+
     public DecryptDatakeyResponse decryptDatakey(DecryptDatakeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.decryptDatakey);
     }
@@ -89,6 +93,10 @@ public class KmsClient {
 
     public EnableKeyRotationResponse enableKeyRotation(EnableKeyRotationRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.enableKeyRotation);
+    }
+
+    public EncryptDataResponse encryptData(EncryptDataRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.encryptData);
     }
 
     public EncryptDatakeyResponse encryptDatakey(EncryptDatakeyRequest request) {
@@ -139,32 +147,24 @@ public class KmsClient {
         return hcClient.syncInvokeHttp(request, KmsMeta.showUserQuotas);
     }
 
-    public ShowVersionResponse showVersion(ShowVersionRequest request) {
-        return hcClient.syncInvokeHttp(request, KmsMeta.showVersion);
-    }
-
-    public ShowVersionsResponse showVersions(ShowVersionsRequest request) {
-        return hcClient.syncInvokeHttp(request, KmsMeta.showVersions);
-    }
-
-    public UpdateKeyRotationIntervalResponse updateKeyRotationInterval(UpdateKeyRotationIntervalRequest request) {
-        return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyRotationInterval);
-    }
-
-    public DecryptDataResponse decryptData(DecryptDataRequest request) {
-        return hcClient.syncInvokeHttp(request, KmsMeta.decryptData);
-    }
-
-    public EncryptDataResponse encryptData(EncryptDataRequest request) {
-        return hcClient.syncInvokeHttp(request, KmsMeta.encryptData);
-    }
-
     public UpdateKeyAliasResponse updateKeyAlias(UpdateKeyAliasRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyAlias);
     }
 
     public UpdateKeyDescriptionResponse updateKeyDescription(UpdateKeyDescriptionRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyDescription);
+    }
+
+    public UpdateKeyRotationIntervalResponse updateKeyRotationInterval(UpdateKeyRotationIntervalRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyRotationInterval);
+    }
+
+    public ShowVersionResponse showVersion(ShowVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.showVersion);
+    }
+
+    public ShowVersionsResponse showVersions(ShowVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.showVersions);
     }
 
 }

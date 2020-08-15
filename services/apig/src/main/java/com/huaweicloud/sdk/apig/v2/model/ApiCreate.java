@@ -1015,7 +1015,7 @@ public class ApiCreate  {
     }
 
     /**
-     * 标签。  包含一个服务名称标签和若干其它标签服务名称标签非必填，必须以APIG-SN-开头其它标签非必填，且不能以APIG-SN-开头 
+     * 标签。  支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。 
      * @return tags
      */
     public List<String> getTags() {

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.UpdateKeyAliasReq;
+import com.huaweicloud.sdk.kms.v1.model.UpdateKeyAliasRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class UpdateKeyAliasRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateKeyAliasReq body = null;
+    private UpdateKeyAliasRequestBody body = null;
 
     public UpdateKeyAliasRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class UpdateKeyAliasRequest  {
         this.versionId = versionId;
     }
 
-    public UpdateKeyAliasRequest withBody(UpdateKeyAliasReq body) {
+    public UpdateKeyAliasRequest withBody(UpdateKeyAliasRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateKeyAliasRequest withBody(Consumer<UpdateKeyAliasReq> bodySetter) {
+    public UpdateKeyAliasRequest withBody(Consumer<UpdateKeyAliasRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateKeyAliasReq();
+            this.body = new UpdateKeyAliasRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class UpdateKeyAliasRequest  {
      * Get body
      * @return body
      */
-    public UpdateKeyAliasReq getBody() {
+    public UpdateKeyAliasRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateKeyAliasReq body) {
+    public void setBody(UpdateKeyAliasRequestBody body) {
         this.body = body;
     }
     @Override

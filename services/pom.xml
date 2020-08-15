@@ -6,43 +6,48 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.7-beta</version>
+        <version>3.0.8-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.7-beta</version>
+    <version>3.0.8-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
 
     <modules>
-        <module>eps</module>
-        <module>eip</module>
+        <module>ims</module>
+        <module>as</module>
         <module>tms</module>
-        <module>image</module>
-        <module>moderation</module>
         <module>fgs</module>
+        <module>ces</module>
+        <module>dc</module>
+        <module>rds</module>
         <module>cloudbuild</module>
+        <module>kms</module>
+        <module>moderation</module>
+        <module>image</module>
+        <module>vpc</module>
+        <module>iotda</module>
+        <module>iam</module>
+        <module>apig</module>
         <module>servicestage</module>
         <module>classroom</module>
-        <module>ecs</module>
-        <module>as</module>
-        <module>dds</module>
+        <module>eip</module>
         <module>evs</module>
-        <module>kms</module>
-        <module>ces</module>
+        <module>dds</module>
+        <module>devstar</module>
+        <module>mpc</module>
         <module>meeting</module>
         <module>cts</module>
-        <module>ims</module>
         <module>dcs</module>
-        <module>mpc</module>
-        <module>vpc</module>
-        <module>apig</module>
-        <module>dc</module>
-        <module>iam</module>
-        <module>devstar</module>
-        <module>iotda</module>
+        <module>cloudide</module>
+        <module>bssintl</module>
+        <module>bss</module>
+        <module>eps</module>
+        <module>live</module>
+        <module>ecs</module>
     </modules>
 </project>

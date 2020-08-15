@@ -22,7 +22,7 @@ public class ServerAddress  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    private Integer version;
+    private String version;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,7 +123,7 @@ public class ServerAddress  {
     
     private String osEXTIPSPortId;
 
-    public ServerAddress withVersion(Integer version) {
+    public ServerAddress withVersion(String version) {
         this.version = version;
         return this;
     }
@@ -135,11 +135,11 @@ public class ServerAddress  {
      * IP地址版本。  - “4”：代表IPv4。 - “6”：代表IPv6。
      * @return version
      */
-    public Integer getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 

@@ -117,6 +117,16 @@ public interface HttpRequest {
             return this;
         }
 
+        public HttpRequestBuilder addAutoFilledPathParam(String key, String value) {
+            httpRequest.autoFilledPathParams.putIfAbsent(key, value);
+            return this;
+        }
+
+        public HttpRequestBuilder addAutoFilledPathParam(Map<String, Object> pathParam) {
+            httpRequest.autoFilledPathParams.putAll(pathParam);
+            return this;
+        }
+
         public HttpRequest build() {
             return httpRequest.buildPathParamsString().buildQueryParamsString().buildUrl();
         }
@@ -136,6 +146,8 @@ public interface HttpRequest {
         private Map<String, List<String>> headers = new HashMap();
 
         private Map<String, Object> pathParams = new LinkedHashMap<>();
+
+        private Map<String, Object> autoFilledPathParams = new LinkedHashMap<>();
 
         private String contentType = Constants.MEDIATYPE.APPLICATION_JSON;
 
@@ -239,6 +251,7 @@ public interface HttpRequest {
             impl.endpoint = this.endpoint;
             impl.path = this.path;
             impl.pathParams = new HashMap<>(this.pathParams);
+            impl.autoFilledPathParams = new HashMap<>(this.autoFilledPathParams);
             impl.queryParams = new HashMap<>(this.queryParams);
             impl.headers = new HashMap<>(this.headers);
             return impl.buildPathParamsString().buildQueryParamsString().buildUrl();
@@ -246,8 +259,11 @@ public interface HttpRequest {
 
         private Impl buildPathParamsString() {
             this.pathParamsString = Objects.isNull(path) ? "" : path;
-            pathParams.forEach((key, value) -> pathParamsString = pathParamsString
-                    .replace(String.format("{%s}", key), value.toString()));
+            pathParams.forEach((key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
+                value.toString()));
+            autoFilledPathParams.forEach(
+                (key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
+                    value.toString()));
             return this;
         }
 

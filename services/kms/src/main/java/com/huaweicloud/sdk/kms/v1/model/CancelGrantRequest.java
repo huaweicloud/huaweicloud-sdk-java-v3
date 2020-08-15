@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.RevokeGrantReq;
+import com.huaweicloud.sdk.kms.v1.model.RevokeGrantRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class CancelGrantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private RevokeGrantReq body = null;
+    private RevokeGrantRequestBody body = null;
 
     public CancelGrantRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class CancelGrantRequest  {
         this.versionId = versionId;
     }
 
-    public CancelGrantRequest withBody(RevokeGrantReq body) {
+    public CancelGrantRequest withBody(RevokeGrantRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CancelGrantRequest withBody(Consumer<RevokeGrantReq> bodySetter) {
+    public CancelGrantRequest withBody(Consumer<RevokeGrantRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new RevokeGrantReq();
+            this.body = new RevokeGrantRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class CancelGrantRequest  {
      * Get body
      * @return body
      */
-    public RevokeGrantReq getBody() {
+    public RevokeGrantRequestBody getBody() {
         return body;
     }
 
-    public void setBody(RevokeGrantReq body) {
+    public void setBody(RevokeGrantRequestBody body) {
         this.body = body;
     }
     @Override

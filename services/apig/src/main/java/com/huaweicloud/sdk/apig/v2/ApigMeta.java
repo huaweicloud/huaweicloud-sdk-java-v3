@@ -266,7 +266,7 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSpecialThrottlingConfigurationV2Request.class, CreateSpecialThrottlingConfigurationV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-specials")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -276,6 +276,14 @@ public class ApigMeta {
             String.class,
             f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("throttle_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
+                req.setThrottleId(v);
             })
         );
         builder.withRequestField("body",
@@ -422,7 +430,7 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSpecialThrottlingConfigurationV2Request.class, DeleteSpecialThrottlingConfigurationV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-specials/{strategy_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials/{strategy_id}");
 
         // requests
         builder.withRequestField("instance_id",
@@ -431,6 +439,14 @@ public class ApigMeta {
             String.class,
             f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("throttle_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
+                req.setThrottleId(v);
             })
         );
         builder.withRequestField("strategy_id",
@@ -1112,7 +1128,7 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSpecialThrottlingConfigurationsV2Request.class, ListSpecialThrottlingConfigurationsV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-specials/{strategy_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1123,12 +1139,12 @@ public class ApigMeta {
                 req.setInstanceId(v);
             })
         );
-        builder.withRequestField("strategy_id",
+        builder.withRequestField("throttle_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getStrategyId, (req, v) -> {
-                req.setStrategyId(v);
+            f -> f.withMarshaller(ListSpecialThrottlingConfigurationsV2Request::getThrottleId, (req, v) -> {
+                req.setThrottleId(v);
             })
         );
         builder.withRequestField("object_type",
@@ -1404,7 +1420,7 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSpecialThrottlingConfigurationV2Request.class, UpdateSpecialThrottlingConfigurationV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-specials/{strategy_id}")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials/{strategy_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -1414,6 +1430,14 @@ public class ApigMeta {
             String.class,
             f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("throttle_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSpecialThrottlingConfigurationV2Request::getThrottleId, (req, v) -> {
+                req.setThrottleId(v);
             })
         );
         builder.withRequestField("strategy_id",

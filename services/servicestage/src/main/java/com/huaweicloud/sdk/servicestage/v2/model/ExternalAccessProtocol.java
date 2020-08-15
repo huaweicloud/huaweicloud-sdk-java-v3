@@ -6,42 +6,84 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * 协议。
  */
-public enum ExternalAccessProtocol {
-  
-  HTTP("HTTP"),
-  
-  HTTPS("HTTPS");
+public class ExternalAccessProtocol {
+    
+    /**
+     * Enum HTTP for value: "HTTP"
+     */
+    public static final ExternalAccessProtocol HTTP = new ExternalAccessProtocol("HTTP");
+    
+    /**
+     * Enum HTTPS for value: "HTTPS"
+     */
+    public static final ExternalAccessProtocol HTTPS = new ExternalAccessProtocol("HTTPS");
+    
 
-  private String value;
+    public static final Map<String, ExternalAccessProtocol> staticFields = new HashMap<String, ExternalAccessProtocol>() {
+        { 
+            put("HTTP", HTTP);
+            put("HTTPS", HTTPS);
+        }
+    };
 
-  ExternalAccessProtocol(String value) {
-    this.value = value;
-  }
+    private String value;
 
-  @JsonValue
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  @JsonCreator
-  public static ExternalAccessProtocol fromValue(String value) {
-    for (ExternalAccessProtocol b : ExternalAccessProtocol.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
+    ExternalAccessProtocol(String value) {
+        this.value = value;
     }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
+
+    @Override
+    @JsonValue
+    public String toString() {
+        return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ExternalAccessProtocol fromValue(String value) {
+        if( value == null ){
+            return null;
+        }
+        ExternalAccessProtocol result = staticFields.get(value);
+        if (result == null) {
+            result = staticFields.putIfAbsent(value, new ExternalAccessProtocol(value));
+            if (result == null) {
+                result = staticFields.get(value);
+            }
+        }
+        return result;
+    }
+
+    public static ExternalAccessProtocol valueOf(String value) {
+        if( value == null ){
+            return null;
+        }
+        ExternalAccessProtocol result = staticFields.get(value);
+        if (result != null) {
+            return result;
+        }
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof ExternalAccessProtocol) {
+            return this.value.equals(((ExternalAccessProtocol) obj).value);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.value.hashCode();
+    }
 }
 

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.ListKmsByTagsReq;
+import com.huaweicloud.sdk.kms.v1.model.ListKmsByTagsRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -33,7 +33,7 @@ public class ListKmsByTagsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListKmsByTagsReq body = null;
+    private ListKmsByTagsRequestBody body = null;
 
     public ListKmsByTagsRequest withResourceInstances(String resourceInstances) {
         this.resourceInstances = resourceInstances;
@@ -75,14 +75,14 @@ public class ListKmsByTagsRequest  {
         this.versionId = versionId;
     }
 
-    public ListKmsByTagsRequest withBody(ListKmsByTagsReq body) {
+    public ListKmsByTagsRequest withBody(ListKmsByTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ListKmsByTagsRequest withBody(Consumer<ListKmsByTagsReq> bodySetter) {
+    public ListKmsByTagsRequest withBody(Consumer<ListKmsByTagsRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ListKmsByTagsReq();
+            this.body = new ListKmsByTagsRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -94,11 +94,11 @@ public class ListKmsByTagsRequest  {
      * Get body
      * @return body
      */
-    public ListKmsByTagsReq getBody() {
+    public ListKmsByTagsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ListKmsByTagsReq body) {
+    public void setBody(ListKmsByTagsRequestBody body) {
         this.body = body;
     }
     @Override

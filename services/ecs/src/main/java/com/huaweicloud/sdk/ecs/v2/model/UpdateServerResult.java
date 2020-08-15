@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ecs.v2.model.Link;
-import com.huaweicloud.sdk.ecs.v2.model.ServerAddress;
 import com.huaweicloud.sdk.ecs.v2.model.SimpleFlavor;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAddress;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -57,7 +57,7 @@ public class UpdateServerResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private Map<String, List<ServerAddress>> addresses = new HashMap<>();
+    private Map<String, List<UpdateServerAddress>> addresses = new HashMap<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -260,19 +260,19 @@ public class UpdateServerResult  {
         this.metadata = metadata;
     }
 
-    public UpdateServerResult withAddresses(Map<String, List<ServerAddress>> addresses) {
+    public UpdateServerResult withAddresses(Map<String, List<UpdateServerAddress>> addresses) {
         this.addresses = addresses;
         return this;
     }
 
     
 
-    public UpdateServerResult putAddressesItem(String key, List<ServerAddress> addressesItem) {
+    public UpdateServerResult putAddressesItem(String key, List<UpdateServerAddress> addressesItem) {
         this.addresses.put(key, addressesItem);
         return this;
     }
 
-    public UpdateServerResult withAddresses(Consumer<Map<String, List<ServerAddress>>> addressesSetter) {
+    public UpdateServerResult withAddresses(Consumer<Map<String, List<UpdateServerAddress>>> addressesSetter) {
         if(this.addresses == null ){
             this.addresses = new HashMap<>();
         }
@@ -283,11 +283,11 @@ public class UpdateServerResult  {
      * 弹性云服务器的网络属性。
      * @return addresses
      */
-    public Map<String, List<ServerAddress>> getAddresses() {
+    public Map<String, List<UpdateServerAddress>> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(Map<String, List<ServerAddress>> addresses) {
+    public void setAddresses(Map<String, List<UpdateServerAddress>> addresses) {
         this.addresses = addresses;
     }
 

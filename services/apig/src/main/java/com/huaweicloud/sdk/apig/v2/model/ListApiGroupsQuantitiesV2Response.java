@@ -39,7 +39,7 @@ public class ListApiGroupsQuantitiesV2Response extends SdkResponse {
 
 
     /**
-     * 未上架的API分组个数
+     * 未上架的API分组个数  暂不支持
      * @return offsellNums
      */
     public Integer getOffsellNums() {

@@ -29,9 +29,9 @@ public class ShowKmsTagsResponse extends SdkResponse {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exist_tag_num")
+    @JsonProperty(value="existTagsNum")
     
-    private Integer existTagNum;
+    private Integer existTagsNum;
 
     public ShowKmsTagsResponse withTags(List<TagItem> tags) {
         this.tags = tags;
@@ -67,8 +67,8 @@ public class ShowKmsTagsResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    public ShowKmsTagsResponse withExistTagNum(Integer existTagNum) {
-        this.existTagNum = existTagNum;
+    public ShowKmsTagsResponse withExistTagsNum(Integer existTagsNum) {
+        this.existTagsNum = existTagsNum;
         return this;
     }
 
@@ -79,14 +79,14 @@ public class ShowKmsTagsResponse extends SdkResponse {
      * 密钥的标签个数。。
      * minimum: 0
      * maximum: 100
-     * @return existTagNum
+     * @return existTagsNum
      */
-    public Integer getExistTagNum() {
-        return existTagNum;
+    public Integer getExistTagsNum() {
+        return existTagsNum;
     }
 
-    public void setExistTagNum(Integer existTagNum) {
-        this.existTagNum = existTagNum;
+    public void setExistTagsNum(Integer existTagsNum) {
+        this.existTagsNum = existTagsNum;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,18 +98,18 @@ public class ShowKmsTagsResponse extends SdkResponse {
         }
         ShowKmsTagsResponse showKmsTagsResponse = (ShowKmsTagsResponse) o;
         return Objects.equals(this.tags, showKmsTagsResponse.tags) &&
-            Objects.equals(this.existTagNum, showKmsTagsResponse.existTagNum);
+            Objects.equals(this.existTagsNum, showKmsTagsResponse.existTagsNum);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(tags, existTagNum);
+        return Objects.hash(tags, existTagsNum);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowKmsTagsResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    existTagNum: ").append(toIndentedString(existTagNum)).append("\n");
+        sb.append("    existTagsNum: ").append(toIndentedString(existTagsNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

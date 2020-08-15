@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.ScheduleKeyDeletionReq;
+import com.huaweicloud.sdk.kms.v1.model.ScheduleKeyDeletionRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class DeleteKeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ScheduleKeyDeletionReq body = null;
+    private ScheduleKeyDeletionRequestBody body = null;
 
     public DeleteKeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class DeleteKeyRequest  {
         this.versionId = versionId;
     }
 
-    public DeleteKeyRequest withBody(ScheduleKeyDeletionReq body) {
+    public DeleteKeyRequest withBody(ScheduleKeyDeletionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public DeleteKeyRequest withBody(Consumer<ScheduleKeyDeletionReq> bodySetter) {
+    public DeleteKeyRequest withBody(Consumer<ScheduleKeyDeletionRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ScheduleKeyDeletionReq();
+            this.body = new ScheduleKeyDeletionRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class DeleteKeyRequest  {
      * Get body
      * @return body
      */
-    public ScheduleKeyDeletionReq getBody() {
+    public ScheduleKeyDeletionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ScheduleKeyDeletionReq body) {
+    public void setBody(ScheduleKeyDeletionRequestBody body) {
         this.body = body;
     }
     @Override

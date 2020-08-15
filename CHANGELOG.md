@@ -1,3 +1,45 @@
+# 3.0.8-beta 2020-8-14
+## HuaweiCloud SDK Core
+ - ### Features
+    - Support temporary AK/SK authentication mode.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK BSS
+ - ### Features
+    - Support Business Support System service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK CloudIDE
+ - ### Features
+    - Support Cloud IDE service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK Live
+ - ### Features
+    - Support Live service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK RDS
+ - ### Features
+    - Support Relational Database Service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 # 3.0.7-beta 2020-07-30
 ## HuaweiCloud SDK APIG
  - ### Features

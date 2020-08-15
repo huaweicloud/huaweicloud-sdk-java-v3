@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.CreateKeyReq;
+import com.huaweicloud.sdk.kms.v1.model.CreateKeyRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class CreateKeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateKeyReq body = null;
+    private CreateKeyRequestBody body = null;
 
     public CreateKeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class CreateKeyRequest  {
         this.versionId = versionId;
     }
 
-    public CreateKeyRequest withBody(CreateKeyReq body) {
+    public CreateKeyRequest withBody(CreateKeyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateKeyRequest withBody(Consumer<CreateKeyReq> bodySetter) {
+    public CreateKeyRequest withBody(Consumer<CreateKeyRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateKeyReq();
+            this.body = new CreateKeyRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class CreateKeyRequest  {
      * Get body
      * @return body
      */
-    public CreateKeyReq getBody() {
+    public CreateKeyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateKeyReq body) {
+    public void setBody(CreateKeyRequestBody body) {
         this.body = body;
     }
     @Override

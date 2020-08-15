@@ -65,6 +65,12 @@ public class SignatureCreateResp  {
     
     private Integer bindNum;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ldapi_bind_num")
+    
+    private Integer ldapiBindNum;
+
     public SignatureCreateResp withSignSecret(String signSecret) {
         this.signSecret = signSecret;
         return this;
@@ -224,6 +230,26 @@ public class SignatureCreateResp  {
     public void setBindNum(Integer bindNum) {
         this.bindNum = bindNum;
     }
+
+    public SignatureCreateResp withLdapiBindNum(Integer ldapiBindNum) {
+        this.ldapiBindNum = ldapiBindNum;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 绑定的自定义后端数量  暂不支持
+     * @return ldapiBindNum
+     */
+    public Integer getLdapiBindNum() {
+        return ldapiBindNum;
+    }
+
+    public void setLdapiBindNum(Integer ldapiBindNum) {
+        this.ldapiBindNum = ldapiBindNum;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -240,11 +266,12 @@ public class SignatureCreateResp  {
             Objects.equals(this.id, signatureCreateResp.id) &&
             Objects.equals(this.signKey, signatureCreateResp.signKey) &&
             Objects.equals(this.signType, signatureCreateResp.signType) &&
-            Objects.equals(this.bindNum, signatureCreateResp.bindNum);
+            Objects.equals(this.bindNum, signatureCreateResp.bindNum) &&
+            Objects.equals(this.ldapiBindNum, signatureCreateResp.ldapiBindNum);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(signSecret, updateTime, createTime, name, id, signKey, signType, bindNum);
+        return Objects.hash(signSecret, updateTime, createTime, name, id, signKey, signType, bindNum, ldapiBindNum);
     }
     @Override
     public String toString() {
@@ -258,6 +285,7 @@ public class SignatureCreateResp  {
         sb.append("    signKey: ").append(toIndentedString(signKey)).append("\n");
         sb.append("    signType: ").append(toIndentedString(signType)).append("\n");
         sb.append("    bindNum: ").append(toIndentedString(bindNum)).append("\n");
+        sb.append("    ldapiBindNum: ").append(toIndentedString(ldapiBindNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

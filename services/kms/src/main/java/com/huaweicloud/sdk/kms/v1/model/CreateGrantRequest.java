@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.CreateGrantReq;
+import com.huaweicloud.sdk.kms.v1.model.CreateGrantRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class CreateGrantRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateGrantReq body = null;
+    private CreateGrantRequestBody body = null;
 
     public CreateGrantRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class CreateGrantRequest  {
         this.versionId = versionId;
     }
 
-    public CreateGrantRequest withBody(CreateGrantReq body) {
+    public CreateGrantRequest withBody(CreateGrantRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateGrantRequest withBody(Consumer<CreateGrantReq> bodySetter) {
+    public CreateGrantRequest withBody(Consumer<CreateGrantRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateGrantReq();
+            this.body = new CreateGrantRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class CreateGrantRequest  {
      * Get body
      * @return body
      */
-    public CreateGrantReq getBody() {
+    public CreateGrantRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateGrantReq body) {
+    public void setBody(CreateGrantRequestBody body) {
         this.body = body;
     }
     @Override

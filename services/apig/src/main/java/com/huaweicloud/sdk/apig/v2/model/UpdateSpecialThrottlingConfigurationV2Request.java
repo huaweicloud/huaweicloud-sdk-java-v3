@@ -25,6 +25,12 @@ public class UpdateSpecialThrottlingConfigurationV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="throttle_id")
+    
+    private String throttleId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="strategy_id")
     
     private String strategyId;
@@ -53,6 +59,26 @@ public class UpdateSpecialThrottlingConfigurationV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public UpdateSpecialThrottlingConfigurationV2Request withThrottleId(String throttleId) {
+        this.throttleId = throttleId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get throttleId
+     * @return throttleId
+     */
+    public String getThrottleId() {
+        return throttleId;
+    }
+
+    public void setThrottleId(String throttleId) {
+        this.throttleId = throttleId;
     }
 
     public UpdateSpecialThrottlingConfigurationV2Request withStrategyId(String strategyId) {
@@ -111,18 +137,20 @@ public class UpdateSpecialThrottlingConfigurationV2Request  {
         }
         UpdateSpecialThrottlingConfigurationV2Request updateSpecialThrottlingConfigurationV2Request = (UpdateSpecialThrottlingConfigurationV2Request) o;
         return Objects.equals(this.instanceId, updateSpecialThrottlingConfigurationV2Request.instanceId) &&
+            Objects.equals(this.throttleId, updateSpecialThrottlingConfigurationV2Request.throttleId) &&
             Objects.equals(this.strategyId, updateSpecialThrottlingConfigurationV2Request.strategyId) &&
             Objects.equals(this.body, updateSpecialThrottlingConfigurationV2Request.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, strategyId, body);
+        return Objects.hash(instanceId, throttleId, strategyId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateSpecialThrottlingConfigurationV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    strategyId: ").append(toIndentedString(strategyId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

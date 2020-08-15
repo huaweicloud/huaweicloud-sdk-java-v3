@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.UpdateKeyRotationIntervalReq;
+import com.huaweicloud.sdk.kms.v1.model.UpdateKeyRotationIntervalRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class UpdateKeyRotationIntervalRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateKeyRotationIntervalReq body = null;
+    private UpdateKeyRotationIntervalRequestBody body = null;
 
     public UpdateKeyRotationIntervalRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class UpdateKeyRotationIntervalRequest  {
         this.versionId = versionId;
     }
 
-    public UpdateKeyRotationIntervalRequest withBody(UpdateKeyRotationIntervalReq body) {
+    public UpdateKeyRotationIntervalRequest withBody(UpdateKeyRotationIntervalRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateKeyRotationIntervalRequest withBody(Consumer<UpdateKeyRotationIntervalReq> bodySetter) {
+    public UpdateKeyRotationIntervalRequest withBody(Consumer<UpdateKeyRotationIntervalRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateKeyRotationIntervalReq();
+            this.body = new UpdateKeyRotationIntervalRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class UpdateKeyRotationIntervalRequest  {
      * Get body
      * @return body
      */
-    public UpdateKeyRotationIntervalReq getBody() {
+    public UpdateKeyRotationIntervalRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateKeyRotationIntervalReq body) {
+    public void setBody(UpdateKeyRotationIntervalRequestBody body) {
         this.body = body;
     }
     @Override

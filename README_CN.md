@@ -14,7 +14,7 @@
 
 ## 现在开始
 
-- 要使用华为云 Java SDK，您需要拥有华为云账号以及该账号对应的 Access Key（AK）和 Secret Access Key（SK）。请在华为云控制台“我的凭证-访问密钥”页面上创建和查看您的 AKSK。更多信息请查看[访问密钥]( https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html )。
+- 要使用华为云 Java SDK，您需要拥有华为云账号以及该账号对应的 Access Key（AK）和 Secret Access Key（SK）。请在华为云控制台“我的凭证-访问密钥”页面上创建和查看您的 AK/SK。更多信息请查看[访问密钥]( https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html )。
 - 华为云 Java SDK 支持 **Java JDK 1.8** 及其以上版本。
 
 ## SDK 获取和安装
@@ -23,7 +23,9 @@
 
 - 通过 Maven 安装依赖（推荐）
 
-    通过 Maven 安装项目依赖是使用 Java SDK 的推荐方法，首先您需要在您的操作系统中[下载]( https://maven.apache.org/download.cgi )并[安装 Maven]( https://maven.apache.org/install.html ) ，安装完成后您只需在 Java 项目的 `pom.xml` 文件加入相应的依赖项即可。以使用ECS SDK为例：
+    通过 Maven 安装项目依赖是使用 Java SDK 的推荐方法，首先您需要在您的操作系统中[下载]( https://maven.apache.org/download.cgi )并[安装 Maven]( https://maven.apache.org/install.html ) ，安装完成后您只需在 Java 项目的 `pom.xml` 文件加入相应的依赖项即可。
+    
+    无论您要使用哪个产品/服务的开发工具包，都必须安装`huaweicloud-sdk-core`。以使用虚拟私有云VPC SDK为例，您需要安装`huaweicloud-sdk-core`和`huaweicloud-sdk-vpc`：
 
     ``` xml
     <dependency>
@@ -33,7 +35,7 @@
     </dependency>
     <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
-        <artifactId>huaweicloud-sdk-ecs</artifactId>
+        <artifactId>huaweicloud-sdk-vpc</artifactId>
         <version>[3.0.1-beta, 3.1.0-beta)</version>
     </dependency>
     ```
@@ -50,7 +52,7 @@
     import com.huaweicloud.sdk.core.exception.ServerResponseException;
     // Http 配置
     import com.huaweicloud.sdk.core.http.HttpConfig;
-    // 导入相应产品的 {Service}Client
+    // 导入指定云服务的 {Service}Client，此处以 VpcClient 为例
     import com.huaweicloud.sdk.vpc.v2.VpcClient;
     // 导入待请求接口的 request 和 response 类
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
@@ -95,14 +97,16 @@
 
 3. 初始化认证信息
 
+    3.1 使用永久AK/SK
+    
     ``` java
-    //Region级服务
+    // Region级服务
     BasicCredentials credentials = new BasicCredentials()
         .withAk(ak)
         .withSk(sk)
         .withProjectId(projectId)
    
-    //Global级服务
+    // Global级服务
     GlobalCredentials credentials = new GlobalCredentials()
         .withAk(ak)
         .withSk(sk)
@@ -118,10 +122,35 @@
     - `sk` 华为云账号 Secret Access Key 。
     - `projectId` 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID 。
     - `domainId` 华为云账号ID 。
-
+    
+    3.2 使用临时AK/SK
+    
+    首选需要获得临时AK、SK和SecurityToken，获取可以从永久AK/SK获得，或者通过委托授权首选获得
+    
+    通过永久AK/SK获得可以参考文档：https://support.huaweicloud.com/api-iam/iam_04_0002.html, 对应IAM SDK 中的createTemporaryAccessKeyByToken方法。
+    
+    通过委托授权获得可以参考文档：https://support.huaweicloud.com/api-iam/iam_04_0101.html, 对应IAM SDK 中的createTemporaryAccessKeyByAgency方法。
+    
+    ``` java
+        // Region级服务
+        BasicCredentials credentials = new BasicCredentials()
+            .withAk(ak)
+            .withSk(sk)
+            .withSecurityToken(securityToken)
+            .withProjectId(projectId)
+       
+        // Global级服务
+        GlobalCredentials credentials = new GlobalCredentials()
+            .withAk(ak)
+            .withSk(sk)
+            .withSecurityToken(securityToken)
+            .withDomainId(domainId);
+        ```
+    
 4. 初始化客户端
 
     ``` java
+   // 初始化指定云服务的客户端 {Service}Client ，以初始化 VpcClient 为例
     VpcClient vpcClient = VpcClient.newBuilder()
         .withHttpConfig(config)
         .withCredential(credentials)
@@ -135,7 +164,7 @@
 5. 发送请求并查看响应
 
     ``` java
-    // 初始化请求
+    // 初始化请求，以调用接口 ListVpcs 为例
     ListVpcsResponse listVpcsResponse = vpcClient.listVpcs(new ListVpcsRequest());
     logger.info(listVpcsResponse.toString());
     ```
@@ -166,7 +195,7 @@
 7. 异步客户端使用
 
     ``` java
-    // 初始化异步客户端  
+    // 初始化异步客户端，以初始化 VpcAsyncClient 为例
     VpcAsyncClient vpcAsyncClient = VpcAsyncClient.newBuilder()
         .withHttpConfig(config)
         .withCredential(credentials)
@@ -289,7 +318,8 @@
 
 ## 代码实例
 
-- 使用如下代码同步查询特定 Region 下的 VPC 清单，调用前请根据实际情况替换如下变量： `{your ak string}`、`{your sk string}`、`{your endpoint string}` 以及 `{your project id}`
+- 使用如下代码同步查询特定 Region 下的 VPC 清单，实际使用中请将 `VpcClient` 替换为您使用的产品/服务相应的 `{Service}Client`。
+- 调用前请根据实际情况替换如下变量： `{your ak string}`、`{your sk string}`、`{your endpoint string}` 以及 `{your project id}`。
 
     ``` java
     package com.huaweicloud.sdk.test;

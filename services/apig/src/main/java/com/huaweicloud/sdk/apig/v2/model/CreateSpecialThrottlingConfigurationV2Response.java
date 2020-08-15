@@ -41,13 +41,13 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="object_id")
     
-    private Integer objectId;
+    private String objectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="strategy_id")
+    @JsonProperty(value="throttle_id")
     
-    private String strategyId;
+    private String throttleId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,7 +71,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="object_type")
     
-    private Integer objectType;
+    private String objectType;
 
     public CreateSpecialThrottlingConfigurationV2Response withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
@@ -133,7 +133,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         this.objectName = objectName;
     }
 
-    public CreateSpecialThrottlingConfigurationV2Response withObjectId(Integer objectId) {
+    public CreateSpecialThrottlingConfigurationV2Response withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
@@ -145,16 +145,16 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
      * 特殊对象的身份标识
      * @return objectId
      */
-    public Integer getObjectId() {
+    public String getObjectId() {
         return objectId;
     }
 
-    public void setObjectId(Integer objectId) {
+    public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
 
-    public CreateSpecialThrottlingConfigurationV2Response withStrategyId(String strategyId) {
-        this.strategyId = strategyId;
+    public CreateSpecialThrottlingConfigurationV2Response withThrottleId(String throttleId) {
+        this.throttleId = throttleId;
         return this;
     }
 
@@ -163,14 +163,14 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
 
     /**
      * 流控策略编号
-     * @return strategyId
+     * @return throttleId
      */
-    public String getStrategyId() {
-        return strategyId;
+    public String getThrottleId() {
+        return throttleId;
     }
 
-    public void setStrategyId(String strategyId) {
-        this.strategyId = strategyId;
+    public void setThrottleId(String throttleId) {
+        this.throttleId = throttleId;
     }
 
     public CreateSpecialThrottlingConfigurationV2Response withApplyTime(OffsetDateTime applyTime) {
@@ -233,7 +233,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         this.appId = appId;
     }
 
-    public CreateSpecialThrottlingConfigurationV2Response withObjectType(Integer objectType) {
+    public CreateSpecialThrottlingConfigurationV2Response withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
     }
@@ -245,11 +245,11 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
      * 特殊对象类型：APP、USER
      * @return objectType
      */
-    public Integer getObjectType() {
+    public String getObjectType() {
         return objectType;
     }
 
-    public void setObjectType(Integer objectType) {
+    public void setObjectType(String objectType) {
         this.objectType = objectType;
     }
     @Override
@@ -265,7 +265,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
             Objects.equals(this.appName, createSpecialThrottlingConfigurationV2Response.appName) &&
             Objects.equals(this.objectName, createSpecialThrottlingConfigurationV2Response.objectName) &&
             Objects.equals(this.objectId, createSpecialThrottlingConfigurationV2Response.objectId) &&
-            Objects.equals(this.strategyId, createSpecialThrottlingConfigurationV2Response.strategyId) &&
+            Objects.equals(this.throttleId, createSpecialThrottlingConfigurationV2Response.throttleId) &&
             Objects.equals(this.applyTime, createSpecialThrottlingConfigurationV2Response.applyTime) &&
             Objects.equals(this.id, createSpecialThrottlingConfigurationV2Response.id) &&
             Objects.equals(this.appId, createSpecialThrottlingConfigurationV2Response.appId) &&
@@ -273,7 +273,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     }
     @Override
     public int hashCode() {
-        return Objects.hash(callLimits, appName, objectName, objectId, strategyId, applyTime, id, appId, objectType);
+        return Objects.hash(callLimits, appName, objectName, objectId, throttleId, applyTime, id, appId, objectType);
     }
     @Override
     public String toString() {
@@ -283,7 +283,7 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    objectName: ").append(toIndentedString(objectName)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    strategyId: ").append(toIndentedString(strategyId)).append("\n");
+        sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    applyTime: ").append(toIndentedString(applyTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

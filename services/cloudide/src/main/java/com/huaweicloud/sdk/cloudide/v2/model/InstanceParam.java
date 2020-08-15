@@ -1,0 +1,748 @@
+package com.huaweicloud.sdk.cloudide.v2.model;
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * InstanceParam
+ */
+public class InstanceParam  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="agent_id")
+    
+    private String agentId;
+    /**
+     * cpu架构 x86|arm
+     */
+    public static class ArchEnum {
+
+        
+        /**
+         * Enum X86 for value: "x86"
+         */
+        public static final ArchEnum X86 = new ArchEnum("x86");
+        
+        /**
+         * Enum ARM for value: "arm"
+         */
+        public static final ArchEnum ARM = new ArchEnum("arm");
+        
+
+        public static final Map<String, ArchEnum> staticFields = new HashMap<String, ArchEnum>() {
+            { 
+                put("x86", X86);
+                put("arm", ARM);
+            }
+        };
+
+        private String value;
+
+        ArchEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ArchEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ArchEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new ArchEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static ArchEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ArchEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ArchEnum) {
+                return this.value.equals(((ArchEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="arch")
+    
+    private ArchEnum arch;
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     */
+    public static class CpuMemoryEnum {
+
+        
+        /**
+         * Enum _1U1G for value: "1U1G"
+         */
+        public static final CpuMemoryEnum _1U1G = new CpuMemoryEnum("1U1G");
+        
+        /**
+         * Enum _2U4G for value: "2U4G"
+         */
+        public static final CpuMemoryEnum _2U4G = new CpuMemoryEnum("2U4G");
+        
+        /**
+         * Enum _2U8G for value: "2U8G"
+         */
+        public static final CpuMemoryEnum _2U8G = new CpuMemoryEnum("2U8G");
+        
+        /**
+         * Enum _4U8G for value: "4U8G"
+         */
+        public static final CpuMemoryEnum _4U8G = new CpuMemoryEnum("4U8G");
+        
+
+        public static final Map<String, CpuMemoryEnum> staticFields = new HashMap<String, CpuMemoryEnum>() {
+            { 
+                put("1U1G", _1U1G);
+                put("2U4G", _2U4G);
+                put("2U8G", _2U8G);
+                put("4U8G", _4U8G);
+            }
+        };
+
+        private String value;
+
+        CpuMemoryEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CpuMemoryEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            CpuMemoryEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new CpuMemoryEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static CpuMemoryEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            CpuMemoryEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof CpuMemoryEnum) {
+                return this.value.equals(((CpuMemoryEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cpu_memory")
+    
+    private CpuMemoryEnum cpuMemory;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="display_name")
+    
+    private String displayName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_temporary")
+    
+    private Boolean isTemporary;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="label_tag")
+    
+    private String labelTag;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="plugin_enable_list")
+    
+    private List<String> pluginEnableList = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="plugin_vars")
+    
+    private Map<String, String> pluginVars = null;
+        /**
+     * PVC规格 5GB|10GB|20GB
+     */
+    public static class PvcQuantityEnum {
+
+        
+        /**
+         * Enum _5GB for value: "5GB"
+         */
+        public static final PvcQuantityEnum _5GB = new PvcQuantityEnum("5GB");
+        
+        /**
+         * Enum _10GB for value: "10GB"
+         */
+        public static final PvcQuantityEnum _10GB = new PvcQuantityEnum("10GB");
+        
+        /**
+         * Enum _20GB for value: "20GB"
+         */
+        public static final PvcQuantityEnum _20GB = new PvcQuantityEnum("20GB");
+        
+
+        public static final Map<String, PvcQuantityEnum> staticFields = new HashMap<String, PvcQuantityEnum>() {
+            { 
+                put("5GB", _5GB);
+                put("10GB", _10GB);
+                put("20GB", _20GB);
+            }
+        };
+
+        private String value;
+
+        PvcQuantityEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PvcQuantityEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            PvcQuantityEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new PvcQuantityEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static PvcQuantityEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            PvcQuantityEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof PvcQuantityEnum) {
+                return this.value.equals(((PvcQuantityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="pvc_quantity")
+    
+    private PvcQuantityEnum pvcQuantity;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="refresh_interval")
+    
+    private String refreshInterval;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="repository_id")
+    
+    private Long repositoryId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="stack_id")
+    
+    private String stackId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="task_type")
+    
+    private String taskType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="token")
+    
+    private String token;
+
+    public InstanceParam withAgentId(String agentId) {
+        this.agentId = agentId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 代理商id，标签为tutorial时使用
+     * @return agentId
+     */
+    public String getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(String agentId) {
+        this.agentId = agentId;
+    }
+
+    public InstanceParam withArch(ArchEnum arch) {
+        this.arch = arch;
+        return this;
+    }
+
+    
+
+
+    /**
+     * cpu架构 x86|arm
+     * @return arch
+     */
+    public ArchEnum getArch() {
+        return arch;
+    }
+
+    public void setArch(ArchEnum arch) {
+        this.arch = arch;
+    }
+
+    public InstanceParam withCpuMemory(CpuMemoryEnum cpuMemory) {
+        this.cpuMemory = cpuMemory;
+        return this;
+    }
+
+    
+
+
+    /**
+     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     * @return cpuMemory
+     */
+    public CpuMemoryEnum getCpuMemory() {
+        return cpuMemory;
+    }
+
+    public void setCpuMemory(CpuMemoryEnum cpuMemory) {
+        this.cpuMemory = cpuMemory;
+    }
+
+    public InstanceParam withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public InstanceParam withDisplayName(String displayName) {
+        this.displayName = displayName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * @return displayName
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public InstanceParam withIsTemporary(Boolean isTemporary) {
+        this.isTemporary = isTemporary;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否临时实例。 false页面会显示
+     * @return isTemporary
+     */
+    public Boolean getIsTemporary() {
+        return isTemporary;
+    }
+
+    public void setIsTemporary(Boolean isTemporary) {
+        this.isTemporary = isTemporary;
+    }
+
+    public InstanceParam withLabelTag(String labelTag) {
+        this.labelTag = labelTag;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 场景标签
+     * @return labelTag
+     */
+    public String getLabelTag() {
+        return labelTag;
+    }
+
+    public void setLabelTag(String labelTag) {
+        this.labelTag = labelTag;
+    }
+
+    public InstanceParam withPluginEnableList(List<String> pluginEnableList) {
+        this.pluginEnableList = pluginEnableList;
+        return this;
+    }
+
+    
+    public InstanceParam addPluginEnableListItem(String pluginEnableListItem) {
+        if (this.pluginEnableList == null) {
+            this.pluginEnableList = new ArrayList<>();
+        }
+        this.pluginEnableList.add(pluginEnableListItem);
+        return this;
+    }
+
+    public InstanceParam withPluginEnableList(Consumer<List<String>> pluginEnableListSetter) {
+        if(this.pluginEnableList == null ){
+            this.pluginEnableList = new ArrayList<>();
+        }
+        pluginEnableListSetter.accept(this.pluginEnableList);
+        return this;
+    }
+
+    /**
+     * 场景插件列表
+     * @return pluginEnableList
+     */
+    public List<String> getPluginEnableList() {
+        return pluginEnableList;
+    }
+
+    public void setPluginEnableList(List<String> pluginEnableList) {
+        this.pluginEnableList = pluginEnableList;
+    }
+
+    public InstanceParam withPluginVars(Map<String, String> pluginVars) {
+        this.pluginVars = pluginVars;
+        return this;
+    }
+
+    
+
+    public InstanceParam putPluginVarsItem(String key, String pluginVarsItem) {
+         if (this.pluginVars == null) {
+            this.pluginVars = new HashMap<>();
+         }
+        this.pluginVars.put(key, pluginVarsItem);
+        return this;
+    }
+
+    public InstanceParam withPluginVars(Consumer<Map<String, String>> pluginVarsSetter) {
+        if(this.pluginVars == null ){
+            this.pluginVars = new HashMap<>();
+        }
+        pluginVarsSetter.accept(this.pluginVars);
+        return this;
+    }
+    /**
+     * 场景插件参数
+     * @return pluginVars
+     */
+    public Map<String, String> getPluginVars() {
+        return pluginVars;
+    }
+
+    public void setPluginVars(Map<String, String> pluginVars) {
+        this.pluginVars = pluginVars;
+    }
+
+    public InstanceParam withPvcQuantity(PvcQuantityEnum pvcQuantity) {
+        this.pvcQuantity = pvcQuantity;
+        return this;
+    }
+
+    
+
+
+    /**
+     * PVC规格 5GB|10GB|20GB
+     * @return pvcQuantity
+     */
+    public PvcQuantityEnum getPvcQuantity() {
+        return pvcQuantity;
+    }
+
+    public void setPvcQuantity(PvcQuantityEnum pvcQuantity) {
+        this.pvcQuantity = pvcQuantity;
+    }
+
+    public InstanceParam withRefreshInterval(String refreshInterval) {
+        this.refreshInterval = refreshInterval;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例的生命周期 arm架构,生命周期只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例在到达生命周期后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
+     * @return refreshInterval
+     */
+    public String getRefreshInterval() {
+        return refreshInterval;
+    }
+
+    public void setRefreshInterval(String refreshInterval) {
+        this.refreshInterval = refreshInterval;
+    }
+
+    public InstanceParam withRepositoryId(Long repositoryId) {
+        this.repositoryId = repositoryId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 解放号的仓库id，标签为jfh时使用
+     * minimum: 1
+     * maximum: 9223372036854775807
+     * @return repositoryId
+     */
+    public Long getRepositoryId() {
+        return repositoryId;
+    }
+
+    public void setRepositoryId(Long repositoryId) {
+        this.repositoryId = repositoryId;
+    }
+
+    public InstanceParam withStackId(String stackId) {
+        this.stackId = stackId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 技术栈ID 目前可取值all，java，go，python，cpp，nodejs，quantum，blockchain，dcn，vue，ruby。
+     * @return stackId
+     */
+    public String getStackId() {
+        return stackId;
+    }
+
+    public void setStackId(String stackId) {
+        this.stackId = stackId;
+    }
+
+    public InstanceParam withTaskType(String taskType) {
+        this.taskType = taskType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 任务类型，标签为tutorial时使用
+     * @return taskType
+     */
+    public String getTaskType() {
+        return taskType;
+    }
+
+    public void setTaskType(String taskType) {
+        this.taskType = taskType;
+    }
+
+    public InstanceParam withToken(String token) {
+        this.token = token;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 解放号的token，标签为jfh时使用
+     * @return token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        InstanceParam instanceParam = (InstanceParam) o;
+        return Objects.equals(this.agentId, instanceParam.agentId) &&
+            Objects.equals(this.arch, instanceParam.arch) &&
+            Objects.equals(this.cpuMemory, instanceParam.cpuMemory) &&
+            Objects.equals(this.description, instanceParam.description) &&
+            Objects.equals(this.displayName, instanceParam.displayName) &&
+            Objects.equals(this.isTemporary, instanceParam.isTemporary) &&
+            Objects.equals(this.labelTag, instanceParam.labelTag) &&
+            Objects.equals(this.pluginEnableList, instanceParam.pluginEnableList) &&
+            Objects.equals(this.pluginVars, instanceParam.pluginVars) &&
+            Objects.equals(this.pvcQuantity, instanceParam.pvcQuantity) &&
+            Objects.equals(this.refreshInterval, instanceParam.refreshInterval) &&
+            Objects.equals(this.repositoryId, instanceParam.repositoryId) &&
+            Objects.equals(this.stackId, instanceParam.stackId) &&
+            Objects.equals(this.taskType, instanceParam.taskType) &&
+            Objects.equals(this.token, instanceParam.token);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(agentId, arch, cpuMemory, description, displayName, isTemporary, labelTag, pluginEnableList, pluginVars, pvcQuantity, refreshInterval, repositoryId, stackId, taskType, token);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class InstanceParam {\n");
+        sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    arch: ").append(toIndentedString(arch)).append("\n");
+        sb.append("    cpuMemory: ").append(toIndentedString(cpuMemory)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+        sb.append("    isTemporary: ").append(toIndentedString(isTemporary)).append("\n");
+        sb.append("    labelTag: ").append(toIndentedString(labelTag)).append("\n");
+        sb.append("    pluginEnableList: ").append(toIndentedString(pluginEnableList)).append("\n");
+        sb.append("    pluginVars: ").append(toIndentedString(pluginVars)).append("\n");
+        sb.append("    pvcQuantity: ").append(toIndentedString(pvcQuantity)).append("\n");
+        sb.append("    refreshInterval: ").append(toIndentedString(refreshInterval)).append("\n");
+        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
+        sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
+        sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

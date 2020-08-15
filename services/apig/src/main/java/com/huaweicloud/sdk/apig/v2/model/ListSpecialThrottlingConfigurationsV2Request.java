@@ -24,9 +24,9 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="strategy_id")
+    @JsonProperty(value="throttle_id")
     
-    private String strategyId;
+    private String throttleId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,8 +72,8 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
         this.instanceId = instanceId;
     }
 
-    public ListSpecialThrottlingConfigurationsV2Request withStrategyId(String strategyId) {
-        this.strategyId = strategyId;
+    public ListSpecialThrottlingConfigurationsV2Request withThrottleId(String throttleId) {
+        this.throttleId = throttleId;
         return this;
     }
 
@@ -81,15 +81,15 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * Get strategyId
-     * @return strategyId
+     * Get throttleId
+     * @return throttleId
      */
-    public String getStrategyId() {
-        return strategyId;
+    public String getThrottleId() {
+        return throttleId;
     }
 
-    public void setStrategyId(String strategyId) {
-        this.strategyId = strategyId;
+    public void setThrottleId(String throttleId) {
+        this.throttleId = throttleId;
     }
 
     public ListSpecialThrottlingConfigurationsV2Request withObjectType(String objectType) {
@@ -183,7 +183,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
         }
         ListSpecialThrottlingConfigurationsV2Request listSpecialThrottlingConfigurationsV2Request = (ListSpecialThrottlingConfigurationsV2Request) o;
         return Objects.equals(this.instanceId, listSpecialThrottlingConfigurationsV2Request.instanceId) &&
-            Objects.equals(this.strategyId, listSpecialThrottlingConfigurationsV2Request.strategyId) &&
+            Objects.equals(this.throttleId, listSpecialThrottlingConfigurationsV2Request.throttleId) &&
             Objects.equals(this.objectType, listSpecialThrottlingConfigurationsV2Request.objectType) &&
             Objects.equals(this.appName, listSpecialThrottlingConfigurationsV2Request.appName) &&
             Objects.equals(this.offset, listSpecialThrottlingConfigurationsV2Request.offset) &&
@@ -191,14 +191,14 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, strategyId, objectType, appName, offset, limit);
+        return Objects.hash(instanceId, throttleId, objectType, appName, offset, limit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSpecialThrottlingConfigurationsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    strategyId: ").append(toIndentedString(strategyId)).append("\n");
+        sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

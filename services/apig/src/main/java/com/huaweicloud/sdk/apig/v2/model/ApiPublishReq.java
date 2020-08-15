@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -15,12 +17,87 @@ import java.util.Objects;
  */
 public class ApiPublishReq  {
 
+    /**
+     * 需要进行的操作。 - online：发布 - offline：下线
+     */
+    public static class ActionEnum {
+
+        
+        /**
+         * Enum ONLINE for value: "online"
+         */
+        public static final ActionEnum ONLINE = new ActionEnum("online");
+        
+        /**
+         * Enum OFFLINE for value: "offline"
+         */
+        public static final ActionEnum OFFLINE = new ActionEnum("offline");
+        
+
+        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
+            { 
+                put("online", ONLINE);
+                put("offline", OFFLINE);
+            }
+        };
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ActionEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new ActionEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static ActionEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ActionEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ActionEnum) {
+                return this.value.equals(((ActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private String action;
+    private ActionEnum action;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,7 +117,7 @@ public class ApiPublishReq  {
     
     private String remark;
 
-    public ApiPublishReq withAction(String action) {
+    public ApiPublishReq withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
@@ -49,14 +126,14 @@ public class ApiPublishReq  {
 
 
     /**
-     * 需要进行的操作。支持发布online，下线offline
+     * 需要进行的操作。 - online：发布 - offline：下线
      * @return action
      */
-    public String getAction() {
+    public ActionEnum getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    public void setAction(ActionEnum action) {
         this.action = action;
     }
 

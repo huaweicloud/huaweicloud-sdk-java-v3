@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.EncryptDatakeyReq;
+import com.huaweicloud.sdk.kms.v1.model.EncryptDatakeyRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class EncryptDatakeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private EncryptDatakeyReq body = null;
+    private EncryptDatakeyRequestBody body = null;
 
     public EncryptDatakeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class EncryptDatakeyRequest  {
         this.versionId = versionId;
     }
 
-    public EncryptDatakeyRequest withBody(EncryptDatakeyReq body) {
+    public EncryptDatakeyRequest withBody(EncryptDatakeyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public EncryptDatakeyRequest withBody(Consumer<EncryptDatakeyReq> bodySetter) {
+    public EncryptDatakeyRequest withBody(Consumer<EncryptDatakeyRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new EncryptDatakeyReq();
+            this.body = new EncryptDatakeyRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class EncryptDatakeyRequest  {
      * Get body
      * @return body
      */
-    public EncryptDatakeyReq getBody() {
+    public EncryptDatakeyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(EncryptDatakeyReq body) {
+    public void setBody(EncryptDatakeyRequestBody body) {
         this.body = body;
     }
     @Override

@@ -29,12 +29,6 @@ public class ThrottleSpecialReq  {
     @JsonProperty(value="object_id")
     
     private String objectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="strategy_id")
-    
-    private String strategyId;
     /**
      * 特殊对象类型
      */
@@ -157,26 +151,6 @@ public class ThrottleSpecialReq  {
         this.objectId = objectId;
     }
 
-    public ThrottleSpecialReq withStrategyId(String strategyId) {
-        this.strategyId = strategyId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 流控策略编号
-     * @return strategyId
-     */
-    public String getStrategyId() {
-        return strategyId;
-    }
-
-    public void setStrategyId(String strategyId) {
-        this.strategyId = strategyId;
-    }
-
     public ThrottleSpecialReq withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
@@ -207,12 +181,11 @@ public class ThrottleSpecialReq  {
         ThrottleSpecialReq throttleSpecialReq = (ThrottleSpecialReq) o;
         return Objects.equals(this.callLimits, throttleSpecialReq.callLimits) &&
             Objects.equals(this.objectId, throttleSpecialReq.objectId) &&
-            Objects.equals(this.strategyId, throttleSpecialReq.strategyId) &&
             Objects.equals(this.objectType, throttleSpecialReq.objectType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(callLimits, objectId, strategyId, objectType);
+        return Objects.hash(callLimits, objectId, objectType);
     }
     @Override
     public String toString() {
@@ -220,7 +193,6 @@ public class ThrottleSpecialReq  {
         sb.append("class ThrottleSpecialReq {\n");
         sb.append("    callLimits: ").append(toIndentedString(callLimits)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    strategyId: ").append(toIndentedString(strategyId)).append("\n");
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
         sb.append("}");
         return sb.toString();

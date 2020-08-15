@@ -9,6 +9,8 @@ public abstract class AbstractCredentials implements ICredential {
 
     private String sk;
 
+    private String securityToken;
+
     private final List<String> sensitiveHeaders
             = Arrays.asList("authorization", "x-auth-token", "x-subject-token", "x-service-token");
 
@@ -26,6 +28,14 @@ public abstract class AbstractCredentials implements ICredential {
 
     public void setSk(String sk) {
         this.sk = sk;
+    }
+
+    public String getSecurityToken() {
+        return securityToken;
+    }
+
+    public void setSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
     }
 
     @Override

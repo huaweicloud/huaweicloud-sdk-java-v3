@@ -45,6 +45,11 @@ public class GlobalCredentials extends AbstractCredentials {
         return this;
     }
 
+    public GlobalCredentials withSecurityToken(String securityToken) {
+        setSecurityToken(securityToken);
+        return this;
+    }
+
     public String getDomainId() {
         return domainId;
     }
@@ -74,12 +79,16 @@ public class GlobalCredentials extends AbstractCredentials {
         }
 
         return CompletableFuture.supplyAsync(() -> {
-            HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addPathParam(getPathParams());
+            HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
             builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());
 
-            if (Objects.nonNull(httpRequest.getContentType())
-                    && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            if (Objects.nonNull(getSecurityToken())) {
+                builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
+            }
+
+            if (Objects.nonNull(httpRequest.getContentType()) && !httpRequest.getContentType()
+                .startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
 

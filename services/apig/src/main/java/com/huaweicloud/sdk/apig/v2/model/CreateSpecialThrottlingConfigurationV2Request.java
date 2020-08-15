@@ -25,6 +25,12 @@ public class CreateSpecialThrottlingConfigurationV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="throttle_id")
+    
+    private String throttleId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private ThrottleSpecialReq body = null;
@@ -47,6 +53,26 @@ public class CreateSpecialThrottlingConfigurationV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public CreateSpecialThrottlingConfigurationV2Request withThrottleId(String throttleId) {
+        this.throttleId = throttleId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get throttleId
+     * @return throttleId
+     */
+    public String getThrottleId() {
+        return throttleId;
+    }
+
+    public void setThrottleId(String throttleId) {
+        this.throttleId = throttleId;
     }
 
     public CreateSpecialThrottlingConfigurationV2Request withBody(ThrottleSpecialReq body) {
@@ -85,17 +111,19 @@ public class CreateSpecialThrottlingConfigurationV2Request  {
         }
         CreateSpecialThrottlingConfigurationV2Request createSpecialThrottlingConfigurationV2Request = (CreateSpecialThrottlingConfigurationV2Request) o;
         return Objects.equals(this.instanceId, createSpecialThrottlingConfigurationV2Request.instanceId) &&
+            Objects.equals(this.throttleId, createSpecialThrottlingConfigurationV2Request.throttleId) &&
             Objects.equals(this.body, createSpecialThrottlingConfigurationV2Request.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, body);
+        return Objects.hash(instanceId, throttleId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSpecialThrottlingConfigurationV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

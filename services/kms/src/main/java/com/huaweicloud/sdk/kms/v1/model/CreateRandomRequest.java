@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.GenRandomReq;
+import com.huaweicloud.sdk.kms.v1.model.GenRandomRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class CreateRandomRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GenRandomReq body = null;
+    private GenRandomRequestBody body = null;
 
     public CreateRandomRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class CreateRandomRequest  {
         this.versionId = versionId;
     }
 
-    public CreateRandomRequest withBody(GenRandomReq body) {
+    public CreateRandomRequest withBody(GenRandomRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateRandomRequest withBody(Consumer<GenRandomReq> bodySetter) {
+    public CreateRandomRequest withBody(Consumer<GenRandomRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new GenRandomReq();
+            this.body = new GenRandomRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class CreateRandomRequest  {
      * Get body
      * @return body
      */
-    public GenRandomReq getBody() {
+    public GenRandomRequestBody getBody() {
         return body;
     }
 
-    public void setBody(GenRandomReq body) {
+    public void setBody(GenRandomRequestBody body) {
         this.body = body;
     }
     @Override

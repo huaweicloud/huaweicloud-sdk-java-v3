@@ -263,6 +263,87 @@ public class ReqParamBase  {
     @JsonProperty(value="json_schema")
     
     private String jsonSchema;
+    /**
+     * 是否透传 - 1：是 - 2：否
+     */
+    public static class PassThroughEnum {
+
+        
+        /**
+         * Enum _1 for value: "1"
+         */
+        public static final PassThroughEnum _1 = new PassThroughEnum("1");
+        
+        /**
+         * Enum _2 for value: "2"
+         */
+        public static final PassThroughEnum _2 = new PassThroughEnum("2");
+        
+
+        public static final Map<String, PassThroughEnum> staticFields = new HashMap<String, PassThroughEnum>() {
+            { 
+                put("1", _1);
+                put("2", _2);
+            }
+        };
+
+        private String value;
+
+        PassThroughEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PassThroughEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            PassThroughEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new PassThroughEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static PassThroughEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            PassThroughEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof PassThroughEnum) {
+                return this.value.equals(((PassThroughEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="pass_through")
+    
+    private PassThroughEnum passThrough;
 
     public ReqParamBase withName(String name) {
         this.name = name;
@@ -563,6 +644,26 @@ public class ReqParamBase  {
     public void setJsonSchema(String jsonSchema) {
         this.jsonSchema = jsonSchema;
     }
+
+    public ReqParamBase withPassThrough(PassThroughEnum passThrough) {
+        this.passThrough = passThrough;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否透传 - 1：是 - 2：否
+     * @return passThrough
+     */
+    public PassThroughEnum getPassThrough() {
+        return passThrough;
+    }
+
+    public void setPassThrough(PassThroughEnum passThrough) {
+        this.passThrough = passThrough;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -586,11 +687,12 @@ public class ReqParamBase  {
             Objects.equals(this.minSize, reqParamBase.minSize) &&
             Objects.equals(this.maxSize, reqParamBase.maxSize) &&
             Objects.equals(this.regular, reqParamBase.regular) &&
-            Objects.equals(this.jsonSchema, reqParamBase.jsonSchema);
+            Objects.equals(this.jsonSchema, reqParamBase.jsonSchema) &&
+            Objects.equals(this.passThrough, reqParamBase.passThrough);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, location, defaultValue, sampleValue, required, validEnable, remark, enumerations, minNum, maxNum, minSize, maxSize, regular, jsonSchema);
+        return Objects.hash(name, type, location, defaultValue, sampleValue, required, validEnable, remark, enumerations, minNum, maxNum, minSize, maxSize, regular, jsonSchema, passThrough);
     }
     @Override
     public String toString() {
@@ -611,6 +713,7 @@ public class ReqParamBase  {
         sb.append("    maxSize: ").append(toIndentedString(maxSize)).append("\n");
         sb.append("    regular: ").append(toIndentedString(regular)).append("\n");
         sb.append("    jsonSchema: ").append(toIndentedString(jsonSchema)).append("\n");
+        sb.append("    passThrough: ").append(toIndentedString(passThrough)).append("\n");
         sb.append("}");
         return sb.toString();
     }

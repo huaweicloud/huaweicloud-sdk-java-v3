@@ -20,7 +20,9 @@ You could obtain and install Java SDK through following methods:
 
 - Use Maven to declare dependencies (Recommended)
 
-    It is recommended to use Maven to declare dependencies to use our Java SDK. At first, you need to [download](https://maven.apache.org/download.cgi) and [install](https://maven.apache.org/install.html) Maven, and then declare dependencies in the `pom.xml` file in your Java project. Take using ECS SDK for example: 
+    It is recommended to use Maven to declare dependencies to use our Java SDK. At first, you need to [download](https://maven.apache.org/download.cgi) and [install](https://maven.apache.org/install.html) Maven, and then declare dependencies in the `pom.xml` file in your Java project. 
+    
+    You must install `huaweicloud-sdk-core` library no matter which product/service development kit you need to use. Take using VPC SDK for example, you need to install `huaweicloud-sdk-core` library and `huaweicloud-sdk-vpc` library: 
 
     ``` xml
     <dependency>
@@ -30,7 +32,7 @@ You could obtain and install Java SDK through following methods:
     </dependency>
     <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
-        <artifactId>huaweicloud-sdk-ecs</artifactId>
+        <artifactId>huaweicloud-sdk-vpc</artifactId>
         <version>[3.0.1-beta, 3.1.0-beta)</version>
     </dependency>
     ```
@@ -40,13 +42,18 @@ You could obtain and install Java SDK through following methods:
 1. Import the required modules as follows
 
     ``` java
+    // User authentification
     import com.huaweicloud.sdk.core.auth.BasicCredentials;
+    // Exceptions
     import com.huaweicloud.sdk.core.exception.ClientRequestException;
     import com.huaweicloud.sdk.core.exception.ServerResponseException;
+    // Http related configuration
     import com.huaweicloud.sdk.core.http.HttpConfig;
+    // {Service}Client, replace Vpc to your specified service, take VpcClient for example
     import com.huaweicloud.sdk.vpc.v2.VpcClient;
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
+    // Logger
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
     ```
@@ -86,33 +93,60 @@ You could obtain and install Java SDK through following methods:
 
 3. Initialize Credentials
 
+    3.1 Use permanent AK/SK
+    
     ``` java
-    //Region Services
-    BasicCredentials credentials = new BasicCredentials()
+    // Regional Services
+        BasicCredentials credentials = new BasicCredentials()
         .withAk(ak)
         .withSk(sk)
         .withProjectId(projectId)
    
-    //Global Services
+    // Global Services
     GlobalCredentials credentials = new GlobalCredentials()
         .withAk(ak)
         .withSk(sk)
         .withDomainId(domainId);
     ```
-
+    
     **where:**
     Global services currently only support IAM, TMS, EPS.
     
-    For Region services need to provide projectId. For global services need to provide domainId. 
+    For Regional services' authentication, projectId is required. 
+    For global services' authentication, domainId is required, projectId should be null. 
 
     - `ak` is the access key ID for your account.
     - `sk` is the secret access key for your account.
     - `projectId` is the ID of your project depending on your region which you want to operate.
     - `domainId` is the account ID of huaweicloud.
+    
+    3.2 Use temporary AK/SK
+    
+    It's preferred to obtain temporary access key, security key and security token first, which could be obtained through permanent access key and security key or through an agency.
+    
+    Obtaining a temporary access key token through permanent access key and security key, you could refer to document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0002.html . The API mentioned in the document above corresponds to the method of createTemporaryAccessKeyByToken in IAM SDK.
+    
+    Obtaining a temporary access key and security token through an agency, you could refer to document: https://support.huaweicloud.com/en-us/api-iam/iam_04_0101.html . The API mentioned in the document above corresponds to the method of createTemporaryAccessKeyByAgency in IAM SDK.
+    
+    ``` java
+        // Region级服务
+        BasicCredentials credentials = new BasicCredentials()
+            .withAk(ak)
+            .withSk(sk)
+            .withSecurityToken(securityToken)
+            .withProjectId(projectId)
+       
+        // Global级服务
+        GlobalCredentials credentials = new GlobalCredentials()
+            .withAk(ak)
+            .withSk(sk)
+            .withSecurityToken(securityToken)
+            .withDomainId(domainId);
 
 4. Initialize the {Service}Client instance
 
     ``` java
+    // Initialize specified service client instance, take VpcClient for example
     VpcClient vpcClient = VpcClient.newBuilder()
         .withHttpConfig(config)
         .withCredential(credentials)
@@ -126,6 +160,7 @@ You could obtain and install Java SDK through following methods:
 5. Send a request and print response
 
     ``` java
+    // send request and print response, take interface of ListVpcs for example
     ListVpcsResponse listVpcsResponse = vpcClient.listVpcs(new ListVpcsRequest());
     logger.info(listVpcsResponse.toString());
     ```
@@ -155,7 +190,7 @@ You could obtain and install Java SDK through following methods:
 7. Use Asynchronous Client
 
     ``` java
-    // Initialize asynchronous client  
+    // Initialize asynchronous client, take VpcAsyncClient for example
     VpcAsyncClient vpcAsyncClient = VpcAsyncClient.newBuilder()
         .withHttpConfig(config)
         .withCredential(credentials)
@@ -280,7 +315,8 @@ You could obtain and install Java SDK through following methods:
 
 ## Code Example
 
-- The following example shows how to query a list of VPC synchronously in a specific region. Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint string}` and `{your project id}`.
+- The following example shows how to query a list of VPC synchronously in a specific region, you need to substitute your real `{Service}Client` for `VpcClient` in actual use.
+- Substitute the values for `{your ak string}`, `{your sk string}`, `{your endpoint string}` and `{your project id}`.
 
     ``` java
     package com.huaweicloud.sdk.test;

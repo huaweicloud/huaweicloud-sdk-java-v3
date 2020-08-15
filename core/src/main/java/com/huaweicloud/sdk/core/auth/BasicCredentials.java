@@ -33,9 +33,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class BasicCredentials extends AbstractCredentials {
 
-
     private String projectId;
-
 
     public BasicCredentials withAk(String ak) {
         setAk(ak);
@@ -44,6 +42,11 @@ public class BasicCredentials extends AbstractCredentials {
 
     public BasicCredentials withSk(String sk) {
         setSk(sk);
+        return this;
+    }
+
+    public BasicCredentials withSecurityToken(String securityToken) {
+        setSecurityToken(securityToken);
         return this;
     }
 
@@ -60,7 +63,6 @@ public class BasicCredentials extends AbstractCredentials {
         return this;
     }
 
-
     Map<String, Object> getPathParams() {
         Map<String, Object> pathParam = new LinkedHashMap<>();
         if (Objects.nonNull(projectId)) {
@@ -69,20 +71,22 @@ public class BasicCredentials extends AbstractCredentials {
         return pathParam;
     }
 
-
     @Override
     public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
         if (Objects.isNull(getProjectId())) {
             throw new SdkException("This is a global service and the proejct id must be provided.");
         }
         return CompletableFuture.supplyAsync(() -> {
-            HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addPathParam(getPathParams());
-
+            HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
             builder.addHeader(Constants.X_PROJECT_ID, projectId);
 
-            if (Objects.nonNull(httpRequest.getContentType())
-                    && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+            if (Objects.nonNull(getSecurityToken())) {
+                builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
+            }
+
+            if (Objects.nonNull(httpRequest.getContentType()) && !httpRequest.getContentType()
+                .startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
 
@@ -92,6 +96,5 @@ public class BasicCredentials extends AbstractCredentials {
             return builder.build();
         });
     }
-
 
 }

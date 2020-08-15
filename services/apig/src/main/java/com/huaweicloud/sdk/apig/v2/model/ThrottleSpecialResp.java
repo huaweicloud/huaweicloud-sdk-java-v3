@@ -39,13 +39,13 @@ public class ThrottleSpecialResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="object_id")
     
-    private Integer objectId;
+    private String objectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="strategy_id")
+    @JsonProperty(value="throttle_id")
     
-    private String strategyId;
+    private String throttleId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class ThrottleSpecialResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="object_type")
     
-    private Integer objectType;
+    private String objectType;
 
     public ThrottleSpecialResp withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
@@ -131,7 +131,7 @@ public class ThrottleSpecialResp  {
         this.objectName = objectName;
     }
 
-    public ThrottleSpecialResp withObjectId(Integer objectId) {
+    public ThrottleSpecialResp withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
@@ -143,16 +143,16 @@ public class ThrottleSpecialResp  {
      * 特殊对象的身份标识
      * @return objectId
      */
-    public Integer getObjectId() {
+    public String getObjectId() {
         return objectId;
     }
 
-    public void setObjectId(Integer objectId) {
+    public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
 
-    public ThrottleSpecialResp withStrategyId(String strategyId) {
-        this.strategyId = strategyId;
+    public ThrottleSpecialResp withThrottleId(String throttleId) {
+        this.throttleId = throttleId;
         return this;
     }
 
@@ -161,14 +161,14 @@ public class ThrottleSpecialResp  {
 
     /**
      * 流控策略编号
-     * @return strategyId
+     * @return throttleId
      */
-    public String getStrategyId() {
-        return strategyId;
+    public String getThrottleId() {
+        return throttleId;
     }
 
-    public void setStrategyId(String strategyId) {
-        this.strategyId = strategyId;
+    public void setThrottleId(String throttleId) {
+        this.throttleId = throttleId;
     }
 
     public ThrottleSpecialResp withApplyTime(OffsetDateTime applyTime) {
@@ -231,7 +231,7 @@ public class ThrottleSpecialResp  {
         this.appId = appId;
     }
 
-    public ThrottleSpecialResp withObjectType(Integer objectType) {
+    public ThrottleSpecialResp withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
     }
@@ -243,11 +243,11 @@ public class ThrottleSpecialResp  {
      * 特殊对象类型：APP、USER
      * @return objectType
      */
-    public Integer getObjectType() {
+    public String getObjectType() {
         return objectType;
     }
 
-    public void setObjectType(Integer objectType) {
+    public void setObjectType(String objectType) {
         this.objectType = objectType;
     }
     @Override
@@ -263,7 +263,7 @@ public class ThrottleSpecialResp  {
             Objects.equals(this.appName, throttleSpecialResp.appName) &&
             Objects.equals(this.objectName, throttleSpecialResp.objectName) &&
             Objects.equals(this.objectId, throttleSpecialResp.objectId) &&
-            Objects.equals(this.strategyId, throttleSpecialResp.strategyId) &&
+            Objects.equals(this.throttleId, throttleSpecialResp.throttleId) &&
             Objects.equals(this.applyTime, throttleSpecialResp.applyTime) &&
             Objects.equals(this.id, throttleSpecialResp.id) &&
             Objects.equals(this.appId, throttleSpecialResp.appId) &&
@@ -271,7 +271,7 @@ public class ThrottleSpecialResp  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(callLimits, appName, objectName, objectId, strategyId, applyTime, id, appId, objectType);
+        return Objects.hash(callLimits, appName, objectName, objectId, throttleId, applyTime, id, appId, objectType);
     }
     @Override
     public String toString() {
@@ -281,7 +281,7 @@ public class ThrottleSpecialResp  {
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    objectName: ").append(toIndentedString(objectName)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    strategyId: ").append(toIndentedString(strategyId)).append("\n");
+        sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
         sb.append("    applyTime: ").append(toIndentedString(applyTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

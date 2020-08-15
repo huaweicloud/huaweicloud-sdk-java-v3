@@ -41,7 +41,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateKmsTagsReq.class,
+            BatchCreateKmsTagsRequestBody.class,
             f -> f.withMarshaller(BatchCreateKmsTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -73,7 +73,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RevokeGrantReq.class,
+            RevokeGrantRequestBody.class,
             f -> f.withMarshaller(CancelGrantRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -105,7 +105,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(CancelKeyDeletionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -137,7 +137,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RevokeGrantReq.class,
+            RevokeGrantRequestBody.class,
             f -> f.withMarshaller(CancelSelfGrantRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -169,7 +169,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateDatakeyReq.class,
+            CreateDatakeyRequestBody.class,
             f -> f.withMarshaller(CreateDatakeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -201,7 +201,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateDatakeyReq.class,
+            CreateDatakeyRequestBody.class,
             f -> f.withMarshaller(CreateDatakeyWithoutPlaintextRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -233,7 +233,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateGrantReq.class,
+            CreateGrantRequestBody.class,
             f -> f.withMarshaller(CreateGrantRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -265,7 +265,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateKeyReq.class,
+            CreateKeyRequestBody.class,
             f -> f.withMarshaller(CreateKeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -305,7 +305,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateKmsTagReq.class,
+            CreateKmsTagRequestBody.class,
             f -> f.withMarshaller(CreateKmsTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -337,7 +337,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            GetParametersForImportReq.class,
+            GetParametersForImportRequestBody.class,
             f -> f.withMarshaller(CreateParametersForImportRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -369,8 +369,40 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            GenRandomReq.class,
+            GenRandomRequestBody.class,
             f -> f.withMarshaller(CreateRandomRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DecryptDataRequest, DecryptDataResponse> decryptData = genFordecryptData();
+
+    private static HttpRequestDef<DecryptDataRequest, DecryptDataResponse> genFordecryptData() {
+        // basic
+        HttpRequestDef.Builder<DecryptDataRequest, DecryptDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DecryptDataRequest.class, DecryptDataResponse.class)
+                .withUri("/{version_id}/{project_id}/kms/decrypt-data")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DecryptDataRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DecryptDataRequestBody.class,
+            f -> f.withMarshaller(DecryptDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -401,7 +433,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DecryptDatakeyReq.class,
+            DecryptDatakeyRequestBody.class,
             f -> f.withMarshaller(DecryptDatakeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -433,7 +465,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(DeleteImportedKeyMaterialRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -465,7 +497,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ScheduleKeyDeletionReq.class,
+            ScheduleKeyDeletionRequestBody.class,
             f -> f.withMarshaller(DeleteKeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -536,7 +568,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(DisableKeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -568,7 +600,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(DisableKeyRotationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -600,7 +632,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(EnableKeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -632,8 +664,40 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(EnableKeyRotationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EncryptDataRequest, EncryptDataResponse> encryptData = genForencryptData();
+
+    private static HttpRequestDef<EncryptDataRequest, EncryptDataResponse> genForencryptData() {
+        // basic
+        HttpRequestDef.Builder<EncryptDataRequest, EncryptDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EncryptDataRequest.class, EncryptDataResponse.class)
+                .withUri("/{version_id}/{project_id}/kms/encrypt-data")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(EncryptDataRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            EncryptDataRequestBody.class,
+            f -> f.withMarshaller(EncryptDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -664,7 +728,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            EncryptDatakeyReq.class,
+            EncryptDatakeyRequestBody.class,
             f -> f.withMarshaller(EncryptDatakeyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -696,7 +760,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ImportKeyMaterialReq.class,
+            ImportKeyMaterialRequestBody.class,
             f -> f.withMarshaller(ImportKeyMaterialRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -728,7 +792,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListGrantsReq.class,
+            ListGrantsRequestBody.class,
             f -> f.withMarshaller(ListGrantsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -760,7 +824,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(ListKeyDetailRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -792,7 +856,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListKeysReq.class,
+            ListKeysRequestBody.class,
             f -> f.withMarshaller(ListKeysRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -832,7 +896,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListKmsByTagsReq.class,
+            ListKmsByTagsRequestBody.class,
             f -> f.withMarshaller(ListKmsByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -887,7 +951,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListRetirableGrantsReq.class,
+            ListRetirableGrantsRequestBody.class,
             f -> f.withMarshaller(ListRetirableGrantsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -919,7 +983,7 @@ public class KmsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OperateKeyReq.class,
+            OperateKeyRequestBody.class,
             f -> f.withMarshaller(ShowKeyRotationStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1007,6 +1071,102 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> updateKeyAlias = genForupdateKeyAlias();
+
+    private static HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> genForupdateKeyAlias() {
+        // basic
+        HttpRequestDef.Builder<UpdateKeyAliasRequest, UpdateKeyAliasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateKeyAliasRequest.class, UpdateKeyAliasResponse.class)
+                .withUri("/{version_id}/{project_id}/kms/update-key-alias")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateKeyAliasRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateKeyAliasRequestBody.class,
+            f -> f.withMarshaller(UpdateKeyAliasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> updateKeyDescription = genForupdateKeyDescription();
+
+    private static HttpRequestDef<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> genForupdateKeyDescription() {
+        // basic
+        HttpRequestDef.Builder<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateKeyDescriptionRequest.class, UpdateKeyDescriptionResponse.class)
+                .withUri("/{version_id}/{project_id}/kms/update-key-description")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateKeyDescriptionRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateKeyDescriptionRequestBody.class,
+            f -> f.withMarshaller(UpdateKeyDescriptionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> updateKeyRotationInterval = genForupdateKeyRotationInterval();
+
+    private static HttpRequestDef<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> genForupdateKeyRotationInterval() {
+        // basic
+        HttpRequestDef.Builder<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateKeyRotationIntervalRequest.class, UpdateKeyRotationIntervalResponse.class)
+                .withUri("/{version_id}/{project_id}/kms/update-key-rotation-interval")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateKeyRotationIntervalRequestBody.class,
+            f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForshowVersion();
 
     private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForshowVersion() {
@@ -1039,166 +1199,6 @@ public class KmsMeta {
                 .withUri("/");
 
         // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> updateKeyRotationInterval = genForupdateKeyRotationInterval();
-
-    private static HttpRequestDef<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> genForupdateKeyRotationInterval() {
-        // basic
-        HttpRequestDef.Builder<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateKeyRotationIntervalRequest.class, UpdateKeyRotationIntervalResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/update-key-rotation-interval")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateKeyRotationIntervalReq.class,
-            f -> f.withMarshaller(UpdateKeyRotationIntervalRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DecryptDataRequest, DecryptDataResponse> decryptData = genFordecryptData();
-
-    private static HttpRequestDef<DecryptDataRequest, DecryptDataResponse> genFordecryptData() {
-        // basic
-        HttpRequestDef.Builder<DecryptDataRequest, DecryptDataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DecryptDataRequest.class, DecryptDataResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/decrypt-data")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(DecryptDataRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            DecryptDataReq.class,
-            f -> f.withMarshaller(DecryptDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<EncryptDataRequest, EncryptDataResponse> encryptData = genForencryptData();
-
-    private static HttpRequestDef<EncryptDataRequest, EncryptDataResponse> genForencryptData() {
-        // basic
-        HttpRequestDef.Builder<EncryptDataRequest, EncryptDataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, EncryptDataRequest.class, EncryptDataResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/encrypt-data")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(EncryptDataRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            EncryptDataReq.class,
-            f -> f.withMarshaller(EncryptDataRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> updateKeyAlias = genForupdateKeyAlias();
-
-    private static HttpRequestDef<UpdateKeyAliasRequest, UpdateKeyAliasResponse> genForupdateKeyAlias() {
-        // basic
-        HttpRequestDef.Builder<UpdateKeyAliasRequest, UpdateKeyAliasResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateKeyAliasRequest.class, UpdateKeyAliasResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/update-key-alias")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateKeyAliasRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateKeyAliasReq.class,
-            f -> f.withMarshaller(UpdateKeyAliasRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> updateKeyDescription = genForupdateKeyDescription();
-
-    private static HttpRequestDef<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> genForupdateKeyDescription() {
-        // basic
-        HttpRequestDef.Builder<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateKeyDescriptionRequest.class, UpdateKeyDescriptionResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/update-key-description")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateKeyDescriptionRequest::getVersionId, (req, v) -> {
-                req.setVersionId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateKeyDescriptionReq.class,
-            f -> f.withMarshaller(UpdateKeyDescriptionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
 
         // response
 

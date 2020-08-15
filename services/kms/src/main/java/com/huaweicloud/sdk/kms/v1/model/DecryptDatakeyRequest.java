@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.DecryptDatakeyReq;
+import com.huaweicloud.sdk.kms.v1.model.DecryptDatakeyRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class DecryptDatakeyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DecryptDatakeyReq body = null;
+    private DecryptDatakeyRequestBody body = null;
 
     public DecryptDatakeyRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class DecryptDatakeyRequest  {
         this.versionId = versionId;
     }
 
-    public DecryptDatakeyRequest withBody(DecryptDatakeyReq body) {
+    public DecryptDatakeyRequest withBody(DecryptDatakeyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public DecryptDatakeyRequest withBody(Consumer<DecryptDatakeyReq> bodySetter) {
+    public DecryptDatakeyRequest withBody(Consumer<DecryptDatakeyRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new DecryptDatakeyReq();
+            this.body = new DecryptDatakeyRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class DecryptDatakeyRequest  {
      * Get body
      * @return body
      */
-    public DecryptDatakeyReq getBody() {
+    public DecryptDatakeyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(DecryptDatakeyReq body) {
+    public void setBody(DecryptDatakeyRequestBody body) {
         this.body = body;
     }
     @Override

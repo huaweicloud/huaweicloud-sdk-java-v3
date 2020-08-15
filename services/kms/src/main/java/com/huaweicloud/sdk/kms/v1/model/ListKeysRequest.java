@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.ListKeysReq;
+import com.huaweicloud.sdk.kms.v1.model.ListKeysRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class ListKeysRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListKeysReq body = null;
+    private ListKeysRequestBody body = null;
 
     public ListKeysRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class ListKeysRequest  {
         this.versionId = versionId;
     }
 
-    public ListKeysRequest withBody(ListKeysReq body) {
+    public ListKeysRequest withBody(ListKeysRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ListKeysRequest withBody(Consumer<ListKeysReq> bodySetter) {
+    public ListKeysRequest withBody(Consumer<ListKeysRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ListKeysReq();
+            this.body = new ListKeysRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class ListKeysRequest  {
      * Get body
      * @return body
      */
-    public ListKeysReq getBody() {
+    public ListKeysRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ListKeysReq body) {
+    public void setBody(ListKeysRequestBody body) {
         this.body = body;
     }
     @Override

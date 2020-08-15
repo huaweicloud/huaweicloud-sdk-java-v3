@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.ListGrantsReq;
+import com.huaweicloud.sdk.kms.v1.model.ListGrantsRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class ListGrantsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListGrantsReq body = null;
+    private ListGrantsRequestBody body = null;
 
     public ListGrantsRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class ListGrantsRequest  {
         this.versionId = versionId;
     }
 
-    public ListGrantsRequest withBody(ListGrantsReq body) {
+    public ListGrantsRequest withBody(ListGrantsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ListGrantsRequest withBody(Consumer<ListGrantsReq> bodySetter) {
+    public ListGrantsRequest withBody(Consumer<ListGrantsRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ListGrantsReq();
+            this.body = new ListGrantsRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class ListGrantsRequest  {
      * Get body
      * @return body
      */
-    public ListGrantsReq getBody() {
+    public ListGrantsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ListGrantsReq body) {
+    public void setBody(ListGrantsRequestBody body) {
         this.body = body;
     }
     @Override

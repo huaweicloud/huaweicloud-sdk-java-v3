@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.ImportKeyMaterialReq;
+import com.huaweicloud.sdk.kms.v1.model.ImportKeyMaterialRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class ImportKeyMaterialRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ImportKeyMaterialReq body = null;
+    private ImportKeyMaterialRequestBody body = null;
 
     public ImportKeyMaterialRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class ImportKeyMaterialRequest  {
         this.versionId = versionId;
     }
 
-    public ImportKeyMaterialRequest withBody(ImportKeyMaterialReq body) {
+    public ImportKeyMaterialRequest withBody(ImportKeyMaterialRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ImportKeyMaterialRequest withBody(Consumer<ImportKeyMaterialReq> bodySetter) {
+    public ImportKeyMaterialRequest withBody(Consumer<ImportKeyMaterialRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ImportKeyMaterialReq();
+            this.body = new ImportKeyMaterialRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class ImportKeyMaterialRequest  {
      * Get body
      * @return body
      */
-    public ImportKeyMaterialReq getBody() {
+    public ImportKeyMaterialRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ImportKeyMaterialReq body) {
+    public void setBody(ImportKeyMaterialRequestBody body) {
         this.body = body;
     }
     @Override

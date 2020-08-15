@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.ListRetirableGrantsReq;
+import com.huaweicloud.sdk.kms.v1.model.ListRetirableGrantsRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public class ListRetirableGrantsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ListRetirableGrantsReq body = null;
+    private ListRetirableGrantsRequestBody body = null;
 
     public ListRetirableGrantsRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -49,14 +49,14 @@ public class ListRetirableGrantsRequest  {
         this.versionId = versionId;
     }
 
-    public ListRetirableGrantsRequest withBody(ListRetirableGrantsReq body) {
+    public ListRetirableGrantsRequest withBody(ListRetirableGrantsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ListRetirableGrantsRequest withBody(Consumer<ListRetirableGrantsReq> bodySetter) {
+    public ListRetirableGrantsRequest withBody(Consumer<ListRetirableGrantsRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new ListRetirableGrantsReq();
+            this.body = new ListRetirableGrantsRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +68,11 @@ public class ListRetirableGrantsRequest  {
      * Get body
      * @return body
      */
-    public ListRetirableGrantsReq getBody() {
+    public ListRetirableGrantsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ListRetirableGrantsReq body) {
+    public void setBody(ListRetirableGrantsRequestBody body) {
         this.body = body;
     }
     @Override

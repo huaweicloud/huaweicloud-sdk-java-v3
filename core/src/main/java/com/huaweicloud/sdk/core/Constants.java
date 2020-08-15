@@ -9,6 +9,7 @@ public class Constants {
     public static final String AUTHORIZATION = "Authorization";
     public static final String X_PROJECT_ID = "X-Project-Id";
     public static final String X_DOMAIN_ID = "X-Domain-Id";
+    public static final String X_SECURITY_TOKEN = "X-Security-Token";
     public static final String X_SDK_CONTENT_SHA256 = "X-Sdk-Content-Sha256";
     public static final String UNSIGNED_PAYLOAD = "UNSIGNED-PAYLOAD";
 

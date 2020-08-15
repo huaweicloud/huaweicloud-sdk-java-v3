@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.CreateKmsTagReq;
+import com.huaweicloud.sdk.kms.v1.model.CreateKmsTagRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -33,7 +33,7 @@ public class CreateKmsTagRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateKmsTagReq body = null;
+    private CreateKmsTagRequestBody body = null;
 
     public CreateKmsTagRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -75,14 +75,14 @@ public class CreateKmsTagRequest  {
         this.keyId = keyId;
     }
 
-    public CreateKmsTagRequest withBody(CreateKmsTagReq body) {
+    public CreateKmsTagRequest withBody(CreateKmsTagRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateKmsTagRequest withBody(Consumer<CreateKmsTagReq> bodySetter) {
+    public CreateKmsTagRequest withBody(Consumer<CreateKmsTagRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateKmsTagReq();
+            this.body = new CreateKmsTagRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -94,11 +94,11 @@ public class CreateKmsTagRequest  {
      * Get body
      * @return body
      */
-    public CreateKmsTagReq getBody() {
+    public CreateKmsTagRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateKmsTagReq body) {
+    public void setBody(CreateKmsTagRequestBody body) {
         this.body = body;
     }
     @Override
