@@ -18,6 +18,12 @@ public class RemoveDomainPermissionFromAgencyRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency_id")
     
     private String agencyId;
@@ -27,6 +33,26 @@ public class RemoveDomainPermissionFromAgencyRequest  {
     @JsonProperty(value="role_id")
     
     private String roleId;
+
+    public RemoveDomainPermissionFromAgencyRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public RemoveDomainPermissionFromAgencyRequest withAgencyId(String agencyId) {
         this.agencyId = agencyId;
@@ -76,17 +102,19 @@ public class RemoveDomainPermissionFromAgencyRequest  {
             return false;
         }
         RemoveDomainPermissionFromAgencyRequest removeDomainPermissionFromAgencyRequest = (RemoveDomainPermissionFromAgencyRequest) o;
-        return Objects.equals(this.agencyId, removeDomainPermissionFromAgencyRequest.agencyId) &&
+        return Objects.equals(this.domainId, removeDomainPermissionFromAgencyRequest.domainId) &&
+            Objects.equals(this.agencyId, removeDomainPermissionFromAgencyRequest.agencyId) &&
             Objects.equals(this.roleId, removeDomainPermissionFromAgencyRequest.roleId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(agencyId, roleId);
+        return Objects.hash(domainId, agencyId, roleId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RemoveDomainPermissionFromAgencyRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    agencyId: ").append(toIndentedString(agencyId)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("}");

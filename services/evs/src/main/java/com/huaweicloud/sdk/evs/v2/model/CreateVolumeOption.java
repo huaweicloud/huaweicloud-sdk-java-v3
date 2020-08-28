@@ -72,12 +72,87 @@ public class CreateVolumeOption  {
     @JsonProperty(value="name")
     
     private String name;
+    /**
+     * 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
+     */
+    public static class ShareableEnum {
+
+        
+        /**
+         * Enum TRUE for value: "true"
+         */
+        public static final ShareableEnum TRUE = new ShareableEnum("true");
+        
+        /**
+         * Enum FALSE for value: "false"
+         */
+        public static final ShareableEnum FALSE = new ShareableEnum("false");
+        
+
+        public static final Map<String, ShareableEnum> staticFields = new HashMap<String, ShareableEnum>() {
+            { 
+                put("true", TRUE);
+                put("false", FALSE);
+            }
+        };
+
+        private String value;
+
+        ShareableEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ShareableEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ShareableEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new ShareableEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static ShareableEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ShareableEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ShareableEnum) {
+                return this.value.equals(((ShareableEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shareable")
     
-    private String shareable;
+    private ShareableEnum shareable = ShareableEnum.FALSE;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -384,7 +459,7 @@ public class CreateVolumeOption  {
         this.name = name;
     }
 
-    public CreateVolumeOption withShareable(String shareable) {
+    public CreateVolumeOption withShareable(ShareableEnum shareable) {
         this.shareable = shareable;
         return this;
     }
@@ -396,11 +471,11 @@ public class CreateVolumeOption  {
      * 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
      * @return shareable
      */
-    public String getShareable() {
+    public ShareableEnum getShareable() {
         return shareable;
     }
 
-    public void setShareable(String shareable) {
+    public void setShareable(ShareableEnum shareable) {
         this.shareable = shareable;
     }
 

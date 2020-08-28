@@ -59,20 +59,20 @@ public class EvsAsyncClient {
         return hcClient.asyncInvokeHttp(request, EvsMeta.deleteVolume);
     }
 
-    public CompletableFuture<ListSnapshotsDetailsResponse> listSnapshotsDetailsAsync(ListSnapshotsDetailsRequest request) {
-        return hcClient.asyncInvokeHttp(request, EvsMeta.listSnapshotsDetails);
+    public CompletableFuture<ListSnapshotsResponse> listSnapshotsAsync(ListSnapshotsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.listSnapshots);
     }
 
     public CompletableFuture<ListVolumeTagsResponse> listVolumeTagsAsync(ListVolumeTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, EvsMeta.listVolumeTags);
     }
 
-    public CompletableFuture<ListVolumesByTagsResponse> listVolumesByTagsAsync(ListVolumesByTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, EvsMeta.listVolumesByTags);
+    public CompletableFuture<ListVolumesResponse> listVolumesAsync(ListVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.listVolumes);
     }
 
-    public CompletableFuture<ListVolumesDetailsResponse> listVolumesDetailsAsync(ListVolumesDetailsRequest request) {
-        return hcClient.asyncInvokeHttp(request, EvsMeta.listVolumesDetails);
+    public CompletableFuture<ListVolumesByTagsResponse> listVolumesByTagsAsync(ListVolumesByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.listVolumesByTags);
     }
 
     public CompletableFuture<ResizeVolumeResponse> resizeVolumeAsync(ResizeVolumeRequest request) {

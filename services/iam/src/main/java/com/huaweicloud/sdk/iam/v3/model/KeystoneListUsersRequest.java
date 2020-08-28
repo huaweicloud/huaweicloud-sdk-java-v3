@@ -18,6 +18,12 @@ public class KeystoneListUsersRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enabled")
     
     private Boolean enabled;
@@ -34,6 +40,26 @@ public class KeystoneListUsersRequest  {
     @com.huaweicloud.sdk.core.json.JsonSensitive
     
     private String passwordExpiresAt;
+
+    public KeystoneListUsersRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public KeystoneListUsersRequest withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -103,18 +129,20 @@ public class KeystoneListUsersRequest  {
             return false;
         }
         KeystoneListUsersRequest keystoneListUsersRequest = (KeystoneListUsersRequest) o;
-        return Objects.equals(this.enabled, keystoneListUsersRequest.enabled) &&
+        return Objects.equals(this.domainId, keystoneListUsersRequest.domainId) &&
+            Objects.equals(this.enabled, keystoneListUsersRequest.enabled) &&
             Objects.equals(this.name, keystoneListUsersRequest.name) &&
             Objects.equals(this.passwordExpiresAt, keystoneListUsersRequest.passwordExpiresAt);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, name, passwordExpiresAt);
+        return Objects.hash(domainId, enabled, name, passwordExpiresAt);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneListUsersRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    passwordExpiresAt: ").append(toIndentedString("******")).append("\n");

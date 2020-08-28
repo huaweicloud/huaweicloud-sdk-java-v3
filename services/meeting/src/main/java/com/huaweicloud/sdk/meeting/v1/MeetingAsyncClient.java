@@ -47,6 +47,10 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.addResource);
     }
 
+    public CompletableFuture<AddToPersonalSpaceResponse> addToPersonalSpaceAsync(AddToPersonalSpaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.addToPersonalSpace);
+    }
+
     public CompletableFuture<AddUserResponse> addUserAsync(AddUserRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.addUser);
     }
@@ -259,6 +263,10 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMaterials);
     }
 
+    public CompletableFuture<SearchMeetingFileListResponse> searchMeetingFileListAsync(SearchMeetingFileListRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMeetingFileList);
+    }
+
     public CompletableFuture<SearchMeetingsResponse> searchMeetingsAsync(SearchMeetingsRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.searchMeetings);
     }
@@ -361,6 +369,14 @@ public class MeetingAsyncClient {
 
     public CompletableFuture<ShowMeetingDetailResponse> showMeetingDetailAsync(ShowMeetingDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showMeetingDetail);
+    }
+
+    public CompletableFuture<ShowMeetingFileResponse> showMeetingFileAsync(ShowMeetingFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showMeetingFile);
+    }
+
+    public CompletableFuture<ShowMeetingFileListResponse> showMeetingFileListAsync(ShowMeetingFileListRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showMeetingFileList);
     }
 
     public CompletableFuture<ShowMyInfoResponse> showMyInfoAsync(ShowMyInfoRequest request) {

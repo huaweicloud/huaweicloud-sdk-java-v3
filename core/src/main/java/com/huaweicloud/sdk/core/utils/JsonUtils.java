@@ -83,6 +83,7 @@ public class JsonUtils {
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
             .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
             .configure(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE, false)
+            .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
             .registerModule(new JavaTimeModule())
             .registerModule(new Jdk8Module())
             .registerModule(new SimpleModule().addDeserializer(OffsetDateTime.class, new OffsetDateTimeDeserializer()))

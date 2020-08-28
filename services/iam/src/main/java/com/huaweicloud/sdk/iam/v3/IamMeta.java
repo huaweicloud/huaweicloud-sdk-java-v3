@@ -12,6 +12,45 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class IamMeta {
 
+    public static final HttpRequestDef<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> associateAgencyWithAllProjectsPermission = genForassociateAgencyWithAllProjectsPermission();
+
+    private static HttpRequestDef<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> genForassociateAgencyWithAllProjectsPermission() {
+        // basic
+        HttpRequestDef.Builder<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AssociateAgencyWithAllProjectsPermissionRequest.class, AssociateAgencyWithAllProjectsPermissionResponse.class)
+                .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("agency_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
+        );
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithAllProjectsPermissionRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> associateAgencyWithDomainPermission = genForassociateAgencyWithDomainPermission();
 
     private static HttpRequestDef<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> genForassociateAgencyWithDomainPermission() {
@@ -21,6 +60,14 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AssociateAgencyWithDomainPermissionRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -82,6 +129,45 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> checkAllProjectsPermissionForAgency = genForcheckAllProjectsPermissionForAgency();
+
+    private static HttpRequestDef<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> genForcheckAllProjectsPermissionForAgency() {
+        // basic
+        HttpRequestDef.Builder<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.HEAD, CheckAllProjectsPermissionForAgencyRequest.class, CheckAllProjectsPermissionForAgencyResponse.class)
+                .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("agency_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
+        );
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckAllProjectsPermissionForAgencyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> checkDomainPermissionForAgency = genForcheckDomainPermissionForAgency();
 
     private static HttpRequestDef<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> genForcheckDomainPermissionForAgency() {
@@ -91,6 +177,14 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckDomainPermissionForAgencyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -310,6 +404,14 @@ public class IamMeta {
                 .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithAllProjectPermissionRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -341,6 +443,14 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneAssociateGroupWithDomainPermissionRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -411,6 +521,14 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckDomainPermissionForGroupRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -613,6 +731,14 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListDomainPermissionsForGroupRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -667,6 +793,14 @@ public class IamMeta {
                 .withUri("/v3/groups");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListGroupsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -696,6 +830,14 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(KeystoneListPermissionsRequest::getName, (req, v) -> {
                 req.setName(v);
+            })
+        );
+        builder.withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
             })
         );
 
@@ -744,6 +886,14 @@ public class IamMeta {
                 .withUri("/v3/projects");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListProjectsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -906,6 +1056,14 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneRemoveDomainPermissionFromGroupRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1137,6 +1295,14 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/config/security_compliance");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowSecurityComplianceRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
 
         // response
 
@@ -1152,6 +1318,14 @@ public class IamMeta {
                 .withUri("/v3/domains/{domain_id}/config/security_compliance/{option}");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowSecurityComplianceByOptionRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("option",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1277,6 +1451,14 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/agencies");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAgenciesRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("trust_domain_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1291,6 +1473,37 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(ListAgenciesRequest::getName, (req, v) -> {
                 req.setName(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> listAllProjectsPermissionsForAgency = genForlistAllProjectsPermissionsForAgency();
+
+    private static HttpRequestDef<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> genForlistAllProjectsPermissionsForAgency() {
+        // basic
+        HttpRequestDef.Builder<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllProjectsPermissionsForAgencyRequest.class, ListAllProjectsPermissionsForAgencyResponse.class)
+                .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("agency_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAllProjectsPermissionsForAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
+        );
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAllProjectsPermissionsForAgencyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
             })
         );
 
@@ -1323,6 +1536,14 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDomainPermissionsForAgencyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1368,6 +1589,45 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> removeAllProjectsPermissionFromAgency = genForremoveAllProjectsPermissionFromAgency();
+
+    private static HttpRequestDef<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> genForremoveAllProjectsPermissionFromAgency() {
+        // basic
+        HttpRequestDef.Builder<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RemoveAllProjectsPermissionFromAgencyRequest.class, RemoveAllProjectsPermissionFromAgencyResponse.class)
+                .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("agency_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getAgencyId, (req, v) -> {
+                req.setAgencyId(v);
+            })
+        );
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveAllProjectsPermissionFromAgencyRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> removeDomainPermissionFromAgency = genForremoveDomainPermissionFromAgency();
 
     private static HttpRequestDef<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> genForremoveDomainPermissionFromAgency() {
@@ -1377,6 +1637,14 @@ public class IamMeta {
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveDomainPermissionFromAgencyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("agency_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1484,6 +1752,152 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> showDomainApiAclPolicy = genForshowDomainApiAclPolicy();
+
+    private static HttpRequestDef<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> genForshowDomainApiAclPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainApiAclPolicyRequest.class, ShowDomainApiAclPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDomainApiAclPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> showDomainConsoleAclPolicy = genForshowDomainConsoleAclPolicy();
+
+    private static HttpRequestDef<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> genForshowDomainConsoleAclPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainConsoleAclPolicyRequest.class, ShowDomainConsoleAclPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDomainConsoleAclPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> showDomainLoginPolicy = genForshowDomainLoginPolicy();
+
+    private static HttpRequestDef<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> genForshowDomainLoginPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainLoginPolicyRequest.class, ShowDomainLoginPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDomainLoginPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> showDomainPasswordPolicy = genForshowDomainPasswordPolicy();
+
+    private static HttpRequestDef<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> genForshowDomainPasswordPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainPasswordPolicyRequest.class, ShowDomainPasswordPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDomainPasswordPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> showDomainProtectPolicy = genForshowDomainProtectPolicy();
+
+    private static HttpRequestDef<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> genForshowDomainProtectPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainProtectPolicyRequest.class, ShowDomainProtectPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDomainProtectPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuota = genForshowDomainQuota();
+
+    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForshowDomainQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainQuotaRequest, ShowDomainQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainQuotaRequest.class, ShowDomainQuotaResponse.class)
+                .withUri("/v3.0/OS-QUOTA/domains/{domain_id}");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ShowDomainQuotaRequest.TypeEnum.class,
+            f -> f.withMarshaller(ShowDomainQuotaRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> showProjectDetailsAndStatus = genForshowProjectDetailsAndStatus();
 
     private static HttpRequestDef<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> genForshowProjectDetailsAndStatus() {
@@ -1498,6 +1912,29 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowProjectDetailsAndStatusRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectQuotaRequest, ShowProjectQuotaResponse> showProjectQuota = genForshowProjectQuota();
+
+    private static HttpRequestDef<ShowProjectQuotaRequest, ShowProjectQuotaResponse> genForshowProjectQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectQuotaRequest, ShowProjectQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProjectQuotaRequest.class, ShowProjectQuotaResponse.class)
+                .withUri("/v3.0/OS-QUOTA/projects/{project_id}");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowProjectQuotaRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
             })
         );
@@ -1594,6 +2031,166 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateCloudServiceCustomPolicyRequestBody.class,
             f -> f.withMarshaller(UpdateCloudServiceCustomPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> updateDomainApiAclPolicy = genForupdateDomainApiAclPolicy();
+
+    private static HttpRequestDef<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> genForupdateDomainApiAclPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainApiAclPolicyRequest.class, UpdateDomainApiAclPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainApiAclPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateDomainApiAclPolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateDomainApiAclPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> updateDomainConsoleAclPolicy = genForupdateDomainConsoleAclPolicy();
+
+    private static HttpRequestDef<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> genForupdateDomainConsoleAclPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainConsoleAclPolicyRequest.class, UpdateDomainConsoleAclPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainConsoleAclPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateDomainConsoleAclPolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateDomainConsoleAclPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> updateDomainLoginPolicy = genForupdateDomainLoginPolicy();
+
+    private static HttpRequestDef<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> genForupdateDomainLoginPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainLoginPolicyRequest.class, UpdateDomainLoginPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainLoginPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateDomainLoginPolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateDomainLoginPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> updateDomainPasswordPolicy = genForupdateDomainPasswordPolicy();
+
+    private static HttpRequestDef<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> genForupdateDomainPasswordPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainPasswordPolicyRequest.class, UpdateDomainPasswordPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainPasswordPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateDomainPasswordPolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateDomainPasswordPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> updateDomainProtectPolicy = genForupdateDomainProtectPolicy();
+
+    private static HttpRequestDef<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> genForupdateDomainProtectPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainProtectPolicyRequest.class, UpdateDomainProtectPolicyResponse.class)
+                .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainProtectPolicyRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateDomainProtectPolicyRequestBody.class,
+            f -> f.withMarshaller(UpdateDomainProtectPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -1911,6 +2508,14 @@ public class IamMeta {
                 .withUri("/v3/users");
 
         // requests
+        builder.withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListUsersRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
         builder.withRequestField("enabled",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2028,6 +2633,36 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> listUserLoginProtects = genForlistUserLoginProtects();
+
+    private static HttpRequestDef<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> genForlistUserLoginProtects() {
+        // basic
+        HttpRequestDef.Builder<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserLoginProtectsRequest.class, ListUserLoginProtectsResponse.class)
+                .withUri("/v3.0/OS-USER/login-protects");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> listUserMfaDevices = genForlistUserMfaDevices();
+
+    private static HttpRequestDef<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> genForlistUserMfaDevices() {
+        // basic
+        HttpRequestDef.Builder<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserMfaDevicesRequest.class, ListUserMfaDevicesResponse.class)
+                .withUri("/v3.0/OS-MFA/virtual-mfa-devices");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowUserRequest, ShowUserResponse> showUser = genForshowUser();
 
     private static HttpRequestDef<ShowUserRequest, ShowUserResponse> genForshowUser() {
@@ -2042,6 +2677,52 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowUserRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> showUserLoginProtect = genForshowUserLoginProtect();
+
+    private static HttpRequestDef<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> genForshowUserLoginProtect() {
+        // basic
+        HttpRequestDef.Builder<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUserLoginProtectRequest.class, ShowUserLoginProtectResponse.class)
+                .withUri("/v3.0/OS-USER/users/{user_id}/login-protect");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowUserLoginProtectRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> showUserMfaDevice = genForshowUserMfaDevice();
+
+    private static HttpRequestDef<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> genForshowUserMfaDevice() {
+        // basic
+        HttpRequestDef.Builder<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUserMfaDeviceRequest.class, ShowUserMfaDeviceResponse.class)
+                .withUri("/v3.0/OS-MFA/users/{user_id}/virtual-mfa-device");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowUserMfaDeviceRequest::getUserId, (req, v) -> {
                 req.setUserId(v);
             })
         );

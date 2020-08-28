@@ -15,9 +15,13 @@ public class IamAsyncClient {
     }
 
     public static ClientBuilder<IamAsyncClient> newBuilder() {
-        return new ClientBuilder<>(IamAsyncClient::new, "GlobalCredentials");
+        return new ClientBuilder<>(IamAsyncClient::new, "GlobalCredentials,BasicCredentials");
     }
 
+
+    public CompletableFuture<AssociateAgencyWithAllProjectsPermissionResponse> associateAgencyWithAllProjectsPermissionAsync(AssociateAgencyWithAllProjectsPermissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.associateAgencyWithAllProjectsPermission);
+    }
 
     public CompletableFuture<AssociateAgencyWithDomainPermissionResponse> associateAgencyWithDomainPermissionAsync(AssociateAgencyWithDomainPermissionRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.associateAgencyWithDomainPermission);
@@ -25,6 +29,10 @@ public class IamAsyncClient {
 
     public CompletableFuture<AssociateAgencyWithProjectPermissionResponse> associateAgencyWithProjectPermissionAsync(AssociateAgencyWithProjectPermissionRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.associateAgencyWithProjectPermission);
+    }
+
+    public CompletableFuture<CheckAllProjectsPermissionForAgencyResponse> checkAllProjectsPermissionForAgencyAsync(CheckAllProjectsPermissionForAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.checkAllProjectsPermissionForAgency);
     }
 
     public CompletableFuture<CheckDomainPermissionForAgencyResponse> checkDomainPermissionForAgencyAsync(CheckDomainPermissionForAgencyRequest request) {
@@ -211,6 +219,10 @@ public class IamAsyncClient {
         return hcClient.asyncInvokeHttp(request, IamMeta.listAgencies);
     }
 
+    public CompletableFuture<ListAllProjectsPermissionsForAgencyResponse> listAllProjectsPermissionsForAgencyAsync(ListAllProjectsPermissionsForAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listAllProjectsPermissionsForAgency);
+    }
+
     public CompletableFuture<ListCustomPoliciesResponse> listCustomPoliciesAsync(ListCustomPoliciesRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.listCustomPolicies);
     }
@@ -221,6 +233,10 @@ public class IamAsyncClient {
 
     public CompletableFuture<ListProjectPermissionsForAgencyResponse> listProjectPermissionsForAgencyAsync(ListProjectPermissionsForAgencyRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.listProjectPermissionsForAgency);
+    }
+
+    public CompletableFuture<RemoveAllProjectsPermissionFromAgencyResponse> removeAllProjectsPermissionFromAgencyAsync(RemoveAllProjectsPermissionFromAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.removeAllProjectsPermissionFromAgency);
     }
 
     public CompletableFuture<RemoveDomainPermissionFromAgencyResponse> removeDomainPermissionFromAgencyAsync(RemoveDomainPermissionFromAgencyRequest request) {
@@ -239,8 +255,36 @@ public class IamAsyncClient {
         return hcClient.asyncInvokeHttp(request, IamMeta.showCustomPolicy);
     }
 
+    public CompletableFuture<ShowDomainApiAclPolicyResponse> showDomainApiAclPolicyAsync(ShowDomainApiAclPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showDomainApiAclPolicy);
+    }
+
+    public CompletableFuture<ShowDomainConsoleAclPolicyResponse> showDomainConsoleAclPolicyAsync(ShowDomainConsoleAclPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showDomainConsoleAclPolicy);
+    }
+
+    public CompletableFuture<ShowDomainLoginPolicyResponse> showDomainLoginPolicyAsync(ShowDomainLoginPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showDomainLoginPolicy);
+    }
+
+    public CompletableFuture<ShowDomainPasswordPolicyResponse> showDomainPasswordPolicyAsync(ShowDomainPasswordPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showDomainPasswordPolicy);
+    }
+
+    public CompletableFuture<ShowDomainProtectPolicyResponse> showDomainProtectPolicyAsync(ShowDomainProtectPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showDomainProtectPolicy);
+    }
+
+    public CompletableFuture<ShowDomainQuotaResponse> showDomainQuotaAsync(ShowDomainQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showDomainQuota);
+    }
+
     public CompletableFuture<ShowProjectDetailsAndStatusResponse> showProjectDetailsAndStatusAsync(ShowProjectDetailsAndStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.showProjectDetailsAndStatus);
+    }
+
+    public CompletableFuture<ShowProjectQuotaResponse> showProjectQuotaAsync(ShowProjectQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showProjectQuota);
     }
 
     public CompletableFuture<UpdateAgencyResponse> updateAgencyAsync(UpdateAgencyRequest request) {
@@ -253,6 +297,26 @@ public class IamAsyncClient {
 
     public CompletableFuture<UpdateCloudServiceCustomPolicyResponse> updateCloudServiceCustomPolicyAsync(UpdateCloudServiceCustomPolicyRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.updateCloudServiceCustomPolicy);
+    }
+
+    public CompletableFuture<UpdateDomainApiAclPolicyResponse> updateDomainApiAclPolicyAsync(UpdateDomainApiAclPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateDomainApiAclPolicy);
+    }
+
+    public CompletableFuture<UpdateDomainConsoleAclPolicyResponse> updateDomainConsoleAclPolicyAsync(UpdateDomainConsoleAclPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateDomainConsoleAclPolicy);
+    }
+
+    public CompletableFuture<UpdateDomainLoginPolicyResponse> updateDomainLoginPolicyAsync(UpdateDomainLoginPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateDomainLoginPolicy);
+    }
+
+    public CompletableFuture<UpdateDomainPasswordPolicyResponse> updateDomainPasswordPolicyAsync(UpdateDomainPasswordPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateDomainPasswordPolicy);
+    }
+
+    public CompletableFuture<UpdateDomainProtectPolicyResponse> updateDomainProtectPolicyAsync(UpdateDomainProtectPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateDomainProtectPolicy);
     }
 
     public CompletableFuture<UpdateProjectStatusResponse> updateProjectStatusAsync(UpdateProjectStatusRequest request) {
@@ -319,8 +383,24 @@ public class IamAsyncClient {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneUpdateUserPassword);
     }
 
+    public CompletableFuture<ListUserLoginProtectsResponse> listUserLoginProtectsAsync(ListUserLoginProtectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listUserLoginProtects);
+    }
+
+    public CompletableFuture<ListUserMfaDevicesResponse> listUserMfaDevicesAsync(ListUserMfaDevicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listUserMfaDevices);
+    }
+
     public CompletableFuture<ShowUserResponse> showUserAsync(ShowUserRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.showUser);
+    }
+
+    public CompletableFuture<ShowUserLoginProtectResponse> showUserLoginProtectAsync(ShowUserLoginProtectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showUserLoginProtect);
+    }
+
+    public CompletableFuture<ShowUserMfaDeviceResponse> showUserMfaDeviceAsync(ShowUserMfaDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showUserMfaDevice);
     }
 
     public CompletableFuture<UpdateUserResponse> updateUserAsync(UpdateUserRequest request) {

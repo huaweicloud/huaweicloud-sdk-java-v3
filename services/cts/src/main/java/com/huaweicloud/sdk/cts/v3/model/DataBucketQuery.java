@@ -7,7 +7,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -30,26 +32,26 @@ public class DataBucketQuery  {
     
     private Boolean searchEnabled;
     /**
-     * 追踪操作。
+     * Gets or Sets dataEvent
      */
     public static class DataEventEnum {
 
-        
-        /**
-         * Enum READ for value: "READ"
-         */
-        public static final DataEventEnum READ = new DataEventEnum("READ");
         
         /**
          * Enum WRITE for value: "WRITE"
          */
         public static final DataEventEnum WRITE = new DataEventEnum("WRITE");
         
+        /**
+         * Enum READ for value: "READ"
+         */
+        public static final DataEventEnum READ = new DataEventEnum("READ");
+        
 
         public static final Map<String, DataEventEnum> staticFields = new HashMap<String, DataEventEnum>() {
             { 
-                put("READ", READ);
                 put("WRITE", WRITE);
+                put("READ", READ);
             }
         };
 
@@ -109,8 +111,8 @@ public class DataBucketQuery  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_event")
     
-    private DataEventEnum dataEvent;
-
+    private List<DataEventEnum> dataEvent = null;
+    
     public DataBucketQuery withDataBucketName(String dataBucketName) {
         this.dataBucketName = dataBucketName;
         return this;
@@ -151,23 +153,37 @@ public class DataBucketQuery  {
         this.searchEnabled = searchEnabled;
     }
 
-    public DataBucketQuery withDataEvent(DataEventEnum dataEvent) {
+    public DataBucketQuery withDataEvent(List<DataEventEnum> dataEvent) {
         this.dataEvent = dataEvent;
         return this;
     }
 
     
+    public DataBucketQuery addDataEventItem(DataEventEnum dataEventItem) {
+        if (this.dataEvent == null) {
+            this.dataEvent = new ArrayList<>();
+        }
+        this.dataEvent.add(dataEventItem);
+        return this;
+    }
 
+    public DataBucketQuery withDataEvent(Consumer<List<DataEventEnum>> dataEventSetter) {
+        if(this.dataEvent == null ){
+            this.dataEvent = new ArrayList<>();
+        }
+        dataEventSetter.accept(this.dataEvent);
+        return this;
+    }
 
     /**
-     * 追踪操作。
+     * Get dataEvent
      * @return dataEvent
      */
-    public DataEventEnum getDataEvent() {
+    public List<DataEventEnum> getDataEvent() {
         return dataEvent;
     }
 
-    public void setDataEvent(DataEventEnum dataEvent) {
+    public void setDataEvent(List<DataEventEnum> dataEvent) {
         this.dataEvent = dataEvent;
     }
     @Override

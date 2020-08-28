@@ -26,7 +26,7 @@ public class TestHcClient {
 
     private static final Logger logger = LoggerFactory.getLogger(TestHcClient.class);
 
-    private static final int FILE_SIZE = 1024 * 1024 * 50;
+    private static final int FILE_SIZE = 1024 * 1024 * 5;
 
     HcClient hcClient;
     HttpRequestDef<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> requestDef
@@ -39,12 +39,18 @@ public class TestHcClient {
             testUploadDownloadDef = TestHttpRequestDef.buildTestUploadDownloadRequestDef();
 
     @Rule
-    public WireMockRule wireMockRule
-            = new WireMockRule(WireMockConfiguration.options().httpsPort(8999).port(8998));
+    public WireMockRule wireMockRule;
 
 
     @Before
     public void init() {
+
+        System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
+        System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
+
+        wireMockRule
+                = new WireMockRule(WireMockConfiguration.options().httpsPort(8999).port(8998).disableRequestJournal());
+
         hcClient = new HcClient(new HttpConfig().withIgnoreSSLVerification(true).withTimeout(600)
                 .addHttpListener(HttpListener.forResponseListener(responseListener ->
                         logger.debug("RESPONSE: {} {} {} {}",

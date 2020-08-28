@@ -308,6 +308,46 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> addToPersonalSpace = genForaddToPersonalSpace();
+
+    private static HttpRequestDef<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> genForaddToPersonalSpace() {
+        // basic
+        HttpRequestDef.Builder<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddToPersonalSpaceRequest.class, AddToPersonalSpaceResponse.class)
+                .withUri("/v1/usg/sss/meeting-files/save-to-personal-space")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddToPersonalSpaceRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddToPersonalSpaceRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Map.class,
+            f -> f.withMarshaller(AddToPersonalSpaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddUserRequest, AddUserResponse> addUser = genForaddUser();
 
     private static HttpRequestDef<AddUserRequest, AddUserResponse> genForaddUser() {
@@ -2852,6 +2892,61 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchMeetingFileListRequest, SearchMeetingFileListResponse> searchMeetingFileList = genForsearchMeetingFileList();
+
+    private static HttpRequestDef<SearchMeetingFileListRequest, SearchMeetingFileListResponse> genForsearchMeetingFileList() {
+        // basic
+        HttpRequestDef.Builder<SearchMeetingFileListRequest, SearchMeetingFileListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchMeetingFileListRequest.class, SearchMeetingFileListResponse.class)
+                .withUri("/v1/usg/sss/meeting-files");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMeetingFileListRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchMeetingsRequest, SearchMeetingsResponse> searchMeetings = genForsearchMeetings();
 
     private static HttpRequestDef<SearchMeetingsRequest, SearchMeetingsResponse> genForsearchMeetings() {
@@ -4389,6 +4484,85 @@ public class MeetingMeta {
             f -> f.withMarshaller(ShowMeetingDetailRequest::getXSiteId, (req, v) -> {
                 req.setXSiteId(v);
             })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMeetingFileRequest, ShowMeetingFileResponse> showMeetingFile = genForshowMeetingFile();
+
+    private static HttpRequestDef<ShowMeetingFileRequest, ShowMeetingFileResponse> genForshowMeetingFile() {
+        // basic
+        HttpRequestDef.Builder<ShowMeetingFileRequest, ShowMeetingFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMeetingFileRequest.class, ShowMeetingFileResponse.class)
+                .withUri("/v1/usg/sss/meeting-files/{file_code}");
+
+        // requests
+        builder.withRequestField("file_code",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowMeetingFileRequest::getFileCode, (req, v) -> {
+                req.setFileCode(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowMeetingFileRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowMeetingFileRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMeetingFileListRequest, ShowMeetingFileListResponse> showMeetingFileList = genForshowMeetingFileList();
+
+    private static HttpRequestDef<ShowMeetingFileListRequest, ShowMeetingFileListResponse> genForshowMeetingFileList() {
+        // basic
+        HttpRequestDef.Builder<ShowMeetingFileListRequest, ShowMeetingFileListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowMeetingFileListRequest.class, ShowMeetingFileListResponse.class)
+                .withUri("/v1/usg/sss/meeting-files/open-meeting-file-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowMeetingFileListRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowMeetingFileListRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Map.class,
+            f -> f.withMarshaller(ShowMeetingFileListRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(String.class)
         );
 
         // response

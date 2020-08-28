@@ -18,6 +18,12 @@ public class ListAgenciesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trust_domain_id")
     
     private String trustDomainId;
@@ -27,6 +33,26 @@ public class ListAgenciesRequest  {
     @JsonProperty(value="name")
     
     private String name;
+
+    public ListAgenciesRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public ListAgenciesRequest withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
@@ -76,17 +102,19 @@ public class ListAgenciesRequest  {
             return false;
         }
         ListAgenciesRequest listAgenciesRequest = (ListAgenciesRequest) o;
-        return Objects.equals(this.trustDomainId, listAgenciesRequest.trustDomainId) &&
+        return Objects.equals(this.domainId, listAgenciesRequest.domainId) &&
+            Objects.equals(this.trustDomainId, listAgenciesRequest.trustDomainId) &&
             Objects.equals(this.name, listAgenciesRequest.name);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(trustDomainId, name);
+        return Objects.hash(domainId, trustDomainId, name);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAgenciesRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    trustDomainId: ").append(toIndentedString(trustDomainId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

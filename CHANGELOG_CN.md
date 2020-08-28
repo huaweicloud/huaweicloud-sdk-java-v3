@@ -1,3 +1,101 @@
+# 3.0.9-beta 2020-08-28
+## HuaweiCloud SDK CloudPipeline
+ - ### 新增特性
+    - 支持流水线服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK CodeHub
+ - ### 新增特性
+    - 支持代码托管服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK EIP
+ - ### 新增特性
+    - 新增支持接口：弹性公网IP标签相关接口和共享带宽相关接口
+ - ### 解决问题
+    - 批量创建带宽接口，修改billing_info字段
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK EVS
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - ListVolumesByTags接口，修改total_count类型定义错误的问题
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK ELB
+ - ### 新增特性
+    - 支持弹性负载均衡服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK FunctionGraph
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 调整服务名，由缩写FGS调整为全称FunctionGraph
+
+## HuaweiCloud SDK IAM
+ - ### 新增特性
+    - 发布新接口：console一致性相关接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK IoTDA
+ - ### 新增特性
+    - 新增支持接口：批量操作接口和异步接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK Meeting
+ - ### 新增特性
+    - 发布新接口：会议纪要接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK ProjectMan
+ - ### 新增特性
+    - 支持项目管理服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK TestHub
+ - ### 新增特性
+    - 支持云测服务TestHub测试工具
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK VPC
+ - ### 新增特性
+    - 发布新接口：安全组、安全组规则和可用IP数
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+
 # 3.0.8-beta 2020-8-14
 ## HuaweiCloud SDK Core
  - ### 新增特性

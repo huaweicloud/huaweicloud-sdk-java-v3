@@ -18,6 +18,12 @@ public class KeystoneCheckDomainPermissionForGroupRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
@@ -27,6 +33,26 @@ public class KeystoneCheckDomainPermissionForGroupRequest  {
     @JsonProperty(value="role_id")
     
     private String roleId;
+
+    public KeystoneCheckDomainPermissionForGroupRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public KeystoneCheckDomainPermissionForGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -76,17 +102,19 @@ public class KeystoneCheckDomainPermissionForGroupRequest  {
             return false;
         }
         KeystoneCheckDomainPermissionForGroupRequest keystoneCheckDomainPermissionForGroupRequest = (KeystoneCheckDomainPermissionForGroupRequest) o;
-        return Objects.equals(this.groupId, keystoneCheckDomainPermissionForGroupRequest.groupId) &&
+        return Objects.equals(this.domainId, keystoneCheckDomainPermissionForGroupRequest.domainId) &&
+            Objects.equals(this.groupId, keystoneCheckDomainPermissionForGroupRequest.groupId) &&
             Objects.equals(this.roleId, keystoneCheckDomainPermissionForGroupRequest.roleId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, roleId);
+        return Objects.hash(domainId, groupId, roleId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneCheckDomainPermissionForGroupRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("}");

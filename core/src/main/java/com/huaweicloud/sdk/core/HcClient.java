@@ -22,7 +22,7 @@
 package com.huaweicloud.sdk.core;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.huaweicloud.sdk.core.auth.ICredential;
+import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServerResponseException;
@@ -65,7 +65,7 @@ public class HcClient implements CustomizationConfigure {
 
     private HttpClient httpClient;
     private String endpoint;
-    private ICredential credential;
+    private AbstractCredentials credential;
     private HttpConfig httpConfig;
 
     HcClient withEndpoint(String endpoint) {
@@ -73,7 +73,7 @@ public class HcClient implements CustomizationConfigure {
         return this;
     }
 
-    HcClient withCredential(ICredential credential) {
+    HcClient withCredential(AbstractCredentials credential) {
         this.credential = credential;
         return this;
     }

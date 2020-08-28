@@ -74,7 +74,7 @@ public class BasicCredentials extends AbstractCredentials {
     @Override
     public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
         if (Objects.isNull(getProjectId())) {
-            throw new SdkException("This is a global service and the proejct id must be provided.");
+            throw new SdkException("This is a regional service and the project id must be provided.");
         }
         return CompletableFuture.supplyAsync(() -> {
             HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());

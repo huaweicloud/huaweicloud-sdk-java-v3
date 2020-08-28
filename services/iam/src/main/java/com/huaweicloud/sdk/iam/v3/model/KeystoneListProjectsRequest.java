@@ -18,6 +18,12 @@ public class KeystoneListProjectsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     private String name;
@@ -51,6 +57,26 @@ public class KeystoneListProjectsRequest  {
     @JsonProperty(value="per_page")
     
     private Integer perPage;
+
+    public KeystoneListProjectsRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public KeystoneListProjectsRequest withName(String name) {
         this.name = name;
@@ -183,7 +209,8 @@ public class KeystoneListProjectsRequest  {
             return false;
         }
         KeystoneListProjectsRequest keystoneListProjectsRequest = (KeystoneListProjectsRequest) o;
-        return Objects.equals(this.name, keystoneListProjectsRequest.name) &&
+        return Objects.equals(this.domainId, keystoneListProjectsRequest.domainId) &&
+            Objects.equals(this.name, keystoneListProjectsRequest.name) &&
             Objects.equals(this.parentId, keystoneListProjectsRequest.parentId) &&
             Objects.equals(this.enabled, keystoneListProjectsRequest.enabled) &&
             Objects.equals(this.isDomain, keystoneListProjectsRequest.isDomain) &&
@@ -192,12 +219,13 @@ public class KeystoneListProjectsRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, parentId, enabled, isDomain, page, perPage);
+        return Objects.hash(domainId, name, parentId, enabled, isDomain, page, perPage);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneListProjectsRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");

@@ -18,9 +18,35 @@ public class ListDomainPermissionsForAgencyRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agency_id")
     
     private String agencyId;
+
+    public ListDomainPermissionsForAgencyRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public ListDomainPermissionsForAgencyRequest withAgencyId(String agencyId) {
         this.agencyId = agencyId;
@@ -50,16 +76,18 @@ public class ListDomainPermissionsForAgencyRequest  {
             return false;
         }
         ListDomainPermissionsForAgencyRequest listDomainPermissionsForAgencyRequest = (ListDomainPermissionsForAgencyRequest) o;
-        return Objects.equals(this.agencyId, listDomainPermissionsForAgencyRequest.agencyId);
+        return Objects.equals(this.domainId, listDomainPermissionsForAgencyRequest.domainId) &&
+            Objects.equals(this.agencyId, listDomainPermissionsForAgencyRequest.agencyId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(agencyId);
+        return Objects.hash(domainId, agencyId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDomainPermissionsForAgencyRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    agencyId: ").append(toIndentedString(agencyId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -118,12 +118,27 @@ public class AppAuthInfoV2 implements Serializable {
     /**
      * 计算签名
      *
+     * 计算公式：
+     * <p>
+     * userId为null或者空字符串：
+     * signature=HexEncode(HMAC256((appId + "::" + expireTime + ":" + nonce), appKey))
+     * </p>
+     * <p>
+     * userId不为空：
+     * HMAC-SHA256 signature=HexEncode(HMAC256((appId + ":" + userId + ":" + expireTime + ":" + nonce), appKey))
+     * </p>
+     *
      * @return
      */
     public String build() {
-        String data = new StringBuilder(this.appId).append(":")
-            .append(this.userId).append(":")
-            .append(this.expireTime).append(":")
+
+        StringBuilder sb = new StringBuilder(this.appId).append(":");
+        if (this.userId != null && !"".equals(this.userId)) {
+            sb.append(this.userId).append(":");
+        } else {
+            sb.append(":");
+        }
+        String data = sb.append(this.expireTime).append(":")
             .append(this.nonce).toString();
         return HmacSHA256.encode(data, this.key);
     }

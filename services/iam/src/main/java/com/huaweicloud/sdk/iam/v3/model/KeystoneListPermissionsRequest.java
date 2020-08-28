@@ -22,6 +22,12 @@ public class KeystoneListPermissionsRequest  {
     
     private String name;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
     public KeystoneListPermissionsRequest withName(String name) {
         this.name = name;
         return this;
@@ -41,6 +47,26 @@ public class KeystoneListPermissionsRequest  {
     public void setName(String name) {
         this.name = name;
     }
+
+    public KeystoneListPermissionsRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -50,17 +76,19 @@ public class KeystoneListPermissionsRequest  {
             return false;
         }
         KeystoneListPermissionsRequest keystoneListPermissionsRequest = (KeystoneListPermissionsRequest) o;
-        return Objects.equals(this.name, keystoneListPermissionsRequest.name);
+        return Objects.equals(this.name, keystoneListPermissionsRequest.name) &&
+            Objects.equals(this.domainId, keystoneListPermissionsRequest.domainId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, domainId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneListPermissionsRequest {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

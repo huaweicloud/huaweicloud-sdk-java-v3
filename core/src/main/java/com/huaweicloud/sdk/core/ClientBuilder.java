@@ -21,22 +21,25 @@
 
 package com.huaweicloud.sdk.core;
 
-import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.auth.GlobalCredentials;
-import com.huaweicloud.sdk.core.auth.ICredential;
-import com.huaweicloud.sdk.core.exception.SdkException;
-import com.huaweicloud.sdk.core.http.HttpConfig;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 
+import com.huaweicloud.sdk.core.auth.AbstractCredentials;
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+
 public class ClientBuilder<T> {
     private Function<HcClient, T> creator;
-    private ICredential credential;
+    private AbstractCredentials credential;
     private HttpConfig httpConfig;
     private String endpoint;
-    private boolean enableHttpLog = false;
-    private String credentialName = BasicCredentials.class.getSimpleName();
+    private List<String> credentialType = new ArrayList<>(Arrays.asList(BasicCredentials.class.getSimpleName(),
+        GlobalCredentials.class.getSimpleName()));
 
     private static final String CUSTOMIZATION = "Customization";
 
@@ -44,12 +47,13 @@ public class ClientBuilder<T> {
         this.creator = creator;
     }
 
-    public ClientBuilder(Function<HcClient, T> creator, String credentialName) {
+
+    public ClientBuilder(Function<HcClient, T> creator, String credentialType) {
         this.creator = creator;
-        this.credentialName = credentialName;
+        this.credentialType = Arrays.asList(credentialType.split(","));
     }
 
-    public ClientBuilder<T> withCredential(ICredential credential) {
+    public ClientBuilder<T> withCredential(AbstractCredentials credential) {
         this.credential = credential;
         return this;
     }
@@ -66,14 +70,17 @@ public class ClientBuilder<T> {
 
     public T build() {
         HcClient hcClient = new HcClient(Objects.nonNull(this.httpConfig)
-                ? this.httpConfig : HttpConfig.getDefaultHttpConfig());
+            ? this.httpConfig : HttpConfig.getDefaultHttpConfig());
         // apply credential to hcClient
         if (Objects.isNull(this.credential)) {
-            loadCredentialsFromEnvVar();
+            credential = AbstractCredentials.getCredentialFromEnvironment(creator.apply(hcClient),
+                credentialType.get(0));
         }
 
-        if (Objects.nonNull(credential) && !credentialName.equals(credential.getClass().getSimpleName())) {
-            throw new SdkException("This client need input " + credentialName + " credential object");
+        if (Objects.nonNull(credential)) {
+            if (!credentialType.contains(credential.getClass().getSimpleName())) {
+                throw new SdkException("This client need input " + credentialType.toString() + " credential object");
+            }
         }
 
         hcClient.withEndpoint(this.endpoint)
@@ -101,33 +108,11 @@ public class ClientBuilder<T> {
         }
     }
 
-    private void loadCredentialsFromEnvVar() {
-        String ak = System.getenv("HUAWEICLOUD_SDK_AK");
-        String sk = System.getenv("HUAWEICLOUD_SDK_SK");
-        String projectId = System.getenv("HUAWEICLOUD_SDK_PROJECT_ID");
-        String domainId = System.getenv("HUAWEICLOUD_SDK_DOMAIN_ID");
-        if (Objects.isNull(ak) || Objects.isNull(sk)) {
-            return;
-        }
-
-        if (credentialName.equals(BasicCredentials.class.getSimpleName())) {
-            this.credential = new BasicCredentials()
-                    .withAk(ak)
-                    .withSk(sk)
-                    .withProjectId(projectId);
-        } else if (credentialName.equals(GlobalCredentials.class.getSimpleName())) {
-            this.credential = new GlobalCredentials()
-                    .withAk(ak)
-                    .withSk(sk)
-                    .withDomainId(domainId);
-        }
-    }
-
     public Function<HcClient, T> getCreator() {
         return creator;
     }
 
-    public ICredential getCredential() {
+    public AbstractCredentials getCredential() {
         return credential;
     }
 
@@ -139,7 +124,4 @@ public class ClientBuilder<T> {
         return endpoint;
     }
 
-    public boolean isEnableHttpLog() {
-        return enableHttpLog;
-    }
 }

@@ -134,9 +134,9 @@ public class BandwidthRespInsert  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billinginfo")
+    @JsonProperty(value="billing_info")
     
-    private String billinginfo;
+    private String billingInfo;
     /**
      * 功能说明：带宽类型，标识是否是共享带宽  取值范围：WHOLE，PER  WHOLE表示共享带宽；PER，表示独享带宽
      */
@@ -432,8 +432,8 @@ public class BandwidthRespInsert  {
         this.publicipInfo = publicipInfo;
     }
 
-    public BandwidthRespInsert withBillinginfo(String billinginfo) {
-        this.billinginfo = billinginfo;
+    public BandwidthRespInsert withBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
         return this;
     }
 
@@ -442,14 +442,14 @@ public class BandwidthRespInsert  {
 
     /**
      * 功能说明：账单信息  如果billinginfo不为空，说明是包周期的带宽
-     * @return billinginfo
+     * @return billingInfo
      */
-    public String getBillinginfo() {
-        return billinginfo;
+    public String getBillingInfo() {
+        return billingInfo;
     }
 
-    public void setBillinginfo(String billinginfo) {
-        this.billinginfo = billinginfo;
+    public void setBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
     }
 
     public BandwidthRespInsert withShareType(ShareTypeEnum shareType) {
@@ -565,7 +565,7 @@ public class BandwidthRespInsert  {
             Objects.equals(this.id, bandwidthRespInsert.id) &&
             Objects.equals(this.name, bandwidthRespInsert.name) &&
             Objects.equals(this.publicipInfo, bandwidthRespInsert.publicipInfo) &&
-            Objects.equals(this.billinginfo, bandwidthRespInsert.billinginfo) &&
+            Objects.equals(this.billingInfo, bandwidthRespInsert.billingInfo) &&
             Objects.equals(this.shareType, bandwidthRespInsert.shareType) &&
             Objects.equals(this.size, bandwidthRespInsert.size) &&
             Objects.equals(this.tenantId, bandwidthRespInsert.tenantId) &&
@@ -574,7 +574,7 @@ public class BandwidthRespInsert  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthType, chargeMode, id, name, publicipInfo, billinginfo, shareType, size, tenantId, enterpriseProjectId, status);
+        return Objects.hash(bandwidthType, chargeMode, id, name, publicipInfo, billingInfo, shareType, size, tenantId, enterpriseProjectId, status);
     }
     @Override
     public String toString() {
@@ -585,7 +585,7 @@ public class BandwidthRespInsert  {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    publicipInfo: ").append(toIndentedString(publicipInfo)).append("\n");
-        sb.append("    billinginfo: ").append(toIndentedString(billinginfo)).append("\n");
+        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    shareType: ").append(toIndentedString(shareType)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");

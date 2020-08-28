@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * SubJobEntities
+ * 子Job的响应信息。
  */
 public class SubJobEntities  {
 

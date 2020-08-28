@@ -55,42 +55,6 @@ public class MpcAsyncClient {
         return hcClient.asyncInvokeHttp(request, MpcMeta.listExtractTask);
     }
 
-    public CompletableFuture<ShowJobStatusResponse> showJobStatusAsync(ShowJobStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.showJobStatus);
-    }
-
-    public CompletableFuture<ListAllBucketsResponse> listAllBucketsAsync(ListAllBucketsRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listAllBuckets);
-    }
-
-    public CompletableFuture<UpdateBucketAuthorizedResponse> updateBucketAuthorizedAsync(UpdateBucketAuthorizedRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.updateBucketAuthorized);
-    }
-
-    public CompletableFuture<ListAllObsObjListResponse> listAllObsObjListAsync(ListAllObsObjListRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listAllObsObjList);
-    }
-
-    public CompletableFuture<CreateQualityEnhanceTemplateResponse> createQualityEnhanceTemplateAsync(CreateQualityEnhanceTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.createQualityEnhanceTemplate);
-    }
-
-    public CompletableFuture<DeleteQualityEnhanceTemplateResponse> deleteQualityEnhanceTemplateAsync(DeleteQualityEnhanceTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteQualityEnhanceTemplate);
-    }
-
-    public CompletableFuture<ListQualityEnhanceDefaultTemplateResponse> listQualityEnhanceDefaultTemplateAsync(ListQualityEnhanceDefaultTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listQualityEnhanceDefaultTemplate);
-    }
-
-    public CompletableFuture<ListQualityEnhanceTemplateResponse> listQualityEnhanceTemplateAsync(ListQualityEnhanceTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listQualityEnhanceTemplate);
-    }
-
-    public CompletableFuture<UpdateQualityEnhanceTemplateResponse> updateQualityEnhanceTemplateAsync(UpdateQualityEnhanceTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.updateQualityEnhanceTemplate);
-    }
-
     public CompletableFuture<ListTranscodeDetailResponse> listTranscodeDetailAsync(ListTranscodeDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, MpcMeta.listTranscodeDetail);
     }
@@ -115,30 +79,6 @@ public class MpcAsyncClient {
         return hcClient.asyncInvokeHttp(request, MpcMeta.listRemuxTask);
     }
 
-    public CompletableFuture<ListNotifyEventResponse> listNotifyEventAsync(ListNotifyEventRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listNotifyEvent);
-    }
-
-    public CompletableFuture<ListNotifySmnTopicConfigResponse> listNotifySmnTopicConfigAsync(ListNotifySmnTopicConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listNotifySmnTopicConfig);
-    }
-
-    public CompletableFuture<ListNotifyTemplateResponse> listNotifyTemplateAsync(ListNotifyTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listNotifyTemplate);
-    }
-
-    public CompletableFuture<NotifySmnTopicConfigResponse> notifySmnTopicConfigAsync(NotifySmnTopicConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.notifySmnTopicConfig);
-    }
-
-    public CompletableFuture<ListStatSummaryResponse> listStatSummaryAsync(ListStatSummaryRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listStatSummary);
-    }
-
-    public CompletableFuture<ListSummaryResponse> listSummaryAsync(ListSummaryRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.listSummary);
-    }
-
     public CompletableFuture<CreateTemplateGroupResponse> createTemplateGroupAsync(CreateTemplateGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, MpcMeta.createTemplateGroup);
     }
@@ -153,18 +93,6 @@ public class MpcAsyncClient {
 
     public CompletableFuture<UpdateTemplateGroupResponse> updateTemplateGroupAsync(UpdateTemplateGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, MpcMeta.updateTemplateGroup);
-    }
-
-    public CompletableFuture<UpdateTenantStatusResponse> updateTenantStatusAsync(UpdateTenantStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.updateTenantStatus);
-    }
-
-    public CompletableFuture<ShowTenantInfoResponse> showTenantInfoAsync(ShowTenantInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.showTenantInfo);
-    }
-
-    public CompletableFuture<UpdateTenantInfoResponse> updateTenantInfoAsync(UpdateTenantInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.updateTenantInfo);
     }
 
     public CompletableFuture<CreateThumbnailsTaskResponse> createThumbnailsTaskAsync(CreateThumbnailsTaskRequest request) {
@@ -185,10 +113,6 @@ public class MpcAsyncClient {
 
     public CompletableFuture<DeleteTranscodingTaskResponse> deleteTranscodingTaskAsync(DeleteTranscodingTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, MpcMeta.deleteTranscodingTask);
-    }
-
-    public CompletableFuture<DeleteTranscodingTaskByConsoleResponse> deleteTranscodingTaskByConsoleAsync(DeleteTranscodingTaskByConsoleRequest request) {
-        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteTranscodingTaskByConsole);
     }
 
     public CompletableFuture<ListTranscodingTaskResponse> listTranscodingTaskAsync(ListTranscodingTaskRequest request) {

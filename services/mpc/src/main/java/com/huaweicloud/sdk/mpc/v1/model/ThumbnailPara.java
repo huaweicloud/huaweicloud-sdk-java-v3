@@ -224,7 +224,7 @@ public class ThumbnailPara  {
 
 
     /**
-     * 采样截图的时间间隔值。  默认值：12.  单位：秒 
+     * 采样截图的时间间隔值。  默认值：12。  单位：秒 
      * minimum: 1
      * maximum: 100
      * @return time

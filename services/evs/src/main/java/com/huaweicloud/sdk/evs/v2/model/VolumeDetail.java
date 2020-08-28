@@ -9,8 +9,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.evs.v2.model.Attachment;
 import com.huaweicloud.sdk.evs.v2.model.Link;
+import com.huaweicloud.sdk.evs.v2.model.VolumeMetadata;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -96,8 +99,8 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_image_metadata")
     
-    private Object volumeImageMetadata = null;
-
+    private Map<String, Object> volumeImageMetadata = new HashMap<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="volume_type")
@@ -108,7 +111,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private String size;
+    private Integer size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -126,7 +129,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private Object metadata = null;
+    private VolumeMetadata metadata = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -138,7 +141,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
-    private String encrypted;
+    private Boolean encrypted;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -168,7 +171,7 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shareable")
     
-    private Boolean shareable;
+    private String shareable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -204,8 +207,8 @@ public class VolumeDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private Object tags = null;
-
+    private Map<String, String> tags = new HashMap<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="wwn")
@@ -480,23 +483,34 @@ public class VolumeDetail  {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
     }
 
-    public VolumeDetail withVolumeImageMetadata(Object volumeImageMetadata) {
+    public VolumeDetail withVolumeImageMetadata(Map<String, Object> volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
         return this;
     }
 
     
 
+    public VolumeDetail putVolumeImageMetadataItem(String key, Object volumeImageMetadataItem) {
+        this.volumeImageMetadata.put(key, volumeImageMetadataItem);
+        return this;
+    }
 
+    public VolumeDetail withVolumeImageMetadata(Consumer<Map<String, Object>> volumeImageMetadataSetter) {
+        if(this.volumeImageMetadata == null ){
+            this.volumeImageMetadata = new HashMap<>();
+        }
+        volumeImageMetadataSetter.accept(this.volumeImageMetadata);
+        return this;
+    }
     /**
      * 云硬盘镜像的元数据。 > 说明： >  > 关于“volume_image_metadata”字段的详细说明，具体请参见：\"[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\"。
      * @return volumeImageMetadata
      */
-    public Object getVolumeImageMetadata() {
+    public Map<String, Object> getVolumeImageMetadata() {
         return volumeImageMetadata;
     }
 
-    public void setVolumeImageMetadata(Object volumeImageMetadata) {
+    public void setVolumeImageMetadata(Map<String, Object> volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
     }
 
@@ -520,7 +534,7 @@ public class VolumeDetail  {
         this.volumeType = volumeType;
     }
 
-    public VolumeDetail withSize(String size) {
+    public VolumeDetail withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -532,11 +546,11 @@ public class VolumeDetail  {
      * 云硬盘大小，单位为GB。
      * @return size
      */
-    public String getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -580,23 +594,30 @@ public class VolumeDetail  {
         this.bootable = bootable;
     }
 
-    public VolumeDetail withMetadata(Object metadata) {
+    public VolumeDetail withMetadata(VolumeMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    
+    public VolumeDetail withMetadata(Consumer<VolumeMetadata> metadataSetter) {
+        if(this.metadata == null ){
+            this.metadata = new VolumeMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+        
+        return this;
+    }
 
 
     /**
-     * 云硬盘的元数据。请参见•[metadata参数说明](https://support.huaweicloud.com/api-evs/evs_04_2006.html#evs_04_2006__evs_04_2010_li29114110314)。 如果元数据中不包含hw:passthrough字段，云硬盘默认为VBD类型。 如果元数据中不包含__system__encrypted字段，云硬盘默认为不加密。
+     * Get metadata
      * @return metadata
      */
-    public Object getMetadata() {
+    public VolumeMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Object metadata) {
+    public void setMetadata(VolumeMetadata metadata) {
         this.metadata = metadata;
     }
 
@@ -620,7 +641,7 @@ public class VolumeDetail  {
         this.updatedAt = updatedAt;
     }
 
-    public VolumeDetail withEncrypted(String encrypted) {
+    public VolumeDetail withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
@@ -632,11 +653,11 @@ public class VolumeDetail  {
      * 当前云硬盘服务不支持该字段。
      * @return encrypted
      */
-    public String getEncrypted() {
+    public Boolean getEncrypted() {
         return encrypted;
     }
 
-    public void setEncrypted(String encrypted) {
+    public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
 
@@ -720,7 +741,7 @@ public class VolumeDetail  {
         this.osVolMigStatusAttrNameId = osVolMigStatusAttrNameId;
     }
 
-    public VolumeDetail withShareable(Boolean shareable) {
+    public VolumeDetail withShareable(String shareable) {
         this.shareable = shareable;
         return this;
     }
@@ -729,14 +750,14 @@ public class VolumeDetail  {
 
 
     /**
-     * 是否为共享云硬盘。
+     * 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
      * @return shareable
      */
-    public Boolean getShareable() {
+    public String getShareable() {
         return shareable;
     }
 
-    public void setShareable(Boolean shareable) {
+    public void setShareable(String shareable) {
         this.shareable = shareable;
     }
 
@@ -840,23 +861,34 @@ public class VolumeDetail  {
         this.dedicatedStorageName = dedicatedStorageName;
     }
 
-    public VolumeDetail withTags(Object tags) {
+    public VolumeDetail withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
     }
 
     
 
+    public VolumeDetail putTagsItem(String key, String tagsItem) {
+        this.tags.put(key, tagsItem);
+        return this;
+    }
 
+    public VolumeDetail withTags(Consumer<Map<String, String>> tagsSetter) {
+        if(this.tags == null ){
+            this.tags = new HashMap<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
     /**
      * 云硬盘的标签。 如果云硬盘有标签，则会有该字段，否则该字段为空。
      * @return tags
      */
-    public Object getTags() {
+    public Map<String, String> getTags() {
         return tags;
     }
 
-    public void setTags(Object tags) {
+    public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
 

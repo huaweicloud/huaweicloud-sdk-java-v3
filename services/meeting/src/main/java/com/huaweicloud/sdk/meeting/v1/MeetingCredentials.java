@@ -1,15 +1,15 @@
 package com.huaweicloud.sdk.meeting.v1;
 
+import java.nio.charset.StandardCharsets;
 import java.time.Instant;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
 
-import com.huaweicloud.sdk.core.auth.ICredential;
+import org.apache.commons.lang3.StringUtils;
+
+import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
@@ -22,9 +22,8 @@ import com.huaweicloud.sdk.core.utils.JsonUtils;
 import com.huaweicloud.sdk.meeting.v1.model.AuthReqDTOV1;
 import com.huaweicloud.sdk.meeting.v1.model.CreatTokenMeta;
 import com.huaweicloud.sdk.meeting.v1.model.CreateTokenResponse;
-import org.apache.commons.lang3.StringUtils;
 
-public class MeetingCredentials implements ICredential {
+public class MeetingCredentials extends AbstractCredentials {
     private String token;
 
     private String userName;
@@ -41,15 +40,19 @@ public class MeetingCredentials implements ICredential {
 
         if (httpRequest.getPath().startsWith("/v1/mmc/control/conferences")
             || httpRequest.getPath().startsWith("/v1/usg/acs/auth/slideverifycode")
-            || httpRequest.getPath().startsWith("/v1/usg/acs/verifycode")
-            || httpRequest.getPath().startsWith("/v1/usg/acs/password/reset")) {
+            || httpRequest.getPath().startsWith("/v1/usg/acs/verifycode")) {
             return CompletableFuture.supplyAsync(() -> httpRequest);
         }
+
+        // 用户忘记密码重置接口需要上送X-Access-Token头域，但不是用户登陆的token，是校验验证码接口返回的token
+        if (httpRequest.getPath().startsWith("/v1/usg/acs/password/reset")) {
+            return CompletableFuture.supplyAsync(
+                () -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
+        }
+
         if (Objects.isNull(userName) || Objects.isNull(userPassword)) {
             throw new SdkException("Input your user name and password");
         }
-
-
 
         long exp = Instant.now().getEpochSecond() - this.lastTokenDate;
 
@@ -76,23 +79,23 @@ public class MeetingCredentials implements ICredential {
 
         String requestBody = JsonUtils.toJSON(new AuthReqDTOV1().withAccount(userName).withClientType(0));
         HttpRequest createTokenRequest = HttpRequest.newBuilder()
-                .withEndpoint(httpRequest.getEndpoint())
-                .withMethod(HttpMethod.POST)
-                .withPath(CreatTokenMeta.URI)
-                .withContentType(CreatTokenMeta.CONTENT_TYPE)
-                .addHeader("Authorization", authorization)
-                .withBodyAsString(requestBody).build();
+            .withEndpoint(httpRequest.getEndpoint())
+            .withMethod(HttpMethod.POST)
+            .withPath(CreatTokenMeta.URI)
+            .withContentType(CreatTokenMeta.CONTENT_TYPE)
+            .addHeader("Authorization", authorization)
+            .withBodyAsString(requestBody).build();
         return httpClient.asyncInvokeHttp(createTokenRequest).handle((createTokenHttpResponse, e) -> {
             if (Objects.nonNull(e)) {
                 throw new SdkException(e);
             }
             if (createTokenHttpResponse.getStatusCode() != 200) {
                 throw ServiceResponseException
-                        .mapException(createTokenHttpResponse.getStatusCode(),
-                                extractErrorMessage(createTokenHttpResponse));
+                    .mapException(createTokenHttpResponse.getStatusCode(),
+                        extractErrorMessage(createTokenHttpResponse));
             }
             CreateTokenResponse createTokenResponse
-                    = JsonUtils.toObject(createTokenHttpResponse.getBodyAsString(), CreateTokenResponse.class);
+                = JsonUtils.toObject(createTokenHttpResponse.getBodyAsString(), CreateTokenResponse.class);
             this.token = createTokenResponse.getAccessToken();
             this.lastTokenDate = Instant.now().getEpochSecond();
             return this.token;
@@ -114,12 +117,6 @@ public class MeetingCredentials implements ICredential {
             sdkErrorMessage.setErrorMsg(httpResponse.getBodyAsString());
         }
         return sdkErrorMessage;
-    }
-
-    @Override
-    public List<String> getSensitiveHeaders() {
-        List<String> sensitiveHeaders = new ArrayList<>();
-        return sensitiveHeaders;
     }
 
     public String getUserName() {
@@ -145,6 +142,11 @@ public class MeetingCredentials implements ICredential {
 
     public MeetingCredentials withUserPassword(String userPassword) {
         this.userPassword = userPassword;
+        return this;
+    }
+
+    public MeetingCredentials withToken(String token) {
+        this.token = token;
         return this;
     }
 }

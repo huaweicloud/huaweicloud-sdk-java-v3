@@ -146,6 +146,101 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAsyncCommandRequest, CreateAsyncCommandResponse> createAsyncCommand = genForcreateAsyncCommand();
+
+    private static HttpRequestDef<CreateAsyncCommandRequest, CreateAsyncCommandResponse> genForcreateAsyncCommand() {
+        // basic
+        HttpRequestDef.Builder<CreateAsyncCommandRequest, CreateAsyncCommandResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAsyncCommandRequest.class, CreateAsyncCommandResponse.class)
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateAsyncCommandRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAsyncCommandRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAsyncCommandRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AsyncDeviceCommandRequest.class,
+            f -> f.withMarshaller(CreateAsyncCommandRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> showAsyncDeviceCommand = genForshowAsyncDeviceCommand();
+
+    private static HttpRequestDef<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> genForshowAsyncDeviceCommand() {
+        // basic
+        HttpRequestDef.Builder<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAsyncDeviceCommandRequest.class, ShowAsyncDeviceCommandResponse.class)
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands/{command_id}");
+
+        // requests
+        builder.withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("command_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getCommandId, (req, v) -> {
+                req.setCommandId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateBatchTaskRequest, CreateBatchTaskResponse> createBatchTask = genForcreateBatchTask();
 
     private static HttpRequestDef<CreateBatchTaskRequest, CreateBatchTaskResponse> genForcreateBatchTask() {
@@ -295,6 +390,69 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowBatchTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> deleteBatchTaskFile = genFordeleteBatchTaskFile();
+
+    private static HttpRequestDef<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> genFordeleteBatchTaskFile() {
+        // basic
+        HttpRequestDef.Builder<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBatchTaskFileRequest.class, DeleteBatchTaskFileResponse.class)
+                .withUri("/v5/iot/{project_id}/batchtask-files/{file_id}");
+
+        // requests
+        builder.withRequestField("file_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteBatchTaskFileRequest::getFileId, (req, v) -> {
+                req.setFileId(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBatchTaskFileRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBatchTaskFileResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> listBatchTaskFiles = genForlistBatchTaskFiles();
+
+    private static HttpRequestDef<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> genForlistBatchTaskFiles() {
+        // basic
+        HttpRequestDef.Builder<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBatchTaskFilesRequest.class, ListBatchTaskFilesResponse.class)
+                .withUri("/v5/iot/{project_id}/batchtask-files");
+
+        // requests
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBatchTaskFilesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );

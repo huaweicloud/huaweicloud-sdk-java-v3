@@ -35,6 +35,14 @@ public class IoTDAAsyncClient {
         return hcClient.asyncInvokeHttp(request, IoTDAMeta.showApplications);
     }
 
+    public CompletableFuture<CreateAsyncCommandResponse> createAsyncCommandAsync(CreateAsyncCommandRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createAsyncCommand);
+    }
+
+    public CompletableFuture<ShowAsyncDeviceCommandResponse> showAsyncDeviceCommandAsync(ShowAsyncDeviceCommandRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showAsyncDeviceCommand);
+    }
+
     public CompletableFuture<CreateBatchTaskResponse> createBatchTaskAsync(CreateBatchTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTDAMeta.createBatchTask);
     }
@@ -45,6 +53,14 @@ public class IoTDAAsyncClient {
 
     public CompletableFuture<ShowBatchTaskResponse> showBatchTaskAsync(ShowBatchTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTDAMeta.showBatchTask);
+    }
+
+    public CompletableFuture<DeleteBatchTaskFileResponse> deleteBatchTaskFileAsync(DeleteBatchTaskFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteBatchTaskFile);
+    }
+
+    public CompletableFuture<ListBatchTaskFilesResponse> listBatchTaskFilesAsync(ListBatchTaskFilesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listBatchTaskFiles);
     }
 
     public CompletableFuture<AddCertificateResponse> addCertificateAsync(AddCertificateRequest request) {

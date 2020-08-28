@@ -29,9 +29,9 @@ public class BatchBandwidthResp  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billinginfo")
+    @JsonProperty(value="billing_info")
     
-    private String billinginfo;
+    private String billingInfo;
     /**
      * 功能说明：按流量计费,按带宽计费还是按增强型95计费。  取值范围：bandwidth，traffic，95peak_plus(按增强型95计费)不返回或者为空时表示是bandwidth。  约束：只有共享带宽支持95peak_plus（按增强型95计费），按增强型95计费时需要指定保底百分比，默认是20%。
      */
@@ -332,8 +332,8 @@ public class BatchBandwidthResp  {
         this.bandwidthType = bandwidthType;
     }
 
-    public BatchBandwidthResp withBillinginfo(String billinginfo) {
-        this.billinginfo = billinginfo;
+    public BatchBandwidthResp withBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
         return this;
     }
 
@@ -341,15 +341,15 @@ public class BatchBandwidthResp  {
 
 
     /**
-     * 功能说明：账单信息  如果billinginfo不为空，说明是包周期的带宽
-     * @return billinginfo
+     * 功能说明：账单信息  如果billing_info不为空，说明是包周期的带宽
+     * @return billingInfo
      */
-    public String getBillinginfo() {
-        return billinginfo;
+    public String getBillingInfo() {
+        return billingInfo;
     }
 
-    public void setBillinginfo(String billinginfo) {
-        this.billinginfo = billinginfo;
+    public void setBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
     }
 
     public BatchBandwidthResp withChargeMode(ChargeModeEnum chargeMode) {
@@ -535,7 +535,7 @@ public class BatchBandwidthResp  {
         }
         BatchBandwidthResp batchBandwidthResp = (BatchBandwidthResp) o;
         return Objects.equals(this.bandwidthType, batchBandwidthResp.bandwidthType) &&
-            Objects.equals(this.billinginfo, batchBandwidthResp.billinginfo) &&
+            Objects.equals(this.billingInfo, batchBandwidthResp.billingInfo) &&
             Objects.equals(this.chargeMode, batchBandwidthResp.chargeMode) &&
             Objects.equals(this.id, batchBandwidthResp.id) &&
             Objects.equals(this.name, batchBandwidthResp.name) &&
@@ -547,14 +547,14 @@ public class BatchBandwidthResp  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthType, billinginfo, chargeMode, id, name, publicipInfo, shareType, size, tenantId, status);
+        return Objects.hash(bandwidthType, billingInfo, chargeMode, id, name, publicipInfo, shareType, size, tenantId, status);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchBandwidthResp {\n");
         sb.append("    bandwidthType: ").append(toIndentedString(bandwidthType)).append("\n");
-        sb.append("    billinginfo: ").append(toIndentedString(billinginfo)).append("\n");
+        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

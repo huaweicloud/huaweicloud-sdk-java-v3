@@ -1,0 +1,115 @@
+package com.huaweicloud.sdk.elb.v3.model;
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.elb.v3.model.UpdateL7PolicyRequestBody;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class UpdateL7PolicyRequest  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="l7policy_id")
+    
+    private String l7policyId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="body")
+    
+    private UpdateL7PolicyRequestBody body = null;
+
+    public UpdateL7PolicyRequest withL7policyId(String l7policyId) {
+        this.l7policyId = l7policyId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get l7policyId
+     * @return l7policyId
+     */
+    public String getL7policyId() {
+        return l7policyId;
+    }
+
+    public void setL7policyId(String l7policyId) {
+        this.l7policyId = l7policyId;
+    }
+
+    public UpdateL7PolicyRequest withBody(UpdateL7PolicyRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public UpdateL7PolicyRequest withBody(Consumer<UpdateL7PolicyRequestBody> bodySetter) {
+        if(this.body == null ){
+            this.body = new UpdateL7PolicyRequestBody();
+            bodySetter.accept(this.body);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get body
+     * @return body
+     */
+    public UpdateL7PolicyRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(UpdateL7PolicyRequestBody body) {
+        this.body = body;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        UpdateL7PolicyRequest updateL7PolicyRequest = (UpdateL7PolicyRequest) o;
+        return Objects.equals(this.l7policyId, updateL7PolicyRequest.l7policyId) &&
+            Objects.equals(this.body, updateL7PolicyRequest.body);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(l7policyId, body);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateL7PolicyRequest {\n");
+        sb.append("    l7policyId: ").append(toIndentedString(l7policyId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

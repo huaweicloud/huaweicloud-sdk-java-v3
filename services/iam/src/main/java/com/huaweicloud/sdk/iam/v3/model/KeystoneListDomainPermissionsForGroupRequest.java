@@ -18,9 +18,35 @@ public class KeystoneListDomainPermissionsForGroupRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
+
+    public KeystoneListDomainPermissionsForGroupRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public KeystoneListDomainPermissionsForGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -50,16 +76,18 @@ public class KeystoneListDomainPermissionsForGroupRequest  {
             return false;
         }
         KeystoneListDomainPermissionsForGroupRequest keystoneListDomainPermissionsForGroupRequest = (KeystoneListDomainPermissionsForGroupRequest) o;
-        return Objects.equals(this.groupId, keystoneListDomainPermissionsForGroupRequest.groupId);
+        return Objects.equals(this.domainId, keystoneListDomainPermissionsForGroupRequest.domainId) &&
+            Objects.equals(this.groupId, keystoneListDomainPermissionsForGroupRequest.groupId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(groupId);
+        return Objects.hash(domainId, groupId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneListDomainPermissionsForGroupRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();

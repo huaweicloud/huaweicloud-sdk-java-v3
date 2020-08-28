@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.LinksSelf;
+import com.huaweicloud.sdk.iam.v3.model.Links;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -45,7 +45,7 @@ public class ShowUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="links")
     
-    private LinksSelf links = null;
+    private Links links = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,6 +88,24 @@ public class ShowUserResult  {
     @JsonProperty(value="update_time")
     
     private String updateTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="create_time")
+    
+    private String createTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="last_login_time")
+    
+    private String lastLoginTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="pwd_stength")
+    
+    private String pwdStength;
 
     public ShowUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -169,14 +187,14 @@ public class ShowUserResult  {
         this.name = name;
     }
 
-    public ShowUserResult withLinks(LinksSelf links) {
+    public ShowUserResult withLinks(Links links) {
         this.links = links;
         return this;
     }
 
-    public ShowUserResult withLinks(Consumer<LinksSelf> linksSetter) {
+    public ShowUserResult withLinks(Consumer<Links> linksSetter) {
         if(this.links == null ){
-            this.links = new LinksSelf();
+            this.links = new Links();
             linksSetter.accept(this.links);
         }
         
@@ -188,11 +206,11 @@ public class ShowUserResult  {
      * Get links
      * @return links
      */
-    public LinksSelf getLinks() {
+    public Links getLinks() {
         return links;
     }
 
-    public void setLinks(LinksSelf links) {
+    public void setLinks(Links links) {
         this.links = links;
     }
 
@@ -335,6 +353,66 @@ public class ShowUserResult  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
+
+    public ShowUserResult withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户创建时间。
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public ShowUserResult withLastLoginTime(String lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户最后登录时间。
+     * @return lastLoginTime
+     */
+    public String getLastLoginTime() {
+        return lastLoginTime;
+    }
+
+    public void setLastLoginTime(String lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
+
+    public ShowUserResult withPwdStength(String pwdStength) {
+        this.pwdStength = pwdStength;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
+     * @return pwdStength
+     */
+    public String getPwdStength() {
+        return pwdStength;
+    }
+
+    public void setPwdStength(String pwdStength) {
+        this.pwdStength = pwdStength;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -355,11 +433,14 @@ public class ShowUserResult  {
             Objects.equals(this.email, showUserResult.email) &&
             Objects.equals(this.phone, showUserResult.phone) &&
             Objects.equals(this.pwdStatus, showUserResult.pwdStatus) &&
-            Objects.equals(this.updateTime, showUserResult.updateTime);
+            Objects.equals(this.updateTime, showUserResult.updateTime) &&
+            Objects.equals(this.createTime, showUserResult.createTime) &&
+            Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime) &&
+            Objects.equals(this.pwdStength, showUserResult.pwdStength);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime);
+        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStength);
     }
     @Override
     public String toString() {
@@ -377,6 +458,9 @@ public class ShowUserResult  {
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    lastLoginTime: ").append(toIndentedString(lastLoginTime)).append("\n");
+        sb.append("    pwdStength: ").append(toIndentedString(pwdStength)).append("\n");
         sb.append("}");
         return sb.toString();
     }

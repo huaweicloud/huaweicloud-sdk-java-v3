@@ -25,7 +25,7 @@ public class ListVolumesByTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_count")
     
-    private String totalCount;
+    private Integer totalCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -33,7 +33,7 @@ public class ListVolumesByTagsResponse extends SdkResponse {
     
     private List<Resource> resources = null;
     
-    public ListVolumesByTagsResponse withTotalCount(String totalCount) {
+    public ListVolumesByTagsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -45,11 +45,11 @@ public class ListVolumesByTagsResponse extends SdkResponse {
      * 符合查询条件的云硬盘资源个数
      * @return totalCount
      */
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

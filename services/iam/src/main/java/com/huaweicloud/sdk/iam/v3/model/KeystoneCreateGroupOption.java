@@ -63,7 +63,7 @@ public class KeystoneCreateGroupOption  {
 
 
     /**
-     * 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/zh-cn_topic_0057845624.html)。
+     * 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return domainId
      */
     public String getDomainId() {

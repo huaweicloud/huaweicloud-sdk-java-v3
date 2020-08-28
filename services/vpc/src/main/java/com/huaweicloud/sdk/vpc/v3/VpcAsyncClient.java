@@ -23,16 +23,48 @@ public class VpcAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateSubNetworkInterfaceV3);
     }
 
+    public CompletableFuture<CreateSecurityGroupResponse> createSecurityGroupAsync(CreateSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createSecurityGroup);
+    }
+
+    public CompletableFuture<CreateSecurityGroupRuleResponse> createSecurityGroupRuleAsync(CreateSecurityGroupRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.createSecurityGroupRule);
+    }
+
     public CompletableFuture<CreateSubNetworkInterfaceResponse> createSubNetworkInterfaceAsync(CreateSubNetworkInterfaceRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.createSubNetworkInterface);
+    }
+
+    public CompletableFuture<DeleteSecurityGroupResponse> deleteSecurityGroupAsync(DeleteSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteSecurityGroup);
+    }
+
+    public CompletableFuture<DeleteSecurityGroupRuleResponse> deleteSecurityGroupRuleAsync(DeleteSecurityGroupRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.deleteSecurityGroupRule);
     }
 
     public CompletableFuture<DeleteSubNetworkInterfaceResponse> deleteSubNetworkInterfaceAsync(DeleteSubNetworkInterfaceRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.deleteSubNetworkInterface);
     }
 
+    public CompletableFuture<ListSecurityGroupRulesResponse> listSecurityGroupRulesAsync(ListSecurityGroupRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listSecurityGroupRules);
+    }
+
+    public CompletableFuture<ListSecurityGroupsResponse> listSecurityGroupsAsync(ListSecurityGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.listSecurityGroups);
+    }
+
     public CompletableFuture<ListSubNetworkInterfacesResponse> listSubNetworkInterfacesAsync(ListSubNetworkInterfacesRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.listSubNetworkInterfaces);
+    }
+
+    public CompletableFuture<ShowSecurityGroupResponse> showSecurityGroupAsync(ShowSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showSecurityGroup);
+    }
+
+    public CompletableFuture<ShowSecurityGroupRuleResponse> showSecurityGroupRuleAsync(ShowSecurityGroupRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showSecurityGroupRule);
     }
 
     public CompletableFuture<ShowSubNetworkInterfaceResponse> showSubNetworkInterfaceAsync(ShowSubNetworkInterfaceRequest request) {
@@ -41,6 +73,10 @@ public class VpcAsyncClient {
 
     public CompletableFuture<ShowSubNetworkInterfacesQuantityResponse> showSubNetworkInterfacesQuantityAsync(ShowSubNetworkInterfacesQuantityRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.showSubNetworkInterfacesQuantity);
+    }
+
+    public CompletableFuture<UpdateSecurityGroupResponse> updateSecurityGroupAsync(UpdateSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.updateSecurityGroup);
     }
 
     public CompletableFuture<UpdateSubNetworkInterfaceResponse> updateSubNetworkInterfaceAsync(UpdateSubNetworkInterfaceRequest request) {

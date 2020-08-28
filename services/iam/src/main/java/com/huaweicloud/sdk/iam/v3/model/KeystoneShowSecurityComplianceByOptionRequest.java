@@ -17,6 +17,12 @@ import java.util.Objects;
  */
 public class KeystoneShowSecurityComplianceByOptionRequest  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
     /**
      * Gets or Sets option
      */
@@ -99,6 +105,26 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
     
     private OptionEnum option;
 
+    public KeystoneShowSecurityComplianceByOptionRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     public KeystoneShowSecurityComplianceByOptionRequest withOption(OptionEnum option) {
         this.option = option;
         return this;
@@ -127,16 +153,18 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
             return false;
         }
         KeystoneShowSecurityComplianceByOptionRequest keystoneShowSecurityComplianceByOptionRequest = (KeystoneShowSecurityComplianceByOptionRequest) o;
-        return Objects.equals(this.option, keystoneShowSecurityComplianceByOptionRequest.option);
+        return Objects.equals(this.domainId, keystoneShowSecurityComplianceByOptionRequest.domainId) &&
+            Objects.equals(this.option, keystoneShowSecurityComplianceByOptionRequest.option);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(option);
+        return Objects.hash(domainId, option);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneShowSecurityComplianceByOptionRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    option: ").append(toIndentedString(option)).append("\n");
         sb.append("}");
         return sb.toString();

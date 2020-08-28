@@ -135,6 +135,10 @@ public class VpcAsyncClient {
         return hcClient.asyncInvokeHttp(request, VpcMeta.listPrivateips);
     }
 
+    public CompletableFuture<ShowNetworkIpAvailabilitiesResponse> showNetworkIpAvailabilitiesAsync(ShowNetworkIpAvailabilitiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.showNetworkIpAvailabilities);
+    }
+
     public CompletableFuture<ShowPrivateipResponse> showPrivateipAsync(ShowPrivateipRequest request) {
         return hcClient.asyncInvokeHttp(request, VpcMeta.showPrivateip);
     }

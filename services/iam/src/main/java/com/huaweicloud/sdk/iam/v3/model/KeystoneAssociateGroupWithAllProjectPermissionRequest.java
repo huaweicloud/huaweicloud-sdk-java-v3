@@ -18,6 +18,12 @@ public class KeystoneAssociateGroupWithAllProjectPermissionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
@@ -27,6 +33,26 @@ public class KeystoneAssociateGroupWithAllProjectPermissionRequest  {
     @JsonProperty(value="role_id")
     
     private String roleId;
+
+    public KeystoneAssociateGroupWithAllProjectPermissionRequest withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get domainId
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 
     public KeystoneAssociateGroupWithAllProjectPermissionRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -76,17 +102,19 @@ public class KeystoneAssociateGroupWithAllProjectPermissionRequest  {
             return false;
         }
         KeystoneAssociateGroupWithAllProjectPermissionRequest keystoneAssociateGroupWithAllProjectPermissionRequest = (KeystoneAssociateGroupWithAllProjectPermissionRequest) o;
-        return Objects.equals(this.groupId, keystoneAssociateGroupWithAllProjectPermissionRequest.groupId) &&
+        return Objects.equals(this.domainId, keystoneAssociateGroupWithAllProjectPermissionRequest.domainId) &&
+            Objects.equals(this.groupId, keystoneAssociateGroupWithAllProjectPermissionRequest.groupId) &&
             Objects.equals(this.roleId, keystoneAssociateGroupWithAllProjectPermissionRequest.roleId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, roleId);
+        return Objects.hash(domainId, groupId, roleId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class KeystoneAssociateGroupWithAllProjectPermissionRequest {\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("}");

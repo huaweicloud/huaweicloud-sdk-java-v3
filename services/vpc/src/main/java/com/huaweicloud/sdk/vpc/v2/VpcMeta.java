@@ -936,6 +936,29 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> showNetworkIpAvailabilities = genForshowNetworkIpAvailabilities();
+
+    private static HttpRequestDef<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> genForshowNetworkIpAvailabilities() {
+        // basic
+        HttpRequestDef.Builder<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNetworkIpAvailabilitiesRequest.class, ShowNetworkIpAvailabilitiesResponse.class)
+                .withUri("/v2.0/network-ip-availabilities/{network_id}");
+
+        // requests
+        builder.withRequestField("network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowNetworkIpAvailabilitiesRequest::getNetworkId, (req, v) -> {
+                req.setNetworkId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPrivateipRequest, ShowPrivateipResponse> showPrivateip = genForshowPrivateip();
 
     private static HttpRequestDef<ShowPrivateipRequest, ShowPrivateipResponse> genForshowPrivateip() {

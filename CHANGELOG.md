@@ -1,3 +1,101 @@
+# 3.0.9-beta 2020-08-28
+## HuaweiCloud SDK CloudPipeline
+ - ### Features
+    - Support CloudPipeline service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK CodeHub
+ - ### Features
+    - Support CodeHub service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK EIP
+ - ### Features
+    - Support more APIs: tags related APIs and shared bandwidth related APIs.
+ - ### Bug Fix
+    - Interface BatchCreateBandwidth: modify field billing_info. 
+ - ### Change
+    - None
+    
+## HuaweiCloud SDK EVS
+ - ### Features
+    - None
+ - ### Bug Fix
+    - APIs ListVolumesByTags, solve the problem of type definition error of field `total_count`.
+ - ### Change
+    - None
+
+## HuaweiCloud SDK ELB
+ - ### Features
+    - Support Elastic Load Balance service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK FunctionGraph
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Modify service name, change abbreviation FGS to full name FunctionGraph.
+
+## HuaweiCloud SDK IAM
+ - ### Features
+    - Support more APIs: consistency of console related APIs.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK IoTDA
+ - ### Features
+    - Support more APIs: batch operation related APIs and asynchronous related APIs.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK Meeting
+ - ### Features
+    - Support more APIs: meeting minutes related APIs.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+    
+## HuaweiCloud SDK ProjectMan
+ - ### Features
+    - Support Project Management service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK TestHub
+ - ### Features
+    - Support TestHub tools in CloudTest service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK VPC
+ - ### Features
+    - Support more APIs: security group, security group rules, available IP count related APIs.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 # 3.0.8-beta 2020-8-14
 ## HuaweiCloud SDK Core
  - ### Features
