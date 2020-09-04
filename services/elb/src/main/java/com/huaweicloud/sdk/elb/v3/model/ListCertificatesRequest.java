@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,20 +40,20 @@ public class ListCertificatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    private String name;
-
+    private List<String> name = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    private String description;
-
+    private List<String> description = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
@@ -62,14 +64,14 @@ public class ListCertificatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
-    private String domain;
-
+    private List<String> domain = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private String type;
-
+    private List<String> type = null;
+    
     public ListCertificatesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -132,63 +134,105 @@ public class ListCertificatesRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListCertificatesRequest withId(String id) {
+    public ListCertificatesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListCertificatesRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListCertificatesRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 
-    public ListCertificatesRequest withName(String name) {
+    public ListCertificatesRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
     
+    public ListCertificatesRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
 
+    public ListCertificatesRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
 
     /**
      * Get name
      * @return name
      */
-    public String getName() {
+    public List<String> getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(List<String> name) {
         this.name = name;
     }
 
-    public ListCertificatesRequest withDescription(String description) {
+    public ListCertificatesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
     
+    public ListCertificatesRequest addDescriptionItem(String descriptionItem) {
+        if (this.description == null) {
+            this.description = new ArrayList<>();
+        }
+        this.description.add(descriptionItem);
+        return this;
+    }
 
+    public ListCertificatesRequest withDescription(Consumer<List<String>> descriptionSetter) {
+        if(this.description == null ){
+            this.description = new ArrayList<>();
+        }
+        descriptionSetter.accept(this.description);
+        return this;
+    }
 
     /**
      * Get description
      * @return description
      */
-    public String getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(List<String> description) {
         this.description = description;
     }
 
@@ -212,43 +256,71 @@ public class ListCertificatesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    public ListCertificatesRequest withDomain(String domain) {
+    public ListCertificatesRequest withDomain(List<String> domain) {
         this.domain = domain;
         return this;
     }
 
     
+    public ListCertificatesRequest addDomainItem(String domainItem) {
+        if (this.domain == null) {
+            this.domain = new ArrayList<>();
+        }
+        this.domain.add(domainItem);
+        return this;
+    }
 
+    public ListCertificatesRequest withDomain(Consumer<List<String>> domainSetter) {
+        if(this.domain == null ){
+            this.domain = new ArrayList<>();
+        }
+        domainSetter.accept(this.domain);
+        return this;
+    }
 
     /**
      * Get domain
      * @return domain
      */
-    public String getDomain() {
+    public List<String> getDomain() {
         return domain;
     }
 
-    public void setDomain(String domain) {
+    public void setDomain(List<String> domain) {
         this.domain = domain;
     }
 
-    public ListCertificatesRequest withType(String type) {
+    public ListCertificatesRequest withType(List<String> type) {
         this.type = type;
         return this;
     }
 
     
+    public ListCertificatesRequest addTypeItem(String typeItem) {
+        if (this.type == null) {
+            this.type = new ArrayList<>();
+        }
+        this.type.add(typeItem);
+        return this;
+    }
 
+    public ListCertificatesRequest withType(Consumer<List<String>> typeSetter) {
+        if(this.type == null ){
+            this.type = new ArrayList<>();
+        }
+        typeSetter.accept(this.type);
+        return this;
+    }
 
     /**
      * Get type
      * @return type
      */
-    public String getType() {
+    public List<String> getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(List<String> type) {
         this.type = type;
     }
     @Override

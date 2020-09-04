@@ -38,12 +38,87 @@ public class CreateApiV2Response extends SdkResponse {
     @JsonProperty(value="name")
     
     private String name;
+    /**
+     * API类型 - 1：公有API - 2：私有API
+     */
+    public static class TypeEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+        
+
+        public static final Map<Integer, TypeEnum> staticFields = new HashMap<Integer, TypeEnum>() {
+            { 
+                put(1, NUMBER_1);
+                put(2, NUMBER_2);
+            }
+        };
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new TypeEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private Integer type;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -728,7 +803,7 @@ public class CreateApiV2Response extends SdkResponse {
         this.name = name;
     }
 
-    public CreateApiV2Response withType(Integer type) {
+    public CreateApiV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -740,11 +815,11 @@ public class CreateApiV2Response extends SdkResponse {
      * API类型 - 1：公有API - 2：私有API
      * @return type
      */
-    public Integer getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

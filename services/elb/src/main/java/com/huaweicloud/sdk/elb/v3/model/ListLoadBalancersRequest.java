@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,20 +40,20 @@ public class ListLoadBalancersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    private String name;
-
+    private List<String> name = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    private String description;
-
+    private List<String> description = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
@@ -62,158 +64,158 @@ public class ListLoadBalancersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provisioning_status")
     
-    private String provisioningStatus;
-
+    private List<String> provisioningStatus = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operating_status")
     
-    private String operatingStatus;
-
+    private List<String> operatingStatus = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="guaranteed")
     
-    private String guaranteed;
+    private Boolean guaranteed;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_id")
     
-    private String vpcId;
-
+    private List<String> vpcId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vip_port_id")
     
-    private String vipPortId;
-
+    private List<String> vipPortId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vip_address")
     
-    private String vipAddress;
-
+    private List<String> vipAddress = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vip_subnet_cidr_id")
     
-    private String vipSubnetCidrId;
-
+    private List<String> vipSubnetCidrId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l4_flavor_id")
     
-    private String l4FlavorId;
-
+    private List<String> l4FlavorId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l4_scale_flavor_id")
     
-    private String l4ScaleFlavorId;
-
+    private List<String> l4ScaleFlavorId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_vip_address")
     
-    private String ipv6VipAddress;
-
+    private List<String> ipv6VipAddress = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_vip_virsubnet_id")
     
-    private String ipv6VipVirsubnetId;
-
+    private List<String> ipv6VipVirsubnetId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_vip_port_id")
     
-    private String ipv6VipPortId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
+    private List<String> ipv6VipPortId = null;
     
-    private String tags;
-
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="availability_zone_list")
     
-    private String availabilityZoneList;
-
+    private List<String> availabilityZoneList = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eips")
     
-    private String eips;
-
+    private List<String> eips = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7_flavor_id")
     
-    private String l7FlavorId;
-
+    private List<String> l7FlavorId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7_scale_flavor_id")
     
-    private String l7ScaleFlavorId;
-
+    private List<String> l7ScaleFlavorId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing_info")
     
-    private String billingInfo;
-
+    private List<String> billingInfo = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_device_id")
     
-    private String memberDeviceId;
-
+    private List<String> memberDeviceId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_address")
     
-    private String memberAddress;
-
+    private List<String> memberAddress = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId;
+    private List<String> enterpriseProjectId = null;
+    
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private List<String> tags = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags-any")
     
-    private String tagsAny;
-
+    private List<String> tagsAny = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not-tags")
     
-    private String notTags;
-
+    private List<String> notTags = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not-tags-any")
     
-    private String notTagsAny;
-
+    private List<String> notTagsAny = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicips")
     
-    private String publicips;
-
+    private List<String> publicips = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_version")
     
-    private Integer ipVersion;
-
+    private List<Integer> ipVersion = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deletion_protection_enable")
@@ -282,63 +284,105 @@ public class ListLoadBalancersRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListLoadBalancersRequest withId(String id) {
+    public ListLoadBalancersRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 
-    public ListLoadBalancersRequest withName(String name) {
+    public ListLoadBalancersRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
 
     /**
      * Get name
      * @return name
      */
-    public String getName() {
+    public List<String> getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(List<String> name) {
         this.name = name;
     }
 
-    public ListLoadBalancersRequest withDescription(String description) {
+    public ListLoadBalancersRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addDescriptionItem(String descriptionItem) {
+        if (this.description == null) {
+            this.description = new ArrayList<>();
+        }
+        this.description.add(descriptionItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withDescription(Consumer<List<String>> descriptionSetter) {
+        if(this.description == null ){
+            this.description = new ArrayList<>();
+        }
+        descriptionSetter.accept(this.description);
+        return this;
+    }
 
     /**
      * Get description
      * @return description
      */
-    public String getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(List<String> description) {
         this.description = description;
     }
 
@@ -362,47 +406,75 @@ public class ListLoadBalancersRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    public ListLoadBalancersRequest withProvisioningStatus(String provisioningStatus) {
+    public ListLoadBalancersRequest withProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addProvisioningStatusItem(String provisioningStatusItem) {
+        if (this.provisioningStatus == null) {
+            this.provisioningStatus = new ArrayList<>();
+        }
+        this.provisioningStatus.add(provisioningStatusItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withProvisioningStatus(Consumer<List<String>> provisioningStatusSetter) {
+        if(this.provisioningStatus == null ){
+            this.provisioningStatus = new ArrayList<>();
+        }
+        provisioningStatusSetter.accept(this.provisioningStatus);
+        return this;
+    }
 
     /**
      * Get provisioningStatus
      * @return provisioningStatus
      */
-    public String getProvisioningStatus() {
+    public List<String> getProvisioningStatus() {
         return provisioningStatus;
     }
 
-    public void setProvisioningStatus(String provisioningStatus) {
+    public void setProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
 
-    public ListLoadBalancersRequest withOperatingStatus(String operatingStatus) {
+    public ListLoadBalancersRequest withOperatingStatus(List<String> operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addOperatingStatusItem(String operatingStatusItem) {
+        if (this.operatingStatus == null) {
+            this.operatingStatus = new ArrayList<>();
+        }
+        this.operatingStatus.add(operatingStatusItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withOperatingStatus(Consumer<List<String>> operatingStatusSetter) {
+        if(this.operatingStatus == null ){
+            this.operatingStatus = new ArrayList<>();
+        }
+        operatingStatusSetter.accept(this.operatingStatus);
+        return this;
+    }
 
     /**
      * Get operatingStatus
      * @return operatingStatus
      */
-    public String getOperatingStatus() {
+    public List<String> getOperatingStatus() {
         return operatingStatus;
     }
 
-    public void setOperatingStatus(String operatingStatus) {
+    public void setOperatingStatus(List<String> operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
 
-    public ListLoadBalancersRequest withGuaranteed(String guaranteed) {
+    public ListLoadBalancersRequest withGuaranteed(Boolean guaranteed) {
         this.guaranteed = guaranteed;
         return this;
     }
@@ -414,471 +486,793 @@ public class ListLoadBalancersRequest  {
      * Get guaranteed
      * @return guaranteed
      */
-    public String getGuaranteed() {
+    public Boolean getGuaranteed() {
         return guaranteed;
     }
 
-    public void setGuaranteed(String guaranteed) {
+    public void setGuaranteed(Boolean guaranteed) {
         this.guaranteed = guaranteed;
     }
 
-    public ListLoadBalancersRequest withVpcId(String vpcId) {
+    public ListLoadBalancersRequest withVpcId(List<String> vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addVpcIdItem(String vpcIdItem) {
+        if (this.vpcId == null) {
+            this.vpcId = new ArrayList<>();
+        }
+        this.vpcId.add(vpcIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withVpcId(Consumer<List<String>> vpcIdSetter) {
+        if(this.vpcId == null ){
+            this.vpcId = new ArrayList<>();
+        }
+        vpcIdSetter.accept(this.vpcId);
+        return this;
+    }
 
     /**
      * Get vpcId
      * @return vpcId
      */
-    public String getVpcId() {
+    public List<String> getVpcId() {
         return vpcId;
     }
 
-    public void setVpcId(String vpcId) {
+    public void setVpcId(List<String> vpcId) {
         this.vpcId = vpcId;
     }
 
-    public ListLoadBalancersRequest withVipPortId(String vipPortId) {
+    public ListLoadBalancersRequest withVipPortId(List<String> vipPortId) {
         this.vipPortId = vipPortId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addVipPortIdItem(String vipPortIdItem) {
+        if (this.vipPortId == null) {
+            this.vipPortId = new ArrayList<>();
+        }
+        this.vipPortId.add(vipPortIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withVipPortId(Consumer<List<String>> vipPortIdSetter) {
+        if(this.vipPortId == null ){
+            this.vipPortId = new ArrayList<>();
+        }
+        vipPortIdSetter.accept(this.vipPortId);
+        return this;
+    }
 
     /**
      * Get vipPortId
      * @return vipPortId
      */
-    public String getVipPortId() {
+    public List<String> getVipPortId() {
         return vipPortId;
     }
 
-    public void setVipPortId(String vipPortId) {
+    public void setVipPortId(List<String> vipPortId) {
         this.vipPortId = vipPortId;
     }
 
-    public ListLoadBalancersRequest withVipAddress(String vipAddress) {
+    public ListLoadBalancersRequest withVipAddress(List<String> vipAddress) {
         this.vipAddress = vipAddress;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addVipAddressItem(String vipAddressItem) {
+        if (this.vipAddress == null) {
+            this.vipAddress = new ArrayList<>();
+        }
+        this.vipAddress.add(vipAddressItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withVipAddress(Consumer<List<String>> vipAddressSetter) {
+        if(this.vipAddress == null ){
+            this.vipAddress = new ArrayList<>();
+        }
+        vipAddressSetter.accept(this.vipAddress);
+        return this;
+    }
 
     /**
      * Get vipAddress
      * @return vipAddress
      */
-    public String getVipAddress() {
+    public List<String> getVipAddress() {
         return vipAddress;
     }
 
-    public void setVipAddress(String vipAddress) {
+    public void setVipAddress(List<String> vipAddress) {
         this.vipAddress = vipAddress;
     }
 
-    public ListLoadBalancersRequest withVipSubnetCidrId(String vipSubnetCidrId) {
+    public ListLoadBalancersRequest withVipSubnetCidrId(List<String> vipSubnetCidrId) {
         this.vipSubnetCidrId = vipSubnetCidrId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addVipSubnetCidrIdItem(String vipSubnetCidrIdItem) {
+        if (this.vipSubnetCidrId == null) {
+            this.vipSubnetCidrId = new ArrayList<>();
+        }
+        this.vipSubnetCidrId.add(vipSubnetCidrIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withVipSubnetCidrId(Consumer<List<String>> vipSubnetCidrIdSetter) {
+        if(this.vipSubnetCidrId == null ){
+            this.vipSubnetCidrId = new ArrayList<>();
+        }
+        vipSubnetCidrIdSetter.accept(this.vipSubnetCidrId);
+        return this;
+    }
 
     /**
      * Get vipSubnetCidrId
      * @return vipSubnetCidrId
      */
-    public String getVipSubnetCidrId() {
+    public List<String> getVipSubnetCidrId() {
         return vipSubnetCidrId;
     }
 
-    public void setVipSubnetCidrId(String vipSubnetCidrId) {
+    public void setVipSubnetCidrId(List<String> vipSubnetCidrId) {
         this.vipSubnetCidrId = vipSubnetCidrId;
     }
 
-    public ListLoadBalancersRequest withL4FlavorId(String l4FlavorId) {
+    public ListLoadBalancersRequest withL4FlavorId(List<String> l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addL4FlavorIdItem(String l4FlavorIdItem) {
+        if (this.l4FlavorId == null) {
+            this.l4FlavorId = new ArrayList<>();
+        }
+        this.l4FlavorId.add(l4FlavorIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withL4FlavorId(Consumer<List<String>> l4FlavorIdSetter) {
+        if(this.l4FlavorId == null ){
+            this.l4FlavorId = new ArrayList<>();
+        }
+        l4FlavorIdSetter.accept(this.l4FlavorId);
+        return this;
+    }
 
     /**
      * Get l4FlavorId
      * @return l4FlavorId
      */
-    public String getL4FlavorId() {
+    public List<String> getL4FlavorId() {
         return l4FlavorId;
     }
 
-    public void setL4FlavorId(String l4FlavorId) {
+    public void setL4FlavorId(List<String> l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
     }
 
-    public ListLoadBalancersRequest withL4ScaleFlavorId(String l4ScaleFlavorId) {
+    public ListLoadBalancersRequest withL4ScaleFlavorId(List<String> l4ScaleFlavorId) {
         this.l4ScaleFlavorId = l4ScaleFlavorId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addL4ScaleFlavorIdItem(String l4ScaleFlavorIdItem) {
+        if (this.l4ScaleFlavorId == null) {
+            this.l4ScaleFlavorId = new ArrayList<>();
+        }
+        this.l4ScaleFlavorId.add(l4ScaleFlavorIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withL4ScaleFlavorId(Consumer<List<String>> l4ScaleFlavorIdSetter) {
+        if(this.l4ScaleFlavorId == null ){
+            this.l4ScaleFlavorId = new ArrayList<>();
+        }
+        l4ScaleFlavorIdSetter.accept(this.l4ScaleFlavorId);
+        return this;
+    }
 
     /**
      * Get l4ScaleFlavorId
      * @return l4ScaleFlavorId
      */
-    public String getL4ScaleFlavorId() {
+    public List<String> getL4ScaleFlavorId() {
         return l4ScaleFlavorId;
     }
 
-    public void setL4ScaleFlavorId(String l4ScaleFlavorId) {
+    public void setL4ScaleFlavorId(List<String> l4ScaleFlavorId) {
         this.l4ScaleFlavorId = l4ScaleFlavorId;
     }
 
-    public ListLoadBalancersRequest withIpv6VipAddress(String ipv6VipAddress) {
+    public ListLoadBalancersRequest withIpv6VipAddress(List<String> ipv6VipAddress) {
         this.ipv6VipAddress = ipv6VipAddress;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addIpv6VipAddressItem(String ipv6VipAddressItem) {
+        if (this.ipv6VipAddress == null) {
+            this.ipv6VipAddress = new ArrayList<>();
+        }
+        this.ipv6VipAddress.add(ipv6VipAddressItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withIpv6VipAddress(Consumer<List<String>> ipv6VipAddressSetter) {
+        if(this.ipv6VipAddress == null ){
+            this.ipv6VipAddress = new ArrayList<>();
+        }
+        ipv6VipAddressSetter.accept(this.ipv6VipAddress);
+        return this;
+    }
 
     /**
      * Get ipv6VipAddress
      * @return ipv6VipAddress
      */
-    public String getIpv6VipAddress() {
+    public List<String> getIpv6VipAddress() {
         return ipv6VipAddress;
     }
 
-    public void setIpv6VipAddress(String ipv6VipAddress) {
+    public void setIpv6VipAddress(List<String> ipv6VipAddress) {
         this.ipv6VipAddress = ipv6VipAddress;
     }
 
-    public ListLoadBalancersRequest withIpv6VipVirsubnetId(String ipv6VipVirsubnetId) {
+    public ListLoadBalancersRequest withIpv6VipVirsubnetId(List<String> ipv6VipVirsubnetId) {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addIpv6VipVirsubnetIdItem(String ipv6VipVirsubnetIdItem) {
+        if (this.ipv6VipVirsubnetId == null) {
+            this.ipv6VipVirsubnetId = new ArrayList<>();
+        }
+        this.ipv6VipVirsubnetId.add(ipv6VipVirsubnetIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withIpv6VipVirsubnetId(Consumer<List<String>> ipv6VipVirsubnetIdSetter) {
+        if(this.ipv6VipVirsubnetId == null ){
+            this.ipv6VipVirsubnetId = new ArrayList<>();
+        }
+        ipv6VipVirsubnetIdSetter.accept(this.ipv6VipVirsubnetId);
+        return this;
+    }
 
     /**
      * Get ipv6VipVirsubnetId
      * @return ipv6VipVirsubnetId
      */
-    public String getIpv6VipVirsubnetId() {
+    public List<String> getIpv6VipVirsubnetId() {
         return ipv6VipVirsubnetId;
     }
 
-    public void setIpv6VipVirsubnetId(String ipv6VipVirsubnetId) {
+    public void setIpv6VipVirsubnetId(List<String> ipv6VipVirsubnetId) {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
     }
 
-    public ListLoadBalancersRequest withIpv6VipPortId(String ipv6VipPortId) {
+    public ListLoadBalancersRequest withIpv6VipPortId(List<String> ipv6VipPortId) {
         this.ipv6VipPortId = ipv6VipPortId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addIpv6VipPortIdItem(String ipv6VipPortIdItem) {
+        if (this.ipv6VipPortId == null) {
+            this.ipv6VipPortId = new ArrayList<>();
+        }
+        this.ipv6VipPortId.add(ipv6VipPortIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withIpv6VipPortId(Consumer<List<String>> ipv6VipPortIdSetter) {
+        if(this.ipv6VipPortId == null ){
+            this.ipv6VipPortId = new ArrayList<>();
+        }
+        ipv6VipPortIdSetter.accept(this.ipv6VipPortId);
+        return this;
+    }
 
     /**
      * Get ipv6VipPortId
      * @return ipv6VipPortId
      */
-    public String getIpv6VipPortId() {
+    public List<String> getIpv6VipPortId() {
         return ipv6VipPortId;
     }
 
-    public void setIpv6VipPortId(String ipv6VipPortId) {
+    public void setIpv6VipPortId(List<String> ipv6VipPortId) {
         this.ipv6VipPortId = ipv6VipPortId;
     }
 
-    public ListLoadBalancersRequest withTags(String tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get tags
-     * @return tags
-     */
-    public String getTags() {
-        return tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
-
-    public ListLoadBalancersRequest withAvailabilityZoneList(String availabilityZoneList) {
+    public ListLoadBalancersRequest withAvailabilityZoneList(List<String> availabilityZoneList) {
         this.availabilityZoneList = availabilityZoneList;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addAvailabilityZoneListItem(String availabilityZoneListItem) {
+        if (this.availabilityZoneList == null) {
+            this.availabilityZoneList = new ArrayList<>();
+        }
+        this.availabilityZoneList.add(availabilityZoneListItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withAvailabilityZoneList(Consumer<List<String>> availabilityZoneListSetter) {
+        if(this.availabilityZoneList == null ){
+            this.availabilityZoneList = new ArrayList<>();
+        }
+        availabilityZoneListSetter.accept(this.availabilityZoneList);
+        return this;
+    }
 
     /**
      * Get availabilityZoneList
      * @return availabilityZoneList
      */
-    public String getAvailabilityZoneList() {
+    public List<String> getAvailabilityZoneList() {
         return availabilityZoneList;
     }
 
-    public void setAvailabilityZoneList(String availabilityZoneList) {
+    public void setAvailabilityZoneList(List<String> availabilityZoneList) {
         this.availabilityZoneList = availabilityZoneList;
     }
 
-    public ListLoadBalancersRequest withEips(String eips) {
+    public ListLoadBalancersRequest withEips(List<String> eips) {
         this.eips = eips;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addEipsItem(String eipsItem) {
+        if (this.eips == null) {
+            this.eips = new ArrayList<>();
+        }
+        this.eips.add(eipsItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withEips(Consumer<List<String>> eipsSetter) {
+        if(this.eips == null ){
+            this.eips = new ArrayList<>();
+        }
+        eipsSetter.accept(this.eips);
+        return this;
+    }
 
     /**
      * Get eips
      * @return eips
      */
-    public String getEips() {
+    public List<String> getEips() {
         return eips;
     }
 
-    public void setEips(String eips) {
+    public void setEips(List<String> eips) {
         this.eips = eips;
     }
 
-    public ListLoadBalancersRequest withL7FlavorId(String l7FlavorId) {
+    public ListLoadBalancersRequest withL7FlavorId(List<String> l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addL7FlavorIdItem(String l7FlavorIdItem) {
+        if (this.l7FlavorId == null) {
+            this.l7FlavorId = new ArrayList<>();
+        }
+        this.l7FlavorId.add(l7FlavorIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withL7FlavorId(Consumer<List<String>> l7FlavorIdSetter) {
+        if(this.l7FlavorId == null ){
+            this.l7FlavorId = new ArrayList<>();
+        }
+        l7FlavorIdSetter.accept(this.l7FlavorId);
+        return this;
+    }
 
     /**
      * Get l7FlavorId
      * @return l7FlavorId
      */
-    public String getL7FlavorId() {
+    public List<String> getL7FlavorId() {
         return l7FlavorId;
     }
 
-    public void setL7FlavorId(String l7FlavorId) {
+    public void setL7FlavorId(List<String> l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
     }
 
-    public ListLoadBalancersRequest withL7ScaleFlavorId(String l7ScaleFlavorId) {
+    public ListLoadBalancersRequest withL7ScaleFlavorId(List<String> l7ScaleFlavorId) {
         this.l7ScaleFlavorId = l7ScaleFlavorId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addL7ScaleFlavorIdItem(String l7ScaleFlavorIdItem) {
+        if (this.l7ScaleFlavorId == null) {
+            this.l7ScaleFlavorId = new ArrayList<>();
+        }
+        this.l7ScaleFlavorId.add(l7ScaleFlavorIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withL7ScaleFlavorId(Consumer<List<String>> l7ScaleFlavorIdSetter) {
+        if(this.l7ScaleFlavorId == null ){
+            this.l7ScaleFlavorId = new ArrayList<>();
+        }
+        l7ScaleFlavorIdSetter.accept(this.l7ScaleFlavorId);
+        return this;
+    }
 
     /**
      * Get l7ScaleFlavorId
      * @return l7ScaleFlavorId
      */
-    public String getL7ScaleFlavorId() {
+    public List<String> getL7ScaleFlavorId() {
         return l7ScaleFlavorId;
     }
 
-    public void setL7ScaleFlavorId(String l7ScaleFlavorId) {
+    public void setL7ScaleFlavorId(List<String> l7ScaleFlavorId) {
         this.l7ScaleFlavorId = l7ScaleFlavorId;
     }
 
-    public ListLoadBalancersRequest withBillingInfo(String billingInfo) {
+    public ListLoadBalancersRequest withBillingInfo(List<String> billingInfo) {
         this.billingInfo = billingInfo;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addBillingInfoItem(String billingInfoItem) {
+        if (this.billingInfo == null) {
+            this.billingInfo = new ArrayList<>();
+        }
+        this.billingInfo.add(billingInfoItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withBillingInfo(Consumer<List<String>> billingInfoSetter) {
+        if(this.billingInfo == null ){
+            this.billingInfo = new ArrayList<>();
+        }
+        billingInfoSetter.accept(this.billingInfo);
+        return this;
+    }
 
     /**
      * Get billingInfo
      * @return billingInfo
      */
-    public String getBillingInfo() {
+    public List<String> getBillingInfo() {
         return billingInfo;
     }
 
-    public void setBillingInfo(String billingInfo) {
+    public void setBillingInfo(List<String> billingInfo) {
         this.billingInfo = billingInfo;
     }
 
-    public ListLoadBalancersRequest withMemberDeviceId(String memberDeviceId) {
+    public ListLoadBalancersRequest withMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
+        if (this.memberDeviceId == null) {
+            this.memberDeviceId = new ArrayList<>();
+        }
+        this.memberDeviceId.add(memberDeviceIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withMemberDeviceId(Consumer<List<String>> memberDeviceIdSetter) {
+        if(this.memberDeviceId == null ){
+            this.memberDeviceId = new ArrayList<>();
+        }
+        memberDeviceIdSetter.accept(this.memberDeviceId);
+        return this;
+    }
 
     /**
      * Get memberDeviceId
      * @return memberDeviceId
      */
-    public String getMemberDeviceId() {
+    public List<String> getMemberDeviceId() {
         return memberDeviceId;
     }
 
-    public void setMemberDeviceId(String memberDeviceId) {
+    public void setMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
     }
 
-    public ListLoadBalancersRequest withMemberAddress(String memberAddress) {
+    public ListLoadBalancersRequest withMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addMemberAddressItem(String memberAddressItem) {
+        if (this.memberAddress == null) {
+            this.memberAddress = new ArrayList<>();
+        }
+        this.memberAddress.add(memberAddressItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withMemberAddress(Consumer<List<String>> memberAddressSetter) {
+        if(this.memberAddress == null ){
+            this.memberAddress = new ArrayList<>();
+        }
+        memberAddressSetter.accept(this.memberAddress);
+        return this;
+    }
 
     /**
      * Get memberAddress
      * @return memberAddress
      */
-    public String getMemberAddress() {
+    public List<String> getMemberAddress() {
         return memberAddress;
     }
 
-    public void setMemberAddress(String memberAddress) {
+    public void setMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
     }
 
-    public ListLoadBalancersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ListLoadBalancersRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if(this.enterpriseProjectId == null ){
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
 
     /**
      * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
-    public String getEnterpriseProjectId() {
+    public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListLoadBalancersRequest withTagsAny(String tagsAny) {
+    public ListLoadBalancersRequest withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public ListLoadBalancersRequest addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ListLoadBalancersRequest withTags(Consumer<List<String>> tagsSetter) {
+        if(this.tags == null ){
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * Get tags
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public ListLoadBalancersRequest withTagsAny(List<String> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addTagsAnyItem(String tagsAnyItem) {
+        if (this.tagsAny == null) {
+            this.tagsAny = new ArrayList<>();
+        }
+        this.tagsAny.add(tagsAnyItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withTagsAny(Consumer<List<String>> tagsAnySetter) {
+        if(this.tagsAny == null ){
+            this.tagsAny = new ArrayList<>();
+        }
+        tagsAnySetter.accept(this.tagsAny);
+        return this;
+    }
 
     /**
      * Get tagsAny
      * @return tagsAny
      */
-    public String getTagsAny() {
+    public List<String> getTagsAny() {
         return tagsAny;
     }
 
-    public void setTagsAny(String tagsAny) {
+    public void setTagsAny(List<String> tagsAny) {
         this.tagsAny = tagsAny;
     }
 
-    public ListLoadBalancersRequest withNotTags(String notTags) {
+    public ListLoadBalancersRequest withNotTags(List<String> notTags) {
         this.notTags = notTags;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addNotTagsItem(String notTagsItem) {
+        if (this.notTags == null) {
+            this.notTags = new ArrayList<>();
+        }
+        this.notTags.add(notTagsItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withNotTags(Consumer<List<String>> notTagsSetter) {
+        if(this.notTags == null ){
+            this.notTags = new ArrayList<>();
+        }
+        notTagsSetter.accept(this.notTags);
+        return this;
+    }
 
     /**
      * Get notTags
      * @return notTags
      */
-    public String getNotTags() {
+    public List<String> getNotTags() {
         return notTags;
     }
 
-    public void setNotTags(String notTags) {
+    public void setNotTags(List<String> notTags) {
         this.notTags = notTags;
     }
 
-    public ListLoadBalancersRequest withNotTagsAny(String notTagsAny) {
+    public ListLoadBalancersRequest withNotTagsAny(List<String> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addNotTagsAnyItem(String notTagsAnyItem) {
+        if (this.notTagsAny == null) {
+            this.notTagsAny = new ArrayList<>();
+        }
+        this.notTagsAny.add(notTagsAnyItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withNotTagsAny(Consumer<List<String>> notTagsAnySetter) {
+        if(this.notTagsAny == null ){
+            this.notTagsAny = new ArrayList<>();
+        }
+        notTagsAnySetter.accept(this.notTagsAny);
+        return this;
+    }
 
     /**
      * Get notTagsAny
      * @return notTagsAny
      */
-    public String getNotTagsAny() {
+    public List<String> getNotTagsAny() {
         return notTagsAny;
     }
 
-    public void setNotTagsAny(String notTagsAny) {
+    public void setNotTagsAny(List<String> notTagsAny) {
         this.notTagsAny = notTagsAny;
     }
 
-    public ListLoadBalancersRequest withPublicips(String publicips) {
+    public ListLoadBalancersRequest withPublicips(List<String> publicips) {
         this.publicips = publicips;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addPublicipsItem(String publicipsItem) {
+        if (this.publicips == null) {
+            this.publicips = new ArrayList<>();
+        }
+        this.publicips.add(publicipsItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withPublicips(Consumer<List<String>> publicipsSetter) {
+        if(this.publicips == null ){
+            this.publicips = new ArrayList<>();
+        }
+        publicipsSetter.accept(this.publicips);
+        return this;
+    }
 
     /**
      * Get publicips
      * @return publicips
      */
-    public String getPublicips() {
+    public List<String> getPublicips() {
         return publicips;
     }
 
-    public void setPublicips(String publicips) {
+    public void setPublicips(List<String> publicips) {
         this.publicips = publicips;
     }
 
-    public ListLoadBalancersRequest withIpVersion(Integer ipVersion) {
+    public ListLoadBalancersRequest withIpVersion(List<Integer> ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
     
+    public ListLoadBalancersRequest addIpVersionItem(Integer ipVersionItem) {
+        if (this.ipVersion == null) {
+            this.ipVersion = new ArrayList<>();
+        }
+        this.ipVersion.add(ipVersionItem);
+        return this;
+    }
 
+    public ListLoadBalancersRequest withIpVersion(Consumer<List<Integer>> ipVersionSetter) {
+        if(this.ipVersion == null ){
+            this.ipVersion = new ArrayList<>();
+        }
+        ipVersionSetter.accept(this.ipVersion);
+        return this;
+    }
 
     /**
      * Get ipVersion
      * @return ipVersion
      */
-    public Integer getIpVersion() {
+    public List<Integer> getIpVersion() {
         return ipVersion;
     }
 
-    public void setIpVersion(Integer ipVersion) {
+    public void setIpVersion(List<Integer> ipVersion) {
         this.ipVersion = ipVersion;
     }
 
@@ -929,7 +1323,6 @@ public class ListLoadBalancersRequest  {
             Objects.equals(this.ipv6VipAddress, listLoadBalancersRequest.ipv6VipAddress) &&
             Objects.equals(this.ipv6VipVirsubnetId, listLoadBalancersRequest.ipv6VipVirsubnetId) &&
             Objects.equals(this.ipv6VipPortId, listLoadBalancersRequest.ipv6VipPortId) &&
-            Objects.equals(this.tags, listLoadBalancersRequest.tags) &&
             Objects.equals(this.availabilityZoneList, listLoadBalancersRequest.availabilityZoneList) &&
             Objects.equals(this.eips, listLoadBalancersRequest.eips) &&
             Objects.equals(this.l7FlavorId, listLoadBalancersRequest.l7FlavorId) &&
@@ -938,6 +1331,7 @@ public class ListLoadBalancersRequest  {
             Objects.equals(this.memberDeviceId, listLoadBalancersRequest.memberDeviceId) &&
             Objects.equals(this.memberAddress, listLoadBalancersRequest.memberAddress) &&
             Objects.equals(this.enterpriseProjectId, listLoadBalancersRequest.enterpriseProjectId) &&
+            Objects.equals(this.tags, listLoadBalancersRequest.tags) &&
             Objects.equals(this.tagsAny, listLoadBalancersRequest.tagsAny) &&
             Objects.equals(this.notTags, listLoadBalancersRequest.notTags) &&
             Objects.equals(this.notTagsAny, listLoadBalancersRequest.notTagsAny) &&
@@ -947,7 +1341,7 @@ public class ListLoadBalancersRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, pageReverse, id, name, description, adminStateUp, provisioningStatus, operatingStatus, guaranteed, vpcId, vipPortId, vipAddress, vipSubnetCidrId, l4FlavorId, l4ScaleFlavorId, ipv6VipAddress, ipv6VipVirsubnetId, ipv6VipPortId, tags, availabilityZoneList, eips, l7FlavorId, l7ScaleFlavorId, billingInfo, memberDeviceId, memberAddress, enterpriseProjectId, tagsAny, notTags, notTagsAny, publicips, ipVersion, deletionProtectionEnable);
+        return Objects.hash(marker, limit, pageReverse, id, name, description, adminStateUp, provisioningStatus, operatingStatus, guaranteed, vpcId, vipPortId, vipAddress, vipSubnetCidrId, l4FlavorId, l4ScaleFlavorId, ipv6VipAddress, ipv6VipVirsubnetId, ipv6VipPortId, availabilityZoneList, eips, l7FlavorId, l7ScaleFlavorId, billingInfo, memberDeviceId, memberAddress, enterpriseProjectId, tags, tagsAny, notTags, notTagsAny, publicips, ipVersion, deletionProtectionEnable);
     }
     @Override
     public String toString() {
@@ -972,7 +1366,6 @@ public class ListLoadBalancersRequest  {
         sb.append("    ipv6VipAddress: ").append(toIndentedString(ipv6VipAddress)).append("\n");
         sb.append("    ipv6VipVirsubnetId: ").append(toIndentedString(ipv6VipVirsubnetId)).append("\n");
         sb.append("    ipv6VipPortId: ").append(toIndentedString(ipv6VipPortId)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    availabilityZoneList: ").append(toIndentedString(availabilityZoneList)).append("\n");
         sb.append("    eips: ").append(toIndentedString(eips)).append("\n");
         sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
@@ -981,6 +1374,7 @@ public class ListLoadBalancersRequest  {
         sb.append("    memberDeviceId: ").append(toIndentedString(memberDeviceId)).append("\n");
         sb.append("    memberAddress: ").append(toIndentedString(memberAddress)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    tagsAny: ").append(toIndentedString(tagsAny)).append("\n");
         sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
         sb.append("    notTagsAny: ").append(toIndentedString(notTagsAny)).append("\n");

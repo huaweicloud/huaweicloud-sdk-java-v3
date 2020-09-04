@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -44,20 +46,20 @@ public class ListL7RulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="compare_type")
     
-    private String compareType;
-
+    private List<String> compareType = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provisioning_status")
     
-    private String provisioningStatus;
-
+    private List<String> provisioningStatus = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invert")
@@ -74,26 +76,26 @@ public class ListL7RulesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    private String value;
-
+    private List<String> value = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    private String key;
-
+    private List<String> key = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private String type;
-
+    private List<String> type = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId;
-
+    private List<String> enterpriseProjectId = null;
+    
     public ListL7RulesRequest withL7policyId(String l7policyId) {
         this.l7policyId = l7policyId;
         return this;
@@ -176,63 +178,105 @@ public class ListL7RulesRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListL7RulesRequest withId(String id) {
+    public ListL7RulesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListL7RulesRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListL7RulesRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 
-    public ListL7RulesRequest withCompareType(String compareType) {
+    public ListL7RulesRequest withCompareType(List<String> compareType) {
         this.compareType = compareType;
         return this;
     }
 
     
+    public ListL7RulesRequest addCompareTypeItem(String compareTypeItem) {
+        if (this.compareType == null) {
+            this.compareType = new ArrayList<>();
+        }
+        this.compareType.add(compareTypeItem);
+        return this;
+    }
 
+    public ListL7RulesRequest withCompareType(Consumer<List<String>> compareTypeSetter) {
+        if(this.compareType == null ){
+            this.compareType = new ArrayList<>();
+        }
+        compareTypeSetter.accept(this.compareType);
+        return this;
+    }
 
     /**
      * Get compareType
      * @return compareType
      */
-    public String getCompareType() {
+    public List<String> getCompareType() {
         return compareType;
     }
 
-    public void setCompareType(String compareType) {
+    public void setCompareType(List<String> compareType) {
         this.compareType = compareType;
     }
 
-    public ListL7RulesRequest withProvisioningStatus(String provisioningStatus) {
+    public ListL7RulesRequest withProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
     
+    public ListL7RulesRequest addProvisioningStatusItem(String provisioningStatusItem) {
+        if (this.provisioningStatus == null) {
+            this.provisioningStatus = new ArrayList<>();
+        }
+        this.provisioningStatus.add(provisioningStatusItem);
+        return this;
+    }
 
+    public ListL7RulesRequest withProvisioningStatus(Consumer<List<String>> provisioningStatusSetter) {
+        if(this.provisioningStatus == null ){
+            this.provisioningStatus = new ArrayList<>();
+        }
+        provisioningStatusSetter.accept(this.provisioningStatus);
+        return this;
+    }
 
     /**
      * Get provisioningStatus
      * @return provisioningStatus
      */
-    public String getProvisioningStatus() {
+    public List<String> getProvisioningStatus() {
         return provisioningStatus;
     }
 
-    public void setProvisioningStatus(String provisioningStatus) {
+    public void setProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
 
@@ -276,83 +320,139 @@ public class ListL7RulesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    public ListL7RulesRequest withValue(String value) {
+    public ListL7RulesRequest withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
     
+    public ListL7RulesRequest addValueItem(String valueItem) {
+        if (this.value == null) {
+            this.value = new ArrayList<>();
+        }
+        this.value.add(valueItem);
+        return this;
+    }
 
+    public ListL7RulesRequest withValue(Consumer<List<String>> valueSetter) {
+        if(this.value == null ){
+            this.value = new ArrayList<>();
+        }
+        valueSetter.accept(this.value);
+        return this;
+    }
 
     /**
      * Get value
      * @return value
      */
-    public String getValue() {
+    public List<String> getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(List<String> value) {
         this.value = value;
     }
 
-    public ListL7RulesRequest withKey(String key) {
+    public ListL7RulesRequest withKey(List<String> key) {
         this.key = key;
         return this;
     }
 
     
+    public ListL7RulesRequest addKeyItem(String keyItem) {
+        if (this.key == null) {
+            this.key = new ArrayList<>();
+        }
+        this.key.add(keyItem);
+        return this;
+    }
 
+    public ListL7RulesRequest withKey(Consumer<List<String>> keySetter) {
+        if(this.key == null ){
+            this.key = new ArrayList<>();
+        }
+        keySetter.accept(this.key);
+        return this;
+    }
 
     /**
      * Get key
      * @return key
      */
-    public String getKey() {
+    public List<String> getKey() {
         return key;
     }
 
-    public void setKey(String key) {
+    public void setKey(List<String> key) {
         this.key = key;
     }
 
-    public ListL7RulesRequest withType(String type) {
+    public ListL7RulesRequest withType(List<String> type) {
         this.type = type;
         return this;
     }
 
     
+    public ListL7RulesRequest addTypeItem(String typeItem) {
+        if (this.type == null) {
+            this.type = new ArrayList<>();
+        }
+        this.type.add(typeItem);
+        return this;
+    }
 
+    public ListL7RulesRequest withType(Consumer<List<String>> typeSetter) {
+        if(this.type == null ){
+            this.type = new ArrayList<>();
+        }
+        typeSetter.accept(this.type);
+        return this;
+    }
 
     /**
      * Get type
      * @return type
      */
-    public String getType() {
+    public List<String> getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(List<String> type) {
         this.type = type;
     }
 
-    public ListL7RulesRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ListL7RulesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
+    public ListL7RulesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
 
+    public ListL7RulesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if(this.enterpriseProjectId == null ){
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
 
     /**
      * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
-    public String getEnterpriseProjectId() {
+    public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
     @Override

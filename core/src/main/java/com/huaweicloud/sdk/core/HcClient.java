@@ -21,8 +21,22 @@
 
 package com.huaweicloud.sdk.core;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.huaweicloud.sdk.core.auth.AbstractCredentials;
+import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServerResponseException;
@@ -36,19 +50,6 @@ import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 public class HcClient implements CustomizationConfigure {
     private static final Logger logger = LoggerFactory.getLogger(HcClient.class);
@@ -65,7 +66,7 @@ public class HcClient implements CustomizationConfigure {
 
     private HttpClient httpClient;
     private String endpoint;
-    private AbstractCredentials credential;
+    private ICredential credential;
     private HttpConfig httpConfig;
 
     HcClient withEndpoint(String endpoint) {
@@ -73,7 +74,7 @@ public class HcClient implements CustomizationConfigure {
         return this;
     }
 
-    HcClient withCredential(AbstractCredentials credential) {
+    HcClient withCredential(ICredential credential) {
         this.credential = credential;
         return this;
     }
@@ -153,7 +154,7 @@ public class HcClient implements CustomizationConfigure {
                     .withErrorMsg(
                         errResult.containsKey(Constants.ERROR_MSG) ? errResult.get(Constants.ERROR_MSG).toString()
                             : errResult.containsKey(Constants.MESSAGE) ? errResult.get(Constants.MESSAGE).toString()
-                                : null)
+                            : null)
                     .withRequestId(
                         errResult.containsKey(Constants.REQUEST_ID) ? errResult.get(Constants.REQUEST_ID).toString()
                             : null);
@@ -219,7 +220,7 @@ public class HcClient implements CustomizationConfigure {
             httpRequestBuilder.withBody(((SdkStreamRequest) request).getBody());
         }
 
-        httpRequestBuilder.addHeader(Constants.USER_AGENT, "huaweicloud-sdk-java/3.0");
+        httpRequestBuilder.addHeader(Constants.USER_AGENT, "huaweicloud-usdk-java/3.0");
 
         HttpRequest httpRequest = httpRequestBuilder.build();
 
@@ -232,10 +233,10 @@ public class HcClient implements CustomizationConfigure {
             String stringResult = httpResponse.getBodyAsString();
             ResT resT;
             if (Objects.nonNull(httpResponse.getContentType())
-                    && httpResponse.getContentType().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+                && httpResponse.getContentType().equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
                 resT = reqDef.getResponseType().newInstance();
                 if (resT instanceof SdkStreamResponse) {
-                    ((SdkStreamResponse)resT).setBody(httpResponse.getBody());
+                    ((SdkStreamResponse) resT).setBody(httpResponse.getBody());
                 }
             } else {
                 if (!reqDef.hasResponseField(Constants.BODY)) {

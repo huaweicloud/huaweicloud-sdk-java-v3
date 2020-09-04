@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -44,14 +46,14 @@ public class ListMembersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    private String name;
-
+    private List<String> name = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="weight")
     
-    private Integer weight;
-
+    private List<Integer> weight = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
@@ -62,38 +64,38 @@ public class ListMembersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subnet_cidr_id")
     
-    private String subnetCidrId;
-
+    private List<String> subnetCidrId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="address")
     
-    private String address;
-
+    private List<String> address = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol_port")
     
-    private Integer protocolPort;
-
+    private List<Integer> protocolPort = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operating_status")
     
-    private String operatingStatus;
-
+    private List<String> operatingStatus = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId;
-
+    private List<String> enterpriseProjectId = null;
+    
     public ListMembersRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -176,45 +178,71 @@ public class ListMembersRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListMembersRequest withName(String name) {
+    public ListMembersRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
     
+    public ListMembersRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
 
+    public ListMembersRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
 
     /**
      * Get name
      * @return name
      */
-    public String getName() {
+    public List<String> getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(List<String> name) {
         this.name = name;
     }
 
-    public ListMembersRequest withWeight(Integer weight) {
+    public ListMembersRequest withWeight(List<Integer> weight) {
         this.weight = weight;
         return this;
     }
 
     
+    public ListMembersRequest addWeightItem(Integer weightItem) {
+        if (this.weight == null) {
+            this.weight = new ArrayList<>();
+        }
+        this.weight.add(weightItem);
+        return this;
+    }
 
+    public ListMembersRequest withWeight(Consumer<List<Integer>> weightSetter) {
+        if(this.weight == null ){
+            this.weight = new ArrayList<>();
+        }
+        weightSetter.accept(this.weight);
+        return this;
+    }
 
     /**
      * Get weight
-     * minimum: 0
-     * maximum: 100
      * @return weight
      */
-    public Integer getWeight() {
+    public List<Integer> getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(List<Integer> weight) {
         this.weight = weight;
     }
 
@@ -238,123 +266,207 @@ public class ListMembersRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    public ListMembersRequest withSubnetCidrId(String subnetCidrId) {
+    public ListMembersRequest withSubnetCidrId(List<String> subnetCidrId) {
         this.subnetCidrId = subnetCidrId;
         return this;
     }
 
     
+    public ListMembersRequest addSubnetCidrIdItem(String subnetCidrIdItem) {
+        if (this.subnetCidrId == null) {
+            this.subnetCidrId = new ArrayList<>();
+        }
+        this.subnetCidrId.add(subnetCidrIdItem);
+        return this;
+    }
 
+    public ListMembersRequest withSubnetCidrId(Consumer<List<String>> subnetCidrIdSetter) {
+        if(this.subnetCidrId == null ){
+            this.subnetCidrId = new ArrayList<>();
+        }
+        subnetCidrIdSetter.accept(this.subnetCidrId);
+        return this;
+    }
 
     /**
      * Get subnetCidrId
      * @return subnetCidrId
      */
-    public String getSubnetCidrId() {
+    public List<String> getSubnetCidrId() {
         return subnetCidrId;
     }
 
-    public void setSubnetCidrId(String subnetCidrId) {
+    public void setSubnetCidrId(List<String> subnetCidrId) {
         this.subnetCidrId = subnetCidrId;
     }
 
-    public ListMembersRequest withAddress(String address) {
+    public ListMembersRequest withAddress(List<String> address) {
         this.address = address;
         return this;
     }
 
     
+    public ListMembersRequest addAddressItem(String addressItem) {
+        if (this.address == null) {
+            this.address = new ArrayList<>();
+        }
+        this.address.add(addressItem);
+        return this;
+    }
 
+    public ListMembersRequest withAddress(Consumer<List<String>> addressSetter) {
+        if(this.address == null ){
+            this.address = new ArrayList<>();
+        }
+        addressSetter.accept(this.address);
+        return this;
+    }
 
     /**
      * Get address
      * @return address
      */
-    public String getAddress() {
+    public List<String> getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(List<String> address) {
         this.address = address;
     }
 
-    public ListMembersRequest withProtocolPort(Integer protocolPort) {
+    public ListMembersRequest withProtocolPort(List<Integer> protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
 
     
+    public ListMembersRequest addProtocolPortItem(Integer protocolPortItem) {
+        if (this.protocolPort == null) {
+            this.protocolPort = new ArrayList<>();
+        }
+        this.protocolPort.add(protocolPortItem);
+        return this;
+    }
 
+    public ListMembersRequest withProtocolPort(Consumer<List<Integer>> protocolPortSetter) {
+        if(this.protocolPort == null ){
+            this.protocolPort = new ArrayList<>();
+        }
+        protocolPortSetter.accept(this.protocolPort);
+        return this;
+    }
 
     /**
      * Get protocolPort
      * @return protocolPort
      */
-    public Integer getProtocolPort() {
+    public List<Integer> getProtocolPort() {
         return protocolPort;
     }
 
-    public void setProtocolPort(Integer protocolPort) {
+    public void setProtocolPort(List<Integer> protocolPort) {
         this.protocolPort = protocolPort;
     }
 
-    public ListMembersRequest withId(String id) {
+    public ListMembersRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListMembersRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListMembersRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 
-    public ListMembersRequest withOperatingStatus(String operatingStatus) {
+    public ListMembersRequest withOperatingStatus(List<String> operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
     
+    public ListMembersRequest addOperatingStatusItem(String operatingStatusItem) {
+        if (this.operatingStatus == null) {
+            this.operatingStatus = new ArrayList<>();
+        }
+        this.operatingStatus.add(operatingStatusItem);
+        return this;
+    }
 
+    public ListMembersRequest withOperatingStatus(Consumer<List<String>> operatingStatusSetter) {
+        if(this.operatingStatus == null ){
+            this.operatingStatus = new ArrayList<>();
+        }
+        operatingStatusSetter.accept(this.operatingStatus);
+        return this;
+    }
 
     /**
      * Get operatingStatus
      * @return operatingStatus
      */
-    public String getOperatingStatus() {
+    public List<String> getOperatingStatus() {
         return operatingStatus;
     }
 
-    public void setOperatingStatus(String operatingStatus) {
+    public void setOperatingStatus(List<String> operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
 
-    public ListMembersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ListMembersRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
+    public ListMembersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
 
+    public ListMembersRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if(this.enterpriseProjectId == null ){
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
 
     /**
      * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
-    public String getEnterpriseProjectId() {
+    public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
     @Override

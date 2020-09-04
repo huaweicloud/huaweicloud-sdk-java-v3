@@ -107,8 +107,6 @@ public class CreateAnimatedGraphicsTaskReq  {
 
     /**
      * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
-     * minimum: 0
-     * maximum: 2
      * @return sync
      */
     public Integer getSync() {

@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,26 +40,26 @@ public class ListIpGroupsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    private String name;
-
+    private List<String> name = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    private String description;
-
+    private List<String> description = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_list")
     
-    private String ipList;
-
+    private List<String> ipList = null;
+    
     public ListIpGroupsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -120,83 +122,139 @@ public class ListIpGroupsRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListIpGroupsRequest withId(String id) {
+    public ListIpGroupsRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListIpGroupsRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListIpGroupsRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 
-    public ListIpGroupsRequest withName(String name) {
+    public ListIpGroupsRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
     
+    public ListIpGroupsRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
 
+    public ListIpGroupsRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
 
     /**
      * Get name
      * @return name
      */
-    public String getName() {
+    public List<String> getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(List<String> name) {
         this.name = name;
     }
 
-    public ListIpGroupsRequest withDescription(String description) {
+    public ListIpGroupsRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
     
+    public ListIpGroupsRequest addDescriptionItem(String descriptionItem) {
+        if (this.description == null) {
+            this.description = new ArrayList<>();
+        }
+        this.description.add(descriptionItem);
+        return this;
+    }
 
+    public ListIpGroupsRequest withDescription(Consumer<List<String>> descriptionSetter) {
+        if(this.description == null ){
+            this.description = new ArrayList<>();
+        }
+        descriptionSetter.accept(this.description);
+        return this;
+    }
 
     /**
      * Get description
      * @return description
      */
-    public String getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(List<String> description) {
         this.description = description;
     }
 
-    public ListIpGroupsRequest withIpList(String ipList) {
+    public ListIpGroupsRequest withIpList(List<String> ipList) {
         this.ipList = ipList;
         return this;
     }
 
     
+    public ListIpGroupsRequest addIpListItem(String ipListItem) {
+        if (this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
+        this.ipList.add(ipListItem);
+        return this;
+    }
 
+    public ListIpGroupsRequest withIpList(Consumer<List<String>> ipListSetter) {
+        if(this.ipList == null ){
+            this.ipList = new ArrayList<>();
+        }
+        ipListSetter.accept(this.ipList);
+        return this;
+    }
 
     /**
      * Get ipList
      * @return ipList
      */
-    public String getIpList() {
+    public List<String> getIpList() {
         return ipList;
     }
 
-    public void setIpList(String ipList) {
+    public void setIpList(List<String> ipList) {
         this.ipList = ipList;
     }
     @Override

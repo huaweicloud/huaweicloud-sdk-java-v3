@@ -60,8 +60,6 @@ public class SourceInfo  {
 
     /**
      * 片源时长
-     * minimum: 0
-     * maximum: 2147483647
      * @return duration
      */
     public Integer getDuration() {

@@ -34,6 +34,12 @@ public class FlavorInfo  {
     
     private Integer qps;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bandwidth")
+    
+    private Integer bandwidth;
+
     public FlavorInfo withConnection(Integer connection) {
         this.connection = connection;
         return this;
@@ -93,6 +99,26 @@ public class FlavorInfo  {
     public void setQps(Integer qps) {
         this.qps = qps;
     }
+
+    public FlavorInfo withBandwidth(Integer bandwidth) {
+        this.bandwidth = bandwidth;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 带宽
+     * @return bandwidth
+     */
+    public Integer getBandwidth() {
+        return bandwidth;
+    }
+
+    public void setBandwidth(Integer bandwidth) {
+        this.bandwidth = bandwidth;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,11 +130,12 @@ public class FlavorInfo  {
         FlavorInfo flavorInfo = (FlavorInfo) o;
         return Objects.equals(this.connection, flavorInfo.connection) &&
             Objects.equals(this.cps, flavorInfo.cps) &&
-            Objects.equals(this.qps, flavorInfo.qps);
+            Objects.equals(this.qps, flavorInfo.qps) &&
+            Objects.equals(this.bandwidth, flavorInfo.bandwidth);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(connection, cps, qps);
+        return Objects.hash(connection, cps, qps, bandwidth);
     }
     @Override
     public String toString() {
@@ -117,6 +144,7 @@ public class FlavorInfo  {
         sb.append("    connection: ").append(toIndentedString(connection)).append("\n");
         sb.append("    cps: ").append(toIndentedString(cps)).append("\n");
         sb.append("    qps: ").append(toIndentedString(qps)).append("\n");
+        sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

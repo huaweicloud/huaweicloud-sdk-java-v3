@@ -316,8 +316,6 @@ public class RemuxTask  {
 
     /**
      * 任务完成进度百分比值。 
-     * minimum: 0
-     * maximum: 100
      * @return completeRatio
      */
     public Integer getCompleteRatio() {

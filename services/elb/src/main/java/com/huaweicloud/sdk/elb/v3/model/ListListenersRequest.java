@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,32 +40,32 @@ public class ListListenersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol_port")
     
-    private Integer protocolPort;
-
+    private List<String> protocolPort = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
-    private String protocol;
-
+    private List<String> protocol = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    private String description;
-
+    private List<String> description = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_tls_container_ref")
     
-    private String defaultTlsContainerRef;
-
+    private List<String> defaultTlsContainerRef = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_ca_tls_container_ref")
     
-    private String clientCaTlsContainerRef;
-
+    private List<String> clientCaTlsContainerRef = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
@@ -74,26 +76,26 @@ public class ListListenersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connection_limit")
     
-    private Integer connectionLimit;
-
+    private List<Integer> connectionLimit = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_pool_id")
     
-    private String defaultPoolId;
-
+    private List<String> defaultPoolId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    private String name;
-
+    private List<String> name = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http2_enable")
@@ -104,38 +106,38 @@ public class ListListenersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancer_id")
     
-    private String loadbalancerId;
-
+    private List<String> loadbalancerId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tls_ciphers_policy")
     
-    private String tlsCiphersPolicy;
-
+    private List<String> tlsCiphersPolicy = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private String tags;
-
+    private List<String> tags = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_address")
     
-    private String memberAddress;
-
+    private List<String> memberAddress = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_device_id")
     
-    private String memberDeviceId;
-
+    private List<String> memberDeviceId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId;
-
+    private List<String> enterpriseProjectId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_member_retry")
@@ -146,20 +148,20 @@ public class ListListenersRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_timeout")
     
-    private Integer memberTimeout;
-
+    private List<Integer> memberTimeout = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_timeout")
     
-    private Integer clientTimeout;
-
+    private List<Integer> clientTimeout = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keepalive_timeout")
     
-    private Integer keepaliveTimeout;
-
+    private List<Integer> keepaliveTimeout = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transparent_client_ip_enable")
@@ -228,103 +230,173 @@ public class ListListenersRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListListenersRequest withProtocolPort(Integer protocolPort) {
+    public ListListenersRequest withProtocolPort(List<String> protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
 
     
+    public ListListenersRequest addProtocolPortItem(String protocolPortItem) {
+        if (this.protocolPort == null) {
+            this.protocolPort = new ArrayList<>();
+        }
+        this.protocolPort.add(protocolPortItem);
+        return this;
+    }
 
+    public ListListenersRequest withProtocolPort(Consumer<List<String>> protocolPortSetter) {
+        if(this.protocolPort == null ){
+            this.protocolPort = new ArrayList<>();
+        }
+        protocolPortSetter.accept(this.protocolPort);
+        return this;
+    }
 
     /**
      * Get protocolPort
      * @return protocolPort
      */
-    public Integer getProtocolPort() {
+    public List<String> getProtocolPort() {
         return protocolPort;
     }
 
-    public void setProtocolPort(Integer protocolPort) {
+    public void setProtocolPort(List<String> protocolPort) {
         this.protocolPort = protocolPort;
     }
 
-    public ListListenersRequest withProtocol(String protocol) {
+    public ListListenersRequest withProtocol(List<String> protocol) {
         this.protocol = protocol;
         return this;
     }
 
     
+    public ListListenersRequest addProtocolItem(String protocolItem) {
+        if (this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
+        this.protocol.add(protocolItem);
+        return this;
+    }
 
+    public ListListenersRequest withProtocol(Consumer<List<String>> protocolSetter) {
+        if(this.protocol == null ){
+            this.protocol = new ArrayList<>();
+        }
+        protocolSetter.accept(this.protocol);
+        return this;
+    }
 
     /**
      * Get protocol
      * @return protocol
      */
-    public String getProtocol() {
+    public List<String> getProtocol() {
         return protocol;
     }
 
-    public void setProtocol(String protocol) {
+    public void setProtocol(List<String> protocol) {
         this.protocol = protocol;
     }
 
-    public ListListenersRequest withDescription(String description) {
+    public ListListenersRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
     
+    public ListListenersRequest addDescriptionItem(String descriptionItem) {
+        if (this.description == null) {
+            this.description = new ArrayList<>();
+        }
+        this.description.add(descriptionItem);
+        return this;
+    }
 
+    public ListListenersRequest withDescription(Consumer<List<String>> descriptionSetter) {
+        if(this.description == null ){
+            this.description = new ArrayList<>();
+        }
+        descriptionSetter.accept(this.description);
+        return this;
+    }
 
     /**
      * Get description
      * @return description
      */
-    public String getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(List<String> description) {
         this.description = description;
     }
 
-    public ListListenersRequest withDefaultTlsContainerRef(String defaultTlsContainerRef) {
+    public ListListenersRequest withDefaultTlsContainerRef(List<String> defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
     }
 
     
+    public ListListenersRequest addDefaultTlsContainerRefItem(String defaultTlsContainerRefItem) {
+        if (this.defaultTlsContainerRef == null) {
+            this.defaultTlsContainerRef = new ArrayList<>();
+        }
+        this.defaultTlsContainerRef.add(defaultTlsContainerRefItem);
+        return this;
+    }
 
+    public ListListenersRequest withDefaultTlsContainerRef(Consumer<List<String>> defaultTlsContainerRefSetter) {
+        if(this.defaultTlsContainerRef == null ){
+            this.defaultTlsContainerRef = new ArrayList<>();
+        }
+        defaultTlsContainerRefSetter.accept(this.defaultTlsContainerRef);
+        return this;
+    }
 
     /**
      * Get defaultTlsContainerRef
      * @return defaultTlsContainerRef
      */
-    public String getDefaultTlsContainerRef() {
+    public List<String> getDefaultTlsContainerRef() {
         return defaultTlsContainerRef;
     }
 
-    public void setDefaultTlsContainerRef(String defaultTlsContainerRef) {
+    public void setDefaultTlsContainerRef(List<String> defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
 
-    public ListListenersRequest withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
+    public ListListenersRequest withClientCaTlsContainerRef(List<String> clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
         return this;
     }
 
     
+    public ListListenersRequest addClientCaTlsContainerRefItem(String clientCaTlsContainerRefItem) {
+        if (this.clientCaTlsContainerRef == null) {
+            this.clientCaTlsContainerRef = new ArrayList<>();
+        }
+        this.clientCaTlsContainerRef.add(clientCaTlsContainerRefItem);
+        return this;
+    }
 
+    public ListListenersRequest withClientCaTlsContainerRef(Consumer<List<String>> clientCaTlsContainerRefSetter) {
+        if(this.clientCaTlsContainerRef == null ){
+            this.clientCaTlsContainerRef = new ArrayList<>();
+        }
+        clientCaTlsContainerRefSetter.accept(this.clientCaTlsContainerRef);
+        return this;
+    }
 
     /**
      * Get clientCaTlsContainerRef
      * @return clientCaTlsContainerRef
      */
-    public String getClientCaTlsContainerRef() {
+    public List<String> getClientCaTlsContainerRef() {
         return clientCaTlsContainerRef;
     }
 
-    public void setClientCaTlsContainerRef(String clientCaTlsContainerRef) {
+    public void setClientCaTlsContainerRef(List<String> clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
 
@@ -348,85 +420,139 @@ public class ListListenersRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    public ListListenersRequest withConnectionLimit(Integer connectionLimit) {
+    public ListListenersRequest withConnectionLimit(List<Integer> connectionLimit) {
         this.connectionLimit = connectionLimit;
         return this;
     }
 
     
+    public ListListenersRequest addConnectionLimitItem(Integer connectionLimitItem) {
+        if (this.connectionLimit == null) {
+            this.connectionLimit = new ArrayList<>();
+        }
+        this.connectionLimit.add(connectionLimitItem);
+        return this;
+    }
 
+    public ListListenersRequest withConnectionLimit(Consumer<List<Integer>> connectionLimitSetter) {
+        if(this.connectionLimit == null ){
+            this.connectionLimit = new ArrayList<>();
+        }
+        connectionLimitSetter.accept(this.connectionLimit);
+        return this;
+    }
 
     /**
      * Get connectionLimit
-     * minimum: -1
-     * maximum: 2147483647
      * @return connectionLimit
      */
-    public Integer getConnectionLimit() {
+    public List<Integer> getConnectionLimit() {
         return connectionLimit;
     }
 
-    public void setConnectionLimit(Integer connectionLimit) {
+    public void setConnectionLimit(List<Integer> connectionLimit) {
         this.connectionLimit = connectionLimit;
     }
 
-    public ListListenersRequest withDefaultPoolId(String defaultPoolId) {
+    public ListListenersRequest withDefaultPoolId(List<String> defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
         return this;
     }
 
     
+    public ListListenersRequest addDefaultPoolIdItem(String defaultPoolIdItem) {
+        if (this.defaultPoolId == null) {
+            this.defaultPoolId = new ArrayList<>();
+        }
+        this.defaultPoolId.add(defaultPoolIdItem);
+        return this;
+    }
 
+    public ListListenersRequest withDefaultPoolId(Consumer<List<String>> defaultPoolIdSetter) {
+        if(this.defaultPoolId == null ){
+            this.defaultPoolId = new ArrayList<>();
+        }
+        defaultPoolIdSetter.accept(this.defaultPoolId);
+        return this;
+    }
 
     /**
      * Get defaultPoolId
      * @return defaultPoolId
      */
-    public String getDefaultPoolId() {
+    public List<String> getDefaultPoolId() {
         return defaultPoolId;
     }
 
-    public void setDefaultPoolId(String defaultPoolId) {
+    public void setDefaultPoolId(List<String> defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
     }
 
-    public ListListenersRequest withId(String id) {
+    public ListListenersRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListListenersRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListListenersRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 
-    public ListListenersRequest withName(String name) {
+    public ListListenersRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
     
+    public ListListenersRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
 
+    public ListListenersRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
 
     /**
      * Get name
      * @return name
      */
-    public String getName() {
+    public List<String> getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(List<String> name) {
         this.name = name;
     }
 
@@ -450,123 +576,207 @@ public class ListListenersRequest  {
         this.http2Enable = http2Enable;
     }
 
-    public ListListenersRequest withLoadbalancerId(String loadbalancerId) {
+    public ListListenersRequest withLoadbalancerId(List<String> loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
     }
 
     
+    public ListListenersRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
+        if (this.loadbalancerId == null) {
+            this.loadbalancerId = new ArrayList<>();
+        }
+        this.loadbalancerId.add(loadbalancerIdItem);
+        return this;
+    }
 
+    public ListListenersRequest withLoadbalancerId(Consumer<List<String>> loadbalancerIdSetter) {
+        if(this.loadbalancerId == null ){
+            this.loadbalancerId = new ArrayList<>();
+        }
+        loadbalancerIdSetter.accept(this.loadbalancerId);
+        return this;
+    }
 
     /**
      * Get loadbalancerId
      * @return loadbalancerId
      */
-    public String getLoadbalancerId() {
+    public List<String> getLoadbalancerId() {
         return loadbalancerId;
     }
 
-    public void setLoadbalancerId(String loadbalancerId) {
+    public void setLoadbalancerId(List<String> loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
     }
 
-    public ListListenersRequest withTlsCiphersPolicy(String tlsCiphersPolicy) {
+    public ListListenersRequest withTlsCiphersPolicy(List<String> tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
     }
 
     
+    public ListListenersRequest addTlsCiphersPolicyItem(String tlsCiphersPolicyItem) {
+        if (this.tlsCiphersPolicy == null) {
+            this.tlsCiphersPolicy = new ArrayList<>();
+        }
+        this.tlsCiphersPolicy.add(tlsCiphersPolicyItem);
+        return this;
+    }
 
+    public ListListenersRequest withTlsCiphersPolicy(Consumer<List<String>> tlsCiphersPolicySetter) {
+        if(this.tlsCiphersPolicy == null ){
+            this.tlsCiphersPolicy = new ArrayList<>();
+        }
+        tlsCiphersPolicySetter.accept(this.tlsCiphersPolicy);
+        return this;
+    }
 
     /**
      * Get tlsCiphersPolicy
      * @return tlsCiphersPolicy
      */
-    public String getTlsCiphersPolicy() {
+    public List<String> getTlsCiphersPolicy() {
         return tlsCiphersPolicy;
     }
 
-    public void setTlsCiphersPolicy(String tlsCiphersPolicy) {
+    public void setTlsCiphersPolicy(List<String> tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
 
-    public ListListenersRequest withTags(String tags) {
+    public ListListenersRequest withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
     
+    public ListListenersRequest addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
 
+    public ListListenersRequest withTags(Consumer<List<String>> tagsSetter) {
+        if(this.tags == null ){
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
 
     /**
      * Get tags
      * @return tags
      */
-    public String getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
-    public void setTags(String tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 
-    public ListListenersRequest withMemberAddress(String memberAddress) {
+    public ListListenersRequest withMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
         return this;
     }
 
     
+    public ListListenersRequest addMemberAddressItem(String memberAddressItem) {
+        if (this.memberAddress == null) {
+            this.memberAddress = new ArrayList<>();
+        }
+        this.memberAddress.add(memberAddressItem);
+        return this;
+    }
 
+    public ListListenersRequest withMemberAddress(Consumer<List<String>> memberAddressSetter) {
+        if(this.memberAddress == null ){
+            this.memberAddress = new ArrayList<>();
+        }
+        memberAddressSetter.accept(this.memberAddress);
+        return this;
+    }
 
     /**
      * Get memberAddress
      * @return memberAddress
      */
-    public String getMemberAddress() {
+    public List<String> getMemberAddress() {
         return memberAddress;
     }
 
-    public void setMemberAddress(String memberAddress) {
+    public void setMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
     }
 
-    public ListListenersRequest withMemberDeviceId(String memberDeviceId) {
+    public ListListenersRequest withMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
         return this;
     }
 
     
+    public ListListenersRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
+        if (this.memberDeviceId == null) {
+            this.memberDeviceId = new ArrayList<>();
+        }
+        this.memberDeviceId.add(memberDeviceIdItem);
+        return this;
+    }
 
+    public ListListenersRequest withMemberDeviceId(Consumer<List<String>> memberDeviceIdSetter) {
+        if(this.memberDeviceId == null ){
+            this.memberDeviceId = new ArrayList<>();
+        }
+        memberDeviceIdSetter.accept(this.memberDeviceId);
+        return this;
+    }
 
     /**
      * Get memberDeviceId
      * @return memberDeviceId
      */
-    public String getMemberDeviceId() {
+    public List<String> getMemberDeviceId() {
         return memberDeviceId;
     }
 
-    public void setMemberDeviceId(String memberDeviceId) {
+    public void setMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
     }
 
-    public ListListenersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ListListenersRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
+    public ListListenersRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
 
+    public ListListenersRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if(this.enterpriseProjectId == null ){
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
 
     /**
      * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
-    public String getEnterpriseProjectId() {
+    public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
@@ -590,67 +800,105 @@ public class ListListenersRequest  {
         this.enableMemberRetry = enableMemberRetry;
     }
 
-    public ListListenersRequest withMemberTimeout(Integer memberTimeout) {
+    public ListListenersRequest withMemberTimeout(List<Integer> memberTimeout) {
         this.memberTimeout = memberTimeout;
         return this;
     }
 
     
+    public ListListenersRequest addMemberTimeoutItem(Integer memberTimeoutItem) {
+        if (this.memberTimeout == null) {
+            this.memberTimeout = new ArrayList<>();
+        }
+        this.memberTimeout.add(memberTimeoutItem);
+        return this;
+    }
 
+    public ListListenersRequest withMemberTimeout(Consumer<List<Integer>> memberTimeoutSetter) {
+        if(this.memberTimeout == null ){
+            this.memberTimeout = new ArrayList<>();
+        }
+        memberTimeoutSetter.accept(this.memberTimeout);
+        return this;
+    }
 
     /**
      * Get memberTimeout
-     * minimum: 1
-     * maximum: 300
      * @return memberTimeout
      */
-    public Integer getMemberTimeout() {
+    public List<Integer> getMemberTimeout() {
         return memberTimeout;
     }
 
-    public void setMemberTimeout(Integer memberTimeout) {
+    public void setMemberTimeout(List<Integer> memberTimeout) {
         this.memberTimeout = memberTimeout;
     }
 
-    public ListListenersRequest withClientTimeout(Integer clientTimeout) {
+    public ListListenersRequest withClientTimeout(List<Integer> clientTimeout) {
         this.clientTimeout = clientTimeout;
         return this;
     }
 
     
+    public ListListenersRequest addClientTimeoutItem(Integer clientTimeoutItem) {
+        if (this.clientTimeout == null) {
+            this.clientTimeout = new ArrayList<>();
+        }
+        this.clientTimeout.add(clientTimeoutItem);
+        return this;
+    }
 
+    public ListListenersRequest withClientTimeout(Consumer<List<Integer>> clientTimeoutSetter) {
+        if(this.clientTimeout == null ){
+            this.clientTimeout = new ArrayList<>();
+        }
+        clientTimeoutSetter.accept(this.clientTimeout);
+        return this;
+    }
 
     /**
      * Get clientTimeout
-     * minimum: 1
-     * maximum: 60
      * @return clientTimeout
      */
-    public Integer getClientTimeout() {
+    public List<Integer> getClientTimeout() {
         return clientTimeout;
     }
 
-    public void setClientTimeout(Integer clientTimeout) {
+    public void setClientTimeout(List<Integer> clientTimeout) {
         this.clientTimeout = clientTimeout;
     }
 
-    public ListListenersRequest withKeepaliveTimeout(Integer keepaliveTimeout) {
+    public ListListenersRequest withKeepaliveTimeout(List<Integer> keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
         return this;
     }
 
     
+    public ListListenersRequest addKeepaliveTimeoutItem(Integer keepaliveTimeoutItem) {
+        if (this.keepaliveTimeout == null) {
+            this.keepaliveTimeout = new ArrayList<>();
+        }
+        this.keepaliveTimeout.add(keepaliveTimeoutItem);
+        return this;
+    }
 
+    public ListListenersRequest withKeepaliveTimeout(Consumer<List<Integer>> keepaliveTimeoutSetter) {
+        if(this.keepaliveTimeout == null ){
+            this.keepaliveTimeout = new ArrayList<>();
+        }
+        keepaliveTimeoutSetter.accept(this.keepaliveTimeout);
+        return this;
+    }
 
     /**
      * Get keepaliveTimeout
      * @return keepaliveTimeout
      */
-    public Integer getKeepaliveTimeout() {
+    public List<Integer> getKeepaliveTimeout() {
         return keepaliveTimeout;
     }
 
-    public void setKeepaliveTimeout(Integer keepaliveTimeout) {
+    public void setKeepaliveTimeout(List<Integer> keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
     }
 

@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,26 +40,26 @@ public class ListL7PoliciesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId;
-
+    private List<String> enterpriseProjectId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
-    private String name;
-
+    private List<String> name = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
-    private String description;
-
+    private List<String> description = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
@@ -68,44 +70,44 @@ public class ListL7PoliciesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listener_id")
     
-    private String listenerId;
-
+    private List<String> listenerId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="position")
     
-    private Integer position;
-
+    private List<Integer> position = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
-    private String action;
-
+    private List<String> action = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="redirect_url")
     
-    private String redirectUrl;
-
+    private List<String> redirectUrl = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="redirect_pool_id")
     
-    private String redirectPoolId;
-
+    private List<String> redirectPoolId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="redirect_listener_id")
     
-    private String redirectListenerId;
-
+    private List<String> redirectListenerId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provisioning_status")
     
-    private String provisioningStatus;
-
+    private List<String> provisioningStatus = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="display_all_rules")
@@ -174,83 +176,139 @@ public class ListL7PoliciesRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListL7PoliciesRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ListL7PoliciesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if(this.enterpriseProjectId == null ){
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
 
     /**
      * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
-    public String getEnterpriseProjectId() {
+    public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListL7PoliciesRequest withId(String id) {
+    public ListL7PoliciesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 
-    public ListL7PoliciesRequest withName(String name) {
+    public ListL7PoliciesRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
 
     /**
      * Get name
      * @return name
      */
-    public String getName() {
+    public List<String> getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(List<String> name) {
         this.name = name;
     }
 
-    public ListL7PoliciesRequest withDescription(String description) {
+    public ListL7PoliciesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addDescriptionItem(String descriptionItem) {
+        if (this.description == null) {
+            this.description = new ArrayList<>();
+        }
+        this.description.add(descriptionItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withDescription(Consumer<List<String>> descriptionSetter) {
+        if(this.description == null ){
+            this.description = new ArrayList<>();
+        }
+        descriptionSetter.accept(this.description);
+        return this;
+    }
 
     /**
      * Get description
      * @return description
      */
-    public String getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(List<String> description) {
         this.description = description;
     }
 
@@ -274,145 +332,241 @@ public class ListL7PoliciesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    public ListL7PoliciesRequest withListenerId(String listenerId) {
+    public ListL7PoliciesRequest withListenerId(List<String> listenerId) {
         this.listenerId = listenerId;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addListenerIdItem(String listenerIdItem) {
+        if (this.listenerId == null) {
+            this.listenerId = new ArrayList<>();
+        }
+        this.listenerId.add(listenerIdItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withListenerId(Consumer<List<String>> listenerIdSetter) {
+        if(this.listenerId == null ){
+            this.listenerId = new ArrayList<>();
+        }
+        listenerIdSetter.accept(this.listenerId);
+        return this;
+    }
 
     /**
      * Get listenerId
      * @return listenerId
      */
-    public String getListenerId() {
+    public List<String> getListenerId() {
         return listenerId;
     }
 
-    public void setListenerId(String listenerId) {
+    public void setListenerId(List<String> listenerId) {
         this.listenerId = listenerId;
     }
 
-    public ListL7PoliciesRequest withPosition(Integer position) {
+    public ListL7PoliciesRequest withPosition(List<Integer> position) {
         this.position = position;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addPositionItem(Integer positionItem) {
+        if (this.position == null) {
+            this.position = new ArrayList<>();
+        }
+        this.position.add(positionItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withPosition(Consumer<List<Integer>> positionSetter) {
+        if(this.position == null ){
+            this.position = new ArrayList<>();
+        }
+        positionSetter.accept(this.position);
+        return this;
+    }
 
     /**
      * Get position
-     * minimum: 1
-     * maximum: 100
      * @return position
      */
-    public Integer getPosition() {
+    public List<Integer> getPosition() {
         return position;
     }
 
-    public void setPosition(Integer position) {
+    public void setPosition(List<Integer> position) {
         this.position = position;
     }
 
-    public ListL7PoliciesRequest withAction(String action) {
+    public ListL7PoliciesRequest withAction(List<String> action) {
         this.action = action;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addActionItem(String actionItem) {
+        if (this.action == null) {
+            this.action = new ArrayList<>();
+        }
+        this.action.add(actionItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withAction(Consumer<List<String>> actionSetter) {
+        if(this.action == null ){
+            this.action = new ArrayList<>();
+        }
+        actionSetter.accept(this.action);
+        return this;
+    }
 
     /**
      * Get action
      * @return action
      */
-    public String getAction() {
+    public List<String> getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    public void setAction(List<String> action) {
         this.action = action;
     }
 
-    public ListL7PoliciesRequest withRedirectUrl(String redirectUrl) {
+    public ListL7PoliciesRequest withRedirectUrl(List<String> redirectUrl) {
         this.redirectUrl = redirectUrl;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addRedirectUrlItem(String redirectUrlItem) {
+        if (this.redirectUrl == null) {
+            this.redirectUrl = new ArrayList<>();
+        }
+        this.redirectUrl.add(redirectUrlItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withRedirectUrl(Consumer<List<String>> redirectUrlSetter) {
+        if(this.redirectUrl == null ){
+            this.redirectUrl = new ArrayList<>();
+        }
+        redirectUrlSetter.accept(this.redirectUrl);
+        return this;
+    }
 
     /**
      * Get redirectUrl
      * @return redirectUrl
      */
-    public String getRedirectUrl() {
+    public List<String> getRedirectUrl() {
         return redirectUrl;
     }
 
-    public void setRedirectUrl(String redirectUrl) {
+    public void setRedirectUrl(List<String> redirectUrl) {
         this.redirectUrl = redirectUrl;
     }
 
-    public ListL7PoliciesRequest withRedirectPoolId(String redirectPoolId) {
+    public ListL7PoliciesRequest withRedirectPoolId(List<String> redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addRedirectPoolIdItem(String redirectPoolIdItem) {
+        if (this.redirectPoolId == null) {
+            this.redirectPoolId = new ArrayList<>();
+        }
+        this.redirectPoolId.add(redirectPoolIdItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withRedirectPoolId(Consumer<List<String>> redirectPoolIdSetter) {
+        if(this.redirectPoolId == null ){
+            this.redirectPoolId = new ArrayList<>();
+        }
+        redirectPoolIdSetter.accept(this.redirectPoolId);
+        return this;
+    }
 
     /**
      * Get redirectPoolId
      * @return redirectPoolId
      */
-    public String getRedirectPoolId() {
+    public List<String> getRedirectPoolId() {
         return redirectPoolId;
     }
 
-    public void setRedirectPoolId(String redirectPoolId) {
+    public void setRedirectPoolId(List<String> redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
     }
 
-    public ListL7PoliciesRequest withRedirectListenerId(String redirectListenerId) {
+    public ListL7PoliciesRequest withRedirectListenerId(List<String> redirectListenerId) {
         this.redirectListenerId = redirectListenerId;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addRedirectListenerIdItem(String redirectListenerIdItem) {
+        if (this.redirectListenerId == null) {
+            this.redirectListenerId = new ArrayList<>();
+        }
+        this.redirectListenerId.add(redirectListenerIdItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withRedirectListenerId(Consumer<List<String>> redirectListenerIdSetter) {
+        if(this.redirectListenerId == null ){
+            this.redirectListenerId = new ArrayList<>();
+        }
+        redirectListenerIdSetter.accept(this.redirectListenerId);
+        return this;
+    }
 
     /**
      * Get redirectListenerId
      * @return redirectListenerId
      */
-    public String getRedirectListenerId() {
+    public List<String> getRedirectListenerId() {
         return redirectListenerId;
     }
 
-    public void setRedirectListenerId(String redirectListenerId) {
+    public void setRedirectListenerId(List<String> redirectListenerId) {
         this.redirectListenerId = redirectListenerId;
     }
 
-    public ListL7PoliciesRequest withProvisioningStatus(String provisioningStatus) {
+    public ListL7PoliciesRequest withProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
     
+    public ListL7PoliciesRequest addProvisioningStatusItem(String provisioningStatusItem) {
+        if (this.provisioningStatus == null) {
+            this.provisioningStatus = new ArrayList<>();
+        }
+        this.provisioningStatus.add(provisioningStatusItem);
+        return this;
+    }
 
+    public ListL7PoliciesRequest withProvisioningStatus(Consumer<List<String>> provisioningStatusSetter) {
+        if(this.provisioningStatus == null ){
+            this.provisioningStatus = new ArrayList<>();
+        }
+        provisioningStatusSetter.accept(this.provisioningStatus);
+        return this;
+    }
 
     /**
      * Get provisioningStatus
      * @return provisioningStatus
      */
-    public String getProvisioningStatus() {
+    public List<String> getProvisioningStatus() {
         return provisioningStatus;
     }
 
-    public void setProvisioningStatus(String provisioningStatus) {
+    public void setProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
 

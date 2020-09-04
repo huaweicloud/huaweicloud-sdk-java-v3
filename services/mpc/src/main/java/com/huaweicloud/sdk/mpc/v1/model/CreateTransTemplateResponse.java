@@ -34,8 +34,6 @@ public class CreateTransTemplateResponse extends SdkResponse {
 
     /**
      * 自定义转码模板编号。 
-     * minimum: 0
-     * maximum: 1000000
      * @return templateId
      */
     public Integer getTemplateId() {

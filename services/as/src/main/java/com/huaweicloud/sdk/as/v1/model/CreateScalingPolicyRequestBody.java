@@ -287,8 +287,6 @@ public class CreateScalingPolicyRequestBody  {
 
     /**
      * 冷却时间，取值范围0-86400，默认为900，单位是秒。
-     * minimum: 0
-     * maximum: 86400
      * @return coolDownTime
      */
     public Integer getCoolDownTime() {

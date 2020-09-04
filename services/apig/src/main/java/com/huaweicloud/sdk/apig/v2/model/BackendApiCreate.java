@@ -259,12 +259,87 @@ public class BackendApiCreate  {
     @JsonProperty(value="vpc_channel_info")
     
     private ApiBackendVpcReq vpcChannelInfo = null;
+    /**
+     * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
+     */
+    public static class VpcChannelStatusEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final VpcChannelStatusEnum NUMBER_1 = new VpcChannelStatusEnum(1);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final VpcChannelStatusEnum NUMBER_2 = new VpcChannelStatusEnum(2);
+        
+
+        public static final Map<Integer, VpcChannelStatusEnum> staticFields = new HashMap<Integer, VpcChannelStatusEnum>() {
+            { 
+                put(1, NUMBER_1);
+                put(2, NUMBER_2);
+            }
+        };
+
+        private Integer value;
+
+        VpcChannelStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VpcChannelStatusEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            VpcChannelStatusEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new VpcChannelStatusEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static VpcChannelStatusEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            VpcChannelStatusEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof VpcChannelStatusEnum) {
+                return this.value.equals(((VpcChannelStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_status")
     
-    private Integer vpcChannelStatus;
+    private VpcChannelStatusEnum vpcChannelStatus;
 
     public BackendApiCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
@@ -416,8 +491,6 @@ public class BackendApiCreate  {
 
     /**
      * API网关请求后端服务的超时时间。  单位：毫秒。请求参数值不在合法范围内时将使用默认值
-     * minimum: 1
-     * maximum: 60000
      * @return timeout
      */
     public Integer getTimeout() {
@@ -455,7 +528,7 @@ public class BackendApiCreate  {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 
-    public BackendApiCreate withVpcChannelStatus(Integer vpcChannelStatus) {
+    public BackendApiCreate withVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
     }
@@ -467,11 +540,11 @@ public class BackendApiCreate  {
      * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
      * @return vpcChannelStatus
      */
-    public Integer getVpcChannelStatus() {
+    public VpcChannelStatusEnum getVpcChannelStatus() {
         return vpcChannelStatus;
     }
 
-    public void setVpcChannelStatus(Integer vpcChannelStatus) {
+    public void setVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
     @Override

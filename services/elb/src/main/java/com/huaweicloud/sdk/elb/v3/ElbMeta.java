@@ -479,7 +479,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListCertificatesRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -487,7 +487,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListCertificatesRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -495,7 +495,7 @@ public class ElbMeta {
         builder.withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListCertificatesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             })
@@ -511,7 +511,7 @@ public class ElbMeta {
         builder.withRequestField("domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListCertificatesRequest::getDomain, (req, v) -> {
                 req.setDomain(v);
             })
@@ -519,7 +519,7 @@ public class ElbMeta {
         builder.withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListCertificatesRequest::getType, (req, v) -> {
                 req.setType(v);
             })
@@ -566,7 +566,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListFlavorsRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -574,7 +574,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListFlavorsRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -582,7 +582,7 @@ public class ElbMeta {
         builder.withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListFlavorsRequest::getType, (req, v) -> {
                 req.setType(v);
             })
@@ -637,7 +637,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -645,7 +645,7 @@ public class ElbMeta {
         builder.withRequestField("monitor_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getMonitorPort, (req, v) -> {
                 req.setMonitorPort(v);
             })
@@ -653,7 +653,7 @@ public class ElbMeta {
         builder.withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getDomainName, (req, v) -> {
                 req.setDomainName(v);
             })
@@ -661,7 +661,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -669,7 +669,7 @@ public class ElbMeta {
         builder.withRequestField("delay",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getDelay, (req, v) -> {
                 req.setDelay(v);
             })
@@ -677,7 +677,7 @@ public class ElbMeta {
         builder.withRequestField("max_retries",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getMaxRetries, (req, v) -> {
                 req.setMaxRetries(v);
             })
@@ -688,6 +688,14 @@ public class ElbMeta {
             Boolean.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
+            })
+        );
+        builder.withRequestField("max_retries_down",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListHealthMonitorsRequest::getMaxRetriesDown, (req, v) -> {
+                req.setMaxRetriesDown(v);
             })
         );
         builder.withRequestField("timeout",
@@ -701,7 +709,7 @@ public class ElbMeta {
         builder.withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getType, (req, v) -> {
                 req.setType(v);
             })
@@ -709,7 +717,7 @@ public class ElbMeta {
         builder.withRequestField("expected_codes",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getExpectedCodes, (req, v) -> {
                 req.setExpectedCodes(v);
             })
@@ -717,7 +725,7 @@ public class ElbMeta {
         builder.withRequestField("url_path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getUrlPath, (req, v) -> {
                 req.setUrlPath(v);
             })
@@ -725,7 +733,7 @@ public class ElbMeta {
         builder.withRequestField("http_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getHttpMethod, (req, v) -> {
                 req.setHttpMethod(v);
             })
@@ -733,7 +741,7 @@ public class ElbMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListHealthMonitorsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
@@ -780,7 +788,7 @@ public class ElbMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
@@ -788,7 +796,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -796,7 +804,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -804,7 +812,7 @@ public class ElbMeta {
         builder.withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             })
@@ -820,7 +828,7 @@ public class ElbMeta {
         builder.withRequestField("listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getListenerId, (req, v) -> {
                 req.setListenerId(v);
             })
@@ -828,7 +836,7 @@ public class ElbMeta {
         builder.withRequestField("position",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getPosition, (req, v) -> {
                 req.setPosition(v);
             })
@@ -836,7 +844,7 @@ public class ElbMeta {
         builder.withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getAction, (req, v) -> {
                 req.setAction(v);
             })
@@ -844,7 +852,7 @@ public class ElbMeta {
         builder.withRequestField("redirect_url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getRedirectUrl, (req, v) -> {
                 req.setRedirectUrl(v);
             })
@@ -852,7 +860,7 @@ public class ElbMeta {
         builder.withRequestField("redirect_pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getRedirectPoolId, (req, v) -> {
                 req.setRedirectPoolId(v);
             })
@@ -860,7 +868,7 @@ public class ElbMeta {
         builder.withRequestField("redirect_listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getRedirectListenerId, (req, v) -> {
                 req.setRedirectListenerId(v);
             })
@@ -868,7 +876,7 @@ public class ElbMeta {
         builder.withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7PoliciesRequest::getProvisioningStatus, (req, v) -> {
                 req.setProvisioningStatus(v);
             })
@@ -931,7 +939,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7RulesRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -939,7 +947,7 @@ public class ElbMeta {
         builder.withRequestField("compare_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7RulesRequest::getCompareType, (req, v) -> {
                 req.setCompareType(v);
             })
@@ -947,7 +955,7 @@ public class ElbMeta {
         builder.withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7RulesRequest::getProvisioningStatus, (req, v) -> {
                 req.setProvisioningStatus(v);
             })
@@ -971,7 +979,7 @@ public class ElbMeta {
         builder.withRequestField("value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7RulesRequest::getValue, (req, v) -> {
                 req.setValue(v);
             })
@@ -979,7 +987,7 @@ public class ElbMeta {
         builder.withRequestField("key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7RulesRequest::getKey, (req, v) -> {
                 req.setKey(v);
             })
@@ -987,7 +995,7 @@ public class ElbMeta {
         builder.withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7RulesRequest::getType, (req, v) -> {
                 req.setType(v);
             })
@@ -995,7 +1003,7 @@ public class ElbMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListL7RulesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
@@ -1042,7 +1050,7 @@ public class ElbMeta {
         builder.withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getProtocolPort, (req, v) -> {
                 req.setProtocolPort(v);
             })
@@ -1050,7 +1058,7 @@ public class ElbMeta {
         builder.withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getProtocol, (req, v) -> {
                 req.setProtocol(v);
             })
@@ -1058,7 +1066,7 @@ public class ElbMeta {
         builder.withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             })
@@ -1066,7 +1074,7 @@ public class ElbMeta {
         builder.withRequestField("default_tls_container_ref",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getDefaultTlsContainerRef, (req, v) -> {
                 req.setDefaultTlsContainerRef(v);
             })
@@ -1074,7 +1082,7 @@ public class ElbMeta {
         builder.withRequestField("client_ca_tls_container_ref",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getClientCaTlsContainerRef, (req, v) -> {
                 req.setClientCaTlsContainerRef(v);
             })
@@ -1090,7 +1098,7 @@ public class ElbMeta {
         builder.withRequestField("connection_limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getConnectionLimit, (req, v) -> {
                 req.setConnectionLimit(v);
             })
@@ -1098,7 +1106,7 @@ public class ElbMeta {
         builder.withRequestField("default_pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getDefaultPoolId, (req, v) -> {
                 req.setDefaultPoolId(v);
             })
@@ -1106,7 +1114,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -1114,7 +1122,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -1130,7 +1138,7 @@ public class ElbMeta {
         builder.withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
             })
@@ -1138,7 +1146,7 @@ public class ElbMeta {
         builder.withRequestField("tls_ciphers_policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getTlsCiphersPolicy, (req, v) -> {
                 req.setTlsCiphersPolicy(v);
             })
@@ -1146,7 +1154,7 @@ public class ElbMeta {
         builder.withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getTags, (req, v) -> {
                 req.setTags(v);
             })
@@ -1154,7 +1162,7 @@ public class ElbMeta {
         builder.withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getMemberAddress, (req, v) -> {
                 req.setMemberAddress(v);
             })
@@ -1162,7 +1170,7 @@ public class ElbMeta {
         builder.withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getMemberDeviceId, (req, v) -> {
                 req.setMemberDeviceId(v);
             })
@@ -1170,7 +1178,7 @@ public class ElbMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
@@ -1186,7 +1194,7 @@ public class ElbMeta {
         builder.withRequestField("member_timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getMemberTimeout, (req, v) -> {
                 req.setMemberTimeout(v);
             })
@@ -1194,7 +1202,7 @@ public class ElbMeta {
         builder.withRequestField("client_timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getClientTimeout, (req, v) -> {
                 req.setClientTimeout(v);
             })
@@ -1202,7 +1210,7 @@ public class ElbMeta {
         builder.withRequestField("keepalive_timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListListenersRequest::getKeepaliveTimeout, (req, v) -> {
                 req.setKeepaliveTimeout(v);
             })
@@ -1257,7 +1265,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -1265,7 +1273,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -1273,7 +1281,7 @@ public class ElbMeta {
         builder.withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             })
@@ -1289,7 +1297,7 @@ public class ElbMeta {
         builder.withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getProvisioningStatus, (req, v) -> {
                 req.setProvisioningStatus(v);
             })
@@ -1297,7 +1305,7 @@ public class ElbMeta {
         builder.withRequestField("operating_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getOperatingStatus, (req, v) -> {
                 req.setOperatingStatus(v);
             })
@@ -1305,7 +1313,7 @@ public class ElbMeta {
         builder.withRequestField("guaranteed",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            Boolean.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getGuaranteed, (req, v) -> {
                 req.setGuaranteed(v);
             })
@@ -1313,7 +1321,7 @@ public class ElbMeta {
         builder.withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
             })
@@ -1321,7 +1329,7 @@ public class ElbMeta {
         builder.withRequestField("vip_port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getVipPortId, (req, v) -> {
                 req.setVipPortId(v);
             })
@@ -1329,7 +1337,7 @@ public class ElbMeta {
         builder.withRequestField("vip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getVipAddress, (req, v) -> {
                 req.setVipAddress(v);
             })
@@ -1337,7 +1345,7 @@ public class ElbMeta {
         builder.withRequestField("vip_subnet_cidr_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getVipSubnetCidrId, (req, v) -> {
                 req.setVipSubnetCidrId(v);
             })
@@ -1345,7 +1353,7 @@ public class ElbMeta {
         builder.withRequestField("l4_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getL4FlavorId, (req, v) -> {
                 req.setL4FlavorId(v);
             })
@@ -1353,7 +1361,7 @@ public class ElbMeta {
         builder.withRequestField("l4_scale_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getL4ScaleFlavorId, (req, v) -> {
                 req.setL4ScaleFlavorId(v);
             })
@@ -1361,7 +1369,7 @@ public class ElbMeta {
         builder.withRequestField("ipv6_vip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpv6VipAddress, (req, v) -> {
                 req.setIpv6VipAddress(v);
             })
@@ -1369,7 +1377,7 @@ public class ElbMeta {
         builder.withRequestField("ipv6_vip_virsubnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpv6VipVirsubnetId, (req, v) -> {
                 req.setIpv6VipVirsubnetId(v);
             })
@@ -1377,23 +1385,15 @@ public class ElbMeta {
         builder.withRequestField("ipv6_vip_port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpv6VipPortId, (req, v) -> {
                 req.setIpv6VipPortId(v);
-            })
-        );
-        builder.withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListLoadBalancersRequest::getTags, (req, v) -> {
-                req.setTags(v);
             })
         );
         builder.withRequestField("availability_zone_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getAvailabilityZoneList, (req, v) -> {
                 req.setAvailabilityZoneList(v);
             })
@@ -1401,7 +1401,7 @@ public class ElbMeta {
         builder.withRequestField("eips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getEips, (req, v) -> {
                 req.setEips(v);
             })
@@ -1409,7 +1409,7 @@ public class ElbMeta {
         builder.withRequestField("l7_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getL7FlavorId, (req, v) -> {
                 req.setL7FlavorId(v);
             })
@@ -1417,7 +1417,7 @@ public class ElbMeta {
         builder.withRequestField("l7_scale_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getL7ScaleFlavorId, (req, v) -> {
                 req.setL7ScaleFlavorId(v);
             })
@@ -1425,7 +1425,7 @@ public class ElbMeta {
         builder.withRequestField("billing_info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getBillingInfo, (req, v) -> {
                 req.setBillingInfo(v);
             })
@@ -1433,7 +1433,7 @@ public class ElbMeta {
         builder.withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getMemberDeviceId, (req, v) -> {
                 req.setMemberDeviceId(v);
             })
@@ -1441,7 +1441,7 @@ public class ElbMeta {
         builder.withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getMemberAddress, (req, v) -> {
                 req.setMemberAddress(v);
             })
@@ -1449,15 +1449,23 @@ public class ElbMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            })
+        );
+        builder.withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListLoadBalancersRequest::getTags, (req, v) -> {
+                req.setTags(v);
             })
         );
         builder.withRequestField("tags-any",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getTagsAny, (req, v) -> {
                 req.setTagsAny(v);
             })
@@ -1465,7 +1473,7 @@ public class ElbMeta {
         builder.withRequestField("not-tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getNotTags, (req, v) -> {
                 req.setNotTags(v);
             })
@@ -1473,7 +1481,7 @@ public class ElbMeta {
         builder.withRequestField("not-tags-any",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getNotTagsAny, (req, v) -> {
                 req.setNotTagsAny(v);
             })
@@ -1481,7 +1489,7 @@ public class ElbMeta {
         builder.withRequestField("publicips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getPublicips, (req, v) -> {
                 req.setPublicips(v);
             })
@@ -1489,7 +1497,7 @@ public class ElbMeta {
         builder.withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpVersion, (req, v) -> {
                 req.setIpVersion(v);
             })
@@ -1552,7 +1560,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -1560,7 +1568,7 @@ public class ElbMeta {
         builder.withRequestField("weight",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getWeight, (req, v) -> {
                 req.setWeight(v);
             })
@@ -1576,7 +1584,7 @@ public class ElbMeta {
         builder.withRequestField("subnet_cidr_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getSubnetCidrId, (req, v) -> {
                 req.setSubnetCidrId(v);
             })
@@ -1584,7 +1592,7 @@ public class ElbMeta {
         builder.withRequestField("address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getAddress, (req, v) -> {
                 req.setAddress(v);
             })
@@ -1592,7 +1600,7 @@ public class ElbMeta {
         builder.withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getProtocolPort, (req, v) -> {
                 req.setProtocolPort(v);
             })
@@ -1600,7 +1608,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -1608,7 +1616,7 @@ public class ElbMeta {
         builder.withRequestField("operating_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getOperatingStatus, (req, v) -> {
                 req.setOperatingStatus(v);
             })
@@ -1616,7 +1624,7 @@ public class ElbMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListMembersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
@@ -1663,7 +1671,7 @@ public class ElbMeta {
         builder.withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             })
@@ -1679,7 +1687,7 @@ public class ElbMeta {
         builder.withRequestField("healthmonitor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getHealthmonitorId, (req, v) -> {
                 req.setHealthmonitorId(v);
             })
@@ -1687,7 +1695,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -1695,7 +1703,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -1703,7 +1711,7 @@ public class ElbMeta {
         builder.withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
             })
@@ -1711,7 +1719,7 @@ public class ElbMeta {
         builder.withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getProtocol, (req, v) -> {
                 req.setProtocol(v);
             })
@@ -1719,7 +1727,7 @@ public class ElbMeta {
         builder.withRequestField("lb_algorithm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getLbAlgorithm, (req, v) -> {
                 req.setLbAlgorithm(v);
             })
@@ -1727,7 +1735,7 @@ public class ElbMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
@@ -1735,7 +1743,7 @@ public class ElbMeta {
         builder.withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getIpVersion, (req, v) -> {
                 req.setIpVersion(v);
             })
@@ -1743,7 +1751,7 @@ public class ElbMeta {
         builder.withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getMemberAddress, (req, v) -> {
                 req.setMemberAddress(v);
             })
@@ -1751,7 +1759,7 @@ public class ElbMeta {
         builder.withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPoolsRequest::getMemberDeviceId, (req, v) -> {
                 req.setMemberDeviceId(v);
             })
@@ -2346,7 +2354,7 @@ public class ElbMeta {
         builder.withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            Integer.class,
             f -> f.withMarshaller(CountPreoccupyIpNumRequest::getIpVersion, (req, v) -> {
                 req.setIpVersion(v);
             })
@@ -2359,12 +2367,12 @@ public class ElbMeta {
                 req.setLoadbalancerId(v);
             })
         );
-        builder.withRequestField("availability_zone_number",
+        builder.withRequestField("availability_zone_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(CountPreoccupyIpNumRequest::getAvailabilityZoneNumber, (req, v) -> {
-                req.setAvailabilityZoneNumber(v);
+            List.class,
+            f -> f.withMarshaller(CountPreoccupyIpNumRequest::getAvailabilityZoneId, (req, v) -> {
+                req.setAvailabilityZoneId(v);
             })
         );
 
@@ -2456,7 +2464,7 @@ public class ElbMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListIpGroupsRequest::getId, (req, v) -> {
                 req.setId(v);
             })
@@ -2464,7 +2472,7 @@ public class ElbMeta {
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListIpGroupsRequest::getName, (req, v) -> {
                 req.setName(v);
             })
@@ -2472,7 +2480,7 @@ public class ElbMeta {
         builder.withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListIpGroupsRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
             })
@@ -2480,7 +2488,7 @@ public class ElbMeta {
         builder.withRequestField("ip_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListIpGroupsRequest::getIpList, (req, v) -> {
                 req.setIpList(v);
             })

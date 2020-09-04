@@ -245,8 +245,6 @@ public class ApiFunc  {
 
     /**
      * API网关请求函数服务的超时时间。  单位：毫秒。请求参数值不在合法范围内时将使用缺省值
-     * minimum: 1
-     * maximum: 60000
      * @return timeout
      */
     public Integer getTimeout() {

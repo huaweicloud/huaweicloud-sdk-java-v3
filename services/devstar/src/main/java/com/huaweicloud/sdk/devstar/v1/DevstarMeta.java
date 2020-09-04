@@ -12,12 +12,43 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class DevstarMeta {
 
-    public static final HttpRequestDef<RunTemplateJobV2Request, RunTemplateJobV2Response> runTemplateJobV2 = genForrunTemplateJobV2();
+    public static final HttpRequestDef<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> downloadApplicationCode = genFordownloadApplicationCode();
 
-    private static HttpRequestDef<RunTemplateJobV2Request, RunTemplateJobV2Response> genForrunTemplateJobV2() {
+    private static HttpRequestDef<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> genFordownloadApplicationCode() {
         // basic
-        HttpRequestDef.Builder<RunTemplateJobV2Request, RunTemplateJobV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RunTemplateJobV2Request.class, RunTemplateJobV2Response.class)
+        HttpRequestDef.Builder<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadApplicationCodeRequest.class, DownloadApplicationCodeResponse.class)
+                .withUri("/v1/application-codes");
+
+        // requests
+        builder.withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DownloadApplicationCodeRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            DownloadApplicationCodeRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(DownloadApplicationCodeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> runDevstarTemplateJob = genForrunDevstarTemplateJob();
+
+    private static HttpRequestDef<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> genForrunDevstarTemplateJob() {
+        // basic
+        HttpRequestDef.Builder<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunDevstarTemplateJobRequest.class, RunDevstarTemplateJobResponse.class)
                 .withUri("/v1/jobs/template")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -25,8 +56,8 @@ public class DevstarMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(RunTemplateJobV2Request::getXLanguage, (req, v) -> {
+            RunDevstarTemplateJobRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(RunDevstarTemplateJobRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -34,7 +65,7 @@ public class DevstarMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TemplateJobInfo.class,
-            f -> f.withMarshaller(RunTemplateJobV2Request::getBody, (req, v) -> {
+            f -> f.withMarshaller(RunDevstarTemplateJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -64,7 +95,7 @@ public class DevstarMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            ShowJobDetailRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ShowJobDetailRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -142,7 +173,7 @@ public class DevstarMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            ShowTemplateDetailRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ShowTemplateDetailRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })

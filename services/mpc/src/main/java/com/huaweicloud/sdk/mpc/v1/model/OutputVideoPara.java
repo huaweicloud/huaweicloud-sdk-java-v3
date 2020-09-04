@@ -77,8 +77,6 @@ public class OutputVideoPara  {
 
     /**
      * 输出视频对应的模板ID 
-     * minimum: 0
-     * maximum: 2147483647
      * @return templateId
      */
     public Integer getTemplateId() {

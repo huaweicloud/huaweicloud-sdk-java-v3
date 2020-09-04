@@ -95,8 +95,6 @@ public class ListScalingPoliciesResponse extends SdkResponse {
 
     /**
      * 查询记录数。
-     * minimum: 0
-     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

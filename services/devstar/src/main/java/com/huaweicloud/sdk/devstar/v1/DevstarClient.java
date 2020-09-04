@@ -17,18 +17,29 @@ public class DevstarClient {
 
 
     /**
-     * 通过DevStar模板创建生成应用代码任务
-     * 通过DevStar的模板进行应用代码创建  新建任务时会返回任务ID，通过任务ID可以查看任务的状态以及最终代码生成的地址  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     * 下载模板产物
+     * 下载模板产物
      *
-     * @param RunTemplateJobV2Request 请求对象
-     * @return RunTemplateJobV2Response
+     * @param DownloadApplicationCodeRequest 请求对象
+     * @return DownloadApplicationCodeResponse
     */
-    public RunTemplateJobV2Response runTemplateJobV2(RunTemplateJobV2Request request) {
-        return hcClient.syncInvokeHttp(request, DevstarMeta.runTemplateJobV2);
+    public DownloadApplicationCodeResponse downloadApplicationCode(DownloadApplicationCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, DevstarMeta.downloadApplicationCode);
     }
 
     /**
-     * 查询任务状态
+     * Devstar 模板生成代码
+     * 通过DevStar的模板进行应用代码创建  通过 DevStar 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     *
+     * @param RunDevstarTemplateJobRequest 请求对象
+     * @return RunDevstarTemplateJobResponse
+    */
+    public RunDevstarTemplateJobResponse runDevstarTemplateJob(RunDevstarTemplateJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DevstarMeta.runDevstarTemplateJob);
+    }
+
+    /**
+     * 查询任务详情
      * 查询任务的详情  通过任务ID可以查看任务的状态 当任务结束时返回应用代码存放的位置  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址
      *
      * @param ShowJobDetailRequest 请求对象

@@ -203,18 +203,168 @@ public class ReqParamBase  {
     @JsonProperty(value="sample_value")
     
     private String sampleValue;
+    /**
+     * 是否必须 - 1：是 - 2：否  location为PATH时，required默认为1，其他场景required默认为2
+     */
+    public static class RequiredEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final RequiredEnum NUMBER_1 = new RequiredEnum(1);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final RequiredEnum NUMBER_2 = new RequiredEnum(2);
+        
+
+        public static final Map<Integer, RequiredEnum> staticFields = new HashMap<Integer, RequiredEnum>() {
+            { 
+                put(1, NUMBER_1);
+                put(2, NUMBER_2);
+            }
+        };
+
+        private Integer value;
+
+        RequiredEnum(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RequiredEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            RequiredEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new RequiredEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static RequiredEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            RequiredEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof RequiredEnum) {
+                return this.value.equals(((RequiredEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="required")
     
-    private Integer required;
+    private RequiredEnum required;
+    /**
+     * 是否开启校验 - 1：开启校验 - 2：不开启校验
+     */
+    public static class ValidEnableEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ValidEnableEnum NUMBER_1 = new ValidEnableEnum(1);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final ValidEnableEnum NUMBER_2 = new ValidEnableEnum(2);
+        
+
+        public static final Map<Integer, ValidEnableEnum> staticFields = new HashMap<Integer, ValidEnableEnum>() {
+            { 
+                put(1, NUMBER_1);
+                put(2, NUMBER_2);
+            }
+        };
+
+        private Integer value;
+
+        ValidEnableEnum(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ValidEnableEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ValidEnableEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new ValidEnableEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static ValidEnableEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ValidEnableEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ValidEnableEnum) {
+                return this.value.equals(((ValidEnableEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="valid_enable")
     
-    private Integer validEnable;
+    private ValidEnableEnum validEnable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -445,7 +595,7 @@ public class ReqParamBase  {
         this.sampleValue = sampleValue;
     }
 
-    public ReqParamBase withRequired(Integer required) {
+    public ReqParamBase withRequired(RequiredEnum required) {
         this.required = required;
         return this;
     }
@@ -457,15 +607,15 @@ public class ReqParamBase  {
      * 是否必须 - 1：是 - 2：否  location为PATH时，required默认为1，其他场景required默认为2
      * @return required
      */
-    public Integer getRequired() {
+    public RequiredEnum getRequired() {
         return required;
     }
 
-    public void setRequired(Integer required) {
+    public void setRequired(RequiredEnum required) {
         this.required = required;
     }
 
-    public ReqParamBase withValidEnable(Integer validEnable) {
+    public ReqParamBase withValidEnable(ValidEnableEnum validEnable) {
         this.validEnable = validEnable;
         return this;
     }
@@ -477,11 +627,11 @@ public class ReqParamBase  {
      * 是否开启校验 - 1：开启校验 - 2：不开启校验
      * @return validEnable
      */
-    public Integer getValidEnable() {
+    public ValidEnableEnum getValidEnable() {
         return validEnable;
     }
 
-    public void setValidEnable(Integer validEnable) {
+    public void setValidEnable(ValidEnableEnum validEnable) {
         this.validEnable = validEnable;
     }
 

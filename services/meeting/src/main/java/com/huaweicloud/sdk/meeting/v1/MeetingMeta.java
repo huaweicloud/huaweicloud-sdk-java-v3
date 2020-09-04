@@ -2626,7 +2626,7 @@ public class MeetingMeta {
         // requests
         builder.withRequestField("deptName",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(SearchDepartmentByNameRequest::getDeptName, (req, v) -> {
                 req.setDeptName(v);
@@ -5535,8 +5535,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateTokenRequest, UpdateTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTokenRequest.class, UpdateTokenResponse.class)
-                .withUri("/v1/usg/acs/token")
-                .withContentType("application/json");
+                .withUri("/v1/usg/acs/token");
 
         // requests
         builder.withRequestField("X-Request-ID",
@@ -5553,14 +5552,6 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(UpdateTokenRequest::getAcceptLanguage, (req, v) -> {
                 req.setAcceptLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            EmptyDTO.class,
-            f -> f.withMarshaller(UpdateTokenRequest::getBody, (req, v) -> {
-                req.setBody(v);
             })
         );
 

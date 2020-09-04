@@ -97,8 +97,6 @@ public class TemplateJobInfo  {
 
     /**
      * 应用代码生成后的地址类型，目前支持0：codehub地址
-     * minimum: 0
-     * maximum: 0
      * @return repoType
      */
     public Integer getRepoType() {

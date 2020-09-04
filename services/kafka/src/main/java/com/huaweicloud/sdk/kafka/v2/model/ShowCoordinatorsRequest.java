@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.meeting.v1.model;
+package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
@@ -11,19 +11,19 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * Request Object
  */
-public class EmptyDTO  {
+public class ShowCoordinatorsRequest  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
+    @JsonProperty(value="instance_id")
     
-    private String token;
+    private String instanceId;
 
-    public EmptyDTO withToken(String token) {
-        this.token = token;
+    public ShowCoordinatorsRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
@@ -31,15 +31,15 @@ public class EmptyDTO  {
 
 
     /**
-     * 登录用账号的token字符串
-     * @return token
+     * Get instanceId
+     * @return instanceId
      */
-    public String getToken() {
-        return token;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -49,18 +49,18 @@ public class EmptyDTO  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        EmptyDTO emptyDTO = (EmptyDTO) o;
-        return Objects.equals(this.token, emptyDTO.token);
+        ShowCoordinatorsRequest showCoordinatorsRequest = (ShowCoordinatorsRequest) o;
+        return Objects.equals(this.instanceId, showCoordinatorsRequest.instanceId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(token);
+        return Objects.hash(instanceId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class EmptyDTO {\n");
-        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("class ShowCoordinatorsRequest {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,8 +19,12 @@ public class DevstarAsyncClient {
     }
 
 
-    public CompletableFuture<RunTemplateJobV2Response> runTemplateJobV2Async(RunTemplateJobV2Request request) {
-        return hcClient.asyncInvokeHttp(request, DevstarMeta.runTemplateJobV2);
+    public CompletableFuture<DownloadApplicationCodeResponse> downloadApplicationCodeAsync(DownloadApplicationCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DevstarMeta.downloadApplicationCode);
+    }
+
+    public CompletableFuture<RunDevstarTemplateJobResponse> runDevstarTemplateJobAsync(RunDevstarTemplateJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DevstarMeta.runDevstarTemplateJob);
     }
 
     public CompletableFuture<ShowJobDetailResponse> showJobDetailAsync(ShowJobDetailRequest request) {

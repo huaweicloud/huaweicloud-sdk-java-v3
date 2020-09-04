@@ -49,12 +49,6 @@ public class CreateIpGroupOption  {
     
     private String enterpriseProjectId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateIpGroupOption withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -165,26 +159,6 @@ public class CreateIpGroupOption  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    public CreateIpGroupOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -198,12 +172,11 @@ public class CreateIpGroupOption  {
             Objects.equals(this.description, createIpGroupOption.description) &&
             Objects.equals(this.name, createIpGroupOption.name) &&
             Objects.equals(this.ipList, createIpGroupOption.ipList) &&
-            Objects.equals(this.enterpriseProjectId, createIpGroupOption.enterpriseProjectId) &&
-            Objects.equals(this.id, createIpGroupOption.id);
+            Objects.equals(this.enterpriseProjectId, createIpGroupOption.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, description, name, ipList, enterpriseProjectId, id);
+        return Objects.hash(projectId, description, name, ipList, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -214,7 +187,6 @@ public class CreateIpGroupOption  {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

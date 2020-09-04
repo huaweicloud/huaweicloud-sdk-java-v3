@@ -1,3 +1,31 @@
+# 3.0.10-beta 2020-09-04
+## HuaweiCloud SDK Core
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 支持多种认证方式，恢复接口类ICredential
+    - 修复yaml中没有定义format的整型枚举参数无法生成枚举代码的问题
+    - 修复请求中query参数传多个值会认证失败的问题
+ - ### 特性变更
+    - 调整Http请求头的User-Agent信息
+
+## HuaweiCloud SDK DevStar
+ - ### 新增特性
+    - 新增支持接口：下载模板产物
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK DMS
+ - ### 新增特性
+    - 支持分布式消息服务，提供Kafka专享版和RabbitMQ专享版
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无 
+
+
 # 3.0.9-beta 2020-08-28
 ## HuaweiCloud SDK CloudPipeline
  - ### 新增特性

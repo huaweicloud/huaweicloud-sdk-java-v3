@@ -83,8 +83,6 @@ public class ListEncryptTaskResponse extends SdkResponse {
 
     /**
      * 是否截断
-     * minimum: 0
-     * maximum: 2147483647
      * @return isTruncated
      */
     public Integer getIsTruncated() {
@@ -105,8 +103,6 @@ public class ListEncryptTaskResponse extends SdkResponse {
 
     /**
      * 查询结果数量
-     * minimum: 0
-     * maximum: 2147483647
      * @return total
      */
     public Integer getTotal() {

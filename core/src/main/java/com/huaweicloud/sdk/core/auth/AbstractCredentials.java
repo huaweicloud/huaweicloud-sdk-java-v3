@@ -2,24 +2,19 @@ package com.huaweicloud.sdk.core.auth;
 
 import java.lang.reflect.Field;
 import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
 
 import org.apache.commons.lang3.ArrayUtils;
 
 import com.huaweicloud.sdk.core.exception.SdkException;
-import com.huaweicloud.sdk.core.http.HttpClient;
-import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
-public abstract class AbstractCredentials {
+public abstract class AbstractCredentials implements ICredential {
 
     private String ak;
 
     private String sk;
 
     private String securityToken;
-
-    public abstract CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient);
 
     public String getAk() {
         return ak;

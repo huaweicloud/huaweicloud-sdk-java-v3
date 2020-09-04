@@ -52,12 +52,6 @@ public class CreateL7PolicyRuleOption  {
     
     private String value;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateL7PolicyRuleOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -177,26 +171,6 @@ public class CreateL7PolicyRuleOption  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    public CreateL7PolicyRuleOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -211,12 +185,11 @@ public class CreateL7PolicyRuleOption  {
             Objects.equals(this.compareType, createL7PolicyRuleOption.compareType) &&
             Objects.equals(this.invert, createL7PolicyRuleOption.invert) &&
             Objects.equals(this.key, createL7PolicyRuleOption.key) &&
-            Objects.equals(this.value, createL7PolicyRuleOption.value) &&
-            Objects.equals(this.id, createL7PolicyRuleOption.id);
+            Objects.equals(this.value, createL7PolicyRuleOption.value);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, type, compareType, invert, key, value, id);
+        return Objects.hash(adminStateUp, type, compareType, invert, key, value);
     }
     @Override
     public String toString() {
@@ -228,7 +201,6 @@ public class CreateL7PolicyRuleOption  {
         sb.append("    invert: ").append(toIndentedString(invert)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

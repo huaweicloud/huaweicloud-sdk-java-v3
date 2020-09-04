@@ -34,8 +34,6 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
 
     /**
      * 水印模板Id
-     * minimum: 0
-     * maximum: 2147483647
      * @return templateId
      */
     public Integer getTemplateId() {

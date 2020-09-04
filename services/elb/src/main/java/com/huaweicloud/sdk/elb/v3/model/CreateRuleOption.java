@@ -58,12 +58,6 @@ public class CreateRuleOption  {
     
     private Boolean invert = false;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateRuleOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -203,26 +197,6 @@ public class CreateRuleOption  {
     public void setInvert(Boolean invert) {
         this.invert = invert;
     }
-
-    public CreateRuleOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id 
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -238,12 +212,11 @@ public class CreateRuleOption  {
             Objects.equals(this.projectId, createRuleOption.projectId) &&
             Objects.equals(this.type, createRuleOption.type) &&
             Objects.equals(this.value, createRuleOption.value) &&
-            Objects.equals(this.invert, createRuleOption.invert) &&
-            Objects.equals(this.id, createRuleOption.id);
+            Objects.equals(this.invert, createRuleOption.invert);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, compareType, key, projectId, type, value, invert, id);
+        return Objects.hash(adminStateUp, compareType, key, projectId, type, value, invert);
     }
     @Override
     public String toString() {
@@ -256,7 +229,6 @@ public class CreateRuleOption  {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    invert: ").append(toIndentedString(invert)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

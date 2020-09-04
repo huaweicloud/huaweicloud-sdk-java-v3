@@ -77,8 +77,6 @@ public class ListProjectsV4Response extends SdkResponse {
 
     /**
      * 项目总数
-     * minimum: 0
-     * maximum: 10000
      * @return total
      */
     public Integer getTotal() {

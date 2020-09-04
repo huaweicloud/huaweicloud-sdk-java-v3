@@ -84,12 +84,6 @@ public class CreatePoolOption  {
     
     private Boolean memberDeletionProtectionEnable = false;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -323,26 +317,6 @@ public class CreatePoolOption  {
     public void setMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
     }
-
-    public CreatePoolOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -362,12 +336,11 @@ public class CreatePoolOption  {
             Objects.equals(this.protocol, createPoolOption.protocol) &&
             Objects.equals(this.sessionPersistence, createPoolOption.sessionPersistence) &&
             Objects.equals(this.slowStart, createPoolOption.slowStart) &&
-            Objects.equals(this.memberDeletionProtectionEnable, createPoolOption.memberDeletionProtectionEnable) &&
-            Objects.equals(this.id, createPoolOption.id);
+            Objects.equals(this.memberDeletionProtectionEnable, createPoolOption.memberDeletionProtectionEnable);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, description, lbAlgorithm, listenerId, loadbalancerId, name, projectId, protocol, sessionPersistence, slowStart, memberDeletionProtectionEnable, id);
+        return Objects.hash(adminStateUp, description, lbAlgorithm, listenerId, loadbalancerId, name, projectId, protocol, sessionPersistence, slowStart, memberDeletionProtectionEnable);
     }
     @Override
     public String toString() {
@@ -384,7 +357,6 @@ public class CreatePoolOption  {
         sb.append("    sessionPersistence: ").append(toIndentedString(sessionPersistence)).append("\n");
         sb.append("    slowStart: ").append(toIndentedString(slowStart)).append("\n");
         sb.append("    memberDeletionProtectionEnable: ").append(toIndentedString(memberDeletionProtectionEnable)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

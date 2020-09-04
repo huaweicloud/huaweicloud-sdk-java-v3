@@ -202,8 +202,6 @@ public class Bandwidth  {
 
     /**
      * 带宽（Mbit/s），取值范围为[1,300]。
-     * minimum: 1
-     * maximum: 300
      * @return size
      */
     public Integer getSize() {

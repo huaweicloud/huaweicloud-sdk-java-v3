@@ -1,9 +1,7 @@
-package com.huaweicloud.sdk.devstar.v1.model;
+package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
-
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,19 +11,19 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Response Object
+ * UpdateInstanceAutoCreateTopicReq
  */
-public class RunTemplateJobV2Response extends SdkResponse {
+public class UpdateInstanceAutoCreateTopicReq  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
+    @JsonProperty(value="enable_auto_topic")
     
-    private String jobId;
+    private Boolean enableAutoTopic;
 
-    public RunTemplateJobV2Response withJobId(String jobId) {
-        this.jobId = jobId;
+    public UpdateInstanceAutoCreateTopicReq withEnableAutoTopic(Boolean enableAutoTopic) {
+        this.enableAutoTopic = enableAutoTopic;
         return this;
     }
 
@@ -33,15 +31,15 @@ public class RunTemplateJobV2Response extends SdkResponse {
 
 
     /**
-     * 任务id
-     * @return jobId
+     * 是否开启自动创建topic功能。
+     * @return enableAutoTopic
      */
-    public String getJobId() {
-        return jobId;
+    public Boolean getEnableAutoTopic() {
+        return enableAutoTopic;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setEnableAutoTopic(Boolean enableAutoTopic) {
+        this.enableAutoTopic = enableAutoTopic;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -51,18 +49,18 @@ public class RunTemplateJobV2Response extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RunTemplateJobV2Response runTemplateJobV2Response = (RunTemplateJobV2Response) o;
-        return Objects.equals(this.jobId, runTemplateJobV2Response.jobId);
+        UpdateInstanceAutoCreateTopicReq updateInstanceAutoCreateTopicReq = (UpdateInstanceAutoCreateTopicReq) o;
+        return Objects.equals(this.enableAutoTopic, updateInstanceAutoCreateTopicReq.enableAutoTopic);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(enableAutoTopic);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RunTemplateJobV2Response {\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("class UpdateInstanceAutoCreateTopicReq {\n");
+        sb.append("    enableAutoTopic: ").append(toIndentedString(enableAutoTopic)).append("\n");
         sb.append("}");
         return sb.toString();
     }

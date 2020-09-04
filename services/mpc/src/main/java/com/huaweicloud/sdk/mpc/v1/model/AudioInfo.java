@@ -70,8 +70,6 @@ public class AudioInfo  {
 
     /**
      * 音频采样率
-     * minimum: 0
-     * maximum: 2147483647
      * @return sample
      */
     public Integer getSample() {
@@ -92,8 +90,6 @@ public class AudioInfo  {
 
     /**
      * 音频信道
-     * minimum: 0
-     * maximum: 2147483647
      * @return channels
      */
     public Integer getChannels() {
@@ -114,8 +110,6 @@ public class AudioInfo  {
 
     /**
      * 音频码率
-     * minimum: 0
-     * maximum: 2147483647
      * @return bitrate
      */
     public Integer getBitrate() {

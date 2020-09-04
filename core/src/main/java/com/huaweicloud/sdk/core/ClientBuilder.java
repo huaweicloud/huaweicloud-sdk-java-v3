@@ -30,12 +30,13 @@ import java.util.function.Function;
 import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.GlobalCredentials;
+import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 
 public class ClientBuilder<T> {
     private Function<HcClient, T> creator;
-    private AbstractCredentials credential;
+    private ICredential credential;
     private HttpConfig httpConfig;
     private String endpoint;
     private List<String> credentialType = new ArrayList<>(Arrays.asList(BasicCredentials.class.getSimpleName(),
@@ -53,7 +54,7 @@ public class ClientBuilder<T> {
         this.credentialType = Arrays.asList(credentialType.split(","));
     }
 
-    public ClientBuilder<T> withCredential(AbstractCredentials credential) {
+    public ClientBuilder<T> withCredential(ICredential credential) {
         this.credential = credential;
         return this;
     }
@@ -112,7 +113,7 @@ public class ClientBuilder<T> {
         return creator;
     }
 
-    public AbstractCredentials getCredential() {
+    public ICredential getCredential() {
         return credential;
     }
 

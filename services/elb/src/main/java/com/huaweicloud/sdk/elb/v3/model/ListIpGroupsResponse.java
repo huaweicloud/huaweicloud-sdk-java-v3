@@ -27,6 +27,12 @@ public class ListIpGroupsResponse extends SdkResponse {
     
     private List<IpGroup> ipgroups = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="request_id")
+    
+    private String requestId;
+
     public ListIpGroupsResponse withIpgroups(List<IpGroup> ipgroups) {
         this.ipgroups = ipgroups;
         return this;
@@ -60,6 +66,26 @@ public class ListIpGroupsResponse extends SdkResponse {
     public void setIpgroups(List<IpGroup> ipgroups) {
         this.ipgroups = ipgroups;
     }
+
+    public ListIpGroupsResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 请求ID。 注：自动生成 。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -69,17 +95,19 @@ public class ListIpGroupsResponse extends SdkResponse {
             return false;
         }
         ListIpGroupsResponse listIpGroupsResponse = (ListIpGroupsResponse) o;
-        return Objects.equals(this.ipgroups, listIpGroupsResponse.ipgroups);
+        return Objects.equals(this.ipgroups, listIpGroupsResponse.ipgroups) &&
+            Objects.equals(this.requestId, listIpGroupsResponse.requestId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ipgroups);
+        return Objects.hash(ipgroups, requestId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListIpGroupsResponse {\n");
         sb.append("    ipgroups: ").append(toIndentedString(ipgroups)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.devstar.v1.model;
+package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
@@ -7,30 +7,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.devstar.v1.model.TemplateJobInfo;
+import com.huaweicloud.sdk.kafka.v2.model.BatchCreateOrDeleteTagReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class RunTemplateJobV2Request  {
+public class BatchCreateOrDeleteInstanceTagRequest  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value="instance_id")
     
-    private String xLanguage = "zh-cn";
+    private String instanceId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private TemplateJobInfo body = null;
+    private BatchCreateOrDeleteTagReq body = null;
 
-    public RunTemplateJobV2Request withXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
+    public BatchCreateOrDeleteInstanceTagRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
@@ -38,27 +38,25 @@ public class RunTemplateJobV2Request  {
 
 
     /**
-     * Get xLanguage
-     * @return xLanguage
+     * Get instanceId
+     * @return instanceId
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
-    public String getXLanguage() {
-        return xLanguage;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setXLanguage(String xLanguage) {
-        this.xLanguage = xLanguage;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
-    public RunTemplateJobV2Request withBody(TemplateJobInfo body) {
+    public BatchCreateOrDeleteInstanceTagRequest withBody(BatchCreateOrDeleteTagReq body) {
         this.body = body;
         return this;
     }
 
-    public RunTemplateJobV2Request withBody(Consumer<TemplateJobInfo> bodySetter) {
+    public BatchCreateOrDeleteInstanceTagRequest withBody(Consumer<BatchCreateOrDeleteTagReq> bodySetter) {
         if(this.body == null ){
-            this.body = new TemplateJobInfo();
+            this.body = new BatchCreateOrDeleteTagReq();
             bodySetter.accept(this.body);
         }
         
@@ -70,11 +68,11 @@ public class RunTemplateJobV2Request  {
      * Get body
      * @return body
      */
-    public TemplateJobInfo getBody() {
+    public BatchCreateOrDeleteTagReq getBody() {
         return body;
     }
 
-    public void setBody(TemplateJobInfo body) {
+    public void setBody(BatchCreateOrDeleteTagReq body) {
         this.body = body;
     }
     @Override
@@ -85,19 +83,19 @@ public class RunTemplateJobV2Request  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RunTemplateJobV2Request runTemplateJobV2Request = (RunTemplateJobV2Request) o;
-        return Objects.equals(this.xLanguage, runTemplateJobV2Request.xLanguage) &&
-            Objects.equals(this.body, runTemplateJobV2Request.body);
+        BatchCreateOrDeleteInstanceTagRequest batchCreateOrDeleteInstanceTagRequest = (BatchCreateOrDeleteInstanceTagRequest) o;
+        return Objects.equals(this.instanceId, batchCreateOrDeleteInstanceTagRequest.instanceId) &&
+            Objects.equals(this.body, batchCreateOrDeleteInstanceTagRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, body);
+        return Objects.hash(instanceId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RunTemplateJobV2Request {\n");
-        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("class BatchCreateOrDeleteInstanceTagRequest {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

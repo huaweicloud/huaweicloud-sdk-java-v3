@@ -125,7 +125,6 @@ public class BandWidthRules  {
 
     /**
      * 出网带宽最大值，单位M bps。取值范围[0,n]，其中n为所属带宽的带宽大小（size字段）。0表示设置为最大带宽。
-     * minimum: 0
      * @return egressSize
      */
     public Integer getEgressSize() {
@@ -146,7 +145,6 @@ public class BandWidthRules  {
 
     /**
      * 出网保障带宽大小，单位M bps。取值范围[0,x]，其中x为所属带宽剩余的保障额。
-     * minimum: 0
      * @return egressGuarentedSize
      */
     public Integer getEgressGuarentedSize() {

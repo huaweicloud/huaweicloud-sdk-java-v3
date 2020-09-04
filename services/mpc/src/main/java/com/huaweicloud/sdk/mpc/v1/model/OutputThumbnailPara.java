@@ -57,8 +57,6 @@ public class OutputThumbnailPara  {
 
     /**
      * 抽帧图片张数 
-     * minimum: 0
-     * maximum: 2147483647
      * @return totalPictures
      */
     public Integer getTotalPictures() {
@@ -79,8 +77,6 @@ public class OutputThumbnailPara  {
 
     /**
      * 抽帧图片宽度 
-     * minimum: 0
-     * maximum: 2147483647
      * @return width
      */
     public Integer getWidth() {
@@ -101,8 +97,6 @@ public class OutputThumbnailPara  {
 
     /**
      * 抽帧图片高度 
-     * minimum: 0
-     * maximum: 2147483647
      * @return height
      */
     public Integer getHeight() {

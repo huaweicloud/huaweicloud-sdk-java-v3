@@ -153,12 +153,6 @@ public class CreateLoadBalancerOption  {
     
     private Boolean deletionProtectionEnable = false;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateLoadBalancerOption withName(String name) {
         this.name = name;
         return this;
@@ -665,26 +659,6 @@ public class CreateLoadBalancerOption  {
     public void setDeletionProtectionEnable(Boolean deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
     }
-
-    public CreateLoadBalancerOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -715,12 +689,11 @@ public class CreateLoadBalancerOption  {
             Objects.equals(this.publicip, createLoadBalancerOption.publicip) &&
             Objects.equals(this.elbVirsubnetIds, createLoadBalancerOption.elbVirsubnetIds) &&
             Objects.equals(this.ipTargetEnable, createLoadBalancerOption.ipTargetEnable) &&
-            Objects.equals(this.deletionProtectionEnable, createLoadBalancerOption.deletionProtectionEnable) &&
-            Objects.equals(this.id, createLoadBalancerOption.id);
+            Objects.equals(this.deletionProtectionEnable, createLoadBalancerOption.deletionProtectionEnable);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, vipAddress, vipSubnetCidrId, ipv6VipVirsubnetId, provider, l4FlavorId, projectId, guaranteed, vpcId, availabilityZoneList, enterpriseProjectId, tags, adminStateUp, l7FlavorId, billingInfo, ipv6Bandwidth, publicipIds, publicip, elbVirsubnetIds, ipTargetEnable, deletionProtectionEnable, id);
+        return Objects.hash(name, description, vipAddress, vipSubnetCidrId, ipv6VipVirsubnetId, provider, l4FlavorId, projectId, guaranteed, vpcId, availabilityZoneList, enterpriseProjectId, tags, adminStateUp, l7FlavorId, billingInfo, ipv6Bandwidth, publicipIds, publicip, elbVirsubnetIds, ipTargetEnable, deletionProtectionEnable);
     }
     @Override
     public String toString() {
@@ -748,7 +721,6 @@ public class CreateLoadBalancerOption  {
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

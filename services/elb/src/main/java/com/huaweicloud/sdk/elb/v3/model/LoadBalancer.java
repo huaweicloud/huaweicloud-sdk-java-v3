@@ -307,6 +307,12 @@ public class LoadBalancer  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="elb_virsubnet_type")
+    
+    private String elbVirsubnetType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_target_enable")
     
     private Boolean ipTargetEnable = false;
@@ -1032,6 +1038,26 @@ public class LoadBalancer  {
         this.elbVirsubnetIds = elbVirsubnetIds;
     }
 
+    public LoadBalancer withElbVirsubnetType(String elbVirsubnetType) {
+        this.elbVirsubnetType = elbVirsubnetType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能描述：下联面子网类型
+     * @return elbVirsubnetType
+     */
+    public String getElbVirsubnetType() {
+        return elbVirsubnetType;
+    }
+
+    public void setElbVirsubnetType(String elbVirsubnetType) {
+        this.elbVirsubnetType = elbVirsubnetType;
+    }
+
     public LoadBalancer withIpTargetEnable(Boolean ipTargetEnable) {
         this.ipTargetEnable = ipTargetEnable;
         return this;
@@ -1158,6 +1184,7 @@ public class LoadBalancer  {
             Objects.equals(this.l7ScaleFlavorId, loadBalancer.l7ScaleFlavorId) &&
             Objects.equals(this.publicips, loadBalancer.publicips) &&
             Objects.equals(this.elbVirsubnetIds, loadBalancer.elbVirsubnetIds) &&
+            Objects.equals(this.elbVirsubnetType, loadBalancer.elbVirsubnetType) &&
             Objects.equals(this.ipTargetEnable, loadBalancer.ipTargetEnable) &&
             Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable) &&
             Objects.equals(this.frozenScene, loadBalancer.frozenScene) &&
@@ -1165,7 +1192,7 @@ public class LoadBalancer  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, provisioningStatus, adminStateUp, provider, pools, listeners, operatingStatus, vipAddress, vipSubnetCidrId, name, projectId, vipPortId, tags, createdAt, updatedAt, guaranteed, vpcId, eips, ipv6VipAddress, ipv6VipVirsubnetId, ipv6VipPortId, availabilityZoneList, enterpriseProjectId, billingInfo, l4FlavorId, l4ScaleFlavorId, l7FlavorId, l7ScaleFlavorId, publicips, elbVirsubnetIds, ipTargetEnable, deletionProtectionEnable, frozenScene, ipv6Bandwidth);
+        return Objects.hash(id, description, provisioningStatus, adminStateUp, provider, pools, listeners, operatingStatus, vipAddress, vipSubnetCidrId, name, projectId, vipPortId, tags, createdAt, updatedAt, guaranteed, vpcId, eips, ipv6VipAddress, ipv6VipVirsubnetId, ipv6VipPortId, availabilityZoneList, enterpriseProjectId, billingInfo, l4FlavorId, l4ScaleFlavorId, l7FlavorId, l7ScaleFlavorId, publicips, elbVirsubnetIds, elbVirsubnetType, ipTargetEnable, deletionProtectionEnable, frozenScene, ipv6Bandwidth);
     }
     @Override
     public String toString() {
@@ -1202,6 +1229,7 @@ public class LoadBalancer  {
         sb.append("    l7ScaleFlavorId: ").append(toIndentedString(l7ScaleFlavorId)).append("\n");
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");
+        sb.append("    elbVirsubnetType: ").append(toIndentedString(elbVirsubnetType)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    frozenScene: ").append(toIndentedString(frozenScene)).append("\n");

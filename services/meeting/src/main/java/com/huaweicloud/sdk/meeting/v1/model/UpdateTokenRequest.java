@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.EmptyDTO;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,12 +27,6 @@ public class UpdateTokenRequest  {
     @JsonProperty(value="Accept-Language")
     
     private String acceptLanguage;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
-    private EmptyDTO body = null;
 
     public UpdateTokenRequest withXRequestID(String xRequestID) {
         this.xRequestID = xRequestID;
@@ -76,33 +69,6 @@ public class UpdateTokenRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
-
-    public UpdateTokenRequest withBody(EmptyDTO body) {
-        this.body = body;
-        return this;
-    }
-
-    public UpdateTokenRequest withBody(Consumer<EmptyDTO> bodySetter) {
-        if(this.body == null ){
-            this.body = new EmptyDTO();
-            bodySetter.accept(this.body);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get body
-     * @return body
-     */
-    public EmptyDTO getBody() {
-        return body;
-    }
-
-    public void setBody(EmptyDTO body) {
-        this.body = body;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -113,12 +79,11 @@ public class UpdateTokenRequest  {
         }
         UpdateTokenRequest updateTokenRequest = (UpdateTokenRequest) o;
         return Objects.equals(this.xRequestID, updateTokenRequest.xRequestID) &&
-            Objects.equals(this.acceptLanguage, updateTokenRequest.acceptLanguage) &&
-            Objects.equals(this.body, updateTokenRequest.body);
+            Objects.equals(this.acceptLanguage, updateTokenRequest.acceptLanguage);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestID, acceptLanguage, body);
+        return Objects.hash(xRequestID, acceptLanguage);
     }
     @Override
     public String toString() {
@@ -126,7 +91,6 @@ public class UpdateTokenRequest  {
         sb.append("class UpdateTokenRequest {\n");
         sb.append("    xRequestID: ").append(toIndentedString(xRequestID)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

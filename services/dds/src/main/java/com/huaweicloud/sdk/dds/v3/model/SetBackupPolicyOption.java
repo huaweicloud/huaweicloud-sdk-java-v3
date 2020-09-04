@@ -44,8 +44,6 @@ public class SetBackupPolicyOption  {
 
     /**
      * 指定已生成的备份文件可以保存的天数。 取值范围：0～732。取0值，表示关闭自动备份策略。
-     * minimum: 0
-     * maximum: 732
      * @return keepDays
      */
     public Integer getKeepDays() {

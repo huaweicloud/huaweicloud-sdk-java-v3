@@ -82,8 +82,6 @@ public class SlideVerifyCodeCheckDTO  {
 
     /**
      * 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc； * 18：workplace mobile 
-     * minimum: 0
-     * maximum: 255
      * @return clientType
      */
     public Integer getClientType() {

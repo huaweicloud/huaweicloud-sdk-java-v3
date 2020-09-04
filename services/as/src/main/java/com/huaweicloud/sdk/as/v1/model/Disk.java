@@ -232,8 +232,6 @@ public class Disk  {
 
     /**
      * 磁盘大小，容量单位为GB。系统盘输入大小范围为40~32768，且不小于镜像中系统盘的最小(min_disk属性)值。数据盘输入大小范围为10~32768。
-     * minimum: 10
-     * maximum: 32768
      * @return size
      */
     public Integer getSize() {

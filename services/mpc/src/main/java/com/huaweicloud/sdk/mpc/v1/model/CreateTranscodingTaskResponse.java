@@ -34,8 +34,6 @@ public class CreateTranscodingTaskResponse extends SdkResponse {
 
     /**
      * 任务ID。 如果返回值为200 OK，为接受任务后产生的任务ID。 
-     * minimum: 0
-     * maximum: 2147483647
      * @return taskId
      */
     public Integer getTaskId() {

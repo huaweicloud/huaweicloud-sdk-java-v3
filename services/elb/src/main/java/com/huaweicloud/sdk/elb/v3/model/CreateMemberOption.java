@@ -58,12 +58,6 @@ public class CreateMemberOption  {
     
     private Integer weight = 1;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateMemberOption withAddress(String address) {
         this.address = address;
         return this;
@@ -207,26 +201,6 @@ public class CreateMemberOption  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
-
-    public CreateMemberOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id 
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -242,12 +216,11 @@ public class CreateMemberOption  {
             Objects.equals(this.projectId, createMemberOption.projectId) &&
             Objects.equals(this.protocolPort, createMemberOption.protocolPort) &&
             Objects.equals(this.subnetCidrId, createMemberOption.subnetCidrId) &&
-            Objects.equals(this.weight, createMemberOption.weight) &&
-            Objects.equals(this.id, createMemberOption.id);
+            Objects.equals(this.weight, createMemberOption.weight);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(address, adminStateUp, name, projectId, protocolPort, subnetCidrId, weight, id);
+        return Objects.hash(address, adminStateUp, name, projectId, protocolPort, subnetCidrId, weight);
     }
     @Override
     public String toString() {
@@ -260,7 +233,6 @@ public class CreateMemberOption  {
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    subnetCidrId: ").append(toIndentedString(subnetCidrId)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

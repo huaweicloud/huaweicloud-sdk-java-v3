@@ -613,8 +613,6 @@ public class BandwidthResp  {
 
     /**
      * 功能说明：带宽支持的最大分组规则数。（该字段仅在上海1局点返回）
-     * minimum: 0
-     * maximum: 1024
      * @return ruleQuota
      */
     public Integer getRuleQuota() {

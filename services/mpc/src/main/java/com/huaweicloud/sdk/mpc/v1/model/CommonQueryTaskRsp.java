@@ -32,8 +32,6 @@ public class CommonQueryTaskRsp  {
 
     /**
      * 任务总数
-     * minimum: 0
-     * maximum: 2147483647
      * @return total
      */
     public Integer getTotal() {

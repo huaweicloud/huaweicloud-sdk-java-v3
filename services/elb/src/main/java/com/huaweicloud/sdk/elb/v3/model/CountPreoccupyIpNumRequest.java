@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,13 +28,13 @@ public class CountPreoccupyIpNumRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_target_enable")
     
-    private Boolean ipTargetEnable;
+    private Boolean ipTargetEnable = false;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_version")
     
-    private Boolean ipVersion = false;
+    private Integer ipVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,10 +44,10 @@ public class CountPreoccupyIpNumRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone_number")
+    @JsonProperty(value="availability_zone_id")
     
-    private Integer availabilityZoneNumber;
-
+    private List<String> availabilityZoneId = null;
+    
     public CountPreoccupyIpNumRequest withL7FlavorId(String l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
         return this;
@@ -86,7 +88,7 @@ public class CountPreoccupyIpNumRequest  {
         this.ipTargetEnable = ipTargetEnable;
     }
 
-    public CountPreoccupyIpNumRequest withIpVersion(Boolean ipVersion) {
+    public CountPreoccupyIpNumRequest withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
@@ -98,11 +100,11 @@ public class CountPreoccupyIpNumRequest  {
      * Get ipVersion
      * @return ipVersion
      */
-    public Boolean getIpVersion() {
+    public Integer getIpVersion() {
         return ipVersion;
     }
 
-    public void setIpVersion(Boolean ipVersion) {
+    public void setIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
     }
 
@@ -126,24 +128,38 @@ public class CountPreoccupyIpNumRequest  {
         this.loadbalancerId = loadbalancerId;
     }
 
-    public CountPreoccupyIpNumRequest withAvailabilityZoneNumber(Integer availabilityZoneNumber) {
-        this.availabilityZoneNumber = availabilityZoneNumber;
+    public CountPreoccupyIpNumRequest withAvailabilityZoneId(List<String> availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
         return this;
     }
 
     
-
-
-    /**
-     * Get availabilityZoneNumber
-     * @return availabilityZoneNumber
-     */
-    public Integer getAvailabilityZoneNumber() {
-        return availabilityZoneNumber;
+    public CountPreoccupyIpNumRequest addAvailabilityZoneIdItem(String availabilityZoneIdItem) {
+        if (this.availabilityZoneId == null) {
+            this.availabilityZoneId = new ArrayList<>();
+        }
+        this.availabilityZoneId.add(availabilityZoneIdItem);
+        return this;
     }
 
-    public void setAvailabilityZoneNumber(Integer availabilityZoneNumber) {
-        this.availabilityZoneNumber = availabilityZoneNumber;
+    public CountPreoccupyIpNumRequest withAvailabilityZoneId(Consumer<List<String>> availabilityZoneIdSetter) {
+        if(this.availabilityZoneId == null ){
+            this.availabilityZoneId = new ArrayList<>();
+        }
+        availabilityZoneIdSetter.accept(this.availabilityZoneId);
+        return this;
+    }
+
+    /**
+     * Get availabilityZoneId
+     * @return availabilityZoneId
+     */
+    public List<String> getAvailabilityZoneId() {
+        return availabilityZoneId;
+    }
+
+    public void setAvailabilityZoneId(List<String> availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,11 +174,11 @@ public class CountPreoccupyIpNumRequest  {
             Objects.equals(this.ipTargetEnable, countPreoccupyIpNumRequest.ipTargetEnable) &&
             Objects.equals(this.ipVersion, countPreoccupyIpNumRequest.ipVersion) &&
             Objects.equals(this.loadbalancerId, countPreoccupyIpNumRequest.loadbalancerId) &&
-            Objects.equals(this.availabilityZoneNumber, countPreoccupyIpNumRequest.availabilityZoneNumber);
+            Objects.equals(this.availabilityZoneId, countPreoccupyIpNumRequest.availabilityZoneId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(l7FlavorId, ipTargetEnable, ipVersion, loadbalancerId, availabilityZoneNumber);
+        return Objects.hash(l7FlavorId, ipTargetEnable, ipVersion, loadbalancerId, availabilityZoneId);
     }
     @Override
     public String toString() {
@@ -172,7 +188,7 @@ public class CountPreoccupyIpNumRequest  {
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
-        sb.append("    availabilityZoneNumber: ").append(toIndentedString(availabilityZoneNumber)).append("\n");
+        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

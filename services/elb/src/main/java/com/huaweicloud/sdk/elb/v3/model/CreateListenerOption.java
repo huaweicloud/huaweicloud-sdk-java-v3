@@ -248,12 +248,6 @@ public class CreateListenerOption  {
     
     private Boolean transparentClientIpEnable = false;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateListenerOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -721,26 +715,6 @@ public class CreateListenerOption  {
     public void setTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
     }
-
-    public CreateListenerOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -770,12 +744,11 @@ public class CreateListenerOption  {
             Objects.equals(this.clientTimeout, createListenerOption.clientTimeout) &&
             Objects.equals(this.memberTimeout, createListenerOption.memberTimeout) &&
             Objects.equals(this.ipgroup, createListenerOption.ipgroup) &&
-            Objects.equals(this.transparentClientIpEnable, createListenerOption.transparentClientIpEnable) &&
-            Objects.equals(this.id, createListenerOption.id);
+            Objects.equals(this.transparentClientIpEnable, createListenerOption.transparentClientIpEnable);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, clientCaTlsContainerRef, defaultPoolId, defaultTlsContainerRef, description, http2Enable, insertHeaders, loadbalancerId, name, projectId, protocol, protocolPort, sniContainerRefs, tags, tlsCiphersPolicy, enableMemberRetry, keepaliveTimeout, clientTimeout, memberTimeout, ipgroup, transparentClientIpEnable, id);
+        return Objects.hash(adminStateUp, clientCaTlsContainerRef, defaultPoolId, defaultTlsContainerRef, description, http2Enable, insertHeaders, loadbalancerId, name, projectId, protocol, protocolPort, sniContainerRefs, tags, tlsCiphersPolicy, enableMemberRetry, keepaliveTimeout, clientTimeout, memberTimeout, ipgroup, transparentClientIpEnable);
     }
     @Override
     public String toString() {
@@ -802,7 +775,6 @@ public class CreateListenerOption  {
         sb.append("    memberTimeout: ").append(toIndentedString(memberTimeout)).append("\n");
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
         sb.append("    transparentClientIpEnable: ").append(toIndentedString(transparentClientIpEnable)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

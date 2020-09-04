@@ -64,8 +64,6 @@ public class SlideVerifyCodeSendDTO  {
 
     /**
      * 登录客户端类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc 
-     * minimum: 0
-     * maximum: 255
      * @return clientType
      */
     public Integer getClientType() {

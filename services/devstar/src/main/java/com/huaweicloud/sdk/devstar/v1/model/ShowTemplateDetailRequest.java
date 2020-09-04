@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -15,12 +17,87 @@ import java.util.Objects;
  */
 public class ShowTemplateDetailRequest  {
 
+    /**
+     * Gets or Sets xLanguage
+     */
+    public static class XLanguageEnum {
+
+        
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
+        public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+        
+        /**
+         * Enum EN_US for value: "en-us"
+         */
+        public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
+        
+
+        public static final Map<String, XLanguageEnum> staticFields = new HashMap<String, XLanguageEnum>() {
+            { 
+                put("zh-cn", ZH_CN);
+                put("en-us", EN_US);
+            }
+        };
+
+        private String value;
+
+        XLanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static XLanguageEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            XLanguageEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new XLanguageEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static XLanguageEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            XLanguageEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof XLanguageEnum) {
+                return this.value.equals(((XLanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage;
+    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,7 +105,7 @@ public class ShowTemplateDetailRequest  {
     
     private String templateId;
 
-    public ShowTemplateDetailRequest withXLanguage(String xLanguage) {
+    public ShowTemplateDetailRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
@@ -42,11 +119,11 @@ public class ShowTemplateDetailRequest  {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="")
-    public String getXLanguage() {
+    public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
 
-    public void setXLanguage(String xLanguage) {
+    public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
 

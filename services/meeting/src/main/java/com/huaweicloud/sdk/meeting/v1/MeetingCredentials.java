@@ -9,7 +9,7 @@ import java.util.concurrent.CompletableFuture;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.huaweicloud.sdk.core.auth.AbstractCredentials;
+import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
@@ -23,7 +23,7 @@ import com.huaweicloud.sdk.meeting.v1.model.AuthReqDTOV1;
 import com.huaweicloud.sdk.meeting.v1.model.CreatTokenMeta;
 import com.huaweicloud.sdk.meeting.v1.model.CreateTokenResponse;
 
-public class MeetingCredentials extends AbstractCredentials {
+public class MeetingCredentials implements ICredential {
     private String token;
 
     private String userName;

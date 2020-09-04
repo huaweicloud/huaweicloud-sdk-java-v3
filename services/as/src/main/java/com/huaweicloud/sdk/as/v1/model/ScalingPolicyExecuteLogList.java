@@ -667,8 +667,6 @@ public class ScalingPolicyExecuteLogList  {
 
     /**
      * 操作限制。当scaling_resource_type为BANDWIDTH时，且operation不为SET时，limit_value生效，单位为Mbit/s。此时，当operation为ADD时，limit_value表示最高带宽限制；当operation为REDUCE时，limit_value表示最低带宽限制。
-     * minimum: 0
-     * maximum: 32768
      * @return limitValue
      */
     public Integer getLimitValue() {

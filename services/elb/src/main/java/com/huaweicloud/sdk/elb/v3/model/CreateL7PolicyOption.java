@@ -85,12 +85,6 @@ public class CreateL7PolicyOption  {
     
     private List<CreateL7PolicyRuleOption> rules = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateL7PolicyOption withAction(String action) {
         this.action = action;
         return this;
@@ -326,26 +320,6 @@ public class CreateL7PolicyOption  {
     public void setRules(List<CreateL7PolicyRuleOption> rules) {
         this.rules = rules;
     }
-
-    public CreateL7PolicyOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -365,12 +339,11 @@ public class CreateL7PolicyOption  {
             Objects.equals(this.redirectListenerId, createL7PolicyOption.redirectListenerId) &&
             Objects.equals(this.redirectPoolId, createL7PolicyOption.redirectPoolId) &&
             Objects.equals(this.redirectUrl, createL7PolicyOption.redirectUrl) &&
-            Objects.equals(this.rules, createL7PolicyOption.rules) &&
-            Objects.equals(this.id, createL7PolicyOption.id);
+            Objects.equals(this.rules, createL7PolicyOption.rules);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(action, adminStateUp, description, listenerId, name, position, projectId, redirectListenerId, redirectPoolId, redirectUrl, rules, id);
+        return Objects.hash(action, adminStateUp, description, listenerId, name, position, projectId, redirectListenerId, redirectPoolId, redirectUrl, rules);
     }
     @Override
     public String toString() {
@@ -387,7 +360,6 @@ public class CreateL7PolicyOption  {
         sb.append("    redirectPoolId: ").append(toIndentedString(redirectPoolId)).append("\n");
         sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

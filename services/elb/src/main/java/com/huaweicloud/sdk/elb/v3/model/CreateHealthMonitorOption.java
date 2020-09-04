@@ -100,12 +100,6 @@ public class CreateHealthMonitorOption  {
     
     private String urlPath = "/";
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
     public CreateHealthMonitorOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -395,26 +389,6 @@ public class CreateHealthMonitorOption  {
     public void setUrlPath(String urlPath) {
         this.urlPath = urlPath;
     }
-
-    public CreateHealthMonitorOption withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定的资源id，只有管理员权限,才可以传入id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -437,12 +411,11 @@ public class CreateHealthMonitorOption  {
             Objects.equals(this.projectId, createHealthMonitorOption.projectId) &&
             Objects.equals(this.timeout, createHealthMonitorOption.timeout) &&
             Objects.equals(this.type, createHealthMonitorOption.type) &&
-            Objects.equals(this.urlPath, createHealthMonitorOption.urlPath) &&
-            Objects.equals(this.id, createHealthMonitorOption.id);
+            Objects.equals(this.urlPath, createHealthMonitorOption.urlPath);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, delay, domainName, expectedCodes, httpMethod, maxRetries, maxRetriesDown, monitorPort, name, poolId, projectId, timeout, type, urlPath, id);
+        return Objects.hash(adminStateUp, delay, domainName, expectedCodes, httpMethod, maxRetries, maxRetriesDown, monitorPort, name, poolId, projectId, timeout, type, urlPath);
     }
     @Override
     public String toString() {
@@ -462,7 +435,6 @@ public class CreateHealthMonitorOption  {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    urlPath: ").append(toIndentedString(urlPath)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -76,12 +78,87 @@ public class ThrottleBindingThrottleResp  {
     @JsonProperty(value="create_time")
     
     private OffsetDateTime createTime = null;
+    /**
+     * 是否包含特殊流控 - 1：包含 - 2：不包含
+     */
+    public static class IsIncludeSpecialThrottleEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final IsIncludeSpecialThrottleEnum NUMBER_1 = new IsIncludeSpecialThrottleEnum(1);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final IsIncludeSpecialThrottleEnum NUMBER_2 = new IsIncludeSpecialThrottleEnum(2);
+        
+
+        public static final Map<Integer, IsIncludeSpecialThrottleEnum> staticFields = new HashMap<Integer, IsIncludeSpecialThrottleEnum>() {
+            { 
+                put(1, NUMBER_1);
+                put(2, NUMBER_2);
+            }
+        };
+
+        private Integer value;
+
+        IsIncludeSpecialThrottleEnum(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IsIncludeSpecialThrottleEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            IsIncludeSpecialThrottleEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new IsIncludeSpecialThrottleEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static IsIncludeSpecialThrottleEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            IsIncludeSpecialThrottleEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof IsIncludeSpecialThrottleEnum) {
+                return this.value.equals(((IsIncludeSpecialThrottleEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_include_special_throttle")
     
-    private Integer isIncludeSpecialThrottle;
+    private IsIncludeSpecialThrottleEnum isIncludeSpecialThrottle;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -319,7 +396,7 @@ public class ThrottleBindingThrottleResp  {
         this.createTime = createTime;
     }
 
-    public ThrottleBindingThrottleResp withIsIncludeSpecialThrottle(Integer isIncludeSpecialThrottle) {
+    public ThrottleBindingThrottleResp withIsIncludeSpecialThrottle(IsIncludeSpecialThrottleEnum isIncludeSpecialThrottle) {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
         return this;
     }
@@ -331,11 +408,11 @@ public class ThrottleBindingThrottleResp  {
      * 是否包含特殊流控 - 1：包含 - 2：不包含
      * @return isIncludeSpecialThrottle
      */
-    public Integer getIsIncludeSpecialThrottle() {
+    public IsIncludeSpecialThrottleEnum getIsIncludeSpecialThrottle() {
         return isIncludeSpecialThrottle;
     }
 
-    public void setIsIncludeSpecialThrottle(Integer isIncludeSpecialThrottle) {
+    public void setIsIncludeSpecialThrottle(IsIncludeSpecialThrottleEnum isIncludeSpecialThrottle) {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
     }
 

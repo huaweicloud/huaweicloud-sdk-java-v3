@@ -97,7 +97,7 @@ public class ListPublishedTemplatesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private XLanguageEnum xLanguage;
+    private XLanguageEnum xLanguage = XLanguageEnum.ZH_CN;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

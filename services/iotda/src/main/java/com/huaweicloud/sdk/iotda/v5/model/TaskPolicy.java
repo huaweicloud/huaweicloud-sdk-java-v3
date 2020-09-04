@@ -64,8 +64,6 @@ public class TaskPolicy  {
 
     /**
      * 批量任务子任务自动重试次数，如果传入retry_interval参数，则需传入该参数，最大支持重试5次。
-     * minimum: 1
-     * maximum: 5
      * @return retryCount
      */
     public Integer getRetryCount() {
@@ -86,8 +84,6 @@ public class TaskPolicy  {
 
     /**
      * 批量任务子任务失败后，自动重试时间间隔，单位：分钟，最大1440(24小时)，不传入此参数表示不重试，如果传入retry_count参数则需要传入该参数。
-     * minimum: 0
-     * maximum: 1440
      * @return retryInterval
      */
     public Integer getRetryInterval() {

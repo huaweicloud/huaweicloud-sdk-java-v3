@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -21,12 +23,93 @@ public class ModDeviceDTO  {
     @JsonProperty(value="name")
     
     private String name;
+    /**
+     * 投影码生成模式，默认为自动 - 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：   私网地址配置成简单模式；公网地址配置成复杂模式) - 1、简单 - 2、复杂
+     */
+    public static class PrjCodeModeEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final PrjCodeModeEnum NUMBER_0 = new PrjCodeModeEnum(0);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final PrjCodeModeEnum NUMBER_1 = new PrjCodeModeEnum(1);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final PrjCodeModeEnum NUMBER_2 = new PrjCodeModeEnum(2);
+        
+
+        public static final Map<Integer, PrjCodeModeEnum> staticFields = new HashMap<Integer, PrjCodeModeEnum>() {
+            { 
+                put(0, NUMBER_0);
+                put(1, NUMBER_1);
+                put(2, NUMBER_2);
+            }
+        };
+
+        private Integer value;
+
+        PrjCodeModeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PrjCodeModeEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            PrjCodeModeEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new PrjCodeModeEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static PrjCodeModeEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            PrjCodeModeEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof PrjCodeModeEnum) {
+                return this.value.equals(((PrjCodeModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="prjCodeMode")
     
-    private Integer prjCodeMode;
+    private PrjCodeModeEnum prjCodeMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,12 +140,87 @@ public class ModDeviceDTO  {
     @JsonProperty(value="description")
     
     private String description;
+    /**
+     * 终端状态。 * 0、正常 * 1、冻结 
+     */
+    public static class StatusEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+        
+
+        public static final Map<Integer, StatusEnum> staticFields = new HashMap<Integer, StatusEnum>() {
+            { 
+                put(0, NUMBER_0);
+                put(1, NUMBER_1);
+            }
+        };
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @Override
+        @JsonValue
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = staticFields.get(value);
+            if (result == null) {
+                result = staticFields.putIfAbsent(value, new StatusEnum(value));
+                if (result == null) {
+                    result = staticFields.get(value);
+                }
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = staticFields.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status;
+    private StatusEnum status;
 
     public ModDeviceDTO withName(String name) {
         this.name = name;
@@ -84,7 +242,7 @@ public class ModDeviceDTO  {
         this.name = name;
     }
 
-    public ModDeviceDTO withPrjCodeMode(Integer prjCodeMode) {
+    public ModDeviceDTO withPrjCodeMode(PrjCodeModeEnum prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
         return this;
     }
@@ -96,11 +254,11 @@ public class ModDeviceDTO  {
      * 投影码生成模式，默认为自动 - 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：   私网地址配置成简单模式；公网地址配置成复杂模式) - 1、简单 - 2、复杂
      * @return prjCodeMode
      */
-    public Integer getPrjCodeMode() {
+    public PrjCodeModeEnum getPrjCodeMode() {
         return prjCodeMode;
     }
 
-    public void setPrjCodeMode(Integer prjCodeMode) {
+    public void setPrjCodeMode(PrjCodeModeEnum prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
     }
 
@@ -204,7 +362,7 @@ public class ModDeviceDTO  {
         this.description = description;
     }
 
-    public ModDeviceDTO withStatus(Integer status) {
+    public ModDeviceDTO withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -216,11 +374,11 @@ public class ModDeviceDTO  {
      * 终端状态。 * 0、正常 * 1、冻结 
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
     @Override

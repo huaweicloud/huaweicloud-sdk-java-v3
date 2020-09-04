@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.vpc.v3.model.PageInfo;
 import com.huaweicloud.sdk.vpc.v3.model.SecurityGroupRule;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,12 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
     
     private List<SecurityGroupRule> securityGroupRules = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="page_info")
+    
+    private PageInfo pageInfo = null;
+
     public ListSecurityGroupRulesResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -86,6 +93,33 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
     public void setSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
     }
+
+    public ListSecurityGroupRulesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListSecurityGroupRulesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if(this.pageInfo == null ){
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -96,11 +130,12 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
         }
         ListSecurityGroupRulesResponse listSecurityGroupRulesResponse = (ListSecurityGroupRulesResponse) o;
         return Objects.equals(this.requestId, listSecurityGroupRulesResponse.requestId) &&
-            Objects.equals(this.securityGroupRules, listSecurityGroupRulesResponse.securityGroupRules);
+            Objects.equals(this.securityGroupRules, listSecurityGroupRulesResponse.securityGroupRules) &&
+            Objects.equals(this.pageInfo, listSecurityGroupRulesResponse.pageInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, securityGroupRules);
+        return Objects.hash(requestId, securityGroupRules, pageInfo);
     }
     @Override
     public String toString() {
@@ -108,6 +143,7 @@ public class ListSecurityGroupRulesResponse extends SdkResponse {
         sb.append("class ListSecurityGroupRulesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    securityGroupRules: ").append(toIndentedString(securityGroupRules)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

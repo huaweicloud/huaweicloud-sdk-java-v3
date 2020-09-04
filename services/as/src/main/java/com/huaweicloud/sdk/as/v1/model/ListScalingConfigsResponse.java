@@ -55,8 +55,6 @@ public class ListScalingConfigsResponse extends SdkResponse {
 
     /**
      * 总记录数。
-     * minimum: 0
-     * maximum: 100
      * @return totalNumber
      */
     public Integer getTotalNumber() {
@@ -97,8 +95,6 @@ public class ListScalingConfigsResponse extends SdkResponse {
 
     /**
      * 查询记录数。
-     * minimum: 0
-     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {
