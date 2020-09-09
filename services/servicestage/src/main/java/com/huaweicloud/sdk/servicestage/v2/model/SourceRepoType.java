@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,14 +40,16 @@ public class SourceRepoType {
     public static final SourceRepoType BITBUCKET = new SourceRepoType("Bitbucket");
     
 
-    public static final Map<String, SourceRepoType> staticFields = new HashMap<String, SourceRepoType>() {
-        { 
-            put("GitHub", GITHUB);
-            put("GitLab", GITLAB);
-            put("Gitee", GITEE);
-            put("Bitbucket", BITBUCKET);
-        }
-    };
+    private static final Map<String, SourceRepoType> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, SourceRepoType> createStaticFields() {
+        Map<String, SourceRepoType> map = new HashMap<>();
+        map.put("GitHub", GITHUB);
+        map.put("GitLab", GITLAB);
+        map.put("Gitee", GITEE);
+        map.put("Bitbucket", BITBUCKET);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -64,12 +68,9 @@ public class SourceRepoType {
         if( value == null ){
             return null;
         }
-        SourceRepoType result = staticFields.get(value);
+        SourceRepoType result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new SourceRepoType(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new SourceRepoType(value);
         }
         return result;
     }
@@ -78,7 +79,7 @@ public class SourceRepoType {
         if( value == null ){
             return null;
         }
-        SourceRepoType result = staticFields.get(value);
+        SourceRepoType result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

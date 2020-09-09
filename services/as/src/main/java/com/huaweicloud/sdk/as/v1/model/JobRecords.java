@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +31,7 @@ public class JobRecords  {
     /**
      * 记录类型。API：接口调用类型。MEG：消息类型。
      */
-    public static class RecordTypeEnum {
+    public static final class RecordTypeEnum {
 
         
         /**
@@ -40,12 +45,14 @@ public class JobRecords  {
         public static final RecordTypeEnum MEG = new RecordTypeEnum("MEG");
         
 
-        public static final Map<String, RecordTypeEnum> staticFields = new HashMap<String, RecordTypeEnum>() {
-            { 
-                put("API", API);
-                put("MEG", MEG);
-            }
-        };
+        private static final Map<String, RecordTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RecordTypeEnum> createStaticFields() {
+            Map<String, RecordTypeEnum> map = new HashMap<>();
+            map.put("API", API);
+            map.put("MEG", MEG);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +71,9 @@ public class JobRecords  {
             if( value == null ){
                 return null;
             }
-            RecordTypeEnum result = staticFields.get(value);
+            RecordTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RecordTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RecordTypeEnum(value);
             }
             return result;
         }
@@ -78,7 +82,7 @@ public class JobRecords  {
             if( value == null ){
                 return null;
             }
-            RecordTypeEnum result = staticFields.get(value);
+            RecordTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -137,7 +141,7 @@ public class JobRecords  {
     /**
      * job执行状态：SUCCESS：成功。FAIL：失败。
      */
-    public static class JobStatusEnum {
+    public static final class JobStatusEnum {
 
         
         /**
@@ -151,12 +155,14 @@ public class JobRecords  {
         public static final JobStatusEnum FAIL = new JobStatusEnum("FAIL");
         
 
-        public static final Map<String, JobStatusEnum> staticFields = new HashMap<String, JobStatusEnum>() {
-            { 
-                put("SUCCESS", SUCCESS);
-                put("FAIL", FAIL);
-            }
-        };
+        private static final Map<String, JobStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobStatusEnum> createStaticFields() {
+            Map<String, JobStatusEnum> map = new HashMap<>();
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAIL", FAIL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -175,12 +181,9 @@ public class JobRecords  {
             if( value == null ){
                 return null;
             }
-            JobStatusEnum result = staticFields.get(value);
+            JobStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new JobStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new JobStatusEnum(value);
             }
             return result;
         }
@@ -189,7 +192,7 @@ public class JobRecords  {
             if( value == null ){
                 return null;
             }
-            JobStatusEnum result = staticFields.get(value);
+            JobStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

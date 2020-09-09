@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.moderation.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class RunCheckTaskJobsRequest  {
     /**
      * Gets or Sets status
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -44,14 +47,16 @@ public class RunCheckTaskJobsRequest  {
         public static final StatusEnum FAILED = new StatusEnum("failed");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("created", CREATED);
-                put("running", RUNNING);
-                put("finish", FINISH);
-                put("failed", FAILED);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("created", CREATED);
+            map.put("running", RUNNING);
+            map.put("finish", FINISH);
+            map.put("failed", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class RunCheckTaskJobsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class RunCheckTaskJobsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

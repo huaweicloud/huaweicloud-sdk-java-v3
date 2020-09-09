@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,7 +27,7 @@ public class ListVolumesByTagsRequestBody  {
     /**
      * 操作标识。  根据标签查询云硬盘实例详情时使用“filter”。
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -33,11 +36,13 @@ public class ListVolumesByTagsRequestBody  {
         public static final ActionEnum FILTER = new ActionEnum("filter");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("filter", FILTER);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("filter", FILTER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -56,12 +61,9 @@ public class ListVolumesByTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -70,7 +72,7 @@ public class ListVolumesByTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

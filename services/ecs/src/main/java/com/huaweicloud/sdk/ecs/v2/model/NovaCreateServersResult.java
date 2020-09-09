@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -42,7 +45,7 @@ public class NovaCreateServersResult  {
         /**
      * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
      */
-    public static class OsDCFDiskConfigEnum {
+    public static final class OsDCFDiskConfigEnum {
 
         
         /**
@@ -56,12 +59,14 @@ public class NovaCreateServersResult  {
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
         
 
-        public static final Map<String, OsDCFDiskConfigEnum> staticFields = new HashMap<String, OsDCFDiskConfigEnum>() {
-            { 
-                put("MANUAL", MANUAL);
-                put("AUTO", AUTO);
-            }
-        };
+        private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsDCFDiskConfigEnum> createStaticFields() {
+            Map<String, OsDCFDiskConfigEnum> map = new HashMap<>();
+            map.put("MANUAL", MANUAL);
+            map.put("AUTO", AUTO);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -80,12 +85,9 @@ public class NovaCreateServersResult  {
             if( value == null ){
                 return null;
             }
-            OsDCFDiskConfigEnum result = staticFields.get(value);
+            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsDCFDiskConfigEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsDCFDiskConfigEnum(value);
             }
             return result;
         }
@@ -94,7 +96,7 @@ public class NovaCreateServersResult  {
             if( value == null ){
                 return null;
             }
-            OsDCFDiskConfigEnum result = staticFields.get(value);
+            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

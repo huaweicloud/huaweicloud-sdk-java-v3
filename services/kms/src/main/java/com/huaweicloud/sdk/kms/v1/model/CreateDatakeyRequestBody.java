@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class CreateDatakeyRequestBody  {
     /**
      * 指定生成的密钥bit位长度。有效值：AES_256、AES_128。  - AES_256：表示256比特的对称密钥。  - AES_128：表示128比特的对称密钥。 说明：  datakey_length和key_spec二选一。   - 若datakey_length和key_spec都为空，默认生成256bit的密钥。   - 若datakey_length和key_spec都指定了值，仅datakey_length生效。
      */
-    public static class KeySpecEnum {
+    public static final class KeySpecEnum {
 
         
         /**
@@ -46,12 +49,14 @@ public class CreateDatakeyRequestBody  {
         public static final KeySpecEnum AES_128 = new KeySpecEnum("AES_128");
         
 
-        public static final Map<String, KeySpecEnum> staticFields = new HashMap<String, KeySpecEnum>() {
-            { 
-                put("AES_256", AES_256);
-                put("AES_128", AES_128);
-            }
-        };
+        private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeySpecEnum> createStaticFields() {
+            Map<String, KeySpecEnum> map = new HashMap<>();
+            map.put("AES_256", AES_256);
+            map.put("AES_128", AES_128);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class CreateDatakeyRequestBody  {
             if( value == null ){
                 return null;
             }
-            KeySpecEnum result = staticFields.get(value);
+            KeySpecEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new KeySpecEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new KeySpecEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class CreateDatakeyRequestBody  {
             if( value == null ){
                 return null;
             }
-            KeySpecEnum result = staticFields.get(value);
+            KeySpecEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

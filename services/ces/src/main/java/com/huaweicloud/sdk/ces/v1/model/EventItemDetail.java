@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -44,7 +49,7 @@ public class EventItemDetail  {
     /**
      * 事件状态。  枚举类型：normal\\warning\\incident
      */
-    public static class EventStateEnum {
+    public static final class EventStateEnum {
 
         
         /**
@@ -63,13 +68,15 @@ public class EventItemDetail  {
         public static final EventStateEnum INCIDENT = new EventStateEnum("incident");
         
 
-        public static final Map<String, EventStateEnum> staticFields = new HashMap<String, EventStateEnum>() {
-            { 
-                put("normal", NORMAL);
-                put("warning", WARNING);
-                put("incident", INCIDENT);
-            }
-        };
+        private static final Map<String, EventStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventStateEnum> createStaticFields() {
+            Map<String, EventStateEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            map.put("warning", WARNING);
+            map.put("incident", INCIDENT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -88,12 +95,9 @@ public class EventItemDetail  {
             if( value == null ){
                 return null;
             }
-            EventStateEnum result = staticFields.get(value);
+            EventStateEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EventStateEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EventStateEnum(value);
             }
             return result;
         }
@@ -102,7 +106,7 @@ public class EventItemDetail  {
             if( value == null ){
                 return null;
             }
-            EventStateEnum result = staticFields.get(value);
+            EventStateEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -131,7 +135,7 @@ public class EventItemDetail  {
     /**
      * 事件级别。  枚举类型：Critical, Major, Minor, Info
      */
-    public static class EventLevelEnum {
+    public static final class EventLevelEnum {
 
         
         /**
@@ -155,14 +159,16 @@ public class EventItemDetail  {
         public static final EventLevelEnum INFO = new EventLevelEnum("Info");
         
 
-        public static final Map<String, EventLevelEnum> staticFields = new HashMap<String, EventLevelEnum>() {
-            { 
-                put("Critical", CRITICAL);
-                put("Major", MAJOR);
-                put("Minor", MINOR);
-                put("Info", INFO);
-            }
-        };
+        private static final Map<String, EventLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventLevelEnum> createStaticFields() {
+            Map<String, EventLevelEnum> map = new HashMap<>();
+            map.put("Critical", CRITICAL);
+            map.put("Major", MAJOR);
+            map.put("Minor", MINOR);
+            map.put("Info", INFO);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -181,12 +187,9 @@ public class EventItemDetail  {
             if( value == null ){
                 return null;
             }
-            EventLevelEnum result = staticFields.get(value);
+            EventLevelEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EventLevelEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EventLevelEnum(value);
             }
             return result;
         }
@@ -195,7 +198,7 @@ public class EventItemDetail  {
             if( value == null ){
                 return null;
             }
-            EventLevelEnum result = staticFields.get(value);
+            EventLevelEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

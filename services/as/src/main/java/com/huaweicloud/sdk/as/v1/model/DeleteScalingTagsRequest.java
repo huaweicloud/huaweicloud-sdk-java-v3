@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +24,7 @@ public class DeleteScalingTagsRequest  {
     /**
      * Gets or Sets resourceType
      */
-    public static class ResourceTypeEnum {
+    public static final class ResourceTypeEnum {
 
         
         /**
@@ -30,11 +33,13 @@ public class DeleteScalingTagsRequest  {
         public static final ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
         
 
-        public static final Map<String, ResourceTypeEnum> staticFields = new HashMap<String, ResourceTypeEnum>() {
-            { 
-                put("scaling_group_tag", SCALING_GROUP_TAG);
-            }
-        };
+        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceTypeEnum> createStaticFields() {
+            Map<String, ResourceTypeEnum> map = new HashMap<>();
+            map.put("scaling_group_tag", SCALING_GROUP_TAG);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -53,12 +58,9 @@ public class DeleteScalingTagsRequest  {
             if( value == null ){
                 return null;
             }
-            ResourceTypeEnum result = staticFields.get(value);
+            ResourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ResourceTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ResourceTypeEnum(value);
             }
             return result;
         }
@@ -67,7 +69,7 @@ public class DeleteScalingTagsRequest  {
             if( value == null ){
                 return null;
             }
-            ResourceTypeEnum result = staticFields.get(value);
+            ResourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.live.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,7 +53,7 @@ public class ListRecordConfigsRequest  {
     /**
      * Gets or Sets recordType
      */
-    public static class RecordTypeEnum {
+    public static final class RecordTypeEnum {
 
         
         /**
@@ -59,11 +62,13 @@ public class ListRecordConfigsRequest  {
         public static final RecordTypeEnum CONFIGER_RECORD = new RecordTypeEnum("configer_record");
         
 
-        public static final Map<String, RecordTypeEnum> staticFields = new HashMap<String, RecordTypeEnum>() {
-            { 
-                put("configer_record", CONFIGER_RECORD);
-            }
-        };
+        private static final Map<String, RecordTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RecordTypeEnum> createStaticFields() {
+            Map<String, RecordTypeEnum> map = new HashMap<>();
+            map.put("configer_record", CONFIGER_RECORD);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -82,12 +87,9 @@ public class ListRecordConfigsRequest  {
             if( value == null ){
                 return null;
             }
-            RecordTypeEnum result = staticFields.get(value);
+            RecordTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RecordTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RecordTypeEnum(value);
             }
             return result;
         }
@@ -96,7 +98,7 @@ public class ListRecordConfigsRequest  {
             if( value == null ){
                 return null;
             }
-            RecordTypeEnum result = staticFields.get(value);
+            RecordTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

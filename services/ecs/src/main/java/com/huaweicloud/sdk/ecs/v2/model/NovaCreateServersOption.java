@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -115,7 +118,7 @@ public class NovaCreateServersOption  {
     /**
      * diskConfig的方式，取值为AUTO、MANUAL。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。  当前不支持该功能。
      */
-    public static class OsDCFDiskConfigEnum {
+    public static final class OsDCFDiskConfigEnum {
 
         
         /**
@@ -129,12 +132,14 @@ public class NovaCreateServersOption  {
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
         
 
-        public static final Map<String, OsDCFDiskConfigEnum> staticFields = new HashMap<String, OsDCFDiskConfigEnum>() {
-            { 
-                put("AUTO", AUTO);
-                put("MANUAL", MANUAL);
-            }
-        };
+        private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsDCFDiskConfigEnum> createStaticFields() {
+            Map<String, OsDCFDiskConfigEnum> map = new HashMap<>();
+            map.put("AUTO", AUTO);
+            map.put("MANUAL", MANUAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -153,12 +158,9 @@ public class NovaCreateServersOption  {
             if( value == null ){
                 return null;
             }
-            OsDCFDiskConfigEnum result = staticFields.get(value);
+            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsDCFDiskConfigEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsDCFDiskConfigEnum(value);
             }
             return result;
         }
@@ -167,7 +169,7 @@ public class NovaCreateServersOption  {
             if( value == null ){
                 return null;
             }
-            OsDCFDiskConfigEnum result = staticFields.get(value);
+            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

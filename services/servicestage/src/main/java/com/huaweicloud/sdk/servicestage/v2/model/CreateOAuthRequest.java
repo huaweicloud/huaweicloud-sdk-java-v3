@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +24,7 @@ public class CreateOAuthRequest  {
     /**
      * Gets or Sets repoType
      */
-    public static class RepoTypeEnum {
+    public static final class RepoTypeEnum {
 
         
         /**
@@ -45,14 +48,16 @@ public class CreateOAuthRequest  {
         public static final RepoTypeEnum BITBUCKET = new RepoTypeEnum("bitbucket");
         
 
-        public static final Map<String, RepoTypeEnum> staticFields = new HashMap<String, RepoTypeEnum>() {
-            { 
-                put("github", GITHUB);
-                put("gitlab", GITLAB);
-                put("gitee", GITEE);
-                put("bitbucket", BITBUCKET);
-            }
-        };
+        private static final Map<String, RepoTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RepoTypeEnum> createStaticFields() {
+            Map<String, RepoTypeEnum> map = new HashMap<>();
+            map.put("github", GITHUB);
+            map.put("gitlab", GITLAB);
+            map.put("gitee", GITEE);
+            map.put("bitbucket", BITBUCKET);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -71,12 +76,9 @@ public class CreateOAuthRequest  {
             if( value == null ){
                 return null;
             }
-            RepoTypeEnum result = staticFields.get(value);
+            RepoTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RepoTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RepoTypeEnum(value);
             }
             return result;
         }
@@ -85,7 +87,7 @@ public class CreateOAuthRequest  {
             if( value == null ){
                 return null;
             }
-            RepoTypeEnum result = staticFields.get(value);
+            RepoTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

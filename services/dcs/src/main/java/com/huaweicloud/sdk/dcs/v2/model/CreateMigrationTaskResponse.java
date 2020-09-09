@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class CreateMigrationTaskResponse extends SdkResponse {
     /**
      * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -53,13 +56,15 @@ public class CreateMigrationTaskResponse extends SdkResponse {
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("SUCCESS", SUCCESS);
-                put("FAILED", FAILED);
-                put("MIGRATING", MIGRATING);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAILED", FAILED);
+            map.put("MIGRATING", MIGRATING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -78,12 +83,9 @@ public class CreateMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -92,7 +94,7 @@ public class CreateMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

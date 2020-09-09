@@ -3,6 +3,19 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +45,7 @@ public class ListTagsRequest  {
     /**
      * Gets or Sets imagetype
      */
-    public static class ImagetypeEnum {
+    public static final class ImagetypeEnum {
 
         
         /**
@@ -51,13 +64,15 @@ public class ListTagsRequest  {
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
         
 
-        public static final Map<String, ImagetypeEnum> staticFields = new HashMap<String, ImagetypeEnum>() {
-            { 
-                put("gold", GOLD);
-                put("private", PRIVATE);
-                put("shared", SHARED);
-            }
-        };
+        private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ImagetypeEnum> createStaticFields() {
+            Map<String, ImagetypeEnum> map = new HashMap<>();
+            map.put("gold", GOLD);
+            map.put("private", PRIVATE);
+            map.put("shared", SHARED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +91,9 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            ImagetypeEnum result = staticFields.get(value);
+            ImagetypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ImagetypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ImagetypeEnum(value);
             }
             return result;
         }
@@ -90,7 +102,7 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            ImagetypeEnum result = staticFields.get(value);
+            ImagetypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -125,7 +137,7 @@ public class ListTagsRequest  {
     /**
      * Gets or Sets status
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -154,15 +166,17 @@ public class ListTagsRequest  {
         public static final StatusEnum ACTIVE = new StatusEnum("active");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("queued", QUEUED);
-                put("saving", SAVING);
-                put("deleted", DELETED);
-                put("killed", KILLED);
-                put("active", ACTIVE);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("queued", QUEUED);
+            map.put("saving", SAVING);
+            map.put("deleted", DELETED);
+            map.put("killed", KILLED);
+            map.put("active", ACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -181,12 +195,9 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -195,7 +206,7 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -242,7 +253,7 @@ public class ListTagsRequest  {
     /**
      * Gets or Sets osType
      */
-    public static class OsTypeEnum {
+    public static final class OsTypeEnum {
 
         
         /**
@@ -261,13 +272,15 @@ public class ListTagsRequest  {
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
         
 
-        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
-            { 
-                put("Linux", LINUX);
-                put("Windows", WINDOWS);
-                put("Other", OTHER);
-            }
-        };
+        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsTypeEnum> createStaticFields() {
+            Map<String, OsTypeEnum> map = new HashMap<>();
+            map.put("Linux", LINUX);
+            map.put("Windows", WINDOWS);
+            map.put("Other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -286,12 +299,9 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsTypeEnum(value);
             }
             return result;
         }
@@ -300,7 +310,7 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -329,7 +339,7 @@ public class ListTagsRequest  {
     /**
      * Gets or Sets memberStatus
      */
-    public static class MemberStatusEnum {
+    public static final class MemberStatusEnum {
 
         
         /**
@@ -348,13 +358,15 @@ public class ListTagsRequest  {
         public static final MemberStatusEnum PENDING = new MemberStatusEnum("pending");
         
 
-        public static final Map<String, MemberStatusEnum> staticFields = new HashMap<String, MemberStatusEnum>() {
-            { 
-                put("accepted", ACCEPTED);
-                put("rejected", REJECTED);
-                put("pending", PENDING);
-            }
-        };
+        private static final Map<String, MemberStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MemberStatusEnum> createStaticFields() {
+            Map<String, MemberStatusEnum> map = new HashMap<>();
+            map.put("accepted", ACCEPTED);
+            map.put("rejected", REJECTED);
+            map.put("pending", PENDING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -373,12 +385,9 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            MemberStatusEnum result = staticFields.get(value);
+            MemberStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MemberStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MemberStatusEnum(value);
             }
             return result;
         }
@@ -387,7 +396,7 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            MemberStatusEnum result = staticFields.get(value);
+            MemberStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -416,7 +425,7 @@ public class ListTagsRequest  {
     /**
      * Gets or Sets virtualEnvType
      */
-    public static class VirtualEnvTypeEnum {
+    public static final class VirtualEnvTypeEnum {
 
         
         /**
@@ -435,13 +444,15 @@ public class ListTagsRequest  {
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
         
 
-        public static final Map<String, VirtualEnvTypeEnum> staticFields = new HashMap<String, VirtualEnvTypeEnum>() {
-            { 
-                put("FusionCompute", FUSIONCOMPUTE);
-                put("Ironic", IRONIC);
-                put("DataImage", DATAIMAGE);
-            }
-        };
+        private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VirtualEnvTypeEnum> createStaticFields() {
+            Map<String, VirtualEnvTypeEnum> map = new HashMap<>();
+            map.put("FusionCompute", FUSIONCOMPUTE);
+            map.put("Ironic", IRONIC);
+            map.put("DataImage", DATAIMAGE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -460,12 +471,9 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VirtualEnvTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VirtualEnvTypeEnum(value);
             }
             return result;
         }
@@ -474,7 +482,7 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -509,7 +517,7 @@ public class ListTagsRequest  {
     /**
      * Gets or Sets architecture
      */
-    public static class ArchitectureEnum {
+    public static final class ArchitectureEnum {
 
         
         /**
@@ -523,12 +531,14 @@ public class ListTagsRequest  {
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
         
 
-        public static final Map<String, ArchitectureEnum> staticFields = new HashMap<String, ArchitectureEnum>() {
-            { 
-                put("x86", X86);
-                put("arm", ARM);
-            }
-        };
+        private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ArchitectureEnum> createStaticFields() {
+            Map<String, ArchitectureEnum> map = new HashMap<>();
+            map.put("x86", X86);
+            map.put("arm", ARM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -547,12 +557,9 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ArchitectureEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ArchitectureEnum(value);
             }
             return result;
         }
@@ -561,7 +568,7 @@ public class ListTagsRequest  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

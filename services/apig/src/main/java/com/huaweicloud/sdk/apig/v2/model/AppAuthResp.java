@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -54,7 +59,7 @@ public class AppAuthResp  {
     /**
      * 授权者 - PROVIDER：API提供者授权 - CONSUMER：API消费者授权
      */
-    public static class AuthRoleEnum {
+    public static final class AuthRoleEnum {
 
         
         /**
@@ -68,12 +73,14 @@ public class AppAuthResp  {
         public static final AuthRoleEnum CONSUMER = new AuthRoleEnum("CONSUMER");
         
 
-        public static final Map<String, AuthRoleEnum> staticFields = new HashMap<String, AuthRoleEnum>() {
-            { 
-                put("PROVIDER", PROVIDER);
-                put("CONSUMER", CONSUMER);
-            }
-        };
+        private static final Map<String, AuthRoleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthRoleEnum> createStaticFields() {
+            Map<String, AuthRoleEnum> map = new HashMap<>();
+            map.put("PROVIDER", PROVIDER);
+            map.put("CONSUMER", CONSUMER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -92,12 +99,9 @@ public class AppAuthResp  {
             if( value == null ){
                 return null;
             }
-            AuthRoleEnum result = staticFields.get(value);
+            AuthRoleEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AuthRoleEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AuthRoleEnum(value);
             }
             return result;
         }
@@ -106,7 +110,7 @@ public class AppAuthResp  {
             if( value == null ){
                 return null;
             }
-            AuthRoleEnum result = staticFields.get(value);
+            AuthRoleEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -135,7 +139,7 @@ public class AppAuthResp  {
     /**
      * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
      */
-    public static class AuthTunnelEnum {
+    public static final class AuthTunnelEnum {
 
         
         /**
@@ -149,12 +153,14 @@ public class AppAuthResp  {
         public static final AuthTunnelEnum GREEN = new AuthTunnelEnum("GREEN");
         
 
-        public static final Map<String, AuthTunnelEnum> staticFields = new HashMap<String, AuthTunnelEnum>() {
-            { 
-                put("NORMAL", NORMAL);
-                put("GREEN", GREEN);
-            }
-        };
+        private static final Map<String, AuthTunnelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthTunnelEnum> createStaticFields() {
+            Map<String, AuthTunnelEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("GREEN", GREEN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -173,12 +179,9 @@ public class AppAuthResp  {
             if( value == null ){
                 return null;
             }
-            AuthTunnelEnum result = staticFields.get(value);
+            AuthTunnelEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AuthTunnelEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AuthTunnelEnum(value);
             }
             return result;
         }
@@ -187,7 +190,7 @@ public class AppAuthResp  {
             if( value == null ){
                 return null;
             }
-            AuthTunnelEnum result = staticFields.get(value);
+            AuthTunnelEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

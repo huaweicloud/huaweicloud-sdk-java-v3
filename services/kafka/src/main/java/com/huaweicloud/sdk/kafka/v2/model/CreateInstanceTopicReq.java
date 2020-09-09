@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -18,9 +19,9 @@ public class CreateInstanceTopicReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
+    @JsonProperty(value="name")
     
-    private String id;
+    private String name;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -52,8 +53,8 @@ public class CreateInstanceTopicReq  {
     
     private Integer retentionTime;
 
-    public CreateInstanceTopicReq withId(String id) {
-        this.id = id;
+    public CreateInstanceTopicReq withName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -62,14 +63,14 @@ public class CreateInstanceTopicReq  {
 
     /**
      * topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线以及数字。
-     * @return id
+     * @return name
      */
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public CreateInstanceTopicReq withReplication(Integer replication) {
@@ -180,7 +181,7 @@ public class CreateInstanceTopicReq  {
             return false;
         }
         CreateInstanceTopicReq createInstanceTopicReq = (CreateInstanceTopicReq) o;
-        return Objects.equals(this.id, createInstanceTopicReq.id) &&
+        return Objects.equals(this.name, createInstanceTopicReq.name) &&
             Objects.equals(this.replication, createInstanceTopicReq.replication) &&
             Objects.equals(this.syncMessageFlush, createInstanceTopicReq.syncMessageFlush) &&
             Objects.equals(this.partition, createInstanceTopicReq.partition) &&
@@ -189,13 +190,13 @@ public class CreateInstanceTopicReq  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, replication, syncMessageFlush, partition, syncReplication, retentionTime);
+        return Objects.hash(name, replication, syncMessageFlush, partition, syncReplication, retentionTime);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceTopicReq {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    replication: ").append(toIndentedString(replication)).append("\n");
         sb.append("    syncMessageFlush: ").append(toIndentedString(syncMessageFlush)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");

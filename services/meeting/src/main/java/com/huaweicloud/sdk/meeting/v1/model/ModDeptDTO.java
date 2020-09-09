@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -40,7 +45,7 @@ public class ModDeptDTO  {
     /**
      * 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） - DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现）
      */
-    public static class InPermissionEnum {
+    public static final class InPermissionEnum {
 
         
         /**
@@ -64,14 +69,16 @@ public class ModDeptDTO  {
         public static final InPermissionEnum DESIGNATED_DEPARTMENT = new InPermissionEnum("DESIGNATED_DEPARTMENT");
         
 
-        public static final Map<String, InPermissionEnum> staticFields = new HashMap<String, InPermissionEnum>() {
-            { 
-                put("UNLIMITED", UNLIMITED);
-                put("OPEN", OPEN);
-                put("CLOSE", CLOSE);
-                put("DESIGNATED_DEPARTMENT", DESIGNATED_DEPARTMENT);
-            }
-        };
+        private static final Map<String, InPermissionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InPermissionEnum> createStaticFields() {
+            Map<String, InPermissionEnum> map = new HashMap<>();
+            map.put("UNLIMITED", UNLIMITED);
+            map.put("OPEN", OPEN);
+            map.put("CLOSE", CLOSE);
+            map.put("DESIGNATED_DEPARTMENT", DESIGNATED_DEPARTMENT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -90,12 +97,9 @@ public class ModDeptDTO  {
             if( value == null ){
                 return null;
             }
-            InPermissionEnum result = staticFields.get(value);
+            InPermissionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InPermissionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InPermissionEnum(value);
             }
             return result;
         }
@@ -104,7 +108,7 @@ public class ModDeptDTO  {
             if( value == null ){
                 return null;
             }
-            InPermissionEnum result = staticFields.get(value);
+            InPermissionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -133,7 +137,7 @@ public class ModDeptDTO  {
     /**
      * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
      */
-    public static class OutPermissionEnum {
+    public static final class OutPermissionEnum {
 
         
         /**
@@ -157,14 +161,16 @@ public class ModDeptDTO  {
         public static final OutPermissionEnum DESIGNATED_DEPARTMENT = new OutPermissionEnum("DESIGNATED_DEPARTMENT");
         
 
-        public static final Map<String, OutPermissionEnum> staticFields = new HashMap<String, OutPermissionEnum>() {
-            { 
-                put("UNLIMITED", UNLIMITED);
-                put("ONLY_SELF", ONLY_SELF);
-                put("SELF_AND_CHILD_DEPARTMENT", SELF_AND_CHILD_DEPARTMENT);
-                put("DESIGNATED_DEPARTMENT", DESIGNATED_DEPARTMENT);
-            }
-        };
+        private static final Map<String, OutPermissionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OutPermissionEnum> createStaticFields() {
+            Map<String, OutPermissionEnum> map = new HashMap<>();
+            map.put("UNLIMITED", UNLIMITED);
+            map.put("ONLY_SELF", ONLY_SELF);
+            map.put("SELF_AND_CHILD_DEPARTMENT", SELF_AND_CHILD_DEPARTMENT);
+            map.put("DESIGNATED_DEPARTMENT", DESIGNATED_DEPARTMENT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -183,12 +189,9 @@ public class ModDeptDTO  {
             if( value == null ){
                 return null;
             }
-            OutPermissionEnum result = staticFields.get(value);
+            OutPermissionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OutPermissionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OutPermissionEnum(value);
             }
             return result;
         }
@@ -197,7 +200,7 @@ public class ModDeptDTO  {
             if( value == null ){
                 return null;
             }
-            OutPermissionEnum result = staticFields.get(value);
+            OutPermissionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

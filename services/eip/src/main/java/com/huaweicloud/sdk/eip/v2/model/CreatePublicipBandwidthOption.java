@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class CreatePublicipBandwidthOption  {
     /**
      * 功能说明：按流量计费还是按带宽计费。  其中IPv6国外默认是bandwidth，国内默认是traffic。取值为traffic，表示流量计费。
      */
-    public static class ChargeModeEnum {
+    public static final class ChargeModeEnum {
 
         
         /**
@@ -34,12 +39,14 @@ public class CreatePublicipBandwidthOption  {
         public static final ChargeModeEnum TRAFFIC = new ChargeModeEnum("traffic");
         
 
-        public static final Map<String, ChargeModeEnum> staticFields = new HashMap<String, ChargeModeEnum>() {
-            { 
-                put("bandwidth", BANDWIDTH);
-                put("traffic", TRAFFIC);
-            }
-        };
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("bandwidth", BANDWIDTH);
+            map.put("traffic", TRAFFIC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +65,9 @@ public class CreatePublicipBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargeModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargeModeEnum(value);
             }
             return result;
         }
@@ -72,7 +76,7 @@ public class CreatePublicipBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -113,7 +117,7 @@ public class CreatePublicipBandwidthOption  {
     /**
      * 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：其中IPv6暂不支持WHOLE类型带宽，该字段为WHOLE时，必须指定带宽ID。
      */
-    public static class ShareTypeEnum {
+    public static final class ShareTypeEnum {
 
         
         /**
@@ -127,12 +131,14 @@ public class CreatePublicipBandwidthOption  {
         public static final ShareTypeEnum PER = new ShareTypeEnum("PER");
         
 
-        public static final Map<String, ShareTypeEnum> staticFields = new HashMap<String, ShareTypeEnum>() {
-            { 
-                put("WHOLE", WHOLE);
-                put("PER", PER);
-            }
-        };
+        private static final Map<String, ShareTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ShareTypeEnum> createStaticFields() {
+            Map<String, ShareTypeEnum> map = new HashMap<>();
+            map.put("WHOLE", WHOLE);
+            map.put("PER", PER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -151,12 +157,9 @@ public class CreatePublicipBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ShareTypeEnum result = staticFields.get(value);
+            ShareTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ShareTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ShareTypeEnum(value);
             }
             return result;
         }
@@ -165,7 +168,7 @@ public class CreatePublicipBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ShareTypeEnum result = staticFields.get(value);
+            ShareTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

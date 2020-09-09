@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +41,7 @@ public class ShowMetricDataRequest  {
     /**
      * Gets or Sets filter
      */
-    public static class FilterEnum {
+    public static final class FilterEnum {
 
         
         /**
@@ -67,15 +70,17 @@ public class ShowMetricDataRequest  {
         public static final FilterEnum VARIANCE = new FilterEnum("variance");
         
 
-        public static final Map<String, FilterEnum> staticFields = new HashMap<String, FilterEnum>() {
-            { 
-                put("max", MAX);
-                put("min", MIN);
-                put("average", AVERAGE);
-                put("sum", SUM);
-                put("variance", VARIANCE);
-            }
-        };
+        private static final Map<String, FilterEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FilterEnum> createStaticFields() {
+            Map<String, FilterEnum> map = new HashMap<>();
+            map.put("max", MAX);
+            map.put("min", MIN);
+            map.put("average", AVERAGE);
+            map.put("sum", SUM);
+            map.put("variance", VARIANCE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -94,12 +99,9 @@ public class ShowMetricDataRequest  {
             if( value == null ){
                 return null;
             }
-            FilterEnum result = staticFields.get(value);
+            FilterEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new FilterEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new FilterEnum(value);
             }
             return result;
         }
@@ -108,7 +110,7 @@ public class ShowMetricDataRequest  {
             if( value == null ){
                 return null;
             }
-            FilterEnum result = staticFields.get(value);
+            FilterEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

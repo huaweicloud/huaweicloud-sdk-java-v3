@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +41,7 @@ public class UpdateAgencyOption  {
     /**
      * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
      */
-    public static class DurationEnum {
+    public static final class DurationEnum {
 
         
         /**
@@ -52,12 +55,14 @@ public class UpdateAgencyOption  {
         public static final DurationEnum ONEDAY = new DurationEnum("ONEDAY");
         
 
-        public static final Map<String, DurationEnum> staticFields = new HashMap<String, DurationEnum>() {
-            { 
-                put("FOREVER", FOREVER);
-                put("ONEDAY", ONEDAY);
-            }
-        };
+        private static final Map<String, DurationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DurationEnum> createStaticFields() {
+            Map<String, DurationEnum> map = new HashMap<>();
+            map.put("FOREVER", FOREVER);
+            map.put("ONEDAY", ONEDAY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class UpdateAgencyOption  {
             if( value == null ){
                 return null;
             }
-            DurationEnum result = staticFields.get(value);
+            DurationEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DurationEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DurationEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class UpdateAgencyOption  {
             if( value == null ){
                 return null;
             }
-            DurationEnum result = staticFields.get(value);
+            DurationEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -76,7 +79,7 @@ public class ShowPublicationResponse extends SdkResponse {
     /**
      * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
      */
-    public static class PublishStatusEnum {
+    public static final class PublishStatusEnum {
 
         
         /**
@@ -95,13 +98,15 @@ public class ShowPublicationResponse extends SdkResponse {
         public static final PublishStatusEnum ALREADY_OFFLINE = new PublishStatusEnum("ALREADY_OFFLINE");
         
 
-        public static final Map<String, PublishStatusEnum> staticFields = new HashMap<String, PublishStatusEnum>() {
-            { 
-                put("NOT_ONLINE", NOT_ONLINE);
-                put("PUBLISHING", PUBLISHING);
-                put("ALREADY_OFFLINE", ALREADY_OFFLINE);
-            }
-        };
+        private static final Map<String, PublishStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PublishStatusEnum> createStaticFields() {
+            Map<String, PublishStatusEnum> map = new HashMap<>();
+            map.put("NOT_ONLINE", NOT_ONLINE);
+            map.put("PUBLISHING", PUBLISHING);
+            map.put("ALREADY_OFFLINE", ALREADY_OFFLINE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -120,12 +125,9 @@ public class ShowPublicationResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            PublishStatusEnum result = staticFields.get(value);
+            PublishStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PublishStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PublishStatusEnum(value);
             }
             return result;
         }
@@ -134,7 +136,7 @@ public class ShowPublicationResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            PublishStatusEnum result = staticFields.get(value);
+            PublishStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class GlanceUpdateImageRequestBody  {
     /**
      * 所需进行的更新操作的类型：替换、添加、删除。取值范围：replace、add、remove
      */
-    public static class OpEnum {
+    public static final class OpEnum {
 
         
         /**
@@ -39,13 +42,15 @@ public class GlanceUpdateImageRequestBody  {
         public static final OpEnum REMOVE = new OpEnum("remove");
         
 
-        public static final Map<String, OpEnum> staticFields = new HashMap<String, OpEnum>() {
-            { 
-                put("replace", REPLACE);
-                put("add", ADD);
-                put("remove", REMOVE);
-            }
-        };
+        private static final Map<String, OpEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OpEnum> createStaticFields() {
+            Map<String, OpEnum> map = new HashMap<>();
+            map.put("replace", REPLACE);
+            map.put("add", ADD);
+            map.put("remove", REMOVE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class GlanceUpdateImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            OpEnum result = staticFields.get(value);
+            OpEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OpEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OpEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class GlanceUpdateImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            OpEnum result = staticFields.get(value);
+            OpEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

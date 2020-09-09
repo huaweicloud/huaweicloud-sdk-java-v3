@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -43,7 +46,7 @@ public class ListKeysResponse extends SdkResponse {
     /**
      * 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
      */
-    public static class TruncatedEnum {
+    public static final class TruncatedEnum {
 
         
         /**
@@ -57,12 +60,14 @@ public class ListKeysResponse extends SdkResponse {
         public static final TruncatedEnum FALSE = new TruncatedEnum("false");
         
 
-        public static final Map<String, TruncatedEnum> staticFields = new HashMap<String, TruncatedEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, TruncatedEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TruncatedEnum> createStaticFields() {
+            Map<String, TruncatedEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -81,12 +86,9 @@ public class ListKeysResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            TruncatedEnum result = staticFields.get(value);
+            TruncatedEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TruncatedEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TruncatedEnum(value);
             }
             return result;
         }
@@ -95,7 +97,7 @@ public class ListKeysResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            TruncatedEnum result = staticFields.get(value);
+            TruncatedEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

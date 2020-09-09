@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -196,7 +199,7 @@ public class ListInstancesRespInstances  {
     /**
      * 实例类型：集群，cluster。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -210,12 +213,14 @@ public class ListInstancesRespInstances  {
         public static final TypeEnum CLUSTER = new TypeEnum("cluster");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("single", SINGLE);
-                put("cluster", CLUSTER);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("single", SINGLE);
+            map.put("cluster", CLUSTER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -234,12 +239,9 @@ public class ListInstancesRespInstances  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -248,7 +250,7 @@ public class ListInstancesRespInstances  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

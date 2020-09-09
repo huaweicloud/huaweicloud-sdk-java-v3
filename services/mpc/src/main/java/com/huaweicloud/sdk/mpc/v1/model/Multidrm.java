@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,7 +31,7 @@ public class Multidrm  {
     /**
      * 定义数据流的类型，取值为DASH或HLS 
      */
-    public static class StreamingModeEnum {
+    public static final class StreamingModeEnum {
 
         
         /**
@@ -42,12 +45,14 @@ public class Multidrm  {
         public static final StreamingModeEnum HLS = new StreamingModeEnum("HLS");
         
 
-        public static final Map<String, StreamingModeEnum> staticFields = new HashMap<String, StreamingModeEnum>() {
-            { 
-                put("DASH", DASH);
-                put("HLS", HLS);
-            }
-        };
+        private static final Map<String, StreamingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StreamingModeEnum> createStaticFields() {
+            Map<String, StreamingModeEnum> map = new HashMap<>();
+            map.put("DASH", DASH);
+            map.put("HLS", HLS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -66,12 +71,9 @@ public class Multidrm  {
             if( value == null ){
                 return null;
             }
-            StreamingModeEnum result = staticFields.get(value);
+            StreamingModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StreamingModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StreamingModeEnum(value);
             }
             return result;
         }
@@ -80,7 +82,7 @@ public class Multidrm  {
             if( value == null ){
                 return null;
             }
-            StreamingModeEnum result = staticFields.get(value);
+            StreamingModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

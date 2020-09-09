@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ExternalAccessesCreate  {
     /**
      * 协议，支持http、https。
      */
-    public static class ProtocolEnum {
+    public static final class ProtocolEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class ExternalAccessesCreate  {
         public static final ProtocolEnum HTTPS = new ProtocolEnum("https");
         
 
-        public static final Map<String, ProtocolEnum> staticFields = new HashMap<String, ProtocolEnum>() {
-            { 
-                put("http", HTTP);
-                put("https", HTTPS);
-            }
-        };
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("http", HTTP);
+            map.put("https", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class ExternalAccessesCreate  {
             if( value == null ){
                 return null;
             }
-            ProtocolEnum result = staticFields.get(value);
+            ProtocolEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ProtocolEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ProtocolEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class ExternalAccessesCreate  {
             if( value == null ){
                 return null;
             }
-            ProtocolEnum result = staticFields.get(value);
+            ProtocolEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

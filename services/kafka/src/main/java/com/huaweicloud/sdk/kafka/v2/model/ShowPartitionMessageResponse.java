@@ -5,11 +5,14 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRespMessage;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,32 +26,39 @@ public class ShowPartitionMessageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    private ShowPartitionMessageRespMessage message = null;
-
-    public ShowPartitionMessageResponse withMessage(ShowPartitionMessageRespMessage message) {
+    private List<ShowPartitionMessageRespMessage> message = null;
+    
+    public ShowPartitionMessageResponse withMessage(List<ShowPartitionMessageRespMessage> message) {
         this.message = message;
         return this;
     }
 
-    public ShowPartitionMessageResponse withMessage(Consumer<ShowPartitionMessageRespMessage> messageSetter) {
-        if(this.message == null ){
-            this.message = new ShowPartitionMessageRespMessage();
-            messageSetter.accept(this.message);
+    
+    public ShowPartitionMessageResponse addMessageItem(ShowPartitionMessageRespMessage messageItem) {
+        if (this.message == null) {
+            this.message = new ArrayList<>();
         }
-        
+        this.message.add(messageItem);
         return this;
     }
 
+    public ShowPartitionMessageResponse withMessage(Consumer<List<ShowPartitionMessageRespMessage>> messageSetter) {
+        if(this.message == null ){
+            this.message = new ArrayList<>();
+        }
+        messageSetter.accept(this.message);
+        return this;
+    }
 
     /**
-     * Get message
+     * 消息列表。
      * @return message
      */
-    public ShowPartitionMessageRespMessage getMessage() {
+    public List<ShowPartitionMessageRespMessage> getMessage() {
         return message;
     }
 
-    public void setMessage(ShowPartitionMessageRespMessage message) {
+    public void setMessage(List<ShowPartitionMessageRespMessage> message) {
         this.message = message;
     }
     @Override

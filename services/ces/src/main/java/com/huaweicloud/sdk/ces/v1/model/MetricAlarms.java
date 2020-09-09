@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -61,7 +64,7 @@ public class MetricAlarms  {
     /**
      * 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
      */
-    public static class AlarmTypeEnum {
+    public static final class AlarmTypeEnum {
 
         
         /**
@@ -75,12 +78,14 @@ public class MetricAlarms  {
         public static final AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
         
 
-        public static final Map<String, AlarmTypeEnum> staticFields = new HashMap<String, AlarmTypeEnum>() {
-            { 
-                put("EVENT.SYS", EVENT_SYS);
-                put("EVENT.CUSTOM", EVENT_CUSTOM);
-            }
-        };
+        private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlarmTypeEnum> createStaticFields() {
+            Map<String, AlarmTypeEnum> map = new HashMap<>();
+            map.put("EVENT.SYS", EVENT_SYS);
+            map.put("EVENT.CUSTOM", EVENT_CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -99,12 +104,9 @@ public class MetricAlarms  {
             if( value == null ){
                 return null;
             }
-            AlarmTypeEnum result = staticFields.get(value);
+            AlarmTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AlarmTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AlarmTypeEnum(value);
             }
             return result;
         }
@@ -113,7 +115,7 @@ public class MetricAlarms  {
             if( value == null ){
                 return null;
             }
-            AlarmTypeEnum result = staticFields.get(value);
+            AlarmTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

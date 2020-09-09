@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,17 +55,19 @@ public class RuntimeType {
     public static final RuntimeType CUSTOM = new RuntimeType("Custom");
     
 
-    public static final Map<String, RuntimeType> staticFields = new HashMap<String, RuntimeType>() {
-        { 
-            put("Tomcat8", TOMCAT8);
-            put("Java8", JAVA8);
-            put("Php7", PHP7);
-            put("Nodejs8", NODEJS8);
-            put("Docker", DOCKER);
-            put("Python3", PYTHON3);
-            put("Custom", CUSTOM);
-        }
-    };
+    private static final Map<String, RuntimeType> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, RuntimeType> createStaticFields() {
+        Map<String, RuntimeType> map = new HashMap<>();
+        map.put("Tomcat8", TOMCAT8);
+        map.put("Java8", JAVA8);
+        map.put("Php7", PHP7);
+        map.put("Nodejs8", NODEJS8);
+        map.put("Docker", DOCKER);
+        map.put("Python3", PYTHON3);
+        map.put("Custom", CUSTOM);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -82,12 +86,9 @@ public class RuntimeType {
         if( value == null ){
             return null;
         }
-        RuntimeType result = staticFields.get(value);
+        RuntimeType result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new RuntimeType(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new RuntimeType(value);
         }
         return result;
     }
@@ -96,7 +97,7 @@ public class RuntimeType {
         if( value == null ){
             return null;
         }
-        RuntimeType result = staticFields.get(value);
+        RuntimeType result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

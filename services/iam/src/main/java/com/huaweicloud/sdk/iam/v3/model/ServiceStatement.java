@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,7 +31,7 @@ public class ServiceStatement  {
         /**
      * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
      */
-    public static class EffectEnum {
+    public static final class EffectEnum {
 
         
         /**
@@ -42,12 +45,14 @@ public class ServiceStatement  {
         public static final EffectEnum DENY = new EffectEnum("Deny");
         
 
-        public static final Map<String, EffectEnum> staticFields = new HashMap<String, EffectEnum>() {
-            { 
-                put("Allow", ALLOW);
-                put("Deny", DENY);
-            }
-        };
+        private static final Map<String, EffectEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EffectEnum> createStaticFields() {
+            Map<String, EffectEnum> map = new HashMap<>();
+            map.put("Allow", ALLOW);
+            map.put("Deny", DENY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -66,12 +71,9 @@ public class ServiceStatement  {
             if( value == null ){
                 return null;
             }
-            EffectEnum result = staticFields.get(value);
+            EffectEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EffectEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EffectEnum(value);
             }
             return result;
         }
@@ -80,7 +82,7 @@ public class ServiceStatement  {
             if( value == null ){
                 return null;
             }
-            EffectEnum result = staticFields.get(value);
+            EffectEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

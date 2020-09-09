@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class AudioProcess  {
     /**
      * 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。 
      */
-    public static class VolumeEnum {
+    public static final class VolumeEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class AudioProcess  {
         public static final VolumeEnum DYNAMIC = new VolumeEnum("dynamic");
         
 
-        public static final Map<String, VolumeEnum> staticFields = new HashMap<String, VolumeEnum>() {
-            { 
-                put("auto", AUTO);
-                put("dynamic", DYNAMIC);
-            }
-        };
+        private static final Map<String, VolumeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VolumeEnum> createStaticFields() {
+            Map<String, VolumeEnum> map = new HashMap<>();
+            map.put("auto", AUTO);
+            map.put("dynamic", DYNAMIC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class AudioProcess  {
             if( value == null ){
                 return null;
             }
-            VolumeEnum result = staticFields.get(value);
+            VolumeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VolumeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VolumeEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class AudioProcess  {
             if( value == null ){
                 return null;
             }
-            VolumeEnum result = staticFields.get(value);
+            VolumeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

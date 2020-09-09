@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -108,7 +113,7 @@ public class CreateImageRequestBody  {
     /**
      * 镜像的类型。 取值为ECS、BMS、FusionCompute、Ironic。默认使用“ECS”。 ECS/FusionCompute：表示是ECS服务器的镜像。 BMS/Ironic：表示是BMS服务器的镜像。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -132,14 +137,16 @@ public class CreateImageRequestBody  {
         public static final TypeEnum IRONIC = new TypeEnum("Ironic");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("ECS", ECS);
-                put("BMS", BMS);
-                put("FusionCompute", FUSIONCOMPUTE);
-                put("Ironic", IRONIC);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("ECS", ECS);
+            map.put("BMS", BMS);
+            map.put("FusionCompute", FUSIONCOMPUTE);
+            map.put("Ironic", IRONIC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -158,12 +165,9 @@ public class CreateImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -172,7 +176,7 @@ public class CreateImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -207,7 +211,7 @@ public class CreateImageRequestBody  {
     /**
      * 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。 当架构类型为arm时，镜像引导方式将自动转为UEFI的引导方式。
      */
-    public static class ArchitectureEnum {
+    public static final class ArchitectureEnum {
 
         
         /**
@@ -221,12 +225,14 @@ public class CreateImageRequestBody  {
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
         
 
-        public static final Map<String, ArchitectureEnum> staticFields = new HashMap<String, ArchitectureEnum>() {
-            { 
-                put("x86", X86);
-                put("arm", ARM);
-            }
-        };
+        private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ArchitectureEnum> createStaticFields() {
+            Map<String, ArchitectureEnum> map = new HashMap<>();
+            map.put("x86", X86);
+            map.put("arm", ARM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -245,12 +251,9 @@ public class CreateImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ArchitectureEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ArchitectureEnum(value);
             }
             return result;
         }
@@ -259,7 +262,7 @@ public class CreateImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

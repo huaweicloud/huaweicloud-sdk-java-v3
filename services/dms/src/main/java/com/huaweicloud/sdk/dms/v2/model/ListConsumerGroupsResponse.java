@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -43,7 +46,7 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         /**
      * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
      */
-    public static class RedrivePolicyEnum {
+    public static final class RedrivePolicyEnum {
 
         
         /**
@@ -57,12 +60,14 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         public static final RedrivePolicyEnum DISABLE = new RedrivePolicyEnum("disable");
         
 
-        public static final Map<String, RedrivePolicyEnum> staticFields = new HashMap<String, RedrivePolicyEnum>() {
-            { 
-                put("enable", ENABLE);
-                put("disable", DISABLE);
-            }
-        };
+        private static final Map<String, RedrivePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RedrivePolicyEnum> createStaticFields() {
+            Map<String, RedrivePolicyEnum> map = new HashMap<>();
+            map.put("enable", ENABLE);
+            map.put("disable", DISABLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -81,12 +86,9 @@ public class ListConsumerGroupsResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RedrivePolicyEnum result = staticFields.get(value);
+            RedrivePolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RedrivePolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RedrivePolicyEnum(value);
             }
             return result;
         }
@@ -95,7 +97,7 @@ public class ListConsumerGroupsResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RedrivePolicyEnum result = staticFields.get(value);
+            RedrivePolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

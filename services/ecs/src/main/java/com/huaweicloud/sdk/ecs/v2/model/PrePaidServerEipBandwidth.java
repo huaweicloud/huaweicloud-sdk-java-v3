@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class PrePaidServerEipBandwidth  {
     /**
      * 带宽的共享类型。  共享类型枚举：PER，表示独享。WHOLE，表示共享。
      */
-    public static class SharetypeEnum {
+    public static final class SharetypeEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class PrePaidServerEipBandwidth  {
         public static final SharetypeEnum WHOLE = new SharetypeEnum("WHOLE");
         
 
-        public static final Map<String, SharetypeEnum> staticFields = new HashMap<String, SharetypeEnum>() {
-            { 
-                put("PER", PER);
-                put("WHOLE", WHOLE);
-            }
-        };
+        private static final Map<String, SharetypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SharetypeEnum> createStaticFields() {
+            Map<String, SharetypeEnum> map = new HashMap<>();
+            map.put("PER", PER);
+            map.put("WHOLE", WHOLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class PrePaidServerEipBandwidth  {
             if( value == null ){
                 return null;
             }
-            SharetypeEnum result = staticFields.get(value);
+            SharetypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SharetypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SharetypeEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class PrePaidServerEipBandwidth  {
             if( value == null ){
                 return null;
             }
-            SharetypeEnum result = staticFields.get(value);
+            SharetypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

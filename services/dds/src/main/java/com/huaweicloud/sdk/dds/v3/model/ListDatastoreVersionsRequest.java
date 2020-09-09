@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ListDatastoreVersionsRequest  {
     /**
      * Gets or Sets datastoreName
      */
-    public static class DatastoreNameEnum {
+    public static final class DatastoreNameEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class ListDatastoreVersionsRequest  {
         public static final DatastoreNameEnum DDS_ENHANCED = new DatastoreNameEnum("DDS-Enhanced");
         
 
-        public static final Map<String, DatastoreNameEnum> staticFields = new HashMap<String, DatastoreNameEnum>() {
-            { 
-                put("DDS-Community", DDS_COMMUNITY);
-                put("DDS-Enhanced", DDS_ENHANCED);
-            }
-        };
+        private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DatastoreNameEnum> createStaticFields() {
+            Map<String, DatastoreNameEnum> map = new HashMap<>();
+            map.put("DDS-Community", DDS_COMMUNITY);
+            map.put("DDS-Enhanced", DDS_ENHANCED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class ListDatastoreVersionsRequest  {
             if( value == null ){
                 return null;
             }
-            DatastoreNameEnum result = staticFields.get(value);
+            DatastoreNameEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DatastoreNameEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DatastoreNameEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class ListDatastoreVersionsRequest  {
             if( value == null ){
                 return null;
             }
-            DatastoreNameEnum result = staticFields.get(value);
+            DatastoreNameEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

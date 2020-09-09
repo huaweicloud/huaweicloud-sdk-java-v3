@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class ShowDomainQuotaRequest  {
     /**
      * Gets or Sets type
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -55,15 +58,17 @@ public class ShowDomainQuotaRequest  {
         public static final TypeEnum POLICY = new TypeEnum("policy");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("user", USER);
-                put("group", GROUP);
-                put("idp", IDP);
-                put("agency", AGENCY);
-                put("policy", POLICY);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("user", USER);
+            map.put("group", GROUP);
+            map.put("idp", IDP);
+            map.put("agency", AGENCY);
+            map.put("policy", POLICY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -82,12 +87,9 @@ public class ShowDomainQuotaRequest  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -96,7 +98,7 @@ public class ShowDomainQuotaRequest  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

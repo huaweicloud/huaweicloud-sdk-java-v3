@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class DeleteScalingInstanceRequest  {
     /**
      * Gets or Sets instanceDelete
      */
-    public static class InstanceDeleteEnum {
+    public static final class InstanceDeleteEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class DeleteScalingInstanceRequest  {
         public static final InstanceDeleteEnum NO = new InstanceDeleteEnum("no");
         
 
-        public static final Map<String, InstanceDeleteEnum> staticFields = new HashMap<String, InstanceDeleteEnum>() {
-            { 
-                put("yes", YES);
-                put("no", NO);
-            }
-        };
+        private static final Map<String, InstanceDeleteEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InstanceDeleteEnum> createStaticFields() {
+            Map<String, InstanceDeleteEnum> map = new HashMap<>();
+            map.put("yes", YES);
+            map.put("no", NO);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class DeleteScalingInstanceRequest  {
             if( value == null ){
                 return null;
             }
-            InstanceDeleteEnum result = staticFields.get(value);
+            InstanceDeleteEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InstanceDeleteEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InstanceDeleteEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class DeleteScalingInstanceRequest  {
             if( value == null ){
                 return null;
             }
-            InstanceDeleteEnum result = staticFields.get(value);
+            InstanceDeleteEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

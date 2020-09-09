@@ -1,3 +1,29 @@
+# 3.0.11-beta 2020-09-09
+## HuaweiCloud SDK Core
+ - ### Features
+    - None
+ - ### Bug Fix
+    - None
+ - ### Change
+    - Enhance the security of dynamic enumerated types.
+
+## HuaweiCloud SDK Meeting
+ - ### Features
+    - Support more APIs: Meeting Control / Meeting Management.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK VPC
+ - ### Features
+    - None
+ - ### Bug Fix
+    - Fix the problem that security group related interfaces have wrong data type.
+ - ### Change
+    - None
+
+
 # 3.0.10-beta 2020-09-04
 ## HuaweiCloud SDK Core
  - ### Features
@@ -8,6 +34,22 @@
     - Fix the problem that authentication will fail if the request query is an array and contains multiple values.
  - ### Change
     - Modify User Agent of Http Request header.
+
+## HuaweiCloud SDK DevStar
+ - ### Features
+    - Support more APIs: DownloadApplicationCode
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+## HuaweiCloud SDK DMS
+ - ### Features
+    - Support Distributed Message Services, provide Kafka premium instances and RabbitMQ premium instances with dedicated resources.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
 
 
 # 3.0.9-beta 2020-08-28

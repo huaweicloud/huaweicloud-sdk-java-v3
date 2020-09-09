@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +43,7 @@ public class ListResizeFlavorsRequest  {
     /**
      * Gets or Sets sortDir
      */
-    public static class SortDirEnum {
+    public static final class SortDirEnum {
 
         
         /**
@@ -52,12 +57,14 @@ public class ListResizeFlavorsRequest  {
         public static final SortDirEnum DESC = new SortDirEnum("desc");
         
 
-        public static final Map<String, SortDirEnum> staticFields = new HashMap<String, SortDirEnum>() {
-            { 
-                put("asc", ASC);
-                put("desc", DESC);
-            }
-        };
+        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortDirEnum> createStaticFields() {
+            Map<String, SortDirEnum> map = new HashMap<>();
+            map.put("asc", ASC);
+            map.put("desc", DESC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +83,9 @@ public class ListResizeFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            SortDirEnum result = staticFields.get(value);
+            SortDirEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortDirEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SortDirEnum(value);
             }
             return result;
         }
@@ -90,7 +94,7 @@ public class ListResizeFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            SortDirEnum result = staticFields.get(value);
+            SortDirEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -119,7 +123,7 @@ public class ListResizeFlavorsRequest  {
     /**
      * Gets or Sets sortKey
      */
-    public static class SortKeyEnum {
+    public static final class SortKeyEnum {
 
         
         /**
@@ -153,16 +157,18 @@ public class ListResizeFlavorsRequest  {
         public static final SortKeyEnum ROOT_GB = new SortKeyEnum("root_gb");
         
 
-        public static final Map<String, SortKeyEnum> staticFields = new HashMap<String, SortKeyEnum>() {
-            { 
-                put("flavorid", FLAVORID);
-                put("sort_key", SORT_KEY);
-                put("name", NAME);
-                put("memory_mb", MEMORY_MB);
-                put("vcpus", VCPUS);
-                put("root_gb", ROOT_GB);
-            }
-        };
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("flavorid", FLAVORID);
+            map.put("sort_key", SORT_KEY);
+            map.put("name", NAME);
+            map.put("memory_mb", MEMORY_MB);
+            map.put("vcpus", VCPUS);
+            map.put("root_gb", ROOT_GB);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -181,12 +187,9 @@ public class ListResizeFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortKeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SortKeyEnum(value);
             }
             return result;
         }
@@ -195,7 +198,7 @@ public class ListResizeFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class CinderListQuotasRequest  {
     /**
      * Gets or Sets usage
      */
-    public static class UsageEnum {
+    public static final class UsageEnum {
 
         
         /**
@@ -35,11 +38,13 @@ public class CinderListQuotasRequest  {
         public static final UsageEnum TRUE = new UsageEnum("true");
         
 
-        public static final Map<String, UsageEnum> staticFields = new HashMap<String, UsageEnum>() {
-            { 
-                put("true", TRUE);
-            }
-        };
+        private static final Map<String, UsageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, UsageEnum> createStaticFields() {
+            Map<String, UsageEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class CinderListQuotasRequest  {
             if( value == null ){
                 return null;
             }
-            UsageEnum result = staticFields.get(value);
+            UsageEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new UsageEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new UsageEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class CinderListQuotasRequest  {
             if( value == null ){
                 return null;
             }
-            UsageEnum result = staticFields.get(value);
+            UsageEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +41,7 @@ public class ListEnvironmentsRequest  {
     /**
      * Gets or Sets order
      */
-    public static class OrderEnum {
+    public static final class OrderEnum {
 
         
         /**
@@ -52,12 +55,14 @@ public class ListEnvironmentsRequest  {
         public static final OrderEnum ASC = new OrderEnum("asc");
         
 
-        public static final Map<String, OrderEnum> staticFields = new HashMap<String, OrderEnum>() {
-            { 
-                put("desc", DESC);
-                put("asc", ASC);
-            }
-        };
+        private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OrderEnum> createStaticFields() {
+            Map<String, OrderEnum> map = new HashMap<>();
+            map.put("desc", DESC);
+            map.put("asc", ASC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class ListEnvironmentsRequest  {
             if( value == null ){
                 return null;
             }
-            OrderEnum result = staticFields.get(value);
+            OrderEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OrderEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OrderEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class ListEnvironmentsRequest  {
             if( value == null ){
                 return null;
             }
-            OrderEnum result = staticFields.get(value);
+            OrderEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

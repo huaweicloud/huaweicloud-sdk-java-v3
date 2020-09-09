@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class ListFlavorsRequest  {
     /**
      * Gets or Sets engineName
      */
-    public static class EngineNameEnum {
+    public static final class EngineNameEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class ListFlavorsRequest  {
         public static final EngineNameEnum DDS_ENHANCED = new EngineNameEnum("DDS-Enhanced");
         
 
-        public static final Map<String, EngineNameEnum> staticFields = new HashMap<String, EngineNameEnum>() {
-            { 
-                put("DDS-Community", DDS_COMMUNITY);
-                put("DDS-Enhanced", DDS_ENHANCED);
-            }
-        };
+        private static final Map<String, EngineNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineNameEnum> createStaticFields() {
+            Map<String, EngineNameEnum> map = new HashMap<>();
+            map.put("DDS-Community", DDS_COMMUNITY);
+            map.put("DDS-Enhanced", DDS_ENHANCED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class ListFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            EngineNameEnum result = staticFields.get(value);
+            EngineNameEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineNameEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineNameEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class ListFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            EngineNameEnum result = staticFields.get(value);
+            EngineNameEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

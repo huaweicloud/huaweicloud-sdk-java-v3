@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class RestartInstanceRequestBody  {
     /**
      * 待重启对象的类型。 - 重启集群实例下的节点时，该参数必选。取值为“mongos”、“shard”、或“config”。 - 重启整个实例时，不传该参数。
      */
-    public static class TargetTypeEnum {
+    public static final class TargetTypeEnum {
 
         
         /**
@@ -39,13 +42,15 @@ public class RestartInstanceRequestBody  {
         public static final TargetTypeEnum CONFIG = new TargetTypeEnum("config");
         
 
-        public static final Map<String, TargetTypeEnum> staticFields = new HashMap<String, TargetTypeEnum>() {
-            { 
-                put("mongos", MONGOS);
-                put("shard", SHARD);
-                put("config", CONFIG);
-            }
-        };
+        private static final Map<String, TargetTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TargetTypeEnum> createStaticFields() {
+            Map<String, TargetTypeEnum> map = new HashMap<>();
+            map.put("mongos", MONGOS);
+            map.put("shard", SHARD);
+            map.put("config", CONFIG);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class RestartInstanceRequestBody  {
             if( value == null ){
                 return null;
             }
-            TargetTypeEnum result = staticFields.get(value);
+            TargetTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TargetTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TargetTypeEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class RestartInstanceRequestBody  {
             if( value == null ){
                 return null;
             }
-            TargetTypeEnum result = staticFields.get(value);
+            TargetTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

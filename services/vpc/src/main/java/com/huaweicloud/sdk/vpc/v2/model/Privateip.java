@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class Privateip  {
     /**
      * 私有IP的状态  - ACTIVE：活动的  - DOWN：不可用
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -34,12 +39,14 @@ public class Privateip  {
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("ACTIVE", ACTIVE);
-                put("DOWN", DOWN);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("DOWN", DOWN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +65,9 @@ public class Privateip  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -72,7 +76,7 @@ public class Privateip  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -119,7 +123,7 @@ public class Privateip  {
     /**
      * 私有IP的使用者，空表示未使用 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用) 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注
      */
-    public static class DeviceOwnerEnum {
+    public static final class DeviceOwnerEnum {
 
         
         /**
@@ -138,13 +142,15 @@ public class Privateip  {
         public static final DeviceOwnerEnum COMPUTE_XXX = new DeviceOwnerEnum("compute:xxx");
         
 
-        public static final Map<String, DeviceOwnerEnum> staticFields = new HashMap<String, DeviceOwnerEnum>() {
-            { 
-                put("network:dhcp", NETWORK_DHCP);
-                put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
-                put("compute:xxx", COMPUTE_XXX);
-            }
-        };
+        private static final Map<String, DeviceOwnerEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DeviceOwnerEnum> createStaticFields() {
+            Map<String, DeviceOwnerEnum> map = new HashMap<>();
+            map.put("network:dhcp", NETWORK_DHCP);
+            map.put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
+            map.put("compute:xxx", COMPUTE_XXX);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -163,12 +169,9 @@ public class Privateip  {
             if( value == null ){
                 return null;
             }
-            DeviceOwnerEnum result = staticFields.get(value);
+            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DeviceOwnerEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DeviceOwnerEnum(value);
             }
             return result;
         }
@@ -177,7 +180,7 @@ public class Privateip  {
             if( value == null ){
                 return null;
             }
-            DeviceOwnerEnum result = staticFields.get(value);
+            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

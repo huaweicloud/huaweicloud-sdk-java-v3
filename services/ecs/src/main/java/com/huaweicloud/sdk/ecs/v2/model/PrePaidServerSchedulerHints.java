@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class PrePaidServerSchedulerHints  {
     /**
      * 在指定的专属主机或者共享主机上创建弹性云服务器。参数值为shared或者dedicated。
      */
-    public static class TenancyEnum {
+    public static final class TenancyEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class PrePaidServerSchedulerHints  {
         public static final TenancyEnum DEDICATED = new TenancyEnum("dedicated");
         
 
-        public static final Map<String, TenancyEnum> staticFields = new HashMap<String, TenancyEnum>() {
-            { 
-                put("shared", SHARED);
-                put("dedicated", DEDICATED);
-            }
-        };
+        private static final Map<String, TenancyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TenancyEnum> createStaticFields() {
+            Map<String, TenancyEnum> map = new HashMap<>();
+            map.put("shared", SHARED);
+            map.put("dedicated", DEDICATED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class PrePaidServerSchedulerHints  {
             if( value == null ){
                 return null;
             }
-            TenancyEnum result = staticFields.get(value);
+            TenancyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TenancyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TenancyEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class PrePaidServerSchedulerHints  {
             if( value == null ){
                 return null;
             }
-            TenancyEnum result = staticFields.get(value);
+            TenancyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

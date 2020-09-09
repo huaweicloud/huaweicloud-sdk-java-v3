@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -27,7 +32,7 @@ public class CoditionResp  {
     /**
      * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
      */
-    public static class ConditionTypeEnum {
+    public static final class ConditionTypeEnum {
 
         
         /**
@@ -46,13 +51,15 @@ public class CoditionResp  {
         public static final ConditionTypeEnum PATTERN = new ConditionTypeEnum("pattern");
         
 
-        public static final Map<String, ConditionTypeEnum> staticFields = new HashMap<String, ConditionTypeEnum>() {
-            { 
-                put("exact", EXACT);
-                put("enum", ENUM);
-                put("pattern", PATTERN);
-            }
-        };
+        private static final Map<String, ConditionTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConditionTypeEnum> createStaticFields() {
+            Map<String, ConditionTypeEnum> map = new HashMap<>();
+            map.put("exact", EXACT);
+            map.put("enum", ENUM);
+            map.put("pattern", PATTERN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -71,12 +78,9 @@ public class CoditionResp  {
             if( value == null ){
                 return null;
             }
-            ConditionTypeEnum result = staticFields.get(value);
+            ConditionTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ConditionTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ConditionTypeEnum(value);
             }
             return result;
         }
@@ -85,7 +89,7 @@ public class CoditionResp  {
             if( value == null ){
                 return null;
             }
-            ConditionTypeEnum result = staticFields.get(value);
+            ConditionTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -114,7 +118,7 @@ public class CoditionResp  {
     /**
      * 策略类型 - param：参数 - source：源IP
      */
-    public static class ConditionOriginEnum {
+    public static final class ConditionOriginEnum {
 
         
         /**
@@ -128,12 +132,14 @@ public class CoditionResp  {
         public static final ConditionOriginEnum SOURCE = new ConditionOriginEnum("source");
         
 
-        public static final Map<String, ConditionOriginEnum> staticFields = new HashMap<String, ConditionOriginEnum>() {
-            { 
-                put("param", PARAM);
-                put("source", SOURCE);
-            }
-        };
+        private static final Map<String, ConditionOriginEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConditionOriginEnum> createStaticFields() {
+            Map<String, ConditionOriginEnum> map = new HashMap<>();
+            map.put("param", PARAM);
+            map.put("source", SOURCE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -152,12 +158,9 @@ public class CoditionResp  {
             if( value == null ){
                 return null;
             }
-            ConditionOriginEnum result = staticFields.get(value);
+            ConditionOriginEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ConditionOriginEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ConditionOriginEnum(value);
             }
             return result;
         }
@@ -166,7 +169,7 @@ public class CoditionResp  {
             if( value == null ){
                 return null;
             }
-            ConditionOriginEnum result = staticFields.get(value);
+            ConditionOriginEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

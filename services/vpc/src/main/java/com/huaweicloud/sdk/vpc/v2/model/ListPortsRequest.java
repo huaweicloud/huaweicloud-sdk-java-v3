@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -62,7 +67,7 @@ public class ListPortsRequest  {
     /**
      * Gets or Sets deviceOwner
      */
-    public static class DeviceOwnerEnum {
+    public static final class DeviceOwnerEnum {
 
         
         /**
@@ -86,14 +91,16 @@ public class ListPortsRequest  {
         public static final DeviceOwnerEnum NETWORK_ROUTER_CENTRALIZED_SNAT = new DeviceOwnerEnum("network:router_centralized_snat");
         
 
-        public static final Map<String, DeviceOwnerEnum> staticFields = new HashMap<String, DeviceOwnerEnum>() {
-            { 
-                put("network:dhcp", NETWORK_DHCP);
-                put("network:VIP_PORT", NETWORK_VIP_PORT);
-                put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
-                put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
-            }
-        };
+        private static final Map<String, DeviceOwnerEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DeviceOwnerEnum> createStaticFields() {
+            Map<String, DeviceOwnerEnum> map = new HashMap<>();
+            map.put("network:dhcp", NETWORK_DHCP);
+            map.put("network:VIP_PORT", NETWORK_VIP_PORT);
+            map.put("network:router_interface_distributed", NETWORK_ROUTER_INTERFACE_DISTRIBUTED);
+            map.put("network:router_centralized_snat", NETWORK_ROUTER_CENTRALIZED_SNAT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -112,12 +119,9 @@ public class ListPortsRequest  {
             if( value == null ){
                 return null;
             }
-            DeviceOwnerEnum result = staticFields.get(value);
+            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DeviceOwnerEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DeviceOwnerEnum(value);
             }
             return result;
         }
@@ -126,7 +130,7 @@ public class ListPortsRequest  {
             if( value == null ){
                 return null;
             }
-            DeviceOwnerEnum result = staticFields.get(value);
+            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -155,7 +159,7 @@ public class ListPortsRequest  {
     /**
      * Gets or Sets status
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -174,13 +178,15 @@ public class ListPortsRequest  {
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("ACTIVE", ACTIVE);
-                put("BUILD", BUILD);
-                put("DOWN", DOWN);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("BUILD", BUILD);
+            map.put("DOWN", DOWN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -199,12 +205,9 @@ public class ListPortsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -213,7 +216,7 @@ public class ListPortsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

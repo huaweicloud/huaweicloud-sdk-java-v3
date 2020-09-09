@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,12 +30,14 @@ public class ExternalAccessStatus {
     public static final ExternalAccessStatus EXPIRED = new ExternalAccessStatus("EXPIRED");
     
 
-    public static final Map<String, ExternalAccessStatus> staticFields = new HashMap<String, ExternalAccessStatus>() {
-        { 
-            put("NORMAL", NORMAL);
-            put("EXPIRED", EXPIRED);
-        }
-    };
+    private static final Map<String, ExternalAccessStatus> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, ExternalAccessStatus> createStaticFields() {
+        Map<String, ExternalAccessStatus> map = new HashMap<>();
+        map.put("NORMAL", NORMAL);
+        map.put("EXPIRED", EXPIRED);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -52,12 +56,9 @@ public class ExternalAccessStatus {
         if( value == null ){
             return null;
         }
-        ExternalAccessStatus result = staticFields.get(value);
+        ExternalAccessStatus result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new ExternalAccessStatus(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new ExternalAccessStatus(value);
         }
         return result;
     }
@@ -66,7 +67,7 @@ public class ExternalAccessStatus {
         if( value == null ){
             return null;
         }
-        ExternalAccessStatus result = staticFields.get(value);
+        ExternalAccessStatus result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class AnimatedGraphicsOutputParam  {
     /**
      * 动图格式，目前仅支持取值 gif 
      */
-    public static class FormatEnum {
+    public static final class FormatEnum {
 
         
         /**
@@ -29,11 +32,13 @@ public class AnimatedGraphicsOutputParam  {
         public static final FormatEnum GIF = new FormatEnum("gif");
         
 
-        public static final Map<String, FormatEnum> staticFields = new HashMap<String, FormatEnum>() {
-            { 
-                put("gif", GIF);
-            }
-        };
+        private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FormatEnum> createStaticFields() {
+            Map<String, FormatEnum> map = new HashMap<>();
+            map.put("gif", GIF);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +57,9 @@ public class AnimatedGraphicsOutputParam  {
             if( value == null ){
                 return null;
             }
-            FormatEnum result = staticFields.get(value);
+            FormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new FormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new FormatEnum(value);
             }
             return result;
         }
@@ -66,7 +68,7 @@ public class AnimatedGraphicsOutputParam  {
             if( value == null ){
                 return null;
             }
-            FormatEnum result = staticFields.get(value);
+            FormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

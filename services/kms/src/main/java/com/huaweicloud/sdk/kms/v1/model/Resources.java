@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class Resources  {
     /**
      * 配额类型。枚举值说明:  - CMK，用户主密钥  - grant_per_CMK，单个用户主密钥可创建授权数
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class Resources  {
         public static final TypeEnum GRANT_PER_CMK = new TypeEnum("grant_per_CMK");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("CMK", CMK);
-                put("grant_per_CMK", GRANT_PER_CMK);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("CMK", CMK);
+            map.put("grant_per_CMK", GRANT_PER_CMK);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class Resources  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class Resources  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

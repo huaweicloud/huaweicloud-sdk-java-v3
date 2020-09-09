@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class CreateInstanceDatastoreResult  {
     /**
      * 数据库版本类型。支持DDS社区版和增强版。 取值： - 取“DDS-Community”，表示创建社区版实例。 - 取“DDS-Enhanced”，表示创建增强版实例。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -34,12 +39,14 @@ public class CreateInstanceDatastoreResult  {
         public static final TypeEnum DDS_ENHANCED = new TypeEnum("DDS-Enhanced");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("DDS-Community", DDS_COMMUNITY);
-                put("DDS-Enhanced", DDS_ENHANCED);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("DDS-Community", DDS_COMMUNITY);
+            map.put("DDS-Enhanced", DDS_ENHANCED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +65,9 @@ public class CreateInstanceDatastoreResult  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -72,7 +76,7 @@ public class CreateInstanceDatastoreResult  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +111,7 @@ public class CreateInstanceDatastoreResult  {
     /**
      * 存储引擎。DDS社区版支持WiredTiger存储引擎，DDS增强版支持RocksDB存储引擎。 取值： - 社区版引擎取“wiredTiger”。 - 增强版引擎取“rocksDB”。
      */
-    public static class StorageEngineEnum {
+    public static final class StorageEngineEnum {
 
         
         /**
@@ -121,12 +125,14 @@ public class CreateInstanceDatastoreResult  {
         public static final StorageEngineEnum ROCKSDB = new StorageEngineEnum("rocksDB");
         
 
-        public static final Map<String, StorageEngineEnum> staticFields = new HashMap<String, StorageEngineEnum>() {
-            { 
-                put("wiredTiger", WIREDTIGER);
-                put("rocksDB", ROCKSDB);
-            }
-        };
+        private static final Map<String, StorageEngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StorageEngineEnum> createStaticFields() {
+            Map<String, StorageEngineEnum> map = new HashMap<>();
+            map.put("wiredTiger", WIREDTIGER);
+            map.put("rocksDB", ROCKSDB);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +151,9 @@ public class CreateInstanceDatastoreResult  {
             if( value == null ){
                 return null;
             }
-            StorageEngineEnum result = staticFields.get(value);
+            StorageEngineEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StorageEngineEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StorageEngineEnum(value);
             }
             return result;
         }
@@ -159,7 +162,7 @@ public class CreateInstanceDatastoreResult  {
             if( value == null ){
                 return null;
             }
-            StorageEngineEnum result = staticFields.get(value);
+            StorageEngineEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

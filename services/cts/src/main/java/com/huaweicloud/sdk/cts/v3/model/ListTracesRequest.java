@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class ListTracesRequest  {
     /**
      * Gets or Sets traceType
      */
-    public static class TraceTypeEnum {
+    public static final class TraceTypeEnum {
 
         
         /**
@@ -34,12 +39,14 @@ public class ListTracesRequest  {
         public static final TraceTypeEnum DATA = new TraceTypeEnum("data");
         
 
-        public static final Map<String, TraceTypeEnum> staticFields = new HashMap<String, TraceTypeEnum>() {
-            { 
-                put("system", SYSTEM);
-                put("data", DATA);
-            }
-        };
+        private static final Map<String, TraceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TraceTypeEnum> createStaticFields() {
+            Map<String, TraceTypeEnum> map = new HashMap<>();
+            map.put("system", SYSTEM);
+            map.put("data", DATA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +65,9 @@ public class ListTracesRequest  {
             if( value == null ){
                 return null;
             }
-            TraceTypeEnum result = staticFields.get(value);
+            TraceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TraceTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TraceTypeEnum(value);
             }
             return result;
         }
@@ -72,7 +76,7 @@ public class ListTracesRequest  {
             if( value == null ){
                 return null;
             }
-            TraceTypeEnum result = staticFields.get(value);
+            TraceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -173,7 +177,7 @@ public class ListTracesRequest  {
     /**
      * Gets or Sets traceRating
      */
-    public static class TraceRatingEnum {
+    public static final class TraceRatingEnum {
 
         
         /**
@@ -192,13 +196,15 @@ public class ListTracesRequest  {
         public static final TraceRatingEnum INCIDENT = new TraceRatingEnum("incident");
         
 
-        public static final Map<String, TraceRatingEnum> staticFields = new HashMap<String, TraceRatingEnum>() {
-            { 
-                put("normal", NORMAL);
-                put("warning", WARNING);
-                put("incident", INCIDENT);
-            }
-        };
+        private static final Map<String, TraceRatingEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TraceRatingEnum> createStaticFields() {
+            Map<String, TraceRatingEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            map.put("warning", WARNING);
+            map.put("incident", INCIDENT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -217,12 +223,9 @@ public class ListTracesRequest  {
             if( value == null ){
                 return null;
             }
-            TraceRatingEnum result = staticFields.get(value);
+            TraceRatingEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TraceRatingEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TraceRatingEnum(value);
             }
             return result;
         }
@@ -231,7 +234,7 @@ public class ListTracesRequest  {
             if( value == null ){
                 return null;
             }
-            TraceRatingEnum result = staticFields.get(value);
+            TraceRatingEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class BatchUpdateUserStatusRequest  {
     /**
      * Gets or Sets value
      */
-    public static class ValueEnum {
+    public static final class ValueEnum {
 
         
         /**
@@ -48,12 +51,14 @@ public class BatchUpdateUserStatusRequest  {
         public static final ValueEnum NUMBER_1 = new ValueEnum(1);
         
 
-        public static final Map<Integer, ValueEnum> staticFields = new HashMap<Integer, ValueEnum>() {
-            { 
-                put(0, NUMBER_0);
-                put(1, NUMBER_1);
-            }
-        };
+        private static final Map<Integer, ValueEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ValueEnum> createStaticFields() {
+            Map<Integer, ValueEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -72,12 +77,9 @@ public class BatchUpdateUserStatusRequest  {
             if( value == null ){
                 return null;
             }
-            ValueEnum result = staticFields.get(value);
+            ValueEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ValueEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ValueEnum(value);
             }
             return result;
         }
@@ -86,7 +88,7 @@ public class BatchUpdateUserStatusRequest  {
             if( value == null ){
                 return null;
             }
-            ValueEnum result = staticFields.get(value);
+            ValueEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class ApiPolicyFunctionBase  {
     /**
      * 调用类型 - async： 异步 - sync：同步
      */
-    public static class InvocationTypeEnum {
+    public static final class InvocationTypeEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class ApiPolicyFunctionBase  {
         public static final InvocationTypeEnum SYNC = new InvocationTypeEnum("sync");
         
 
-        public static final Map<String, InvocationTypeEnum> staticFields = new HashMap<String, InvocationTypeEnum>() {
-            { 
-                put("async", ASYNC);
-                put("sync", SYNC);
-            }
-        };
+        private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InvocationTypeEnum> createStaticFields() {
+            Map<String, InvocationTypeEnum> map = new HashMap<>();
+            map.put("async", ASYNC);
+            map.put("sync", SYNC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class ApiPolicyFunctionBase  {
             if( value == null ){
                 return null;
             }
-            InvocationTypeEnum result = staticFields.get(value);
+            InvocationTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InvocationTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InvocationTypeEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class ApiPolicyFunctionBase  {
             if( value == null ){
                 return null;
             }
-            InvocationTypeEnum result = staticFields.get(value);
+            InvocationTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

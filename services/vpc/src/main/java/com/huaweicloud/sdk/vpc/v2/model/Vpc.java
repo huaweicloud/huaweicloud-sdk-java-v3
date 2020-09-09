@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -53,7 +56,7 @@ public class Vpc  {
         /**
      * 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -72,13 +75,15 @@ public class Vpc  {
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("CREATING", CREATING);
-                put("OK", OK);
-                put("ERROR", ERROR);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("CREATING", CREATING);
+            map.put("OK", OK);
+            map.put("ERROR", ERROR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -97,12 +102,9 @@ public class Vpc  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -111,7 +113,7 @@ public class Vpc  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

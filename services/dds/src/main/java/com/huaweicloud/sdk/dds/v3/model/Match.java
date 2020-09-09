@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class Match  {
     /**
      * 取值为“instance_name”或“instance_id”，分别表示按实例名称或按实例ID匹配查询。
      */
-    public static class KeyEnum {
+    public static final class KeyEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class Match  {
         public static final KeyEnum INSTANCE_ID = new KeyEnum("instance_id");
         
 
-        public static final Map<String, KeyEnum> staticFields = new HashMap<String, KeyEnum>() {
-            { 
-                put("instance_name", INSTANCE_NAME);
-                put("instance_id", INSTANCE_ID);
-            }
-        };
+        private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeyEnum> createStaticFields() {
+            Map<String, KeyEnum> map = new HashMap<>();
+            map.put("instance_name", INSTANCE_NAME);
+            map.put("instance_id", INSTANCE_ID);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class Match  {
             if( value == null ){
                 return null;
             }
-            KeyEnum result = staticFields.get(value);
+            KeyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new KeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new KeyEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class Match  {
             if( value == null ){
                 return null;
             }
-            KeyEnum result = staticFields.get(value);
+            KeyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

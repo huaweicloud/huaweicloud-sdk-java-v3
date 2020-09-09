@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +37,7 @@ public class ListInstancesRequest  {
     /**
      * Gets or Sets mode
      */
-    public static class ModeEnum {
+    public static final class ModeEnum {
 
         
         /**
@@ -51,13 +56,15 @@ public class ListInstancesRequest  {
         public static final ModeEnum SINGLE = new ModeEnum("Single");
         
 
-        public static final Map<String, ModeEnum> staticFields = new HashMap<String, ModeEnum>() {
-            { 
-                put("Sharding", SHARDING);
-                put("ReplicaSet", REPLICASET);
-                put("Single", SINGLE);
-            }
-        };
+        private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ModeEnum> createStaticFields() {
+            Map<String, ModeEnum> map = new HashMap<>();
+            map.put("Sharding", SHARDING);
+            map.put("ReplicaSet", REPLICASET);
+            map.put("Single", SINGLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +83,9 @@ public class ListInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            ModeEnum result = staticFields.get(value);
+            ModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ModeEnum(value);
             }
             return result;
         }
@@ -90,7 +94,7 @@ public class ListInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            ModeEnum result = staticFields.get(value);
+            ModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -119,7 +123,7 @@ public class ListInstancesRequest  {
     /**
      * Gets or Sets datastoreType
      */
-    public static class DatastoreTypeEnum {
+    public static final class DatastoreTypeEnum {
 
         
         /**
@@ -133,12 +137,14 @@ public class ListInstancesRequest  {
         public static final DatastoreTypeEnum DDS_ENHANCED = new DatastoreTypeEnum("DDS-Enhanced");
         
 
-        public static final Map<String, DatastoreTypeEnum> staticFields = new HashMap<String, DatastoreTypeEnum>() {
-            { 
-                put("DDS-Community", DDS_COMMUNITY);
-                put("DDS-Enhanced", DDS_ENHANCED);
-            }
-        };
+        private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DatastoreTypeEnum> createStaticFields() {
+            Map<String, DatastoreTypeEnum> map = new HashMap<>();
+            map.put("DDS-Community", DDS_COMMUNITY);
+            map.put("DDS-Enhanced", DDS_ENHANCED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -157,12 +163,9 @@ public class ListInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            DatastoreTypeEnum result = staticFields.get(value);
+            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DatastoreTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DatastoreTypeEnum(value);
             }
             return result;
         }
@@ -171,7 +174,7 @@ public class ListInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            DatastoreTypeEnum result = staticFields.get(value);
+            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

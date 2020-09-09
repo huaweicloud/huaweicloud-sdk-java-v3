@@ -3,6 +3,17 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -41,7 +52,7 @@ public class NovaServer  {
     /**
      * 云服务器当前状态信息。   取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -115,24 +126,26 @@ public class NovaServer  {
         public static final StatusEnum VERIFY_RESIZE = new StatusEnum("VERIFY_RESIZE");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("ACTIVE", ACTIVE);
-                put(" BUILD", _BUILD);
-                put("DELETED", DELETED);
-                put("ERROR", ERROR);
-                put("HARD_REBOOT", HARD_REBOOT);
-                put("MIGRATING", MIGRATING);
-                put("REBOOT", REBOOT);
-                put("RESIZE", RESIZE);
-                put("REVERT_RESIZE", REVERT_RESIZE);
-                put("SHELVED", SHELVED);
-                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-                put("SHUTOFF", SHUTOFF);
-                put("UNKNOWN", UNKNOWN);
-                put("VERIFY_RESIZE", VERIFY_RESIZE);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put(" BUILD", _BUILD);
+            map.put("DELETED", DELETED);
+            map.put("ERROR", ERROR);
+            map.put("HARD_REBOOT", HARD_REBOOT);
+            map.put("MIGRATING", MIGRATING);
+            map.put("REBOOT", REBOOT);
+            map.put("RESIZE", RESIZE);
+            map.put("REVERT_RESIZE", REVERT_RESIZE);
+            map.put("SHELVED", SHELVED);
+            map.put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+            map.put("SHUTOFF", SHUTOFF);
+            map.put("UNKNOWN", UNKNOWN);
+            map.put("VERIFY_RESIZE", VERIFY_RESIZE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -151,12 +164,9 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -165,7 +175,7 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -266,7 +276,7 @@ public class NovaServer  {
         /**
      * 扩展属性，磁盘配置方式。对镜像启动云服务器生效。  取值范围：  - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 - MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
      */
-    public static class OsDCFDiskConfigEnum {
+    public static final class OsDCFDiskConfigEnum {
 
         
         /**
@@ -280,12 +290,14 @@ public class NovaServer  {
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
         
 
-        public static final Map<String, OsDCFDiskConfigEnum> staticFields = new HashMap<String, OsDCFDiskConfigEnum>() {
-            { 
-                put("AUTO", AUTO);
-                put("MANUAL", MANUAL);
-            }
-        };
+        private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsDCFDiskConfigEnum> createStaticFields() {
+            Map<String, OsDCFDiskConfigEnum> map = new HashMap<>();
+            map.put("AUTO", AUTO);
+            map.put("MANUAL", MANUAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -304,12 +316,9 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            OsDCFDiskConfigEnum result = staticFields.get(value);
+            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsDCFDiskConfigEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsDCFDiskConfigEnum(value);
             }
             return result;
         }
@@ -318,7 +327,7 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            OsDCFDiskConfigEnum result = staticFields.get(value);
+            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -377,7 +386,7 @@ public class NovaServer  {
     /**
      * 扩展属性，云服务器任务状态。   取值范围：  SHOUTOFF, RESIZE, REBUILD, VERIFY_RESIZE, REVERT_RESIZE, PAUSED, MIGRATING, SUSPENDED, RESCUE, ERROR, DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED
      */
-    public static class OsEXTSTSTaskStateEnum {
+    public static final class OsEXTSTSTaskStateEnum {
 
         
         /**
@@ -451,24 +460,26 @@ public class NovaServer  {
         public static final OsEXTSTSTaskStateEnum SHELVED_OFFLOADED = new OsEXTSTSTaskStateEnum("SHELVED_OFFLOADED");
         
 
-        public static final Map<String, OsEXTSTSTaskStateEnum> staticFields = new HashMap<String, OsEXTSTSTaskStateEnum>() {
-            { 
-                put("SHOUTOFF", SHOUTOFF);
-                put(" RESIZE", _RESIZE);
-                put(" REBUILD", _REBUILD);
-                put(" VERIFY_RESIZE", _VERIFY_RESIZE);
-                put(" REVERT_RESIZE", _REVERT_RESIZE);
-                put(" PAUSED", _PAUSED);
-                put(" MIGRATING", _MIGRATING);
-                put(" SUSPENDED", _SUSPENDED);
-                put(" RESCUE", _RESCUE);
-                put(" ERROR", _ERROR);
-                put(" DELETED", _DELETED);
-                put("SOFT_DELETED", SOFT_DELETED);
-                put("SHELVED", SHELVED);
-                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-            }
-        };
+        private static final Map<String, OsEXTSTSTaskStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsEXTSTSTaskStateEnum> createStaticFields() {
+            Map<String, OsEXTSTSTaskStateEnum> map = new HashMap<>();
+            map.put("SHOUTOFF", SHOUTOFF);
+            map.put(" RESIZE", _RESIZE);
+            map.put(" REBUILD", _REBUILD);
+            map.put(" VERIFY_RESIZE", _VERIFY_RESIZE);
+            map.put(" REVERT_RESIZE", _REVERT_RESIZE);
+            map.put(" PAUSED", _PAUSED);
+            map.put(" MIGRATING", _MIGRATING);
+            map.put(" SUSPENDED", _SUSPENDED);
+            map.put(" RESCUE", _RESCUE);
+            map.put(" ERROR", _ERROR);
+            map.put(" DELETED", _DELETED);
+            map.put("SOFT_DELETED", SOFT_DELETED);
+            map.put("SHELVED", SHELVED);
+            map.put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -487,12 +498,9 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = staticFields.get(value);
+            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsEXTSTSTaskStateEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsEXTSTSTaskStateEnum(value);
             }
             return result;
         }
@@ -501,7 +509,7 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = staticFields.get(value);
+            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -530,7 +538,7 @@ public class NovaServer  {
     /**
      * 扩展属性，云服务器状态。  取值范围：   ACTIVE,BUILDING,STOPPED,RESIZED,PAUSED,SUSPENDED,RESCUED,ERROR,DELETED,SOFT_DELETED,SHELVED,SHELVED_OFFLOADED
      */
-    public static class OsEXTSTSVmStateEnum {
+    public static final class OsEXTSTSVmStateEnum {
 
         
         /**
@@ -594,22 +602,24 @@ public class NovaServer  {
         public static final OsEXTSTSVmStateEnum SHELVED_OFFLOADED = new OsEXTSTSVmStateEnum("SHELVED_OFFLOADED");
         
 
-        public static final Map<String, OsEXTSTSVmStateEnum> staticFields = new HashMap<String, OsEXTSTSVmStateEnum>() {
-            { 
-                put("ACTIVE", ACTIVE);
-                put("BUILDING", BUILDING);
-                put("STOPPED", STOPPED);
-                put("RESIZED", RESIZED);
-                put("PAUSED", PAUSED);
-                put("SUSPENDED", SUSPENDED);
-                put("RESCUED", RESCUED);
-                put("ERROR", ERROR);
-                put("DELETED", DELETED);
-                put("SOFT_DELETED", SOFT_DELETED);
-                put("SHELVED", SHELVED);
-                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-            }
-        };
+        private static final Map<String, OsEXTSTSVmStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsEXTSTSVmStateEnum> createStaticFields() {
+            Map<String, OsEXTSTSVmStateEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("BUILDING", BUILDING);
+            map.put("STOPPED", STOPPED);
+            map.put("RESIZED", RESIZED);
+            map.put("PAUSED", PAUSED);
+            map.put("SUSPENDED", SUSPENDED);
+            map.put("RESCUED", RESCUED);
+            map.put("ERROR", ERROR);
+            map.put("DELETED", DELETED);
+            map.put("SOFT_DELETED", SOFT_DELETED);
+            map.put("SHELVED", SHELVED);
+            map.put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -628,12 +638,9 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            OsEXTSTSVmStateEnum result = staticFields.get(value);
+            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsEXTSTSVmStateEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsEXTSTSVmStateEnum(value);
             }
             return result;
         }
@@ -642,7 +649,7 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            OsEXTSTSVmStateEnum result = staticFields.get(value);
+            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -701,7 +708,7 @@ public class NovaServer  {
     /**
      * nova-compute状态。  - UP：服务正常 - UNKNOWN：状态未知 - DOWN：服务异常 - MAINTENANCE：维护状态 - 空字符串：弹性云服务器无主机信息
      */
-    public static class HostStatusEnum {
+    public static final class HostStatusEnum {
 
         
         /**
@@ -725,14 +732,16 @@ public class NovaServer  {
         public static final HostStatusEnum MAINTENANCE = new HostStatusEnum("MAINTENANCE");
         
 
-        public static final Map<String, HostStatusEnum> staticFields = new HashMap<String, HostStatusEnum>() {
-            { 
-                put("UP", UP);
-                put("UNKNOWN", UNKNOWN);
-                put("DOWN", DOWN);
-                put("MAINTENANCE", MAINTENANCE);
-            }
-        };
+        private static final Map<String, HostStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HostStatusEnum> createStaticFields() {
+            Map<String, HostStatusEnum> map = new HashMap<>();
+            map.put("UP", UP);
+            map.put("UNKNOWN", UNKNOWN);
+            map.put("DOWN", DOWN);
+            map.put("MAINTENANCE", MAINTENANCE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -751,12 +760,9 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            HostStatusEnum result = staticFields.get(value);
+            HostStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HostStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HostStatusEnum(value);
             }
             return result;
         }
@@ -765,7 +771,7 @@ public class NovaServer  {
             if( value == null ){
                 return null;
             }
-            HostStatusEnum result = staticFields.get(value);
+            HostStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

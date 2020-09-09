@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -70,7 +73,7 @@ public class WatermarkTemplate  {
     /**
      * 水印叠加母体  取值如下： - input ：水印叠加在输入片源上，转码输出后实际大小按图像等比例缩放 - output ：水印叠加在转码输出文件上。 
      */
-    public static class BaseEnum {
+    public static final class BaseEnum {
 
         
         /**
@@ -84,12 +87,14 @@ public class WatermarkTemplate  {
         public static final BaseEnum OUTPUT = new BaseEnum("output");
         
 
-        public static final Map<String, BaseEnum> staticFields = new HashMap<String, BaseEnum>() {
-            { 
-                put("input", INPUT);
-                put("output", OUTPUT);
-            }
-        };
+        private static final Map<String, BaseEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BaseEnum> createStaticFields() {
+            Map<String, BaseEnum> map = new HashMap<>();
+            map.put("input", INPUT);
+            map.put("output", OUTPUT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -108,12 +113,9 @@ public class WatermarkTemplate  {
             if( value == null ){
                 return null;
             }
-            BaseEnum result = staticFields.get(value);
+            BaseEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new BaseEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new BaseEnum(value);
             }
             return result;
         }
@@ -122,7 +124,7 @@ public class WatermarkTemplate  {
             if( value == null ){
                 return null;
             }
-            BaseEnum result = staticFields.get(value);
+            BaseEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

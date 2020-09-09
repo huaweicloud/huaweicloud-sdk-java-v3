@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +31,7 @@ public class CreateQueueReq  {
     /**
      * 队列类型。  取值范围： - NORMAL：普通队列，更高的并发性能，不保证先入先出（FIFO）的严格顺序。 - FIFO：有序队列，保证消息先入先出（FIFO）的严格顺序。 - KAFKA_HA：高可靠模式的kafka队列。消息多副本同步落盘，保证消息的可靠性。 - KAFKA_HT：高吞吐模式的kafka队列。消息副本异步落盘，具有较高的性能。  默认值：NORMAL
      */
-    public static class QueueModeEnum {
+    public static final class QueueModeEnum {
 
         
         /**
@@ -50,14 +55,16 @@ public class CreateQueueReq  {
         public static final QueueModeEnum KAFKA_HT = new QueueModeEnum("KAFKA_HT");
         
 
-        public static final Map<String, QueueModeEnum> staticFields = new HashMap<String, QueueModeEnum>() {
-            { 
-                put("NORMAL", NORMAL);
-                put("FIFO", FIFO);
-                put("KAFKA_HA", KAFKA_HA);
-                put("KAFKA_HT", KAFKA_HT);
-            }
-        };
+        private static final Map<String, QueueModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, QueueModeEnum> createStaticFields() {
+            Map<String, QueueModeEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("FIFO", FIFO);
+            map.put("KAFKA_HA", KAFKA_HA);
+            map.put("KAFKA_HT", KAFKA_HT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +83,9 @@ public class CreateQueueReq  {
             if( value == null ){
                 return null;
             }
-            QueueModeEnum result = staticFields.get(value);
+            QueueModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new QueueModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new QueueModeEnum(value);
             }
             return result;
         }
@@ -90,7 +94,7 @@ public class CreateQueueReq  {
             if( value == null ){
                 return null;
             }
-            QueueModeEnum result = staticFields.get(value);
+            QueueModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -125,7 +129,7 @@ public class CreateQueueReq  {
     /**
      * 仅当queue_mode为“NORMAL”或者“FIFO”时，该参数有效。  是否开启死信消息，死信消息是指无法被正常消费的消息。  当达到最大消费次数仍然失败后，DMS会将该条消息转存到死信队列中，有效期为72小时，用户可以根据需要对死信消息进行重新消费。  消费死信消息时，只能消费该消费组产生的死信消息。  有序队列的死信消息依然按照先入先出（FIFO）的顺序存储在死信队列中。  取值范围： - enable：开启 - disable：不开启  默认值：disable
      */
-    public static class RedrivePolicyEnum {
+    public static final class RedrivePolicyEnum {
 
         
         /**
@@ -139,12 +143,14 @@ public class CreateQueueReq  {
         public static final RedrivePolicyEnum DISABLE = new RedrivePolicyEnum("disable");
         
 
-        public static final Map<String, RedrivePolicyEnum> staticFields = new HashMap<String, RedrivePolicyEnum>() {
-            { 
-                put("enable", ENABLE);
-                put("disable", DISABLE);
-            }
-        };
+        private static final Map<String, RedrivePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RedrivePolicyEnum> createStaticFields() {
+            Map<String, RedrivePolicyEnum> map = new HashMap<>();
+            map.put("enable", ENABLE);
+            map.put("disable", DISABLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -163,12 +169,9 @@ public class CreateQueueReq  {
             if( value == null ){
                 return null;
             }
-            RedrivePolicyEnum result = staticFields.get(value);
+            RedrivePolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RedrivePolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RedrivePolicyEnum(value);
             }
             return result;
         }
@@ -177,7 +180,7 @@ public class CreateQueueReq  {
             if( value == null ){
                 return null;
             }
-            RedrivePolicyEnum result = staticFields.get(value);
+            RedrivePolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class KeystoneListEndpointsRequest  {
     /**
      * Gets or Sets _interface
      */
-    public static class InterfaceEnum {
+    public static final class InterfaceEnum {
 
         
         /**
@@ -39,13 +42,15 @@ public class KeystoneListEndpointsRequest  {
         public static final InterfaceEnum ADMIN = new InterfaceEnum("admin");
         
 
-        public static final Map<String, InterfaceEnum> staticFields = new HashMap<String, InterfaceEnum>() {
-            { 
-                put("public", PUBLIC);
-                put("internal", INTERNAL);
-                put("admin", ADMIN);
-            }
-        };
+        private static final Map<String, InterfaceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InterfaceEnum> createStaticFields() {
+            Map<String, InterfaceEnum> map = new HashMap<>();
+            map.put("public", PUBLIC);
+            map.put("internal", INTERNAL);
+            map.put("admin", ADMIN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class KeystoneListEndpointsRequest  {
             if( value == null ){
                 return null;
             }
-            InterfaceEnum result = staticFields.get(value);
+            InterfaceEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InterfaceEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InterfaceEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class KeystoneListEndpointsRequest  {
             if( value == null ){
                 return null;
             }
-            InterfaceEnum result = staticFields.get(value);
+            InterfaceEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

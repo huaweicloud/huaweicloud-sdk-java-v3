@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -80,7 +83,7 @@ public class InstanceRestoreInfo  {
     /**
      * 恢复状态。 - waiting：等待中 - restoring：恢复中 - succeed：恢复成功 - failed：恢复失败 
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -104,14 +107,16 @@ public class InstanceRestoreInfo  {
         public static final StatusEnum FAILED = new StatusEnum("failed");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("waiting", WAITING);
-                put("restoring", RESTORING);
-                put("succeed", SUCCEED);
-                put("failed", FAILED);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("waiting", WAITING);
+            map.put("restoring", RESTORING);
+            map.put("succeed", SUCCEED);
+            map.put("failed", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -130,12 +135,9 @@ public class InstanceRestoreInfo  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -144,7 +146,7 @@ public class InstanceRestoreInfo  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

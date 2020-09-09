@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.moderation.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class ImageDetectionReq  {
     /**
      * Gets or Sets categories
      */
-    public static class CategoriesEnum {
+    public static final class CategoriesEnum {
 
         
         /**
@@ -63,15 +66,17 @@ public class ImageDetectionReq  {
         public static final CategoriesEnum ALL = new CategoriesEnum("all");
         
 
-        public static final Map<String, CategoriesEnum> staticFields = new HashMap<String, CategoriesEnum>() {
-            { 
-                put("politics", POLITICS);
-                put("terrorism", TERRORISM);
-                put("porn", PORN);
-                put("ad", AD);
-                put("all", ALL);
-            }
-        };
+        private static final Map<String, CategoriesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CategoriesEnum> createStaticFields() {
+            Map<String, CategoriesEnum> map = new HashMap<>();
+            map.put("politics", POLITICS);
+            map.put("terrorism", TERRORISM);
+            map.put("porn", PORN);
+            map.put("ad", AD);
+            map.put("all", ALL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -90,12 +95,9 @@ public class ImageDetectionReq  {
             if( value == null ){
                 return null;
             }
-            CategoriesEnum result = staticFields.get(value);
+            CategoriesEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new CategoriesEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new CategoriesEnum(value);
             }
             return result;
         }
@@ -104,7 +106,7 @@ public class ImageDetectionReq  {
             if( value == null ){
                 return null;
             }
-            CategoriesEnum result = staticFields.get(value);
+            CategoriesEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

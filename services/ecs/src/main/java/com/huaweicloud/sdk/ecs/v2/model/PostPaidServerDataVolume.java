@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -22,7 +27,7 @@ public class PostPaidServerDataVolume  {
     /**
      * 云服务器数据盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  磁盘类型枚举值：  - SATA：普通IO磁盘类型。 - SAS：高IO磁盘类型。 - SSD：超高IO磁盘类型。 - co-p1：高IO (性能优化Ⅰ型) - uh-l1：超高IO (时延优化)磁盘类型。  > 说明： >  > 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
      */
-    public static class VolumetypeEnum {
+    public static final class VolumetypeEnum {
 
         
         /**
@@ -56,16 +61,18 @@ public class PostPaidServerDataVolume  {
         public static final VolumetypeEnum UH_L1 = new VolumetypeEnum("uh-l1");
         
 
-        public static final Map<String, VolumetypeEnum> staticFields = new HashMap<String, VolumetypeEnum>() {
-            { 
-                put("SATA", SATA);
-                put("SAS", SAS);
-                put("SSD", SSD);
-                put("GPSSD", GPSSD);
-                put("co-p1", CO_P1);
-                put("uh-l1", UH_L1);
-            }
-        };
+        private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VolumetypeEnum> createStaticFields() {
+            Map<String, VolumetypeEnum> map = new HashMap<>();
+            map.put("SATA", SATA);
+            map.put("SAS", SAS);
+            map.put("SSD", SSD);
+            map.put("GPSSD", GPSSD);
+            map.put("co-p1", CO_P1);
+            map.put("uh-l1", UH_L1);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -84,12 +91,9 @@ public class PostPaidServerDataVolume  {
             if( value == null ){
                 return null;
             }
-            VolumetypeEnum result = staticFields.get(value);
+            VolumetypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VolumetypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VolumetypeEnum(value);
             }
             return result;
         }
@@ -98,7 +102,7 @@ public class PostPaidServerDataVolume  {
             if( value == null ){
                 return null;
             }
-            VolumetypeEnum result = staticFields.get(value);
+            VolumetypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -157,7 +161,7 @@ public class PostPaidServerDataVolume  {
     /**
      * 云服务器数据盘对应的磁盘存储类型。 磁盘存储类型枚举值： DSS：专属存储类型
      */
-    public static class ClusterTypeEnum {
+    public static final class ClusterTypeEnum {
 
         
         /**
@@ -166,11 +170,13 @@ public class PostPaidServerDataVolume  {
         public static final ClusterTypeEnum DSS = new ClusterTypeEnum("DSS");
         
 
-        public static final Map<String, ClusterTypeEnum> staticFields = new HashMap<String, ClusterTypeEnum>() {
-            { 
-                put("DSS", DSS);
-            }
-        };
+        private static final Map<String, ClusterTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ClusterTypeEnum> createStaticFields() {
+            Map<String, ClusterTypeEnum> map = new HashMap<>();
+            map.put("DSS", DSS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -189,12 +195,9 @@ public class PostPaidServerDataVolume  {
             if( value == null ){
                 return null;
             }
-            ClusterTypeEnum result = staticFields.get(value);
+            ClusterTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ClusterTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ClusterTypeEnum(value);
             }
             return result;
         }
@@ -203,7 +206,7 @@ public class PostPaidServerDataVolume  {
             if( value == null ){
                 return null;
             }
-            ClusterTypeEnum result = staticFields.get(value);
+            ClusterTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -36,7 +39,7 @@ public class ListInstancesByTagsRequestBody  {
     /**
      * 操作标识。   - 取值为“filter”，表示根据标签过滤条件查询实例。   - 取值为“count”，表示仅返回总记录数，禁止返回其他字段。
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -50,12 +53,14 @@ public class ListInstancesByTagsRequestBody  {
         public static final ActionEnum COUNT = new ActionEnum("count");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("filter", FILTER);
-                put("count", COUNT);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("filter", FILTER);
+            map.put("count", COUNT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -74,12 +79,9 @@ public class ListInstancesByTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -88,7 +90,7 @@ public class ListInstancesByTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

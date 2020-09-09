@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +35,15 @@ public class Template {
     public static final Template WORDPRESS = new Template("wordpress");
     
 
-    public static final Map<String, Template> staticFields = new HashMap<String, Template>() {
-        { 
-            put("magento", MAGENTO);
-            put("mbaas", MBAAS);
-            put("wordpress", WORDPRESS);
-        }
-    };
+    private static final Map<String, Template> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, Template> createStaticFields() {
+        Map<String, Template> map = new HashMap<>();
+        map.put("magento", MAGENTO);
+        map.put("mbaas", MBAAS);
+        map.put("wordpress", WORDPRESS);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -58,12 +62,9 @@ public class Template {
         if( value == null ){
             return null;
         }
-        Template result = staticFields.get(value);
+        Template result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new Template(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new Template(value);
         }
         return result;
     }
@@ -72,7 +73,7 @@ public class Template {
         if( value == null ){
             return null;
         }
-        Template result = staticFields.get(value);
+        Template result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +35,15 @@ public class ChargeMode {
     public static final ChargeMode MONTHLY = new ChargeMode("monthly");
     
 
-    public static final Map<String, ChargeMode> staticFields = new HashMap<String, ChargeMode>() {
-        { 
-            put("provided", PROVIDED);
-            put("on_demanded", ON_DEMANDED);
-            put("monthly", MONTHLY);
-        }
-    };
+    private static final Map<String, ChargeMode> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, ChargeMode> createStaticFields() {
+        Map<String, ChargeMode> map = new HashMap<>();
+        map.put("provided", PROVIDED);
+        map.put("on_demanded", ON_DEMANDED);
+        map.put("monthly", MONTHLY);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -58,12 +62,9 @@ public class ChargeMode {
         if( value == null ){
             return null;
         }
-        ChargeMode result = staticFields.get(value);
+        ChargeMode result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new ChargeMode(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new ChargeMode(value);
         }
         return result;
     }
@@ -72,7 +73,7 @@ public class ChargeMode {
         if( value == null ){
             return null;
         }
-        ChargeMode result = staticFields.get(value);
+        ChargeMode result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

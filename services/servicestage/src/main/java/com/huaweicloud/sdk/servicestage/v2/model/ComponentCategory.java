@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +35,15 @@ public class ComponentCategory {
     public static final ComponentCategory COMMON = new ComponentCategory("Common");
     
 
-    public static final Map<String, ComponentCategory> staticFields = new HashMap<String, ComponentCategory>() {
-        { 
-            put("Webapp", WEBAPP);
-            put("MicroService", MICROSERVICE);
-            put("Common", COMMON);
-        }
-    };
+    private static final Map<String, ComponentCategory> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, ComponentCategory> createStaticFields() {
+        Map<String, ComponentCategory> map = new HashMap<>();
+        map.put("Webapp", WEBAPP);
+        map.put("MicroService", MICROSERVICE);
+        map.put("Common", COMMON);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -58,12 +62,9 @@ public class ComponentCategory {
         if( value == null ){
             return null;
         }
-        ComponentCategory result = staticFields.get(value);
+        ComponentCategory result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new ComponentCategory(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new ComponentCategory(value);
         }
         return result;
     }
@@ -72,7 +73,7 @@ public class ComponentCategory {
         if( value == null ){
             return null;
         }
-        ComponentCategory result = staticFields.get(value);
+        ComponentCategory result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

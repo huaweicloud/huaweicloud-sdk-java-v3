@@ -4,6 +4,7 @@ package com.huaweicloud.sdk.devstar.v1.model;
 
 
 import com.huaweicloud.sdk.core.SdkStreamResponse;
+
 import java.util.function.Consumer;
 import java.util.Objects;
 

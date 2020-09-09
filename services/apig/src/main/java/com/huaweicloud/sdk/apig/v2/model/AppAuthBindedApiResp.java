@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -89,7 +94,7 @@ public class AppAuthBindedApiResp  {
     /**
      * APP的类型  默认为apig，暂不支持其他类型
      */
-    public static class AppTypeEnum {
+    public static final class AppTypeEnum {
 
         
         /**
@@ -103,12 +108,14 @@ public class AppAuthBindedApiResp  {
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
         
 
-        public static final Map<String, AppTypeEnum> staticFields = new HashMap<String, AppTypeEnum>() {
-            { 
-                put("apig", APIG);
-                put("roma", ROMA);
-            }
-        };
+        private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AppTypeEnum> createStaticFields() {
+            Map<String, AppTypeEnum> map = new HashMap<>();
+            map.put("apig", APIG);
+            map.put("roma", ROMA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -127,12 +134,9 @@ public class AppAuthBindedApiResp  {
             if( value == null ){
                 return null;
             }
-            AppTypeEnum result = staticFields.get(value);
+            AppTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AppTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AppTypeEnum(value);
             }
             return result;
         }
@@ -141,7 +145,7 @@ public class AppAuthBindedApiResp  {
             if( value == null ){
                 return null;
             }
-            AppTypeEnum result = staticFields.get(value);
+            AppTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -188,7 +192,7 @@ public class AppAuthBindedApiResp  {
     /**
      * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
      */
-    public static class AuthTunnelEnum {
+    public static final class AuthTunnelEnum {
 
         
         /**
@@ -202,12 +206,14 @@ public class AppAuthBindedApiResp  {
         public static final AuthTunnelEnum GREEN = new AuthTunnelEnum("GREEN");
         
 
-        public static final Map<String, AuthTunnelEnum> staticFields = new HashMap<String, AuthTunnelEnum>() {
-            { 
-                put("NORMAL", NORMAL);
-                put("GREEN", GREEN);
-            }
-        };
+        private static final Map<String, AuthTunnelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthTunnelEnum> createStaticFields() {
+            Map<String, AuthTunnelEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("GREEN", GREEN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -226,12 +232,9 @@ public class AppAuthBindedApiResp  {
             if( value == null ){
                 return null;
             }
-            AuthTunnelEnum result = staticFields.get(value);
+            AuthTunnelEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AuthTunnelEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AuthTunnelEnum(value);
             }
             return result;
         }
@@ -240,7 +243,7 @@ public class AppAuthBindedApiResp  {
             if( value == null ){
                 return null;
             }
-            AuthTunnelEnum result = staticFields.get(value);
+            AuthTunnelEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

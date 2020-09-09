@@ -5,6 +5,17 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -48,7 +59,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     /**
      * 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。
      */
-    public static class DiskFormatEnum {
+    public static final class DiskFormatEnum {
 
         
         /**
@@ -72,14 +83,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
         
 
-        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
-            { 
-                put("vhd", VHD);
-                put("zvhd", ZVHD);
-                put("raw", RAW);
-                put("qcow2", QCOW2);
-            }
-        };
+        private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DiskFormatEnum> createStaticFields() {
+            Map<String, DiskFormatEnum> map = new HashMap<>();
+            map.put("vhd", VHD);
+            map.put("zvhd", ZVHD);
+            map.put("raw", RAW);
+            map.put("qcow2", QCOW2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -98,12 +111,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DiskFormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DiskFormatEnum(value);
             }
             return result;
         }
@@ -112,7 +122,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -159,7 +169,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     /**
      * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -188,15 +198,17 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         public static final StatusEnum ACTIVE = new StatusEnum("active");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("queued", QUEUED);
-                put("saving", SAVING);
-                put("deleted", DELETED);
-                put("killed", KILLED);
-                put("active", ACTIVE);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("queued", QUEUED);
+            map.put("saving", SAVING);
+            map.put("deleted", DELETED);
+            map.put("killed", KILLED);
+            map.put("active", ACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -215,12 +227,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -229,7 +238,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -318,7 +327,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     /**
      * 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。
      */
-    public static class OsTypeEnum {
+    public static final class OsTypeEnum {
 
         
         /**
@@ -337,13 +346,15 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         public static final OsTypeEnum OTHER = new OsTypeEnum("other");
         
 
-        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
-            { 
-                put("Windows", WINDOWS);
-                put("Linux", LINUX);
-                put("other", OTHER);
-            }
-        };
+        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsTypeEnum> createStaticFields() {
+            Map<String, OsTypeEnum> map = new HashMap<>();
+            map.put("Windows", WINDOWS);
+            map.put("Linux", LINUX);
+            map.put("other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -362,12 +373,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsTypeEnum(value);
             }
             return result;
         }
@@ -376,7 +384,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -411,7 +419,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     /**
      * 表示操作系统位数。取值由__os_version确定，取值为32或64。
      */
-    public static class OsBitEnum {
+    public static final class OsBitEnum {
 
         
         /**
@@ -425,12 +433,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         public static final OsBitEnum _64 = new OsBitEnum("64");
         
 
-        public static final Map<String, OsBitEnum> staticFields = new HashMap<String, OsBitEnum>() {
-            { 
-                put("32", _32);
-                put("64", _64);
-            }
-        };
+        private static final Map<String, OsBitEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsBitEnum> createStaticFields() {
+            Map<String, OsBitEnum> map = new HashMap<>();
+            map.put("32", _32);
+            map.put("64", _64);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -449,12 +459,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            OsBitEnum result = staticFields.get(value);
+            OsBitEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsBitEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsBitEnum(value);
             }
             return result;
         }
@@ -463,7 +470,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            OsBitEnum result = staticFields.get(value);
+            OsBitEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -498,7 +505,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     /**
      * 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。
      */
-    public static class VirtualEnvTypeEnum {
+    public static final class VirtualEnvTypeEnum {
 
         
         /**
@@ -517,13 +524,15 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
         
 
-        public static final Map<String, VirtualEnvTypeEnum> staticFields = new HashMap<String, VirtualEnvTypeEnum>() {
-            { 
-                put("FusionCompute", FUSIONCOMPUTE);
-                put("Ironic", IRONIC);
-                put("DataImage", DATAIMAGE);
-            }
-        };
+        private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VirtualEnvTypeEnum> createStaticFields() {
+            Map<String, VirtualEnvTypeEnum> map = new HashMap<>();
+            map.put("FusionCompute", FUSIONCOMPUTE);
+            map.put("Ironic", IRONIC);
+            map.put("DataImage", DATAIMAGE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -542,12 +551,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VirtualEnvTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VirtualEnvTypeEnum(value);
             }
             return result;
         }
@@ -556,7 +562,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

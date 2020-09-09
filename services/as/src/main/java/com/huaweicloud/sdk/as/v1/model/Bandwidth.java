@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +31,7 @@ public class Bandwidth  {
     /**
      * 带宽的共享类型。共享类型枚举：PER：独享型。WHOLE：共享型。
      */
-    public static class ShareTypeEnum {
+    public static final class ShareTypeEnum {
 
         
         /**
@@ -40,12 +45,14 @@ public class Bandwidth  {
         public static final ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
         
 
-        public static final Map<String, ShareTypeEnum> staticFields = new HashMap<String, ShareTypeEnum>() {
-            { 
-                put("PER", PER);
-                put("WHOLE", WHOLE);
-            }
-        };
+        private static final Map<String, ShareTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ShareTypeEnum> createStaticFields() {
+            Map<String, ShareTypeEnum> map = new HashMap<>();
+            map.put("PER", PER);
+            map.put("WHOLE", WHOLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +71,9 @@ public class Bandwidth  {
             if( value == null ){
                 return null;
             }
-            ShareTypeEnum result = staticFields.get(value);
+            ShareTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ShareTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ShareTypeEnum(value);
             }
             return result;
         }
@@ -78,7 +82,7 @@ public class Bandwidth  {
             if( value == null ){
                 return null;
             }
-            ShareTypeEnum result = staticFields.get(value);
+            ShareTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +111,7 @@ public class Bandwidth  {
     /**
      * 带宽的计费类型。字段值为“bandwidth”，表示按带宽计费。字段值为“traffic”，表示按流量计费。字段为其它值，会导致创建云服务器失败。如果share_type是PER，该参数为必选项。如果share_type是WHOLE，会忽略该参数。
      */
-    public static class ChargingModeEnum {
+    public static final class ChargingModeEnum {
 
         
         /**
@@ -121,12 +125,14 @@ public class Bandwidth  {
         public static final ChargingModeEnum TRAFFIC = new ChargingModeEnum("traffic");
         
 
-        public static final Map<String, ChargingModeEnum> staticFields = new HashMap<String, ChargingModeEnum>() {
-            { 
-                put("bandwidth", BANDWIDTH);
-                put("traffic", TRAFFIC);
-            }
-        };
+        private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargingModeEnum> createStaticFields() {
+            Map<String, ChargingModeEnum> map = new HashMap<>();
+            map.put("bandwidth", BANDWIDTH);
+            map.put("traffic", TRAFFIC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +151,9 @@ public class Bandwidth  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargingModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargingModeEnum(value);
             }
             return result;
         }
@@ -159,7 +162,7 @@ public class Bandwidth  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +24,7 @@ public class SystemProcess  {
     /**
      * 追加转码类型。  取值如下： - SUBTITLE：追加字幕 - AUDIO：追加音频 - VIDEO：追加视频（原有追加新分辨率视频） 
      */
-    public static class AppendTypeEnum {
+    public static final class AppendTypeEnum {
 
         
         /**
@@ -40,13 +43,15 @@ public class SystemProcess  {
         public static final AppendTypeEnum VIDEO = new AppendTypeEnum("VIDEO");
         
 
-        public static final Map<String, AppendTypeEnum> staticFields = new HashMap<String, AppendTypeEnum>() {
-            { 
-                put("SUBTITLE", SUBTITLE);
-                put("AUDIO", AUDIO);
-                put("VIDEO", VIDEO);
-            }
-        };
+        private static final Map<String, AppendTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AppendTypeEnum> createStaticFields() {
+            Map<String, AppendTypeEnum> map = new HashMap<>();
+            map.put("SUBTITLE", SUBTITLE);
+            map.put("AUDIO", AUDIO);
+            map.put("VIDEO", VIDEO);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -65,12 +70,9 @@ public class SystemProcess  {
             if( value == null ){
                 return null;
             }
-            AppendTypeEnum result = staticFields.get(value);
+            AppendTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AppendTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AppendTypeEnum(value);
             }
             return result;
         }
@@ -79,7 +81,7 @@ public class SystemProcess  {
             if( value == null ){
                 return null;
             }
-            AppendTypeEnum result = staticFields.get(value);
+            AppendTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +26,7 @@ public class BackupFilesBody  {
     /**
      * 数据来源，当前仅支持OBS桶方式，取值为：self_build_obs。
      */
-    public static class FileSourceEnum {
+    public static final class FileSourceEnum {
 
         
         /**
@@ -32,11 +35,13 @@ public class BackupFilesBody  {
         public static final FileSourceEnum SELF_BUILD_OBS = new FileSourceEnum("self_build_obs");
         
 
-        public static final Map<String, FileSourceEnum> staticFields = new HashMap<String, FileSourceEnum>() {
-            { 
-                put("self_build_obs", SELF_BUILD_OBS);
-            }
-        };
+        private static final Map<String, FileSourceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FileSourceEnum> createStaticFields() {
+            Map<String, FileSourceEnum> map = new HashMap<>();
+            map.put("self_build_obs", SELF_BUILD_OBS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -55,12 +60,9 @@ public class BackupFilesBody  {
             if( value == null ){
                 return null;
             }
-            FileSourceEnum result = staticFields.get(value);
+            FileSourceEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new FileSourceEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new FileSourceEnum(value);
             }
             return result;
         }
@@ -69,7 +71,7 @@ public class BackupFilesBody  {
             if( value == null ){
                 return null;
             }
-            FileSourceEnum result = staticFields.get(value);
+            FileSourceEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

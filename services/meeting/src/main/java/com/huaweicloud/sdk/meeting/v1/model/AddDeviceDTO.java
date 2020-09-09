@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +43,7 @@ public class AddDeviceDTO  {
     /**
      * 投影码生成模式，默认为自动 - 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：   私网地址配置成简单模式；公网地址配置成复杂模式) - 1、简单 - 2、复杂
      */
-    public static class PrjCodeModeEnum {
+    public static final class PrjCodeModeEnum {
 
         
         /**
@@ -57,13 +62,15 @@ public class AddDeviceDTO  {
         public static final PrjCodeModeEnum NUMBER_2 = new PrjCodeModeEnum(2);
         
 
-        public static final Map<Integer, PrjCodeModeEnum> staticFields = new HashMap<Integer, PrjCodeModeEnum>() {
-            { 
-                put(0, NUMBER_0);
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, PrjCodeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PrjCodeModeEnum> createStaticFields() {
+            Map<Integer, PrjCodeModeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -82,12 +89,9 @@ public class AddDeviceDTO  {
             if( value == null ){
                 return null;
             }
-            PrjCodeModeEnum result = staticFields.get(value);
+            PrjCodeModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PrjCodeModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PrjCodeModeEnum(value);
             }
             return result;
         }
@@ -96,7 +100,7 @@ public class AddDeviceDTO  {
             if( value == null ){
                 return null;
             }
-            PrjCodeModeEnum result = staticFields.get(value);
+            PrjCodeModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -155,7 +159,7 @@ public class AddDeviceDTO  {
     /**
      * 终端状态 * 0、正常 * 1、冻结\" 默认值：0。 
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -169,12 +173,14 @@ public class AddDeviceDTO  {
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
         
 
-        public static final Map<Integer, StatusEnum> staticFields = new HashMap<Integer, StatusEnum>() {
-            { 
-                put(0, NUMBER_0);
-                put(1, NUMBER_1);
-            }
-        };
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -193,12 +199,9 @@ public class AddDeviceDTO  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -207,7 +210,7 @@ public class AddDeviceDTO  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

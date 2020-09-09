@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class ShowContentResponse extends SdkResponse {
     /**
      * 编码方式：base64或者text/plain。
      */
-    public static class EncodingEnum {
+    public static final class EncodingEnum {
 
         
         /**
@@ -48,12 +51,14 @@ public class ShowContentResponse extends SdkResponse {
         public static final EncodingEnum TEXT_PLAIN = new EncodingEnum("text/plain");
         
 
-        public static final Map<String, EncodingEnum> staticFields = new HashMap<String, EncodingEnum>() {
-            { 
-                put("base64", BASE64);
-                put("text/plain", TEXT_PLAIN);
-            }
-        };
+        private static final Map<String, EncodingEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EncodingEnum> createStaticFields() {
+            Map<String, EncodingEnum> map = new HashMap<>();
+            map.put("base64", BASE64);
+            map.put("text/plain", TEXT_PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -72,12 +77,9 @@ public class ShowContentResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            EncodingEnum result = staticFields.get(value);
+            EncodingEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EncodingEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EncodingEnum(value);
             }
             return result;
         }
@@ -86,7 +88,7 @@ public class ShowContentResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            EncodingEnum result = staticFields.get(value);
+            EncodingEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +24,7 @@ public class UpdatePortRequest  {
     /**
      * Gets or Sets xLanguage
      */
-    public static class XLanguageEnum {
+    public static final class XLanguageEnum {
 
         
         /**
@@ -35,12 +38,14 @@ public class UpdatePortRequest  {
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
         
 
-        public static final Map<String, XLanguageEnum> staticFields = new HashMap<String, XLanguageEnum>() {
-            { 
-                put("zh-cn", ZH_CN);
-                put("en-us", EN_US);
-            }
-        };
+        private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, XLanguageEnum> createStaticFields() {
+            Map<String, XLanguageEnum> map = new HashMap<>();
+            map.put("zh-cn", ZH_CN);
+            map.put("en-us", EN_US);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -59,12 +64,9 @@ public class UpdatePortRequest  {
             if( value == null ){
                 return null;
             }
-            XLanguageEnum result = staticFields.get(value);
+            XLanguageEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new XLanguageEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new XLanguageEnum(value);
             }
             return result;
         }
@@ -73,7 +75,7 @@ public class UpdatePortRequest  {
             if( value == null ){
                 return null;
             }
-            XLanguageEnum result = staticFields.get(value);
+            XLanguageEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

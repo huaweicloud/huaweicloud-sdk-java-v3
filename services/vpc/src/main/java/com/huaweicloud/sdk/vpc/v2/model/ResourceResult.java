@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ResourceResult  {
     /**
      * 功能说明：根据type过滤查询指定类型的配额  取值范围：vpc，subnet，securityGroup，securityGroupRule，publicIp，vpn，vpngw，vpcPeer，firewall，shareBandwidth，shareBandwidthIP，loadbalancer，listener，physicalConnect，virtualInterface，vpcContainRoutetable，routetableContainRoutes
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -109,27 +112,29 @@ public class ResourceResult  {
         public static final TypeEnum ROUTETABLECONTAINROUTES = new TypeEnum("routetableContainRoutes");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("vpc", VPC);
-                put("subnet", SUBNET);
-                put("securityGroup", SECURITYGROUP);
-                put("securityGroupRule", SECURITYGROUPRULE);
-                put("publicIp", PUBLICIP);
-                put("vpn", VPN);
-                put("vpngw", VPNGW);
-                put("vpcPeer", VPCPEER);
-                put("firewall", FIREWALL);
-                put("shareBandwidth", SHAREBANDWIDTH);
-                put("shareBandwidthIP", SHAREBANDWIDTHIP);
-                put("loadbalancer", LOADBALANCER);
-                put("listener", LISTENER);
-                put("physicalConnect", PHYSICALCONNECT);
-                put("virtualInterface", VIRTUALINTERFACE);
-                put("vpcContainRoutetable", VPCCONTAINROUTETABLE);
-                put("routetableContainRoutes", ROUTETABLECONTAINROUTES);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("vpc", VPC);
+            map.put("subnet", SUBNET);
+            map.put("securityGroup", SECURITYGROUP);
+            map.put("securityGroupRule", SECURITYGROUPRULE);
+            map.put("publicIp", PUBLICIP);
+            map.put("vpn", VPN);
+            map.put("vpngw", VPNGW);
+            map.put("vpcPeer", VPCPEER);
+            map.put("firewall", FIREWALL);
+            map.put("shareBandwidth", SHAREBANDWIDTH);
+            map.put("shareBandwidthIP", SHAREBANDWIDTHIP);
+            map.put("loadbalancer", LOADBALANCER);
+            map.put("listener", LISTENER);
+            map.put("physicalConnect", PHYSICALCONNECT);
+            map.put("virtualInterface", VIRTUALINTERFACE);
+            map.put("vpcContainRoutetable", VPCCONTAINROUTETABLE);
+            map.put("routetableContainRoutes", ROUTETABLECONTAINROUTES);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -148,12 +153,9 @@ public class ResourceResult  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -162,7 +164,7 @@ public class ResourceResult  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

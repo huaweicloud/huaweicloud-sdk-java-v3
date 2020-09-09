@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ExtraDhcpOption  {
     /**
      * 功能说明：子网配置的NTP地址名称 约束：目前只支持字段“ntp”
      */
-    public static class OptNameEnum {
+    public static final class OptNameEnum {
 
         
         /**
@@ -29,11 +32,13 @@ public class ExtraDhcpOption  {
         public static final OptNameEnum NTP = new OptNameEnum("ntp");
         
 
-        public static final Map<String, OptNameEnum> staticFields = new HashMap<String, OptNameEnum>() {
-            { 
-                put("ntp", NTP);
-            }
-        };
+        private static final Map<String, OptNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OptNameEnum> createStaticFields() {
+            Map<String, OptNameEnum> map = new HashMap<>();
+            map.put("ntp", NTP);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +57,9 @@ public class ExtraDhcpOption  {
             if( value == null ){
                 return null;
             }
-            OptNameEnum result = staticFields.get(value);
+            OptNameEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OptNameEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OptNameEnum(value);
             }
             return result;
         }
@@ -66,7 +68,7 @@ public class ExtraDhcpOption  {
             if( value == null ){
                 return null;
             }
-            OptNameEnum result = staticFields.get(value);
+            OptNameEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

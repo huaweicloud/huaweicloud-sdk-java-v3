@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -39,12 +40,6 @@ public class ShowMessagesRespMessages  {
     @JsonProperty(value="size")
     
     private Integer size;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
-    private Integer timestamp;
 
     public ShowMessagesRespMessages withTopic(String topic) {
         this.topic = topic;
@@ -125,26 +120,6 @@ public class ShowMessagesRespMessages  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    public ShowMessagesRespMessages withTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 消息时间戳。
-     * @return timestamp
-     */
-    public Integer getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -157,12 +132,11 @@ public class ShowMessagesRespMessages  {
         return Objects.equals(this.topic, showMessagesRespMessages.topic) &&
             Objects.equals(this.partition, showMessagesRespMessages.partition) &&
             Objects.equals(this.messageOffset, showMessagesRespMessages.messageOffset) &&
-            Objects.equals(this.size, showMessagesRespMessages.size) &&
-            Objects.equals(this.timestamp, showMessagesRespMessages.timestamp);
+            Objects.equals(this.size, showMessagesRespMessages.size);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, messageOffset, size, timestamp);
+        return Objects.hash(topic, partition, messageOffset, size);
     }
     @Override
     public String toString() {
@@ -172,7 +146,6 @@ public class ShowMessagesRespMessages  {
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

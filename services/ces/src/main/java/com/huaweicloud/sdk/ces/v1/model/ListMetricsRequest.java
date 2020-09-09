@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ces.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -56,7 +59,7 @@ public class ListMetricsRequest  {
     /**
      * Gets or Sets order
      */
-    public static class OrderEnum {
+    public static final class OrderEnum {
 
         
         /**
@@ -70,12 +73,14 @@ public class ListMetricsRequest  {
         public static final OrderEnum DESC = new OrderEnum("desc");
         
 
-        public static final Map<String, OrderEnum> staticFields = new HashMap<String, OrderEnum>() {
-            { 
-                put("asc", ASC);
-                put("desc", DESC);
-            }
-        };
+        private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OrderEnum> createStaticFields() {
+            Map<String, OrderEnum> map = new HashMap<>();
+            map.put("asc", ASC);
+            map.put("desc", DESC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -94,12 +99,9 @@ public class ListMetricsRequest  {
             if( value == null ){
                 return null;
             }
-            OrderEnum result = staticFields.get(value);
+            OrderEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OrderEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OrderEnum(value);
             }
             return result;
         }
@@ -108,7 +110,7 @@ public class ListMetricsRequest  {
             if( value == null ){
                 return null;
             }
-            OrderEnum result = staticFields.get(value);
+            OrderEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

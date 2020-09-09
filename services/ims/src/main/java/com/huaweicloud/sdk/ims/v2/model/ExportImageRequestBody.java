@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class ExportImageRequestBody  {
     /**
      * 文件格式，支持qcow2、vhd、zvhd和vmdk。
      */
-    public static class FileFormatEnum {
+    public static final class FileFormatEnum {
 
         
         /**
@@ -50,14 +53,16 @@ public class ExportImageRequestBody  {
         public static final FileFormatEnum VMDK = new FileFormatEnum("vmdk");
         
 
-        public static final Map<String, FileFormatEnum> staticFields = new HashMap<String, FileFormatEnum>() {
-            { 
-                put("qcow2", QCOW2);
-                put("vhd", VHD);
-                put("zvhd", ZVHD);
-                put("vmdk", VMDK);
-            }
-        };
+        private static final Map<String, FileFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FileFormatEnum> createStaticFields() {
+            Map<String, FileFormatEnum> map = new HashMap<>();
+            map.put("qcow2", QCOW2);
+            map.put("vhd", VHD);
+            map.put("zvhd", ZVHD);
+            map.put("vmdk", VMDK);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class ExportImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            FileFormatEnum result = staticFields.get(value);
+            FileFormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new FileFormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new FileFormatEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class ExportImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            FileFormatEnum result = staticFields.get(value);
+            FileFormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

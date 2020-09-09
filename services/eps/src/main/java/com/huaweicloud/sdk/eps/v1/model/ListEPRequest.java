@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.eps.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,7 +55,7 @@ public class ListEPRequest  {
     /**
      * Gets or Sets sortKey
      */
-    public static class SortKeyEnum {
+    public static final class SortKeyEnum {
 
         
         /**
@@ -64,12 +69,14 @@ public class ListEPRequest  {
         public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
         
 
-        public static final Map<String, SortKeyEnum> staticFields = new HashMap<String, SortKeyEnum>() {
-            { 
-                put("created_at", CREATED_AT);
-                put("updated_at", UPDATED_AT);
-            }
-        };
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("created_at", CREATED_AT);
+            map.put("updated_at", UPDATED_AT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -88,12 +95,9 @@ public class ListEPRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortKeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SortKeyEnum(value);
             }
             return result;
         }
@@ -102,7 +106,7 @@ public class ListEPRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -131,7 +135,7 @@ public class ListEPRequest  {
     /**
      * Gets or Sets sortDir
      */
-    public static class SortDirEnum {
+    public static final class SortDirEnum {
 
         
         /**
@@ -145,12 +149,14 @@ public class ListEPRequest  {
         public static final SortDirEnum ASC = new SortDirEnum("asc");
         
 
-        public static final Map<String, SortDirEnum> staticFields = new HashMap<String, SortDirEnum>() {
-            { 
-                put("desc", DESC);
-                put("asc", ASC);
-            }
-        };
+        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortDirEnum> createStaticFields() {
+            Map<String, SortDirEnum> map = new HashMap<>();
+            map.put("desc", DESC);
+            map.put("asc", ASC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -169,12 +175,9 @@ public class ListEPRequest  {
             if( value == null ){
                 return null;
             }
-            SortDirEnum result = staticFields.get(value);
+            SortDirEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortDirEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SortDirEnum(value);
             }
             return result;
         }
@@ -183,7 +186,7 @@ public class ListEPRequest  {
             if( value == null ){
                 return null;
             }
-            SortDirEnum result = staticFields.get(value);
+            SortDirEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

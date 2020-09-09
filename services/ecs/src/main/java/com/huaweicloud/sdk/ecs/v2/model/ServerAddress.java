@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class ServerAddress  {
     /**
      * IP地址类型。  - fixed：代表私有IP地址。 - floating：代表浮动IP地址。
      */
-    public static class OsEXTIPSTypeEnum {
+    public static final class OsEXTIPSTypeEnum {
 
         
         /**
@@ -46,12 +49,14 @@ public class ServerAddress  {
         public static final OsEXTIPSTypeEnum FLOATING = new OsEXTIPSTypeEnum("floating");
         
 
-        public static final Map<String, OsEXTIPSTypeEnum> staticFields = new HashMap<String, OsEXTIPSTypeEnum>() {
-            { 
-                put("fixed", FIXED);
-                put("floating", FLOATING);
-            }
-        };
+        private static final Map<String, OsEXTIPSTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsEXTIPSTypeEnum> createStaticFields() {
+            Map<String, OsEXTIPSTypeEnum> map = new HashMap<>();
+            map.put("fixed", FIXED);
+            map.put("floating", FLOATING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class ServerAddress  {
             if( value == null ){
                 return null;
             }
-            OsEXTIPSTypeEnum result = staticFields.get(value);
+            OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsEXTIPSTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsEXTIPSTypeEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class ServerAddress  {
             if( value == null ){
                 return null;
             }
-            OsEXTIPSTypeEnum result = staticFields.get(value);
+            OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

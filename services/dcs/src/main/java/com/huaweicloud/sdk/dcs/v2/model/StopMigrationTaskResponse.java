@@ -5,6 +5,15 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -43,7 +52,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
     /**
      * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -62,13 +71,15 @@ public class StopMigrationTaskResponse extends SdkResponse {
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("SUCCESS", SUCCESS);
-                put("FAILED", FAILED);
-                put("MIGRATING", MIGRATING);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAILED", FAILED);
+            map.put("MIGRATING", MIGRATING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -87,12 +98,9 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -101,7 +109,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -130,7 +138,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
     /**
      * 迁移任务类型,包括备份文件导入和在线迁移两种类型。
      */
-    public static class MigrationTypeEnum {
+    public static final class MigrationTypeEnum {
 
         
         /**
@@ -144,12 +152,14 @@ public class StopMigrationTaskResponse extends SdkResponse {
         public static final MigrationTypeEnum ONLINE_MIGRATION = new MigrationTypeEnum("online_migration");
         
 
-        public static final Map<String, MigrationTypeEnum> staticFields = new HashMap<String, MigrationTypeEnum>() {
-            { 
-                put("backupfile_import", BACKUPFILE_IMPORT);
-                put("online_migration", ONLINE_MIGRATION);
-            }
-        };
+        private static final Map<String, MigrationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MigrationTypeEnum> createStaticFields() {
+            Map<String, MigrationTypeEnum> map = new HashMap<>();
+            map.put("backupfile_import", BACKUPFILE_IMPORT);
+            map.put("online_migration", ONLINE_MIGRATION);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -168,12 +178,9 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            MigrationTypeEnum result = staticFields.get(value);
+            MigrationTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MigrationTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MigrationTypeEnum(value);
             }
             return result;
         }
@@ -182,7 +189,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            MigrationTypeEnum result = staticFields.get(value);
+            MigrationTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -211,7 +218,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
     /**
      * 迁移方式，包括全量迁移和增量迁移两种类型。
      */
-    public static class MigrationMethodEnum {
+    public static final class MigrationMethodEnum {
 
         
         /**
@@ -225,12 +232,14 @@ public class StopMigrationTaskResponse extends SdkResponse {
         public static final MigrationMethodEnum INCREMENTAL_MIGRATION = new MigrationMethodEnum("incremental_migration");
         
 
-        public static final Map<String, MigrationMethodEnum> staticFields = new HashMap<String, MigrationMethodEnum>() {
-            { 
-                put("full_amount_migration", FULL_AMOUNT_MIGRATION);
-                put("incremental_migration", INCREMENTAL_MIGRATION);
-            }
-        };
+        private static final Map<String, MigrationMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MigrationMethodEnum> createStaticFields() {
+            Map<String, MigrationMethodEnum> map = new HashMap<>();
+            map.put("full_amount_migration", FULL_AMOUNT_MIGRATION);
+            map.put("incremental_migration", INCREMENTAL_MIGRATION);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -249,12 +258,9 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            MigrationMethodEnum result = staticFields.get(value);
+            MigrationMethodEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MigrationMethodEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MigrationMethodEnum(value);
             }
             return result;
         }
@@ -263,7 +269,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            MigrationMethodEnum result = staticFields.get(value);
+            MigrationMethodEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -298,7 +304,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
     /**
      * 网络类型，包括vpc和vpn两种类型。
      */
-    public static class NetworkTypeEnum {
+    public static final class NetworkTypeEnum {
 
         
         /**
@@ -312,12 +318,14 @@ public class StopMigrationTaskResponse extends SdkResponse {
         public static final NetworkTypeEnum VPN = new NetworkTypeEnum("vpn");
         
 
-        public static final Map<String, NetworkTypeEnum> staticFields = new HashMap<String, NetworkTypeEnum>() {
-            { 
-                put("vpc", VPC);
-                put("vpn", VPN);
-            }
-        };
+        private static final Map<String, NetworkTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NetworkTypeEnum> createStaticFields() {
+            Map<String, NetworkTypeEnum> map = new HashMap<>();
+            map.put("vpc", VPC);
+            map.put("vpn", VPN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -336,12 +344,9 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            NetworkTypeEnum result = staticFields.get(value);
+            NetworkTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new NetworkTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new NetworkTypeEnum(value);
             }
             return result;
         }
@@ -350,7 +355,7 @@ public class StopMigrationTaskResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            NetworkTypeEnum result = staticFields.get(value);
+            NetworkTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

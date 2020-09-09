@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ResizeInstanceOption  {
     /**
      * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
      */
-    public static class TargetTypeEnum {
+    public static final class TargetTypeEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class ResizeInstanceOption  {
         public static final TargetTypeEnum SHARD = new TargetTypeEnum("shard");
         
 
-        public static final Map<String, TargetTypeEnum> staticFields = new HashMap<String, TargetTypeEnum>() {
-            { 
-                put("mongos", MONGOS);
-                put("shard", SHARD);
-            }
-        };
+        private static final Map<String, TargetTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TargetTypeEnum> createStaticFields() {
+            Map<String, TargetTypeEnum> map = new HashMap<>();
+            map.put("mongos", MONGOS);
+            map.put("shard", SHARD);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class ResizeInstanceOption  {
             if( value == null ){
                 return null;
             }
-            TargetTypeEnum result = staticFields.get(value);
+            TargetTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TargetTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TargetTypeEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class ResizeInstanceOption  {
             if( value == null ){
                 return null;
             }
-            TargetTypeEnum result = staticFields.get(value);
+            TargetTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

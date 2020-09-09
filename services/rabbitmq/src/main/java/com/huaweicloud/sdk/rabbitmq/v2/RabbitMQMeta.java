@@ -287,6 +287,29 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForlistPlugins();
+
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForlistPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProductsRequest, ListProductsResponse> listProducts = genForlistProducts();
 
     private static HttpRequestDef<ListProductsRequest, ListProductsResponse> genForlistProducts() {
@@ -543,6 +566,38 @@ public class RabbitMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateInstanceReq.class,
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> updatePlugins = genForupdatePlugins();
+
+    private static HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> genForupdatePlugins() {
+        // basic
+        HttpRequestDef.Builder<UpdatePluginsRequest, UpdatePluginsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginsRequest.class, UpdatePluginsResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdatePluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdatePluginsReq.class,
+            f -> f.withMarshaller(UpdatePluginsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

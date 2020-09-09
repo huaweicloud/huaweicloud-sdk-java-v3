@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ListProductsRequest  {
     /**
      * Gets or Sets engine
      */
-    public static class EngineEnum {
+    public static final class EngineEnum {
 
         
         /**
@@ -29,11 +32,13 @@ public class ListProductsRequest  {
         public static final EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
         
 
-        public static final Map<String, EngineEnum> staticFields = new HashMap<String, EngineEnum>() {
-            { 
-                put("rabbitmq", RABBITMQ);
-            }
-        };
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("rabbitmq", RABBITMQ);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +57,9 @@ public class ListProductsRequest  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineEnum(value);
             }
             return result;
         }
@@ -66,7 +68,7 @@ public class ListProductsRequest  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -1710,6 +1710,38 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InviteWithPwdRequest, InviteWithPwdResponse> inviteWithPwd = genForinviteWithPwd();
+
+    private static HttpRequestDef<InviteWithPwdRequest, InviteWithPwdResponse> genForinviteWithPwd() {
+        // basic
+        HttpRequestDef.Builder<InviteWithPwdRequest, InviteWithPwdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InviteWithPwdRequest.class, InviteWithPwdResponse.class)
+                .withUri("/v1/mmc/control/conferences/inviteWithPwd")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(InviteWithPwdRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RestInviteWithPwdReqBody.class,
+            f -> f.withMarshaller(InviteWithPwdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<LiveRequest, LiveResponse> live = genForlive();
 
     private static HttpRequestDef<LiveRequest, LiveResponse> genForlive() {
@@ -4010,6 +4042,29 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> showConfOrg = genForshowConfOrg();
+
+    private static HttpRequestDef<ShowConfOrgRequest, ShowConfOrgResponse> genForshowConfOrg() {
+        // basic
+        HttpRequestDef.Builder<ShowConfOrgRequest, ShowConfOrgResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConfOrgRequest.class, ShowConfOrgResponse.class)
+                .withUri("/v1/mmc/management/conferences/confOrg");
+
+        // requests
+        builder.withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowConfOrgRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCorpRequest, ShowCorpResponse> showCorp = genForshowCorp();
 
     private static HttpRequestDef<ShowCorpRequest, ShowCorpResponse> genForshowCorp() {
@@ -4861,6 +4916,21 @@ public class MeetingMeta {
                 req.setConferenceID(v);
             })
         );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSpResRequest, ShowSpResResponse> showSpRes = genForshowSpRes();
+
+    private static HttpRequestDef<ShowSpResRequest, ShowSpResResponse> genForshowSpRes() {
+        // basic
+        HttpRequestDef.Builder<ShowSpResRequest, ShowSpResResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSpResRequest.class, ShowSpResResponse.class)
+                .withUri("/v1/mmc/management/spRes");
+
+        // requests
 
         // response
 

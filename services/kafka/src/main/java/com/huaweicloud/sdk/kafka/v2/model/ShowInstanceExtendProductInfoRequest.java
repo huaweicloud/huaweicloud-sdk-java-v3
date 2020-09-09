@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +31,7 @@ public class ShowInstanceExtendProductInfoRequest  {
     /**
      * Gets or Sets type
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -50,14 +55,16 @@ public class ShowInstanceExtendProductInfoRequest  {
         public static final TypeEnum EXP = new TypeEnum("exp");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("advanced", ADVANCED);
-                put("platinum", PLATINUM);
-                put("dec", DEC);
-                put("exp", EXP);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("advanced", ADVANCED);
+            map.put("platinum", PLATINUM);
+            map.put("dec", DEC);
+            map.put("exp", EXP);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +83,9 @@ public class ShowInstanceExtendProductInfoRequest  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -90,7 +94,7 @@ public class ShowInstanceExtendProductInfoRequest  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -119,7 +123,7 @@ public class ShowInstanceExtendProductInfoRequest  {
     /**
      * Gets or Sets engine
      */
-    public static class EngineEnum {
+    public static final class EngineEnum {
 
         
         /**
@@ -128,11 +132,13 @@ public class ShowInstanceExtendProductInfoRequest  {
         public static final EngineEnum KAFKA = new EngineEnum("kafka");
         
 
-        public static final Map<String, EngineEnum> staticFields = new HashMap<String, EngineEnum>() {
-            { 
-                put("kafka", KAFKA);
-            }
-        };
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("kafka", KAFKA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -151,12 +157,9 @@ public class ShowInstanceExtendProductInfoRequest  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineEnum(value);
             }
             return result;
         }
@@ -165,7 +168,7 @@ public class ShowInstanceExtendProductInfoRequest  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

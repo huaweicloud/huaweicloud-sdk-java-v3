@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class GetParametersForImportRequestBody  {
     /**
      * 密钥材料加密算法，枚举如下：  - RSAES_PKCS1_V1_5  - RSAES_OAEP_SHA_1  - RSAES_OAEP_SHA_256
      */
-    public static class WrappingAlgorithmEnum {
+    public static final class WrappingAlgorithmEnum {
 
         
         /**
@@ -45,13 +48,15 @@ public class GetParametersForImportRequestBody  {
         public static final WrappingAlgorithmEnum RSAES_OAEP_SHA_256 = new WrappingAlgorithmEnum("RSAES_OAEP_SHA_256");
         
 
-        public static final Map<String, WrappingAlgorithmEnum> staticFields = new HashMap<String, WrappingAlgorithmEnum>() {
-            { 
-                put("RSAES_PKCS1_V1_5", RSAES_PKCS1_V1_5);
-                put("RSAES_OAEP_SHA_1", RSAES_OAEP_SHA_1);
-                put("RSAES_OAEP_SHA_256", RSAES_OAEP_SHA_256);
-            }
-        };
+        private static final Map<String, WrappingAlgorithmEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, WrappingAlgorithmEnum> createStaticFields() {
+            Map<String, WrappingAlgorithmEnum> map = new HashMap<>();
+            map.put("RSAES_PKCS1_V1_5", RSAES_PKCS1_V1_5);
+            map.put("RSAES_OAEP_SHA_1", RSAES_OAEP_SHA_1);
+            map.put("RSAES_OAEP_SHA_256", RSAES_OAEP_SHA_256);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class GetParametersForImportRequestBody  {
             if( value == null ){
                 return null;
             }
-            WrappingAlgorithmEnum result = staticFields.get(value);
+            WrappingAlgorithmEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new WrappingAlgorithmEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new WrappingAlgorithmEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class GetParametersForImportRequestBody  {
             if( value == null ){
                 return null;
             }
-            WrappingAlgorithmEnum result = staticFields.get(value);
+            WrappingAlgorithmEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

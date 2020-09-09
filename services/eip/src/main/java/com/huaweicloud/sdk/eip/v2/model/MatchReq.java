@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class MatchReq  {
     /**
      * 键。当前仅限定为resource_name
      */
-    public static class KeyEnum {
+    public static final class KeyEnum {
 
         
         /**
@@ -29,11 +32,13 @@ public class MatchReq  {
         public static final KeyEnum RESOURCE_NAME = new KeyEnum("resource_name");
         
 
-        public static final Map<String, KeyEnum> staticFields = new HashMap<String, KeyEnum>() {
-            { 
-                put("resource_name", RESOURCE_NAME);
-            }
-        };
+        private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeyEnum> createStaticFields() {
+            Map<String, KeyEnum> map = new HashMap<>();
+            map.put("resource_name", RESOURCE_NAME);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +57,9 @@ public class MatchReq  {
             if( value == null ){
                 return null;
             }
-            KeyEnum result = staticFields.get(value);
+            KeyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new KeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new KeyEnum(value);
             }
             return result;
         }
@@ -66,7 +68,7 @@ public class MatchReq  {
             if( value == null ){
                 return null;
             }
-            KeyEnum result = staticFields.get(value);
+            KeyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

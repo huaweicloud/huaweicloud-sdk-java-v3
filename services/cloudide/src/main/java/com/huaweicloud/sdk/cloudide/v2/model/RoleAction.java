@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class RoleAction  {
     /**
      * 执行动作
      */
-    public static class ActionsEnum {
+    public static final class ActionsEnum {
 
         
         /**
@@ -95,23 +98,25 @@ public class RoleAction  {
         public static final ActionsEnum QUERY_USER_IN_ORG = new ActionsEnum("QUERY_USER_IN_ORG");
         
 
-        public static final Map<String, ActionsEnum> staticFields = new HashMap<String, ActionsEnum>() {
-            { 
-                put("CREATE_INSTANCE", CREATE_INSTANCE);
-                put("DELETE_INSTANCE", DELETE_INSTANCE);
-                put("UPDATE_INSTANCE", UPDATE_INSTANCE);
-                put("QUERY_INSTANCE", QUERY_INSTANCE);
-                put("RUN_INSTANCE", RUN_INSTANCE);
-                put("CREATE_SUB_ORG", CREATE_SUB_ORG);
-                put("UPDATE_SUB_ORG", UPDATE_SUB_ORG);
-                put("DELETE_SUB_ORG", DELETE_SUB_ORG);
-                put("QUERY_SUB_ORG", QUERY_SUB_ORG);
-                put("ADD_USER_TO_ORG", ADD_USER_TO_ORG);
-                put("SET_USER_ROLES", SET_USER_ROLES);
-                put("DELETE_USER_IN_ORG", DELETE_USER_IN_ORG);
-                put("QUERY_USER_IN_ORG", QUERY_USER_IN_ORG);
-            }
-        };
+        private static final Map<String, ActionsEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionsEnum> createStaticFields() {
+            Map<String, ActionsEnum> map = new HashMap<>();
+            map.put("CREATE_INSTANCE", CREATE_INSTANCE);
+            map.put("DELETE_INSTANCE", DELETE_INSTANCE);
+            map.put("UPDATE_INSTANCE", UPDATE_INSTANCE);
+            map.put("QUERY_INSTANCE", QUERY_INSTANCE);
+            map.put("RUN_INSTANCE", RUN_INSTANCE);
+            map.put("CREATE_SUB_ORG", CREATE_SUB_ORG);
+            map.put("UPDATE_SUB_ORG", UPDATE_SUB_ORG);
+            map.put("DELETE_SUB_ORG", DELETE_SUB_ORG);
+            map.put("QUERY_SUB_ORG", QUERY_SUB_ORG);
+            map.put("ADD_USER_TO_ORG", ADD_USER_TO_ORG);
+            map.put("SET_USER_ROLES", SET_USER_ROLES);
+            map.put("DELETE_USER_IN_ORG", DELETE_USER_IN_ORG);
+            map.put("QUERY_USER_IN_ORG", QUERY_USER_IN_ORG);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -130,12 +135,9 @@ public class RoleAction  {
             if( value == null ){
                 return null;
             }
-            ActionsEnum result = staticFields.get(value);
+            ActionsEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionsEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionsEnum(value);
             }
             return result;
         }
@@ -144,7 +146,7 @@ public class RoleAction  {
             if( value == null ){
                 return null;
             }
-            ActionsEnum result = staticFields.get(value);
+            ActionsEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

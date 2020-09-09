@@ -5,6 +5,7 @@ package com.huaweicloud.sdk.tms.v1.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 

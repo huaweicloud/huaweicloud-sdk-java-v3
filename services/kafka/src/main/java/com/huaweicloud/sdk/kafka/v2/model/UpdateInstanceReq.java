@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,7 +53,7 @@ public class UpdateInstanceReq  {
     /**
      * 容量阈值策略。 支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
      */
-    public static class RetentionPolicyEnum {
+    public static final class RetentionPolicyEnum {
 
         
         /**
@@ -64,12 +67,14 @@ public class UpdateInstanceReq  {
         public static final RetentionPolicyEnum TIME_BASE = new RetentionPolicyEnum("time_base");
         
 
-        public static final Map<String, RetentionPolicyEnum> staticFields = new HashMap<String, RetentionPolicyEnum>() {
-            { 
-                put("produce_reject", PRODUCE_REJECT);
-                put("time_base", TIME_BASE);
-            }
-        };
+        private static final Map<String, RetentionPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RetentionPolicyEnum> createStaticFields() {
+            Map<String, RetentionPolicyEnum> map = new HashMap<>();
+            map.put("produce_reject", PRODUCE_REJECT);
+            map.put("time_base", TIME_BASE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -88,12 +93,9 @@ public class UpdateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            RetentionPolicyEnum result = staticFields.get(value);
+            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RetentionPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RetentionPolicyEnum(value);
             }
             return result;
         }
@@ -102,7 +104,7 @@ public class UpdateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            RetentionPolicyEnum result = staticFields.get(value);
+            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -128,6 +130,12 @@ public class UpdateInstanceReq  {
     @JsonProperty(value="retention_policy")
     
     private RetentionPolicyEnum retentionPolicy;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
     public UpdateInstanceReq withName(String name) {
         this.name = name;
@@ -248,6 +256,26 @@ public class UpdateInstanceReq  {
     public void setRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
         this.retentionPolicy = retentionPolicy;
     }
+
+    public UpdateInstanceReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -262,11 +290,12 @@ public class UpdateInstanceReq  {
             Objects.equals(this.maintainBegin, updateInstanceReq.maintainBegin) &&
             Objects.equals(this.maintainEnd, updateInstanceReq.maintainEnd) &&
             Objects.equals(this.securityGroupId, updateInstanceReq.securityGroupId) &&
-            Objects.equals(this.retentionPolicy, updateInstanceReq.retentionPolicy);
+            Objects.equals(this.retentionPolicy, updateInstanceReq.retentionPolicy) &&
+            Objects.equals(this.enterpriseProjectId, updateInstanceReq.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, maintainBegin, maintainEnd, securityGroupId, retentionPolicy);
+        return Objects.hash(name, description, maintainBegin, maintainEnd, securityGroupId, retentionPolicy, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -278,6 +307,7 @@ public class UpdateInstanceReq  {
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,6 +3,15 @@ package com.huaweicloud.sdk.live.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +41,7 @@ public class QualityInfo  {
     /**
      * 是否使用窄带高清转码，模板组里不同模板的PVC选项必须相同。 - on：启用。 - off：不启用。 默认为off 
      */
-    public static class PvcEnum {
+    public static final class PvcEnum {
 
         
         /**
@@ -46,12 +55,14 @@ public class QualityInfo  {
         public static final PvcEnum OFF = new PvcEnum("off");
         
 
-        public static final Map<String, PvcEnum> staticFields = new HashMap<String, PvcEnum>() {
-            { 
-                put("on", ON);
-                put("off", OFF);
-            }
-        };
+        private static final Map<String, PvcEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PvcEnum> createStaticFields() {
+            Map<String, PvcEnum> map = new HashMap<>();
+            map.put("on", ON);
+            map.put("off", OFF);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +81,9 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            PvcEnum result = staticFields.get(value);
+            PvcEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PvcEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PvcEnum(value);
             }
             return result;
         }
@@ -84,7 +92,7 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            PvcEnum result = staticFields.get(value);
+            PvcEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -113,7 +121,7 @@ public class QualityInfo  {
     /**
      * 是否启用高清低码，较PVC相比画质增强。 - on：启用。 - off：不启用。 默认为off。 
      */
-    public static class HdlbEnum {
+    public static final class HdlbEnum {
 
         
         /**
@@ -127,12 +135,14 @@ public class QualityInfo  {
         public static final HdlbEnum OFF = new HdlbEnum("off");
         
 
-        public static final Map<String, HdlbEnum> staticFields = new HashMap<String, HdlbEnum>() {
-            { 
-                put("on", ON);
-                put("off", OFF);
-            }
-        };
+        private static final Map<String, HdlbEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HdlbEnum> createStaticFields() {
+            Map<String, HdlbEnum> map = new HashMap<>();
+            map.put("on", ON);
+            map.put("off", OFF);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -151,12 +161,9 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            HdlbEnum result = staticFields.get(value);
+            HdlbEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HdlbEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HdlbEnum(value);
             }
             return result;
         }
@@ -165,7 +172,7 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            HdlbEnum result = staticFields.get(value);
+            HdlbEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -194,7 +201,7 @@ public class QualityInfo  {
     /**
      * 视频编码格式，模板组里不同模板的编码格式必须相同。 - H264：使用H.264。 - H265：使用H.265。 默认为H264。 
      */
-    public static class CodecEnum {
+    public static final class CodecEnum {
 
         
         /**
@@ -208,12 +215,14 @@ public class QualityInfo  {
         public static final CodecEnum H265 = new CodecEnum("H265");
         
 
-        public static final Map<String, CodecEnum> staticFields = new HashMap<String, CodecEnum>() {
-            { 
-                put("H264", H264);
-                put("H265", H265);
-            }
-        };
+        private static final Map<String, CodecEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CodecEnum> createStaticFields() {
+            Map<String, CodecEnum> map = new HashMap<>();
+            map.put("H264", H264);
+            map.put("H265", H265);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -232,12 +241,9 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            CodecEnum result = staticFields.get(value);
+            CodecEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new CodecEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new CodecEnum(value);
             }
             return result;
         }
@@ -246,7 +252,7 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            CodecEnum result = staticFields.get(value);
+            CodecEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -299,7 +305,7 @@ public class QualityInfo  {
     /**
      * 转码输出支持的协议类型。当前只支持RTMP和HLS，且模板组里不同模板的输出协议类型必须相同。 - RTMP - HLS - DASH  默认为RTMP。 
      */
-    public static class ProtocolEnum {
+    public static final class ProtocolEnum {
 
         
         /**
@@ -318,13 +324,15 @@ public class QualityInfo  {
         public static final ProtocolEnum DASH = new ProtocolEnum("DASH");
         
 
-        public static final Map<String, ProtocolEnum> staticFields = new HashMap<String, ProtocolEnum>() {
-            { 
-                put("RTMP", RTMP);
-                put("HLS", HLS);
-                put("DASH", DASH);
-            }
-        };
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("RTMP", RTMP);
+            map.put("HLS", HLS);
+            map.put("DASH", DASH);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -343,12 +351,9 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            ProtocolEnum result = staticFields.get(value);
+            ProtocolEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ProtocolEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ProtocolEnum(value);
             }
             return result;
         }
@@ -357,7 +362,7 @@ public class QualityInfo  {
             if( value == null ){
                 return null;
             }
-            ProtocolEnum result = staticFields.get(value);
+            ProtocolEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

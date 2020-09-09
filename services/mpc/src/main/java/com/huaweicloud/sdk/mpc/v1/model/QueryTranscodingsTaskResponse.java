@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class QueryTranscodingsTaskResponse  {
     /**
      * 任务执行状态。 
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -71,17 +74,19 @@ public class QueryTranscodingsTaskResponse  {
         public static final StatusEnum NEED_TO_BE_AUDIT = new StatusEnum("NEED_TO_BE_AUDIT");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("NO_TASK", NO_TASK);
-                put("WAITING", WAITING);
-                put("TRANSCODING", TRANSCODING);
-                put("SUCCEEDED", SUCCEEDED);
-                put("FAILED", FAILED);
-                put("CANCELED", CANCELED);
-                put("NEED_TO_BE_AUDIT", NEED_TO_BE_AUDIT);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("NO_TASK", NO_TASK);
+            map.put("WAITING", WAITING);
+            map.put("TRANSCODING", TRANSCODING);
+            map.put("SUCCEEDED", SUCCEEDED);
+            map.put("FAILED", FAILED);
+            map.put("CANCELED", CANCELED);
+            map.put("NEED_TO_BE_AUDIT", NEED_TO_BE_AUDIT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -100,12 +105,9 @@ public class QueryTranscodingsTaskResponse  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -114,7 +116,7 @@ public class QueryTranscodingsTaskResponse  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,7 +31,7 @@ public class CreateServerGroupOption  {
     /**
      * Gets or Sets policies
      */
-    public static class PoliciesEnum {
+    public static final class PoliciesEnum {
 
         
         /**
@@ -37,11 +40,13 @@ public class CreateServerGroupOption  {
         public static final PoliciesEnum ANTI_AFFINITY = new PoliciesEnum("anti-affinity");
         
 
-        public static final Map<String, PoliciesEnum> staticFields = new HashMap<String, PoliciesEnum>() {
-            { 
-                put("anti-affinity", ANTI_AFFINITY);
-            }
-        };
+        private static final Map<String, PoliciesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PoliciesEnum> createStaticFields() {
+            Map<String, PoliciesEnum> map = new HashMap<>();
+            map.put("anti-affinity", ANTI_AFFINITY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -60,12 +65,9 @@ public class CreateServerGroupOption  {
             if( value == null ){
                 return null;
             }
-            PoliciesEnum result = staticFields.get(value);
+            PoliciesEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PoliciesEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PoliciesEnum(value);
             }
             return result;
         }
@@ -74,7 +76,7 @@ public class CreateServerGroupOption  {
             if( value == null ){
                 return null;
             }
-            PoliciesEnum result = staticFields.get(value);
+            PoliciesEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

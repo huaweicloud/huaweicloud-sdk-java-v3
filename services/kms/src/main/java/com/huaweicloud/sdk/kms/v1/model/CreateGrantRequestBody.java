@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -52,7 +55,7 @@ public class CreateGrantRequestBody  {
     /**
      * 授权类型。有效值：“user”，“domain”。默认值为“user”。
      */
-    public static class GranteePrincipalTypeEnum {
+    public static final class GranteePrincipalTypeEnum {
 
         
         /**
@@ -66,12 +69,14 @@ public class CreateGrantRequestBody  {
         public static final GranteePrincipalTypeEnum DOMAIN = new GranteePrincipalTypeEnum("domain");
         
 
-        public static final Map<String, GranteePrincipalTypeEnum> staticFields = new HashMap<String, GranteePrincipalTypeEnum>() {
-            { 
-                put("user", USER);
-                put("domain", DOMAIN);
-            }
-        };
+        private static final Map<String, GranteePrincipalTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, GranteePrincipalTypeEnum> createStaticFields() {
+            Map<String, GranteePrincipalTypeEnum> map = new HashMap<>();
+            map.put("user", USER);
+            map.put("domain", DOMAIN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -90,12 +95,9 @@ public class CreateGrantRequestBody  {
             if( value == null ){
                 return null;
             }
-            GranteePrincipalTypeEnum result = staticFields.get(value);
+            GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new GranteePrincipalTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new GranteePrincipalTypeEnum(value);
             }
             return result;
         }
@@ -104,7 +106,7 @@ public class CreateGrantRequestBody  {
             if( value == null ){
                 return null;
             }
-            GranteePrincipalTypeEnum result = staticFields.get(value);
+            GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

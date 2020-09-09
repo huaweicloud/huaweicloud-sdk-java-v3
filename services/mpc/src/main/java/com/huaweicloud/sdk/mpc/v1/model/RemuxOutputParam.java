@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class RemuxOutputParam  {
     /**
      * 输出格式。 
      */
-    public static class FormatEnum {
+    public static final class FormatEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class RemuxOutputParam  {
         public static final FormatEnum MP4 = new FormatEnum("MP4");
         
 
-        public static final Map<String, FormatEnum> staticFields = new HashMap<String, FormatEnum>() {
-            { 
-                put("HLS", HLS);
-                put("MP4", MP4);
-            }
-        };
+        private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FormatEnum> createStaticFields() {
+            Map<String, FormatEnum> map = new HashMap<>();
+            map.put("HLS", HLS);
+            map.put("MP4", MP4);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class RemuxOutputParam  {
             if( value == null ){
                 return null;
             }
-            FormatEnum result = staticFields.get(value);
+            FormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new FormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new FormatEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class RemuxOutputParam  {
             if( value == null ){
                 return null;
             }
-            FormatEnum result = staticFields.get(value);
+            FormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

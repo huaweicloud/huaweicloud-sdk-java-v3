@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.codehub.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class SetRepoRoleRequestBody  {
     /**
      * 设置仓库的成员权限，取值范围：20 -> 只读成员 30->普通成员，40->管理员
      */
-    public static class RoleEnum {
+    public static final class RoleEnum {
 
         
         /**
@@ -39,13 +42,15 @@ public class SetRepoRoleRequestBody  {
         public static final RoleEnum _40 = new RoleEnum("40");
         
 
-        public static final Map<String, RoleEnum> staticFields = new HashMap<String, RoleEnum>() {
-            { 
-                put("20", _20);
-                put("30", _30);
-                put("40", _40);
-            }
-        };
+        private static final Map<String, RoleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RoleEnum> createStaticFields() {
+            Map<String, RoleEnum> map = new HashMap<>();
+            map.put("20", _20);
+            map.put("30", _30);
+            map.put("40", _40);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class SetRepoRoleRequestBody  {
             if( value == null ){
                 return null;
             }
-            RoleEnum result = staticFields.get(value);
+            RoleEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RoleEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RoleEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class SetRepoRoleRequestBody  {
             if( value == null ){
                 return null;
             }
-            RoleEnum result = staticFields.get(value);
+            RoleEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

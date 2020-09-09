@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +26,7 @@ public class BatchCreateServerTagsRequestBody  {
     /**
      * 操作标识（仅支持小写）：create（创建）。
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -32,11 +35,13 @@ public class BatchCreateServerTagsRequestBody  {
         public static final ActionEnum CREATE = new ActionEnum("create");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("create", CREATE);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("create", CREATE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -55,12 +60,9 @@ public class BatchCreateServerTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -69,7 +71,7 @@ public class BatchCreateServerTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

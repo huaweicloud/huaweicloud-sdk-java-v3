@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class Pager  {
     /**
      * next:下一页  previous:前一页
      */
-    public static class RelEnum {
+    public static final class RelEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class Pager  {
         public static final RelEnum PREVIOUS = new RelEnum("previous");
         
 
-        public static final Map<String, RelEnum> staticFields = new HashMap<String, RelEnum>() {
-            { 
-                put("next", NEXT);
-                put("previous", PREVIOUS);
-            }
-        };
+        private static final Map<String, RelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RelEnum> createStaticFields() {
+            Map<String, RelEnum> map = new HashMap<>();
+            map.put("next", NEXT);
+            map.put("previous", PREVIOUS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class Pager  {
             if( value == null ){
                 return null;
             }
-            RelEnum result = staticFields.get(value);
+            RelEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RelEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RelEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class Pager  {
             if( value == null ){
                 return null;
             }
-            RelEnum result = staticFields.get(value);
+            RelEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +41,7 @@ public class CompleteLifecycleActionRequestBody  {
     /**
      * 生命周期回调操作。ABANDON：终止。CONTINUE：继续。EXTEND：延长超时时间，每次延长1小时。
      */
-    public static class LifecycleActionResultEnum {
+    public static final class LifecycleActionResultEnum {
 
         
         /**
@@ -57,13 +60,15 @@ public class CompleteLifecycleActionRequestBody  {
         public static final LifecycleActionResultEnum EXTEND = new LifecycleActionResultEnum("EXTEND");
         
 
-        public static final Map<String, LifecycleActionResultEnum> staticFields = new HashMap<String, LifecycleActionResultEnum>() {
-            { 
-                put("ABANDON", ABANDON);
-                put("CONTINUE", CONTINUE);
-                put("EXTEND", EXTEND);
-            }
-        };
+        private static final Map<String, LifecycleActionResultEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LifecycleActionResultEnum> createStaticFields() {
+            Map<String, LifecycleActionResultEnum> map = new HashMap<>();
+            map.put("ABANDON", ABANDON);
+            map.put("CONTINUE", CONTINUE);
+            map.put("EXTEND", EXTEND);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -82,12 +87,9 @@ public class CompleteLifecycleActionRequestBody  {
             if( value == null ){
                 return null;
             }
-            LifecycleActionResultEnum result = staticFields.get(value);
+            LifecycleActionResultEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LifecycleActionResultEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LifecycleActionResultEnum(value);
             }
             return result;
         }
@@ -96,7 +98,7 @@ public class CompleteLifecycleActionRequestBody  {
             if( value == null ){
                 return null;
             }
-            LifecycleActionResultEnum result = staticFields.get(value);
+            LifecycleActionResultEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

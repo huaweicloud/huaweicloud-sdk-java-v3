@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -27,7 +30,7 @@ public class ScheduledPolicy  {
     /**
      * 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
      */
-    public static class RecurrenceTypeEnum {
+    public static final class RecurrenceTypeEnum {
 
         
         /**
@@ -46,13 +49,15 @@ public class ScheduledPolicy  {
         public static final RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("Monthly");
         
 
-        public static final Map<String, RecurrenceTypeEnum> staticFields = new HashMap<String, RecurrenceTypeEnum>() {
-            { 
-                put("Daily", DAILY);
-                put("Weekly", WEEKLY);
-                put("Monthly", MONTHLY);
-            }
-        };
+        private static final Map<String, RecurrenceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RecurrenceTypeEnum> createStaticFields() {
+            Map<String, RecurrenceTypeEnum> map = new HashMap<>();
+            map.put("Daily", DAILY);
+            map.put("Weekly", WEEKLY);
+            map.put("Monthly", MONTHLY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -71,12 +76,9 @@ public class ScheduledPolicy  {
             if( value == null ){
                 return null;
             }
-            RecurrenceTypeEnum result = staticFields.get(value);
+            RecurrenceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RecurrenceTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RecurrenceTypeEnum(value);
             }
             return result;
         }
@@ -85,7 +87,7 @@ public class ScheduledPolicy  {
             if( value == null ){
                 return null;
             }
-            RecurrenceTypeEnum result = staticFields.get(value);
+            RecurrenceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

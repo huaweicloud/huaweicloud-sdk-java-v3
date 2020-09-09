@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,17 +55,19 @@ public class ComponentSubCategory {
     public static final ComponentSubCategory MESHER = new ComponentSubCategory("Mesher");
     
 
-    public static final Map<String, ComponentSubCategory> staticFields = new HashMap<String, ComponentSubCategory>() {
-        { 
-            put("Web", WEB);
-            put("Magento", MAGENTO);
-            put("Wordpress", WORDPRESS);
-            put("SpringCloud", SPRINGCLOUD);
-            put("Java Chassis", JAVA_CHASSIS);
-            put("Go Chassis", GO_CHASSIS);
-            put("Mesher", MESHER);
-        }
-    };
+    private static final Map<String, ComponentSubCategory> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, ComponentSubCategory> createStaticFields() {
+        Map<String, ComponentSubCategory> map = new HashMap<>();
+        map.put("Web", WEB);
+        map.put("Magento", MAGENTO);
+        map.put("Wordpress", WORDPRESS);
+        map.put("SpringCloud", SPRINGCLOUD);
+        map.put("Java Chassis", JAVA_CHASSIS);
+        map.put("Go Chassis", GO_CHASSIS);
+        map.put("Mesher", MESHER);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -82,12 +86,9 @@ public class ComponentSubCategory {
         if( value == null ){
             return null;
         }
-        ComponentSubCategory result = staticFields.get(value);
+        ComponentSubCategory result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new ComponentSubCategory(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new ComponentSubCategory(value);
         }
         return result;
     }
@@ -96,7 +97,7 @@ public class ComponentSubCategory {
         if( value == null ){
             return null;
         }
-        ComponentSubCategory result = staticFields.get(value);
+        ComponentSubCategory result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

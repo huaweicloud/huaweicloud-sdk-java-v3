@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class ChargeInfo  {
     /**
      * 计费模式。  取值范围：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
      */
-    public static class ChargeModeEnum {
+    public static final class ChargeModeEnum {
 
         
         /**
@@ -34,12 +39,14 @@ public class ChargeInfo  {
         public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
         
 
-        public static final Map<String, ChargeModeEnum> staticFields = new HashMap<String, ChargeModeEnum>() {
-            { 
-                put("prePaid", PREPAID);
-                put("postPaid", POSTPAID);
-            }
-        };
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +65,9 @@ public class ChargeInfo  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargeModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargeModeEnum(value);
             }
             return result;
         }
@@ -72,7 +76,7 @@ public class ChargeInfo  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -101,7 +105,7 @@ public class ChargeInfo  {
     /**
      * 订购周期类型。  取值范围：  - month：包月。 - year：包年。
      */
-    public static class PeriodTypeEnum {
+    public static final class PeriodTypeEnum {
 
         
         /**
@@ -115,12 +119,14 @@ public class ChargeInfo  {
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
         
 
-        public static final Map<String, PeriodTypeEnum> staticFields = new HashMap<String, PeriodTypeEnum>() {
-            { 
-                put("month", MONTH);
-                put("year", YEAR);
-            }
-        };
+        private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PeriodTypeEnum> createStaticFields() {
+            Map<String, PeriodTypeEnum> map = new HashMap<>();
+            map.put("month", MONTH);
+            map.put("year", YEAR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -139,12 +145,9 @@ public class ChargeInfo  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PeriodTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PeriodTypeEnum(value);
             }
             return result;
         }
@@ -153,7 +156,7 @@ public class ChargeInfo  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

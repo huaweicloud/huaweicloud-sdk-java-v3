@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.tms.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,7 +53,7 @@ public class ListPredefineTagsRequest  {
     /**
      * Gets or Sets orderMethod
      */
-    public static class OrderMethodEnum {
+    public static final class OrderMethodEnum {
 
         
         /**
@@ -64,12 +67,14 @@ public class ListPredefineTagsRequest  {
         public static final OrderMethodEnum DESC = new OrderMethodEnum("desc");
         
 
-        public static final Map<String, OrderMethodEnum> staticFields = new HashMap<String, OrderMethodEnum>() {
-            { 
-                put("asc", ASC);
-                put("desc", DESC);
-            }
-        };
+        private static final Map<String, OrderMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OrderMethodEnum> createStaticFields() {
+            Map<String, OrderMethodEnum> map = new HashMap<>();
+            map.put("asc", ASC);
+            map.put("desc", DESC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -88,12 +93,9 @@ public class ListPredefineTagsRequest  {
             if( value == null ){
                 return null;
             }
-            OrderMethodEnum result = staticFields.get(value);
+            OrderMethodEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OrderMethodEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OrderMethodEnum(value);
             }
             return result;
         }
@@ -102,7 +104,7 @@ public class ListPredefineTagsRequest  {
             if( value == null ){
                 return null;
             }
-            OrderMethodEnum result = staticFields.get(value);
+            OrderMethodEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +26,7 @@ public class CreateFunctionTriggerRequestBody  {
     /**
      * 触发器类型。  - TIMER: 定时触发器。 - APIG: APIGW触发器。 - CTS: 云审计触发器，需要先开通云审计服务。 - DDS: 文档数据库触发器，需要开启函数vpc。 - DMS: 分布式消息服务触发器，需要配置dms委托。 - DIS: 数据接入服务触发器，需要配置dis委托。 - LTS: 云审计日志服务触发器，需要配置lts委托。 - OBS: 对象存储服务触发器。 - KAFKA: 专享版本kafka触发器。
      */
-    public static class TriggerTypeCodeEnum {
+    public static final class TriggerTypeCodeEnum {
 
         
         /**
@@ -70,19 +75,21 @@ public class CreateFunctionTriggerRequestBody  {
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
         
 
-        public static final Map<String, TriggerTypeCodeEnum> staticFields = new HashMap<String, TriggerTypeCodeEnum>() {
-            { 
-                put("TIMER", TIMER);
-                put("APIG", APIG);
-                put("CTS", CTS);
-                put("DDS", DDS);
-                put("DMS", DMS);
-                put("DIS", DIS);
-                put("LTS", LTS);
-                put("OBS", OBS);
-                put("KAFKA", KAFKA);
-            }
-        };
+        private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TriggerTypeCodeEnum> createStaticFields() {
+            Map<String, TriggerTypeCodeEnum> map = new HashMap<>();
+            map.put("TIMER", TIMER);
+            map.put("APIG", APIG);
+            map.put("CTS", CTS);
+            map.put("DDS", DDS);
+            map.put("DMS", DMS);
+            map.put("DIS", DIS);
+            map.put("LTS", LTS);
+            map.put("OBS", OBS);
+            map.put("KAFKA", KAFKA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -101,12 +108,9 @@ public class CreateFunctionTriggerRequestBody  {
             if( value == null ){
                 return null;
             }
-            TriggerTypeCodeEnum result = staticFields.get(value);
+            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TriggerTypeCodeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TriggerTypeCodeEnum(value);
             }
             return result;
         }
@@ -115,7 +119,7 @@ public class CreateFunctionTriggerRequestBody  {
             if( value == null ){
                 return null;
             }
-            TriggerTypeCodeEnum result = staticFields.get(value);
+            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -144,7 +148,7 @@ public class CreateFunctionTriggerRequestBody  {
     /**
      * 触发器状态，取值为ACTIVE,DISABLED。
      */
-    public static class TriggerStatusEnum {
+    public static final class TriggerStatusEnum {
 
         
         /**
@@ -158,12 +162,14 @@ public class CreateFunctionTriggerRequestBody  {
         public static final TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
         
 
-        public static final Map<String, TriggerStatusEnum> staticFields = new HashMap<String, TriggerStatusEnum>() {
-            { 
-                put("ACTIVE", ACTIVE);
-                put("DISABLED", DISABLED);
-            }
-        };
+        private static final Map<String, TriggerStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TriggerStatusEnum> createStaticFields() {
+            Map<String, TriggerStatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("DISABLED", DISABLED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -182,12 +188,9 @@ public class CreateFunctionTriggerRequestBody  {
             if( value == null ){
                 return null;
             }
-            TriggerStatusEnum result = staticFields.get(value);
+            TriggerStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TriggerStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TriggerStatusEnum(value);
             }
             return result;
         }
@@ -196,7 +199,7 @@ public class CreateFunctionTriggerRequestBody  {
             if( value == null ){
                 return null;
             }
-            TriggerStatusEnum result = staticFields.get(value);
+            TriggerStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

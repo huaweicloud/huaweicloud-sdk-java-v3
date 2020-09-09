@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.vpc.v3.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -10,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.vpc.v3.model.SecurityGroup;
 import com.huaweicloud.sdk.vpc.v3.model.SecurityGroupRule;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -63,10 +66,10 @@ public class SecurityGroupInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_rule")
+    @JsonProperty(value="security_group_rules")
     
-    private SecurityGroupRule securityGroupRule = null;
-
+    private List<SecurityGroupRule> securityGroupRules = new ArrayList<>();
+    
     public SecurityGroupInfo withId(String id) {
         this.id = id;
         return this;
@@ -207,31 +210,35 @@ public class SecurityGroupInfo  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public SecurityGroupInfo withSecurityGroupRule(SecurityGroupRule securityGroupRule) {
-        this.securityGroupRule = securityGroupRule;
+    public SecurityGroupInfo withSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
+        this.securityGroupRules = securityGroupRules;
         return this;
     }
 
-    public SecurityGroupInfo withSecurityGroupRule(Consumer<SecurityGroupRule> securityGroupRuleSetter) {
-        if(this.securityGroupRule == null ){
-            this.securityGroupRule = new SecurityGroupRule();
-            securityGroupRuleSetter.accept(this.securityGroupRule);
+    
+    public SecurityGroupInfo addSecurityGroupRulesItem(SecurityGroupRule securityGroupRulesItem) {
+        this.securityGroupRules.add(securityGroupRulesItem);
+        return this;
+    }
+
+    public SecurityGroupInfo withSecurityGroupRules(Consumer<List<SecurityGroupRule>> securityGroupRulesSetter) {
+        if(this.securityGroupRules == null ){
+            this.securityGroupRules = new ArrayList<>();
         }
-        
+        securityGroupRulesSetter.accept(this.securityGroupRules);
         return this;
     }
-
 
     /**
-     * Get securityGroupRule
-     * @return securityGroupRule
+     * 安全组规则
+     * @return securityGroupRules
      */
-    public SecurityGroupRule getSecurityGroupRule() {
-        return securityGroupRule;
+    public List<SecurityGroupRule> getSecurityGroupRules() {
+        return securityGroupRules;
     }
 
-    public void setSecurityGroupRule(SecurityGroupRule securityGroupRule) {
-        this.securityGroupRule = securityGroupRule;
+    public void setSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
+        this.securityGroupRules = securityGroupRules;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -249,11 +256,11 @@ public class SecurityGroupInfo  {
             Objects.equals(this.createdAt, securityGroupInfo.createdAt) &&
             Objects.equals(this.updatedAt, securityGroupInfo.updatedAt) &&
             Objects.equals(this.enterpriseProjectId, securityGroupInfo.enterpriseProjectId) &&
-            Objects.equals(this.securityGroupRule, securityGroupInfo.securityGroupRule);
+            Objects.equals(this.securityGroupRules, securityGroupInfo.securityGroupRules);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, projectId, createdAt, updatedAt, enterpriseProjectId, securityGroupRule);
+        return Objects.hash(id, name, description, projectId, createdAt, updatedAt, enterpriseProjectId, securityGroupRules);
     }
     @Override
     public String toString() {
@@ -266,7 +273,7 @@ public class SecurityGroupInfo  {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    securityGroupRule: ").append(toIndentedString(securityGroupRule)).append("\n");
+        sb.append("    securityGroupRules: ").append(toIndentedString(securityGroupRules)).append("\n");
         sb.append("}");
         return sb.toString();
     }

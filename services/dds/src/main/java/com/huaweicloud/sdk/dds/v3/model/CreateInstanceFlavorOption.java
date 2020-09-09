@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class CreateInstanceFlavorOption  {
     /**
      * 节点类型。 取值：   - 社区版集群实例包含mongos、shard和config节点，各节点下该参数取值分别为“mongos”、“shard”和“config”。   - 增强版集群实例下该参数取值为“shard”。   - 社区版副本集实例下该参数取值为“replica”。   - 社区版单节点实例下该参数取值为“single”。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -49,15 +52,17 @@ public class CreateInstanceFlavorOption  {
         public static final TypeEnum SINGLE = new TypeEnum("single");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("mongos", MONGOS);
-                put("shard", SHARD);
-                put("config", CONFIG);
-                put("replica", REPLICA);
-                put("single", SINGLE);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("mongos", MONGOS);
+            map.put("shard", SHARD);
+            map.put("config", CONFIG);
+            map.put("replica", REPLICA);
+            map.put("single", SINGLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class CreateInstanceFlavorOption  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class CreateInstanceFlavorOption  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

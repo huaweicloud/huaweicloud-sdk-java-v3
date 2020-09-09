@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class HaResponse  {
     /**
      * 备机同步参数。实例主备模式为Ha时有效。 取值： - MySQL为“async”或“semisync”。 - PostgreSQL为“async”或“sync”。 - Microsoft SQL Server为“sync”。
      */
-    public static class ReplicationModeEnum {
+    public static final class ReplicationModeEnum {
 
         
         /**
@@ -39,13 +42,15 @@ public class HaResponse  {
         public static final ReplicationModeEnum SYNC = new ReplicationModeEnum("sync");
         
 
-        public static final Map<String, ReplicationModeEnum> staticFields = new HashMap<String, ReplicationModeEnum>() {
-            { 
-                put("async", ASYNC);
-                put("semisync", SEMISYNC);
-                put("sync", SYNC);
-            }
-        };
+        private static final Map<String, ReplicationModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReplicationModeEnum> createStaticFields() {
+            Map<String, ReplicationModeEnum> map = new HashMap<>();
+            map.put("async", ASYNC);
+            map.put("semisync", SEMISYNC);
+            map.put("sync", SYNC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class HaResponse  {
             if( value == null ){
                 return null;
             }
-            ReplicationModeEnum result = staticFields.get(value);
+            ReplicationModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ReplicationModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ReplicationModeEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class HaResponse  {
             if( value == null ){
                 return null;
             }
-            ReplicationModeEnum result = staticFields.get(value);
+            ReplicationModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

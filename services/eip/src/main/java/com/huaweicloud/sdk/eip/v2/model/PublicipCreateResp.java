@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -45,7 +50,7 @@ public class PublicipCreateResp  {
     /**
      * 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -114,23 +119,25 @@ public class PublicipCreateResp  {
         public static final StatusEnum VPN = new StatusEnum("VPN");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("FREEZED", FREEZED);
-                put("BIND_ERROR", BIND_ERROR);
-                put("BINDING", BINDING);
-                put("PENDING_DELETE", PENDING_DELETE);
-                put("PENDING_CREATE", PENDING_CREATE);
-                put("NOTIFYING", NOTIFYING);
-                put("NOTIFY_DELETE", NOTIFY_DELETE);
-                put("PENDING_UPDATE", PENDING_UPDATE);
-                put("DOWN", DOWN);
-                put("ACTIVE", ACTIVE);
-                put("ELB", ELB);
-                put("ERROR", ERROR);
-                put("VPN", VPN);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("FREEZED", FREEZED);
+            map.put("BIND_ERROR", BIND_ERROR);
+            map.put("BINDING", BINDING);
+            map.put("PENDING_DELETE", PENDING_DELETE);
+            map.put("PENDING_CREATE", PENDING_CREATE);
+            map.put("NOTIFYING", NOTIFYING);
+            map.put("NOTIFY_DELETE", NOTIFY_DELETE);
+            map.put("PENDING_UPDATE", PENDING_UPDATE);
+            map.put("DOWN", DOWN);
+            map.put("ACTIVE", ACTIVE);
+            map.put("ELB", ELB);
+            map.put("ERROR", ERROR);
+            map.put("VPN", VPN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -149,12 +156,9 @@ public class PublicipCreateResp  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -163,7 +167,7 @@ public class PublicipCreateResp  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -210,7 +214,7 @@ public class PublicipCreateResp  {
     /**
      * IP版本信息，取值范围是4和6
      */
-    public static class IpVersionEnum {
+    public static final class IpVersionEnum {
 
         
         /**
@@ -224,12 +228,14 @@ public class PublicipCreateResp  {
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
         
 
-        public static final Map<Integer, IpVersionEnum> staticFields = new HashMap<Integer, IpVersionEnum>() {
-            { 
-                put(4, NUMBER_4);
-                put(6, NUMBER_6);
-            }
-        };
+        private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IpVersionEnum> createStaticFields() {
+            Map<Integer, IpVersionEnum> map = new HashMap<>();
+            map.put(4, NUMBER_4);
+            map.put(6, NUMBER_6);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -248,12 +254,9 @@ public class PublicipCreateResp  {
             if( value == null ){
                 return null;
             }
-            IpVersionEnum result = staticFields.get(value);
+            IpVersionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IpVersionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IpVersionEnum(value);
             }
             return result;
         }
@@ -262,7 +265,7 @@ public class PublicipCreateResp  {
             if( value == null ){
                 return null;
             }
-            IpVersionEnum result = staticFields.get(value);
+            IpVersionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

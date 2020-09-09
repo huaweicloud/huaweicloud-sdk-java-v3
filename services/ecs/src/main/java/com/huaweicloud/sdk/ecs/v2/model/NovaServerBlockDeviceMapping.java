@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class NovaServerBlockDeviceMapping  {
     /**
      * 卷设备的源头类型，当前只支持volume、image、snapshot、blank类型。  当使用卷创建云服务器时，source_type设置为volume；当使用镜像创建云服务器时，source_type设置为image；当使用快照创建云服务器时，source_type设置为snapshot；当创建空数据卷时，source_type设置为blank。  - 说明： -  - 当卷设备的源头类型为snapshot时，且boot_index为0，则该快照对应的云硬盘必须为系统盘。
      */
-    public static class SourceTypeEnum {
+    public static final class SourceTypeEnum {
 
         
         /**
@@ -44,14 +49,16 @@ public class NovaServerBlockDeviceMapping  {
         public static final SourceTypeEnum IMAGE = new SourceTypeEnum("image");
         
 
-        public static final Map<String, SourceTypeEnum> staticFields = new HashMap<String, SourceTypeEnum>() {
-            { 
-                put("blank", BLANK);
-                put("snapshot", SNAPSHOT);
-                put("volume", VOLUME);
-                put("image", IMAGE);
-            }
-        };
+        private static final Map<String, SourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SourceTypeEnum> createStaticFields() {
+            Map<String, SourceTypeEnum> map = new HashMap<>();
+            map.put("blank", BLANK);
+            map.put("snapshot", SNAPSHOT);
+            map.put("volume", VOLUME);
+            map.put("image", IMAGE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +77,9 @@ public class NovaServerBlockDeviceMapping  {
             if( value == null ){
                 return null;
             }
-            SourceTypeEnum result = staticFields.get(value);
+            SourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SourceTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SourceTypeEnum(value);
             }
             return result;
         }
@@ -84,7 +88,7 @@ public class NovaServerBlockDeviceMapping  {
             if( value == null ){
                 return null;
             }
-            SourceTypeEnum result = staticFields.get(value);
+            SourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -113,7 +117,7 @@ public class NovaServerBlockDeviceMapping  {
     /**
      * 卷设备的目标类型，当前仅支持volume类型。  - volume：卷。 - local：本地文件，当前不支持该类型。
      */
-    public static class DestinationTypeEnum {
+    public static final class DestinationTypeEnum {
 
         
         /**
@@ -122,11 +126,13 @@ public class NovaServerBlockDeviceMapping  {
         public static final DestinationTypeEnum VOLUME = new DestinationTypeEnum("volume");
         
 
-        public static final Map<String, DestinationTypeEnum> staticFields = new HashMap<String, DestinationTypeEnum>() {
-            { 
-                put("volume", VOLUME);
-            }
-        };
+        private static final Map<String, DestinationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DestinationTypeEnum> createStaticFields() {
+            Map<String, DestinationTypeEnum> map = new HashMap<>();
+            map.put("volume", VOLUME);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +151,9 @@ public class NovaServerBlockDeviceMapping  {
             if( value == null ){
                 return null;
             }
-            DestinationTypeEnum result = staticFields.get(value);
+            DestinationTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DestinationTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DestinationTypeEnum(value);
             }
             return result;
         }
@@ -159,7 +162,7 @@ public class NovaServerBlockDeviceMapping  {
             if( value == null ){
                 return null;
             }
-            DestinationTypeEnum result = staticFields.get(value);
+            DestinationTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,33 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +47,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets imagetype
      */
-    public static class ImagetypeEnum {
+    public static final class ImagetypeEnum {
 
         
         /**
@@ -39,13 +66,15 @@ public class ListImagesRequest  {
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
         
 
-        public static final Map<String, ImagetypeEnum> staticFields = new HashMap<String, ImagetypeEnum>() {
-            { 
-                put("gold", GOLD);
-                put("private", PRIVATE);
-                put("shared", SHARED);
-            }
-        };
+        private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ImagetypeEnum> createStaticFields() {
+            Map<String, ImagetypeEnum> map = new HashMap<>();
+            map.put("gold", GOLD);
+            map.put("private", PRIVATE);
+            map.put("shared", SHARED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +93,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            ImagetypeEnum result = staticFields.get(value);
+            ImagetypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ImagetypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ImagetypeEnum(value);
             }
             return result;
         }
@@ -78,7 +104,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            ImagetypeEnum result = staticFields.get(value);
+            ImagetypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +133,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets isregistered
      */
-    public static class IsregisteredEnum {
+    public static final class IsregisteredEnum {
 
         
         /**
@@ -121,12 +147,14 @@ public class ListImagesRequest  {
         public static final IsregisteredEnum FALSE = new IsregisteredEnum("false");
         
 
-        public static final Map<String, IsregisteredEnum> staticFields = new HashMap<String, IsregisteredEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IsregisteredEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsregisteredEnum> createStaticFields() {
+            Map<String, IsregisteredEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +173,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            IsregisteredEnum result = staticFields.get(value);
+            IsregisteredEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsregisteredEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsregisteredEnum(value);
             }
             return result;
         }
@@ -159,7 +184,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            IsregisteredEnum result = staticFields.get(value);
+            IsregisteredEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -188,7 +213,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets osBit
      */
-    public static class OsBitEnum {
+    public static final class OsBitEnum {
 
         
         /**
@@ -202,12 +227,14 @@ public class ListImagesRequest  {
         public static final OsBitEnum _64 = new OsBitEnum("64");
         
 
-        public static final Map<String, OsBitEnum> staticFields = new HashMap<String, OsBitEnum>() {
-            { 
-                put("32", _32);
-                put("64", _64);
-            }
-        };
+        private static final Map<String, OsBitEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsBitEnum> createStaticFields() {
+            Map<String, OsBitEnum> map = new HashMap<>();
+            map.put("32", _32);
+            map.put("64", _64);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -226,12 +253,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            OsBitEnum result = staticFields.get(value);
+            OsBitEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsBitEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsBitEnum(value);
             }
             return result;
         }
@@ -240,7 +264,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            OsBitEnum result = staticFields.get(value);
+            OsBitEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -269,7 +293,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets osType
      */
-    public static class OsTypeEnum {
+    public static final class OsTypeEnum {
 
         
         /**
@@ -288,13 +312,15 @@ public class ListImagesRequest  {
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
         
 
-        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
-            { 
-                put("Linux", LINUX);
-                put("Windows", WINDOWS);
-                put("Other", OTHER);
-            }
-        };
+        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsTypeEnum> createStaticFields() {
+            Map<String, OsTypeEnum> map = new HashMap<>();
+            map.put("Linux", LINUX);
+            map.put("Windows", WINDOWS);
+            map.put("Other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -313,12 +339,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsTypeEnum(value);
             }
             return result;
         }
@@ -327,7 +350,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -356,7 +379,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets platform
      */
-    public static class PlatformEnum {
+    public static final class PlatformEnum {
 
         
         /**
@@ -420,22 +443,24 @@ public class ListImagesRequest  {
         public static final PlatformEnum EULEOS = new PlatformEnum("EuleOS");
         
 
-        public static final Map<String, PlatformEnum> staticFields = new HashMap<String, PlatformEnum>() {
-            { 
-                put("Windows", WINDOWS);
-                put("Ubuntu", UBUNTU);
-                put("RedHat", REDHAT);
-                put("SUSE", SUSE);
-                put("CentOS", CENTOS);
-                put("Debian", DEBIAN);
-                put("OpenSUSE", OPENSUSE);
-                put("Oracle Linux", ORACLE_LINUX);
-                put("Fedora", FEDORA);
-                put("Other", OTHER);
-                put("CoreOS", COREOS);
-                put("EuleOS", EULEOS);
-            }
-        };
+        private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PlatformEnum> createStaticFields() {
+            Map<String, PlatformEnum> map = new HashMap<>();
+            map.put("Windows", WINDOWS);
+            map.put("Ubuntu", UBUNTU);
+            map.put("RedHat", REDHAT);
+            map.put("SUSE", SUSE);
+            map.put("CentOS", CENTOS);
+            map.put("Debian", DEBIAN);
+            map.put("OpenSUSE", OPENSUSE);
+            map.put("Oracle Linux", ORACLE_LINUX);
+            map.put("Fedora", FEDORA);
+            map.put("Other", OTHER);
+            map.put("CoreOS", COREOS);
+            map.put("EuleOS", EULEOS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -454,12 +479,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            PlatformEnum result = staticFields.get(value);
+            PlatformEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PlatformEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PlatformEnum(value);
             }
             return result;
         }
@@ -468,7 +490,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            PlatformEnum result = staticFields.get(value);
+            PlatformEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -557,7 +579,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets diskFormat
      */
-    public static class DiskFormatEnum {
+    public static final class DiskFormatEnum {
 
         
         /**
@@ -586,15 +608,17 @@ public class ListImagesRequest  {
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
         
 
-        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
-            { 
-                put("vhd", VHD);
-                put("zvhd", ZVHD);
-                put("raw", RAW);
-                put("qcow2", QCOW2);
-                put("zvhd2", ZVHD2);
-            }
-        };
+        private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DiskFormatEnum> createStaticFields() {
+            Map<String, DiskFormatEnum> map = new HashMap<>();
+            map.put("vhd", VHD);
+            map.put("zvhd", ZVHD);
+            map.put("raw", RAW);
+            map.put("qcow2", QCOW2);
+            map.put("zvhd2", ZVHD2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -613,12 +637,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DiskFormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DiskFormatEnum(value);
             }
             return result;
         }
@@ -627,7 +648,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -680,7 +701,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets memberStatus
      */
-    public static class MemberStatusEnum {
+    public static final class MemberStatusEnum {
 
         
         /**
@@ -699,13 +720,15 @@ public class ListImagesRequest  {
         public static final MemberStatusEnum PENDING = new MemberStatusEnum("pending");
         
 
-        public static final Map<String, MemberStatusEnum> staticFields = new HashMap<String, MemberStatusEnum>() {
-            { 
-                put("accepted", ACCEPTED);
-                put("rejected", REJECTED);
-                put("pending", PENDING);
-            }
-        };
+        private static final Map<String, MemberStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MemberStatusEnum> createStaticFields() {
+            Map<String, MemberStatusEnum> map = new HashMap<>();
+            map.put("accepted", ACCEPTED);
+            map.put("rejected", REJECTED);
+            map.put("pending", PENDING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -724,12 +747,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            MemberStatusEnum result = staticFields.get(value);
+            MemberStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MemberStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MemberStatusEnum(value);
             }
             return result;
         }
@@ -738,7 +758,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            MemberStatusEnum result = staticFields.get(value);
+            MemberStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -797,7 +817,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets sortDir
      */
-    public static class SortDirEnum {
+    public static final class SortDirEnum {
 
         
         /**
@@ -811,12 +831,14 @@ public class ListImagesRequest  {
         public static final SortDirEnum DESC = new SortDirEnum("desc");
         
 
-        public static final Map<String, SortDirEnum> staticFields = new HashMap<String, SortDirEnum>() {
-            { 
-                put("asc", ASC);
-                put("desc", DESC);
-            }
-        };
+        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortDirEnum> createStaticFields() {
+            Map<String, SortDirEnum> map = new HashMap<>();
+            map.put("asc", ASC);
+            map.put("desc", DESC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -835,12 +857,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            SortDirEnum result = staticFields.get(value);
+            SortDirEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortDirEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SortDirEnum(value);
             }
             return result;
         }
@@ -849,7 +868,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            SortDirEnum result = staticFields.get(value);
+            SortDirEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -878,7 +897,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets sortKey
      */
-    public static class SortKeyEnum {
+    public static final class SortKeyEnum {
 
         
         /**
@@ -917,17 +936,19 @@ public class ListImagesRequest  {
         public static final SortKeyEnum SIZE = new SortKeyEnum("size");
         
 
-        public static final Map<String, SortKeyEnum> staticFields = new HashMap<String, SortKeyEnum>() {
-            { 
-                put("created_at", CREATED_AT);
-                put("name", NAME);
-                put("container_format", CONTAINER_FORMAT);
-                put("disk_format", DISK_FORMAT);
-                put("status ", STATUS_);
-                put("id", ID);
-                put("size", SIZE);
-            }
-        };
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("created_at", CREATED_AT);
+            map.put("name", NAME);
+            map.put("container_format", CONTAINER_FORMAT);
+            map.put("disk_format", DISK_FORMAT);
+            map.put("status ", STATUS_);
+            map.put("id", ID);
+            map.put("size", SIZE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -946,12 +967,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortKeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SortKeyEnum(value);
             }
             return result;
         }
@@ -960,7 +978,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -989,7 +1007,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets status
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -1018,15 +1036,17 @@ public class ListImagesRequest  {
         public static final StatusEnum ACTIVE = new StatusEnum("active");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("queued", QUEUED);
-                put("saving", SAVING);
-                put("deleted", DELETED);
-                put("killed", KILLED);
-                put("active", ACTIVE);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("queued", QUEUED);
+            map.put("saving", SAVING);
+            map.put("deleted", DELETED);
+            map.put("killed", KILLED);
+            map.put("active", ACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1045,12 +1065,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -1059,7 +1076,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1094,7 +1111,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets virtualEnvType
      */
-    public static class VirtualEnvTypeEnum {
+    public static final class VirtualEnvTypeEnum {
 
         
         /**
@@ -1113,13 +1130,15 @@ public class ListImagesRequest  {
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
         
 
-        public static final Map<String, VirtualEnvTypeEnum> staticFields = new HashMap<String, VirtualEnvTypeEnum>() {
-            { 
-                put("FusionCompute", FUSIONCOMPUTE);
-                put("Ironic", IRONIC);
-                put("DataImage", DATAIMAGE);
-            }
-        };
+        private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VirtualEnvTypeEnum> createStaticFields() {
+            Map<String, VirtualEnvTypeEnum> map = new HashMap<>();
+            map.put("FusionCompute", FUSIONCOMPUTE);
+            map.put("Ironic", IRONIC);
+            map.put("DataImage", DATAIMAGE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1138,12 +1157,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VirtualEnvTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VirtualEnvTypeEnum(value);
             }
             return result;
         }
@@ -1152,7 +1168,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1181,7 +1197,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets visibility
      */
-    public static class VisibilityEnum {
+    public static final class VisibilityEnum {
 
         
         /**
@@ -1195,12 +1211,14 @@ public class ListImagesRequest  {
         public static final VisibilityEnum PRIVATE = new VisibilityEnum("private");
         
 
-        public static final Map<String, VisibilityEnum> staticFields = new HashMap<String, VisibilityEnum>() {
-            { 
-                put("public", PUBLIC);
-                put("private", PRIVATE);
-            }
-        };
+        private static final Map<String, VisibilityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VisibilityEnum> createStaticFields() {
+            Map<String, VisibilityEnum> map = new HashMap<>();
+            map.put("public", PUBLIC);
+            map.put("private", PRIVATE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1219,12 +1237,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            VisibilityEnum result = staticFields.get(value);
+            VisibilityEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VisibilityEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VisibilityEnum(value);
             }
             return result;
         }
@@ -1233,7 +1248,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            VisibilityEnum result = staticFields.get(value);
+            VisibilityEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1286,7 +1301,7 @@ public class ListImagesRequest  {
     /**
      * Gets or Sets architecture
      */
-    public static class ArchitectureEnum {
+    public static final class ArchitectureEnum {
 
         
         /**
@@ -1300,12 +1315,14 @@ public class ListImagesRequest  {
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
         
 
-        public static final Map<String, ArchitectureEnum> staticFields = new HashMap<String, ArchitectureEnum>() {
-            { 
-                put("x86", X86);
-                put("arm", ARM);
-            }
-        };
+        private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ArchitectureEnum> createStaticFields() {
+            Map<String, ArchitectureEnum> map = new HashMap<>();
+            map.put("x86", X86);
+            map.put("arm", ARM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1324,12 +1341,9 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ArchitectureEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ArchitectureEnum(value);
             }
             return result;
         }
@@ -1338,7 +1352,7 @@ public class ListImagesRequest  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ResourcePrice  {
     /**
      * cpu架构 x86|arm
      */
-    public static class ArchEnum {
+    public static final class ArchEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class ResourcePrice  {
         public static final ArchEnum ARM = new ArchEnum("arm");
         
 
-        public static final Map<String, ArchEnum> staticFields = new HashMap<String, ArchEnum>() {
-            { 
-                put("x86", X86);
-                put("arm", ARM);
-            }
-        };
+        private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ArchEnum> createStaticFields() {
+            Map<String, ArchEnum> map = new HashMap<>();
+            map.put("x86", X86);
+            map.put("arm", ARM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class ResourcePrice  {
             if( value == null ){
                 return null;
             }
-            ArchEnum result = staticFields.get(value);
+            ArchEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ArchEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ArchEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class ResourcePrice  {
             if( value == null ){
                 return null;
             }
-            ArchEnum result = staticFields.get(value);
+            ArchEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

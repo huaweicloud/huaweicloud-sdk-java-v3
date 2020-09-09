@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -70,7 +73,7 @@ public class LoadBalancer  {
         /**
      * 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
      */
-    public static class OperatingStatusEnum {
+    public static final class OperatingStatusEnum {
 
         
         /**
@@ -99,15 +102,17 @@ public class LoadBalancer  {
         public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
         
 
-        public static final Map<String, OperatingStatusEnum> staticFields = new HashMap<String, OperatingStatusEnum>() {
-            { 
-                put("ONLINE", ONLINE);
-                put("OFFLINE", OFFLINE);
-                put("DEGRADED", DEGRADED);
-                put("DISABLED", DISABLED);
-                put("NO_MONITOR", NO_MONITOR);
-            }
-        };
+        private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OperatingStatusEnum> createStaticFields() {
+            Map<String, OperatingStatusEnum> map = new HashMap<>();
+            map.put("ONLINE", ONLINE);
+            map.put("OFFLINE", OFFLINE);
+            map.put("DEGRADED", DEGRADED);
+            map.put("DISABLED", DISABLED);
+            map.put("NO_MONITOR", NO_MONITOR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -126,12 +131,9 @@ public class LoadBalancer  {
             if( value == null ){
                 return null;
             }
-            OperatingStatusEnum result = staticFields.get(value);
+            OperatingStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OperatingStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OperatingStatusEnum(value);
             }
             return result;
         }
@@ -140,7 +142,7 @@ public class LoadBalancer  {
             if( value == null ){
                 return null;
             }
-            OperatingStatusEnum result = staticFields.get(value);
+            OperatingStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

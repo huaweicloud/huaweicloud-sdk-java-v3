@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,12 +30,14 @@ public class SourceKind {
     public static final SourceKind ARTIFACT = new SourceKind("artifact");
     
 
-    public static final Map<String, SourceKind> staticFields = new HashMap<String, SourceKind>() {
-        { 
-            put("code", CODE);
-            put("artifact", ARTIFACT);
-        }
-    };
+    private static final Map<String, SourceKind> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, SourceKind> createStaticFields() {
+        Map<String, SourceKind> map = new HashMap<>();
+        map.put("code", CODE);
+        map.put("artifact", ARTIFACT);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -52,12 +56,9 @@ public class SourceKind {
         if( value == null ){
             return null;
         }
-        SourceKind result = staticFields.get(value);
+        SourceKind result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new SourceKind(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new SourceKind(value);
         }
         return result;
     }
@@ -66,7 +67,7 @@ public class SourceKind {
         if( value == null ){
             return null;
         }
-        SourceKind result = staticFields.get(value);
+        SourceKind result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

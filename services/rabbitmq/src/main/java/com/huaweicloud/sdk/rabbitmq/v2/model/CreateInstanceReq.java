@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -35,7 +42,7 @@ public class CreateInstanceReq  {
     /**
      * 消息引擎：rabbitmq。
      */
-    public static class EngineEnum {
+    public static final class EngineEnum {
 
         
         /**
@@ -44,11 +51,13 @@ public class CreateInstanceReq  {
         public static final EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
         
 
-        public static final Map<String, EngineEnum> staticFields = new HashMap<String, EngineEnum>() {
-            { 
-                put("rabbitmq", RABBITMQ);
-            }
-        };
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("rabbitmq", RABBITMQ);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -67,12 +76,9 @@ public class CreateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineEnum(value);
             }
             return result;
         }
@@ -81,7 +87,7 @@ public class CreateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -110,7 +116,7 @@ public class CreateInstanceReq  {
     /**
      * 消息引擎的版本。   - RabbitMQ版本有：3.7.17 
      */
-    public static class EngineVersionEnum {
+    public static final class EngineVersionEnum {
 
         
         /**
@@ -119,11 +125,13 @@ public class CreateInstanceReq  {
         public static final EngineVersionEnum _3_7_17 = new EngineVersionEnum("3.7.17");
         
 
-        public static final Map<String, EngineVersionEnum> staticFields = new HashMap<String, EngineVersionEnum>() {
-            { 
-                put("3.7.17", _3_7_17);
-            }
-        };
+        private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineVersionEnum> createStaticFields() {
+            Map<String, EngineVersionEnum> map = new HashMap<>();
+            map.put("3.7.17", _3_7_17);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -142,12 +150,9 @@ public class CreateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineVersionEnum result = staticFields.get(value);
+            EngineVersionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineVersionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineVersionEnum(value);
             }
             return result;
         }
@@ -156,7 +161,7 @@ public class CreateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineVersionEnum result = staticFields.get(value);
+            EngineVersionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -263,7 +268,7 @@ public class CreateInstanceReq  {
     /**
      * 存储IO规格。如何选择磁盘类型请参考[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 取值范围：   - dms.physical.storage.normal：   - dms.physical.storage.high   - dms.physical.storage.ultra
      */
-    public static class StorageSpecCodeEnum {
+    public static final class StorageSpecCodeEnum {
 
         
         /**
@@ -282,13 +287,15 @@ public class CreateInstanceReq  {
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA = new StorageSpecCodeEnum("dms.physical.storage.ultra");
         
 
-        public static final Map<String, StorageSpecCodeEnum> staticFields = new HashMap<String, StorageSpecCodeEnum>() {
-            { 
-                put("dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL);
-                put("dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH);
-                put("dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA);
-            }
-        };
+        private static final Map<String, StorageSpecCodeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StorageSpecCodeEnum> createStaticFields() {
+            Map<String, StorageSpecCodeEnum> map = new HashMap<>();
+            map.put("dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL);
+            map.put("dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH);
+            map.put("dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -307,12 +314,9 @@ public class CreateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            StorageSpecCodeEnum result = staticFields.get(value);
+            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StorageSpecCodeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StorageSpecCodeEnum(value);
             }
             return result;
         }
@@ -321,7 +325,7 @@ public class CreateInstanceReq  {
             if( value == null ){
                 return null;
             }
-            StorageSpecCodeEnum result = staticFields.get(value);
+            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

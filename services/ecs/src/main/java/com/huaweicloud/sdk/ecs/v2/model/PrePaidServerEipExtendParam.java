@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class PrePaidServerEipExtendParam  {
     /**
      * 公网IP的计费模式。  取值范围：  - prePaid-预付费，即包年包月； - postPaid-后付费，即按需付费；  > 说明： >  > 如果bandwidth对象中share_type是WHOLE且id有值，弹性IP只能创建为按需付费的，故该参数传参“prePaid”无效。
      */
-    public static class ChargingModeEnum {
+    public static final class ChargingModeEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class PrePaidServerEipExtendParam  {
         public static final ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
         
 
-        public static final Map<String, ChargingModeEnum> staticFields = new HashMap<String, ChargingModeEnum>() {
-            { 
-                put("prePaid", PREPAID);
-                put("postPaid", POSTPAID);
-            }
-        };
+        private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargingModeEnum> createStaticFields() {
+            Map<String, ChargingModeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class PrePaidServerEipExtendParam  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargingModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargingModeEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class PrePaidServerEipExtendParam  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -75,7 +80,7 @@ public class CreateVolumeOption  {
     /**
      * 是否为共享云硬盘。true为共享盘，false为普通云硬盘。 该字段已经废弃，请使用multiattach。
      */
-    public static class ShareableEnum {
+    public static final class ShareableEnum {
 
         
         /**
@@ -89,12 +94,14 @@ public class CreateVolumeOption  {
         public static final ShareableEnum FALSE = new ShareableEnum("false");
         
 
-        public static final Map<String, ShareableEnum> staticFields = new HashMap<String, ShareableEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, ShareableEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ShareableEnum> createStaticFields() {
+            Map<String, ShareableEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -113,12 +120,9 @@ public class CreateVolumeOption  {
             if( value == null ){
                 return null;
             }
-            ShareableEnum result = staticFields.get(value);
+            ShareableEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ShareableEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ShareableEnum(value);
             }
             return result;
         }
@@ -127,7 +131,7 @@ public class CreateVolumeOption  {
             if( value == null ){
                 return null;
             }
-            ShareableEnum result = staticFields.get(value);
+            ShareableEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -168,7 +172,7 @@ public class CreateVolumeOption  {
     /**
      * 云硬盘类型。  目前支持“SSD”，“SAS”和“SATA”三种。 “SSD”为超高IO云硬盘 \"GPSSD\"为通用型SSD云硬盘 “SAS”为高IO云硬盘 “SATA”为普通IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      */
-    public static class VolumeTypeEnum {
+    public static final class VolumeTypeEnum {
 
         
         /**
@@ -192,14 +196,16 @@ public class CreateVolumeOption  {
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
         
 
-        public static final Map<String, VolumeTypeEnum> staticFields = new HashMap<String, VolumeTypeEnum>() {
-            { 
-                put("SSD", SSD);
-                put("GPSSD", GPSSD);
-                put("SAS", SAS);
-                put("SATA", SATA);
-            }
-        };
+        private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VolumeTypeEnum> createStaticFields() {
+            Map<String, VolumeTypeEnum> map = new HashMap<>();
+            map.put("SSD", SSD);
+            map.put("GPSSD", GPSSD);
+            map.put("SAS", SAS);
+            map.put("SATA", SATA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -218,12 +224,9 @@ public class CreateVolumeOption  {
             if( value == null ){
                 return null;
             }
-            VolumeTypeEnum result = staticFields.get(value);
+            VolumeTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VolumeTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VolumeTypeEnum(value);
             }
             return result;
         }
@@ -232,7 +235,7 @@ public class CreateVolumeOption  {
             if( value == null ){
                 return null;
             }
-            VolumeTypeEnum result = staticFields.get(value);
+            VolumeTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

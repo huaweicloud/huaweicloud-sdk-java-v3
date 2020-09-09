@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ApiPublishReq  {
     /**
      * 需要进行的操作。 - online：发布 - offline：下线
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class ApiPublishReq  {
         public static final ActionEnum OFFLINE = new ActionEnum("offline");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("online", ONLINE);
-                put("offline", OFFLINE);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("online", ONLINE);
+            map.put("offline", OFFLINE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class ApiPublishReq  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class ApiPublishReq  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

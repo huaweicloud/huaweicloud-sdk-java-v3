@@ -5,6 +5,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -35,12 +36,6 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
     @JsonProperty(value="message_offset")
     
     private Integer messageOffset;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
-    private Integer timestamp;
 
     public ShowPartitionBeginningMessageResponse withTopic(String topic) {
         this.topic = topic;
@@ -101,26 +96,6 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
     public void setMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
     }
-
-    public ShowPartitionBeginningMessageResponse withTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 最新消息时间戳。
-     * @return timestamp
-     */
-    public Integer getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -132,12 +107,11 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         ShowPartitionBeginningMessageResponse showPartitionBeginningMessageResponse = (ShowPartitionBeginningMessageResponse) o;
         return Objects.equals(this.topic, showPartitionBeginningMessageResponse.topic) &&
             Objects.equals(this.partition, showPartitionBeginningMessageResponse.partition) &&
-            Objects.equals(this.messageOffset, showPartitionBeginningMessageResponse.messageOffset) &&
-            Objects.equals(this.timestamp, showPartitionBeginningMessageResponse.timestamp);
+            Objects.equals(this.messageOffset, showPartitionBeginningMessageResponse.messageOffset);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, messageOffset, timestamp);
+        return Objects.hash(topic, partition, messageOffset);
     }
     @Override
     public String toString() {
@@ -146,7 +120,6 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

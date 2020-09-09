@@ -1,4 +1,5 @@
-package com.huaweicloud.sdk.kafka.v2.model;
+package com.huaweicloud.sdk.meeting.v1.model;
+
 
 
 
@@ -7,30 +8,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicReq;
+import com.huaweicloud.sdk.meeting.v1.model.RestInviteWithPwdReqBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class UpdateInstaneTopicRequest  {
+public class InviteWithPwdRequest  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
+    @JsonProperty(value="conferenceID")
     
-    private String instanceId;
+    private String conferenceID;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateInstanceTopicReq body = null;
+    private RestInviteWithPwdReqBody body = null;
 
-    public UpdateInstaneTopicRequest withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public InviteWithPwdRequest withConferenceID(String conferenceID) {
+        this.conferenceID = conferenceID;
         return this;
     }
 
@@ -38,25 +39,25 @@ public class UpdateInstaneTopicRequest  {
 
 
     /**
-     * Get instanceId
-     * @return instanceId
+     * Get conferenceID
+     * @return conferenceID
      */
-    public String getInstanceId() {
-        return instanceId;
+    public String getConferenceID() {
+        return conferenceID;
     }
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public void setConferenceID(String conferenceID) {
+        this.conferenceID = conferenceID;
     }
 
-    public UpdateInstaneTopicRequest withBody(UpdateInstanceTopicReq body) {
+    public InviteWithPwdRequest withBody(RestInviteWithPwdReqBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateInstaneTopicRequest withBody(Consumer<UpdateInstanceTopicReq> bodySetter) {
+    public InviteWithPwdRequest withBody(Consumer<RestInviteWithPwdReqBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateInstanceTopicReq();
+            this.body = new RestInviteWithPwdReqBody();
             bodySetter.accept(this.body);
         }
         
@@ -68,11 +69,11 @@ public class UpdateInstaneTopicRequest  {
      * Get body
      * @return body
      */
-    public UpdateInstanceTopicReq getBody() {
+    public RestInviteWithPwdReqBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateInstanceTopicReq body) {
+    public void setBody(RestInviteWithPwdReqBody body) {
         this.body = body;
     }
     @Override
@@ -83,19 +84,19 @@ public class UpdateInstaneTopicRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateInstaneTopicRequest updateInstaneTopicRequest = (UpdateInstaneTopicRequest) o;
-        return Objects.equals(this.instanceId, updateInstaneTopicRequest.instanceId) &&
-            Objects.equals(this.body, updateInstaneTopicRequest.body);
+        InviteWithPwdRequest inviteWithPwdRequest = (InviteWithPwdRequest) o;
+        return Objects.equals(this.conferenceID, inviteWithPwdRequest.conferenceID) &&
+            Objects.equals(this.body, inviteWithPwdRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, body);
+        return Objects.hash(conferenceID, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateInstaneTopicRequest {\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("class InviteWithPwdRequest {\n");
+        sb.append("    conferenceID: ").append(toIndentedString(conferenceID)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

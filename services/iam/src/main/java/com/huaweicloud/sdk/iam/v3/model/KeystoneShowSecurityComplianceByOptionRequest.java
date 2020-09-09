@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
     /**
      * Gets or Sets option
      */
-    public static class OptionEnum {
+    public static final class OptionEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         public static final OptionEnum PASSWORD_REGEX_DESCRIPTION = new OptionEnum("password_regex_description");
         
 
-        public static final Map<String, OptionEnum> staticFields = new HashMap<String, OptionEnum>() {
-            { 
-                put("password_regex", PASSWORD_REGEX);
-                put("password_regex_description", PASSWORD_REGEX_DESCRIPTION);
-            }
-        };
+        private static final Map<String, OptionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OptionEnum> createStaticFields() {
+            Map<String, OptionEnum> map = new HashMap<>();
+            map.put("password_regex", PASSWORD_REGEX);
+            map.put("password_regex_description", PASSWORD_REGEX_DESCRIPTION);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
             if( value == null ){
                 return null;
             }
-            OptionEnum result = staticFields.get(value);
+            OptionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OptionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OptionEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
             if( value == null ){
                 return null;
             }
-            OptionEnum result = staticFields.get(value);
+            OptionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -44,7 +47,7 @@ public class ConfigurationSummaryForCreate  {
     /**
      * 引擎名。
      */
-    public static class DatastoreNameEnum {
+    public static final class DatastoreNameEnum {
 
         
         /**
@@ -63,13 +66,15 @@ public class ConfigurationSummaryForCreate  {
         public static final DatastoreNameEnum SQLSERVER = new DatastoreNameEnum("sqlserver");
         
 
-        public static final Map<String, DatastoreNameEnum> staticFields = new HashMap<String, DatastoreNameEnum>() {
-            { 
-                put("mysql", MYSQL);
-                put("postgresql", POSTGRESQL);
-                put("sqlserver", SQLSERVER);
-            }
-        };
+        private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DatastoreNameEnum> createStaticFields() {
+            Map<String, DatastoreNameEnum> map = new HashMap<>();
+            map.put("mysql", MYSQL);
+            map.put("postgresql", POSTGRESQL);
+            map.put("sqlserver", SQLSERVER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -88,12 +93,9 @@ public class ConfigurationSummaryForCreate  {
             if( value == null ){
                 return null;
             }
-            DatastoreNameEnum result = staticFields.get(value);
+            DatastoreNameEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DatastoreNameEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DatastoreNameEnum(value);
             }
             return result;
         }
@@ -102,7 +104,7 @@ public class ConfigurationSummaryForCreate  {
             if( value == null ){
                 return null;
             }
-            DatastoreNameEnum result = staticFields.get(value);
+            DatastoreNameEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

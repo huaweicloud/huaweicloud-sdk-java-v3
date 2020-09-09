@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class DeleteScalingGroupRequest  {
     /**
      * Gets or Sets forceDelete
      */
-    public static class ForceDeleteEnum {
+    public static final class ForceDeleteEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class DeleteScalingGroupRequest  {
         public static final ForceDeleteEnum FALSE = new ForceDeleteEnum("false");
         
 
-        public static final Map<String, ForceDeleteEnum> staticFields = new HashMap<String, ForceDeleteEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, ForceDeleteEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ForceDeleteEnum> createStaticFields() {
+            Map<String, ForceDeleteEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class DeleteScalingGroupRequest  {
             if( value == null ){
                 return null;
             }
-            ForceDeleteEnum result = staticFields.get(value);
+            ForceDeleteEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ForceDeleteEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ForceDeleteEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class DeleteScalingGroupRequest  {
             if( value == null ){
                 return null;
             }
-            ForceDeleteEnum result = staticFields.get(value);
+            ForceDeleteEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

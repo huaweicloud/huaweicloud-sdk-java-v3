@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,7 +32,7 @@ public class BatchDeletePublicipTagsRequestBody  {
         /**
      * 操作标识  delete：删除  action为delete时，value可选
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -38,11 +41,13 @@ public class BatchDeletePublicipTagsRequestBody  {
         public static final ActionEnum DELETE = new ActionEnum("delete");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("delete", DELETE);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("delete", DELETE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -61,12 +66,9 @@ public class BatchDeletePublicipTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -75,7 +77,7 @@ public class BatchDeletePublicipTagsRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

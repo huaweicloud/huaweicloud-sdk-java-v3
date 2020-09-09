@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -81,7 +84,7 @@ public class ThrottleBindingThrottleResp  {
     /**
      * 是否包含特殊流控 - 1：包含 - 2：不包含
      */
-    public static class IsIncludeSpecialThrottleEnum {
+    public static final class IsIncludeSpecialThrottleEnum {
 
         
         /**
@@ -95,12 +98,14 @@ public class ThrottleBindingThrottleResp  {
         public static final IsIncludeSpecialThrottleEnum NUMBER_2 = new IsIncludeSpecialThrottleEnum(2);
         
 
-        public static final Map<Integer, IsIncludeSpecialThrottleEnum> staticFields = new HashMap<Integer, IsIncludeSpecialThrottleEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, IsIncludeSpecialThrottleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IsIncludeSpecialThrottleEnum> createStaticFields() {
+            Map<Integer, IsIncludeSpecialThrottleEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -119,12 +124,9 @@ public class ThrottleBindingThrottleResp  {
             if( value == null ){
                 return null;
             }
-            IsIncludeSpecialThrottleEnum result = staticFields.get(value);
+            IsIncludeSpecialThrottleEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsIncludeSpecialThrottleEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsIncludeSpecialThrottleEnum(value);
             }
             return result;
         }
@@ -133,7 +135,7 @@ public class ThrottleBindingThrottleResp  {
             if( value == null ){
                 return null;
             }
-            IsIncludeSpecialThrottleEnum result = staticFields.get(value);
+            IsIncludeSpecialThrottleEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

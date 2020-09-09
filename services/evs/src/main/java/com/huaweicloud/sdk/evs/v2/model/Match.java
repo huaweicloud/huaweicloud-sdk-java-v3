@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class Match  {
     /**
      * 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。
      */
-    public static class KeyEnum {
+    public static final class KeyEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class Match  {
         public static final KeyEnum SERVICE_TYPE = new KeyEnum("service_type");
         
 
-        public static final Map<String, KeyEnum> staticFields = new HashMap<String, KeyEnum>() {
-            { 
-                put("resource_name", RESOURCE_NAME);
-                put("service_type", SERVICE_TYPE);
-            }
-        };
+        private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeyEnum> createStaticFields() {
+            Map<String, KeyEnum> map = new HashMap<>();
+            map.put("resource_name", RESOURCE_NAME);
+            map.put("service_type", SERVICE_TYPE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class Match  {
             if( value == null ){
                 return null;
             }
-            KeyEnum result = staticFields.get(value);
+            KeyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new KeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new KeyEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class Match  {
             if( value == null ){
                 return null;
             }
-            KeyEnum result = staticFields.get(value);
+            KeyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class AllResources  {
     /**
      * 查询配额的类型。scaling_Group：伸缩组配额。scaling_Config：伸缩配置配额。scaling_Policy：伸缩策略配额。scaling_Instance：伸缩实例配额。bandwidth_scaling_policy：伸缩带宽策略配额。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -49,15 +52,17 @@ public class AllResources  {
         public static final TypeEnum BANDWIDTH_SCALING_POLICY = new TypeEnum("bandwidth_scaling_policy");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("scaling_group", SCALING_GROUP);
-                put("scaling_config", SCALING_CONFIG);
-                put("scaling_Policy", SCALING_POLICY);
-                put("scaling_Instance", SCALING_INSTANCE);
-                put("bandwidth_scaling_policy", BANDWIDTH_SCALING_POLICY);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("scaling_group", SCALING_GROUP);
+            map.put("scaling_config", SCALING_CONFIG);
+            map.put("scaling_Policy", SCALING_POLICY);
+            map.put("scaling_Instance", SCALING_INSTANCE);
+            map.put("bandwidth_scaling_policy", BANDWIDTH_SCALING_POLICY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class AllResources  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class AllResources  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

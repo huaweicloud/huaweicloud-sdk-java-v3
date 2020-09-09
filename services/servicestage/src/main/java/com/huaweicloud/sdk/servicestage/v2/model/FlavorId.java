@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,16 +50,18 @@ public class FlavorId {
     public static final FlavorId CUSTOM_XG_X_X_X_X = new FlavorId("CUSTOM-XG:X-X:X-X");
     
 
-    public static final Map<String, FlavorId> staticFields = new HashMap<String, FlavorId>() {
-        { 
-            put("MICRO-5G:0.5C:1G", MICRO_5G_0_5C_1G);
-            put("SMALL-10G:1.0C:2G", SMALL_10G_1_0C_2G);
-            put("STANDARD-30G:2.0C:4G", STANDARD_30G_2_0C_4G);
-            put("LARGE-50G:4.0C:8G", LARGE_50G_4_0C_8G);
-            put("XLARGE-100G:4.0C:16G", XLARGE_100G_4_0C_16G);
-            put("CUSTOM-XG:X-X:X-X", CUSTOM_XG_X_X_X_X);
-        }
-    };
+    private static final Map<String, FlavorId> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, FlavorId> createStaticFields() {
+        Map<String, FlavorId> map = new HashMap<>();
+        map.put("MICRO-5G:0.5C:1G", MICRO_5G_0_5C_1G);
+        map.put("SMALL-10G:1.0C:2G", SMALL_10G_1_0C_2G);
+        map.put("STANDARD-30G:2.0C:4G", STANDARD_30G_2_0C_4G);
+        map.put("LARGE-50G:4.0C:8G", LARGE_50G_4_0C_8G);
+        map.put("XLARGE-100G:4.0C:16G", XLARGE_100G_4_0C_16G);
+        map.put("CUSTOM-XG:X-X:X-X", CUSTOM_XG_X_X_X_X);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -76,12 +80,9 @@ public class FlavorId {
         if( value == null ){
             return null;
         }
-        FlavorId result = staticFields.get(value);
+        FlavorId result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new FlavorId(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new FlavorId(value);
         }
         return result;
     }
@@ -90,7 +91,7 @@ public class FlavorId {
         if( value == null ){
             return null;
         }
-        FlavorId result = staticFields.get(value);
+        FlavorId result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

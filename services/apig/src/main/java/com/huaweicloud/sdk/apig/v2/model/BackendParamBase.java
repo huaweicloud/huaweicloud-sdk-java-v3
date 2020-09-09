@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class BackendParamBase  {
     /**
      * 参数类别：REQUEST、CONSTANT、SYSTEM
      */
-    public static class OriginEnum {
+    public static final class OriginEnum {
 
         
         /**
@@ -39,13 +44,15 @@ public class BackendParamBase  {
         public static final OriginEnum SYSTEM = new OriginEnum("SYSTEM");
         
 
-        public static final Map<String, OriginEnum> staticFields = new HashMap<String, OriginEnum>() {
-            { 
-                put("REQUEST", REQUEST);
-                put("CONSTANT", CONSTANT);
-                put("SYSTEM", SYSTEM);
-            }
-        };
+        private static final Map<String, OriginEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OriginEnum> createStaticFields() {
+            Map<String, OriginEnum> map = new HashMap<>();
+            map.put("REQUEST", REQUEST);
+            map.put("CONSTANT", CONSTANT);
+            map.put("SYSTEM", SYSTEM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +71,9 @@ public class BackendParamBase  {
             if( value == null ){
                 return null;
             }
-            OriginEnum result = staticFields.get(value);
+            OriginEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OriginEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OriginEnum(value);
             }
             return result;
         }
@@ -78,7 +82,7 @@ public class BackendParamBase  {
             if( value == null ){
                 return null;
             }
-            OriginEnum result = staticFields.get(value);
+            OriginEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -119,7 +123,7 @@ public class BackendParamBase  {
     /**
      * 参数位置：PATH、QUERY、HEADER
      */
-    public static class LocationEnum {
+    public static final class LocationEnum {
 
         
         /**
@@ -138,13 +142,15 @@ public class BackendParamBase  {
         public static final LocationEnum HEADER = new LocationEnum("HEADER");
         
 
-        public static final Map<String, LocationEnum> staticFields = new HashMap<String, LocationEnum>() {
-            { 
-                put("PATH", PATH);
-                put("QUERY", QUERY);
-                put("HEADER", HEADER);
-            }
-        };
+        private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LocationEnum> createStaticFields() {
+            Map<String, LocationEnum> map = new HashMap<>();
+            map.put("PATH", PATH);
+            map.put("QUERY", QUERY);
+            map.put("HEADER", HEADER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -163,12 +169,9 @@ public class BackendParamBase  {
             if( value == null ){
                 return null;
             }
-            LocationEnum result = staticFields.get(value);
+            LocationEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LocationEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LocationEnum(value);
             }
             return result;
         }
@@ -177,7 +180,7 @@ public class BackendParamBase  {
             if( value == null ){
                 return null;
             }
-            LocationEnum result = staticFields.get(value);
+            LocationEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class ListFlavorsRequest  {
     /**
      * Gets or Sets databaseName
      */
-    public static class DatabaseNameEnum {
+    public static final class DatabaseNameEnum {
 
         
         /**
@@ -45,13 +48,15 @@ public class ListFlavorsRequest  {
         public static final DatabaseNameEnum SQLSERVER = new DatabaseNameEnum("SQLServer");
         
 
-        public static final Map<String, DatabaseNameEnum> staticFields = new HashMap<String, DatabaseNameEnum>() {
-            { 
-                put("MySQL", MYSQL);
-                put("PostgreSQL", POSTGRESQL);
-                put("SQLServer", SQLSERVER);
-            }
-        };
+        private static final Map<String, DatabaseNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DatabaseNameEnum> createStaticFields() {
+            Map<String, DatabaseNameEnum> map = new HashMap<>();
+            map.put("MySQL", MYSQL);
+            map.put("PostgreSQL", POSTGRESQL);
+            map.put("SQLServer", SQLSERVER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class ListFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            DatabaseNameEnum result = staticFields.get(value);
+            DatabaseNameEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DatabaseNameEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DatabaseNameEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class ListFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            DatabaseNameEnum result = staticFields.get(value);
+            DatabaseNameEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -43,7 +46,7 @@ public class ListConfigurationsResponse extends SdkResponse {
         /**
      * 实例修改状态 - UPDATING - FAILURE - SUCCESS 
      */
-    public static class ConfigStatusEnum {
+    public static final class ConfigStatusEnum {
 
         
         /**
@@ -62,13 +65,15 @@ public class ListConfigurationsResponse extends SdkResponse {
         public static final ConfigStatusEnum SUCCESS = new ConfigStatusEnum("SUCCESS");
         
 
-        public static final Map<String, ConfigStatusEnum> staticFields = new HashMap<String, ConfigStatusEnum>() {
-            { 
-                put("UPDATING", UPDATING);
-                put("FAILURE", FAILURE);
-                put("SUCCESS", SUCCESS);
-            }
-        };
+        private static final Map<String, ConfigStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConfigStatusEnum> createStaticFields() {
+            Map<String, ConfigStatusEnum> map = new HashMap<>();
+            map.put("UPDATING", UPDATING);
+            map.put("FAILURE", FAILURE);
+            map.put("SUCCESS", SUCCESS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -87,12 +92,9 @@ public class ListConfigurationsResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            ConfigStatusEnum result = staticFields.get(value);
+            ConfigStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ConfigStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ConfigStatusEnum(value);
             }
             return result;
         }
@@ -101,7 +103,7 @@ public class ListConfigurationsResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            ConfigStatusEnum result = staticFields.get(value);
+            ConfigStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

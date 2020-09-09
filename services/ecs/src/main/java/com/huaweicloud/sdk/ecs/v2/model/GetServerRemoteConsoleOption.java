@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class GetServerRemoteConsoleOption  {
     /**
      * 远程登录协议，请将protocol配置为“vnc”。
      */
-    public static class ProtocolEnum {
+    public static final class ProtocolEnum {
 
         
         /**
@@ -29,11 +34,13 @@ public class GetServerRemoteConsoleOption  {
         public static final ProtocolEnum VNC = new ProtocolEnum("vnc");
         
 
-        public static final Map<String, ProtocolEnum> staticFields = new HashMap<String, ProtocolEnum>() {
-            { 
-                put("vnc", VNC);
-            }
-        };
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("vnc", VNC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +59,9 @@ public class GetServerRemoteConsoleOption  {
             if( value == null ){
                 return null;
             }
-            ProtocolEnum result = staticFields.get(value);
+            ProtocolEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ProtocolEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ProtocolEnum(value);
             }
             return result;
         }
@@ -66,7 +70,7 @@ public class GetServerRemoteConsoleOption  {
             if( value == null ){
                 return null;
             }
-            ProtocolEnum result = staticFields.get(value);
+            ProtocolEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -95,7 +99,7 @@ public class GetServerRemoteConsoleOption  {
     /**
      * 远程登录的类型，请将type配置为“novnc”。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -104,11 +108,13 @@ public class GetServerRemoteConsoleOption  {
         public static final TypeEnum NOVNC = new TypeEnum("novnc");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("novnc", NOVNC);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("novnc", NOVNC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -127,12 +133,9 @@ public class GetServerRemoteConsoleOption  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -141,7 +144,7 @@ public class GetServerRemoteConsoleOption  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

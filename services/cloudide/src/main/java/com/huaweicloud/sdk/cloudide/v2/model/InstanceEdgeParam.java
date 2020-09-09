@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.cloudide.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +30,7 @@ public class InstanceEdgeParam  {
     /**
      * cpu架构 x86|arm
      */
-    public static class ArchEnum {
+    public static final class ArchEnum {
 
         
         /**
@@ -37,12 +44,14 @@ public class InstanceEdgeParam  {
         public static final ArchEnum ARM = new ArchEnum("arm");
         
 
-        public static final Map<String, ArchEnum> staticFields = new HashMap<String, ArchEnum>() {
-            { 
-                put("x86", X86);
-                put("arm", ARM);
-            }
-        };
+        private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ArchEnum> createStaticFields() {
+            Map<String, ArchEnum> map = new HashMap<>();
+            map.put("x86", X86);
+            map.put("arm", ARM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -61,12 +70,9 @@ public class InstanceEdgeParam  {
             if( value == null ){
                 return null;
             }
-            ArchEnum result = staticFields.get(value);
+            ArchEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ArchEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ArchEnum(value);
             }
             return result;
         }
@@ -75,7 +81,7 @@ public class InstanceEdgeParam  {
             if( value == null ){
                 return null;
             }
-            ArchEnum result = staticFields.get(value);
+            ArchEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -104,7 +110,7 @@ public class InstanceEdgeParam  {
     /**
      * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
      */
-    public static class CpuMemoryEnum {
+    public static final class CpuMemoryEnum {
 
         
         /**
@@ -128,14 +134,16 @@ public class InstanceEdgeParam  {
         public static final CpuMemoryEnum _4U8G = new CpuMemoryEnum("4U8G");
         
 
-        public static final Map<String, CpuMemoryEnum> staticFields = new HashMap<String, CpuMemoryEnum>() {
-            { 
-                put("1U1G", _1U1G);
-                put("2U4G", _2U4G);
-                put("2U8G", _2U8G);
-                put("4U8G", _4U8G);
-            }
-        };
+        private static final Map<String, CpuMemoryEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CpuMemoryEnum> createStaticFields() {
+            Map<String, CpuMemoryEnum> map = new HashMap<>();
+            map.put("1U1G", _1U1G);
+            map.put("2U4G", _2U4G);
+            map.put("2U8G", _2U8G);
+            map.put("4U8G", _4U8G);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -154,12 +162,9 @@ public class InstanceEdgeParam  {
             if( value == null ){
                 return null;
             }
-            CpuMemoryEnum result = staticFields.get(value);
+            CpuMemoryEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new CpuMemoryEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new CpuMemoryEnum(value);
             }
             return result;
         }
@@ -168,7 +173,7 @@ public class InstanceEdgeParam  {
             if( value == null ){
                 return null;
             }
-            CpuMemoryEnum result = staticFields.get(value);
+            CpuMemoryEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -245,7 +250,7 @@ public class InstanceEdgeParam  {
         /**
      * PVC规格 5GB|10GB|20GB
      */
-    public static class PvcQuantityEnum {
+    public static final class PvcQuantityEnum {
 
         
         /**
@@ -264,13 +269,15 @@ public class InstanceEdgeParam  {
         public static final PvcQuantityEnum _20GB = new PvcQuantityEnum("20GB");
         
 
-        public static final Map<String, PvcQuantityEnum> staticFields = new HashMap<String, PvcQuantityEnum>() {
-            { 
-                put("5GB", _5GB);
-                put("10GB", _10GB);
-                put("20GB", _20GB);
-            }
-        };
+        private static final Map<String, PvcQuantityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PvcQuantityEnum> createStaticFields() {
+            Map<String, PvcQuantityEnum> map = new HashMap<>();
+            map.put("5GB", _5GB);
+            map.put("10GB", _10GB);
+            map.put("20GB", _20GB);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -289,12 +296,9 @@ public class InstanceEdgeParam  {
             if( value == null ){
                 return null;
             }
-            PvcQuantityEnum result = staticFields.get(value);
+            PvcQuantityEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PvcQuantityEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PvcQuantityEnum(value);
             }
             return result;
         }
@@ -303,7 +307,7 @@ public class InstanceEdgeParam  {
             if( value == null ){
                 return null;
             }
-            PvcQuantityEnum result = staticFields.get(value);
+            PvcQuantityEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

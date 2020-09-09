@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class ListTrackersRequest  {
     /**
      * Gets or Sets trackerType
      */
-    public static class TrackerTypeEnum {
+    public static final class TrackerTypeEnum {
 
         
         /**
@@ -40,12 +43,14 @@ public class ListTrackersRequest  {
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
         
 
-        public static final Map<String, TrackerTypeEnum> staticFields = new HashMap<String, TrackerTypeEnum>() {
-            { 
-                put("system", SYSTEM);
-                put("data", DATA);
-            }
-        };
+        private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TrackerTypeEnum> createStaticFields() {
+            Map<String, TrackerTypeEnum> map = new HashMap<>();
+            map.put("system", SYSTEM);
+            map.put("data", DATA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class ListTrackersRequest  {
             if( value == null ){
                 return null;
             }
-            TrackerTypeEnum result = staticFields.get(value);
+            TrackerTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TrackerTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TrackerTypeEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class ListTrackersRequest  {
             if( value == null ){
                 return null;
             }
-            TrackerTypeEnum result = staticFields.get(value);
+            TrackerTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -1,17 +1,16 @@
-package com.huaweicloud.sdk.kafka.v2.model;
+package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
 
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Response Object
+ * Request Object
  */
-public class UpdateInstaneTopicResponse extends SdkResponse {
+public class ShowSpResRequest  {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -30,7 +29,7 @@ public class UpdateInstaneTopicResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateInstaneTopicResponse {\n");
+        sb.append("class ShowSpResRequest {\n");
         sb.append("}");
         return sb.toString();
     }

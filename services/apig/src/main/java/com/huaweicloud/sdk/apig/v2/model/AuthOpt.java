@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class AuthOpt  {
     /**
      * AppCode简易认证类型，仅在auth_type为APP时生效，默认为DISABLE： - DISABLE：不开启简易认证 - HEADER：开启简易认证且AppCode位置在HEADER
      */
-    public static class AppCodeAuthTypeEnum {
+    public static final class AppCodeAuthTypeEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class AuthOpt  {
         public static final AppCodeAuthTypeEnum HEADER = new AppCodeAuthTypeEnum("HEADER");
         
 
-        public static final Map<String, AppCodeAuthTypeEnum> staticFields = new HashMap<String, AppCodeAuthTypeEnum>() {
-            { 
-                put("DISABLE", DISABLE);
-                put("HEADER", HEADER);
-            }
-        };
+        private static final Map<String, AppCodeAuthTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AppCodeAuthTypeEnum> createStaticFields() {
+            Map<String, AppCodeAuthTypeEnum> map = new HashMap<>();
+            map.put("DISABLE", DISABLE);
+            map.put("HEADER", HEADER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class AuthOpt  {
             if( value == null ){
                 return null;
             }
-            AppCodeAuthTypeEnum result = staticFields.get(value);
+            AppCodeAuthTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AppCodeAuthTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AppCodeAuthTypeEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class AuthOpt  {
             if( value == null ){
                 return null;
             }
-            AppCodeAuthTypeEnum result = staticFields.get(value);
+            AppCodeAuthTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

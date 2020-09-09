@@ -3,6 +3,15 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +29,7 @@ public class BssParamForCreateVolume  {
     /**
      * 功能说明：计费模式。默认值为postPaid。 取值范围： * prePaid：包年包月 * postPaid：按需
      */
-    public static class ChargingModeEnum {
+    public static final class ChargingModeEnum {
 
         
         /**
@@ -34,12 +43,14 @@ public class BssParamForCreateVolume  {
         public static final ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
         
 
-        public static final Map<String, ChargingModeEnum> staticFields = new HashMap<String, ChargingModeEnum>() {
-            { 
-                put("postPaid", POSTPAID);
-                put("prePaid", PREPAID);
-            }
-        };
+        private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargingModeEnum> createStaticFields() {
+            Map<String, ChargingModeEnum> map = new HashMap<>();
+            map.put("postPaid", POSTPAID);
+            map.put("prePaid", PREPAID);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +69,9 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargingModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargingModeEnum(value);
             }
             return result;
         }
@@ -72,7 +80,7 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -101,7 +109,7 @@ public class BssParamForCreateVolume  {
     /**
      * 功能说明：是否立即支付。chargingMode为PrePaid时该参数会生效。默认值为false。 取值范围： * true：立即支付，从帐户余额中自动扣费 * false：不立即支付，创建订单暂不支付 
      */
-    public static class IsAutoPayEnum {
+    public static final class IsAutoPayEnum {
 
         
         /**
@@ -115,12 +123,14 @@ public class BssParamForCreateVolume  {
         public static final IsAutoPayEnum FALSE = new IsAutoPayEnum("false");
         
 
-        public static final Map<String, IsAutoPayEnum> staticFields = new HashMap<String, IsAutoPayEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IsAutoPayEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsAutoPayEnum> createStaticFields() {
+            Map<String, IsAutoPayEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -139,12 +149,9 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            IsAutoPayEnum result = staticFields.get(value);
+            IsAutoPayEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsAutoPayEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsAutoPayEnum(value);
             }
             return result;
         }
@@ -153,7 +160,7 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            IsAutoPayEnum result = staticFields.get(value);
+            IsAutoPayEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -182,7 +189,7 @@ public class BssParamForCreateVolume  {
     /**
      * 功能说明：是否自动续订。chargingMode为prePaid时该参数会生效。默认值为false。 取值范围： * true：自动续订，自动续订周期与订购周期相同 * false：不自动续订 
      */
-    public static class IsAutoRenewEnum {
+    public static final class IsAutoRenewEnum {
 
         
         /**
@@ -196,12 +203,14 @@ public class BssParamForCreateVolume  {
         public static final IsAutoRenewEnum FALSE = new IsAutoRenewEnum("false");
         
 
-        public static final Map<String, IsAutoRenewEnum> staticFields = new HashMap<String, IsAutoRenewEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IsAutoRenewEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsAutoRenewEnum> createStaticFields() {
+            Map<String, IsAutoRenewEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -220,12 +229,9 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            IsAutoRenewEnum result = staticFields.get(value);
+            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsAutoRenewEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsAutoRenewEnum(value);
             }
             return result;
         }
@@ -234,7 +240,7 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            IsAutoRenewEnum result = staticFields.get(value);
+            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -269,7 +275,7 @@ public class BssParamForCreateVolume  {
     /**
      * 功能说明：订购周期单位。chargingMode为prePaid时该参数会生效，并且该参数为必选。 取值范围： * month：月 * year：年
      */
-    public static class PeriodTypeEnum {
+    public static final class PeriodTypeEnum {
 
         
         /**
@@ -283,12 +289,14 @@ public class BssParamForCreateVolume  {
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
         
 
-        public static final Map<String, PeriodTypeEnum> staticFields = new HashMap<String, PeriodTypeEnum>() {
-            { 
-                put("month", MONTH);
-                put("year", YEAR);
-            }
-        };
+        private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PeriodTypeEnum> createStaticFields() {
+            Map<String, PeriodTypeEnum> map = new HashMap<>();
+            map.put("month", MONTH);
+            map.put("year", YEAR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -307,12 +315,9 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PeriodTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PeriodTypeEnum(value);
             }
             return result;
         }
@@ -321,7 +326,7 @@ public class BssParamForCreateVolume  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +41,7 @@ public class SignatureReq  {
     /**
      * 签名密钥类型。
      */
-    public static class SignTypeEnum {
+    public static final class SignTypeEnum {
 
         
         /**
@@ -52,12 +55,14 @@ public class SignatureReq  {
         public static final SignTypeEnum BASIC = new SignTypeEnum("basic");
         
 
-        public static final Map<String, SignTypeEnum> staticFields = new HashMap<String, SignTypeEnum>() {
-            { 
-                put("hmac", HMAC);
-                put("basic", BASIC);
-            }
-        };
+        private static final Map<String, SignTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SignTypeEnum> createStaticFields() {
+            Map<String, SignTypeEnum> map = new HashMap<>();
+            map.put("hmac", HMAC);
+            map.put("basic", BASIC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class SignatureReq  {
             if( value == null ){
                 return null;
             }
-            SignTypeEnum result = staticFields.get(value);
+            SignTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SignTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SignTypeEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class SignatureReq  {
             if( value == null ){
                 return null;
             }
-            SignTypeEnum result = staticFields.get(value);
+            SignTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

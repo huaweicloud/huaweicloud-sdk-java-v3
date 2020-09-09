@@ -3,6 +3,15 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -25,7 +34,7 @@ public class ScalingPolicyExecuteLogList  {
     /**
      * 策略执行状态：SUCCESS：成功。FAIL：失败。EXECUTING：执行中
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -44,13 +53,15 @@ public class ScalingPolicyExecuteLogList  {
         public static final StatusEnum EXECUTING = new StatusEnum("EXECUTING");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("SUCCESS", SUCCESS);
-                put("FAIL", FAIL);
-                put("EXECUTING", EXECUTING);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAIL", FAIL);
+            map.put("EXECUTING", EXECUTING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -69,12 +80,9 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -83,7 +91,7 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -118,7 +126,7 @@ public class ScalingPolicyExecuteLogList  {
     /**
      * 策略执行类型：SCHEDULE：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动警告（告警）。MANUAL：手动触发
      */
-    public static class ExecuteTypeEnum {
+    public static final class ExecuteTypeEnum {
 
         
         /**
@@ -142,14 +150,16 @@ public class ScalingPolicyExecuteLogList  {
         public static final ExecuteTypeEnum MANUAL = new ExecuteTypeEnum("MANUAL");
         
 
-        public static final Map<String, ExecuteTypeEnum> staticFields = new HashMap<String, ExecuteTypeEnum>() {
-            { 
-                put("SCHEDULE", SCHEDULE);
-                put("RECURRENCE", RECURRENCE);
-                put("ALARM", ALARM);
-                put("MANUAL", MANUAL);
-            }
-        };
+        private static final Map<String, ExecuteTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ExecuteTypeEnum> createStaticFields() {
+            Map<String, ExecuteTypeEnum> map = new HashMap<>();
+            map.put("SCHEDULE", SCHEDULE);
+            map.put("RECURRENCE", RECURRENCE);
+            map.put("ALARM", ALARM);
+            map.put("MANUAL", MANUAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -168,12 +178,9 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            ExecuteTypeEnum result = staticFields.get(value);
+            ExecuteTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ExecuteTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ExecuteTypeEnum(value);
             }
             return result;
         }
@@ -182,7 +189,7 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            ExecuteTypeEnum result = staticFields.get(value);
+            ExecuteTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -235,7 +242,7 @@ public class ScalingPolicyExecuteLogList  {
     /**
      * 伸缩资源类型：伸缩组：SCALING_GROUP 带宽：BANDWIDTH
      */
-    public static class ScalingResourceTypeEnum {
+    public static final class ScalingResourceTypeEnum {
 
         
         /**
@@ -249,12 +256,14 @@ public class ScalingPolicyExecuteLogList  {
         public static final ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
         
 
-        public static final Map<String, ScalingResourceTypeEnum> staticFields = new HashMap<String, ScalingResourceTypeEnum>() {
-            { 
-                put("SCALING_GROUP", SCALING_GROUP);
-                put("BANDWIDTH", BANDWIDTH);
-            }
-        };
+        private static final Map<String, ScalingResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ScalingResourceTypeEnum> createStaticFields() {
+            Map<String, ScalingResourceTypeEnum> map = new HashMap<>();
+            map.put("SCALING_GROUP", SCALING_GROUP);
+            map.put("BANDWIDTH", BANDWIDTH);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -273,12 +282,9 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            ScalingResourceTypeEnum result = staticFields.get(value);
+            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ScalingResourceTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ScalingResourceTypeEnum(value);
             }
             return result;
         }
@@ -287,7 +293,7 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            ScalingResourceTypeEnum result = staticFields.get(value);
+            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -340,7 +346,7 @@ public class ScalingPolicyExecuteLogList  {
     /**
      * 策略执行任务类型。ADD：添加。REMOVE：减少。SET：设置为
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -359,13 +365,15 @@ public class ScalingPolicyExecuteLogList  {
         public static final TypeEnum SET = new TypeEnum("SET");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("ADD", ADD);
-                put("REMOVE", REMOVE);
-                put("SET", SET);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("ADD", ADD);
+            map.put("REMOVE", REMOVE);
+            map.put("SET", SET);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -384,12 +392,9 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -398,7 +403,7 @@ public class ScalingPolicyExecuteLogList  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

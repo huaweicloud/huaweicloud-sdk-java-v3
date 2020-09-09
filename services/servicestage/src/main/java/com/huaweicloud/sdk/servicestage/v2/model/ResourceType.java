@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,22 +80,24 @@ public class ResourceType {
     public static final ResourceType APM = new ResourceType("apm");
     
 
-    public static final Map<String, ResourceType> staticFields = new HashMap<String, ResourceType>() {
-        { 
-            put("security_group", SECURITY_GROUP);
-            put("eip", EIP);
-            put("elb", ELB);
-            put("cce", CCE);
-            put("cci", CCI);
-            put("ecs", ECS);
-            put("as", AS);
-            put("cse", CSE);
-            put("dcs", DCS);
-            put("rds", RDS);
-            put("pvc", PVC);
-            put("apm", APM);
-        }
-    };
+    private static final Map<String, ResourceType> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, ResourceType> createStaticFields() {
+        Map<String, ResourceType> map = new HashMap<>();
+        map.put("security_group", SECURITY_GROUP);
+        map.put("eip", EIP);
+        map.put("elb", ELB);
+        map.put("cce", CCE);
+        map.put("cci", CCI);
+        map.put("ecs", ECS);
+        map.put("as", AS);
+        map.put("cse", CSE);
+        map.put("dcs", DCS);
+        map.put("rds", RDS);
+        map.put("pvc", PVC);
+        map.put("apm", APM);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -112,12 +116,9 @@ public class ResourceType {
         if( value == null ){
             return null;
         }
-        ResourceType result = staticFields.get(value);
+        ResourceType result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new ResourceType(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new ResourceType(value);
         }
         return result;
     }
@@ -126,7 +127,7 @@ public class ResourceType {
         if( value == null ){
             return null;
         }
-        ResourceType result = staticFields.get(value);
+        ResourceType result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

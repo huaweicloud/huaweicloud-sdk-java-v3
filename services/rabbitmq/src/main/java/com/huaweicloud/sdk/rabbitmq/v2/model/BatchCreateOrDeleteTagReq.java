@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +26,7 @@ public class BatchCreateOrDeleteTagReq  {
     /**
      * 操作标识（仅支持小写）: - create（创建） - delete（删除）
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -37,12 +40,14 @@ public class BatchCreateOrDeleteTagReq  {
         public static final ActionEnum DELETE = new ActionEnum("delete");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("create", CREATE);
-                put("delete", DELETE);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("create", CREATE);
+            map.put("delete", DELETE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -61,12 +66,9 @@ public class BatchCreateOrDeleteTagReq  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -75,7 +77,7 @@ public class BatchCreateOrDeleteTagReq  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

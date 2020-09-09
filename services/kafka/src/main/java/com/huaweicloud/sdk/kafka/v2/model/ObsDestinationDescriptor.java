@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +37,7 @@ public class ObsDestinationDescriptor  {
     /**
      * 转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 
      */
-    public static class ConsumerStrategyEnum {
+    public static final class ConsumerStrategyEnum {
 
         
         /**
@@ -46,12 +51,14 @@ public class ObsDestinationDescriptor  {
         public static final ConsumerStrategyEnum EARLIEST = new ConsumerStrategyEnum("earliest");
         
 
-        public static final Map<String, ConsumerStrategyEnum> staticFields = new HashMap<String, ConsumerStrategyEnum>() {
-            { 
-                put("latest", LATEST);
-                put("earliest", EARLIEST);
-            }
-        };
+        private static final Map<String, ConsumerStrategyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConsumerStrategyEnum> createStaticFields() {
+            Map<String, ConsumerStrategyEnum> map = new HashMap<>();
+            map.put("latest", LATEST);
+            map.put("earliest", EARLIEST);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +77,9 @@ public class ObsDestinationDescriptor  {
             if( value == null ){
                 return null;
             }
-            ConsumerStrategyEnum result = staticFields.get(value);
+            ConsumerStrategyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ConsumerStrategyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ConsumerStrategyEnum(value);
             }
             return result;
         }
@@ -84,7 +88,7 @@ public class ObsDestinationDescriptor  {
             if( value == null ){
                 return null;
             }
-            ConsumerStrategyEnum result = staticFields.get(value);
+            ConsumerStrategyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -113,7 +117,7 @@ public class ObsDestinationDescriptor  {
     /**
      * 转储文件格式。当前只支持text。 
      */
-    public static class DestinationFileTypeEnum {
+    public static final class DestinationFileTypeEnum {
 
         
         /**
@@ -122,11 +126,13 @@ public class ObsDestinationDescriptor  {
         public static final DestinationFileTypeEnum TEXT = new DestinationFileTypeEnum("TEXT");
         
 
-        public static final Map<String, DestinationFileTypeEnum> staticFields = new HashMap<String, DestinationFileTypeEnum>() {
-            { 
-                put("TEXT", TEXT);
-            }
-        };
+        private static final Map<String, DestinationFileTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DestinationFileTypeEnum> createStaticFields() {
+            Map<String, DestinationFileTypeEnum> map = new HashMap<>();
+            map.put("TEXT", TEXT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +151,9 @@ public class ObsDestinationDescriptor  {
             if( value == null ){
                 return null;
             }
-            DestinationFileTypeEnum result = staticFields.get(value);
+            DestinationFileTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DestinationFileTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DestinationFileTypeEnum(value);
             }
             return result;
         }
@@ -159,7 +162,7 @@ public class ObsDestinationDescriptor  {
             if( value == null ){
                 return null;
             }
-            DestinationFileTypeEnum result = staticFields.get(value);
+            DestinationFileTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

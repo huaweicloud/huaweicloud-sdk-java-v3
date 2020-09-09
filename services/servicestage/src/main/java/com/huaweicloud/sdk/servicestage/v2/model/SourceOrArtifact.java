@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +26,7 @@ public class SourceOrArtifact  {
     /**
      * 存储方式，支持软件仓库swr和对象存储obs。
      */
-    public static class StorageEnum {
+    public static final class StorageEnum {
 
         
         /**
@@ -35,12 +40,14 @@ public class SourceOrArtifact  {
         public static final StorageEnum OBS = new StorageEnum("obs");
         
 
-        public static final Map<String, StorageEnum> staticFields = new HashMap<String, StorageEnum>() {
-            { 
-                put("swr", SWR);
-                put("obs", OBS);
-            }
-        };
+        private static final Map<String, StorageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StorageEnum> createStaticFields() {
+            Map<String, StorageEnum> map = new HashMap<>();
+            map.put("swr", SWR);
+            map.put("obs", OBS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -59,12 +66,9 @@ public class SourceOrArtifact  {
             if( value == null ){
                 return null;
             }
-            StorageEnum result = staticFields.get(value);
+            StorageEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StorageEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StorageEnum(value);
             }
             return result;
         }
@@ -73,7 +77,7 @@ public class SourceOrArtifact  {
             if( value == null ){
                 return null;
             }
-            StorageEnum result = staticFields.get(value);
+            StorageEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -102,7 +106,7 @@ public class SourceOrArtifact  {
     /**
      * 类别，支持package。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -111,11 +115,13 @@ public class SourceOrArtifact  {
         public static final TypeEnum PACKAGE = new TypeEnum("package");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("package", PACKAGE);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("package", PACKAGE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -134,12 +140,9 @@ public class SourceOrArtifact  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -148,7 +151,7 @@ public class SourceOrArtifact  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

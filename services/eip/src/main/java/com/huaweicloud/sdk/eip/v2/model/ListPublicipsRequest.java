@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class ListPublicipsRequest  {
     /**
      * Gets or Sets ipVersion
      */
-    public static class IpVersionEnum {
+    public static final class IpVersionEnum {
 
         
         /**
@@ -46,12 +49,14 @@ public class ListPublicipsRequest  {
         public static final IpVersionEnum NUMBER_6 = new IpVersionEnum(6);
         
 
-        public static final Map<Integer, IpVersionEnum> staticFields = new HashMap<Integer, IpVersionEnum>() {
-            { 
-                put(4, NUMBER_4);
-                put(6, NUMBER_6);
-            }
-        };
+        private static final Map<Integer, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IpVersionEnum> createStaticFields() {
+            Map<Integer, IpVersionEnum> map = new HashMap<>();
+            map.put(4, NUMBER_4);
+            map.put(6, NUMBER_6);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -70,12 +75,9 @@ public class ListPublicipsRequest  {
             if( value == null ){
                 return null;
             }
-            IpVersionEnum result = staticFields.get(value);
+            IpVersionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IpVersionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IpVersionEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class ListPublicipsRequest  {
             if( value == null ){
                 return null;
             }
-            IpVersionEnum result = staticFields.get(value);
+            IpVersionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

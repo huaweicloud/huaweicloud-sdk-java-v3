@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -33,7 +36,7 @@ public class VideoProcess  {
     /**
      * 长短边自适应控制字段： - SHORT：表示短边自适应 - LONG：表示长边自适应 - NONE：表示不自适应 
      */
-    public static class AdaptationEnum {
+    public static final class AdaptationEnum {
 
         
         /**
@@ -52,13 +55,15 @@ public class VideoProcess  {
         public static final AdaptationEnum NONE = new AdaptationEnum("NONE");
         
 
-        public static final Map<String, AdaptationEnum> staticFields = new HashMap<String, AdaptationEnum>() {
-            { 
-                put("SHORT", SHORT);
-                put("LONG", LONG);
-                put("NONE", NONE);
-            }
-        };
+        private static final Map<String, AdaptationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AdaptationEnum> createStaticFields() {
+            Map<String, AdaptationEnum> map = new HashMap<>();
+            map.put("SHORT", SHORT);
+            map.put("LONG", LONG);
+            map.put("NONE", NONE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -77,12 +82,9 @@ public class VideoProcess  {
             if( value == null ){
                 return null;
             }
-            AdaptationEnum result = staticFields.get(value);
+            AdaptationEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AdaptationEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AdaptationEnum(value);
             }
             return result;
         }
@@ -91,7 +93,7 @@ public class VideoProcess  {
             if( value == null ){
                 return null;
             }
-            AdaptationEnum result = staticFields.get(value);
+            AdaptationEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

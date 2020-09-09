@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +24,7 @@ public class Eip  {
     /**
      * 弹性IP地址类型。类型枚举值：5_bgp：全动态BGP;5_sbgp：静态BGP;5_telcom：中国电信;5_union：中国联通;详情请参见《虚拟私有云接口参考》“申请弹性公网IP”章节的“publicip”字段说明。
      */
-    public static class IpTypeEnum {
+    public static final class IpTypeEnum {
 
         
         /**
@@ -45,14 +48,16 @@ public class Eip  {
         public static final IpTypeEnum _5_UNION = new IpTypeEnum("5_union");
         
 
-        public static final Map<String, IpTypeEnum> staticFields = new HashMap<String, IpTypeEnum>() {
-            { 
-                put("5_bgp", _5_BGP);
-                put("5_sbgp", _5_SBGP);
-                put("5_telcom", _5_TELCOM);
-                put("5_union", _5_UNION);
-            }
-        };
+        private static final Map<String, IpTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpTypeEnum> createStaticFields() {
+            Map<String, IpTypeEnum> map = new HashMap<>();
+            map.put("5_bgp", _5_BGP);
+            map.put("5_sbgp", _5_SBGP);
+            map.put("5_telcom", _5_TELCOM);
+            map.put("5_union", _5_UNION);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -71,12 +76,9 @@ public class Eip  {
             if( value == null ){
                 return null;
             }
-            IpTypeEnum result = staticFields.get(value);
+            IpTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IpTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IpTypeEnum(value);
             }
             return result;
         }
@@ -85,7 +87,7 @@ public class Eip  {
             if( value == null ){
                 return null;
             }
-            IpTypeEnum result = staticFields.get(value);
+            IpTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

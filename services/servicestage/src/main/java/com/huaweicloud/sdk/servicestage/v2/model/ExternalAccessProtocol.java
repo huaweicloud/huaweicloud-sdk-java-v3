@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,12 +30,14 @@ public class ExternalAccessProtocol {
     public static final ExternalAccessProtocol HTTPS = new ExternalAccessProtocol("HTTPS");
     
 
-    public static final Map<String, ExternalAccessProtocol> staticFields = new HashMap<String, ExternalAccessProtocol>() {
-        { 
-            put("HTTP", HTTP);
-            put("HTTPS", HTTPS);
-        }
-    };
+    private static final Map<String, ExternalAccessProtocol> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, ExternalAccessProtocol> createStaticFields() {
+        Map<String, ExternalAccessProtocol> map = new HashMap<>();
+        map.put("HTTP", HTTP);
+        map.put("HTTPS", HTTPS);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -52,12 +56,9 @@ public class ExternalAccessProtocol {
         if( value == null ){
             return null;
         }
-        ExternalAccessProtocol result = staticFields.get(value);
+        ExternalAccessProtocol result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new ExternalAccessProtocol(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new ExternalAccessProtocol(value);
         }
         return result;
     }
@@ -66,7 +67,7 @@ public class ExternalAccessProtocol {
         if( value == null ){
             return null;
         }
-        ExternalAccessProtocol result = staticFields.get(value);
+        ExternalAccessProtocol result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

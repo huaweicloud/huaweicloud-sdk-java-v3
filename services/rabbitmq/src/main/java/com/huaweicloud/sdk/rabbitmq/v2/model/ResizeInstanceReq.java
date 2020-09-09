@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class ResizeInstanceReq  {
     /**
      * 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
      */
-    public static class NewSpecCodeEnum {
+    public static final class NewSpecCodeEnum {
 
         
         /**
@@ -39,13 +44,15 @@ public class ResizeInstanceReq  {
         public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 = new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.7");
         
 
-        public static final Map<String, NewSpecCodeEnum> staticFields = new HashMap<String, NewSpecCodeEnum>() {
-            { 
-                put("dms.instance.rabbitmq.cluster.c3.4u8g.3", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3);
-                put("dms.instance.rabbitmq.cluster.c3.4u8g.5", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5);
-                put("dms.instance.rabbitmq.cluster.c3.4u8g.7", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7);
-            }
-        };
+        private static final Map<String, NewSpecCodeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NewSpecCodeEnum> createStaticFields() {
+            Map<String, NewSpecCodeEnum> map = new HashMap<>();
+            map.put("dms.instance.rabbitmq.cluster.c3.4u8g.3", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3);
+            map.put("dms.instance.rabbitmq.cluster.c3.4u8g.5", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5);
+            map.put("dms.instance.rabbitmq.cluster.c3.4u8g.7", DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +71,9 @@ public class ResizeInstanceReq  {
             if( value == null ){
                 return null;
             }
-            NewSpecCodeEnum result = staticFields.get(value);
+            NewSpecCodeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new NewSpecCodeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new NewSpecCodeEnum(value);
             }
             return result;
         }
@@ -78,7 +82,7 @@ public class ResizeInstanceReq  {
             if( value == null ){
                 return null;
             }
-            NewSpecCodeEnum result = staticFields.get(value);
+            NewSpecCodeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +111,7 @@ public class ResizeInstanceReq  {
     /**
      * 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
      */
-    public static class NewStorageSpaceEnum {
+    public static final class NewStorageSpaceEnum {
 
         
         /**
@@ -126,13 +130,15 @@ public class ResizeInstanceReq  {
         public static final NewStorageSpaceEnum NUMBER_700 = new NewStorageSpaceEnum(700);
         
 
-        public static final Map<Integer, NewStorageSpaceEnum> staticFields = new HashMap<Integer, NewStorageSpaceEnum>() {
-            { 
-                put(300, NUMBER_300);
-                put(500, NUMBER_500);
-                put(700, NUMBER_700);
-            }
-        };
+        private static final Map<Integer, NewStorageSpaceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, NewStorageSpaceEnum> createStaticFields() {
+            Map<Integer, NewStorageSpaceEnum> map = new HashMap<>();
+            map.put(300, NUMBER_300);
+            map.put(500, NUMBER_500);
+            map.put(700, NUMBER_700);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -151,12 +157,9 @@ public class ResizeInstanceReq  {
             if( value == null ){
                 return null;
             }
-            NewStorageSpaceEnum result = staticFields.get(value);
+            NewStorageSpaceEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new NewStorageSpaceEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new NewStorageSpaceEnum(value);
             }
             return result;
         }
@@ -165,7 +168,7 @@ public class ResizeInstanceReq  {
             if( value == null ){
                 return null;
             }
-            NewStorageSpaceEnum result = staticFields.get(value);
+            NewStorageSpaceEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

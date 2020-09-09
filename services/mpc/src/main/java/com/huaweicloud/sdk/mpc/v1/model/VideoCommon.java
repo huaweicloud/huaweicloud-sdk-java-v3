@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +24,7 @@ public class VideoCommon  {
     /**
      * 输出策略。  取值如下： - discard - transcode  >- 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >- 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >- 同时为“transcode”时，表示输出音视频。 
      */
-    public static class OutputPolicyEnum {
+    public static final class OutputPolicyEnum {
 
         
         /**
@@ -35,12 +38,14 @@ public class VideoCommon  {
         public static final OutputPolicyEnum DISCARD = new OutputPolicyEnum("discard");
         
 
-        public static final Map<String, OutputPolicyEnum> staticFields = new HashMap<String, OutputPolicyEnum>() {
-            { 
-                put("transcode", TRANSCODE);
-                put("discard", DISCARD);
-            }
-        };
+        private static final Map<String, OutputPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OutputPolicyEnum> createStaticFields() {
+            Map<String, OutputPolicyEnum> map = new HashMap<>();
+            map.put("transcode", TRANSCODE);
+            map.put("discard", DISCARD);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -59,12 +64,9 @@ public class VideoCommon  {
             if( value == null ){
                 return null;
             }
-            OutputPolicyEnum result = staticFields.get(value);
+            OutputPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OutputPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OutputPolicyEnum(value);
             }
             return result;
         }
@@ -73,7 +75,7 @@ public class VideoCommon  {
             if( value == null ){
                 return null;
             }
-            OutputPolicyEnum result = staticFields.get(value);
+            OutputPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

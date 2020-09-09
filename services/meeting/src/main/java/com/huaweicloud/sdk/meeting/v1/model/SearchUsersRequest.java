@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -76,7 +79,7 @@ public class SearchUsersRequest  {
     /**
      * Gets or Sets adminType
      */
-    public static class AdminTypeEnum {
+    public static final class AdminTypeEnum {
 
         
         /**
@@ -90,12 +93,14 @@ public class SearchUsersRequest  {
         public static final AdminTypeEnum NUMBER_2 = new AdminTypeEnum(2);
         
 
-        public static final Map<Integer, AdminTypeEnum> staticFields = new HashMap<Integer, AdminTypeEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, AdminTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, AdminTypeEnum> createStaticFields() {
+            Map<Integer, AdminTypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -114,12 +119,9 @@ public class SearchUsersRequest  {
             if( value == null ){
                 return null;
             }
-            AdminTypeEnum result = staticFields.get(value);
+            AdminTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AdminTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AdminTypeEnum(value);
             }
             return result;
         }
@@ -128,7 +130,7 @@ public class SearchUsersRequest  {
             if( value == null ){
                 return null;
             }
-            AdminTypeEnum result = staticFields.get(value);
+            AdminTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

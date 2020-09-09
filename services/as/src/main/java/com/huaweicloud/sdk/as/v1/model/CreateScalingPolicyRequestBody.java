@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class CreateScalingPolicyRequestBody  {
     /**
      * 策略类型。告警策略：ALARM（与alarm_id对应）；定时策略：SCHEDULED（与scheduled_policy对应）；周期策略：RECURRENCE（与scheduled_policy对应）
      */
-    public static class ScalingPolicyTypeEnum {
+    public static final class ScalingPolicyTypeEnum {
 
         
         /**
@@ -53,13 +56,15 @@ public class CreateScalingPolicyRequestBody  {
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
         
 
-        public static final Map<String, ScalingPolicyTypeEnum> staticFields = new HashMap<String, ScalingPolicyTypeEnum>() {
-            { 
-                put("ALARM", ALARM);
-                put("SCHEDULED", SCHEDULED);
-                put("RECURRENCE", RECURRENCE);
-            }
-        };
+        private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ScalingPolicyTypeEnum> createStaticFields() {
+            Map<String, ScalingPolicyTypeEnum> map = new HashMap<>();
+            map.put("ALARM", ALARM);
+            map.put("SCHEDULED", SCHEDULED);
+            map.put("RECURRENCE", RECURRENCE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -78,12 +83,9 @@ public class CreateScalingPolicyRequestBody  {
             if( value == null ){
                 return null;
             }
-            ScalingPolicyTypeEnum result = staticFields.get(value);
+            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ScalingPolicyTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ScalingPolicyTypeEnum(value);
             }
             return result;
         }
@@ -92,7 +94,7 @@ public class CreateScalingPolicyRequestBody  {
             if( value == null ){
                 return null;
             }
-            ScalingPolicyTypeEnum result = staticFields.get(value);
+            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class AssociateDomainV2Response extends SdkResponse {
     /**
      * CNAME解析状态 - 1: 未解析 - 2: 解析中 - 3: 解析成功 - 4: 解析失败
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -58,14 +61,16 @@ public class AssociateDomainV2Response extends SdkResponse {
         public static final StatusEnum NUMBER_4 = new StatusEnum(4);
         
 
-        public static final Map<Integer, StatusEnum> staticFields = new HashMap<Integer, StatusEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-                put(3, NUMBER_3);
-                put(4, NUMBER_4);
-            }
-        };
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -84,12 +89,9 @@ public class AssociateDomainV2Response extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -98,7 +100,7 @@ public class AssociateDomainV2Response extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

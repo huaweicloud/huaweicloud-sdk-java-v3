@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class UpdateBandwidthOption  {
     /**
      * 功能说明：按流量计费,按带宽计费还是按增强型95计费。  取值范围：bandwidth，traffic，95peak_plus(按增强型95计费)不返回或者为空时表示是bandwidth。  约束：只有共享带宽支持95peak_plus（按增强型95计费），按增强型95计费时需要指定保底百分比，默认是20%。
      */
-    public static class ChargeModeEnum {
+    public static final class ChargeModeEnum {
 
         
         /**
@@ -51,13 +54,15 @@ public class UpdateBandwidthOption  {
         public static final ChargeModeEnum _95PEAK_PLUS = new ChargeModeEnum("95peak_plus");
         
 
-        public static final Map<String, ChargeModeEnum> staticFields = new HashMap<String, ChargeModeEnum>() {
-            { 
-                put("bandwidth", BANDWIDTH);
-                put("traffic", TRAFFIC);
-                put("95peak_plus", _95PEAK_PLUS);
-            }
-        };
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("bandwidth", BANDWIDTH);
+            map.put("traffic", TRAFFIC);
+            map.put("95peak_plus", _95PEAK_PLUS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class UpdateBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargeModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargeModeEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class UpdateBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

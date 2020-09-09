@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,7 +33,7 @@ public class BatchRestartOrDeleteInstanceReq  {
         /**
      * 对实例的操作：restart、delete
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -42,12 +47,14 @@ public class BatchRestartOrDeleteInstanceReq  {
         public static final ActionEnum DELETE = new ActionEnum("delete");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("restart", RESTART);
-                put("delete", DELETE);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("restart", RESTART);
+            map.put("delete", DELETE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -66,12 +73,9 @@ public class BatchRestartOrDeleteInstanceReq  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -80,7 +84,7 @@ public class BatchRestartOrDeleteInstanceReq  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -109,7 +113,7 @@ public class BatchRestartOrDeleteInstanceReq  {
     /**
      * 参数值为kafka，表示删除租户所有创建失败的Kafka实例。
      */
-    public static class AllFailureEnum {
+    public static final class AllFailureEnum {
 
         
         /**
@@ -128,13 +132,15 @@ public class BatchRestartOrDeleteInstanceReq  {
         public static final AllFailureEnum KAFKA = new AllFailureEnum("kafka");
         
 
-        public static final Map<String, AllFailureEnum> staticFields = new HashMap<String, AllFailureEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-                put("kafka", KAFKA);
-            }
-        };
+        private static final Map<String, AllFailureEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AllFailureEnum> createStaticFields() {
+            Map<String, AllFailureEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            map.put("kafka", KAFKA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -153,12 +159,9 @@ public class BatchRestartOrDeleteInstanceReq  {
             if( value == null ){
                 return null;
             }
-            AllFailureEnum result = staticFields.get(value);
+            AllFailureEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AllFailureEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AllFailureEnum(value);
             }
             return result;
         }
@@ -167,7 +170,7 @@ public class BatchRestartOrDeleteInstanceReq  {
             if( value == null ){
                 return null;
             }
-            AllFailureEnum result = staticFields.get(value);
+            AllFailureEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -93,7 +100,7 @@ public class InstanceConfig  {
     /**
      * 在专属主机上创建弹性云服务器。参数取值为dedicated。
      */
-    public static class TenancyEnum {
+    public static final class TenancyEnum {
 
         
         /**
@@ -102,11 +109,13 @@ public class InstanceConfig  {
         public static final TenancyEnum DEDICATED = new TenancyEnum("dedicated");
         
 
-        public static final Map<String, TenancyEnum> staticFields = new HashMap<String, TenancyEnum>() {
-            { 
-                put("dedicated", DEDICATED);
-            }
-        };
+        private static final Map<String, TenancyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TenancyEnum> createStaticFields() {
+            Map<String, TenancyEnum> map = new HashMap<>();
+            map.put("dedicated", DEDICATED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -125,12 +134,9 @@ public class InstanceConfig  {
             if( value == null ){
                 return null;
             }
-            TenancyEnum result = staticFields.get(value);
+            TenancyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TenancyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TenancyEnum(value);
             }
             return result;
         }
@@ -139,7 +145,7 @@ public class InstanceConfig  {
             if( value == null ){
                 return null;
             }
-            TenancyEnum result = staticFields.get(value);
+            TenancyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -174,7 +180,7 @@ public class InstanceConfig  {
     /**
      * 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。PICK_FIRST（默认）：选择优先，虚拟机扩容时规格的选择按照flavorRef列表的顺序进行优先级排序。COST_FIRST：成本优化，虚拟机扩容时规格的选择按照价格最优原则进行优先级排序。
      */
-    public static class MultiFlavorPriorityPolicyEnum {
+    public static final class MultiFlavorPriorityPolicyEnum {
 
         
         /**
@@ -188,12 +194,14 @@ public class InstanceConfig  {
         public static final MultiFlavorPriorityPolicyEnum COST_FIRST = new MultiFlavorPriorityPolicyEnum("COST_FIRST");
         
 
-        public static final Map<String, MultiFlavorPriorityPolicyEnum> staticFields = new HashMap<String, MultiFlavorPriorityPolicyEnum>() {
-            { 
-                put("PICK_FIRST", PICK_FIRST);
-                put("COST_FIRST", COST_FIRST);
-            }
-        };
+        private static final Map<String, MultiFlavorPriorityPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MultiFlavorPriorityPolicyEnum> createStaticFields() {
+            Map<String, MultiFlavorPriorityPolicyEnum> map = new HashMap<>();
+            map.put("PICK_FIRST", PICK_FIRST);
+            map.put("COST_FIRST", COST_FIRST);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -212,12 +220,9 @@ public class InstanceConfig  {
             if( value == null ){
                 return null;
             }
-            MultiFlavorPriorityPolicyEnum result = staticFields.get(value);
+            MultiFlavorPriorityPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MultiFlavorPriorityPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MultiFlavorPriorityPolicyEnum(value);
             }
             return result;
         }
@@ -226,7 +231,7 @@ public class InstanceConfig  {
             if( value == null ){
                 return null;
             }
-            MultiFlavorPriorityPolicyEnum result = staticFields.get(value);
+            MultiFlavorPriorityPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -255,7 +260,7 @@ public class InstanceConfig  {
     /**
      * 云服务器的计费模式，可以选择竞价计费或按需计费，取值如下：按需计费：不指定该字段。竞价计费：spot
      */
-    public static class MarketTypeEnum {
+    public static final class MarketTypeEnum {
 
         
         /**
@@ -264,11 +269,13 @@ public class InstanceConfig  {
         public static final MarketTypeEnum SPOT = new MarketTypeEnum("spot");
         
 
-        public static final Map<String, MarketTypeEnum> staticFields = new HashMap<String, MarketTypeEnum>() {
-            { 
-                put("spot", SPOT);
-            }
-        };
+        private static final Map<String, MarketTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MarketTypeEnum> createStaticFields() {
+            Map<String, MarketTypeEnum> map = new HashMap<>();
+            map.put("spot", SPOT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -287,12 +294,9 @@ public class InstanceConfig  {
             if( value == null ){
                 return null;
             }
-            MarketTypeEnum result = staticFields.get(value);
+            MarketTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MarketTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MarketTypeEnum(value);
             }
             return result;
         }
@@ -301,7 +305,7 @@ public class InstanceConfig  {
             if( value == null ){
                 return null;
             }
-            MarketTypeEnum result = staticFields.get(value);
+            MarketTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

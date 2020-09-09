@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -62,7 +65,7 @@ public class TaskInfo  {
     /**
      * 任务状态。
      */
-    public static class TaskStatusEnum {
+    public static final class TaskStatusEnum {
 
         
         /**
@@ -86,14 +89,16 @@ public class TaskInfo  {
         public static final TaskStatusEnum SUCCEEDED = new TaskStatusEnum("SUCCEEDED");
         
 
-        public static final Map<String, TaskStatusEnum> staticFields = new HashMap<String, TaskStatusEnum>() {
-            { 
-                put("RUNNING", RUNNING);
-                put("SKIPPED", SKIPPED);
-                put("FAILED", FAILED);
-                put("SUCCEEDED", SUCCEEDED);
-            }
-        };
+        private static final Map<String, TaskStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TaskStatusEnum> createStaticFields() {
+            Map<String, TaskStatusEnum> map = new HashMap<>();
+            map.put("RUNNING", RUNNING);
+            map.put("SKIPPED", SKIPPED);
+            map.put("FAILED", FAILED);
+            map.put("SUCCEEDED", SUCCEEDED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -112,12 +117,9 @@ public class TaskInfo  {
             if( value == null ){
                 return null;
             }
-            TaskStatusEnum result = staticFields.get(value);
+            TaskStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TaskStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TaskStatusEnum(value);
             }
             return result;
         }
@@ -126,7 +128,7 @@ public class TaskInfo  {
             if( value == null ){
                 return null;
             }
-            TaskStatusEnum result = staticFields.get(value);
+            TaskStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +41,7 @@ public class BackendApiCreate  {
     /**
      * 请求协议
      */
-    public static class ReqProtocolEnum {
+    public static final class ReqProtocolEnum {
 
         
         /**
@@ -48,12 +55,14 @@ public class BackendApiCreate  {
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
         
 
-        public static final Map<String, ReqProtocolEnum> staticFields = new HashMap<String, ReqProtocolEnum>() {
-            { 
-                put("HTTP", HTTP);
-                put("HTTPS", HTTPS);
-            }
-        };
+        private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqProtocolEnum> createStaticFields() {
+            Map<String, ReqProtocolEnum> map = new HashMap<>();
+            map.put("HTTP", HTTP);
+            map.put("HTTPS", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -72,12 +81,9 @@ public class BackendApiCreate  {
             if( value == null ){
                 return null;
             }
-            ReqProtocolEnum result = staticFields.get(value);
+            ReqProtocolEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ReqProtocolEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ReqProtocolEnum(value);
             }
             return result;
         }
@@ -86,7 +92,7 @@ public class BackendApiCreate  {
             if( value == null ){
                 return null;
             }
-            ReqProtocolEnum result = staticFields.get(value);
+            ReqProtocolEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -121,7 +127,7 @@ public class BackendApiCreate  {
     /**
      * 请求方式
      */
-    public static class ReqMethodEnum {
+    public static final class ReqMethodEnum {
 
         
         /**
@@ -165,18 +171,20 @@ public class BackendApiCreate  {
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
         
 
-        public static final Map<String, ReqMethodEnum> staticFields = new HashMap<String, ReqMethodEnum>() {
-            { 
-                put("GET", GET);
-                put("POST", POST);
-                put("PUT", PUT);
-                put("DELETE", DELETE);
-                put("HEAD", HEAD);
-                put("PATCH", PATCH);
-                put("OPTIONS", OPTIONS);
-                put("ANY", ANY);
-            }
-        };
+        private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqMethodEnum> createStaticFields() {
+            Map<String, ReqMethodEnum> map = new HashMap<>();
+            map.put("GET", GET);
+            map.put("POST", POST);
+            map.put("PUT", PUT);
+            map.put("DELETE", DELETE);
+            map.put("HEAD", HEAD);
+            map.put("PATCH", PATCH);
+            map.put("OPTIONS", OPTIONS);
+            map.put("ANY", ANY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -195,12 +203,9 @@ public class BackendApiCreate  {
             if( value == null ){
                 return null;
             }
-            ReqMethodEnum result = staticFields.get(value);
+            ReqMethodEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ReqMethodEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ReqMethodEnum(value);
             }
             return result;
         }
@@ -209,7 +214,7 @@ public class BackendApiCreate  {
             if( value == null ){
                 return null;
             }
-            ReqMethodEnum result = staticFields.get(value);
+            ReqMethodEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -262,7 +267,7 @@ public class BackendApiCreate  {
     /**
      * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
      */
-    public static class VpcChannelStatusEnum {
+    public static final class VpcChannelStatusEnum {
 
         
         /**
@@ -276,12 +281,14 @@ public class BackendApiCreate  {
         public static final VpcChannelStatusEnum NUMBER_2 = new VpcChannelStatusEnum(2);
         
 
-        public static final Map<Integer, VpcChannelStatusEnum> staticFields = new HashMap<Integer, VpcChannelStatusEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, VpcChannelStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, VpcChannelStatusEnum> createStaticFields() {
+            Map<Integer, VpcChannelStatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -300,12 +307,9 @@ public class BackendApiCreate  {
             if( value == null ){
                 return null;
             }
-            VpcChannelStatusEnum result = staticFields.get(value);
+            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VpcChannelStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VpcChannelStatusEnum(value);
             }
             return result;
         }
@@ -314,7 +318,7 @@ public class BackendApiCreate  {
             if( value == null ){
                 return null;
             }
-            VpcChannelStatusEnum result = staticFields.get(value);
+            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

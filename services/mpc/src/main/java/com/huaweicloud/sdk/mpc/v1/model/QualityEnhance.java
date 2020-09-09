@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +27,7 @@ public class QualityEnhance  {
     /**
      * 针对一般质量、无明显问题的普通片源，通过增强、锐化等技术明显提升主观效果。单纯该处理操作前后，分辨率、帧率等参数不发生变化。 可和old_repair、super_resolution、super_framerate、SDRToHDR组合使用。 
      */
-    public static class NormalEnhanceEnum {
+    public static final class NormalEnhanceEnum {
 
         
         /**
@@ -29,11 +36,13 @@ public class QualityEnhance  {
         public static final NormalEnhanceEnum NORMAL = new NormalEnhanceEnum("normal");
         
 
-        public static final Map<String, NormalEnhanceEnum> staticFields = new HashMap<String, NormalEnhanceEnum>() {
-            { 
-                put("normal", NORMAL);
-            }
-        };
+        private static final Map<String, NormalEnhanceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NormalEnhanceEnum> createStaticFields() {
+            Map<String, NormalEnhanceEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +61,9 @@ public class QualityEnhance  {
             if( value == null ){
                 return null;
             }
-            NormalEnhanceEnum result = staticFields.get(value);
+            NormalEnhanceEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new NormalEnhanceEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new NormalEnhanceEnum(value);
             }
             return result;
         }
@@ -66,7 +72,7 @@ public class QualityEnhance  {
             if( value == null ){
                 return null;
             }
-            NormalEnhanceEnum result = staticFields.get(value);
+            NormalEnhanceEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -95,7 +101,7 @@ public class QualityEnhance  {
     /**
      * 针对旧片、老片，画质主观质量比较低的片源，通过降噪、去压缩失真等视频增强技术，提升画质主观效果。 
      */
-    public static class ReviveEnum {
+    public static final class ReviveEnum {
 
         
         /**
@@ -104,11 +110,13 @@ public class QualityEnhance  {
         public static final ReviveEnum NORMAL = new ReviveEnum("normal");
         
 
-        public static final Map<String, ReviveEnum> staticFields = new HashMap<String, ReviveEnum>() {
-            { 
-                put("normal", NORMAL);
-            }
-        };
+        private static final Map<String, ReviveEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReviveEnum> createStaticFields() {
+            Map<String, ReviveEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -127,12 +135,9 @@ public class QualityEnhance  {
             if( value == null ){
                 return null;
             }
-            ReviveEnum result = staticFields.get(value);
+            ReviveEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ReviveEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ReviveEnum(value);
             }
             return result;
         }
@@ -141,7 +146,7 @@ public class QualityEnhance  {
             if( value == null ){
                 return null;
             }
-            ReviveEnum result = staticFields.get(value);
+            ReviveEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -170,7 +175,7 @@ public class QualityEnhance  {
     /**
      * 超动态范围，提升视频动态范围，明显提升片源动态范围。单纯该处理操作前后，分辨率、帧率等参数不发生变化，动态范围、色域范围、码率发生变化。 可和normal_ enhance组合使用。SDRtoHDR10（默认）,SDRtoHLG（暂不支持） 
      */
-    public static class SdrToHdrEnum {
+    public static final class SdrToHdrEnum {
 
         
         /**
@@ -179,11 +184,13 @@ public class QualityEnhance  {
         public static final SdrToHdrEnum SDRTOHDR10 = new SdrToHdrEnum("SDRtoHDR10");
         
 
-        public static final Map<String, SdrToHdrEnum> staticFields = new HashMap<String, SdrToHdrEnum>() {
-            { 
-                put("SDRtoHDR10", SDRTOHDR10);
-            }
-        };
+        private static final Map<String, SdrToHdrEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SdrToHdrEnum> createStaticFields() {
+            Map<String, SdrToHdrEnum> map = new HashMap<>();
+            map.put("SDRtoHDR10", SDRTOHDR10);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -202,12 +209,9 @@ public class QualityEnhance  {
             if( value == null ){
                 return null;
             }
-            SdrToHdrEnum result = staticFields.get(value);
+            SdrToHdrEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SdrToHdrEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SdrToHdrEnum(value);
             }
             return result;
         }
@@ -216,7 +220,7 @@ public class QualityEnhance  {
             if( value == null ){
                 return null;
             }
-            SdrToHdrEnum result = staticFields.get(value);
+            SdrToHdrEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

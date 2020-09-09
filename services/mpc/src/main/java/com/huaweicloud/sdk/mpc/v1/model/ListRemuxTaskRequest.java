@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,7 +31,7 @@ public class ListRemuxTaskRequest  {
         /**
      * Gets or Sets status
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -62,16 +65,18 @@ public class ListRemuxTaskRequest  {
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("INIT", INIT);
-                put("WAITING", WAITING);
-                put("PROCESSING", PROCESSING);
-                put("SUCCEED", SUCCEED);
-                put("FAILED", FAILED);
-                put("CANCELED", CANCELED);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("INIT", INIT);
+            map.put("WAITING", WAITING);
+            map.put("PROCESSING", PROCESSING);
+            map.put("SUCCEED", SUCCEED);
+            map.put("FAILED", FAILED);
+            map.put("CANCELED", CANCELED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -90,12 +95,9 @@ public class ListRemuxTaskRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -104,7 +106,7 @@ public class ListRemuxTaskRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

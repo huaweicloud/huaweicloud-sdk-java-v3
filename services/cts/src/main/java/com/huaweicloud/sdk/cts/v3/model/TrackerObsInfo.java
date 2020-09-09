@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +41,7 @@ public class TrackerObsInfo  {
     /**
      * 标识配置桶内对象存储周期。 当\"tracker_type\"参数值为\"data\"时该参数值有效。
      */
-    public static class BucketLifecycleEnum {
+    public static final class BucketLifecycleEnum {
 
         
         /**
@@ -67,15 +70,17 @@ public class TrackerObsInfo  {
         public static final BucketLifecycleEnum NUMBER_1095 = new BucketLifecycleEnum(1095);
         
 
-        public static final Map<Integer, BucketLifecycleEnum> staticFields = new HashMap<Integer, BucketLifecycleEnum>() {
-            { 
-                put(30, NUMBER_30);
-                put(60, NUMBER_60);
-                put(90, NUMBER_90);
-                put(180, NUMBER_180);
-                put(1095, NUMBER_1095);
-            }
-        };
+        private static final Map<Integer, BucketLifecycleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, BucketLifecycleEnum> createStaticFields() {
+            Map<Integer, BucketLifecycleEnum> map = new HashMap<>();
+            map.put(30, NUMBER_30);
+            map.put(60, NUMBER_60);
+            map.put(90, NUMBER_90);
+            map.put(180, NUMBER_180);
+            map.put(1095, NUMBER_1095);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -94,12 +99,9 @@ public class TrackerObsInfo  {
             if( value == null ){
                 return null;
             }
-            BucketLifecycleEnum result = staticFields.get(value);
+            BucketLifecycleEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new BucketLifecycleEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new BucketLifecycleEnum(value);
             }
             return result;
         }
@@ -108,7 +110,7 @@ public class TrackerObsInfo  {
             if( value == null ){
                 return null;
             }
-            BucketLifecycleEnum result = staticFields.get(value);
+            BucketLifecycleEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

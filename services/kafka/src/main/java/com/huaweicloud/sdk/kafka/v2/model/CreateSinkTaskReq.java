@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,7 +26,7 @@ public class CreateSinkTaskReq  {
     /**
      * 源数据类型，目前只支持BLOB。 
      */
-    public static class SourceTypeEnum {
+    public static final class SourceTypeEnum {
 
         
         /**
@@ -30,11 +35,13 @@ public class CreateSinkTaskReq  {
         public static final SourceTypeEnum BLOB = new SourceTypeEnum("BLOB");
         
 
-        public static final Map<String, SourceTypeEnum> staticFields = new HashMap<String, SourceTypeEnum>() {
-            { 
-                put("BLOB", BLOB);
-            }
-        };
+        private static final Map<String, SourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SourceTypeEnum> createStaticFields() {
+            Map<String, SourceTypeEnum> map = new HashMap<>();
+            map.put("BLOB", BLOB);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -53,12 +60,9 @@ public class CreateSinkTaskReq  {
             if( value == null ){
                 return null;
             }
-            SourceTypeEnum result = staticFields.get(value);
+            SourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SourceTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SourceTypeEnum(value);
             }
             return result;
         }
@@ -67,7 +71,7 @@ public class CreateSinkTaskReq  {
             if( value == null ){
                 return null;
             }
-            SourceTypeEnum result = staticFields.get(value);
+            SourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -102,7 +106,7 @@ public class CreateSinkTaskReq  {
     /**
      * 转存的目标类型，当前只支持OBS。 
      */
-    public static class DestinationTypeEnum {
+    public static final class DestinationTypeEnum {
 
         
         /**
@@ -111,11 +115,13 @@ public class CreateSinkTaskReq  {
         public static final DestinationTypeEnum OBS = new DestinationTypeEnum("OBS");
         
 
-        public static final Map<String, DestinationTypeEnum> staticFields = new HashMap<String, DestinationTypeEnum>() {
-            { 
-                put("OBS", OBS);
-            }
-        };
+        private static final Map<String, DestinationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DestinationTypeEnum> createStaticFields() {
+            Map<String, DestinationTypeEnum> map = new HashMap<>();
+            map.put("OBS", OBS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -134,12 +140,9 @@ public class CreateSinkTaskReq  {
             if( value == null ){
                 return null;
             }
-            DestinationTypeEnum result = staticFields.get(value);
+            DestinationTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DestinationTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DestinationTypeEnum(value);
             }
             return result;
         }
@@ -148,7 +151,7 @@ public class CreateSinkTaskReq  {
             if( value == null ){
                 return null;
             }
-            DestinationTypeEnum result = staticFields.get(value);
+            DestinationTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

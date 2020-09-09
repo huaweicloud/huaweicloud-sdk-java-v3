@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +26,7 @@ public class SpecialEffect  {
     /**
      * 特效处理类型。取值： Blur（水印模糊化） Mosaic（水印打马赛克，暂不支持） Replace（替换，暂不支持） 
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -42,13 +45,15 @@ public class SpecialEffect  {
         public static final TypeEnum REPLACE = new TypeEnum("Replace");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("Blur", BLUR);
-                put("Mosaic", MOSAIC);
-                put("Replace", REPLACE);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("Blur", BLUR);
+            map.put("Mosaic", MOSAIC);
+            map.put("Replace", REPLACE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -67,12 +72,9 @@ public class SpecialEffect  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -81,7 +83,7 @@ public class SpecialEffect  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

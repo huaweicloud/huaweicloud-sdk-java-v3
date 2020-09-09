@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ScalingPolicyAction  {
     /**
      * 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为
      */
-    public static class OperationEnum {
+    public static final class OperationEnum {
 
         
         /**
@@ -44,14 +47,16 @@ public class ScalingPolicyAction  {
         public static final OperationEnum SET = new OperationEnum("SET");
         
 
-        public static final Map<String, OperationEnum> staticFields = new HashMap<String, OperationEnum>() {
-            { 
-                put("ADD", ADD);
-                put("REMOVE", REMOVE);
-                put("REDUCE", REDUCE);
-                put("SET", SET);
-            }
-        };
+        private static final Map<String, OperationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OperationEnum> createStaticFields() {
+            Map<String, OperationEnum> map = new HashMap<>();
+            map.put("ADD", ADD);
+            map.put("REMOVE", REMOVE);
+            map.put("REDUCE", REDUCE);
+            map.put("SET", SET);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class ScalingPolicyAction  {
             if( value == null ){
                 return null;
             }
-            OperationEnum result = staticFields.get(value);
+            OperationEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OperationEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OperationEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class ScalingPolicyAction  {
             if( value == null ){
                 return null;
             }
-            OperationEnum result = staticFields.get(value);
+            OperationEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

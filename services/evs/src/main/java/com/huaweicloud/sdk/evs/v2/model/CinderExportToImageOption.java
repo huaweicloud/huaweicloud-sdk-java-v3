@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +27,7 @@ public class CinderExportToImageOption  {
     /**
      * 云硬盘导出镜像的容器类型。  目前支持ami、ari、aki、ovf、bare。默认是bare。
      */
-    public static class ContainerFormatEnum {
+    public static final class ContainerFormatEnum {
 
         
         /**
@@ -49,15 +56,17 @@ public class CinderExportToImageOption  {
         public static final ContainerFormatEnum BARE = new ContainerFormatEnum("bare");
         
 
-        public static final Map<String, ContainerFormatEnum> staticFields = new HashMap<String, ContainerFormatEnum>() {
-            { 
-                put("ami", AMI);
-                put("ari", ARI);
-                put("aki", AKI);
-                put("ovf", OVF);
-                put("bare", BARE);
-            }
-        };
+        private static final Map<String, ContainerFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContainerFormatEnum> createStaticFields() {
+            Map<String, ContainerFormatEnum> map = new HashMap<>();
+            map.put("ami", AMI);
+            map.put("ari", ARI);
+            map.put("aki", AKI);
+            map.put("ovf", OVF);
+            map.put("bare", BARE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +85,9 @@ public class CinderExportToImageOption  {
             if( value == null ){
                 return null;
             }
-            ContainerFormatEnum result = staticFields.get(value);
+            ContainerFormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ContainerFormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ContainerFormatEnum(value);
             }
             return result;
         }
@@ -90,7 +96,7 @@ public class CinderExportToImageOption  {
             if( value == null ){
                 return null;
             }
-            ContainerFormatEnum result = staticFields.get(value);
+            ContainerFormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -119,7 +125,7 @@ public class CinderExportToImageOption  {
     /**
      * 云硬盘导出镜像的格式。  目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。
      */
-    public static class DiskFormatEnum {
+    public static final class DiskFormatEnum {
 
         
         /**
@@ -148,15 +154,17 @@ public class CinderExportToImageOption  {
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
         
 
-        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
-            { 
-                put("vhd", VHD);
-                put("zvhd", ZVHD);
-                put("zvhd2", ZVHD2);
-                put("raw", RAW);
-                put("qcow2", QCOW2);
-            }
-        };
+        private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DiskFormatEnum> createStaticFields() {
+            Map<String, DiskFormatEnum> map = new HashMap<>();
+            map.put("vhd", VHD);
+            map.put("zvhd", ZVHD);
+            map.put("zvhd2", ZVHD2);
+            map.put("raw", RAW);
+            map.put("qcow2", QCOW2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -175,12 +183,9 @@ public class CinderExportToImageOption  {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DiskFormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DiskFormatEnum(value);
             }
             return result;
         }
@@ -189,7 +194,7 @@ public class CinderExportToImageOption  {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -230,7 +235,7 @@ public class CinderExportToImageOption  {
     /**
      * 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
      */
-    public static class OsTypeEnum {
+    public static final class OsTypeEnum {
 
         
         /**
@@ -244,12 +249,14 @@ public class CinderExportToImageOption  {
         public static final OsTypeEnum LINUX = new OsTypeEnum("linux");
         
 
-        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
-            { 
-                put("windows", WINDOWS);
-                put("linux", LINUX);
-            }
-        };
+        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsTypeEnum> createStaticFields() {
+            Map<String, OsTypeEnum> map = new HashMap<>();
+            map.put("windows", WINDOWS);
+            map.put("linux", LINUX);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -268,12 +275,9 @@ public class CinderExportToImageOption  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsTypeEnum(value);
             }
             return result;
         }
@@ -282,7 +286,7 @@ public class CinderExportToImageOption  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -57,6 +58,12 @@ public class UpdateInstanceReq  {
     @JsonProperty(value="publicip_id")
     
     private String publicipId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
     public UpdateInstanceReq withName(String name) {
         this.name = name;
@@ -197,6 +204,26 @@ public class UpdateInstanceReq  {
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
     }
+
+    public UpdateInstanceReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -212,11 +239,12 @@ public class UpdateInstanceReq  {
             Objects.equals(this.maintainEnd, updateInstanceReq.maintainEnd) &&
             Objects.equals(this.securityGroupId, updateInstanceReq.securityGroupId) &&
             Objects.equals(this.enablePublicip, updateInstanceReq.enablePublicip) &&
-            Objects.equals(this.publicipId, updateInstanceReq.publicipId);
+            Objects.equals(this.publicipId, updateInstanceReq.publicipId) &&
+            Objects.equals(this.enterpriseProjectId, updateInstanceReq.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, maintainBegin, maintainEnd, securityGroupId, enablePublicip, publicipId);
+        return Objects.hash(name, description, maintainBegin, maintainEnd, securityGroupId, enablePublicip, publicipId, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -229,6 +257,7 @@ public class UpdateInstanceReq  {
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

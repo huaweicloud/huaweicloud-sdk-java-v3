@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.vpc.v3.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -57,7 +58,7 @@ public class SecurityGroupRule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="multiport")
     
-    private Integer multiport;
+    private String multiport;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -227,7 +228,7 @@ public class SecurityGroupRule  {
         this.ethertype = ethertype;
     }
 
-    public SecurityGroupRule withMultiport(Integer multiport) {
+    public SecurityGroupRule withMultiport(String multiport) {
         this.multiport = multiport;
         return this;
     }
@@ -239,11 +240,11 @@ public class SecurityGroupRule  {
      * 功能说明：端口取值范围 取值范围：支持单端口(80)，连续端口(1-30)以及不连续端口(22,3389,80)
      * @return multiport
      */
-    public Integer getMultiport() {
+    public String getMultiport() {
         return multiport;
     }
 
-    public void setMultiport(Integer multiport) {
+    public void setMultiport(String multiport) {
         this.multiport = multiport;
     }
 

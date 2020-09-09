@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,7 +55,7 @@ public class BackupRecordResponse  {
     /**
      * 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份 
      */
-    public static class BackupTypeEnum {
+    public static final class BackupTypeEnum {
 
         
         /**
@@ -64,12 +69,14 @@ public class BackupRecordResponse  {
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("auto");
         
 
-        public static final Map<String, BackupTypeEnum> staticFields = new HashMap<String, BackupTypeEnum>() {
-            { 
-                put("manual", MANUAL);
-                put("auto", AUTO);
-            }
-        };
+        private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BackupTypeEnum> createStaticFields() {
+            Map<String, BackupTypeEnum> map = new HashMap<>();
+            map.put("manual", MANUAL);
+            map.put("auto", AUTO);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -88,12 +95,9 @@ public class BackupRecordResponse  {
             if( value == null ){
                 return null;
             }
-            BackupTypeEnum result = staticFields.get(value);
+            BackupTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new BackupTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new BackupTypeEnum(value);
             }
             return result;
         }
@@ -102,7 +106,7 @@ public class BackupRecordResponse  {
             if( value == null ){
                 return null;
             }
-            BackupTypeEnum result = staticFields.get(value);
+            BackupTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -161,7 +165,7 @@ public class BackupRecordResponse  {
     /**
      * 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。 
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -195,16 +199,18 @@ public class BackupRecordResponse  {
         public static final StatusEnum DELETED = new StatusEnum("deleted");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("waiting", WAITING);
-                put("backuping", BACKUPING);
-                put("succeed", SUCCEED);
-                put("failed", FAILED);
-                put("expired", EXPIRED);
-                put("deleted", DELETED);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("waiting", WAITING);
+            map.put("backuping", BACKUPING);
+            map.put("succeed", SUCCEED);
+            map.put("failed", FAILED);
+            map.put("expired", EXPIRED);
+            map.put("deleted", DELETED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -223,12 +229,9 @@ public class BackupRecordResponse  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -237,7 +240,7 @@ public class BackupRecordResponse  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

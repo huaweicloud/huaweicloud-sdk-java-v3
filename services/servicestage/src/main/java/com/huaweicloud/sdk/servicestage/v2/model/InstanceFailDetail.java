@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,17 +55,19 @@ public class InstanceFailDetail {
     public static final InstanceFailDetail RESOURCE_DELETED = new InstanceFailDetail("resource_deleted");
     
 
-    public static final Map<String, InstanceFailDetail> staticFields = new HashMap<String, InstanceFailDetail>() {
-        { 
-            put("cluster_deleted", CLUSTER_DELETED);
-            put("cluster_unavailable", CLUSTER_UNAVAILABLE);
-            put("cluster_inaccessible", CLUSTER_INACCESSIBLE);
-            put("namespace_deleted", NAMESPACE_DELETED);
-            put("namespace_unavailable", NAMESPACE_UNAVAILABLE);
-            put("namespace_inaccessible", NAMESPACE_INACCESSIBLE);
-            put("resource_deleted", RESOURCE_DELETED);
-        }
-    };
+    private static final Map<String, InstanceFailDetail> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, InstanceFailDetail> createStaticFields() {
+        Map<String, InstanceFailDetail> map = new HashMap<>();
+        map.put("cluster_deleted", CLUSTER_DELETED);
+        map.put("cluster_unavailable", CLUSTER_UNAVAILABLE);
+        map.put("cluster_inaccessible", CLUSTER_INACCESSIBLE);
+        map.put("namespace_deleted", NAMESPACE_DELETED);
+        map.put("namespace_unavailable", NAMESPACE_UNAVAILABLE);
+        map.put("namespace_inaccessible", NAMESPACE_INACCESSIBLE);
+        map.put("resource_deleted", RESOURCE_DELETED);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -82,12 +86,9 @@ public class InstanceFailDetail {
         if( value == null ){
             return null;
         }
-        InstanceFailDetail result = staticFields.get(value);
+        InstanceFailDetail result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new InstanceFailDetail(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new InstanceFailDetail(value);
         }
         return result;
     }
@@ -96,7 +97,7 @@ public class InstanceFailDetail {
         if( value == null ){
             return null;
         }
-        InstanceFailDetail result = staticFields.get(value);
+        InstanceFailDetail result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

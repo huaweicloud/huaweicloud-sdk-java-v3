@@ -5,6 +5,11 @@ package com.huaweicloud.sdk.dms.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -46,7 +51,7 @@ public class ShowQueueResponse extends SdkResponse {
     /**
      * 队列类型。
      */
-    public static class QueueModeEnum {
+    public static final class QueueModeEnum {
 
         
         /**
@@ -70,14 +75,16 @@ public class ShowQueueResponse extends SdkResponse {
         public static final QueueModeEnum KAFKA_HT = new QueueModeEnum("KAFKA_HT");
         
 
-        public static final Map<String, QueueModeEnum> staticFields = new HashMap<String, QueueModeEnum>() {
-            { 
-                put("NORMAL", NORMAL);
-                put("FIFO", FIFO);
-                put("KAFKA_HA", KAFKA_HA);
-                put("KAFKA_HT", KAFKA_HT);
-            }
-        };
+        private static final Map<String, QueueModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, QueueModeEnum> createStaticFields() {
+            Map<String, QueueModeEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("FIFO", FIFO);
+            map.put("KAFKA_HA", KAFKA_HA);
+            map.put("KAFKA_HT", KAFKA_HT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -96,12 +103,9 @@ public class ShowQueueResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            QueueModeEnum result = staticFields.get(value);
+            QueueModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new QueueModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new QueueModeEnum(value);
             }
             return result;
         }
@@ -110,7 +114,7 @@ public class ShowQueueResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            QueueModeEnum result = staticFields.get(value);
+            QueueModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -157,7 +161,7 @@ public class ShowQueueResponse extends SdkResponse {
     /**
      * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
      */
-    public static class RedrivePolicyEnum {
+    public static final class RedrivePolicyEnum {
 
         
         /**
@@ -171,12 +175,14 @@ public class ShowQueueResponse extends SdkResponse {
         public static final RedrivePolicyEnum DISABLE = new RedrivePolicyEnum("disable");
         
 
-        public static final Map<String, RedrivePolicyEnum> staticFields = new HashMap<String, RedrivePolicyEnum>() {
-            { 
-                put("enable", ENABLE);
-                put("disable", DISABLE);
-            }
-        };
+        private static final Map<String, RedrivePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RedrivePolicyEnum> createStaticFields() {
+            Map<String, RedrivePolicyEnum> map = new HashMap<>();
+            map.put("enable", ENABLE);
+            map.put("disable", DISABLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -195,12 +201,9 @@ public class ShowQueueResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RedrivePolicyEnum result = staticFields.get(value);
+            RedrivePolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RedrivePolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RedrivePolicyEnum(value);
             }
             return result;
         }
@@ -209,7 +212,7 @@ public class ShowQueueResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RedrivePolicyEnum result = staticFields.get(value);
+            RedrivePolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

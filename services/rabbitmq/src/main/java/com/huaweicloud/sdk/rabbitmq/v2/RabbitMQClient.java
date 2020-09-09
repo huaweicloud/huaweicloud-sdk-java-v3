@@ -105,6 +105,17 @@ public class RabbitMQClient {
     }
 
     /**
+     * 查询插件列表
+     * 查询插件列表。
+     *
+     * @param ListPluginsRequest 请求对象
+     * @return ListPluginsResponse
+    */
+    public ListPluginsResponse listPlugins(ListPluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.listPlugins);
+    }
+
+    /**
      * 查询产品规格列表
      * 在创建实例时，需要配置订购的产品ID（即product_id），可通过该接口查询产品规格。
      *
@@ -212,6 +223,17 @@ public class RabbitMQClient {
     */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.updateInstance);
+    }
+
+    /**
+     * 开启或关闭插件
+     * 开启或关闭插件。
+     *
+     * @param UpdatePluginsRequest 请求对象
+     * @return UpdatePluginsResponse
+    */
+    public UpdatePluginsResponse updatePlugins(UpdatePluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.updatePlugins);
     }
 
 }

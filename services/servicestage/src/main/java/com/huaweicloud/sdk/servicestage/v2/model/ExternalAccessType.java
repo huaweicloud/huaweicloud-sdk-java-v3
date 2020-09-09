@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +35,15 @@ public class ExternalAccessType {
     public static final ExternalAccessType IP_ADDR = new ExternalAccessType("IP_ADDR");
     
 
-    public static final Map<String, ExternalAccessType> staticFields = new HashMap<String, ExternalAccessType>() {
-        { 
-            put("AUTO_GENERATED", AUTO_GENERATED);
-            put("SPECIFIED", SPECIFIED);
-            put("IP_ADDR", IP_ADDR);
-        }
-    };
+    private static final Map<String, ExternalAccessType> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, ExternalAccessType> createStaticFields() {
+        Map<String, ExternalAccessType> map = new HashMap<>();
+        map.put("AUTO_GENERATED", AUTO_GENERATED);
+        map.put("SPECIFIED", SPECIFIED);
+        map.put("IP_ADDR", IP_ADDR);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -58,12 +62,9 @@ public class ExternalAccessType {
         if( value == null ){
             return null;
         }
-        ExternalAccessType result = staticFields.get(value);
+        ExternalAccessType result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new ExternalAccessType(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new ExternalAccessType(value);
         }
         return result;
     }
@@ -72,7 +73,7 @@ public class ExternalAccessType {
         if( value == null ){
             return null;
         }
-        ExternalAccessType result = staticFields.get(value);
+        ExternalAccessType result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

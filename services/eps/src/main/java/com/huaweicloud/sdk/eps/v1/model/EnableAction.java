@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.eps.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class EnableAction  {
     /**
      * 启用操作
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -29,11 +32,13 @@ public class EnableAction  {
         public static final ActionEnum ENABLE = new ActionEnum("enable");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("enable", ENABLE);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("enable", ENABLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +57,9 @@ public class EnableAction  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -66,7 +68,7 @@ public class EnableAction  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

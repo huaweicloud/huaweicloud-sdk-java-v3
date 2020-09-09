@@ -5,6 +5,11 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +28,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     /**
      * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配
      */
-    public static class CreatorEnum {
+    public static final class CreatorEnum {
 
         
         /**
@@ -37,12 +42,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         public static final CreatorEnum MARKET = new CreatorEnum("MARKET");
         
 
-        public static final Map<String, CreatorEnum> staticFields = new HashMap<String, CreatorEnum>() {
-            { 
-                put("USER", USER);
-                put("MARKET", MARKET);
-            }
-        };
+        private static final Map<String, CreatorEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CreatorEnum> createStaticFields() {
+            Map<String, CreatorEnum> map = new HashMap<>();
+            map.put("USER", USER);
+            map.put("MARKET", MARKET);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -61,12 +68,9 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            CreatorEnum result = staticFields.get(value);
+            CreatorEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new CreatorEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new CreatorEnum(value);
             }
             return result;
         }
@@ -75,7 +79,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            CreatorEnum result = staticFields.get(value);
+            CreatorEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -152,7 +156,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     /**
      * APP的类型  默认为apig，暂不支持其他类型
      */
-    public static class AppTypeEnum {
+    public static final class AppTypeEnum {
 
         
         /**
@@ -166,12 +170,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
         
 
-        public static final Map<String, AppTypeEnum> staticFields = new HashMap<String, AppTypeEnum>() {
-            { 
-                put("apig", APIG);
-                put("roma", ROMA);
-            }
-        };
+        private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AppTypeEnum> createStaticFields() {
+            Map<String, AppTypeEnum> map = new HashMap<>();
+            map.put("apig", APIG);
+            map.put("roma", ROMA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -190,12 +196,9 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            AppTypeEnum result = staticFields.get(value);
+            AppTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AppTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AppTypeEnum(value);
             }
             return result;
         }
@@ -204,7 +207,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            AppTypeEnum result = staticFields.get(value);
+            AppTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -11,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 消息列表。
+ * 消息体。
  */
 public class ShowPartitionMessageRespMessage  {
 
@@ -51,12 +52,6 @@ public class ShowPartitionMessageRespMessage  {
     @JsonProperty(value="size")
     
     private Integer size;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
-    private Integer timestamp;
 
     public ShowPartitionMessageRespMessage withKey(String key) {
         this.key = key;
@@ -177,26 +172,6 @@ public class ShowPartitionMessageRespMessage  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    public ShowPartitionMessageRespMessage withTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 消息时间戳。
-     * @return timestamp
-     */
-    public Integer getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -211,12 +186,11 @@ public class ShowPartitionMessageRespMessage  {
             Objects.equals(this.topic, showPartitionMessageRespMessage.topic) &&
             Objects.equals(this.partition, showPartitionMessageRespMessage.partition) &&
             Objects.equals(this.messageOffset, showPartitionMessageRespMessage.messageOffset) &&
-            Objects.equals(this.size, showPartitionMessageRespMessage.size) &&
-            Objects.equals(this.timestamp, showPartitionMessageRespMessage.timestamp);
+            Objects.equals(this.size, showPartitionMessageRespMessage.size);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(key, value, topic, partition, messageOffset, size, timestamp);
+        return Objects.hash(key, value, topic, partition, messageOffset, size);
     }
     @Override
     public String toString() {
@@ -228,7 +202,6 @@ public class ShowPartitionMessageRespMessage  {
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

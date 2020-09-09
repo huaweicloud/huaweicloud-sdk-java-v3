@@ -3,6 +3,19 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -35,7 +48,7 @@ public class CreatePostPaidInstanceReq  {
     /**
      * 消息引擎。取值填写为：kafka。
      */
-    public static class EngineEnum {
+    public static final class EngineEnum {
 
         
         /**
@@ -44,11 +57,13 @@ public class CreatePostPaidInstanceReq  {
         public static final EngineEnum KAFKA = new EngineEnum("kafka");
         
 
-        public static final Map<String, EngineEnum> staticFields = new HashMap<String, EngineEnum>() {
-            { 
-                put("kafka", KAFKA);
-            }
-        };
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("kafka", KAFKA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -67,12 +82,9 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineEnum(value);
             }
             return result;
         }
@@ -81,7 +93,7 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -110,7 +122,7 @@ public class CreatePostPaidInstanceReq  {
     /**
      * 消息引擎的版本。取值填写为：1.1.0。
      */
-    public static class EngineVersionEnum {
+    public static final class EngineVersionEnum {
 
         
         /**
@@ -119,11 +131,13 @@ public class CreatePostPaidInstanceReq  {
         public static final EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
         
 
-        public static final Map<String, EngineVersionEnum> staticFields = new HashMap<String, EngineVersionEnum>() {
-            { 
-                put("1.1.0", _1_1_0);
-            }
-        };
+        private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineVersionEnum> createStaticFields() {
+            Map<String, EngineVersionEnum> map = new HashMap<>();
+            map.put("1.1.0", _1_1_0);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -142,12 +156,9 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineVersionEnum result = staticFields.get(value);
+            EngineVersionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineVersionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineVersionEnum(value);
             }
             return result;
         }
@@ -156,7 +167,7 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            EngineVersionEnum result = staticFields.get(value);
+            EngineVersionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -185,7 +196,7 @@ public class CreatePostPaidInstanceReq  {
     /**
      * Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。 取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB
      */
-    public static class SpecificationEnum {
+    public static final class SpecificationEnum {
 
         
         /**
@@ -209,14 +220,16 @@ public class CreatePostPaidInstanceReq  {
         public static final SpecificationEnum _1200MB = new SpecificationEnum("1200MB");
         
 
-        public static final Map<String, SpecificationEnum> staticFields = new HashMap<String, SpecificationEnum>() {
-            { 
-                put("100MB", _100MB);
-                put("300MB", _300MB);
-                put("600MB", _600MB);
-                put("1200MB", _1200MB);
-            }
-        };
+        private static final Map<String, SpecificationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SpecificationEnum> createStaticFields() {
+            Map<String, SpecificationEnum> map = new HashMap<>();
+            map.put("100MB", _100MB);
+            map.put("300MB", _300MB);
+            map.put("600MB", _600MB);
+            map.put("1200MB", _1200MB);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -235,12 +248,9 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            SpecificationEnum result = staticFields.get(value);
+            SpecificationEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SpecificationEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SpecificationEnum(value);
             }
             return result;
         }
@@ -249,7 +259,7 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            SpecificationEnum result = staticFields.get(value);
+            SpecificationEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -284,7 +294,7 @@ public class CreatePostPaidInstanceReq  {
     /**
      * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
      */
-    public static class PartitionNumEnum {
+    public static final class PartitionNumEnum {
 
         
         /**
@@ -303,13 +313,15 @@ public class CreatePostPaidInstanceReq  {
         public static final PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
         
 
-        public static final Map<Integer, PartitionNumEnum> staticFields = new HashMap<Integer, PartitionNumEnum>() {
-            { 
-                put(300, NUMBER_300);
-                put(900, NUMBER_900);
-                put(1800, NUMBER_1800);
-            }
-        };
+        private static final Map<Integer, PartitionNumEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, PartitionNumEnum> createStaticFields() {
+            Map<Integer, PartitionNumEnum> map = new HashMap<>();
+            map.put(300, NUMBER_300);
+            map.put(900, NUMBER_900);
+            map.put(1800, NUMBER_1800);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -328,12 +340,9 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            PartitionNumEnum result = staticFields.get(value);
+            PartitionNumEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PartitionNumEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PartitionNumEnum(value);
             }
             return result;
         }
@@ -342,7 +351,7 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            PartitionNumEnum result = staticFields.get(value);
+            PartitionNumEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -461,7 +470,7 @@ public class CreatePostPaidInstanceReq  {
     /**
      * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
      */
-    public static class RetentionPolicyEnum {
+    public static final class RetentionPolicyEnum {
 
         
         /**
@@ -475,12 +484,14 @@ public class CreatePostPaidInstanceReq  {
         public static final RetentionPolicyEnum PRODUCE_REJECT = new RetentionPolicyEnum("produce_reject");
         
 
-        public static final Map<String, RetentionPolicyEnum> staticFields = new HashMap<String, RetentionPolicyEnum>() {
-            { 
-                put("time_base", TIME_BASE);
-                put("produce_reject", PRODUCE_REJECT);
-            }
-        };
+        private static final Map<String, RetentionPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RetentionPolicyEnum> createStaticFields() {
+            Map<String, RetentionPolicyEnum> map = new HashMap<>();
+            map.put("time_base", TIME_BASE);
+            map.put("produce_reject", PRODUCE_REJECT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -499,12 +510,9 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            RetentionPolicyEnum result = staticFields.get(value);
+            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RetentionPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RetentionPolicyEnum(value);
             }
             return result;
         }
@@ -513,7 +521,7 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            RetentionPolicyEnum result = staticFields.get(value);
+            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -554,7 +562,7 @@ public class CreatePostPaidInstanceReq  {
     /**
      * 存储IO规格。如何选择磁盘类型请参考[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 取值范围：   - 参数specification为100MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB时，取值dms.physical.storage.ultra   - 参数specification为1200MB时，取值dms.physical.storage.ultra存储IO规格。如何选择磁盘类型请参考磁盘类型及性能介绍。
      */
-    public static class StorageSpecCodeEnum {
+    public static final class StorageSpecCodeEnum {
 
         
         /**
@@ -573,13 +581,15 @@ public class CreatePostPaidInstanceReq  {
         public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA = new StorageSpecCodeEnum("dms.physical.storage.ultra");
         
 
-        public static final Map<String, StorageSpecCodeEnum> staticFields = new HashMap<String, StorageSpecCodeEnum>() {
-            { 
-                put("dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL);
-                put("dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH);
-                put("dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA);
-            }
-        };
+        private static final Map<String, StorageSpecCodeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StorageSpecCodeEnum> createStaticFields() {
+            Map<String, StorageSpecCodeEnum> map = new HashMap<>();
+            map.put("dms.physical.storage.normal", DMS_PHYSICAL_STORAGE_NORMAL);
+            map.put("dms.physical.storage.high", DMS_PHYSICAL_STORAGE_HIGH);
+            map.put("dms.physical.storage.ultra", DMS_PHYSICAL_STORAGE_ULTRA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -598,12 +608,9 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            StorageSpecCodeEnum result = staticFields.get(value);
+            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StorageSpecCodeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StorageSpecCodeEnum(value);
             }
             return result;
         }
@@ -612,7 +619,7 @@ public class CreatePostPaidInstanceReq  {
             if( value == null ){
                 return null;
             }
-            StorageSpecCodeEnum result = staticFields.get(value);
+            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

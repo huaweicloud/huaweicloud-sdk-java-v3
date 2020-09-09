@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -49,7 +52,7 @@ public class ShowConfigurationResponse extends SdkResponse {
     /**
      * 引擎名。
      */
-    public static class DatastoreNameEnum {
+    public static final class DatastoreNameEnum {
 
         
         /**
@@ -68,13 +71,15 @@ public class ShowConfigurationResponse extends SdkResponse {
         public static final DatastoreNameEnum SQLSERVER = new DatastoreNameEnum("sqlserver");
         
 
-        public static final Map<String, DatastoreNameEnum> staticFields = new HashMap<String, DatastoreNameEnum>() {
-            { 
-                put("mysql", MYSQL);
-                put("postgresql", POSTGRESQL);
-                put("sqlserver", SQLSERVER);
-            }
-        };
+        private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DatastoreNameEnum> createStaticFields() {
+            Map<String, DatastoreNameEnum> map = new HashMap<>();
+            map.put("mysql", MYSQL);
+            map.put("postgresql", POSTGRESQL);
+            map.put("sqlserver", SQLSERVER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -93,12 +98,9 @@ public class ShowConfigurationResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            DatastoreNameEnum result = staticFields.get(value);
+            DatastoreNameEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DatastoreNameEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DatastoreNameEnum(value);
             }
             return result;
         }
@@ -107,7 +109,7 @@ public class ShowConfigurationResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            DatastoreNameEnum result = staticFields.get(value);
+            DatastoreNameEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

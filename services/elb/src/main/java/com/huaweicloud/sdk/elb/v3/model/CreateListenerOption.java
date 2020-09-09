@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -109,7 +112,7 @@ public class CreateListenerOption  {
         /**
      * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。 取值包括：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict，tls-1-2-fs六种安全策略
      */
-    public static class TlsCiphersPolicyEnum {
+    public static final class TlsCiphersPolicyEnum {
 
         
         /**
@@ -143,16 +146,18 @@ public class CreateListenerOption  {
         public static final TlsCiphersPolicyEnum TLS_1_2_FS = new TlsCiphersPolicyEnum("tls-1-2-fs");
         
 
-        public static final Map<String, TlsCiphersPolicyEnum> staticFields = new HashMap<String, TlsCiphersPolicyEnum>() {
-            { 
-                put("tls-1-0-inherit", TLS_1_0_INHERIT);
-                put("tls-1-0", TLS_1_0);
-                put("tls-1-1", TLS_1_1);
-                put("tls-1-2", TLS_1_2);
-                put("tls-1-2-strict", TLS_1_2_STRICT);
-                put("tls-1-2-fs", TLS_1_2_FS);
-            }
-        };
+        private static final Map<String, TlsCiphersPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TlsCiphersPolicyEnum> createStaticFields() {
+            Map<String, TlsCiphersPolicyEnum> map = new HashMap<>();
+            map.put("tls-1-0-inherit", TLS_1_0_INHERIT);
+            map.put("tls-1-0", TLS_1_0);
+            map.put("tls-1-1", TLS_1_1);
+            map.put("tls-1-2", TLS_1_2);
+            map.put("tls-1-2-strict", TLS_1_2_STRICT);
+            map.put("tls-1-2-fs", TLS_1_2_FS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -171,12 +176,9 @@ public class CreateListenerOption  {
             if( value == null ){
                 return null;
             }
-            TlsCiphersPolicyEnum result = staticFields.get(value);
+            TlsCiphersPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TlsCiphersPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TlsCiphersPolicyEnum(value);
             }
             return result;
         }
@@ -185,7 +187,7 @@ public class CreateListenerOption  {
             if( value == null ){
                 return null;
             }
-            TlsCiphersPolicyEnum result = staticFields.get(value);
+            TlsCiphersPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class ListScalingGroupsRequest  {
     /**
      * Gets or Sets scalingGroupStatus
      */
-    public static class ScalingGroupStatusEnum {
+    public static final class ScalingGroupStatusEnum {
 
         
         /**
@@ -56,14 +59,16 @@ public class ListScalingGroupsRequest  {
         public static final ScalingGroupStatusEnum DELETING = new ScalingGroupStatusEnum("DELETING");
         
 
-        public static final Map<String, ScalingGroupStatusEnum> staticFields = new HashMap<String, ScalingGroupStatusEnum>() {
-            { 
-                put("INSERVICE", INSERVICE);
-                put("PAUSED", PAUSED);
-                put("ERROR", ERROR);
-                put("DELETING", DELETING);
-            }
-        };
+        private static final Map<String, ScalingGroupStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ScalingGroupStatusEnum> createStaticFields() {
+            Map<String, ScalingGroupStatusEnum> map = new HashMap<>();
+            map.put("INSERVICE", INSERVICE);
+            map.put("PAUSED", PAUSED);
+            map.put("ERROR", ERROR);
+            map.put("DELETING", DELETING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -82,12 +87,9 @@ public class ListScalingGroupsRequest  {
             if( value == null ){
                 return null;
             }
-            ScalingGroupStatusEnum result = staticFields.get(value);
+            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ScalingGroupStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ScalingGroupStatusEnum(value);
             }
             return result;
         }
@@ -96,7 +98,7 @@ public class ListScalingGroupsRequest  {
             if( value == null ){
                 return null;
             }
-            ScalingGroupStatusEnum result = staticFields.get(value);
+            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

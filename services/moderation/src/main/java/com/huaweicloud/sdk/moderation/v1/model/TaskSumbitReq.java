@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.moderation.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,7 +31,7 @@ public class TaskSumbitReq  {
         /**
      * Gets or Sets categories
      */
-    public static class CategoriesEnum {
+    public static final class CategoriesEnum {
 
         
         /**
@@ -47,13 +50,15 @@ public class TaskSumbitReq  {
         public static final CategoriesEnum TERRORISM = new CategoriesEnum("terrorism");
         
 
-        public static final Map<String, CategoriesEnum> staticFields = new HashMap<String, CategoriesEnum>() {
-            { 
-                put("politics", POLITICS);
-                put("porn", PORN);
-                put("terrorism", TERRORISM);
-            }
-        };
+        private static final Map<String, CategoriesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CategoriesEnum> createStaticFields() {
+            Map<String, CategoriesEnum> map = new HashMap<>();
+            map.put("politics", POLITICS);
+            map.put("porn", PORN);
+            map.put("terrorism", TERRORISM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -72,12 +77,9 @@ public class TaskSumbitReq  {
             if( value == null ){
                 return null;
             }
-            CategoriesEnum result = staticFields.get(value);
+            CategoriesEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new CategoriesEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new CategoriesEnum(value);
             }
             return result;
         }
@@ -86,7 +88,7 @@ public class TaskSumbitReq  {
             if( value == null ){
                 return null;
             }
-            CategoriesEnum result = staticFields.get(value);
+            CategoriesEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

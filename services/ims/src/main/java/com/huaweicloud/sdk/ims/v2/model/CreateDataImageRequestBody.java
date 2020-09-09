@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -65,7 +68,7 @@ public class CreateDataImageRequestBody  {
     /**
      * 操作系统类型。只能是Windows、Linux二者之一，值区分大小写。
      */
-    public static class OsTypeEnum {
+    public static final class OsTypeEnum {
 
         
         /**
@@ -79,12 +82,14 @@ public class CreateDataImageRequestBody  {
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
         
 
-        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
-            { 
-                put("Windows", WINDOWS);
-                put("Linux", LINUX);
-            }
-        };
+        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsTypeEnum> createStaticFields() {
+            Map<String, OsTypeEnum> map = new HashMap<>();
+            map.put("Windows", WINDOWS);
+            map.put("Linux", LINUX);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -103,12 +108,9 @@ public class CreateDataImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsTypeEnum(value);
             }
             return result;
         }
@@ -117,7 +119,7 @@ public class CreateDataImageRequestBody  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

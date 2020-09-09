@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +31,7 @@ public class CreateLifeCycleHookRequestBody  {
     /**
      * 生命周期挂钩类型。INSTANCE_TERMINATING。INSTANCE_LAUNCHING。INSTANCE_TERMINATING 类型的挂钩负责在实例终止时将实例挂起，INSTANCE_LAUNCHING 类型的挂钩则是在实例启动时将实例挂起。
      */
-    public static class LifecycleHookTypeEnum {
+    public static final class LifecycleHookTypeEnum {
 
         
         /**
@@ -40,12 +45,14 @@ public class CreateLifeCycleHookRequestBody  {
         public static final LifecycleHookTypeEnum INSTANCE_LAUNCHING = new LifecycleHookTypeEnum("INSTANCE_LAUNCHING");
         
 
-        public static final Map<String, LifecycleHookTypeEnum> staticFields = new HashMap<String, LifecycleHookTypeEnum>() {
-            { 
-                put("INSTANCE_TERMINATING", INSTANCE_TERMINATING);
-                put("INSTANCE_LAUNCHING", INSTANCE_LAUNCHING);
-            }
-        };
+        private static final Map<String, LifecycleHookTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LifecycleHookTypeEnum> createStaticFields() {
+            Map<String, LifecycleHookTypeEnum> map = new HashMap<>();
+            map.put("INSTANCE_TERMINATING", INSTANCE_TERMINATING);
+            map.put("INSTANCE_LAUNCHING", INSTANCE_LAUNCHING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +71,9 @@ public class CreateLifeCycleHookRequestBody  {
             if( value == null ){
                 return null;
             }
-            LifecycleHookTypeEnum result = staticFields.get(value);
+            LifecycleHookTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LifecycleHookTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LifecycleHookTypeEnum(value);
             }
             return result;
         }
@@ -78,7 +82,7 @@ public class CreateLifeCycleHookRequestBody  {
             if( value == null ){
                 return null;
             }
-            LifecycleHookTypeEnum result = staticFields.get(value);
+            LifecycleHookTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +111,7 @@ public class CreateLifeCycleHookRequestBody  {
     /**
      * 生命周期挂钩默认回调操作。默认情况下，到达超时时间后执行的操作。ABANDON；CONTINUE；如果实例正在启动，则 CONTINUE 表示用户自定义操作已成功，可将实例投入使用。否则，ABANDON 表示用户自定义操作未成功，终止实例，伸缩活动置为失败，重新创建新实例。如果实例正在终止，则 ABANDON 和 CONTINUE 都允许终止实例。不过，ABANDON 将停止其他生命周期挂钩，而 CONTINUE 将允许完成其他生命周期挂钩。该字段缺省时默认为 ABANDON。
      */
-    public static class DefaultResultEnum {
+    public static final class DefaultResultEnum {
 
         
         /**
@@ -121,12 +125,14 @@ public class CreateLifeCycleHookRequestBody  {
         public static final DefaultResultEnum CONTINUE = new DefaultResultEnum("CONTINUE");
         
 
-        public static final Map<String, DefaultResultEnum> staticFields = new HashMap<String, DefaultResultEnum>() {
-            { 
-                put("ABANDON", ABANDON);
-                put("CONTINUE", CONTINUE);
-            }
-        };
+        private static final Map<String, DefaultResultEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DefaultResultEnum> createStaticFields() {
+            Map<String, DefaultResultEnum> map = new HashMap<>();
+            map.put("ABANDON", ABANDON);
+            map.put("CONTINUE", CONTINUE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +151,9 @@ public class CreateLifeCycleHookRequestBody  {
             if( value == null ){
                 return null;
             }
-            DefaultResultEnum result = staticFields.get(value);
+            DefaultResultEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DefaultResultEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DefaultResultEnum(value);
             }
             return result;
         }
@@ -159,7 +162,7 @@ public class CreateLifeCycleHookRequestBody  {
             if( value == null ){
                 return null;
             }
-            DefaultResultEnum result = staticFields.get(value);
+            DefaultResultEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

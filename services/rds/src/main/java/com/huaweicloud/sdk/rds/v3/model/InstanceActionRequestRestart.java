@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class InstanceActionRequestRestart  {
     /**
      * 在线调试时必填。
      */
-    public static class RestartEnum {
+    public static final class RestartEnum {
 
         
         /**
@@ -29,11 +32,13 @@ public class InstanceActionRequestRestart  {
         public static final RestartEnum TRUE = new RestartEnum("true");
         
 
-        public static final Map<String, RestartEnum> staticFields = new HashMap<String, RestartEnum>() {
-            { 
-                put("true", TRUE);
-            }
-        };
+        private static final Map<String, RestartEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RestartEnum> createStaticFields() {
+            Map<String, RestartEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +57,9 @@ public class InstanceActionRequestRestart  {
             if( value == null ){
                 return null;
             }
-            RestartEnum result = staticFields.get(value);
+            RestartEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RestartEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RestartEnum(value);
             }
             return result;
         }
@@ -66,7 +68,7 @@ public class InstanceActionRequestRestart  {
             if( value == null ){
                 return null;
             }
-            RestartEnum result = staticFields.get(value);
+            RestartEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

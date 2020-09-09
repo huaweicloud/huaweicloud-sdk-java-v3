@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class Datastore  {
     /**
      * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -39,13 +42,15 @@ public class Datastore  {
         public static final TypeEnum SQLSERVER = new TypeEnum("SQLServer");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("MySQL", MYSQL);
-                put("PostgreSQL", POSTGRESQL);
-                put("SQLServer", SQLSERVER);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("MySQL", MYSQL);
+            map.put("PostgreSQL", POSTGRESQL);
+            map.put("SQLServer", SQLSERVER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +69,9 @@ public class Datastore  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -78,7 +80,7 @@ public class Datastore  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

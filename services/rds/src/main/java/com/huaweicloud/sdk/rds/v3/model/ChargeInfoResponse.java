@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class ChargeInfoResponse  {
     /**
      * 计费模式。  取值范围：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
      */
-    public static class ChargeModeEnum {
+    public static final class ChargeModeEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class ChargeInfoResponse  {
         public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
         
 
-        public static final Map<String, ChargeModeEnum> staticFields = new HashMap<String, ChargeModeEnum>() {
-            { 
-                put("prePaid", PREPAID);
-                put("postPaid", POSTPAID);
-            }
-        };
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class ChargeInfoResponse  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargeModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargeModeEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class ChargeInfoResponse  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

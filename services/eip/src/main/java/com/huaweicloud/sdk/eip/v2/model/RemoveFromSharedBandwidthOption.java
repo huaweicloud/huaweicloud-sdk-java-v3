@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +26,7 @@ public class RemoveFromSharedBandwidthOption  {
     /**
      * 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。  此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic）
      */
-    public static class ChargeModeEnum {
+    public static final class ChargeModeEnum {
 
         
         /**
@@ -37,12 +40,14 @@ public class RemoveFromSharedBandwidthOption  {
         public static final ChargeModeEnum TRAFFIC = new ChargeModeEnum("traffic");
         
 
-        public static final Map<String, ChargeModeEnum> staticFields = new HashMap<String, ChargeModeEnum>() {
-            { 
-                put("bandwidth", BANDWIDTH);
-                put("traffic", TRAFFIC);
-            }
-        };
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("bandwidth", BANDWIDTH);
+            map.put("traffic", TRAFFIC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -61,12 +66,9 @@ public class RemoveFromSharedBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargeModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargeModeEnum(value);
             }
             return result;
         }
@@ -75,7 +77,7 @@ public class RemoveFromSharedBandwidthOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

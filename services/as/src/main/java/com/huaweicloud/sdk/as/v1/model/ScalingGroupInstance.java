@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -45,7 +50,7 @@ public class ScalingGroupInstance  {
     /**
      * 实例在伸缩组中的实力状态周期：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
      */
-    public static class LifeCycleStateEnum {
+    public static final class LifeCycleStateEnum {
 
         
         /**
@@ -74,15 +79,17 @@ public class ScalingGroupInstance  {
         public static final LifeCycleStateEnum REMOVING_WAIT = new LifeCycleStateEnum("REMOVING_WAIT");
         
 
-        public static final Map<String, LifeCycleStateEnum> staticFields = new HashMap<String, LifeCycleStateEnum>() {
-            { 
-                put("INSERVICE", INSERVICE);
-                put("PENDING", PENDING);
-                put("REMOVING", REMOVING);
-                put("PENDING_WAIT", PENDING_WAIT);
-                put("REMOVING_WAIT", REMOVING_WAIT);
-            }
-        };
+        private static final Map<String, LifeCycleStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LifeCycleStateEnum> createStaticFields() {
+            Map<String, LifeCycleStateEnum> map = new HashMap<>();
+            map.put("INSERVICE", INSERVICE);
+            map.put("PENDING", PENDING);
+            map.put("REMOVING", REMOVING);
+            map.put("PENDING_WAIT", PENDING_WAIT);
+            map.put("REMOVING_WAIT", REMOVING_WAIT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -101,12 +108,9 @@ public class ScalingGroupInstance  {
             if( value == null ){
                 return null;
             }
-            LifeCycleStateEnum result = staticFields.get(value);
+            LifeCycleStateEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LifeCycleStateEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LifeCycleStateEnum(value);
             }
             return result;
         }
@@ -115,7 +119,7 @@ public class ScalingGroupInstance  {
             if( value == null ){
                 return null;
             }
-            LifeCycleStateEnum result = staticFields.get(value);
+            LifeCycleStateEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -144,7 +148,7 @@ public class ScalingGroupInstance  {
     /**
      * 实例健康状态:INITAILIZING:初始化；NORMAL：正常；ERROR：错误。
      */
-    public static class HealthStatusEnum {
+    public static final class HealthStatusEnum {
 
         
         /**
@@ -163,13 +167,15 @@ public class ScalingGroupInstance  {
         public static final HealthStatusEnum INITAILIZING = new HealthStatusEnum("INITAILIZING");
         
 
-        public static final Map<String, HealthStatusEnum> staticFields = new HashMap<String, HealthStatusEnum>() {
-            { 
-                put("NORMAL", NORMAL);
-                put("ERROR", ERROR);
-                put("INITAILIZING", INITAILIZING);
-            }
-        };
+        private static final Map<String, HealthStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HealthStatusEnum> createStaticFields() {
+            Map<String, HealthStatusEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("ERROR", ERROR);
+            map.put("INITAILIZING", INITAILIZING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -188,12 +194,9 @@ public class ScalingGroupInstance  {
             if( value == null ){
                 return null;
             }
-            HealthStatusEnum result = staticFields.get(value);
+            HealthStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HealthStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HealthStatusEnum(value);
             }
             return result;
         }
@@ -202,7 +205,7 @@ public class ScalingGroupInstance  {
             if( value == null ){
                 return null;
             }
-            HealthStatusEnum result = staticFields.get(value);
+            HealthStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

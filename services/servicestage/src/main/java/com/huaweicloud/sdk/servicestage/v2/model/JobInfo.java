@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class JobInfo  {
     /**
      * 执行状态。
      */
-    public static class ExecutionStatusEnum {
+    public static final class ExecutionStatusEnum {
 
         
         /**
@@ -45,13 +48,15 @@ public class JobInfo  {
         public static final ExecutionStatusEnum SUCCEEDED = new ExecutionStatusEnum("SUCCEEDED");
         
 
-        public static final Map<String, ExecutionStatusEnum> staticFields = new HashMap<String, ExecutionStatusEnum>() {
-            { 
-                put("RUNNING", RUNNING);
-                put("FAILED", FAILED);
-                put("SUCCEEDED", SUCCEEDED);
-            }
-        };
+        private static final Map<String, ExecutionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ExecutionStatusEnum> createStaticFields() {
+            Map<String, ExecutionStatusEnum> map = new HashMap<>();
+            map.put("RUNNING", RUNNING);
+            map.put("FAILED", FAILED);
+            map.put("SUCCEEDED", SUCCEEDED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class JobInfo  {
             if( value == null ){
                 return null;
             }
-            ExecutionStatusEnum result = staticFields.get(value);
+            ExecutionStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ExecutionStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ExecutionStatusEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class JobInfo  {
             if( value == null ){
                 return null;
             }
-            ExecutionStatusEnum result = staticFields.get(value);
+            ExecutionStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

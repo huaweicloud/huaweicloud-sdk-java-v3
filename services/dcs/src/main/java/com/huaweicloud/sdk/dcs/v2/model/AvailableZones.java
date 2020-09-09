@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -44,7 +47,7 @@ public class AvailableZones  {
     /**
      * 分区上是否还有可用资源。 - true：还有资源。 - false：资源已售罄。 
      */
-    public static class ResourceAvailabilityEnum {
+    public static final class ResourceAvailabilityEnum {
 
         
         /**
@@ -58,12 +61,14 @@ public class AvailableZones  {
         public static final ResourceAvailabilityEnum FALSE = new ResourceAvailabilityEnum("false");
         
 
-        public static final Map<String, ResourceAvailabilityEnum> staticFields = new HashMap<String, ResourceAvailabilityEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, ResourceAvailabilityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceAvailabilityEnum> createStaticFields() {
+            Map<String, ResourceAvailabilityEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -82,12 +87,9 @@ public class AvailableZones  {
             if( value == null ){
                 return null;
             }
-            ResourceAvailabilityEnum result = staticFields.get(value);
+            ResourceAvailabilityEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ResourceAvailabilityEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ResourceAvailabilityEnum(value);
             }
             return result;
         }
@@ -96,7 +98,7 @@ public class AvailableZones  {
             if( value == null ){
                 return null;
             }
-            ResourceAvailabilityEnum result = staticFields.get(value);
+            ResourceAvailabilityEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

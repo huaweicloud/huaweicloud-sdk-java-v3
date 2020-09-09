@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +31,7 @@ public class Disk  {
     /**
      * 云服务器数据盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。磁盘类型枚举值：SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。co-pl：高IO (性能优化Ⅰ型)磁盘类型。uh-l1：超高 IO (时延优化)磁盘类型。说明：对于HANA云服务器和HL1型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
      */
-    public static class VolumeTypeEnum {
+    public static final class VolumeTypeEnum {
 
         
         /**
@@ -55,15 +60,17 @@ public class Disk  {
         public static final VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
         
 
-        public static final Map<String, VolumeTypeEnum> staticFields = new HashMap<String, VolumeTypeEnum>() {
-            { 
-                put("SATA", SATA);
-                put("SAS", SAS);
-                put("SSD", SSD);
-                put("co-pl", CO_PL);
-                put("uh-11", UH_11);
-            }
-        };
+        private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VolumeTypeEnum> createStaticFields() {
+            Map<String, VolumeTypeEnum> map = new HashMap<>();
+            map.put("SATA", SATA);
+            map.put("SAS", SAS);
+            map.put("SSD", SSD);
+            map.put("co-pl", CO_PL);
+            map.put("uh-11", UH_11);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -82,12 +89,9 @@ public class Disk  {
             if( value == null ){
                 return null;
             }
-            VolumeTypeEnum result = staticFields.get(value);
+            VolumeTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VolumeTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VolumeTypeEnum(value);
             }
             return result;
         }
@@ -96,7 +100,7 @@ public class Disk  {
             if( value == null ){
                 return null;
             }
-            VolumeTypeEnum result = staticFields.get(value);
+            VolumeTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -125,7 +129,7 @@ public class Disk  {
     /**
      * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
      */
-    public static class DiskTypeEnum {
+    public static final class DiskTypeEnum {
 
         
         /**
@@ -139,12 +143,14 @@ public class Disk  {
         public static final DiskTypeEnum DATA = new DiskTypeEnum("DATA");
         
 
-        public static final Map<String, DiskTypeEnum> staticFields = new HashMap<String, DiskTypeEnum>() {
-            { 
-                put("SYS", SYS);
-                put("DATA", DATA);
-            }
-        };
+        private static final Map<String, DiskTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DiskTypeEnum> createStaticFields() {
+            Map<String, DiskTypeEnum> map = new HashMap<>();
+            map.put("SYS", SYS);
+            map.put("DATA", DATA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -163,12 +169,9 @@ public class Disk  {
             if( value == null ){
                 return null;
             }
-            DiskTypeEnum result = staticFields.get(value);
+            DiskTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DiskTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DiskTypeEnum(value);
             }
             return result;
         }
@@ -177,7 +180,7 @@ public class Disk  {
             if( value == null ){
                 return null;
             }
-            DiskTypeEnum result = staticFields.get(value);
+            DiskTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class UpdateScalingGroupInstanceRequestBody  {
     /**
      * 批量操作实例action标识：添加：ADD  移除： REMOVE  设置实例保护： PROTECT  取消实例保护： UNPROTECT；转入备用状态：ENTER_STANDBY 移出备用状态:EXIT_STANDBY
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -68,16 +71,18 @@ public class UpdateScalingGroupInstanceRequestBody  {
         public static final ActionEnum EXIT_STANDBY = new ActionEnum("EXIT_STANDBY");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("ADD", ADD);
-                put("REMOVE", REMOVE);
-                put("PROTECT", PROTECT);
-                put("UNPROTECT", UNPROTECT);
-                put("ENTER_STANDBY", ENTER_STANDBY);
-                put("EXIT_STANDBY", EXIT_STANDBY);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("ADD", ADD);
+            map.put("REMOVE", REMOVE);
+            map.put("PROTECT", PROTECT);
+            map.put("UNPROTECT", UNPROTECT);
+            map.put("ENTER_STANDBY", ENTER_STANDBY);
+            map.put("EXIT_STANDBY", EXIT_STANDBY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -96,12 +101,9 @@ public class UpdateScalingGroupInstanceRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -110,7 +112,7 @@ public class UpdateScalingGroupInstanceRequestBody  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

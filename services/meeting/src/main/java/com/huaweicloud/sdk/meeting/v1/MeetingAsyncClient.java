@@ -175,6 +175,10 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.inviteParticipant);
     }
 
+    public CompletableFuture<InviteWithPwdResponse> inviteWithPwdAsync(InviteWithPwdRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.inviteWithPwd);
+    }
+
     public CompletableFuture<LiveResponse> liveAsync(LiveRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.live);
     }
@@ -331,6 +335,10 @@ public class MeetingAsyncClient {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.setRole);
     }
 
+    public CompletableFuture<ShowConfOrgResponse> showConfOrgAsync(ShowConfOrgRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showConfOrg);
+    }
+
     public CompletableFuture<ShowCorpResponse> showCorpAsync(ShowCorpRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showCorp);
     }
@@ -405,6 +413,10 @@ public class MeetingAsyncClient {
 
     public CompletableFuture<ShowRegionInfoOfMeetingResponse> showRegionInfoOfMeetingAsync(ShowRegionInfoOfMeetingRequest request) {
         return hcClient.asyncInvokeHttp(request, MeetingMeta.showRegionInfoOfMeeting);
+    }
+
+    public CompletableFuture<ShowSpResResponse> showSpResAsync(ShowSpResRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showSpRes);
     }
 
     public CompletableFuture<ShowUserDetailResponse> showUserDetailAsync(ShowUserDetailRequest request) {

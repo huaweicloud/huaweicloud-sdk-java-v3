@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class DetachServerVolumeRequest  {
     /**
      * Gets or Sets deleteFlag
      */
-    public static class DeleteFlagEnum {
+    public static final class DeleteFlagEnum {
 
         
         /**
@@ -46,12 +49,14 @@ public class DetachServerVolumeRequest  {
         public static final DeleteFlagEnum _1 = new DeleteFlagEnum("1");
         
 
-        public static final Map<String, DeleteFlagEnum> staticFields = new HashMap<String, DeleteFlagEnum>() {
-            { 
-                put("0", _0);
-                put("1", _1);
-            }
-        };
+        private static final Map<String, DeleteFlagEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DeleteFlagEnum> createStaticFields() {
+            Map<String, DeleteFlagEnum> map = new HashMap<>();
+            map.put("0", _0);
+            map.put("1", _1);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class DetachServerVolumeRequest  {
             if( value == null ){
                 return null;
             }
-            DeleteFlagEnum result = staticFields.get(value);
+            DeleteFlagEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DeleteFlagEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DeleteFlagEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class DetachServerVolumeRequest  {
             if( value == null ){
                 return null;
             }
-            DeleteFlagEnum result = staticFields.get(value);
+            DeleteFlagEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

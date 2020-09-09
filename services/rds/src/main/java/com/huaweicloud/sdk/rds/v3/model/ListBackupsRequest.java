@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +41,7 @@ public class ListBackupsRequest  {
     /**
      * Gets or Sets backupType
      */
-    public static class BackupTypeEnum {
+    public static final class BackupTypeEnum {
 
         
         /**
@@ -62,14 +65,16 @@ public class ListBackupsRequest  {
         public static final BackupTypeEnum INCREMENTAL = new BackupTypeEnum("incremental");
         
 
-        public static final Map<String, BackupTypeEnum> staticFields = new HashMap<String, BackupTypeEnum>() {
-            { 
-                put("auto", AUTO);
-                put("manual", MANUAL);
-                put("fragment", FRAGMENT);
-                put("incremental", INCREMENTAL);
-            }
-        };
+        private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BackupTypeEnum> createStaticFields() {
+            Map<String, BackupTypeEnum> map = new HashMap<>();
+            map.put("auto", AUTO);
+            map.put("manual", MANUAL);
+            map.put("fragment", FRAGMENT);
+            map.put("incremental", INCREMENTAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -88,12 +93,9 @@ public class ListBackupsRequest  {
             if( value == null ){
                 return null;
             }
-            BackupTypeEnum result = staticFields.get(value);
+            BackupTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new BackupTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new BackupTypeEnum(value);
             }
             return result;
         }
@@ -102,7 +104,7 @@ public class ListBackupsRequest  {
             if( value == null ){
                 return null;
             }
-            BackupTypeEnum result = staticFields.get(value);
+            BackupTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

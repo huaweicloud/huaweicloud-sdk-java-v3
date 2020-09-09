@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -45,7 +48,7 @@ public class InstanceHangingInfos  {
     /**
      * 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。
      */
-    public static class LifecycleHookStatusEnum {
+    public static final class LifecycleHookStatusEnum {
 
         
         /**
@@ -64,13 +67,15 @@ public class InstanceHangingInfos  {
         public static final LifecycleHookStatusEnum ABANDON = new LifecycleHookStatusEnum("ABANDON");
         
 
-        public static final Map<String, LifecycleHookStatusEnum> staticFields = new HashMap<String, LifecycleHookStatusEnum>() {
-            { 
-                put("HANGING", HANGING);
-                put("CONTINUE", CONTINUE);
-                put("ABANDON", ABANDON);
-            }
-        };
+        private static final Map<String, LifecycleHookStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LifecycleHookStatusEnum> createStaticFields() {
+            Map<String, LifecycleHookStatusEnum> map = new HashMap<>();
+            map.put("HANGING", HANGING);
+            map.put("CONTINUE", CONTINUE);
+            map.put("ABANDON", ABANDON);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -89,12 +94,9 @@ public class InstanceHangingInfos  {
             if( value == null ){
                 return null;
             }
-            LifecycleHookStatusEnum result = staticFields.get(value);
+            LifecycleHookStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LifecycleHookStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LifecycleHookStatusEnum(value);
             }
             return result;
         }
@@ -103,7 +105,7 @@ public class InstanceHangingInfos  {
             if( value == null ){
                 return null;
             }
-            LifecycleHookStatusEnum result = staticFields.get(value);
+            LifecycleHookStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

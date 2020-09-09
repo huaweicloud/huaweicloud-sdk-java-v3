@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +37,7 @@ public class ApiPolicyFunctionResp  {
     /**
      * 调用类型 - async： 异步 - sync：同步
      */
-    public static class InvocationTypeEnum {
+    public static final class InvocationTypeEnum {
 
         
         /**
@@ -46,12 +51,14 @@ public class ApiPolicyFunctionResp  {
         public static final InvocationTypeEnum SYNC = new InvocationTypeEnum("sync");
         
 
-        public static final Map<String, InvocationTypeEnum> staticFields = new HashMap<String, InvocationTypeEnum>() {
-            { 
-                put("async", ASYNC);
-                put("sync", SYNC);
-            }
-        };
+        private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InvocationTypeEnum> createStaticFields() {
+            Map<String, InvocationTypeEnum> map = new HashMap<>();
+            map.put("async", ASYNC);
+            map.put("sync", SYNC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +77,9 @@ public class ApiPolicyFunctionResp  {
             if( value == null ){
                 return null;
             }
-            InvocationTypeEnum result = staticFields.get(value);
+            InvocationTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InvocationTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InvocationTypeEnum(value);
             }
             return result;
         }
@@ -84,7 +88,7 @@ public class ApiPolicyFunctionResp  {
             if( value == null ){
                 return null;
             }
-            InvocationTypeEnum result = staticFields.get(value);
+            InvocationTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -131,7 +135,7 @@ public class ApiPolicyFunctionResp  {
     /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
-    public static class EffectModeEnum {
+    public static final class EffectModeEnum {
 
         
         /**
@@ -145,12 +149,14 @@ public class ApiPolicyFunctionResp  {
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
         
 
-        public static final Map<String, EffectModeEnum> staticFields = new HashMap<String, EffectModeEnum>() {
-            { 
-                put("ALL", ALL);
-                put("ANY", ANY);
-            }
-        };
+        private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EffectModeEnum> createStaticFields() {
+            Map<String, EffectModeEnum> map = new HashMap<>();
+            map.put("ALL", ALL);
+            map.put("ANY", ANY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -169,12 +175,9 @@ public class ApiPolicyFunctionResp  {
             if( value == null ){
                 return null;
             }
-            EffectModeEnum result = staticFields.get(value);
+            EffectModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EffectModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EffectModeEnum(value);
             }
             return result;
         }
@@ -183,7 +186,7 @@ public class ApiPolicyFunctionResp  {
             if( value == null ){
                 return null;
             }
-            EffectModeEnum result = staticFields.get(value);
+            EffectModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

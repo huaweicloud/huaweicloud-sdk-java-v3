@@ -5,6 +5,11 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -46,7 +51,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     /**
      * FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。
      */
-    public static class RuntimeEnum {
+    public static final class RuntimeEnum {
 
         
         /**
@@ -105,21 +110,23 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
         
 
-        public static final Map<String, RuntimeEnum> staticFields = new HashMap<String, RuntimeEnum>() {
-            { 
-                put("Python2.7", PYTHON2_7);
-                put("Python3.6", PYTHON3_6);
-                put("Go1.8", GO1_8);
-                put("Java8", JAVA8);
-                put("Node.js6.10", NODE_JS6_10);
-                put("Node.js8.10", NODE_JS8_10);
-                put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
-                put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
-                put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
-                put("Custom", CUSTOM);
-                put("PHP7.3", PHP7_3);
-            }
-        };
+        private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RuntimeEnum> createStaticFields() {
+            Map<String, RuntimeEnum> map = new HashMap<>();
+            map.put("Python2.7", PYTHON2_7);
+            map.put("Python3.6", PYTHON3_6);
+            map.put("Go1.8", GO1_8);
+            map.put("Java8", JAVA8);
+            map.put("Node.js6.10", NODE_JS6_10);
+            map.put("Node.js8.10", NODE_JS8_10);
+            map.put("C#(.NET Core 2.0)", C_NET_CORE_2_0_);
+            map.put("C#(.NET Core 2.1)", C_NET_CORE_2_1_);
+            map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
+            map.put("Custom", CUSTOM);
+            map.put("PHP7.3", PHP7_3);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -138,12 +145,9 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RuntimeEnum result = staticFields.get(value);
+            RuntimeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RuntimeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RuntimeEnum(value);
             }
             return result;
         }
@@ -152,7 +156,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RuntimeEnum result = staticFields.get(value);
+            RuntimeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -181,7 +185,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
     /**
      * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
      */
-    public static class CodeTypeEnum {
+    public static final class CodeTypeEnum {
 
         
         /**
@@ -205,14 +209,16 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
         
 
-        public static final Map<String, CodeTypeEnum> staticFields = new HashMap<String, CodeTypeEnum>() {
-            { 
-                put("inline", INLINE);
-                put("zip", ZIP);
-                put("obs", OBS);
-                put("jar", JAR);
-            }
-        };
+        private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CodeTypeEnum> createStaticFields() {
+            Map<String, CodeTypeEnum> map = new HashMap<>();
+            map.put("inline", INLINE);
+            map.put("zip", ZIP);
+            map.put("obs", OBS);
+            map.put("jar", JAR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -231,12 +237,9 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            CodeTypeEnum result = staticFields.get(value);
+            CodeTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new CodeTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new CodeTypeEnum(value);
             }
             return result;
         }
@@ -245,7 +248,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            CodeTypeEnum result = staticFields.get(value);
+            CodeTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

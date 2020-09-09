@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.evs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class BssParamForResizeVolume  {
     /**
      * 功能说明：是否立即支付。该参数只有在云硬盘为包周期的情况下有意义。默认值为false 取值范围： * true：立即支付，从帐户余额中自动扣费 * false：不立即支付，创建订单暂不支付 
      */
-    public static class IsAutoPayEnum {
+    public static final class IsAutoPayEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class BssParamForResizeVolume  {
         public static final IsAutoPayEnum TRUE = new IsAutoPayEnum("true");
         
 
-        public static final Map<String, IsAutoPayEnum> staticFields = new HashMap<String, IsAutoPayEnum>() {
-            { 
-                put("false", FALSE);
-                put("true", TRUE);
-            }
-        };
+        private static final Map<String, IsAutoPayEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsAutoPayEnum> createStaticFields() {
+            Map<String, IsAutoPayEnum> map = new HashMap<>();
+            map.put("false", FALSE);
+            map.put("true", TRUE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class BssParamForResizeVolume  {
             if( value == null ){
                 return null;
             }
-            IsAutoPayEnum result = staticFields.get(value);
+            IsAutoPayEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsAutoPayEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsAutoPayEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class BssParamForResizeVolume  {
             if( value == null ){
                 return null;
             }
-            IsAutoPayEnum result = staticFields.get(value);
+            IsAutoPayEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

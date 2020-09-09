@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.eip.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
     /**
      * 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）  取值范围：  prePaid -预付费，即包年包月；  postPaid-后付费，即按需付费；  后付费的场景下，extendParam的其他字段都会被忽略。
      */
-    public static class ChargeModeEnum {
+    public static final class ChargeModeEnum {
 
         
         /**
@@ -34,12 +39,14 @@ public class CreatePrePaidPublicipExtendParamOption  {
         public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
         
 
-        public static final Map<String, ChargeModeEnum> staticFields = new HashMap<String, ChargeModeEnum>() {
-            { 
-                put("prePaid", PREPAID);
-                put("postPaid", POSTPAID);
-            }
-        };
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +65,9 @@ public class CreatePrePaidPublicipExtendParamOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargeModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargeModeEnum(value);
             }
             return result;
         }
@@ -72,7 +76,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
             if( value == null ){
                 return null;
             }
-            ChargeModeEnum result = staticFields.get(value);
+            ChargeModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -101,7 +105,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
     /**
      * 功能说明：订购资源的周期类型（包年、包月等）  取值范围：  month-月  year-年  约束：如果用包周期共享带宽创建时（即携带共享带宽id创建弹性公网IP）此字段可不填。付费方式是预付费且不是使用共享带宽创建IP时，该字段必选；  使用共享带宽创建IP时，带宽资源到期时间与IP的到期时间相同。
      */
-    public static class PeriodTypeEnum {
+    public static final class PeriodTypeEnum {
 
         
         /**
@@ -115,12 +119,14 @@ public class CreatePrePaidPublicipExtendParamOption  {
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
         
 
-        public static final Map<String, PeriodTypeEnum> staticFields = new HashMap<String, PeriodTypeEnum>() {
-            { 
-                put("month", MONTH);
-                put("year", YEAR);
-            }
-        };
+        private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PeriodTypeEnum> createStaticFields() {
+            Map<String, PeriodTypeEnum> map = new HashMap<>();
+            map.put("month", MONTH);
+            map.put("year", YEAR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -139,12 +145,9 @@ public class CreatePrePaidPublicipExtendParamOption  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PeriodTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PeriodTypeEnum(value);
             }
             return result;
         }
@@ -153,7 +156,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

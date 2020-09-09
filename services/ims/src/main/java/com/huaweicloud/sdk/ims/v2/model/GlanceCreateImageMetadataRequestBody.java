@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class GlanceCreateImageMetadataRequestBody  {
     /**
      * 镜像文件格式。目前支持vhd，zvhd、zvhd2、raw，qcow2。默认取值为vhd
      */
-    public static class DiskFormatEnum {
+    public static final class DiskFormatEnum {
 
         
         /**
@@ -63,15 +66,17 @@ public class GlanceCreateImageMetadataRequestBody  {
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
         
 
-        public static final Map<String, DiskFormatEnum> staticFields = new HashMap<String, DiskFormatEnum>() {
-            { 
-                put("vhd", VHD);
-                put("zvhd", ZVHD);
-                put("zvhd2", ZVHD2);
-                put("raw", RAW);
-                put("qcow2", QCOW2);
-            }
-        };
+        private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DiskFormatEnum> createStaticFields() {
+            Map<String, DiskFormatEnum> map = new HashMap<>();
+            map.put("vhd", VHD);
+            map.put("zvhd", ZVHD);
+            map.put("zvhd2", ZVHD2);
+            map.put("raw", RAW);
+            map.put("qcow2", QCOW2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -90,12 +95,9 @@ public class GlanceCreateImageMetadataRequestBody  {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DiskFormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DiskFormatEnum(value);
             }
             return result;
         }
@@ -104,7 +106,7 @@ public class GlanceCreateImageMetadataRequestBody  {
             if( value == null ){
                 return null;
             }
-            DiskFormatEnum result = staticFields.get(value);
+            DiskFormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +25,7 @@ public class Ha  {
     /**
      * 实例主备模式，取值：Ha（主备），不区分大小写。
      */
-    public static class ModeEnum {
+    public static final class ModeEnum {
 
         
         /**
@@ -34,12 +39,14 @@ public class Ha  {
         public static final ModeEnum SINGLE = new ModeEnum("Single");
         
 
-        public static final Map<String, ModeEnum> staticFields = new HashMap<String, ModeEnum>() {
-            { 
-                put("Ha", HA);
-                put("Single", SINGLE);
-            }
-        };
+        private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ModeEnum> createStaticFields() {
+            Map<String, ModeEnum> map = new HashMap<>();
+            map.put("Ha", HA);
+            map.put("Single", SINGLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +65,9 @@ public class Ha  {
             if( value == null ){
                 return null;
             }
-            ModeEnum result = staticFields.get(value);
+            ModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ModeEnum(value);
             }
             return result;
         }
@@ -72,7 +76,7 @@ public class Ha  {
             if( value == null ){
                 return null;
             }
-            ModeEnum result = staticFields.get(value);
+            ModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -101,7 +105,7 @@ public class Ha  {
     /**
      * 备机同步参数。实例主备模式为Ha时有效。 取值： - MySQL为“async”或“semisync”。 - PostgreSQL为“async”或“sync”。 - Microsoft SQL Server为“sync”。
      */
-    public static class ReplicationModeEnum {
+    public static final class ReplicationModeEnum {
 
         
         /**
@@ -120,13 +124,15 @@ public class Ha  {
         public static final ReplicationModeEnum SYNC = new ReplicationModeEnum("sync");
         
 
-        public static final Map<String, ReplicationModeEnum> staticFields = new HashMap<String, ReplicationModeEnum>() {
-            { 
-                put("async", ASYNC);
-                put("semisync", SEMISYNC);
-                put("sync", SYNC);
-            }
-        };
+        private static final Map<String, ReplicationModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReplicationModeEnum> createStaticFields() {
+            Map<String, ReplicationModeEnum> map = new HashMap<>();
+            map.put("async", ASYNC);
+            map.put("semisync", SEMISYNC);
+            map.put("sync", SYNC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +151,9 @@ public class Ha  {
             if( value == null ){
                 return null;
             }
-            ReplicationModeEnum result = staticFields.get(value);
+            ReplicationModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ReplicationModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ReplicationModeEnum(value);
             }
             return result;
         }
@@ -159,7 +162,7 @@ public class Ha  {
             if( value == null ){
                 return null;
             }
-            ReplicationModeEnum result = staticFields.get(value);
+            ReplicationModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

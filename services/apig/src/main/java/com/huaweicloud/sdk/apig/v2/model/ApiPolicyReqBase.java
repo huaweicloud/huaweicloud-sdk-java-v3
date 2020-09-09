@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,7 +27,7 @@ public class ApiPolicyReqBase  {
     /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
-    public static class EffectModeEnum {
+    public static final class EffectModeEnum {
 
         
         /**
@@ -38,12 +41,14 @@ public class ApiPolicyReqBase  {
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
         
 
-        public static final Map<String, EffectModeEnum> staticFields = new HashMap<String, EffectModeEnum>() {
-            { 
-                put("ALL", ALL);
-                put("ANY", ANY);
-            }
-        };
+        private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EffectModeEnum> createStaticFields() {
+            Map<String, EffectModeEnum> map = new HashMap<>();
+            map.put("ALL", ALL);
+            map.put("ANY", ANY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -62,12 +67,9 @@ public class ApiPolicyReqBase  {
             if( value == null ){
                 return null;
             }
-            EffectModeEnum result = staticFields.get(value);
+            EffectModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EffectModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EffectModeEnum(value);
             }
             return result;
         }
@@ -76,7 +78,7 @@ public class ApiPolicyReqBase  {
             if( value == null ){
                 return null;
             }
-            EffectModeEnum result = staticFields.get(value);
+            EffectModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

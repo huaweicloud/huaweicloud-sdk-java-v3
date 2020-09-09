@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -27,7 +34,7 @@ public class ThrottleResp  {
     /**
      * 是否包含特殊流控配置 - 1：包含 - 2：不包含
      */
-    public static class IsIncludeSpecialThrottleEnum {
+    public static final class IsIncludeSpecialThrottleEnum {
 
         
         /**
@@ -41,12 +48,14 @@ public class ThrottleResp  {
         public static final IsIncludeSpecialThrottleEnum NUMBER_2 = new IsIncludeSpecialThrottleEnum(2);
         
 
-        public static final Map<Integer, IsIncludeSpecialThrottleEnum> staticFields = new HashMap<Integer, IsIncludeSpecialThrottleEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, IsIncludeSpecialThrottleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IsIncludeSpecialThrottleEnum> createStaticFields() {
+            Map<Integer, IsIncludeSpecialThrottleEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -65,12 +74,9 @@ public class ThrottleResp  {
             if( value == null ){
                 return null;
             }
-            IsIncludeSpecialThrottleEnum result = staticFields.get(value);
+            IsIncludeSpecialThrottleEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsIncludeSpecialThrottleEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsIncludeSpecialThrottleEnum(value);
             }
             return result;
         }
@@ -79,7 +85,7 @@ public class ThrottleResp  {
             if( value == null ){
                 return null;
             }
-            IsIncludeSpecialThrottleEnum result = staticFields.get(value);
+            IsIncludeSpecialThrottleEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -120,7 +126,7 @@ public class ThrottleResp  {
     /**
      * 流控策略的类型 - 1：独享，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -134,12 +140,14 @@ public class ThrottleResp  {
         public static final TypeEnum NUMBER_2 = new TypeEnum(2);
         
 
-        public static final Map<Integer, TypeEnum> staticFields = new HashMap<Integer, TypeEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -158,12 +166,9 @@ public class ThrottleResp  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -172,7 +177,7 @@ public class ThrottleResp  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -225,7 +230,7 @@ public class ThrottleResp  {
     /**
      * 流控的时间单位
      */
-    public static class TimeUnitEnum {
+    public static final class TimeUnitEnum {
 
         
         /**
@@ -249,14 +254,16 @@ public class ThrottleResp  {
         public static final TimeUnitEnum DAY = new TimeUnitEnum("DAY");
         
 
-        public static final Map<String, TimeUnitEnum> staticFields = new HashMap<String, TimeUnitEnum>() {
-            { 
-                put("SECOND", SECOND);
-                put("MINUTE", MINUTE);
-                put("HOUR", HOUR);
-                put("DAY", DAY);
-            }
-        };
+        private static final Map<String, TimeUnitEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TimeUnitEnum> createStaticFields() {
+            Map<String, TimeUnitEnum> map = new HashMap<>();
+            map.put("SECOND", SECOND);
+            map.put("MINUTE", MINUTE);
+            map.put("HOUR", HOUR);
+            map.put("DAY", DAY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -275,12 +282,9 @@ public class ThrottleResp  {
             if( value == null ){
                 return null;
             }
-            TimeUnitEnum result = staticFields.get(value);
+            TimeUnitEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TimeUnitEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TimeUnitEnum(value);
             }
             return result;
         }
@@ -289,7 +293,7 @@ public class ThrottleResp  {
             if( value == null ){
                 return null;
             }
-            TimeUnitEnum result = staticFields.get(value);
+            TimeUnitEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

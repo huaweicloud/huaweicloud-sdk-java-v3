@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.functiongraph.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class ShowFunctionTriggerRequest  {
     /**
      * Gets or Sets triggerTypeCode
      */
-    public static class TriggerTypeCodeEnum {
+    public static final class TriggerTypeCodeEnum {
 
         
         /**
@@ -80,20 +83,22 @@ public class ShowFunctionTriggerRequest  {
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
         
 
-        public static final Map<String, TriggerTypeCodeEnum> staticFields = new HashMap<String, TriggerTypeCodeEnum>() {
-            { 
-                put("TIMER", TIMER);
-                put("APIG", APIG);
-                put("CTS", CTS);
-                put("DDS", DDS);
-                put("DMS", DMS);
-                put("DIS", DIS);
-                put("LTS", LTS);
-                put("OBS", OBS);
-                put("SMN", SMN);
-                put("KAFKA", KAFKA);
-            }
-        };
+        private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TriggerTypeCodeEnum> createStaticFields() {
+            Map<String, TriggerTypeCodeEnum> map = new HashMap<>();
+            map.put("TIMER", TIMER);
+            map.put("APIG", APIG);
+            map.put("CTS", CTS);
+            map.put("DDS", DDS);
+            map.put("DMS", DMS);
+            map.put("DIS", DIS);
+            map.put("LTS", LTS);
+            map.put("OBS", OBS);
+            map.put("SMN", SMN);
+            map.put("KAFKA", KAFKA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -112,12 +117,9 @@ public class ShowFunctionTriggerRequest  {
             if( value == null ){
                 return null;
             }
-            TriggerTypeCodeEnum result = staticFields.get(value);
+            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TriggerTypeCodeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TriggerTypeCodeEnum(value);
             }
             return result;
         }
@@ -126,7 +128,7 @@ public class ShowFunctionTriggerRequest  {
             if( value == null ){
                 return null;
             }
-            TriggerTypeCodeEnum result = staticFields.get(value);
+            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

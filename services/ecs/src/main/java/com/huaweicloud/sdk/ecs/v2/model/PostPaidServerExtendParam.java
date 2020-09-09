@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -68,7 +71,7 @@ public class PostPaidServerExtendParam  {
     /**
      * 竞价实例中断策略，当前支持immediate。  - 当interruption_policy=immediate时表示释放策略为立即释放。 
      */
-    public static class InterruptionPolicyEnum {
+    public static final class InterruptionPolicyEnum {
 
         
         /**
@@ -77,11 +80,13 @@ public class PostPaidServerExtendParam  {
         public static final InterruptionPolicyEnum IMMEDIATE = new InterruptionPolicyEnum("immediate");
         
 
-        public static final Map<String, InterruptionPolicyEnum> staticFields = new HashMap<String, InterruptionPolicyEnum>() {
-            { 
-                put("immediate", IMMEDIATE);
-            }
-        };
+        private static final Map<String, InterruptionPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InterruptionPolicyEnum> createStaticFields() {
+            Map<String, InterruptionPolicyEnum> map = new HashMap<>();
+            map.put("immediate", IMMEDIATE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -100,12 +105,9 @@ public class PostPaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            InterruptionPolicyEnum result = staticFields.get(value);
+            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InterruptionPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InterruptionPolicyEnum(value);
             }
             return result;
         }
@@ -114,7 +116,7 @@ public class PostPaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            InterruptionPolicyEnum result = staticFields.get(value);
+            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

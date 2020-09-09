@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class ThrottleSpecialReq  {
     /**
      * 特殊对象类型
      */
-    public static class ObjectTypeEnum {
+    public static final class ObjectTypeEnum {
 
         
         /**
@@ -46,12 +49,14 @@ public class ThrottleSpecialReq  {
         public static final ObjectTypeEnum USER = new ObjectTypeEnum("USER");
         
 
-        public static final Map<String, ObjectTypeEnum> staticFields = new HashMap<String, ObjectTypeEnum>() {
-            { 
-                put("APP", APP);
-                put("USER", USER);
-            }
-        };
+        private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ObjectTypeEnum> createStaticFields() {
+            Map<String, ObjectTypeEnum> map = new HashMap<>();
+            map.put("APP", APP);
+            map.put("USER", USER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class ThrottleSpecialReq  {
             if( value == null ){
                 return null;
             }
-            ObjectTypeEnum result = staticFields.get(value);
+            ObjectTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ObjectTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ObjectTypeEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class ThrottleSpecialReq  {
             if( value == null ){
                 return null;
             }
-            ObjectTypeEnum result = staticFields.get(value);
+            ObjectTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class UpdateProjectOption  {
     /**
      * 项目的状态信息，参数的值为\"suspended\"或\"normal\"。   - status值为\"suspended\"时，会将项目设置为冻结状态。   - status值为\"normal\"时，会将项目设置为正常（解冻）状态。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class UpdateProjectOption  {
         public static final StatusEnum NORMAL = new StatusEnum("normal");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("suspended", SUSPENDED);
-                put("normal", NORMAL);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("suspended", SUSPENDED);
+            map.put("normal", NORMAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class UpdateProjectOption  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class UpdateProjectOption  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

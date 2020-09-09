@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,15 +45,17 @@ public class InstanceActionType {
     public static final InstanceActionType ROLLBACK = new InstanceActionType("rollback");
     
 
-    public static final Map<String, InstanceActionType> staticFields = new HashMap<String, InstanceActionType>() {
-        { 
-            put("start", START);
-            put("stop", STOP);
-            put("restart", RESTART);
-            put("scale", SCALE);
-            put("rollback", ROLLBACK);
-        }
-    };
+    private static final Map<String, InstanceActionType> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, InstanceActionType> createStaticFields() {
+        Map<String, InstanceActionType> map = new HashMap<>();
+        map.put("start", START);
+        map.put("stop", STOP);
+        map.put("restart", RESTART);
+        map.put("scale", SCALE);
+        map.put("rollback", ROLLBACK);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -70,12 +74,9 @@ public class InstanceActionType {
         if( value == null ){
             return null;
         }
-        InstanceActionType result = staticFields.get(value);
+        InstanceActionType result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new InstanceActionType(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new InstanceActionType(value);
         }
         return result;
     }
@@ -84,7 +85,7 @@ public class InstanceActionType {
         if( value == null ){
             return null;
         }
-        InstanceActionType result = staticFields.get(value);
+        InstanceActionType result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

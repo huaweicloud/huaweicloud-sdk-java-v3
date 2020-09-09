@@ -446,6 +446,17 @@ public class MeetingClient {
     }
 
     /**
+     * 通过会议ID和密码邀请与会者
+     * 通过会议ID和密码邀请与会者
+     *
+     * @param InviteWithPwdRequest 请求对象
+     * @return InviteWithPwdResponse
+    */
+    public InviteWithPwdResponse inviteWithPwd(InviteWithPwdRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.inviteWithPwd);
+    }
+
+    /**
      * 启停会议直播
      * 启动或停止会议直播。
      *
@@ -875,6 +886,17 @@ public class MeetingClient {
     }
 
     /**
+     * 通过会议ID查询企业ID
+     * 与某个会议在同一个SP下的用户，可以通过会议ID查询到该会议对应的企业ID。
+     *
+     * @param ShowConfOrgRequest 请求对象
+     * @return ShowConfOrgResponse
+    */
+    public ShowConfOrgResponse showConfOrg(ShowConfOrgRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showConfOrg);
+    }
+
+    /**
      * SP管理员查询企业
      * 获取企业
      *
@@ -1081,6 +1103,17 @@ public class MeetingClient {
     */
     public ShowRegionInfoOfMeetingResponse showRegionInfoOfMeeting(ShowRegionInfoOfMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showRegionInfoOfMeeting);
+    }
+
+    /**
+     * 查询SP的共享资源使用信息
+     * SP管理查询所属SP的共享资源使用信息
+     *
+     * @param ShowSpResRequest 请求对象
+     * @return ShowSpResResponse
+    */
+    public ShowSpResResponse showSpRes(ShowSpResRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showSpRes);
     }
 
     /**

@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,7 +31,7 @@ public class UpdatePasswordResponse extends SdkResponse {
     /**
      * 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。 
      */
-    public static class ResultEnum {
+    public static final class ResultEnum {
 
         
         /**
@@ -52,14 +55,16 @@ public class UpdatePasswordResponse extends SdkResponse {
         public static final ResultEnum FAILED = new ResultEnum("failed");
         
 
-        public static final Map<String, ResultEnum> staticFields = new HashMap<String, ResultEnum>() {
-            { 
-                put("success", SUCCESS);
-                put("passwordFailed", PASSWORDFAILED);
-                put("locked", LOCKED);
-                put("failed", FAILED);
-            }
-        };
+        private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResultEnum> createStaticFields() {
+            Map<String, ResultEnum> map = new HashMap<>();
+            map.put("success", SUCCESS);
+            map.put("passwordFailed", PASSWORDFAILED);
+            map.put("locked", LOCKED);
+            map.put("failed", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -78,12 +83,9 @@ public class UpdatePasswordResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            ResultEnum result = staticFields.get(value);
+            ResultEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ResultEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ResultEnum(value);
             }
             return result;
         }
@@ -92,7 +94,7 @@ public class UpdatePasswordResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            ResultEnum result = staticFields.get(value);
+            ResultEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

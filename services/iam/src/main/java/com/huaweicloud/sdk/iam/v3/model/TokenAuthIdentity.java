@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,7 +27,7 @@ public class TokenAuthIdentity  {
     /**
      * Gets or Sets methods
      */
-    public static class MethodsEnum {
+    public static final class MethodsEnum {
 
         
         /**
@@ -33,11 +36,13 @@ public class TokenAuthIdentity  {
         public static final MethodsEnum TOKEN = new MethodsEnum("token");
         
 
-        public static final Map<String, MethodsEnum> staticFields = new HashMap<String, MethodsEnum>() {
-            { 
-                put("token", TOKEN);
-            }
-        };
+        private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MethodsEnum> createStaticFields() {
+            Map<String, MethodsEnum> map = new HashMap<>();
+            map.put("token", TOKEN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -56,12 +61,9 @@ public class TokenAuthIdentity  {
             if( value == null ){
                 return null;
             }
-            MethodsEnum result = staticFields.get(value);
+            MethodsEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MethodsEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MethodsEnum(value);
             }
             return result;
         }
@@ -70,7 +72,7 @@ public class TokenAuthIdentity  {
             if( value == null ){
                 return null;
             }
-            MethodsEnum result = staticFields.get(value);
+            MethodsEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

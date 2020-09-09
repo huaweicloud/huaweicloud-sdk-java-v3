@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -74,7 +77,7 @@ public class CorpBasicDTO  {
     /**
      * 企业提示音语言设置,zh-CN或en-US
      */
-    public static class LanguageEnum {
+    public static final class LanguageEnum {
 
         
         /**
@@ -88,12 +91,14 @@ public class CorpBasicDTO  {
         public static final LanguageEnum EN_US = new LanguageEnum("en-US");
         
 
-        public static final Map<String, LanguageEnum> staticFields = new HashMap<String, LanguageEnum>() {
-            { 
-                put("zh-CN", ZH_CN);
-                put("en-US", EN_US);
-            }
-        };
+        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LanguageEnum> createStaticFields() {
+            Map<String, LanguageEnum> map = new HashMap<>();
+            map.put("zh-CN", ZH_CN);
+            map.put("en-US", EN_US);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -112,12 +117,9 @@ public class CorpBasicDTO  {
             if( value == null ){
                 return null;
             }
-            LanguageEnum result = staticFields.get(value);
+            LanguageEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LanguageEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LanguageEnum(value);
             }
             return result;
         }
@@ -126,7 +128,7 @@ public class CorpBasicDTO  {
             if( value == null ){
                 return null;
             }
-            LanguageEnum result = staticFields.get(value);
+            LanguageEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -44,7 +47,7 @@ public class ListFlavorsRequest  {
     /**
      * Gets or Sets cpuType
      */
-    public static class CpuTypeEnum {
+    public static final class CpuTypeEnum {
 
         
         /**
@@ -58,12 +61,14 @@ public class ListFlavorsRequest  {
         public static final CpuTypeEnum AARCH64 = new CpuTypeEnum("aarch64");
         
 
-        public static final Map<String, CpuTypeEnum> staticFields = new HashMap<String, CpuTypeEnum>() {
-            { 
-                put("X86_64", X86_64);
-                put("aarch64", AARCH64);
-            }
-        };
+        private static final Map<String, CpuTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CpuTypeEnum> createStaticFields() {
+            Map<String, CpuTypeEnum> map = new HashMap<>();
+            map.put("X86_64", X86_64);
+            map.put("aarch64", AARCH64);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -82,12 +87,9 @@ public class ListFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            CpuTypeEnum result = staticFields.get(value);
+            CpuTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new CpuTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new CpuTypeEnum(value);
             }
             return result;
         }
@@ -96,7 +98,7 @@ public class ListFlavorsRequest  {
             if( value == null ){
                 return null;
             }
-            CpuTypeEnum result = staticFields.get(value);
+            CpuTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

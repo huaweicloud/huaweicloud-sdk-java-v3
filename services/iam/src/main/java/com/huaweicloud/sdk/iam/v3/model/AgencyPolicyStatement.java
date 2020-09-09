@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +28,7 @@ public class AgencyPolicyStatement  {
     /**
      * Gets or Sets action
      */
-    public static class ActionEnum {
+    public static final class ActionEnum {
 
         
         /**
@@ -32,11 +37,13 @@ public class AgencyPolicyStatement  {
         public static final ActionEnum IAM_AGENCIES_ASSUME = new ActionEnum("iam:agencies:assume");
         
 
-        public static final Map<String, ActionEnum> staticFields = new HashMap<String, ActionEnum>() {
-            { 
-                put("iam:agencies:assume", IAM_AGENCIES_ASSUME);
-            }
-        };
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("iam:agencies:assume", IAM_AGENCIES_ASSUME);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -55,12 +62,9 @@ public class AgencyPolicyStatement  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ActionEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ActionEnum(value);
             }
             return result;
         }
@@ -69,7 +73,7 @@ public class AgencyPolicyStatement  {
             if( value == null ){
                 return null;
             }
-            ActionEnum result = staticFields.get(value);
+            ActionEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -98,7 +102,7 @@ public class AgencyPolicyStatement  {
         /**
      * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
      */
-    public static class EffectEnum {
+    public static final class EffectEnum {
 
         
         /**
@@ -112,12 +116,14 @@ public class AgencyPolicyStatement  {
         public static final EffectEnum DENY = new EffectEnum("Deny");
         
 
-        public static final Map<String, EffectEnum> staticFields = new HashMap<String, EffectEnum>() {
-            { 
-                put("Allow", ALLOW);
-                put("Deny", DENY);
-            }
-        };
+        private static final Map<String, EffectEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EffectEnum> createStaticFields() {
+            Map<String, EffectEnum> map = new HashMap<>();
+            map.put("Allow", ALLOW);
+            map.put("Deny", DENY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -136,12 +142,9 @@ public class AgencyPolicyStatement  {
             if( value == null ){
                 return null;
             }
-            EffectEnum result = staticFields.get(value);
+            EffectEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EffectEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EffectEnum(value);
             }
             return result;
         }
@@ -150,7 +153,7 @@ public class AgencyPolicyStatement  {
             if( value == null ){
                 return null;
             }
-            EffectEnum result = staticFields.get(value);
+            EffectEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -5,6 +5,9 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +26,7 @@ public class ShowJobResponse extends SdkResponse {
     /**
      * 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -47,14 +50,16 @@ public class ShowJobResponse extends SdkResponse {
         public static final StatusEnum INIT = new StatusEnum("INIT");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("SUCCESS", SUCCESS);
-                put("FAIL", FAIL);
-                put("RUNNING", RUNNING);
-                put("INIT", INIT);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("SUCCESS", SUCCESS);
+            map.put("FAIL", FAIL);
+            map.put("RUNNING", RUNNING);
+            map.put("INIT", INIT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -73,12 +78,9 @@ public class ShowJobResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -87,7 +89,7 @@ public class ShowJobResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class DigitalWatermark  {
     /**
      * 数字水印属性。 - ROBUST：水印鲁棒性最高 - MEDIUM：水印鲁棒性和视频质量折中(默认，暂时只支持该选项) - QUALITY：视频质量最好 - MEZZ：具有最高感官质量的水印 - CAMCORDING：最强大的水印配置文件，支持摄录攻击 
      */
-    public static class ProfileEnum {
+    public static final class ProfileEnum {
 
         
         /**
@@ -49,15 +52,17 @@ public class DigitalWatermark  {
         public static final ProfileEnum CAMCORDING = new ProfileEnum("CAMCORDING");
         
 
-        public static final Map<String, ProfileEnum> staticFields = new HashMap<String, ProfileEnum>() {
-            { 
-                put("ROBUST", ROBUST);
-                put("MEDIUM", MEDIUM);
-                put("QUALITY", QUALITY);
-                put("MEZZ", MEZZ);
-                put("CAMCORDING", CAMCORDING);
-            }
-        };
+        private static final Map<String, ProfileEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProfileEnum> createStaticFields() {
+            Map<String, ProfileEnum> map = new HashMap<>();
+            map.put("ROBUST", ROBUST);
+            map.put("MEDIUM", MEDIUM);
+            map.put("QUALITY", QUALITY);
+            map.put("MEZZ", MEZZ);
+            map.put("CAMCORDING", CAMCORDING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class DigitalWatermark  {
             if( value == null ){
                 return null;
             }
-            ProfileEnum result = staticFields.get(value);
+            ProfileEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ProfileEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ProfileEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class DigitalWatermark  {
             if( value == null ){
                 return null;
             }
-            ProfileEnum result = staticFields.get(value);
+            ProfileEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

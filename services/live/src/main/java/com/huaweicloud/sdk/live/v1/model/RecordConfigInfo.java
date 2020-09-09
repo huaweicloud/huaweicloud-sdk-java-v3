@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.live.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -39,7 +46,7 @@ public class RecordConfigInfo  {
     /**
      * 录制格式flv，hls，mp4，默认flv（目前仅支持flv）
      */
-    public static class RecordFormatEnum {
+    public static final class RecordFormatEnum {
 
         
         /**
@@ -58,13 +65,15 @@ public class RecordConfigInfo  {
         public static final RecordFormatEnum MP4 = new RecordFormatEnum("mp4");
         
 
-        public static final Map<String, RecordFormatEnum> staticFields = new HashMap<String, RecordFormatEnum>() {
-            { 
-                put("flv", FLV);
-                put("hls", HLS);
-                put("mp4", MP4);
-            }
-        };
+        private static final Map<String, RecordFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RecordFormatEnum> createStaticFields() {
+            Map<String, RecordFormatEnum> map = new HashMap<>();
+            map.put("flv", FLV);
+            map.put("hls", HLS);
+            map.put("mp4", MP4);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -83,12 +92,9 @@ public class RecordConfigInfo  {
             if( value == null ){
                 return null;
             }
-            RecordFormatEnum result = staticFields.get(value);
+            RecordFormatEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RecordFormatEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RecordFormatEnum(value);
             }
             return result;
         }
@@ -97,7 +103,7 @@ public class RecordConfigInfo  {
             if( value == null ){
                 return null;
             }
-            RecordFormatEnum result = staticFields.get(value);
+            RecordFormatEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -126,7 +132,7 @@ public class RecordConfigInfo  {
     /**
      * 录制类型，configer_record，默认configer_record。表示录制配置好后，只要有流就录制
      */
-    public static class RecordTypeEnum {
+    public static final class RecordTypeEnum {
 
         
         /**
@@ -135,11 +141,13 @@ public class RecordConfigInfo  {
         public static final RecordTypeEnum CONFIGER_RECORD = new RecordTypeEnum("configer_record");
         
 
-        public static final Map<String, RecordTypeEnum> staticFields = new HashMap<String, RecordTypeEnum>() {
-            { 
-                put("configer_record", CONFIGER_RECORD);
-            }
-        };
+        private static final Map<String, RecordTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RecordTypeEnum> createStaticFields() {
+            Map<String, RecordTypeEnum> map = new HashMap<>();
+            map.put("configer_record", CONFIGER_RECORD);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -158,12 +166,9 @@ public class RecordConfigInfo  {
             if( value == null ){
                 return null;
             }
-            RecordTypeEnum result = staticFields.get(value);
+            RecordTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RecordTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RecordTypeEnum(value);
             }
             return result;
         }
@@ -172,7 +177,7 @@ public class RecordConfigInfo  {
             if( value == null ){
                 return null;
             }
-            RecordTypeEnum result = staticFields.get(value);
+            RecordTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -201,7 +206,7 @@ public class RecordConfigInfo  {
     /**
      * 录制位置vod， 默认vod（目前暂只支持vod）
      */
-    public static class RecordLocationEnum {
+    public static final class RecordLocationEnum {
 
         
         /**
@@ -215,12 +220,14 @@ public class RecordConfigInfo  {
         public static final RecordLocationEnum OBS = new RecordLocationEnum("obs");
         
 
-        public static final Map<String, RecordLocationEnum> staticFields = new HashMap<String, RecordLocationEnum>() {
-            { 
-                put("vod", VOD);
-                put("obs", OBS);
-            }
-        };
+        private static final Map<String, RecordLocationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RecordLocationEnum> createStaticFields() {
+            Map<String, RecordLocationEnum> map = new HashMap<>();
+            map.put("vod", VOD);
+            map.put("obs", OBS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -239,12 +246,9 @@ public class RecordConfigInfo  {
             if( value == null ){
                 return null;
             }
-            RecordLocationEnum result = staticFields.get(value);
+            RecordLocationEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RecordLocationEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RecordLocationEnum(value);
             }
             return result;
         }
@@ -253,7 +257,7 @@ public class RecordConfigInfo  {
             if( value == null ){
                 return null;
             }
-            RecordLocationEnum result = staticFields.get(value);
+            RecordLocationEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

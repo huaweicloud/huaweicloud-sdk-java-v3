@@ -103,6 +103,10 @@ public class KafkaAsyncClient {
         return hcClient.asyncInvokeHttp(request, KafkaMeta.resizeInstance);
     }
 
+    public CompletableFuture<RestartManagerResponse> restartManagerAsync(RestartManagerRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.restartManager);
+    }
+
     public CompletableFuture<ShowBackgroundTaskResponse> showBackgroundTaskAsync(ShowBackgroundTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, KafkaMeta.showBackgroundTask);
     }
@@ -179,8 +183,8 @@ public class KafkaAsyncClient {
         return hcClient.asyncInvokeHttp(request, KafkaMeta.updateInstanceCrossVPCIP);
     }
 
-    public CompletableFuture<UpdateInstaneTopicResponse> updateInstaneTopicAsync(UpdateInstaneTopicRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateInstaneTopic);
+    public CompletableFuture<UpdateInstanceTopicResponse> updateInstanceTopicAsync(UpdateInstanceTopicRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateInstanceTopic);
     }
 
     public CompletableFuture<UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaAsync(UpdateSinkTaskQuotaRequest request) {

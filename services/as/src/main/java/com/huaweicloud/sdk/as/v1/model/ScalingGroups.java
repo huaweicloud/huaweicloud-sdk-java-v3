@@ -3,6 +3,15 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -38,7 +47,7 @@ public class ScalingGroups  {
     /**
      * 伸缩组状态。
      */
-    public static class ScalingGroupStatusEnum {
+    public static final class ScalingGroupStatusEnum {
 
         
         /**
@@ -67,15 +76,17 @@ public class ScalingGroups  {
         public static final ScalingGroupStatusEnum FREEZED = new ScalingGroupStatusEnum("FREEZED");
         
 
-        public static final Map<String, ScalingGroupStatusEnum> staticFields = new HashMap<String, ScalingGroupStatusEnum>() {
-            { 
-                put("INSERVICE", INSERVICE);
-                put("PAUSED", PAUSED);
-                put("ERROR", ERROR);
-                put("DELETING", DELETING);
-                put("FREEZED", FREEZED);
-            }
-        };
+        private static final Map<String, ScalingGroupStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ScalingGroupStatusEnum> createStaticFields() {
+            Map<String, ScalingGroupStatusEnum> map = new HashMap<>();
+            map.put("INSERVICE", INSERVICE);
+            map.put("PAUSED", PAUSED);
+            map.put("ERROR", ERROR);
+            map.put("DELETING", DELETING);
+            map.put("FREEZED", FREEZED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -94,12 +105,9 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            ScalingGroupStatusEnum result = staticFields.get(value);
+            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ScalingGroupStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ScalingGroupStatusEnum(value);
             }
             return result;
         }
@@ -108,7 +116,7 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            ScalingGroupStatusEnum result = staticFields.get(value);
+            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -233,7 +241,7 @@ public class ScalingGroups  {
     /**
      * 健康检查方式。
      */
-    public static class HealthPeriodicAuditMethodEnum {
+    public static final class HealthPeriodicAuditMethodEnum {
 
         
         /**
@@ -247,12 +255,14 @@ public class ScalingGroups  {
         public static final HealthPeriodicAuditMethodEnum NOVA_AUDIT = new HealthPeriodicAuditMethodEnum("NOVA_AUDIT");
         
 
-        public static final Map<String, HealthPeriodicAuditMethodEnum> staticFields = new HashMap<String, HealthPeriodicAuditMethodEnum>() {
-            { 
-                put("ELB_AUDIT", ELB_AUDIT);
-                put("NOVA_AUDIT", NOVA_AUDIT);
-            }
-        };
+        private static final Map<String, HealthPeriodicAuditMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HealthPeriodicAuditMethodEnum> createStaticFields() {
+            Map<String, HealthPeriodicAuditMethodEnum> map = new HashMap<>();
+            map.put("ELB_AUDIT", ELB_AUDIT);
+            map.put("NOVA_AUDIT", NOVA_AUDIT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -271,12 +281,9 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = staticFields.get(value);
+            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HealthPeriodicAuditMethodEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HealthPeriodicAuditMethodEnum(value);
             }
             return result;
         }
@@ -285,7 +292,7 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = staticFields.get(value);
+            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -314,7 +321,7 @@ public class ScalingGroups  {
     /**
      * 健康检查的间隔时间。
      */
-    public static class HealthPeriodicAuditTimeEnum {
+    public static final class HealthPeriodicAuditTimeEnum {
 
         
         /**
@@ -348,16 +355,18 @@ public class ScalingGroups  {
         public static final HealthPeriodicAuditTimeEnum NUMBER_180 = new HealthPeriodicAuditTimeEnum(180);
         
 
-        public static final Map<Integer, HealthPeriodicAuditTimeEnum> staticFields = new HashMap<Integer, HealthPeriodicAuditTimeEnum>() {
-            { 
-                put(0, NUMBER_0);
-                put(1, NUMBER_1);
-                put(5, NUMBER_5);
-                put(15, NUMBER_15);
-                put(60, NUMBER_60);
-                put(180, NUMBER_180);
-            }
-        };
+        private static final Map<Integer, HealthPeriodicAuditTimeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, HealthPeriodicAuditTimeEnum> createStaticFields() {
+            Map<Integer, HealthPeriodicAuditTimeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(5, NUMBER_5);
+            map.put(15, NUMBER_15);
+            map.put(60, NUMBER_60);
+            map.put(180, NUMBER_180);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -376,12 +385,9 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditTimeEnum result = staticFields.get(value);
+            HealthPeriodicAuditTimeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HealthPeriodicAuditTimeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HealthPeriodicAuditTimeEnum(value);
             }
             return result;
         }
@@ -390,7 +396,7 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditTimeEnum result = staticFields.get(value);
+            HealthPeriodicAuditTimeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -425,7 +431,7 @@ public class ScalingGroups  {
     /**
      * 移除策略。
      */
-    public static class InstanceTerminatePolicyEnum {
+    public static final class InstanceTerminatePolicyEnum {
 
         
         /**
@@ -449,14 +455,16 @@ public class ScalingGroups  {
         public static final InstanceTerminatePolicyEnum NEW_INSTANCE = new InstanceTerminatePolicyEnum("NEW_INSTANCE");
         
 
-        public static final Map<String, InstanceTerminatePolicyEnum> staticFields = new HashMap<String, InstanceTerminatePolicyEnum>() {
-            { 
-                put("OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE);
-                put("OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE);
-                put("OLD_INSTANCE", OLD_INSTANCE);
-                put("NEW_INSTANCE", NEW_INSTANCE);
-            }
-        };
+        private static final Map<String, InstanceTerminatePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InstanceTerminatePolicyEnum> createStaticFields() {
+            Map<String, InstanceTerminatePolicyEnum> map = new HashMap<>();
+            map.put("OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE);
+            map.put("OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE);
+            map.put("OLD_INSTANCE", OLD_INSTANCE);
+            map.put("NEW_INSTANCE", NEW_INSTANCE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -475,12 +483,9 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            InstanceTerminatePolicyEnum result = staticFields.get(value);
+            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InstanceTerminatePolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InstanceTerminatePolicyEnum(value);
             }
             return result;
         }
@@ -489,7 +494,7 @@ public class ScalingGroups  {
             if( value == null ){
                 return null;
             }
-            InstanceTerminatePolicyEnum result = staticFields.get(value);
+            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

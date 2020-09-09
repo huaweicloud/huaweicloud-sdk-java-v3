@@ -6,12 +6,13 @@ import com.huaweicloud.sdk.core.utils.JsonUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TestEnumClass {
 
-    public static class VolumetypeEnum {
+    public static final class VolumetypeEnum {
 
         public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
 
@@ -21,14 +22,15 @@ public class TestEnumClass {
 
         private String value;
 
-        public static Map<String, VolumetypeEnum> staticFields =
-            new HashMap<String, VolumetypeEnum>() {
-                {
-                    put("SATA", SATA);
-                    put("SAS", SAS);
-                    put("SSD", SSD);
-                }
-            };
+        private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VolumetypeEnum> createStaticFields() {
+            Map<String, VolumetypeEnum> map = new HashMap<>();
+            map.put("SATA", SATA);
+            map.put("SAS", SAS);
+            map.put("SSD", SSD);
+            return Collections.unmodifiableMap(map);
+        }
 
         VolumetypeEnum(String value) {
             this.value = value;
@@ -46,12 +48,9 @@ public class TestEnumClass {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = staticFields.get(value);
+            VolumetypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VolumetypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result =  new VolumetypeEnum(value);
             }
             return result;
         }
@@ -60,7 +59,7 @@ public class TestEnumClass {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = staticFields.get(value);
+            VolumetypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -113,8 +112,6 @@ public class TestEnumClass {
         System.out.println(enumClassC.getVolumetypeEnum());
         Assert.assertEquals(atype, enumClassA.getVolumetypeEnum());
         Assert.assertEquals(btype, enumClassB.getVolumetypeEnum());
-        Assert.assertEquals(btype == enumClassB.getVolumetypeEnum(), true);
-        Assert.assertEquals(atype == enumClassA.getVolumetypeEnum(), true);
         Assert.assertEquals(atype.hashCode(), "SATA".hashCode());
     }
 

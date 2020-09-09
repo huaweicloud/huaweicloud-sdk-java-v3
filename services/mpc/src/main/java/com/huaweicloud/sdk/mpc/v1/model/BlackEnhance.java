@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class BlackEnhance  {
     /**
      * 提前反馈“疑似黑边”开关，取值为on或off。 
      */
-    public static class EarlyReportEnum {
+    public static final class EarlyReportEnum {
 
         
         /**
@@ -34,12 +37,14 @@ public class BlackEnhance  {
         public static final EarlyReportEnum OFF = new EarlyReportEnum("off");
         
 
-        public static final Map<String, EarlyReportEnum> staticFields = new HashMap<String, EarlyReportEnum>() {
-            { 
-                put("on", ON);
-                put("off", OFF);
-            }
-        };
+        private static final Map<String, EarlyReportEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EarlyReportEnum> createStaticFields() {
+            Map<String, EarlyReportEnum> map = new HashMap<>();
+            map.put("on", ON);
+            map.put("off", OFF);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +63,9 @@ public class BlackEnhance  {
             if( value == null ){
                 return null;
             }
-            EarlyReportEnum result = staticFields.get(value);
+            EarlyReportEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EarlyReportEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EarlyReportEnum(value);
             }
             return result;
         }
@@ -72,7 +74,7 @@ public class BlackEnhance  {
             if( value == null ){
                 return null;
             }
-            EarlyReportEnum result = staticFields.get(value);
+            EarlyReportEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.kms.v1.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +35,7 @@ public class CreateKeyRequestBody  {
     /**
      * 密钥来源，默认为“kms”，枚举如下： - kms：表示密钥材料由kms生成。 - external：表示密钥材料由外部导入。
      */
-    public static class OriginEnum {
+    public static final class OriginEnum {
 
         
         /**
@@ -46,12 +49,14 @@ public class CreateKeyRequestBody  {
         public static final OriginEnum EXTERNAL = new OriginEnum("external");
         
 
-        public static final Map<String, OriginEnum> staticFields = new HashMap<String, OriginEnum>() {
-            { 
-                put("kms", KMS);
-                put("external", EXTERNAL);
-            }
-        };
+        private static final Map<String, OriginEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OriginEnum> createStaticFields() {
+            Map<String, OriginEnum> map = new HashMap<>();
+            map.put("kms", KMS);
+            map.put("external", EXTERNAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +75,9 @@ public class CreateKeyRequestBody  {
             if( value == null ){
                 return null;
             }
-            OriginEnum result = staticFields.get(value);
+            OriginEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OriginEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OriginEnum(value);
             }
             return result;
         }
@@ -84,7 +86,7 @@ public class CreateKeyRequestBody  {
             if( value == null ){
                 return null;
             }
-            OriginEnum result = staticFields.get(value);
+            OriginEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

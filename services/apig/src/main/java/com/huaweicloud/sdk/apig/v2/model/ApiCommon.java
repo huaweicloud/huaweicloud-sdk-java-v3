@@ -3,6 +3,19 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -37,7 +50,7 @@ public class ApiCommon  {
     /**
      * API类型 - 1：公有API - 2：私有API
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -51,12 +64,14 @@ public class ApiCommon  {
         public static final TypeEnum NUMBER_2 = new TypeEnum(2);
         
 
-        public static final Map<Integer, TypeEnum> staticFields = new HashMap<Integer, TypeEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -75,12 +90,9 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -89,7 +101,7 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -124,7 +136,7 @@ public class ApiCommon  {
     /**
      * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
      */
-    public static class ReqProtocolEnum {
+    public static final class ReqProtocolEnum {
 
         
         /**
@@ -143,13 +155,15 @@ public class ApiCommon  {
         public static final ReqProtocolEnum BOTH = new ReqProtocolEnum("BOTH");
         
 
-        public static final Map<String, ReqProtocolEnum> staticFields = new HashMap<String, ReqProtocolEnum>() {
-            { 
-                put("HTTP", HTTP);
-                put("HTTPS", HTTPS);
-                put("BOTH", BOTH);
-            }
-        };
+        private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqProtocolEnum> createStaticFields() {
+            Map<String, ReqProtocolEnum> map = new HashMap<>();
+            map.put("HTTP", HTTP);
+            map.put("HTTPS", HTTPS);
+            map.put("BOTH", BOTH);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -168,12 +182,9 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            ReqProtocolEnum result = staticFields.get(value);
+            ReqProtocolEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ReqProtocolEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ReqProtocolEnum(value);
             }
             return result;
         }
@@ -182,7 +193,7 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            ReqProtocolEnum result = staticFields.get(value);
+            ReqProtocolEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -211,7 +222,7 @@ public class ApiCommon  {
     /**
      * API的请求方式
      */
-    public static class ReqMethodEnum {
+    public static final class ReqMethodEnum {
 
         
         /**
@@ -255,18 +266,20 @@ public class ApiCommon  {
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
         
 
-        public static final Map<String, ReqMethodEnum> staticFields = new HashMap<String, ReqMethodEnum>() {
-            { 
-                put("GET", GET);
-                put("POST", POST);
-                put("PUT", PUT);
-                put("DELETE", DELETE);
-                put("HEAD", HEAD);
-                put("PATCH", PATCH);
-                put("OPTIONS", OPTIONS);
-                put("ANY", ANY);
-            }
-        };
+        private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqMethodEnum> createStaticFields() {
+            Map<String, ReqMethodEnum> map = new HashMap<>();
+            map.put("GET", GET);
+            map.put("POST", POST);
+            map.put("PUT", PUT);
+            map.put("DELETE", DELETE);
+            map.put("HEAD", HEAD);
+            map.put("PATCH", PATCH);
+            map.put("OPTIONS", OPTIONS);
+            map.put("ANY", ANY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -285,12 +298,9 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            ReqMethodEnum result = staticFields.get(value);
+            ReqMethodEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ReqMethodEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ReqMethodEnum(value);
             }
             return result;
         }
@@ -299,7 +309,7 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            ReqMethodEnum result = staticFields.get(value);
+            ReqMethodEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -334,7 +344,7 @@ public class ApiCommon  {
     /**
      * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
      */
-    public static class AuthTypeEnum {
+    public static final class AuthTypeEnum {
 
         
         /**
@@ -358,14 +368,16 @@ public class ApiCommon  {
         public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
         
 
-        public static final Map<String, AuthTypeEnum> staticFields = new HashMap<String, AuthTypeEnum>() {
-            { 
-                put("NONE", NONE);
-                put("APP", APP);
-                put("IAM", IAM);
-                put("AUTHORIZER", AUTHORIZER);
-            }
-        };
+        private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthTypeEnum> createStaticFields() {
+            Map<String, AuthTypeEnum> map = new HashMap<>();
+            map.put("NONE", NONE);
+            map.put("APP", APP);
+            map.put("IAM", IAM);
+            map.put("AUTHORIZER", AUTHORIZER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -384,12 +396,9 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            AuthTypeEnum result = staticFields.get(value);
+            AuthTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new AuthTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new AuthTypeEnum(value);
             }
             return result;
         }
@@ -398,7 +407,7 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            AuthTypeEnum result = staticFields.get(value);
+            AuthTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -439,7 +448,7 @@ public class ApiCommon  {
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
-    public static class MatchModeEnum {
+    public static final class MatchModeEnum {
 
         
         /**
@@ -453,12 +462,14 @@ public class ApiCommon  {
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
         
 
-        public static final Map<String, MatchModeEnum> staticFields = new HashMap<String, MatchModeEnum>() {
-            { 
-                put("SWA", SWA);
-                put("NORMAL", NORMAL);
-            }
-        };
+        private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MatchModeEnum> createStaticFields() {
+            Map<String, MatchModeEnum> map = new HashMap<>();
+            map.put("SWA", SWA);
+            map.put("NORMAL", NORMAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -477,12 +488,9 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            MatchModeEnum result = staticFields.get(value);
+            MatchModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MatchModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MatchModeEnum(value);
             }
             return result;
         }
@@ -491,7 +499,7 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            MatchModeEnum result = staticFields.get(value);
+            MatchModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -520,7 +528,7 @@ public class ApiCommon  {
     /**
      * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
      */
-    public static class BackendTypeEnum {
+    public static final class BackendTypeEnum {
 
         
         /**
@@ -539,13 +547,15 @@ public class ApiCommon  {
         public static final BackendTypeEnum MOCK = new BackendTypeEnum("MOCK");
         
 
-        public static final Map<String, BackendTypeEnum> staticFields = new HashMap<String, BackendTypeEnum>() {
-            { 
-                put("HTTP", HTTP);
-                put("FUNCTION", FUNCTION);
-                put("MOCK", MOCK);
-            }
-        };
+        private static final Map<String, BackendTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BackendTypeEnum> createStaticFields() {
+            Map<String, BackendTypeEnum> map = new HashMap<>();
+            map.put("HTTP", HTTP);
+            map.put("FUNCTION", FUNCTION);
+            map.put("MOCK", MOCK);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -564,12 +574,9 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            BackendTypeEnum result = staticFields.get(value);
+            BackendTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new BackendTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new BackendTypeEnum(value);
             }
             return result;
         }
@@ -578,7 +585,7 @@ public class ApiCommon  {
             if( value == null ){
                 return null;
             }
-            BackendTypeEnum result = staticFields.get(value);
+            BackendTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

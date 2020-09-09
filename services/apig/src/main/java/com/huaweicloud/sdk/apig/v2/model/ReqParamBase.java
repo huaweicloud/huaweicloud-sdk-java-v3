@@ -3,6 +3,17 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +37,7 @@ public class ReqParamBase  {
     /**
      * 参数类型
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -40,12 +51,14 @@ public class ReqParamBase  {
         public static final TypeEnum NUMBER = new TypeEnum("NUMBER");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("STRING", STRING);
-                put("NUMBER", NUMBER);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("STRING", STRING);
+            map.put("NUMBER", NUMBER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -64,12 +77,9 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -78,7 +88,7 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +117,7 @@ public class ReqParamBase  {
     /**
      * 参数位置
      */
-    public static class LocationEnum {
+    public static final class LocationEnum {
 
         
         /**
@@ -126,13 +136,15 @@ public class ReqParamBase  {
         public static final LocationEnum HEADER = new LocationEnum("HEADER");
         
 
-        public static final Map<String, LocationEnum> staticFields = new HashMap<String, LocationEnum>() {
-            { 
-                put("PATH", PATH);
-                put("QUERY", QUERY);
-                put("HEADER", HEADER);
-            }
-        };
+        private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LocationEnum> createStaticFields() {
+            Map<String, LocationEnum> map = new HashMap<>();
+            map.put("PATH", PATH);
+            map.put("QUERY", QUERY);
+            map.put("HEADER", HEADER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -151,12 +163,9 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            LocationEnum result = staticFields.get(value);
+            LocationEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LocationEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LocationEnum(value);
             }
             return result;
         }
@@ -165,7 +174,7 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            LocationEnum result = staticFields.get(value);
+            LocationEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -206,7 +215,7 @@ public class ReqParamBase  {
     /**
      * 是否必须 - 1：是 - 2：否  location为PATH时，required默认为1，其他场景required默认为2
      */
-    public static class RequiredEnum {
+    public static final class RequiredEnum {
 
         
         /**
@@ -220,12 +229,14 @@ public class ReqParamBase  {
         public static final RequiredEnum NUMBER_2 = new RequiredEnum(2);
         
 
-        public static final Map<Integer, RequiredEnum> staticFields = new HashMap<Integer, RequiredEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, RequiredEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, RequiredEnum> createStaticFields() {
+            Map<Integer, RequiredEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -244,12 +255,9 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            RequiredEnum result = staticFields.get(value);
+            RequiredEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RequiredEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RequiredEnum(value);
             }
             return result;
         }
@@ -258,7 +266,7 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            RequiredEnum result = staticFields.get(value);
+            RequiredEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -287,7 +295,7 @@ public class ReqParamBase  {
     /**
      * 是否开启校验 - 1：开启校验 - 2：不开启校验
      */
-    public static class ValidEnableEnum {
+    public static final class ValidEnableEnum {
 
         
         /**
@@ -301,12 +309,14 @@ public class ReqParamBase  {
         public static final ValidEnableEnum NUMBER_2 = new ValidEnableEnum(2);
         
 
-        public static final Map<Integer, ValidEnableEnum> staticFields = new HashMap<Integer, ValidEnableEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-            }
-        };
+        private static final Map<Integer, ValidEnableEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ValidEnableEnum> createStaticFields() {
+            Map<Integer, ValidEnableEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -325,12 +335,9 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            ValidEnableEnum result = staticFields.get(value);
+            ValidEnableEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ValidEnableEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ValidEnableEnum(value);
             }
             return result;
         }
@@ -339,7 +346,7 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            ValidEnableEnum result = staticFields.get(value);
+            ValidEnableEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -416,7 +423,7 @@ public class ReqParamBase  {
     /**
      * 是否透传 - 1：是 - 2：否
      */
-    public static class PassThroughEnum {
+    public static final class PassThroughEnum {
 
         
         /**
@@ -430,12 +437,14 @@ public class ReqParamBase  {
         public static final PassThroughEnum _2 = new PassThroughEnum("2");
         
 
-        public static final Map<String, PassThroughEnum> staticFields = new HashMap<String, PassThroughEnum>() {
-            { 
-                put("1", _1);
-                put("2", _2);
-            }
-        };
+        private static final Map<String, PassThroughEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PassThroughEnum> createStaticFields() {
+            Map<String, PassThroughEnum> map = new HashMap<>();
+            map.put("1", _1);
+            map.put("2", _2);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -454,12 +463,9 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            PassThroughEnum result = staticFields.get(value);
+            PassThroughEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PassThroughEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PassThroughEnum(value);
             }
             return result;
         }
@@ -468,7 +474,7 @@ public class ReqParamBase  {
             if( value == null ){
                 return null;
             }
-            PassThroughEnum result = staticFields.get(value);
+            PassThroughEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

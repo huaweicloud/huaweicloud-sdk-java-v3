@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +33,7 @@ public class ListScalingInstancesRequest  {
     /**
      * Gets or Sets lifeCycleState
      */
-    public static class LifeCycleStateEnum {
+    public static final class LifeCycleStateEnum {
 
         
         /**
@@ -65,17 +72,19 @@ public class ListScalingInstancesRequest  {
         public static final LifeCycleStateEnum ENTERING_STANDBY = new LifeCycleStateEnum("ENTERING_STANDBY");
         
 
-        public static final Map<String, LifeCycleStateEnum> staticFields = new HashMap<String, LifeCycleStateEnum>() {
-            { 
-                put("INSERVICE", INSERVICE);
-                put("PENDING", PENDING);
-                put("REMOVING", REMOVING);
-                put("PENDING_WAIT", PENDING_WAIT);
-                put("REMOVING_WAIT", REMOVING_WAIT);
-                put("STANDBY", STANDBY);
-                put("ENTERING_STANDBY", ENTERING_STANDBY);
-            }
-        };
+        private static final Map<String, LifeCycleStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LifeCycleStateEnum> createStaticFields() {
+            Map<String, LifeCycleStateEnum> map = new HashMap<>();
+            map.put("INSERVICE", INSERVICE);
+            map.put("PENDING", PENDING);
+            map.put("REMOVING", REMOVING);
+            map.put("PENDING_WAIT", PENDING_WAIT);
+            map.put("REMOVING_WAIT", REMOVING_WAIT);
+            map.put("STANDBY", STANDBY);
+            map.put("ENTERING_STANDBY", ENTERING_STANDBY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -94,12 +103,9 @@ public class ListScalingInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            LifeCycleStateEnum result = staticFields.get(value);
+            LifeCycleStateEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LifeCycleStateEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LifeCycleStateEnum(value);
             }
             return result;
         }
@@ -108,7 +114,7 @@ public class ListScalingInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            LifeCycleStateEnum result = staticFields.get(value);
+            LifeCycleStateEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -137,7 +143,7 @@ public class ListScalingInstancesRequest  {
     /**
      * Gets or Sets healthStatus
      */
-    public static class HealthStatusEnum {
+    public static final class HealthStatusEnum {
 
         
         /**
@@ -156,13 +162,15 @@ public class ListScalingInstancesRequest  {
         public static final HealthStatusEnum ERROR = new HealthStatusEnum("ERROR");
         
 
-        public static final Map<String, HealthStatusEnum> staticFields = new HashMap<String, HealthStatusEnum>() {
-            { 
-                put("INITIALIZING", INITIALIZING);
-                put("NORMAL", NORMAL);
-                put("ERROR", ERROR);
-            }
-        };
+        private static final Map<String, HealthStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HealthStatusEnum> createStaticFields() {
+            Map<String, HealthStatusEnum> map = new HashMap<>();
+            map.put("INITIALIZING", INITIALIZING);
+            map.put("NORMAL", NORMAL);
+            map.put("ERROR", ERROR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -181,12 +189,9 @@ public class ListScalingInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            HealthStatusEnum result = staticFields.get(value);
+            HealthStatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HealthStatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HealthStatusEnum(value);
             }
             return result;
         }
@@ -195,7 +200,7 @@ public class ListScalingInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            HealthStatusEnum result = staticFields.get(value);
+            HealthStatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -224,7 +229,7 @@ public class ListScalingInstancesRequest  {
     /**
      * Gets or Sets protectFromScalingDown
      */
-    public static class ProtectFromScalingDownEnum {
+    public static final class ProtectFromScalingDownEnum {
 
         
         /**
@@ -238,12 +243,14 @@ public class ListScalingInstancesRequest  {
         public static final ProtectFromScalingDownEnum FALSE = new ProtectFromScalingDownEnum("false");
         
 
-        public static final Map<String, ProtectFromScalingDownEnum> staticFields = new HashMap<String, ProtectFromScalingDownEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, ProtectFromScalingDownEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtectFromScalingDownEnum> createStaticFields() {
+            Map<String, ProtectFromScalingDownEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -262,12 +269,9 @@ public class ListScalingInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            ProtectFromScalingDownEnum result = staticFields.get(value);
+            ProtectFromScalingDownEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ProtectFromScalingDownEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ProtectFromScalingDownEnum(value);
             }
             return result;
         }
@@ -276,7 +280,7 @@ public class ListScalingInstancesRequest  {
             if( value == null ){
                 return null;
             }
-            ProtectFromScalingDownEnum result = staticFields.get(value);
+            ProtectFromScalingDownEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

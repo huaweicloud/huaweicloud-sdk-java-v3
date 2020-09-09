@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.dds.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -32,7 +37,7 @@ public class ListBackupsRequest  {
     /**
      * Gets or Sets backupType
      */
-    public static class BackupTypeEnum {
+    public static final class BackupTypeEnum {
 
         
         /**
@@ -46,12 +51,14 @@ public class ListBackupsRequest  {
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("Manual");
         
 
-        public static final Map<String, BackupTypeEnum> staticFields = new HashMap<String, BackupTypeEnum>() {
-            { 
-                put("Auto", AUTO);
-                put("Manual", MANUAL);
-            }
-        };
+        private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BackupTypeEnum> createStaticFields() {
+            Map<String, BackupTypeEnum> map = new HashMap<>();
+            map.put("Auto", AUTO);
+            map.put("Manual", MANUAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -70,12 +77,9 @@ public class ListBackupsRequest  {
             if( value == null ){
                 return null;
             }
-            BackupTypeEnum result = staticFields.get(value);
+            BackupTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new BackupTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new BackupTypeEnum(value);
             }
             return result;
         }
@@ -84,7 +88,7 @@ public class ListBackupsRequest  {
             if( value == null ){
                 return null;
             }
-            BackupTypeEnum result = staticFields.get(value);
+            BackupTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -137,7 +141,7 @@ public class ListBackupsRequest  {
     /**
      * Gets or Sets mode
      */
-    public static class ModeEnum {
+    public static final class ModeEnum {
 
         
         /**
@@ -156,13 +160,15 @@ public class ListBackupsRequest  {
         public static final ModeEnum SINGLE = new ModeEnum("Single");
         
 
-        public static final Map<String, ModeEnum> staticFields = new HashMap<String, ModeEnum>() {
-            { 
-                put("Sharding", SHARDING);
-                put("ReplicaSet", REPLICASET);
-                put("Single", SINGLE);
-            }
-        };
+        private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ModeEnum> createStaticFields() {
+            Map<String, ModeEnum> map = new HashMap<>();
+            map.put("Sharding", SHARDING);
+            map.put("ReplicaSet", REPLICASET);
+            map.put("Single", SINGLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -181,12 +187,9 @@ public class ListBackupsRequest  {
             if( value == null ){
                 return null;
             }
-            ModeEnum result = staticFields.get(value);
+            ModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ModeEnum(value);
             }
             return result;
         }
@@ -195,7 +198,7 @@ public class ListBackupsRequest  {
             if( value == null ){
                 return null;
             }
-            ModeEnum result = staticFields.get(value);
+            ModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

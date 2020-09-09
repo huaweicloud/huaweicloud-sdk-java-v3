@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -59,7 +64,7 @@ public class BackupInfo  {
     /**
      * 备份状态，取值：  - BUILDING: 备份中。 - COMPLETED: 备份完成。 - FAILED：备份失败。 - DELETING：备份删除中。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -83,14 +88,16 @@ public class BackupInfo  {
         public static final StatusEnum DELETING = new StatusEnum("DELETING");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("BUILDING", BUILDING);
-                put("COMPLETED", COMPLETED);
-                put("FAILED", FAILED);
-                put("DELETING", DELETING);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("BUILDING", BUILDING);
+            map.put("COMPLETED", COMPLETED);
+            map.put("FAILED", FAILED);
+            map.put("DELETING", DELETING);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -109,12 +116,9 @@ public class BackupInfo  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -123,7 +127,7 @@ public class BackupInfo  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -152,7 +156,7 @@ public class BackupInfo  {
     /**
      * 备份类型，取值：  - “auto”: 自动全量备份 - “manual”: 手动全量备份 - “fragment”: 差异全量备份 - “incremental”: 自动增量备份
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -176,14 +180,16 @@ public class BackupInfo  {
         public static final TypeEnum INCREMENTAL = new TypeEnum("incremental");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("auto", AUTO);
-                put("manual", MANUAL);
-                put("fragment", FRAGMENT);
-                put("incremental", INCREMENTAL);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("auto", AUTO);
+            map.put("manual", MANUAL);
+            map.put("fragment", FRAGMENT);
+            map.put("incremental", INCREMENTAL);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -202,12 +208,9 @@ public class BackupInfo  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -216,7 +219,7 @@ public class BackupInfo  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,7 +29,7 @@ public class NovaLink  {
     /**
      * 有三种取值。self：自助链接包含版本链接的资源。立即链接后使用这些链接。bookmark：书签链接提供了一个永久资源的永久链接，该链接适合于长期存储。alternate：备用链接可以包含资源的替换表示形式。例如，OpenStack计算映像可能在OpenStack映像服务中有一个替代表示。
      */
-    public static class RelEnum {
+    public static final class RelEnum {
 
         
         /**
@@ -50,14 +53,16 @@ public class NovaLink  {
         public static final RelEnum DESCRIBEDBY = new RelEnum("describedby");
         
 
-        public static final Map<String, RelEnum> staticFields = new HashMap<String, RelEnum>() {
-            { 
-                put("self", SELF);
-                put("bookmark", BOOKMARK);
-                put("alternate", ALTERNATE);
-                put("describedby", DESCRIBEDBY);
-            }
-        };
+        private static final Map<String, RelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RelEnum> createStaticFields() {
+            Map<String, RelEnum> map = new HashMap<>();
+            map.put("self", SELF);
+            map.put("bookmark", BOOKMARK);
+            map.put("alternate", ALTERNATE);
+            map.put("describedby", DESCRIBEDBY);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class NovaLink  {
             if( value == null ){
                 return null;
             }
-            RelEnum result = staticFields.get(value);
+            RelEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RelEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RelEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class NovaLink  {
             if( value == null ){
                 return null;
             }
-            RelEnum result = staticFields.get(value);
+            RelEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -93,25 +95,27 @@ public class InstanceStatusType {
     public static final InstanceStatusType PARTIALLY_FAILED = new InstanceStatusType("PARTIALLY_FAILED");
     
 
-    public static final Map<String, InstanceStatusType> staticFields = new HashMap<String, InstanceStatusType>() {
-        { 
-            put("INITIALIZING", INITIALIZING);
-            put("UPGRADING", UPGRADING);
-            put("FAILED", FAILED);
-            put("RUNNING", RUNNING);
-            put("DOWN", DOWN);
-            put("DELETING", DELETING);
-            put("DELETED", DELETED);
-            put("RESERVED", RESERVED);
-            put("STARTING", STARTING);
-            put("STOPPING", STOPPING);
-            put("STOPPED", STOPPED);
-            put("RESTARTING", RESTARTING);
-            put("PENDING", PENDING);
-            put("UNKNOWN", UNKNOWN);
-            put("PARTIALLY_FAILED", PARTIALLY_FAILED);
-        }
-    };
+    private static final Map<String, InstanceStatusType> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, InstanceStatusType> createStaticFields() {
+        Map<String, InstanceStatusType> map = new HashMap<>();
+        map.put("INITIALIZING", INITIALIZING);
+        map.put("UPGRADING", UPGRADING);
+        map.put("FAILED", FAILED);
+        map.put("RUNNING", RUNNING);
+        map.put("DOWN", DOWN);
+        map.put("DELETING", DELETING);
+        map.put("DELETED", DELETED);
+        map.put("RESERVED", RESERVED);
+        map.put("STARTING", STARTING);
+        map.put("STOPPING", STOPPING);
+        map.put("STOPPED", STOPPED);
+        map.put("RESTARTING", RESTARTING);
+        map.put("PENDING", PENDING);
+        map.put("UNKNOWN", UNKNOWN);
+        map.put("PARTIALLY_FAILED", PARTIALLY_FAILED);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -130,12 +134,9 @@ public class InstanceStatusType {
         if( value == null ){
             return null;
         }
-        InstanceStatusType result = staticFields.get(value);
+        InstanceStatusType result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new InstanceStatusType(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new InstanceStatusType(value);
         }
         return result;
     }
@@ -144,7 +145,7 @@ public class InstanceStatusType {
         if( value == null ){
             return null;
         }
-        InstanceStatusType result = staticFields.get(value);
+        InstanceStatusType result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

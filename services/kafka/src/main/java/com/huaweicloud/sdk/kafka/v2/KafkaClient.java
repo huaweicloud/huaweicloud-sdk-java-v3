@@ -248,6 +248,17 @@ public class KafkaClient {
     }
 
     /**
+     * 重启Manager
+     * 重启Manager。
+     *
+     * @param RestartManagerRequest 请求对象
+     * @return RestartManagerResponse
+    */
+    public RestartManagerResponse restartManager(RestartManagerRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.restartManager);
+    }
+
+    /**
      * 查询后台任务管理中的指定记录
      * 查询后台任务管理中的指定记录。
      *
@@ -460,11 +471,11 @@ public class KafkaClient {
      * 修改Kafka实例Topic
      * 修改Kafka实例Topic
      *
-     * @param UpdateInstaneTopicRequest 请求对象
-     * @return UpdateInstaneTopicResponse
+     * @param UpdateInstanceTopicRequest 请求对象
+     * @return UpdateInstanceTopicResponse
     */
-    public UpdateInstaneTopicResponse updateInstaneTopic(UpdateInstaneTopicRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstaneTopic);
+    public UpdateInstanceTopicResponse updateInstanceTopic(UpdateInstanceTopicRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceTopic);
     }
 
     /**

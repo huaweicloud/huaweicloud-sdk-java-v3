@@ -3,6 +3,15 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +29,7 @@ public class ListInstancesDetailsRequest  {
     /**
      * Gets or Sets engine
      */
-    public static class EngineEnum {
+    public static final class EngineEnum {
 
         
         /**
@@ -29,11 +38,13 @@ public class ListInstancesDetailsRequest  {
         public static final EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
         
 
-        public static final Map<String, EngineEnum> staticFields = new HashMap<String, EngineEnum>() {
-            { 
-                put("rabbitmq", RABBITMQ);
-            }
-        };
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("rabbitmq", RABBITMQ);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -52,12 +63,9 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new EngineEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new EngineEnum(value);
             }
             return result;
         }
@@ -66,7 +74,7 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            EngineEnum result = staticFields.get(value);
+            EngineEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +115,7 @@ public class ListInstancesDetailsRequest  {
     /**
      * Gets or Sets status
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -151,18 +159,20 @@ public class ListInstancesDetailsRequest  {
         public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("CREATING", CREATING);
-                put("CREATEFAILED", CREATEFAILED);
-                put("RUNNING", RUNNING);
-                put("ERROR", ERROR);
-                put("STARTING", STARTING);
-                put("RESTARTING", RESTARTING);
-                put("CLOSING", CLOSING);
-                put("FROZEN", FROZEN);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("CREATING", CREATING);
+            map.put("CREATEFAILED", CREATEFAILED);
+            map.put("RUNNING", RUNNING);
+            map.put("ERROR", ERROR);
+            map.put("STARTING", STARTING);
+            map.put("RESTARTING", RESTARTING);
+            map.put("CLOSING", CLOSING);
+            map.put("FROZEN", FROZEN);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -181,12 +191,9 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -195,7 +202,7 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -224,7 +231,7 @@ public class ListInstancesDetailsRequest  {
     /**
      * Gets or Sets includeFailure
      */
-    public static class IncludeFailureEnum {
+    public static final class IncludeFailureEnum {
 
         
         /**
@@ -238,12 +245,14 @@ public class ListInstancesDetailsRequest  {
         public static final IncludeFailureEnum FALSE = new IncludeFailureEnum("false");
         
 
-        public static final Map<String, IncludeFailureEnum> staticFields = new HashMap<String, IncludeFailureEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IncludeFailureEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IncludeFailureEnum> createStaticFields() {
+            Map<String, IncludeFailureEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -262,12 +271,9 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            IncludeFailureEnum result = staticFields.get(value);
+            IncludeFailureEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IncludeFailureEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IncludeFailureEnum(value);
             }
             return result;
         }
@@ -276,7 +282,7 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            IncludeFailureEnum result = staticFields.get(value);
+            IncludeFailureEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -305,7 +311,7 @@ public class ListInstancesDetailsRequest  {
     /**
      * Gets or Sets exactMatchName
      */
-    public static class ExactMatchNameEnum {
+    public static final class ExactMatchNameEnum {
 
         
         /**
@@ -319,12 +325,14 @@ public class ListInstancesDetailsRequest  {
         public static final ExactMatchNameEnum FALSE = new ExactMatchNameEnum("false");
         
 
-        public static final Map<String, ExactMatchNameEnum> staticFields = new HashMap<String, ExactMatchNameEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, ExactMatchNameEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ExactMatchNameEnum> createStaticFields() {
+            Map<String, ExactMatchNameEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -343,12 +351,9 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            ExactMatchNameEnum result = staticFields.get(value);
+            ExactMatchNameEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ExactMatchNameEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ExactMatchNameEnum(value);
             }
             return result;
         }
@@ -357,7 +362,7 @@ public class ListInstancesDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            ExactMatchNameEnum result = staticFields.get(value);
+            ExactMatchNameEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

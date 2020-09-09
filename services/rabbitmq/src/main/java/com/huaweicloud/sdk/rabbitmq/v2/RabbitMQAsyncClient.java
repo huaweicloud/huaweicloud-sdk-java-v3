@@ -51,6 +51,10 @@ public class RabbitMQAsyncClient {
         return hcClient.asyncInvokeHttp(request, RabbitMQMeta.listInstancesDetails);
     }
 
+    public CompletableFuture<ListPluginsResponse> listPluginsAsync(ListPluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.listPlugins);
+    }
+
     public CompletableFuture<ListProductsResponse> listProductsAsync(ListProductsRequest request) {
         return hcClient.asyncInvokeHttp(request, RabbitMQMeta.listProducts);
     }
@@ -89,6 +93,10 @@ public class RabbitMQAsyncClient {
 
     public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, RabbitMQMeta.updateInstance);
+    }
+
+    public CompletableFuture<UpdatePluginsResponse> updatePluginsAsync(UpdatePluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.updatePlugins);
     }
 
 }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.iam.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,7 +27,7 @@ public class AgencyAuthIdentity  {
     /**
      * Gets or Sets methods
      */
-    public static class MethodsEnum {
+    public static final class MethodsEnum {
 
         
         /**
@@ -33,11 +36,13 @@ public class AgencyAuthIdentity  {
         public static final MethodsEnum ASSUME_ROLE = new MethodsEnum("assume_role");
         
 
-        public static final Map<String, MethodsEnum> staticFields = new HashMap<String, MethodsEnum>() {
-            { 
-                put("assume_role", ASSUME_ROLE);
-            }
-        };
+        private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MethodsEnum> createStaticFields() {
+            Map<String, MethodsEnum> map = new HashMap<>();
+            map.put("assume_role", ASSUME_ROLE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -56,12 +61,9 @@ public class AgencyAuthIdentity  {
             if( value == null ){
                 return null;
             }
-            MethodsEnum result = staticFields.get(value);
+            MethodsEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new MethodsEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new MethodsEnum(value);
             }
             return result;
         }
@@ -70,7 +72,7 @@ public class AgencyAuthIdentity  {
             if( value == null ){
                 return null;
             }
-            MethodsEnum result = staticFields.get(value);
+            MethodsEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

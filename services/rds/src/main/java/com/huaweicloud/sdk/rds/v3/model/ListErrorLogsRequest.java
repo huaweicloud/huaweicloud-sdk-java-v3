@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -56,7 +59,7 @@ public class ListErrorLogsRequest  {
     /**
      * Gets or Sets level
      */
-    public static class LevelEnum {
+    public static final class LevelEnum {
 
         
         /**
@@ -100,18 +103,20 @@ public class ListErrorLogsRequest  {
         public static final LevelEnum NOTE = new LevelEnum("NOTE");
         
 
-        public static final Map<String, LevelEnum> staticFields = new HashMap<String, LevelEnum>() {
-            { 
-                put("ALL", ALL);
-                put("INFO", INFO);
-                put("LOG", LOG);
-                put("WARNING", WARNING);
-                put("ERROR", ERROR);
-                put("FATAL", FATAL);
-                put("PANIC", PANIC);
-                put("NOTE", NOTE);
-            }
-        };
+        private static final Map<String, LevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LevelEnum> createStaticFields() {
+            Map<String, LevelEnum> map = new HashMap<>();
+            map.put("ALL", ALL);
+            map.put("INFO", INFO);
+            map.put("LOG", LOG);
+            map.put("WARNING", WARNING);
+            map.put("ERROR", ERROR);
+            map.put("FATAL", FATAL);
+            map.put("PANIC", PANIC);
+            map.put("NOTE", NOTE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -130,12 +135,9 @@ public class ListErrorLogsRequest  {
             if( value == null ){
                 return null;
             }
-            LevelEnum result = staticFields.get(value);
+            LevelEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new LevelEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new LevelEnum(value);
             }
             return result;
         }
@@ -144,7 +146,7 @@ public class ListErrorLogsRequest  {
             if( value == null ){
                 return null;
             }
-            LevelEnum result = staticFields.get(value);
+            LevelEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

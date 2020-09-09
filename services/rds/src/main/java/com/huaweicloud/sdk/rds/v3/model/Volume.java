@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +23,7 @@ public class Volume  {
     /**
      * 磁盘类型。 取值范围如下，区分大小写： - COMMON，表示SATA。 - HIGH，表示SAS。 - ULTRAHIGH，表示SSD。 - ULTRAHIGHPRO，表示SSD尊享版，仅支持超高性能型尊享版（需申请权限）。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -49,15 +52,17 @@ public class Volume  {
         public static final TypeEnum ULTRAHIGHPRO = new TypeEnum("ULTRAHIGHPRO");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("ULTRAHIGH", ULTRAHIGH);
-                put("HIGH", HIGH);
-                put("COMMON", COMMON);
-                put("NVMESSD", NVMESSD);
-                put("ULTRAHIGHPRO", ULTRAHIGHPRO);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("ULTRAHIGH", ULTRAHIGH);
+            map.put("HIGH", HIGH);
+            map.put("COMMON", COMMON);
+            map.put("NVMESSD", NVMESSD);
+            map.put("ULTRAHIGHPRO", ULTRAHIGHPRO);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -76,12 +81,9 @@ public class Volume  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -90,7 +92,7 @@ public class Volume  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

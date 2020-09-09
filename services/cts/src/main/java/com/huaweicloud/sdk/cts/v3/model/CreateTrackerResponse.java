@@ -5,6 +5,11 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -55,7 +60,7 @@ public class CreateTrackerResponse extends SdkResponse {
     /**
      * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器（system）和数据类追踪器（data）。
      */
-    public static class TrackerTypeEnum {
+    public static final class TrackerTypeEnum {
 
         
         /**
@@ -69,12 +74,14 @@ public class CreateTrackerResponse extends SdkResponse {
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
         
 
-        public static final Map<String, TrackerTypeEnum> staticFields = new HashMap<String, TrackerTypeEnum>() {
-            { 
-                put("system", SYSTEM);
-                put("data", DATA);
-            }
-        };
+        private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TrackerTypeEnum> createStaticFields() {
+            Map<String, TrackerTypeEnum> map = new HashMap<>();
+            map.put("system", SYSTEM);
+            map.put("data", DATA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -93,12 +100,9 @@ public class CreateTrackerResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            TrackerTypeEnum result = staticFields.get(value);
+            TrackerTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TrackerTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TrackerTypeEnum(value);
             }
             return result;
         }
@@ -107,7 +111,7 @@ public class CreateTrackerResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            TrackerTypeEnum result = staticFields.get(value);
+            TrackerTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -154,7 +158,7 @@ public class CreateTrackerResponse extends SdkResponse {
     /**
      * 标识追踪器状态，包括正常（enabled），停止（disabled）和异常（error）三种状态，状态为异常时需通过明细（detail）字段说明错误来源。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -168,12 +172,14 @@ public class CreateTrackerResponse extends SdkResponse {
         public static final StatusEnum DISABLED = new StatusEnum("disabled");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("enabled", ENABLED);
-                put("disabled", DISABLED);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("enabled", ENABLED);
+            map.put("disabled", DISABLED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -192,12 +198,9 @@ public class CreateTrackerResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -206,7 +209,7 @@ public class CreateTrackerResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,11 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -74,7 +79,7 @@ public class NovaListServersDetailsRequest  {
     /**
      * Gets or Sets sortKey
      */
-    public static class SortKeyEnum {
+    public static final class SortKeyEnum {
 
         
         /**
@@ -133,21 +138,23 @@ public class NovaListServersDetailsRequest  {
         public static final SortKeyEnum VM_STATE = new SortKeyEnum("vm_state");
         
 
-        public static final Map<String, SortKeyEnum> staticFields = new HashMap<String, SortKeyEnum>() {
-            { 
-                put("created_at", CREATED_AT);
-                put("availability_zone", AVAILABILITY_ZONE);
-                put("display_name", DISPLAY_NAME);
-                put("host", HOST);
-                put("instance_type_id", INSTANCE_TYPE_ID);
-                put("key_name", KEY_NAME);
-                put("project_id", PROJECT_ID);
-                put("user_id", USER_ID);
-                put("updated_at", UPDATED_AT);
-                put("uuid", UUID);
-                put("vm_state", VM_STATE);
-            }
-        };
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("created_at", CREATED_AT);
+            map.put("availability_zone", AVAILABILITY_ZONE);
+            map.put("display_name", DISPLAY_NAME);
+            map.put("host", HOST);
+            map.put("instance_type_id", INSTANCE_TYPE_ID);
+            map.put("key_name", KEY_NAME);
+            map.put("project_id", PROJECT_ID);
+            map.put("user_id", USER_ID);
+            map.put("updated_at", UPDATED_AT);
+            map.put("uuid", UUID);
+            map.put("vm_state", VM_STATE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -166,12 +173,9 @@ public class NovaListServersDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SortKeyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SortKeyEnum(value);
             }
             return result;
         }
@@ -180,7 +184,7 @@ public class NovaListServersDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            SortKeyEnum result = staticFields.get(value);
+            SortKeyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -209,7 +213,7 @@ public class NovaListServersDetailsRequest  {
     /**
      * Gets or Sets status
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -283,24 +287,26 @@ public class NovaListServersDetailsRequest  {
         public static final StatusEnum VERIFY_RESIZE = new StatusEnum("VERIFY_RESIZE");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("ACTIVE", ACTIVE);
-                put("BUILD", BUILD);
-                put("DELETED", DELETED);
-                put("ERROR", ERROR);
-                put("HARD_REBOOT", HARD_REBOOT);
-                put("MIGRATING", MIGRATING);
-                put("REBOOT", REBOOT);
-                put("RESIZE", RESIZE);
-                put("REVERT_RESIZE", REVERT_RESIZE);
-                put("SHELVED", SHELVED);
-                put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
-                put("SHUTOFF", SHUTOFF);
-                put("UNKNOWN", UNKNOWN);
-                put("VERIFY_RESIZE", VERIFY_RESIZE);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("BUILD", BUILD);
+            map.put("DELETED", DELETED);
+            map.put("ERROR", ERROR);
+            map.put("HARD_REBOOT", HARD_REBOOT);
+            map.put("MIGRATING", MIGRATING);
+            map.put("REBOOT", REBOOT);
+            map.put("RESIZE", RESIZE);
+            map.put("REVERT_RESIZE", REVERT_RESIZE);
+            map.put("SHELVED", SHELVED);
+            map.put("SHELVED_OFFLOADED", SHELVED_OFFLOADED);
+            map.put("SHUTOFF", SHUTOFF);
+            map.put("UNKNOWN", UNKNOWN);
+            map.put("VERIFY_RESIZE", VERIFY_RESIZE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -319,12 +325,9 @@ public class NovaListServersDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -333,7 +336,7 @@ public class NovaListServersDetailsRequest  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

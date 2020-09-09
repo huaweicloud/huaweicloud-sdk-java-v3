@@ -3,6 +3,35 @@ package com.huaweicloud.sdk.ims.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -52,7 +81,7 @@ public class ImageInfo  {
     /**
      * 镜像后端存储类型，目前只支持uds
      */
-    public static class ImageSourceTypeEnum {
+    public static final class ImageSourceTypeEnum {
 
         
         /**
@@ -66,12 +95,14 @@ public class ImageInfo  {
         public static final ImageSourceTypeEnum SWIFT = new ImageSourceTypeEnum("swift");
         
 
-        public static final Map<String, ImageSourceTypeEnum> staticFields = new HashMap<String, ImageSourceTypeEnum>() {
-            { 
-                put("uds", UDS);
-                put("swift", SWIFT);
-            }
-        };
+        private static final Map<String, ImageSourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ImageSourceTypeEnum> createStaticFields() {
+            Map<String, ImageSourceTypeEnum> map = new HashMap<>();
+            map.put("uds", UDS);
+            map.put("swift", SWIFT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -90,12 +121,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            ImageSourceTypeEnum result = staticFields.get(value);
+            ImageSourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ImageSourceTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ImageSourceTypeEnum(value);
             }
             return result;
         }
@@ -104,7 +132,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            ImageSourceTypeEnum result = staticFields.get(value);
+            ImageSourceTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -133,7 +161,7 @@ public class ImageInfo  {
     /**
      * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
      */
-    public static class ImagetypeEnum {
+    public static final class ImagetypeEnum {
 
         
         /**
@@ -152,13 +180,15 @@ public class ImageInfo  {
         public static final ImagetypeEnum SHARED = new ImagetypeEnum("shared");
         
 
-        public static final Map<String, ImagetypeEnum> staticFields = new HashMap<String, ImagetypeEnum>() {
-            { 
-                put("gold", GOLD);
-                put("private", PRIVATE);
-                put("shared", SHARED);
-            }
-        };
+        private static final Map<String, ImagetypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ImagetypeEnum> createStaticFields() {
+            Map<String, ImagetypeEnum> map = new HashMap<>();
+            map.put("gold", GOLD);
+            map.put("private", PRIVATE);
+            map.put("shared", SHARED);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -177,12 +207,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            ImagetypeEnum result = staticFields.get(value);
+            ImagetypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ImagetypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ImagetypeEnum(value);
             }
             return result;
         }
@@ -191,7 +218,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            ImagetypeEnum result = staticFields.get(value);
+            ImagetypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -220,7 +247,7 @@ public class ImageInfo  {
     /**
      * 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否            则设置为false。默认为false。
      */
-    public static class IsConfigInitEnum {
+    public static final class IsConfigInitEnum {
 
         
         /**
@@ -234,12 +261,14 @@ public class ImageInfo  {
         public static final IsConfigInitEnum FALSE = new IsConfigInitEnum("false");
         
 
-        public static final Map<String, IsConfigInitEnum> staticFields = new HashMap<String, IsConfigInitEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IsConfigInitEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsConfigInitEnum> createStaticFields() {
+            Map<String, IsConfigInitEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -258,12 +287,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            IsConfigInitEnum result = staticFields.get(value);
+            IsConfigInitEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsConfigInitEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsConfigInitEnum(value);
             }
             return result;
         }
@@ -272,7 +298,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            IsConfigInitEnum result = staticFields.get(value);
+            IsConfigInitEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -301,7 +327,7 @@ public class ImageInfo  {
     /**
      * 是否是注册过的镜像，取值为“true”或者“false”
      */
-    public static class IsregisteredEnum {
+    public static final class IsregisteredEnum {
 
         
         /**
@@ -315,12 +341,14 @@ public class ImageInfo  {
         public static final IsregisteredEnum FALSE = new IsregisteredEnum("false");
         
 
-        public static final Map<String, IsregisteredEnum> staticFields = new HashMap<String, IsregisteredEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IsregisteredEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsregisteredEnum> createStaticFields() {
+            Map<String, IsregisteredEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -339,12 +367,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            IsregisteredEnum result = staticFields.get(value);
+            IsregisteredEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsregisteredEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsregisteredEnum(value);
             }
             return result;
         }
@@ -353,7 +378,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            IsregisteredEnum result = staticFields.get(value);
+            IsregisteredEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -388,7 +413,7 @@ public class ImageInfo  {
     /**
      * 操作系统位数，一般取值为“32”或者“64”
      */
-    public static class OsBitEnum {
+    public static final class OsBitEnum {
 
         
         /**
@@ -402,12 +427,14 @@ public class ImageInfo  {
         public static final OsBitEnum _64 = new OsBitEnum("64");
         
 
-        public static final Map<String, OsBitEnum> staticFields = new HashMap<String, OsBitEnum>() {
-            { 
-                put("32", _32);
-                put("64", _64);
-            }
-        };
+        private static final Map<String, OsBitEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsBitEnum> createStaticFields() {
+            Map<String, OsBitEnum> map = new HashMap<>();
+            map.put("32", _32);
+            map.put("64", _64);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -426,12 +453,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            OsBitEnum result = staticFields.get(value);
+            OsBitEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsBitEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsBitEnum(value);
             }
             return result;
         }
@@ -440,7 +464,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            OsBitEnum result = staticFields.get(value);
+            OsBitEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -469,7 +493,7 @@ public class ImageInfo  {
     /**
      * 操作系统类型，目前取值Linux， Windows，Other
      */
-    public static class OsTypeEnum {
+    public static final class OsTypeEnum {
 
         
         /**
@@ -488,13 +512,15 @@ public class ImageInfo  {
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
         
 
-        public static final Map<String, OsTypeEnum> staticFields = new HashMap<String, OsTypeEnum>() {
-            { 
-                put("Linux", LINUX);
-                put("Windows", WINDOWS);
-                put("Other", OTHER);
-            }
-        };
+        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsTypeEnum> createStaticFields() {
+            Map<String, OsTypeEnum> map = new HashMap<>();
+            map.put("Linux", LINUX);
+            map.put("Windows", WINDOWS);
+            map.put("Other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -513,12 +539,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new OsTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new OsTypeEnum(value);
             }
             return result;
         }
@@ -527,7 +550,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            OsTypeEnum result = staticFields.get(value);
+            OsTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -562,7 +585,7 @@ public class ImageInfo  {
     /**
      * 镜像平台分类
      */
-    public static class PlatformEnum {
+    public static final class PlatformEnum {
 
         
         /**
@@ -626,22 +649,24 @@ public class ImageInfo  {
         public static final PlatformEnum EULEOS = new PlatformEnum("EuleOS");
         
 
-        public static final Map<String, PlatformEnum> staticFields = new HashMap<String, PlatformEnum>() {
-            { 
-                put("Windows", WINDOWS);
-                put("Ubuntu", UBUNTU);
-                put("RedHat", REDHAT);
-                put("SUSE", SUSE);
-                put("CentOS", CENTOS);
-                put("Debian", DEBIAN);
-                put("OpenSUSE", OPENSUSE);
-                put("Oracle Linux", ORACLE_LINUX);
-                put("Fedora", FEDORA);
-                put("Other", OTHER);
-                put("CoreOS", COREOS);
-                put("EuleOS", EULEOS);
-            }
-        };
+        private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PlatformEnum> createStaticFields() {
+            Map<String, PlatformEnum> map = new HashMap<>();
+            map.put("Windows", WINDOWS);
+            map.put("Ubuntu", UBUNTU);
+            map.put("RedHat", REDHAT);
+            map.put("SUSE", SUSE);
+            map.put("CentOS", CENTOS);
+            map.put("Debian", DEBIAN);
+            map.put("OpenSUSE", OPENSUSE);
+            map.put("Oracle Linux", ORACLE_LINUX);
+            map.put("Fedora", FEDORA);
+            map.put("Other", OTHER);
+            map.put("CoreOS", COREOS);
+            map.put("EuleOS", EULEOS);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -660,12 +685,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            PlatformEnum result = staticFields.get(value);
+            PlatformEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PlatformEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PlatformEnum(value);
             }
             return result;
         }
@@ -674,7 +696,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            PlatformEnum result = staticFields.get(value);
+            PlatformEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -871,7 +893,7 @@ public class ImageInfo  {
     /**
      * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待 上传镜像文件。saving：表示镜像 正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -900,15 +922,17 @@ public class ImageInfo  {
         public static final StatusEnum ACTIVE = new StatusEnum("active");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("queued", QUEUED);
-                put("saving", SAVING);
-                put("deleted", DELETED);
-                put("killed", KILLED);
-                put("active", ACTIVE);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("queued", QUEUED);
+            map.put("saving", SAVING);
+            map.put("deleted", DELETED);
+            map.put("killed", KILLED);
+            map.put("active", ACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -927,12 +951,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -941,7 +962,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -982,7 +1003,7 @@ public class ImageInfo  {
     /**
      * 镜像使用环境类型：FusionCompute，Ironic，DataImage。如果弹性云服务器镜像，则取值为FusionCompute，如果是数据卷镜像则取Dat            aImage，如果是裸金属服务器镜像，则取值是Ironic
      */
-    public static class VirtualEnvTypeEnum {
+    public static final class VirtualEnvTypeEnum {
 
         
         /**
@@ -1001,13 +1022,15 @@ public class ImageInfo  {
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
         
 
-        public static final Map<String, VirtualEnvTypeEnum> staticFields = new HashMap<String, VirtualEnvTypeEnum>() {
-            { 
-                put("FusionCompute", FUSIONCOMPUTE);
-                put("Ironic", IRONIC);
-                put("DataImage", DATAIMAGE);
-            }
-        };
+        private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VirtualEnvTypeEnum> createStaticFields() {
+            Map<String, VirtualEnvTypeEnum> map = new HashMap<>();
+            map.put("FusionCompute", FUSIONCOMPUTE);
+            map.put("Ironic", IRONIC);
+            map.put("DataImage", DATAIMAGE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1026,12 +1049,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VirtualEnvTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VirtualEnvTypeEnum(value);
             }
             return result;
         }
@@ -1040,7 +1060,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            VirtualEnvTypeEnum result = staticFields.get(value);
+            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1075,7 +1095,7 @@ public class ImageInfo  {
     /**
      * 是否被其他租户可见，取值为private或public
      */
-    public static class VisibilityEnum {
+    public static final class VisibilityEnum {
 
         
         /**
@@ -1089,12 +1109,14 @@ public class ImageInfo  {
         public static final VisibilityEnum PUBLIC = new VisibilityEnum("public");
         
 
-        public static final Map<String, VisibilityEnum> staticFields = new HashMap<String, VisibilityEnum>() {
-            { 
-                put("private", PRIVATE);
-                put("public", PUBLIC);
-            }
-        };
+        private static final Map<String, VisibilityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VisibilityEnum> createStaticFields() {
+            Map<String, VisibilityEnum> map = new HashMap<>();
+            map.put("private", PRIVATE);
+            map.put("public", PUBLIC);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1113,12 +1135,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            VisibilityEnum result = staticFields.get(value);
+            VisibilityEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new VisibilityEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new VisibilityEnum(value);
             }
             return result;
         }
@@ -1127,7 +1146,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            VisibilityEnum result = staticFields.get(value);
+            VisibilityEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1156,7 +1175,7 @@ public class ImageInfo  {
     /**
      * 镜像架构类型。取值包括： x86 arm
      */
-    public static class ArchitectureEnum {
+    public static final class ArchitectureEnum {
 
         
         /**
@@ -1170,12 +1189,14 @@ public class ImageInfo  {
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
         
 
-        public static final Map<String, ArchitectureEnum> staticFields = new HashMap<String, ArchitectureEnum>() {
-            { 
-                put("x86", X86);
-                put("arm", ARM);
-            }
-        };
+        private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ArchitectureEnum> createStaticFields() {
+            Map<String, ArchitectureEnum> map = new HashMap<>();
+            map.put("x86", X86);
+            map.put("arm", ARM);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1194,12 +1215,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ArchitectureEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ArchitectureEnum(value);
             }
             return result;
         }
@@ -1208,7 +1226,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            ArchitectureEnum result = staticFields.get(value);
+            ArchitectureEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1237,7 +1255,7 @@ public class ImageInfo  {
     /**
      * 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\"true\"或者\"false\"。 如果取值为\"true\"，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
      */
-    public static class SupportFcInjectEnum {
+    public static final class SupportFcInjectEnum {
 
         
         /**
@@ -1251,12 +1269,14 @@ public class ImageInfo  {
         public static final SupportFcInjectEnum FALSE = new SupportFcInjectEnum("false");
         
 
-        public static final Map<String, SupportFcInjectEnum> staticFields = new HashMap<String, SupportFcInjectEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, SupportFcInjectEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SupportFcInjectEnum> createStaticFields() {
+            Map<String, SupportFcInjectEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1275,12 +1295,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            SupportFcInjectEnum result = staticFields.get(value);
+            SupportFcInjectEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SupportFcInjectEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SupportFcInjectEnum(value);
             }
             return result;
         }
@@ -1289,7 +1306,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            SupportFcInjectEnum result = staticFields.get(value);
+            SupportFcInjectEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1318,7 +1335,7 @@ public class ImageInfo  {
     /**
      * 云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
      */
-    public static class HwFirmwareTypeEnum {
+    public static final class HwFirmwareTypeEnum {
 
         
         /**
@@ -1332,12 +1349,14 @@ public class ImageInfo  {
         public static final HwFirmwareTypeEnum UEFI = new HwFirmwareTypeEnum("uefi");
         
 
-        public static final Map<String, HwFirmwareTypeEnum> staticFields = new HashMap<String, HwFirmwareTypeEnum>() {
-            { 
-                put("bios", BIOS);
-                put("uefi", UEFI);
-            }
-        };
+        private static final Map<String, HwFirmwareTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HwFirmwareTypeEnum> createStaticFields() {
+            Map<String, HwFirmwareTypeEnum> map = new HashMap<>();
+            map.put("bios", BIOS);
+            map.put("uefi", UEFI);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1356,12 +1375,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            HwFirmwareTypeEnum result = staticFields.get(value);
+            HwFirmwareTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HwFirmwareTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HwFirmwareTypeEnum(value);
             }
             return result;
         }
@@ -1370,7 +1386,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            HwFirmwareTypeEnum result = staticFields.get(value);
+            HwFirmwareTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -1399,7 +1415,7 @@ public class ImageInfo  {
     /**
      * 是否是ARM架构类型的镜像，取值为“true”或者“false”。
      */
-    public static class SupportArmEnum {
+    public static final class SupportArmEnum {
 
         
         /**
@@ -1413,12 +1429,14 @@ public class ImageInfo  {
         public static final SupportArmEnum FALSE = new SupportArmEnum("false");
         
 
-        public static final Map<String, SupportArmEnum> staticFields = new HashMap<String, SupportArmEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, SupportArmEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SupportArmEnum> createStaticFields() {
+            Map<String, SupportArmEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -1437,12 +1455,9 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            SupportArmEnum result = staticFields.get(value);
+            SupportArmEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new SupportArmEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new SupportArmEnum(value);
             }
             return result;
         }
@@ -1451,7 +1466,7 @@ public class ImageInfo  {
             if( value == null ){
                 return null;
             }
-            SupportArmEnum result = staticFields.get(value);
+            SupportArmEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

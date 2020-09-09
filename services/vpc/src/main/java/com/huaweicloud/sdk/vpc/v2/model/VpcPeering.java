@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.vpc.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -33,7 +36,7 @@ public class VpcPeering  {
     /**
      * 功能说明：对等连接状态 取值范围： - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
      */
-    public static class StatusEnum {
+    public static final class StatusEnum {
 
         
         /**
@@ -62,15 +65,17 @@ public class VpcPeering  {
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
         
 
-        public static final Map<String, StatusEnum> staticFields = new HashMap<String, StatusEnum>() {
-            { 
-                put("PENDING_ACCEPTANCE", PENDING_ACCEPTANCE);
-                put("REJECTED", REJECTED);
-                put("EXPIRED", EXPIRED);
-                put("DELETED", DELETED);
-                put("ACTIVE", ACTIVE);
-            }
-        };
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("PENDING_ACCEPTANCE", PENDING_ACCEPTANCE);
+            map.put("REJECTED", REJECTED);
+            map.put("EXPIRED", EXPIRED);
+            map.put("DELETED", DELETED);
+            map.put("ACTIVE", ACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -89,12 +94,9 @@ public class VpcPeering  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new StatusEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new StatusEnum(value);
             }
             return result;
         }
@@ -103,7 +105,7 @@ public class VpcPeering  {
             if( value == null ){
                 return null;
             }
-            StatusEnum result = staticFields.get(value);
+            StatusEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

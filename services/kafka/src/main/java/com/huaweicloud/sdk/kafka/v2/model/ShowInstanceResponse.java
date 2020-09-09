@@ -5,6 +5,11 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -192,7 +197,7 @@ public class ShowInstanceResponse extends SdkResponse {
     /**
      * 实例类型：集群，cluster。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -206,12 +211,14 @@ public class ShowInstanceResponse extends SdkResponse {
         public static final TypeEnum CLUSTER = new TypeEnum("cluster");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("single", SINGLE);
-                put("cluster", CLUSTER);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("single", SINGLE);
+            map.put("cluster", CLUSTER);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -230,12 +237,9 @@ public class ShowInstanceResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -244,7 +248,7 @@ public class ShowInstanceResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -339,7 +343,7 @@ public class ShowInstanceResponse extends SdkResponse {
     /**
      * 消息老化策略。
      */
-    public static class RetentionPolicyEnum {
+    public static final class RetentionPolicyEnum {
 
         
         /**
@@ -353,12 +357,14 @@ public class ShowInstanceResponse extends SdkResponse {
         public static final RetentionPolicyEnum PRODUCE_REJECT = new RetentionPolicyEnum("produce_reject");
         
 
-        public static final Map<String, RetentionPolicyEnum> staticFields = new HashMap<String, RetentionPolicyEnum>() {
-            { 
-                put("time_base", TIME_BASE);
-                put("produce_reject", PRODUCE_REJECT);
-            }
-        };
+        private static final Map<String, RetentionPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RetentionPolicyEnum> createStaticFields() {
+            Map<String, RetentionPolicyEnum> map = new HashMap<>();
+            map.put("time_base", TIME_BASE);
+            map.put("produce_reject", PRODUCE_REJECT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -377,12 +383,9 @@ public class ShowInstanceResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RetentionPolicyEnum result = staticFields.get(value);
+            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new RetentionPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new RetentionPolicyEnum(value);
             }
             return result;
         }
@@ -391,7 +394,7 @@ public class ShowInstanceResponse extends SdkResponse {
             if( value == null ){
                 return null;
             }
-            RetentionPolicyEnum result = staticFields.get(value);
+            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

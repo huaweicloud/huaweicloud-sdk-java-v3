@@ -3,9 +3,11 @@ package com.huaweicloud.sdk.servicestage.v2.model;
 
 
 
+
 import java.util.function.Consumer;
 import java.util.Objects;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,12 +30,14 @@ public class InstancePlatformType {
     public static final InstancePlatformType VMAPP = new InstancePlatformType("vmapp");
     
 
-    public static final Map<String, InstancePlatformType> staticFields = new HashMap<String, InstancePlatformType>() {
-        { 
-            put("cce", CCE);
-            put("vmapp", VMAPP);
-        }
-    };
+    private static final Map<String, InstancePlatformType> STATIC_FIELDS = createStaticFields();
+
+    private static Map<String, InstancePlatformType> createStaticFields() {
+        Map<String, InstancePlatformType> map = new HashMap<>();
+        map.put("cce", CCE);
+        map.put("vmapp", VMAPP);
+        return Collections.unmodifiableMap(map);
+    }
 
     private String value;
 
@@ -52,12 +56,9 @@ public class InstancePlatformType {
         if( value == null ){
             return null;
         }
-        InstancePlatformType result = staticFields.get(value);
+        InstancePlatformType result = STATIC_FIELDS.get(value);
         if (result == null) {
-            result = staticFields.putIfAbsent(value, new InstancePlatformType(value));
-            if (result == null) {
-                result = staticFields.get(value);
-            }
+            result = new InstancePlatformType(value);
         }
         return result;
     }
@@ -66,7 +67,7 @@ public class InstancePlatformType {
         if( value == null ){
             return null;
         }
-        InstancePlatformType result = staticFields.get(value);
+        InstancePlatformType result = STATIC_FIELDS.get(value);
         if (result != null) {
             return result;
         }

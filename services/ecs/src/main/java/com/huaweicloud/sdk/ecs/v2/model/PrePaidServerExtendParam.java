@@ -3,6 +3,17 @@ package com.huaweicloud.sdk.ecs.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -20,7 +31,7 @@ public class PrePaidServerExtendParam  {
     /**
      * 计费模式。  功能说明：付费方式  取值范围：  - prePaid-预付费，即包年包月； - postPaid-后付费，即按需付费； - 默认值是postPaid  > 说明： >  > 当chargingMode为prePaid（即创建包年包月付费的云服务器），且使用SSH秘钥方式登录云服务器时，metadata 中的 op_svc_userid 字段为必选字段。
      */
-    public static class ChargingModeEnum {
+    public static final class ChargingModeEnum {
 
         
         /**
@@ -34,12 +45,14 @@ public class PrePaidServerExtendParam  {
         public static final ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
         
 
-        public static final Map<String, ChargingModeEnum> staticFields = new HashMap<String, ChargingModeEnum>() {
-            { 
-                put("prePaid", PREPAID);
-                put("postPaid", POSTPAID);
-            }
-        };
+        private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargingModeEnum> createStaticFields() {
+            Map<String, ChargingModeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -58,12 +71,9 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ChargingModeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ChargingModeEnum(value);
             }
             return result;
         }
@@ -72,7 +82,7 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            ChargingModeEnum result = staticFields.get(value);
+            ChargingModeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -107,7 +117,7 @@ public class PrePaidServerExtendParam  {
     /**
      * 订购周期类型。  取值范围：  - month-月 - year-年  > 说明： >  > chargingMode为prePaid时生效且为必选值。
      */
-    public static class PeriodTypeEnum {
+    public static final class PeriodTypeEnum {
 
         
         /**
@@ -121,12 +131,14 @@ public class PrePaidServerExtendParam  {
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
         
 
-        public static final Map<String, PeriodTypeEnum> staticFields = new HashMap<String, PeriodTypeEnum>() {
-            { 
-                put("month", MONTH);
-                put("year", YEAR);
-            }
-        };
+        private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PeriodTypeEnum> createStaticFields() {
+            Map<String, PeriodTypeEnum> map = new HashMap<>();
+            map.put("month", MONTH);
+            map.put("year", YEAR);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -145,12 +157,9 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new PeriodTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new PeriodTypeEnum(value);
             }
             return result;
         }
@@ -159,7 +168,7 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            PeriodTypeEnum result = staticFields.get(value);
+            PeriodTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -194,7 +203,7 @@ public class PrePaidServerExtendParam  {
     /**
      * 是否自动续订。  - “true”：自动续订 - “false”：不自动续订  > 说明： >  > chargingMode为prePaid时生效，不传该字段时默认为不自动续订。
      */
-    public static class IsAutoRenewEnum {
+    public static final class IsAutoRenewEnum {
 
         
         /**
@@ -208,12 +217,14 @@ public class PrePaidServerExtendParam  {
         public static final IsAutoRenewEnum FALSE = new IsAutoRenewEnum("false");
         
 
-        public static final Map<String, IsAutoRenewEnum> staticFields = new HashMap<String, IsAutoRenewEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IsAutoRenewEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsAutoRenewEnum> createStaticFields() {
+            Map<String, IsAutoRenewEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -232,12 +243,9 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            IsAutoRenewEnum result = staticFields.get(value);
+            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsAutoRenewEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsAutoRenewEnum(value);
             }
             return result;
         }
@@ -246,7 +254,7 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            IsAutoRenewEnum result = staticFields.get(value);
+            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -275,7 +283,7 @@ public class PrePaidServerExtendParam  {
     /**
      * 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。  - “true”：是（自动支付） - “false”：否（需要客户手动支付）  > 说明： >  > chargingMode为prePaid时生效，不传该字段时默认为客户手动支付。
      */
-    public static class IsAutoPayEnum {
+    public static final class IsAutoPayEnum {
 
         
         /**
@@ -289,12 +297,14 @@ public class PrePaidServerExtendParam  {
         public static final IsAutoPayEnum FALSE = new IsAutoPayEnum("false");
         
 
-        public static final Map<String, IsAutoPayEnum> staticFields = new HashMap<String, IsAutoPayEnum>() {
-            { 
-                put("true", TRUE);
-                put("false", FALSE);
-            }
-        };
+        private static final Map<String, IsAutoPayEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IsAutoPayEnum> createStaticFields() {
+            Map<String, IsAutoPayEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -313,12 +323,9 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            IsAutoPayEnum result = staticFields.get(value);
+            IsAutoPayEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new IsAutoPayEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new IsAutoPayEnum(value);
             }
             return result;
         }
@@ -327,7 +334,7 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            IsAutoPayEnum result = staticFields.get(value);
+            IsAutoPayEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -392,7 +399,7 @@ public class PrePaidServerExtendParam  {
     /**
      * 竞价实例中断策略，当前支持immediate。  - 当interruption_policy=immediate时表示释放策略为立即释放。 
      */
-    public static class InterruptionPolicyEnum {
+    public static final class InterruptionPolicyEnum {
 
         
         /**
@@ -401,11 +408,13 @@ public class PrePaidServerExtendParam  {
         public static final InterruptionPolicyEnum IMMEDIATE = new InterruptionPolicyEnum("immediate");
         
 
-        public static final Map<String, InterruptionPolicyEnum> staticFields = new HashMap<String, InterruptionPolicyEnum>() {
-            { 
-                put("immediate", IMMEDIATE);
-            }
-        };
+        private static final Map<String, InterruptionPolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InterruptionPolicyEnum> createStaticFields() {
+            Map<String, InterruptionPolicyEnum> map = new HashMap<>();
+            map.put("immediate", IMMEDIATE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -424,12 +433,9 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            InterruptionPolicyEnum result = staticFields.get(value);
+            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InterruptionPolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InterruptionPolicyEnum(value);
             }
             return result;
         }
@@ -438,7 +444,7 @@ public class PrePaidServerExtendParam  {
             if( value == null ){
                 return null;
             }
-            InterruptionPolicyEnum result = staticFields.get(value);
+            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

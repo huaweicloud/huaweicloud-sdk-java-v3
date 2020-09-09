@@ -3,6 +3,13 @@ package com.huaweicloud.sdk.as.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -85,7 +92,7 @@ public class UpdateScalingGroupRequestBody  {
         /**
      * 伸缩组实例健康检查方式：ELB_AUDIT和NOVA_AUDIT。当伸缩组参数中设置负载均衡时，默认为ELB_AUDIT；否则默认为NOVA_AUDIT。ELB_AUDIT表示负载均衡健康检查方式，在有监听器的伸缩组中有效。NOVA_AUDIT表示弹性伸缩自带的健康检查方式。
      */
-    public static class HealthPeriodicAuditMethodEnum {
+    public static final class HealthPeriodicAuditMethodEnum {
 
         
         /**
@@ -99,12 +106,14 @@ public class UpdateScalingGroupRequestBody  {
         public static final HealthPeriodicAuditMethodEnum NOVA_AUDIT = new HealthPeriodicAuditMethodEnum("NOVA_AUDIT");
         
 
-        public static final Map<String, HealthPeriodicAuditMethodEnum> staticFields = new HashMap<String, HealthPeriodicAuditMethodEnum>() {
-            { 
-                put("ELB_AUDIT", ELB_AUDIT);
-                put("NOVA_AUDIT", NOVA_AUDIT);
-            }
-        };
+        private static final Map<String, HealthPeriodicAuditMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HealthPeriodicAuditMethodEnum> createStaticFields() {
+            Map<String, HealthPeriodicAuditMethodEnum> map = new HashMap<>();
+            map.put("ELB_AUDIT", ELB_AUDIT);
+            map.put("NOVA_AUDIT", NOVA_AUDIT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -123,12 +132,9 @@ public class UpdateScalingGroupRequestBody  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = staticFields.get(value);
+            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HealthPeriodicAuditMethodEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HealthPeriodicAuditMethodEnum(value);
             }
             return result;
         }
@@ -137,7 +143,7 @@ public class UpdateScalingGroupRequestBody  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = staticFields.get(value);
+            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -166,7 +172,7 @@ public class UpdateScalingGroupRequestBody  {
     /**
      * 伸缩组实例健康检查周期（分钟）：1、5、15、60、180。若设置为0，可以实现10秒级健康检查。
      */
-    public static class HealthPeriodicAuditTimeEnum {
+    public static final class HealthPeriodicAuditTimeEnum {
 
         
         /**
@@ -200,16 +206,18 @@ public class UpdateScalingGroupRequestBody  {
         public static final HealthPeriodicAuditTimeEnum NUMBER_180 = new HealthPeriodicAuditTimeEnum(180);
         
 
-        public static final Map<Integer, HealthPeriodicAuditTimeEnum> staticFields = new HashMap<Integer, HealthPeriodicAuditTimeEnum>() {
-            { 
-                put(0, NUMBER_0);
-                put(1, NUMBER_1);
-                put(5, NUMBER_5);
-                put(15, NUMBER_15);
-                put(60, NUMBER_60);
-                put(180, NUMBER_180);
-            }
-        };
+        private static final Map<Integer, HealthPeriodicAuditTimeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, HealthPeriodicAuditTimeEnum> createStaticFields() {
+            Map<Integer, HealthPeriodicAuditTimeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(5, NUMBER_5);
+            map.put(15, NUMBER_15);
+            map.put(60, NUMBER_60);
+            map.put(180, NUMBER_180);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -228,12 +236,9 @@ public class UpdateScalingGroupRequestBody  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditTimeEnum result = staticFields.get(value);
+            HealthPeriodicAuditTimeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new HealthPeriodicAuditTimeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new HealthPeriodicAuditTimeEnum(value);
             }
             return result;
         }
@@ -242,7 +247,7 @@ public class UpdateScalingGroupRequestBody  {
             if( value == null ){
                 return null;
             }
-            HealthPeriodicAuditTimeEnum result = staticFields.get(value);
+            HealthPeriodicAuditTimeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
@@ -277,7 +282,7 @@ public class UpdateScalingGroupRequestBody  {
     /**
      * 伸缩组实例移除策略：OLD_CONFIG_OLD_INSTANCE（默认）：从根据“较早创建的配置”创建的实例中筛选出较早创建的实例被优先移除。OLD_CONFIG_NEW_INSTANCE：从根据“较早创建的配置”创建的实例中筛选出较新创建的实例被优先移除。OLD_INSTANCE：较早创建的实例被优先移除。NEW_INSTANCE：较新创建的实例将被优先移除。
      */
-    public static class InstanceTerminatePolicyEnum {
+    public static final class InstanceTerminatePolicyEnum {
 
         
         /**
@@ -301,14 +306,16 @@ public class UpdateScalingGroupRequestBody  {
         public static final InstanceTerminatePolicyEnum NEW_INSTANCE = new InstanceTerminatePolicyEnum("NEW_INSTANCE");
         
 
-        public static final Map<String, InstanceTerminatePolicyEnum> staticFields = new HashMap<String, InstanceTerminatePolicyEnum>() {
-            { 
-                put("OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE);
-                put("OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE);
-                put("OLD_INSTANCE", OLD_INSTANCE);
-                put("NEW_INSTANCE", NEW_INSTANCE);
-            }
-        };
+        private static final Map<String, InstanceTerminatePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InstanceTerminatePolicyEnum> createStaticFields() {
+            Map<String, InstanceTerminatePolicyEnum> map = new HashMap<>();
+            map.put("OLD_CONFIG_OLD_INSTANCE", OLD_CONFIG_OLD_INSTANCE);
+            map.put("OLD_CONFIG_NEW_INSTANCE", OLD_CONFIG_NEW_INSTANCE);
+            map.put("OLD_INSTANCE", OLD_INSTANCE);
+            map.put("NEW_INSTANCE", NEW_INSTANCE);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -327,12 +334,9 @@ public class UpdateScalingGroupRequestBody  {
             if( value == null ){
                 return null;
             }
-            InstanceTerminatePolicyEnum result = staticFields.get(value);
+            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new InstanceTerminatePolicyEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new InstanceTerminatePolicyEnum(value);
             }
             return result;
         }
@@ -341,7 +345,7 @@ public class UpdateScalingGroupRequestBody  {
             if( value == null ){
                 return null;
             }
-            InstanceTerminatePolicyEnum result = staticFields.get(value);
+            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

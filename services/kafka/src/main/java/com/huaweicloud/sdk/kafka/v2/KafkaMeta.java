@@ -691,6 +691,29 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestartManagerRequest, RestartManagerResponse> restartManager = genForrestartManager();
+
+    private static HttpRequestDef<RestartManagerRequest, RestartManagerResponse> genForrestartManager() {
+        // basic
+        HttpRequestDef.Builder<RestartManagerRequest, RestartManagerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RestartManagerRequest.class, RestartManagerResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RestartManagerRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask = genForshowBackgroundTask();
 
     private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForshowBackgroundTask() {
@@ -1291,12 +1314,12 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstaneTopicRequest, UpdateInstaneTopicResponse> updateInstaneTopic = genForupdateInstaneTopic();
+    public static final HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> updateInstanceTopic = genForupdateInstanceTopic();
 
-    private static HttpRequestDef<UpdateInstaneTopicRequest, UpdateInstaneTopicResponse> genForupdateInstaneTopic() {
+    private static HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> genForupdateInstanceTopic() {
         // basic
-        HttpRequestDef.Builder<UpdateInstaneTopicRequest, UpdateInstaneTopicResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstaneTopicRequest.class, UpdateInstaneTopicResponse.class)
+        HttpRequestDef.Builder<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceTopicRequest.class, UpdateInstanceTopicResponse.class)
                 .withUri("/v2/{project_id}/instances/{instance_id}/topics")
                 .withContentType("application/json");
 
@@ -1305,7 +1328,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateInstaneTopicRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(UpdateInstanceTopicRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );
@@ -1313,7 +1336,7 @@ public class KafkaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateInstanceTopicReq.class,
-            f -> f.withMarshaller(UpdateInstaneTopicRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateInstanceTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

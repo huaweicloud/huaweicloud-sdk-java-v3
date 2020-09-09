@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -27,7 +30,7 @@ public class ThrottleBindingResp  {
     /**
      * 策略作用域，取值如下： - 1：整个API - 2： 单个用户 - 3：单个APP  目前只支持1
      */
-    public static class ScopeEnum {
+    public static final class ScopeEnum {
 
         
         /**
@@ -46,13 +49,15 @@ public class ThrottleBindingResp  {
         public static final ScopeEnum NUMBER_3 = new ScopeEnum(3);
         
 
-        public static final Map<Integer, ScopeEnum> staticFields = new HashMap<Integer, ScopeEnum>() {
-            { 
-                put(1, NUMBER_1);
-                put(2, NUMBER_2);
-                put(3, NUMBER_3);
-            }
-        };
+        private static final Map<Integer, ScopeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ScopeEnum> createStaticFields() {
+            Map<Integer, ScopeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            return Collections.unmodifiableMap(map);
+        }
 
         private Integer value;
 
@@ -71,12 +76,9 @@ public class ThrottleBindingResp  {
             if( value == null ){
                 return null;
             }
-            ScopeEnum result = staticFields.get(value);
+            ScopeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new ScopeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new ScopeEnum(value);
             }
             return result;
         }
@@ -85,7 +87,7 @@ public class ThrottleBindingResp  {
             if( value == null ){
                 return null;
             }
-            ScopeEnum result = staticFields.get(value);
+            ScopeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

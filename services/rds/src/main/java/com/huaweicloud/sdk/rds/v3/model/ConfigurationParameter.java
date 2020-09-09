@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,7 +53,7 @@ public class ConfigurationParameter  {
     /**
      * 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
      */
-    public static class TypeEnum {
+    public static final class TypeEnum {
 
         
         /**
@@ -79,15 +82,17 @@ public class ConfigurationParameter  {
         public static final TypeEnum FLOAT = new TypeEnum("float");
         
 
-        public static final Map<String, TypeEnum> staticFields = new HashMap<String, TypeEnum>() {
-            { 
-                put("string", STRING);
-                put("integer", INTEGER);
-                put("boolean", BOOLEAN);
-                put("list", LIST);
-                put("float", FLOAT);
-            }
-        };
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("string", STRING);
+            map.put("integer", INTEGER);
+            map.put("boolean", BOOLEAN);
+            map.put("list", LIST);
+            map.put("float", FLOAT);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -106,12 +111,9 @@ public class ConfigurationParameter  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TypeEnum(value);
             }
             return result;
         }
@@ -120,7 +122,7 @@ public class ConfigurationParameter  {
             if( value == null ){
                 return null;
             }
-            TypeEnum result = staticFields.get(value);
+            TypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -22,7 +25,7 @@ public class CreateTrackerRequestBody  {
     /**
      * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info; 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate; 数据类追踪器参数：tracker_name, data_bucket。
      */
-    public static class TrackerTypeEnum {
+    public static final class TrackerTypeEnum {
 
         
         /**
@@ -36,12 +39,14 @@ public class CreateTrackerRequestBody  {
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
         
 
-        public static final Map<String, TrackerTypeEnum> staticFields = new HashMap<String, TrackerTypeEnum>() {
-            { 
-                put("system", SYSTEM);
-                put("data", DATA);
-            }
-        };
+        private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TrackerTypeEnum> createStaticFields() {
+            Map<String, TrackerTypeEnum> map = new HashMap<>();
+            map.put("system", SYSTEM);
+            map.put("data", DATA);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -60,12 +65,9 @@ public class CreateTrackerRequestBody  {
             if( value == null ){
                 return null;
             }
-            TrackerTypeEnum result = staticFields.get(value);
+            TrackerTypeEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new TrackerTypeEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new TrackerTypeEnum(value);
             }
             return result;
         }
@@ -74,7 +76,7 @@ public class CreateTrackerRequestBody  {
             if( value == null ){
                 return null;
             }
-            TrackerTypeEnum result = staticFields.get(value);
+            TrackerTypeEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }

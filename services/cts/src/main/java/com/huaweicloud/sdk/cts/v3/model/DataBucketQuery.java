@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 
 
+import java.util.Collections;
+
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -34,7 +37,7 @@ public class DataBucketQuery  {
     /**
      * Gets or Sets dataEvent
      */
-    public static class DataEventEnum {
+    public static final class DataEventEnum {
 
         
         /**
@@ -48,12 +51,14 @@ public class DataBucketQuery  {
         public static final DataEventEnum READ = new DataEventEnum("READ");
         
 
-        public static final Map<String, DataEventEnum> staticFields = new HashMap<String, DataEventEnum>() {
-            { 
-                put("WRITE", WRITE);
-                put("READ", READ);
-            }
-        };
+        private static final Map<String, DataEventEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DataEventEnum> createStaticFields() {
+            Map<String, DataEventEnum> map = new HashMap<>();
+            map.put("WRITE", WRITE);
+            map.put("READ", READ);
+            return Collections.unmodifiableMap(map);
+        }
 
         private String value;
 
@@ -72,12 +77,9 @@ public class DataBucketQuery  {
             if( value == null ){
                 return null;
             }
-            DataEventEnum result = staticFields.get(value);
+            DataEventEnum result = STATIC_FIELDS.get(value);
             if (result == null) {
-                result = staticFields.putIfAbsent(value, new DataEventEnum(value));
-                if (result == null) {
-                    result = staticFields.get(value);
-                }
+                result = new DataEventEnum(value);
             }
             return result;
         }
@@ -86,7 +88,7 @@ public class DataBucketQuery  {
             if( value == null ){
                 return null;
             }
-            DataEventEnum result = staticFields.get(value);
+            DataEventEnum result = STATIC_FIELDS.get(value);
             if (result != null) {
                 return result;
             }
