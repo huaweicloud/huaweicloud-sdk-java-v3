@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,6 +33,12 @@ public class CreateVolumeResponse extends SdkResponse {
     
     private String orderId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="volume_ids")
+    
+    private List<String> volumeIds = null;
+    
     public CreateVolumeResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -70,6 +78,40 @@ public class CreateVolumeResponse extends SdkResponse {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
+
+    public CreateVolumeResponse withVolumeIds(List<String> volumeIds) {
+        this.volumeIds = volumeIds;
+        return this;
+    }
+
+    
+    public CreateVolumeResponse addVolumeIdsItem(String volumeIdsItem) {
+        if (this.volumeIds == null) {
+            this.volumeIds = new ArrayList<>();
+        }
+        this.volumeIds.add(volumeIdsItem);
+        return this;
+    }
+
+    public CreateVolumeResponse withVolumeIds(Consumer<List<String>> volumeIdsSetter) {
+        if(this.volumeIds == null ){
+            this.volumeIds = new ArrayList<>();
+        }
+        volumeIdsSetter.accept(this.volumeIds);
+        return this;
+    }
+
+    /**
+     * 待创建的磁盘ID列表。
+     * @return volumeIds
+     */
+    public List<String> getVolumeIds() {
+        return volumeIds;
+    }
+
+    public void setVolumeIds(List<String> volumeIds) {
+        this.volumeIds = volumeIds;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,11 +122,12 @@ public class CreateVolumeResponse extends SdkResponse {
         }
         CreateVolumeResponse createVolumeResponse = (CreateVolumeResponse) o;
         return Objects.equals(this.jobId, createVolumeResponse.jobId) &&
-            Objects.equals(this.orderId, createVolumeResponse.orderId);
+            Objects.equals(this.orderId, createVolumeResponse.orderId) &&
+            Objects.equals(this.volumeIds, createVolumeResponse.volumeIds);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, orderId);
+        return Objects.hash(jobId, orderId, volumeIds);
     }
     @Override
     public String toString() {
@@ -92,6 +135,7 @@ public class CreateVolumeResponse extends SdkResponse {
         sb.append("class CreateVolumeResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    volumeIds: ").append(toIndentedString(volumeIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

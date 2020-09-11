@@ -24,12 +24,6 @@ public class CreateIpGroupRequestBody  {
     
     private CreateIpGroupOption ipgroup = null;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
-    private String requestId;
-
     public CreateIpGroupRequestBody withIpgroup(CreateIpGroupOption ipgroup) {
         this.ipgroup = ipgroup;
         return this;
@@ -56,26 +50,6 @@ public class CreateIpGroupRequestBody  {
     public void setIpgroup(CreateIpGroupOption ipgroup) {
         this.ipgroup = ipgroup;
     }
-
-    public CreateIpGroupRequestBody withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 请求ID。 注：自动生成 。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -85,19 +59,17 @@ public class CreateIpGroupRequestBody  {
             return false;
         }
         CreateIpGroupRequestBody createIpGroupRequestBody = (CreateIpGroupRequestBody) o;
-        return Objects.equals(this.ipgroup, createIpGroupRequestBody.ipgroup) &&
-            Objects.equals(this.requestId, createIpGroupRequestBody.requestId);
+        return Objects.equals(this.ipgroup, createIpGroupRequestBody.ipgroup);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ipgroup, requestId);
+        return Objects.hash(ipgroup);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateIpGroupRequestBody {\n");
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
-        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -117,12 +117,6 @@ public class ListListenersRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
-    private List<String> tags = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_address")
     
     private List<String> memberAddress = null;
@@ -645,40 +639,6 @@ public class ListListenersRequest  {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
 
-    public ListListenersRequest withTags(List<String> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    
-    public ListListenersRequest addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public ListListenersRequest withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * Get tags
-     * @return tags
-     */
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
-    }
-
     public ListListenersRequest withMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
         return this;
@@ -947,7 +907,6 @@ public class ListListenersRequest  {
             Objects.equals(this.http2Enable, listListenersRequest.http2Enable) &&
             Objects.equals(this.loadbalancerId, listListenersRequest.loadbalancerId) &&
             Objects.equals(this.tlsCiphersPolicy, listListenersRequest.tlsCiphersPolicy) &&
-            Objects.equals(this.tags, listListenersRequest.tags) &&
             Objects.equals(this.memberAddress, listListenersRequest.memberAddress) &&
             Objects.equals(this.memberDeviceId, listListenersRequest.memberDeviceId) &&
             Objects.equals(this.enterpriseProjectId, listListenersRequest.enterpriseProjectId) &&
@@ -959,7 +918,7 @@ public class ListListenersRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, pageReverse, protocolPort, protocol, description, defaultTlsContainerRef, clientCaTlsContainerRef, adminStateUp, connectionLimit, defaultPoolId, id, name, http2Enable, loadbalancerId, tlsCiphersPolicy, tags, memberAddress, memberDeviceId, enterpriseProjectId, enableMemberRetry, memberTimeout, clientTimeout, keepaliveTimeout, transparentClientIpEnable);
+        return Objects.hash(limit, marker, pageReverse, protocolPort, protocol, description, defaultTlsContainerRef, clientCaTlsContainerRef, adminStateUp, connectionLimit, defaultPoolId, id, name, http2Enable, loadbalancerId, tlsCiphersPolicy, memberAddress, memberDeviceId, enterpriseProjectId, enableMemberRetry, memberTimeout, clientTimeout, keepaliveTimeout, transparentClientIpEnable);
     }
     @Override
     public String toString() {
@@ -981,7 +940,6 @@ public class ListListenersRequest  {
         sb.append("    http2Enable: ").append(toIndentedString(http2Enable)).append("\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
         sb.append("    tlsCiphersPolicy: ").append(toIndentedString(tlsCiphersPolicy)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    memberAddress: ").append(toIndentedString(memberAddress)).append("\n");
         sb.append("    memberDeviceId: ").append(toIndentedString(memberDeviceId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

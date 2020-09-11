@@ -183,30 +183,6 @@ public class ListLoadBalancersRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
-    private List<String> tags = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags-any")
-    
-    private List<String> tagsAny = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not-tags")
-    
-    private List<String> notTags = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not-tags-any")
-    
-    private List<String> notTagsAny = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicips")
     
     private List<String> publicips = null;
@@ -1073,142 +1049,6 @@ public class ListLoadBalancersRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListLoadBalancersRequest withTags(List<String> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    
-    public ListLoadBalancersRequest addTagsItem(String tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public ListLoadBalancersRequest withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * Get tags
-     * @return tags
-     */
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
-    }
-
-    public ListLoadBalancersRequest withTagsAny(List<String> tagsAny) {
-        this.tagsAny = tagsAny;
-        return this;
-    }
-
-    
-    public ListLoadBalancersRequest addTagsAnyItem(String tagsAnyItem) {
-        if (this.tagsAny == null) {
-            this.tagsAny = new ArrayList<>();
-        }
-        this.tagsAny.add(tagsAnyItem);
-        return this;
-    }
-
-    public ListLoadBalancersRequest withTagsAny(Consumer<List<String>> tagsAnySetter) {
-        if(this.tagsAny == null ){
-            this.tagsAny = new ArrayList<>();
-        }
-        tagsAnySetter.accept(this.tagsAny);
-        return this;
-    }
-
-    /**
-     * Get tagsAny
-     * @return tagsAny
-     */
-    public List<String> getTagsAny() {
-        return tagsAny;
-    }
-
-    public void setTagsAny(List<String> tagsAny) {
-        this.tagsAny = tagsAny;
-    }
-
-    public ListLoadBalancersRequest withNotTags(List<String> notTags) {
-        this.notTags = notTags;
-        return this;
-    }
-
-    
-    public ListLoadBalancersRequest addNotTagsItem(String notTagsItem) {
-        if (this.notTags == null) {
-            this.notTags = new ArrayList<>();
-        }
-        this.notTags.add(notTagsItem);
-        return this;
-    }
-
-    public ListLoadBalancersRequest withNotTags(Consumer<List<String>> notTagsSetter) {
-        if(this.notTags == null ){
-            this.notTags = new ArrayList<>();
-        }
-        notTagsSetter.accept(this.notTags);
-        return this;
-    }
-
-    /**
-     * Get notTags
-     * @return notTags
-     */
-    public List<String> getNotTags() {
-        return notTags;
-    }
-
-    public void setNotTags(List<String> notTags) {
-        this.notTags = notTags;
-    }
-
-    public ListLoadBalancersRequest withNotTagsAny(List<String> notTagsAny) {
-        this.notTagsAny = notTagsAny;
-        return this;
-    }
-
-    
-    public ListLoadBalancersRequest addNotTagsAnyItem(String notTagsAnyItem) {
-        if (this.notTagsAny == null) {
-            this.notTagsAny = new ArrayList<>();
-        }
-        this.notTagsAny.add(notTagsAnyItem);
-        return this;
-    }
-
-    public ListLoadBalancersRequest withNotTagsAny(Consumer<List<String>> notTagsAnySetter) {
-        if(this.notTagsAny == null ){
-            this.notTagsAny = new ArrayList<>();
-        }
-        notTagsAnySetter.accept(this.notTagsAny);
-        return this;
-    }
-
-    /**
-     * Get notTagsAny
-     * @return notTagsAny
-     */
-    public List<String> getNotTagsAny() {
-        return notTagsAny;
-    }
-
-    public void setNotTagsAny(List<String> notTagsAny) {
-        this.notTagsAny = notTagsAny;
-    }
-
     public ListLoadBalancersRequest withPublicips(List<String> publicips) {
         this.publicips = publicips;
         return this;
@@ -1332,17 +1172,13 @@ public class ListLoadBalancersRequest  {
             Objects.equals(this.memberDeviceId, listLoadBalancersRequest.memberDeviceId) &&
             Objects.equals(this.memberAddress, listLoadBalancersRequest.memberAddress) &&
             Objects.equals(this.enterpriseProjectId, listLoadBalancersRequest.enterpriseProjectId) &&
-            Objects.equals(this.tags, listLoadBalancersRequest.tags) &&
-            Objects.equals(this.tagsAny, listLoadBalancersRequest.tagsAny) &&
-            Objects.equals(this.notTags, listLoadBalancersRequest.notTags) &&
-            Objects.equals(this.notTagsAny, listLoadBalancersRequest.notTagsAny) &&
             Objects.equals(this.publicips, listLoadBalancersRequest.publicips) &&
             Objects.equals(this.ipVersion, listLoadBalancersRequest.ipVersion) &&
             Objects.equals(this.deletionProtectionEnable, listLoadBalancersRequest.deletionProtectionEnable);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, pageReverse, id, name, description, adminStateUp, provisioningStatus, operatingStatus, guaranteed, vpcId, vipPortId, vipAddress, vipSubnetCidrId, l4FlavorId, l4ScaleFlavorId, ipv6VipAddress, ipv6VipVirsubnetId, ipv6VipPortId, availabilityZoneList, eips, l7FlavorId, l7ScaleFlavorId, billingInfo, memberDeviceId, memberAddress, enterpriseProjectId, tags, tagsAny, notTags, notTagsAny, publicips, ipVersion, deletionProtectionEnable);
+        return Objects.hash(marker, limit, pageReverse, id, name, description, adminStateUp, provisioningStatus, operatingStatus, guaranteed, vpcId, vipPortId, vipAddress, vipSubnetCidrId, l4FlavorId, l4ScaleFlavorId, ipv6VipAddress, ipv6VipVirsubnetId, ipv6VipPortId, availabilityZoneList, eips, l7FlavorId, l7ScaleFlavorId, billingInfo, memberDeviceId, memberAddress, enterpriseProjectId, publicips, ipVersion, deletionProtectionEnable);
     }
     @Override
     public String toString() {
@@ -1375,10 +1211,6 @@ public class ListLoadBalancersRequest  {
         sb.append("    memberDeviceId: ").append(toIndentedString(memberDeviceId)).append("\n");
         sb.append("    memberAddress: ").append(toIndentedString(memberAddress)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    tagsAny: ").append(toIndentedString(tagsAny)).append("\n");
-        sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");
-        sb.append("    notTagsAny: ").append(toIndentedString(notTagsAny)).append("\n");
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");

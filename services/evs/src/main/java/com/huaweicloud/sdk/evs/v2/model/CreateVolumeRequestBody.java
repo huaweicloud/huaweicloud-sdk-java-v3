@@ -31,6 +31,12 @@ public class CreateVolumeRequestBody  {
     
     private CreateVolumeOption volume = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="server_id")
+    
+    private String serverId;
+
     public CreateVolumeRequestBody withBssParam(BssParamForCreateVolume bssParam) {
         this.bssParam = bssParam;
         return this;
@@ -84,6 +90,26 @@ public class CreateVolumeRequestBody  {
     public void setVolume(CreateVolumeOption volume) {
         this.volume = volume;
     }
+
+    public CreateVolumeRequestBody withServerId(String serverId) {
+        this.serverId = serverId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建云硬盘并挂载到目标虚拟机。
+     * @return serverId
+     */
+    public String getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,11 +120,12 @@ public class CreateVolumeRequestBody  {
         }
         CreateVolumeRequestBody createVolumeRequestBody = (CreateVolumeRequestBody) o;
         return Objects.equals(this.bssParam, createVolumeRequestBody.bssParam) &&
-            Objects.equals(this.volume, createVolumeRequestBody.volume);
+            Objects.equals(this.volume, createVolumeRequestBody.volume) &&
+            Objects.equals(this.serverId, createVolumeRequestBody.serverId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bssParam, volume);
+        return Objects.hash(bssParam, volume, serverId);
     }
     @Override
     public String toString() {
@@ -106,6 +133,7 @@ public class CreateVolumeRequestBody  {
         sb.append("class CreateVolumeRequestBody {\n");
         sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

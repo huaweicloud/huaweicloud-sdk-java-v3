@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk</artifactId>
-    <version>3.0.11-beta</version>
+    <version>3.0.12-beta</version>
     <name>Huaweicloud SDK for Java</name>
     <description>Huaweicloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -48,7 +48,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <revision>3.0.11-beta</revision>
+        <revision>3.0.12-beta</revision>
         <jackson.version>2.11.1</jackson.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <okhttp.version>3.14.2</okhttp.version>

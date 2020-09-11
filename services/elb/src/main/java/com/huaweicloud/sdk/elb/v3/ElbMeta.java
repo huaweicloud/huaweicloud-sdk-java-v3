@@ -1151,14 +1151,6 @@ public class ElbMeta {
                 req.setTlsCiphersPolicy(v);
             })
         );
-        builder.withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            List.class,
-            f -> f.withMarshaller(ListListenersRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            })
-        );
         builder.withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1452,38 +1444,6 @@ public class ElbMeta {
             List.class,
             f -> f.withMarshaller(ListLoadBalancersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            List.class,
-            f -> f.withMarshaller(ListLoadBalancersRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            })
-        );
-        builder.withRequestField("tags-any",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            List.class,
-            f -> f.withMarshaller(ListLoadBalancersRequest::getTagsAny, (req, v) -> {
-                req.setTagsAny(v);
-            })
-        );
-        builder.withRequestField("not-tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            List.class,
-            f -> f.withMarshaller(ListLoadBalancersRequest::getNotTags, (req, v) -> {
-                req.setNotTags(v);
-            })
-        );
-        builder.withRequestField("not-tags-any",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            List.class,
-            f -> f.withMarshaller(ListLoadBalancersRequest::getNotTagsAny, (req, v) -> {
-                req.setNotTagsAny(v);
             })
         );
         builder.withRequestField("publicips",
