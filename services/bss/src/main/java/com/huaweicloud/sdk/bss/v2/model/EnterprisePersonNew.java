@@ -19,9 +19,9 @@ public class EnterprisePersonNew  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certifier_role")
+    @JsonProperty(value="legel_name")
     
-    private String certifierRole;
+    private String legelName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,12 +31,12 @@ public class EnterprisePersonNew  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="legel_name")
+    @JsonProperty(value="certifier_role")
     
-    private String legelName;
+    private String certifierRole;
 
-    public EnterprisePersonNew withCertifierRole(String certifierRole) {
-        this.certifierRole = certifierRole;
+    public EnterprisePersonNew withLegelName(String legelName) {
+        this.legelName = legelName;
         return this;
     }
 
@@ -44,15 +44,15 @@ public class EnterprisePersonNew  {
 
 
     /**
-     * |参数名称：认证人角色| |参数的约束及描述：该参数非必填，legalPerson ：法人代表 authorizedPerson：授权人|
-     * @return certifierRole
+     * |参数名称：法人姓名| |参数的约束及描述：该参数必填，且只允许字符串|
+     * @return legelName
      */
-    public String getCertifierRole() {
-        return certifierRole;
+    public String getLegelName() {
+        return legelName;
     }
 
-    public void setCertifierRole(String certifierRole) {
-        this.certifierRole = certifierRole;
+    public void setLegelName(String legelName) {
+        this.legelName = legelName;
     }
 
     public EnterprisePersonNew withLegelIdNumber(String legelIdNumber) {
@@ -75,8 +75,8 @@ public class EnterprisePersonNew  {
         this.legelIdNumber = legelIdNumber;
     }
 
-    public EnterprisePersonNew withLegelName(String legelName) {
-        this.legelName = legelName;
+    public EnterprisePersonNew withCertifierRole(String certifierRole) {
+        this.certifierRole = certifierRole;
         return this;
     }
 
@@ -84,15 +84,15 @@ public class EnterprisePersonNew  {
 
 
     /**
-     * |参数名称：法人姓名| |参数的约束及描述：该参数必填，且只允许字符串|
-     * @return legelName
+     * |参数名称：认证人角色| |参数的约束及描述：该参数非必填，legalPerson ：法人代表 authorizedPerson：授权人|
+     * @return certifierRole
      */
-    public String getLegelName() {
-        return legelName;
+    public String getCertifierRole() {
+        return certifierRole;
     }
 
-    public void setLegelName(String legelName) {
-        this.legelName = legelName;
+    public void setCertifierRole(String certifierRole) {
+        this.certifierRole = certifierRole;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,21 +103,21 @@ public class EnterprisePersonNew  {
             return false;
         }
         EnterprisePersonNew enterprisePersonNew = (EnterprisePersonNew) o;
-        return Objects.equals(this.certifierRole, enterprisePersonNew.certifierRole) &&
+        return Objects.equals(this.legelName, enterprisePersonNew.legelName) &&
             Objects.equals(this.legelIdNumber, enterprisePersonNew.legelIdNumber) &&
-            Objects.equals(this.legelName, enterprisePersonNew.legelName);
+            Objects.equals(this.certifierRole, enterprisePersonNew.certifierRole);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(certifierRole, legelIdNumber, legelName);
+        return Objects.hash(legelName, legelIdNumber, certifierRole);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnterprisePersonNew {\n");
-        sb.append("    certifierRole: ").append(toIndentedString(certifierRole)).append("\n");
-        sb.append("    legelIdNumber: ").append(toIndentedString(legelIdNumber)).append("\n");
         sb.append("    legelName: ").append(toIndentedString(legelName)).append("\n");
+        sb.append("    legelIdNumber: ").append(toIndentedString(legelIdNumber)).append("\n");
+        sb.append("    certifierRole: ").append(toIndentedString(certifierRole)).append("\n");
         sb.append("}");
         return sb.toString();
     }

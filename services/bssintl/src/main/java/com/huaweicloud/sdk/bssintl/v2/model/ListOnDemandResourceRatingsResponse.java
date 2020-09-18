@@ -31,15 +31,15 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_amount")
     
     private BigDecimal discountAmount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="official_website_amount")
+    
+    private BigDecimal officialWebsiteAmount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +49,9 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_website_amount")
+    @JsonProperty(value="currency")
     
-    private BigDecimal officialWebsiteAmount = null;
+    private String currency;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,26 +79,6 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         this.amount = amount;
     }
 
-    public ListOnDemandResourceRatingsResponse withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：币种| |参数约束及描述：比如CNY|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
     public ListOnDemandResourceRatingsResponse withDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
         return this;
@@ -117,6 +97,26 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
     public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
+    }
+
+    public ListOnDemandResourceRatingsResponse withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+        this.officialWebsiteAmount = officialWebsiteAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：官网价| |参数约束及描述：官网价|
+     * @return officialWebsiteAmount
+     */
+    public BigDecimal getOfficialWebsiteAmount() {
+        return officialWebsiteAmount;
+    }
+
+    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+        this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
     public ListOnDemandResourceRatingsResponse withMeasureId(Integer measureId) {
@@ -141,8 +141,8 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         this.measureId = measureId;
     }
 
-    public ListOnDemandResourceRatingsResponse withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
-        this.officialWebsiteAmount = officialWebsiteAmount;
+    public ListOnDemandResourceRatingsResponse withCurrency(String currency) {
+        this.currency = currency;
         return this;
     }
 
@@ -150,15 +150,15 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：官网价| |参数约束及描述：官网价|
-     * @return officialWebsiteAmount
+     * |参数名称：币种| |参数约束及描述：比如CNY|
+     * @return currency
      */
-    public BigDecimal getOfficialWebsiteAmount() {
-        return officialWebsiteAmount;
+    public String getCurrency() {
+        return currency;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
-        this.officialWebsiteAmount = officialWebsiteAmount;
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public ListOnDemandResourceRatingsResponse withProductRatingResults(List<DemandProductRatingResult> productRatingResults) {
@@ -204,25 +204,25 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
         }
         ListOnDemandResourceRatingsResponse listOnDemandResourceRatingsResponse = (ListOnDemandResourceRatingsResponse) o;
         return Objects.equals(this.amount, listOnDemandResourceRatingsResponse.amount) &&
-            Objects.equals(this.currency, listOnDemandResourceRatingsResponse.currency) &&
             Objects.equals(this.discountAmount, listOnDemandResourceRatingsResponse.discountAmount) &&
-            Objects.equals(this.measureId, listOnDemandResourceRatingsResponse.measureId) &&
             Objects.equals(this.officialWebsiteAmount, listOnDemandResourceRatingsResponse.officialWebsiteAmount) &&
+            Objects.equals(this.measureId, listOnDemandResourceRatingsResponse.measureId) &&
+            Objects.equals(this.currency, listOnDemandResourceRatingsResponse.currency) &&
             Objects.equals(this.productRatingResults, listOnDemandResourceRatingsResponse.productRatingResults);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, currency, discountAmount, measureId, officialWebsiteAmount, productRatingResults);
+        return Objects.hash(amount, discountAmount, officialWebsiteAmount, measureId, currency, productRatingResults);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOnDemandResourceRatingsResponse {\n");
         sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    productRatingResults: ").append(toIndentedString(productRatingResults)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -22,24 +22,6 @@ public class AmountInfomationV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="commission_amount")
-    
-    private Double commissionAmount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consumed_amount")
-    
-    private Double consumedAmount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coupon_amount")
-    
-    private Double couponAmount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discounts")
     
     private List<DiscountItemV2> discounts = null;
@@ -52,69 +34,27 @@ public class AmountInfomationV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="coupon_amount")
+    
+    private Double couponAmount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stored_card_amount")
     
     private Double storedCardAmount;
 
-    public AmountInfomationV2 withCommissionAmount(Double commissionAmount) {
-        this.commissionAmount = commissionAmount;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="commission_amount")
     
+    private Double commissionAmount;
 
 
-    /**
-     * |参数名称：手续费（仅退订订单存在）。| |参数的约束及描述：手续费（仅退订订单存在）。|
-     * @return commissionAmount
-     */
-    public Double getCommissionAmount() {
-        return commissionAmount;
-    }
-
-    public void setCommissionAmount(Double commissionAmount) {
-        this.commissionAmount = commissionAmount;
-    }
-
-    public AmountInfomationV2 withConsumedAmount(Double consumedAmount) {
-        this.consumedAmount = consumedAmount;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="consumed_amount")
     
-
-
-    /**
-     * |参数名称：消费金额（仅退订订单存在）。| |参数的约束及描述：消费金额（仅退订订单存在）。|
-     * @return consumedAmount
-     */
-    public Double getConsumedAmount() {
-        return consumedAmount;
-    }
-
-    public void setConsumedAmount(Double consumedAmount) {
-        this.consumedAmount = consumedAmount;
-    }
-
-    public AmountInfomationV2 withCouponAmount(Double couponAmount) {
-        this.couponAmount = couponAmount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：代金券金额。| |参数的约束及描述：代金券金额。|
-     * @return couponAmount
-     */
-    public Double getCouponAmount() {
-        return couponAmount;
-    }
-
-    public void setCouponAmount(Double couponAmount) {
-        this.couponAmount = couponAmount;
-    }
+    private Double consumedAmount;
 
     public AmountInfomationV2 withDiscounts(List<DiscountItemV2> discounts) {
         this.discounts = discounts;
@@ -170,6 +110,26 @@ public class AmountInfomationV2  {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
+    public AmountInfomationV2 withCouponAmount(Double couponAmount) {
+        this.couponAmount = couponAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：代金券金额。| |参数的约束及描述：代金券金额。|
+     * @return couponAmount
+     */
+    public Double getCouponAmount() {
+        return couponAmount;
+    }
+
+    public void setCouponAmount(Double couponAmount) {
+        this.couponAmount = couponAmount;
+    }
+
     public AmountInfomationV2 withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
@@ -189,6 +149,46 @@ public class AmountInfomationV2  {
     public void setStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
     }
+
+    public AmountInfomationV2 withCommissionAmount(Double commissionAmount) {
+        this.commissionAmount = commissionAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：手续费（仅退订订单存在）。| |参数的约束及描述：手续费（仅退订订单存在）。|
+     * @return commissionAmount
+     */
+    public Double getCommissionAmount() {
+        return commissionAmount;
+    }
+
+    public void setCommissionAmount(Double commissionAmount) {
+        this.commissionAmount = commissionAmount;
+    }
+
+    public AmountInfomationV2 withConsumedAmount(Double consumedAmount) {
+        this.consumedAmount = consumedAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：消费金额（仅退订订单存在）。| |参数的约束及描述：消费金额（仅退订订单存在）。|
+     * @return consumedAmount
+     */
+    public Double getConsumedAmount() {
+        return consumedAmount;
+    }
+
+    public void setConsumedAmount(Double consumedAmount) {
+        this.consumedAmount = consumedAmount;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -198,27 +198,27 @@ public class AmountInfomationV2  {
             return false;
         }
         AmountInfomationV2 amountInfomationV2 = (AmountInfomationV2) o;
-        return Objects.equals(this.commissionAmount, amountInfomationV2.commissionAmount) &&
-            Objects.equals(this.consumedAmount, amountInfomationV2.consumedAmount) &&
-            Objects.equals(this.couponAmount, amountInfomationV2.couponAmount) &&
-            Objects.equals(this.discounts, amountInfomationV2.discounts) &&
+        return Objects.equals(this.discounts, amountInfomationV2.discounts) &&
             Objects.equals(this.flexipurchaseCouponAmount, amountInfomationV2.flexipurchaseCouponAmount) &&
-            Objects.equals(this.storedCardAmount, amountInfomationV2.storedCardAmount);
+            Objects.equals(this.couponAmount, amountInfomationV2.couponAmount) &&
+            Objects.equals(this.storedCardAmount, amountInfomationV2.storedCardAmount) &&
+            Objects.equals(this.commissionAmount, amountInfomationV2.commissionAmount) &&
+            Objects.equals(this.consumedAmount, amountInfomationV2.consumedAmount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(commissionAmount, consumedAmount, couponAmount, discounts, flexipurchaseCouponAmount, storedCardAmount);
+        return Objects.hash(discounts, flexipurchaseCouponAmount, couponAmount, storedCardAmount, commissionAmount, consumedAmount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AmountInfomationV2 {\n");
-        sb.append("    commissionAmount: ").append(toIndentedString(commissionAmount)).append("\n");
-        sb.append("    consumedAmount: ").append(toIndentedString(consumedAmount)).append("\n");
-        sb.append("    couponAmount: ").append(toIndentedString(couponAmount)).append("\n");
         sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
         sb.append("    flexipurchaseCouponAmount: ").append(toIndentedString(flexipurchaseCouponAmount)).append("\n");
+        sb.append("    couponAmount: ").append(toIndentedString(couponAmount)).append("\n");
         sb.append("    storedCardAmount: ").append(toIndentedString(storedCardAmount)).append("\n");
+        sb.append("    commissionAmount: ").append(toIndentedString(commissionAmount)).append("\n");
+        sb.append("    consumedAmount: ").append(toIndentedString(consumedAmount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

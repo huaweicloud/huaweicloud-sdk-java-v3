@@ -22,21 +22,21 @@ public class CreateSubCustomerReqV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="party_id")
+    
+    private String partyId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="display_name")
     
     private String displayName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_sub_customer")
+    @JsonProperty(value="sub_customer_association_type")
     
-    private NewCustomerV2 newSubCustomer = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="party_id")
-    
-    private String partyId;
+    private Integer subCustomerAssociationType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,9 +46,29 @@ public class CreateSubCustomerReqV2  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_customer_association_type")
+    @JsonProperty(value="new_sub_customer")
     
-    private Integer subCustomerAssociationType;
+    private NewCustomerV2 newSubCustomer = null;
+
+    public CreateSubCustomerReqV2 withPartyId(String partyId) {
+        this.partyId = partyId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：子账号挂载的组织单元，填写组织单元的Party ID，通过查询企业组织结构接口的响应获得。| |参数约束及描述：子账号挂载的组织单元，填写组织单元的Party ID，通过查询企业组织结构接口的响应获得。|
+     * @return partyId
+     */
+    public String getPartyId() {
+        return partyId;
+    }
+
+    public void setPartyId(String partyId) {
+        this.partyId = partyId;
+    }
 
     public CreateSubCustomerReqV2 withDisplayName(String displayName) {
         this.displayName = displayName;
@@ -70,35 +90,8 @@ public class CreateSubCustomerReqV2  {
         this.displayName = displayName;
     }
 
-    public CreateSubCustomerReqV2 withNewSubCustomer(NewCustomerV2 newSubCustomer) {
-        this.newSubCustomer = newSubCustomer;
-        return this;
-    }
-
-    public CreateSubCustomerReqV2 withNewSubCustomer(Consumer<NewCustomerV2> newSubCustomerSetter) {
-        if(this.newSubCustomer == null ){
-            this.newSubCustomer = new NewCustomerV2();
-            newSubCustomerSetter.accept(this.newSubCustomer);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get newSubCustomer
-     * @return newSubCustomer
-     */
-    public NewCustomerV2 getNewSubCustomer() {
-        return newSubCustomer;
-    }
-
-    public void setNewSubCustomer(NewCustomerV2 newSubCustomer) {
-        this.newSubCustomer = newSubCustomer;
-    }
-
-    public CreateSubCustomerReqV2 withPartyId(String partyId) {
-        this.partyId = partyId;
+    public CreateSubCustomerReqV2 withSubCustomerAssociationType(Integer subCustomerAssociationType) {
+        this.subCustomerAssociationType = subCustomerAssociationType;
         return this;
     }
 
@@ -106,15 +99,17 @@ public class CreateSubCustomerReqV2  {
 
 
     /**
-     * |参数名称：子账号挂载的组织单元，填写组织单元的Party ID，通过查询企业组织结构接口的响应获得。| |参数约束及描述：子账号挂载的组织单元，填写组织单元的Party ID，通过查询企业组织结构接口的响应获得。|
-     * @return partyId
+     * |参数名称：子账号关联类型：1：同一法人。注：关联类型目前只能是同一法人。| |参数的约束及描述：子账号关联类型：1：同一法人。注：关联类型目前只能是同一法人。|
+     * minimum: -1
+     * maximum: 1
+     * @return subCustomerAssociationType
      */
-    public String getPartyId() {
-        return partyId;
+    public Integer getSubCustomerAssociationType() {
+        return subCustomerAssociationType;
     }
 
-    public void setPartyId(String partyId) {
-        this.partyId = partyId;
+    public void setSubCustomerAssociationType(Integer subCustomerAssociationType) {
+        this.subCustomerAssociationType = subCustomerAssociationType;
     }
 
     public CreateSubCustomerReqV2 withPermissionIds(List<String> permissionIds) {
@@ -151,26 +146,31 @@ public class CreateSubCustomerReqV2  {
         this.permissionIds = permissionIds;
     }
 
-    public CreateSubCustomerReqV2 withSubCustomerAssociationType(Integer subCustomerAssociationType) {
-        this.subCustomerAssociationType = subCustomerAssociationType;
+    public CreateSubCustomerReqV2 withNewSubCustomer(NewCustomerV2 newSubCustomer) {
+        this.newSubCustomer = newSubCustomer;
         return this;
     }
 
-    
+    public CreateSubCustomerReqV2 withNewSubCustomer(Consumer<NewCustomerV2> newSubCustomerSetter) {
+        if(this.newSubCustomer == null ){
+            this.newSubCustomer = new NewCustomerV2();
+            newSubCustomerSetter.accept(this.newSubCustomer);
+        }
+        
+        return this;
+    }
 
 
     /**
-     * |参数名称：子账号关联类型：1：同一法人。注：关联类型目前只能是同一法人。| |参数的约束及描述：子账号关联类型：1：同一法人。注：关联类型目前只能是同一法人。|
-     * minimum: -1
-     * maximum: 1
-     * @return subCustomerAssociationType
+     * Get newSubCustomer
+     * @return newSubCustomer
      */
-    public Integer getSubCustomerAssociationType() {
-        return subCustomerAssociationType;
+    public NewCustomerV2 getNewSubCustomer() {
+        return newSubCustomer;
     }
 
-    public void setSubCustomerAssociationType(Integer subCustomerAssociationType) {
-        this.subCustomerAssociationType = subCustomerAssociationType;
+    public void setNewSubCustomer(NewCustomerV2 newSubCustomer) {
+        this.newSubCustomer = newSubCustomer;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,25 +181,25 @@ public class CreateSubCustomerReqV2  {
             return false;
         }
         CreateSubCustomerReqV2 createSubCustomerReqV2 = (CreateSubCustomerReqV2) o;
-        return Objects.equals(this.displayName, createSubCustomerReqV2.displayName) &&
-            Objects.equals(this.newSubCustomer, createSubCustomerReqV2.newSubCustomer) &&
-            Objects.equals(this.partyId, createSubCustomerReqV2.partyId) &&
+        return Objects.equals(this.partyId, createSubCustomerReqV2.partyId) &&
+            Objects.equals(this.displayName, createSubCustomerReqV2.displayName) &&
+            Objects.equals(this.subCustomerAssociationType, createSubCustomerReqV2.subCustomerAssociationType) &&
             Objects.equals(this.permissionIds, createSubCustomerReqV2.permissionIds) &&
-            Objects.equals(this.subCustomerAssociationType, createSubCustomerReqV2.subCustomerAssociationType);
+            Objects.equals(this.newSubCustomer, createSubCustomerReqV2.newSubCustomer);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(displayName, newSubCustomer, partyId, permissionIds, subCustomerAssociationType);
+        return Objects.hash(partyId, displayName, subCustomerAssociationType, permissionIds, newSubCustomer);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSubCustomerReqV2 {\n");
-        sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-        sb.append("    newSubCustomer: ").append(toIndentedString(newSubCustomer)).append("\n");
         sb.append("    partyId: ").append(toIndentedString(partyId)).append("\n");
-        sb.append("    permissionIds: ").append(toIndentedString(permissionIds)).append("\n");
+        sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    subCustomerAssociationType: ").append(toIndentedString(subCustomerAssociationType)).append("\n");
+        sb.append("    permissionIds: ").append(toIndentedString(permissionIds)).append("\n");
+        sb.append("    newSubCustomer: ").append(toIndentedString(newSubCustomer)).append("\n");
         sb.append("}");
         return sb.toString();
     }

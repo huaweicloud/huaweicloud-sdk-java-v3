@@ -20,15 +20,35 @@ public class AdjustToIndirectPartnerReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="indirect_partner_id")
+    
+    private String indirectPartnerId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
     private BigDecimal amount = null;
 
+    public AdjustToIndirectPartnerReq withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
     
-    private String indirectPartnerId;
+
+
+    /**
+     * |参数名称：合作伙伴关联的二级经销商伙伴ID。| |参数约束及描述：必填，最大长度64，合作伙伴关联的二级经销商伙伴ID。|
+     * @return indirectPartnerId
+     */
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
+    }
+
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+    }
 
     public AdjustToIndirectPartnerReq withAmount(BigDecimal amount) {
         this.amount = amount;
@@ -51,26 +71,6 @@ public class AdjustToIndirectPartnerReq  {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
-
-    public AdjustToIndirectPartnerReq withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：合作伙伴关联的二级经销商伙伴ID。| |参数约束及描述：必填，最大长度64，合作伙伴关联的二级经销商伙伴ID。|
-     * @return indirectPartnerId
-     */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
-    }
-
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,19 +80,19 @@ public class AdjustToIndirectPartnerReq  {
             return false;
         }
         AdjustToIndirectPartnerReq adjustToIndirectPartnerReq = (AdjustToIndirectPartnerReq) o;
-        return Objects.equals(this.amount, adjustToIndirectPartnerReq.amount) &&
-            Objects.equals(this.indirectPartnerId, adjustToIndirectPartnerReq.indirectPartnerId);
+        return Objects.equals(this.indirectPartnerId, adjustToIndirectPartnerReq.indirectPartnerId) &&
+            Objects.equals(this.amount, adjustToIndirectPartnerReq.amount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, indirectPartnerId);
+        return Objects.hash(indirectPartnerId, amount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AdjustToIndirectPartnerReq {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

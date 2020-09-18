@@ -22,15 +22,35 @@ public class PayCustomerOrderReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="order_id")
+    
+    private String orderId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coupon_infos")
     
     private List<CouponSimpleInfoOrderPay> couponInfos = null;
     
+    public PayCustomerOrderReq withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
     
-    private String orderId;
+
+
+    /**
+     * |参数名称：订单ID。| |参数约束及描述：订单ID。|
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 
     public PayCustomerOrderReq withCouponInfos(List<CouponSimpleInfoOrderPay> couponInfos) {
         this.couponInfos = couponInfos;
@@ -65,26 +85,6 @@ public class PayCustomerOrderReq  {
     public void setCouponInfos(List<CouponSimpleInfoOrderPay> couponInfos) {
         this.couponInfos = couponInfos;
     }
-
-    public PayCustomerOrderReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：订单ID。| |参数约束及描述：订单ID。|
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,19 +94,19 @@ public class PayCustomerOrderReq  {
             return false;
         }
         PayCustomerOrderReq payCustomerOrderReq = (PayCustomerOrderReq) o;
-        return Objects.equals(this.couponInfos, payCustomerOrderReq.couponInfos) &&
-            Objects.equals(this.orderId, payCustomerOrderReq.orderId);
+        return Objects.equals(this.orderId, payCustomerOrderReq.orderId) &&
+            Objects.equals(this.couponInfos, payCustomerOrderReq.couponInfos);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(couponInfos, orderId);
+        return Objects.hash(orderId, couponInfos);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PayCustomerOrderReq {\n");
-        sb.append("    couponInfos: ").append(toIndentedString(couponInfos)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    couponInfos: ").append(toIndentedString(couponInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

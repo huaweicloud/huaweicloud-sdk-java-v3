@@ -20,9 +20,9 @@ public class DemandProductInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available_zone")
+    @JsonProperty(value="id")
     
-    private String availableZone;
+    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,21 +32,9 @@ public class DemandProductInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
+    @JsonProperty(value="resource_type")
     
-    private String id;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
-    private String region;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_size")
-    
-    private Integer resourceSize;
+    private String resourceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,9 +44,21 @@ public class DemandProductInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
+    @JsonProperty(value="region")
     
-    private String resourceType;
+    private String region;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="available_zone")
+    
+    private String availableZone;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_size")
+    
+    private Integer resourceSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,15 +68,15 @@ public class DemandProductInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subscription_num")
-    
-    private Integer subscriptionNum;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="usage_factor")
     
     private String usageFactor;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="usage_value")
+    
+    private BigDecimal usageValue = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,12 +86,12 @@ public class DemandProductInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usage_value")
+    @JsonProperty(value="subscription_num")
     
-    private BigDecimal usageValue = null;
+    private Integer subscriptionNum;
 
-    public DemandProductInfo withAvailableZone(String availableZone) {
-        this.availableZone = availableZone;
+    public DemandProductInfo withId(String id) {
+        this.id = id;
         return this;
     }
 
@@ -99,15 +99,15 @@ public class DemandProductInfo  {
 
 
     /**
-     * |参数名称：可用区标识| |参数约束及描述：可用区标识|
-     * @return availableZone
+     * |参数名称：ID标识| |参数约束及描述：同一次询价中不能重复，用于标识返回询价结果和请求的映射关系|
+     * @return id
      */
-    public String getAvailableZone() {
-        return availableZone;
+    public String getId() {
+        return id;
     }
 
-    public void setAvailableZone(String availableZone) {
-        this.availableZone = availableZone;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public DemandProductInfo withCloudServiceType(String cloudServiceType) {
@@ -130,8 +130,8 @@ public class DemandProductInfo  {
         this.cloudServiceType = cloudServiceType;
     }
 
-    public DemandProductInfo withId(String id) {
-        this.id = id;
+    public DemandProductInfo withResourceType(String resourceType) {
+        this.resourceType = resourceType;
         return this;
     }
 
@@ -139,15 +139,35 @@ public class DemandProductInfo  {
 
 
     /**
-     * |参数名称：ID标识| |参数约束及描述：同一次询价中不能重复，用于标识返回询价结果和请求的映射关系|
-     * @return id
+     * |参数名称：用户购买云服务产品的资源类型| |参数约束及描述：例如EC2中的VM，资源类型为hws.resource.type.vm。ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供|
+     * @return resourceType
      */
-    public String getId() {
-        return id;
+    public String getResourceType() {
+        return resourceType;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    public DemandProductInfo withResourceSpec(String resourceSpec) {
+        this.resourceSpec = resourceSpec;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：用户购买云服务产品的资源规格| |参数约束及描述：例如VM的小型规格，资源规格为m1.tiny|
+     * @return resourceSpec
+     */
+    public String getResourceSpec() {
+        return resourceSpec;
+    }
+
+    public void setResourceSpec(String resourceSpec) {
+        this.resourceSpec = resourceSpec;
     }
 
     public DemandProductInfo withRegion(String region) {
@@ -168,6 +188,26 @@ public class DemandProductInfo  {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public DemandProductInfo withAvailableZone(String availableZone) {
+        this.availableZone = availableZone;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：可用区标识| |参数约束及描述：可用区标识|
+     * @return availableZone
+     */
+    public String getAvailableZone() {
+        return availableZone;
+    }
+
+    public void setAvailableZone(String availableZone) {
+        this.availableZone = availableZone;
     }
 
     public DemandProductInfo withResourceSize(Integer resourceSize) {
@@ -192,46 +232,6 @@ public class DemandProductInfo  {
         this.resourceSize = resourceSize;
     }
 
-    public DemandProductInfo withResourceSpec(String resourceSpec) {
-        this.resourceSpec = resourceSpec;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：用户购买云服务产品的资源规格| |参数约束及描述：例如VM的小型规格，资源规格为m1.tiny|
-     * @return resourceSpec
-     */
-    public String getResourceSpec() {
-        return resourceSpec;
-    }
-
-    public void setResourceSpec(String resourceSpec) {
-        this.resourceSpec = resourceSpec;
-    }
-
-    public DemandProductInfo withResourceType(String resourceType) {
-        this.resourceType = resourceType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：用户购买云服务产品的资源类型| |参数约束及描述：例如EC2中的VM，资源类型为hws.resource.type.vm。ResourceType是CloudServiceType中的一种资源，CloudServiceType由多种ResourceType组合提供|
-     * @return resourceType
-     */
-    public String getResourceType() {
-        return resourceType;
-    }
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
     public DemandProductInfo withSizeMeasureId(Integer sizeMeasureId) {
         this.sizeMeasureId = sizeMeasureId;
         return this;
@@ -252,28 +252,6 @@ public class DemandProductInfo  {
         this.sizeMeasureId = sizeMeasureId;
     }
 
-    public DemandProductInfo withSubscriptionNum(Integer subscriptionNum) {
-        this.subscriptionNum = subscriptionNum;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：订购数量| |参数约束及描述：订购数量,有值时不能小于0，默认为1|
-     * minimum: 1
-     * maximum: 10000
-     * @return subscriptionNum
-     */
-    public Integer getSubscriptionNum() {
-        return subscriptionNum;
-    }
-
-    public void setSubscriptionNum(Integer subscriptionNum) {
-        this.subscriptionNum = subscriptionNum;
-    }
-
     public DemandProductInfo withUsageFactor(String usageFactor) {
         this.usageFactor = usageFactor;
         return this;
@@ -292,6 +270,26 @@ public class DemandProductInfo  {
 
     public void setUsageFactor(String usageFactor) {
         this.usageFactor = usageFactor;
+    }
+
+    public DemandProductInfo withUsageValue(BigDecimal usageValue) {
+        this.usageValue = usageValue;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：使用量值| |参数约束及描述：例如按小时询价，使用量值为1，使用量单位为小时|
+     * @return usageValue
+     */
+    public BigDecimal getUsageValue() {
+        return usageValue;
+    }
+
+    public void setUsageValue(BigDecimal usageValue) {
+        this.usageValue = usageValue;
     }
 
     public DemandProductInfo withUsageMeasureId(Integer usageMeasureId) {
@@ -316,8 +314,8 @@ public class DemandProductInfo  {
         this.usageMeasureId = usageMeasureId;
     }
 
-    public DemandProductInfo withUsageValue(BigDecimal usageValue) {
-        this.usageValue = usageValue;
+    public DemandProductInfo withSubscriptionNum(Integer subscriptionNum) {
+        this.subscriptionNum = subscriptionNum;
         return this;
     }
 
@@ -325,15 +323,17 @@ public class DemandProductInfo  {
 
 
     /**
-     * |参数名称：使用量值| |参数约束及描述：例如按小时询价，使用量值为1，使用量单位为小时|
-     * @return usageValue
+     * |参数名称：订购数量| |参数约束及描述：订购数量,有值时不能小于0，默认为1|
+     * minimum: 1
+     * maximum: 10000
+     * @return subscriptionNum
      */
-    public BigDecimal getUsageValue() {
-        return usageValue;
+    public Integer getSubscriptionNum() {
+        return subscriptionNum;
     }
 
-    public void setUsageValue(BigDecimal usageValue) {
-        this.usageValue = usageValue;
+    public void setSubscriptionNum(Integer subscriptionNum) {
+        this.subscriptionNum = subscriptionNum;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -344,39 +344,39 @@ public class DemandProductInfo  {
             return false;
         }
         DemandProductInfo demandProductInfo = (DemandProductInfo) o;
-        return Objects.equals(this.availableZone, demandProductInfo.availableZone) &&
+        return Objects.equals(this.id, demandProductInfo.id) &&
             Objects.equals(this.cloudServiceType, demandProductInfo.cloudServiceType) &&
-            Objects.equals(this.id, demandProductInfo.id) &&
-            Objects.equals(this.region, demandProductInfo.region) &&
-            Objects.equals(this.resourceSize, demandProductInfo.resourceSize) &&
-            Objects.equals(this.resourceSpec, demandProductInfo.resourceSpec) &&
             Objects.equals(this.resourceType, demandProductInfo.resourceType) &&
+            Objects.equals(this.resourceSpec, demandProductInfo.resourceSpec) &&
+            Objects.equals(this.region, demandProductInfo.region) &&
+            Objects.equals(this.availableZone, demandProductInfo.availableZone) &&
+            Objects.equals(this.resourceSize, demandProductInfo.resourceSize) &&
             Objects.equals(this.sizeMeasureId, demandProductInfo.sizeMeasureId) &&
-            Objects.equals(this.subscriptionNum, demandProductInfo.subscriptionNum) &&
             Objects.equals(this.usageFactor, demandProductInfo.usageFactor) &&
+            Objects.equals(this.usageValue, demandProductInfo.usageValue) &&
             Objects.equals(this.usageMeasureId, demandProductInfo.usageMeasureId) &&
-            Objects.equals(this.usageValue, demandProductInfo.usageValue);
+            Objects.equals(this.subscriptionNum, demandProductInfo.subscriptionNum);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(availableZone, cloudServiceType, id, region, resourceSize, resourceSpec, resourceType, sizeMeasureId, subscriptionNum, usageFactor, usageMeasureId, usageValue);
+        return Objects.hash(id, cloudServiceType, resourceType, resourceSpec, region, availableZone, resourceSize, sizeMeasureId, usageFactor, usageValue, usageMeasureId, subscriptionNum);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DemandProductInfo {\n");
-        sb.append("    availableZone: ").append(toIndentedString(availableZone)).append("\n");
-        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
-        sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
-        sb.append("    resourceSpec: ").append(toIndentedString(resourceSpec)).append("\n");
+        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    resourceSpec: ").append(toIndentedString(resourceSpec)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    availableZone: ").append(toIndentedString(availableZone)).append("\n");
+        sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
         sb.append("    sizeMeasureId: ").append(toIndentedString(sizeMeasureId)).append("\n");
-        sb.append("    subscriptionNum: ").append(toIndentedString(subscriptionNum)).append("\n");
         sb.append("    usageFactor: ").append(toIndentedString(usageFactor)).append("\n");
-        sb.append("    usageMeasureId: ").append(toIndentedString(usageMeasureId)).append("\n");
         sb.append("    usageValue: ").append(toIndentedString(usageValue)).append("\n");
+        sb.append("    usageMeasureId: ").append(toIndentedString(usageMeasureId)).append("\n");
+        sb.append("    subscriptionNum: ").append(toIndentedString(subscriptionNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

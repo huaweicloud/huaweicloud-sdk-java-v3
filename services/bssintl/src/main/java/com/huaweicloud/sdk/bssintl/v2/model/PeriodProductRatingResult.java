@@ -20,27 +20,21 @@ public class PeriodProductRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
-    private BigDecimal amount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_amount")
-    
-    private BigDecimal discountAmount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
+    @JsonProperty(value="product_id")
     
-    private Integer measureId;
+    private String productId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount")
+    
+    private BigDecimal amount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,49 +44,15 @@ public class PeriodProductRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
+    @JsonProperty(value="discount_amount")
     
-    private String productId;
+    private BigDecimal discountAmount = null;
 
-    public PeriodProductRatingResult withAmount(BigDecimal amount) {
-        this.amount = amount;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="measure_id")
     
-
-
-    /**
-     * |参数名称：总额| |参数约束及描述：即最终优惠的金额|
-     * @return amount
-     */
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public PeriodProductRatingResult withDiscountAmount(BigDecimal discountAmount) {
-        this.discountAmount = discountAmount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：优惠额（官网价和总价的差）| |参数约束及描述：优惠额（官网价和总价的差）|
-     * @return discountAmount
-     */
-    public BigDecimal getDiscountAmount() {
-        return discountAmount;
-    }
-
-    public void setDiscountAmount(BigDecimal discountAmount) {
-        this.discountAmount = discountAmount;
-    }
+    private Integer measureId;
 
     public PeriodProductRatingResult withId(String id) {
         this.id = id;
@@ -114,8 +74,8 @@ public class PeriodProductRatingResult  {
         this.id = id;
     }
 
-    public PeriodProductRatingResult withMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public PeriodProductRatingResult withProductId(String productId) {
+        this.productId = productId;
         return this;
     }
 
@@ -123,15 +83,35 @@ public class PeriodProductRatingResult  {
 
 
     /**
-     * |参数名称：度量单位标识| |参数约束及描述：1：元|
-     * @return measureId
+     * |参数名称：产品ID| |参数约束及描述：产品ID|
+     * @return productId
      */
-    public Integer getMeasureId() {
-        return measureId;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public PeriodProductRatingResult withAmount(BigDecimal amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：总额| |参数约束及描述：即最终优惠的金额|
+     * @return amount
+     */
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public PeriodProductRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
@@ -154,8 +134,8 @@ public class PeriodProductRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    public PeriodProductRatingResult withProductId(String productId) {
-        this.productId = productId;
+    public PeriodProductRatingResult withDiscountAmount(BigDecimal discountAmount) {
+        this.discountAmount = discountAmount;
         return this;
     }
 
@@ -163,15 +143,35 @@ public class PeriodProductRatingResult  {
 
 
     /**
-     * |参数名称：产品ID| |参数约束及描述：产品ID|
-     * @return productId
+     * |参数名称：优惠额（官网价和总价的差）| |参数约束及描述：优惠额（官网价和总价的差）|
+     * @return discountAmount
      */
-    public String getProductId() {
-        return productId;
+    public BigDecimal getDiscountAmount() {
+        return discountAmount;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setDiscountAmount(BigDecimal discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
+    public PeriodProductRatingResult withMeasureId(Integer measureId) {
+        this.measureId = measureId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：度量单位标识| |参数约束及描述：1：元|
+     * @return measureId
+     */
+    public Integer getMeasureId() {
+        return measureId;
+    }
+
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -182,27 +182,27 @@ public class PeriodProductRatingResult  {
             return false;
         }
         PeriodProductRatingResult periodProductRatingResult = (PeriodProductRatingResult) o;
-        return Objects.equals(this.amount, periodProductRatingResult.amount) &&
-            Objects.equals(this.discountAmount, periodProductRatingResult.discountAmount) &&
-            Objects.equals(this.id, periodProductRatingResult.id) &&
-            Objects.equals(this.measureId, periodProductRatingResult.measureId) &&
+        return Objects.equals(this.id, periodProductRatingResult.id) &&
+            Objects.equals(this.productId, periodProductRatingResult.productId) &&
+            Objects.equals(this.amount, periodProductRatingResult.amount) &&
             Objects.equals(this.officialWebsiteAmount, periodProductRatingResult.officialWebsiteAmount) &&
-            Objects.equals(this.productId, periodProductRatingResult.productId);
+            Objects.equals(this.discountAmount, periodProductRatingResult.discountAmount) &&
+            Objects.equals(this.measureId, periodProductRatingResult.measureId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, discountAmount, id, measureId, officialWebsiteAmount, productId);
+        return Objects.hash(id, productId, amount, officialWebsiteAmount, discountAmount, measureId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PeriodProductRatingResult {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+        sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
+        sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,15 +22,21 @@ public class SendSmVerificationCodeReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="language")
-    
-    private String language;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mobile_phone")
     
     private String mobilePhone;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="timeout")
+    
+    private Integer timeout = 10;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="language")
+    
+    private String language;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,11 +44,47 @@ public class SendSmVerificationCodeReq  {
     
     private List<TemplateArgs> smTemplateArgs = null;
     
+    public SendSmVerificationCodeReq withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
     
-    private Integer timeout = 10;
+
+
+    /**
+     * |参数名称：手机号| |参数约束及描述：手机号|
+     * @return mobilePhone
+     */
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
+    public SendSmVerificationCodeReq withTimeout(Integer timeout) {
+        this.timeout = timeout;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：超时时间，单位是分钟| |参数的约束及描述：超时时间，单位是分钟，短信传递10，邮箱传递60|
+     * minimum: 0
+     * maximum: 100
+     * @return timeout
+     */
+    public Integer getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
 
     public SendSmVerificationCodeReq withLanguage(String language) {
         this.language = language;
@@ -62,26 +104,6 @@ public class SendSmVerificationCodeReq  {
 
     public void setLanguage(String language) {
         this.language = language;
-    }
-
-    public SendSmVerificationCodeReq withMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：手机号| |参数约束及描述：手机号|
-     * @return mobilePhone
-     */
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
     }
 
     public SendSmVerificationCodeReq withSmTemplateArgs(List<TemplateArgs> smTemplateArgs) {
@@ -117,28 +139,6 @@ public class SendSmVerificationCodeReq  {
     public void setSmTemplateArgs(List<TemplateArgs> smTemplateArgs) {
         this.smTemplateArgs = smTemplateArgs;
     }
-
-    public SendSmVerificationCodeReq withTimeout(Integer timeout) {
-        this.timeout = timeout;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：超时时间，单位是分钟| |参数的约束及描述：超时时间，单位是分钟，短信传递10，邮箱传递60|
-     * minimum: 0
-     * maximum: 100
-     * @return timeout
-     */
-    public Integer getTimeout() {
-        return timeout;
-    }
-
-    public void setTimeout(Integer timeout) {
-        this.timeout = timeout;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,23 +148,23 @@ public class SendSmVerificationCodeReq  {
             return false;
         }
         SendSmVerificationCodeReq sendSmVerificationCodeReq = (SendSmVerificationCodeReq) o;
-        return Objects.equals(this.language, sendSmVerificationCodeReq.language) &&
-            Objects.equals(this.mobilePhone, sendSmVerificationCodeReq.mobilePhone) &&
-            Objects.equals(this.smTemplateArgs, sendSmVerificationCodeReq.smTemplateArgs) &&
-            Objects.equals(this.timeout, sendSmVerificationCodeReq.timeout);
+        return Objects.equals(this.mobilePhone, sendSmVerificationCodeReq.mobilePhone) &&
+            Objects.equals(this.timeout, sendSmVerificationCodeReq.timeout) &&
+            Objects.equals(this.language, sendSmVerificationCodeReq.language) &&
+            Objects.equals(this.smTemplateArgs, sendSmVerificationCodeReq.smTemplateArgs);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(language, mobilePhone, smTemplateArgs, timeout);
+        return Objects.hash(mobilePhone, timeout, language, smTemplateArgs);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SendSmVerificationCodeReq {\n");
-        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
-        sb.append("    smTemplateArgs: ").append(toIndentedString(smTemplateArgs)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    smTemplateArgs: ").append(toIndentedString(smTemplateArgs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

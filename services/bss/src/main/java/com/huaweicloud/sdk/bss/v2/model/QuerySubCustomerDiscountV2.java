@@ -20,15 +20,15 @@ public class QuerySubCustomerDiscountV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount")
-    
-    private BigDecimal discount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_id")
     
     private String discountId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="discount")
+    
+    private BigDecimal discount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,26 +41,6 @@ public class QuerySubCustomerDiscountV2  {
     @JsonProperty(value="expire_time")
     
     private String expireTime;
-
-    public QuerySubCustomerDiscountV2 withDiscount(BigDecimal discount) {
-        this.discount = discount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：折扣率，精确到4位小数。如果折扣率是22%，则折扣率写成0.22。| |参数的约束及描述：折扣率，精确到4位小数。如果折扣率是22%，则折扣率写成0.22。|
-     * @return discount
-     */
-    public BigDecimal getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
-    }
 
     public QuerySubCustomerDiscountV2 withDiscountId(String discountId) {
         this.discountId = discountId;
@@ -80,6 +60,26 @@ public class QuerySubCustomerDiscountV2  {
 
     public void setDiscountId(String discountId) {
         this.discountId = discountId;
+    }
+
+    public QuerySubCustomerDiscountV2 withDiscount(BigDecimal discount) {
+        this.discount = discount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：折扣率，精确到4位小数。如果折扣率是22%，则折扣率写成0.22。| |参数的约束及描述：折扣率，精确到4位小数。如果折扣率是22%，则折扣率写成0.22。|
+     * @return discount
+     */
+    public BigDecimal getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
     }
 
     public QuerySubCustomerDiscountV2 withEffectiveTime(String effectiveTime) {
@@ -130,21 +130,21 @@ public class QuerySubCustomerDiscountV2  {
             return false;
         }
         QuerySubCustomerDiscountV2 querySubCustomerDiscountV2 = (QuerySubCustomerDiscountV2) o;
-        return Objects.equals(this.discount, querySubCustomerDiscountV2.discount) &&
-            Objects.equals(this.discountId, querySubCustomerDiscountV2.discountId) &&
+        return Objects.equals(this.discountId, querySubCustomerDiscountV2.discountId) &&
+            Objects.equals(this.discount, querySubCustomerDiscountV2.discount) &&
             Objects.equals(this.effectiveTime, querySubCustomerDiscountV2.effectiveTime) &&
             Objects.equals(this.expireTime, querySubCustomerDiscountV2.expireTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(discount, discountId, effectiveTime, expireTime);
+        return Objects.hash(discountId, discount, effectiveTime, expireTime);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QuerySubCustomerDiscountV2 {\n");
-        sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
         sb.append("    discountId: ").append(toIndentedString(discountId)).append("\n");
+        sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("}");

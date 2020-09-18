@@ -19,35 +19,15 @@ public class DiscountEntry  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_amount")
-    
-    private Double discountAmount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_type")
     
     private String discountType;
 
-    public DiscountEntry withDiscountAmount(Double discountAmount) {
-        this.discountAmount = discountAmount;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="discount_amount")
     
-
-
-    /**
-     * |参数名称：折扣金额| |参数的约束及描述：折扣金额|
-     * @return discountAmount
-     */
-    public Double getDiscountAmount() {
-        return discountAmount;
-    }
-
-    public void setDiscountAmount(Double discountAmount) {
-        this.discountAmount = discountAmount;
-    }
+    private Double discountAmount;
 
     public DiscountEntry withDiscountType(String discountType) {
         this.discountType = discountType;
@@ -68,6 +48,26 @@ public class DiscountEntry  {
     public void setDiscountType(String discountType) {
         this.discountType = discountType;
     }
+
+    public DiscountEntry withDiscountAmount(Double discountAmount) {
+        this.discountAmount = discountAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：折扣金额| |参数的约束及描述：折扣金额|
+     * @return discountAmount
+     */
+    public Double getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public void setDiscountAmount(Double discountAmount) {
+        this.discountAmount = discountAmount;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -77,19 +77,19 @@ public class DiscountEntry  {
             return false;
         }
         DiscountEntry discountEntry = (DiscountEntry) o;
-        return Objects.equals(this.discountAmount, discountEntry.discountAmount) &&
-            Objects.equals(this.discountType, discountEntry.discountType);
+        return Objects.equals(this.discountType, discountEntry.discountType) &&
+            Objects.equals(this.discountAmount, discountEntry.discountAmount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(discountAmount, discountType);
+        return Objects.hash(discountType, discountAmount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DiscountEntry {\n");
-        sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    discountType: ").append(toIndentedString(discountType)).append("\n");
+        sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

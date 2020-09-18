@@ -20,24 +20,6 @@ public class AdjustRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
-    private BigDecimal amount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apply_scene")
-    
-    private String applyScene;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_id")
     
     private String customerId;
@@ -50,9 +32,27 @@ public class AdjustRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
+    @JsonProperty(value="operation_type")
     
-    private Integer measureId;
+    private String operationType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount")
+    
+    private BigDecimal amount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currency")
+    
+    private String currency;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="apply_scene")
+    
+    private String applyScene;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,75 +62,15 @@ public class AdjustRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_type")
+    @JsonProperty(value="measure_id")
     
-    private String operationType;
+    private Integer measureId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trans_id")
     
     private String transId;
-
-    public AdjustRecordV2 withAmount(BigDecimal amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：调账/回收总额。| |参数的约束及描述：调账/回收总额。|
-     * @return amount
-     */
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public AdjustRecordV2 withApplyScene(String applyScene) {
-        this.applyScene = applyScene;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：使用场景。| |参数约束及描述：使用场景。|
-     * @return applyScene
-     */
-    public String getApplyScene() {
-        return applyScene;
-    }
-
-    public void setApplyScene(String applyScene) {
-        this.applyScene = applyScene;
-    }
-
-    public AdjustRecordV2 withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：币种。当前固定为CNY。| |参数约束及描述：币种。当前固定为CNY。|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
 
     public AdjustRecordV2 withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -172,8 +112,8 @@ public class AdjustRecordV2  {
         this.customerName = customerName;
     }
 
-    public AdjustRecordV2 withMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public AdjustRecordV2 withOperationType(String operationType) {
+        this.operationType = operationType;
         return this;
     }
 
@@ -181,15 +121,75 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：度量单位。1：元| |参数的约束及描述：度量单位。1：元|
-     * @return measureId
+     * |参数名称：调账类型。0：授信1：回收2：解绑回收| |参数约束及描述：调账类型。0：授信1：回收2：解绑回收|
+     * @return operationType
      */
-    public Integer getMeasureId() {
-        return measureId;
+    public String getOperationType() {
+        return operationType;
     }
 
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public void setOperationType(String operationType) {
+        this.operationType = operationType;
+    }
+
+    public AdjustRecordV2 withAmount(BigDecimal amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：调账/回收总额。| |参数的约束及描述：调账/回收总额。|
+     * @return amount
+     */
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public AdjustRecordV2 withCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：币种。当前固定为CNY。| |参数约束及描述：币种。当前固定为CNY。|
+     * @return currency
+     */
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public AdjustRecordV2 withApplyScene(String applyScene) {
+        this.applyScene = applyScene;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：使用场景。| |参数约束及描述：使用场景。|
+     * @return applyScene
+     */
+    public String getApplyScene() {
+        return applyScene;
+    }
+
+    public void setApplyScene(String applyScene) {
+        this.applyScene = applyScene;
     }
 
     public AdjustRecordV2 withOperationTime(String operationTime) {
@@ -212,8 +212,8 @@ public class AdjustRecordV2  {
         this.operationTime = operationTime;
     }
 
-    public AdjustRecordV2 withOperationType(String operationType) {
-        this.operationType = operationType;
+    public AdjustRecordV2 withMeasureId(Integer measureId) {
+        this.measureId = measureId;
         return this;
     }
 
@@ -221,15 +221,15 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：调账类型。0：授信1：回收2：解绑回收| |参数约束及描述：调账类型。0：授信1：回收2：解绑回收|
-     * @return operationType
+     * |参数名称：度量单位。1：元| |参数的约束及描述：度量单位。1：元|
+     * @return measureId
      */
-    public String getOperationType() {
-        return operationType;
+    public Integer getMeasureId() {
+        return measureId;
     }
 
-    public void setOperationType(String operationType) {
-        this.operationType = operationType;
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
     }
 
     public AdjustRecordV2 withTransId(String transId) {
@@ -260,32 +260,32 @@ public class AdjustRecordV2  {
             return false;
         }
         AdjustRecordV2 adjustRecordV2 = (AdjustRecordV2) o;
-        return Objects.equals(this.amount, adjustRecordV2.amount) &&
-            Objects.equals(this.applyScene, adjustRecordV2.applyScene) &&
-            Objects.equals(this.currency, adjustRecordV2.currency) &&
-            Objects.equals(this.customerId, adjustRecordV2.customerId) &&
+        return Objects.equals(this.customerId, adjustRecordV2.customerId) &&
             Objects.equals(this.customerName, adjustRecordV2.customerName) &&
-            Objects.equals(this.measureId, adjustRecordV2.measureId) &&
-            Objects.equals(this.operationTime, adjustRecordV2.operationTime) &&
             Objects.equals(this.operationType, adjustRecordV2.operationType) &&
+            Objects.equals(this.amount, adjustRecordV2.amount) &&
+            Objects.equals(this.currency, adjustRecordV2.currency) &&
+            Objects.equals(this.applyScene, adjustRecordV2.applyScene) &&
+            Objects.equals(this.operationTime, adjustRecordV2.operationTime) &&
+            Objects.equals(this.measureId, adjustRecordV2.measureId) &&
             Objects.equals(this.transId, adjustRecordV2.transId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, applyScene, currency, customerId, customerName, measureId, operationTime, operationType, transId);
+        return Objects.hash(customerId, customerName, operationType, amount, currency, applyScene, operationTime, measureId, transId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AdjustRecordV2 {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    applyScene: ").append(toIndentedString(applyScene)).append("\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    operationTime: ").append(toIndentedString(operationTime)).append("\n");
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+        sb.append("    applyScene: ").append(toIndentedString(applyScene)).append("\n");
+        sb.append("    operationTime: ").append(toIndentedString(operationTime)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
         sb.append("}");
         return sb.toString();

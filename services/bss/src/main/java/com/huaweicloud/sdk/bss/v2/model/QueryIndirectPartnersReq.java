@@ -37,9 +37,9 @@ public class QueryIndirectPartnersReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
+    @JsonProperty(value="offset")
     
-    private String indirectPartnerId;
+    private Integer offset = 0;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,9 +49,9 @@ public class QueryIndirectPartnersReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
+    @JsonProperty(value="indirect_partner_id")
     
-    private Integer offset = 0;
+    private String indirectPartnerId;
 
     public QueryIndirectPartnersReq withAccountName(String accountName) {
         this.accountName = accountName;
@@ -113,8 +113,8 @@ public class QueryIndirectPartnersReq  {
         this.associatedOnEnd = associatedOnEnd;
     }
 
-    public QueryIndirectPartnersReq withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
+    public QueryIndirectPartnersReq withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
@@ -122,15 +122,17 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：二级经销商ID|
-     * @return indirectPartnerId
+     * |参数名称：偏移量，从0开始，默认是0| |参数的约束及描述：偏移量，从0开始，默认是0|
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
      */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public QueryIndirectPartnersReq withLimit(Integer limit) {
@@ -155,8 +157,8 @@ public class QueryIndirectPartnersReq  {
         this.limit = limit;
     }
 
-    public QueryIndirectPartnersReq withOffset(Integer offset) {
-        this.offset = offset;
+    public QueryIndirectPartnersReq withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
         return this;
     }
 
@@ -164,17 +166,15 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：偏移量，从0开始，默认是0| |参数的约束及描述：偏移量，从0开始，默认是0|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
+     * |参数名称：二级经销商ID| |参数约束及描述：二级经销商ID|
+     * @return indirectPartnerId
      */
-    public Integer getOffset() {
-        return offset;
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
     }
 
-    public void setOffset(Integer offset) {
-        this.offset = offset;
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -188,13 +188,13 @@ public class QueryIndirectPartnersReq  {
         return Objects.equals(this.accountName, queryIndirectPartnersReq.accountName) &&
             Objects.equals(this.associatedOnBegin, queryIndirectPartnersReq.associatedOnBegin) &&
             Objects.equals(this.associatedOnEnd, queryIndirectPartnersReq.associatedOnEnd) &&
-            Objects.equals(this.indirectPartnerId, queryIndirectPartnersReq.indirectPartnerId) &&
+            Objects.equals(this.offset, queryIndirectPartnersReq.offset) &&
             Objects.equals(this.limit, queryIndirectPartnersReq.limit) &&
-            Objects.equals(this.offset, queryIndirectPartnersReq.offset);
+            Objects.equals(this.indirectPartnerId, queryIndirectPartnersReq.indirectPartnerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accountName, associatedOnBegin, associatedOnEnd, indirectPartnerId, limit, offset);
+        return Objects.hash(accountName, associatedOnBegin, associatedOnEnd, offset, limit, indirectPartnerId);
     }
     @Override
     public String toString() {
@@ -203,9 +203,9 @@ public class QueryIndirectPartnersReq  {
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("    associatedOnBegin: ").append(toIndentedString(associatedOnBegin)).append("\n");
         sb.append("    associatedOnEnd: ").append(toIndentedString(associatedOnEnd)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

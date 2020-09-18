@@ -19,15 +19,15 @@ public class BankCardInfoV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="areacode")
-    
-    private String areacode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bank_account")
     
     private String bankAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="areacode")
+    
+    private String areacode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,26 +40,6 @@ public class BankCardInfoV2  {
     @JsonProperty(value="verification_code")
     
     private String verificationCode;
-
-    public BankCardInfoV2 withAreacode(String areacode) {
-        this.areacode = areacode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：国家/区号码。例如：0086：中国大陆区号码。| |参数约束及描述：国家/区号码。例如：0086：中国大陆区号码。|
-     * @return areacode
-     */
-    public String getAreacode() {
-        return areacode;
-    }
-
-    public void setAreacode(String areacode) {
-        this.areacode = areacode;
-    }
 
     public BankCardInfoV2 withBankAccount(String bankAccount) {
         this.bankAccount = bankAccount;
@@ -79,6 +59,26 @@ public class BankCardInfoV2  {
 
     public void setBankAccount(String bankAccount) {
         this.bankAccount = bankAccount;
+    }
+
+    public BankCardInfoV2 withAreacode(String areacode) {
+        this.areacode = areacode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：国家/区号码。例如：0086：中国大陆区号码。| |参数约束及描述：国家/区号码。例如：0086：中国大陆区号码。|
+     * @return areacode
+     */
+    public String getAreacode() {
+        return areacode;
+    }
+
+    public void setAreacode(String areacode) {
+        this.areacode = areacode;
     }
 
     public BankCardInfoV2 withMobile(String mobile) {
@@ -129,21 +129,21 @@ public class BankCardInfoV2  {
             return false;
         }
         BankCardInfoV2 bankCardInfoV2 = (BankCardInfoV2) o;
-        return Objects.equals(this.areacode, bankCardInfoV2.areacode) &&
-            Objects.equals(this.bankAccount, bankCardInfoV2.bankAccount) &&
+        return Objects.equals(this.bankAccount, bankCardInfoV2.bankAccount) &&
+            Objects.equals(this.areacode, bankCardInfoV2.areacode) &&
             Objects.equals(this.mobile, bankCardInfoV2.mobile) &&
             Objects.equals(this.verificationCode, bankCardInfoV2.verificationCode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(areacode, bankAccount, mobile, verificationCode);
+        return Objects.hash(bankAccount, areacode, mobile, verificationCode);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BankCardInfoV2 {\n");
-        sb.append("    areacode: ").append(toIndentedString(areacode)).append("\n");
         sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
+        sb.append("    areacode: ").append(toIndentedString(areacode)).append("\n");
         sb.append("    mobile: ").append(toIndentedString(mobile)).append("\n");
         sb.append("    verificationCode: ").append(toIndentedString(verificationCode)).append("\n");
         sb.append("}");

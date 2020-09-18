@@ -23,21 +23,21 @@ public class IQueryUserPartnerCouponsResultV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="active_time")
-    
-    private String activeTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="balance")
-    
-    private BigDecimal balance = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coupon_id")
     
     private String couponId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    private Integer status;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="customer_id")
+    
+    private String customerId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,15 +47,15 @@ public class IQueryUserPartnerCouponsResultV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
+    @JsonProperty(value="measure_id")
     
-    private String createTime;
+    private Integer measureId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
+    @JsonProperty(value="face_value")
     
-    private String customerId;
+    private BigDecimal faceValue = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,63 +71,9 @@ public class IQueryUserPartnerCouponsResultV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="face_value")
-    
-    private BigDecimal faceValue = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fetch_method")
-    
-    private Integer fetchMethod;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_frozen")
-    
-    private String isFrozen;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_used_time")
-    
-    private String lastUsedTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lock_order_id")
-    
-    private String lockOrderId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
-    private Integer measureId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="media_type")
-    
-    private Integer mediaType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
     private String orderId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="promotion_id")
-    
-    private String promotionId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="promotion_plan_desc")
-    
-    private String promotionPlanDesc;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -143,9 +89,21 @@ public class IQueryUserPartnerCouponsResultV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
+    @JsonProperty(value="promotion_plan_desc")
     
-    private Integer status;
+    private String promotionPlanDesc;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="media_type")
+    
+    private Integer mediaType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="fetch_method")
+    
+    private Integer fetchMethod;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,45 +111,47 @@ public class IQueryUserPartnerCouponsResultV2  {
     
     private List<ICouponUseLimitInfoV2> useLimits = null;
     
-    public IQueryUserPartnerCouponsResultV2 withActiveTime(String activeTime) {
-        this.activeTime = activeTime;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="active_time")
     
+    private String activeTime;
 
 
-    /**
-     * |参数名称：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
-     * @return activeTime
-     */
-    public String getActiveTime() {
-        return activeTime;
-    }
-
-    public void setActiveTime(String activeTime) {
-        this.activeTime = activeTime;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withBalance(BigDecimal balance) {
-        this.balance = balance;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="last_used_time")
     
+    private String lastUsedTime;
 
 
-    /**
-     * |参数名称：余额。如果为老版本优惠券，该值为空| |参数的约束及描述：余额。如果为老版本优惠券，该值为空|
-     * @return balance
-     */
-    public BigDecimal getBalance() {
-        return balance;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="promotion_id")
+    
+    private String promotionId;
 
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="create_time")
+    
+    private String createTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="balance")
+    
+    private BigDecimal balance = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="lock_order_id")
+    
+    private String lockOrderId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_frozen")
+    
+    private String isFrozen;
 
     public IQueryUserPartnerCouponsResultV2 withCouponId(String couponId) {
         this.couponId = couponId;
@@ -211,6 +171,46 @@ public class IQueryUserPartnerCouponsResultV2  {
 
     public void setCouponId(String couponId) {
         this.couponId = couponId;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：优惠券状态：1：未激活；2：待使用；3：已使用；4：已过期。| |参数的约束及描述：优惠券状态：1：未激活；2：待使用；3：已使用；4：已过期。|
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：客户ID| |参数约束及描述：客户ID|
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public IQueryUserPartnerCouponsResultV2 withCouponType(Integer couponType) {
@@ -233,8 +233,8 @@ public class IQueryUserPartnerCouponsResultV2  {
         this.couponType = couponType;
     }
 
-    public IQueryUserPartnerCouponsResultV2 withCreateTime(String createTime) {
-        this.createTime = createTime;
+    public IQueryUserPartnerCouponsResultV2 withMeasureId(Integer measureId) {
+        this.measureId = measureId;
         return this;
     }
 
@@ -242,19 +242,19 @@ public class IQueryUserPartnerCouponsResultV2  {
 
 
     /**
-     * |参数名称：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
-     * @return createTime
+     * |参数名称：度量单位。1：元| |参数的约束及描述：度量单位。1：元|
+     * @return measureId
      */
-    public String getCreateTime() {
-        return createTime;
+    public Integer getMeasureId() {
+        return measureId;
     }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
     }
 
-    public IQueryUserPartnerCouponsResultV2 withCustomerId(String customerId) {
-        this.customerId = customerId;
+    public IQueryUserPartnerCouponsResultV2 withFaceValue(BigDecimal faceValue) {
+        this.faceValue = faceValue;
         return this;
     }
 
@@ -262,15 +262,15 @@ public class IQueryUserPartnerCouponsResultV2  {
 
 
     /**
-     * |参数名称：客户ID| |参数约束及描述：客户ID|
-     * @return customerId
+     * |参数名称：优惠券金额。| |参数的约束及描述：优惠券金额。|
+     * @return faceValue
      */
-    public String getCustomerId() {
-        return customerId;
+    public BigDecimal getFaceValue() {
+        return faceValue;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setFaceValue(BigDecimal faceValue) {
+        this.faceValue = faceValue;
     }
 
     public IQueryUserPartnerCouponsResultV2 withEffectiveTime(String effectiveTime) {
@@ -313,146 +313,6 @@ public class IQueryUserPartnerCouponsResultV2  {
         this.expireTime = expireTime;
     }
 
-    public IQueryUserPartnerCouponsResultV2 withFaceValue(BigDecimal faceValue) {
-        this.faceValue = faceValue;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：优惠券金额。| |参数的约束及描述：优惠券金额。|
-     * @return faceValue
-     */
-    public BigDecimal getFaceValue() {
-        return faceValue;
-    }
-
-    public void setFaceValue(BigDecimal faceValue) {
-        this.faceValue = faceValue;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withFetchMethod(Integer fetchMethod) {
-        this.fetchMethod = fetchMethod;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：获取方式：1：线上领取；2：线上兑换；3：线上发放；4：线下获取；5：事件赠送。| |参数的约束及描述：获取方式：1：线上领取；2：线上兑换；3：线上发放；4：线下获取；5：事件赠送。|
-     * @return fetchMethod
-     */
-    public Integer getFetchMethod() {
-        return fetchMethod;
-    }
-
-    public void setFetchMethod(Integer fetchMethod) {
-        this.fetchMethod = fetchMethod;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withIsFrozen(String isFrozen) {
-        this.isFrozen = isFrozen;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：优惠券是否冻结：0：否1：是可用优惠券接口返回时不包括冻结状态的优惠券。| |参数约束及描述：优惠券是否冻结：0：否1：是可用优惠券接口返回时不包括冻结状态的优惠券。|
-     * @return isFrozen
-     */
-    public String getIsFrozen() {
-        return isFrozen;
-    }
-
-    public void setIsFrozen(String isFrozen) {
-        this.isFrozen = isFrozen;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withLastUsedTime(String lastUsedTime) {
-        this.lastUsedTime = lastUsedTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
-     * @return lastUsedTime
-     */
-    public String getLastUsedTime() {
-        return lastUsedTime;
-    }
-
-    public void setLastUsedTime(String lastUsedTime) {
-        this.lastUsedTime = lastUsedTime;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withLockOrderId(String lockOrderId) {
-        this.lockOrderId = lockOrderId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：锁定优惠券的订单ID。如果为老版本优惠券，该值为空。| |参数约束及描述：锁定优惠券的订单ID。如果为老版本优惠券，该值为空。|
-     * @return lockOrderId
-     */
-    public String getLockOrderId() {
-        return lockOrderId;
-    }
-
-    public void setLockOrderId(String lockOrderId) {
-        this.lockOrderId = lockOrderId;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withMeasureId(Integer measureId) {
-        this.measureId = measureId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：度量单位。1：元| |参数的约束及描述：度量单位。1：元|
-     * @return measureId
-     */
-    public Integer getMeasureId() {
-        return measureId;
-    }
-
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withMediaType(Integer mediaType) {
-        this.mediaType = mediaType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：介质类型。| |参数的约束及描述：介质类型。|
-     * @return mediaType
-     */
-    public Integer getMediaType() {
-        return mediaType;
-    }
-
-    public void setMediaType(Integer mediaType) {
-        this.mediaType = mediaType;
-    }
-
     public IQueryUserPartnerCouponsResultV2 withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -471,46 +331,6 @@ public class IQueryUserPartnerCouponsResultV2  {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withPromotionId(String promotionId) {
-        this.promotionId = promotionId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：促销ID。| |参数约束及描述：促销ID。|
-     * @return promotionId
-     */
-    public String getPromotionId() {
-        return promotionId;
-    }
-
-    public void setPromotionId(String promotionId) {
-        this.promotionId = promotionId;
-    }
-
-    public IQueryUserPartnerCouponsResultV2 withPromotionPlanDesc(String promotionPlanDesc) {
-        this.promotionPlanDesc = promotionPlanDesc;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：促销计划描述。| |参数约束及描述：促销计划描述。|
-     * @return promotionPlanDesc
-     */
-    public String getPromotionPlanDesc() {
-        return promotionPlanDesc;
-    }
-
-    public void setPromotionPlanDesc(String promotionPlanDesc) {
-        this.promotionPlanDesc = promotionPlanDesc;
     }
 
     public IQueryUserPartnerCouponsResultV2 withPromotionPlanId(String promotionPlanId) {
@@ -553,8 +373,8 @@ public class IQueryUserPartnerCouponsResultV2  {
         this.promotionPlanName = promotionPlanName;
     }
 
-    public IQueryUserPartnerCouponsResultV2 withStatus(Integer status) {
-        this.status = status;
+    public IQueryUserPartnerCouponsResultV2 withPromotionPlanDesc(String promotionPlanDesc) {
+        this.promotionPlanDesc = promotionPlanDesc;
         return this;
     }
 
@@ -562,15 +382,55 @@ public class IQueryUserPartnerCouponsResultV2  {
 
 
     /**
-     * |参数名称：优惠券状态：1：未激活；2：待使用；3：已使用；4：已过期。| |参数的约束及描述：优惠券状态：1：未激活；2：待使用；3：已使用；4：已过期。|
-     * @return status
+     * |参数名称：促销计划描述。| |参数约束及描述：促销计划描述。|
+     * @return promotionPlanDesc
      */
-    public Integer getStatus() {
-        return status;
+    public String getPromotionPlanDesc() {
+        return promotionPlanDesc;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setPromotionPlanDesc(String promotionPlanDesc) {
+        this.promotionPlanDesc = promotionPlanDesc;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withMediaType(Integer mediaType) {
+        this.mediaType = mediaType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：介质类型。| |参数的约束及描述：介质类型。|
+     * @return mediaType
+     */
+    public Integer getMediaType() {
+        return mediaType;
+    }
+
+    public void setMediaType(Integer mediaType) {
+        this.mediaType = mediaType;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withFetchMethod(Integer fetchMethod) {
+        this.fetchMethod = fetchMethod;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：获取方式：1：线上领取；2：线上兑换；3：线上发放；4：线下获取；5：事件赠送。| |参数的约束及描述：获取方式：1：线上领取；2：线上兑换；3：线上发放；4：线下获取；5：事件赠送。|
+     * @return fetchMethod
+     */
+    public Integer getFetchMethod() {
+        return fetchMethod;
+    }
+
+    public void setFetchMethod(Integer fetchMethod) {
+        this.fetchMethod = fetchMethod;
     }
 
     public IQueryUserPartnerCouponsResultV2 withUseLimits(List<ICouponUseLimitInfoV2> useLimits) {
@@ -606,6 +466,146 @@ public class IQueryUserPartnerCouponsResultV2  {
     public void setUseLimits(List<ICouponUseLimitInfoV2> useLimits) {
         this.useLimits = useLimits;
     }
+
+    public IQueryUserPartnerCouponsResultV2 withActiveTime(String activeTime) {
+        this.activeTime = activeTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+     * @return activeTime
+     */
+    public String getActiveTime() {
+        return activeTime;
+    }
+
+    public void setActiveTime(String activeTime) {
+        this.activeTime = activeTime;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withLastUsedTime(String lastUsedTime) {
+        this.lastUsedTime = lastUsedTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+     * @return lastUsedTime
+     */
+    public String getLastUsedTime() {
+        return lastUsedTime;
+    }
+
+    public void setLastUsedTime(String lastUsedTime) {
+        this.lastUsedTime = lastUsedTime;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withPromotionId(String promotionId) {
+        this.promotionId = promotionId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：促销ID。| |参数约束及描述：促销ID。|
+     * @return promotionId
+     */
+    public String getPromotionId() {
+        return promotionId;
+    }
+
+    public void setPromotionId(String promotionId) {
+        this.promotionId = promotionId;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withBalance(BigDecimal balance) {
+        this.balance = balance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：余额。如果为老版本优惠券，该值为空| |参数的约束及描述：余额。如果为老版本优惠券，该值为空|
+     * @return balance
+     */
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withLockOrderId(String lockOrderId) {
+        this.lockOrderId = lockOrderId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：锁定优惠券的订单ID。如果为老版本优惠券，该值为空。| |参数约束及描述：锁定优惠券的订单ID。如果为老版本优惠券，该值为空。|
+     * @return lockOrderId
+     */
+    public String getLockOrderId() {
+        return lockOrderId;
+    }
+
+    public void setLockOrderId(String lockOrderId) {
+        this.lockOrderId = lockOrderId;
+    }
+
+    public IQueryUserPartnerCouponsResultV2 withIsFrozen(String isFrozen) {
+        this.isFrozen = isFrozen;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：优惠券是否冻结：0：否1：是可用优惠券接口返回时不包括冻结状态的优惠券。| |参数约束及描述：优惠券是否冻结：0：否1：是可用优惠券接口返回时不包括冻结状态的优惠券。|
+     * @return isFrozen
+     */
+    public String getIsFrozen() {
+        return isFrozen;
+    }
+
+    public void setIsFrozen(String isFrozen) {
+        this.isFrozen = isFrozen;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -615,59 +615,59 @@ public class IQueryUserPartnerCouponsResultV2  {
             return false;
         }
         IQueryUserPartnerCouponsResultV2 iqueryUserPartnerCouponsResultV2 = (IQueryUserPartnerCouponsResultV2) o;
-        return Objects.equals(this.activeTime, iqueryUserPartnerCouponsResultV2.activeTime) &&
-            Objects.equals(this.balance, iqueryUserPartnerCouponsResultV2.balance) &&
-            Objects.equals(this.couponId, iqueryUserPartnerCouponsResultV2.couponId) &&
-            Objects.equals(this.couponType, iqueryUserPartnerCouponsResultV2.couponType) &&
-            Objects.equals(this.createTime, iqueryUserPartnerCouponsResultV2.createTime) &&
+        return Objects.equals(this.couponId, iqueryUserPartnerCouponsResultV2.couponId) &&
+            Objects.equals(this.status, iqueryUserPartnerCouponsResultV2.status) &&
             Objects.equals(this.customerId, iqueryUserPartnerCouponsResultV2.customerId) &&
+            Objects.equals(this.couponType, iqueryUserPartnerCouponsResultV2.couponType) &&
+            Objects.equals(this.measureId, iqueryUserPartnerCouponsResultV2.measureId) &&
+            Objects.equals(this.faceValue, iqueryUserPartnerCouponsResultV2.faceValue) &&
             Objects.equals(this.effectiveTime, iqueryUserPartnerCouponsResultV2.effectiveTime) &&
             Objects.equals(this.expireTime, iqueryUserPartnerCouponsResultV2.expireTime) &&
-            Objects.equals(this.faceValue, iqueryUserPartnerCouponsResultV2.faceValue) &&
-            Objects.equals(this.fetchMethod, iqueryUserPartnerCouponsResultV2.fetchMethod) &&
-            Objects.equals(this.isFrozen, iqueryUserPartnerCouponsResultV2.isFrozen) &&
-            Objects.equals(this.lastUsedTime, iqueryUserPartnerCouponsResultV2.lastUsedTime) &&
-            Objects.equals(this.lockOrderId, iqueryUserPartnerCouponsResultV2.lockOrderId) &&
-            Objects.equals(this.measureId, iqueryUserPartnerCouponsResultV2.measureId) &&
-            Objects.equals(this.mediaType, iqueryUserPartnerCouponsResultV2.mediaType) &&
             Objects.equals(this.orderId, iqueryUserPartnerCouponsResultV2.orderId) &&
-            Objects.equals(this.promotionId, iqueryUserPartnerCouponsResultV2.promotionId) &&
-            Objects.equals(this.promotionPlanDesc, iqueryUserPartnerCouponsResultV2.promotionPlanDesc) &&
             Objects.equals(this.promotionPlanId, iqueryUserPartnerCouponsResultV2.promotionPlanId) &&
             Objects.equals(this.promotionPlanName, iqueryUserPartnerCouponsResultV2.promotionPlanName) &&
-            Objects.equals(this.status, iqueryUserPartnerCouponsResultV2.status) &&
-            Objects.equals(this.useLimits, iqueryUserPartnerCouponsResultV2.useLimits);
+            Objects.equals(this.promotionPlanDesc, iqueryUserPartnerCouponsResultV2.promotionPlanDesc) &&
+            Objects.equals(this.mediaType, iqueryUserPartnerCouponsResultV2.mediaType) &&
+            Objects.equals(this.fetchMethod, iqueryUserPartnerCouponsResultV2.fetchMethod) &&
+            Objects.equals(this.useLimits, iqueryUserPartnerCouponsResultV2.useLimits) &&
+            Objects.equals(this.activeTime, iqueryUserPartnerCouponsResultV2.activeTime) &&
+            Objects.equals(this.lastUsedTime, iqueryUserPartnerCouponsResultV2.lastUsedTime) &&
+            Objects.equals(this.promotionId, iqueryUserPartnerCouponsResultV2.promotionId) &&
+            Objects.equals(this.createTime, iqueryUserPartnerCouponsResultV2.createTime) &&
+            Objects.equals(this.balance, iqueryUserPartnerCouponsResultV2.balance) &&
+            Objects.equals(this.lockOrderId, iqueryUserPartnerCouponsResultV2.lockOrderId) &&
+            Objects.equals(this.isFrozen, iqueryUserPartnerCouponsResultV2.isFrozen);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(activeTime, balance, couponId, couponType, createTime, customerId, effectiveTime, expireTime, faceValue, fetchMethod, isFrozen, lastUsedTime, lockOrderId, measureId, mediaType, orderId, promotionId, promotionPlanDesc, promotionPlanId, promotionPlanName, status, useLimits);
+        return Objects.hash(couponId, status, customerId, couponType, measureId, faceValue, effectiveTime, expireTime, orderId, promotionPlanId, promotionPlanName, promotionPlanDesc, mediaType, fetchMethod, useLimits, activeTime, lastUsedTime, promotionId, createTime, balance, lockOrderId, isFrozen);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class IQueryUserPartnerCouponsResultV2 {\n");
-        sb.append("    activeTime: ").append(toIndentedString(activeTime)).append("\n");
-        sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
         sb.append("    couponId: ").append(toIndentedString(couponId)).append("\n");
-        sb.append("    couponType: ").append(toIndentedString(couponType)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    couponType: ").append(toIndentedString(couponType)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    faceValue: ").append(toIndentedString(faceValue)).append("\n");
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
-        sb.append("    faceValue: ").append(toIndentedString(faceValue)).append("\n");
-        sb.append("    fetchMethod: ").append(toIndentedString(fetchMethod)).append("\n");
-        sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
-        sb.append("    lastUsedTime: ").append(toIndentedString(lastUsedTime)).append("\n");
-        sb.append("    lockOrderId: ").append(toIndentedString(lockOrderId)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-        sb.append("    promotionId: ").append(toIndentedString(promotionId)).append("\n");
-        sb.append("    promotionPlanDesc: ").append(toIndentedString(promotionPlanDesc)).append("\n");
         sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
         sb.append("    promotionPlanName: ").append(toIndentedString(promotionPlanName)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    promotionPlanDesc: ").append(toIndentedString(promotionPlanDesc)).append("\n");
+        sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+        sb.append("    fetchMethod: ").append(toIndentedString(fetchMethod)).append("\n");
         sb.append("    useLimits: ").append(toIndentedString(useLimits)).append("\n");
+        sb.append("    activeTime: ").append(toIndentedString(activeTime)).append("\n");
+        sb.append("    lastUsedTime: ").append(toIndentedString(lastUsedTime)).append("\n");
+        sb.append("    promotionId: ").append(toIndentedString(promotionId)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
+        sb.append("    lockOrderId: ").append(toIndentedString(lockOrderId)).append("\n");
+        sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
         sb.append("}");
         return sb.toString();
     }

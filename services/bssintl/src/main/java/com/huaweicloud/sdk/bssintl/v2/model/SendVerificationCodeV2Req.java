@@ -19,9 +19,15 @@ public class SendVerificationCodeV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
+    @JsonProperty(value="receiver_type")
     
-    private String customerId;
+    private Integer receiverType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="timeout")
+    
+    private Integer timeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,24 +43,18 @@ public class SendVerificationCodeV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="receiver_type")
-    
-    private Integer receiverType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scene")
     
     private Integer scene = 29;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
+    @JsonProperty(value="customer_id")
     
-    private Integer timeout;
+    private String customerId;
 
-    public SendVerificationCodeV2Req withCustomerId(String customerId) {
-        this.customerId = customerId;
+    public SendVerificationCodeV2Req withReceiverType(Integer receiverType) {
+        this.receiverType = receiverType;
         return this;
     }
 
@@ -62,15 +62,39 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
-     * @return customerId
+     * |参数名称：发送类型：1：发送短信验证码。2：发送邮件验证码。| |参数的约束及描述：发送类型：1：发送短信验证码。2：发送邮件验证码。|
+     * minimum: 1
+     * maximum: 2
+     * @return receiverType
      */
-    public String getCustomerId() {
-        return customerId;
+    public Integer getReceiverType() {
+        return receiverType;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setReceiverType(Integer receiverType) {
+        this.receiverType = receiverType;
+    }
+
+    public SendVerificationCodeV2Req withTimeout(Integer timeout) {
+        this.timeout = timeout;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| |参数的约束及描述：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟|
+     * minimum: 1
+     * maximum: 2147483647
+     * @return timeout
+     */
+    public Integer getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
     }
 
     public SendVerificationCodeV2Req withEmail(String email) {
@@ -113,28 +137,6 @@ public class SendVerificationCodeV2Req  {
         this.lang = lang;
     }
 
-    public SendVerificationCodeV2Req withReceiverType(Integer receiverType) {
-        this.receiverType = receiverType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：发送类型：1：发送短信验证码。2：发送邮件验证码。| |参数的约束及描述：发送类型：1：发送短信验证码。2：发送邮件验证码。|
-     * minimum: 1
-     * maximum: 2
-     * @return receiverType
-     */
-    public Integer getReceiverType() {
-        return receiverType;
-    }
-
-    public void setReceiverType(Integer receiverType) {
-        this.receiverType = receiverType;
-    }
-
     public SendVerificationCodeV2Req withScene(Integer scene) {
         this.scene = scene;
         return this;
@@ -157,8 +159,8 @@ public class SendVerificationCodeV2Req  {
         this.scene = scene;
     }
 
-    public SendVerificationCodeV2Req withTimeout(Integer timeout) {
-        this.timeout = timeout;
+    public SendVerificationCodeV2Req withCustomerId(String customerId) {
+        this.customerId = customerId;
         return this;
     }
 
@@ -166,17 +168,15 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| |参数的约束及描述：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟|
-     * minimum: 1
-     * maximum: 2147483647
-     * @return timeout
+     * |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
+     * @return customerId
      */
-    public Integer getTimeout() {
-        return timeout;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setTimeout(Integer timeout) {
-        this.timeout = timeout;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -187,27 +187,27 @@ public class SendVerificationCodeV2Req  {
             return false;
         }
         SendVerificationCodeV2Req sendVerificationCodeV2Req = (SendVerificationCodeV2Req) o;
-        return Objects.equals(this.customerId, sendVerificationCodeV2Req.customerId) &&
+        return Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType) &&
+            Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout) &&
             Objects.equals(this.email, sendVerificationCodeV2Req.email) &&
             Objects.equals(this.lang, sendVerificationCodeV2Req.lang) &&
-            Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType) &&
             Objects.equals(this.scene, sendVerificationCodeV2Req.scene) &&
-            Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout);
+            Objects.equals(this.customerId, sendVerificationCodeV2Req.customerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, email, lang, receiverType, scene, timeout);
+        return Objects.hash(receiverType, timeout, email, lang, scene, customerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SendVerificationCodeV2Req {\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    receiverType: ").append(toIndentedString(receiverType)).append("\n");
+        sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
-        sb.append("    receiverType: ").append(toIndentedString(receiverType)).append("\n");
         sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
-        sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

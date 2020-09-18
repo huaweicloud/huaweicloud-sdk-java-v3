@@ -22,10 +22,10 @@ public class CreatePartnerCouponsReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_service_types")
+    @JsonProperty(value="quota_id")
     
-    private List<String> cloudServiceTypes = null;
-    
+    private String quotaId;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_ids")
@@ -34,28 +34,28 @@ public class CreatePartnerCouponsReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expire_time")
-    
-    private String expireTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="face_value")
     
     private BigDecimal faceValue = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
+    @JsonProperty(value="valid_time")
     
-    private String indirectPartnerId;
+    private String validTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memo")
+    @JsonProperty(value="expire_time")
     
-    private String memo;
+    private String expireTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cloud_service_types")
+    
+    private List<String> cloudServiceTypes = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_ids")
@@ -64,48 +64,34 @@ public class CreatePartnerCouponsReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_id")
+    @JsonProperty(value="memo")
     
-    private String quotaId;
+    private String memo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="valid_time")
+    @JsonProperty(value="indirect_partner_id")
     
-    private String validTime;
+    private String indirectPartnerId;
 
-    public CreatePartnerCouponsReq withCloudServiceTypes(List<String> cloudServiceTypes) {
-        this.cloudServiceTypes = cloudServiceTypes;
+    public CreatePartnerCouponsReq withQuotaId(String quotaId) {
+        this.quotaId = quotaId;
         return this;
     }
 
     
-    public CreatePartnerCouponsReq addCloudServiceTypesItem(String cloudServiceTypesItem) {
-        if (this.cloudServiceTypes == null) {
-            this.cloudServiceTypes = new ArrayList<>();
-        }
-        this.cloudServiceTypes.add(cloudServiceTypesItem);
-        return this;
-    }
 
-    public CreatePartnerCouponsReq withCloudServiceTypes(Consumer<List<String>> cloudServiceTypesSetter) {
-        if(this.cloudServiceTypes == null ){
-            this.cloudServiceTypes = new ArrayList<>();
-        }
-        cloudServiceTypesSetter.accept(this.cloudServiceTypes);
-        return this;
-    }
 
     /**
-     * |参数名称：云服务限制| |参数约束以及描述：云服务限制|
-     * @return cloudServiceTypes
+     * |参数名称：优惠券额度ID优惠券的类型跟随额度中的类型。| |参数约束及描述：优惠券额度ID优惠券的类型跟随额度中的类型。|
+     * @return quotaId
      */
-    public List<String> getCloudServiceTypes() {
-        return cloudServiceTypes;
+    public String getQuotaId() {
+        return quotaId;
     }
 
-    public void setCloudServiceTypes(List<String> cloudServiceTypes) {
-        this.cloudServiceTypes = cloudServiceTypes;
+    public void setQuotaId(String quotaId) {
+        this.quotaId = quotaId;
     }
 
     public CreatePartnerCouponsReq withCustomerIds(List<String> customerIds) {
@@ -139,26 +125,6 @@ public class CreatePartnerCouponsReq  {
         this.customerIds = customerIds;
     }
 
-    public CreatePartnerCouponsReq withExpireTime(String expireTime) {
-        this.expireTime = expireTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：优惠券的失效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：优惠券的失效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ|
-     * @return expireTime
-     */
-    public String getExpireTime() {
-        return expireTime;
-    }
-
-    public void setExpireTime(String expireTime) {
-        this.expireTime = expireTime;
-    }
-
     public CreatePartnerCouponsReq withFaceValue(BigDecimal faceValue) {
         this.faceValue = faceValue;
         return this;
@@ -181,8 +147,8 @@ public class CreatePartnerCouponsReq  {
         this.faceValue = faceValue;
     }
 
-    public CreatePartnerCouponsReq withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
+    public CreatePartnerCouponsReq withValidTime(String validTime) {
+        this.validTime = validTime;
         return this;
     }
 
@@ -190,19 +156,19 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：如果一级经销商要给二级经销商的子客户设置折扣，需要携带这个字段|
-     * @return indirectPartnerId
+     * |参数名称：优惠券的生效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：优惠券的生效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ|
+     * @return validTime
      */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
+    public String getValidTime() {
+        return validTime;
     }
 
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
+    public void setValidTime(String validTime) {
+        this.validTime = validTime;
     }
 
-    public CreatePartnerCouponsReq withMemo(String memo) {
-        this.memo = memo;
+    public CreatePartnerCouponsReq withExpireTime(String expireTime) {
+        this.expireTime = expireTime;
         return this;
     }
 
@@ -210,15 +176,49 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：发券时的备注信息| |参数约束及描述：发券时的备注信息|
-     * @return memo
+     * |参数名称：优惠券的失效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：优惠券的失效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ|
+     * @return expireTime
      */
-    public String getMemo() {
-        return memo;
+    public String getExpireTime() {
+        return expireTime;
     }
 
-    public void setMemo(String memo) {
-        this.memo = memo;
+    public void setExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public CreatePartnerCouponsReq withCloudServiceTypes(List<String> cloudServiceTypes) {
+        this.cloudServiceTypes = cloudServiceTypes;
+        return this;
+    }
+
+    
+    public CreatePartnerCouponsReq addCloudServiceTypesItem(String cloudServiceTypesItem) {
+        if (this.cloudServiceTypes == null) {
+            this.cloudServiceTypes = new ArrayList<>();
+        }
+        this.cloudServiceTypes.add(cloudServiceTypesItem);
+        return this;
+    }
+
+    public CreatePartnerCouponsReq withCloudServiceTypes(Consumer<List<String>> cloudServiceTypesSetter) {
+        if(this.cloudServiceTypes == null ){
+            this.cloudServiceTypes = new ArrayList<>();
+        }
+        cloudServiceTypesSetter.accept(this.cloudServiceTypes);
+        return this;
+    }
+
+    /**
+     * |参数名称：云服务限制| |参数约束以及描述：云服务限制|
+     * @return cloudServiceTypes
+     */
+    public List<String> getCloudServiceTypes() {
+        return cloudServiceTypes;
+    }
+
+    public void setCloudServiceTypes(List<String> cloudServiceTypes) {
+        this.cloudServiceTypes = cloudServiceTypes;
     }
 
     public CreatePartnerCouponsReq withProductIds(List<String> productIds) {
@@ -255,8 +255,8 @@ public class CreatePartnerCouponsReq  {
         this.productIds = productIds;
     }
 
-    public CreatePartnerCouponsReq withQuotaId(String quotaId) {
-        this.quotaId = quotaId;
+    public CreatePartnerCouponsReq withMemo(String memo) {
+        this.memo = memo;
         return this;
     }
 
@@ -264,19 +264,19 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：优惠券额度ID优惠券的类型跟随额度中的类型。| |参数约束及描述：优惠券额度ID优惠券的类型跟随额度中的类型。|
-     * @return quotaId
+     * |参数名称：发券时的备注信息| |参数约束及描述：发券时的备注信息|
+     * @return memo
      */
-    public String getQuotaId() {
-        return quotaId;
+    public String getMemo() {
+        return memo;
     }
 
-    public void setQuotaId(String quotaId) {
-        this.quotaId = quotaId;
+    public void setMemo(String memo) {
+        this.memo = memo;
     }
 
-    public CreatePartnerCouponsReq withValidTime(String validTime) {
-        this.validTime = validTime;
+    public CreatePartnerCouponsReq withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
         return this;
     }
 
@@ -284,15 +284,15 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：优惠券的生效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：优惠券的生效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ|
-     * @return validTime
+     * |参数名称：二级经销商ID| |参数约束及描述：如果一级经销商要给二级经销商的子客户设置折扣，需要携带这个字段|
+     * @return indirectPartnerId
      */
-    public String getValidTime() {
-        return validTime;
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
     }
 
-    public void setValidTime(String validTime) {
-        this.validTime = validTime;
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -303,33 +303,33 @@ public class CreatePartnerCouponsReq  {
             return false;
         }
         CreatePartnerCouponsReq createPartnerCouponsReq = (CreatePartnerCouponsReq) o;
-        return Objects.equals(this.cloudServiceTypes, createPartnerCouponsReq.cloudServiceTypes) &&
+        return Objects.equals(this.quotaId, createPartnerCouponsReq.quotaId) &&
             Objects.equals(this.customerIds, createPartnerCouponsReq.customerIds) &&
-            Objects.equals(this.expireTime, createPartnerCouponsReq.expireTime) &&
             Objects.equals(this.faceValue, createPartnerCouponsReq.faceValue) &&
-            Objects.equals(this.indirectPartnerId, createPartnerCouponsReq.indirectPartnerId) &&
-            Objects.equals(this.memo, createPartnerCouponsReq.memo) &&
+            Objects.equals(this.validTime, createPartnerCouponsReq.validTime) &&
+            Objects.equals(this.expireTime, createPartnerCouponsReq.expireTime) &&
+            Objects.equals(this.cloudServiceTypes, createPartnerCouponsReq.cloudServiceTypes) &&
             Objects.equals(this.productIds, createPartnerCouponsReq.productIds) &&
-            Objects.equals(this.quotaId, createPartnerCouponsReq.quotaId) &&
-            Objects.equals(this.validTime, createPartnerCouponsReq.validTime);
+            Objects.equals(this.memo, createPartnerCouponsReq.memo) &&
+            Objects.equals(this.indirectPartnerId, createPartnerCouponsReq.indirectPartnerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(cloudServiceTypes, customerIds, expireTime, faceValue, indirectPartnerId, memo, productIds, quotaId, validTime);
+        return Objects.hash(quotaId, customerIds, faceValue, validTime, expireTime, cloudServiceTypes, productIds, memo, indirectPartnerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePartnerCouponsReq {\n");
-        sb.append("    cloudServiceTypes: ").append(toIndentedString(cloudServiceTypes)).append("\n");
-        sb.append("    customerIds: ").append(toIndentedString(customerIds)).append("\n");
-        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
-        sb.append("    faceValue: ").append(toIndentedString(faceValue)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
-        sb.append("    memo: ").append(toIndentedString(memo)).append("\n");
-        sb.append("    productIds: ").append(toIndentedString(productIds)).append("\n");
         sb.append("    quotaId: ").append(toIndentedString(quotaId)).append("\n");
+        sb.append("    customerIds: ").append(toIndentedString(customerIds)).append("\n");
+        sb.append("    faceValue: ").append(toIndentedString(faceValue)).append("\n");
         sb.append("    validTime: ").append(toIndentedString(validTime)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    cloudServiceTypes: ").append(toIndentedString(cloudServiceTypes)).append("\n");
+        sb.append("    productIds: ").append(toIndentedString(productIds)).append("\n");
+        sb.append("    memo: ").append(toIndentedString(memo)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

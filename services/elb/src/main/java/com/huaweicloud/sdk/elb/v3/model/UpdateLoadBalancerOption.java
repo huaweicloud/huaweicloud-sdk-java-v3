@@ -342,7 +342,7 @@ public class UpdateLoadBalancerOption  {
     }
 
     /**
-     * 【描述】下联面网络ID列表，若该字段不指定，在loadbalancer所属的VPC中任意选一个网络id，优选双栈网络。 【约束】 1、所有ID同属一个VPC 2、不允许移除已被ELB使用的子网 3、listener未清除时，不允许清空该字段 4、ipv6_virsubnet_id不为空时，不允许清除elb_virsubnet_ids中的双栈子网
+     * 【描述】下联面网络ID列表，若该字段不指定，在loadbalancer所属的VPC中任意选一个网络id，优选双栈网络。 【约束】 1、所有ID同属一个VPC 2、不允许移除已被ELB使用的子网 3、不支持边缘云子网 4、负载均衡实例不处于ACTIVE状态时，不支持该字段更新 
      * @return elbVirsubnetIds
      */
     public List<String> getElbVirsubnetIds() {

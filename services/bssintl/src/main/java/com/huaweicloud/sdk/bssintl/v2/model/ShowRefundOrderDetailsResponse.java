@@ -24,15 +24,35 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_count")
+    
+    private Integer totalCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="refund_infos")
     
     private List<OrderRefundInfoV2> refundInfos = null;
     
+    public ShowRefundOrderDetailsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
     
-    private Integer totalCount;
+
+
+    /**
+     * |参数名称：总记录数。| |参数的约束及描述：总记录数。|
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
     public ShowRefundOrderDetailsResponse withRefundInfos(List<OrderRefundInfoV2> refundInfos) {
         this.refundInfos = refundInfos;
@@ -67,26 +87,6 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
     public void setRefundInfos(List<OrderRefundInfoV2> refundInfos) {
         this.refundInfos = refundInfos;
     }
-
-    public ShowRefundOrderDetailsResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：总记录数。| |参数的约束及描述：总记录数。|
-     * @return totalCount
-     */
-    public Integer getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -96,19 +96,19 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
             return false;
         }
         ShowRefundOrderDetailsResponse showRefundOrderDetailsResponse = (ShowRefundOrderDetailsResponse) o;
-        return Objects.equals(this.refundInfos, showRefundOrderDetailsResponse.refundInfos) &&
-            Objects.equals(this.totalCount, showRefundOrderDetailsResponse.totalCount);
+        return Objects.equals(this.totalCount, showRefundOrderDetailsResponse.totalCount) &&
+            Objects.equals(this.refundInfos, showRefundOrderDetailsResponse.refundInfos);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(refundInfos, totalCount);
+        return Objects.hash(totalCount, refundInfos);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRefundOrderDetailsResponse {\n");
-        sb.append("    refundInfos: ").append(toIndentedString(refundInfos)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    refundInfos: ").append(toIndentedString(refundInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

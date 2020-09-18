@@ -20,9 +20,37 @@ public class ListCustomerOnDemandResourcesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Language")
+    
+    private String xLanguage = "zh_CN";
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private QueryCustomerOnDemandResourcesReq body = null;
+
+    public ListCustomerOnDemandResourcesRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get xLanguage
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ListCustomerOnDemandResourcesRequest withBody(QueryCustomerOnDemandResourcesReq body) {
         this.body = body;
@@ -59,16 +87,18 @@ public class ListCustomerOnDemandResourcesRequest  {
             return false;
         }
         ListCustomerOnDemandResourcesRequest listCustomerOnDemandResourcesRequest = (ListCustomerOnDemandResourcesRequest) o;
-        return Objects.equals(this.body, listCustomerOnDemandResourcesRequest.body);
+        return Objects.equals(this.xLanguage, listCustomerOnDemandResourcesRequest.xLanguage) &&
+            Objects.equals(this.body, listCustomerOnDemandResourcesRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(xLanguage, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCustomerOnDemandResourcesRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -22,12 +22,6 @@ public class AmountInfomation  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coupon_amount")
-    
-    private Double couponAmount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discounts")
     
     private List<DiscountEntry> discounts = null;
@@ -40,29 +34,15 @@ public class AmountInfomation  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="coupon_amount")
+    
+    private Double couponAmount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stored_card_amount")
     
     private Double storedCardAmount;
-
-    public AmountInfomation withCouponAmount(Double couponAmount) {
-        this.couponAmount = couponAmount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：代金券金额。| |参数的约束及描述：代金券金额。|
-     * @return couponAmount
-     */
-    public Double getCouponAmount() {
-        return couponAmount;
-    }
-
-    public void setCouponAmount(Double couponAmount) {
-        this.couponAmount = couponAmount;
-    }
 
     public AmountInfomation withDiscounts(List<DiscountEntry> discounts) {
         this.discounts = discounts;
@@ -118,6 +98,26 @@ public class AmountInfomation  {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
+    public AmountInfomation withCouponAmount(Double couponAmount) {
+        this.couponAmount = couponAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：代金券金额。| |参数的约束及描述：代金券金额。|
+     * @return couponAmount
+     */
+    public Double getCouponAmount() {
+        return couponAmount;
+    }
+
+    public void setCouponAmount(Double couponAmount) {
+        this.couponAmount = couponAmount;
+    }
+
     public AmountInfomation withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
@@ -146,22 +146,22 @@ public class AmountInfomation  {
             return false;
         }
         AmountInfomation amountInfomation = (AmountInfomation) o;
-        return Objects.equals(this.couponAmount, amountInfomation.couponAmount) &&
-            Objects.equals(this.discounts, amountInfomation.discounts) &&
+        return Objects.equals(this.discounts, amountInfomation.discounts) &&
             Objects.equals(this.flexipurchaseCouponAmount, amountInfomation.flexipurchaseCouponAmount) &&
+            Objects.equals(this.couponAmount, amountInfomation.couponAmount) &&
             Objects.equals(this.storedCardAmount, amountInfomation.storedCardAmount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(couponAmount, discounts, flexipurchaseCouponAmount, storedCardAmount);
+        return Objects.hash(discounts, flexipurchaseCouponAmount, couponAmount, storedCardAmount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AmountInfomation {\n");
-        sb.append("    couponAmount: ").append(toIndentedString(couponAmount)).append("\n");
         sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
         sb.append("    flexipurchaseCouponAmount: ").append(toIndentedString(flexipurchaseCouponAmount)).append("\n");
+        sb.append("    couponAmount: ").append(toIndentedString(couponAmount)).append("\n");
         sb.append("    storedCardAmount: ").append(toIndentedString(storedCardAmount)).append("\n");
         sb.append("}");
         return sb.toString();

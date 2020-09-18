@@ -27,9 +27,9 @@ public class UnsubscribeResourcesReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unsubscribe_reason")
+    @JsonProperty(value="unsubscribe_type")
     
-    private String unsubscribeReason;
+    private Integer unsubscribeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,9 +39,9 @@ public class UnsubscribeResourcesReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unsubscribe_type")
+    @JsonProperty(value="unsubscribe_reason")
     
-    private Integer unsubscribeType;
+    private String unsubscribeReason;
 
     public UnsubscribeResourcesReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
@@ -74,8 +74,8 @@ public class UnsubscribeResourcesReq  {
         this.resourceIds = resourceIds;
     }
 
-    public UnsubscribeResourcesReq withUnsubscribeReason(String unsubscribeReason) {
-        this.unsubscribeReason = unsubscribeReason;
+    public UnsubscribeResourcesReq withUnsubscribeType(Integer unsubscribeType) {
+        this.unsubscribeType = unsubscribeType;
         return this;
     }
 
@@ -83,15 +83,17 @@ public class UnsubscribeResourcesReq  {
 
 
     /**
-     * |参数名称：退订原因，一般由客户输入。| |参数约束及描述：退订原因，一般由客户输入。|
-     * @return unsubscribeReason
+     * |参数名称：退订类型，取值如下：1：退订资源及其已续费周期。2：只退订资源已续费周期，不退订资源。| |参数的约束及描述：退订类型，取值如下：1：退订资源及其已续费周期。2：只退订资源已续费周期，不退订资源。|
+     * minimum: 1
+     * maximum: 2
+     * @return unsubscribeType
      */
-    public String getUnsubscribeReason() {
-        return unsubscribeReason;
+    public Integer getUnsubscribeType() {
+        return unsubscribeType;
     }
 
-    public void setUnsubscribeReason(String unsubscribeReason) {
-        this.unsubscribeReason = unsubscribeReason;
+    public void setUnsubscribeType(Integer unsubscribeType) {
+        this.unsubscribeType = unsubscribeType;
     }
 
     public UnsubscribeResourcesReq withUnsubscribeReasonType(Integer unsubscribeReasonType) {
@@ -116,8 +118,8 @@ public class UnsubscribeResourcesReq  {
         this.unsubscribeReasonType = unsubscribeReasonType;
     }
 
-    public UnsubscribeResourcesReq withUnsubscribeType(Integer unsubscribeType) {
-        this.unsubscribeType = unsubscribeType;
+    public UnsubscribeResourcesReq withUnsubscribeReason(String unsubscribeReason) {
+        this.unsubscribeReason = unsubscribeReason;
         return this;
     }
 
@@ -125,17 +127,15 @@ public class UnsubscribeResourcesReq  {
 
 
     /**
-     * |参数名称：退订类型，取值如下：1：退订资源及其已续费周期。2：只退订资源已续费周期，不退订资源。| |参数的约束及描述：退订类型，取值如下：1：退订资源及其已续费周期。2：只退订资源已续费周期，不退订资源。|
-     * minimum: 1
-     * maximum: 2
-     * @return unsubscribeType
+     * |参数名称：退订原因，一般由客户输入。| |参数约束及描述：退订原因，一般由客户输入。|
+     * @return unsubscribeReason
      */
-    public Integer getUnsubscribeType() {
-        return unsubscribeType;
+    public String getUnsubscribeReason() {
+        return unsubscribeReason;
     }
 
-    public void setUnsubscribeType(Integer unsubscribeType) {
-        this.unsubscribeType = unsubscribeType;
+    public void setUnsubscribeReason(String unsubscribeReason) {
+        this.unsubscribeReason = unsubscribeReason;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -147,22 +147,22 @@ public class UnsubscribeResourcesReq  {
         }
         UnsubscribeResourcesReq unsubscribeResourcesReq = (UnsubscribeResourcesReq) o;
         return Objects.equals(this.resourceIds, unsubscribeResourcesReq.resourceIds) &&
-            Objects.equals(this.unsubscribeReason, unsubscribeResourcesReq.unsubscribeReason) &&
+            Objects.equals(this.unsubscribeType, unsubscribeResourcesReq.unsubscribeType) &&
             Objects.equals(this.unsubscribeReasonType, unsubscribeResourcesReq.unsubscribeReasonType) &&
-            Objects.equals(this.unsubscribeType, unsubscribeResourcesReq.unsubscribeType);
+            Objects.equals(this.unsubscribeReason, unsubscribeResourcesReq.unsubscribeReason);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(resourceIds, unsubscribeReason, unsubscribeReasonType, unsubscribeType);
+        return Objects.hash(resourceIds, unsubscribeType, unsubscribeReasonType, unsubscribeReason);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UnsubscribeResourcesReq {\n");
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
-        sb.append("    unsubscribeReason: ").append(toIndentedString(unsubscribeReason)).append("\n");
-        sb.append("    unsubscribeReasonType: ").append(toIndentedString(unsubscribeReasonType)).append("\n");
         sb.append("    unsubscribeType: ").append(toIndentedString(unsubscribeType)).append("\n");
+        sb.append("    unsubscribeReasonType: ").append(toIndentedString(unsubscribeReasonType)).append("\n");
+        sb.append("    unsubscribeReason: ").append(toIndentedString(unsubscribeReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,15 +25,15 @@ public class SkuInventory  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="saleable_quantity")
-    
-    private Integer saleableQuantity;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sku_code")
     
     private String skuCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="saleable_quantity")
+    
+    private Integer saleableQuantity;
 
     public SkuInventory withProductId(String productId) {
         this.productId = productId;
@@ -53,6 +53,26 @@ public class SkuInventory  {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public SkuInventory withSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：SKU编码| |参数约束及描述：SKU编码|
+     * @return skuCode
+     */
+    public String getSkuCode() {
+        return skuCode;
+    }
+
+    public void setSkuCode(String skuCode) {
+        this.skuCode = skuCode;
     }
 
     public SkuInventory withSaleableQuantity(Integer saleableQuantity) {
@@ -76,26 +96,6 @@ public class SkuInventory  {
     public void setSaleableQuantity(Integer saleableQuantity) {
         this.saleableQuantity = saleableQuantity;
     }
-
-    public SkuInventory withSkuCode(String skuCode) {
-        this.skuCode = skuCode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：SKU编码| |参数约束及描述：SKU编码|
-     * @return skuCode
-     */
-    public String getSkuCode() {
-        return skuCode;
-    }
-
-    public void setSkuCode(String skuCode) {
-        this.skuCode = skuCode;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -106,20 +106,20 @@ public class SkuInventory  {
         }
         SkuInventory skuInventory = (SkuInventory) o;
         return Objects.equals(this.productId, skuInventory.productId) &&
-            Objects.equals(this.saleableQuantity, skuInventory.saleableQuantity) &&
-            Objects.equals(this.skuCode, skuInventory.skuCode);
+            Objects.equals(this.skuCode, skuInventory.skuCode) &&
+            Objects.equals(this.saleableQuantity, skuInventory.saleableQuantity);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(productId, saleableQuantity, skuCode);
+        return Objects.hash(productId, skuCode, saleableQuantity);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SkuInventory {\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    saleableQuantity: ").append(toIndentedString(saleableQuantity)).append("\n");
         sb.append("    skuCode: ").append(toIndentedString(skuCode)).append("\n");
+        sb.append("    saleableQuantity: ").append(toIndentedString(saleableQuantity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

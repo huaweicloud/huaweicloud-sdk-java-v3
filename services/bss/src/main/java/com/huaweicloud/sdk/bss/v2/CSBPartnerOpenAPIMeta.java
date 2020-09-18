@@ -10,7 +10,7 @@ import java.util.Map;
 import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
-public class BssMeta {
+public class CSBPartnerOpenAPIMeta {
 
     public static final HttpRequestDef<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> autoRenewalResources = genForautoRenewalResources();
 
@@ -172,6 +172,21 @@ public class BssMeta {
                 req.setBody(v);
             })
         );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> createEnterpriseProjectAuth = genForcreateEnterpriseProjectAuth();
+
+    private static HttpRequestDef<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> genForcreateEnterpriseProjectAuth() {
+        // basic
+        HttpRequestDef.Builder<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEnterpriseProjectAuthRequest.class, CreateEnterpriseProjectAuthResponse.class)
+                .withUri("/v2/enterprises/enterprise-projects/authority");
+
+        // requests
 
         // response
 
@@ -536,6 +551,14 @@ public class BssMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerOnDemandResourcesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -804,6 +827,77 @@ public class BssMeta {
             Boolean.class,
             f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getIncludeZeroRecord, (req, v) -> {
                 req.setIncludeZeroRecord(v);
+            })
+        );
+        builder.withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getMethod, (req, v) -> {
+                req.setMethod(v);
+            })
+        );
+        builder.withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> listEnterpriseMultiAccount = genForlistEnterpriseMultiAccount();
+
+    private static HttpRequestDef<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> genForlistEnterpriseMultiAccount() {
+        // basic
+        HttpRequestDef.Builder<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseMultiAccountRequest.class, ListEnterpriseMultiAccountResponse.class)
+                .withUri("/v2/enterprises/multi-accounts/retrieve-amount");
+
+        // requests
+        builder.withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            })
+        );
+        builder.withRequestField("balance_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getBalanceType, (req, v) -> {
+                req.setBalanceType(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 
@@ -1349,6 +1443,37 @@ public class BssMeta {
             QueryResourcesReq.class,
             f -> f.withMarshaller(ListPayPerUseCustomerResourcesRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPostalAddressRequest, ListPostalAddressResponse> listPostalAddress = genForlistPostalAddress();
+
+    private static HttpRequestDef<ListPostalAddressRequest, ListPostalAddressResponse> genForlistPostalAddress() {
+        // basic
+        HttpRequestDef.Builder<ListPostalAddressRequest, ListPostalAddressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPostalAddressRequest.class, ListPostalAddressResponse.class)
+                .withUri("/v2/customers/postal-addresses");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListPostalAddressRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListPostalAddressRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 
@@ -2111,6 +2236,22 @@ public class BssMeta {
                 req.setLimit(v);
             })
         );
+        builder.withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getMethod, (req, v) -> {
+                req.setMethod(v);
+            })
+        );
+        builder.withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            })
+        );
 
         // response
 
@@ -2156,6 +2297,45 @@ public class BssMeta {
             String.class,
             f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getIndirectPartnerId, (req, v) -> {
                 req.setIndirectPartnerId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> showMultiAccountTransferAmount = genForshowMultiAccountTransferAmount();
+
+    private static HttpRequestDef<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> genForshowMultiAccountTransferAmount() {
+        // basic
+        HttpRequestDef.Builder<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMultiAccountTransferAmountRequest.class, ShowMultiAccountTransferAmountResponse.class)
+                .withUri("/v2/enterprises/multi-accounts/transfer-amount");
+
+        // requests
+        builder.withRequestField("balance_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getBalanceType, (req, v) -> {
+                req.setBalanceType(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 

@@ -24,35 +24,15 @@ public class ListSubCustomersResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
-    private Integer count;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_infos")
     
     private List<CustomerInformation> customerInfos = null;
     
-    public ListSubCustomersResponse withCount(Integer count) {
-        this.count = count;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
     
-
-
-    /**
-     * |参数名称：总记录数。| |参数的约束及描述：总记录数。|
-     * @return count
-     */
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
+    private Integer count;
 
     public ListSubCustomersResponse withCustomerInfos(List<CustomerInformation> customerInfos) {
         this.customerInfos = customerInfos;
@@ -87,6 +67,26 @@ public class ListSubCustomersResponse extends SdkResponse {
     public void setCustomerInfos(List<CustomerInformation> customerInfos) {
         this.customerInfos = customerInfos;
     }
+
+    public ListSubCustomersResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：总记录数。| |参数的约束及描述：总记录数。|
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -96,19 +96,19 @@ public class ListSubCustomersResponse extends SdkResponse {
             return false;
         }
         ListSubCustomersResponse listSubCustomersResponse = (ListSubCustomersResponse) o;
-        return Objects.equals(this.count, listSubCustomersResponse.count) &&
-            Objects.equals(this.customerInfos, listSubCustomersResponse.customerInfos);
+        return Objects.equals(this.customerInfos, listSubCustomersResponse.customerInfos) &&
+            Objects.equals(this.count, listSubCustomersResponse.count);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, customerInfos);
+        return Objects.hash(customerInfos, count);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSubCustomersResponse {\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    customerInfos: ").append(toIndentedString(customerInfos)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

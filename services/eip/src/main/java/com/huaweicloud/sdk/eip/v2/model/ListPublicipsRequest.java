@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -117,32 +119,32 @@ public class ListPublicipsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId;
-
+    private List<String> enterpriseProjectId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port_id")
     
-    private String portId;
-
+    private List<String> portId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip_address")
     
-    private String publicIpAddress;
-
+    private List<String> publicIpAddress = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="private_ip_address")
     
-    private String privateIpAddress;
-
+    private List<String> privateIpAddress = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
-
+    private List<String> id = null;
+    
     public ListPublicipsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -204,103 +206,173 @@ public class ListPublicipsRequest  {
         this.ipVersion = ipVersion;
     }
 
-    public ListPublicipsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ListPublicipsRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
+    public ListPublicipsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
 
+    public ListPublicipsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if(this.enterpriseProjectId == null ){
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
 
     /**
      * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
-    public String getEnterpriseProjectId() {
+    public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListPublicipsRequest withPortId(String portId) {
+    public ListPublicipsRequest withPortId(List<String> portId) {
         this.portId = portId;
         return this;
     }
 
     
+    public ListPublicipsRequest addPortIdItem(String portIdItem) {
+        if (this.portId == null) {
+            this.portId = new ArrayList<>();
+        }
+        this.portId.add(portIdItem);
+        return this;
+    }
 
+    public ListPublicipsRequest withPortId(Consumer<List<String>> portIdSetter) {
+        if(this.portId == null ){
+            this.portId = new ArrayList<>();
+        }
+        portIdSetter.accept(this.portId);
+        return this;
+    }
 
     /**
      * Get portId
      * @return portId
      */
-    public String getPortId() {
+    public List<String> getPortId() {
         return portId;
     }
 
-    public void setPortId(String portId) {
+    public void setPortId(List<String> portId) {
         this.portId = portId;
     }
 
-    public ListPublicipsRequest withPublicIpAddress(String publicIpAddress) {
+    public ListPublicipsRequest withPublicIpAddress(List<String> publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
         return this;
     }
 
     
+    public ListPublicipsRequest addPublicIpAddressItem(String publicIpAddressItem) {
+        if (this.publicIpAddress == null) {
+            this.publicIpAddress = new ArrayList<>();
+        }
+        this.publicIpAddress.add(publicIpAddressItem);
+        return this;
+    }
 
+    public ListPublicipsRequest withPublicIpAddress(Consumer<List<String>> publicIpAddressSetter) {
+        if(this.publicIpAddress == null ){
+            this.publicIpAddress = new ArrayList<>();
+        }
+        publicIpAddressSetter.accept(this.publicIpAddress);
+        return this;
+    }
 
     /**
      * Get publicIpAddress
      * @return publicIpAddress
      */
-    public String getPublicIpAddress() {
+    public List<String> getPublicIpAddress() {
         return publicIpAddress;
     }
 
-    public void setPublicIpAddress(String publicIpAddress) {
+    public void setPublicIpAddress(List<String> publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
     }
 
-    public ListPublicipsRequest withPrivateIpAddress(String privateIpAddress) {
+    public ListPublicipsRequest withPrivateIpAddress(List<String> privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
         return this;
     }
 
     
+    public ListPublicipsRequest addPrivateIpAddressItem(String privateIpAddressItem) {
+        if (this.privateIpAddress == null) {
+            this.privateIpAddress = new ArrayList<>();
+        }
+        this.privateIpAddress.add(privateIpAddressItem);
+        return this;
+    }
 
+    public ListPublicipsRequest withPrivateIpAddress(Consumer<List<String>> privateIpAddressSetter) {
+        if(this.privateIpAddress == null ){
+            this.privateIpAddress = new ArrayList<>();
+        }
+        privateIpAddressSetter.accept(this.privateIpAddress);
+        return this;
+    }
 
     /**
      * Get privateIpAddress
      * @return privateIpAddress
      */
-    public String getPrivateIpAddress() {
+    public List<String> getPrivateIpAddress() {
         return privateIpAddress;
     }
 
-    public void setPrivateIpAddress(String privateIpAddress) {
+    public void setPrivateIpAddress(List<String> privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
 
-    public ListPublicipsRequest withId(String id) {
+    public ListPublicipsRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
     
+    public ListPublicipsRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
 
+    public ListPublicipsRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
 
     /**
      * Get id
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
     @Override

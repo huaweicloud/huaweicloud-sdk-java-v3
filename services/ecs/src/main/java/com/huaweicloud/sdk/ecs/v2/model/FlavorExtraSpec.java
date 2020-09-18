@@ -57,7 +57,7 @@ public class FlavorExtraSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pci_passthrough:enable_gpu")
     
-    private Boolean pciPassthroughEnableGpu;
+    private String pciPassthroughEnableGpu;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -227,7 +227,7 @@ public class FlavorExtraSpec  {
         this.ecsVirtualizationEnvTypes = ecsVirtualizationEnvTypes;
     }
 
-    public FlavorExtraSpec withPciPassthroughEnableGpu(Boolean pciPassthroughEnableGpu) {
+    public FlavorExtraSpec withPciPassthroughEnableGpu(String pciPassthroughEnableGpu) {
         this.pciPassthroughEnableGpu = pciPassthroughEnableGpu;
         return this;
     }
@@ -239,11 +239,11 @@ public class FlavorExtraSpec  {
      * 显卡是否直通。  值为“true”，表示GPU直通。
      * @return pciPassthroughEnableGpu
      */
-    public Boolean getPciPassthroughEnableGpu() {
+    public String getPciPassthroughEnableGpu() {
         return pciPassthroughEnableGpu;
     }
 
-    public void setPciPassthroughEnableGpu(Boolean pciPassthroughEnableGpu) {
+    public void setPciPassthroughEnableGpu(String pciPassthroughEnableGpu) {
         this.pciPassthroughEnableGpu = pciPassthroughEnableGpu;
     }
 

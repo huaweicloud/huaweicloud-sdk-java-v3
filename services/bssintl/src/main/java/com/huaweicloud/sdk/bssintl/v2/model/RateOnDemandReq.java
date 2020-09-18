@@ -22,6 +22,12 @@ public class RateOnDemandReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="project_id")
+    
+    private String projectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="inquiry_precision")
     
     private Integer inquiryPrecision = 0;
@@ -32,11 +38,25 @@ public class RateOnDemandReq  {
     
     private List<DemandProductInfo> productInfos = new ArrayList<>();
     
+    public RateOnDemandReq withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
     
-    private String projectId;
+
+
+    /**
+     * |参数名称：项目ID| |参数约束及描述：如果使用客户AK/SK或者Token，可以调用“通过assume_role方式获取用户token”接口获取“regionId”取值对应的project id。|
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
 
     public RateOnDemandReq withInquiryPrecision(Integer inquiryPrecision) {
         this.inquiryPrecision = inquiryPrecision;
@@ -90,26 +110,6 @@ public class RateOnDemandReq  {
     public void setProductInfos(List<DemandProductInfo> productInfos) {
         this.productInfos = productInfos;
     }
-
-    public RateOnDemandReq withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：项目ID| |参数约束及描述：如果使用客户AK/SK或者Token，可以调用“通过assume_role方式获取用户token”接口获取“regionId”取值对应的project id。|
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -119,21 +119,21 @@ public class RateOnDemandReq  {
             return false;
         }
         RateOnDemandReq rateOnDemandReq = (RateOnDemandReq) o;
-        return Objects.equals(this.inquiryPrecision, rateOnDemandReq.inquiryPrecision) &&
-            Objects.equals(this.productInfos, rateOnDemandReq.productInfos) &&
-            Objects.equals(this.projectId, rateOnDemandReq.projectId);
+        return Objects.equals(this.projectId, rateOnDemandReq.projectId) &&
+            Objects.equals(this.inquiryPrecision, rateOnDemandReq.inquiryPrecision) &&
+            Objects.equals(this.productInfos, rateOnDemandReq.productInfos);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(inquiryPrecision, productInfos, projectId);
+        return Objects.hash(projectId, inquiryPrecision, productInfos);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RateOnDemandReq {\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    inquiryPrecision: ").append(toIndentedString(inquiryPrecision)).append("\n");
         sb.append("    productInfos: ").append(toIndentedString(productInfos)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

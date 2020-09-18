@@ -24,6 +24,12 @@ public class ListSubCustomerResFeeRecordsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="fee_records")
+    
+    private List<SubCustomerResFeeRecordV2> feeRecords = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
     private Integer count;
@@ -34,12 +40,40 @@ public class ListSubCustomerResFeeRecordsResponse extends SdkResponse {
     
     private String currency;
 
+    public ListSubCustomerResFeeRecordsResponse withFeeRecords(List<SubCustomerResFeeRecordV2> feeRecords) {
+        this.feeRecords = feeRecords;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fee_records")
     
-    private List<SubCustomerResFeeRecordV2> feeRecords = null;
-    
+    public ListSubCustomerResFeeRecordsResponse addFeeRecordsItem(SubCustomerResFeeRecordV2 feeRecordsItem) {
+        if (this.feeRecords == null) {
+            this.feeRecords = new ArrayList<>();
+        }
+        this.feeRecords.add(feeRecordsItem);
+        return this;
+    }
+
+    public ListSubCustomerResFeeRecordsResponse withFeeRecords(Consumer<List<SubCustomerResFeeRecordV2>> feeRecordsSetter) {
+        if(this.feeRecords == null ){
+            this.feeRecords = new ArrayList<>();
+        }
+        feeRecordsSetter.accept(this.feeRecords);
+        return this;
+    }
+
+    /**
+     * |参数名称：资源费用记录数据。具体请参见表 ResFeeRecordV2。| |参数约束以及描述：资源费用记录数据。具体请参见表 ResFeeRecordV2。|
+     * @return feeRecords
+     */
+    public List<SubCustomerResFeeRecordV2> getFeeRecords() {
+        return feeRecords;
+    }
+
+    public void setFeeRecords(List<SubCustomerResFeeRecordV2> feeRecords) {
+        this.feeRecords = feeRecords;
+    }
+
     public ListSubCustomerResFeeRecordsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -79,40 +113,6 @@ public class ListSubCustomerResFeeRecordsResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
-
-    public ListSubCustomerResFeeRecordsResponse withFeeRecords(List<SubCustomerResFeeRecordV2> feeRecords) {
-        this.feeRecords = feeRecords;
-        return this;
-    }
-
-    
-    public ListSubCustomerResFeeRecordsResponse addFeeRecordsItem(SubCustomerResFeeRecordV2 feeRecordsItem) {
-        if (this.feeRecords == null) {
-            this.feeRecords = new ArrayList<>();
-        }
-        this.feeRecords.add(feeRecordsItem);
-        return this;
-    }
-
-    public ListSubCustomerResFeeRecordsResponse withFeeRecords(Consumer<List<SubCustomerResFeeRecordV2>> feeRecordsSetter) {
-        if(this.feeRecords == null ){
-            this.feeRecords = new ArrayList<>();
-        }
-        feeRecordsSetter.accept(this.feeRecords);
-        return this;
-    }
-
-    /**
-     * |参数名称：资源费用记录数据。具体请参见表 ResFeeRecordV2。| |参数约束以及描述：资源费用记录数据。具体请参见表 ResFeeRecordV2。|
-     * @return feeRecords
-     */
-    public List<SubCustomerResFeeRecordV2> getFeeRecords() {
-        return feeRecords;
-    }
-
-    public void setFeeRecords(List<SubCustomerResFeeRecordV2> feeRecords) {
-        this.feeRecords = feeRecords;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -122,21 +122,21 @@ public class ListSubCustomerResFeeRecordsResponse extends SdkResponse {
             return false;
         }
         ListSubCustomerResFeeRecordsResponse listSubCustomerResFeeRecordsResponse = (ListSubCustomerResFeeRecordsResponse) o;
-        return Objects.equals(this.count, listSubCustomerResFeeRecordsResponse.count) &&
-            Objects.equals(this.currency, listSubCustomerResFeeRecordsResponse.currency) &&
-            Objects.equals(this.feeRecords, listSubCustomerResFeeRecordsResponse.feeRecords);
+        return Objects.equals(this.feeRecords, listSubCustomerResFeeRecordsResponse.feeRecords) &&
+            Objects.equals(this.count, listSubCustomerResFeeRecordsResponse.count) &&
+            Objects.equals(this.currency, listSubCustomerResFeeRecordsResponse.currency);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, currency, feeRecords);
+        return Objects.hash(feeRecords, count, currency);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSubCustomerResFeeRecordsResponse {\n");
+        sb.append("    feeRecords: ").append(toIndentedString(feeRecords)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-        sb.append("    feeRecords: ").append(toIndentedString(feeRecords)).append("\n");
         sb.append("}");
         return sb.toString();
     }

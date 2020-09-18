@@ -31,15 +31,15 @@ public class NewCustomerV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
-    private String password;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="use_pri_mobile_phone")
     
     private String usePriMobilePhone;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="password")
+    
+    private String password;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,26 +87,6 @@ public class NewCustomerV2  {
         this.mobilePhone = mobilePhone;
     }
 
-    public NewCustomerV2 withPassword(String password) {
-        this.password = password;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：客户登录密码。注：usePriMobilePhone为Y时才支持| |参数约束及描述：客户登录密码。注：usePriMobilePhone为Y时才支持|
-     * @return password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public NewCustomerV2 withUsePriMobilePhone(String usePriMobilePhone) {
         this.usePriMobilePhone = usePriMobilePhone;
         return this;
@@ -125,6 +105,26 @@ public class NewCustomerV2  {
 
     public void setUsePriMobilePhone(String usePriMobilePhone) {
         this.usePriMobilePhone = usePriMobilePhone;
+    }
+
+    public NewCustomerV2 withPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：客户登录密码。注：usePriMobilePhone为Y时才支持| |参数约束及描述：客户登录密码。注：usePriMobilePhone为Y时才支持|
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public NewCustomerV2 withVerificationCode(String verificationCode) {
@@ -157,13 +157,13 @@ public class NewCustomerV2  {
         NewCustomerV2 newCustomerV2 = (NewCustomerV2) o;
         return Objects.equals(this.customerName, newCustomerV2.customerName) &&
             Objects.equals(this.mobilePhone, newCustomerV2.mobilePhone) &&
-            Objects.equals(this.password, newCustomerV2.password) &&
             Objects.equals(this.usePriMobilePhone, newCustomerV2.usePriMobilePhone) &&
+            Objects.equals(this.password, newCustomerV2.password) &&
             Objects.equals(this.verificationCode, newCustomerV2.verificationCode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(customerName, mobilePhone, password, usePriMobilePhone, verificationCode);
+        return Objects.hash(customerName, mobilePhone, usePriMobilePhone, password, verificationCode);
     }
     @Override
     public String toString() {
@@ -171,8 +171,8 @@ public class NewCustomerV2  {
         sb.append("class NewCustomerV2 {\n");
         sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
         sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
-        sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    usePriMobilePhone: ").append(toIndentedString(usePriMobilePhone)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    verificationCode: ").append(toIndentedString(verificationCode)).append("\n");
         sb.append("}");
         return sb.toString();

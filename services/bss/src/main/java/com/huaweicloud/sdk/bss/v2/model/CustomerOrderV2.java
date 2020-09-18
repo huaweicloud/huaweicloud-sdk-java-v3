@@ -20,69 +20,15 @@ public class CustomerOrderV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount_after_discount")
-    
-    private Double amountAfterDiscount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount_info")
-    
-    private AmountInfomationV2 amountInfo = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="contract_id")
-    
-    private String contractId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
-    private String createTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
-    private String customerId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
-    private Integer measureId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_amount")
-    
-    private Double officialAmount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
     private String orderId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_type")
+    @JsonProperty(value="customer_id")
     
-    private Integer orderType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="payment_time")
-    
-    private String paymentTime;
+    private String customerId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,172 +48,59 @@ public class CustomerOrderV2  {
     
     private Integer status;
 
-    public CustomerOrderV2 withAmountAfterDiscount(Double amountAfterDiscount) {
-        this.amountAfterDiscount = amountAfterDiscount;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="order_type")
     
+    private Integer orderType;
 
 
-    /**
-     * |参数名称：订单优惠后金额（不含券不含卡的实付价格）。| |参数的约束及描述：订单优惠后金额（不含券不含卡的实付价格）。|
-     * @return amountAfterDiscount
-     */
-    public Double getAmountAfterDiscount() {
-        return amountAfterDiscount;
-    }
-
-    public void setAmountAfterDiscount(Double amountAfterDiscount) {
-        this.amountAfterDiscount = amountAfterDiscount;
-    }
-
-    public CustomerOrderV2 withAmountInfo(AmountInfomationV2 amountInfo) {
-        this.amountInfo = amountInfo;
-        return this;
-    }
-
-    public CustomerOrderV2 withAmountInfo(Consumer<AmountInfomationV2> amountInfoSetter) {
-        if(this.amountInfo == null ){
-            this.amountInfo = new AmountInfomationV2();
-            amountInfoSetter.accept(this.amountInfo);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get amountInfo
-     * @return amountInfo
-     */
-    public AmountInfomationV2 getAmountInfo() {
-        return amountInfo;
-    }
-
-    public void setAmountInfo(AmountInfomationV2 amountInfo) {
-        this.amountInfo = amountInfo;
-    }
-
-    public CustomerOrderV2 withContractId(String contractId) {
-        this.contractId = contractId;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount_after_discount")
     
+    private Double amountAfterDiscount;
 
 
-    /**
-     * |参数名称：合同ID。| |参数约束及描述：合同ID。|
-     * @return contractId
-     */
-    public String getContractId() {
-        return contractId;
-    }
-
-    public void setContractId(String contractId) {
-        this.contractId = contractId;
-    }
-
-    public CustomerOrderV2 withCreateTime(String createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="official_amount")
     
+    private Double officialAmount;
 
 
-    /**
-     * |参数名称：创建时间 。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：创建时间 。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * @return createTime
-     */
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    public CustomerOrderV2 withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="measure_id")
     
+    private Integer measureId;
 
 
-    /**
-     * |参数名称：货币编码。| |参数约束及描述：货币编码。如CNY|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
-    public CustomerOrderV2 withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="create_time")
     
+    private String createTime;
 
 
-    /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
-     * @return customerId
-     */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
-    public CustomerOrderV2 withMeasureId(Integer measureId) {
-        this.measureId = measureId;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="payment_time")
     
+    private String paymentTime;
 
 
-    /**
-     * |参数名称：订单金额度量单位：1：元2：角3：分| |参数的约束及描述：订单金额度量单位：1：元2：角3：分|
-     * @return measureId
-     */
-    public Integer getMeasureId() {
-        return measureId;
-    }
-
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
-    }
-
-    public CustomerOrderV2 withOfficialAmount(Double officialAmount) {
-        this.officialAmount = officialAmount;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currency")
     
+    private String currency;
 
 
-    /**
-     * |参数名称：订单金额（官网价）。退订订单中，该金额等于amount。| |参数的约束及描述：订单金额（官网价）。退订订单中，该金额等于amount。|
-     * @return officialAmount
-     */
-    public Double getOfficialAmount() {
-        return officialAmount;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="contract_id")
+    
+    private String contractId;
 
-    public void setOfficialAmount(Double officialAmount) {
-        this.officialAmount = officialAmount;
-    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount_info")
+    
+    private AmountInfomationV2 amountInfo = null;
 
     public CustomerOrderV2 withOrderId(String orderId) {
         this.orderId = orderId;
@@ -289,8 +122,8 @@ public class CustomerOrderV2  {
         this.orderId = orderId;
     }
 
-    public CustomerOrderV2 withOrderType(Integer orderType) {
-        this.orderType = orderType;
+    public CustomerOrderV2 withCustomerId(String customerId) {
+        this.customerId = customerId;
         return this;
     }
 
@@ -298,35 +131,15 @@ public class CustomerOrderV2  {
 
 
     /**
-     * |参数名称：订单类型：1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整| |参数的约束及描述：订单类型：1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整|
-     * @return orderType
+     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * @return customerId
      */
-    public Integer getOrderType() {
-        return orderType;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setOrderType(Integer orderType) {
-        this.orderType = orderType;
-    }
-
-    public CustomerOrderV2 withPaymentTime(String paymentTime) {
-        this.paymentTime = paymentTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：支付时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：支付时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * @return paymentTime
-     */
-    public String getPaymentTime() {
-        return paymentTime;
-    }
-
-    public void setPaymentTime(String paymentTime) {
-        this.paymentTime = paymentTime;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public CustomerOrderV2 withServiceTypeCode(String serviceTypeCode) {
@@ -388,6 +201,193 @@ public class CustomerOrderV2  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    public CustomerOrderV2 withOrderType(Integer orderType) {
+        this.orderType = orderType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：订单类型：1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整| |参数的约束及描述：订单类型：1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整|
+     * @return orderType
+     */
+    public Integer getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(Integer orderType) {
+        this.orderType = orderType;
+    }
+
+    public CustomerOrderV2 withAmountAfterDiscount(Double amountAfterDiscount) {
+        this.amountAfterDiscount = amountAfterDiscount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：订单优惠后金额（不含券不含卡的实付价格）。| |参数的约束及描述：订单优惠后金额（不含券不含卡的实付价格）。|
+     * @return amountAfterDiscount
+     */
+    public Double getAmountAfterDiscount() {
+        return amountAfterDiscount;
+    }
+
+    public void setAmountAfterDiscount(Double amountAfterDiscount) {
+        this.amountAfterDiscount = amountAfterDiscount;
+    }
+
+    public CustomerOrderV2 withOfficialAmount(Double officialAmount) {
+        this.officialAmount = officialAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：订单金额（官网价）。退订订单中，该金额等于amount。| |参数的约束及描述：订单金额（官网价）。退订订单中，该金额等于amount。|
+     * @return officialAmount
+     */
+    public Double getOfficialAmount() {
+        return officialAmount;
+    }
+
+    public void setOfficialAmount(Double officialAmount) {
+        this.officialAmount = officialAmount;
+    }
+
+    public CustomerOrderV2 withMeasureId(Integer measureId) {
+        this.measureId = measureId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：订单金额度量单位：1：元2：角3：分| |参数的约束及描述：订单金额度量单位：1：元2：角3：分|
+     * @return measureId
+     */
+    public Integer getMeasureId() {
+        return measureId;
+    }
+
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
+    }
+
+    public CustomerOrderV2 withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：创建时间 。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：创建时间 。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public CustomerOrderV2 withPaymentTime(String paymentTime) {
+        this.paymentTime = paymentTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：支付时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：支付时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * @return paymentTime
+     */
+    public String getPaymentTime() {
+        return paymentTime;
+    }
+
+    public void setPaymentTime(String paymentTime) {
+        this.paymentTime = paymentTime;
+    }
+
+    public CustomerOrderV2 withCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：货币编码。| |参数约束及描述：货币编码。如CNY|
+     * @return currency
+     */
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public CustomerOrderV2 withContractId(String contractId) {
+        this.contractId = contractId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：合同ID。| |参数约束及描述：合同ID。|
+     * @return contractId
+     */
+    public String getContractId() {
+        return contractId;
+    }
+
+    public void setContractId(String contractId) {
+        this.contractId = contractId;
+    }
+
+    public CustomerOrderV2 withAmountInfo(AmountInfomationV2 amountInfo) {
+        this.amountInfo = amountInfo;
+        return this;
+    }
+
+    public CustomerOrderV2 withAmountInfo(Consumer<AmountInfomationV2> amountInfoSetter) {
+        if(this.amountInfo == null ){
+            this.amountInfo = new AmountInfomationV2();
+            amountInfoSetter.accept(this.amountInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get amountInfo
+     * @return amountInfo
+     */
+    public AmountInfomationV2 getAmountInfo() {
+        return amountInfo;
+    }
+
+    public void setAmountInfo(AmountInfomationV2 amountInfo) {
+        this.amountInfo = amountInfo;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -397,43 +397,43 @@ public class CustomerOrderV2  {
             return false;
         }
         CustomerOrderV2 customerOrderV2 = (CustomerOrderV2) o;
-        return Objects.equals(this.amountAfterDiscount, customerOrderV2.amountAfterDiscount) &&
-            Objects.equals(this.amountInfo, customerOrderV2.amountInfo) &&
-            Objects.equals(this.contractId, customerOrderV2.contractId) &&
-            Objects.equals(this.createTime, customerOrderV2.createTime) &&
-            Objects.equals(this.currency, customerOrderV2.currency) &&
+        return Objects.equals(this.orderId, customerOrderV2.orderId) &&
             Objects.equals(this.customerId, customerOrderV2.customerId) &&
-            Objects.equals(this.measureId, customerOrderV2.measureId) &&
-            Objects.equals(this.officialAmount, customerOrderV2.officialAmount) &&
-            Objects.equals(this.orderId, customerOrderV2.orderId) &&
-            Objects.equals(this.orderType, customerOrderV2.orderType) &&
-            Objects.equals(this.paymentTime, customerOrderV2.paymentTime) &&
             Objects.equals(this.serviceTypeCode, customerOrderV2.serviceTypeCode) &&
             Objects.equals(this.sourceType, customerOrderV2.sourceType) &&
-            Objects.equals(this.status, customerOrderV2.status);
+            Objects.equals(this.status, customerOrderV2.status) &&
+            Objects.equals(this.orderType, customerOrderV2.orderType) &&
+            Objects.equals(this.amountAfterDiscount, customerOrderV2.amountAfterDiscount) &&
+            Objects.equals(this.officialAmount, customerOrderV2.officialAmount) &&
+            Objects.equals(this.measureId, customerOrderV2.measureId) &&
+            Objects.equals(this.createTime, customerOrderV2.createTime) &&
+            Objects.equals(this.paymentTime, customerOrderV2.paymentTime) &&
+            Objects.equals(this.currency, customerOrderV2.currency) &&
+            Objects.equals(this.contractId, customerOrderV2.contractId) &&
+            Objects.equals(this.amountInfo, customerOrderV2.amountInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amountAfterDiscount, amountInfo, contractId, createTime, currency, customerId, measureId, officialAmount, orderId, orderType, paymentTime, serviceTypeCode, sourceType, status);
+        return Objects.hash(orderId, customerId, serviceTypeCode, sourceType, status, orderType, amountAfterDiscount, officialAmount, measureId, createTime, paymentTime, currency, contractId, amountInfo);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CustomerOrderV2 {\n");
-        sb.append("    amountAfterDiscount: ").append(toIndentedString(amountAfterDiscount)).append("\n");
-        sb.append("    amountInfo: ").append(toIndentedString(amountInfo)).append("\n");
-        sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-        sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");
-        sb.append("    paymentTime: ").append(toIndentedString(paymentTime)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");
+        sb.append("    amountAfterDiscount: ").append(toIndentedString(amountAfterDiscount)).append("\n");
+        sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    paymentTime: ").append(toIndentedString(paymentTime)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+        sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
+        sb.append("    amountInfo: ").append(toIndentedString(amountInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

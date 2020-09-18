@@ -20,21 +20,41 @@ public class ReclaimToPartnerAccountBalancesReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
-    private BigDecimal amount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_id")
     
     private String customerId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount")
+    
+    private BigDecimal amount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="indirect_partner_id")
     
     private String indirectPartnerId;
+
+    public ReclaimToPartnerAccountBalancesReq withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：合作伙伴关联的客户的客户ID。| |参数约束及描述：合作伙伴关联的客户的客户ID。|
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
 
     public ReclaimToPartnerAccountBalancesReq withAmount(BigDecimal amount) {
         this.amount = amount;
@@ -56,26 +76,6 @@ public class ReclaimToPartnerAccountBalancesReq  {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
-    }
-
-    public ReclaimToPartnerAccountBalancesReq withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：合作伙伴关联的客户的客户ID。| |参数约束及描述：合作伙伴关联的客户的客户ID。|
-     * @return customerId
-     */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
     }
 
     public ReclaimToPartnerAccountBalancesReq withIndirectPartnerId(String indirectPartnerId) {
@@ -106,20 +106,20 @@ public class ReclaimToPartnerAccountBalancesReq  {
             return false;
         }
         ReclaimToPartnerAccountBalancesReq reclaimToPartnerAccountBalancesReq = (ReclaimToPartnerAccountBalancesReq) o;
-        return Objects.equals(this.amount, reclaimToPartnerAccountBalancesReq.amount) &&
-            Objects.equals(this.customerId, reclaimToPartnerAccountBalancesReq.customerId) &&
+        return Objects.equals(this.customerId, reclaimToPartnerAccountBalancesReq.customerId) &&
+            Objects.equals(this.amount, reclaimToPartnerAccountBalancesReq.amount) &&
             Objects.equals(this.indirectPartnerId, reclaimToPartnerAccountBalancesReq.indirectPartnerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, customerId, indirectPartnerId);
+        return Objects.hash(customerId, amount, indirectPartnerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReclaimToPartnerAccountBalancesReq {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();

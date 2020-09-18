@@ -23,21 +23,15 @@ public class BillSumInfoV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account_details")
+    @JsonProperty(value="customer_id")
     
-    private List<BalanceTypeDeductSumV2> accountDetails = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="adjustment_amount")
-    
-    private BigDecimal adjustmentAmount = null;
+    private String customerId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
+    @JsonProperty(value="cloud_service_type")
     
-    private BigDecimal amount = null;
+    private String cloudServiceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,21 +47,21 @@ public class BillSumInfoV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_service_type")
+    @JsonProperty(value="amount")
     
-    private String cloudServiceType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
-    private String customerId;
+    private BigDecimal amount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
     private BigDecimal debtAmount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="adjustment_amount")
+    
+    private BigDecimal adjustmentAmount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,46 +77,18 @@ public class BillSumInfoV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="account_details")
+    
+    private List<BalanceTypeDeductSumV2> accountDetails = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_type_code")
     
     private String resourceTypeCode;
 
-    public BillSumInfoV2 withAccountDetails(List<BalanceTypeDeductSumV2> accountDetails) {
-        this.accountDetails = accountDetails;
-        return this;
-    }
-
-    
-    public BillSumInfoV2 addAccountDetailsItem(BalanceTypeDeductSumV2 accountDetailsItem) {
-        if (this.accountDetails == null) {
-            this.accountDetails = new ArrayList<>();
-        }
-        this.accountDetails.add(accountDetailsItem);
-        return this;
-    }
-
-    public BillSumInfoV2 withAccountDetails(Consumer<List<BalanceTypeDeductSumV2>> accountDetailsSetter) {
-        if(this.accountDetails == null ){
-            this.accountDetails = new ArrayList<>();
-        }
-        accountDetailsSetter.accept(this.accountDetails);
-        return this;
-    }
-
-    /**
-     * |参数名称：按不同账户消费类型和付费方式区分的支付总金额。具体请参见表 BalanceTypeDeductSum。| |参数约束以及描述：按不同账户消费类型和付费方式区分的支付总金额。具体请参见表 BalanceTypeDeductSum。|
-     * @return accountDetails
-     */
-    public List<BalanceTypeDeductSumV2> getAccountDetails() {
-        return accountDetails;
-    }
-
-    public void setAccountDetails(List<BalanceTypeDeductSumV2> accountDetails) {
-        this.accountDetails = accountDetails;
-    }
-
-    public BillSumInfoV2 withAdjustmentAmount(BigDecimal adjustmentAmount) {
-        this.adjustmentAmount = adjustmentAmount;
+    public BillSumInfoV2 withCustomerId(String customerId) {
+        this.customerId = customerId;
         return this;
     }
 
@@ -130,19 +96,19 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：核销欠款，华为核销或者退订的时候没有该字段。| |参数的约束及描述：核销欠款，华为核销或者退订的时候没有该字段。|
-     * @return adjustmentAmount
+     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * @return customerId
      */
-    public BigDecimal getAdjustmentAmount() {
-        return adjustmentAmount;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
-        this.adjustmentAmount = adjustmentAmount;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
-    public BillSumInfoV2 withAmount(BigDecimal amount) {
-        this.amount = amount;
+    public BillSumInfoV2 withCloudServiceType(String cloudServiceType) {
+        this.cloudServiceType = cloudServiceType;
         return this;
     }
 
@@ -150,15 +116,15 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：消费的金额，即从客户账户实际扣除的金额。对于billType=1或者2的账单，该金额为负值。| |参数的约束及描述：消费的金额，即从客户账户实际扣除的金额。对于billType=1或者2的账单，该金额为负值。|
-     * @return amount
+     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型。|
+     * @return cloudServiceType
      */
-    public BigDecimal getAmount() {
-        return amount;
+    public String getCloudServiceType() {
+        return cloudServiceType;
     }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
+    public void setCloudServiceType(String cloudServiceType) {
+        this.cloudServiceType = cloudServiceType;
     }
 
     public BillSumInfoV2 withBillType(String billType) {
@@ -201,8 +167,8 @@ public class BillSumInfoV2  {
         this.chargeMode = chargeMode;
     }
 
-    public BillSumInfoV2 withCloudServiceType(String cloudServiceType) {
-        this.cloudServiceType = cloudServiceType;
+    public BillSumInfoV2 withAmount(BigDecimal amount) {
+        this.amount = amount;
         return this;
     }
 
@@ -210,35 +176,15 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型。|
-     * @return cloudServiceType
+     * |参数名称：消费的金额，即从客户账户实际扣除的金额。对于billType=1或者2的账单，该金额为负值。| |参数的约束及描述：消费的金额，即从客户账户实际扣除的金额。对于billType=1或者2的账单，该金额为负值。|
+     * @return amount
      */
-    public String getCloudServiceType() {
-        return cloudServiceType;
+    public BigDecimal getAmount() {
+        return amount;
     }
 
-    public void setCloudServiceType(String cloudServiceType) {
-        this.cloudServiceType = cloudServiceType;
-    }
-
-    public BillSumInfoV2 withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
-     * @return customerId
-     */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public BillSumInfoV2 withDebtAmount(BigDecimal debtAmount) {
@@ -259,6 +205,26 @@ public class BillSumInfoV2  {
 
     public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
+    }
+
+    public BillSumInfoV2 withAdjustmentAmount(BigDecimal adjustmentAmount) {
+        this.adjustmentAmount = adjustmentAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：核销欠款，华为核销或者退订的时候没有该字段。| |参数的约束及描述：核销欠款，华为核销或者退订的时候没有该字段。|
+     * @return adjustmentAmount
+     */
+    public BigDecimal getAdjustmentAmount() {
+        return adjustmentAmount;
+    }
+
+    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
+        this.adjustmentAmount = adjustmentAmount;
     }
 
     public BillSumInfoV2 withDiscountAmount(BigDecimal discountAmount) {
@@ -301,6 +267,40 @@ public class BillSumInfoV2  {
         this.measureId = measureId;
     }
 
+    public BillSumInfoV2 withAccountDetails(List<BalanceTypeDeductSumV2> accountDetails) {
+        this.accountDetails = accountDetails;
+        return this;
+    }
+
+    
+    public BillSumInfoV2 addAccountDetailsItem(BalanceTypeDeductSumV2 accountDetailsItem) {
+        if (this.accountDetails == null) {
+            this.accountDetails = new ArrayList<>();
+        }
+        this.accountDetails.add(accountDetailsItem);
+        return this;
+    }
+
+    public BillSumInfoV2 withAccountDetails(Consumer<List<BalanceTypeDeductSumV2>> accountDetailsSetter) {
+        if(this.accountDetails == null ){
+            this.accountDetails = new ArrayList<>();
+        }
+        accountDetailsSetter.accept(this.accountDetails);
+        return this;
+    }
+
+    /**
+     * |参数名称：按不同账户消费类型和付费方式区分的支付总金额。具体请参见表 BalanceTypeDeductSum。| |参数约束以及描述：按不同账户消费类型和付费方式区分的支付总金额。具体请参见表 BalanceTypeDeductSum。|
+     * @return accountDetails
+     */
+    public List<BalanceTypeDeductSumV2> getAccountDetails() {
+        return accountDetails;
+    }
+
+    public void setAccountDetails(List<BalanceTypeDeductSumV2> accountDetails) {
+        this.accountDetails = accountDetails;
+    }
+
     public BillSumInfoV2 withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
@@ -329,36 +329,36 @@ public class BillSumInfoV2  {
             return false;
         }
         BillSumInfoV2 billSumInfoV2 = (BillSumInfoV2) o;
-        return Objects.equals(this.accountDetails, billSumInfoV2.accountDetails) &&
-            Objects.equals(this.adjustmentAmount, billSumInfoV2.adjustmentAmount) &&
-            Objects.equals(this.amount, billSumInfoV2.amount) &&
+        return Objects.equals(this.customerId, billSumInfoV2.customerId) &&
+            Objects.equals(this.cloudServiceType, billSumInfoV2.cloudServiceType) &&
             Objects.equals(this.billType, billSumInfoV2.billType) &&
             Objects.equals(this.chargeMode, billSumInfoV2.chargeMode) &&
-            Objects.equals(this.cloudServiceType, billSumInfoV2.cloudServiceType) &&
-            Objects.equals(this.customerId, billSumInfoV2.customerId) &&
+            Objects.equals(this.amount, billSumInfoV2.amount) &&
             Objects.equals(this.debtAmount, billSumInfoV2.debtAmount) &&
+            Objects.equals(this.adjustmentAmount, billSumInfoV2.adjustmentAmount) &&
             Objects.equals(this.discountAmount, billSumInfoV2.discountAmount) &&
             Objects.equals(this.measureId, billSumInfoV2.measureId) &&
+            Objects.equals(this.accountDetails, billSumInfoV2.accountDetails) &&
             Objects.equals(this.resourceTypeCode, billSumInfoV2.resourceTypeCode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accountDetails, adjustmentAmount, amount, billType, chargeMode, cloudServiceType, customerId, debtAmount, discountAmount, measureId, resourceTypeCode);
+        return Objects.hash(customerId, cloudServiceType, billType, chargeMode, amount, debtAmount, adjustmentAmount, discountAmount, measureId, accountDetails, resourceTypeCode);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BillSumInfoV2 {\n");
-        sb.append("    accountDetails: ").append(toIndentedString(accountDetails)).append("\n");
-        sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
-        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    debtAmount: ").append(toIndentedString(debtAmount)).append("\n");
+        sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    accountDetails: ").append(toIndentedString(accountDetails)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -247,7 +247,7 @@ public class UpdateImageResponse extends SdkResponse {
     
     private ImagetypeEnum imagetype;
     /**
-     * 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否            则设置为false。默认为false。
+     * 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
      */
     public static final class IsConfigInitEnum {
 
@@ -646,9 +646,9 @@ public class UpdateImageResponse extends SdkResponse {
         public static final PlatformEnum COREOS = new PlatformEnum("CoreOS");
         
         /**
-         * Enum EULEOS for value: "EuleOS"
+         * Enum EULEROS for value: "EulerOS"
          */
-        public static final PlatformEnum EULEOS = new PlatformEnum("EuleOS");
+        public static final PlatformEnum EULEROS = new PlatformEnum("EulerOS");
         
 
         private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
@@ -666,7 +666,7 @@ public class UpdateImageResponse extends SdkResponse {
             map.put("Fedora", FEDORA);
             map.put("Other", OTHER);
             map.put("CoreOS", COREOS);
-            map.put("EuleOS", EULEOS);
+            map.put("EulerOS", EULEROS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -808,18 +808,6 @@ public class UpdateImageResponse extends SdkResponse {
     @JsonProperty(value="created_at")
     
     private String createdAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleted")
-    
-    private Boolean deleted;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleted_at")
-    
-    private String deletedAt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1495,6 +1483,36 @@ public class UpdateImageResponse extends SdkResponse {
     
     private SupportArmEnum supportArm;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="max_ram")
+    
+    private String maxRam;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__system__cmkid")
+    
+    private String systemCmkid;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__os_feature_list")
+    
+    private String osFeatureList;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__account_code")
+    
+    private String accountCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="hw_vif_multiqueue_enabled")
+    
+    private String hwVifMultiqueueEnabled;
+
     public UpdateImageResponse withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -1658,7 +1676,7 @@ public class UpdateImageResponse extends SdkResponse {
 
 
     /**
-     * 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否            则设置为false。默认为false。
+     * 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
      * @return isConfigInit
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -2105,46 +2123,6 @@ public class UpdateImageResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    public UpdateImageResponse withDeleted(Boolean deleted) {
-        this.deleted = deleted;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否是删除的镜像，取值为true或者false
-     * @return deleted
-     */
-    public Boolean getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
-    }
-
-    public UpdateImageResponse withDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 删除时间。格式为UTC时间
-     * @return deletedAt
-     */
-    public String getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
-    }
-
     public UpdateImageResponse withDiskFormat(String diskFormat) {
         this.diskFormat = diskFormat;
         return this;
@@ -2174,7 +2152,7 @@ public class UpdateImageResponse extends SdkResponse {
 
 
     /**
-     * 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目，取值为UUID，表示属于             该UUID对应的企业项目。
+     * 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目，取值为UUID，表示属于该UUID对应的企业项目。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -2604,6 +2582,112 @@ public class UpdateImageResponse extends SdkResponse {
     public void setSupportArm(SupportArmEnum supportArm) {
         this.supportArm = supportArm;
     }
+
+    public UpdateImageResponse withMaxRam(String maxRam) {
+        this.maxRam = maxRam;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像支持的最大内存，单位为MB。取值可以参考云服务器规格限制，一般不设置。
+     * @return maxRam
+     */
+    public String getMaxRam() {
+        return maxRam;
+    }
+
+    public void setMaxRam(String maxRam) {
+        this.maxRam = maxRam;
+    }
+
+    public UpdateImageResponse withSystemCmkid(String systemCmkid) {
+        this.systemCmkid = systemCmkid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 加密镜像所使用的密钥ID。
+     * @return systemCmkid
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getSystemCmkid() {
+        return systemCmkid;
+    }
+
+    public void setSystemCmkid(String systemCmkid) {
+        this.systemCmkid = systemCmkid;
+    }
+
+    public UpdateImageResponse withOsFeatureList(String osFeatureList) {
+        this.osFeatureList = osFeatureList;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。
+     * @return osFeatureList
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getOsFeatureList() {
+        return osFeatureList;
+    }
+
+    public void setOsFeatureList(String osFeatureList) {
+        this.osFeatureList = osFeatureList;
+    }
+
+    public UpdateImageResponse withAccountCode(String accountCode) {
+        this.accountCode = accountCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 收费镜像标识。
+     * @return accountCode
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getAccountCode() {
+        return accountCode;
+    }
+
+    public void setAccountCode(String accountCode) {
+        this.accountCode = accountCode;
+    }
+
+    public UpdateImageResponse withHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
+        this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像是否支持网卡多队列。取值为“true”或者“false”。
+     * @return hwVifMultiqueueEnabled
+     */
+    public String getHwVifMultiqueueEnabled() {
+        return hwVifMultiqueueEnabled;
+    }
+
+    public void setHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
+        this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2641,8 +2725,6 @@ public class UpdateImageResponse extends SdkResponse {
             Objects.equals(this.checksum, updateImageResponse.checksum) &&
             Objects.equals(this.containerFormat, updateImageResponse.containerFormat) &&
             Objects.equals(this.createdAt, updateImageResponse.createdAt) &&
-            Objects.equals(this.deleted, updateImageResponse.deleted) &&
-            Objects.equals(this.deletedAt, updateImageResponse.deletedAt) &&
             Objects.equals(this.diskFormat, updateImageResponse.diskFormat) &&
             Objects.equals(this.enterpriseProjectId, updateImageResponse.enterpriseProjectId) &&
             Objects.equals(this.file, updateImageResponse.file) &&
@@ -2664,11 +2746,16 @@ public class UpdateImageResponse extends SdkResponse {
             Objects.equals(this.architecture, updateImageResponse.architecture) &&
             Objects.equals(this.supportFcInject, updateImageResponse.supportFcInject) &&
             Objects.equals(this.hwFirmwareType, updateImageResponse.hwFirmwareType) &&
-            Objects.equals(this.supportArm, updateImageResponse.supportArm);
+            Objects.equals(this.supportArm, updateImageResponse.supportArm) &&
+            Objects.equals(this.maxRam, updateImageResponse.maxRam) &&
+            Objects.equals(this.systemCmkid, updateImageResponse.systemCmkid) &&
+            Objects.equals(this.osFeatureList, updateImageResponse.osFeatureList) &&
+            Objects.equals(this.accountCode, updateImageResponse.accountCode) &&
+            Objects.equals(this.hwVifMultiqueueEnabled, updateImageResponse.hwVifMultiqueueEnabled);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(backupId, dataOrigin, description, imageLocation, imageSize, imageSourceType, imagetype, isConfigInit, isregistered, originalimagename, osBit, osType, osVersion, platform, productcode, supportDiskintensive, supportHighperformance, supportKvm, supportKvmGpuType, supportKvmInfiniband, supportLargememory, supportXen, supportXenGpuType, supportXenHana, systemSupportMarket, checksum, containerFormat, createdAt, deleted, deletedAt, diskFormat, enterpriseProjectId, file, id, minDisk, minRam, name, owner, _protected, schema, self, size, status, tags, updatedAt, virtualEnvType, virtualSize, visibility, architecture, supportFcInject, hwFirmwareType, supportArm);
+        return Objects.hash(backupId, dataOrigin, description, imageLocation, imageSize, imageSourceType, imagetype, isConfigInit, isregistered, originalimagename, osBit, osType, osVersion, platform, productcode, supportDiskintensive, supportHighperformance, supportKvm, supportKvmGpuType, supportKvmInfiniband, supportLargememory, supportXen, supportXenGpuType, supportXenHana, systemSupportMarket, checksum, containerFormat, createdAt, diskFormat, enterpriseProjectId, file, id, minDisk, minRam, name, owner, _protected, schema, self, size, status, tags, updatedAt, virtualEnvType, virtualSize, visibility, architecture, supportFcInject, hwFirmwareType, supportArm, maxRam, systemCmkid, osFeatureList, accountCode, hwVifMultiqueueEnabled);
     }
     @Override
     public String toString() {
@@ -2702,8 +2789,6 @@ public class UpdateImageResponse extends SdkResponse {
         sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
         sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
-        sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
         sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    file: ").append(toIndentedString(file)).append("\n");
@@ -2726,6 +2811,11 @@ public class UpdateImageResponse extends SdkResponse {
         sb.append("    supportFcInject: ").append(toIndentedString(supportFcInject)).append("\n");
         sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
         sb.append("    supportArm: ").append(toIndentedString(supportArm)).append("\n");
+        sb.append("    maxRam: ").append(toIndentedString(maxRam)).append("\n");
+        sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
+        sb.append("    osFeatureList: ").append(toIndentedString(osFeatureList)).append("\n");
+        sb.append("    accountCode: ").append(toIndentedString(accountCode)).append("\n");
+        sb.append("    hwVifMultiqueueEnabled: ").append(toIndentedString(hwVifMultiqueueEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

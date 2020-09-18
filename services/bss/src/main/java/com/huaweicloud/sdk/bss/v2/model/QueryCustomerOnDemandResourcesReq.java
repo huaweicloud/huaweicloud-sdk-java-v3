@@ -27,6 +27,24 @@ public class QueryCustomerOnDemandResourcesReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region_code")
+    
+    private String regionCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="service_type_code")
+    
+    private String serviceTypeCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_ids")
+    
+    private List<String> resourceIds = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="effective_time_begin")
     
     private String effectiveTimeBegin;
@@ -39,9 +57,9 @@ public class QueryCustomerOnDemandResourcesReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
+    @JsonProperty(value="offset")
     
-    private String indirectPartnerId;
+    private Integer offset = 0;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,33 +69,15 @@ public class QueryCustomerOnDemandResourcesReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Integer offset = 0;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_code")
-    
-    private String regionCode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
-    private List<String> resourceIds = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type_code")
-    
-    private String serviceTypeCode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
     private Integer status;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="indirect_partner_id")
+    
+    private String indirectPartnerId;
 
     public QueryCustomerOnDemandResourcesReq withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -97,6 +97,80 @@ public class QueryCustomerOnDemandResourcesReq  {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public QueryCustomerOnDemandResourcesReq withRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+     * @return regionCode
+     */
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+    }
+
+    public QueryCustomerOnDemandResourcesReq withServiceTypeCode(String serviceTypeCode) {
+        this.serviceTypeCode = serviceTypeCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * @return serviceTypeCode
+     */
+    public String getServiceTypeCode() {
+        return serviceTypeCode;
+    }
+
+    public void setServiceTypeCode(String serviceTypeCode) {
+        this.serviceTypeCode = serviceTypeCode;
+    }
+
+    public QueryCustomerOnDemandResourcesReq withResourceIds(List<String> resourceIds) {
+        this.resourceIds = resourceIds;
+        return this;
+    }
+
+    
+    public QueryCustomerOnDemandResourcesReq addResourceIdsItem(String resourceIdsItem) {
+        if (this.resourceIds == null) {
+            this.resourceIds = new ArrayList<>();
+        }
+        this.resourceIds.add(resourceIdsItem);
+        return this;
+    }
+
+    public QueryCustomerOnDemandResourcesReq withResourceIds(Consumer<List<String>> resourceIdsSetter) {
+        if(this.resourceIds == null ){
+            this.resourceIds = new ArrayList<>();
+        }
+        resourceIdsSetter.accept(this.resourceIds);
+        return this;
+    }
+
+    /**
+     * |参数名称：资源ID批量查询| |参数约束以及描述：用于查询指定资源ID对应的资源。最多支持同时传递50个Id的列表。|
+     * @return resourceIds
+     */
+    public List<String> getResourceIds() {
+        return resourceIds;
+    }
+
+    public void setResourceIds(List<String> resourceIds) {
+        this.resourceIds = resourceIds;
     }
 
     public QueryCustomerOnDemandResourcesReq withEffectiveTimeBegin(String effectiveTimeBegin) {
@@ -139,8 +213,8 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.effectiveTimeEnd = effectiveTimeEnd;
     }
 
-    public QueryCustomerOnDemandResourcesReq withIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
+    public QueryCustomerOnDemandResourcesReq withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
@@ -148,15 +222,17 @@ public class QueryCustomerOnDemandResourcesReq  {
 
 
     /**
-     * |参数名称：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源| |参数约束及描述：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源|
-     * @return indirectPartnerId
+     * |参数名称：偏移量，从0开始。默认值：0| |参数的约束及描述：偏移量，从0开始。默认值：0|
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
      */
-    public String getIndirectPartnerId() {
-        return indirectPartnerId;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setIndirectPartnerId(String indirectPartnerId) {
-        this.indirectPartnerId = indirectPartnerId;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public QueryCustomerOnDemandResourcesReq withLimit(Integer limit) {
@@ -181,102 +257,6 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.limit = limit;
     }
 
-    public QueryCustomerOnDemandResourcesReq withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：偏移量，从0开始。默认值：0| |参数的约束及描述：偏移量，从0开始。默认值：0|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public QueryCustomerOnDemandResourcesReq withRegionCode(String regionCode) {
-        this.regionCode = regionCode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
-     * @return regionCode
-     */
-    public String getRegionCode() {
-        return regionCode;
-    }
-
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
-    }
-
-    public QueryCustomerOnDemandResourcesReq withResourceIds(List<String> resourceIds) {
-        this.resourceIds = resourceIds;
-        return this;
-    }
-
-    
-    public QueryCustomerOnDemandResourcesReq addResourceIdsItem(String resourceIdsItem) {
-        if (this.resourceIds == null) {
-            this.resourceIds = new ArrayList<>();
-        }
-        this.resourceIds.add(resourceIdsItem);
-        return this;
-    }
-
-    public QueryCustomerOnDemandResourcesReq withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null ){
-            this.resourceIds = new ArrayList<>();
-        }
-        resourceIdsSetter.accept(this.resourceIds);
-        return this;
-    }
-
-    /**
-     * |参数名称：资源ID批量查询| |参数约束以及描述：用于查询指定资源ID对应的资源。最多支持同时传递50个Id的列表。|
-     * @return resourceIds
-     */
-    public List<String> getResourceIds() {
-        return resourceIds;
-    }
-
-    public void setResourceIds(List<String> resourceIds) {
-        this.resourceIds = resourceIds;
-    }
-
-    public QueryCustomerOnDemandResourcesReq withServiceTypeCode(String serviceTypeCode) {
-        this.serviceTypeCode = serviceTypeCode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * @return serviceTypeCode
-     */
-    public String getServiceTypeCode() {
-        return serviceTypeCode;
-    }
-
-    public void setServiceTypeCode(String serviceTypeCode) {
-        this.serviceTypeCode = serviceTypeCode;
-    }
-
     public QueryCustomerOnDemandResourcesReq withStatus(Integer status) {
         this.status = status;
         return this;
@@ -298,6 +278,26 @@ public class QueryCustomerOnDemandResourcesReq  {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    public QueryCustomerOnDemandResourcesReq withIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源| |参数约束及描述：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源|
+     * @return indirectPartnerId
+     */
+    public String getIndirectPartnerId() {
+        return indirectPartnerId;
+    }
+
+    public void setIndirectPartnerId(String indirectPartnerId) {
+        this.indirectPartnerId = indirectPartnerId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -308,34 +308,34 @@ public class QueryCustomerOnDemandResourcesReq  {
         }
         QueryCustomerOnDemandResourcesReq queryCustomerOnDemandResourcesReq = (QueryCustomerOnDemandResourcesReq) o;
         return Objects.equals(this.customerId, queryCustomerOnDemandResourcesReq.customerId) &&
+            Objects.equals(this.regionCode, queryCustomerOnDemandResourcesReq.regionCode) &&
+            Objects.equals(this.serviceTypeCode, queryCustomerOnDemandResourcesReq.serviceTypeCode) &&
+            Objects.equals(this.resourceIds, queryCustomerOnDemandResourcesReq.resourceIds) &&
             Objects.equals(this.effectiveTimeBegin, queryCustomerOnDemandResourcesReq.effectiveTimeBegin) &&
             Objects.equals(this.effectiveTimeEnd, queryCustomerOnDemandResourcesReq.effectiveTimeEnd) &&
-            Objects.equals(this.indirectPartnerId, queryCustomerOnDemandResourcesReq.indirectPartnerId) &&
-            Objects.equals(this.limit, queryCustomerOnDemandResourcesReq.limit) &&
             Objects.equals(this.offset, queryCustomerOnDemandResourcesReq.offset) &&
-            Objects.equals(this.regionCode, queryCustomerOnDemandResourcesReq.regionCode) &&
-            Objects.equals(this.resourceIds, queryCustomerOnDemandResourcesReq.resourceIds) &&
-            Objects.equals(this.serviceTypeCode, queryCustomerOnDemandResourcesReq.serviceTypeCode) &&
-            Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status);
+            Objects.equals(this.limit, queryCustomerOnDemandResourcesReq.limit) &&
+            Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status) &&
+            Objects.equals(this.indirectPartnerId, queryCustomerOnDemandResourcesReq.indirectPartnerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, effectiveTimeBegin, effectiveTimeEnd, indirectPartnerId, limit, offset, regionCode, resourceIds, serviceTypeCode, status);
+        return Objects.hash(customerId, regionCode, serviceTypeCode, resourceIds, effectiveTimeBegin, effectiveTimeEnd, offset, limit, status, indirectPartnerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QueryCustomerOnDemandResourcesReq {\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
+        sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    effectiveTimeBegin: ").append(toIndentedString(effectiveTimeBegin)).append("\n");
         sb.append("    effectiveTimeEnd: ").append(toIndentedString(effectiveTimeEnd)).append("\n");
-        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
-        sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
-        sb.append("    serviceTypeCode: ").append(toIndentedString(serviceTypeCode)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

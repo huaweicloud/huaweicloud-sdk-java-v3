@@ -24,15 +24,35 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_count")
+    
+    private Integer totalCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="records")
     
     private List<QuotaRecord> records = null;
     
+    public ListCouponQuotasRecordsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
     
-    private Integer totalCount;
+
+
+    /**
+     * |参数名称：查询总数。| |参数的约束及描述：查询总数。|
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
     public ListCouponQuotasRecordsResponse withRecords(List<QuotaRecord> records) {
         this.records = records;
@@ -67,26 +87,6 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
     public void setRecords(List<QuotaRecord> records) {
         this.records = records;
     }
-
-    public ListCouponQuotasRecordsResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：查询总数。| |参数的约束及描述：查询总数。|
-     * @return totalCount
-     */
-    public Integer getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -96,19 +96,19 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
             return false;
         }
         ListCouponQuotasRecordsResponse listCouponQuotasRecordsResponse = (ListCouponQuotasRecordsResponse) o;
-        return Objects.equals(this.records, listCouponQuotasRecordsResponse.records) &&
-            Objects.equals(this.totalCount, listCouponQuotasRecordsResponse.totalCount);
+        return Objects.equals(this.totalCount, listCouponQuotasRecordsResponse.totalCount) &&
+            Objects.equals(this.records, listCouponQuotasRecordsResponse.records);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(records, totalCount);
+        return Objects.hash(totalCount, records);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCouponQuotasRecordsResponse {\n");
-        sb.append("    records: ").append(toIndentedString(records)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    records: ").append(toIndentedString(records)).append("\n");
         sb.append("}");
         return sb.toString();
     }

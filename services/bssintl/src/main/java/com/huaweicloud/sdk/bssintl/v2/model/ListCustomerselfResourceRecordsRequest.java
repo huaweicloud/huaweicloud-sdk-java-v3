@@ -19,6 +19,12 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Language")
+    
+    private String xLanguage;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cycle")
     
     private String cycle;
@@ -76,6 +82,40 @@ public class ListCustomerselfResourceRecordsRequest  {
     @JsonProperty(value="include_zero_record")
     
     private Boolean includeZeroRecord;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="method")
+    
+    private String method;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sub_customer_id")
+    
+    private String subCustomerId;
+
+    public ListCustomerselfResourceRecordsRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get xLanguage
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ListCustomerselfResourceRecordsRequest withCycle(String cycle) {
         this.cycle = cycle;
@@ -282,6 +322,46 @@ public class ListCustomerselfResourceRecordsRequest  {
     public void setIncludeZeroRecord(Boolean includeZeroRecord) {
         this.includeZeroRecord = includeZeroRecord;
     }
+
+    public ListCustomerselfResourceRecordsRequest withMethod(String method) {
+        this.method = method;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get method
+     * @return method
+     */
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public ListCustomerselfResourceRecordsRequest withSubCustomerId(String subCustomerId) {
+        this.subCustomerId = subCustomerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get subCustomerId
+     * @return subCustomerId
+     */
+    public String getSubCustomerId() {
+        return subCustomerId;
+    }
+
+    public void setSubCustomerId(String subCustomerId) {
+        this.subCustomerId = subCustomerId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -291,7 +371,8 @@ public class ListCustomerselfResourceRecordsRequest  {
             return false;
         }
         ListCustomerselfResourceRecordsRequest listCustomerselfResourceRecordsRequest = (ListCustomerselfResourceRecordsRequest) o;
-        return Objects.equals(this.cycle, listCustomerselfResourceRecordsRequest.cycle) &&
+        return Objects.equals(this.xLanguage, listCustomerselfResourceRecordsRequest.xLanguage) &&
+            Objects.equals(this.cycle, listCustomerselfResourceRecordsRequest.cycle) &&
             Objects.equals(this.cloudServiceType, listCustomerselfResourceRecordsRequest.cloudServiceType) &&
             Objects.equals(this.region, listCustomerselfResourceRecordsRequest.region) &&
             Objects.equals(this.chargeMode, listCustomerselfResourceRecordsRequest.chargeMode) &&
@@ -300,16 +381,19 @@ public class ListCustomerselfResourceRecordsRequest  {
             Objects.equals(this.limit, listCustomerselfResourceRecordsRequest.limit) &&
             Objects.equals(this.resourceId, listCustomerselfResourceRecordsRequest.resourceId) &&
             Objects.equals(this.enterpriseProjectId, listCustomerselfResourceRecordsRequest.enterpriseProjectId) &&
-            Objects.equals(this.includeZeroRecord, listCustomerselfResourceRecordsRequest.includeZeroRecord);
+            Objects.equals(this.includeZeroRecord, listCustomerselfResourceRecordsRequest.includeZeroRecord) &&
+            Objects.equals(this.method, listCustomerselfResourceRecordsRequest.method) &&
+            Objects.equals(this.subCustomerId, listCustomerselfResourceRecordsRequest.subCustomerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, enterpriseProjectId, includeZeroRecord);
+        return Objects.hash(xLanguage, cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, enterpriseProjectId, includeZeroRecord, method, subCustomerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCustomerselfResourceRecordsRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    cycle: ").append(toIndentedString(cycle)).append("\n");
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
@@ -320,6 +404,8 @@ public class ListCustomerselfResourceRecordsRequest  {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    includeZeroRecord: ").append(toIndentedString(includeZeroRecord)).append("\n");
+        sb.append("    method: ").append(toIndentedString(method)).append("\n");
+        sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

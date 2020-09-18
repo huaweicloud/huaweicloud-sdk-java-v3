@@ -19,35 +19,15 @@ public class CouponSimpleInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coupon_id")
-    
-    private String couponId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
 
-    public CouponSimpleInfo withCouponId(String couponId) {
-        this.couponId = couponId;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="coupon_id")
     
-
-
-    /**
-     * |参数名称：发放成功的券ID| |参数约束及描述：发放成功的券ID|
-     * @return couponId
-     */
-    public String getCouponId() {
-        return couponId;
-    }
-
-    public void setCouponId(String couponId) {
-        this.couponId = couponId;
-    }
+    private String couponId;
 
     public CouponSimpleInfo withId(String id) {
         this.id = id;
@@ -68,6 +48,26 @@ public class CouponSimpleInfo  {
     public void setId(String id) {
         this.id = id;
     }
+
+    public CouponSimpleInfo withCouponId(String couponId) {
+        this.couponId = couponId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：发放成功的券ID| |参数约束及描述：发放成功的券ID|
+     * @return couponId
+     */
+    public String getCouponId() {
+        return couponId;
+    }
+
+    public void setCouponId(String couponId) {
+        this.couponId = couponId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -77,19 +77,19 @@ public class CouponSimpleInfo  {
             return false;
         }
         CouponSimpleInfo couponSimpleInfo = (CouponSimpleInfo) o;
-        return Objects.equals(this.couponId, couponSimpleInfo.couponId) &&
-            Objects.equals(this.id, couponSimpleInfo.id);
+        return Objects.equals(this.id, couponSimpleInfo.id) &&
+            Objects.equals(this.couponId, couponSimpleInfo.couponId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(couponId, id);
+        return Objects.hash(id, couponId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CouponSimpleInfo {\n");
-        sb.append("    couponId: ").append(toIndentedString(couponId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    couponId: ").append(toIndentedString(couponId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

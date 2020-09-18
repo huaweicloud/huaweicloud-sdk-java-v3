@@ -21,35 +21,15 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="opinion")
-    
-    private String opinion;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="review_result")
     
     private Integer reviewResult;
 
-    public ShowRealnameAuthenticationReviewResultResponse withOpinion(String opinion) {
-        this.opinion = opinion;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="opinion")
     
-
-
-    /**
-     * |参数名称：审批意见，只有状态码为200并且审核不通过才返回。| |参数约束及描述：审批意见，只有状态码为200并且审核不通过才返回。|
-     * @return opinion
-     */
-    public String getOpinion() {
-        return opinion;
-    }
-
-    public void setOpinion(String opinion) {
-        this.opinion = opinion;
-    }
+    private String opinion;
 
     public ShowRealnameAuthenticationReviewResultResponse withReviewResult(Integer reviewResult) {
         this.reviewResult = reviewResult;
@@ -70,6 +50,26 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
     public void setReviewResult(Integer reviewResult) {
         this.reviewResult = reviewResult;
     }
+
+    public ShowRealnameAuthenticationReviewResultResponse withOpinion(String opinion) {
+        this.opinion = opinion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：审批意见，只有状态码为200并且审核不通过才返回。| |参数约束及描述：审批意见，只有状态码为200并且审核不通过才返回。|
+     * @return opinion
+     */
+    public String getOpinion() {
+        return opinion;
+    }
+
+    public void setOpinion(String opinion) {
+        this.opinion = opinion;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -79,19 +79,19 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
             return false;
         }
         ShowRealnameAuthenticationReviewResultResponse showRealnameAuthenticationReviewResultResponse = (ShowRealnameAuthenticationReviewResultResponse) o;
-        return Objects.equals(this.opinion, showRealnameAuthenticationReviewResultResponse.opinion) &&
-            Objects.equals(this.reviewResult, showRealnameAuthenticationReviewResultResponse.reviewResult);
+        return Objects.equals(this.reviewResult, showRealnameAuthenticationReviewResultResponse.reviewResult) &&
+            Objects.equals(this.opinion, showRealnameAuthenticationReviewResultResponse.opinion);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(opinion, reviewResult);
+        return Objects.hash(reviewResult, opinion);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRealnameAuthenticationReviewResultResponse {\n");
-        sb.append("    opinion: ").append(toIndentedString(opinion)).append("\n");
         sb.append("    reviewResult: ").append(toIndentedString(reviewResult)).append("\n");
+        sb.append("    opinion: ").append(toIndentedString(opinion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

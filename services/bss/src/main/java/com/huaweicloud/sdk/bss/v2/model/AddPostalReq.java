@@ -19,9 +19,15 @@ public class AddPostalReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
+    @JsonProperty(value="recipient")
     
-    private String address;
+    private String recipient;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="province")
+    
+    private String province;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +43,15 @@ public class AddPostalReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_default")
+    @JsonProperty(value="address")
     
-    private Integer isDefault = 0;
+    private String address;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="zipcode")
+    
+    private String zipcode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,24 +61,12 @@ public class AddPostalReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="province")
+    @JsonProperty(value="is_default")
     
-    private String province;
+    private Integer isDefault = 0;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recipient")
-    
-    private String recipient;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zipcode")
-    
-    private String zipcode;
-
-    public AddPostalReq withAddress(String address) {
-        this.address = address;
+    public AddPostalReq withRecipient(String recipient) {
+        this.recipient = recipient;
         return this;
     }
 
@@ -74,15 +74,35 @@ public class AddPostalReq  {
 
 
     /**
-     * |参数名称：邮寄详细地址。| |参数约束及描述：邮寄详细地址。|
-     * @return address
+     * |参数名称：收件人姓名| |参数约束及描述：收件人姓名|
+     * @return recipient
      */
-    public String getAddress() {
-        return address;
+    public String getRecipient() {
+        return recipient;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
+    }
+
+    public AddPostalReq withProvince(String province) {
+        this.province = province;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：省/自治区/直辖市。例如：江苏，不要写成：江苏省| |参数约束及描述：省/自治区/直辖市。例如：江苏，不要写成：江苏省|
+     * @return province
+     */
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     public AddPostalReq withCity(String city) {
@@ -125,8 +145,8 @@ public class AddPostalReq  {
         this.district = district;
     }
 
-    public AddPostalReq withIsDefault(Integer isDefault) {
-        this.isDefault = isDefault;
+    public AddPostalReq withAddress(String address) {
+        this.address = address;
         return this;
     }
 
@@ -134,17 +154,35 @@ public class AddPostalReq  {
 
 
     /**
-     * |参数名称：是否默认地址| |参数约束及描述：是否默认地址，默认为0。1：默认地址0：非默认地址|
-     * minimum: 0
-     * maximum: 1
-     * @return isDefault
+     * |参数名称：邮寄详细地址。| |参数约束及描述：邮寄详细地址。|
+     * @return address
      */
-    public Integer getIsDefault() {
-        return isDefault;
+    public String getAddress() {
+        return address;
     }
 
-    public void setIsDefault(Integer isDefault) {
-        this.isDefault = isDefault;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public AddPostalReq withZipcode(String zipcode) {
+        this.zipcode = zipcode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：邮编| |参数约束及描述：邮编|
+     * @return zipcode
+     */
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public AddPostalReq withMobilePhone(String mobilePhone) {
@@ -167,8 +205,8 @@ public class AddPostalReq  {
         this.mobilePhone = mobilePhone;
     }
 
-    public AddPostalReq withProvince(String province) {
-        this.province = province;
+    public AddPostalReq withIsDefault(Integer isDefault) {
+        this.isDefault = isDefault;
         return this;
     }
 
@@ -176,55 +214,17 @@ public class AddPostalReq  {
 
 
     /**
-     * |参数名称：省/自治区/直辖市。例如：江苏，不要写成：江苏省| |参数约束及描述：省/自治区/直辖市。例如：江苏，不要写成：江苏省|
-     * @return province
+     * |参数名称：是否默认地址| |参数约束及描述：是否默认地址，默认为0。1：默认地址0：非默认地址|
+     * minimum: 0
+     * maximum: 1
+     * @return isDefault
      */
-    public String getProvince() {
-        return province;
+    public Integer getIsDefault() {
+        return isDefault;
     }
 
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public AddPostalReq withRecipient(String recipient) {
-        this.recipient = recipient;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：收件人姓名| |参数约束及描述：收件人姓名|
-     * @return recipient
-     */
-    public String getRecipient() {
-        return recipient;
-    }
-
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
-
-    public AddPostalReq withZipcode(String zipcode) {
-        this.zipcode = zipcode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：邮编| |参数约束及描述：邮编|
-     * @return zipcode
-     */
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setIsDefault(Integer isDefault) {
+        this.isDefault = isDefault;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -235,31 +235,31 @@ public class AddPostalReq  {
             return false;
         }
         AddPostalReq addPostalReq = (AddPostalReq) o;
-        return Objects.equals(this.address, addPostalReq.address) &&
+        return Objects.equals(this.recipient, addPostalReq.recipient) &&
+            Objects.equals(this.province, addPostalReq.province) &&
             Objects.equals(this.city, addPostalReq.city) &&
             Objects.equals(this.district, addPostalReq.district) &&
-            Objects.equals(this.isDefault, addPostalReq.isDefault) &&
+            Objects.equals(this.address, addPostalReq.address) &&
+            Objects.equals(this.zipcode, addPostalReq.zipcode) &&
             Objects.equals(this.mobilePhone, addPostalReq.mobilePhone) &&
-            Objects.equals(this.province, addPostalReq.province) &&
-            Objects.equals(this.recipient, addPostalReq.recipient) &&
-            Objects.equals(this.zipcode, addPostalReq.zipcode);
+            Objects.equals(this.isDefault, addPostalReq.isDefault);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(address, city, district, isDefault, mobilePhone, province, recipient, zipcode);
+        return Objects.hash(recipient, province, city, district, address, zipcode, mobilePhone, isDefault);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddPostalReq {\n");
-        sb.append("    address: ").append(toIndentedString(address)).append("\n");
+        sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
+        sb.append("    province: ").append(toIndentedString(province)).append("\n");
         sb.append("    city: ").append(toIndentedString(city)).append("\n");
         sb.append("    district: ").append(toIndentedString(district)).append("\n");
-        sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
-        sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
-        sb.append("    province: ").append(toIndentedString(province)).append("\n");
-        sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
+        sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    zipcode: ").append(toIndentedString(zipcode)).append("\n");
+        sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
+        sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
         sb.append("}");
         return sb.toString();
     }

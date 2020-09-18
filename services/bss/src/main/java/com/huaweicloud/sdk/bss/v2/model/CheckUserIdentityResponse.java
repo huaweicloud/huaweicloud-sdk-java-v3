@@ -21,12 +21,6 @@ public class CheckUserIdentityResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="check_result")
-    
-    private String checkResult;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
     private String errorCode = "CBC.0000";
@@ -37,25 +31,11 @@ public class CheckUserIdentityResponse extends SdkResponse {
     
     private String errorMsg = "success";
 
-    public CheckUserIdentityResponse withCheckResult(String checkResult) {
-        this.checkResult = checkResult;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="check_result")
     
-
-
-    /**
-     * |参数名称：是否可以继续注册| |参数的约束及描述：该参数非必填，且只允许字符串,available: 该登录名称/手机号/邮箱可以继续注册,used_by_user: 该登录名称/手机号/邮箱不可以继续注册|
-     * @return checkResult
-     */
-    public String getCheckResult() {
-        return checkResult;
-    }
-
-    public void setCheckResult(String checkResult) {
-        this.checkResult = checkResult;
-    }
+    private String checkResult;
 
     public CheckUserIdentityResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -96,6 +76,26 @@ public class CheckUserIdentityResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
+
+    public CheckUserIdentityResponse withCheckResult(String checkResult) {
+        this.checkResult = checkResult;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：是否可以继续注册| |参数的约束及描述：该参数非必填，且只允许字符串,available: 该登录名称/手机号/邮箱可以继续注册,used_by_user: 该登录名称/手机号/邮箱不可以继续注册|
+     * @return checkResult
+     */
+    public String getCheckResult() {
+        return checkResult;
+    }
+
+    public void setCheckResult(String checkResult) {
+        this.checkResult = checkResult;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,21 +105,21 @@ public class CheckUserIdentityResponse extends SdkResponse {
             return false;
         }
         CheckUserIdentityResponse checkUserIdentityResponse = (CheckUserIdentityResponse) o;
-        return Objects.equals(this.checkResult, checkUserIdentityResponse.checkResult) &&
-            Objects.equals(this.errorCode, checkUserIdentityResponse.errorCode) &&
-            Objects.equals(this.errorMsg, checkUserIdentityResponse.errorMsg);
+        return Objects.equals(this.errorCode, checkUserIdentityResponse.errorCode) &&
+            Objects.equals(this.errorMsg, checkUserIdentityResponse.errorMsg) &&
+            Objects.equals(this.checkResult, checkUserIdentityResponse.checkResult);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(checkResult, errorCode, errorMsg);
+        return Objects.hash(errorCode, errorMsg, checkResult);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckUserIdentityResponse {\n");
-        sb.append("    checkResult: ").append(toIndentedString(checkResult)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    checkResult: ").append(toIndentedString(checkResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

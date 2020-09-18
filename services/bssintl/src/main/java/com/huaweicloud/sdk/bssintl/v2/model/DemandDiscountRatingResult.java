@@ -20,21 +20,9 @@ public class DemandDiscountRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
-    private BigDecimal amount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_id")
     
     private String discountId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_name")
-    
-    private String discountName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -44,29 +32,21 @@ public class DemandDiscountRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount")
+    
+    private BigDecimal amount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="measure_id")
     
     private Integer measureId;
 
-    public DemandDiscountRatingResult withAmount(BigDecimal amount) {
-        this.amount = amount;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="discount_name")
     
-
-
-    /**
-     * 优惠金额
-     * @return amount
-     */
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
+    private String discountName;
 
     public DemandDiscountRatingResult withDiscountId(String discountId) {
         this.discountId = discountId;
@@ -86,26 +66,6 @@ public class DemandDiscountRatingResult  {
 
     public void setDiscountId(String discountId) {
         this.discountId = discountId;
-    }
-
-    public DemandDiscountRatingResult withDiscountName(String discountName) {
-        this.discountName = discountName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：折扣名称| |参数约束及描述：折扣名称|
-     * @return discountName
-     */
-    public String getDiscountName() {
-        return discountName;
-    }
-
-    public void setDiscountName(String discountName) {
-        this.discountName = discountName;
     }
 
     public DemandDiscountRatingResult withDiscountType(Integer discountType) {
@@ -128,6 +88,26 @@ public class DemandDiscountRatingResult  {
         this.discountType = discountType;
     }
 
+    public DemandDiscountRatingResult withAmount(BigDecimal amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 优惠金额
+     * @return amount
+     */
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
     public DemandDiscountRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -147,6 +127,26 @@ public class DemandDiscountRatingResult  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    public DemandDiscountRatingResult withDiscountName(String discountName) {
+        this.discountName = discountName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：折扣名称| |参数约束及描述：折扣名称|
+     * @return discountName
+     */
+    public String getDiscountName() {
+        return discountName;
+    }
+
+    public void setDiscountName(String discountName) {
+        this.discountName = discountName;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -156,25 +156,25 @@ public class DemandDiscountRatingResult  {
             return false;
         }
         DemandDiscountRatingResult demandDiscountRatingResult = (DemandDiscountRatingResult) o;
-        return Objects.equals(this.amount, demandDiscountRatingResult.amount) &&
-            Objects.equals(this.discountId, demandDiscountRatingResult.discountId) &&
-            Objects.equals(this.discountName, demandDiscountRatingResult.discountName) &&
+        return Objects.equals(this.discountId, demandDiscountRatingResult.discountId) &&
             Objects.equals(this.discountType, demandDiscountRatingResult.discountType) &&
-            Objects.equals(this.measureId, demandDiscountRatingResult.measureId);
+            Objects.equals(this.amount, demandDiscountRatingResult.amount) &&
+            Objects.equals(this.measureId, demandDiscountRatingResult.measureId) &&
+            Objects.equals(this.discountName, demandDiscountRatingResult.discountName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, discountId, discountName, discountType, measureId);
+        return Objects.hash(discountId, discountType, amount, measureId, discountName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DemandDiscountRatingResult {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    discountId: ").append(toIndentedString(discountId)).append("\n");
-        sb.append("    discountName: ").append(toIndentedString(discountName)).append("\n");
         sb.append("    discountType: ").append(toIndentedString(discountType)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    discountName: ").append(toIndentedString(discountName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

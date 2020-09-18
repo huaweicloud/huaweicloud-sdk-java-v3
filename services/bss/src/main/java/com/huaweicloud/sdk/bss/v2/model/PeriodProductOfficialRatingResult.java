@@ -26,9 +26,9 @@ public class PeriodProductOfficialRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
+    @JsonProperty(value="product_id")
     
-    private Integer measureId;
+    private String productId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,9 +38,9 @@ public class PeriodProductOfficialRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
+    @JsonProperty(value="measure_id")
     
-    private String productId;
+    private Integer measureId;
 
     public PeriodProductOfficialRatingResult withId(String id) {
         this.id = id;
@@ -62,8 +62,8 @@ public class PeriodProductOfficialRatingResult  {
         this.id = id;
     }
 
-    public PeriodProductOfficialRatingResult withMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public PeriodProductOfficialRatingResult withProductId(String productId) {
+        this.productId = productId;
         return this;
     }
 
@@ -71,15 +71,15 @@ public class PeriodProductOfficialRatingResult  {
 
 
     /**
-     * |参数名称：度量单位标识1：元|
-     * @return measureId
+     * |参数名称：产品ID| |参数约束及描述：产品ID|
+     * @return productId
      */
-    public Integer getMeasureId() {
-        return measureId;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
@@ -102,8 +102,8 @@ public class PeriodProductOfficialRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    public PeriodProductOfficialRatingResult withProductId(String productId) {
-        this.productId = productId;
+    public PeriodProductOfficialRatingResult withMeasureId(Integer measureId) {
+        this.measureId = measureId;
         return this;
     }
 
@@ -111,15 +111,15 @@ public class PeriodProductOfficialRatingResult  {
 
 
     /**
-     * |参数名称：产品ID| |参数约束及描述：产品ID|
-     * @return productId
+     * |参数名称：度量单位标识1：元|
+     * @return measureId
      */
-    public String getProductId() {
-        return productId;
+    public Integer getMeasureId() {
+        return measureId;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -131,22 +131,22 @@ public class PeriodProductOfficialRatingResult  {
         }
         PeriodProductOfficialRatingResult periodProductOfficialRatingResult = (PeriodProductOfficialRatingResult) o;
         return Objects.equals(this.id, periodProductOfficialRatingResult.id) &&
-            Objects.equals(this.measureId, periodProductOfficialRatingResult.measureId) &&
+            Objects.equals(this.productId, periodProductOfficialRatingResult.productId) &&
             Objects.equals(this.officialWebsiteAmount, periodProductOfficialRatingResult.officialWebsiteAmount) &&
-            Objects.equals(this.productId, periodProductOfficialRatingResult.productId);
+            Objects.equals(this.measureId, periodProductOfficialRatingResult.measureId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, measureId, officialWebsiteAmount, productId);
+        return Objects.hash(id, productId, officialWebsiteAmount, measureId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PeriodProductOfficialRatingResult {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

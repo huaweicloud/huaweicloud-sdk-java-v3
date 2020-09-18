@@ -25,6 +25,36 @@ public class QuerySubCustomerListReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="customer")
+    
+    private String customer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Integer offset = 0;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit = 10;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="label")
+    
+    private String label;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="association_type")
+    
+    private String associationType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="associated_on_begin")
     
     private String associatedOnBegin;
@@ -37,18 +67,6 @@ public class QuerySubCustomerListReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="association_type")
-    
-    private String associationType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer")
-    
-    private String customer;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_id")
     
     private String customerId;
@@ -58,24 +76,6 @@ public class QuerySubCustomerListReq  {
     @JsonProperty(value="indirect_partner_id")
     
     private String indirectPartnerId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
-    private String label;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit = 10;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Integer offset = 0;
 
     public QuerySubCustomerListReq withAccountName(String accountName) {
         this.accountName = accountName;
@@ -95,6 +95,110 @@ public class QuerySubCustomerListReq  {
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
+    }
+
+    public QuerySubCustomerListReq withCustomer(String customer) {
+        this.customer = customer;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：实名认证名称。支持模糊查询。| |参数约束及描述：实名认证名称。支持模糊查询。|
+     * @return customer
+     */
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public QuerySubCustomerListReq withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：偏移量，从0开始| |参数约束及描述： 偏移量，从0开始|
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public QuerySubCustomerListReq withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：每次查询的数量。默认10，最多100。| |参数约束及描述： 每次查询的数量。默认10，最多100。|
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public QuerySubCustomerListReq withLabel(String label) {
+        this.label = label;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：标签，支持模糊查找。| |参数约束及描述：非必填，最大长度64|
+     * @return label
+     */
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public QuerySubCustomerListReq withAssociationType(String associationType) {
+        this.associationType = associationType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：关联类型1.推荐，2.垫付，3.转售| |参数约束及描述：非必填，最大长度2|
+     * @return associationType
+     */
+    public String getAssociationType() {
+        return associationType;
+    }
+
+    public void setAssociationType(String associationType) {
+        this.associationType = associationType;
     }
 
     public QuerySubCustomerListReq withAssociatedOnBegin(String associatedOnBegin) {
@@ -137,46 +241,6 @@ public class QuerySubCustomerListReq  {
         this.associatedOnEnd = associatedOnEnd;
     }
 
-    public QuerySubCustomerListReq withAssociationType(String associationType) {
-        this.associationType = associationType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：关联类型1.推荐，2.垫付，3.转售| |参数约束及描述：非必填，最大长度2|
-     * @return associationType
-     */
-    public String getAssociationType() {
-        return associationType;
-    }
-
-    public void setAssociationType(String associationType) {
-        this.associationType = associationType;
-    }
-
-    public QuerySubCustomerListReq withCustomer(String customer) {
-        this.customer = customer;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：实名认证名称。支持模糊查询。| |参数约束及描述：实名认证名称。支持模糊查询。|
-     * @return customer
-     */
-    public String getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(String customer) {
-        this.customer = customer;
-    }
-
     public QuerySubCustomerListReq withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -216,70 +280,6 @@ public class QuerySubCustomerListReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
-
-    public QuerySubCustomerListReq withLabel(String label) {
-        this.label = label;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：标签，支持模糊查找。| |参数约束及描述：非必填，最大长度64|
-     * @return label
-     */
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public QuerySubCustomerListReq withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：每次查询的数量。默认10，最多100。| |参数约束及描述： 每次查询的数量。默认10，最多100。|
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public QuerySubCustomerListReq withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：偏移量，从0开始| |参数约束及描述： 偏移量，从0开始|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -290,34 +290,34 @@ public class QuerySubCustomerListReq  {
         }
         QuerySubCustomerListReq querySubCustomerListReq = (QuerySubCustomerListReq) o;
         return Objects.equals(this.accountName, querySubCustomerListReq.accountName) &&
+            Objects.equals(this.customer, querySubCustomerListReq.customer) &&
+            Objects.equals(this.offset, querySubCustomerListReq.offset) &&
+            Objects.equals(this.limit, querySubCustomerListReq.limit) &&
+            Objects.equals(this.label, querySubCustomerListReq.label) &&
+            Objects.equals(this.associationType, querySubCustomerListReq.associationType) &&
             Objects.equals(this.associatedOnBegin, querySubCustomerListReq.associatedOnBegin) &&
             Objects.equals(this.associatedOnEnd, querySubCustomerListReq.associatedOnEnd) &&
-            Objects.equals(this.associationType, querySubCustomerListReq.associationType) &&
-            Objects.equals(this.customer, querySubCustomerListReq.customer) &&
             Objects.equals(this.customerId, querySubCustomerListReq.customerId) &&
-            Objects.equals(this.indirectPartnerId, querySubCustomerListReq.indirectPartnerId) &&
-            Objects.equals(this.label, querySubCustomerListReq.label) &&
-            Objects.equals(this.limit, querySubCustomerListReq.limit) &&
-            Objects.equals(this.offset, querySubCustomerListReq.offset);
+            Objects.equals(this.indirectPartnerId, querySubCustomerListReq.indirectPartnerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accountName, associatedOnBegin, associatedOnEnd, associationType, customer, customerId, indirectPartnerId, label, limit, offset);
+        return Objects.hash(accountName, customer, offset, limit, label, associationType, associatedOnBegin, associatedOnEnd, customerId, indirectPartnerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QuerySubCustomerListReq {\n");
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
+        sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
+        sb.append("    associationType: ").append(toIndentedString(associationType)).append("\n");
         sb.append("    associatedOnBegin: ").append(toIndentedString(associatedOnBegin)).append("\n");
         sb.append("    associatedOnEnd: ").append(toIndentedString(associatedOnEnd)).append("\n");
-        sb.append("    associationType: ").append(toIndentedString(associationType)).append("\n");
-        sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
-        sb.append("    label: ").append(toIndentedString(label)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

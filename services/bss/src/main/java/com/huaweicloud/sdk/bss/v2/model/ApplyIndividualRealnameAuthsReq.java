@@ -22,18 +22,6 @@ public class ApplyIndividualRealnameAuthsReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bank_card_info")
-    
-    private BankCardInfoV2 bankCardInfo = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="change_type")
-    
-    private Integer changeType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_id")
     
     private String customerId;
@@ -46,9 +34,9 @@ public class ApplyIndividualRealnameAuthsReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="verified_type")
     
-    private String name;
+    private Integer verifiedType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,15 +46,21 @@ public class ApplyIndividualRealnameAuthsReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="verified_number")
     
     private String verifiedNumber;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="verified_type")
+    @JsonProperty(value="change_type")
     
-    private Integer verifiedType;
+    private Integer changeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,54 +68,11 @@ public class ApplyIndividualRealnameAuthsReq  {
     
     private String xaccountType;
 
-    public ApplyIndividualRealnameAuthsReq withBankCardInfo(BankCardInfoV2 bankCardInfo) {
-        this.bankCardInfo = bankCardInfo;
-        return this;
-    }
 
-    public ApplyIndividualRealnameAuthsReq withBankCardInfo(Consumer<BankCardInfoV2> bankCardInfoSetter) {
-        if(this.bankCardInfo == null ){
-            this.bankCardInfo = new BankCardInfoV2();
-            bankCardInfoSetter.accept(this.bankCardInfo);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get bankCardInfo
-     * @return bankCardInfo
-     */
-    public BankCardInfoV2 getBankCardInfo() {
-        return bankCardInfo;
-    }
-
-    public void setBankCardInfo(BankCardInfoV2 bankCardInfo) {
-        this.bankCardInfo = bankCardInfo;
-    }
-
-    public ApplyIndividualRealnameAuthsReq withChangeType(Integer changeType) {
-        this.changeType = changeType;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bank_card_info")
     
-
-
-    /**
-     * |参数名称：变更类型：-1：首次实名认证| |参数的约束及描述：变更类型：-1：首次实名认证|
-     * minimum: -1
-     * maximum: -1
-     * @return changeType
-     */
-    public Integer getChangeType() {
-        return changeType;
-    }
-
-    public void setChangeType(Integer changeType) {
-        this.changeType = changeType;
-    }
+    private BankCardInfoV2 bankCardInfo = null;
 
     public ApplyIndividualRealnameAuthsReq withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -165,8 +116,8 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.identifyType = identifyType;
     }
 
-    public ApplyIndividualRealnameAuthsReq withName(String name) {
-        this.name = name;
+    public ApplyIndividualRealnameAuthsReq withVerifiedType(Integer verifiedType) {
+        this.verifiedType = verifiedType;
         return this;
     }
 
@@ -174,15 +125,17 @@ public class ApplyIndividualRealnameAuthsReq  {
 
 
     /**
-     * |参数名称：姓名。| |参数约束及描述：姓名。|
-     * @return name
+     * |参数名称：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。| |参数的约束及描述：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。|
+     * minimum: 0
+     * maximum: 32
+     * @return verifiedType
      */
-    public String getName() {
-        return name;
+    public Integer getVerifiedType() {
+        return verifiedType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setVerifiedType(Integer verifiedType) {
+        this.verifiedType = verifiedType;
     }
 
     public ApplyIndividualRealnameAuthsReq withVerifiedFileUrl(List<String> verifiedFileUrl) {
@@ -216,6 +169,26 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.verifiedFileUrl = verifiedFileUrl;
     }
 
+    public ApplyIndividualRealnameAuthsReq withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：姓名。| |参数约束及描述：姓名。|
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ApplyIndividualRealnameAuthsReq withVerifiedNumber(String verifiedNumber) {
         this.verifiedNumber = verifiedNumber;
         return this;
@@ -236,8 +209,8 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.verifiedNumber = verifiedNumber;
     }
 
-    public ApplyIndividualRealnameAuthsReq withVerifiedType(Integer verifiedType) {
-        this.verifiedType = verifiedType;
+    public ApplyIndividualRealnameAuthsReq withChangeType(Integer changeType) {
+        this.changeType = changeType;
         return this;
     }
 
@@ -245,17 +218,17 @@ public class ApplyIndividualRealnameAuthsReq  {
 
 
     /**
-     * |参数名称：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。| |参数的约束及描述：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。|
-     * minimum: 0
-     * maximum: 32
-     * @return verifiedType
+     * |参数名称：变更类型：-1：首次实名认证| |参数的约束及描述：变更类型：-1：首次实名认证|
+     * minimum: -1
+     * maximum: -1
+     * @return changeType
      */
-    public Integer getVerifiedType() {
-        return verifiedType;
+    public Integer getChangeType() {
+        return changeType;
     }
 
-    public void setVerifiedType(Integer verifiedType) {
-        this.verifiedType = verifiedType;
+    public void setChangeType(Integer changeType) {
+        this.changeType = changeType;
     }
 
     public ApplyIndividualRealnameAuthsReq withXaccountType(String xaccountType) {
@@ -277,6 +250,33 @@ public class ApplyIndividualRealnameAuthsReq  {
     public void setXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
     }
+
+    public ApplyIndividualRealnameAuthsReq withBankCardInfo(BankCardInfoV2 bankCardInfo) {
+        this.bankCardInfo = bankCardInfo;
+        return this;
+    }
+
+    public ApplyIndividualRealnameAuthsReq withBankCardInfo(Consumer<BankCardInfoV2> bankCardInfoSetter) {
+        if(this.bankCardInfo == null ){
+            this.bankCardInfo = new BankCardInfoV2();
+            bankCardInfoSetter.accept(this.bankCardInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get bankCardInfo
+     * @return bankCardInfo
+     */
+    public BankCardInfoV2 getBankCardInfo() {
+        return bankCardInfo;
+    }
+
+    public void setBankCardInfo(BankCardInfoV2 bankCardInfo) {
+        this.bankCardInfo = bankCardInfo;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -286,33 +286,33 @@ public class ApplyIndividualRealnameAuthsReq  {
             return false;
         }
         ApplyIndividualRealnameAuthsReq applyIndividualRealnameAuthsReq = (ApplyIndividualRealnameAuthsReq) o;
-        return Objects.equals(this.bankCardInfo, applyIndividualRealnameAuthsReq.bankCardInfo) &&
-            Objects.equals(this.changeType, applyIndividualRealnameAuthsReq.changeType) &&
-            Objects.equals(this.customerId, applyIndividualRealnameAuthsReq.customerId) &&
+        return Objects.equals(this.customerId, applyIndividualRealnameAuthsReq.customerId) &&
             Objects.equals(this.identifyType, applyIndividualRealnameAuthsReq.identifyType) &&
-            Objects.equals(this.name, applyIndividualRealnameAuthsReq.name) &&
-            Objects.equals(this.verifiedFileUrl, applyIndividualRealnameAuthsReq.verifiedFileUrl) &&
-            Objects.equals(this.verifiedNumber, applyIndividualRealnameAuthsReq.verifiedNumber) &&
             Objects.equals(this.verifiedType, applyIndividualRealnameAuthsReq.verifiedType) &&
-            Objects.equals(this.xaccountType, applyIndividualRealnameAuthsReq.xaccountType);
+            Objects.equals(this.verifiedFileUrl, applyIndividualRealnameAuthsReq.verifiedFileUrl) &&
+            Objects.equals(this.name, applyIndividualRealnameAuthsReq.name) &&
+            Objects.equals(this.verifiedNumber, applyIndividualRealnameAuthsReq.verifiedNumber) &&
+            Objects.equals(this.changeType, applyIndividualRealnameAuthsReq.changeType) &&
+            Objects.equals(this.xaccountType, applyIndividualRealnameAuthsReq.xaccountType) &&
+            Objects.equals(this.bankCardInfo, applyIndividualRealnameAuthsReq.bankCardInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bankCardInfo, changeType, customerId, identifyType, name, verifiedFileUrl, verifiedNumber, verifiedType, xaccountType);
+        return Objects.hash(customerId, identifyType, verifiedType, verifiedFileUrl, name, verifiedNumber, changeType, xaccountType, bankCardInfo);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplyIndividualRealnameAuthsReq {\n");
-        sb.append("    bankCardInfo: ").append(toIndentedString(bankCardInfo)).append("\n");
-        sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    identifyType: ").append(toIndentedString(identifyType)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    verifiedFileUrl: ").append(toIndentedString(verifiedFileUrl)).append("\n");
-        sb.append("    verifiedNumber: ").append(toIndentedString(verifiedNumber)).append("\n");
         sb.append("    verifiedType: ").append(toIndentedString(verifiedType)).append("\n");
+        sb.append("    verifiedFileUrl: ").append(toIndentedString(verifiedFileUrl)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    verifiedNumber: ").append(toIndentedString(verifiedNumber)).append("\n");
+        sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
         sb.append("    xaccountType: ").append(toIndentedString(xaccountType)).append("\n");
+        sb.append("    bankCardInfo: ").append(toIndentedString(bankCardInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

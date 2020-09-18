@@ -24,15 +24,35 @@ public class ListCustomerOrdersResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_count")
+    
+    private Integer totalCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_infos")
     
     private List<CustomerOrderV2> orderInfos = null;
     
+    public ListCustomerOrdersResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
     
-    private Integer totalCount;
+
+
+    /**
+     * |参数名称：符合条件的记录总数。| |参数的约束及描述：符合条件的记录总数。|
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
     public ListCustomerOrdersResponse withOrderInfos(List<CustomerOrderV2> orderInfos) {
         this.orderInfos = orderInfos;
@@ -67,26 +87,6 @@ public class ListCustomerOrdersResponse extends SdkResponse {
     public void setOrderInfos(List<CustomerOrderV2> orderInfos) {
         this.orderInfos = orderInfos;
     }
-
-    public ListCustomerOrdersResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：符合条件的记录总数。| |参数的约束及描述：符合条件的记录总数。|
-     * @return totalCount
-     */
-    public Integer getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -96,19 +96,19 @@ public class ListCustomerOrdersResponse extends SdkResponse {
             return false;
         }
         ListCustomerOrdersResponse listCustomerOrdersResponse = (ListCustomerOrdersResponse) o;
-        return Objects.equals(this.orderInfos, listCustomerOrdersResponse.orderInfos) &&
-            Objects.equals(this.totalCount, listCustomerOrdersResponse.totalCount);
+        return Objects.equals(this.totalCount, listCustomerOrdersResponse.totalCount) &&
+            Objects.equals(this.orderInfos, listCustomerOrdersResponse.orderInfos);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(orderInfos, totalCount);
+        return Objects.hash(totalCount, orderInfos);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCustomerOrdersResponse {\n");
-        sb.append("    orderInfos: ").append(toIndentedString(orderInfos)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    orderInfos: ").append(toIndentedString(orderInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

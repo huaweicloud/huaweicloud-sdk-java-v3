@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.elb.v3.model.IpGroup;
+import com.huaweicloud.sdk.elb.v3.model.PageInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -33,6 +34,12 @@ public class ListIpGroupsResponse extends SdkResponse {
     @JsonProperty(value="request_id")
     
     private String requestId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="page_info")
+    
+    private PageInfo pageInfo = null;
 
     public ListIpGroupsResponse withIpgroups(List<IpGroup> ipgroups) {
         this.ipgroups = ipgroups;
@@ -87,6 +94,33 @@ public class ListIpGroupsResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    public ListIpGroupsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListIpGroupsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if(this.pageInfo == null ){
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -97,11 +131,12 @@ public class ListIpGroupsResponse extends SdkResponse {
         }
         ListIpGroupsResponse listIpGroupsResponse = (ListIpGroupsResponse) o;
         return Objects.equals(this.ipgroups, listIpGroupsResponse.ipgroups) &&
-            Objects.equals(this.requestId, listIpGroupsResponse.requestId);
+            Objects.equals(this.requestId, listIpGroupsResponse.requestId) &&
+            Objects.equals(this.pageInfo, listIpGroupsResponse.pageInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ipgroups, requestId);
+        return Objects.hash(ipgroups, requestId, pageInfo);
     }
     @Override
     public String toString() {
@@ -109,6 +144,7 @@ public class ListIpGroupsResponse extends SdkResponse {
         sb.append("class ListIpGroupsResponse {\n");
         sb.append("    ipgroups: ").append(toIndentedString(ipgroups)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

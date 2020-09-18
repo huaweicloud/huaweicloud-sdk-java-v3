@@ -553,7 +553,7 @@ public class EipMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPublicipsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
@@ -561,7 +561,7 @@ public class EipMeta {
         builder.withRequestField("port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPublicipsRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
             })
@@ -569,7 +569,7 @@ public class EipMeta {
         builder.withRequestField("public_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPublicipsRequest::getPublicIpAddress, (req, v) -> {
                 req.setPublicIpAddress(v);
             })
@@ -577,7 +577,7 @@ public class EipMeta {
         builder.withRequestField("private_ip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPublicipsRequest::getPrivateIpAddress, (req, v) -> {
                 req.setPrivateIpAddress(v);
             })
@@ -585,7 +585,7 @@ public class EipMeta {
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            List.class,
             f -> f.withMarshaller(ListPublicipsRequest::getId, (req, v) -> {
                 req.setId(v);
             })

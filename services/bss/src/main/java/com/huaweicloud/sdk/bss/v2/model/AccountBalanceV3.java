@@ -38,12 +38,6 @@ public class AccountBalanceV3  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credit_amount")
-    
-    private BigDecimal creditAmount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currency")
     
     private String currency = "CNY";
@@ -53,6 +47,12 @@ public class AccountBalanceV3  {
     @JsonProperty(value="designated_amount")
     
     private BigDecimal designatedAmount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="credit_amount")
+    
+    private BigDecimal creditAmount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -120,26 +120,6 @@ public class AccountBalanceV3  {
         this.amount = amount;
     }
 
-    public AccountBalanceV3 withCreditAmount(BigDecimal creditAmount) {
-        this.creditAmount = creditAmount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：总信用额度。只有账户类型是2:信用的时候才有该字段| |参数的约束及描述：总信用额度。只有账户类型是2:信用的时候才有该字段|
-     * @return creditAmount
-     */
-    public BigDecimal getCreditAmount() {
-        return creditAmount;
-    }
-
-    public void setCreditAmount(BigDecimal creditAmount) {
-        this.creditAmount = creditAmount;
-    }
-
     public AccountBalanceV3 withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -180,6 +160,26 @@ public class AccountBalanceV3  {
         this.designatedAmount = designatedAmount;
     }
 
+    public AccountBalanceV3 withCreditAmount(BigDecimal creditAmount) {
+        this.creditAmount = creditAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：总信用额度。只有账户类型是2:信用的时候才有该字段| |参数的约束及描述：总信用额度。只有账户类型是2:信用的时候才有该字段|
+     * @return creditAmount
+     */
+    public BigDecimal getCreditAmount() {
+        return creditAmount;
+    }
+
+    public void setCreditAmount(BigDecimal creditAmount) {
+        this.creditAmount = creditAmount;
+    }
+
     public AccountBalanceV3 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -211,14 +211,14 @@ public class AccountBalanceV3  {
         return Objects.equals(this.accountId, accountBalanceV3.accountId) &&
             Objects.equals(this.accountType, accountBalanceV3.accountType) &&
             Objects.equals(this.amount, accountBalanceV3.amount) &&
-            Objects.equals(this.creditAmount, accountBalanceV3.creditAmount) &&
             Objects.equals(this.currency, accountBalanceV3.currency) &&
             Objects.equals(this.designatedAmount, accountBalanceV3.designatedAmount) &&
+            Objects.equals(this.creditAmount, accountBalanceV3.creditAmount) &&
             Objects.equals(this.measureId, accountBalanceV3.measureId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, accountType, amount, creditAmount, currency, designatedAmount, measureId);
+        return Objects.hash(accountId, accountType, amount, currency, designatedAmount, creditAmount, measureId);
     }
     @Override
     public String toString() {
@@ -227,9 +227,9 @@ public class AccountBalanceV3  {
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
         sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    designatedAmount: ").append(toIndentedString(designatedAmount)).append("\n");
+        sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("}");
         return sb.toString();

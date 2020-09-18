@@ -23,7 +23,7 @@ public class CreateListenerIpGroupOption  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Ipgroup_id")
+    @JsonProperty(value="ipgroup_id")
     
     private String ipgroupId;
 

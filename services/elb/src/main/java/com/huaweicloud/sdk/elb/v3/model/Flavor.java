@@ -212,7 +212,7 @@ public class Flavor  {
     }
 
     /**
-     * availability_zone_list字段，标志ELB对应L7-flavor在对应可用区是否可以售卖。 默认为[\"ALL\"]，所有可用区可售卖，若仅部分可用区可售卖则返回[\"cn-north-1a\",\"cn-north-1b\"]，若全部可不卖则为[]
+     * availability_zone_ids字段，标志ELB对应L7-flavor在对应可用区是否可以售卖。 若该字段为[]代表该flavor不可售卖；若该字段为[\"ALL\"]，代表所有可用区可售卖；若仅部分可用区可售卖则返回[\"cn-north-1a\",\"cn-north-1b\"]。 可通过/v3/{project_id}/elb/availability-zones接口查询所有可售卖的可用区接口。
      * @return availabilityZoneIds
      */
     public List<String> getAvailabilityZoneIds() {

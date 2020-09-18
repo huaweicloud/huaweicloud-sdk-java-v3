@@ -20,33 +20,9 @@ public class CouponRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coupon_id")
-    
-    private String couponId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
-    private String customerId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_amount")
-    
-    private BigDecimal operationAmount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_time")
-    
-    private String operationTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,9 +44,27 @@ public class CouponRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
+    @JsonProperty(value="coupon_id")
     
-    private String remark;
+    private String couponId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="customer_id")
+    
+    private String customerId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="operation_amount")
+    
+    private BigDecimal operationAmount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="operation_time")
+    
+    private String operationTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -78,45 +72,11 @@ public class CouponRecordV2  {
     
     private String result;
 
-    public CouponRecordV2 withCouponId(String couponId) {
-        this.couponId = couponId;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="remark")
     
-
-
-    /**
-     * |参数名称：代金券ID。| |参数约束及描述：代金券ID。|
-     * @return couponId
-     */
-    public String getCouponId() {
-        return couponId;
-    }
-
-    public void setCouponId(String couponId) {
-        this.couponId = couponId;
-    }
-
-    public CouponRecordV2 withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
-     * @return customerId
-     */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
+    private String remark;
 
     public CouponRecordV2 withId(String id) {
         this.id = id;
@@ -136,46 +96,6 @@ public class CouponRecordV2  {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public CouponRecordV2 withOperationAmount(BigDecimal operationAmount) {
-        this.operationAmount = operationAmount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：操作的面额值。发放时，等于面额值；回收时，指每次回收的具体值。| |参数的约束及描述：操作的面额值。发放时，等于面额值；回收时，指每次回收的具体值。|
-     * @return operationAmount
-     */
-    public BigDecimal getOperationAmount() {
-        return operationAmount;
-    }
-
-    public void setOperationAmount(BigDecimal operationAmount) {
-        this.operationAmount = operationAmount;
-    }
-
-    public CouponRecordV2 withOperationTime(String operationTime) {
-        this.operationTime = operationTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：操作时间。| |参数约束及描述：操作时间。|
-     * @return operationTime
-     */
-    public String getOperationTime() {
-        return operationTime;
-    }
-
-    public void setOperationTime(String operationTime) {
-        this.operationTime = operationTime;
     }
 
     public CouponRecordV2 withOperationType(String operationType) {
@@ -238,8 +158,8 @@ public class CouponRecordV2  {
         this.quotaType = quotaType;
     }
 
-    public CouponRecordV2 withRemark(String remark) {
-        this.remark = remark;
+    public CouponRecordV2 withCouponId(String couponId) {
+        this.couponId = couponId;
         return this;
     }
 
@@ -247,15 +167,75 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：操作记录中的备注| |参数约束及描述：操作记录中的备注|
-     * @return remark
+     * |参数名称：代金券ID。| |参数约束及描述：代金券ID。|
+     * @return couponId
      */
-    public String getRemark() {
-        return remark;
+    public String getCouponId() {
+        return couponId;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark;
+    public void setCouponId(String couponId) {
+        this.couponId = couponId;
+    }
+
+    public CouponRecordV2 withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public CouponRecordV2 withOperationAmount(BigDecimal operationAmount) {
+        this.operationAmount = operationAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：操作的面额值。发放时，等于面额值；回收时，指每次回收的具体值。| |参数的约束及描述：操作的面额值。发放时，等于面额值；回收时，指每次回收的具体值。|
+     * @return operationAmount
+     */
+    public BigDecimal getOperationAmount() {
+        return operationAmount;
+    }
+
+    public void setOperationAmount(BigDecimal operationAmount) {
+        this.operationAmount = operationAmount;
+    }
+
+    public CouponRecordV2 withOperationTime(String operationTime) {
+        this.operationTime = operationTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：操作时间。| |参数约束及描述：操作时间。|
+     * @return operationTime
+     */
+    public String getOperationTime() {
+        return operationTime;
+    }
+
+    public void setOperationTime(String operationTime) {
+        this.operationTime = operationTime;
     }
 
     public CouponRecordV2 withResult(String result) {
@@ -277,6 +257,26 @@ public class CouponRecordV2  {
     public void setResult(String result) {
         this.result = result;
     }
+
+    public CouponRecordV2 withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：操作记录中的备注| |参数约束及描述：操作记录中的备注|
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -286,35 +286,35 @@ public class CouponRecordV2  {
             return false;
         }
         CouponRecordV2 couponRecordV2 = (CouponRecordV2) o;
-        return Objects.equals(this.couponId, couponRecordV2.couponId) &&
-            Objects.equals(this.customerId, couponRecordV2.customerId) &&
-            Objects.equals(this.id, couponRecordV2.id) &&
-            Objects.equals(this.operationAmount, couponRecordV2.operationAmount) &&
-            Objects.equals(this.operationTime, couponRecordV2.operationTime) &&
+        return Objects.equals(this.id, couponRecordV2.id) &&
             Objects.equals(this.operationType, couponRecordV2.operationType) &&
             Objects.equals(this.quotaId, couponRecordV2.quotaId) &&
             Objects.equals(this.quotaType, couponRecordV2.quotaType) &&
-            Objects.equals(this.remark, couponRecordV2.remark) &&
-            Objects.equals(this.result, couponRecordV2.result);
+            Objects.equals(this.couponId, couponRecordV2.couponId) &&
+            Objects.equals(this.customerId, couponRecordV2.customerId) &&
+            Objects.equals(this.operationAmount, couponRecordV2.operationAmount) &&
+            Objects.equals(this.operationTime, couponRecordV2.operationTime) &&
+            Objects.equals(this.result, couponRecordV2.result) &&
+            Objects.equals(this.remark, couponRecordV2.remark);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(couponId, customerId, id, operationAmount, operationTime, operationType, quotaId, quotaType, remark, result);
+        return Objects.hash(id, operationType, quotaId, quotaType, couponId, customerId, operationAmount, operationTime, result, remark);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CouponRecordV2 {\n");
-        sb.append("    couponId: ").append(toIndentedString(couponId)).append("\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    operationAmount: ").append(toIndentedString(operationAmount)).append("\n");
-        sb.append("    operationTime: ").append(toIndentedString(operationTime)).append("\n");
         sb.append("    operationType: ").append(toIndentedString(operationType)).append("\n");
         sb.append("    quotaId: ").append(toIndentedString(quotaId)).append("\n");
         sb.append("    quotaType: ").append(toIndentedString(quotaType)).append("\n");
-        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
+        sb.append("    couponId: ").append(toIndentedString(couponId)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    operationAmount: ").append(toIndentedString(operationAmount)).append("\n");
+        sb.append("    operationTime: ").append(toIndentedString(operationTime)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("}");
         return sb.toString();
     }

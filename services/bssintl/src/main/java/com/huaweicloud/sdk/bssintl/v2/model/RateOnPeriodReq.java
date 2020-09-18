@@ -22,15 +22,35 @@ public class RateOnPeriodReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="project_id")
+    
+    private String projectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_infos")
     
     private List<PeriodProductInfo> productInfos = new ArrayList<>();
     
+    public RateOnPeriodReq withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
     
-    private String projectId;
+
+
+    /**
+     * |参数名称：项目ID| |参数约束及描述：如果使用客户AK/SK或者Token，可以调用“通过assume_role方式获取用户token”接口获取“regionId”取值对应的project id。|
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
 
     public RateOnPeriodReq withProductInfos(List<PeriodProductInfo> productInfos) {
         this.productInfos = productInfos;
@@ -62,26 +82,6 @@ public class RateOnPeriodReq  {
     public void setProductInfos(List<PeriodProductInfo> productInfos) {
         this.productInfos = productInfos;
     }
-
-    public RateOnPeriodReq withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：项目ID| |参数约束及描述：如果使用客户AK/SK或者Token，可以调用“通过assume_role方式获取用户token”接口获取“regionId”取值对应的project id。|
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,19 +91,19 @@ public class RateOnPeriodReq  {
             return false;
         }
         RateOnPeriodReq rateOnPeriodReq = (RateOnPeriodReq) o;
-        return Objects.equals(this.productInfos, rateOnPeriodReq.productInfos) &&
-            Objects.equals(this.projectId, rateOnPeriodReq.projectId);
+        return Objects.equals(this.projectId, rateOnPeriodReq.projectId) &&
+            Objects.equals(this.productInfos, rateOnPeriodReq.productInfos);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(productInfos, projectId);
+        return Objects.hash(projectId, productInfos);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RateOnPeriodReq {\n");
-        sb.append("    productInfos: ").append(toIndentedString(productInfos)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    productInfos: ").append(toIndentedString(productInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

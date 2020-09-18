@@ -23,15 +23,15 @@ public class OfficialWebsiteRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
-    private Integer measureId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_website_amount")
     
     private BigDecimal officialWebsiteAmount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="measure_id")
+    
+    private Integer measureId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,26 +39,6 @@ public class OfficialWebsiteRatingResult  {
     
     private List<PeriodProductOfficialRatingResult> productRatingResults = null;
     
-    public OfficialWebsiteRatingResult withMeasureId(Integer measureId) {
-        this.measureId = measureId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：度量单位标识1：元|
-     * @return measureId
-     */
-    public Integer getMeasureId() {
-        return measureId;
-    }
-
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
-    }
-
     public OfficialWebsiteRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
@@ -77,6 +57,26 @@ public class OfficialWebsiteRatingResult  {
 
     public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
+    }
+
+    public OfficialWebsiteRatingResult withMeasureId(Integer measureId) {
+        this.measureId = measureId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：度量单位标识1：元|
+     * @return measureId
+     */
+    public Integer getMeasureId() {
+        return measureId;
+    }
+
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
     }
 
     public OfficialWebsiteRatingResult withProductRatingResults(List<PeriodProductOfficialRatingResult> productRatingResults) {
@@ -121,20 +121,20 @@ public class OfficialWebsiteRatingResult  {
             return false;
         }
         OfficialWebsiteRatingResult officialWebsiteRatingResult = (OfficialWebsiteRatingResult) o;
-        return Objects.equals(this.measureId, officialWebsiteRatingResult.measureId) &&
-            Objects.equals(this.officialWebsiteAmount, officialWebsiteRatingResult.officialWebsiteAmount) &&
+        return Objects.equals(this.officialWebsiteAmount, officialWebsiteRatingResult.officialWebsiteAmount) &&
+            Objects.equals(this.measureId, officialWebsiteRatingResult.measureId) &&
             Objects.equals(this.productRatingResults, officialWebsiteRatingResult.productRatingResults);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(measureId, officialWebsiteAmount, productRatingResults);
+        return Objects.hash(officialWebsiteAmount, measureId, productRatingResults);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OfficialWebsiteRatingResult {\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    productRatingResults: ").append(toIndentedString(productRatingResults)).append("\n");
         sb.append("}");
         return sb.toString();

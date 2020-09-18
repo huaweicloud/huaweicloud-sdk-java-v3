@@ -23,45 +23,15 @@ public class OptionalDiscountRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
-    private BigDecimal amount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="best_offer")
-    
-    private Integer bestOffer;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_amount")
-    
-    private BigDecimal discountAmount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_id")
     
     private String discountId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_name")
+    @JsonProperty(value="amount")
     
-    private String discountName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_type")
-    
-    private Integer discountType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
-    private Integer measureId;
+    private BigDecimal amount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,10 +41,60 @@ public class OptionalDiscountRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="discount_amount")
+    
+    private BigDecimal discountAmount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="measure_id")
+    
+    private Integer measureId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="discount_type")
+    
+    private Integer discountType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="discount_name")
+    
+    private String discountName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="best_offer")
+    
+    private Integer bestOffer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_rating_results")
     
     private List<PeriodProductRatingResult> productRatingResults = null;
     
+    public OptionalDiscountRatingResult withDiscountId(String discountId) {
+        this.discountId = discountId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：折扣优惠Id| |参数约束及描述：折扣优惠Id|
+     * @return discountId
+     */
+    public String getDiscountId() {
+        return discountId;
+    }
+
+    public void setDiscountId(String discountId) {
+        this.discountId = discountId;
+    }
+
     public OptionalDiscountRatingResult withAmount(BigDecimal amount) {
         this.amount = amount;
         return this;
@@ -95,8 +115,8 @@ public class OptionalDiscountRatingResult  {
         this.amount = amount;
     }
 
-    public OptionalDiscountRatingResult withBestOffer(Integer bestOffer) {
-        this.bestOffer = bestOffer;
+    public OptionalDiscountRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+        this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
@@ -104,15 +124,15 @@ public class OptionalDiscountRatingResult  {
 
 
     /**
-     * |参数名称：是否为最优折扣| |参数约束及描述：0：不是最优折扣；为缺省值。1：是最优折扣；最优折扣：在商务折扣、伙伴折扣中选择（优惠金额最大的折扣为最优，优惠金额相等则按此顺序排优先级），促销折扣，折扣券不参与最优折扣的计算|
-     * @return bestOffer
+     * |参数名称：官网价| |参数约束及描述：官网价|
+     * @return officialWebsiteAmount
      */
-    public Integer getBestOffer() {
-        return bestOffer;
+    public BigDecimal getOfficialWebsiteAmount() {
+        return officialWebsiteAmount;
     }
 
-    public void setBestOffer(Integer bestOffer) {
-        this.bestOffer = bestOffer;
+    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+        this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
     public OptionalDiscountRatingResult withDiscountAmount(BigDecimal discountAmount) {
@@ -135,8 +155,8 @@ public class OptionalDiscountRatingResult  {
         this.discountAmount = discountAmount;
     }
 
-    public OptionalDiscountRatingResult withDiscountId(String discountId) {
-        this.discountId = discountId;
+    public OptionalDiscountRatingResult withMeasureId(Integer measureId) {
+        this.measureId = measureId;
         return this;
     }
 
@@ -144,35 +164,15 @@ public class OptionalDiscountRatingResult  {
 
 
     /**
-     * |参数名称：折扣优惠Id| |参数约束及描述：折扣优惠Id|
-     * @return discountId
+     * |参数名称：度量单位标识| |参数约束及描述：1：元|
+     * @return measureId
      */
-    public String getDiscountId() {
-        return discountId;
+    public Integer getMeasureId() {
+        return measureId;
     }
 
-    public void setDiscountId(String discountId) {
-        this.discountId = discountId;
-    }
-
-    public OptionalDiscountRatingResult withDiscountName(String discountName) {
-        this.discountName = discountName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：折扣名称| |参数约束及描述：折扣名称|
-     * @return discountName
-     */
-    public String getDiscountName() {
-        return discountName;
-    }
-
-    public void setDiscountName(String discountName) {
-        this.discountName = discountName;
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
     }
 
     public OptionalDiscountRatingResult withDiscountType(Integer discountType) {
@@ -195,8 +195,8 @@ public class OptionalDiscountRatingResult  {
         this.discountType = discountType;
     }
 
-    public OptionalDiscountRatingResult withMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public OptionalDiscountRatingResult withDiscountName(String discountName) {
+        this.discountName = discountName;
         return this;
     }
 
@@ -204,19 +204,19 @@ public class OptionalDiscountRatingResult  {
 
 
     /**
-     * |参数名称：度量单位标识| |参数约束及描述：1：元|
-     * @return measureId
+     * |参数名称：折扣名称| |参数约束及描述：折扣名称|
+     * @return discountName
      */
-    public Integer getMeasureId() {
-        return measureId;
+    public String getDiscountName() {
+        return discountName;
     }
 
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public void setDiscountName(String discountName) {
+        this.discountName = discountName;
     }
 
-    public OptionalDiscountRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
-        this.officialWebsiteAmount = officialWebsiteAmount;
+    public OptionalDiscountRatingResult withBestOffer(Integer bestOffer) {
+        this.bestOffer = bestOffer;
         return this;
     }
 
@@ -224,15 +224,15 @@ public class OptionalDiscountRatingResult  {
 
 
     /**
-     * |参数名称：官网价| |参数约束及描述：官网价|
-     * @return officialWebsiteAmount
+     * |参数名称：是否为最优折扣| |参数约束及描述：0：不是最优折扣；为缺省值。1：是最优折扣；最优折扣：在商务折扣、伙伴折扣中选择（优惠金额最大的折扣为最优，优惠金额相等则按此顺序排优先级），促销折扣，折扣券不参与最优折扣的计算|
+     * @return bestOffer
      */
-    public BigDecimal getOfficialWebsiteAmount() {
-        return officialWebsiteAmount;
+    public Integer getBestOffer() {
+        return bestOffer;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
-        this.officialWebsiteAmount = officialWebsiteAmount;
+    public void setBestOffer(Integer bestOffer) {
+        this.bestOffer = bestOffer;
     }
 
     public OptionalDiscountRatingResult withProductRatingResults(List<PeriodProductRatingResult> productRatingResults) {
@@ -277,32 +277,32 @@ public class OptionalDiscountRatingResult  {
             return false;
         }
         OptionalDiscountRatingResult optionalDiscountRatingResult = (OptionalDiscountRatingResult) o;
-        return Objects.equals(this.amount, optionalDiscountRatingResult.amount) &&
-            Objects.equals(this.bestOffer, optionalDiscountRatingResult.bestOffer) &&
-            Objects.equals(this.discountAmount, optionalDiscountRatingResult.discountAmount) &&
-            Objects.equals(this.discountId, optionalDiscountRatingResult.discountId) &&
-            Objects.equals(this.discountName, optionalDiscountRatingResult.discountName) &&
-            Objects.equals(this.discountType, optionalDiscountRatingResult.discountType) &&
-            Objects.equals(this.measureId, optionalDiscountRatingResult.measureId) &&
+        return Objects.equals(this.discountId, optionalDiscountRatingResult.discountId) &&
+            Objects.equals(this.amount, optionalDiscountRatingResult.amount) &&
             Objects.equals(this.officialWebsiteAmount, optionalDiscountRatingResult.officialWebsiteAmount) &&
+            Objects.equals(this.discountAmount, optionalDiscountRatingResult.discountAmount) &&
+            Objects.equals(this.measureId, optionalDiscountRatingResult.measureId) &&
+            Objects.equals(this.discountType, optionalDiscountRatingResult.discountType) &&
+            Objects.equals(this.discountName, optionalDiscountRatingResult.discountName) &&
+            Objects.equals(this.bestOffer, optionalDiscountRatingResult.bestOffer) &&
             Objects.equals(this.productRatingResults, optionalDiscountRatingResult.productRatingResults);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, bestOffer, discountAmount, discountId, discountName, discountType, measureId, officialWebsiteAmount, productRatingResults);
+        return Objects.hash(discountId, amount, officialWebsiteAmount, discountAmount, measureId, discountType, discountName, bestOffer, productRatingResults);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OptionalDiscountRatingResult {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    bestOffer: ").append(toIndentedString(bestOffer)).append("\n");
-        sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    discountId: ").append(toIndentedString(discountId)).append("\n");
-        sb.append("    discountName: ").append(toIndentedString(discountName)).append("\n");
-        sb.append("    discountType: ").append(toIndentedString(discountType)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
+        sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    discountType: ").append(toIndentedString(discountType)).append("\n");
+        sb.append("    discountName: ").append(toIndentedString(discountName)).append("\n");
+        sb.append("    bestOffer: ").append(toIndentedString(bestOffer)).append("\n");
         sb.append("    productRatingResults: ").append(toIndentedString(productRatingResults)).append("\n");
         sb.append("}");
         return sb.toString();

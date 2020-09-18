@@ -24,15 +24,37 @@ public class ListCitiesResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    private Integer count;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cities")
     
     private List<City> cities = null;
     
+    public ListCitiesResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
     
-    private Integer count;
+
+
+    /**
+     * |参数名称：查询个数，成功的时候返回| |参数的约束及描述：查询个数，成功的时候返回|
+     * minimum: 0
+     * maximum: 1000
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
     public ListCitiesResponse withCities(List<City> cities) {
         this.cities = cities;
@@ -67,28 +89,6 @@ public class ListCitiesResponse extends SdkResponse {
     public void setCities(List<City> cities) {
         this.cities = cities;
     }
-
-    public ListCitiesResponse withCount(Integer count) {
-        this.count = count;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：查询个数，成功的时候返回| |参数的约束及描述：查询个数，成功的时候返回|
-     * minimum: 0
-     * maximum: 1000
-     * @return count
-     */
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -98,19 +98,19 @@ public class ListCitiesResponse extends SdkResponse {
             return false;
         }
         ListCitiesResponse listCitiesResponse = (ListCitiesResponse) o;
-        return Objects.equals(this.cities, listCitiesResponse.cities) &&
-            Objects.equals(this.count, listCitiesResponse.count);
+        return Objects.equals(this.count, listCitiesResponse.count) &&
+            Objects.equals(this.cities, listCitiesResponse.cities);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(cities, count);
+        return Objects.hash(count, cities);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCitiesResponse {\n");
-        sb.append("    cities: ").append(toIndentedString(cities)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    cities: ").append(toIndentedString(cities)).append("\n");
         sb.append("}");
         return sb.toString();
     }

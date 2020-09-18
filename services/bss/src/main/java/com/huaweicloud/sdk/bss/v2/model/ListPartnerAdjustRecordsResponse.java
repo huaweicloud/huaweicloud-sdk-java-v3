@@ -24,15 +24,35 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_count")
+    
+    private Integer totalCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="records")
     
     private List<AdjustRecordV2> records = null;
     
+    public ListPartnerAdjustRecordsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
     
-    private Integer totalCount;
+
+
+    /**
+     * |参数名称：返回总条数。| |参数的约束及描述：返回总条数。|
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
     public ListPartnerAdjustRecordsResponse withRecords(List<AdjustRecordV2> records) {
         this.records = records;
@@ -67,26 +87,6 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
     public void setRecords(List<AdjustRecordV2> records) {
         this.records = records;
     }
-
-    public ListPartnerAdjustRecordsResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：返回总条数。| |参数的约束及描述：返回总条数。|
-     * @return totalCount
-     */
-    public Integer getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -96,19 +96,19 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
             return false;
         }
         ListPartnerAdjustRecordsResponse listPartnerAdjustRecordsResponse = (ListPartnerAdjustRecordsResponse) o;
-        return Objects.equals(this.records, listPartnerAdjustRecordsResponse.records) &&
-            Objects.equals(this.totalCount, listPartnerAdjustRecordsResponse.totalCount);
+        return Objects.equals(this.totalCount, listPartnerAdjustRecordsResponse.totalCount) &&
+            Objects.equals(this.records, listPartnerAdjustRecordsResponse.records);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(records, totalCount);
+        return Objects.hash(totalCount, records);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPartnerAdjustRecordsResponse {\n");
-        sb.append("    records: ").append(toIndentedString(records)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    records: ").append(toIndentedString(records)).append("\n");
         sb.append("}");
         return sb.toString();
     }

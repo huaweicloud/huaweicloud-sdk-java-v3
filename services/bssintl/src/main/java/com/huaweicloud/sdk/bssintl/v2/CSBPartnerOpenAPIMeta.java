@@ -10,7 +10,7 @@ import java.util.Map;
 import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
-public class BssintlMeta {
+public class CSBPartnerOpenAPIMeta {
 
     public static final HttpRequestDef<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> autoRenewalResources = genForautoRenewalResources();
 
@@ -226,6 +226,30 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<FreezeSubCustomersRequest, FreezeSubCustomersResponse> freezeSubCustomers = genForfreezeSubCustomers();
+
+    private static HttpRequestDef<FreezeSubCustomersRequest, FreezeSubCustomersResponse> genForfreezeSubCustomers() {
+        // basic
+        HttpRequestDef.Builder<FreezeSubCustomersRequest, FreezeSubCustomersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, FreezeSubCustomersRequest.class, FreezeSubCustomersResponse.class)
+                .withUri("/v2/partners/sub-customers/freeze")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            FreezeSubCustomersReq.class,
+            f -> f.withMarshaller(FreezeSubCustomersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResources = genForlistCustomerOnDemandResources();
 
     private static HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> genForlistCustomerOnDemandResources() {
@@ -236,6 +260,14 @@ public class BssintlMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerOnDemandResourcesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -480,6 +512,30 @@ public class BssintlMeta {
             Boolean.class,
             f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getIncludeZeroRecord, (req, v) -> {
                 req.setIncludeZeroRecord(v);
+            })
+        );
+        builder.withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getMethod, (req, v) -> {
+                req.setMethod(v);
+            })
+        );
+        builder.withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 
@@ -805,6 +861,77 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySum = genForshowCustomerMonthlySum();
+
+    private static HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> genForshowCustomerMonthlySum() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCustomerMonthlySumRequest.class, ShowCustomerMonthlySumResponse.class)
+                .withUri("/v2/bills/customer-bills/monthly-sum");
+
+        // requests
+        builder.withRequestField("bill_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getBillCycle, (req, v) -> {
+                req.setBillCycle(v);
+            })
+        );
+        builder.withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            })
+        );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getMethod, (req, v) -> {
+                req.setMethod(v);
+            })
+        );
+        builder.withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> showCustomerOrderDetails = genForshowCustomerOrderDetails();
 
     private static HttpRequestDef<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> genForshowCustomerOrderDetails() {
@@ -890,6 +1017,77 @@ public class BssintlMeta {
             String.class,
             f -> f.withMarshaller(ShowRefundOrderDetailsRequest::getOrderId, (req, v) -> {
                 req.setOrderId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubCustomerBudgetRequest, ShowSubCustomerBudgetResponse> showSubCustomerBudget = genForshowSubCustomerBudget();
+
+    private static HttpRequestDef<ShowSubCustomerBudgetRequest, ShowSubCustomerBudgetResponse> genForshowSubCustomerBudget() {
+        // basic
+        HttpRequestDef.Builder<ShowSubCustomerBudgetRequest, ShowSubCustomerBudgetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSubCustomerBudgetRequest.class, ShowSubCustomerBudgetResponse.class)
+                .withUri("/v2/partners/sub-customers/budget");
+
+        // requests
+        builder.withRequestField("customer_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSubCustomerBudgetRequest::getCustomerId, (req, v) -> {
+                req.setCustomerId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnfreezeSubCustomersRequest, UnfreezeSubCustomersResponse> unfreezeSubCustomers = genForunfreezeSubCustomers();
+
+    private static HttpRequestDef<UnfreezeSubCustomersRequest, UnfreezeSubCustomersResponse> genForunfreezeSubCustomers() {
+        // basic
+        HttpRequestDef.Builder<UnfreezeSubCustomersRequest, UnfreezeSubCustomersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnfreezeSubCustomersRequest.class, UnfreezeSubCustomersResponse.class)
+                .withUri("/v2/partners/sub-customers/unfreeze")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UnfreezeSubCustomersReq.class,
+            f -> f.withMarshaller(UnfreezeSubCustomersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSubCustomerBudgetRequest, UpdateSubCustomerBudgetResponse> updateSubCustomerBudget = genForupdateSubCustomerBudget();
+
+    private static HttpRequestDef<UpdateSubCustomerBudgetRequest, UpdateSubCustomerBudgetResponse> genForupdateSubCustomerBudget() {
+        // basic
+        HttpRequestDef.Builder<UpdateSubCustomerBudgetRequest, UpdateSubCustomerBudgetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateSubCustomerBudgetRequest.class, UpdateSubCustomerBudgetResponse.class)
+                .withUri("/v2/partners/sub-customers/budget")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ModSubCustomerBudgetReq.class,
+            f -> f.withMarshaller(UpdateSubCustomerBudgetRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

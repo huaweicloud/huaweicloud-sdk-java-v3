@@ -19,15 +19,15 @@ public class SendVerificationCodeV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
+    @JsonProperty(value="receiver_type")
     
-    private String customerId;
+    private Integer receiverType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
+    @JsonProperty(value="timeout")
     
-    private String lang;
+    private Integer timeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,9 +37,9 @@ public class SendVerificationCodeV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="receiver_type")
+    @JsonProperty(value="lang")
     
-    private Integer receiverType;
+    private String lang;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -49,12 +49,12 @@ public class SendVerificationCodeV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
+    @JsonProperty(value="customer_id")
     
-    private Integer timeout;
+    private String customerId;
 
-    public SendVerificationCodeV2Req withCustomerId(String customerId) {
-        this.customerId = customerId;
+    public SendVerificationCodeV2Req withReceiverType(Integer receiverType) {
+        this.receiverType = receiverType;
         return this;
     }
 
@@ -62,19 +62,21 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
-     * @return customerId
+     * |参数名称：发送类型：1：发送短信验证码。2：发送邮件验证码。| |参数的约束及描述：发送类型：1：发送短信验证码。2：发送邮件验证码。|
+     * minimum: 1
+     * maximum: 2
+     * @return receiverType
      */
-    public String getCustomerId() {
-        return customerId;
+    public Integer getReceiverType() {
+        return receiverType;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setReceiverType(Integer receiverType) {
+        this.receiverType = receiverType;
     }
 
-    public SendVerificationCodeV2Req withLang(String lang) {
-        this.lang = lang;
+    public SendVerificationCodeV2Req withTimeout(Integer timeout) {
+        this.timeout = timeout;
         return this;
     }
 
@@ -82,15 +84,17 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。| |参数约束及描述：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。|
-     * @return lang
+     * |参数名称：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| |参数的约束及描述：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟|
+     * minimum: 1
+     * maximum: 2147483647
+     * @return timeout
      */
-    public String getLang() {
-        return lang;
+    public Integer getTimeout() {
+        return timeout;
     }
 
-    public void setLang(String lang) {
-        this.lang = lang;
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
     }
 
     public SendVerificationCodeV2Req withMobilePhone(String mobilePhone) {
@@ -113,8 +117,8 @@ public class SendVerificationCodeV2Req  {
         this.mobilePhone = mobilePhone;
     }
 
-    public SendVerificationCodeV2Req withReceiverType(Integer receiverType) {
-        this.receiverType = receiverType;
+    public SendVerificationCodeV2Req withLang(String lang) {
+        this.lang = lang;
         return this;
     }
 
@@ -122,17 +126,15 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：发送类型：1：发送短信验证码。2：发送邮件验证码。| |参数的约束及描述：发送类型：1：发送短信验证码。2：发送邮件验证码。|
-     * minimum: 1
-     * maximum: 2
-     * @return receiverType
+     * |参数名称：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。| |参数约束及描述：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。|
+     * @return lang
      */
-    public Integer getReceiverType() {
-        return receiverType;
+    public String getLang() {
+        return lang;
     }
 
-    public void setReceiverType(Integer receiverType) {
-        this.receiverType = receiverType;
+    public void setLang(String lang) {
+        this.lang = lang;
     }
 
     public SendVerificationCodeV2Req withScene(Integer scene) {
@@ -157,8 +159,8 @@ public class SendVerificationCodeV2Req  {
         this.scene = scene;
     }
 
-    public SendVerificationCodeV2Req withTimeout(Integer timeout) {
-        this.timeout = timeout;
+    public SendVerificationCodeV2Req withCustomerId(String customerId) {
+        this.customerId = customerId;
         return this;
     }
 
@@ -166,17 +168,15 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| |参数的约束及描述：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟|
-     * minimum: 1
-     * maximum: 2147483647
-     * @return timeout
+     * |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
+     * @return customerId
      */
-    public Integer getTimeout() {
-        return timeout;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setTimeout(Integer timeout) {
-        this.timeout = timeout;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -187,27 +187,27 @@ public class SendVerificationCodeV2Req  {
             return false;
         }
         SendVerificationCodeV2Req sendVerificationCodeV2Req = (SendVerificationCodeV2Req) o;
-        return Objects.equals(this.customerId, sendVerificationCodeV2Req.customerId) &&
-            Objects.equals(this.lang, sendVerificationCodeV2Req.lang) &&
+        return Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType) &&
+            Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout) &&
             Objects.equals(this.mobilePhone, sendVerificationCodeV2Req.mobilePhone) &&
-            Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType) &&
+            Objects.equals(this.lang, sendVerificationCodeV2Req.lang) &&
             Objects.equals(this.scene, sendVerificationCodeV2Req.scene) &&
-            Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout);
+            Objects.equals(this.customerId, sendVerificationCodeV2Req.customerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, lang, mobilePhone, receiverType, scene, timeout);
+        return Objects.hash(receiverType, timeout, mobilePhone, lang, scene, customerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SendVerificationCodeV2Req {\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-        sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
-        sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
         sb.append("    receiverType: ").append(toIndentedString(receiverType)).append("\n");
-        sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
+        sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
+        sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

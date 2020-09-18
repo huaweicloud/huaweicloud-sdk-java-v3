@@ -19,27 +19,15 @@ public class LimitInfoV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit_key")
-    
-    private String limitKey;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit_type")
-    
-    private String limitType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="promotion_plan_id")
-    
-    private String promotionPlanId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="use_limiti_info_id")
     
     private String useLimitiInfoId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit_key")
+    
+    private String limitKey;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,65 +47,17 @@ public class LimitInfoV2  {
     
     private String valueUnit;
 
-    public LimitInfoV2 withLimitKey(String limitKey) {
-        this.limitKey = limitKey;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit_type")
     
+    private String limitType;
 
 
-    /**
-     * |参数名称：折扣限制，key的取值请参考表 ICouponUseLimitInfo的limit_key要求。| |参数约束及描述：折扣限制，key的取值请参考表 ICouponUseLimitInfo的limit_key要求。|
-     * @return limitKey
-     */
-    public String getLimitKey() {
-        return limitKey;
-    }
-
-    public void setLimitKey(String limitKey) {
-        this.limitKey = limitKey;
-    }
-
-    public LimitInfoV2 withLimitType(String limitType) {
-        this.limitType = limitType;
-        return this;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="promotion_plan_id")
     
-
-
-    /**
-     * |参数名称：限制类型。| |参数约束及描述：限制类型。|
-     * @return limitType
-     */
-    public String getLimitType() {
-        return limitType;
-    }
-
-    public void setLimitType(String limitType) {
-        this.limitType = limitType;
-    }
-
-    public LimitInfoV2 withPromotionPlanId(String promotionPlanId) {
-        this.promotionPlanId = promotionPlanId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：促销计划ID。| |参数约束及描述：促销计划ID。|
-     * @return promotionPlanId
-     */
-    public String getPromotionPlanId() {
-        return promotionPlanId;
-    }
-
-    public void setPromotionPlanId(String promotionPlanId) {
-        this.promotionPlanId = promotionPlanId;
-    }
+    private String promotionPlanId;
 
     public LimitInfoV2 withUseLimitiInfoId(String useLimitiInfoId) {
         this.useLimitiInfoId = useLimitiInfoId;
@@ -137,6 +77,26 @@ public class LimitInfoV2  {
 
     public void setUseLimitiInfoId(String useLimitiInfoId) {
         this.useLimitiInfoId = useLimitiInfoId;
+    }
+
+    public LimitInfoV2 withLimitKey(String limitKey) {
+        this.limitKey = limitKey;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：折扣限制，key的取值请参考表 ICouponUseLimitInfo的limit_key要求。| |参数约束及描述：折扣限制，key的取值请参考表 ICouponUseLimitInfo的limit_key要求。|
+     * @return limitKey
+     */
+    public String getLimitKey() {
+        return limitKey;
+    }
+
+    public void setLimitKey(String limitKey) {
+        this.limitKey = limitKey;
     }
 
     public LimitInfoV2 withValue1(String value1) {
@@ -198,6 +158,46 @@ public class LimitInfoV2  {
     public void setValueUnit(String valueUnit) {
         this.valueUnit = valueUnit;
     }
+
+    public LimitInfoV2 withLimitType(String limitType) {
+        this.limitType = limitType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：限制类型。| |参数约束及描述：限制类型。|
+     * @return limitType
+     */
+    public String getLimitType() {
+        return limitType;
+    }
+
+    public void setLimitType(String limitType) {
+        this.limitType = limitType;
+    }
+
+    public LimitInfoV2 withPromotionPlanId(String promotionPlanId) {
+        this.promotionPlanId = promotionPlanId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：促销计划ID。| |参数约束及描述：促销计划ID。|
+     * @return promotionPlanId
+     */
+    public String getPromotionPlanId() {
+        return promotionPlanId;
+    }
+
+    public void setPromotionPlanId(String promotionPlanId) {
+        this.promotionPlanId = promotionPlanId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -207,29 +207,29 @@ public class LimitInfoV2  {
             return false;
         }
         LimitInfoV2 limitInfoV2 = (LimitInfoV2) o;
-        return Objects.equals(this.limitKey, limitInfoV2.limitKey) &&
-            Objects.equals(this.limitType, limitInfoV2.limitType) &&
-            Objects.equals(this.promotionPlanId, limitInfoV2.promotionPlanId) &&
-            Objects.equals(this.useLimitiInfoId, limitInfoV2.useLimitiInfoId) &&
+        return Objects.equals(this.useLimitiInfoId, limitInfoV2.useLimitiInfoId) &&
+            Objects.equals(this.limitKey, limitInfoV2.limitKey) &&
             Objects.equals(this.value1, limitInfoV2.value1) &&
             Objects.equals(this.value2, limitInfoV2.value2) &&
-            Objects.equals(this.valueUnit, limitInfoV2.valueUnit);
+            Objects.equals(this.valueUnit, limitInfoV2.valueUnit) &&
+            Objects.equals(this.limitType, limitInfoV2.limitType) &&
+            Objects.equals(this.promotionPlanId, limitInfoV2.promotionPlanId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(limitKey, limitType, promotionPlanId, useLimitiInfoId, value1, value2, valueUnit);
+        return Objects.hash(useLimitiInfoId, limitKey, value1, value2, valueUnit, limitType, promotionPlanId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LimitInfoV2 {\n");
-        sb.append("    limitKey: ").append(toIndentedString(limitKey)).append("\n");
-        sb.append("    limitType: ").append(toIndentedString(limitType)).append("\n");
-        sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
         sb.append("    useLimitiInfoId: ").append(toIndentedString(useLimitiInfoId)).append("\n");
+        sb.append("    limitKey: ").append(toIndentedString(limitKey)).append("\n");
         sb.append("    value1: ").append(toIndentedString(value1)).append("\n");
         sb.append("    value2: ").append(toIndentedString(value2)).append("\n");
         sb.append("    valueUnit: ").append(toIndentedString(valueUnit)).append("\n");
+        sb.append("    limitType: ").append(toIndentedString(limitType)).append("\n");
+        sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

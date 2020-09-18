@@ -22,6 +22,12 @@ public class AdjustCouponQuotasReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="quota_id")
+    
+    private String quotaId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="indirect_partner_ids")
     
     private List<String> indirectPartnerIds = new ArrayList<>();
@@ -32,11 +38,25 @@ public class AdjustCouponQuotasReq  {
     
     private BigDecimal quotaAmount = null;
 
+    public AdjustCouponQuotasReq withQuotaId(String quotaId) {
+        this.quotaId = quotaId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_id")
     
-    private String quotaId;
+
+
+    /**
+     * |参数名称：优惠券额度ID。| |参数约束及描述：优惠券额度ID。|
+     * @return quotaId
+     */
+    public String getQuotaId() {
+        return quotaId;
+    }
+
+    public void setQuotaId(String quotaId) {
+        this.quotaId = quotaId;
+    }
 
     public AdjustCouponQuotasReq withIndirectPartnerIds(List<String> indirectPartnerIds) {
         this.indirectPartnerIds = indirectPartnerIds;
@@ -90,26 +110,6 @@ public class AdjustCouponQuotasReq  {
     public void setQuotaAmount(BigDecimal quotaAmount) {
         this.quotaAmount = quotaAmount;
     }
-
-    public AdjustCouponQuotasReq withQuotaId(String quotaId) {
-        this.quotaId = quotaId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：优惠券额度ID。| |参数约束及描述：优惠券额度ID。|
-     * @return quotaId
-     */
-    public String getQuotaId() {
-        return quotaId;
-    }
-
-    public void setQuotaId(String quotaId) {
-        this.quotaId = quotaId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -119,21 +119,21 @@ public class AdjustCouponQuotasReq  {
             return false;
         }
         AdjustCouponQuotasReq adjustCouponQuotasReq = (AdjustCouponQuotasReq) o;
-        return Objects.equals(this.indirectPartnerIds, adjustCouponQuotasReq.indirectPartnerIds) &&
-            Objects.equals(this.quotaAmount, adjustCouponQuotasReq.quotaAmount) &&
-            Objects.equals(this.quotaId, adjustCouponQuotasReq.quotaId);
+        return Objects.equals(this.quotaId, adjustCouponQuotasReq.quotaId) &&
+            Objects.equals(this.indirectPartnerIds, adjustCouponQuotasReq.indirectPartnerIds) &&
+            Objects.equals(this.quotaAmount, adjustCouponQuotasReq.quotaAmount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(indirectPartnerIds, quotaAmount, quotaId);
+        return Objects.hash(quotaId, indirectPartnerIds, quotaAmount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AdjustCouponQuotasReq {\n");
+        sb.append("    quotaId: ").append(toIndentedString(quotaId)).append("\n");
         sb.append("    indirectPartnerIds: ").append(toIndentedString(indirectPartnerIds)).append("\n");
         sb.append("    quotaAmount: ").append(toIndentedString(quotaAmount)).append("\n");
-        sb.append("    quotaId: ").append(toIndentedString(quotaId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -25,12 +25,6 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_website_rating_result")
     
     private OfficialWebsiteRatingResult officialWebsiteRatingResult = null;
@@ -41,25 +35,11 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
     
     private List<OptionalDiscountRatingResult> optionalDiscountRatingResults = null;
     
-    public ListRateOnPeriodDetailResponse withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currency")
     
-
-
-    /**
-     * |参数名称：币种| |参数约束及描述：比如CNY|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
+    private String currency;
 
     public ListRateOnPeriodDetailResponse withOfficialWebsiteRatingResult(OfficialWebsiteRatingResult officialWebsiteRatingResult) {
         this.officialWebsiteRatingResult = officialWebsiteRatingResult;
@@ -121,6 +101,26 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
     public void setOptionalDiscountRatingResults(List<OptionalDiscountRatingResult> optionalDiscountRatingResults) {
         this.optionalDiscountRatingResults = optionalDiscountRatingResults;
     }
+
+    public ListRateOnPeriodDetailResponse withCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：币种| |参数约束及描述：比如CNY|
+     * @return currency
+     */
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -130,21 +130,21 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
             return false;
         }
         ListRateOnPeriodDetailResponse listRateOnPeriodDetailResponse = (ListRateOnPeriodDetailResponse) o;
-        return Objects.equals(this.currency, listRateOnPeriodDetailResponse.currency) &&
-            Objects.equals(this.officialWebsiteRatingResult, listRateOnPeriodDetailResponse.officialWebsiteRatingResult) &&
-            Objects.equals(this.optionalDiscountRatingResults, listRateOnPeriodDetailResponse.optionalDiscountRatingResults);
+        return Objects.equals(this.officialWebsiteRatingResult, listRateOnPeriodDetailResponse.officialWebsiteRatingResult) &&
+            Objects.equals(this.optionalDiscountRatingResults, listRateOnPeriodDetailResponse.optionalDiscountRatingResults) &&
+            Objects.equals(this.currency, listRateOnPeriodDetailResponse.currency);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(currency, officialWebsiteRatingResult, optionalDiscountRatingResults);
+        return Objects.hash(officialWebsiteRatingResult, optionalDiscountRatingResults, currency);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRateOnPeriodDetailResponse {\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    officialWebsiteRatingResult: ").append(toIndentedString(officialWebsiteRatingResult)).append("\n");
         sb.append("    optionalDiscountRatingResults: ").append(toIndentedString(optionalDiscountRatingResults)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,12 +31,6 @@ public class ShowCusotmerAccountBalancesResponse extends SdkResponse {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
     private BigDecimal debtAmount = null;
@@ -46,6 +40,12 @@ public class ShowCusotmerAccountBalancesResponse extends SdkResponse {
     @JsonProperty(value="measure_id")
     
     private Integer measureId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currency")
+    
+    private String currency;
 
     public ShowCusotmerAccountBalancesResponse withAccountBalances(List<AccountBalanceV3> accountBalances) {
         this.accountBalances = accountBalances;
@@ -79,26 +79,6 @@ public class ShowCusotmerAccountBalancesResponse extends SdkResponse {
 
     public void setAccountBalances(List<AccountBalanceV3> accountBalances) {
         this.accountBalances = accountBalances;
-    }
-
-    public ShowCusotmerAccountBalancesResponse withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：币种。CNY：人民币。USD：美元。| |参数约束及描述：币种。CNY：人民币。USD：美元。|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
     }
 
     public ShowCusotmerAccountBalancesResponse withDebtAmount(BigDecimal debtAmount) {
@@ -140,6 +120,26 @@ public class ShowCusotmerAccountBalancesResponse extends SdkResponse {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
+
+    public ShowCusotmerAccountBalancesResponse withCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：币种。CNY：人民币。USD：美元。| |参数约束及描述：币种。CNY：人民币。USD：美元。|
+     * @return currency
+     */
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -150,22 +150,22 @@ public class ShowCusotmerAccountBalancesResponse extends SdkResponse {
         }
         ShowCusotmerAccountBalancesResponse showCusotmerAccountBalancesResponse = (ShowCusotmerAccountBalancesResponse) o;
         return Objects.equals(this.accountBalances, showCusotmerAccountBalancesResponse.accountBalances) &&
-            Objects.equals(this.currency, showCusotmerAccountBalancesResponse.currency) &&
             Objects.equals(this.debtAmount, showCusotmerAccountBalancesResponse.debtAmount) &&
-            Objects.equals(this.measureId, showCusotmerAccountBalancesResponse.measureId);
+            Objects.equals(this.measureId, showCusotmerAccountBalancesResponse.measureId) &&
+            Objects.equals(this.currency, showCusotmerAccountBalancesResponse.currency);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accountBalances, currency, debtAmount, measureId);
+        return Objects.hash(accountBalances, debtAmount, measureId, currency);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCusotmerAccountBalancesResponse {\n");
         sb.append("    accountBalances: ").append(toIndentedString(accountBalances)).append("\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    debtAmount: ").append(toIndentedString(debtAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("}");
         return sb.toString();
     }

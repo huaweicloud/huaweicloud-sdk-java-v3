@@ -37,12 +37,6 @@ public class AccountBalanceV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credit_amount")
-    
-    private Double creditAmount;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="currency")
     
     private String currency = "CNY";
@@ -52,6 +46,12 @@ public class AccountBalanceV2  {
     @JsonProperty(value="designated_amount")
     
     private Double designatedAmount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="credit_amount")
+    
+    private Double creditAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -125,26 +125,6 @@ public class AccountBalanceV2  {
         this.amount = amount;
     }
 
-    public AccountBalanceV2 withCreditAmount(Double creditAmount) {
-        this.creditAmount = creditAmount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：总信用额度。只有账户类型是2:信用的时候才有该字段| |参数的约束及描述：总信用额度。只有账户类型是2:信用的时候才有该字段|
-     * @return creditAmount
-     */
-    public Double getCreditAmount() {
-        return creditAmount;
-    }
-
-    public void setCreditAmount(Double creditAmount) {
-        this.creditAmount = creditAmount;
-    }
-
     public AccountBalanceV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
@@ -183,6 +163,26 @@ public class AccountBalanceV2  {
 
     public void setDesignatedAmount(Double designatedAmount) {
         this.designatedAmount = designatedAmount;
+    }
+
+    public AccountBalanceV2 withCreditAmount(Double creditAmount) {
+        this.creditAmount = creditAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：总信用额度。只有账户类型是2:信用的时候才有该字段| |参数的约束及描述：总信用额度。只有账户类型是2:信用的时候才有该字段|
+     * @return creditAmount
+     */
+    public Double getCreditAmount() {
+        return creditAmount;
+    }
+
+    public void setCreditAmount(Double creditAmount) {
+        this.creditAmount = creditAmount;
     }
 
     public AccountBalanceV2 withMeasureId(Integer measureId) {
@@ -236,15 +236,15 @@ public class AccountBalanceV2  {
         return Objects.equals(this.accountId, accountBalanceV2.accountId) &&
             Objects.equals(this.accountType, accountBalanceV2.accountType) &&
             Objects.equals(this.amount, accountBalanceV2.amount) &&
-            Objects.equals(this.creditAmount, accountBalanceV2.creditAmount) &&
             Objects.equals(this.currency, accountBalanceV2.currency) &&
             Objects.equals(this.designatedAmount, accountBalanceV2.designatedAmount) &&
+            Objects.equals(this.creditAmount, accountBalanceV2.creditAmount) &&
             Objects.equals(this.measureId, accountBalanceV2.measureId) &&
             Objects.equals(this.memo, accountBalanceV2.memo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, accountType, amount, creditAmount, currency, designatedAmount, measureId, memo);
+        return Objects.hash(accountId, accountType, amount, currency, designatedAmount, creditAmount, measureId, memo);
     }
     @Override
     public String toString() {
@@ -253,9 +253,9 @@ public class AccountBalanceV2  {
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
         sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    designatedAmount: ").append(toIndentedString(designatedAmount)).append("\n");
+        sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    memo: ").append(toIndentedString(memo)).append("\n");
         sb.append("}");

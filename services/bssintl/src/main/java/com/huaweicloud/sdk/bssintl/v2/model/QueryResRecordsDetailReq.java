@@ -19,15 +19,9 @@ public class QueryResRecordsDetailReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_type")
+    @JsonProperty(value="cycle")
     
-    private Integer billType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
-    private Integer chargeMode;
+    private String cycle;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,33 +31,9 @@ public class QueryResRecordsDetailReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cycle")
+    @JsonProperty(value="resource_type")
     
-    private String cycle;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
-    private String enterpriseProjectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="include_zero_record")
-    
-    private Boolean includeZeroRecord;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit = 10;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Integer offset = 0;
+    private String resourceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,12 +49,54 @@ public class QueryResRecordsDetailReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
+    @JsonProperty(value="charge_mode")
     
-    private String resourceType;
+    private Integer chargeMode;
 
-    public QueryResRecordsDetailReq withBillType(Integer billType) {
-        this.billType = billType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bill_type")
+    
+    private Integer billType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="include_zero_record")
+    
+    private Boolean includeZeroRecord;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Integer offset = 0;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit = 10;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="method")
+    
+    private String method;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sub_customer_id")
+    
+    private String subCustomerId;
+
+    public QueryResRecordsDetailReq withCycle(String cycle) {
+        this.cycle = cycle;
         return this;
     }
 
@@ -92,39 +104,15 @@ public class QueryResRecordsDetailReq  {
 
 
     /**
-     * |参数名称：账单类型| |参数的约束及描述：该参数非必填，且只允许整数,1：消费-新购；2：消费-续订；3：消费-变更；4：退款-退订；5：消费-使用；8：消费-自动续订；9：调账-补偿；12：消费-按时计费；13：消费-退订手续费；14：消费-服务支持计划月末扣费；16：调账-扣费|
-     * minimum: 1
-     * maximum: 16
-     * @return billType
+     * |参数名称：消费月份| |参数的约束及描述：该参数必填，最大长度：8，比如2018-12|
+     * @return cycle
      */
-    public Integer getBillType() {
-        return billType;
+    public String getCycle() {
+        return cycle;
     }
 
-    public void setBillType(Integer billType) {
-        this.billType = billType;
-    }
-
-    public QueryResRecordsDetailReq withChargeMode(Integer chargeMode) {
-        this.chargeMode = chargeMode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：支付方式| |参数的约束及描述：该参数非必填，且只允许整数,1 : 包周期；3: 按需。10: 预留实例|
-     * minimum: 1
-     * maximum: 10
-     * @return chargeMode
-     */
-    public Integer getChargeMode() {
-        return chargeMode;
-    }
-
-    public void setChargeMode(Integer chargeMode) {
-        this.chargeMode = chargeMode;
+    public void setCycle(String cycle) {
+        this.cycle = cycle;
     }
 
     public QueryResRecordsDetailReq withCloudServiceType(String cloudServiceType) {
@@ -147,8 +135,8 @@ public class QueryResRecordsDetailReq  {
         this.cloudServiceType = cloudServiceType;
     }
 
-    public QueryResRecordsDetailReq withCycle(String cycle) {
-        this.cycle = cycle;
+    public QueryResRecordsDetailReq withResourceType(String resourceType) {
+        this.resourceType = resourceType;
         return this;
     }
 
@@ -156,99 +144,15 @@ public class QueryResRecordsDetailReq  {
 
 
     /**
-     * |参数名称：消费月份| |参数的约束及描述：该参数必填，最大长度：8，比如2018-12|
-     * @return cycle
+     * |参数名称：资源类型编码| |参数的约束及描述：该参数非必填，最大长度：64，且只允许字符串，例如ECS的VM为“hws.resource.type.vm”|
+     * @return resourceType
      */
-    public String getCycle() {
-        return cycle;
+    public String getResourceType() {
+        return resourceType;
     }
 
-    public void setCycle(String cycle) {
-        this.cycle = cycle;
-    }
-
-    public QueryResRecordsDetailReq withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：企业项目ID| |参数的约束及描述：该参数非必，最大长度：64，且只允许字符串|
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public QueryResRecordsDetailReq withIncludeZeroRecord(Boolean includeZeroRecord) {
-        this.includeZeroRecord = includeZeroRecord;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：返回是否包含应付金额为0的记录| |参数的约束及描述：该参数非必填，且只允许布尔型，true: 包含；false: 不包含|
-     * @return includeZeroRecord
-     */
-    public Boolean getIncludeZeroRecord() {
-        return includeZeroRecord;
-    }
-
-    public void setIncludeZeroRecord(Boolean includeZeroRecord) {
-        this.includeZeroRecord = includeZeroRecord;
-    }
-
-    public QueryResRecordsDetailReq withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：页面大小| |参数的约束及描述：该参数非必填，且只允许1-100的数字，默认10|
-     * minimum: 1
-     * maximum: 1000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public QueryResRecordsDetailReq withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：偏移量| |参数的约束及描述：该参数非必填，且只允许数字，默认为1|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
     }
 
     public QueryResRecordsDetailReq withRegion(String region) {
@@ -291,8 +195,8 @@ public class QueryResRecordsDetailReq  {
         this.resInstanceId = resInstanceId;
     }
 
-    public QueryResRecordsDetailReq withResourceType(String resourceType) {
-        this.resourceType = resourceType;
+    public QueryResRecordsDetailReq withChargeMode(Integer chargeMode) {
+        this.chargeMode = chargeMode;
         return this;
     }
 
@@ -300,15 +204,163 @@ public class QueryResRecordsDetailReq  {
 
 
     /**
-     * |参数名称：资源类型编码| |参数的约束及描述：该参数非必填，最大长度：64，且只允许字符串，例如ECS的VM为“hws.resource.type.vm”|
-     * @return resourceType
+     * |参数名称：支付方式| |参数的约束及描述：该参数非必填，且只允许整数,1 : 包周期；3: 按需。10: 预留实例|
+     * minimum: 1
+     * maximum: 10
+     * @return chargeMode
      */
-    public String getResourceType() {
-        return resourceType;
+    public Integer getChargeMode() {
+        return chargeMode;
     }
 
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
+    public void setChargeMode(Integer chargeMode) {
+        this.chargeMode = chargeMode;
+    }
+
+    public QueryResRecordsDetailReq withBillType(Integer billType) {
+        this.billType = billType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：账单类型| |参数的约束及描述：该参数非必填，且只允许整数,1：消费-新购；2：消费-续订；3：消费-变更；4：退款-退订；5：消费-使用；8：消费-自动续订；9：调账-补偿；12：消费-按时计费；13：消费-退订手续费；14：消费-服务支持计划月末扣费；16：调账-扣费|
+     * minimum: 1
+     * maximum: 16
+     * @return billType
+     */
+    public Integer getBillType() {
+        return billType;
+    }
+
+    public void setBillType(Integer billType) {
+        this.billType = billType;
+    }
+
+    public QueryResRecordsDetailReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：企业项目ID| |参数的约束及描述：该参数非必，最大长度：64，且只允许字符串|
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public QueryResRecordsDetailReq withIncludeZeroRecord(Boolean includeZeroRecord) {
+        this.includeZeroRecord = includeZeroRecord;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：返回是否包含应付金额为0的记录| |参数的约束及描述：该参数非必填，且只允许布尔型，true: 包含；false: 不包含|
+     * @return includeZeroRecord
+     */
+    public Boolean getIncludeZeroRecord() {
+        return includeZeroRecord;
+    }
+
+    public void setIncludeZeroRecord(Boolean includeZeroRecord) {
+        this.includeZeroRecord = includeZeroRecord;
+    }
+
+    public QueryResRecordsDetailReq withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：偏移量| |参数的约束及描述：该参数非必填，且只允许数字，默认为1|
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public QueryResRecordsDetailReq withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：页面大小| |参数的约束及描述：该参数非必填，且只允许1-100的数字，默认10|
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public QueryResRecordsDetailReq withMethod(String method) {
+        this.method = method;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：查询方式。oneself：自身sub_customer: 企业子客户all:自己和企业子客户| |参数的约束及描述：oneself：自身sub_customer: 企业子客户all:自己和企业子客户|
+     * @return method
+     */
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public QueryResRecordsDetailReq withSubCustomerId(String subCustomerId) {
+        this.subCustomerId = subCustomerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：企业子账号ID。| |参数的约束及描述：注意：method不等于sub_customer的时候，该参数无效，如果method等于sub_customer，该参数不能为空|
+     * @return subCustomerId
+     */
+    public String getSubCustomerId() {
+        return subCustomerId;
+    }
+
+    public void setSubCustomerId(String subCustomerId) {
+        this.subCustomerId = subCustomerId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -319,37 +371,41 @@ public class QueryResRecordsDetailReq  {
             return false;
         }
         QueryResRecordsDetailReq queryResRecordsDetailReq = (QueryResRecordsDetailReq) o;
-        return Objects.equals(this.billType, queryResRecordsDetailReq.billType) &&
-            Objects.equals(this.chargeMode, queryResRecordsDetailReq.chargeMode) &&
+        return Objects.equals(this.cycle, queryResRecordsDetailReq.cycle) &&
             Objects.equals(this.cloudServiceType, queryResRecordsDetailReq.cloudServiceType) &&
-            Objects.equals(this.cycle, queryResRecordsDetailReq.cycle) &&
-            Objects.equals(this.enterpriseProjectId, queryResRecordsDetailReq.enterpriseProjectId) &&
-            Objects.equals(this.includeZeroRecord, queryResRecordsDetailReq.includeZeroRecord) &&
-            Objects.equals(this.limit, queryResRecordsDetailReq.limit) &&
-            Objects.equals(this.offset, queryResRecordsDetailReq.offset) &&
+            Objects.equals(this.resourceType, queryResRecordsDetailReq.resourceType) &&
             Objects.equals(this.region, queryResRecordsDetailReq.region) &&
             Objects.equals(this.resInstanceId, queryResRecordsDetailReq.resInstanceId) &&
-            Objects.equals(this.resourceType, queryResRecordsDetailReq.resourceType);
+            Objects.equals(this.chargeMode, queryResRecordsDetailReq.chargeMode) &&
+            Objects.equals(this.billType, queryResRecordsDetailReq.billType) &&
+            Objects.equals(this.enterpriseProjectId, queryResRecordsDetailReq.enterpriseProjectId) &&
+            Objects.equals(this.includeZeroRecord, queryResRecordsDetailReq.includeZeroRecord) &&
+            Objects.equals(this.offset, queryResRecordsDetailReq.offset) &&
+            Objects.equals(this.limit, queryResRecordsDetailReq.limit) &&
+            Objects.equals(this.method, queryResRecordsDetailReq.method) &&
+            Objects.equals(this.subCustomerId, queryResRecordsDetailReq.subCustomerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(billType, chargeMode, cloudServiceType, cycle, enterpriseProjectId, includeZeroRecord, limit, offset, region, resInstanceId, resourceType);
+        return Objects.hash(cycle, cloudServiceType, resourceType, region, resInstanceId, chargeMode, billType, enterpriseProjectId, includeZeroRecord, offset, limit, method, subCustomerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QueryResRecordsDetailReq {\n");
-        sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
-        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
-        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    cycle: ").append(toIndentedString(cycle)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    includeZeroRecord: ").append(toIndentedString(includeZeroRecord)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    resInstanceId: ").append(toIndentedString(resInstanceId)).append("\n");
-        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    includeZeroRecord: ").append(toIndentedString(includeZeroRecord)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    method: ").append(toIndentedString(method)).append("\n");
+        sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,12 +24,6 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="fee_records")
     
     private List<ResFeeRecordV2> feeRecords = null;
@@ -40,25 +34,11 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListCustomerselfResourceRecordsResponse withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currency")
     
-
-
-    /**
-     * |参数名称：货币单位代码：CNY：人民币USD：美元| |参数约束及描述：货币单位代码：CNY：人民币USD：美元|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
+    private String currency;
 
     public ListCustomerselfResourceRecordsResponse withFeeRecords(List<ResFeeRecordV2> feeRecords) {
         this.feeRecords = feeRecords;
@@ -113,6 +93,26 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    public ListCustomerselfResourceRecordsResponse withCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：货币单位代码：CNY：人民币USD：美元| |参数约束及描述：货币单位代码：CNY：人民币USD：美元|
+     * @return currency
+     */
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -122,21 +122,21 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
             return false;
         }
         ListCustomerselfResourceRecordsResponse listCustomerselfResourceRecordsResponse = (ListCustomerselfResourceRecordsResponse) o;
-        return Objects.equals(this.currency, listCustomerselfResourceRecordsResponse.currency) &&
-            Objects.equals(this.feeRecords, listCustomerselfResourceRecordsResponse.feeRecords) &&
-            Objects.equals(this.totalCount, listCustomerselfResourceRecordsResponse.totalCount);
+        return Objects.equals(this.feeRecords, listCustomerselfResourceRecordsResponse.feeRecords) &&
+            Objects.equals(this.totalCount, listCustomerselfResourceRecordsResponse.totalCount) &&
+            Objects.equals(this.currency, listCustomerselfResourceRecordsResponse.currency);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(currency, feeRecords, totalCount);
+        return Objects.hash(feeRecords, totalCount, currency);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCustomerselfResourceRecordsResponse {\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    feeRecords: ").append(toIndentedString(feeRecords)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("}");
         return sb.toString();
     }

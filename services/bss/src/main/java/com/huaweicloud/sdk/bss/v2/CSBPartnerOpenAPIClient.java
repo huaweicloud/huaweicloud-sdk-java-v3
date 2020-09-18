@@ -4,15 +4,15 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.bss.v2.model.*;
 
-public class BssClient {
+public class CSBPartnerOpenAPIClient {
     protected HcClient hcClient;
 
-    public BssClient(HcClient hcClient) {
+    public CSBPartnerOpenAPIClient(HcClient hcClient) {
         this.hcClient = hcClient;
     }
 
-    public static ClientBuilder<BssClient> newBuilder() {
-        return new ClientBuilder<>(BssClient::new, "GlobalCredentials");
+    public static ClientBuilder<CSBPartnerOpenAPIClient> newBuilder() {
+        return new ClientBuilder<>(CSBPartnerOpenAPIClient::new, "GlobalCredentials");
     }
 
 
@@ -24,7 +24,7 @@ public class BssClient {
      * @return AutoRenewalResourcesResponse
     */
     public AutoRenewalResourcesResponse autoRenewalResources(AutoRenewalResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.autoRenewalResources);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.autoRenewalResources);
     }
 
     /**
@@ -35,7 +35,7 @@ public class BssClient {
      * @return BatchSetSubCustomerDiscountResponse
     */
     public BatchSetSubCustomerDiscountResponse batchSetSubCustomerDiscount(BatchSetSubCustomerDiscountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.batchSetSubCustomerDiscount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.batchSetSubCustomerDiscount);
     }
 
     /**
@@ -46,7 +46,7 @@ public class BssClient {
      * @return CancelAutoRenewalResourcesResponse
     */
     public CancelAutoRenewalResourcesResponse cancelAutoRenewalResources(CancelAutoRenewalResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.cancelAutoRenewalResources);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.cancelAutoRenewalResources);
     }
 
     /**
@@ -57,7 +57,7 @@ public class BssClient {
      * @return CancelCustomerOrderResponse
     */
     public CancelCustomerOrderResponse cancelCustomerOrder(CancelCustomerOrderRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.cancelCustomerOrder);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.cancelCustomerOrder);
     }
 
     /**
@@ -68,7 +68,7 @@ public class BssClient {
      * @return CancelResourcesSubscriptionResponse
     */
     public CancelResourcesSubscriptionResponse cancelResourcesSubscription(CancelResourcesSubscriptionRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.cancelResourcesSubscription);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.cancelResourcesSubscription);
     }
 
     /**
@@ -79,7 +79,7 @@ public class BssClient {
      * @return ChangeEnterpriseRealnameAuthenticationResponse
     */
     public ChangeEnterpriseRealnameAuthenticationResponse changeEnterpriseRealnameAuthentication(ChangeEnterpriseRealnameAuthenticationRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.changeEnterpriseRealnameAuthentication);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.changeEnterpriseRealnameAuthentication);
     }
 
     /**
@@ -90,7 +90,18 @@ public class BssClient {
      * @return CheckUserIdentityResponse
     */
     public CheckUserIdentityResponse checkUserIdentity(CheckUserIdentityRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.checkUserIdentity);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.checkUserIdentity);
+    }
+
+    /**
+     * 开通企业项目
+     * 功能描述：客户开通自身的企业项目功能
+     *
+     * @param CreateEnterpriseProjectAuthRequest 请求对象
+     * @return CreateEnterpriseProjectAuthResponse
+    */
+    public CreateEnterpriseProjectAuthResponse createEnterpriseProjectAuth(CreateEnterpriseProjectAuthRequest request) {
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.createEnterpriseProjectAuth);
     }
 
     /**
@@ -101,7 +112,7 @@ public class BssClient {
      * @return CreateEnterpriseRealnameAuthenticationResponse
     */
     public CreateEnterpriseRealnameAuthenticationResponse createEnterpriseRealnameAuthentication(CreateEnterpriseRealnameAuthenticationRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.createEnterpriseRealnameAuthentication);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.createEnterpriseRealnameAuthentication);
     }
 
     /**
@@ -112,7 +123,7 @@ public class BssClient {
      * @return CreatePartnerCouponsResponse
     */
     public CreatePartnerCouponsResponse createPartnerCoupons(CreatePartnerCouponsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.createPartnerCoupons);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.createPartnerCoupons);
     }
 
     /**
@@ -123,7 +134,7 @@ public class BssClient {
      * @return CreatePersonalRealnameAuthResponse
     */
     public CreatePersonalRealnameAuthResponse createPersonalRealnameAuth(CreatePersonalRealnameAuthRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.createPersonalRealnameAuth);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.createPersonalRealnameAuth);
     }
 
     /**
@@ -134,7 +145,7 @@ public class BssClient {
      * @return CreatePostalResponse
     */
     public CreatePostalResponse createPostal(CreatePostalRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.createPostal);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.createPostal);
     }
 
     /**
@@ -145,7 +156,7 @@ public class BssClient {
      * @return CreateSubCustomerResponse
     */
     public CreateSubCustomerResponse createSubCustomer(CreateSubCustomerRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.createSubCustomer);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.createSubCustomer);
     }
 
     /**
@@ -156,7 +167,7 @@ public class BssClient {
      * @return CreateSubEnterpriseAccountResponse
     */
     public CreateSubEnterpriseAccountResponse createSubEnterpriseAccount(CreateSubEnterpriseAccountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.createSubEnterpriseAccount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.createSubEnterpriseAccount);
     }
 
     /**
@@ -167,7 +178,7 @@ public class BssClient {
      * @return DeletePostalResponse
     */
     public DeletePostalResponse deletePostal(DeletePostalRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.deletePostal);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.deletePostal);
     }
 
     /**
@@ -178,7 +189,7 @@ public class BssClient {
      * @return ListCitiesResponse
     */
     public ListCitiesResponse listCities(ListCitiesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCities);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCities);
     }
 
     /**
@@ -189,7 +200,7 @@ public class BssClient {
      * @return ListCountiesResponse
     */
     public ListCountiesResponse listCounties(ListCountiesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCounties);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCounties);
     }
 
     /**
@@ -200,7 +211,7 @@ public class BssClient {
      * @return ListCouponQuotasRecordsResponse
     */
     public ListCouponQuotasRecordsResponse listCouponQuotasRecords(ListCouponQuotasRecordsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCouponQuotasRecords);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCouponQuotasRecords);
     }
 
     /**
@@ -211,7 +222,7 @@ public class BssClient {
      * @return ListCustomerOnDemandResourcesResponse
     */
     public ListCustomerOnDemandResourcesResponse listCustomerOnDemandResources(ListCustomerOnDemandResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCustomerOnDemandResources);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCustomerOnDemandResources);
     }
 
     /**
@@ -222,7 +233,7 @@ public class BssClient {
      * @return ListCustomerOrdersResponse
     */
     public ListCustomerOrdersResponse listCustomerOrders(ListCustomerOrdersRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCustomerOrders);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCustomerOrders);
     }
 
     /**
@@ -233,7 +244,7 @@ public class BssClient {
      * @return ListCustomersBalancesDetailResponse
     */
     public ListCustomersBalancesDetailResponse listCustomersBalancesDetail(ListCustomersBalancesDetailRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCustomersBalancesDetail);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCustomersBalancesDetail);
     }
 
     /**
@@ -244,7 +255,7 @@ public class BssClient {
      * @return ListCustomerselfResourceRecordDetailsResponse
     */
     public ListCustomerselfResourceRecordDetailsResponse listCustomerselfResourceRecordDetails(ListCustomerselfResourceRecordDetailsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCustomerselfResourceRecordDetails);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCustomerselfResourceRecordDetails);
     }
 
     /**
@@ -255,7 +266,18 @@ public class BssClient {
      * @return ListCustomerselfResourceRecordsResponse
     */
     public ListCustomerselfResourceRecordsResponse listCustomerselfResourceRecords(ListCustomerselfResourceRecordsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listCustomerselfResourceRecords);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listCustomerselfResourceRecords);
+    }
+
+    /**
+     * 查询企业子可回收余额
+     * 功能描述：查询企业子可回收余额
+     *
+     * @param ListEnterpriseMultiAccountRequest 请求对象
+     * @return ListEnterpriseMultiAccountResponse
+    */
+    public ListEnterpriseMultiAccountResponse listEnterpriseMultiAccount(ListEnterpriseMultiAccountRequest request) {
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listEnterpriseMultiAccount);
     }
 
     /**
@@ -266,7 +288,7 @@ public class BssClient {
      * @return ListIndirectPartnersResponse
     */
     public ListIndirectPartnersResponse listIndirectPartners(ListIndirectPartnersRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listIndirectPartners);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listIndirectPartners);
     }
 
     /**
@@ -277,7 +299,7 @@ public class BssClient {
      * @return ListIssuedCouponQuotasResponse
     */
     public ListIssuedCouponQuotasResponse listIssuedCouponQuotas(ListIssuedCouponQuotasRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listIssuedCouponQuotas);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listIssuedCouponQuotas);
     }
 
     /**
@@ -288,7 +310,7 @@ public class BssClient {
      * @return ListIssuedPartnerCouponsResponse
     */
     public ListIssuedPartnerCouponsResponse listIssuedPartnerCoupons(ListIssuedPartnerCouponsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listIssuedPartnerCoupons);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listIssuedPartnerCoupons);
     }
 
     /**
@@ -299,7 +321,7 @@ public class BssClient {
      * @return ListOnDemandResourceRatingsResponse
     */
     public ListOnDemandResourceRatingsResponse listOnDemandResourceRatings(ListOnDemandResourceRatingsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listOnDemandResourceRatings);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listOnDemandResourceRatings);
     }
 
     /**
@@ -310,7 +332,7 @@ public class BssClient {
      * @return ListOrderCouponsByOrderIdResponse
     */
     public ListOrderCouponsByOrderIdResponse listOrderCouponsByOrderId(ListOrderCouponsByOrderIdRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listOrderCouponsByOrderId);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listOrderCouponsByOrderId);
     }
 
     /**
@@ -321,7 +343,7 @@ public class BssClient {
      * @return ListPartnerAdjustRecordsResponse
     */
     public ListPartnerAdjustRecordsResponse listPartnerAdjustRecords(ListPartnerAdjustRecordsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listPartnerAdjustRecords);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listPartnerAdjustRecords);
     }
 
     /**
@@ -332,7 +354,7 @@ public class BssClient {
      * @return ListPartnerBalancesResponse
     */
     public ListPartnerBalancesResponse listPartnerBalances(ListPartnerBalancesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listPartnerBalances);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listPartnerBalances);
     }
 
     /**
@@ -343,7 +365,7 @@ public class BssClient {
      * @return ListPartnerCouponsRecordResponse
     */
     public ListPartnerCouponsRecordResponse listPartnerCouponsRecord(ListPartnerCouponsRecordRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listPartnerCouponsRecord);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listPartnerCouponsRecord);
     }
 
     /**
@@ -354,7 +376,7 @@ public class BssClient {
      * @return ListPartnerPayOrdersResponse
     */
     public ListPartnerPayOrdersResponse listPartnerPayOrders(ListPartnerPayOrdersRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listPartnerPayOrders);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listPartnerPayOrders);
     }
 
     /**
@@ -365,7 +387,18 @@ public class BssClient {
      * @return ListPayPerUseCustomerResourcesResponse
     */
     public ListPayPerUseCustomerResourcesResponse listPayPerUseCustomerResources(ListPayPerUseCustomerResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listPayPerUseCustomerResources);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listPayPerUseCustomerResources);
+    }
+
+    /**
+     * 查询邮寄地址
+     * 功能描述：查询邮寄地址
+     *
+     * @param ListPostalAddressRequest 请求对象
+     * @return ListPostalAddressResponse
+    */
+    public ListPostalAddressResponse listPostalAddress(ListPostalAddressRequest request) {
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listPostalAddress);
     }
 
     /**
@@ -376,7 +409,7 @@ public class BssClient {
      * @return ListProvincesResponse
     */
     public ListProvincesResponse listProvinces(ListProvincesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listProvinces);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listProvinces);
     }
 
     /**
@@ -387,7 +420,7 @@ public class BssClient {
      * @return ListQuotaCouponsResponse
     */
     public ListQuotaCouponsResponse listQuotaCoupons(ListQuotaCouponsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listQuotaCoupons);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listQuotaCoupons);
     }
 
     /**
@@ -398,7 +431,7 @@ public class BssClient {
      * @return ListRateOnPeriodDetailResponse
     */
     public ListRateOnPeriodDetailResponse listRateOnPeriodDetail(ListRateOnPeriodDetailRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listRateOnPeriodDetail);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listRateOnPeriodDetail);
     }
 
     /**
@@ -409,7 +442,7 @@ public class BssClient {
      * @return ListResourceUsagesResponse
     */
     public ListResourceUsagesResponse listResourceUsages(ListResourceUsagesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listResourceUsages);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listResourceUsages);
     }
 
     /**
@@ -420,7 +453,7 @@ public class BssClient {
      * @return ListSkuInventoriesResponse
     */
     public ListSkuInventoriesResponse listSkuInventories(ListSkuInventoriesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSkuInventories);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listSkuInventories);
     }
 
     /**
@@ -431,7 +464,7 @@ public class BssClient {
      * @return ListSubCustomerCouponsResponse
     */
     public ListSubCustomerCouponsResponse listSubCustomerCoupons(ListSubCustomerCouponsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomerCoupons);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listSubCustomerCoupons);
     }
 
     /**
@@ -442,7 +475,7 @@ public class BssClient {
      * @return ListSubCustomerDiscountsResponse
     */
     public ListSubCustomerDiscountsResponse listSubCustomerDiscounts(ListSubCustomerDiscountsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomerDiscounts);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listSubCustomerDiscounts);
     }
 
     /**
@@ -453,7 +486,7 @@ public class BssClient {
      * @return ListSubCustomerResFeeRecordsResponse
     */
     public ListSubCustomerResFeeRecordsResponse listSubCustomerResFeeRecords(ListSubCustomerResFeeRecordsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomerResFeeRecords);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listSubCustomerResFeeRecords);
     }
 
     /**
@@ -464,7 +497,7 @@ public class BssClient {
      * @return ListSubCustomersResponse
     */
     public ListSubCustomersResponse listSubCustomers(ListSubCustomersRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomers);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listSubCustomers);
     }
 
     /**
@@ -475,7 +508,7 @@ public class BssClient {
      * @return ListSubcustomerMonthlyBillsResponse
     */
     public ListSubcustomerMonthlyBillsResponse listSubcustomerMonthlyBills(ListSubcustomerMonthlyBillsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listSubcustomerMonthlyBills);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.listSubcustomerMonthlyBills);
     }
 
     /**
@@ -486,7 +519,7 @@ public class BssClient {
      * @return PayOrdersResponse
     */
     public PayOrdersResponse payOrders(PayOrdersRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.payOrders);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.payOrders);
     }
 
     /**
@@ -497,7 +530,7 @@ public class BssClient {
      * @return ReclaimCouponQuotasResponse
     */
     public ReclaimCouponQuotasResponse reclaimCouponQuotas(ReclaimCouponQuotasRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.reclaimCouponQuotas);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.reclaimCouponQuotas);
     }
 
     /**
@@ -508,7 +541,7 @@ public class BssClient {
      * @return ReclaimIndirectPartnerAccountResponse
     */
     public ReclaimIndirectPartnerAccountResponse reclaimIndirectPartnerAccount(ReclaimIndirectPartnerAccountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.reclaimIndirectPartnerAccount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.reclaimIndirectPartnerAccount);
     }
 
     /**
@@ -519,7 +552,7 @@ public class BssClient {
      * @return ReclaimPartnerCouponsResponse
     */
     public ReclaimPartnerCouponsResponse reclaimPartnerCoupons(ReclaimPartnerCouponsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.reclaimPartnerCoupons);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.reclaimPartnerCoupons);
     }
 
     /**
@@ -530,7 +563,7 @@ public class BssClient {
      * @return ReclaimSubEnterpriseAmountResponse
     */
     public ReclaimSubEnterpriseAmountResponse reclaimSubEnterpriseAmount(ReclaimSubEnterpriseAmountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.reclaimSubEnterpriseAmount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.reclaimSubEnterpriseAmount);
     }
 
     /**
@@ -541,7 +574,7 @@ public class BssClient {
      * @return ReclaimToPartnerAccountResponse
     */
     public ReclaimToPartnerAccountResponse reclaimToPartnerAccount(ReclaimToPartnerAccountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.reclaimToPartnerAccount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.reclaimToPartnerAccount);
     }
 
     /**
@@ -552,7 +585,7 @@ public class BssClient {
      * @return RenewalResourcesResponse
     */
     public RenewalResourcesResponse renewalResources(RenewalResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.renewalResources);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.renewalResources);
     }
 
     /**
@@ -563,7 +596,7 @@ public class BssClient {
      * @return SendSmsVerificationCodeResponse
     */
     public SendSmsVerificationCodeResponse sendSmsVerificationCode(SendSmsVerificationCodeRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.sendSmsVerificationCode);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.sendSmsVerificationCode);
     }
 
     /**
@@ -574,7 +607,7 @@ public class BssClient {
      * @return SendVerificationMessageCodeResponse
     */
     public SendVerificationMessageCodeResponse sendVerificationMessageCode(SendVerificationMessageCodeRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.sendVerificationMessageCode);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.sendVerificationMessageCode);
     }
 
     /**
@@ -585,7 +618,7 @@ public class BssClient {
      * @return ShowCusotmerAccountBalancesResponse
     */
     public ShowCusotmerAccountBalancesResponse showCusotmerAccountBalances(ShowCusotmerAccountBalancesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.showCusotmerAccountBalances);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.showCusotmerAccountBalances);
     }
 
     /**
@@ -596,7 +629,7 @@ public class BssClient {
      * @return ShowCustomerMonthlySumResponse
     */
     public ShowCustomerMonthlySumResponse showCustomerMonthlySum(ShowCustomerMonthlySumRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.showCustomerMonthlySum);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.showCustomerMonthlySum);
     }
 
     /**
@@ -607,7 +640,18 @@ public class BssClient {
      * @return ShowCustomerOrderDetailsResponse
     */
     public ShowCustomerOrderDetailsResponse showCustomerOrderDetails(ShowCustomerOrderDetailsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.showCustomerOrderDetails);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.showCustomerOrderDetails);
+    }
+
+    /**
+     * 查询企业主的可拨款余额
+     * 功能描述：查询企业主的可拨款余额
+     *
+     * @param ShowMultiAccountTransferAmountRequest 请求对象
+     * @return ShowMultiAccountTransferAmountResponse
+    */
+    public ShowMultiAccountTransferAmountResponse showMultiAccountTransferAmount(ShowMultiAccountTransferAmountRequest request) {
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.showMultiAccountTransferAmount);
     }
 
     /**
@@ -618,7 +662,7 @@ public class BssClient {
      * @return ShowRealnameAuthenticationReviewResultResponse
     */
     public ShowRealnameAuthenticationReviewResultResponse showRealnameAuthenticationReviewResult(ShowRealnameAuthenticationReviewResultRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.showRealnameAuthenticationReviewResult);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.showRealnameAuthenticationReviewResult);
     }
 
     /**
@@ -629,7 +673,7 @@ public class BssClient {
      * @return ShowRefundOrderDetailsResponse
     */
     public ShowRefundOrderDetailsResponse showRefundOrderDetails(ShowRefundOrderDetailsRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.showRefundOrderDetails);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.showRefundOrderDetails);
     }
 
     /**
@@ -640,7 +684,7 @@ public class BssClient {
      * @return UpdateCouponQuotasResponse
     */
     public UpdateCouponQuotasResponse updateCouponQuotas(UpdateCouponQuotasRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.updateCouponQuotas);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.updateCouponQuotas);
     }
 
     /**
@@ -651,7 +695,7 @@ public class BssClient {
      * @return UpdateCustomerAccountAmountResponse
     */
     public UpdateCustomerAccountAmountResponse updateCustomerAccountAmount(UpdateCustomerAccountAmountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.updateCustomerAccountAmount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.updateCustomerAccountAmount);
     }
 
     /**
@@ -662,7 +706,7 @@ public class BssClient {
      * @return UpdateIndirectPartnerAccountResponse
     */
     public UpdateIndirectPartnerAccountResponse updateIndirectPartnerAccount(UpdateIndirectPartnerAccountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.updateIndirectPartnerAccount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.updateIndirectPartnerAccount);
     }
 
     /**
@@ -673,7 +717,7 @@ public class BssClient {
      * @return UpdatePostalResponse
     */
     public UpdatePostalResponse updatePostal(UpdatePostalRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.updatePostal);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.updatePostal);
     }
 
     /**
@@ -684,7 +728,7 @@ public class BssClient {
      * @return UpdateSubEnterpriseAmountResponse
     */
     public UpdateSubEnterpriseAmountResponse updateSubEnterpriseAmount(UpdateSubEnterpriseAmountRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.updateSubEnterpriseAmount);
+        return hcClient.syncInvokeHttp(request, CSBPartnerOpenAPIMeta.updateSubEnterpriseAmount);
     }
 
 }

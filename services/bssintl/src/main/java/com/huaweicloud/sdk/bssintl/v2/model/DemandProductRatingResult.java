@@ -23,6 +23,18 @@ public class DemandProductRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="product_id")
+    
+    private String productId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
     private BigDecimal amount = null;
@@ -35,15 +47,9 @@ public class DemandProductRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_rating_results")
+    @JsonProperty(value="official_website_amount")
     
-    private List<DemandDiscountRatingResult> discountRatingResults = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
+    private BigDecimal officialWebsiteAmount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,15 +59,49 @@ public class DemandProductRatingResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_website_amount")
+    @JsonProperty(value="discount_rating_results")
     
-    private BigDecimal officialWebsiteAmount = null;
+    private List<DemandDiscountRatingResult> discountRatingResults = null;
+    
+    public DemandProductRatingResult withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
 
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
+    /**
+     * |参数名称：ID标识| |参数约束及描述：同一次询价中不能重复，用于标识返回询价结果和请求的映射关系|
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public DemandProductRatingResult withProductId(String productId) {
+        this.productId = productId;
+        return this;
+    }
+
     
-    private String productId;
+
+
+    /**
+     * |参数名称：寻到的产品ID| |参数约束及描述：寻到的产品ID|
+     * @return productId
+     */
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
 
     public DemandProductRatingResult withAmount(BigDecimal amount) {
         this.amount = amount;
@@ -103,6 +143,46 @@ public class DemandProductRatingResult  {
         this.discountAmount = discountAmount;
     }
 
+    public DemandProductRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+        this.officialWebsiteAmount = officialWebsiteAmount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：官网价| |参数约束及描述：官网价|
+     * @return officialWebsiteAmount
+     */
+    public BigDecimal getOfficialWebsiteAmount() {
+        return officialWebsiteAmount;
+    }
+
+    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+        this.officialWebsiteAmount = officialWebsiteAmount;
+    }
+
+    public DemandProductRatingResult withMeasureId(Integer measureId) {
+        this.measureId = measureId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：度量单位标识| |参数约束及描述：1：元|
+     * @return measureId
+     */
+    public Integer getMeasureId() {
+        return measureId;
+    }
+
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
+    }
+
     public DemandProductRatingResult withDiscountRatingResults(List<DemandDiscountRatingResult> discountRatingResults) {
         this.discountRatingResults = discountRatingResults;
         return this;
@@ -136,86 +216,6 @@ public class DemandProductRatingResult  {
     public void setDiscountRatingResults(List<DemandDiscountRatingResult> discountRatingResults) {
         this.discountRatingResults = discountRatingResults;
     }
-
-    public DemandProductRatingResult withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：ID标识| |参数约束及描述：同一次询价中不能重复，用于标识返回询价结果和请求的映射关系|
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public DemandProductRatingResult withMeasureId(Integer measureId) {
-        this.measureId = measureId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：度量单位标识| |参数约束及描述：1：元|
-     * @return measureId
-     */
-    public Integer getMeasureId() {
-        return measureId;
-    }
-
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
-    }
-
-    public DemandProductRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
-        this.officialWebsiteAmount = officialWebsiteAmount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：官网价| |参数约束及描述：官网价|
-     * @return officialWebsiteAmount
-     */
-    public BigDecimal getOfficialWebsiteAmount() {
-        return officialWebsiteAmount;
-    }
-
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
-        this.officialWebsiteAmount = officialWebsiteAmount;
-    }
-
-    public DemandProductRatingResult withProductId(String productId) {
-        this.productId = productId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：寻到的产品ID| |参数约束及描述：寻到的产品ID|
-     * @return productId
-     */
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -225,29 +225,29 @@ public class DemandProductRatingResult  {
             return false;
         }
         DemandProductRatingResult demandProductRatingResult = (DemandProductRatingResult) o;
-        return Objects.equals(this.amount, demandProductRatingResult.amount) &&
+        return Objects.equals(this.id, demandProductRatingResult.id) &&
+            Objects.equals(this.productId, demandProductRatingResult.productId) &&
+            Objects.equals(this.amount, demandProductRatingResult.amount) &&
             Objects.equals(this.discountAmount, demandProductRatingResult.discountAmount) &&
-            Objects.equals(this.discountRatingResults, demandProductRatingResult.discountRatingResults) &&
-            Objects.equals(this.id, demandProductRatingResult.id) &&
-            Objects.equals(this.measureId, demandProductRatingResult.measureId) &&
             Objects.equals(this.officialWebsiteAmount, demandProductRatingResult.officialWebsiteAmount) &&
-            Objects.equals(this.productId, demandProductRatingResult.productId);
+            Objects.equals(this.measureId, demandProductRatingResult.measureId) &&
+            Objects.equals(this.discountRatingResults, demandProductRatingResult.discountRatingResults);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, discountAmount, discountRatingResults, id, measureId, officialWebsiteAmount, productId);
+        return Objects.hash(id, productId, amount, discountAmount, officialWebsiteAmount, measureId, discountRatingResults);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DemandProductRatingResult {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
-        sb.append("    discountRatingResults: ").append(toIndentedString(discountRatingResults)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
-        sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    discountRatingResults: ").append(toIndentedString(discountRatingResults)).append("\n");
         sb.append("}");
         return sb.toString();
     }

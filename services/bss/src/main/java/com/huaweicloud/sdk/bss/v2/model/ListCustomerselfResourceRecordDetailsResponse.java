@@ -24,12 +24,6 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="monthly_records")
     
     private List<MonthlyBillRes> monthlyRecords = null;
@@ -40,25 +34,11 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListCustomerselfResourceRecordDetailsResponse withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currency")
     
-
-
-    /**
-     * |参数名称：货币单位代码| |参数的约束及描述：该参数非必填，最大长度3，CNY：人民币；USD：美元|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
+    private String currency;
 
     public ListCustomerselfResourceRecordDetailsResponse withMonthlyRecords(List<MonthlyBillRes> monthlyRecords) {
         this.monthlyRecords = monthlyRecords;
@@ -113,6 +93,26 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
+
+    public ListCustomerselfResourceRecordDetailsResponse withCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：货币单位代码| |参数的约束及描述：该参数非必填，最大长度3，CNY：人民币；USD：美元|
+     * @return currency
+     */
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -122,21 +122,21 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
             return false;
         }
         ListCustomerselfResourceRecordDetailsResponse listCustomerselfResourceRecordDetailsResponse = (ListCustomerselfResourceRecordDetailsResponse) o;
-        return Objects.equals(this.currency, listCustomerselfResourceRecordDetailsResponse.currency) &&
-            Objects.equals(this.monthlyRecords, listCustomerselfResourceRecordDetailsResponse.monthlyRecords) &&
-            Objects.equals(this.totalCount, listCustomerselfResourceRecordDetailsResponse.totalCount);
+        return Objects.equals(this.monthlyRecords, listCustomerselfResourceRecordDetailsResponse.monthlyRecords) &&
+            Objects.equals(this.totalCount, listCustomerselfResourceRecordDetailsResponse.totalCount) &&
+            Objects.equals(this.currency, listCustomerselfResourceRecordDetailsResponse.currency);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(currency, monthlyRecords, totalCount);
+        return Objects.hash(monthlyRecords, totalCount, currency);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCustomerselfResourceRecordDetailsResponse {\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    monthlyRecords: ").append(toIndentedString(monthlyRecords)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,9 +19,21 @@ public class RetrieveEnterpriseMultiAccountReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="customer_id")
+    
+    private String customerId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
     private String amount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="trans_id")
+    
+    private String transId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -31,21 +43,29 @@ public class RetrieveEnterpriseMultiAccountReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
-    private String customerId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expire_time")
     
     private String expireTime;
 
+    public RetrieveEnterpriseMultiAccountReq withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trans_id")
     
-    private String transId;
+
+
+    /**
+     * |参数名称：企业子账号的客户ID。| |参数约束及描述：企业子账号的客户ID。|
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
 
     public RetrieveEnterpriseMultiAccountReq withAmount(String amount) {
         this.amount = amount;
@@ -65,6 +85,26 @@ public class RetrieveEnterpriseMultiAccountReq  {
 
     public void setAmount(String amount) {
         this.amount = amount;
+    }
+
+    public RetrieveEnterpriseMultiAccountReq withTransId(String transId) {
+        this.transId = transId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：交易序列号，用于防止重复提交。如果接口调用方不传，则企业管理微服务后台生成。如果接口调用方传入，则请采用UUID保证全局唯一。| |参数约束及描述：交易序列号，用于防止重复提交。如果接口调用方不传，则企业管理微服务后台生成。如果接口调用方传入，则请采用UUID保证全局唯一。|
+     * @return transId
+     */
+    public String getTransId() {
+        return transId;
+    }
+
+    public void setTransId(String transId) {
+        this.transId = transId;
     }
 
     public RetrieveEnterpriseMultiAccountReq withBalanceType(String balanceType) {
@@ -87,26 +127,6 @@ public class RetrieveEnterpriseMultiAccountReq  {
         this.balanceType = balanceType;
     }
 
-    public RetrieveEnterpriseMultiAccountReq withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：企业子账号的客户ID。| |参数约束及描述：企业子账号的客户ID。|
-     * @return customerId
-     */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
     public RetrieveEnterpriseMultiAccountReq withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -126,26 +146,6 @@ public class RetrieveEnterpriseMultiAccountReq  {
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
     }
-
-    public RetrieveEnterpriseMultiAccountReq withTransId(String transId) {
-        this.transId = transId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：交易序列号，用于防止重复提交。如果接口调用方不传，则企业管理微服务后台生成。如果接口调用方传入，则请采用UUID保证全局唯一。| |参数约束及描述：交易序列号，用于防止重复提交。如果接口调用方不传，则企业管理微服务后台生成。如果接口调用方传入，则请采用UUID保证全局唯一。|
-     * @return transId
-     */
-    public String getTransId() {
-        return transId;
-    }
-
-    public void setTransId(String transId) {
-        this.transId = transId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -155,25 +155,25 @@ public class RetrieveEnterpriseMultiAccountReq  {
             return false;
         }
         RetrieveEnterpriseMultiAccountReq retrieveEnterpriseMultiAccountReq = (RetrieveEnterpriseMultiAccountReq) o;
-        return Objects.equals(this.amount, retrieveEnterpriseMultiAccountReq.amount) &&
+        return Objects.equals(this.customerId, retrieveEnterpriseMultiAccountReq.customerId) &&
+            Objects.equals(this.amount, retrieveEnterpriseMultiAccountReq.amount) &&
+            Objects.equals(this.transId, retrieveEnterpriseMultiAccountReq.transId) &&
             Objects.equals(this.balanceType, retrieveEnterpriseMultiAccountReq.balanceType) &&
-            Objects.equals(this.customerId, retrieveEnterpriseMultiAccountReq.customerId) &&
-            Objects.equals(this.expireTime, retrieveEnterpriseMultiAccountReq.expireTime) &&
-            Objects.equals(this.transId, retrieveEnterpriseMultiAccountReq.transId);
+            Objects.equals(this.expireTime, retrieveEnterpriseMultiAccountReq.expireTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, balanceType, customerId, expireTime, transId);
+        return Objects.hash(customerId, amount, transId, balanceType, expireTime);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RetrieveEnterpriseMultiAccountReq {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    balanceType: ").append(toIndentedString(balanceType)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
+        sb.append("    balanceType: ").append(toIndentedString(balanceType)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -20,18 +20,6 @@ public class CustomerBalancesV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
-    private BigDecimal amount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
-    private String currency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_id")
     
     private String customerId;
@@ -44,49 +32,21 @@ public class CustomerBalancesV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount")
+    
+    private BigDecimal amount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="currency")
+    
+    private String currency;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="measure_id")
     
     private Integer measureId;
-
-    public CustomerBalancesV2 withAmount(BigDecimal amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：客户可用总额度。| |参数约束及描述： 客户可用总额度。|
-     * @return amount
-     */
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public CustomerBalancesV2 withCurrency(String currency) {
-        this.currency = currency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：币种。| |参数约束及描述：币种。|
-     * @return currency
-     */
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
 
     public CustomerBalancesV2 withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -128,6 +88,46 @@ public class CustomerBalancesV2  {
         this.debtAmount = debtAmount;
     }
 
+    public CustomerBalancesV2 withAmount(BigDecimal amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：客户可用总额度。| |参数约束及描述： 客户可用总额度。|
+     * @return amount
+     */
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public CustomerBalancesV2 withCurrency(String currency) {
+        this.currency = currency;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：币种。| |参数约束及描述：币种。|
+     * @return currency
+     */
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
     public CustomerBalancesV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
@@ -156,24 +156,24 @@ public class CustomerBalancesV2  {
             return false;
         }
         CustomerBalancesV2 customerBalancesV2 = (CustomerBalancesV2) o;
-        return Objects.equals(this.amount, customerBalancesV2.amount) &&
-            Objects.equals(this.currency, customerBalancesV2.currency) &&
-            Objects.equals(this.customerId, customerBalancesV2.customerId) &&
+        return Objects.equals(this.customerId, customerBalancesV2.customerId) &&
             Objects.equals(this.debtAmount, customerBalancesV2.debtAmount) &&
+            Objects.equals(this.amount, customerBalancesV2.amount) &&
+            Objects.equals(this.currency, customerBalancesV2.currency) &&
             Objects.equals(this.measureId, customerBalancesV2.measureId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(amount, currency, customerId, debtAmount, measureId);
+        return Objects.hash(customerId, debtAmount, amount, currency, measureId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CustomerBalancesV2 {\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    debtAmount: ").append(toIndentedString(debtAmount)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+        sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -20,35 +20,15 @@ public class QuotaReclaim  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_balance")
-    
-    private BigDecimal quotaBalance = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_id")
     
     private String quotaId;
 
-    public QuotaReclaim withQuotaBalance(BigDecimal quotaBalance) {
-        this.quotaBalance = quotaBalance;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="quota_balance")
     
-
-
-    /**
-     * |参数名称：被回收的代金券的余额| |参数的约束及描述：被回收的代金券的余额|
-     * @return quotaBalance
-     */
-    public BigDecimal getQuotaBalance() {
-        return quotaBalance;
-    }
-
-    public void setQuotaBalance(BigDecimal quotaBalance) {
-        this.quotaBalance = quotaBalance;
-    }
+    private BigDecimal quotaBalance = null;
 
     public QuotaReclaim withQuotaId(String quotaId) {
         this.quotaId = quotaId;
@@ -69,6 +49,26 @@ public class QuotaReclaim  {
     public void setQuotaId(String quotaId) {
         this.quotaId = quotaId;
     }
+
+    public QuotaReclaim withQuotaBalance(BigDecimal quotaBalance) {
+        this.quotaBalance = quotaBalance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：被回收的代金券的余额| |参数的约束及描述：被回收的代金券的余额|
+     * @return quotaBalance
+     */
+    public BigDecimal getQuotaBalance() {
+        return quotaBalance;
+    }
+
+    public void setQuotaBalance(BigDecimal quotaBalance) {
+        this.quotaBalance = quotaBalance;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -78,19 +78,19 @@ public class QuotaReclaim  {
             return false;
         }
         QuotaReclaim quotaReclaim = (QuotaReclaim) o;
-        return Objects.equals(this.quotaBalance, quotaReclaim.quotaBalance) &&
-            Objects.equals(this.quotaId, quotaReclaim.quotaId);
+        return Objects.equals(this.quotaId, quotaReclaim.quotaId) &&
+            Objects.equals(this.quotaBalance, quotaReclaim.quotaBalance);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(quotaBalance, quotaId);
+        return Objects.hash(quotaId, quotaBalance);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class QuotaReclaim {\n");
-        sb.append("    quotaBalance: ").append(toIndentedString(quotaBalance)).append("\n");
         sb.append("    quotaId: ").append(toIndentedString(quotaId)).append("\n");
+        sb.append("    quotaBalance: ").append(toIndentedString(quotaBalance)).append("\n");
         sb.append("}");
         return sb.toString();
     }

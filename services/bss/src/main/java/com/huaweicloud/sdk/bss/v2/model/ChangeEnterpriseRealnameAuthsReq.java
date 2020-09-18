@@ -22,33 +22,9 @@ public class ChangeEnterpriseRealnameAuthsReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate_type")
-    
-    private Integer certificateType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="change_type")
-    
-    private Integer changeType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corp_name")
-    
-    private String corpName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="customer_id")
     
     private String customerId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_person")
-    
-    private EnterprisePersonNew enterprisePerson = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -58,15 +34,9 @@ public class ChangeEnterpriseRealnameAuthsReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reg_address")
+    @JsonProperty(value="certificate_type")
     
-    private String regAddress;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reg_country")
-    
-    private String regCountry;
+    private Integer certificateType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,9 +46,33 @@ public class ChangeEnterpriseRealnameAuthsReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="corp_name")
+    
+    private String corpName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="verified_number")
     
     private String verifiedNumber;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="reg_country")
+    
+    private String regCountry;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="reg_address")
+    
+    private String regAddress;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="change_type")
+    
+    private Integer changeType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,69 +80,11 @@ public class ChangeEnterpriseRealnameAuthsReq  {
     
     private String xaccountType;
 
-    public ChangeEnterpriseRealnameAuthsReq withCertificateType(Integer certificateType) {
-        this.certificateType = certificateType;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_person")
     
-
-
-    /**
-     * |参数名称：企业证件类型：0：企业营业执照1：事业单位法人证书2：社会团体法人登记证书3：行政执法主体资格证4：组织机构代码证99：其他| |参数的约束及描述：企业证件类型：0：企业营业执照1：事业单位法人证书2：社会团体法人登记证书3：行政执法主体资格证4：组织机构代码证99：其他|
-     * minimum: 0
-     * maximum: 99
-     * @return certificateType
-     */
-    public Integer getCertificateType() {
-        return certificateType;
-    }
-
-    public void setCertificateType(Integer certificateType) {
-        this.certificateType = certificateType;
-    }
-
-    public ChangeEnterpriseRealnameAuthsReq withChangeType(Integer changeType) {
-        this.changeType = changeType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：变更类型：1：个人变企业| |参数的约束及描述：变更类型：1：个人变企业|
-     * minimum: 1
-     * maximum: 1
-     * @return changeType
-     */
-    public Integer getChangeType() {
-        return changeType;
-    }
-
-    public void setChangeType(Integer changeType) {
-        this.changeType = changeType;
-    }
-
-    public ChangeEnterpriseRealnameAuthsReq withCorpName(String corpName) {
-        this.corpName = corpName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：单位名称。不能全是数字、特殊字符、空格。| |参数约束及描述：单位名称。不能全是数字、特殊字符、空格。|
-     * @return corpName
-     */
-    public String getCorpName() {
-        return corpName;
-    }
-
-    public void setCorpName(String corpName) {
-        this.corpName = corpName;
-    }
+    private EnterprisePersonNew enterprisePerson = null;
 
     public ChangeEnterpriseRealnameAuthsReq withCustomerId(String customerId) {
         this.customerId = customerId;
@@ -168,33 +104,6 @@ public class ChangeEnterpriseRealnameAuthsReq  {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
-    }
-
-    public ChangeEnterpriseRealnameAuthsReq withEnterprisePerson(EnterprisePersonNew enterprisePerson) {
-        this.enterprisePerson = enterprisePerson;
-        return this;
-    }
-
-    public ChangeEnterpriseRealnameAuthsReq withEnterprisePerson(Consumer<EnterprisePersonNew> enterprisePersonSetter) {
-        if(this.enterprisePerson == null ){
-            this.enterprisePerson = new EnterprisePersonNew();
-            enterprisePersonSetter.accept(this.enterprisePerson);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get enterprisePerson
-     * @return enterprisePerson
-     */
-    public EnterprisePersonNew getEnterprisePerson() {
-        return enterprisePerson;
-    }
-
-    public void setEnterprisePerson(EnterprisePersonNew enterprisePerson) {
-        this.enterprisePerson = enterprisePerson;
     }
 
     public ChangeEnterpriseRealnameAuthsReq withIdentifyType(Integer identifyType) {
@@ -219,8 +128,8 @@ public class ChangeEnterpriseRealnameAuthsReq  {
         this.identifyType = identifyType;
     }
 
-    public ChangeEnterpriseRealnameAuthsReq withRegAddress(String regAddress) {
-        this.regAddress = regAddress;
+    public ChangeEnterpriseRealnameAuthsReq withCertificateType(Integer certificateType) {
+        this.certificateType = certificateType;
         return this;
     }
 
@@ -228,35 +137,17 @@ public class ChangeEnterpriseRealnameAuthsReq  {
 
 
     /**
-     * |参数名称：实名认证企业注册地址。| |参数约束及描述：实名认证企业注册地址。|
-     * @return regAddress
+     * |参数名称：企业证件类型：0：企业营业执照1：事业单位法人证书2：社会团体法人登记证书3：行政执法主体资格证4：组织机构代码证99：其他| |参数的约束及描述：企业证件类型：0：企业营业执照1：事业单位法人证书2：社会团体法人登记证书3：行政执法主体资格证4：组织机构代码证99：其他|
+     * minimum: 0
+     * maximum: 99
+     * @return certificateType
      */
-    public String getRegAddress() {
-        return regAddress;
+    public Integer getCertificateType() {
+        return certificateType;
     }
 
-    public void setRegAddress(String regAddress) {
-        this.regAddress = regAddress;
-    }
-
-    public ChangeEnterpriseRealnameAuthsReq withRegCountry(String regCountry) {
-        this.regCountry = regCountry;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：实名认证填写的注册国家。国家的两位字母简码。例如：注册国家为“中国”请填写“CN”。| |参数约束及描述：实名认证填写的注册国家。国家的两位字母简码。例如：注册国家为“中国”请填写“CN”。|
-     * @return regCountry
-     */
-    public String getRegCountry() {
-        return regCountry;
-    }
-
-    public void setRegCountry(String regCountry) {
-        this.regCountry = regCountry;
+    public void setCertificateType(Integer certificateType) {
+        this.certificateType = certificateType;
     }
 
     public ChangeEnterpriseRealnameAuthsReq withVerifiedFileUrl(List<String> verifiedFileUrl) {
@@ -290,6 +181,26 @@ public class ChangeEnterpriseRealnameAuthsReq  {
         this.verifiedFileUrl = verifiedFileUrl;
     }
 
+    public ChangeEnterpriseRealnameAuthsReq withCorpName(String corpName) {
+        this.corpName = corpName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：单位名称。不能全是数字、特殊字符、空格。| |参数约束及描述：单位名称。不能全是数字、特殊字符、空格。|
+     * @return corpName
+     */
+    public String getCorpName() {
+        return corpName;
+    }
+
+    public void setCorpName(String corpName) {
+        this.corpName = corpName;
+    }
+
     public ChangeEnterpriseRealnameAuthsReq withVerifiedNumber(String verifiedNumber) {
         this.verifiedNumber = verifiedNumber;
         return this;
@@ -308,6 +219,68 @@ public class ChangeEnterpriseRealnameAuthsReq  {
 
     public void setVerifiedNumber(String verifiedNumber) {
         this.verifiedNumber = verifiedNumber;
+    }
+
+    public ChangeEnterpriseRealnameAuthsReq withRegCountry(String regCountry) {
+        this.regCountry = regCountry;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：实名认证填写的注册国家。国家的两位字母简码。例如：注册国家为“中国”请填写“CN”。| |参数约束及描述：实名认证填写的注册国家。国家的两位字母简码。例如：注册国家为“中国”请填写“CN”。|
+     * @return regCountry
+     */
+    public String getRegCountry() {
+        return regCountry;
+    }
+
+    public void setRegCountry(String regCountry) {
+        this.regCountry = regCountry;
+    }
+
+    public ChangeEnterpriseRealnameAuthsReq withRegAddress(String regAddress) {
+        this.regAddress = regAddress;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：实名认证企业注册地址。| |参数约束及描述：实名认证企业注册地址。|
+     * @return regAddress
+     */
+    public String getRegAddress() {
+        return regAddress;
+    }
+
+    public void setRegAddress(String regAddress) {
+        this.regAddress = regAddress;
+    }
+
+    public ChangeEnterpriseRealnameAuthsReq withChangeType(Integer changeType) {
+        this.changeType = changeType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：变更类型：1：个人变企业| |参数的约束及描述：变更类型：1：个人变企业|
+     * minimum: 1
+     * maximum: 1
+     * @return changeType
+     */
+    public Integer getChangeType() {
+        return changeType;
+    }
+
+    public void setChangeType(Integer changeType) {
+        this.changeType = changeType;
     }
 
     public ChangeEnterpriseRealnameAuthsReq withXaccountType(String xaccountType) {
@@ -329,6 +302,33 @@ public class ChangeEnterpriseRealnameAuthsReq  {
     public void setXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
     }
+
+    public ChangeEnterpriseRealnameAuthsReq withEnterprisePerson(EnterprisePersonNew enterprisePerson) {
+        this.enterprisePerson = enterprisePerson;
+        return this;
+    }
+
+    public ChangeEnterpriseRealnameAuthsReq withEnterprisePerson(Consumer<EnterprisePersonNew> enterprisePersonSetter) {
+        if(this.enterprisePerson == null ){
+            this.enterprisePerson = new EnterprisePersonNew();
+            enterprisePersonSetter.accept(this.enterprisePerson);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get enterprisePerson
+     * @return enterprisePerson
+     */
+    public EnterprisePersonNew getEnterprisePerson() {
+        return enterprisePerson;
+    }
+
+    public void setEnterprisePerson(EnterprisePersonNew enterprisePerson) {
+        this.enterprisePerson = enterprisePerson;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -338,37 +338,37 @@ public class ChangeEnterpriseRealnameAuthsReq  {
             return false;
         }
         ChangeEnterpriseRealnameAuthsReq changeEnterpriseRealnameAuthsReq = (ChangeEnterpriseRealnameAuthsReq) o;
-        return Objects.equals(this.certificateType, changeEnterpriseRealnameAuthsReq.certificateType) &&
-            Objects.equals(this.changeType, changeEnterpriseRealnameAuthsReq.changeType) &&
-            Objects.equals(this.corpName, changeEnterpriseRealnameAuthsReq.corpName) &&
-            Objects.equals(this.customerId, changeEnterpriseRealnameAuthsReq.customerId) &&
-            Objects.equals(this.enterprisePerson, changeEnterpriseRealnameAuthsReq.enterprisePerson) &&
+        return Objects.equals(this.customerId, changeEnterpriseRealnameAuthsReq.customerId) &&
             Objects.equals(this.identifyType, changeEnterpriseRealnameAuthsReq.identifyType) &&
-            Objects.equals(this.regAddress, changeEnterpriseRealnameAuthsReq.regAddress) &&
-            Objects.equals(this.regCountry, changeEnterpriseRealnameAuthsReq.regCountry) &&
+            Objects.equals(this.certificateType, changeEnterpriseRealnameAuthsReq.certificateType) &&
             Objects.equals(this.verifiedFileUrl, changeEnterpriseRealnameAuthsReq.verifiedFileUrl) &&
+            Objects.equals(this.corpName, changeEnterpriseRealnameAuthsReq.corpName) &&
             Objects.equals(this.verifiedNumber, changeEnterpriseRealnameAuthsReq.verifiedNumber) &&
-            Objects.equals(this.xaccountType, changeEnterpriseRealnameAuthsReq.xaccountType);
+            Objects.equals(this.regCountry, changeEnterpriseRealnameAuthsReq.regCountry) &&
+            Objects.equals(this.regAddress, changeEnterpriseRealnameAuthsReq.regAddress) &&
+            Objects.equals(this.changeType, changeEnterpriseRealnameAuthsReq.changeType) &&
+            Objects.equals(this.xaccountType, changeEnterpriseRealnameAuthsReq.xaccountType) &&
+            Objects.equals(this.enterprisePerson, changeEnterpriseRealnameAuthsReq.enterprisePerson);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(certificateType, changeType, corpName, customerId, enterprisePerson, identifyType, regAddress, regCountry, verifiedFileUrl, verifiedNumber, xaccountType);
+        return Objects.hash(customerId, identifyType, certificateType, verifiedFileUrl, corpName, verifiedNumber, regCountry, regAddress, changeType, xaccountType, enterprisePerson);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeEnterpriseRealnameAuthsReq {\n");
-        sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
-        sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
-        sb.append("    corpName: ").append(toIndentedString(corpName)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-        sb.append("    enterprisePerson: ").append(toIndentedString(enterprisePerson)).append("\n");
         sb.append("    identifyType: ").append(toIndentedString(identifyType)).append("\n");
-        sb.append("    regAddress: ").append(toIndentedString(regAddress)).append("\n");
-        sb.append("    regCountry: ").append(toIndentedString(regCountry)).append("\n");
+        sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
         sb.append("    verifiedFileUrl: ").append(toIndentedString(verifiedFileUrl)).append("\n");
+        sb.append("    corpName: ").append(toIndentedString(corpName)).append("\n");
         sb.append("    verifiedNumber: ").append(toIndentedString(verifiedNumber)).append("\n");
+        sb.append("    regCountry: ").append(toIndentedString(regCountry)).append("\n");
+        sb.append("    regAddress: ").append(toIndentedString(regAddress)).append("\n");
+        sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
         sb.append("    xaccountType: ").append(toIndentedString(xaccountType)).append("\n");
+        sb.append("    enterprisePerson: ").append(toIndentedString(enterprisePerson)).append("\n");
         sb.append("}");
         return sb.toString();
     }

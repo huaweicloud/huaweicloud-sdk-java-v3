@@ -25,6 +25,12 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_count")
+    
+    private Integer totalCount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_info")
     
     private CustomerOrderV2 orderInfo = null;
@@ -35,11 +41,25 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
     
     private List<OrderLineItemEntityV2> orderLineItems = null;
     
+    public ShowCustomerOrderDetailsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
     
-    private Integer totalCount;
+
+
+    /**
+     * |参数名称：符合条件的记录总数。| |参数的约束及描述：符合条件的记录总数。|
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
     public ShowCustomerOrderDetailsResponse withOrderInfo(CustomerOrderV2 orderInfo) {
         this.orderInfo = orderInfo;
@@ -101,26 +121,6 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
     public void setOrderLineItems(List<OrderLineItemEntityV2> orderLineItems) {
         this.orderLineItems = orderLineItems;
     }
-
-    public ShowCustomerOrderDetailsResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：符合条件的记录总数。| |参数的约束及描述：符合条件的记录总数。|
-     * @return totalCount
-     */
-    public Integer getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -130,21 +130,21 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
             return false;
         }
         ShowCustomerOrderDetailsResponse showCustomerOrderDetailsResponse = (ShowCustomerOrderDetailsResponse) o;
-        return Objects.equals(this.orderInfo, showCustomerOrderDetailsResponse.orderInfo) &&
-            Objects.equals(this.orderLineItems, showCustomerOrderDetailsResponse.orderLineItems) &&
-            Objects.equals(this.totalCount, showCustomerOrderDetailsResponse.totalCount);
+        return Objects.equals(this.totalCount, showCustomerOrderDetailsResponse.totalCount) &&
+            Objects.equals(this.orderInfo, showCustomerOrderDetailsResponse.orderInfo) &&
+            Objects.equals(this.orderLineItems, showCustomerOrderDetailsResponse.orderLineItems);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(orderInfo, orderLineItems, totalCount);
+        return Objects.hash(totalCount, orderInfo, orderLineItems);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCustomerOrderDetailsResponse {\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    orderInfo: ").append(toIndentedString(orderInfo)).append("\n");
         sb.append("    orderLineItems: ").append(toIndentedString(orderLineItems)).append("\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

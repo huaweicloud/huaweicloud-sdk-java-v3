@@ -57,7 +57,7 @@ public class UpdateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_retries_down")
     
-    private String maxRetriesDown;
+    private Integer maxRetriesDown;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,7 +213,7 @@ public class UpdateHealthMonitorOption  {
         this.maxRetries = maxRetries;
     }
 
-    public UpdateHealthMonitorOption withMaxRetriesDown(String maxRetriesDown) {
+    public UpdateHealthMonitorOption withMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
         return this;
     }
@@ -225,11 +225,11 @@ public class UpdateHealthMonitorOption  {
      * 健康检查连续成功多少次后，将后端服务器的健康检查状态由online判定为offline，取值范围[1，10]。
      * @return maxRetriesDown
      */
-    public String getMaxRetriesDown() {
+    public Integer getMaxRetriesDown() {
         return maxRetriesDown;
     }
 
-    public void setMaxRetriesDown(String maxRetriesDown) {
+    public void setMaxRetriesDown(Integer maxRetriesDown) {
         this.maxRetriesDown = maxRetriesDown;
     }
 

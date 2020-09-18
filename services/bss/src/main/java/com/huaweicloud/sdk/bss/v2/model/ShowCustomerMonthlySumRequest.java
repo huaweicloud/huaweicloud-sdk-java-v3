@@ -47,6 +47,18 @@ public class ShowCustomerMonthlySumRequest  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="method")
+    
+    private String method;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sub_customer_id")
+    
+    private String subCustomerId;
+
     public ShowCustomerMonthlySumRequest withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -150,6 +162,46 @@ public class ShowCustomerMonthlySumRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
+    public ShowCustomerMonthlySumRequest withMethod(String method) {
+        this.method = method;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get method
+     * @return method
+     */
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public ShowCustomerMonthlySumRequest withSubCustomerId(String subCustomerId) {
+        this.subCustomerId = subCustomerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get subCustomerId
+     * @return subCustomerId
+     */
+    public String getSubCustomerId() {
+        return subCustomerId;
+    }
+
+    public void setSubCustomerId(String subCustomerId) {
+        this.subCustomerId = subCustomerId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -163,11 +215,13 @@ public class ShowCustomerMonthlySumRequest  {
             Objects.equals(this.serviceTypeCode, showCustomerMonthlySumRequest.serviceTypeCode) &&
             Objects.equals(this.enterpriseProjectId, showCustomerMonthlySumRequest.enterpriseProjectId) &&
             Objects.equals(this.offset, showCustomerMonthlySumRequest.offset) &&
-            Objects.equals(this.limit, showCustomerMonthlySumRequest.limit);
+            Objects.equals(this.limit, showCustomerMonthlySumRequest.limit) &&
+            Objects.equals(this.method, showCustomerMonthlySumRequest.method) &&
+            Objects.equals(this.subCustomerId, showCustomerMonthlySumRequest.subCustomerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(billCycle, serviceTypeCode, enterpriseProjectId, offset, limit);
+        return Objects.hash(billCycle, serviceTypeCode, enterpriseProjectId, offset, limit, method, subCustomerId);
     }
     @Override
     public String toString() {
@@ -178,6 +232,8 @@ public class ShowCustomerMonthlySumRequest  {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    method: ").append(toIndentedString(method)).append("\n");
+        sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
