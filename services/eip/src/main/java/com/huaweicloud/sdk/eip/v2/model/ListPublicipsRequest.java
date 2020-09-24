@@ -119,8 +119,8 @@ public class ListPublicipsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private List<String> enterpriseProjectId = null;
-    
+    private String enterpriseProjectId;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port_id")
@@ -206,37 +206,23 @@ public class ListPublicipsRequest  {
         this.ipVersion = ipVersion;
     }
 
-    public ListPublicipsRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+    public ListPublicipsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
-    public ListPublicipsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
-        this.enterpriseProjectId.add(enterpriseProjectIdItem);
-        return this;
-    }
 
-    public ListPublicipsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
-            this.enterpriseProjectId = new ArrayList<>();
-        }
-        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
-        return this;
-    }
 
     /**
      * Get enterpriseProjectId
      * @return enterpriseProjectId
      */
-    public List<String> getEnterpriseProjectId() {
+    public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
 
-    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 

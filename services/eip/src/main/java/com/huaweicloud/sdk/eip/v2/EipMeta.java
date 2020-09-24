@@ -553,7 +553,7 @@ public class EipMeta {
         builder.withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            String.class,
             f -> f.withMarshaller(ListPublicipsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })

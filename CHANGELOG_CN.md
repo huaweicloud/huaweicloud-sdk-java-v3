@@ -1,3 +1,45 @@
+## 3.0.14-beta 2020-09-24
+## HuaweiCloud SDK Core
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - [Issue 11](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/issues/11)：使用okhttp3不当导致线程数一直增加问题修复
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK BSS
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 修复BssClient类无法加载的问题
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK EIP
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 接口ListPublicips调整，企业项目ID不支持多值查询
+
+## HuaweiCloud SDK OMS
+ - ### 新增特性
+    - 支持对象存储迁移服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK TestHub
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 原TestHub服务名变更为CloudTest，原命名无法正常上线SDK中心
+
+
 ## 3.0.13-beta 2020-09-16
 ## HuaweiCloud SDK ECS
  - ### 新增特性

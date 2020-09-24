@@ -28,14 +28,13 @@ import java.net.SocketTimeoutException;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLHandshakeException;
 
-import okhttp3.Protocol;
-import okhttp3.internal.http.HttpMethod;
-import okio.BufferedSink;
-import okio.Okio;
 import org.apache.commons.lang3.StringUtils;
 
 import com.huaweicloud.sdk.core.exception.ConnectionException;
@@ -50,18 +49,25 @@ import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.ConnectionPool;
 import okhttp3.Credentials;
+import okhttp3.Dispatcher;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
+import okhttp3.Protocol;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.internal.Util;
+import okhttp3.internal.http.HttpMethod;
+import okio.BufferedSink;
+import okio.Okio;
 
 
 public class DefaultHttpClient implements HttpClient {
 
-    private OkHttpClient client = new OkHttpClient();
+    private OkHttpClient client;
 
     private HttpConfig httpConfig;
 
@@ -69,10 +75,21 @@ public class DefaultHttpClient implements HttpClient {
     private static final String PROXY_AUTHENTICATE = "Proxy-Authenticate";
     private static final String PROXY_AUTHORIZATION = "Proxy-Authorization";
 
+    /**
+     * Set unique connection pool for synchronous and asynchronous requests
+     */
+    private static final ConnectionPool CONNECTION_POOL = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
+
+    /**
+     * Set number of maximum threads for asynchronous requests.
+     * If threads number hasn't been limited, each client will occupy one thread which may leads to out of memory.
+     */
+    private static ExecutorService executorService = new ThreadPoolExecutor(0, 16, 60L, TimeUnit.SECONDS,
+        new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
+    private static final Dispatcher DISPATCHER = new Dispatcher(executorService);
+
     public DefaultHttpClient(HttpConfig httpConfig) {
-
         withHttpConfig(httpConfig);
-
     }
 
     public HttpConfig getHttpConfig() {
@@ -81,20 +98,22 @@ public class DefaultHttpClient implements HttpClient {
 
     public DefaultHttpClient withHttpConfig(HttpConfig httpConfig) {
         this.httpConfig = httpConfig;
-        OkHttpClient.Builder clientBuilder = client.newBuilder();
+        OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+        clientBuilder.connectionPool(CONNECTION_POOL);
+        clientBuilder.dispatcher(DISPATCHER);
         clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS);
         if (httpConfig.isIgnoreSSLVerification()) {
             clientBuilder
-                    .hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
-                    .sslSocketFactory(IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
-                            IgnoreSSLVerificationFactory.getTrustAllManager());
+                .hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
+                .sslSocketFactory(IgnoreSSLVerificationFactory.getSSLContext().getSocketFactory(),
+                    IgnoreSSLVerificationFactory.getTrustAllManager());
         }
 
         clientBuilder.protocols(Arrays.asList(Protocol.HTTP_1_1));
-        //set proxy
+        // set proxy
         if (!StringUtils.isEmpty(httpConfig.getProxyHost())) {
             Proxy proxy = new Proxy(Proxy.Type.HTTP,
-                    new InetSocketAddress(httpConfig.getProxyHost(), httpConfig.getProxyPort()));
+                new InetSocketAddress(httpConfig.getProxyHost(), httpConfig.getProxyPort()));
             clientBuilder.proxy(proxy);
         }
         if (!StringUtils.isEmpty(httpConfig.getProxyUsername())) {
@@ -105,11 +124,11 @@ public class DefaultHttpClient implements HttpClient {
                     }
 
                     String credential = Credentials.basic(httpConfig.getProxyUsername(),
-                            httpConfig.getProxyPassword());
+                        httpConfig.getProxyPassword());
 
                     return response.request().newBuilder()
-                            .header(PROXY_AUTHORIZATION, credential)
-                            .build();
+                        .header(PROXY_AUTHORIZATION, credential)
+                        .build();
                 };
             clientBuilder.proxyAuthenticator(proxyAuthenticator);
         }
@@ -122,7 +141,7 @@ public class DefaultHttpClient implements HttpClient {
     private Request buildOkHttpRequest(HttpRequest httpRequest) {
         Request.Builder requestBuilder = new Request.Builder();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(httpRequest.getEndpoint()
-                + httpRequest.getPathParamsString()).newBuilder();
+            + httpRequest.getPathParamsString()).newBuilder();
 
         httpRequest.getQueryParams().forEach((key, values) -> values.forEach(value -> {
             urlBuilder.addQueryParameter(key, value);
@@ -131,33 +150,18 @@ public class DefaultHttpClient implements HttpClient {
         requestBuilder.url(urlBuilder.build());
 
         httpRequest.getHeaders().forEach((key, values) ->
-                values.forEach(value -> requestBuilder.header(key, value)));
+            values.forEach(value -> requestBuilder.header(key, value)));
 
         if (Objects.isNull(httpRequest.getBodyAsString())) {
             if (Objects.isNull(httpRequest.getBody())) {
                 if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
                     requestBuilder.method(httpRequest.getMethod().toString(),
-                            RequestBody.create(null, new byte[0]));
+                        RequestBody.create(null, new byte[0]));
                 } else {
                     requestBuilder.method(httpRequest.getMethod().toString(), null);
                 }
             } else {
                 requestBuilder.method(httpRequest.getMethod().toString(),
-                        new RequestBody() {
-
-                            @Override
-                            public MediaType contentType() {
-                                return MediaType.parse(httpRequest.getContentType());
-                            }
-
-                            @Override
-                            public void writeTo(BufferedSink bufferedSink) throws IOException {
-                                bufferedSink.writeAll(Okio.source(httpRequest.getBody()));
-                            }
-                        });
-            }
-        } else {
-            requestBuilder.method(httpRequest.getMethod().toString(),
                     new RequestBody() {
 
                         @Override
@@ -167,9 +171,24 @@ public class DefaultHttpClient implements HttpClient {
 
                         @Override
                         public void writeTo(BufferedSink bufferedSink) throws IOException {
-                            bufferedSink.writeUtf8(httpRequest.getBodyAsString());
+                            bufferedSink.writeAll(Okio.source(httpRequest.getBody()));
                         }
                     });
+            }
+        } else {
+            requestBuilder.method(httpRequest.getMethod().toString(),
+                new RequestBody() {
+
+                    @Override
+                    public MediaType contentType() {
+                        return MediaType.parse(httpRequest.getContentType());
+                    }
+
+                    @Override
+                    public void writeTo(BufferedSink bufferedSink) throws IOException {
+                        bufferedSink.writeUtf8(httpRequest.getBodyAsString());
+                    }
+                });
         }
 
         return requestBuilder.build();
@@ -211,7 +230,7 @@ public class DefaultHttpClient implements HttpClient {
     @Override
     public HttpResponse syncInvokeHttp(HttpRequest httpRequest) throws ConnectionException {
         Request request = buildOkHttpRequest(httpRequest);
-        Response response = null;
+        Response response;
         try {
             response = client.newCall(request).execute();
         } catch (SSLHandshakeException e) {
@@ -223,6 +242,5 @@ public class DefaultHttpClient implements HttpClient {
         }
         return DefaultHttpResponse.wrap(response);
     }
-
 
 }
