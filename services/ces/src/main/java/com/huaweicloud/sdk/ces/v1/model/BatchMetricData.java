@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.Datapoint;
+import com.huaweicloud.sdk.ces.v1.model.DatapointForBatchMetric;
 import com.huaweicloud.sdk.ces.v1.model.MetricsDimension;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class BatchMetricData  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datapoints")
     
-    private List<Datapoint> datapoints = new ArrayList<>();
+    private List<DatapointForBatchMetric> datapoints = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,18 +71,18 @@ public class BatchMetricData  {
         this.unit = unit;
     }
 
-    public BatchMetricData withDatapoints(List<Datapoint> datapoints) {
+    public BatchMetricData withDatapoints(List<DatapointForBatchMetric> datapoints) {
         this.datapoints = datapoints;
         return this;
     }
 
     
-    public BatchMetricData addDatapointsItem(Datapoint datapointsItem) {
+    public BatchMetricData addDatapointsItem(DatapointForBatchMetric datapointsItem) {
         this.datapoints.add(datapointsItem);
         return this;
     }
 
-    public BatchMetricData withDatapoints(Consumer<List<Datapoint>> datapointsSetter) {
+    public BatchMetricData withDatapoints(Consumer<List<DatapointForBatchMetric>> datapointsSetter) {
         if(this.datapoints == null ){
             this.datapoints = new ArrayList<>();
         }
@@ -91,14 +91,14 @@ public class BatchMetricData  {
     }
 
     /**
-     *   指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
+     * 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
      * @return datapoints
      */
-    public List<Datapoint> getDatapoints() {
+    public List<DatapointForBatchMetric> getDatapoints() {
         return datapoints;
     }
 
-    public void setDatapoints(List<Datapoint> datapoints) {
+    public void setDatapoints(List<DatapointForBatchMetric> datapoints) {
         this.datapoints = datapoints;
     }
 

@@ -22,7 +22,7 @@ public class ServiceStageClient {
      *
      * @param ChangeApplicationRequest 请求对象
      * @return ChangeApplicationResponse
-    */
+     */
     public ChangeApplicationResponse changeApplication(ChangeApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.changeApplication);
     }
@@ -33,7 +33,7 @@ public class ServiceStageClient {
      *
      * @param ChangeApplicationConfigurationRequest 请求对象
      * @return ChangeApplicationConfigurationResponse
-    */
+     */
     public ChangeApplicationConfigurationResponse changeApplicationConfiguration(ChangeApplicationConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.changeApplicationConfiguration);
     }
@@ -44,7 +44,7 @@ public class ServiceStageClient {
      *
      * @param ChangeComponentRequest 请求对象
      * @return ChangeComponentResponse
-    */
+     */
     public ChangeComponentResponse changeComponent(ChangeComponentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.changeComponent);
     }
@@ -55,7 +55,7 @@ public class ServiceStageClient {
      *
      * @param ChangeEnvironmentRequest 请求对象
      * @return ChangeEnvironmentResponse
-    */
+     */
     public ChangeEnvironmentResponse changeEnvironment(ChangeEnvironmentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.changeEnvironment);
     }
@@ -66,7 +66,7 @@ public class ServiceStageClient {
      *
      * @param ChangeInstanceRequest 请求对象
      * @return ChangeInstanceResponse
-    */
+     */
     public ChangeInstanceResponse changeInstance(ChangeInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.changeInstance);
     }
@@ -77,7 +77,7 @@ public class ServiceStageClient {
      *
      * @param ChangeResourceInEnvironmentRequest 请求对象
      * @return ChangeResourceInEnvironmentResponse
-    */
+     */
     public ChangeResourceInEnvironmentResponse changeResourceInEnvironment(ChangeResourceInEnvironmentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.changeResourceInEnvironment);
     }
@@ -88,7 +88,7 @@ public class ServiceStageClient {
      *
      * @param CreateApplicationRequest 请求对象
      * @return CreateApplicationResponse
-    */
+     */
     public CreateApplicationResponse createApplication(CreateApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createApplication);
     }
@@ -99,7 +99,7 @@ public class ServiceStageClient {
      *
      * @param CreateComponentRequest 请求对象
      * @return CreateComponentResponse
-    */
+     */
     public CreateComponentResponse createComponent(CreateComponentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createComponent);
     }
@@ -110,7 +110,7 @@ public class ServiceStageClient {
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return CreateEnvironmentResponse
-    */
+     */
     public CreateEnvironmentResponse createEnvironment(CreateEnvironmentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createEnvironment);
     }
@@ -121,7 +121,7 @@ public class ServiceStageClient {
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
-    */
+     */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createInstance);
     }
@@ -132,7 +132,7 @@ public class ServiceStageClient {
      *
      * @param DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
-    */
+     */
     public DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteApplication);
     }
@@ -143,7 +143,7 @@ public class ServiceStageClient {
      *
      * @param DeleteApplicationConfigurationRequest 请求对象
      * @return DeleteApplicationConfigurationResponse
-    */
+     */
     public DeleteApplicationConfigurationResponse deleteApplicationConfiguration(DeleteApplicationConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteApplicationConfiguration);
     }
@@ -154,7 +154,7 @@ public class ServiceStageClient {
      *
      * @param DeleteComponentRequest 请求对象
      * @return DeleteComponentResponse
-    */
+     */
     public DeleteComponentResponse deleteComponent(DeleteComponentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteComponent);
     }
@@ -165,7 +165,7 @@ public class ServiceStageClient {
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return DeleteEnvironmentResponse
-    */
+     */
     public DeleteEnvironmentResponse deleteEnvironment(DeleteEnvironmentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteEnvironment);
     }
@@ -176,7 +176,7 @@ public class ServiceStageClient {
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
-    */
+     */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteInstance);
     }
@@ -187,7 +187,7 @@ public class ServiceStageClient {
      *
      * @param ListApplicationsRequest 请求对象
      * @return ListApplicationsResponse
-    */
+     */
     public ListApplicationsResponse listApplications(ListApplicationsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listApplications);
     }
@@ -198,7 +198,7 @@ public class ServiceStageClient {
      *
      * @param ListComponentsRequest 请求对象
      * @return ListComponentsResponse
-    */
+     */
     public ListComponentsResponse listComponents(ListComponentsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listComponents);
     }
@@ -209,7 +209,7 @@ public class ServiceStageClient {
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return ListEnvironmentsResponse
-    */
+     */
     public ListEnvironmentsResponse listEnvironments(ListEnvironmentsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listEnvironments);
     }
@@ -220,7 +220,7 @@ public class ServiceStageClient {
      *
      * @param ListInstanceSnapshotsRequest 请求对象
      * @return ListInstanceSnapshotsResponse
-    */
+     */
     public ListInstanceSnapshotsResponse listInstanceSnapshots(ListInstanceSnapshotsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listInstanceSnapshots);
     }
@@ -231,7 +231,7 @@ public class ServiceStageClient {
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
-    */
+     */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listInstances);
     }
@@ -242,7 +242,7 @@ public class ServiceStageClient {
      *
      * @param ShowApplicationConfigurationRequest 请求对象
      * @return ShowApplicationConfigurationResponse
-    */
+     */
     public ShowApplicationConfigurationResponse showApplicationConfiguration(ShowApplicationConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showApplicationConfiguration);
     }
@@ -253,7 +253,7 @@ public class ServiceStageClient {
      *
      * @param ShowApplicationDetailRequest 请求对象
      * @return ShowApplicationDetailResponse
-    */
+     */
     public ShowApplicationDetailResponse showApplicationDetail(ShowApplicationDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showApplicationDetail);
     }
@@ -264,7 +264,7 @@ public class ServiceStageClient {
      *
      * @param ShowComponentDetailRequest 请求对象
      * @return ShowComponentDetailResponse
-    */
+     */
     public ShowComponentDetailResponse showComponentDetail(ShowComponentDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showComponentDetail);
     }
@@ -275,7 +275,7 @@ public class ServiceStageClient {
      *
      * @param ShowEnvironmentDetailRequest 请求对象
      * @return ShowEnvironmentDetailResponse
-    */
+     */
     public ShowEnvironmentDetailResponse showEnvironmentDetail(ShowEnvironmentDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showEnvironmentDetail);
     }
@@ -286,7 +286,7 @@ public class ServiceStageClient {
      *
      * @param ShowInstanceDetailRequest 请求对象
      * @return ShowInstanceDetailResponse
-    */
+     */
     public ShowInstanceDetailResponse showInstanceDetail(ShowInstanceDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showInstanceDetail);
     }
@@ -297,7 +297,7 @@ public class ServiceStageClient {
      *
      * @param ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
-    */
+     */
     public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showJobDetail);
     }
@@ -308,7 +308,7 @@ public class ServiceStageClient {
      *
      * @param UpdateInstanceActionRequest 请求对象
      * @return UpdateInstanceActionResponse
-    */
+     */
     public UpdateInstanceActionResponse updateInstanceAction(UpdateInstanceActionRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.updateInstanceAction);
     }
@@ -319,7 +319,7 @@ public class ServiceStageClient {
      *
      * @param CreateFileRequest 请求对象
      * @return CreateFileResponse
-    */
+     */
     public CreateFileResponse createFile(CreateFileRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createFile);
     }
@@ -330,7 +330,7 @@ public class ServiceStageClient {
      *
      * @param CreateHookRequest 请求对象
      * @return CreateHookResponse
-    */
+     */
     public CreateHookResponse createHook(CreateHookRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createHook);
     }
@@ -341,7 +341,7 @@ public class ServiceStageClient {
      *
      * @param CreateOAuthRequest 请求对象
      * @return CreateOAuthResponse
-    */
+     */
     public CreateOAuthResponse createOAuth(CreateOAuthRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createOAuth);
     }
@@ -352,7 +352,7 @@ public class ServiceStageClient {
      *
      * @param CreatePasswordAuthRequest 请求对象
      * @return CreatePasswordAuthResponse
-    */
+     */
     public CreatePasswordAuthResponse createPasswordAuth(CreatePasswordAuthRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createPasswordAuth);
     }
@@ -363,7 +363,7 @@ public class ServiceStageClient {
      *
      * @param CreatePersonalAuthRequest 请求对象
      * @return CreatePersonalAuthResponse
-    */
+     */
     public CreatePersonalAuthResponse createPersonalAuth(CreatePersonalAuthRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createPersonalAuth);
     }
@@ -374,7 +374,7 @@ public class ServiceStageClient {
      *
      * @param CreateProjectRequest 请求对象
      * @return CreateProjectResponse
-    */
+     */
     public CreateProjectResponse createProject(CreateProjectRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createProject);
     }
@@ -385,7 +385,7 @@ public class ServiceStageClient {
      *
      * @param CreateTagRequest 请求对象
      * @return CreateTagResponse
-    */
+     */
     public CreateTagResponse createTag(CreateTagRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.createTag);
     }
@@ -396,7 +396,7 @@ public class ServiceStageClient {
      *
      * @param DeleteAuthorizeRequest 请求对象
      * @return DeleteAuthorizeResponse
-    */
+     */
     public DeleteAuthorizeResponse deleteAuthorize(DeleteAuthorizeRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteAuthorize);
     }
@@ -407,7 +407,7 @@ public class ServiceStageClient {
      *
      * @param DeleteFileRequest 请求对象
      * @return DeleteFileResponse
-    */
+     */
     public DeleteFileResponse deleteFile(DeleteFileRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteFile);
     }
@@ -418,7 +418,7 @@ public class ServiceStageClient {
      *
      * @param DeleteHookRequest 请求对象
      * @return DeleteHookResponse
-    */
+     */
     public DeleteHookResponse deleteHook(DeleteHookRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteHook);
     }
@@ -429,7 +429,7 @@ public class ServiceStageClient {
      *
      * @param DeleteTagRequest 请求对象
      * @return DeleteTagResponse
-    */
+     */
     public DeleteTagResponse deleteTag(DeleteTagRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.deleteTag);
     }
@@ -440,7 +440,7 @@ public class ServiceStageClient {
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return ListAuthorizationsResponse
-    */
+     */
     public ListAuthorizationsResponse listAuthorizations(ListAuthorizationsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listAuthorizations);
     }
@@ -451,7 +451,7 @@ public class ServiceStageClient {
      *
      * @param ListBranchesRequest 请求对象
      * @return ListBranchesResponse
-    */
+     */
     public ListBranchesResponse listBranches(ListBranchesRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listBranches);
     }
@@ -462,7 +462,7 @@ public class ServiceStageClient {
      *
      * @param ListCommitsRequest 请求对象
      * @return ListCommitsResponse
-    */
+     */
     public ListCommitsResponse listCommits(ListCommitsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listCommits);
     }
@@ -473,7 +473,7 @@ public class ServiceStageClient {
      *
      * @param ListHooksRequest 请求对象
      * @return ListHooksResponse
-    */
+     */
     public ListHooksResponse listHooks(ListHooksRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listHooks);
     }
@@ -484,7 +484,7 @@ public class ServiceStageClient {
      *
      * @param ListNamespacesRequest 请求对象
      * @return ListNamespacesResponse
-    */
+     */
     public ListNamespacesResponse listNamespaces(ListNamespacesRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listNamespaces);
     }
@@ -495,7 +495,7 @@ public class ServiceStageClient {
      *
      * @param ListProjectsRequest 请求对象
      * @return ListProjectsResponse
-    */
+     */
     public ListProjectsResponse listProjects(ListProjectsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listProjects);
     }
@@ -506,7 +506,7 @@ public class ServiceStageClient {
      *
      * @param ListTagsRequest 请求对象
      * @return ListTagsResponse
-    */
+     */
     public ListTagsResponse listTags(ListTagsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listTags);
     }
@@ -517,7 +517,7 @@ public class ServiceStageClient {
      *
      * @param ListTreesRequest 请求对象
      * @return ListTreesResponse
-    */
+     */
     public ListTreesResponse listTrees(ListTreesRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listTrees);
     }
@@ -528,7 +528,7 @@ public class ServiceStageClient {
      *
      * @param ShowContentRequest 请求对象
      * @return ShowContentResponse
-    */
+     */
     public ShowContentResponse showContent(ShowContentRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showContent);
     }
@@ -539,7 +539,7 @@ public class ServiceStageClient {
      *
      * @param ShowProjectDetailRequest 请求对象
      * @return ShowProjectDetailResponse
-    */
+     */
     public ShowProjectDetailResponse showProjectDetail(ShowProjectDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showProjectDetail);
     }
@@ -550,7 +550,7 @@ public class ServiceStageClient {
      *
      * @param ShowRedirectUrlRequest 请求对象
      * @return ShowRedirectUrlResponse
-    */
+     */
     public ShowRedirectUrlResponse showRedirectUrl(ShowRedirectUrlRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.showRedirectUrl);
     }
@@ -561,7 +561,7 @@ public class ServiceStageClient {
      *
      * @param UpdateFileRequest 请求对象
      * @return UpdateFileResponse
-    */
+     */
     public UpdateFileResponse updateFile(UpdateFileRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.updateFile);
     }
@@ -572,7 +572,7 @@ public class ServiceStageClient {
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
-    */
+     */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listFlavors);
     }
@@ -583,7 +583,7 @@ public class ServiceStageClient {
      *
      * @param ListRuntimesRequest 请求对象
      * @return ListRuntimesResponse
-    */
+     */
     public ListRuntimesResponse listRuntimes(ListRuntimesRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listRuntimes);
     }
@@ -594,7 +594,7 @@ public class ServiceStageClient {
      *
      * @param ListTemplatesRequest 请求对象
      * @return ListTemplatesResponse
-    */
+     */
     public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, ServiceStageMeta.listTemplates);
     }

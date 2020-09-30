@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * 添加一条或多条自定义指标监控数据，请求参数。
  */
 public class MetricDataItem  {
 

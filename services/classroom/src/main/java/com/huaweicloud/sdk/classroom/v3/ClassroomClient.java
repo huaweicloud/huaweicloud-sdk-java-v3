@@ -22,7 +22,7 @@ public class ClassroomClient {
      *
      * @param ListClassroomMembersRequest 请求对象
      * @return ListClassroomMembersResponse
-    */
+     */
     public ListClassroomMembersResponse listClassroomMembers(ListClassroomMembersRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.listClassroomMembers);
     }
@@ -33,7 +33,7 @@ public class ClassroomClient {
      *
      * @param ListClassroomsRequest 请求对象
      * @return ListClassroomsResponse
-    */
+     */
     public ListClassroomsResponse listClassrooms(ListClassroomsRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.listClassrooms);
     }
@@ -44,7 +44,7 @@ public class ClassroomClient {
      *
      * @param ShowClassroomDetailRequest 请求对象
      * @return ShowClassroomDetailResponse
-    */
+     */
     public ShowClassroomDetailResponse showClassroomDetail(ShowClassroomDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.showClassroomDetail);
     }
@@ -55,7 +55,7 @@ public class ClassroomClient {
      *
      * @param ListClassroomMemberJobsRequest 请求对象
      * @return ListClassroomMemberJobsResponse
-    */
+     */
     public ListClassroomMemberJobsResponse listClassroomMemberJobs(ListClassroomMemberJobsRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.listClassroomMemberJobs);
     }
@@ -66,7 +66,7 @@ public class ClassroomClient {
      *
      * @param ListJobsRequest 请求对象
      * @return ListJobsResponse
-    */
+     */
     public ListJobsResponse listJobs(ListJobsRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.listJobs);
     }
@@ -77,7 +77,7 @@ public class ClassroomClient {
      *
      * @param ListMemberJobRecordsRequest 请求对象
      * @return ListMemberJobRecordsResponse
-    */
+     */
     public ListMemberJobRecordsResponse listMemberJobRecords(ListMemberJobRecordsRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.listMemberJobRecords);
     }
@@ -88,7 +88,7 @@ public class ClassroomClient {
      *
      * @param ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
-    */
+     */
     public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.showJobDetail);
     }
@@ -99,7 +99,7 @@ public class ClassroomClient {
      *
      * @param ShowJobExercisesRequest 请求对象
      * @return ShowJobExercisesResponse
-    */
+     */
     public ShowJobExercisesResponse showJobExercises(ShowJobExercisesRequest request) {
         return hcClient.syncInvokeHttp(request, ClassroomMeta.showJobExercises);
     }

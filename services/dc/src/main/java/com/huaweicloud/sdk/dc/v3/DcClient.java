@@ -22,7 +22,7 @@ public class DcClient {
      *
      * @param BatchCreateDirectConnectRequest 请求对象
      * @return BatchCreateDirectConnectResponse
-    */
+     */
     public BatchCreateDirectConnectResponse batchCreateDirectConnect(BatchCreateDirectConnectRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchCreateDirectConnect);
     }
@@ -33,7 +33,7 @@ public class DcClient {
      *
      * @param BatchCreateVirtualGatewaysRequest 请求对象
      * @return BatchCreateVirtualGatewaysResponse
-    */
+     */
     public BatchCreateVirtualGatewaysResponse batchCreateVirtualGateways(BatchCreateVirtualGatewaysRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchCreateVirtualGateways);
     }
@@ -44,7 +44,7 @@ public class DcClient {
      *
      * @param BatchCreateVirtualInterfaceRequest 请求对象
      * @return BatchCreateVirtualInterfaceResponse
-    */
+     */
     public BatchCreateVirtualInterfaceResponse batchCreateVirtualInterface(BatchCreateVirtualInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchCreateVirtualInterface);
     }
@@ -55,7 +55,7 @@ public class DcClient {
      *
      * @param BatchDeleteDirectConnectRequest 请求对象
      * @return BatchDeleteDirectConnectResponse
-    */
+     */
     public BatchDeleteDirectConnectResponse batchDeleteDirectConnect(BatchDeleteDirectConnectRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchDeleteDirectConnect);
     }
@@ -66,7 +66,7 @@ public class DcClient {
      *
      * @param BatchDeleteVirtualGatewaysRequest 请求对象
      * @return BatchDeleteVirtualGatewaysResponse
-    */
+     */
     public BatchDeleteVirtualGatewaysResponse batchDeleteVirtualGateways(BatchDeleteVirtualGatewaysRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchDeleteVirtualGateways);
     }
@@ -77,7 +77,7 @@ public class DcClient {
      *
      * @param BatchDeleteVirtualInterfaceRequest 请求对象
      * @return BatchDeleteVirtualInterfaceResponse
-    */
+     */
     public BatchDeleteVirtualInterfaceResponse batchDeleteVirtualInterface(BatchDeleteVirtualInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchDeleteVirtualInterface);
     }
@@ -88,7 +88,7 @@ public class DcClient {
      *
      * @param BatchUpdateDirectConnectRequest 请求对象
      * @return BatchUpdateDirectConnectResponse
-    */
+     */
     public BatchUpdateDirectConnectResponse batchUpdateDirectConnect(BatchUpdateDirectConnectRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchUpdateDirectConnect);
     }
@@ -99,7 +99,7 @@ public class DcClient {
      *
      * @param BatchUpdateVirtualGatewaysRequest 请求对象
      * @return BatchUpdateVirtualGatewaysResponse
-    */
+     */
     public BatchUpdateVirtualGatewaysResponse batchUpdateVirtualGateways(BatchUpdateVirtualGatewaysRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchUpdateVirtualGateways);
     }
@@ -110,7 +110,7 @@ public class DcClient {
      *
      * @param BatchUpdateVirtualInterfaceRequest 请求对象
      * @return BatchUpdateVirtualInterfaceResponse
-    */
+     */
     public BatchUpdateVirtualInterfaceResponse batchUpdateVirtualInterface(BatchUpdateVirtualInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.batchUpdateVirtualInterface);
     }
@@ -121,7 +121,7 @@ public class DcClient {
      *
      * @param ListDirectConnectRequest 请求对象
      * @return ListDirectConnectResponse
-    */
+     */
     public ListDirectConnectResponse listDirectConnect(ListDirectConnectRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.listDirectConnect);
     }
@@ -132,7 +132,7 @@ public class DcClient {
      *
      * @param ListVirtualGatewaysRequest 请求对象
      * @return ListVirtualGatewaysResponse
-    */
+     */
     public ListVirtualGatewaysResponse listVirtualGateways(ListVirtualGatewaysRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.listVirtualGateways);
     }
@@ -143,7 +143,7 @@ public class DcClient {
      *
      * @param ListVirtualInterfaceRequest 请求对象
      * @return ListVirtualInterfaceResponse
-    */
+     */
     public ListVirtualInterfaceResponse listVirtualInterface(ListVirtualInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.listVirtualInterface);
     }
@@ -154,7 +154,7 @@ public class DcClient {
      *
      * @param ShowDirectConnectRequest 请求对象
      * @return ShowDirectConnectResponse
-    */
+     */
     public ShowDirectConnectResponse showDirectConnect(ShowDirectConnectRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.showDirectConnect);
     }
@@ -165,7 +165,7 @@ public class DcClient {
      *
      * @param ShowVirtualGatewaysRequest 请求对象
      * @return ShowVirtualGatewaysResponse
-    */
+     */
     public ShowVirtualGatewaysResponse showVirtualGateways(ShowVirtualGatewaysRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.showVirtualGateways);
     }
@@ -176,7 +176,7 @@ public class DcClient {
      *
      * @param ShowVirtualInterfaceRequest 请求对象
      * @return ShowVirtualInterfaceResponse
-    */
+     */
     public ShowVirtualInterfaceResponse showVirtualInterface(ShowVirtualInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, DcMeta.showVirtualInterface);
     }

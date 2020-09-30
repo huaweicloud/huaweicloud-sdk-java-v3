@@ -62,7 +62,7 @@ public class Condition  {
 
 
     /**
-     * Get comparisonOperator
+     * 告警阈值的比较条件，可以是>、=、<、>=、<=。
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -82,7 +82,7 @@ public class Condition  {
 
 
     /**
-     * Get count
+     * 触发告警的连续发生次数，取值范围[1, 5]。
      * minimum: 1
      * maximum: 5
      * @return count
@@ -104,7 +104,7 @@ public class Condition  {
 
 
     /**
-     * Get filter
+     * 数据聚合的方式，支持max、min、average、sum、variance，分别表示最大值、最小值、平均值、求和值、方差值。
      * @return filter
      */
     public String getFilter() {
@@ -124,7 +124,7 @@ public class Condition  {
 
 
     /**
-     * Get period
+     * 告警条件判断周期，单位为秒，支持的值为1，300，1200，3600，14400，86400。说明：当period设置为1时，表示以原始的指标数据判断告警。当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为0。
      * @return period
      */
     public Integer getPeriod() {
@@ -144,7 +144,7 @@ public class Condition  {
 
 
     /**
-     * Get unit
+     * 数据的单位，最大长度为32位。
      * @return unit
      */
     public String getUnit() {
@@ -164,7 +164,7 @@ public class Condition  {
 
 
     /**
-     * Get value
+     * 告警阈值，取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。
      * @return value
      */
     public Integer getValue() {

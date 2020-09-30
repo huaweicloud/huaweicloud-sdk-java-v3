@@ -51,7 +51,7 @@ public class ShowAlarmResponse extends SdkResponse {
     }
 
     /**
-     * 
+     * 告警对象列表。
      * @return metricAlarms
      */
     public List<MetricAlarms> getMetricAlarms() {

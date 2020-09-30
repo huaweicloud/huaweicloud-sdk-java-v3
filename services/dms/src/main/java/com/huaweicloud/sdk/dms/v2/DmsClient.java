@@ -22,7 +22,7 @@ public class DmsClient {
      *
      * @param BatchCreateOrDeleteQueueTagRequest 请求对象
      * @return BatchCreateOrDeleteQueueTagResponse
-    */
+     */
     public BatchCreateOrDeleteQueueTagResponse batchCreateOrDeleteQueueTag(BatchCreateOrDeleteQueueTagRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.batchCreateOrDeleteQueueTag);
     }
@@ -33,7 +33,7 @@ public class DmsClient {
      *
      * @param ConfirmConsumptionMessagesRequest 请求对象
      * @return ConfirmConsumptionMessagesResponse
-    */
+     */
     public ConfirmConsumptionMessagesResponse confirmConsumptionMessages(ConfirmConsumptionMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.confirmConsumptionMessages);
     }
@@ -44,7 +44,7 @@ public class DmsClient {
      *
      * @param ConfirmDeadLettersMessagesRequest 请求对象
      * @return ConfirmDeadLettersMessagesResponse
-    */
+     */
     public ConfirmDeadLettersMessagesResponse confirmDeadLettersMessages(ConfirmDeadLettersMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.confirmDeadLettersMessages);
     }
@@ -55,7 +55,7 @@ public class DmsClient {
      *
      * @param ConsumeDeadlettersMessageRequest 请求对象
      * @return ConsumeDeadlettersMessageResponse
-    */
+     */
     public ConsumeDeadlettersMessageResponse consumeDeadlettersMessage(ConsumeDeadlettersMessageRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.consumeDeadlettersMessage);
     }
@@ -66,7 +66,7 @@ public class DmsClient {
      *
      * @param ConsumeMessagesRequest 请求对象
      * @return ConsumeMessagesResponse
-    */
+     */
     public ConsumeMessagesResponse consumeMessages(ConsumeMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.consumeMessages);
     }
@@ -77,7 +77,7 @@ public class DmsClient {
      *
      * @param CreateConsumerGroupRequest 请求对象
      * @return CreateConsumerGroupResponse
-    */
+     */
     public CreateConsumerGroupResponse createConsumerGroup(CreateConsumerGroupRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.createConsumerGroup);
     }
@@ -88,7 +88,7 @@ public class DmsClient {
      *
      * @param CreateQueueRequest 请求对象
      * @return CreateQueueResponse
-    */
+     */
     public CreateQueueResponse createQueue(CreateQueueRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.createQueue);
     }
@@ -99,7 +99,7 @@ public class DmsClient {
      *
      * @param DeleteQueueRequest 请求对象
      * @return DeleteQueueResponse
-    */
+     */
     public DeleteQueueResponse deleteQueue(DeleteQueueRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.deleteQueue);
     }
@@ -110,7 +110,7 @@ public class DmsClient {
      *
      * @param DeleteSpecifiedConsumerGroupRequest 请求对象
      * @return DeleteSpecifiedConsumerGroupResponse
-    */
+     */
     public DeleteSpecifiedConsumerGroupResponse deleteSpecifiedConsumerGroup(DeleteSpecifiedConsumerGroupRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.deleteSpecifiedConsumerGroup);
     }
@@ -121,7 +121,7 @@ public class DmsClient {
      *
      * @param ListConsumerGroupsRequest 请求对象
      * @return ListConsumerGroupsResponse
-    */
+     */
     public ListConsumerGroupsResponse listConsumerGroups(ListConsumerGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.listConsumerGroups);
     }
@@ -132,7 +132,7 @@ public class DmsClient {
      *
      * @param ListQueuesRequest 请求对象
      * @return ListQueuesResponse
-    */
+     */
     public ListQueuesResponse listQueues(ListQueuesRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.listQueues);
     }
@@ -143,7 +143,7 @@ public class DmsClient {
      *
      * @param SendMessagesRequest 请求对象
      * @return SendMessagesResponse
-    */
+     */
     public SendMessagesResponse sendMessages(SendMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.sendMessages);
     }
@@ -154,7 +154,7 @@ public class DmsClient {
      *
      * @param ShowProjectTagsRequest 请求对象
      * @return ShowProjectTagsResponse
-    */
+     */
     public ShowProjectTagsResponse showProjectTags(ShowProjectTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.showProjectTags);
     }
@@ -165,7 +165,7 @@ public class DmsClient {
      *
      * @param ShowQueueRequest 请求对象
      * @return ShowQueueResponse
-    */
+     */
     public ShowQueueResponse showQueue(ShowQueueRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.showQueue);
     }
@@ -176,7 +176,7 @@ public class DmsClient {
      *
      * @param ShowQueueTagsRequest 请求对象
      * @return ShowQueueTagsResponse
-    */
+     */
     public ShowQueueTagsResponse showQueueTags(ShowQueueTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.showQueueTags);
     }
@@ -187,7 +187,7 @@ public class DmsClient {
      *
      * @param ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
-    */
+     */
     public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, DmsMeta.showQuotas);
     }

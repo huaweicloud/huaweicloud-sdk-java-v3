@@ -22,7 +22,7 @@ public class ModerationClient {
      *
      * @param RunCheckResultRequest 请求对象
      * @return RunCheckResultResponse
-    */
+     */
     public RunCheckResultResponse runCheckResult(RunCheckResultRequest request) {
         return hcClient.syncInvokeHttp(request, ModerationMeta.runCheckResult);
     }
@@ -33,7 +33,7 @@ public class ModerationClient {
      *
      * @param RunCheckTaskJobsRequest 请求对象
      * @return RunCheckTaskJobsResponse
-    */
+     */
     public RunCheckTaskJobsResponse runCheckTaskJobs(RunCheckTaskJobsRequest request) {
         return hcClient.syncInvokeHttp(request, ModerationMeta.runCheckTaskJobs);
     }
@@ -44,7 +44,7 @@ public class ModerationClient {
      *
      * @param RunImageBatchModerationRequest 请求对象
      * @return RunImageBatchModerationResponse
-    */
+     */
     public RunImageBatchModerationResponse runImageBatchModeration(RunImageBatchModerationRequest request) {
         return hcClient.syncInvokeHttp(request, ModerationMeta.runImageBatchModeration);
     }
@@ -55,7 +55,7 @@ public class ModerationClient {
      *
      * @param RunImageModerationRequest 请求对象
      * @return RunImageModerationResponse
-    */
+     */
     public RunImageModerationResponse runImageModeration(RunImageModerationRequest request) {
         return hcClient.syncInvokeHttp(request, ModerationMeta.runImageModeration);
     }
@@ -66,7 +66,7 @@ public class ModerationClient {
      *
      * @param RunTaskSumbitRequest 请求对象
      * @return RunTaskSumbitResponse
-    */
+     */
     public RunTaskSumbitResponse runTaskSumbit(RunTaskSumbitRequest request) {
         return hcClient.syncInvokeHttp(request, ModerationMeta.runTaskSumbit);
     }
@@ -77,7 +77,7 @@ public class ModerationClient {
      *
      * @param RunTextModerationRequest 请求对象
      * @return RunTextModerationResponse
-    */
+     */
     public RunTextModerationResponse runTextModeration(RunTextModerationRequest request) {
         return hcClient.syncInvokeHttp(request, ModerationMeta.runTextModeration);
     }

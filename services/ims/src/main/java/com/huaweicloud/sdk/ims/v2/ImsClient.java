@@ -22,7 +22,7 @@ public class ImsClient {
      *
      * @param BatchAddMembersRequest 请求对象
      * @return BatchAddMembersResponse
-    */
+     */
     public BatchAddMembersResponse batchAddMembers(BatchAddMembersRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.batchAddMembers);
     }
@@ -33,7 +33,7 @@ public class ImsClient {
      *
      * @param BatchDeleteMembersRequest 请求对象
      * @return BatchDeleteMembersResponse
-    */
+     */
     public BatchDeleteMembersResponse batchDeleteMembers(BatchDeleteMembersRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.batchDeleteMembers);
     }
@@ -44,7 +44,7 @@ public class ImsClient {
      *
      * @param BatchUpdateMembersRequest 请求对象
      * @return BatchUpdateMembersResponse
-    */
+     */
     public BatchUpdateMembersResponse batchUpdateMembers(BatchUpdateMembersRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.batchUpdateMembers);
     }
@@ -55,7 +55,7 @@ public class ImsClient {
      *
      * @param CopyImageCrossRegionRequest 请求对象
      * @return CopyImageCrossRegionResponse
-    */
+     */
     public CopyImageCrossRegionResponse copyImageCrossRegion(CopyImageCrossRegionRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.copyImageCrossRegion);
     }
@@ -66,7 +66,7 @@ public class ImsClient {
      *
      * @param CopyImageInRegionRequest 请求对象
      * @return CopyImageInRegionResponse
-    */
+     */
     public CopyImageInRegionResponse copyImageInRegion(CopyImageInRegionRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.copyImageInRegion);
     }
@@ -77,7 +77,7 @@ public class ImsClient {
      *
      * @param CreateDataImageRequest 请求对象
      * @return CreateDataImageResponse
-    */
+     */
     public CreateDataImageResponse createDataImage(CreateDataImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.createDataImage);
     }
@@ -88,7 +88,7 @@ public class ImsClient {
      *
      * @param CreateImageRequest 请求对象
      * @return CreateImageResponse
-    */
+     */
     public CreateImageResponse createImage(CreateImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.createImage);
     }
@@ -99,7 +99,7 @@ public class ImsClient {
      *
      * @param CreateOrUpdateTagsRequest 请求对象
      * @return CreateOrUpdateTagsResponse
-    */
+     */
     public CreateOrUpdateTagsResponse createOrUpdateTags(CreateOrUpdateTagsRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.createOrUpdateTags);
     }
@@ -110,7 +110,7 @@ public class ImsClient {
      *
      * @param CreateWholeImageRequest 请求对象
      * @return CreateWholeImageResponse
-    */
+     */
     public CreateWholeImageResponse createWholeImage(CreateWholeImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.createWholeImage);
     }
@@ -121,7 +121,7 @@ public class ImsClient {
      *
      * @param ExportImageRequest 请求对象
      * @return ExportImageResponse
-    */
+     */
     public ExportImageResponse exportImage(ExportImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.exportImage);
     }
@@ -132,7 +132,7 @@ public class ImsClient {
      *
      * @param ImportImageQuickRequest 请求对象
      * @return ImportImageQuickResponse
-    */
+     */
     public ImportImageQuickResponse importImageQuick(ImportImageQuickRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.importImageQuick);
     }
@@ -143,7 +143,7 @@ public class ImsClient {
      *
      * @param ListImagesRequest 请求对象
      * @return ListImagesResponse
-    */
+     */
     public ListImagesResponse listImages(ListImagesRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.listImages);
     }
@@ -154,7 +154,7 @@ public class ImsClient {
      *
      * @param ListOsVersionsRequest 请求对象
      * @return ListOsVersionsResponse
-    */
+     */
     public ListOsVersionsResponse listOsVersions(ListOsVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.listOsVersions);
     }
@@ -165,7 +165,7 @@ public class ImsClient {
      *
      * @param ListTagsRequest 请求对象
      * @return ListTagsResponse
-    */
+     */
     public ListTagsResponse listTags(ListTagsRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.listTags);
     }
@@ -176,7 +176,7 @@ public class ImsClient {
      *
      * @param RegisterImageRequest 请求对象
      * @return RegisterImageResponse
-    */
+     */
     public RegisterImageResponse registerImage(RegisterImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.registerImage);
     }
@@ -187,7 +187,7 @@ public class ImsClient {
      *
      * @param ShowImageQuotaRequest 请求对象
      * @return ShowImageQuotaResponse
-    */
+     */
     public ShowImageQuotaResponse showImageQuota(ShowImageQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.showImageQuota);
     }
@@ -198,7 +198,7 @@ public class ImsClient {
      *
      * @param UpdateImageRequest 请求对象
      * @return UpdateImageResponse
-    */
+     */
     public UpdateImageResponse updateImage(UpdateImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.updateImage);
     }
@@ -209,7 +209,7 @@ public class ImsClient {
      *
      * @param ShowJobRequest 请求对象
      * @return ShowJobResponse
-    */
+     */
     public ShowJobResponse showJob(ShowJobRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.showJob);
     }
@@ -220,7 +220,7 @@ public class ImsClient {
      *
      * @param GlanceAddImageMemberRequest 请求对象
      * @return GlanceAddImageMemberResponse
-    */
+     */
     public GlanceAddImageMemberResponse glanceAddImageMember(GlanceAddImageMemberRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceAddImageMember);
     }
@@ -231,7 +231,7 @@ public class ImsClient {
      *
      * @param GlanceCreateImageMetadataRequest 请求对象
      * @return GlanceCreateImageMetadataResponse
-    */
+     */
     public GlanceCreateImageMetadataResponse glanceCreateImageMetadata(GlanceCreateImageMetadataRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceCreateImageMetadata);
     }
@@ -242,7 +242,7 @@ public class ImsClient {
      *
      * @param GlanceCreateTagRequest 请求对象
      * @return GlanceCreateTagResponse
-    */
+     */
     public GlanceCreateTagResponse glanceCreateTag(GlanceCreateTagRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceCreateTag);
     }
@@ -253,7 +253,7 @@ public class ImsClient {
      *
      * @param GlanceDeleteImageRequest 请求对象
      * @return GlanceDeleteImageResponse
-    */
+     */
     public GlanceDeleteImageResponse glanceDeleteImage(GlanceDeleteImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceDeleteImage);
     }
@@ -264,7 +264,7 @@ public class ImsClient {
      *
      * @param GlanceDeleteImageMemberRequest 请求对象
      * @return GlanceDeleteImageMemberResponse
-    */
+     */
     public GlanceDeleteImageMemberResponse glanceDeleteImageMember(GlanceDeleteImageMemberRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceDeleteImageMember);
     }
@@ -275,7 +275,7 @@ public class ImsClient {
      *
      * @param GlanceDeleteTagRequest 请求对象
      * @return GlanceDeleteTagResponse
-    */
+     */
     public GlanceDeleteTagResponse glanceDeleteTag(GlanceDeleteTagRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceDeleteTag);
     }
@@ -286,7 +286,7 @@ public class ImsClient {
      *
      * @param GlanceListImageMemberSchemasRequest 请求对象
      * @return GlanceListImageMemberSchemasResponse
-    */
+     */
     public GlanceListImageMemberSchemasResponse glanceListImageMemberSchemas(GlanceListImageMemberSchemasRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceListImageMemberSchemas);
     }
@@ -297,7 +297,7 @@ public class ImsClient {
      *
      * @param GlanceListImageMembersRequest 请求对象
      * @return GlanceListImageMembersResponse
-    */
+     */
     public GlanceListImageMembersResponse glanceListImageMembers(GlanceListImageMembersRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceListImageMembers);
     }
@@ -308,7 +308,7 @@ public class ImsClient {
      *
      * @param GlanceListImageSchemasRequest 请求对象
      * @return GlanceListImageSchemasResponse
-    */
+     */
     public GlanceListImageSchemasResponse glanceListImageSchemas(GlanceListImageSchemasRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceListImageSchemas);
     }
@@ -319,7 +319,7 @@ public class ImsClient {
      *
      * @param GlanceListImagesRequest 请求对象
      * @return GlanceListImagesResponse
-    */
+     */
     public GlanceListImagesResponse glanceListImages(GlanceListImagesRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceListImages);
     }
@@ -330,7 +330,7 @@ public class ImsClient {
      *
      * @param GlanceShowImageRequest 请求对象
      * @return GlanceShowImageResponse
-    */
+     */
     public GlanceShowImageResponse glanceShowImage(GlanceShowImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceShowImage);
     }
@@ -341,7 +341,7 @@ public class ImsClient {
      *
      * @param GlanceShowImageMemberRequest 请求对象
      * @return GlanceShowImageMemberResponse
-    */
+     */
     public GlanceShowImageMemberResponse glanceShowImageMember(GlanceShowImageMemberRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceShowImageMember);
     }
@@ -352,7 +352,7 @@ public class ImsClient {
      *
      * @param GlanceShowImageMemberSchemasRequest 请求对象
      * @return GlanceShowImageMemberSchemasResponse
-    */
+     */
     public GlanceShowImageMemberSchemasResponse glanceShowImageMemberSchemas(GlanceShowImageMemberSchemasRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceShowImageMemberSchemas);
     }
@@ -363,7 +363,7 @@ public class ImsClient {
      *
      * @param GlanceShowImageSchemasRequest 请求对象
      * @return GlanceShowImageSchemasResponse
-    */
+     */
     public GlanceShowImageSchemasResponse glanceShowImageSchemas(GlanceShowImageSchemasRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceShowImageSchemas);
     }
@@ -374,7 +374,7 @@ public class ImsClient {
      *
      * @param GlanceUpdateImageRequest 请求对象
      * @return GlanceUpdateImageResponse
-    */
+     */
     public GlanceUpdateImageResponse glanceUpdateImage(GlanceUpdateImageRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceUpdateImage);
     }
@@ -385,7 +385,7 @@ public class ImsClient {
      *
      * @param GlanceUpdateImageMemberRequest 请求对象
      * @return GlanceUpdateImageMemberResponse
-    */
+     */
     public GlanceUpdateImageMemberResponse glanceUpdateImageMember(GlanceUpdateImageMemberRequest request) {
         return hcClient.syncInvokeHttp(request, ImsMeta.glanceUpdateImageMember);
     }

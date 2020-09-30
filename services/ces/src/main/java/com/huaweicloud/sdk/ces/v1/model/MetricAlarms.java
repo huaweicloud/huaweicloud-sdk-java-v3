@@ -93,8 +93,12 @@ public class MetricAlarms  {
             this.value = value;
         }
 
-        @Override
         @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
         public String toString() {
             return String.valueOf(value);
         }
@@ -162,6 +166,24 @@ public class MetricAlarms  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="insufficientdata_actions")
+    
+    private List<AlarmActions> insufficientdataActions = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="alarm_action_begin_time")
+    
+    private String alarmActionBeginTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="alarm_action_end_time")
+    
+    private String alarmActionEndTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_id")
     
     private String alarmId;
@@ -177,6 +199,12 @@ public class MetricAlarms  {
     @JsonProperty(value="alarm_state")
     
     private String alarmState;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
     public MetricAlarms withAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -420,6 +448,80 @@ public class MetricAlarms  {
         this.okActions = okActions;
     }
 
+    public MetricAlarms withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
+        this.insufficientdataActions = insufficientdataActions;
+        return this;
+    }
+
+    
+    public MetricAlarms addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
+        if (this.insufficientdataActions == null) {
+            this.insufficientdataActions = new ArrayList<>();
+        }
+        this.insufficientdataActions.add(insufficientdataActionsItem);
+        return this;
+    }
+
+    public MetricAlarms withInsufficientdataActions(Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
+        if(this.insufficientdataActions == null ){
+            this.insufficientdataActions = new ArrayList<>();
+        }
+        insufficientdataActionsSetter.accept(this.insufficientdataActions);
+        return this;
+    }
+
+    /**
+     * 数据不足触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： 数据不足触发告警通知类型，取值为notification。 notificationList：数据不足触发告警通知时，被通知对象的ID列表。
+     * @return insufficientdataActions
+     */
+    public List<AlarmActions> getInsufficientdataActions() {
+        return insufficientdataActions;
+    }
+
+    public void setInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
+        this.insufficientdataActions = insufficientdataActions;
+    }
+
+    public MetricAlarms withAlarmActionBeginTime(String alarmActionBeginTime) {
+        this.alarmActionBeginTime = alarmActionBeginTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 告警规则生效的开始时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
+     * @return alarmActionBeginTime
+     */
+    public String getAlarmActionBeginTime() {
+        return alarmActionBeginTime;
+    }
+
+    public void setAlarmActionBeginTime(String alarmActionBeginTime) {
+        this.alarmActionBeginTime = alarmActionBeginTime;
+    }
+
+    public MetricAlarms withAlarmActionEndTime(String alarmActionEndTime) {
+        this.alarmActionEndTime = alarmActionEndTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 告警规则生效的结束时间，告警规则仅在生效时间内发送通知消息。例如alarm_action_begin_time为8:00，alarm_action_end_time为20:00时，则对应的告警规则仅在08:00-20:00发送通知消息。
+     * @return alarmActionEndTime
+     */
+    public String getAlarmActionEndTime() {
+        return alarmActionEndTime;
+    }
+
+    public void setAlarmActionEndTime(String alarmActionEndTime) {
+        this.alarmActionEndTime = alarmActionEndTime;
+    }
+
     public MetricAlarms withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -479,6 +581,26 @@ public class MetricAlarms  {
     public void setAlarmState(String alarmState) {
         this.alarmState = alarmState;
     }
+
+    public MetricAlarms withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目ID。 取值为all_granted_eps时，表示所有企业项目; 取值为0时，表示默认的企业项目default。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -498,13 +620,17 @@ public class MetricAlarms  {
             Objects.equals(this.alarmActionEnabled, metricAlarms.alarmActionEnabled) &&
             Objects.equals(this.alarmActions, metricAlarms.alarmActions) &&
             Objects.equals(this.okActions, metricAlarms.okActions) &&
+            Objects.equals(this.insufficientdataActions, metricAlarms.insufficientdataActions) &&
+            Objects.equals(this.alarmActionBeginTime, metricAlarms.alarmActionBeginTime) &&
+            Objects.equals(this.alarmActionEndTime, metricAlarms.alarmActionEndTime) &&
             Objects.equals(this.alarmId, metricAlarms.alarmId) &&
             Objects.equals(this.updateTime, metricAlarms.updateTime) &&
-            Objects.equals(this.alarmState, metricAlarms.alarmState);
+            Objects.equals(this.alarmState, metricAlarms.alarmState) &&
+            Objects.equals(this.enterpriseProjectId, metricAlarms.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(alarmName, alarmDescription, metric, condition, alarmEnabled, alarmLevel, alarmType, alarmActionEnabled, alarmActions, okActions, alarmId, updateTime, alarmState);
+        return Objects.hash(alarmName, alarmDescription, metric, condition, alarmEnabled, alarmLevel, alarmType, alarmActionEnabled, alarmActions, okActions, insufficientdataActions, alarmActionBeginTime, alarmActionEndTime, alarmId, updateTime, alarmState, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -520,9 +646,13 @@ public class MetricAlarms  {
         sb.append("    alarmActionEnabled: ").append(toIndentedString(alarmActionEnabled)).append("\n");
         sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
         sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
+        sb.append("    insufficientdataActions: ").append(toIndentedString(insufficientdataActions)).append("\n");
+        sb.append("    alarmActionBeginTime: ").append(toIndentedString(alarmActionBeginTime)).append("\n");
+        sb.append("    alarmActionEndTime: ").append(toIndentedString(alarmActionEndTime)).append("\n");
         sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    alarmState: ").append(toIndentedString(alarmState)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,7 +22,7 @@ public class EcsClient {
      *
      * @param AddServerGroupMemberRequest 请求对象
      * @return AddServerGroupMemberResponse
-    */
+     */
     public AddServerGroupMemberResponse addServerGroupMember(AddServerGroupMemberRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.addServerGroupMember);
     }
@@ -33,7 +33,7 @@ public class EcsClient {
      *
      * @param AttachServerVolumeRequest 请求对象
      * @return AttachServerVolumeResponse
-    */
+     */
     public AttachServerVolumeResponse attachServerVolume(AttachServerVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.attachServerVolume);
     }
@@ -44,7 +44,7 @@ public class EcsClient {
      *
      * @param BatchAddServerNicsRequest 请求对象
      * @return BatchAddServerNicsResponse
-    */
+     */
     public BatchAddServerNicsResponse batchAddServerNics(BatchAddServerNicsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchAddServerNics);
     }
@@ -55,7 +55,7 @@ public class EcsClient {
      *
      * @param BatchCreateServerTagsRequest 请求对象
      * @return BatchCreateServerTagsResponse
-    */
+     */
     public BatchCreateServerTagsResponse batchCreateServerTags(BatchCreateServerTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchCreateServerTags);
     }
@@ -66,7 +66,7 @@ public class EcsClient {
      *
      * @param BatchDeleteServerNicsRequest 请求对象
      * @return BatchDeleteServerNicsResponse
-    */
+     */
     public BatchDeleteServerNicsResponse batchDeleteServerNics(BatchDeleteServerNicsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchDeleteServerNics);
     }
@@ -77,7 +77,7 @@ public class EcsClient {
      *
      * @param BatchDeleteServerTagsRequest 请求对象
      * @return BatchDeleteServerTagsResponse
-    */
+     */
     public BatchDeleteServerTagsResponse batchDeleteServerTags(BatchDeleteServerTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchDeleteServerTags);
     }
@@ -88,7 +88,7 @@ public class EcsClient {
      *
      * @param BatchRebootServersRequest 请求对象
      * @return BatchRebootServersResponse
-    */
+     */
     public BatchRebootServersResponse batchRebootServers(BatchRebootServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchRebootServers);
     }
@@ -99,7 +99,7 @@ public class EcsClient {
      *
      * @param BatchStartServersRequest 请求对象
      * @return BatchStartServersResponse
-    */
+     */
     public BatchStartServersResponse batchStartServers(BatchStartServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchStartServers);
     }
@@ -110,7 +110,7 @@ public class EcsClient {
      *
      * @param BatchStopServersRequest 请求对象
      * @return BatchStopServersResponse
-    */
+     */
     public BatchStopServersResponse batchStopServers(BatchStopServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.batchStopServers);
     }
@@ -121,7 +121,7 @@ public class EcsClient {
      *
      * @param ChangeServerOsWithCloudInitRequest 请求对象
      * @return ChangeServerOsWithCloudInitResponse
-    */
+     */
     public ChangeServerOsWithCloudInitResponse changeServerOsWithCloudInit(ChangeServerOsWithCloudInitRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.changeServerOsWithCloudInit);
     }
@@ -132,7 +132,7 @@ public class EcsClient {
      *
      * @param CreatePostPaidServersRequest 请求对象
      * @return CreatePostPaidServersResponse
-    */
+     */
     public CreatePostPaidServersResponse createPostPaidServers(CreatePostPaidServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.createPostPaidServers);
     }
@@ -143,7 +143,7 @@ public class EcsClient {
      *
      * @param CreateServerGroupRequest 请求对象
      * @return CreateServerGroupResponse
-    */
+     */
     public CreateServerGroupResponse createServerGroup(CreateServerGroupRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.createServerGroup);
     }
@@ -154,7 +154,7 @@ public class EcsClient {
      *
      * @param CreateServersRequest 请求对象
      * @return CreateServersResponse
-    */
+     */
     public CreateServersResponse createServers(CreateServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.createServers);
     }
@@ -165,7 +165,7 @@ public class EcsClient {
      *
      * @param DeleteServerGroupRequest 请求对象
      * @return DeleteServerGroupResponse
-    */
+     */
     public DeleteServerGroupResponse deleteServerGroup(DeleteServerGroupRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.deleteServerGroup);
     }
@@ -176,7 +176,7 @@ public class EcsClient {
      *
      * @param DeleteServerGroupMemberRequest 请求对象
      * @return DeleteServerGroupMemberResponse
-    */
+     */
     public DeleteServerGroupMemberResponse deleteServerGroupMember(DeleteServerGroupMemberRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.deleteServerGroupMember);
     }
@@ -187,7 +187,7 @@ public class EcsClient {
      *
      * @param DeleteServerMetadataRequest 请求对象
      * @return DeleteServerMetadataResponse
-    */
+     */
     public DeleteServerMetadataResponse deleteServerMetadata(DeleteServerMetadataRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.deleteServerMetadata);
     }
@@ -198,7 +198,7 @@ public class EcsClient {
      *
      * @param DeleteServersRequest 请求对象
      * @return DeleteServersResponse
-    */
+     */
     public DeleteServersResponse deleteServers(DeleteServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.deleteServers);
     }
@@ -209,7 +209,7 @@ public class EcsClient {
      *
      * @param DetachServerVolumeRequest 请求对象
      * @return DetachServerVolumeResponse
-    */
+     */
     public DetachServerVolumeResponse detachServerVolume(DetachServerVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.detachServerVolume);
     }
@@ -220,7 +220,7 @@ public class EcsClient {
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
-    */
+     */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.listFlavors);
     }
@@ -231,7 +231,7 @@ public class EcsClient {
      *
      * @param ListResizeFlavorsRequest 请求对象
      * @return ListResizeFlavorsResponse
-    */
+     */
     public ListResizeFlavorsResponse listResizeFlavors(ListResizeFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.listResizeFlavors);
     }
@@ -242,7 +242,7 @@ public class EcsClient {
      *
      * @param ListServerBlockDevicesRequest 请求对象
      * @return ListServerBlockDevicesResponse
-    */
+     */
     public ListServerBlockDevicesResponse listServerBlockDevices(ListServerBlockDevicesRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.listServerBlockDevices);
     }
@@ -253,7 +253,7 @@ public class EcsClient {
      *
      * @param ListServerInterfacesRequest 请求对象
      * @return ListServerInterfacesResponse
-    */
+     */
     public ListServerInterfacesResponse listServerInterfaces(ListServerInterfacesRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.listServerInterfaces);
     }
@@ -264,7 +264,7 @@ public class EcsClient {
      *
      * @param ListServersDetailsRequest 请求对象
      * @return ListServersDetailsResponse
-    */
+     */
     public ListServersDetailsResponse listServersDetails(ListServersDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.listServersDetails);
     }
@@ -275,7 +275,7 @@ public class EcsClient {
      *
      * @param NovaAssociateSecurityGroupRequest 请求对象
      * @return NovaAssociateSecurityGroupResponse
-    */
+     */
     public NovaAssociateSecurityGroupResponse novaAssociateSecurityGroup(NovaAssociateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaAssociateSecurityGroup);
     }
@@ -286,7 +286,7 @@ public class EcsClient {
      *
      * @param NovaCreateKeypairRequest 请求对象
      * @return NovaCreateKeypairResponse
-    */
+     */
     public NovaCreateKeypairResponse novaCreateKeypair(NovaCreateKeypairRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaCreateKeypair);
     }
@@ -297,7 +297,7 @@ public class EcsClient {
      *
      * @param NovaCreateServersRequest 请求对象
      * @return NovaCreateServersResponse
-    */
+     */
     public NovaCreateServersResponse novaCreateServers(NovaCreateServersRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaCreateServers);
     }
@@ -308,7 +308,7 @@ public class EcsClient {
      *
      * @param NovaDeleteKeypairRequest 请求对象
      * @return NovaDeleteKeypairResponse
-    */
+     */
     public NovaDeleteKeypairResponse novaDeleteKeypair(NovaDeleteKeypairRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaDeleteKeypair);
     }
@@ -319,7 +319,7 @@ public class EcsClient {
      *
      * @param NovaDeleteServerRequest 请求对象
      * @return NovaDeleteServerResponse
-    */
+     */
     public NovaDeleteServerResponse novaDeleteServer(NovaDeleteServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaDeleteServer);
     }
@@ -330,7 +330,7 @@ public class EcsClient {
      *
      * @param NovaDisassociateSecurityGroupRequest 请求对象
      * @return NovaDisassociateSecurityGroupResponse
-    */
+     */
     public NovaDisassociateSecurityGroupResponse novaDisassociateSecurityGroup(NovaDisassociateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaDisassociateSecurityGroup);
     }
@@ -341,7 +341,7 @@ public class EcsClient {
      *
      * @param NovaListAvailabilityZonesRequest 请求对象
      * @return NovaListAvailabilityZonesResponse
-    */
+     */
     public NovaListAvailabilityZonesResponse novaListAvailabilityZones(NovaListAvailabilityZonesRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListAvailabilityZones);
     }
@@ -352,7 +352,7 @@ public class EcsClient {
      *
      * @param NovaListKeypairsRequest 请求对象
      * @return NovaListKeypairsResponse
-    */
+     */
     public NovaListKeypairsResponse novaListKeypairs(NovaListKeypairsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListKeypairs);
     }
@@ -363,7 +363,7 @@ public class EcsClient {
      *
      * @param NovaListServerSecurityGroupsRequest 请求对象
      * @return NovaListServerSecurityGroupsResponse
-    */
+     */
     public NovaListServerSecurityGroupsResponse novaListServerSecurityGroups(NovaListServerSecurityGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListServerSecurityGroups);
     }
@@ -374,7 +374,7 @@ public class EcsClient {
      *
      * @param NovaListServersDetailsRequest 请求对象
      * @return NovaListServersDetailsResponse
-    */
+     */
     public NovaListServersDetailsResponse novaListServersDetails(NovaListServersDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListServersDetails);
     }
@@ -385,7 +385,7 @@ public class EcsClient {
      *
      * @param NovaShowServerRequest 请求对象
      * @return NovaShowServerResponse
-    */
+     */
     public NovaShowServerResponse novaShowServer(NovaShowServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaShowServer);
     }
@@ -396,7 +396,7 @@ public class EcsClient {
      *
      * @param ReinstallServerWithCloudInitRequest 请求对象
      * @return ReinstallServerWithCloudInitResponse
-    */
+     */
     public ReinstallServerWithCloudInitResponse reinstallServerWithCloudInit(ReinstallServerWithCloudInitRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.reinstallServerWithCloudInit);
     }
@@ -407,7 +407,7 @@ public class EcsClient {
      *
      * @param ResetServerPasswordRequest 请求对象
      * @return ResetServerPasswordResponse
-    */
+     */
     public ResetServerPasswordResponse resetServerPassword(ResetServerPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.resetServerPassword);
     }
@@ -418,7 +418,7 @@ public class EcsClient {
      *
      * @param ResizePostPaidServerRequest 请求对象
      * @return ResizePostPaidServerResponse
-    */
+     */
     public ResizePostPaidServerResponse resizePostPaidServer(ResizePostPaidServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.resizePostPaidServer);
     }
@@ -429,7 +429,7 @@ public class EcsClient {
      *
      * @param ResizeServerRequest 请求对象
      * @return ResizeServerResponse
-    */
+     */
     public ResizeServerResponse resizeServer(ResizeServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.resizeServer);
     }
@@ -440,7 +440,7 @@ public class EcsClient {
      *
      * @param ShowResetPasswordFlagRequest 请求对象
      * @return ShowResetPasswordFlagResponse
-    */
+     */
     public ShowResetPasswordFlagResponse showResetPasswordFlag(ShowResetPasswordFlagRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.showResetPasswordFlag);
     }
@@ -451,7 +451,7 @@ public class EcsClient {
      *
      * @param ShowServerRequest 请求对象
      * @return ShowServerResponse
-    */
+     */
     public ShowServerResponse showServer(ShowServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.showServer);
     }
@@ -462,7 +462,7 @@ public class EcsClient {
      *
      * @param ShowServerLimitsRequest 请求对象
      * @return ShowServerLimitsResponse
-    */
+     */
     public ShowServerLimitsResponse showServerLimits(ShowServerLimitsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.showServerLimits);
     }
@@ -473,7 +473,7 @@ public class EcsClient {
      *
      * @param ShowServerRemoteConsoleRequest 请求对象
      * @return ShowServerRemoteConsoleResponse
-    */
+     */
     public ShowServerRemoteConsoleResponse showServerRemoteConsole(ShowServerRemoteConsoleRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.showServerRemoteConsole);
     }
@@ -484,7 +484,7 @@ public class EcsClient {
      *
      * @param ShowServerTagsRequest 请求对象
      * @return ShowServerTagsResponse
-    */
+     */
     public ShowServerTagsResponse showServerTags(ShowServerTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.showServerTags);
     }
@@ -495,7 +495,7 @@ public class EcsClient {
      *
      * @param UpdateServerRequest 请求对象
      * @return UpdateServerResponse
-    */
+     */
     public UpdateServerResponse updateServer(UpdateServerRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.updateServer);
     }
@@ -506,7 +506,7 @@ public class EcsClient {
      *
      * @param UpdateServerMetadataRequest 请求对象
      * @return UpdateServerMetadataResponse
-    */
+     */
     public UpdateServerMetadataResponse updateServerMetadata(UpdateServerMetadataRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.updateServerMetadata);
     }
@@ -517,7 +517,7 @@ public class EcsClient {
      *
      * @param ShowJobRequest 请求对象
      * @return ShowJobResponse
-    */
+     */
     public ShowJobResponse showJob(ShowJobRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.showJob);
     }

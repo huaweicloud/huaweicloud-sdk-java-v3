@@ -22,7 +22,7 @@ public class DevstarClient {
      *
      * @param DownloadApplicationCodeRequest 请求对象
      * @return DownloadApplicationCodeResponse
-    */
+     */
     public DownloadApplicationCodeResponse downloadApplicationCode(DownloadApplicationCodeRequest request) {
         return hcClient.syncInvokeHttp(request, DevstarMeta.downloadApplicationCode);
     }
@@ -33,7 +33,7 @@ public class DevstarClient {
      *
      * @param RunDevstarTemplateJobRequest 请求对象
      * @return RunDevstarTemplateJobResponse
-    */
+     */
     public RunDevstarTemplateJobResponse runDevstarTemplateJob(RunDevstarTemplateJobRequest request) {
         return hcClient.syncInvokeHttp(request, DevstarMeta.runDevstarTemplateJob);
     }
@@ -44,7 +44,7 @@ public class DevstarClient {
      *
      * @param ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
-    */
+     */
     public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
         return hcClient.syncInvokeHttp(request, DevstarMeta.showJobDetail);
     }
@@ -55,7 +55,7 @@ public class DevstarClient {
      *
      * @param ListPublishedTemplatesRequest 请求对象
      * @return ListPublishedTemplatesResponse
-    */
+     */
     public ListPublishedTemplatesResponse listPublishedTemplates(ListPublishedTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, DevstarMeta.listPublishedTemplates);
     }
@@ -66,7 +66,7 @@ public class DevstarClient {
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return ShowTemplateDetailResponse
-    */
+     */
     public ShowTemplateDetailResponse showTemplateDetail(ShowTemplateDetailRequest request) {
         return hcClient.syncInvokeHttp(request, DevstarMeta.showTemplateDetail);
     }

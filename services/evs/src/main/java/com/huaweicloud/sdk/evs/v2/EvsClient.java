@@ -22,7 +22,7 @@ public class EvsClient {
      *
      * @param BatchCreateVolumeTagsRequest 请求对象
      * @return BatchCreateVolumeTagsResponse
-    */
+     */
     public BatchCreateVolumeTagsResponse batchCreateVolumeTags(BatchCreateVolumeTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.batchCreateVolumeTags);
     }
@@ -33,7 +33,7 @@ public class EvsClient {
      *
      * @param BatchDeleteVolumeTagsRequest 请求对象
      * @return BatchDeleteVolumeTagsResponse
-    */
+     */
     public BatchDeleteVolumeTagsResponse batchDeleteVolumeTags(BatchDeleteVolumeTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.batchDeleteVolumeTags);
     }
@@ -44,7 +44,7 @@ public class EvsClient {
      *
      * @param CinderExportToImageRequest 请求对象
      * @return CinderExportToImageResponse
-    */
+     */
     public CinderExportToImageResponse cinderExportToImage(CinderExportToImageRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.cinderExportToImage);
     }
@@ -55,7 +55,7 @@ public class EvsClient {
      *
      * @param CinderListAvailabilityZonesRequest 请求对象
      * @return CinderListAvailabilityZonesResponse
-    */
+     */
     public CinderListAvailabilityZonesResponse cinderListAvailabilityZones(CinderListAvailabilityZonesRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.cinderListAvailabilityZones);
     }
@@ -66,7 +66,7 @@ public class EvsClient {
      *
      * @param CinderListQuotasRequest 请求对象
      * @return CinderListQuotasResponse
-    */
+     */
     public CinderListQuotasResponse cinderListQuotas(CinderListQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.cinderListQuotas);
     }
@@ -77,7 +77,7 @@ public class EvsClient {
      *
      * @param CinderListVolumeTypesRequest 请求对象
      * @return CinderListVolumeTypesResponse
-    */
+     */
     public CinderListVolumeTypesResponse cinderListVolumeTypes(CinderListVolumeTypesRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.cinderListVolumeTypes);
     }
@@ -88,7 +88,7 @@ public class EvsClient {
      *
      * @param CreateSnapshotRequest 请求对象
      * @return CreateSnapshotResponse
-    */
+     */
     public CreateSnapshotResponse createSnapshot(CreateSnapshotRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.createSnapshot);
     }
@@ -99,7 +99,7 @@ public class EvsClient {
      *
      * @param CreateVolumeRequest 请求对象
      * @return CreateVolumeResponse
-    */
+     */
     public CreateVolumeResponse createVolume(CreateVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.createVolume);
     }
@@ -110,7 +110,7 @@ public class EvsClient {
      *
      * @param DeleteSnapshotRequest 请求对象
      * @return DeleteSnapshotResponse
-    */
+     */
     public DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.deleteSnapshot);
     }
@@ -121,7 +121,7 @@ public class EvsClient {
      *
      * @param DeleteVolumeRequest 请求对象
      * @return DeleteVolumeResponse
-    */
+     */
     public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.deleteVolume);
     }
@@ -132,7 +132,7 @@ public class EvsClient {
      *
      * @param ListSnapshotsRequest 请求对象
      * @return ListSnapshotsResponse
-    */
+     */
     public ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.listSnapshots);
     }
@@ -143,7 +143,7 @@ public class EvsClient {
      *
      * @param ListVolumeTagsRequest 请求对象
      * @return ListVolumeTagsResponse
-    */
+     */
     public ListVolumeTagsResponse listVolumeTags(ListVolumeTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.listVolumeTags);
     }
@@ -154,7 +154,7 @@ public class EvsClient {
      *
      * @param ListVolumesRequest 请求对象
      * @return ListVolumesResponse
-    */
+     */
     public ListVolumesResponse listVolumes(ListVolumesRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.listVolumes);
     }
@@ -165,7 +165,7 @@ public class EvsClient {
      *
      * @param ListVolumesByTagsRequest 请求对象
      * @return ListVolumesByTagsResponse
-    */
+     */
     public ListVolumesByTagsResponse listVolumesByTags(ListVolumesByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.listVolumesByTags);
     }
@@ -176,7 +176,7 @@ public class EvsClient {
      *
      * @param ResizeVolumeRequest 请求对象
      * @return ResizeVolumeResponse
-    */
+     */
     public ResizeVolumeResponse resizeVolume(ResizeVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.resizeVolume);
     }
@@ -187,7 +187,7 @@ public class EvsClient {
      *
      * @param RollbackSnapshotRequest 请求对象
      * @return RollbackSnapshotResponse
-    */
+     */
     public RollbackSnapshotResponse rollbackSnapshot(RollbackSnapshotRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.rollbackSnapshot);
     }
@@ -198,7 +198,7 @@ public class EvsClient {
      *
      * @param ShowJobRequest 请求对象
      * @return ShowJobResponse
-    */
+     */
     public ShowJobResponse showJob(ShowJobRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.showJob);
     }
@@ -209,7 +209,7 @@ public class EvsClient {
      *
      * @param ShowSnapshotRequest 请求对象
      * @return ShowSnapshotResponse
-    */
+     */
     public ShowSnapshotResponse showSnapshot(ShowSnapshotRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.showSnapshot);
     }
@@ -220,7 +220,7 @@ public class EvsClient {
      *
      * @param ShowVolumeRequest 请求对象
      * @return ShowVolumeResponse
-    */
+     */
     public ShowVolumeResponse showVolume(ShowVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.showVolume);
     }
@@ -231,7 +231,7 @@ public class EvsClient {
      *
      * @param ShowVolumeTagsRequest 请求对象
      * @return ShowVolumeTagsResponse
-    */
+     */
     public ShowVolumeTagsResponse showVolumeTags(ShowVolumeTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.showVolumeTags);
     }
@@ -242,7 +242,7 @@ public class EvsClient {
      *
      * @param UpdateSnapshotRequest 请求对象
      * @return UpdateSnapshotResponse
-    */
+     */
     public UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.updateSnapshot);
     }
@@ -253,7 +253,7 @@ public class EvsClient {
      *
      * @param UpdateVolumeRequest 请求对象
      * @return UpdateVolumeResponse
-    */
+     */
     public UpdateVolumeResponse updateVolume(UpdateVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, EvsMeta.updateVolume);
     }

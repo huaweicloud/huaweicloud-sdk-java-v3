@@ -47,8 +47,12 @@ public class DeleteScalingTagsRequest  {
             this.value = value;
         }
 
-        @Override
         @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
         public String toString() {
             return String.valueOf(value);
         }

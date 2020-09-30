@@ -22,7 +22,7 @@ public class ImageClient {
      *
      * @param RunCelebrityRecognitionRequest 请求对象
      * @return RunCelebrityRecognitionResponse
-    */
+     */
     public RunCelebrityRecognitionResponse runCelebrityRecognition(RunCelebrityRecognitionRequest request) {
         return hcClient.syncInvokeHttp(request, ImageMeta.runCelebrityRecognition);
     }
@@ -33,7 +33,7 @@ public class ImageClient {
      *
      * @param RunImageTaggingRequest 请求对象
      * @return RunImageTaggingResponse
-    */
+     */
     public RunImageTaggingResponse runImageTagging(RunImageTaggingRequest request) {
         return hcClient.syncInvokeHttp(request, ImageMeta.runImageTagging);
     }

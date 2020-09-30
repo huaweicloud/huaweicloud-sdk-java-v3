@@ -57,7 +57,7 @@ public class ShowMetricDataResponse extends SdkResponse {
     }
 
     /**
-     *   指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
+     * 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
      * @return datapoints
      */
     public List<Datapoint> getDatapoints() {

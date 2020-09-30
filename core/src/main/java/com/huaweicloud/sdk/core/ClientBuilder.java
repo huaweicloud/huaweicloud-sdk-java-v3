@@ -29,7 +29,6 @@ import java.util.function.Function;
 
 import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
-import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpConfig;
@@ -39,15 +38,13 @@ public class ClientBuilder<T> {
     private ICredential credential;
     private HttpConfig httpConfig;
     private String endpoint;
-    private List<String> credentialType = new ArrayList<>(Arrays.asList(BasicCredentials.class.getSimpleName(),
-        GlobalCredentials.class.getSimpleName()));
+    private List<String> credentialType = new ArrayList<>(Arrays.asList(BasicCredentials.class.getSimpleName()));
 
     private static final String CUSTOMIZATION = "Customization";
 
     public ClientBuilder(Function<HcClient, T> creator) {
         this.creator = creator;
     }
-
 
     public ClientBuilder(Function<HcClient, T> creator, String credentialType) {
         this.creator = creator;

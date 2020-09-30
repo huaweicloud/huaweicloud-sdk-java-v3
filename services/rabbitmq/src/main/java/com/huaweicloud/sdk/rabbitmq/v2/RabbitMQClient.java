@@ -22,7 +22,7 @@ public class RabbitMQClient {
      *
      * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
      * @return BatchCreateOrDeleteInstanceTagResponse
-    */
+     */
     public BatchCreateOrDeleteInstanceTagResponse batchCreateOrDeleteInstanceTag(BatchCreateOrDeleteInstanceTagRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.batchCreateOrDeleteInstanceTag);
     }
@@ -33,7 +33,7 @@ public class RabbitMQClient {
      *
      * @param BatchRestartOrDeleteInstancesRequest 请求对象
      * @return BatchRestartOrDeleteInstancesResponse
-    */
+     */
     public BatchRestartOrDeleteInstancesResponse batchRestartOrDeleteInstances(BatchRestartOrDeleteInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.batchRestartOrDeleteInstances);
     }
@@ -44,7 +44,7 @@ public class RabbitMQClient {
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return CreatePostPaidInstanceResponse
-    */
+     */
     public CreatePostPaidInstanceResponse createPostPaidInstance(CreatePostPaidInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.createPostPaidInstance);
     }
@@ -55,7 +55,7 @@ public class RabbitMQClient {
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return DeleteBackgroundTaskResponse
-    */
+     */
     public DeleteBackgroundTaskResponse deleteBackgroundTask(DeleteBackgroundTaskRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.deleteBackgroundTask);
     }
@@ -66,7 +66,7 @@ public class RabbitMQClient {
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
-    */
+     */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.deleteInstance);
     }
@@ -77,7 +77,7 @@ public class RabbitMQClient {
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
-    */
+     */
     public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.listAvailableZones);
     }
@@ -88,7 +88,7 @@ public class RabbitMQClient {
      *
      * @param ListBackgroundTasksRequest 请求对象
      * @return ListBackgroundTasksResponse
-    */
+     */
     public ListBackgroundTasksResponse listBackgroundTasks(ListBackgroundTasksRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.listBackgroundTasks);
     }
@@ -99,7 +99,7 @@ public class RabbitMQClient {
      *
      * @param ListInstancesDetailsRequest 请求对象
      * @return ListInstancesDetailsResponse
-    */
+     */
     public ListInstancesDetailsResponse listInstancesDetails(ListInstancesDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.listInstancesDetails);
     }
@@ -110,7 +110,7 @@ public class RabbitMQClient {
      *
      * @param ListPluginsRequest 请求对象
      * @return ListPluginsResponse
-    */
+     */
     public ListPluginsResponse listPlugins(ListPluginsRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.listPlugins);
     }
@@ -121,7 +121,7 @@ public class RabbitMQClient {
      *
      * @param ListProductsRequest 请求对象
      * @return ListProductsResponse
-    */
+     */
     public ListProductsResponse listProducts(ListProductsRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.listProducts);
     }
@@ -132,7 +132,7 @@ public class RabbitMQClient {
      *
      * @param ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
-    */
+     */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.resetPassword);
     }
@@ -143,7 +143,7 @@ public class RabbitMQClient {
      *
      * @param ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
-    */
+     */
     public ResizeInstanceResponse resizeInstance(ResizeInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.resizeInstance);
     }
@@ -154,7 +154,7 @@ public class RabbitMQClient {
      *
      * @param ShowBackgroundTaskRequest 请求对象
      * @return ShowBackgroundTaskResponse
-    */
+     */
     public ShowBackgroundTaskResponse showBackgroundTask(ShowBackgroundTaskRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.showBackgroundTask);
     }
@@ -165,7 +165,7 @@ public class RabbitMQClient {
      *
      * @param ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
-    */
+     */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.showInstance);
     }
@@ -176,7 +176,7 @@ public class RabbitMQClient {
      *
      * @param ShowInstanceExtendProductInfoRequest 请求对象
      * @return ShowInstanceExtendProductInfoResponse
-    */
+     */
     public ShowInstanceExtendProductInfoResponse showInstanceExtendProductInfo(ShowInstanceExtendProductInfoRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.showInstanceExtendProductInfo);
     }
@@ -187,7 +187,7 @@ public class RabbitMQClient {
      *
      * @param ShowInstanceTagsRequest 请求对象
      * @return ShowInstanceTagsResponse
-    */
+     */
     public ShowInstanceTagsResponse showInstanceTags(ShowInstanceTagsRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.showInstanceTags);
     }
@@ -198,7 +198,7 @@ public class RabbitMQClient {
      *
      * @param ShowMaintainWindowsRequest 请求对象
      * @return ShowMaintainWindowsResponse
-    */
+     */
     public ShowMaintainWindowsResponse showMaintainWindows(ShowMaintainWindowsRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.showMaintainWindows);
     }
@@ -209,7 +209,7 @@ public class RabbitMQClient {
      *
      * @param ShowProjectTagsRequest 请求对象
      * @return ShowProjectTagsResponse
-    */
+     */
     public ShowProjectTagsResponse showProjectTags(ShowProjectTagsRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.showProjectTags);
     }
@@ -220,7 +220,7 @@ public class RabbitMQClient {
      *
      * @param UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
-    */
+     */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.updateInstance);
     }
@@ -231,7 +231,7 @@ public class RabbitMQClient {
      *
      * @param UpdatePluginsRequest 请求对象
      * @return UpdatePluginsResponse
-    */
+     */
     public UpdatePluginsResponse updatePlugins(UpdatePluginsRequest request) {
         return hcClient.syncInvokeHttp(request, RabbitMQMeta.updatePlugins);
     }

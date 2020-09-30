@@ -22,7 +22,7 @@ public class DevcloudpipelineClient {
      *
      * @param BatchShowPipelinesStatusRequest 请求对象
      * @return BatchShowPipelinesStatusResponse
-    */
+     */
     public BatchShowPipelinesStatusResponse batchShowPipelinesStatus(BatchShowPipelinesStatusRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.batchShowPipelinesStatus);
     }
@@ -33,7 +33,7 @@ public class DevcloudpipelineClient {
      *
      * @param CreatePipelineByTemplateRequest 请求对象
      * @return CreatePipelineByTemplateResponse
-    */
+     */
     public CreatePipelineByTemplateResponse createPipelineByTemplate(CreatePipelineByTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.createPipelineByTemplate);
     }
@@ -44,7 +44,7 @@ public class DevcloudpipelineClient {
      *
      * @param ListTemplatesRequest 请求对象
      * @return ListTemplatesResponse
-    */
+     */
     public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.listTemplates);
     }
@@ -55,7 +55,7 @@ public class DevcloudpipelineClient {
      *
      * @param RegisterAgentRequest 请求对象
      * @return RegisterAgentResponse
-    */
+     */
     public RegisterAgentResponse registerAgent(RegisterAgentRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.registerAgent);
     }
@@ -66,7 +66,7 @@ public class DevcloudpipelineClient {
      *
      * @param RemovePipelineRequest 请求对象
      * @return RemovePipelineResponse
-    */
+     */
     public RemovePipelineResponse removePipeline(RemovePipelineRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.removePipeline);
     }
@@ -77,7 +77,7 @@ public class DevcloudpipelineClient {
      *
      * @param ShowAgentStatusRequest 请求对象
      * @return ShowAgentStatusResponse
-    */
+     */
     public ShowAgentStatusResponse showAgentStatus(ShowAgentStatusRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.showAgentStatus);
     }
@@ -88,7 +88,7 @@ public class DevcloudpipelineClient {
      *
      * @param ShowInstanceStatusRequest 请求对象
      * @return ShowInstanceStatusResponse
-    */
+     */
     public ShowInstanceStatusResponse showInstanceStatus(ShowInstanceStatusRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.showInstanceStatus);
     }
@@ -99,7 +99,7 @@ public class DevcloudpipelineClient {
      *
      * @param ShowPipleineStatusRequest 请求对象
      * @return ShowPipleineStatusResponse
-    */
+     */
     public ShowPipleineStatusResponse showPipleineStatus(ShowPipleineStatusRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.showPipleineStatus);
     }
@@ -110,7 +110,7 @@ public class DevcloudpipelineClient {
      *
      * @param ShowTemplateDetailRequest 请求对象
      * @return ShowTemplateDetailResponse
-    */
+     */
     public ShowTemplateDetailResponse showTemplateDetail(ShowTemplateDetailRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.showTemplateDetail);
     }
@@ -121,7 +121,7 @@ public class DevcloudpipelineClient {
      *
      * @param StartNewPipelineRequest 请求对象
      * @return StartNewPipelineResponse
-    */
+     */
     public StartNewPipelineResponse startNewPipeline(StartNewPipelineRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.startNewPipeline);
     }
@@ -132,7 +132,7 @@ public class DevcloudpipelineClient {
      *
      * @param StartPipelineRequest 请求对象
      * @return StartPipelineResponse
-    */
+     */
     public StartPipelineResponse startPipeline(StartPipelineRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.startPipeline);
     }
@@ -143,7 +143,7 @@ public class DevcloudpipelineClient {
      *
      * @param StopPipelineRequest 请求对象
      * @return StopPipelineResponse
-    */
+     */
     public StopPipelineResponse stopPipeline(StopPipelineRequest request) {
         return hcClient.syncInvokeHttp(request, DevcloudpipelineMeta.stopPipeline);
     }

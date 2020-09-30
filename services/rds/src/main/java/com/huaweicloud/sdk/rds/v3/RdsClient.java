@@ -22,7 +22,7 @@ public class RdsClient {
      *
      * @param BatchTagActionRequest 请求对象
      * @return BatchTagActionResponse
-    */
+     */
     public BatchTagActionResponse batchTagAction(BatchTagActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.batchTagAction);
     }
@@ -33,7 +33,7 @@ public class RdsClient {
      *
      * @param CreateConfigurationRequest 请求对象
      * @return CreateConfigurationResponse
-    */
+     */
     public CreateConfigurationResponse createConfiguration(CreateConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createConfiguration);
     }
@@ -44,7 +44,7 @@ public class RdsClient {
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
-    */
+     */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createInstance);
     }
@@ -55,7 +55,7 @@ public class RdsClient {
      *
      * @param DeleteConfigurationRequest 请求对象
      * @return DeleteConfigurationResponse
-    */
+     */
     public DeleteConfigurationResponse deleteConfiguration(DeleteConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteConfiguration);
     }
@@ -66,7 +66,7 @@ public class RdsClient {
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
-    */
+     */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteInstance);
     }
@@ -77,7 +77,7 @@ public class RdsClient {
      *
      * @param DoManualBackupRequest 请求对象
      * @return DoManualBackupResponse
-    */
+     */
     public DoManualBackupResponse doManualBackup(DoManualBackupRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.doManualBackup);
     }
@@ -88,7 +88,7 @@ public class RdsClient {
      *
      * @param ListAuditlogsRequest 请求对象
      * @return ListAuditlogsResponse
-    */
+     */
     public ListAuditlogsResponse listAuditlogs(ListAuditlogsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listAuditlogs);
     }
@@ -99,7 +99,7 @@ public class RdsClient {
      *
      * @param ListBackupsRequest 请求对象
      * @return ListBackupsResponse
-    */
+     */
     public ListBackupsResponse listBackups(ListBackupsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listBackups);
     }
@@ -110,7 +110,7 @@ public class RdsClient {
      *
      * @param ListCollationsRequest 请求对象
      * @return ListCollationsResponse
-    */
+     */
     public ListCollationsResponse listCollations(ListCollationsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listCollations);
     }
@@ -121,7 +121,7 @@ public class RdsClient {
      *
      * @param ListDatastoresRequest 请求对象
      * @return ListDatastoresResponse
-    */
+     */
     public ListDatastoresResponse listDatastores(ListDatastoresRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listDatastores);
     }
@@ -132,7 +132,7 @@ public class RdsClient {
      *
      * @param ListErrorLogsRequest 请求对象
      * @return ListErrorLogsResponse
-    */
+     */
     public ListErrorLogsResponse listErrorLogs(ListErrorLogsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listErrorLogs);
     }
@@ -143,7 +143,7 @@ public class RdsClient {
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
-    */
+     */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listFlavors);
     }
@@ -154,7 +154,7 @@ public class RdsClient {
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
-    */
+     */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listInstances);
     }
@@ -165,7 +165,7 @@ public class RdsClient {
      *
      * @param ListSlowLogsRequest 请求对象
      * @return ListSlowLogsResponse
-    */
+     */
     public ListSlowLogsResponse listSlowLogs(ListSlowLogsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSlowLogs);
     }
@@ -176,7 +176,7 @@ public class RdsClient {
      *
      * @param ListStorageTypesRequest 请求对象
      * @return ListStorageTypesResponse
-    */
+     */
     public ListStorageTypesResponse listStorageTypes(ListStorageTypesRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listStorageTypes);
     }
@@ -187,7 +187,7 @@ public class RdsClient {
      *
      * @param ResetPwdRequest 请求对象
      * @return ResetPwdResponse
-    */
+     */
     public ResetPwdResponse resetPwd(ResetPwdRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.resetPwd);
     }
@@ -198,7 +198,7 @@ public class RdsClient {
      *
      * @param SetAuditlogPolicyRequest 请求对象
      * @return SetAuditlogPolicyResponse
-    */
+     */
     public SetAuditlogPolicyResponse setAuditlogPolicy(SetAuditlogPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setAuditlogPolicy);
     }
@@ -209,7 +209,7 @@ public class RdsClient {
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return SetBackupPolicyResponse
-    */
+     */
     public SetBackupPolicyResponse setBackupPolicy(SetBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setBackupPolicy);
     }
@@ -220,7 +220,7 @@ public class RdsClient {
      *
      * @param ShowAuditlogPolicyRequest 请求对象
      * @return ShowAuditlogPolicyResponse
-    */
+     */
     public ShowAuditlogPolicyResponse showAuditlogPolicy(ShowAuditlogPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showAuditlogPolicy);
     }
@@ -231,7 +231,7 @@ public class RdsClient {
      *
      * @param ShowBackupPolicyRequest 请求对象
      * @return ShowBackupPolicyResponse
-    */
+     */
     public ShowBackupPolicyResponse showBackupPolicy(ShowBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showBackupPolicy);
     }
@@ -242,7 +242,7 @@ public class RdsClient {
      *
      * @param ShowConfigurationRequest 请求对象
      * @return ShowConfigurationResponse
-    */
+     */
     public ShowConfigurationResponse showConfiguration(ShowConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showConfiguration);
     }
@@ -253,7 +253,7 @@ public class RdsClient {
      *
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return ShowInstanceConfigurationResponse
-    */
+     */
     public ShowInstanceConfigurationResponse showInstanceConfiguration(ShowInstanceConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showInstanceConfiguration);
     }
@@ -264,7 +264,7 @@ public class RdsClient {
      *
      * @param StartInstanceActionRequest 请求对象
      * @return StartInstanceActionResponse
-    */
+     */
     public StartInstanceActionResponse startInstanceAction(StartInstanceActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceAction);
     }
@@ -275,7 +275,7 @@ public class RdsClient {
      *
      * @param UpdateDataIpRequest 请求对象
      * @return UpdateDataIpResponse
-    */
+     */
     public UpdateDataIpResponse updateDataIp(UpdateDataIpRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updateDataIp);
     }
@@ -286,7 +286,7 @@ public class RdsClient {
      *
      * @param UpdatePortRequest 请求对象
      * @return UpdatePortResponse
-    */
+     */
     public UpdatePortResponse updatePort(UpdatePortRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.updatePort);
     }
@@ -297,7 +297,7 @@ public class RdsClient {
      *
      * @param AllowDbUserPrivilegeRequest 请求对象
      * @return AllowDbUserPrivilegeResponse
-    */
+     */
     public AllowDbUserPrivilegeResponse allowDbUserPrivilege(AllowDbUserPrivilegeRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.allowDbUserPrivilege);
     }
@@ -308,7 +308,7 @@ public class RdsClient {
      *
      * @param CreateDatabaseRequest 请求对象
      * @return CreateDatabaseResponse
-    */
+     */
     public CreateDatabaseResponse createDatabase(CreateDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createDatabase);
     }
@@ -319,7 +319,7 @@ public class RdsClient {
      *
      * @param CreateDbUserRequest 请求对象
      * @return CreateDbUserResponse
-    */
+     */
     public CreateDbUserResponse createDbUser(CreateDbUserRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.createDbUser);
     }
@@ -330,7 +330,7 @@ public class RdsClient {
      *
      * @param DeleteDatabaseRequest 请求对象
      * @return DeleteDatabaseResponse
-    */
+     */
     public DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteDatabase);
     }
@@ -341,7 +341,7 @@ public class RdsClient {
      *
      * @param SetDbUserPwdRequest 请求对象
      * @return SetDbUserPwdResponse
-    */
+     */
     public SetDbUserPwdResponse setDbUserPwd(SetDbUserPwdRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.setDbUserPwd);
     }

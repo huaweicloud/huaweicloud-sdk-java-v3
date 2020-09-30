@@ -99,8 +99,12 @@ public class CreateAlarmRequestBody  {
             this.value = value;
         }
 
-        @Override
         @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
         public String toString() {
             return String.valueOf(value);
         }
@@ -166,6 +170,12 @@ public class CreateAlarmRequestBody  {
     
     private List<AlarmActions> okActions = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
     public CreateAlarmRequestBody withAlarmName(String alarmName) {
         this.alarmName = alarmName;
         return this;
@@ -195,7 +205,7 @@ public class CreateAlarmRequestBody  {
 
 
     /**
-     * 
+     * 告警描述，长度0-256。
      * @return alarmDescription
      */
     public String getAlarmDescription() {
@@ -441,6 +451,26 @@ public class CreateAlarmRequestBody  {
     public void setOkActions(List<AlarmActions> okActions) {
         this.okActions = okActions;
     }
+
+    public CreateAlarmRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目ID。默认值为0，表示默认的企业项目default。说明：此参数在“华东-上海一”区域上线。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -460,11 +490,12 @@ public class CreateAlarmRequestBody  {
             Objects.equals(this.alarmType, createAlarmRequestBody.alarmType) &&
             Objects.equals(this.alarmActions, createAlarmRequestBody.alarmActions) &&
             Objects.equals(this.insufficientdataActions, createAlarmRequestBody.insufficientdataActions) &&
-            Objects.equals(this.okActions, createAlarmRequestBody.okActions);
+            Objects.equals(this.okActions, createAlarmRequestBody.okActions) &&
+            Objects.equals(this.enterpriseProjectId, createAlarmRequestBody.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(alarmName, alarmDescription, metric, condition, alarmEnabled, alarmActionEnabled, alarmLevel, alarmType, alarmActions, insufficientdataActions, okActions);
+        return Objects.hash(alarmName, alarmDescription, metric, condition, alarmEnabled, alarmActionEnabled, alarmLevel, alarmType, alarmActions, insufficientdataActions, okActions, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -481,6 +512,7 @@ public class CreateAlarmRequestBody  {
         sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
         sb.append("    insufficientdataActions: ").append(toIndentedString(insufficientdataActions)).append("\n");
         sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

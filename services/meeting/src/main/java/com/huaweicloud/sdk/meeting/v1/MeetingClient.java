@@ -22,7 +22,7 @@ public class MeetingClient {
      *
      * @param AddCorpRequest 请求对象
      * @return AddCorpResponse
-    */
+     */
     public AddCorpResponse addCorp(AddCorpRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addCorp);
     }
@@ -33,7 +33,7 @@ public class MeetingClient {
      *
      * @param AddCorpAdminRequest 请求对象
      * @return AddCorpAdminResponse
-    */
+     */
     public AddCorpAdminResponse addCorpAdmin(AddCorpAdminRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addCorpAdmin);
     }
@@ -44,7 +44,7 @@ public class MeetingClient {
      *
      * @param AddDepartmentRequest 请求对象
      * @return AddDepartmentResponse
-    */
+     */
     public AddDepartmentResponse addDepartment(AddDepartmentRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addDepartment);
     }
@@ -55,7 +55,7 @@ public class MeetingClient {
      *
      * @param AddDeviceRequest 请求对象
      * @return AddDeviceResponse
-    */
+     */
     public AddDeviceResponse addDevice(AddDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addDevice);
     }
@@ -66,7 +66,7 @@ public class MeetingClient {
      *
      * @param AddProgramRequest 请求对象
      * @return AddProgramResponse
-    */
+     */
     public AddProgramResponse addProgram(AddProgramRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addProgram);
     }
@@ -77,7 +77,7 @@ public class MeetingClient {
      *
      * @param AddPublicationRequest 请求对象
      * @return AddPublicationResponse
-    */
+     */
     public AddPublicationResponse addPublication(AddPublicationRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addPublication);
     }
@@ -88,7 +88,7 @@ public class MeetingClient {
      *
      * @param AddResourceRequest 请求对象
      * @return AddResourceResponse
-    */
+     */
     public AddResourceResponse addResource(AddResourceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addResource);
     }
@@ -99,7 +99,7 @@ public class MeetingClient {
      *
      * @param AddToPersonalSpaceRequest 请求对象
      * @return AddToPersonalSpaceResponse
-    */
+     */
     public AddToPersonalSpaceResponse addToPersonalSpace(AddToPersonalSpaceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addToPersonalSpace);
     }
@@ -110,7 +110,7 @@ public class MeetingClient {
      *
      * @param AddUserRequest 请求对象
      * @return AddUserResponse
-    */
+     */
     public AddUserResponse addUser(AddUserRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.addUser);
     }
@@ -121,7 +121,7 @@ public class MeetingClient {
      *
      * @param AllowGuestUnmuteRequest 请求对象
      * @return AllowGuestUnmuteResponse
-    */
+     */
     public AllowGuestUnmuteResponse allowGuestUnmute(AllowGuestUnmuteRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.allowGuestUnmute);
     }
@@ -132,7 +132,7 @@ public class MeetingClient {
      *
      * @param AssociateVmrRequest 请求对象
      * @return AssociateVmrResponse
-    */
+     */
     public AssociateVmrResponse associateVmr(AssociateVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.associateVmr);
     }
@@ -143,7 +143,7 @@ public class MeetingClient {
      *
      * @param BatchDeleteCorpAdminsRequest 请求对象
      * @return BatchDeleteCorpAdminsResponse
-    */
+     */
     public BatchDeleteCorpAdminsResponse batchDeleteCorpAdmins(BatchDeleteCorpAdminsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeleteCorpAdmins);
     }
@@ -154,7 +154,7 @@ public class MeetingClient {
      *
      * @param BatchDeleteDevicesRequest 请求对象
      * @return BatchDeleteDevicesResponse
-    */
+     */
     public BatchDeleteDevicesResponse batchDeleteDevices(BatchDeleteDevicesRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeleteDevices);
     }
@@ -165,7 +165,7 @@ public class MeetingClient {
      *
      * @param BatchDeleteMaterialsRequest 请求对象
      * @return BatchDeleteMaterialsResponse
-    */
+     */
     public BatchDeleteMaterialsResponse batchDeleteMaterials(BatchDeleteMaterialsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeleteMaterials);
     }
@@ -176,7 +176,7 @@ public class MeetingClient {
      *
      * @param BatchDeleteProgramsRequest 请求对象
      * @return BatchDeleteProgramsResponse
-    */
+     */
     public BatchDeleteProgramsResponse batchDeletePrograms(BatchDeleteProgramsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeletePrograms);
     }
@@ -187,7 +187,7 @@ public class MeetingClient {
      *
      * @param BatchDeletePublicationsRequest 请求对象
      * @return BatchDeletePublicationsResponse
-    */
+     */
     public BatchDeletePublicationsResponse batchDeletePublications(BatchDeletePublicationsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeletePublications);
     }
@@ -198,7 +198,7 @@ public class MeetingClient {
      *
      * @param BatchDeleteUsersRequest 请求对象
      * @return BatchDeleteUsersResponse
-    */
+     */
     public BatchDeleteUsersResponse batchDeleteUsers(BatchDeleteUsersRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchDeleteUsers);
     }
@@ -209,7 +209,7 @@ public class MeetingClient {
      *
      * @param BatchUpdateDevicesStatusRequest 请求对象
      * @return BatchUpdateDevicesStatusResponse
-    */
+     */
     public BatchUpdateDevicesStatusResponse batchUpdateDevicesStatus(BatchUpdateDevicesStatusRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchUpdateDevicesStatus);
     }
@@ -220,7 +220,7 @@ public class MeetingClient {
      *
      * @param BatchUpdateUserStatusRequest 请求对象
      * @return BatchUpdateUserStatusResponse
-    */
+     */
     public BatchUpdateUserStatusResponse batchUpdateUserStatus(BatchUpdateUserStatusRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.batchUpdateUserStatus);
     }
@@ -231,7 +231,7 @@ public class MeetingClient {
      *
      * @param BroadcastParticipantRequest 请求对象
      * @return BroadcastParticipantResponse
-    */
+     */
     public BroadcastParticipantResponse broadcastParticipant(BroadcastParticipantRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.broadcastParticipant);
     }
@@ -242,7 +242,7 @@ public class MeetingClient {
      *
      * @param CancelMeetingRequest 请求对象
      * @return CancelMeetingResponse
-    */
+     */
     public CancelMeetingResponse cancelMeeting(CancelMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.cancelMeeting);
     }
@@ -253,7 +253,7 @@ public class MeetingClient {
      *
      * @param CheckSlideVerifyCodeRequest 请求对象
      * @return CheckSlideVerifyCodeResponse
-    */
+     */
     public CheckSlideVerifyCodeResponse checkSlideVerifyCode(CheckSlideVerifyCodeRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.checkSlideVerifyCode);
     }
@@ -264,7 +264,7 @@ public class MeetingClient {
      *
      * @param CheckTokenRequest 请求对象
      * @return CheckTokenResponse
-    */
+     */
     public CheckTokenResponse checkToken(CheckTokenRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.checkToken);
     }
@@ -275,7 +275,7 @@ public class MeetingClient {
      *
      * @param CheckVeriCodeForUpdateUserInfoRequest 请求对象
      * @return CheckVeriCodeForUpdateUserInfoResponse
-    */
+     */
     public CheckVeriCodeForUpdateUserInfoResponse checkVeriCodeForUpdateUserInfo(CheckVeriCodeForUpdateUserInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.checkVeriCodeForUpdateUserInfo);
     }
@@ -286,7 +286,7 @@ public class MeetingClient {
      *
      * @param CheckVerifyCodeRequest 请求对象
      * @return CheckVerifyCodeResponse
-    */
+     */
     public CheckVerifyCodeResponse checkVerifyCode(CheckVerifyCodeRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.checkVerifyCode);
     }
@@ -297,7 +297,7 @@ public class MeetingClient {
      *
      * @param CreateAnonymousAuthRandomRequest 请求对象
      * @return CreateAnonymousAuthRandomResponse
-    */
+     */
     public CreateAnonymousAuthRandomResponse createAnonymousAuthRandom(CreateAnonymousAuthRandomRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.createAnonymousAuthRandom);
     }
@@ -308,7 +308,7 @@ public class MeetingClient {
      *
      * @param CreateConfTokenRequest 请求对象
      * @return CreateConfTokenResponse
-    */
+     */
     public CreateConfTokenResponse createConfToken(CreateConfTokenRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.createConfToken);
     }
@@ -319,7 +319,7 @@ public class MeetingClient {
      *
      * @param CreateMeetingRequest 请求对象
      * @return CreateMeetingResponse
-    */
+     */
     public CreateMeetingResponse createMeeting(CreateMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.createMeeting);
     }
@@ -330,7 +330,7 @@ public class MeetingClient {
      *
      * @param DeleteAttendeesRequest 请求对象
      * @return DeleteAttendeesResponse
-    */
+     */
     public DeleteAttendeesResponse deleteAttendees(DeleteAttendeesRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteAttendees);
     }
@@ -341,7 +341,7 @@ public class MeetingClient {
      *
      * @param DeleteCorpRequest 请求对象
      * @return DeleteCorpResponse
-    */
+     */
     public DeleteCorpResponse deleteCorp(DeleteCorpRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteCorp);
     }
@@ -352,7 +352,7 @@ public class MeetingClient {
      *
      * @param DeleteCorpVmrRequest 请求对象
      * @return DeleteCorpVmrResponse
-    */
+     */
     public DeleteCorpVmrResponse deleteCorpVmr(DeleteCorpVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteCorpVmr);
     }
@@ -363,7 +363,7 @@ public class MeetingClient {
      *
      * @param DeleteDepartmentRequest 请求对象
      * @return DeleteDepartmentResponse
-    */
+     */
     public DeleteDepartmentResponse deleteDepartment(DeleteDepartmentRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteDepartment);
     }
@@ -374,7 +374,7 @@ public class MeetingClient {
      *
      * @param DeleteRecordingsRequest 请求对象
      * @return DeleteRecordingsResponse
-    */
+     */
     public DeleteRecordingsResponse deleteRecordings(DeleteRecordingsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteRecordings);
     }
@@ -385,7 +385,7 @@ public class MeetingClient {
      *
      * @param DeleteResourceRequest 请求对象
      * @return DeleteResourceResponse
-    */
+     */
     public DeleteResourceResponse deleteResource(DeleteResourceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.deleteResource);
     }
@@ -396,7 +396,7 @@ public class MeetingClient {
      *
      * @param DisassociateVmrRequest 请求对象
      * @return DisassociateVmrResponse
-    */
+     */
     public DisassociateVmrResponse disassociateVmr(DisassociateVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.disassociateVmr);
     }
@@ -407,7 +407,7 @@ public class MeetingClient {
      *
      * @param EditMeetingRequest 请求对象
      * @return EditMeetingResponse
-    */
+     */
     public EditMeetingResponse editMeeting(EditMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.editMeeting);
     }
@@ -418,7 +418,7 @@ public class MeetingClient {
      *
      * @param HandRequest 请求对象
      * @return HandResponse
-    */
+     */
     public HandResponse hand(HandRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.hand);
     }
@@ -429,7 +429,7 @@ public class MeetingClient {
      *
      * @param HangUpRequest 请求对象
      * @return HangUpResponse
-    */
+     */
     public HangUpResponse hangUp(HangUpRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.hangUp);
     }
@@ -440,7 +440,7 @@ public class MeetingClient {
      *
      * @param InviteParticipantRequest 请求对象
      * @return InviteParticipantResponse
-    */
+     */
     public InviteParticipantResponse inviteParticipant(InviteParticipantRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.inviteParticipant);
     }
@@ -451,7 +451,7 @@ public class MeetingClient {
      *
      * @param InviteWithPwdRequest 请求对象
      * @return InviteWithPwdResponse
-    */
+     */
     public InviteWithPwdResponse inviteWithPwd(InviteWithPwdRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.inviteWithPwd);
     }
@@ -462,7 +462,7 @@ public class MeetingClient {
      *
      * @param LiveRequest 请求对象
      * @return LiveResponse
-    */
+     */
     public LiveResponse live(LiveRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.live);
     }
@@ -473,7 +473,7 @@ public class MeetingClient {
      *
      * @param LockMeetingRequest 请求对象
      * @return LockMeetingResponse
-    */
+     */
     public LockMeetingResponse lockMeeting(LockMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.lockMeeting);
     }
@@ -484,7 +484,7 @@ public class MeetingClient {
      *
      * @param LockViewRequest 请求对象
      * @return LockViewResponse
-    */
+     */
     public LockViewResponse lockView(LockViewRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.lockView);
     }
@@ -495,7 +495,7 @@ public class MeetingClient {
      *
      * @param MuteMeetingRequest 请求对象
      * @return MuteMeetingResponse
-    */
+     */
     public MuteMeetingResponse muteMeeting(MuteMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.muteMeeting);
     }
@@ -506,7 +506,7 @@ public class MeetingClient {
      *
      * @param MuteParticipantRequest 请求对象
      * @return MuteParticipantResponse
-    */
+     */
     public MuteParticipantResponse muteParticipant(MuteParticipantRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.muteParticipant);
     }
@@ -517,7 +517,7 @@ public class MeetingClient {
      *
      * @param ProlongMeetingRequest 请求对象
      * @return ProlongMeetingResponse
-    */
+     */
     public ProlongMeetingResponse prolongMeeting(ProlongMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.prolongMeeting);
     }
@@ -528,7 +528,7 @@ public class MeetingClient {
      *
      * @param RecordRequest 请求对象
      * @return RecordResponse
-    */
+     */
     public RecordResponse record(RecordRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.record);
     }
@@ -539,7 +539,7 @@ public class MeetingClient {
      *
      * @param RenameParticipantRequest 请求对象
      * @return RenameParticipantResponse
-    */
+     */
     public RenameParticipantResponse renameParticipant(RenameParticipantRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.renameParticipant);
     }
@@ -550,7 +550,7 @@ public class MeetingClient {
      *
      * @param ResetActivecodeRequest 请求对象
      * @return ResetActivecodeResponse
-    */
+     */
     public ResetActivecodeResponse resetActivecode(ResetActivecodeRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.resetActivecode);
     }
@@ -561,7 +561,7 @@ public class MeetingClient {
      *
      * @param ResetPwdRequest 请求对象
      * @return ResetPwdResponse
-    */
+     */
     public ResetPwdResponse resetPwd(ResetPwdRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.resetPwd);
     }
@@ -572,7 +572,7 @@ public class MeetingClient {
      *
      * @param ResetPwdByAdminRequest 请求对象
      * @return ResetPwdByAdminResponse
-    */
+     */
     public ResetPwdByAdminResponse resetPwdByAdmin(ResetPwdByAdminRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.resetPwdByAdmin);
     }
@@ -583,7 +583,7 @@ public class MeetingClient {
      *
      * @param RollcallParticipantRequest 请求对象
      * @return RollcallParticipantResponse
-    */
+     */
     public RollcallParticipantResponse rollcallParticipant(RollcallParticipantRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.rollcallParticipant);
     }
@@ -594,7 +594,7 @@ public class MeetingClient {
      *
      * @param SearchAttendanceRecordsOfHisMeetingRequest 请求对象
      * @return SearchAttendanceRecordsOfHisMeetingResponse
-    */
+     */
     public SearchAttendanceRecordsOfHisMeetingResponse searchAttendanceRecordsOfHisMeeting(SearchAttendanceRecordsOfHisMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchAttendanceRecordsOfHisMeeting);
     }
@@ -605,7 +605,7 @@ public class MeetingClient {
      *
      * @param SearchCorpRequest 请求对象
      * @return SearchCorpResponse
-    */
+     */
     public SearchCorpResponse searchCorp(SearchCorpRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchCorp);
     }
@@ -616,7 +616,7 @@ public class MeetingClient {
      *
      * @param SearchCorpAdminsRequest 请求对象
      * @return SearchCorpAdminsResponse
-    */
+     */
     public SearchCorpAdminsResponse searchCorpAdmins(SearchCorpAdminsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchCorpAdmins);
     }
@@ -627,7 +627,7 @@ public class MeetingClient {
      *
      * @param SearchCorpDirRequest 请求对象
      * @return SearchCorpDirResponse
-    */
+     */
     public SearchCorpDirResponse searchCorpDir(SearchCorpDirRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchCorpDir);
     }
@@ -638,7 +638,7 @@ public class MeetingClient {
      *
      * @param SearchCorpVmrRequest 请求对象
      * @return SearchCorpVmrResponse
-    */
+     */
     public SearchCorpVmrResponse searchCorpVmr(SearchCorpVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchCorpVmr);
     }
@@ -649,7 +649,7 @@ public class MeetingClient {
      *
      * @param SearchCtlRecordsOfHisMeetingRequest 请求对象
      * @return SearchCtlRecordsOfHisMeetingResponse
-    */
+     */
     public SearchCtlRecordsOfHisMeetingResponse searchCtlRecordsOfHisMeeting(SearchCtlRecordsOfHisMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchCtlRecordsOfHisMeeting);
     }
@@ -660,7 +660,7 @@ public class MeetingClient {
      *
      * @param SearchDepartmentByNameRequest 请求对象
      * @return SearchDepartmentByNameResponse
-    */
+     */
     public SearchDepartmentByNameResponse searchDepartmentByName(SearchDepartmentByNameRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchDepartmentByName);
     }
@@ -671,7 +671,7 @@ public class MeetingClient {
      *
      * @param SearchDevicesRequest 请求对象
      * @return SearchDevicesResponse
-    */
+     */
     public SearchDevicesResponse searchDevices(SearchDevicesRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchDevices);
     }
@@ -682,7 +682,7 @@ public class MeetingClient {
      *
      * @param SearchHisMeetingsRequest 请求对象
      * @return SearchHisMeetingsResponse
-    */
+     */
     public SearchHisMeetingsResponse searchHisMeetings(SearchHisMeetingsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchHisMeetings);
     }
@@ -693,7 +693,7 @@ public class MeetingClient {
      *
      * @param SearchMaterialsRequest 请求对象
      * @return SearchMaterialsResponse
-    */
+     */
     public SearchMaterialsResponse searchMaterials(SearchMaterialsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchMaterials);
     }
@@ -704,7 +704,7 @@ public class MeetingClient {
      *
      * @param SearchMeetingFileListRequest 请求对象
      * @return SearchMeetingFileListResponse
-    */
+     */
     public SearchMeetingFileListResponse searchMeetingFileList(SearchMeetingFileListRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchMeetingFileList);
     }
@@ -715,7 +715,7 @@ public class MeetingClient {
      *
      * @param SearchMeetingsRequest 请求对象
      * @return SearchMeetingsResponse
-    */
+     */
     public SearchMeetingsResponse searchMeetings(SearchMeetingsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchMeetings);
     }
@@ -726,7 +726,7 @@ public class MeetingClient {
      *
      * @param SearchMemberVmrRequest 请求对象
      * @return SearchMemberVmrResponse
-    */
+     */
     public SearchMemberVmrResponse searchMemberVmr(SearchMemberVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchMemberVmr);
     }
@@ -737,7 +737,7 @@ public class MeetingClient {
      *
      * @param SearchOnlineMeetingsRequest 请求对象
      * @return SearchOnlineMeetingsResponse
-    */
+     */
     public SearchOnlineMeetingsResponse searchOnlineMeetings(SearchOnlineMeetingsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchOnlineMeetings);
     }
@@ -748,7 +748,7 @@ public class MeetingClient {
      *
      * @param SearchProgramsRequest 请求对象
      * @return SearchProgramsResponse
-    */
+     */
     public SearchProgramsResponse searchPrograms(SearchProgramsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchPrograms);
     }
@@ -759,7 +759,7 @@ public class MeetingClient {
      *
      * @param SearchPublicationsRequest 请求对象
      * @return SearchPublicationsResponse
-    */
+     */
     public SearchPublicationsResponse searchPublications(SearchPublicationsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchPublications);
     }
@@ -770,7 +770,7 @@ public class MeetingClient {
      *
      * @param SearchRecordingsRequest 请求对象
      * @return SearchRecordingsResponse
-    */
+     */
     public SearchRecordingsResponse searchRecordings(SearchRecordingsRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchRecordings);
     }
@@ -781,7 +781,7 @@ public class MeetingClient {
      *
      * @param SearchResourceRequest 请求对象
      * @return SearchResourceResponse
-    */
+     */
     public SearchResourceResponse searchResource(SearchResourceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchResource);
     }
@@ -792,7 +792,7 @@ public class MeetingClient {
      *
      * @param SearchResourceOpRecordRequest 请求对象
      * @return SearchResourceOpRecordResponse
-    */
+     */
     public SearchResourceOpRecordResponse searchResourceOpRecord(SearchResourceOpRecordRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchResourceOpRecord);
     }
@@ -803,7 +803,7 @@ public class MeetingClient {
      *
      * @param SearchUsersRequest 请求对象
      * @return SearchUsersResponse
-    */
+     */
     public SearchUsersResponse searchUsers(SearchUsersRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.searchUsers);
     }
@@ -814,7 +814,7 @@ public class MeetingClient {
      *
      * @param SendSlideVerifyCodeRequest 请求对象
      * @return SendSlideVerifyCodeResponse
-    */
+     */
     public SendSlideVerifyCodeResponse sendSlideVerifyCode(SendSlideVerifyCodeRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.sendSlideVerifyCode);
     }
@@ -825,7 +825,7 @@ public class MeetingClient {
      *
      * @param SendVeriCodeForChangePwdRequest 请求对象
      * @return SendVeriCodeForChangePwdResponse
-    */
+     */
     public SendVeriCodeForChangePwdResponse sendVeriCodeForChangePwd(SendVeriCodeForChangePwdRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.sendVeriCodeForChangePwd);
     }
@@ -836,7 +836,7 @@ public class MeetingClient {
      *
      * @param SendVeriCodeForUpdateUserInfoRequest 请求对象
      * @return SendVeriCodeForUpdateUserInfoResponse
-    */
+     */
     public SendVeriCodeForUpdateUserInfoResponse sendVeriCodeForUpdateUserInfo(SendVeriCodeForUpdateUserInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.sendVeriCodeForUpdateUserInfo);
     }
@@ -847,7 +847,7 @@ public class MeetingClient {
      *
      * @param SetHostViewRequest 请求对象
      * @return SetHostViewResponse
-    */
+     */
     public SetHostViewResponse setHostView(SetHostViewRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.setHostView);
     }
@@ -858,7 +858,7 @@ public class MeetingClient {
      *
      * @param SetMultiPictureRequest 请求对象
      * @return SetMultiPictureResponse
-    */
+     */
     public SetMultiPictureResponse setMultiPicture(SetMultiPictureRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.setMultiPicture);
     }
@@ -869,7 +869,7 @@ public class MeetingClient {
      *
      * @param SetParticipantViewRequest 请求对象
      * @return SetParticipantViewResponse
-    */
+     */
     public SetParticipantViewResponse setParticipantView(SetParticipantViewRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.setParticipantView);
     }
@@ -880,7 +880,7 @@ public class MeetingClient {
      *
      * @param SetRoleRequest 请求对象
      * @return SetRoleResponse
-    */
+     */
     public SetRoleResponse setRole(SetRoleRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.setRole);
     }
@@ -891,7 +891,7 @@ public class MeetingClient {
      *
      * @param ShowConfOrgRequest 请求对象
      * @return ShowConfOrgResponse
-    */
+     */
     public ShowConfOrgResponse showConfOrg(ShowConfOrgRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showConfOrg);
     }
@@ -902,7 +902,7 @@ public class MeetingClient {
      *
      * @param ShowCorpRequest 请求对象
      * @return ShowCorpResponse
-    */
+     */
     public ShowCorpResponse showCorp(ShowCorpRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showCorp);
     }
@@ -913,7 +913,7 @@ public class MeetingClient {
      *
      * @param ShowCorpAdminRequest 请求对象
      * @return ShowCorpAdminResponse
-    */
+     */
     public ShowCorpAdminResponse showCorpAdmin(ShowCorpAdminRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showCorpAdmin);
     }
@@ -924,7 +924,7 @@ public class MeetingClient {
      *
      * @param ShowCorpBasicInfoRequest 请求对象
      * @return ShowCorpBasicInfoResponse
-    */
+     */
     public ShowCorpBasicInfoResponse showCorpBasicInfo(ShowCorpBasicInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showCorpBasicInfo);
     }
@@ -935,7 +935,7 @@ public class MeetingClient {
      *
      * @param ShowCorpResourceRequest 请求对象
      * @return ShowCorpResourceResponse
-    */
+     */
     public ShowCorpResourceResponse showCorpResource(ShowCorpResourceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showCorpResource);
     }
@@ -946,7 +946,7 @@ public class MeetingClient {
      *
      * @param ShowDeptAndChildDeptRequest 请求对象
      * @return ShowDeptAndChildDeptResponse
-    */
+     */
     public ShowDeptAndChildDeptResponse showDeptAndChildDept(ShowDeptAndChildDeptRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showDeptAndChildDept);
     }
@@ -957,7 +957,7 @@ public class MeetingClient {
      *
      * @param ShowDeviceDetailRequest 请求对象
      * @return ShowDeviceDetailResponse
-    */
+     */
     public ShowDeviceDetailResponse showDeviceDetail(ShowDeviceDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showDeviceDetail);
     }
@@ -968,7 +968,7 @@ public class MeetingClient {
      *
      * @param ShowDeviceStatusRequest 请求对象
      * @return ShowDeviceStatusResponse
-    */
+     */
     public ShowDeviceStatusResponse showDeviceStatus(ShowDeviceStatusRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showDeviceStatus);
     }
@@ -979,7 +979,7 @@ public class MeetingClient {
      *
      * @param ShowDeviceTypesRequest 请求对象
      * @return ShowDeviceTypesResponse
-    */
+     */
     public ShowDeviceTypesResponse showDeviceTypes(ShowDeviceTypesRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showDeviceTypes);
     }
@@ -990,7 +990,7 @@ public class MeetingClient {
      *
      * @param ShowHisMeetingDetailRequest 请求对象
      * @return ShowHisMeetingDetailResponse
-    */
+     */
     public ShowHisMeetingDetailResponse showHisMeetingDetail(ShowHisMeetingDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showHisMeetingDetail);
     }
@@ -1001,7 +1001,7 @@ public class MeetingClient {
      *
      * @param ShowMeetingDetailRequest 请求对象
      * @return ShowMeetingDetailResponse
-    */
+     */
     public ShowMeetingDetailResponse showMeetingDetail(ShowMeetingDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showMeetingDetail);
     }
@@ -1012,7 +1012,7 @@ public class MeetingClient {
      *
      * @param ShowMeetingFileRequest 请求对象
      * @return ShowMeetingFileResponse
-    */
+     */
     public ShowMeetingFileResponse showMeetingFile(ShowMeetingFileRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showMeetingFile);
     }
@@ -1023,7 +1023,7 @@ public class MeetingClient {
      *
      * @param ShowMeetingFileListRequest 请求对象
      * @return ShowMeetingFileListResponse
-    */
+     */
     public ShowMeetingFileListResponse showMeetingFileList(ShowMeetingFileListRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showMeetingFileList);
     }
@@ -1034,7 +1034,7 @@ public class MeetingClient {
      *
      * @param ShowMyInfoRequest 请求对象
      * @return ShowMyInfoResponse
-    */
+     */
     public ShowMyInfoResponse showMyInfo(ShowMyInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showMyInfo);
     }
@@ -1045,7 +1045,7 @@ public class MeetingClient {
      *
      * @param ShowOnlineMeetingDetailRequest 请求对象
      * @return ShowOnlineMeetingDetailResponse
-    */
+     */
     public ShowOnlineMeetingDetailResponse showOnlineMeetingDetail(ShowOnlineMeetingDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showOnlineMeetingDetail);
     }
@@ -1056,7 +1056,7 @@ public class MeetingClient {
      *
      * @param ShowProgramRequest 请求对象
      * @return ShowProgramResponse
-    */
+     */
     public ShowProgramResponse showProgram(ShowProgramRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showProgram);
     }
@@ -1067,7 +1067,7 @@ public class MeetingClient {
      *
      * @param ShowPublicationRequest 请求对象
      * @return ShowPublicationResponse
-    */
+     */
     public ShowPublicationResponse showPublication(ShowPublicationRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showPublication);
     }
@@ -1078,7 +1078,7 @@ public class MeetingClient {
      *
      * @param ShowRealTimeInfoOfMeetingRequest 请求对象
      * @return ShowRealTimeInfoOfMeetingResponse
-    */
+     */
     public ShowRealTimeInfoOfMeetingResponse showRealTimeInfoOfMeeting(ShowRealTimeInfoOfMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showRealTimeInfoOfMeeting);
     }
@@ -1089,7 +1089,7 @@ public class MeetingClient {
      *
      * @param ShowRecordingDetailRequest 请求对象
      * @return ShowRecordingDetailResponse
-    */
+     */
     public ShowRecordingDetailResponse showRecordingDetail(ShowRecordingDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showRecordingDetail);
     }
@@ -1100,7 +1100,7 @@ public class MeetingClient {
      *
      * @param ShowRegionInfoOfMeetingRequest 请求对象
      * @return ShowRegionInfoOfMeetingResponse
-    */
+     */
     public ShowRegionInfoOfMeetingResponse showRegionInfoOfMeeting(ShowRegionInfoOfMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showRegionInfoOfMeeting);
     }
@@ -1111,7 +1111,7 @@ public class MeetingClient {
      *
      * @param ShowSpResRequest 请求对象
      * @return ShowSpResResponse
-    */
+     */
     public ShowSpResResponse showSpRes(ShowSpResRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showSpRes);
     }
@@ -1122,7 +1122,7 @@ public class MeetingClient {
      *
      * @param ShowUserDetailRequest 请求对象
      * @return ShowUserDetailResponse
-    */
+     */
     public ShowUserDetailResponse showUserDetail(ShowUserDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.showUserDetail);
     }
@@ -1133,7 +1133,7 @@ public class MeetingClient {
      *
      * @param StopMeetingRequest 请求对象
      * @return StopMeetingResponse
-    */
+     */
     public StopMeetingResponse stopMeeting(StopMeetingRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.stopMeeting);
     }
@@ -1144,7 +1144,7 @@ public class MeetingClient {
      *
      * @param SwitchModeRequest 请求对象
      * @return SwitchModeResponse
-    */
+     */
     public SwitchModeResponse switchMode(SwitchModeRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.switchMode);
     }
@@ -1155,7 +1155,7 @@ public class MeetingClient {
      *
      * @param UpdateContactRequest 请求对象
      * @return UpdateContactResponse
-    */
+     */
     public UpdateContactResponse updateContact(UpdateContactRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateContact);
     }
@@ -1166,7 +1166,7 @@ public class MeetingClient {
      *
      * @param UpdateCorpRequest 请求对象
      * @return UpdateCorpResponse
-    */
+     */
     public UpdateCorpResponse updateCorp(UpdateCorpRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateCorp);
     }
@@ -1177,7 +1177,7 @@ public class MeetingClient {
      *
      * @param UpdateCorpBasicInfoRequest 请求对象
      * @return UpdateCorpBasicInfoResponse
-    */
+     */
     public UpdateCorpBasicInfoResponse updateCorpBasicInfo(UpdateCorpBasicInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateCorpBasicInfo);
     }
@@ -1188,7 +1188,7 @@ public class MeetingClient {
      *
      * @param UpdateDepartmentRequest 请求对象
      * @return UpdateDepartmentResponse
-    */
+     */
     public UpdateDepartmentResponse updateDepartment(UpdateDepartmentRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateDepartment);
     }
@@ -1199,7 +1199,7 @@ public class MeetingClient {
      *
      * @param UpdateDeviceRequest 请求对象
      * @return UpdateDeviceResponse
-    */
+     */
     public UpdateDeviceResponse updateDevice(UpdateDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateDevice);
     }
@@ -1210,7 +1210,7 @@ public class MeetingClient {
      *
      * @param UpdateMaterialRequest 请求对象
      * @return UpdateMaterialResponse
-    */
+     */
     public UpdateMaterialResponse updateMaterial(UpdateMaterialRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateMaterial);
     }
@@ -1221,7 +1221,7 @@ public class MeetingClient {
      *
      * @param UpdateMemberVmrRequest 请求对象
      * @return UpdateMemberVmrResponse
-    */
+     */
     public UpdateMemberVmrResponse updateMemberVmr(UpdateMemberVmrRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateMemberVmr);
     }
@@ -1232,7 +1232,7 @@ public class MeetingClient {
      *
      * @param UpdateMyInfoRequest 请求对象
      * @return UpdateMyInfoResponse
-    */
+     */
     public UpdateMyInfoResponse updateMyInfo(UpdateMyInfoRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateMyInfo);
     }
@@ -1243,7 +1243,7 @@ public class MeetingClient {
      *
      * @param UpdateProgramRequest 请求对象
      * @return UpdateProgramResponse
-    */
+     */
     public UpdateProgramResponse updateProgram(UpdateProgramRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateProgram);
     }
@@ -1254,7 +1254,7 @@ public class MeetingClient {
      *
      * @param UpdatePublicationRequest 请求对象
      * @return UpdatePublicationResponse
-    */
+     */
     public UpdatePublicationResponse updatePublication(UpdatePublicationRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updatePublication);
     }
@@ -1265,7 +1265,7 @@ public class MeetingClient {
      *
      * @param UpdatePwdRequest 请求对象
      * @return UpdatePwdResponse
-    */
+     */
     public UpdatePwdResponse updatePwd(UpdatePwdRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updatePwd);
     }
@@ -1276,7 +1276,7 @@ public class MeetingClient {
      *
      * @param UpdateResourceRequest 请求对象
      * @return UpdateResourceResponse
-    */
+     */
     public UpdateResourceResponse updateResource(UpdateResourceRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateResource);
     }
@@ -1287,7 +1287,7 @@ public class MeetingClient {
      *
      * @param UpdateTokenRequest 请求对象
      * @return UpdateTokenResponse
-    */
+     */
     public UpdateTokenResponse updateToken(UpdateTokenRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateToken);
     }
@@ -1298,7 +1298,7 @@ public class MeetingClient {
      *
      * @param UpdateUserRequest 请求对象
      * @return UpdateUserResponse
-    */
+     */
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
         return hcClient.syncInvokeHttp(request, MeetingMeta.updateUser);
     }

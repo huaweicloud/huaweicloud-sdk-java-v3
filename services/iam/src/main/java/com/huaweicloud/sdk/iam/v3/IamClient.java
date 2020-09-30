@@ -22,7 +22,7 @@ public class IamClient {
      *
      * @param AssociateAgencyWithAllProjectsPermissionRequest 请求对象
      * @return AssociateAgencyWithAllProjectsPermissionResponse
-    */
+     */
     public AssociateAgencyWithAllProjectsPermissionResponse associateAgencyWithAllProjectsPermission(AssociateAgencyWithAllProjectsPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateAgencyWithAllProjectsPermission);
     }
@@ -33,7 +33,7 @@ public class IamClient {
      *
      * @param AssociateAgencyWithDomainPermissionRequest 请求对象
      * @return AssociateAgencyWithDomainPermissionResponse
-    */
+     */
     public AssociateAgencyWithDomainPermissionResponse associateAgencyWithDomainPermission(AssociateAgencyWithDomainPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateAgencyWithDomainPermission);
     }
@@ -44,7 +44,7 @@ public class IamClient {
      *
      * @param AssociateAgencyWithProjectPermissionRequest 请求对象
      * @return AssociateAgencyWithProjectPermissionResponse
-    */
+     */
     public AssociateAgencyWithProjectPermissionResponse associateAgencyWithProjectPermission(AssociateAgencyWithProjectPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.associateAgencyWithProjectPermission);
     }
@@ -55,7 +55,7 @@ public class IamClient {
      *
      * @param CheckAllProjectsPermissionForAgencyRequest 请求对象
      * @return CheckAllProjectsPermissionForAgencyResponse
-    */
+     */
     public CheckAllProjectsPermissionForAgencyResponse checkAllProjectsPermissionForAgency(CheckAllProjectsPermissionForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.checkAllProjectsPermissionForAgency);
     }
@@ -66,7 +66,7 @@ public class IamClient {
      *
      * @param CheckDomainPermissionForAgencyRequest 请求对象
      * @return CheckDomainPermissionForAgencyResponse
-    */
+     */
     public CheckDomainPermissionForAgencyResponse checkDomainPermissionForAgency(CheckDomainPermissionForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.checkDomainPermissionForAgency);
     }
@@ -77,7 +77,7 @@ public class IamClient {
      *
      * @param CheckProjectPermissionForAgencyRequest 请求对象
      * @return CheckProjectPermissionForAgencyResponse
-    */
+     */
     public CheckProjectPermissionForAgencyResponse checkProjectPermissionForAgency(CheckProjectPermissionForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.checkProjectPermissionForAgency);
     }
@@ -88,7 +88,7 @@ public class IamClient {
      *
      * @param CreateAgencyRequest 请求对象
      * @return CreateAgencyResponse
-    */
+     */
     public CreateAgencyResponse createAgency(CreateAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createAgency);
     }
@@ -99,7 +99,7 @@ public class IamClient {
      *
      * @param CreateAgencyCustomPolicyRequest 请求对象
      * @return CreateAgencyCustomPolicyResponse
-    */
+     */
     public CreateAgencyCustomPolicyResponse createAgencyCustomPolicy(CreateAgencyCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createAgencyCustomPolicy);
     }
@@ -110,7 +110,7 @@ public class IamClient {
      *
      * @param CreateCloudServiceCustomPolicyRequest 请求对象
      * @return CreateCloudServiceCustomPolicyResponse
-    */
+     */
     public CreateCloudServiceCustomPolicyResponse createCloudServiceCustomPolicy(CreateCloudServiceCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createCloudServiceCustomPolicy);
     }
@@ -121,7 +121,7 @@ public class IamClient {
      *
      * @param DeleteAgencyRequest 请求对象
      * @return DeleteAgencyResponse
-    */
+     */
     public DeleteAgencyResponse deleteAgency(DeleteAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deleteAgency);
     }
@@ -132,7 +132,7 @@ public class IamClient {
      *
      * @param DeleteCustomPolicyRequest 请求对象
      * @return DeleteCustomPolicyResponse
-    */
+     */
     public DeleteCustomPolicyResponse deleteCustomPolicy(DeleteCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deleteCustomPolicy);
     }
@@ -143,7 +143,7 @@ public class IamClient {
      *
      * @param KeystoneAddUserToGroupRequest 请求对象
      * @return KeystoneAddUserToGroupResponse
-    */
+     */
     public KeystoneAddUserToGroupResponse keystoneAddUserToGroup(KeystoneAddUserToGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAddUserToGroup);
     }
@@ -154,7 +154,7 @@ public class IamClient {
      *
      * @param KeystoneAssociateGroupWithAllProjectPermissionRequest 请求对象
      * @return KeystoneAssociateGroupWithAllProjectPermissionResponse
-    */
+     */
     public KeystoneAssociateGroupWithAllProjectPermissionResponse keystoneAssociateGroupWithAllProjectPermission(KeystoneAssociateGroupWithAllProjectPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAssociateGroupWithAllProjectPermission);
     }
@@ -165,7 +165,7 @@ public class IamClient {
      *
      * @param KeystoneAssociateGroupWithDomainPermissionRequest 请求对象
      * @return KeystoneAssociateGroupWithDomainPermissionResponse
-    */
+     */
     public KeystoneAssociateGroupWithDomainPermissionResponse keystoneAssociateGroupWithDomainPermission(KeystoneAssociateGroupWithDomainPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAssociateGroupWithDomainPermission);
     }
@@ -176,7 +176,7 @@ public class IamClient {
      *
      * @param KeystoneAssociateGroupWithProjectPermissionRequest 请求对象
      * @return KeystoneAssociateGroupWithProjectPermissionResponse
-    */
+     */
     public KeystoneAssociateGroupWithProjectPermissionResponse keystoneAssociateGroupWithProjectPermission(KeystoneAssociateGroupWithProjectPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAssociateGroupWithProjectPermission);
     }
@@ -187,7 +187,7 @@ public class IamClient {
      *
      * @param KeystoneCheckDomainPermissionForGroupRequest 请求对象
      * @return KeystoneCheckDomainPermissionForGroupResponse
-    */
+     */
     public KeystoneCheckDomainPermissionForGroupResponse keystoneCheckDomainPermissionForGroup(KeystoneCheckDomainPermissionForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckDomainPermissionForGroup);
     }
@@ -198,7 +198,7 @@ public class IamClient {
      *
      * @param KeystoneCheckProjectPermissionForGroupRequest 请求对象
      * @return KeystoneCheckProjectPermissionForGroupResponse
-    */
+     */
     public KeystoneCheckProjectPermissionForGroupResponse keystoneCheckProjectPermissionForGroup(KeystoneCheckProjectPermissionForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckProjectPermissionForGroup);
     }
@@ -209,7 +209,7 @@ public class IamClient {
      *
      * @param KeystoneCheckUserInGroupRequest 请求对象
      * @return KeystoneCheckUserInGroupResponse
-    */
+     */
     public KeystoneCheckUserInGroupResponse keystoneCheckUserInGroup(KeystoneCheckUserInGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckUserInGroup);
     }
@@ -220,7 +220,7 @@ public class IamClient {
      *
      * @param KeystoneCreateGroupRequest 请求对象
      * @return KeystoneCreateGroupResponse
-    */
+     */
     public KeystoneCreateGroupResponse keystoneCreateGroup(KeystoneCreateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateGroup);
     }
@@ -231,7 +231,7 @@ public class IamClient {
      *
      * @param KeystoneCreateProjectRequest 请求对象
      * @return KeystoneCreateProjectResponse
-    */
+     */
     public KeystoneCreateProjectResponse keystoneCreateProject(KeystoneCreateProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateProject);
     }
@@ -242,7 +242,7 @@ public class IamClient {
      *
      * @param KeystoneDeleteGroupRequest 请求对象
      * @return KeystoneDeleteGroupResponse
-    */
+     */
     public KeystoneDeleteGroupResponse keystoneDeleteGroup(KeystoneDeleteGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteGroup);
     }
@@ -253,7 +253,7 @@ public class IamClient {
      *
      * @param KeystoneListAuthDomainsRequest 请求对象
      * @return KeystoneListAuthDomainsResponse
-    */
+     */
     public KeystoneListAuthDomainsResponse keystoneListAuthDomains(KeystoneListAuthDomainsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListAuthDomains);
     }
@@ -264,7 +264,7 @@ public class IamClient {
      *
      * @param KeystoneListAuthProjectsRequest 请求对象
      * @return KeystoneListAuthProjectsResponse
-    */
+     */
     public KeystoneListAuthProjectsResponse keystoneListAuthProjects(KeystoneListAuthProjectsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListAuthProjects);
     }
@@ -275,7 +275,7 @@ public class IamClient {
      *
      * @param KeystoneListDomainPermissionsForGroupRequest 请求对象
      * @return KeystoneListDomainPermissionsForGroupResponse
-    */
+     */
     public KeystoneListDomainPermissionsForGroupResponse keystoneListDomainPermissionsForGroup(KeystoneListDomainPermissionsForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListDomainPermissionsForGroup);
     }
@@ -286,7 +286,7 @@ public class IamClient {
      *
      * @param KeystoneListEndpointsRequest 请求对象
      * @return KeystoneListEndpointsResponse
-    */
+     */
     public KeystoneListEndpointsResponse keystoneListEndpoints(KeystoneListEndpointsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListEndpoints);
     }
@@ -297,7 +297,7 @@ public class IamClient {
      *
      * @param KeystoneListGroupsRequest 请求对象
      * @return KeystoneListGroupsResponse
-    */
+     */
     public KeystoneListGroupsResponse keystoneListGroups(KeystoneListGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListGroups);
     }
@@ -308,7 +308,7 @@ public class IamClient {
      *
      * @param KeystoneListPermissionsRequest 请求对象
      * @return KeystoneListPermissionsResponse
-    */
+     */
     public KeystoneListPermissionsResponse keystoneListPermissions(KeystoneListPermissionsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListPermissions);
     }
@@ -319,7 +319,7 @@ public class IamClient {
      *
      * @param KeystoneListProjectPermissionsForGroupRequest 请求对象
      * @return KeystoneListProjectPermissionsForGroupResponse
-    */
+     */
     public KeystoneListProjectPermissionsForGroupResponse keystoneListProjectPermissionsForGroup(KeystoneListProjectPermissionsForGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListProjectPermissionsForGroup);
     }
@@ -330,7 +330,7 @@ public class IamClient {
      *
      * @param KeystoneListProjectsRequest 请求对象
      * @return KeystoneListProjectsResponse
-    */
+     */
     public KeystoneListProjectsResponse keystoneListProjects(KeystoneListProjectsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListProjects);
     }
@@ -341,7 +341,7 @@ public class IamClient {
      *
      * @param KeystoneListProjectsForUserRequest 请求对象
      * @return KeystoneListProjectsForUserResponse
-    */
+     */
     public KeystoneListProjectsForUserResponse keystoneListProjectsForUser(KeystoneListProjectsForUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListProjectsForUser);
     }
@@ -352,7 +352,7 @@ public class IamClient {
      *
      * @param KeystoneListRegionsRequest 请求对象
      * @return KeystoneListRegionsResponse
-    */
+     */
     public KeystoneListRegionsResponse keystoneListRegions(KeystoneListRegionsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListRegions);
     }
@@ -363,7 +363,7 @@ public class IamClient {
      *
      * @param KeystoneListServicesRequest 请求对象
      * @return KeystoneListServicesResponse
-    */
+     */
     public KeystoneListServicesResponse keystoneListServices(KeystoneListServicesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListServices);
     }
@@ -374,7 +374,7 @@ public class IamClient {
      *
      * @param KeystoneListUsersForGroupByAdminRequest 请求对象
      * @return KeystoneListUsersForGroupByAdminResponse
-    */
+     */
     public KeystoneListUsersForGroupByAdminResponse keystoneListUsersForGroupByAdmin(KeystoneListUsersForGroupByAdminRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListUsersForGroupByAdmin);
     }
@@ -385,7 +385,7 @@ public class IamClient {
      *
      * @param KeystoneListVersionsRequest 请求对象
      * @return KeystoneListVersionsResponse
-    */
+     */
     public KeystoneListVersionsResponse keystoneListVersions(KeystoneListVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListVersions);
     }
@@ -396,7 +396,7 @@ public class IamClient {
      *
      * @param KeystoneRemoveDomainPermissionFromGroupRequest 请求对象
      * @return KeystoneRemoveDomainPermissionFromGroupResponse
-    */
+     */
     public KeystoneRemoveDomainPermissionFromGroupResponse keystoneRemoveDomainPermissionFromGroup(KeystoneRemoveDomainPermissionFromGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneRemoveDomainPermissionFromGroup);
     }
@@ -407,7 +407,7 @@ public class IamClient {
      *
      * @param KeystoneRemoveProjectPermissionFromGroupRequest 请求对象
      * @return KeystoneRemoveProjectPermissionFromGroupResponse
-    */
+     */
     public KeystoneRemoveProjectPermissionFromGroupResponse keystoneRemoveProjectPermissionFromGroup(KeystoneRemoveProjectPermissionFromGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneRemoveProjectPermissionFromGroup);
     }
@@ -418,7 +418,7 @@ public class IamClient {
      *
      * @param KeystoneRemoveUserFromGroupRequest 请求对象
      * @return KeystoneRemoveUserFromGroupResponse
-    */
+     */
     public KeystoneRemoveUserFromGroupResponse keystoneRemoveUserFromGroup(KeystoneRemoveUserFromGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneRemoveUserFromGroup);
     }
@@ -429,7 +429,7 @@ public class IamClient {
      *
      * @param KeystoneShowCatalogRequest 请求对象
      * @return KeystoneShowCatalogResponse
-    */
+     */
     public KeystoneShowCatalogResponse keystoneShowCatalog(KeystoneShowCatalogRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowCatalog);
     }
@@ -440,7 +440,7 @@ public class IamClient {
      *
      * @param KeystoneShowEndpointRequest 请求对象
      * @return KeystoneShowEndpointResponse
-    */
+     */
     public KeystoneShowEndpointResponse keystoneShowEndpoint(KeystoneShowEndpointRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowEndpoint);
     }
@@ -451,7 +451,7 @@ public class IamClient {
      *
      * @param KeystoneShowGroupRequest 请求对象
      * @return KeystoneShowGroupResponse
-    */
+     */
     public KeystoneShowGroupResponse keystoneShowGroup(KeystoneShowGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowGroup);
     }
@@ -462,7 +462,7 @@ public class IamClient {
      *
      * @param KeystoneShowPermissionRequest 请求对象
      * @return KeystoneShowPermissionResponse
-    */
+     */
     public KeystoneShowPermissionResponse keystoneShowPermission(KeystoneShowPermissionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowPermission);
     }
@@ -473,7 +473,7 @@ public class IamClient {
      *
      * @param KeystoneShowProjectRequest 请求对象
      * @return KeystoneShowProjectResponse
-    */
+     */
     public KeystoneShowProjectResponse keystoneShowProject(KeystoneShowProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowProject);
     }
@@ -484,7 +484,7 @@ public class IamClient {
      *
      * @param KeystoneShowRegionRequest 请求对象
      * @return KeystoneShowRegionResponse
-    */
+     */
     public KeystoneShowRegionResponse keystoneShowRegion(KeystoneShowRegionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowRegion);
     }
@@ -495,7 +495,7 @@ public class IamClient {
      *
      * @param KeystoneShowSecurityComplianceRequest 请求对象
      * @return KeystoneShowSecurityComplianceResponse
-    */
+     */
     public KeystoneShowSecurityComplianceResponse keystoneShowSecurityCompliance(KeystoneShowSecurityComplianceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowSecurityCompliance);
     }
@@ -506,7 +506,7 @@ public class IamClient {
      *
      * @param KeystoneShowSecurityComplianceByOptionRequest 请求对象
      * @return KeystoneShowSecurityComplianceByOptionResponse
-    */
+     */
     public KeystoneShowSecurityComplianceByOptionResponse keystoneShowSecurityComplianceByOption(KeystoneShowSecurityComplianceByOptionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowSecurityComplianceByOption);
     }
@@ -517,7 +517,7 @@ public class IamClient {
      *
      * @param KeystoneShowServiceRequest 请求对象
      * @return KeystoneShowServiceResponse
-    */
+     */
     public KeystoneShowServiceResponse keystoneShowService(KeystoneShowServiceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowService);
     }
@@ -528,7 +528,7 @@ public class IamClient {
      *
      * @param KeystoneShowVersionRequest 请求对象
      * @return KeystoneShowVersionResponse
-    */
+     */
     public KeystoneShowVersionResponse keystoneShowVersion(KeystoneShowVersionRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowVersion);
     }
@@ -539,7 +539,7 @@ public class IamClient {
      *
      * @param KeystoneUpdateGroupRequest 请求对象
      * @return KeystoneUpdateGroupResponse
-    */
+     */
     public KeystoneUpdateGroupResponse keystoneUpdateGroup(KeystoneUpdateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateGroup);
     }
@@ -550,7 +550,7 @@ public class IamClient {
      *
      * @param KeystoneUpdateProjectRequest 请求对象
      * @return KeystoneUpdateProjectResponse
-    */
+     */
     public KeystoneUpdateProjectResponse keystoneUpdateProject(KeystoneUpdateProjectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateProject);
     }
@@ -561,7 +561,7 @@ public class IamClient {
      *
      * @param ListAgenciesRequest 请求对象
      * @return ListAgenciesResponse
-    */
+     */
     public ListAgenciesResponse listAgencies(ListAgenciesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listAgencies);
     }
@@ -572,7 +572,7 @@ public class IamClient {
      *
      * @param ListAllProjectsPermissionsForAgencyRequest 请求对象
      * @return ListAllProjectsPermissionsForAgencyResponse
-    */
+     */
     public ListAllProjectsPermissionsForAgencyResponse listAllProjectsPermissionsForAgency(ListAllProjectsPermissionsForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listAllProjectsPermissionsForAgency);
     }
@@ -583,7 +583,7 @@ public class IamClient {
      *
      * @param ListCustomPoliciesRequest 请求对象
      * @return ListCustomPoliciesResponse
-    */
+     */
     public ListCustomPoliciesResponse listCustomPolicies(ListCustomPoliciesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listCustomPolicies);
     }
@@ -594,7 +594,7 @@ public class IamClient {
      *
      * @param ListDomainPermissionsForAgencyRequest 请求对象
      * @return ListDomainPermissionsForAgencyResponse
-    */
+     */
     public ListDomainPermissionsForAgencyResponse listDomainPermissionsForAgency(ListDomainPermissionsForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listDomainPermissionsForAgency);
     }
@@ -605,7 +605,7 @@ public class IamClient {
      *
      * @param ListProjectPermissionsForAgencyRequest 请求对象
      * @return ListProjectPermissionsForAgencyResponse
-    */
+     */
     public ListProjectPermissionsForAgencyResponse listProjectPermissionsForAgency(ListProjectPermissionsForAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listProjectPermissionsForAgency);
     }
@@ -616,7 +616,7 @@ public class IamClient {
      *
      * @param RemoveAllProjectsPermissionFromAgencyRequest 请求对象
      * @return RemoveAllProjectsPermissionFromAgencyResponse
-    */
+     */
     public RemoveAllProjectsPermissionFromAgencyResponse removeAllProjectsPermissionFromAgency(RemoveAllProjectsPermissionFromAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.removeAllProjectsPermissionFromAgency);
     }
@@ -627,7 +627,7 @@ public class IamClient {
      *
      * @param RemoveDomainPermissionFromAgencyRequest 请求对象
      * @return RemoveDomainPermissionFromAgencyResponse
-    */
+     */
     public RemoveDomainPermissionFromAgencyResponse removeDomainPermissionFromAgency(RemoveDomainPermissionFromAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.removeDomainPermissionFromAgency);
     }
@@ -638,7 +638,7 @@ public class IamClient {
      *
      * @param RemoveProjectPermissionFromAgencyRequest 请求对象
      * @return RemoveProjectPermissionFromAgencyResponse
-    */
+     */
     public RemoveProjectPermissionFromAgencyResponse removeProjectPermissionFromAgency(RemoveProjectPermissionFromAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.removeProjectPermissionFromAgency);
     }
@@ -649,7 +649,7 @@ public class IamClient {
      *
      * @param ShowAgencyRequest 请求对象
      * @return ShowAgencyResponse
-    */
+     */
     public ShowAgencyResponse showAgency(ShowAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showAgency);
     }
@@ -660,7 +660,7 @@ public class IamClient {
      *
      * @param ShowCustomPolicyRequest 请求对象
      * @return ShowCustomPolicyResponse
-    */
+     */
     public ShowCustomPolicyResponse showCustomPolicy(ShowCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showCustomPolicy);
     }
@@ -671,7 +671,7 @@ public class IamClient {
      *
      * @param ShowDomainApiAclPolicyRequest 请求对象
      * @return ShowDomainApiAclPolicyResponse
-    */
+     */
     public ShowDomainApiAclPolicyResponse showDomainApiAclPolicy(ShowDomainApiAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainApiAclPolicy);
     }
@@ -682,7 +682,7 @@ public class IamClient {
      *
      * @param ShowDomainConsoleAclPolicyRequest 请求对象
      * @return ShowDomainConsoleAclPolicyResponse
-    */
+     */
     public ShowDomainConsoleAclPolicyResponse showDomainConsoleAclPolicy(ShowDomainConsoleAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainConsoleAclPolicy);
     }
@@ -693,7 +693,7 @@ public class IamClient {
      *
      * @param ShowDomainLoginPolicyRequest 请求对象
      * @return ShowDomainLoginPolicyResponse
-    */
+     */
     public ShowDomainLoginPolicyResponse showDomainLoginPolicy(ShowDomainLoginPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainLoginPolicy);
     }
@@ -704,7 +704,7 @@ public class IamClient {
      *
      * @param ShowDomainPasswordPolicyRequest 请求对象
      * @return ShowDomainPasswordPolicyResponse
-    */
+     */
     public ShowDomainPasswordPolicyResponse showDomainPasswordPolicy(ShowDomainPasswordPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainPasswordPolicy);
     }
@@ -715,7 +715,7 @@ public class IamClient {
      *
      * @param ShowDomainProtectPolicyRequest 请求对象
      * @return ShowDomainProtectPolicyResponse
-    */
+     */
     public ShowDomainProtectPolicyResponse showDomainProtectPolicy(ShowDomainProtectPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainProtectPolicy);
     }
@@ -726,7 +726,7 @@ public class IamClient {
      *
      * @param ShowDomainQuotaRequest 请求对象
      * @return ShowDomainQuotaResponse
-    */
+     */
     public ShowDomainQuotaResponse showDomainQuota(ShowDomainQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showDomainQuota);
     }
@@ -737,7 +737,7 @@ public class IamClient {
      *
      * @param ShowProjectDetailsAndStatusRequest 请求对象
      * @return ShowProjectDetailsAndStatusResponse
-    */
+     */
     public ShowProjectDetailsAndStatusResponse showProjectDetailsAndStatus(ShowProjectDetailsAndStatusRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showProjectDetailsAndStatus);
     }
@@ -748,7 +748,7 @@ public class IamClient {
      *
      * @param ShowProjectQuotaRequest 请求对象
      * @return ShowProjectQuotaResponse
-    */
+     */
     public ShowProjectQuotaResponse showProjectQuota(ShowProjectQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showProjectQuota);
     }
@@ -759,7 +759,7 @@ public class IamClient {
      *
      * @param UpdateAgencyRequest 请求对象
      * @return UpdateAgencyResponse
-    */
+     */
     public UpdateAgencyResponse updateAgency(UpdateAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateAgency);
     }
@@ -770,7 +770,7 @@ public class IamClient {
      *
      * @param UpdateAgencyCustomPolicyRequest 请求对象
      * @return UpdateAgencyCustomPolicyResponse
-    */
+     */
     public UpdateAgencyCustomPolicyResponse updateAgencyCustomPolicy(UpdateAgencyCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateAgencyCustomPolicy);
     }
@@ -781,7 +781,7 @@ public class IamClient {
      *
      * @param UpdateCloudServiceCustomPolicyRequest 请求对象
      * @return UpdateCloudServiceCustomPolicyResponse
-    */
+     */
     public UpdateCloudServiceCustomPolicyResponse updateCloudServiceCustomPolicy(UpdateCloudServiceCustomPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateCloudServiceCustomPolicy);
     }
@@ -792,7 +792,7 @@ public class IamClient {
      *
      * @param UpdateDomainApiAclPolicyRequest 请求对象
      * @return UpdateDomainApiAclPolicyResponse
-    */
+     */
     public UpdateDomainApiAclPolicyResponse updateDomainApiAclPolicy(UpdateDomainApiAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainApiAclPolicy);
     }
@@ -803,7 +803,7 @@ public class IamClient {
      *
      * @param UpdateDomainConsoleAclPolicyRequest 请求对象
      * @return UpdateDomainConsoleAclPolicyResponse
-    */
+     */
     public UpdateDomainConsoleAclPolicyResponse updateDomainConsoleAclPolicy(UpdateDomainConsoleAclPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainConsoleAclPolicy);
     }
@@ -814,7 +814,7 @@ public class IamClient {
      *
      * @param UpdateDomainLoginPolicyRequest 请求对象
      * @return UpdateDomainLoginPolicyResponse
-    */
+     */
     public UpdateDomainLoginPolicyResponse updateDomainLoginPolicy(UpdateDomainLoginPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainLoginPolicy);
     }
@@ -825,7 +825,7 @@ public class IamClient {
      *
      * @param UpdateDomainPasswordPolicyRequest 请求对象
      * @return UpdateDomainPasswordPolicyResponse
-    */
+     */
     public UpdateDomainPasswordPolicyResponse updateDomainPasswordPolicy(UpdateDomainPasswordPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainPasswordPolicy);
     }
@@ -836,7 +836,7 @@ public class IamClient {
      *
      * @param UpdateDomainProtectPolicyRequest 请求对象
      * @return UpdateDomainProtectPolicyResponse
-    */
+     */
     public UpdateDomainProtectPolicyResponse updateDomainProtectPolicy(UpdateDomainProtectPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateDomainProtectPolicy);
     }
@@ -847,7 +847,7 @@ public class IamClient {
      *
      * @param UpdateProjectStatusRequest 请求对象
      * @return UpdateProjectStatusResponse
-    */
+     */
     public UpdateProjectStatusResponse updateProjectStatus(UpdateProjectStatusRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateProjectStatus);
     }
@@ -858,7 +858,7 @@ public class IamClient {
      *
      * @param CreatePermanentAccessKeyRequest 请求对象
      * @return CreatePermanentAccessKeyResponse
-    */
+     */
     public CreatePermanentAccessKeyResponse createPermanentAccessKey(CreatePermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createPermanentAccessKey);
     }
@@ -869,7 +869,7 @@ public class IamClient {
      *
      * @param CreateTemporaryAccessKeyByAgencyRequest 请求对象
      * @return CreateTemporaryAccessKeyByAgencyResponse
-    */
+     */
     public CreateTemporaryAccessKeyByAgencyResponse createTemporaryAccessKeyByAgency(CreateTemporaryAccessKeyByAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createTemporaryAccessKeyByAgency);
     }
@@ -880,7 +880,7 @@ public class IamClient {
      *
      * @param CreateTemporaryAccessKeyByTokenRequest 请求对象
      * @return CreateTemporaryAccessKeyByTokenResponse
-    */
+     */
     public CreateTemporaryAccessKeyByTokenResponse createTemporaryAccessKeyByToken(CreateTemporaryAccessKeyByTokenRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createTemporaryAccessKeyByToken);
     }
@@ -891,7 +891,7 @@ public class IamClient {
      *
      * @param DeletePermanentAccessKeyRequest 请求对象
      * @return DeletePermanentAccessKeyResponse
-    */
+     */
     public DeletePermanentAccessKeyResponse deletePermanentAccessKey(DeletePermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.deletePermanentAccessKey);
     }
@@ -902,7 +902,7 @@ public class IamClient {
      *
      * @param ListPermanentAccessKeysRequest 请求对象
      * @return ListPermanentAccessKeysResponse
-    */
+     */
     public ListPermanentAccessKeysResponse listPermanentAccessKeys(ListPermanentAccessKeysRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listPermanentAccessKeys);
     }
@@ -913,7 +913,7 @@ public class IamClient {
      *
      * @param ShowPermanentAccessKeyRequest 请求对象
      * @return ShowPermanentAccessKeyResponse
-    */
+     */
     public ShowPermanentAccessKeyResponse showPermanentAccessKey(ShowPermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showPermanentAccessKey);
     }
@@ -924,7 +924,7 @@ public class IamClient {
      *
      * @param UpdatePermanentAccessKeyRequest 请求对象
      * @return UpdatePermanentAccessKeyResponse
-    */
+     */
     public UpdatePermanentAccessKeyResponse updatePermanentAccessKey(UpdatePermanentAccessKeyRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updatePermanentAccessKey);
     }
@@ -935,7 +935,7 @@ public class IamClient {
      *
      * @param CreateUserRequest 请求对象
      * @return CreateUserResponse
-    */
+     */
     public CreateUserResponse createUser(CreateUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createUser);
     }
@@ -946,7 +946,7 @@ public class IamClient {
      *
      * @param KeystoneCreateUserRequest 请求对象
      * @return KeystoneCreateUserResponse
-    */
+     */
     public KeystoneCreateUserResponse keystoneCreateUser(KeystoneCreateUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCreateUser);
     }
@@ -957,7 +957,7 @@ public class IamClient {
      *
      * @param KeystoneDeleteUserRequest 请求对象
      * @return KeystoneDeleteUserResponse
-    */
+     */
     public KeystoneDeleteUserResponse keystoneDeleteUser(KeystoneDeleteUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteUser);
     }
@@ -968,7 +968,7 @@ public class IamClient {
      *
      * @param KeystoneListGroupsForUserRequest 请求对象
      * @return KeystoneListGroupsForUserResponse
-    */
+     */
     public KeystoneListGroupsForUserResponse keystoneListGroupsForUser(KeystoneListGroupsForUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListGroupsForUser);
     }
@@ -979,7 +979,7 @@ public class IamClient {
      *
      * @param KeystoneListUsersRequest 请求对象
      * @return KeystoneListUsersResponse
-    */
+     */
     public KeystoneListUsersResponse keystoneListUsers(KeystoneListUsersRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneListUsers);
     }
@@ -990,7 +990,7 @@ public class IamClient {
      *
      * @param KeystoneShowUserRequest 请求对象
      * @return KeystoneShowUserResponse
-    */
+     */
     public KeystoneShowUserResponse keystoneShowUser(KeystoneShowUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneShowUser);
     }
@@ -1001,7 +1001,7 @@ public class IamClient {
      *
      * @param KeystoneUpdateUserByAdminRequest 请求对象
      * @return KeystoneUpdateUserByAdminResponse
-    */
+     */
     public KeystoneUpdateUserByAdminResponse keystoneUpdateUserByAdmin(KeystoneUpdateUserByAdminRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateUserByAdmin);
     }
@@ -1012,7 +1012,7 @@ public class IamClient {
      *
      * @param KeystoneUpdateUserPasswordRequest 请求对象
      * @return KeystoneUpdateUserPasswordResponse
-    */
+     */
     public KeystoneUpdateUserPasswordResponse keystoneUpdateUserPassword(KeystoneUpdateUserPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneUpdateUserPassword);
     }
@@ -1023,7 +1023,7 @@ public class IamClient {
      *
      * @param ListUserLoginProtectsRequest 请求对象
      * @return ListUserLoginProtectsResponse
-    */
+     */
     public ListUserLoginProtectsResponse listUserLoginProtects(ListUserLoginProtectsRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listUserLoginProtects);
     }
@@ -1034,7 +1034,7 @@ public class IamClient {
      *
      * @param ListUserMfaDevicesRequest 请求对象
      * @return ListUserMfaDevicesResponse
-    */
+     */
     public ListUserMfaDevicesResponse listUserMfaDevices(ListUserMfaDevicesRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.listUserMfaDevices);
     }
@@ -1045,7 +1045,7 @@ public class IamClient {
      *
      * @param ShowUserRequest 请求对象
      * @return ShowUserResponse
-    */
+     */
     public ShowUserResponse showUser(ShowUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showUser);
     }
@@ -1056,7 +1056,7 @@ public class IamClient {
      *
      * @param ShowUserLoginProtectRequest 请求对象
      * @return ShowUserLoginProtectResponse
-    */
+     */
     public ShowUserLoginProtectResponse showUserLoginProtect(ShowUserLoginProtectRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showUserLoginProtect);
     }
@@ -1067,7 +1067,7 @@ public class IamClient {
      *
      * @param ShowUserMfaDeviceRequest 请求对象
      * @return ShowUserMfaDeviceResponse
-    */
+     */
     public ShowUserMfaDeviceResponse showUserMfaDevice(ShowUserMfaDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showUserMfaDevice);
     }
@@ -1078,7 +1078,7 @@ public class IamClient {
      *
      * @param UpdateUserRequest 请求对象
      * @return UpdateUserResponse
-    */
+     */
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateUser);
     }
@@ -1089,7 +1089,7 @@ public class IamClient {
      *
      * @param UpdateUserInformationRequest 请求对象
      * @return UpdateUserInformationResponse
-    */
+     */
     public UpdateUserInformationResponse updateUserInformation(UpdateUserInformationRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.updateUserInformation);
     }

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ces.v1.model.MetaData;
-import com.huaweicloud.sdk.ces.v1.model.MetricInfo;
+import com.huaweicloud.sdk.ces.v1.model.MetricInfoList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -27,7 +27,7 @@ public class ListMetricsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metrics")
     
-    private List<MetricInfo> metrics = null;
+    private List<MetricInfoList> metrics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,13 +35,13 @@ public class ListMetricsResponse extends SdkResponse {
     
     private MetaData metaData = null;
 
-    public ListMetricsResponse withMetrics(List<MetricInfo> metrics) {
+    public ListMetricsResponse withMetrics(List<MetricInfoList> metrics) {
         this.metrics = metrics;
         return this;
     }
 
     
-    public ListMetricsResponse addMetricsItem(MetricInfo metricsItem) {
+    public ListMetricsResponse addMetricsItem(MetricInfoList metricsItem) {
         if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
@@ -49,7 +49,7 @@ public class ListMetricsResponse extends SdkResponse {
         return this;
     }
 
-    public ListMetricsResponse withMetrics(Consumer<List<MetricInfo>> metricsSetter) {
+    public ListMetricsResponse withMetrics(Consumer<List<MetricInfoList>> metricsSetter) {
         if(this.metrics == null ){
             this.metrics = new ArrayList<>();
         }
@@ -61,11 +61,11 @@ public class ListMetricsResponse extends SdkResponse {
      * 指标信息列表
      * @return metrics
      */
-    public List<MetricInfo> getMetrics() {
+    public List<MetricInfoList> getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(List<MetricInfo> metrics) {
+    public void setMetrics(List<MetricInfoList> metrics) {
         this.metrics = metrics;
     }
 

@@ -63,8 +63,12 @@ public class ThrottleResp  {
             this.value = value;
         }
 
-        @Override
         @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
         public String toString() {
             return String.valueOf(value);
         }
@@ -155,8 +159,12 @@ public class ThrottleResp  {
             this.value = value;
         }
 
-        @Override
         @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
         public String toString() {
             return String.valueOf(value);
         }
@@ -271,8 +279,12 @@ public class ThrottleResp  {
             this.value = value;
         }
 
-        @Override
         @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
         public String toString() {
             return String.valueOf(value);
         }

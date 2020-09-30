@@ -22,7 +22,7 @@ public class FunctionGraphClient {
      *
      * @param AsyncInvokeFunctionRequest 请求对象
      * @return AsyncInvokeFunctionResponse
-    */
+     */
     public AsyncInvokeFunctionResponse asyncInvokeFunction(AsyncInvokeFunctionRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.asyncInvokeFunction);
     }
@@ -33,7 +33,7 @@ public class FunctionGraphClient {
      *
      * @param CreateFunctionRequest 请求对象
      * @return CreateFunctionResponse
-    */
+     */
     public CreateFunctionResponse createFunction(CreateFunctionRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createFunction);
     }
@@ -44,7 +44,7 @@ public class FunctionGraphClient {
      *
      * @param CreateFunctionVersionRequest 请求对象
      * @return CreateFunctionVersionResponse
-    */
+     */
     public CreateFunctionVersionResponse createFunctionVersion(CreateFunctionVersionRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createFunctionVersion);
     }
@@ -55,7 +55,7 @@ public class FunctionGraphClient {
      *
      * @param CreateVersionAliasRequest 请求对象
      * @return CreateVersionAliasResponse
-    */
+     */
     public CreateVersionAliasResponse createVersionAlias(CreateVersionAliasRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createVersionAlias);
     }
@@ -66,7 +66,7 @@ public class FunctionGraphClient {
      *
      * @param DeleteFunctionRequest 请求对象
      * @return DeleteFunctionResponse
-    */
+     */
     public DeleteFunctionResponse deleteFunction(DeleteFunctionRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteFunction);
     }
@@ -77,7 +77,7 @@ public class FunctionGraphClient {
      *
      * @param DeleteVersionAliasRequest 请求对象
      * @return DeleteVersionAliasResponse
-    */
+     */
     public DeleteVersionAliasResponse deleteVersionAlias(DeleteVersionAliasRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteVersionAlias);
     }
@@ -88,7 +88,7 @@ public class FunctionGraphClient {
      *
      * @param InvokeFunctionRequest 请求对象
      * @return InvokeFunctionResponse
-    */
+     */
     public InvokeFunctionResponse invokeFunction(InvokeFunctionRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.invokeFunction);
     }
@@ -99,7 +99,7 @@ public class FunctionGraphClient {
      *
      * @param ListFunctionVersionsRequest 请求对象
      * @return ListFunctionVersionsResponse
-    */
+     */
     public ListFunctionVersionsResponse listFunctionVersions(ListFunctionVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctionVersions);
     }
@@ -110,7 +110,7 @@ public class FunctionGraphClient {
      *
      * @param ListFunctionsRequest 请求对象
      * @return ListFunctionsResponse
-    */
+     */
     public ListFunctionsResponse listFunctions(ListFunctionsRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctions);
     }
@@ -121,7 +121,7 @@ public class FunctionGraphClient {
      *
      * @param ListVersionAliasesRequest 请求对象
      * @return ListVersionAliasesResponse
-    */
+     */
     public ListVersionAliasesResponse listVersionAliases(ListVersionAliasesRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listVersionAliases);
     }
@@ -132,7 +132,7 @@ public class FunctionGraphClient {
      *
      * @param ShowFunctionCodeRequest 请求对象
      * @return ShowFunctionCodeResponse
-    */
+     */
     public ShowFunctionCodeResponse showFunctionCode(ShowFunctionCodeRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFunctionCode);
     }
@@ -143,7 +143,7 @@ public class FunctionGraphClient {
      *
      * @param ShowFunctionConfigRequest 请求对象
      * @return ShowFunctionConfigResponse
-    */
+     */
     public ShowFunctionConfigResponse showFunctionConfig(ShowFunctionConfigRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFunctionConfig);
     }
@@ -154,7 +154,7 @@ public class FunctionGraphClient {
      *
      * @param ShowVersionAliasRequest 请求对象
      * @return ShowVersionAliasResponse
-    */
+     */
     public ShowVersionAliasResponse showVersionAlias(ShowVersionAliasRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showVersionAlias);
     }
@@ -165,7 +165,7 @@ public class FunctionGraphClient {
      *
      * @param UpdateFunctionCodeRequest 请求对象
      * @return UpdateFunctionCodeResponse
-    */
+     */
     public UpdateFunctionCodeResponse updateFunctionCode(UpdateFunctionCodeRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateFunctionCode);
     }
@@ -176,7 +176,7 @@ public class FunctionGraphClient {
      *
      * @param UpdateFunctionConfigRequest 请求对象
      * @return UpdateFunctionConfigResponse
-    */
+     */
     public UpdateFunctionConfigResponse updateFunctionConfig(UpdateFunctionConfigRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateFunctionConfig);
     }
@@ -187,7 +187,7 @@ public class FunctionGraphClient {
      *
      * @param UpdateVersionAliasRequest 请求对象
      * @return UpdateVersionAliasResponse
-    */
+     */
     public UpdateVersionAliasResponse updateVersionAlias(UpdateVersionAliasRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateVersionAlias);
     }
@@ -198,7 +198,7 @@ public class FunctionGraphClient {
      *
      * @param BatchDeleteFunctionTriggersRequest 请求对象
      * @return BatchDeleteFunctionTriggersResponse
-    */
+     */
     public BatchDeleteFunctionTriggersResponse batchDeleteFunctionTriggers(BatchDeleteFunctionTriggersRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.batchDeleteFunctionTriggers);
     }
@@ -209,7 +209,7 @@ public class FunctionGraphClient {
      *
      * @param CreateFunctionTriggerRequest 请求对象
      * @return CreateFunctionTriggerResponse
-    */
+     */
     public CreateFunctionTriggerResponse createFunctionTrigger(CreateFunctionTriggerRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createFunctionTrigger);
     }
@@ -220,7 +220,7 @@ public class FunctionGraphClient {
      *
      * @param DeleteFunctionTriggerRequest 请求对象
      * @return DeleteFunctionTriggerResponse
-    */
+     */
     public DeleteFunctionTriggerResponse deleteFunctionTrigger(DeleteFunctionTriggerRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteFunctionTrigger);
     }
@@ -231,7 +231,7 @@ public class FunctionGraphClient {
      *
      * @param ListFunctionTriggersRequest 请求对象
      * @return ListFunctionTriggersResponse
-    */
+     */
     public ListFunctionTriggersResponse listFunctionTriggers(ListFunctionTriggersRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctionTriggers);
     }
@@ -242,7 +242,7 @@ public class FunctionGraphClient {
      *
      * @param ShowFunctionTriggerRequest 请求对象
      * @return ShowFunctionTriggerResponse
-    */
+     */
     public ShowFunctionTriggerResponse showFunctionTrigger(ShowFunctionTriggerRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFunctionTrigger);
     }

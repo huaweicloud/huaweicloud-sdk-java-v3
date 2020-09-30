@@ -22,7 +22,7 @@ public class OmsClient {
      *
      * @param CreateTaskRequest 请求对象
      * @return CreateTaskResponse
-    */
+     */
     public CreateTaskResponse createTask(CreateTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.createTask);
     }
@@ -33,7 +33,7 @@ public class OmsClient {
      *
      * @param DeleteTaskRequest 请求对象
      * @return DeleteTaskResponse
-    */
+     */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.deleteTask);
     }
@@ -44,7 +44,7 @@ public class OmsClient {
      *
      * @param ListTasksRequest 请求对象
      * @return ListTasksResponse
-    */
+     */
     public ListTasksResponse listTasks(ListTasksRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.listTasks);
     }
@@ -55,7 +55,7 @@ public class OmsClient {
      *
      * @param ShowTaskRequest 请求对象
      * @return ShowTaskResponse
-    */
+     */
     public ShowTaskResponse showTask(ShowTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.showTask);
     }
@@ -66,7 +66,7 @@ public class OmsClient {
      *
      * @param StartTaskRequest 请求对象
      * @return StartTaskResponse
-    */
+     */
     public StartTaskResponse startTask(StartTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.startTask);
     }
@@ -77,7 +77,7 @@ public class OmsClient {
      *
      * @param StopTaskRequest 请求对象
      * @return StopTaskResponse
-    */
+     */
     public StopTaskResponse stopTask(StopTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.stopTask);
     }
@@ -88,7 +88,7 @@ public class OmsClient {
      *
      * @param UpdateBandwidthPolicyRequest 请求对象
      * @return UpdateBandwidthPolicyResponse
-    */
+     */
     public UpdateBandwidthPolicyResponse updateBandwidthPolicy(UpdateBandwidthPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.updateBandwidthPolicy);
     }
@@ -99,7 +99,7 @@ public class OmsClient {
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
-    */
+     */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.listApiVersions);
     }
@@ -110,7 +110,7 @@ public class OmsClient {
      *
      * @param ShowApiInfoRequest 请求对象
      * @return ShowApiInfoResponse
-    */
+     */
     public ShowApiInfoResponse showApiInfo(ShowApiInfoRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.showApiInfo);
     }

@@ -22,7 +22,7 @@ public class EipClient {
      *
      * @param AddPublicipsIntoSharedBandwidthRequest 请求对象
      * @return AddPublicipsIntoSharedBandwidthResponse
-    */
+     */
     public AddPublicipsIntoSharedBandwidthResponse addPublicipsIntoSharedBandwidth(AddPublicipsIntoSharedBandwidthRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.addPublicipsIntoSharedBandwidth);
     }
@@ -33,7 +33,7 @@ public class EipClient {
      *
      * @param BatchCreateSharedBandwidthsRequest 请求对象
      * @return BatchCreateSharedBandwidthsResponse
-    */
+     */
     public BatchCreateSharedBandwidthsResponse batchCreateSharedBandwidths(BatchCreateSharedBandwidthsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.batchCreateSharedBandwidths);
     }
@@ -44,7 +44,7 @@ public class EipClient {
      *
      * @param CreateSharedBandwidthRequest 请求对象
      * @return CreateSharedBandwidthResponse
-    */
+     */
     public CreateSharedBandwidthResponse createSharedBandwidth(CreateSharedBandwidthRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.createSharedBandwidth);
     }
@@ -55,7 +55,7 @@ public class EipClient {
      *
      * @param DeleteSharedBandwidthRequest 请求对象
      * @return DeleteSharedBandwidthResponse
-    */
+     */
     public DeleteSharedBandwidthResponse deleteSharedBandwidth(DeleteSharedBandwidthRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.deleteSharedBandwidth);
     }
@@ -66,7 +66,7 @@ public class EipClient {
      *
      * @param ListBandwidthsRequest 请求对象
      * @return ListBandwidthsResponse
-    */
+     */
     public ListBandwidthsResponse listBandwidths(ListBandwidthsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.listBandwidths);
     }
@@ -77,7 +77,7 @@ public class EipClient {
      *
      * @param ListQuotasRequest 请求对象
      * @return ListQuotasResponse
-    */
+     */
     public ListQuotasResponse listQuotas(ListQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.listQuotas);
     }
@@ -88,7 +88,7 @@ public class EipClient {
      *
      * @param RemovePublicipsFromSharedBandwidthRequest 请求对象
      * @return RemovePublicipsFromSharedBandwidthResponse
-    */
+     */
     public RemovePublicipsFromSharedBandwidthResponse removePublicipsFromSharedBandwidth(RemovePublicipsFromSharedBandwidthRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.removePublicipsFromSharedBandwidth);
     }
@@ -99,7 +99,7 @@ public class EipClient {
      *
      * @param ShowBandwidthRequest 请求对象
      * @return ShowBandwidthResponse
-    */
+     */
     public ShowBandwidthResponse showBandwidth(ShowBandwidthRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.showBandwidth);
     }
@@ -110,7 +110,7 @@ public class EipClient {
      *
      * @param UpdateBandwidthRequest 请求对象
      * @return UpdateBandwidthResponse
-    */
+     */
     public UpdateBandwidthResponse updateBandwidth(UpdateBandwidthRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.updateBandwidth);
     }
@@ -121,7 +121,7 @@ public class EipClient {
      *
      * @param UpdatePrePaidBandwidthRequest 请求对象
      * @return UpdatePrePaidBandwidthResponse
-    */
+     */
     public UpdatePrePaidBandwidthResponse updatePrePaidBandwidth(UpdatePrePaidBandwidthRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.updatePrePaidBandwidth);
     }
@@ -132,7 +132,7 @@ public class EipClient {
      *
      * @param BatchCreatePublicipTagsRequest 请求对象
      * @return BatchCreatePublicipTagsResponse
-    */
+     */
     public BatchCreatePublicipTagsResponse batchCreatePublicipTags(BatchCreatePublicipTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.batchCreatePublicipTags);
     }
@@ -143,7 +143,7 @@ public class EipClient {
      *
      * @param BatchDeletePublicipTagsRequest 请求对象
      * @return BatchDeletePublicipTagsResponse
-    */
+     */
     public BatchDeletePublicipTagsResponse batchDeletePublicipTags(BatchDeletePublicipTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.batchDeletePublicipTags);
     }
@@ -154,7 +154,7 @@ public class EipClient {
      *
      * @param CreatePrePaidPublicipRequest 请求对象
      * @return CreatePrePaidPublicipResponse
-    */
+     */
     public CreatePrePaidPublicipResponse createPrePaidPublicip(CreatePrePaidPublicipRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.createPrePaidPublicip);
     }
@@ -165,7 +165,7 @@ public class EipClient {
      *
      * @param CreatePublicipRequest 请求对象
      * @return CreatePublicipResponse
-    */
+     */
     public CreatePublicipResponse createPublicip(CreatePublicipRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.createPublicip);
     }
@@ -176,7 +176,7 @@ public class EipClient {
      *
      * @param CreatePublicipTagRequest 请求对象
      * @return CreatePublicipTagResponse
-    */
+     */
     public CreatePublicipTagResponse createPublicipTag(CreatePublicipTagRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.createPublicipTag);
     }
@@ -187,7 +187,7 @@ public class EipClient {
      *
      * @param DeletePublicipRequest 请求对象
      * @return DeletePublicipResponse
-    */
+     */
     public DeletePublicipResponse deletePublicip(DeletePublicipRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.deletePublicip);
     }
@@ -198,7 +198,7 @@ public class EipClient {
      *
      * @param DeletePublicipTagRequest 请求对象
      * @return DeletePublicipTagResponse
-    */
+     */
     public DeletePublicipTagResponse deletePublicipTag(DeletePublicipTagRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.deletePublicipTag);
     }
@@ -209,7 +209,7 @@ public class EipClient {
      *
      * @param ListPublicipTagsRequest 请求对象
      * @return ListPublicipTagsResponse
-    */
+     */
     public ListPublicipTagsResponse listPublicipTags(ListPublicipTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.listPublicipTags);
     }
@@ -220,7 +220,7 @@ public class EipClient {
      *
      * @param ListPublicipsRequest 请求对象
      * @return ListPublicipsResponse
-    */
+     */
     public ListPublicipsResponse listPublicips(ListPublicipsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.listPublicips);
     }
@@ -231,7 +231,7 @@ public class EipClient {
      *
      * @param ListPublicipsByTagsRequest 请求对象
      * @return ListPublicipsByTagsResponse
-    */
+     */
     public ListPublicipsByTagsResponse listPublicipsByTags(ListPublicipsByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.listPublicipsByTags);
     }
@@ -242,7 +242,7 @@ public class EipClient {
      *
      * @param ShowPublicipRequest 请求对象
      * @return ShowPublicipResponse
-    */
+     */
     public ShowPublicipResponse showPublicip(ShowPublicipRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.showPublicip);
     }
@@ -253,7 +253,7 @@ public class EipClient {
      *
      * @param ShowPublicipTagsRequest 请求对象
      * @return ShowPublicipTagsResponse
-    */
+     */
     public ShowPublicipTagsResponse showPublicipTags(ShowPublicipTagsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.showPublicipTags);
     }
@@ -264,7 +264,7 @@ public class EipClient {
      *
      * @param UpdatePublicipRequest 请求对象
      * @return UpdatePublicipResponse
-    */
+     */
     public UpdatePublicipResponse updatePublicip(UpdatePublicipRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.updatePublicip);
     }
@@ -275,7 +275,7 @@ public class EipClient {
      *
      * @param NeutronCreateFloatingIpRequest 请求对象
      * @return NeutronCreateFloatingIpResponse
-    */
+     */
     public NeutronCreateFloatingIpResponse neutronCreateFloatingIp(NeutronCreateFloatingIpRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.neutronCreateFloatingIp);
     }
@@ -286,7 +286,7 @@ public class EipClient {
      *
      * @param NeutronDeleteFloatingIpRequest 请求对象
      * @return NeutronDeleteFloatingIpResponse
-    */
+     */
     public NeutronDeleteFloatingIpResponse neutronDeleteFloatingIp(NeutronDeleteFloatingIpRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.neutronDeleteFloatingIp);
     }
@@ -297,7 +297,7 @@ public class EipClient {
      *
      * @param NeutronListFloatingIpsRequest 请求对象
      * @return NeutronListFloatingIpsResponse
-    */
+     */
     public NeutronListFloatingIpsResponse neutronListFloatingIps(NeutronListFloatingIpsRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.neutronListFloatingIps);
     }
@@ -308,7 +308,7 @@ public class EipClient {
      *
      * @param NeutronShowFloatingIpRequest 请求对象
      * @return NeutronShowFloatingIpResponse
-    */
+     */
     public NeutronShowFloatingIpResponse neutronShowFloatingIp(NeutronShowFloatingIpRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.neutronShowFloatingIp);
     }
@@ -319,7 +319,7 @@ public class EipClient {
      *
      * @param NeutronUpdateFloatingIpRequest 请求对象
      * @return NeutronUpdateFloatingIpResponse
-    */
+     */
     public NeutronUpdateFloatingIpResponse neutronUpdateFloatingIp(NeutronUpdateFloatingIpRequest request) {
         return hcClient.syncInvokeHttp(request, EipMeta.neutronUpdateFloatingIp);
     }

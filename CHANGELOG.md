@@ -1,3 +1,13 @@
+## 3.0.15-beta 2020-09-30
+## HuaweiCloud SDK CBR
+ - ### Features
+    - Support Cloud Backup and Recovery service.
+ - ### Bug Fix
+    - None
+ - ### Change
+    - None
+
+
 ## 3.0.14-beta 2020-09-24
 ## HuaweiCloud SDK Core
  - ### Features

@@ -19,126 +19,343 @@ public class BssintlAsyncClient {
     }
 
 
+    /**
+     * 设置包年包月资源自动续费
+     * 功能描述：设置包周期资源自动续费
+     *
+     * @param AutoRenewalResourcesRequest 请求对象
+     * @return CompletableFuture<AutoRenewalResourcesResponse>
+     */
     public CompletableFuture<AutoRenewalResourcesResponse> autoRenewalResourcesAsync(AutoRenewalResourcesRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.autoRenewalResources);
     }
 
+    /**
+     * 取消包年包月资源自动续费
+     * 功能描述：取消包年/包月资源自动续费
+     *
+     * @param CancelAutoRenewalResourcesRequest 请求对象
+     * @return CompletableFuture<CancelAutoRenewalResourcesResponse>
+     */
     public CompletableFuture<CancelAutoRenewalResourcesResponse> cancelAutoRenewalResourcesAsync(CancelAutoRenewalResourcesRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.cancelAutoRenewalResources);
     }
 
+    /**
+     * 取消包周期订单
+     * 功能描述：取消包周期订单
+     *
+     * @param CancelCustomerOrderRequest 请求对象
+     * @return CompletableFuture<CancelCustomerOrderResponse>
+     */
     public CompletableFuture<CancelCustomerOrderResponse> cancelCustomerOrderAsync(CancelCustomerOrderRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.cancelCustomerOrder);
     }
 
+    /**
+     * 退订包周期资源
+     * 功能描述：退订包周期资源
+     *
+     * @param CancelResourcesSubscriptionRequest 请求对象
+     * @return CompletableFuture<CancelResourcesSubscriptionResponse>
+     */
     public CompletableFuture<CancelResourcesSubscriptionResponse> cancelResourcesSubscriptionAsync(CancelResourcesSubscriptionRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.cancelResourcesSubscription);
     }
 
+    /**
+     * 实名认证变更申请
+     * 功能描述：实名认证变更申请
+     *
+     * @param ChangeEnterpriseRealnameAuthenticationRequest 请求对象
+     * @return CompletableFuture<ChangeEnterpriseRealnameAuthenticationResponse>
+     */
     public CompletableFuture<ChangeEnterpriseRealnameAuthenticationResponse> changeEnterpriseRealnameAuthenticationAsync(ChangeEnterpriseRealnameAuthenticationRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.changeEnterpriseRealnameAuthentication);
     }
 
+    /**
+     * 校验客户的注册信息
+     * 功能描述：校验客户的注册信息
+     *
+     * @param CheckUserIdentityRequest 请求对象
+     * @return CompletableFuture<CheckUserIdentityResponse>
+     */
     public CompletableFuture<CheckUserIdentityResponse> checkUserIdentityAsync(CheckUserIdentityRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.checkUserIdentity);
     }
 
+    /**
+     * 企业实名认证申请
+     * 功能描述：企业实名认证申请V2
+     *
+     * @param CreateEnterpriseRealnameAuthenticationRequest 请求对象
+     * @return CompletableFuture<CreateEnterpriseRealnameAuthenticationResponse>
+     */
     public CompletableFuture<CreateEnterpriseRealnameAuthenticationResponse> createEnterpriseRealnameAuthenticationAsync(CreateEnterpriseRealnameAuthenticationRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.createEnterpriseRealnameAuthentication);
     }
 
+    /**
+     * 个人实名认证申请
+     * 功能描述：个人实名认证申请
+     *
+     * @param CreatePersonalRealnameAuthRequest 请求对象
+     * @return CompletableFuture<CreatePersonalRealnameAuthResponse>
+     */
     public CompletableFuture<CreatePersonalRealnameAuthResponse> createPersonalRealnameAuthAsync(CreatePersonalRealnameAuthRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.createPersonalRealnameAuth);
     }
 
+    /**
+     * 创建客户（V2）
+     * 功能描述：在伙伴销售平台创建客户时同步创建华为云账号，并将客户在伙伴销售平台上的账号与华为云账号进行映射。同时，创建的华为云账号与伙伴账号关联绑定。
+     *
+     * @param CreateSubCustomerRequest 请求对象
+     * @return CompletableFuture<CreateSubCustomerResponse>
+     */
     public CompletableFuture<CreateSubCustomerResponse> createSubCustomerAsync(CreateSubCustomerRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.createSubCustomer);
     }
 
+    /**
+     * 冻结伙伴子客户
+     * 功能描述：冻结伙伴子客户
+     *
+     * @param FreezeSubCustomersRequest 请求对象
+     * @return CompletableFuture<FreezeSubCustomersResponse>
+     */
     public CompletableFuture<FreezeSubCustomersResponse> freezeSubCustomersAsync(FreezeSubCustomersRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.freezeSubCustomers);
     }
 
+    /**
+     * 查询客户按需资源列表
+     * 功能描述：查询客户按需资源列表
+     *
+     * @param ListCustomerOnDemandResourcesRequest 请求对象
+     * @return CompletableFuture<ListCustomerOnDemandResourcesResponse>
+     */
     public CompletableFuture<ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResourcesAsync(ListCustomerOnDemandResourcesRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listCustomerOnDemandResources);
     }
 
+    /**
+     * 查询订单列表V2
+     * 功能描述：查询订单列表
+     *
+     * @param ListCustomerOrdersRequest 请求对象
+     * @return CompletableFuture<ListCustomerOrdersResponse>
+     */
     public CompletableFuture<ListCustomerOrdersResponse> listCustomerOrdersAsync(ListCustomerOrdersRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listCustomerOrders);
     }
 
+    /**
+     * 查询资源详单V2（客户）
+     * 功能描述：客户在客户自建平台查询自己的资源详单，用于反映各类资源的消耗情况。资源详单数据有延迟，最大延迟24小时。
+     *
+     * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
+     * @return CompletableFuture<ListCustomerselfResourceRecordDetailsResponse>
+     */
     public CompletableFuture<ListCustomerselfResourceRecordDetailsResponse> listCustomerselfResourceRecordDetailsAsync(ListCustomerselfResourceRecordDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listCustomerselfResourceRecordDetails);
     }
 
+    /**
+     * 查询资源消费记录（客户）
+     * 功能描述：查询资源消费记录（客户）
+     *
+     * @param ListCustomerselfResourceRecordsRequest 请求对象
+     * @return CompletableFuture<ListCustomerselfResourceRecordsResponse>
+     */
     public CompletableFuture<ListCustomerselfResourceRecordsResponse> listCustomerselfResourceRecordsAsync(ListCustomerselfResourceRecordsRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listCustomerselfResourceRecords);
     }
 
+    /**
+     * 查询按需产品价格
+     * 功能描述：按需资源询价
+     *
+     * @param ListOnDemandResourceRatingsRequest 请求对象
+     * @return CompletableFuture<ListOnDemandResourceRatingsResponse>
+     */
     public CompletableFuture<ListOnDemandResourceRatingsResponse> listOnDemandResourceRatingsAsync(ListOnDemandResourceRatingsRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listOnDemandResourceRatings);
     }
 
+    /**
+     * 查询订单可用优惠券
+     * 功能描述：查询订单详情
+     *
+     * @param ListOrderCouponsByOrderIdRequest 请求对象
+     * @return CompletableFuture<ListOrderCouponsByOrderIdResponse>
+     */
     public CompletableFuture<ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderIdAsync(ListOrderCouponsByOrderIdRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listOrderCouponsByOrderId);
     }
 
+    /**
+     * 查询客户包年包月资源列表
+     * 功能描述：查询客户包年/包月资源列表
+     *
+     * @param ListPayPerUseCustomerResourcesRequest 请求对象
+     * @return CompletableFuture<ListPayPerUseCustomerResourcesResponse>
+     */
     public CompletableFuture<ListPayPerUseCustomerResourcesResponse> listPayPerUseCustomerResourcesAsync(ListPayPerUseCustomerResourcesRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listPayPerUseCustomerResources);
     }
 
+    /**
+     * 包周期资源订购询价
+     * 功能描述：包周期资源订购询价
+     *
+     * @param ListRateOnPeriodDetailRequest 请求对象
+     * @return CompletableFuture<ListRateOnPeriodDetailResponse>
+     */
     public CompletableFuture<ListRateOnPeriodDetailResponse> listRateOnPeriodDetailAsync(ListRateOnPeriodDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listRateOnPeriodDetail);
     }
 
+    /**
+     * 查询套餐内使用量
+     * 功能描述：查询套餐内使用量
+     *
+     * @param ListResourceUsagesRequest 请求对象
+     * @return CompletableFuture<ListResourceUsagesResponse>
+     */
     public CompletableFuture<ListResourceUsagesResponse> listResourceUsagesAsync(ListResourceUsagesRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listResourceUsages);
     }
 
+    /**
+     * 查询优惠券列表
+     * 功能描述：查询优惠券列表
+     *
+     * @param ListSubCustomerCouponsRequest 请求对象
+     * @return CompletableFuture<ListSubCustomerCouponsResponse>
+     */
     public CompletableFuture<ListSubCustomerCouponsResponse> listSubCustomerCouponsAsync(ListSubCustomerCouponsRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listSubCustomerCoupons);
     }
 
+    /**
+     * 查询客户列表
+     * 功能描述：查询客户列表
+     *
+     * @param ListSubCustomersRequest 请求对象
+     * @return CompletableFuture<ListSubCustomersResponse>
+     */
     public CompletableFuture<ListSubCustomersResponse> listSubCustomersAsync(ListSubCustomersRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listSubCustomers);
     }
 
+    /**
+     * 支付包周期订单
+     * 功能描述：支付包周期订单
+     *
+     * @param PayOrdersRequest 请求对象
+     * @return CompletableFuture<PayOrdersResponse>
+     */
     public CompletableFuture<PayOrdersResponse> payOrdersAsync(PayOrdersRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.payOrders);
     }
 
+    /**
+     * 续订包周期资源
+     * 功能描述：续订包周期资源
+     *
+     * @param RenewalResourcesRequest 请求对象
+     * @return CompletableFuture<RenewalResourcesResponse>
+     */
     public CompletableFuture<RenewalResourcesResponse> renewalResourcesAsync(RenewalResourcesRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.renewalResources);
     }
 
+    /**
+     * 短信验证码
+     * 功能描述：发送验证码
+     *
+     * @param SendVerificationMessageCodeRequest 请求对象
+     * @return CompletableFuture<SendVerificationMessageCodeResponse>
+     */
     public CompletableFuture<SendVerificationMessageCodeResponse> sendVerificationMessageCodeAsync(SendVerificationMessageCodeRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.sendVerificationMessageCode);
     }
 
+    /**
+     * 查询客户消费汇总
+     * 功能描述：客户可以查询自身的消费汇总单的功能，消费按月汇总。每天刷新一次，更新前一天的数据。
+     *
+     * @param ShowCustomerMonthlySumRequest 请求对象
+     * @return CompletableFuture<ShowCustomerMonthlySumResponse>
+     */
     public CompletableFuture<ShowCustomerMonthlySumResponse> showCustomerMonthlySumAsync(ShowCustomerMonthlySumRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.showCustomerMonthlySum);
     }
 
+    /**
+     * 查询订单详情V2
+     * 功能描述：查询订单详情
+     *
+     * @param ShowCustomerOrderDetailsRequest 请求对象
+     * @return CompletableFuture<ShowCustomerOrderDetailsResponse>
+     */
     public CompletableFuture<ShowCustomerOrderDetailsResponse> showCustomerOrderDetailsAsync(ShowCustomerOrderDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.showCustomerOrderDetails);
     }
 
+    /**
+     * 查询实名认证审核结果
+     * 功能描述：查询实名认证审核结果
+     *
+     * @param ShowRealnameAuthenticationReviewResultRequest 请求对象
+     * @return CompletableFuture<ShowRealnameAuthenticationReviewResultResponse>
+     */
     public CompletableFuture<ShowRealnameAuthenticationReviewResultResponse> showRealnameAuthenticationReviewResultAsync(ShowRealnameAuthenticationReviewResultRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.showRealnameAuthenticationReviewResult);
     }
 
+    /**
+     * 查询退款订单的金额详情V2
+     * 功能描述：查询退款订单的金额详情
+     *
+     * @param ShowRefundOrderDetailsRequest 请求对象
+     * @return CompletableFuture<ShowRefundOrderDetailsResponse>
+     */
     public CompletableFuture<ShowRefundOrderDetailsResponse> showRefundOrderDetailsAsync(ShowRefundOrderDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.showRefundOrderDetails);
     }
 
+    /**
+     * 查询客户预算
+     * 功能描述：查询客户预算
+     *
+     * @param ShowSubCustomerBudgetRequest 请求对象
+     * @return CompletableFuture<ShowSubCustomerBudgetResponse>
+     */
     public CompletableFuture<ShowSubCustomerBudgetResponse> showSubCustomerBudgetAsync(ShowSubCustomerBudgetRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.showSubCustomerBudget);
     }
 
+    /**
+     * 解冻伙伴子客户
+     * 功能描述：解冻伙伴子客户
+     *
+     * @param UnfreezeSubCustomersRequest 请求对象
+     * @return CompletableFuture<UnfreezeSubCustomersResponse>
+     */
     public CompletableFuture<UnfreezeSubCustomersResponse> unfreezeSubCustomersAsync(UnfreezeSubCustomersRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.unfreezeSubCustomers);
     }
 
+    /**
+     * 设置客户预算
+     * 功能描述：设置客户预算
+     *
+     * @param UpdateSubCustomerBudgetRequest 请求对象
+     * @return CompletableFuture<UpdateSubCustomerBudgetResponse>
+     */
     public CompletableFuture<UpdateSubCustomerBudgetResponse> updateSubCustomerBudgetAsync(UpdateSubCustomerBudgetRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.updateSubCustomerBudget);
     }

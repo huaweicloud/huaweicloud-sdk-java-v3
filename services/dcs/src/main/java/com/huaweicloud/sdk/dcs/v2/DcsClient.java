@@ -22,7 +22,7 @@ public class DcsClient {
      *
      * @param BatchCreateOrDeleteDcsTagsRequest 请求对象
      * @return BatchCreateOrDeleteDcsTagsResponse
-    */
+     */
     public BatchCreateOrDeleteDcsTagsResponse batchCreateOrDeleteDcsTags(BatchCreateOrDeleteDcsTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.batchCreateOrDeleteDcsTags);
     }
@@ -33,7 +33,7 @@ public class DcsClient {
      *
      * @param BatchDeleteDCSInstancesRequest 请求对象
      * @return BatchDeleteDCSInstancesResponse
-    */
+     */
     public BatchDeleteDCSInstancesResponse batchDeleteDCSInstances(BatchDeleteDCSInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.batchDeleteDCSInstances);
     }
@@ -44,7 +44,7 @@ public class DcsClient {
      *
      * @param CopyInstanceRequest 请求对象
      * @return CopyInstanceResponse
-    */
+     */
     public CopyInstanceResponse copyInstance(CopyInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.copyInstance);
     }
@@ -55,7 +55,7 @@ public class DcsClient {
      *
      * @param CreateDCSInstanceRequest 请求对象
      * @return CreateDCSInstanceResponse
-    */
+     */
     public CreateDCSInstanceResponse createDCSInstance(CreateDCSInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.createDCSInstance);
     }
@@ -66,7 +66,7 @@ public class DcsClient {
      *
      * @param CreateMigrationTaskRequest 请求对象
      * @return CreateMigrationTaskResponse
-    */
+     */
     public CreateMigrationTaskResponse createMigrationTask(CreateMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.createMigrationTask);
     }
@@ -77,7 +77,7 @@ public class DcsClient {
      *
      * @param CreateReplicationRequest 请求对象
      * @return CreateReplicationResponse
-    */
+     */
     public CreateReplicationResponse createReplication(CreateReplicationRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.createReplication);
     }
@@ -88,7 +88,7 @@ public class DcsClient {
      *
      * @param DeleteBackupFileRequest 请求对象
      * @return DeleteBackupFileResponse
-    */
+     */
     public DeleteBackupFileResponse deleteBackupFile(DeleteBackupFileRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.deleteBackupFile);
     }
@@ -99,7 +99,7 @@ public class DcsClient {
      *
      * @param DeleteIpFromDomainNameRequest 请求对象
      * @return DeleteIpFromDomainNameResponse
-    */
+     */
     public DeleteIpFromDomainNameResponse deleteIpFromDomainName(DeleteIpFromDomainNameRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.deleteIpFromDomainName);
     }
@@ -110,7 +110,7 @@ public class DcsClient {
      *
      * @param DeleteMigrationTaskRequest 请求对象
      * @return DeleteMigrationTaskResponse
-    */
+     */
     public DeleteMigrationTaskResponse deleteMigrationTask(DeleteMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.deleteMigrationTask);
     }
@@ -121,7 +121,7 @@ public class DcsClient {
      *
      * @param DeleteReplicationRequest 请求对象
      * @return DeleteReplicationResponse
-    */
+     */
     public DeleteReplicationResponse deleteReplication(DeleteReplicationRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.deleteReplication);
     }
@@ -132,7 +132,7 @@ public class DcsClient {
      *
      * @param DeleteSingleDCSInstanceRequest 请求对象
      * @return DeleteSingleDCSInstanceResponse
-    */
+     */
     public DeleteSingleDCSInstanceResponse deleteSingleDCSInstance(DeleteSingleDCSInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.deleteSingleDCSInstance);
     }
@@ -143,7 +143,7 @@ public class DcsClient {
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
-    */
+     */
     public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listAvailableZones);
     }
@@ -154,7 +154,7 @@ public class DcsClient {
      *
      * @param ListBackupFileLinksRequest 请求对象
      * @return ListBackupFileLinksResponse
-    */
+     */
     public ListBackupFileLinksResponse listBackupFileLinks(ListBackupFileLinksRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listBackupFileLinks);
     }
@@ -165,7 +165,7 @@ public class DcsClient {
      *
      * @param ListBackupRecordsRequest 请求对象
      * @return ListBackupRecordsResponse
-    */
+     */
     public ListBackupRecordsResponse listBackupRecords(ListBackupRecordsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listBackupRecords);
     }
@@ -176,7 +176,7 @@ public class DcsClient {
      *
      * @param ListCESMonitoredObjectsRequest 请求对象
      * @return ListCESMonitoredObjectsResponse
-    */
+     */
     public ListCESMonitoredObjectsResponse listCESMonitoredObjects(ListCESMonitoredObjectsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listCESMonitoredObjects);
     }
@@ -187,7 +187,7 @@ public class DcsClient {
      *
      * @param ListConfigurationsRequest 请求对象
      * @return ListConfigurationsResponse
-    */
+     */
     public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listConfigurations);
     }
@@ -198,7 +198,7 @@ public class DcsClient {
      *
      * @param ListDcsTagsOfTenantRequest 请求对象
      * @return ListDcsTagsOfTenantResponse
-    */
+     */
     public ListDcsTagsOfTenantResponse listDcsTagsOfTenant(ListDcsTagsOfTenantRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listDcsTagsOfTenant);
     }
@@ -209,7 +209,7 @@ public class DcsClient {
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
-    */
+     */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listFlavors);
     }
@@ -220,7 +220,7 @@ public class DcsClient {
      *
      * @param ListGroupReplicationInfoRequest 请求对象
      * @return ListGroupReplicationInfoResponse
-    */
+     */
     public ListGroupReplicationInfoResponse listGroupReplicationInfo(ListGroupReplicationInfoRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listGroupReplicationInfo);
     }
@@ -231,7 +231,7 @@ public class DcsClient {
      *
      * @param ListMaintenanceWindowsRequest 请求对象
      * @return ListMaintenanceWindowsResponse
-    */
+     */
     public ListMaintenanceWindowsResponse listMaintenanceWindows(ListMaintenanceWindowsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listMaintenanceWindows);
     }
@@ -242,7 +242,7 @@ public class DcsClient {
      *
      * @param ListMigrationTaskRequest 请求对象
      * @return ListMigrationTaskResponse
-    */
+     */
     public ListMigrationTaskResponse listMigrationTask(ListMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listMigrationTask);
     }
@@ -253,7 +253,7 @@ public class DcsClient {
      *
      * @param ListMonitoredObjectsOfInstanceRequest 请求对象
      * @return ListMonitoredObjectsOfInstanceResponse
-    */
+     */
     public ListMonitoredObjectsOfInstanceResponse listMonitoredObjectsOfInstance(ListMonitoredObjectsOfInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listMonitoredObjectsOfInstance);
     }
@@ -264,7 +264,7 @@ public class DcsClient {
      *
      * @param ListNumberOfInstancesInDifferentStatusRequest 请求对象
      * @return ListNumberOfInstancesInDifferentStatusResponse
-    */
+     */
     public ListNumberOfInstancesInDifferentStatusResponse listNumberOfInstancesInDifferentStatus(ListNumberOfInstancesInDifferentStatusRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listNumberOfInstancesInDifferentStatus);
     }
@@ -275,7 +275,7 @@ public class DcsClient {
      *
      * @param ListRestoreRecordsRequest 请求对象
      * @return ListRestoreRecordsResponse
-    */
+     */
     public ListRestoreRecordsResponse listRestoreRecords(ListRestoreRecordsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listRestoreRecords);
     }
@@ -286,7 +286,7 @@ public class DcsClient {
      *
      * @param ListStatisticsOfRunningInstancesRequest 请求对象
      * @return ListStatisticsOfRunningInstancesResponse
-    */
+     */
     public ListStatisticsOfRunningInstancesResponse listStatisticsOfRunningInstances(ListStatisticsOfRunningInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listStatisticsOfRunningInstances);
     }
@@ -297,7 +297,7 @@ public class DcsClient {
      *
      * @param RestartOrFlushDCSInstancesRequest 请求对象
      * @return RestartOrFlushDCSInstancesResponse
-    */
+     */
     public RestartOrFlushDCSInstancesResponse restartOrFlushDCSInstances(RestartOrFlushDCSInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.restartOrFlushDCSInstances);
     }
@@ -308,7 +308,7 @@ public class DcsClient {
      *
      * @param RestoreInstanceRequest 请求对象
      * @return RestoreInstanceResponse
-    */
+     */
     public RestoreInstanceResponse restoreInstance(RestoreInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.restoreInstance);
     }
@@ -319,7 +319,7 @@ public class DcsClient {
      *
      * @param ShowDcsTagsRequest 请求对象
      * @return ShowDcsTagsResponse
-    */
+     */
     public ShowDcsTagsResponse showDcsTags(ShowDcsTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.showDcsTags);
     }
@@ -330,7 +330,7 @@ public class DcsClient {
      *
      * @param ShowMigrationTaskRequest 请求对象
      * @return ShowMigrationTaskResponse
-    */
+     */
     public ShowMigrationTaskResponse showMigrationTask(ShowMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.showMigrationTask);
     }
@@ -341,7 +341,7 @@ public class DcsClient {
      *
      * @param ShowQuotaOfTenantRequest 请求对象
      * @return ShowQuotaOfTenantResponse
-    */
+     */
     public ShowQuotaOfTenantResponse showQuotaOfTenant(ShowQuotaOfTenantRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.showQuotaOfTenant);
     }
@@ -352,7 +352,7 @@ public class DcsClient {
      *
      * @param StopMigrationTaskRequest 请求对象
      * @return StopMigrationTaskResponse
-    */
+     */
     public StopMigrationTaskResponse stopMigrationTask(StopMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.stopMigrationTask);
     }
@@ -363,7 +363,7 @@ public class DcsClient {
      *
      * @param UpdateConfigurationsRequest 请求对象
      * @return UpdateConfigurationsResponse
-    */
+     */
     public UpdateConfigurationsResponse updateConfigurations(UpdateConfigurationsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.updateConfigurations);
     }
@@ -374,7 +374,7 @@ public class DcsClient {
      *
      * @param UpdateDCSInstanceRequest 请求对象
      * @return UpdateDCSInstanceResponse
-    */
+     */
     public UpdateDCSInstanceResponse updateDCSInstance(UpdateDCSInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.updateDCSInstance);
     }
@@ -385,7 +385,7 @@ public class DcsClient {
      *
      * @param UpdatePasswordRequest 请求对象
      * @return UpdatePasswordResponse
-    */
+     */
     public UpdatePasswordResponse updatePassword(UpdatePasswordRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.updatePassword);
     }
@@ -396,7 +396,7 @@ public class DcsClient {
      *
      * @param UpdateSlavePriorityRequest 请求对象
      * @return UpdateSlavePriorityResponse
-    */
+     */
     public UpdateSlavePriorityResponse updateSlavePriority(UpdateSlavePriorityRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.updateSlavePriority);
     }
@@ -407,7 +407,7 @@ public class DcsClient {
      *
      * @param ShowIpWhitelistRequest 请求对象
      * @return ShowIpWhitelistResponse
-    */
+     */
     public ShowIpWhitelistResponse showIpWhitelist(ShowIpWhitelistRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.showIpWhitelist);
     }
@@ -418,7 +418,7 @@ public class DcsClient {
      *
      * @param UpdateIpWhitelistRequest 请求对象
      * @return UpdateIpWhitelistResponse
-    */
+     */
     public UpdateIpWhitelistResponse updateIpWhitelist(UpdateIpWhitelistRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.updateIpWhitelist);
     }

@@ -22,7 +22,7 @@ public class VpcClient {
      *
      * @param BatchCreateSubNetworkInterfaceV3Request 请求对象
      * @return BatchCreateSubNetworkInterfaceV3Response
-    */
+     */
     public BatchCreateSubNetworkInterfaceV3Response batchCreateSubNetworkInterfaceV3(BatchCreateSubNetworkInterfaceV3Request request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateSubNetworkInterfaceV3);
     }
@@ -33,7 +33,7 @@ public class VpcClient {
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return CreateSecurityGroupResponse
-    */
+     */
     public CreateSecurityGroupResponse createSecurityGroup(CreateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createSecurityGroup);
     }
@@ -44,7 +44,7 @@ public class VpcClient {
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return CreateSecurityGroupRuleResponse
-    */
+     */
     public CreateSecurityGroupRuleResponse createSecurityGroupRule(CreateSecurityGroupRuleRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createSecurityGroupRule);
     }
@@ -55,7 +55,7 @@ public class VpcClient {
      *
      * @param CreateSubNetworkInterfaceRequest 请求对象
      * @return CreateSubNetworkInterfaceResponse
-    */
+     */
     public CreateSubNetworkInterfaceResponse createSubNetworkInterface(CreateSubNetworkInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createSubNetworkInterface);
     }
@@ -66,7 +66,7 @@ public class VpcClient {
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return DeleteSecurityGroupResponse
-    */
+     */
     public DeleteSecurityGroupResponse deleteSecurityGroup(DeleteSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteSecurityGroup);
     }
@@ -77,7 +77,7 @@ public class VpcClient {
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return DeleteSecurityGroupRuleResponse
-    */
+     */
     public DeleteSecurityGroupRuleResponse deleteSecurityGroupRule(DeleteSecurityGroupRuleRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteSecurityGroupRule);
     }
@@ -88,7 +88,7 @@ public class VpcClient {
      *
      * @param DeleteSubNetworkInterfaceRequest 请求对象
      * @return DeleteSubNetworkInterfaceResponse
-    */
+     */
     public DeleteSubNetworkInterfaceResponse deleteSubNetworkInterface(DeleteSubNetworkInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteSubNetworkInterface);
     }
@@ -99,7 +99,7 @@ public class VpcClient {
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return ListSecurityGroupRulesResponse
-    */
+     */
     public ListSecurityGroupRulesResponse listSecurityGroupRules(ListSecurityGroupRulesRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listSecurityGroupRules);
     }
@@ -110,7 +110,7 @@ public class VpcClient {
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return ListSecurityGroupsResponse
-    */
+     */
     public ListSecurityGroupsResponse listSecurityGroups(ListSecurityGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listSecurityGroups);
     }
@@ -121,7 +121,7 @@ public class VpcClient {
      *
      * @param ListSubNetworkInterfacesRequest 请求对象
      * @return ListSubNetworkInterfacesResponse
-    */
+     */
     public ListSubNetworkInterfacesResponse listSubNetworkInterfaces(ListSubNetworkInterfacesRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listSubNetworkInterfaces);
     }
@@ -132,7 +132,7 @@ public class VpcClient {
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return ShowSecurityGroupResponse
-    */
+     */
     public ShowSecurityGroupResponse showSecurityGroup(ShowSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSecurityGroup);
     }
@@ -143,7 +143,7 @@ public class VpcClient {
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return ShowSecurityGroupRuleResponse
-    */
+     */
     public ShowSecurityGroupRuleResponse showSecurityGroupRule(ShowSecurityGroupRuleRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSecurityGroupRule);
     }
@@ -154,7 +154,7 @@ public class VpcClient {
      *
      * @param ShowSubNetworkInterfaceRequest 请求对象
      * @return ShowSubNetworkInterfaceResponse
-    */
+     */
     public ShowSubNetworkInterfaceResponse showSubNetworkInterface(ShowSubNetworkInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSubNetworkInterface);
     }
@@ -165,7 +165,7 @@ public class VpcClient {
      *
      * @param ShowSubNetworkInterfacesQuantityRequest 请求对象
      * @return ShowSubNetworkInterfacesQuantityResponse
-    */
+     */
     public ShowSubNetworkInterfacesQuantityResponse showSubNetworkInterfacesQuantity(ShowSubNetworkInterfacesQuantityRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSubNetworkInterfacesQuantity);
     }
@@ -176,7 +176,7 @@ public class VpcClient {
      *
      * @param UpdateSecurityGroupRequest 请求对象
      * @return UpdateSecurityGroupResponse
-    */
+     */
     public UpdateSecurityGroupResponse updateSecurityGroup(UpdateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updateSecurityGroup);
     }
@@ -187,7 +187,7 @@ public class VpcClient {
      *
      * @param UpdateSubNetworkInterfaceRequest 请求对象
      * @return UpdateSubNetworkInterfaceResponse
-    */
+     */
     public UpdateSubNetworkInterfaceResponse updateSubNetworkInterface(UpdateSubNetworkInterfaceRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updateSubNetworkInterface);
     }

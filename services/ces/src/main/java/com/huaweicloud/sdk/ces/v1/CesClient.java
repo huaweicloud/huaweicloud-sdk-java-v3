@@ -22,7 +22,7 @@ public class CesClient {
      *
      * @param BatchListMetricDataRequest 请求对象
      * @return BatchListMetricDataResponse
-    */
+     */
     public BatchListMetricDataResponse batchListMetricData(BatchListMetricDataRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.batchListMetricData);
     }
@@ -33,7 +33,7 @@ public class CesClient {
      *
      * @param CreateAlarmRequest 请求对象
      * @return CreateAlarmResponse
-    */
+     */
     public CreateAlarmResponse createAlarm(CreateAlarmRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.createAlarm);
     }
@@ -44,7 +44,7 @@ public class CesClient {
      *
      * @param CreateEventsRequest 请求对象
      * @return CreateEventsResponse
-    */
+     */
     public CreateEventsResponse createEvents(CreateEventsRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.createEvents);
     }
@@ -55,7 +55,7 @@ public class CesClient {
      *
      * @param CreateMetricDataRequest 请求对象
      * @return CreateMetricDataResponse
-    */
+     */
     public CreateMetricDataResponse createMetricData(CreateMetricDataRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.createMetricData);
     }
@@ -66,7 +66,7 @@ public class CesClient {
      *
      * @param DeleteAlarmRequest 请求对象
      * @return DeleteAlarmResponse
-    */
+     */
     public DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.deleteAlarm);
     }
@@ -77,7 +77,7 @@ public class CesClient {
      *
      * @param ListAlarmsRequest 请求对象
      * @return ListAlarmsResponse
-    */
+     */
     public ListAlarmsResponse listAlarms(ListAlarmsRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.listAlarms);
     }
@@ -88,7 +88,7 @@ public class CesClient {
      *
      * @param ListMetricsRequest 请求对象
      * @return ListMetricsResponse
-    */
+     */
     public ListMetricsResponse listMetrics(ListMetricsRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.listMetrics);
     }
@@ -99,7 +99,7 @@ public class CesClient {
      *
      * @param ShowAlarmRequest 请求对象
      * @return ShowAlarmResponse
-    */
+     */
     public ShowAlarmResponse showAlarm(ShowAlarmRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.showAlarm);
     }
@@ -110,7 +110,7 @@ public class CesClient {
      *
      * @param ShowEventDataRequest 请求对象
      * @return ShowEventDataResponse
-    */
+     */
     public ShowEventDataResponse showEventData(ShowEventDataRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.showEventData);
     }
@@ -121,7 +121,7 @@ public class CesClient {
      *
      * @param ShowMetricDataRequest 请求对象
      * @return ShowMetricDataResponse
-    */
+     */
     public ShowMetricDataResponse showMetricData(ShowMetricDataRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.showMetricData);
     }
@@ -132,7 +132,7 @@ public class CesClient {
      *
      * @param ShowQuotasRequest 请求对象
      * @return ShowQuotasResponse
-    */
+     */
     public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.showQuotas);
     }
@@ -143,7 +143,7 @@ public class CesClient {
      *
      * @param UpdateAlarmActionRequest 请求对象
      * @return UpdateAlarmActionResponse
-    */
+     */
     public UpdateAlarmActionResponse updateAlarmAction(UpdateAlarmActionRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.updateAlarmAction);
     }

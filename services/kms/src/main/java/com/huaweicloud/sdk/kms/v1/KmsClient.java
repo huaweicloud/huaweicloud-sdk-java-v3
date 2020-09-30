@@ -22,7 +22,7 @@ public class KmsClient {
      *
      * @param BatchCreateKmsTagsRequest 请求对象
      * @return BatchCreateKmsTagsResponse
-    */
+     */
     public BatchCreateKmsTagsResponse batchCreateKmsTags(BatchCreateKmsTagsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.batchCreateKmsTags);
     }
@@ -33,7 +33,7 @@ public class KmsClient {
      *
      * @param CancelGrantRequest 请求对象
      * @return CancelGrantResponse
-    */
+     */
     public CancelGrantResponse cancelGrant(CancelGrantRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.cancelGrant);
     }
@@ -44,7 +44,7 @@ public class KmsClient {
      *
      * @param CancelKeyDeletionRequest 请求对象
      * @return CancelKeyDeletionResponse
-    */
+     */
     public CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.cancelKeyDeletion);
     }
@@ -55,7 +55,7 @@ public class KmsClient {
      *
      * @param CancelSelfGrantRequest 请求对象
      * @return CancelSelfGrantResponse
-    */
+     */
     public CancelSelfGrantResponse cancelSelfGrant(CancelSelfGrantRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.cancelSelfGrant);
     }
@@ -66,7 +66,7 @@ public class KmsClient {
      *
      * @param CreateDatakeyRequest 请求对象
      * @return CreateDatakeyResponse
-    */
+     */
     public CreateDatakeyResponse createDatakey(CreateDatakeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createDatakey);
     }
@@ -77,7 +77,7 @@ public class KmsClient {
      *
      * @param CreateDatakeyWithoutPlaintextRequest 请求对象
      * @return CreateDatakeyWithoutPlaintextResponse
-    */
+     */
     public CreateDatakeyWithoutPlaintextResponse createDatakeyWithoutPlaintext(CreateDatakeyWithoutPlaintextRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createDatakeyWithoutPlaintext);
     }
@@ -88,7 +88,7 @@ public class KmsClient {
      *
      * @param CreateGrantRequest 请求对象
      * @return CreateGrantResponse
-    */
+     */
     public CreateGrantResponse createGrant(CreateGrantRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createGrant);
     }
@@ -99,7 +99,7 @@ public class KmsClient {
      *
      * @param CreateKeyRequest 请求对象
      * @return CreateKeyResponse
-    */
+     */
     public CreateKeyResponse createKey(CreateKeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createKey);
     }
@@ -110,7 +110,7 @@ public class KmsClient {
      *
      * @param CreateKmsTagRequest 请求对象
      * @return CreateKmsTagResponse
-    */
+     */
     public CreateKmsTagResponse createKmsTag(CreateKmsTagRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createKmsTag);
     }
@@ -121,7 +121,7 @@ public class KmsClient {
      *
      * @param CreateParametersForImportRequest 请求对象
      * @return CreateParametersForImportResponse
-    */
+     */
     public CreateParametersForImportResponse createParametersForImport(CreateParametersForImportRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createParametersForImport);
     }
@@ -132,7 +132,7 @@ public class KmsClient {
      *
      * @param CreateRandomRequest 请求对象
      * @return CreateRandomResponse
-    */
+     */
     public CreateRandomResponse createRandom(CreateRandomRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createRandom);
     }
@@ -143,7 +143,7 @@ public class KmsClient {
      *
      * @param DecryptDataRequest 请求对象
      * @return DecryptDataResponse
-    */
+     */
     public DecryptDataResponse decryptData(DecryptDataRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.decryptData);
     }
@@ -154,7 +154,7 @@ public class KmsClient {
      *
      * @param DecryptDatakeyRequest 请求对象
      * @return DecryptDatakeyResponse
-    */
+     */
     public DecryptDatakeyResponse decryptDatakey(DecryptDatakeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.decryptDatakey);
     }
@@ -165,7 +165,7 @@ public class KmsClient {
      *
      * @param DeleteImportedKeyMaterialRequest 请求对象
      * @return DeleteImportedKeyMaterialResponse
-    */
+     */
     public DeleteImportedKeyMaterialResponse deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.deleteImportedKeyMaterial);
     }
@@ -176,7 +176,7 @@ public class KmsClient {
      *
      * @param DeleteKeyRequest 请求对象
      * @return DeleteKeyResponse
-    */
+     */
     public DeleteKeyResponse deleteKey(DeleteKeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.deleteKey);
     }
@@ -187,7 +187,7 @@ public class KmsClient {
      *
      * @param DeleteTagRequest 请求对象
      * @return DeleteTagResponse
-    */
+     */
     public DeleteTagResponse deleteTag(DeleteTagRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.deleteTag);
     }
@@ -198,7 +198,7 @@ public class KmsClient {
      *
      * @param DisableKeyRequest 请求对象
      * @return DisableKeyResponse
-    */
+     */
     public DisableKeyResponse disableKey(DisableKeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.disableKey);
     }
@@ -209,7 +209,7 @@ public class KmsClient {
      *
      * @param DisableKeyRotationRequest 请求对象
      * @return DisableKeyRotationResponse
-    */
+     */
     public DisableKeyRotationResponse disableKeyRotation(DisableKeyRotationRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.disableKeyRotation);
     }
@@ -220,7 +220,7 @@ public class KmsClient {
      *
      * @param EnableKeyRequest 请求对象
      * @return EnableKeyResponse
-    */
+     */
     public EnableKeyResponse enableKey(EnableKeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.enableKey);
     }
@@ -231,7 +231,7 @@ public class KmsClient {
      *
      * @param EnableKeyRotationRequest 请求对象
      * @return EnableKeyRotationResponse
-    */
+     */
     public EnableKeyRotationResponse enableKeyRotation(EnableKeyRotationRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.enableKeyRotation);
     }
@@ -242,7 +242,7 @@ public class KmsClient {
      *
      * @param EncryptDataRequest 请求对象
      * @return EncryptDataResponse
-    */
+     */
     public EncryptDataResponse encryptData(EncryptDataRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.encryptData);
     }
@@ -253,7 +253,7 @@ public class KmsClient {
      *
      * @param EncryptDatakeyRequest 请求对象
      * @return EncryptDatakeyResponse
-    */
+     */
     public EncryptDatakeyResponse encryptDatakey(EncryptDatakeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.encryptDatakey);
     }
@@ -264,7 +264,7 @@ public class KmsClient {
      *
      * @param ImportKeyMaterialRequest 请求对象
      * @return ImportKeyMaterialResponse
-    */
+     */
     public ImportKeyMaterialResponse importKeyMaterial(ImportKeyMaterialRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.importKeyMaterial);
     }
@@ -275,7 +275,7 @@ public class KmsClient {
      *
      * @param ListGrantsRequest 请求对象
      * @return ListGrantsResponse
-    */
+     */
     public ListGrantsResponse listGrants(ListGrantsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listGrants);
     }
@@ -286,7 +286,7 @@ public class KmsClient {
      *
      * @param ListKeyDetailRequest 请求对象
      * @return ListKeyDetailResponse
-    */
+     */
     public ListKeyDetailResponse listKeyDetail(ListKeyDetailRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listKeyDetail);
     }
@@ -297,7 +297,7 @@ public class KmsClient {
      *
      * @param ListKeysRequest 请求对象
      * @return ListKeysResponse
-    */
+     */
     public ListKeysResponse listKeys(ListKeysRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listKeys);
     }
@@ -308,7 +308,7 @@ public class KmsClient {
      *
      * @param ListKmsByTagsRequest 请求对象
      * @return ListKmsByTagsResponse
-    */
+     */
     public ListKmsByTagsResponse listKmsByTags(ListKmsByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listKmsByTags);
     }
@@ -319,7 +319,7 @@ public class KmsClient {
      *
      * @param ListKmsTagsRequest 请求对象
      * @return ListKmsTagsResponse
-    */
+     */
     public ListKmsTagsResponse listKmsTags(ListKmsTagsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listKmsTags);
     }
@@ -330,7 +330,7 @@ public class KmsClient {
      *
      * @param ListRetirableGrantsRequest 请求对象
      * @return ListRetirableGrantsResponse
-    */
+     */
     public ListRetirableGrantsResponse listRetirableGrants(ListRetirableGrantsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listRetirableGrants);
     }
@@ -341,7 +341,7 @@ public class KmsClient {
      *
      * @param ShowKeyRotationStatusRequest 请求对象
      * @return ShowKeyRotationStatusResponse
-    */
+     */
     public ShowKeyRotationStatusResponse showKeyRotationStatus(ShowKeyRotationStatusRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showKeyRotationStatus);
     }
@@ -352,7 +352,7 @@ public class KmsClient {
      *
      * @param ShowKmsTagsRequest 请求对象
      * @return ShowKmsTagsResponse
-    */
+     */
     public ShowKmsTagsResponse showKmsTags(ShowKmsTagsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showKmsTags);
     }
@@ -363,7 +363,7 @@ public class KmsClient {
      *
      * @param ShowUserInstancesRequest 请求对象
      * @return ShowUserInstancesResponse
-    */
+     */
     public ShowUserInstancesResponse showUserInstances(ShowUserInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showUserInstances);
     }
@@ -374,7 +374,7 @@ public class KmsClient {
      *
      * @param ShowUserQuotasRequest 请求对象
      * @return ShowUserQuotasResponse
-    */
+     */
     public ShowUserQuotasResponse showUserQuotas(ShowUserQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showUserQuotas);
     }
@@ -385,7 +385,7 @@ public class KmsClient {
      *
      * @param UpdateKeyAliasRequest 请求对象
      * @return UpdateKeyAliasResponse
-    */
+     */
     public UpdateKeyAliasResponse updateKeyAlias(UpdateKeyAliasRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyAlias);
     }
@@ -396,7 +396,7 @@ public class KmsClient {
      *
      * @param UpdateKeyDescriptionRequest 请求对象
      * @return UpdateKeyDescriptionResponse
-    */
+     */
     public UpdateKeyDescriptionResponse updateKeyDescription(UpdateKeyDescriptionRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyDescription);
     }
@@ -407,7 +407,7 @@ public class KmsClient {
      *
      * @param UpdateKeyRotationIntervalRequest 请求对象
      * @return UpdateKeyRotationIntervalResponse
-    */
+     */
     public UpdateKeyRotationIntervalResponse updateKeyRotationInterval(UpdateKeyRotationIntervalRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyRotationInterval);
     }
@@ -418,7 +418,7 @@ public class KmsClient {
      *
      * @param ShowVersionRequest 请求对象
      * @return ShowVersionResponse
-    */
+     */
     public ShowVersionResponse showVersion(ShowVersionRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showVersion);
     }
@@ -429,7 +429,7 @@ public class KmsClient {
      *
      * @param ShowVersionsRequest 请求对象
      * @return ShowVersionsResponse
-    */
+     */
     public ShowVersionsResponse showVersions(ShowVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showVersions);
     }

@@ -22,7 +22,7 @@ public class IoTDAClient {
      *
      * @param AddApplicationRequest 请求对象
      * @return AddApplicationResponse
-    */
+     */
     public AddApplicationResponse addApplication(AddApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.addApplication);
     }
@@ -33,7 +33,7 @@ public class IoTDAClient {
      *
      * @param DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
-    */
+     */
     public DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteApplication);
     }
@@ -44,7 +44,7 @@ public class IoTDAClient {
      *
      * @param ShowApplicationRequest 请求对象
      * @return ShowApplicationResponse
-    */
+     */
     public ShowApplicationResponse showApplication(ShowApplicationRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showApplication);
     }
@@ -55,7 +55,7 @@ public class IoTDAClient {
      *
      * @param ShowApplicationsRequest 请求对象
      * @return ShowApplicationsResponse
-    */
+     */
     public ShowApplicationsResponse showApplications(ShowApplicationsRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showApplications);
     }
@@ -66,7 +66,7 @@ public class IoTDAClient {
      *
      * @param CreateAsyncCommandRequest 请求对象
      * @return CreateAsyncCommandResponse
-    */
+     */
     public CreateAsyncCommandResponse createAsyncCommand(CreateAsyncCommandRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createAsyncCommand);
     }
@@ -77,7 +77,7 @@ public class IoTDAClient {
      *
      * @param ShowAsyncDeviceCommandRequest 请求对象
      * @return ShowAsyncDeviceCommandResponse
-    */
+     */
     public ShowAsyncDeviceCommandResponse showAsyncDeviceCommand(ShowAsyncDeviceCommandRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showAsyncDeviceCommand);
     }
@@ -88,7 +88,7 @@ public class IoTDAClient {
      *
      * @param CreateBatchTaskRequest 请求对象
      * @return CreateBatchTaskResponse
-    */
+     */
     public CreateBatchTaskResponse createBatchTask(CreateBatchTaskRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createBatchTask);
     }
@@ -99,7 +99,7 @@ public class IoTDAClient {
      *
      * @param ListBatchTasksRequest 请求对象
      * @return ListBatchTasksResponse
-    */
+     */
     public ListBatchTasksResponse listBatchTasks(ListBatchTasksRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listBatchTasks);
     }
@@ -110,7 +110,7 @@ public class IoTDAClient {
      *
      * @param ShowBatchTaskRequest 请求对象
      * @return ShowBatchTaskResponse
-    */
+     */
     public ShowBatchTaskResponse showBatchTask(ShowBatchTaskRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showBatchTask);
     }
@@ -121,7 +121,7 @@ public class IoTDAClient {
      *
      * @param DeleteBatchTaskFileRequest 请求对象
      * @return DeleteBatchTaskFileResponse
-    */
+     */
     public DeleteBatchTaskFileResponse deleteBatchTaskFile(DeleteBatchTaskFileRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteBatchTaskFile);
     }
@@ -132,7 +132,7 @@ public class IoTDAClient {
      *
      * @param ListBatchTaskFilesRequest 请求对象
      * @return ListBatchTaskFilesResponse
-    */
+     */
     public ListBatchTaskFilesResponse listBatchTaskFiles(ListBatchTaskFilesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listBatchTaskFiles);
     }
@@ -143,7 +143,7 @@ public class IoTDAClient {
      *
      * @param AddCertificateRequest 请求对象
      * @return AddCertificateResponse
-    */
+     */
     public AddCertificateResponse addCertificate(AddCertificateRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.addCertificate);
     }
@@ -154,7 +154,7 @@ public class IoTDAClient {
      *
      * @param CheckCertificateRequest 请求对象
      * @return CheckCertificateResponse
-    */
+     */
     public CheckCertificateResponse checkCertificate(CheckCertificateRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.checkCertificate);
     }
@@ -165,7 +165,7 @@ public class IoTDAClient {
      *
      * @param DeleteCertificateRequest 请求对象
      * @return DeleteCertificateResponse
-    */
+     */
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteCertificate);
     }
@@ -176,7 +176,7 @@ public class IoTDAClient {
      *
      * @param ListCertificatesRequest 请求对象
      * @return ListCertificatesResponse
-    */
+     */
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listCertificates);
     }
@@ -187,7 +187,7 @@ public class IoTDAClient {
      *
      * @param CreateCommandRequest 请求对象
      * @return CreateCommandResponse
-    */
+     */
     public CreateCommandResponse createCommand(CreateCommandRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createCommand);
     }
@@ -198,7 +198,7 @@ public class IoTDAClient {
      *
      * @param AddDeviceGroupRequest 请求对象
      * @return AddDeviceGroupResponse
-    */
+     */
     public AddDeviceGroupResponse addDeviceGroup(AddDeviceGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.addDeviceGroup);
     }
@@ -209,7 +209,7 @@ public class IoTDAClient {
      *
      * @param CreateOrDeleteDeviceInGroupRequest 请求对象
      * @return CreateOrDeleteDeviceInGroupResponse
-    */
+     */
     public CreateOrDeleteDeviceInGroupResponse createOrDeleteDeviceInGroup(CreateOrDeleteDeviceInGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createOrDeleteDeviceInGroup);
     }
@@ -220,7 +220,7 @@ public class IoTDAClient {
      *
      * @param DeleteDeviceGroupRequest 请求对象
      * @return DeleteDeviceGroupResponse
-    */
+     */
     public DeleteDeviceGroupResponse deleteDeviceGroup(DeleteDeviceGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDeviceGroup);
     }
@@ -231,7 +231,7 @@ public class IoTDAClient {
      *
      * @param ListDeviceGroupsRequest 请求对象
      * @return ListDeviceGroupsResponse
-    */
+     */
     public ListDeviceGroupsResponse listDeviceGroups(ListDeviceGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listDeviceGroups);
     }
@@ -242,7 +242,7 @@ public class IoTDAClient {
      *
      * @param ShowDeviceGroupRequest 请求对象
      * @return ShowDeviceGroupResponse
-    */
+     */
     public ShowDeviceGroupResponse showDeviceGroup(ShowDeviceGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showDeviceGroup);
     }
@@ -253,7 +253,7 @@ public class IoTDAClient {
      *
      * @param ShowDevicesInGroupRequest 请求对象
      * @return ShowDevicesInGroupResponse
-    */
+     */
     public ShowDevicesInGroupResponse showDevicesInGroup(ShowDevicesInGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showDevicesInGroup);
     }
@@ -264,7 +264,7 @@ public class IoTDAClient {
      *
      * @param UpdateDeviceGroupRequest 请求对象
      * @return UpdateDeviceGroupResponse
-    */
+     */
     public UpdateDeviceGroupResponse updateDeviceGroup(UpdateDeviceGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateDeviceGroup);
     }
@@ -275,7 +275,7 @@ public class IoTDAClient {
      *
      * @param AddDeviceRequest 请求对象
      * @return AddDeviceResponse
-    */
+     */
     public AddDeviceResponse addDevice(AddDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.addDevice);
     }
@@ -286,7 +286,7 @@ public class IoTDAClient {
      *
      * @param DeleteDeviceRequest 请求对象
      * @return DeleteDeviceResponse
-    */
+     */
     public DeleteDeviceResponse deleteDevice(DeleteDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDevice);
     }
@@ -297,7 +297,7 @@ public class IoTDAClient {
      *
      * @param FreezeDeviceRequest 请求对象
      * @return FreezeDeviceResponse
-    */
+     */
     public FreezeDeviceResponse freezeDevice(FreezeDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.freezeDevice);
     }
@@ -308,7 +308,7 @@ public class IoTDAClient {
      *
      * @param ListDevicesRequest 请求对象
      * @return ListDevicesResponse
-    */
+     */
     public ListDevicesResponse listDevices(ListDevicesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listDevices);
     }
@@ -319,7 +319,7 @@ public class IoTDAClient {
      *
      * @param ResetDeviceSecretRequest 请求对象
      * @return ResetDeviceSecretResponse
-    */
+     */
     public ResetDeviceSecretResponse resetDeviceSecret(ResetDeviceSecretRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.resetDeviceSecret);
     }
@@ -330,7 +330,7 @@ public class IoTDAClient {
      *
      * @param ShowDeviceRequest 请求对象
      * @return ShowDeviceResponse
-    */
+     */
     public ShowDeviceResponse showDevice(ShowDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showDevice);
     }
@@ -341,7 +341,7 @@ public class IoTDAClient {
      *
      * @param UnfreezeDeviceRequest 请求对象
      * @return UnfreezeDeviceResponse
-    */
+     */
     public UnfreezeDeviceResponse unfreezeDevice(UnfreezeDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.unfreezeDevice);
     }
@@ -352,7 +352,7 @@ public class IoTDAClient {
      *
      * @param UpdateDeviceRequest 请求对象
      * @return UpdateDeviceResponse
-    */
+     */
     public UpdateDeviceResponse updateDevice(UpdateDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateDevice);
     }
@@ -363,7 +363,7 @@ public class IoTDAClient {
      *
      * @param ShowDeviceShadowRequest 请求对象
      * @return ShowDeviceShadowResponse
-    */
+     */
     public ShowDeviceShadowResponse showDeviceShadow(ShowDeviceShadowRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showDeviceShadow);
     }
@@ -374,7 +374,7 @@ public class IoTDAClient {
      *
      * @param UpdateDeviceShadowDesiredDataRequest 请求对象
      * @return UpdateDeviceShadowDesiredDataResponse
-    */
+     */
     public UpdateDeviceShadowDesiredDataResponse updateDeviceShadowDesiredData(UpdateDeviceShadowDesiredDataRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateDeviceShadowDesiredData);
     }
@@ -385,7 +385,7 @@ public class IoTDAClient {
      *
      * @param CreateMessageRequest 请求对象
      * @return CreateMessageResponse
-    */
+     */
     public CreateMessageResponse createMessage(CreateMessageRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createMessage);
     }
@@ -396,7 +396,7 @@ public class IoTDAClient {
      *
      * @param ListDeviceMessagesRequest 请求对象
      * @return ListDeviceMessagesResponse
-    */
+     */
     public ListDeviceMessagesResponse listDeviceMessages(ListDeviceMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listDeviceMessages);
     }
@@ -407,7 +407,7 @@ public class IoTDAClient {
      *
      * @param ShowDeviceMessageRequest 请求对象
      * @return ShowDeviceMessageResponse
-    */
+     */
     public ShowDeviceMessageResponse showDeviceMessage(ShowDeviceMessageRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showDeviceMessage);
     }
@@ -418,7 +418,7 @@ public class IoTDAClient {
      *
      * @param CreateProductRequest 请求对象
      * @return CreateProductResponse
-    */
+     */
     public CreateProductResponse createProduct(CreateProductRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createProduct);
     }
@@ -429,7 +429,7 @@ public class IoTDAClient {
      *
      * @param DeleteProductRequest 请求对象
      * @return DeleteProductResponse
-    */
+     */
     public DeleteProductResponse deleteProduct(DeleteProductRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteProduct);
     }
@@ -440,7 +440,7 @@ public class IoTDAClient {
      *
      * @param ListProductsRequest 请求对象
      * @return ListProductsResponse
-    */
+     */
     public ListProductsResponse listProducts(ListProductsRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listProducts);
     }
@@ -451,7 +451,7 @@ public class IoTDAClient {
      *
      * @param ShowProductRequest 请求对象
      * @return ShowProductResponse
-    */
+     */
     public ShowProductResponse showProduct(ShowProductRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showProduct);
     }
@@ -462,7 +462,7 @@ public class IoTDAClient {
      *
      * @param UpdateProductRequest 请求对象
      * @return UpdateProductResponse
-    */
+     */
     public UpdateProductResponse updateProduct(UpdateProductRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateProduct);
     }
@@ -473,7 +473,7 @@ public class IoTDAClient {
      *
      * @param ListPropertiesRequest 请求对象
      * @return ListPropertiesResponse
-    */
+     */
     public ListPropertiesResponse listProperties(ListPropertiesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listProperties);
     }
@@ -484,7 +484,7 @@ public class IoTDAClient {
      *
      * @param UpdatePropertiesRequest 请求对象
      * @return UpdatePropertiesResponse
-    */
+     */
     public UpdatePropertiesResponse updateProperties(UpdatePropertiesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateProperties);
     }
@@ -495,7 +495,7 @@ public class IoTDAClient {
      *
      * @param ChangeRuleStatusRequest 请求对象
      * @return ChangeRuleStatusResponse
-    */
+     */
     public ChangeRuleStatusResponse changeRuleStatus(ChangeRuleStatusRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.changeRuleStatus);
     }
@@ -506,7 +506,7 @@ public class IoTDAClient {
      *
      * @param CreateRuleRequest 请求对象
      * @return CreateRuleResponse
-    */
+     */
     public CreateRuleResponse createRule(CreateRuleRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createRule);
     }
@@ -517,7 +517,7 @@ public class IoTDAClient {
      *
      * @param DeleteRuleRequest 请求对象
      * @return DeleteRuleResponse
-    */
+     */
     public DeleteRuleResponse deleteRule(DeleteRuleRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteRule);
     }
@@ -528,7 +528,7 @@ public class IoTDAClient {
      *
      * @param ListRulesRequest 请求对象
      * @return ListRulesResponse
-    */
+     */
     public ListRulesResponse listRules(ListRulesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listRules);
     }
@@ -539,7 +539,7 @@ public class IoTDAClient {
      *
      * @param ShowRuleRequest 请求对象
      * @return ShowRuleResponse
-    */
+     */
     public ShowRuleResponse showRule(ShowRuleRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showRule);
     }
@@ -550,7 +550,7 @@ public class IoTDAClient {
      *
      * @param UpdateRuleRequest 请求对象
      * @return UpdateRuleResponse
-    */
+     */
     public UpdateRuleResponse updateRule(UpdateRuleRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateRule);
     }
@@ -561,7 +561,7 @@ public class IoTDAClient {
      *
      * @param CreateSubscriptionRequest 请求对象
      * @return CreateSubscriptionResponse
-    */
+     */
     public CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.createSubscription);
     }
@@ -572,7 +572,7 @@ public class IoTDAClient {
      *
      * @param DeleteSubscriptionRequest 请求对象
      * @return DeleteSubscriptionResponse
-    */
+     */
     public DeleteSubscriptionResponse deleteSubscription(DeleteSubscriptionRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteSubscription);
     }
@@ -583,7 +583,7 @@ public class IoTDAClient {
      *
      * @param ListSubscriptionsRequest 请求对象
      * @return ListSubscriptionsResponse
-    */
+     */
     public ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listSubscriptions);
     }
@@ -594,7 +594,7 @@ public class IoTDAClient {
      *
      * @param ShowSubscriptionRequest 请求对象
      * @return ShowSubscriptionResponse
-    */
+     */
     public ShowSubscriptionResponse showSubscription(ShowSubscriptionRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.showSubscription);
     }
@@ -605,7 +605,7 @@ public class IoTDAClient {
      *
      * @param UpdateSubscriptionRequest 请求对象
      * @return UpdateSubscriptionResponse
-    */
+     */
     public UpdateSubscriptionResponse updateSubscription(UpdateSubscriptionRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateSubscription);
     }
@@ -616,7 +616,7 @@ public class IoTDAClient {
      *
      * @param ListResourcesByTagsRequest 请求对象
      * @return ListResourcesByTagsResponse
-    */
+     */
     public ListResourcesByTagsResponse listResourcesByTags(ListResourcesByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.listResourcesByTags);
     }
@@ -627,7 +627,7 @@ public class IoTDAClient {
      *
      * @param TagDeviceRequest 请求对象
      * @return TagDeviceResponse
-    */
+     */
     public TagDeviceResponse tagDevice(TagDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.tagDevice);
     }
@@ -638,7 +638,7 @@ public class IoTDAClient {
      *
      * @param UntagDeviceRequest 请求对象
      * @return UntagDeviceResponse
-    */
+     */
     public UntagDeviceResponse untagDevice(UntagDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.untagDevice);
     }

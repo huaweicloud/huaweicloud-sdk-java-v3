@@ -22,7 +22,7 @@ public class CodehubClient {
      *
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return GetAllRepositoryByProjectIdResponse
-    */
+     */
     public GetAllRepositoryByProjectIdResponse getAllRepositoryByProjectId(GetAllRepositoryByProjectIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.getAllRepositoryByProjectId);
     }
@@ -33,7 +33,7 @@ public class CodehubClient {
      *
      * @param GetProductTemplatesRequest 请求对象
      * @return GetProductTemplatesResponse
-    */
+     */
     public GetProductTemplatesResponse getProductTemplates(GetProductTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.getProductTemplates);
     }
@@ -44,7 +44,7 @@ public class CodehubClient {
      *
      * @param ListProductTwoTemplatesRequest 请求对象
      * @return ListProductTwoTemplatesResponse
-    */
+     */
     public ListProductTwoTemplatesResponse listProductTwoTemplates(ListProductTwoTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listProductTwoTemplates);
     }
@@ -55,7 +55,7 @@ public class CodehubClient {
      *
      * @param ShowRepositoryNameExistRequest 请求对象
      * @return ShowRepositoryNameExistResponse
-    */
+     */
     public ShowRepositoryNameExistResponse showRepositoryNameExist(ShowRepositoryNameExistRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showRepositoryNameExist);
     }
@@ -66,7 +66,7 @@ public class CodehubClient {
      *
      * @param AddRepoMembersRequest 请求对象
      * @return AddRepoMembersResponse
-    */
+     */
     public AddRepoMembersResponse addRepoMembers(AddRepoMembersRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.addRepoMembers);
     }
@@ -77,7 +77,7 @@ public class CodehubClient {
      *
      * @param DeleteRepoMemberRequest 请求对象
      * @return DeleteRepoMemberResponse
-    */
+     */
     public DeleteRepoMemberResponse deleteRepoMember(DeleteRepoMemberRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.deleteRepoMember);
     }
@@ -88,7 +88,7 @@ public class CodehubClient {
      *
      * @param ListRepoMembersRequest 请求对象
      * @return ListRepoMembersResponse
-    */
+     */
     public ListRepoMembersResponse listRepoMembers(ListRepoMembersRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listRepoMembers);
     }
@@ -99,7 +99,7 @@ public class CodehubClient {
      *
      * @param SetRepoRoleRequest 请求对象
      * @return SetRepoRoleResponse
-    */
+     */
     public SetRepoRoleResponse setRepoRole(SetRepoRoleRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.setRepoRole);
     }
@@ -110,7 +110,7 @@ public class CodehubClient {
      *
      * @param AddDeployKeyRequest 请求对象
      * @return AddDeployKeyResponse
-    */
+     */
     public AddDeployKeyResponse addDeployKey(AddDeployKeyRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.addDeployKey);
     }
@@ -121,7 +121,7 @@ public class CodehubClient {
      *
      * @param AddDeployKeyV2Request 请求对象
      * @return AddDeployKeyV2Response
-    */
+     */
     public AddDeployKeyV2Response addDeployKeyV2(AddDeployKeyV2Request request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.addDeployKeyV2);
     }
@@ -132,7 +132,7 @@ public class CodehubClient {
      *
      * @param CreateRepositoryRequest 请求对象
      * @return CreateRepositoryResponse
-    */
+     */
     public CreateRepositoryResponse createRepository(CreateRepositoryRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.createRepository);
     }
@@ -143,7 +143,7 @@ public class CodehubClient {
      *
      * @param DeleteDeployKeyRequest 请求对象
      * @return DeleteDeployKeyResponse
-    */
+     */
     public DeleteDeployKeyResponse deleteDeployKey(DeleteDeployKeyRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.deleteDeployKey);
     }
@@ -154,7 +154,7 @@ public class CodehubClient {
      *
      * @param DeleteDeployKeyV2Request 请求对象
      * @return DeleteDeployKeyV2Response
-    */
+     */
     public DeleteDeployKeyV2Response deleteDeployKeyV2(DeleteDeployKeyV2Request request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.deleteDeployKeyV2);
     }
@@ -165,7 +165,7 @@ public class CodehubClient {
      *
      * @param DeleteRepositoryRequest 请求对象
      * @return DeleteRepositoryResponse
-    */
+     */
     public DeleteRepositoryResponse deleteRepository(DeleteRepositoryRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.deleteRepository);
     }
@@ -176,7 +176,7 @@ public class CodehubClient {
      *
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return GetRepositoryByProjectIdResponse
-    */
+     */
     public GetRepositoryByProjectIdResponse getRepositoryByProjectId(GetRepositoryByProjectIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.getRepositoryByProjectId);
     }
@@ -187,7 +187,7 @@ public class CodehubClient {
      *
      * @param GetTemplatesRequest 请求对象
      * @return GetTemplatesResponse
-    */
+     */
     public GetTemplatesResponse getTemplates(GetTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.getTemplates);
     }
@@ -198,7 +198,7 @@ public class CodehubClient {
      *
      * @param LaunchStatisticsRequest 请求对象
      * @return LaunchStatisticsResponse
-    */
+     */
     public LaunchStatisticsResponse launchStatistics(LaunchStatisticsRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.launchStatistics);
     }
@@ -209,7 +209,7 @@ public class CodehubClient {
      *
      * @param ListCommitStatisticsRequest 请求对象
      * @return ListCommitStatisticsResponse
-    */
+     */
     public ListCommitStatisticsResponse listCommitStatistics(ListCommitStatisticsRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listCommitStatistics);
     }
@@ -220,7 +220,7 @@ public class CodehubClient {
      *
      * @param ListFilesRequest 请求对象
      * @return ListFilesResponse
-    */
+     */
     public ListFilesResponse listFiles(ListFilesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listFiles);
     }
@@ -231,7 +231,7 @@ public class CodehubClient {
      *
      * @param ListRepositoryStatusRequest 请求对象
      * @return ListRepositoryStatusResponse
-    */
+     */
     public ListRepositoryStatusResponse listRepositoryStatus(ListRepositoryStatusRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listRepositoryStatus);
     }
@@ -242,7 +242,7 @@ public class CodehubClient {
      *
      * @param ListSubfilesRequest 请求对象
      * @return ListSubfilesResponse
-    */
+     */
     public ListSubfilesResponse listSubfiles(ListSubfilesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listSubfiles);
     }
@@ -253,7 +253,7 @@ public class CodehubClient {
      *
      * @param ListTemplatesTwoRequest 请求对象
      * @return ListTemplatesTwoResponse
-    */
+     */
     public ListTemplatesTwoResponse listTemplatesTwo(ListTemplatesTwoRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listTemplatesTwo);
     }
@@ -264,7 +264,7 @@ public class CodehubClient {
      *
      * @param ListTwoTemplatesRequest 请求对象
      * @return ListTwoTemplatesResponse
-    */
+     */
     public ListTwoTemplatesResponse listTwoTemplates(ListTwoTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listTwoTemplates);
     }
@@ -275,7 +275,7 @@ public class CodehubClient {
      *
      * @param ShareTemplatesRequest 请求对象
      * @return ShareTemplatesResponse
-    */
+     */
     public ShareTemplatesResponse shareTemplates(ShareTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.shareTemplates);
     }
@@ -286,7 +286,7 @@ public class CodehubClient {
      *
      * @param ShowBranchesByRepositoryIdRequest 请求对象
      * @return ShowBranchesByRepositoryIdResponse
-    */
+     */
     public ShowBranchesByRepositoryIdResponse showBranchesByRepositoryId(ShowBranchesByRepositoryIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showBranchesByRepositoryId);
     }
@@ -297,7 +297,7 @@ public class CodehubClient {
      *
      * @param ShowBranchesByTwoRepositoryIdRequest 请求对象
      * @return ShowBranchesByTwoRepositoryIdResponse
-    */
+     */
     public ShowBranchesByTwoRepositoryIdResponse showBranchesByTwoRepositoryId(ShowBranchesByTwoRepositoryIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showBranchesByTwoRepositoryId);
     }
@@ -308,7 +308,7 @@ public class CodehubClient {
      *
      * @param ShowCommitsByBranchRequest 请求对象
      * @return ShowCommitsByBranchResponse
-    */
+     */
     public ShowCommitsByBranchResponse showCommitsByBranch(ShowCommitsByBranchRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showCommitsByBranch);
     }
@@ -319,7 +319,7 @@ public class CodehubClient {
      *
      * @param ShowCommitsByRepoIdRequest 请求对象
      * @return ShowCommitsByRepoIdResponse
-    */
+     */
     public ShowCommitsByRepoIdResponse showCommitsByRepoId(ShowCommitsByRepoIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showCommitsByRepoId);
     }
@@ -330,7 +330,7 @@ public class CodehubClient {
      *
      * @param ShowHasPipelineRequest 请求对象
      * @return ShowHasPipelineResponse
-    */
+     */
     public ShowHasPipelineResponse showHasPipeline(ShowHasPipelineRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showHasPipeline);
     }
@@ -341,7 +341,7 @@ public class CodehubClient {
      *
      * @param ShowImageBlobRequest 请求对象
      * @return ShowImageBlobResponse
-    */
+     */
     public ShowImageBlobResponse showImageBlob(ShowImageBlobRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showImageBlob);
     }
@@ -352,7 +352,7 @@ public class CodehubClient {
      *
      * @param ShowMasterRequest 请求对象
      * @return ShowMasterResponse
-    */
+     */
     public ShowMasterResponse showMaster(ShowMasterRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showMaster);
     }
@@ -363,7 +363,7 @@ public class CodehubClient {
      *
      * @param ShowRepoIdRequest 请求对象
      * @return ShowRepoIdResponse
-    */
+     */
     public ShowRepoIdResponse showRepoId(ShowRepoIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showRepoId);
     }
@@ -374,7 +374,7 @@ public class CodehubClient {
      *
      * @param ShowRepositoryByUUIdRequest 请求对象
      * @return ShowRepositoryByUUIdResponse
-    */
+     */
     public ShowRepositoryByUUIdResponse showRepositoryByUUId(ShowRepositoryByUUIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showRepositoryByUUId);
     }
@@ -385,7 +385,7 @@ public class CodehubClient {
      *
      * @param ShowStatisticalDataRequest 请求对象
      * @return ShowStatisticalDataResponse
-    */
+     */
     public ShowStatisticalDataResponse showStatisticalData(ShowStatisticalDataRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showStatisticalData);
     }
@@ -396,7 +396,7 @@ public class CodehubClient {
      *
      * @param AddSshKeyRequest 请求对象
      * @return AddSshKeyResponse
-    */
+     */
     public AddSshKeyResponse addSshKey(AddSshKeyRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.addSshKey);
     }
@@ -407,7 +407,7 @@ public class CodehubClient {
      *
      * @param DeleteSShkeyRequest 请求对象
      * @return DeleteSShkeyResponse
-    */
+     */
     public DeleteSShkeyResponse deleteSShkey(DeleteSShkeyRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.deleteSShkey);
     }
@@ -418,7 +418,7 @@ public class CodehubClient {
      *
      * @param ListSSHKeysRequest 请求对象
      * @return ListSSHKeysResponse
-    */
+     */
     public ListSSHKeysResponse listSSHKeys(ListSSHKeysRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listSSHKeys);
     }
@@ -429,7 +429,7 @@ public class CodehubClient {
      *
      * @param ShowPrivateKeyVerifyRequest 请求对象
      * @return ShowPrivateKeyVerifyResponse
-    */
+     */
     public ShowPrivateKeyVerifyResponse showPrivateKeyVerify(ShowPrivateKeyVerifyRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showPrivateKeyVerify);
     }
@@ -440,7 +440,7 @@ public class CodehubClient {
      *
      * @param ValidateHttpsInfoRequest 请求对象
      * @return ValidateHttpsInfoResponse
-    */
+     */
     public ValidateHttpsInfoResponse validateHttpsInfo(ValidateHttpsInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.validateHttpsInfo);
     }
@@ -451,7 +451,7 @@ public class CodehubClient {
      *
      * @param ValidateHttpsInfoV2Request 请求对象
      * @return ValidateHttpsInfoV2Response
-    */
+     */
     public ValidateHttpsInfoV2Response validateHttpsInfoV2(ValidateHttpsInfoV2Request request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.validateHttpsInfoV2);
     }
@@ -462,7 +462,7 @@ public class CodehubClient {
      *
      * @param CreateProjectAndRepositoriesRequest 请求对象
      * @return CreateProjectAndRepositoriesResponse
-    */
+     */
     public CreateProjectAndRepositoriesResponse createProjectAndRepositories(CreateProjectAndRepositoriesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.createProjectAndRepositories);
     }
@@ -473,7 +473,7 @@ public class CodehubClient {
      *
      * @param CreateProjectAndforkRepositoriesRequest 请求对象
      * @return CreateProjectAndforkRepositoriesResponse
-    */
+     */
     public CreateProjectAndforkRepositoriesResponse createProjectAndforkRepositories(CreateProjectAndforkRepositoriesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.createProjectAndforkRepositories);
     }
@@ -484,7 +484,7 @@ public class CodehubClient {
      *
      * @param ListUserAllRepositoriesRequest 请求对象
      * @return ListUserAllRepositoriesResponse
-    */
+     */
     public ListUserAllRepositoriesResponse listUserAllRepositories(ListUserAllRepositoriesRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listUserAllRepositories);
     }
@@ -495,7 +495,7 @@ public class CodehubClient {
      *
      * @param ShowAllRepositoryByTwoProjectIdRequest 请求对象
      * @return ShowAllRepositoryByTwoProjectIdResponse
-    */
+     */
     public ShowAllRepositoryByTwoProjectIdResponse showAllRepositoryByTwoProjectId(ShowAllRepositoryByTwoProjectIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.showAllRepositoryByTwoProjectId);
     }
@@ -506,7 +506,7 @@ public class CodehubClient {
      *
      * @param AddHooksRequest 请求对象
      * @return AddHooksResponse
-    */
+     */
     public AddHooksResponse addHooks(AddHooksRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.addHooks);
     }
@@ -517,7 +517,7 @@ public class CodehubClient {
      *
      * @param DeleteHooksRequest 请求对象
      * @return DeleteHooksResponse
-    */
+     */
     public DeleteHooksResponse deleteHooks(DeleteHooksRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.deleteHooks);
     }
@@ -528,7 +528,7 @@ public class CodehubClient {
      *
      * @param ListHooksRequest 请求对象
      * @return ListHooksResponse
-    */
+     */
     public ListHooksResponse listHooks(ListHooksRequest request) {
         return hcClient.syncInvokeHttp(request, CodehubMeta.listHooks);
     }

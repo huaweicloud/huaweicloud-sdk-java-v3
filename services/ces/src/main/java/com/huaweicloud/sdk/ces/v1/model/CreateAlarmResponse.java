@@ -34,7 +34,7 @@ public class CreateAlarmResponse extends SdkResponse {
 
 
     /**
-     * 
+     * 告警规则的ID。
      * @return alarmId
      */
     public String getAlarmId() {

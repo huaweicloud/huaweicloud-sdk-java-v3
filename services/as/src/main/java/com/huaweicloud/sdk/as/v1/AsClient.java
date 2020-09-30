@@ -22,7 +22,7 @@ public class AsClient {
      *
      * @param BatchDeleteScalingConfigsRequest 请求对象
      * @return BatchDeleteScalingConfigsResponse
-    */
+     */
     public BatchDeleteScalingConfigsResponse batchDeleteScalingConfigs(BatchDeleteScalingConfigsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.batchDeleteScalingConfigs);
     }
@@ -33,7 +33,7 @@ public class AsClient {
      *
      * @param CompleteLifecycleActionRequest 请求对象
      * @return CompleteLifecycleActionResponse
-    */
+     */
     public CompleteLifecycleActionResponse completeLifecycleAction(CompleteLifecycleActionRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.completeLifecycleAction);
     }
@@ -44,7 +44,7 @@ public class AsClient {
      *
      * @param CreateLifyCycleHookRequest 请求对象
      * @return CreateLifyCycleHookResponse
-    */
+     */
     public CreateLifyCycleHookResponse createLifyCycleHook(CreateLifyCycleHookRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.createLifyCycleHook);
     }
@@ -55,7 +55,7 @@ public class AsClient {
      *
      * @param CreateScalingConfigRequest 请求对象
      * @return CreateScalingConfigResponse
-    */
+     */
     public CreateScalingConfigResponse createScalingConfig(CreateScalingConfigRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.createScalingConfig);
     }
@@ -66,7 +66,7 @@ public class AsClient {
      *
      * @param CreateScalingGroupRequest 请求对象
      * @return CreateScalingGroupResponse
-    */
+     */
     public CreateScalingGroupResponse createScalingGroup(CreateScalingGroupRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.createScalingGroup);
     }
@@ -77,7 +77,7 @@ public class AsClient {
      *
      * @param CreateScalingNotificationRequest 请求对象
      * @return CreateScalingNotificationResponse
-    */
+     */
     public CreateScalingNotificationResponse createScalingNotification(CreateScalingNotificationRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.createScalingNotification);
     }
@@ -88,7 +88,7 @@ public class AsClient {
      *
      * @param CreateScalingPolicyRequest 请求对象
      * @return CreateScalingPolicyResponse
-    */
+     */
     public CreateScalingPolicyResponse createScalingPolicy(CreateScalingPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.createScalingPolicy);
     }
@@ -99,7 +99,7 @@ public class AsClient {
      *
      * @param CreateScalingTagsRequest 请求对象
      * @return CreateScalingTagsResponse
-    */
+     */
     public CreateScalingTagsResponse createScalingTags(CreateScalingTagsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.createScalingTags);
     }
@@ -110,7 +110,7 @@ public class AsClient {
      *
      * @param DeleteLifecycleHookRequest 请求对象
      * @return DeleteLifecycleHookResponse
-    */
+     */
     public DeleteLifecycleHookResponse deleteLifecycleHook(DeleteLifecycleHookRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.deleteLifecycleHook);
     }
@@ -121,7 +121,7 @@ public class AsClient {
      *
      * @param DeleteScalingConfigRequest 请求对象
      * @return DeleteScalingConfigResponse
-    */
+     */
     public DeleteScalingConfigResponse deleteScalingConfig(DeleteScalingConfigRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.deleteScalingConfig);
     }
@@ -132,7 +132,7 @@ public class AsClient {
      *
      * @param DeleteScalingGroupRequest 请求对象
      * @return DeleteScalingGroupResponse
-    */
+     */
     public DeleteScalingGroupResponse deleteScalingGroup(DeleteScalingGroupRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.deleteScalingGroup);
     }
@@ -143,7 +143,7 @@ public class AsClient {
      *
      * @param DeleteScalingInstanceRequest 请求对象
      * @return DeleteScalingInstanceResponse
-    */
+     */
     public DeleteScalingInstanceResponse deleteScalingInstance(DeleteScalingInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.deleteScalingInstance);
     }
@@ -154,7 +154,7 @@ public class AsClient {
      *
      * @param DeleteScalingNotificationRequest 请求对象
      * @return DeleteScalingNotificationResponse
-    */
+     */
     public DeleteScalingNotificationResponse deleteScalingNotification(DeleteScalingNotificationRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.deleteScalingNotification);
     }
@@ -165,7 +165,7 @@ public class AsClient {
      *
      * @param DeleteScalingPolicyRequest 请求对象
      * @return DeleteScalingPolicyResponse
-    */
+     */
     public DeleteScalingPolicyResponse deleteScalingPolicy(DeleteScalingPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.deleteScalingPolicy);
     }
@@ -176,7 +176,7 @@ public class AsClient {
      *
      * @param DeleteScalingTagsRequest 请求对象
      * @return DeleteScalingTagsResponse
-    */
+     */
     public DeleteScalingTagsResponse deleteScalingTags(DeleteScalingTagsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.deleteScalingTags);
     }
@@ -187,7 +187,7 @@ public class AsClient {
      *
      * @param EnableOrDisableScalingGroupRequest 请求对象
      * @return EnableOrDisableScalingGroupResponse
-    */
+     */
     public EnableOrDisableScalingGroupResponse enableOrDisableScalingGroup(EnableOrDisableScalingGroupRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.enableOrDisableScalingGroup);
     }
@@ -198,7 +198,7 @@ public class AsClient {
      *
      * @param ExecuteScalingPolicyRequest 请求对象
      * @return ExecuteScalingPolicyResponse
-    */
+     */
     public ExecuteScalingPolicyResponse executeScalingPolicy(ExecuteScalingPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.executeScalingPolicy);
     }
@@ -209,7 +209,7 @@ public class AsClient {
      *
      * @param ListHookInstancesRequest 请求对象
      * @return ListHookInstancesResponse
-    */
+     */
     public ListHookInstancesResponse listHookInstances(ListHookInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listHookInstances);
     }
@@ -220,7 +220,7 @@ public class AsClient {
      *
      * @param ListLifeCycleHooksRequest 请求对象
      * @return ListLifeCycleHooksResponse
-    */
+     */
     public ListLifeCycleHooksResponse listLifeCycleHooks(ListLifeCycleHooksRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listLifeCycleHooks);
     }
@@ -231,7 +231,7 @@ public class AsClient {
      *
      * @param ListResourceInstancesRequest 请求对象
      * @return ListResourceInstancesResponse
-    */
+     */
     public ListResourceInstancesResponse listResourceInstances(ListResourceInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listResourceInstances);
     }
@@ -242,7 +242,7 @@ public class AsClient {
      *
      * @param ListScalingActivityLogsRequest 请求对象
      * @return ListScalingActivityLogsResponse
-    */
+     */
     public ListScalingActivityLogsResponse listScalingActivityLogs(ListScalingActivityLogsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingActivityLogs);
     }
@@ -253,7 +253,7 @@ public class AsClient {
      *
      * @param ListScalingConfigsRequest 请求对象
      * @return ListScalingConfigsResponse
-    */
+     */
     public ListScalingConfigsResponse listScalingConfigs(ListScalingConfigsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingConfigs);
     }
@@ -264,7 +264,7 @@ public class AsClient {
      *
      * @param ListScalingGroupsRequest 请求对象
      * @return ListScalingGroupsResponse
-    */
+     */
     public ListScalingGroupsResponse listScalingGroups(ListScalingGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingGroups);
     }
@@ -275,7 +275,7 @@ public class AsClient {
      *
      * @param ListScalingInstancesRequest 请求对象
      * @return ListScalingInstancesResponse
-    */
+     */
     public ListScalingInstancesResponse listScalingInstances(ListScalingInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingInstances);
     }
@@ -286,7 +286,7 @@ public class AsClient {
      *
      * @param ListScalingNotificationsRequest 请求对象
      * @return ListScalingNotificationsResponse
-    */
+     */
     public ListScalingNotificationsResponse listScalingNotifications(ListScalingNotificationsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingNotifications);
     }
@@ -297,7 +297,7 @@ public class AsClient {
      *
      * @param ListScalingPoliciesRequest 请求对象
      * @return ListScalingPoliciesResponse
-    */
+     */
     public ListScalingPoliciesResponse listScalingPolicies(ListScalingPoliciesRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingPolicies);
     }
@@ -308,7 +308,7 @@ public class AsClient {
      *
      * @param ListScalingPolicyExecuteLogsRequest 请求对象
      * @return ListScalingPolicyExecuteLogsResponse
-    */
+     */
     public ListScalingPolicyExecuteLogsResponse listScalingPolicyExecuteLogs(ListScalingPolicyExecuteLogsRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingPolicyExecuteLogs);
     }
@@ -319,7 +319,7 @@ public class AsClient {
      *
      * @param ListScalingTagInfosByResourceIdRequest 请求对象
      * @return ListScalingTagInfosByResourceIdResponse
-    */
+     */
     public ListScalingTagInfosByResourceIdResponse listScalingTagInfosByResourceId(ListScalingTagInfosByResourceIdRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingTagInfosByResourceId);
     }
@@ -330,7 +330,7 @@ public class AsClient {
      *
      * @param ListScalingTagInfosByTenantIdRequest 请求对象
      * @return ListScalingTagInfosByTenantIdResponse
-    */
+     */
     public ListScalingTagInfosByTenantIdResponse listScalingTagInfosByTenantId(ListScalingTagInfosByTenantIdRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.listScalingTagInfosByTenantId);
     }
@@ -341,7 +341,7 @@ public class AsClient {
      *
      * @param ShowLifeCycleHookRequest 请求对象
      * @return ShowLifeCycleHookResponse
-    */
+     */
     public ShowLifeCycleHookResponse showLifeCycleHook(ShowLifeCycleHookRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.showLifeCycleHook);
     }
@@ -352,7 +352,7 @@ public class AsClient {
      *
      * @param ShowPolicyAndInstanceQuotaRequest 请求对象
      * @return ShowPolicyAndInstanceQuotaResponse
-    */
+     */
     public ShowPolicyAndInstanceQuotaResponse showPolicyAndInstanceQuota(ShowPolicyAndInstanceQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.showPolicyAndInstanceQuota);
     }
@@ -363,7 +363,7 @@ public class AsClient {
      *
      * @param ShowResourceQuotaRequest 请求对象
      * @return ShowResourceQuotaResponse
-    */
+     */
     public ShowResourceQuotaResponse showResourceQuota(ShowResourceQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.showResourceQuota);
     }
@@ -374,7 +374,7 @@ public class AsClient {
      *
      * @param ShowScalingConfigRequest 请求对象
      * @return ShowScalingConfigResponse
-    */
+     */
     public ShowScalingConfigResponse showScalingConfig(ShowScalingConfigRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.showScalingConfig);
     }
@@ -385,7 +385,7 @@ public class AsClient {
      *
      * @param ShowScalingGroupRequest 请求对象
      * @return ShowScalingGroupResponse
-    */
+     */
     public ShowScalingGroupResponse showScalingGroup(ShowScalingGroupRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.showScalingGroup);
     }
@@ -396,7 +396,7 @@ public class AsClient {
      *
      * @param ShowScalingPolicyRequest 请求对象
      * @return ShowScalingPolicyResponse
-    */
+     */
     public ShowScalingPolicyResponse showScalingPolicy(ShowScalingPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.showScalingPolicy);
     }
@@ -407,7 +407,7 @@ public class AsClient {
      *
      * @param UpdateLifeCycleHookRequest 请求对象
      * @return UpdateLifeCycleHookResponse
-    */
+     */
     public UpdateLifeCycleHookResponse updateLifeCycleHook(UpdateLifeCycleHookRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.updateLifeCycleHook);
     }
@@ -418,7 +418,7 @@ public class AsClient {
      *
      * @param UpdateScalingGroupRequest 请求对象
      * @return UpdateScalingGroupResponse
-    */
+     */
     public UpdateScalingGroupResponse updateScalingGroup(UpdateScalingGroupRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.updateScalingGroup);
     }
@@ -429,7 +429,7 @@ public class AsClient {
      *
      * @param UpdateScalingGroupInstanceRequest 请求对象
      * @return UpdateScalingGroupInstanceResponse
-    */
+     */
     public UpdateScalingGroupInstanceResponse updateScalingGroupInstance(UpdateScalingGroupInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.updateScalingGroupInstance);
     }
@@ -440,7 +440,7 @@ public class AsClient {
      *
      * @param UpdateScalingPolicyRequest 请求对象
      * @return UpdateScalingPolicyResponse
-    */
+     */
     public UpdateScalingPolicyResponse updateScalingPolicy(UpdateScalingPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, AsMeta.updateScalingPolicy);
     }

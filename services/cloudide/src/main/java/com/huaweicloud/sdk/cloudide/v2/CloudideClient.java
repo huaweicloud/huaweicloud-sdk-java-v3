@@ -22,7 +22,7 @@ public class CloudideClient {
      *
      * @param ListProjectTemplatesRequest 请求对象
      * @return ListProjectTemplatesResponse
-    */
+     */
     public ListProjectTemplatesResponse listProjectTemplates(ListProjectTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.listProjectTemplates);
     }
@@ -33,7 +33,7 @@ public class CloudideClient {
      *
      * @param ListStacksByTagRequest 请求对象
      * @return ListStacksByTagResponse
-    */
+     */
     public ListStacksByTagResponse listStacksByTag(ListStacksByTagRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.listStacksByTag);
     }
@@ -44,7 +44,7 @@ public class CloudideClient {
      *
      * @param ShowPriceRequest 请求对象
      * @return ShowPriceResponse
-    */
+     */
     public ShowPriceResponse showPrice(ShowPriceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.showPrice);
     }
@@ -55,7 +55,7 @@ public class CloudideClient {
      *
      * @param CheckNameRequest 请求对象
      * @return CheckNameResponse
-    */
+     */
     public CheckNameResponse checkName(CheckNameRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.checkName);
     }
@@ -66,7 +66,7 @@ public class CloudideClient {
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
-    */
+     */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.createInstance);
     }
@@ -77,7 +77,7 @@ public class CloudideClient {
      *
      * @param CreateInstanceBy3rdRequest 请求对象
      * @return CreateInstanceBy3rdResponse
-    */
+     */
     public CreateInstanceBy3rdResponse createInstanceBy3rd(CreateInstanceBy3rdRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.createInstanceBy3rd);
     }
@@ -88,7 +88,7 @@ public class CloudideClient {
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
-    */
+     */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.deleteInstance);
     }
@@ -99,7 +99,7 @@ public class CloudideClient {
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
-    */
+     */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.listInstances);
     }
@@ -110,7 +110,7 @@ public class CloudideClient {
      *
      * @param ListOrgInstancesRequest 请求对象
      * @return ListOrgInstancesResponse
-    */
+     */
     public ListOrgInstancesResponse listOrgInstances(ListOrgInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.listOrgInstances);
     }
@@ -121,7 +121,7 @@ public class CloudideClient {
      *
      * @param ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
-    */
+     */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.showInstance);
     }
@@ -132,7 +132,7 @@ public class CloudideClient {
      *
      * @param StartInstanceRequest 请求对象
      * @return StartInstanceResponse
-    */
+     */
     public StartInstanceResponse startInstance(StartInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.startInstance);
     }
@@ -143,7 +143,7 @@ public class CloudideClient {
      *
      * @param StopInstanceRequest 请求对象
      * @return StopInstanceResponse
-    */
+     */
     public StopInstanceResponse stopInstance(StopInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.stopInstance);
     }
@@ -154,7 +154,7 @@ public class CloudideClient {
      *
      * @param UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
-    */
+     */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudideMeta.updateInstance);
     }

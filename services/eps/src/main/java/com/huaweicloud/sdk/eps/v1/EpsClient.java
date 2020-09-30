@@ -22,7 +22,7 @@ public class EpsClient {
      *
      * @param CreateEPRequest 请求对象
      * @return CreateEPResponse
-    */
+     */
     public CreateEPResponse createEP(CreateEPRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.createEP);
     }
@@ -33,7 +33,7 @@ public class EpsClient {
      *
      * @param DisableEPRequest 请求对象
      * @return DisableEPResponse
-    */
+     */
     public DisableEPResponse disableEP(DisableEPRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.disableEP);
     }
@@ -44,7 +44,7 @@ public class EpsClient {
      *
      * @param EnableEPRequest 请求对象
      * @return EnableEPResponse
-    */
+     */
     public EnableEPResponse enableEP(EnableEPRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.enableEP);
     }
@@ -55,7 +55,7 @@ public class EpsClient {
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
-    */
+     */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.listApiVersions);
     }
@@ -66,7 +66,7 @@ public class EpsClient {
      *
      * @param ListEPRequest 请求对象
      * @return ListEPResponse
-    */
+     */
     public ListEPResponse listEP(ListEPRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.listEP);
     }
@@ -77,7 +77,7 @@ public class EpsClient {
      *
      * @param MigrateResourceRequest 请求对象
      * @return MigrateResourceResponse
-    */
+     */
     public MigrateResourceResponse migrateResource(MigrateResourceRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.migrateResource);
     }
@@ -88,7 +88,7 @@ public class EpsClient {
      *
      * @param ModifyEPRequest 请求对象
      * @return ModifyEPResponse
-    */
+     */
     public ModifyEPResponse modifyEP(ModifyEPRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.modifyEP);
     }
@@ -99,7 +99,7 @@ public class EpsClient {
      *
      * @param ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
-    */
+     */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.showApiVersion);
     }
@@ -110,7 +110,7 @@ public class EpsClient {
      *
      * @param ShowEPRequest 请求对象
      * @return ShowEPResponse
-    */
+     */
     public ShowEPResponse showEP(ShowEPRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.showEP);
     }
@@ -121,7 +121,7 @@ public class EpsClient {
      *
      * @param ShowEPQuotaRequest 请求对象
      * @return ShowEPQuotaResponse
-    */
+     */
     public ShowEPQuotaResponse showEPQuota(ShowEPQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.showEPQuota);
     }
@@ -132,7 +132,7 @@ public class EpsClient {
      *
      * @param ShowResourceBindEPRequest 请求对象
      * @return ShowResourceBindEPResponse
-    */
+     */
     public ShowResourceBindEPResponse showResourceBindEP(ShowResourceBindEPRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.showResourceBindEP);
     }

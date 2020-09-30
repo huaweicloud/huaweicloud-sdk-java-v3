@@ -22,7 +22,7 @@ public class TmsClient {
      *
      * @param CreatePredefineTagsRequest 请求对象
      * @return CreatePredefineTagsResponse
-    */
+     */
     public CreatePredefineTagsResponse createPredefineTags(CreatePredefineTagsRequest request) {
         return hcClient.syncInvokeHttp(request, TmsMeta.createPredefineTags);
     }
@@ -33,7 +33,7 @@ public class TmsClient {
      *
      * @param DeletePredefineTagsRequest 请求对象
      * @return DeletePredefineTagsResponse
-    */
+     */
     public DeletePredefineTagsResponse deletePredefineTags(DeletePredefineTagsRequest request) {
         return hcClient.syncInvokeHttp(request, TmsMeta.deletePredefineTags);
     }
@@ -44,7 +44,7 @@ public class TmsClient {
      *
      * @param ListApiVersionsRequest 请求对象
      * @return ListApiVersionsResponse
-    */
+     */
     public ListApiVersionsResponse listApiVersions(ListApiVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, TmsMeta.listApiVersions);
     }
@@ -55,7 +55,7 @@ public class TmsClient {
      *
      * @param ListPredefineTagsRequest 请求对象
      * @return ListPredefineTagsResponse
-    */
+     */
     public ListPredefineTagsResponse listPredefineTags(ListPredefineTagsRequest request) {
         return hcClient.syncInvokeHttp(request, TmsMeta.listPredefineTags);
     }
@@ -66,7 +66,7 @@ public class TmsClient {
      *
      * @param ShowApiVersionRequest 请求对象
      * @return ShowApiVersionResponse
-    */
+     */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
         return hcClient.syncInvokeHttp(request, TmsMeta.showApiVersion);
     }
@@ -77,7 +77,7 @@ public class TmsClient {
      *
      * @param UpdatePredefineTagsRequest 请求对象
      * @return UpdatePredefineTagsResponse
-    */
+     */
     public UpdatePredefineTagsResponse updatePredefineTags(UpdatePredefineTagsRequest request) {
         return hcClient.syncInvokeHttp(request, TmsMeta.updatePredefineTags);
     }

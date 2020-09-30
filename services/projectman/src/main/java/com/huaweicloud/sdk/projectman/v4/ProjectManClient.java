@@ -22,7 +22,7 @@ public class ProjectManClient {
      *
      * @param CreateProjectV4Request 请求对象
      * @return CreateProjectV4Response
-    */
+     */
     public CreateProjectV4Response createProjectV4(CreateProjectV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.createProjectV4);
     }
@@ -33,7 +33,7 @@ public class ProjectManClient {
      *
      * @param ListDomainNotAddedProjectsV4Request 请求对象
      * @return ListDomainNotAddedProjectsV4Response
-    */
+     */
     public ListDomainNotAddedProjectsV4Response listDomainNotAddedProjectsV4(ListDomainNotAddedProjectsV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.listDomainNotAddedProjectsV4);
     }
@@ -44,7 +44,7 @@ public class ProjectManClient {
      *
      * @param ListIssueCommentsV4Request 请求对象
      * @return ListIssueCommentsV4Response
-    */
+     */
     public ListIssueCommentsV4Response listIssueCommentsV4(ListIssueCommentsV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueCommentsV4);
     }
@@ -55,7 +55,7 @@ public class ProjectManClient {
      *
      * @param ListIssueRecordsV4Request 请求对象
      * @return ListIssueRecordsV4Response
-    */
+     */
     public ListIssueRecordsV4Response listIssueRecordsV4(ListIssueRecordsV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueRecordsV4);
     }
@@ -66,7 +66,7 @@ public class ProjectManClient {
      *
      * @param ListProjectMembersV4Request 请求对象
      * @return ListProjectMembersV4Response
-    */
+     */
     public ListProjectMembersV4Response listProjectMembersV4(ListProjectMembersV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectMembersV4);
     }
@@ -77,7 +77,7 @@ public class ProjectManClient {
      *
      * @param ListProjectVersionsV4Request 请求对象
      * @return ListProjectVersionsV4Response
-    */
+     */
     public ListProjectVersionsV4Response listProjectVersionsV4(ListProjectVersionsV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectVersionsV4);
     }
@@ -88,7 +88,7 @@ public class ProjectManClient {
      *
      * @param ListProjectWorkHoursRequest 请求对象
      * @return ListProjectWorkHoursResponse
-    */
+     */
     public ListProjectWorkHoursResponse listProjectWorkHours(ListProjectWorkHoursRequest request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectWorkHours);
     }
@@ -99,7 +99,7 @@ public class ProjectManClient {
      *
      * @param ListProjectsV4Request 请求对象
      * @return ListProjectsV4Response
-    */
+     */
     public ListProjectsV4Response listProjectsV4(ListProjectsV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.listProjectsV4);
     }
@@ -110,7 +110,7 @@ public class ProjectManClient {
      *
      * @param RemoveProjectRequest 请求对象
      * @return RemoveProjectResponse
-    */
+     */
     public RemoveProjectResponse removeProject(RemoveProjectRequest request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.removeProject);
     }
@@ -121,7 +121,7 @@ public class ProjectManClient {
      *
      * @param ShowCurUserInfoRequest 请求对象
      * @return ShowCurUserInfoResponse
-    */
+     */
     public ShowCurUserInfoResponse showCurUserInfo(ShowCurUserInfoRequest request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.showCurUserInfo);
     }
@@ -132,7 +132,7 @@ public class ProjectManClient {
      *
      * @param ShowCurUserRoleRequest 请求对象
      * @return ShowCurUserRoleResponse
-    */
+     */
     public ShowCurUserRoleResponse showCurUserRole(ShowCurUserRoleRequest request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.showCurUserRole);
     }
@@ -143,7 +143,7 @@ public class ProjectManClient {
      *
      * @param ShowProjectWorkHoursRequest 请求对象
      * @return ShowProjectWorkHoursResponse
-    */
+     */
     public ShowProjectWorkHoursResponse showProjectWorkHours(ShowProjectWorkHoursRequest request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.showProjectWorkHours);
     }
@@ -154,7 +154,7 @@ public class ProjectManClient {
      *
      * @param ShowtIssueCompletionRateRequest 请求对象
      * @return ShowtIssueCompletionRateResponse
-    */
+     */
     public ShowtIssueCompletionRateResponse showtIssueCompletionRate(ShowtIssueCompletionRateRequest request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.showtIssueCompletionRate);
     }
@@ -165,7 +165,7 @@ public class ProjectManClient {
      *
      * @param UpdateMembesRoleV4Request 请求对象
      * @return UpdateMembesRoleV4Response
-    */
+     */
     public UpdateMembesRoleV4Response updateMembesRoleV4(UpdateMembesRoleV4Request request) {
         return hcClient.syncInvokeHttp(request, ProjectManMeta.updateMembesRoleV4);
     }

@@ -22,7 +22,7 @@ public class OsmClient {
      *
      * @param CheckHostsRequest 请求对象
      * @return CheckHostsResponse
-    */
+     */
     public CheckHostsResponse checkHosts(CheckHostsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.checkHosts);
     }
@@ -33,7 +33,7 @@ public class OsmClient {
      *
      * @param CheckNeedVerifyCodeRequest 请求对象
      * @return CheckNeedVerifyCodeResponse
-    */
+     */
     public CheckNeedVerifyCodeResponse checkNeedVerifyCode(CheckNeedVerifyCodeRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.checkNeedVerifyCode);
     }
@@ -44,7 +44,7 @@ public class OsmClient {
      *
      * @param CheckVerifyCodeRequest 请求对象
      * @return CheckVerifyCodeResponse
-    */
+     */
     public CheckVerifyCodeResponse checkVerifyCode(CheckVerifyCodeRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.checkVerifyCode);
     }
@@ -55,7 +55,7 @@ public class OsmClient {
      *
      * @param ConfirmAuthorizationsRequest 请求对象
      * @return ConfirmAuthorizationsResponse
-    */
+     */
     public ConfirmAuthorizationsResponse confirmAuthorizations(ConfirmAuthorizationsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.confirmAuthorizations);
     }
@@ -66,7 +66,7 @@ public class OsmClient {
      *
      * @param CreateAuthorizationsRequest 请求对象
      * @return CreateAuthorizationsResponse
-    */
+     */
     public CreateAuthorizationsResponse createAuthorizations(CreateAuthorizationsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createAuthorizations);
     }
@@ -77,7 +77,7 @@ public class OsmClient {
      *
      * @param CreateCaseLabelsRequest 请求对象
      * @return CreateCaseLabelsResponse
-    */
+     */
     public CreateCaseLabelsResponse createCaseLabels(CreateCaseLabelsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createCaseLabels);
     }
@@ -88,7 +88,7 @@ public class OsmClient {
      *
      * @param CreateCasesRequest 请求对象
      * @return CreateCasesResponse
-    */
+     */
     public CreateCasesResponse createCases(CreateCasesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createCases);
     }
@@ -99,7 +99,7 @@ public class OsmClient {
      *
      * @param CreateLabelsRequest 请求对象
      * @return CreateLabelsResponse
-    */
+     */
     public CreateLabelsResponse createLabels(CreateLabelsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createLabels);
     }
@@ -110,7 +110,7 @@ public class OsmClient {
      *
      * @param CreateMessagesRequest 请求对象
      * @return CreateMessagesResponse
-    */
+     */
     public CreateMessagesResponse createMessages(CreateMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createMessages);
     }
@@ -121,7 +121,7 @@ public class OsmClient {
      *
      * @param CreatePrivilegesRequest 请求对象
      * @return CreatePrivilegesResponse
-    */
+     */
     public CreatePrivilegesResponse createPrivileges(CreatePrivilegesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createPrivileges);
     }
@@ -132,7 +132,7 @@ public class OsmClient {
      *
      * @param CreateRelationsRequest 请求对象
      * @return CreateRelationsResponse
-    */
+     */
     public CreateRelationsResponse createRelations(CreateRelationsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createRelations);
     }
@@ -143,7 +143,7 @@ public class OsmClient {
      *
      * @param CreateScoresRequest 请求对象
      * @return CreateScoresResponse
-    */
+     */
     public CreateScoresResponse createScores(CreateScoresRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.createScores);
     }
@@ -154,7 +154,7 @@ public class OsmClient {
      *
      * @param DeleteAccessoriesRequest 请求对象
      * @return DeleteAccessoriesResponse
-    */
+     */
     public DeleteAccessoriesResponse deleteAccessories(DeleteAccessoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.deleteAccessories);
     }
@@ -165,7 +165,7 @@ public class OsmClient {
      *
      * @param DeleteCaseLabelsRequest 请求对象
      * @return DeleteCaseLabelsResponse
-    */
+     */
     public DeleteCaseLabelsResponse deleteCaseLabels(DeleteCaseLabelsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.deleteCaseLabels);
     }
@@ -176,7 +176,7 @@ public class OsmClient {
      *
      * @param DeleteLabelsRequest 请求对象
      * @return DeleteLabelsResponse
-    */
+     */
     public DeleteLabelsResponse deleteLabels(DeleteLabelsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.deleteLabels);
     }
@@ -187,7 +187,7 @@ public class OsmClient {
      *
      * @param DeleteRelationRequest 请求对象
      * @return DeleteRelationResponse
-    */
+     */
     public DeleteRelationResponse deleteRelation(DeleteRelationRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.deleteRelation);
     }
@@ -198,7 +198,7 @@ public class OsmClient {
      *
      * @param DownloadAccessoriesRequest 请求对象
      * @return DownloadAccessoriesResponse
-    */
+     */
     public DownloadAccessoriesResponse downloadAccessories(DownloadAccessoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.downloadAccessories);
     }
@@ -209,7 +209,7 @@ public class OsmClient {
      *
      * @param DownloadCasesRequest 请求对象
      * @return DownloadCasesResponse
-    */
+     */
     public DownloadCasesResponse downloadCases(DownloadCasesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.downloadCases);
     }
@@ -220,7 +220,7 @@ public class OsmClient {
      *
      * @param DownloadImagesRequest 请求对象
      * @return DownloadImagesResponse
-    */
+     */
     public DownloadImagesResponse downloadImages(DownloadImagesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.downloadImages);
     }
@@ -231,7 +231,7 @@ public class OsmClient {
      *
      * @param ListAgenciesRequest 请求对象
      * @return ListAgenciesResponse
-    */
+     */
     public ListAgenciesResponse listAgencies(ListAgenciesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listAgencies);
     }
@@ -242,7 +242,7 @@ public class OsmClient {
      *
      * @param ListAreaCodesRequest 请求对象
      * @return ListAreaCodesResponse
-    */
+     */
     public ListAreaCodesResponse listAreaCodes(ListAreaCodesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listAreaCodes);
     }
@@ -253,7 +253,7 @@ public class OsmClient {
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return ListAuthorizationsResponse
-    */
+     */
     public ListAuthorizationsResponse listAuthorizations(ListAuthorizationsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listAuthorizations);
     }
@@ -264,7 +264,7 @@ public class OsmClient {
      *
      * @param ListCaseCategoriesRequest 请求对象
      * @return ListCaseCategoriesResponse
-    */
+     */
     public ListCaseCategoriesResponse listCaseCategories(ListCaseCategoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseCategories);
     }
@@ -275,7 +275,7 @@ public class OsmClient {
      *
      * @param ListCaseLabelsRequest 请求对象
      * @return ListCaseLabelsResponse
-    */
+     */
     public ListCaseLabelsResponse listCaseLabels(ListCaseLabelsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseLabels);
     }
@@ -286,7 +286,7 @@ public class OsmClient {
      *
      * @param ListCaseLimitsRequest 请求对象
      * @return ListCaseLimitsResponse
-    */
+     */
     public ListCaseLimitsResponse listCaseLimits(ListCaseLimitsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseLimits);
     }
@@ -297,7 +297,7 @@ public class OsmClient {
      *
      * @param ListCaseQuotasRequest 请求对象
      * @return ListCaseQuotasResponse
-    */
+     */
     public ListCaseQuotasResponse listCaseQuotas(ListCaseQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseQuotas);
     }
@@ -308,7 +308,7 @@ public class OsmClient {
      *
      * @param ListCaseTemplatesRequest 请求对象
      * @return ListCaseTemplatesResponse
-    */
+     */
     public ListCaseTemplatesResponse listCaseTemplates(ListCaseTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseTemplates);
     }
@@ -319,7 +319,7 @@ public class OsmClient {
      *
      * @param ListCasesRequest 请求对象
      * @return ListCasesResponse
-    */
+     */
     public ListCasesResponse listCases(ListCasesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCases);
     }
@@ -330,7 +330,7 @@ public class OsmClient {
      *
      * @param ListExtendsParamsRequest 请求对象
      * @return ListExtendsParamsResponse
-    */
+     */
     public ListExtendsParamsResponse listExtendsParams(ListExtendsParamsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listExtendsParams);
     }
@@ -341,7 +341,7 @@ public class OsmClient {
      *
      * @param ListHasVerifiedContactRequest 请求对象
      * @return ListHasVerifiedContactResponse
-    */
+     */
     public ListHasVerifiedContactResponse listHasVerifiedContact(ListHasVerifiedContactRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listHasVerifiedContact);
     }
@@ -352,7 +352,7 @@ public class OsmClient {
      *
      * @param ListHistoryOperateLogsRequest 请求对象
      * @return ListHistoryOperateLogsResponse
-    */
+     */
     public ListHistoryOperateLogsResponse listHistoryOperateLogs(ListHistoryOperateLogsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listHistoryOperateLogs);
     }
@@ -363,7 +363,7 @@ public class OsmClient {
      *
      * @param ListHistorySessionsRequest 请求对象
      * @return ListHistorySessionsResponse
-    */
+     */
     public ListHistorySessionsResponse listHistorySessions(ListHistorySessionsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listHistorySessions);
     }
@@ -374,7 +374,7 @@ public class OsmClient {
      *
      * @param ListIncidentCountRequest 请求对象
      * @return ListIncidentCountResponse
-    */
+     */
     public ListIncidentCountResponse listIncidentCount(ListIncidentCountRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listIncidentCount);
     }
@@ -385,7 +385,7 @@ public class OsmClient {
      *
      * @param ListIncidentOperateLogRequest 请求对象
      * @return ListIncidentOperateLogResponse
-    */
+     */
     public ListIncidentOperateLogResponse listIncidentOperateLog(ListIncidentOperateLogRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listIncidentOperateLog);
     }
@@ -396,7 +396,7 @@ public class OsmClient {
      *
      * @param ListIncidentOrderCCEmailRequest 请求对象
      * @return ListIncidentOrderCCEmailResponse
-    */
+     */
     public ListIncidentOrderCCEmailResponse listIncidentOrderCCEmail(ListIncidentOrderCCEmailRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listIncidentOrderCCEmail);
     }
@@ -407,7 +407,7 @@ public class OsmClient {
      *
      * @param ListLabelsRequest 请求对象
      * @return ListLabelsResponse
-    */
+     */
     public ListLabelsResponse listLabels(ListLabelsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listLabels);
     }
@@ -418,7 +418,7 @@ public class OsmClient {
      *
      * @param ListMessagesRequest 请求对象
      * @return ListMessagesResponse
-    */
+     */
     public ListMessagesResponse listMessages(ListMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listMessages);
     }
@@ -429,7 +429,7 @@ public class OsmClient {
      *
      * @param ListMoreInstantMessagesRequest 请求对象
      * @return ListMoreInstantMessagesResponse
-    */
+     */
     public ListMoreInstantMessagesResponse listMoreInstantMessages(ListMoreInstantMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listMoreInstantMessages);
     }
@@ -440,7 +440,7 @@ public class OsmClient {
      *
      * @param ListNewInstantMessagesRequest 请求对象
      * @return ListNewInstantMessagesResponse
-    */
+     */
     public ListNewInstantMessagesResponse listNewInstantMessages(ListNewInstantMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listNewInstantMessages);
     }
@@ -451,7 +451,7 @@ public class OsmClient {
      *
      * @param ListPrivilegesRequest 请求对象
      * @return ListPrivilegesResponse
-    */
+     */
     public ListPrivilegesResponse listPrivileges(ListPrivilegesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listPrivileges);
     }
@@ -462,7 +462,7 @@ public class OsmClient {
      *
      * @param ListProblemTypesRequest 请求对象
      * @return ListProblemTypesResponse
-    */
+     */
     public ListProblemTypesResponse listProblemTypes(ListProblemTypesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listProblemTypes);
     }
@@ -473,7 +473,7 @@ public class OsmClient {
      *
      * @param ListProductCategoriesRequest 请求对象
      * @return ListProductCategoriesResponse
-    */
+     */
     public ListProductCategoriesResponse listProductCategories(ListProductCategoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listProductCategories);
     }
@@ -484,7 +484,7 @@ public class OsmClient {
      *
      * @param ListRegionsRequest 请求对象
      * @return ListRegionsResponse
-    */
+     */
     public ListRegionsResponse listRegions(ListRegionsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listRegions);
     }
@@ -495,7 +495,7 @@ public class OsmClient {
      *
      * @param ListRelationRequest 请求对象
      * @return ListRelationResponse
-    */
+     */
     public ListRelationResponse listRelation(ListRelationRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listRelation);
     }
@@ -506,7 +506,7 @@ public class OsmClient {
      *
      * @param ListSatisfactionDimensionsRequest 请求对象
      * @return ListSatisfactionDimensionsResponse
-    */
+     */
     public ListSatisfactionDimensionsResponse listSatisfactionDimensions(ListSatisfactionDimensionsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listSatisfactionDimensions);
     }
@@ -517,7 +517,7 @@ public class OsmClient {
      *
      * @param ListSeveritiesRequest 请求对象
      * @return ListSeveritiesResponse
-    */
+     */
     public ListSeveritiesResponse listSeverities(ListSeveritiesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listSeverities);
     }
@@ -528,7 +528,7 @@ public class OsmClient {
      *
      * @param ListSubCustomerRequest 请求对象
      * @return ListSubCustomerResponse
-    */
+     */
     public ListSubCustomerResponse listSubCustomer(ListSubCustomerRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listSubCustomer);
     }
@@ -539,7 +539,7 @@ public class OsmClient {
      *
      * @param ListSubCustomersRequest 请求对象
      * @return ListSubCustomersResponse
-    */
+     */
     public ListSubCustomersResponse listSubCustomers(ListSubCustomersRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listSubCustomers);
     }
@@ -550,7 +550,7 @@ public class OsmClient {
      *
      * @param ListTransportHistoriesRequest 请求对象
      * @return ListTransportHistoriesResponse
-    */
+     */
     public ListTransportHistoriesResponse listTransportHistories(ListTransportHistoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listTransportHistories);
     }
@@ -561,7 +561,7 @@ public class OsmClient {
      *
      * @param ListUnreadNewInstantMessagesRequest 请求对象
      * @return ListUnreadNewInstantMessagesResponse
-    */
+     */
     public ListUnreadNewInstantMessagesResponse listUnreadNewInstantMessages(ListUnreadNewInstantMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listUnreadNewInstantMessages);
     }
@@ -572,7 +572,7 @@ public class OsmClient {
      *
      * @param SendVerifyCodeRequest 请求对象
      * @return SendVerifyCodeResponse
-    */
+     */
     public SendVerifyCodeResponse sendVerifyCode(SendVerifyCodeRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.sendVerifyCode);
     }
@@ -583,7 +583,7 @@ public class OsmClient {
      *
      * @param ShowAccessoryLimitsRequest 请求对象
      * @return ShowAccessoryLimitsResponse
-    */
+     */
     public ShowAccessoryLimitsResponse showAccessoryLimits(ShowAccessoryLimitsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.showAccessoryLimits);
     }
@@ -594,7 +594,7 @@ public class OsmClient {
      *
      * @param ShowAuthorizationDetailRequest 请求对象
      * @return ShowAuthorizationDetailResponse
-    */
+     */
     public ShowAuthorizationDetailResponse showAuthorizationDetail(ShowAuthorizationDetailRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.showAuthorizationDetail);
     }
@@ -605,7 +605,7 @@ public class OsmClient {
      *
      * @param ShowCaseStatusRequest 请求对象
      * @return ShowCaseStatusResponse
-    */
+     */
     public ShowCaseStatusResponse showCaseStatus(ShowCaseStatusRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.showCaseStatus);
     }
@@ -616,7 +616,7 @@ public class OsmClient {
      *
      * @param ShowIncidentDetailRequest 请求对象
      * @return ShowIncidentDetailResponse
-    */
+     */
     public ShowIncidentDetailResponse showIncidentDetail(ShowIncidentDetailRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.showIncidentDetail);
     }
@@ -627,7 +627,7 @@ public class OsmClient {
      *
      * @param ShowPartnersCasesProcessingPrivilegeRequest 请求对象
      * @return ShowPartnersCasesProcessingPrivilegeResponse
-    */
+     */
     public ShowPartnersCasesProcessingPrivilegeResponse showPartnersCasesProcessingPrivilege(ShowPartnersCasesProcessingPrivilegeRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.showPartnersCasesProcessingPrivilege);
     }
@@ -638,7 +638,7 @@ public class OsmClient {
      *
      * @param ShowPartnersServiceInfoRequest 请求对象
      * @return ShowPartnersServiceInfoResponse
-    */
+     */
     public ShowPartnersServiceInfoResponse showPartnersServiceInfo(ShowPartnersServiceInfoRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.showPartnersServiceInfo);
     }
@@ -649,7 +649,7 @@ public class OsmClient {
      *
      * @param UpdateAuthorizationsRequest 请求对象
      * @return UpdateAuthorizationsResponse
-    */
+     */
     public UpdateAuthorizationsResponse updateAuthorizations(UpdateAuthorizationsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.updateAuthorizations);
     }
@@ -660,7 +660,7 @@ public class OsmClient {
      *
      * @param UpdateCasesRequest 请求对象
      * @return UpdateCasesResponse
-    */
+     */
     public UpdateCasesResponse updateCases(UpdateCasesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.updateCases);
     }
@@ -671,7 +671,7 @@ public class OsmClient {
      *
      * @param UpdateLabelsRequest 请求对象
      * @return UpdateLabelsResponse
-    */
+     */
     public UpdateLabelsResponse updateLabels(UpdateLabelsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.updateLabels);
     }
@@ -682,7 +682,7 @@ public class OsmClient {
      *
      * @param UpdateNewInstantMessagesReadRequest 请求对象
      * @return UpdateNewInstantMessagesReadResponse
-    */
+     */
     public UpdateNewInstantMessagesReadResponse updateNewInstantMessagesRead(UpdateNewInstantMessagesReadRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.updateNewInstantMessagesRead);
     }
@@ -693,7 +693,7 @@ public class OsmClient {
      *
      * @param UploadJsonAccessoriesRequest 请求对象
      * @return UploadJsonAccessoriesResponse
-    */
+     */
     public UploadJsonAccessoriesResponse uploadJsonAccessories(UploadJsonAccessoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.uploadJsonAccessories);
     }

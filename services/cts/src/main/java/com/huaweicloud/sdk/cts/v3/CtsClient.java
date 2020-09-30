@@ -22,7 +22,7 @@ public class CtsClient {
      *
      * @param CreateTrackerRequest 请求对象
      * @return CreateTrackerResponse
-    */
+     */
     public CreateTrackerResponse createTracker(CreateTrackerRequest request) {
         return hcClient.syncInvokeHttp(request, CtsMeta.createTracker);
     }
@@ -33,7 +33,7 @@ public class CtsClient {
      *
      * @param DeleteTrackerRequest 请求对象
      * @return DeleteTrackerResponse
-    */
+     */
     public DeleteTrackerResponse deleteTracker(DeleteTrackerRequest request) {
         return hcClient.syncInvokeHttp(request, CtsMeta.deleteTracker);
     }
@@ -44,7 +44,7 @@ public class CtsClient {
      *
      * @param ListTracesRequest 请求对象
      * @return ListTracesResponse
-    */
+     */
     public ListTracesResponse listTraces(ListTracesRequest request) {
         return hcClient.syncInvokeHttp(request, CtsMeta.listTraces);
     }
@@ -55,7 +55,7 @@ public class CtsClient {
      *
      * @param ListTrackersRequest 请求对象
      * @return ListTrackersResponse
-    */
+     */
     public ListTrackersResponse listTrackers(ListTrackersRequest request) {
         return hcClient.syncInvokeHttp(request, CtsMeta.listTrackers);
     }
@@ -66,7 +66,7 @@ public class CtsClient {
      *
      * @param UpdateTrackerRequest 请求对象
      * @return UpdateTrackerResponse
-    */
+     */
     public UpdateTrackerResponse updateTracker(UpdateTrackerRequest request) {
         return hcClient.syncInvokeHttp(request, CtsMeta.updateTracker);
     }

@@ -51,7 +51,7 @@ public class BatchListMetricDataResponse extends SdkResponse {
     }
 
     /**
-     * 
+     * 监控指标。
      * @return metrics
      */
     public List<BatchMetricData> getMetrics() {

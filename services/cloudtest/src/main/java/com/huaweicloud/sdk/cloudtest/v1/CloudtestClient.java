@@ -22,7 +22,7 @@ public class CloudtestClient {
      *
      * @param CreatePlanRequest 请求对象
      * @return CreatePlanResponse
-    */
+     */
     public CreatePlanResponse createPlan(CreatePlanRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.createPlan);
     }
@@ -33,7 +33,7 @@ public class CloudtestClient {
      *
      * @param CreateTestCaseInPlanRequest 请求对象
      * @return CreateTestCaseInPlanResponse
-    */
+     */
     public CreateTestCaseInPlanResponse createTestCaseInPlan(CreateTestCaseInPlanRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.createTestCaseInPlan);
     }
@@ -44,7 +44,7 @@ public class CloudtestClient {
      *
      * @param CreateServiceRequest 请求对象
      * @return CreateServiceResponse
-    */
+     */
     public CreateServiceResponse createService(CreateServiceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.createService);
     }
@@ -55,7 +55,7 @@ public class CloudtestClient {
      *
      * @param DeleteServiceRequest 请求对象
      * @return DeleteServiceResponse
-    */
+     */
     public DeleteServiceResponse deleteService(DeleteServiceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.deleteService);
     }
@@ -66,7 +66,7 @@ public class CloudtestClient {
      *
      * @param ShowRegisterServiceRequest 请求对象
      * @return ShowRegisterServiceResponse
-    */
+     */
     public ShowRegisterServiceResponse showRegisterService(ShowRegisterServiceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.showRegisterService);
     }
@@ -77,7 +77,7 @@ public class CloudtestClient {
      *
      * @param UpdateServiceRequest 请求对象
      * @return UpdateServiceResponse
-    */
+     */
     public UpdateServiceResponse updateService(UpdateServiceRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.updateService);
     }
@@ -88,7 +88,7 @@ public class CloudtestClient {
      *
      * @param BatchDeleteTestCaseRequest 请求对象
      * @return BatchDeleteTestCaseResponse
-    */
+     */
     public BatchDeleteTestCaseResponse batchDeleteTestCase(BatchDeleteTestCaseRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.batchDeleteTestCase);
     }
@@ -99,7 +99,7 @@ public class CloudtestClient {
      *
      * @param CreateTestCaseRequest 请求对象
      * @return CreateTestCaseResponse
-    */
+     */
     public CreateTestCaseResponse createTestCase(CreateTestCaseRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.createTestCase);
     }
@@ -110,7 +110,7 @@ public class CloudtestClient {
      *
      * @param RunTestCaseRequest 请求对象
      * @return RunTestCaseResponse
-    */
+     */
     public RunTestCaseResponse runTestCase(RunTestCaseRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.runTestCase);
     }
@@ -121,7 +121,7 @@ public class CloudtestClient {
      *
      * @param ShowTestCaseDetailRequest 请求对象
      * @return ShowTestCaseDetailResponse
-    */
+     */
     public ShowTestCaseDetailResponse showTestCaseDetail(ShowTestCaseDetailRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.showTestCaseDetail);
     }
@@ -132,7 +132,7 @@ public class CloudtestClient {
      *
      * @param ShowTestCaseDetailV2Request 请求对象
      * @return ShowTestCaseDetailV2Response
-    */
+     */
     public ShowTestCaseDetailV2Response showTestCaseDetailV2(ShowTestCaseDetailV2Request request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.showTestCaseDetailV2);
     }
@@ -143,7 +143,7 @@ public class CloudtestClient {
      *
      * @param UpdateTestCaseRequest 请求对象
      * @return UpdateTestCaseResponse
-    */
+     */
     public UpdateTestCaseResponse updateTestCase(UpdateTestCaseRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.updateTestCase);
     }
@@ -154,7 +154,7 @@ public class CloudtestClient {
      *
      * @param UpdateTestCaseResultRequest 请求对象
      * @return UpdateTestCaseResultResponse
-    */
+     */
     public UpdateTestCaseResultResponse updateTestCaseResult(UpdateTestCaseResultRequest request) {
         return hcClient.syncInvokeHttp(request, CloudtestMeta.updateTestCaseResult);
     }

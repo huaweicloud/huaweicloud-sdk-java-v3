@@ -22,7 +22,7 @@ public class VpcClient {
      *
      * @param AcceptVpcPeeringRequest 请求对象
      * @return AcceptVpcPeeringResponse
-    */
+     */
     public AcceptVpcPeeringResponse acceptVpcPeering(AcceptVpcPeeringRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.acceptVpcPeering);
     }
@@ -33,7 +33,7 @@ public class VpcClient {
      *
      * @param CreatePortRequest 请求对象
      * @return CreatePortResponse
-    */
+     */
     public CreatePortResponse createPort(CreatePortRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createPort);
     }
@@ -44,7 +44,7 @@ public class VpcClient {
      *
      * @param CreateSecurityGroupRequest 请求对象
      * @return CreateSecurityGroupResponse
-    */
+     */
     public CreateSecurityGroupResponse createSecurityGroup(CreateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createSecurityGroup);
     }
@@ -55,7 +55,7 @@ public class VpcClient {
      *
      * @param CreateSecurityGroupRuleRequest 请求对象
      * @return CreateSecurityGroupRuleResponse
-    */
+     */
     public CreateSecurityGroupRuleResponse createSecurityGroupRule(CreateSecurityGroupRuleRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createSecurityGroupRule);
     }
@@ -66,7 +66,7 @@ public class VpcClient {
      *
      * @param CreateSubnetRequest 请求对象
      * @return CreateSubnetResponse
-    */
+     */
     public CreateSubnetResponse createSubnet(CreateSubnetRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createSubnet);
     }
@@ -77,7 +77,7 @@ public class VpcClient {
      *
      * @param CreateVpcPeeringRequest 请求对象
      * @return CreateVpcPeeringResponse
-    */
+     */
     public CreateVpcPeeringResponse createVpcPeering(CreateVpcPeeringRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createVpcPeering);
     }
@@ -88,7 +88,7 @@ public class VpcClient {
      *
      * @param DeletePortRequest 请求对象
      * @return DeletePortResponse
-    */
+     */
     public DeletePortResponse deletePort(DeletePortRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deletePort);
     }
@@ -99,7 +99,7 @@ public class VpcClient {
      *
      * @param DeleteSecurityGroupRequest 请求对象
      * @return DeleteSecurityGroupResponse
-    */
+     */
     public DeleteSecurityGroupResponse deleteSecurityGroup(DeleteSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteSecurityGroup);
     }
@@ -110,7 +110,7 @@ public class VpcClient {
      *
      * @param DeleteSecurityGroupRuleRequest 请求对象
      * @return DeleteSecurityGroupRuleResponse
-    */
+     */
     public DeleteSecurityGroupRuleResponse deleteSecurityGroupRule(DeleteSecurityGroupRuleRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteSecurityGroupRule);
     }
@@ -121,7 +121,7 @@ public class VpcClient {
      *
      * @param DeleteSubnetRequest 请求对象
      * @return DeleteSubnetResponse
-    */
+     */
     public DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteSubnet);
     }
@@ -132,7 +132,7 @@ public class VpcClient {
      *
      * @param DeleteVpcPeeringRequest 请求对象
      * @return DeleteVpcPeeringResponse
-    */
+     */
     public DeleteVpcPeeringResponse deleteVpcPeering(DeleteVpcPeeringRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteVpcPeering);
     }
@@ -143,7 +143,7 @@ public class VpcClient {
      *
      * @param ListPortsRequest 请求对象
      * @return ListPortsResponse
-    */
+     */
     public ListPortsResponse listPorts(ListPortsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listPorts);
     }
@@ -154,7 +154,7 @@ public class VpcClient {
      *
      * @param ListSecurityGroupRulesRequest 请求对象
      * @return ListSecurityGroupRulesResponse
-    */
+     */
     public ListSecurityGroupRulesResponse listSecurityGroupRules(ListSecurityGroupRulesRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listSecurityGroupRules);
     }
@@ -165,7 +165,7 @@ public class VpcClient {
      *
      * @param ListSecurityGroupsRequest 请求对象
      * @return ListSecurityGroupsResponse
-    */
+     */
     public ListSecurityGroupsResponse listSecurityGroups(ListSecurityGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listSecurityGroups);
     }
@@ -176,7 +176,7 @@ public class VpcClient {
      *
      * @param ListSubnetsRequest 请求对象
      * @return ListSubnetsResponse
-    */
+     */
     public ListSubnetsResponse listSubnets(ListSubnetsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listSubnets);
     }
@@ -187,7 +187,7 @@ public class VpcClient {
      *
      * @param ListVpcPeeringsRequest 请求对象
      * @return ListVpcPeeringsResponse
-    */
+     */
     public ListVpcPeeringsResponse listVpcPeerings(ListVpcPeeringsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listVpcPeerings);
     }
@@ -198,7 +198,7 @@ public class VpcClient {
      *
      * @param RejectVpcPeeringRequest 请求对象
      * @return RejectVpcPeeringResponse
-    */
+     */
     public RejectVpcPeeringResponse rejectVpcPeering(RejectVpcPeeringRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.rejectVpcPeering);
     }
@@ -209,7 +209,7 @@ public class VpcClient {
      *
      * @param ShowPortRequest 请求对象
      * @return ShowPortResponse
-    */
+     */
     public ShowPortResponse showPort(ShowPortRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showPort);
     }
@@ -220,7 +220,7 @@ public class VpcClient {
      *
      * @param ShowQuotaRequest 请求对象
      * @return ShowQuotaResponse
-    */
+     */
     public ShowQuotaResponse showQuota(ShowQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showQuota);
     }
@@ -231,7 +231,7 @@ public class VpcClient {
      *
      * @param ShowSecurityGroupRequest 请求对象
      * @return ShowSecurityGroupResponse
-    */
+     */
     public ShowSecurityGroupResponse showSecurityGroup(ShowSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSecurityGroup);
     }
@@ -242,7 +242,7 @@ public class VpcClient {
      *
      * @param ShowSecurityGroupRuleRequest 请求对象
      * @return ShowSecurityGroupRuleResponse
-    */
+     */
     public ShowSecurityGroupRuleResponse showSecurityGroupRule(ShowSecurityGroupRuleRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSecurityGroupRule);
     }
@@ -253,7 +253,7 @@ public class VpcClient {
      *
      * @param ShowSubnetRequest 请求对象
      * @return ShowSubnetResponse
-    */
+     */
     public ShowSubnetResponse showSubnet(ShowSubnetRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showSubnet);
     }
@@ -264,7 +264,7 @@ public class VpcClient {
      *
      * @param ShowVpcPeeringRequest 请求对象
      * @return ShowVpcPeeringResponse
-    */
+     */
     public ShowVpcPeeringResponse showVpcPeering(ShowVpcPeeringRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showVpcPeering);
     }
@@ -275,7 +275,7 @@ public class VpcClient {
      *
      * @param UpdatePortRequest 请求对象
      * @return UpdatePortResponse
-    */
+     */
     public UpdatePortResponse updatePort(UpdatePortRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updatePort);
     }
@@ -286,7 +286,7 @@ public class VpcClient {
      *
      * @param UpdateSubnetRequest 请求对象
      * @return UpdateSubnetResponse
-    */
+     */
     public UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updateSubnet);
     }
@@ -297,7 +297,7 @@ public class VpcClient {
      *
      * @param UpdateVpcPeeringRequest 请求对象
      * @return UpdateVpcPeeringResponse
-    */
+     */
     public UpdateVpcPeeringResponse updateVpcPeering(UpdateVpcPeeringRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updateVpcPeering);
     }
@@ -308,7 +308,7 @@ public class VpcClient {
      *
      * @param CreatePrivateipRequest 请求对象
      * @return CreatePrivateipResponse
-    */
+     */
     public CreatePrivateipResponse createPrivateip(CreatePrivateipRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createPrivateip);
     }
@@ -319,7 +319,7 @@ public class VpcClient {
      *
      * @param DeletePrivateipRequest 请求对象
      * @return DeletePrivateipResponse
-    */
+     */
     public DeletePrivateipResponse deletePrivateip(DeletePrivateipRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deletePrivateip);
     }
@@ -330,7 +330,7 @@ public class VpcClient {
      *
      * @param ListPrivateipsRequest 请求对象
      * @return ListPrivateipsResponse
-    */
+     */
     public ListPrivateipsResponse listPrivateips(ListPrivateipsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listPrivateips);
     }
@@ -341,7 +341,7 @@ public class VpcClient {
      *
      * @param ShowNetworkIpAvailabilitiesRequest 请求对象
      * @return ShowNetworkIpAvailabilitiesResponse
-    */
+     */
     public ShowNetworkIpAvailabilitiesResponse showNetworkIpAvailabilities(ShowNetworkIpAvailabilitiesRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showNetworkIpAvailabilities);
     }
@@ -352,7 +352,7 @@ public class VpcClient {
      *
      * @param ShowPrivateipRequest 请求对象
      * @return ShowPrivateipResponse
-    */
+     */
     public ShowPrivateipResponse showPrivateip(ShowPrivateipRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showPrivateip);
     }
@@ -363,7 +363,7 @@ public class VpcClient {
      *
      * @param CreateVpcRequest 请求对象
      * @return CreateVpcResponse
-    */
+     */
     public CreateVpcResponse createVpc(CreateVpcRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createVpc);
     }
@@ -374,7 +374,7 @@ public class VpcClient {
      *
      * @param CreateVpcRouteRequest 请求对象
      * @return CreateVpcRouteResponse
-    */
+     */
     public CreateVpcRouteResponse createVpcRoute(CreateVpcRouteRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.createVpcRoute);
     }
@@ -385,7 +385,7 @@ public class VpcClient {
      *
      * @param DeleteVpcRequest 请求对象
      * @return DeleteVpcResponse
-    */
+     */
     public DeleteVpcResponse deleteVpc(DeleteVpcRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteVpc);
     }
@@ -396,7 +396,7 @@ public class VpcClient {
      *
      * @param DeleteVpcRouteRequest 请求对象
      * @return DeleteVpcRouteResponse
-    */
+     */
     public DeleteVpcRouteResponse deleteVpcRoute(DeleteVpcRouteRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.deleteVpcRoute);
     }
@@ -407,7 +407,7 @@ public class VpcClient {
      *
      * @param ListVpcRoutesRequest 请求对象
      * @return ListVpcRoutesResponse
-    */
+     */
     public ListVpcRoutesResponse listVpcRoutes(ListVpcRoutesRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listVpcRoutes);
     }
@@ -418,7 +418,7 @@ public class VpcClient {
      *
      * @param ListVpcsRequest 请求对象
      * @return ListVpcsResponse
-    */
+     */
     public ListVpcsResponse listVpcs(ListVpcsRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.listVpcs);
     }
@@ -429,7 +429,7 @@ public class VpcClient {
      *
      * @param ShowVpcRequest 请求对象
      * @return ShowVpcResponse
-    */
+     */
     public ShowVpcResponse showVpc(ShowVpcRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showVpc);
     }
@@ -440,7 +440,7 @@ public class VpcClient {
      *
      * @param ShowVpcRouteRequest 请求对象
      * @return ShowVpcRouteResponse
-    */
+     */
     public ShowVpcRouteResponse showVpcRoute(ShowVpcRouteRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.showVpcRoute);
     }
@@ -451,7 +451,7 @@ public class VpcClient {
      *
      * @param UpdateVpcRequest 请求对象
      * @return UpdateVpcResponse
-    */
+     */
     public UpdateVpcResponse updateVpc(UpdateVpcRequest request) {
         return hcClient.syncInvokeHttp(request, VpcMeta.updateVpc);
     }

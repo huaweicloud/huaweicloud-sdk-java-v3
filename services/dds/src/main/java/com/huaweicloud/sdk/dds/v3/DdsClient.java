@@ -22,7 +22,7 @@ public class DdsClient {
      *
      * @param AddShardingNodeRequest 请求对象
      * @return AddShardingNodeResponse
-    */
+     */
     public AddShardingNodeResponse addShardingNode(AddShardingNodeRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.addShardingNode);
     }
@@ -33,7 +33,7 @@ public class DdsClient {
      *
      * @param BatchCreateInstanceTagsRequest 请求对象
      * @return BatchCreateInstanceTagsResponse
-    */
+     */
     public BatchCreateInstanceTagsResponse batchCreateInstanceTags(BatchCreateInstanceTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.batchCreateInstanceTags);
     }
@@ -44,7 +44,7 @@ public class DdsClient {
      *
      * @param BatchDeleteInstanceTagsRequest 请求对象
      * @return BatchDeleteInstanceTagsResponse
-    */
+     */
     public BatchDeleteInstanceTagsResponse batchDeleteInstanceTags(BatchDeleteInstanceTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.batchDeleteInstanceTags);
     }
@@ -55,7 +55,7 @@ public class DdsClient {
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
-    */
+     */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.createInstance);
     }
@@ -66,7 +66,7 @@ public class DdsClient {
      *
      * @param CreateManualBackupRequest 请求对象
      * @return CreateManualBackupResponse
-    */
+     */
     public CreateManualBackupResponse createManualBackup(CreateManualBackupRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.createManualBackup);
     }
@@ -77,7 +77,7 @@ public class DdsClient {
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
-    */
+     */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.deleteInstance);
     }
@@ -88,7 +88,7 @@ public class DdsClient {
      *
      * @param DeleteManualBackupRequest 请求对象
      * @return DeleteManualBackupResponse
-    */
+     */
     public DeleteManualBackupResponse deleteManualBackup(DeleteManualBackupRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.deleteManualBackup);
     }
@@ -99,7 +99,7 @@ public class DdsClient {
      *
      * @param ListBackupsRequest 请求对象
      * @return ListBackupsResponse
-    */
+     */
     public ListBackupsResponse listBackups(ListBackupsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listBackups);
     }
@@ -110,7 +110,7 @@ public class DdsClient {
      *
      * @param ListDatastoreVersionsRequest 请求对象
      * @return ListDatastoreVersionsResponse
-    */
+     */
     public ListDatastoreVersionsResponse listDatastoreVersions(ListDatastoreVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listDatastoreVersions);
     }
@@ -121,7 +121,7 @@ public class DdsClient {
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
-    */
+     */
     public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listFlavors);
     }
@@ -132,7 +132,7 @@ public class DdsClient {
      *
      * @param ListInstanceTagsRequest 请求对象
      * @return ListInstanceTagsResponse
-    */
+     */
     public ListInstanceTagsResponse listInstanceTags(ListInstanceTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listInstanceTags);
     }
@@ -143,7 +143,7 @@ public class DdsClient {
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
-    */
+     */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listInstances);
     }
@@ -154,7 +154,7 @@ public class DdsClient {
      *
      * @param ListInstancesByTagsRequest 请求对象
      * @return ListInstancesByTagsResponse
-    */
+     */
     public ListInstancesByTagsResponse listInstancesByTags(ListInstancesByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listInstancesByTags);
     }
@@ -165,7 +165,7 @@ public class DdsClient {
      *
      * @param ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
-    */
+     */
     public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listProjectTags);
     }
@@ -176,7 +176,7 @@ public class DdsClient {
      *
      * @param ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
-    */
+     */
     public ResizeInstanceResponse resizeInstance(ResizeInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.resizeInstance);
     }
@@ -187,7 +187,7 @@ public class DdsClient {
      *
      * @param ResizeInstanceVolumeRequest 请求对象
      * @return ResizeInstanceVolumeResponse
-    */
+     */
     public ResizeInstanceVolumeResponse resizeInstanceVolume(ResizeInstanceVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.resizeInstanceVolume);
     }
@@ -198,7 +198,7 @@ public class DdsClient {
      *
      * @param RestartInstanceRequest 请求对象
      * @return RestartInstanceResponse
-    */
+     */
     public RestartInstanceResponse restartInstance(RestartInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.restartInstance);
     }
@@ -209,7 +209,7 @@ public class DdsClient {
      *
      * @param SetBackupPolicyRequest 请求对象
      * @return SetBackupPolicyResponse
-    */
+     */
     public SetBackupPolicyResponse setBackupPolicy(SetBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.setBackupPolicy);
     }
@@ -220,7 +220,7 @@ public class DdsClient {
      *
      * @param ShowBackupPolicyRequest 请求对象
      * @return ShowBackupPolicyResponse
-    */
+     */
     public ShowBackupPolicyResponse showBackupPolicy(ShowBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.showBackupPolicy);
     }

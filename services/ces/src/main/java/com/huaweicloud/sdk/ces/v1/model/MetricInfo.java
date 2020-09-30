@@ -38,12 +38,6 @@ public class MetricInfo  {
     
     private String namespace;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
-    private String unit;
-
     public MetricInfo withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
         return this;
@@ -114,26 +108,6 @@ public class MetricInfo  {
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
-
-    public MetricInfo withUnit(String unit) {
-        this.unit = unit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指标单位
-     * @return unit
-     */
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -145,12 +119,11 @@ public class MetricInfo  {
         MetricInfo metricInfo = (MetricInfo) o;
         return Objects.equals(this.dimensions, metricInfo.dimensions) &&
             Objects.equals(this.metricName, metricInfo.metricName) &&
-            Objects.equals(this.namespace, metricInfo.namespace) &&
-            Objects.equals(this.unit, metricInfo.unit);
+            Objects.equals(this.namespace, metricInfo.namespace);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(dimensions, metricName, namespace, unit);
+        return Objects.hash(dimensions, metricName, namespace);
     }
     @Override
     public String toString() {
@@ -159,7 +132,6 @@ public class MetricInfo  {
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-        sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

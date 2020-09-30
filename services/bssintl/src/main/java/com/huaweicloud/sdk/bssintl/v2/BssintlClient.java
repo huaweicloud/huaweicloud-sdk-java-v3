@@ -22,7 +22,7 @@ public class BssintlClient {
      *
      * @param AutoRenewalResourcesRequest 请求对象
      * @return AutoRenewalResourcesResponse
-    */
+     */
     public AutoRenewalResourcesResponse autoRenewalResources(AutoRenewalResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.autoRenewalResources);
     }
@@ -33,7 +33,7 @@ public class BssintlClient {
      *
      * @param CancelAutoRenewalResourcesRequest 请求对象
      * @return CancelAutoRenewalResourcesResponse
-    */
+     */
     public CancelAutoRenewalResourcesResponse cancelAutoRenewalResources(CancelAutoRenewalResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.cancelAutoRenewalResources);
     }
@@ -44,7 +44,7 @@ public class BssintlClient {
      *
      * @param CancelCustomerOrderRequest 请求对象
      * @return CancelCustomerOrderResponse
-    */
+     */
     public CancelCustomerOrderResponse cancelCustomerOrder(CancelCustomerOrderRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.cancelCustomerOrder);
     }
@@ -55,7 +55,7 @@ public class BssintlClient {
      *
      * @param CancelResourcesSubscriptionRequest 请求对象
      * @return CancelResourcesSubscriptionResponse
-    */
+     */
     public CancelResourcesSubscriptionResponse cancelResourcesSubscription(CancelResourcesSubscriptionRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.cancelResourcesSubscription);
     }
@@ -66,7 +66,7 @@ public class BssintlClient {
      *
      * @param ChangeEnterpriseRealnameAuthenticationRequest 请求对象
      * @return ChangeEnterpriseRealnameAuthenticationResponse
-    */
+     */
     public ChangeEnterpriseRealnameAuthenticationResponse changeEnterpriseRealnameAuthentication(ChangeEnterpriseRealnameAuthenticationRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.changeEnterpriseRealnameAuthentication);
     }
@@ -77,7 +77,7 @@ public class BssintlClient {
      *
      * @param CheckUserIdentityRequest 请求对象
      * @return CheckUserIdentityResponse
-    */
+     */
     public CheckUserIdentityResponse checkUserIdentity(CheckUserIdentityRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.checkUserIdentity);
     }
@@ -88,7 +88,7 @@ public class BssintlClient {
      *
      * @param CreateEnterpriseRealnameAuthenticationRequest 请求对象
      * @return CreateEnterpriseRealnameAuthenticationResponse
-    */
+     */
     public CreateEnterpriseRealnameAuthenticationResponse createEnterpriseRealnameAuthentication(CreateEnterpriseRealnameAuthenticationRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.createEnterpriseRealnameAuthentication);
     }
@@ -99,7 +99,7 @@ public class BssintlClient {
      *
      * @param CreatePersonalRealnameAuthRequest 请求对象
      * @return CreatePersonalRealnameAuthResponse
-    */
+     */
     public CreatePersonalRealnameAuthResponse createPersonalRealnameAuth(CreatePersonalRealnameAuthRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.createPersonalRealnameAuth);
     }
@@ -110,7 +110,7 @@ public class BssintlClient {
      *
      * @param CreateSubCustomerRequest 请求对象
      * @return CreateSubCustomerResponse
-    */
+     */
     public CreateSubCustomerResponse createSubCustomer(CreateSubCustomerRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.createSubCustomer);
     }
@@ -121,7 +121,7 @@ public class BssintlClient {
      *
      * @param FreezeSubCustomersRequest 请求对象
      * @return FreezeSubCustomersResponse
-    */
+     */
     public FreezeSubCustomersResponse freezeSubCustomers(FreezeSubCustomersRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.freezeSubCustomers);
     }
@@ -132,7 +132,7 @@ public class BssintlClient {
      *
      * @param ListCustomerOnDemandResourcesRequest 请求对象
      * @return ListCustomerOnDemandResourcesResponse
-    */
+     */
     public ListCustomerOnDemandResourcesResponse listCustomerOnDemandResources(ListCustomerOnDemandResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listCustomerOnDemandResources);
     }
@@ -143,7 +143,7 @@ public class BssintlClient {
      *
      * @param ListCustomerOrdersRequest 请求对象
      * @return ListCustomerOrdersResponse
-    */
+     */
     public ListCustomerOrdersResponse listCustomerOrders(ListCustomerOrdersRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listCustomerOrders);
     }
@@ -154,7 +154,7 @@ public class BssintlClient {
      *
      * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
      * @return ListCustomerselfResourceRecordDetailsResponse
-    */
+     */
     public ListCustomerselfResourceRecordDetailsResponse listCustomerselfResourceRecordDetails(ListCustomerselfResourceRecordDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listCustomerselfResourceRecordDetails);
     }
@@ -165,7 +165,7 @@ public class BssintlClient {
      *
      * @param ListCustomerselfResourceRecordsRequest 请求对象
      * @return ListCustomerselfResourceRecordsResponse
-    */
+     */
     public ListCustomerselfResourceRecordsResponse listCustomerselfResourceRecords(ListCustomerselfResourceRecordsRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listCustomerselfResourceRecords);
     }
@@ -176,7 +176,7 @@ public class BssintlClient {
      *
      * @param ListOnDemandResourceRatingsRequest 请求对象
      * @return ListOnDemandResourceRatingsResponse
-    */
+     */
     public ListOnDemandResourceRatingsResponse listOnDemandResourceRatings(ListOnDemandResourceRatingsRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listOnDemandResourceRatings);
     }
@@ -187,7 +187,7 @@ public class BssintlClient {
      *
      * @param ListOrderCouponsByOrderIdRequest 请求对象
      * @return ListOrderCouponsByOrderIdResponse
-    */
+     */
     public ListOrderCouponsByOrderIdResponse listOrderCouponsByOrderId(ListOrderCouponsByOrderIdRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listOrderCouponsByOrderId);
     }
@@ -198,7 +198,7 @@ public class BssintlClient {
      *
      * @param ListPayPerUseCustomerResourcesRequest 请求对象
      * @return ListPayPerUseCustomerResourcesResponse
-    */
+     */
     public ListPayPerUseCustomerResourcesResponse listPayPerUseCustomerResources(ListPayPerUseCustomerResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listPayPerUseCustomerResources);
     }
@@ -209,7 +209,7 @@ public class BssintlClient {
      *
      * @param ListRateOnPeriodDetailRequest 请求对象
      * @return ListRateOnPeriodDetailResponse
-    */
+     */
     public ListRateOnPeriodDetailResponse listRateOnPeriodDetail(ListRateOnPeriodDetailRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listRateOnPeriodDetail);
     }
@@ -220,7 +220,7 @@ public class BssintlClient {
      *
      * @param ListResourceUsagesRequest 请求对象
      * @return ListResourceUsagesResponse
-    */
+     */
     public ListResourceUsagesResponse listResourceUsages(ListResourceUsagesRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceUsages);
     }
@@ -231,7 +231,7 @@ public class BssintlClient {
      *
      * @param ListSubCustomerCouponsRequest 请求对象
      * @return ListSubCustomerCouponsResponse
-    */
+     */
     public ListSubCustomerCouponsResponse listSubCustomerCoupons(ListSubCustomerCouponsRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listSubCustomerCoupons);
     }
@@ -242,7 +242,7 @@ public class BssintlClient {
      *
      * @param ListSubCustomersRequest 请求对象
      * @return ListSubCustomersResponse
-    */
+     */
     public ListSubCustomersResponse listSubCustomers(ListSubCustomersRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listSubCustomers);
     }
@@ -253,7 +253,7 @@ public class BssintlClient {
      *
      * @param PayOrdersRequest 请求对象
      * @return PayOrdersResponse
-    */
+     */
     public PayOrdersResponse payOrders(PayOrdersRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.payOrders);
     }
@@ -264,7 +264,7 @@ public class BssintlClient {
      *
      * @param RenewalResourcesRequest 请求对象
      * @return RenewalResourcesResponse
-    */
+     */
     public RenewalResourcesResponse renewalResources(RenewalResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.renewalResources);
     }
@@ -275,7 +275,7 @@ public class BssintlClient {
      *
      * @param SendVerificationMessageCodeRequest 请求对象
      * @return SendVerificationMessageCodeResponse
-    */
+     */
     public SendVerificationMessageCodeResponse sendVerificationMessageCode(SendVerificationMessageCodeRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.sendVerificationMessageCode);
     }
@@ -286,7 +286,7 @@ public class BssintlClient {
      *
      * @param ShowCustomerMonthlySumRequest 请求对象
      * @return ShowCustomerMonthlySumResponse
-    */
+     */
     public ShowCustomerMonthlySumResponse showCustomerMonthlySum(ShowCustomerMonthlySumRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.showCustomerMonthlySum);
     }
@@ -297,7 +297,7 @@ public class BssintlClient {
      *
      * @param ShowCustomerOrderDetailsRequest 请求对象
      * @return ShowCustomerOrderDetailsResponse
-    */
+     */
     public ShowCustomerOrderDetailsResponse showCustomerOrderDetails(ShowCustomerOrderDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.showCustomerOrderDetails);
     }
@@ -308,7 +308,7 @@ public class BssintlClient {
      *
      * @param ShowRealnameAuthenticationReviewResultRequest 请求对象
      * @return ShowRealnameAuthenticationReviewResultResponse
-    */
+     */
     public ShowRealnameAuthenticationReviewResultResponse showRealnameAuthenticationReviewResult(ShowRealnameAuthenticationReviewResultRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.showRealnameAuthenticationReviewResult);
     }
@@ -319,7 +319,7 @@ public class BssintlClient {
      *
      * @param ShowRefundOrderDetailsRequest 请求对象
      * @return ShowRefundOrderDetailsResponse
-    */
+     */
     public ShowRefundOrderDetailsResponse showRefundOrderDetails(ShowRefundOrderDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.showRefundOrderDetails);
     }
@@ -330,7 +330,7 @@ public class BssintlClient {
      *
      * @param ShowSubCustomerBudgetRequest 请求对象
      * @return ShowSubCustomerBudgetResponse
-    */
+     */
     public ShowSubCustomerBudgetResponse showSubCustomerBudget(ShowSubCustomerBudgetRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.showSubCustomerBudget);
     }
@@ -341,7 +341,7 @@ public class BssintlClient {
      *
      * @param UnfreezeSubCustomersRequest 请求对象
      * @return UnfreezeSubCustomersResponse
-    */
+     */
     public UnfreezeSubCustomersResponse unfreezeSubCustomers(UnfreezeSubCustomersRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.unfreezeSubCustomers);
     }
@@ -352,7 +352,7 @@ public class BssintlClient {
      *
      * @param UpdateSubCustomerBudgetRequest 请求对象
      * @return UpdateSubCustomerBudgetResponse
-    */
+     */
     public UpdateSubCustomerBudgetResponse updateSubCustomerBudget(UpdateSubCustomerBudgetRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.updateSubCustomerBudget);
     }

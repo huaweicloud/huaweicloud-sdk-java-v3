@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.ResourcesItems;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -17,18 +16,6 @@ import java.util.Objects;
  */
 public class Resource  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
-    private String value;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,46 +40,6 @@ public class Resource  {
     @JsonProperty(value="quota")
     
     private Integer quota;
-
-    public Resource withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Resource withValue(String value) {
-        this.value = value;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 值
-     * @return value
-     */
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
 
     public Resource withType(String type) {
         this.type = type;
@@ -182,23 +129,19 @@ public class Resource  {
             return false;
         }
         Resource resource = (Resource) o;
-        return Objects.equals(this.name, resource.name) &&
-            Objects.equals(this.value, resource.value) &&
-            Objects.equals(this.type, resource.type) &&
+        return Objects.equals(this.type, resource.type) &&
             Objects.equals(this.used, resource.used) &&
             Objects.equals(this.unit, resource.unit) &&
             Objects.equals(this.quota, resource.quota);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, value, type, used, unit, quota);
+        return Objects.hash(type, used, unit, quota);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Resource {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    used: ").append(toIndentedString(used)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");

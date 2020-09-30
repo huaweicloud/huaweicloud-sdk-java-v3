@@ -46,7 +46,7 @@ public class Quotas  {
     }
 
     /**
-     * 
+     * 资源配额列表。
      * @return resources
      */
     public List<Resource> getResources() {

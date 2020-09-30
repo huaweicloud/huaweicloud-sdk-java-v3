@@ -22,7 +22,7 @@ public class MpcClient {
      *
      * @param CreateAnimatedGraphicsTaskRequest 请求对象
      * @return CreateAnimatedGraphicsTaskResponse
-    */
+     */
     public CreateAnimatedGraphicsTaskResponse createAnimatedGraphicsTask(CreateAnimatedGraphicsTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createAnimatedGraphicsTask);
     }
@@ -33,7 +33,7 @@ public class MpcClient {
      *
      * @param DeleteAnimatedGraphicsTaskRequest 请求对象
      * @return DeleteAnimatedGraphicsTaskResponse
-    */
+     */
     public DeleteAnimatedGraphicsTaskResponse deleteAnimatedGraphicsTask(DeleteAnimatedGraphicsTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteAnimatedGraphicsTask);
     }
@@ -44,7 +44,7 @@ public class MpcClient {
      *
      * @param ListAnimatedGraphicsTaskRequest 请求对象
      * @return ListAnimatedGraphicsTaskResponse
-    */
+     */
     public ListAnimatedGraphicsTaskResponse listAnimatedGraphicsTask(ListAnimatedGraphicsTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listAnimatedGraphicsTask);
     }
@@ -55,7 +55,7 @@ public class MpcClient {
      *
      * @param CreateEncryptTaskRequest 请求对象
      * @return CreateEncryptTaskResponse
-    */
+     */
     public CreateEncryptTaskResponse createEncryptTask(CreateEncryptTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createEncryptTask);
     }
@@ -66,7 +66,7 @@ public class MpcClient {
      *
      * @param DeleteEncryptTaskRequest 请求对象
      * @return DeleteEncryptTaskResponse
-    */
+     */
     public DeleteEncryptTaskResponse deleteEncryptTask(DeleteEncryptTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteEncryptTask);
     }
@@ -77,7 +77,7 @@ public class MpcClient {
      *
      * @param ListEncryptTaskRequest 请求对象
      * @return ListEncryptTaskResponse
-    */
+     */
     public ListEncryptTaskResponse listEncryptTask(ListEncryptTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listEncryptTask);
     }
@@ -88,7 +88,7 @@ public class MpcClient {
      *
      * @param CreateExtractTaskRequest 请求对象
      * @return CreateExtractTaskResponse
-    */
+     */
     public CreateExtractTaskResponse createExtractTask(CreateExtractTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createExtractTask);
     }
@@ -99,7 +99,7 @@ public class MpcClient {
      *
      * @param DeleteExtractTaskRequest 请求对象
      * @return DeleteExtractTaskResponse
-    */
+     */
     public DeleteExtractTaskResponse deleteExtractTask(DeleteExtractTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteExtractTask);
     }
@@ -110,7 +110,7 @@ public class MpcClient {
      *
      * @param ListExtractTaskRequest 请求对象
      * @return ListExtractTaskResponse
-    */
+     */
     public ListExtractTaskResponse listExtractTask(ListExtractTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listExtractTask);
     }
@@ -121,7 +121,7 @@ public class MpcClient {
      *
      * @param ListTranscodeDetailRequest 请求对象
      * @return ListTranscodeDetailResponse
-    */
+     */
     public ListTranscodeDetailResponse listTranscodeDetail(ListTranscodeDetailRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listTranscodeDetail);
     }
@@ -132,7 +132,7 @@ public class MpcClient {
      *
      * @param CancelRemuxTaskRequest 请求对象
      * @return CancelRemuxTaskResponse
-    */
+     */
     public CancelRemuxTaskResponse cancelRemuxTask(CancelRemuxTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.cancelRemuxTask);
     }
@@ -143,7 +143,7 @@ public class MpcClient {
      *
      * @param CreateRemuxTaskRequest 请求对象
      * @return CreateRemuxTaskResponse
-    */
+     */
     public CreateRemuxTaskResponse createRemuxTask(CreateRemuxTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createRemuxTask);
     }
@@ -154,7 +154,7 @@ public class MpcClient {
      *
      * @param CreateRetryRemuxTaskRequest 请求对象
      * @return CreateRetryRemuxTaskResponse
-    */
+     */
     public CreateRetryRemuxTaskResponse createRetryRemuxTask(CreateRetryRemuxTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createRetryRemuxTask);
     }
@@ -165,7 +165,7 @@ public class MpcClient {
      *
      * @param DeleteRemuxTaskRequest 请求对象
      * @return DeleteRemuxTaskResponse
-    */
+     */
     public DeleteRemuxTaskResponse deleteRemuxTask(DeleteRemuxTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteRemuxTask);
     }
@@ -176,7 +176,7 @@ public class MpcClient {
      *
      * @param ListRemuxTaskRequest 请求对象
      * @return ListRemuxTaskResponse
-    */
+     */
     public ListRemuxTaskResponse listRemuxTask(ListRemuxTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listRemuxTask);
     }
@@ -187,7 +187,7 @@ public class MpcClient {
      *
      * @param CreateTemplateGroupRequest 请求对象
      * @return CreateTemplateGroupResponse
-    */
+     */
     public CreateTemplateGroupResponse createTemplateGroup(CreateTemplateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createTemplateGroup);
     }
@@ -198,7 +198,7 @@ public class MpcClient {
      *
      * @param DeleteTemplateGroupRequest 请求对象
      * @return DeleteTemplateGroupResponse
-    */
+     */
     public DeleteTemplateGroupResponse deleteTemplateGroup(DeleteTemplateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteTemplateGroup);
     }
@@ -209,7 +209,7 @@ public class MpcClient {
      *
      * @param ListTemplateGroupRequest 请求对象
      * @return ListTemplateGroupResponse
-    */
+     */
     public ListTemplateGroupResponse listTemplateGroup(ListTemplateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listTemplateGroup);
     }
@@ -220,7 +220,7 @@ public class MpcClient {
      *
      * @param UpdateTemplateGroupRequest 请求对象
      * @return UpdateTemplateGroupResponse
-    */
+     */
     public UpdateTemplateGroupResponse updateTemplateGroup(UpdateTemplateGroupRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.updateTemplateGroup);
     }
@@ -231,7 +231,7 @@ public class MpcClient {
      *
      * @param CreateThumbnailsTaskRequest 请求对象
      * @return CreateThumbnailsTaskResponse
-    */
+     */
     public CreateThumbnailsTaskResponse createThumbnailsTask(CreateThumbnailsTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createThumbnailsTask);
     }
@@ -242,7 +242,7 @@ public class MpcClient {
      *
      * @param DeleteThumbnailsTaskRequest 请求对象
      * @return DeleteThumbnailsTaskResponse
-    */
+     */
     public DeleteThumbnailsTaskResponse deleteThumbnailsTask(DeleteThumbnailsTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteThumbnailsTask);
     }
@@ -253,7 +253,7 @@ public class MpcClient {
      *
      * @param ListThumbnailsTaskRequest 请求对象
      * @return ListThumbnailsTaskResponse
-    */
+     */
     public ListThumbnailsTaskResponse listThumbnailsTask(ListThumbnailsTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listThumbnailsTask);
     }
@@ -264,7 +264,7 @@ public class MpcClient {
      *
      * @param CreateTranscodingTaskRequest 请求对象
      * @return CreateTranscodingTaskResponse
-    */
+     */
     public CreateTranscodingTaskResponse createTranscodingTask(CreateTranscodingTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createTranscodingTask);
     }
@@ -275,7 +275,7 @@ public class MpcClient {
      *
      * @param DeleteTranscodingTaskRequest 请求对象
      * @return DeleteTranscodingTaskResponse
-    */
+     */
     public DeleteTranscodingTaskResponse deleteTranscodingTask(DeleteTranscodingTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteTranscodingTask);
     }
@@ -286,7 +286,7 @@ public class MpcClient {
      *
      * @param ListTranscodingTaskRequest 请求对象
      * @return ListTranscodingTaskResponse
-    */
+     */
     public ListTranscodingTaskResponse listTranscodingTask(ListTranscodingTaskRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listTranscodingTask);
     }
@@ -297,7 +297,7 @@ public class MpcClient {
      *
      * @param CreateTransTemplateRequest 请求对象
      * @return CreateTransTemplateResponse
-    */
+     */
     public CreateTransTemplateResponse createTransTemplate(CreateTransTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createTransTemplate);
     }
@@ -308,7 +308,7 @@ public class MpcClient {
      *
      * @param DeleteTemplateRequest 请求对象
      * @return DeleteTemplateResponse
-    */
+     */
     public DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteTemplate);
     }
@@ -319,7 +319,7 @@ public class MpcClient {
      *
      * @param ListTemplateRequest 请求对象
      * @return ListTemplateResponse
-    */
+     */
     public ListTemplateResponse listTemplate(ListTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listTemplate);
     }
@@ -330,7 +330,7 @@ public class MpcClient {
      *
      * @param UpdateTransTemplateRequest 请求对象
      * @return UpdateTransTemplateResponse
-    */
+     */
     public UpdateTransTemplateResponse updateTransTemplate(UpdateTransTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.updateTransTemplate);
     }
@@ -341,7 +341,7 @@ public class MpcClient {
      *
      * @param CreateWatermarkTemplateRequest 请求对象
      * @return CreateWatermarkTemplateResponse
-    */
+     */
     public CreateWatermarkTemplateResponse createWatermarkTemplate(CreateWatermarkTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.createWatermarkTemplate);
     }
@@ -352,7 +352,7 @@ public class MpcClient {
      *
      * @param DeleteWatermarkTemplateRequest 请求对象
      * @return DeleteWatermarkTemplateResponse
-    */
+     */
     public DeleteWatermarkTemplateResponse deleteWatermarkTemplate(DeleteWatermarkTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.deleteWatermarkTemplate);
     }
@@ -363,7 +363,7 @@ public class MpcClient {
      *
      * @param ListWatermarkTemplateRequest 请求对象
      * @return ListWatermarkTemplateResponse
-    */
+     */
     public ListWatermarkTemplateResponse listWatermarkTemplate(ListWatermarkTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.listWatermarkTemplate);
     }
@@ -374,7 +374,7 @@ public class MpcClient {
      *
      * @param UpdateWatermarkTemplateRequest 请求对象
      * @return UpdateWatermarkTemplateResponse
-    */
+     */
     public UpdateWatermarkTemplateResponse updateWatermarkTemplate(UpdateWatermarkTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, MpcMeta.updateWatermarkTemplate);
     }

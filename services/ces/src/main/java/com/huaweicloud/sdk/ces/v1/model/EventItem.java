@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * 请求参数。
  */
 public class EventItem  {
 

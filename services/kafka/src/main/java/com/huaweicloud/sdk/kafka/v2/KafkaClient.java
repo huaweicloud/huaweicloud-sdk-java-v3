@@ -22,7 +22,7 @@ public class KafkaClient {
      *
      * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
      * @return BatchCreateOrDeleteInstanceTagResponse
-    */
+     */
     public BatchCreateOrDeleteInstanceTagResponse batchCreateOrDeleteInstanceTag(BatchCreateOrDeleteInstanceTagRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.batchCreateOrDeleteInstanceTag);
     }
@@ -33,7 +33,7 @@ public class KafkaClient {
      *
      * @param BatchDeleteInstanceTopicRequest 请求对象
      * @return BatchDeleteInstanceTopicResponse
-    */
+     */
     public BatchDeleteInstanceTopicResponse batchDeleteInstanceTopic(BatchDeleteInstanceTopicRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.batchDeleteInstanceTopic);
     }
@@ -44,7 +44,7 @@ public class KafkaClient {
      *
      * @param BatchRestartOrDeleteInstancesRequest 请求对象
      * @return BatchRestartOrDeleteInstancesResponse
-    */
+     */
     public BatchRestartOrDeleteInstancesResponse batchRestartOrDeleteInstances(BatchRestartOrDeleteInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.batchRestartOrDeleteInstances);
     }
@@ -55,7 +55,7 @@ public class KafkaClient {
      *
      * @param CreateConnectorRequest 请求对象
      * @return CreateConnectorResponse
-    */
+     */
     public CreateConnectorResponse createConnector(CreateConnectorRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.createConnector);
     }
@@ -66,7 +66,7 @@ public class KafkaClient {
      *
      * @param CreateInstanceTopicRequest 请求对象
      * @return CreateInstanceTopicResponse
-    */
+     */
     public CreateInstanceTopicResponse createInstanceTopic(CreateInstanceTopicRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.createInstanceTopic);
     }
@@ -77,7 +77,7 @@ public class KafkaClient {
      *
      * @param CreatePartitionRequest 请求对象
      * @return CreatePartitionResponse
-    */
+     */
     public CreatePartitionResponse createPartition(CreatePartitionRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.createPartition);
     }
@@ -88,7 +88,7 @@ public class KafkaClient {
      *
      * @param CreatePostPaidInstanceRequest 请求对象
      * @return CreatePostPaidInstanceResponse
-    */
+     */
     public CreatePostPaidInstanceResponse createPostPaidInstance(CreatePostPaidInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.createPostPaidInstance);
     }
@@ -99,7 +99,7 @@ public class KafkaClient {
      *
      * @param CreateSinkTaskRequest 请求对象
      * @return CreateSinkTaskResponse
-    */
+     */
     public CreateSinkTaskResponse createSinkTask(CreateSinkTaskRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.createSinkTask);
     }
@@ -110,7 +110,7 @@ public class KafkaClient {
      *
      * @param DeleteBackgroundTaskRequest 请求对象
      * @return DeleteBackgroundTaskResponse
-    */
+     */
     public DeleteBackgroundTaskResponse deleteBackgroundTask(DeleteBackgroundTaskRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.deleteBackgroundTask);
     }
@@ -121,7 +121,7 @@ public class KafkaClient {
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
-    */
+     */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.deleteInstance);
     }
@@ -132,7 +132,7 @@ public class KafkaClient {
      *
      * @param DeleteSinkTaskRequest 请求对象
      * @return DeleteSinkTaskResponse
-    */
+     */
     public DeleteSinkTaskResponse deleteSinkTask(DeleteSinkTaskRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.deleteSinkTask);
     }
@@ -143,7 +143,7 @@ public class KafkaClient {
      *
      * @param ListAvailableZonesRequest 请求对象
      * @return ListAvailableZonesResponse
-    */
+     */
     public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.listAvailableZones);
     }
@@ -154,7 +154,7 @@ public class KafkaClient {
      *
      * @param ListBackgroundTasksRequest 请求对象
      * @return ListBackgroundTasksResponse
-    */
+     */
     public ListBackgroundTasksResponse listBackgroundTasks(ListBackgroundTasksRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.listBackgroundTasks);
     }
@@ -165,7 +165,7 @@ public class KafkaClient {
      *
      * @param ListInstanceTopicsRequest 请求对象
      * @return ListInstanceTopicsResponse
-    */
+     */
     public ListInstanceTopicsResponse listInstanceTopics(ListInstanceTopicsRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.listInstanceTopics);
     }
@@ -176,7 +176,7 @@ public class KafkaClient {
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
-    */
+     */
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.listInstances);
     }
@@ -187,7 +187,7 @@ public class KafkaClient {
      *
      * @param ListProductsRequest 请求对象
      * @return ListProductsResponse
-    */
+     */
     public ListProductsResponse listProducts(ListProductsRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.listProducts);
     }
@@ -198,7 +198,7 @@ public class KafkaClient {
      *
      * @param ListSinkTasksRequest 请求对象
      * @return ListSinkTasksResponse
-    */
+     */
     public ListSinkTasksResponse listSinkTasks(ListSinkTasksRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.listSinkTasks);
     }
@@ -209,7 +209,7 @@ public class KafkaClient {
      *
      * @param ResetManagerPasswordRequest 请求对象
      * @return ResetManagerPasswordResponse
-    */
+     */
     public ResetManagerPasswordResponse resetManagerPassword(ResetManagerPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.resetManagerPassword);
     }
@@ -220,7 +220,7 @@ public class KafkaClient {
      *
      * @param ResetMessageOffsetRequest 请求对象
      * @return ResetMessageOffsetResponse
-    */
+     */
     public ResetMessageOffsetResponse resetMessageOffset(ResetMessageOffsetRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.resetMessageOffset);
     }
@@ -231,7 +231,7 @@ public class KafkaClient {
      *
      * @param ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
-    */
+     */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.resetPassword);
     }
@@ -242,7 +242,7 @@ public class KafkaClient {
      *
      * @param ResizeInstanceRequest 请求对象
      * @return ResizeInstanceResponse
-    */
+     */
     public ResizeInstanceResponse resizeInstance(ResizeInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.resizeInstance);
     }
@@ -253,7 +253,7 @@ public class KafkaClient {
      *
      * @param RestartManagerRequest 请求对象
      * @return RestartManagerResponse
-    */
+     */
     public RestartManagerResponse restartManager(RestartManagerRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.restartManager);
     }
@@ -264,7 +264,7 @@ public class KafkaClient {
      *
      * @param ShowBackgroundTaskRequest 请求对象
      * @return ShowBackgroundTaskResponse
-    */
+     */
     public ShowBackgroundTaskResponse showBackgroundTask(ShowBackgroundTaskRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showBackgroundTask);
     }
@@ -275,7 +275,7 @@ public class KafkaClient {
      *
      * @param ShowCesHierarchyRequest 请求对象
      * @return ShowCesHierarchyResponse
-    */
+     */
     public ShowCesHierarchyResponse showCesHierarchy(ShowCesHierarchyRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showCesHierarchy);
     }
@@ -286,7 +286,7 @@ public class KafkaClient {
      *
      * @param ShowClusterRequest 请求对象
      * @return ShowClusterResponse
-    */
+     */
     public ShowClusterResponse showCluster(ShowClusterRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showCluster);
     }
@@ -297,7 +297,7 @@ public class KafkaClient {
      *
      * @param ShowCoordinatorsRequest 请求对象
      * @return ShowCoordinatorsResponse
-    */
+     */
     public ShowCoordinatorsResponse showCoordinators(ShowCoordinatorsRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showCoordinators);
     }
@@ -308,7 +308,7 @@ public class KafkaClient {
      *
      * @param ShowGroupsRequest 请求对象
      * @return ShowGroupsResponse
-    */
+     */
     public ShowGroupsResponse showGroups(ShowGroupsRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showGroups);
     }
@@ -319,7 +319,7 @@ public class KafkaClient {
      *
      * @param ShowInstanceRequest 请求对象
      * @return ShowInstanceResponse
-    */
+     */
     public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showInstance);
     }
@@ -330,7 +330,7 @@ public class KafkaClient {
      *
      * @param ShowInstanceExtendProductInfoRequest 请求对象
      * @return ShowInstanceExtendProductInfoResponse
-    */
+     */
     public ShowInstanceExtendProductInfoResponse showInstanceExtendProductInfo(ShowInstanceExtendProductInfoRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceExtendProductInfo);
     }
@@ -341,7 +341,7 @@ public class KafkaClient {
      *
      * @param ShowInstanceTagsRequest 请求对象
      * @return ShowInstanceTagsResponse
-    */
+     */
     public ShowInstanceTagsResponse showInstanceTags(ShowInstanceTagsRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceTags);
     }
@@ -352,7 +352,7 @@ public class KafkaClient {
      *
      * @param ShowInstanceTopicDetailRequest 请求对象
      * @return ShowInstanceTopicDetailResponse
-    */
+     */
     public ShowInstanceTopicDetailResponse showInstanceTopicDetail(ShowInstanceTopicDetailRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceTopicDetail);
     }
@@ -363,7 +363,7 @@ public class KafkaClient {
      *
      * @param ShowMaintainWindowsRequest 请求对象
      * @return ShowMaintainWindowsResponse
-    */
+     */
     public ShowMaintainWindowsResponse showMaintainWindows(ShowMaintainWindowsRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showMaintainWindows);
     }
@@ -374,7 +374,7 @@ public class KafkaClient {
      *
      * @param ShowMessagesRequest 请求对象
      * @return ShowMessagesResponse
-    */
+     */
     public ShowMessagesResponse showMessages(ShowMessagesRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showMessages);
     }
@@ -385,7 +385,7 @@ public class KafkaClient {
      *
      * @param ShowPartitionBeginningMessageRequest 请求对象
      * @return ShowPartitionBeginningMessageResponse
-    */
+     */
     public ShowPartitionBeginningMessageResponse showPartitionBeginningMessage(ShowPartitionBeginningMessageRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showPartitionBeginningMessage);
     }
@@ -396,7 +396,7 @@ public class KafkaClient {
      *
      * @param ShowPartitionEndMessageRequest 请求对象
      * @return ShowPartitionEndMessageResponse
-    */
+     */
     public ShowPartitionEndMessageResponse showPartitionEndMessage(ShowPartitionEndMessageRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showPartitionEndMessage);
     }
@@ -407,7 +407,7 @@ public class KafkaClient {
      *
      * @param ShowPartitionMessageRequest 请求对象
      * @return ShowPartitionMessageResponse
-    */
+     */
     public ShowPartitionMessageResponse showPartitionMessage(ShowPartitionMessageRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showPartitionMessage);
     }
@@ -418,7 +418,7 @@ public class KafkaClient {
      *
      * @param ShowProjectTagsRequest 请求对象
      * @return ShowProjectTagsResponse
-    */
+     */
     public ShowProjectTagsResponse showProjectTags(ShowProjectTagsRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showProjectTags);
     }
@@ -429,7 +429,7 @@ public class KafkaClient {
      *
      * @param ShowSinkTaskDetailRequest 请求对象
      * @return ShowSinkTaskDetailResponse
-    */
+     */
     public ShowSinkTaskDetailResponse showSinkTaskDetail(ShowSinkTaskDetailRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.showSinkTaskDetail);
     }
@@ -440,7 +440,7 @@ public class KafkaClient {
      *
      * @param UpdateInstanceRequest 请求对象
      * @return UpdateInstanceResponse
-    */
+     */
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstance);
     }
@@ -451,7 +451,7 @@ public class KafkaClient {
      *
      * @param UpdateInstanceAutoCreateTopicRequest 请求对象
      * @return UpdateInstanceAutoCreateTopicResponse
-    */
+     */
     public UpdateInstanceAutoCreateTopicResponse updateInstanceAutoCreateTopic(UpdateInstanceAutoCreateTopicRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceAutoCreateTopic);
     }
@@ -462,7 +462,7 @@ public class KafkaClient {
      *
      * @param UpdateInstanceCrossVPCIPRequest 请求对象
      * @return UpdateInstanceCrossVPCIPResponse
-    */
+     */
     public UpdateInstanceCrossVPCIPResponse updateInstanceCrossVPCIP(UpdateInstanceCrossVPCIPRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceCrossVPCIP);
     }
@@ -473,7 +473,7 @@ public class KafkaClient {
      *
      * @param UpdateInstanceTopicRequest 请求对象
      * @return UpdateInstanceTopicResponse
-    */
+     */
     public UpdateInstanceTopicResponse updateInstanceTopic(UpdateInstanceTopicRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceTopic);
     }
@@ -484,7 +484,7 @@ public class KafkaClient {
      *
      * @param UpdateSinkTaskQuotaRequest 请求对象
      * @return UpdateSinkTaskQuotaResponse
-    */
+     */
     public UpdateSinkTaskQuotaResponse updateSinkTaskQuota(UpdateSinkTaskQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.updateSinkTaskQuota);
     }
@@ -495,7 +495,7 @@ public class KafkaClient {
      *
      * @param UpdateTopicReplicaRequest 请求对象
      * @return UpdateTopicReplicaResponse
-    */
+     */
     public UpdateTopicReplicaResponse updateTopicReplica(UpdateTopicReplicaRequest request) {
         return hcClient.syncInvokeHttp(request, KafkaMeta.updateTopicReplica);
     }

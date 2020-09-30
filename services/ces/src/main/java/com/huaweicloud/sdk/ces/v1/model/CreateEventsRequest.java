@@ -49,7 +49,7 @@ public class CreateEventsRequest  {
     }
 
     /**
-     * Get body
+     * 上报自定义事件。请求参数。
      * @return body
      */
     public List<EventItem> getBody() {
