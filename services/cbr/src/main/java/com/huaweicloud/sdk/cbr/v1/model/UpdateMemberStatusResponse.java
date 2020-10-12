@@ -5,15 +5,12 @@ package com.huaweicloud.sdk.cbr.v1.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
+import com.huaweicloud.sdk.cbr.v1.model.Member;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,297 +19,38 @@ import java.util.Objects;
  */
 public class UpdateMemberStatusResponse extends SdkResponse {
 
-    /**
-     * 共享状态
-     */
-    public static final class StatusEnum {
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="member")
+    
+    private Member member = null;
+
+    public UpdateMemberStatusResponse withMember(Member member) {
+        this.member = member;
+        return this;
+    }
+
+    public UpdateMemberStatusResponse withMember(Consumer<Member> memberSetter) {
+        if(this.member == null ){
+            this.member = new Member();
+            memberSetter.accept(this.member);
+        }
         
-        /**
-         * Enum PENDING for value: "pending"
-         */
-        public static final StatusEnum PENDING = new StatusEnum("pending");
-        
-        /**
-         * Enum ACCEPTED for value: "accepted"
-         */
-        public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
-        
-        /**
-         * Enum REJECTED for value: "rejected"
-         */
-        public static final StatusEnum REJECTED = new StatusEnum("rejected");
-        
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("pending", PENDING);
-            map.put("accepted", ACCEPTED);
-            map.put("rejected", REJECTED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
-    private StatusEnum status;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
-    private String createdAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
-    private String updatedAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
-    private String backupId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
-    private String imageId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dest_project_id")
-    
-    private String destProjectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
-    private String vaultId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
-    public UpdateMemberStatusResponse withStatus(StatusEnum status) {
-        this.status = status;
         return this;
     }
 
-    
-
 
     /**
-     * 共享状态
-     * @return status
+     * Get member
+     * @return member
      */
-    public StatusEnum getStatus() {
-        return status;
+    public Member getMember() {
+        return member;
     }
 
-    public void setStatus(StatusEnum status) {
-        this.status = status;
-    }
-
-    public UpdateMemberStatusResponse withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 共享时间，例如:\"2020-02-05T10:38:34.209782\"
-     * @return createdAt
-     */
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public UpdateMemberStatusResponse withUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 更新时间，例如:\"2020-02-05T10:38:34.209782\"
-     * @return updatedAt
-     */
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public UpdateMemberStatusResponse withBackupId(String backupId) {
-        this.backupId = backupId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 备份副本id
-     * @return backupId
-     */
-    public String getBackupId() {
-        return backupId;
-    }
-
-    public void setBackupId(String backupId) {
-        this.backupId = backupId;
-    }
-
-    public UpdateMemberStatusResponse withImageId(String imageId) {
-        this.imageId = imageId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 接受的共享备份副本注册的镜像id
-     * @return imageId
-     */
-    public String getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
-    }
-
-    public UpdateMemberStatusResponse withDestProjectId(String destProjectId) {
-        this.destProjectId = destProjectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 接受备份共享的项目id
-     * @return destProjectId
-     */
-    public String getDestProjectId() {
-        return destProjectId;
-    }
-
-    public void setDestProjectId(String destProjectId) {
-        this.destProjectId = destProjectId;
-    }
-
-    public UpdateMemberStatusResponse withVaultId(String vaultId) {
-        this.vaultId = vaultId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 目标端接受共享备份的存储库id
-     * @return vaultId
-     */
-    public String getVaultId() {
-        return vaultId;
-    }
-
-    public void setVaultId(String vaultId) {
-        this.vaultId = vaultId;
-    }
-
-    public UpdateMemberStatusResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 共享记录id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public void setMember(Member member) {
+        this.member = member;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -323,31 +61,17 @@ public class UpdateMemberStatusResponse extends SdkResponse {
             return false;
         }
         UpdateMemberStatusResponse updateMemberStatusResponse = (UpdateMemberStatusResponse) o;
-        return Objects.equals(this.status, updateMemberStatusResponse.status) &&
-            Objects.equals(this.createdAt, updateMemberStatusResponse.createdAt) &&
-            Objects.equals(this.updatedAt, updateMemberStatusResponse.updatedAt) &&
-            Objects.equals(this.backupId, updateMemberStatusResponse.backupId) &&
-            Objects.equals(this.imageId, updateMemberStatusResponse.imageId) &&
-            Objects.equals(this.destProjectId, updateMemberStatusResponse.destProjectId) &&
-            Objects.equals(this.vaultId, updateMemberStatusResponse.vaultId) &&
-            Objects.equals(this.id, updateMemberStatusResponse.id);
+        return Objects.equals(this.member, updateMemberStatusResponse.member);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(status, createdAt, updatedAt, backupId, imageId, destProjectId, vaultId, id);
+        return Objects.hash(member);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateMemberStatusResponse {\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
-        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
-        sb.append("    destProjectId: ").append(toIndentedString(destProjectId)).append("\n");
-        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    member: ").append(toIndentedString(member)).append("\n");
         sb.append("}");
         return sb.toString();
     }

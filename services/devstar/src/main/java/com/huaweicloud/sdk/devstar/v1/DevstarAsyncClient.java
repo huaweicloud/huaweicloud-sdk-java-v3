@@ -15,7 +15,7 @@ public class DevstarAsyncClient {
     }
 
     public static ClientBuilder<DevstarAsyncClient> newBuilder() {
-        return new ClientBuilder<>(DevstarAsyncClient::new);
+        return new ClientBuilder<>(DevstarAsyncClient::new, "GlobalCredentials");
     }
 
 

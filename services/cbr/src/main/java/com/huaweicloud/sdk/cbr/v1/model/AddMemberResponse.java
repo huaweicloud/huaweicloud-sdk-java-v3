@@ -28,6 +28,12 @@ public class AddMemberResponse extends SdkResponse {
     
     private List<Member> members = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    private Integer count;
+
     public AddMemberResponse withMembers(List<Member> members) {
         this.members = members;
         return this;
@@ -61,6 +67,26 @@ public class AddMemberResponse extends SdkResponse {
     public void setMembers(List<Member> members) {
         this.members = members;
     }
+
+    public AddMemberResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -70,17 +96,19 @@ public class AddMemberResponse extends SdkResponse {
             return false;
         }
         AddMemberResponse addMemberResponse = (AddMemberResponse) o;
-        return Objects.equals(this.members, addMemberResponse.members);
+        return Objects.equals(this.members, addMemberResponse.members) &&
+            Objects.equals(this.count, addMemberResponse.count);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(members);
+        return Objects.hash(members, count);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddMemberResponse {\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

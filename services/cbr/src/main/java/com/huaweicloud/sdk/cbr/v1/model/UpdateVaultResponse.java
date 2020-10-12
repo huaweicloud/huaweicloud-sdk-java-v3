@@ -10,13 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.Billing;
-import com.huaweicloud.sdk.cbr.v1.model.TagsResp;
 import com.huaweicloud.sdk.cbr.v1.model.Vault;
-import com.huaweicloud.sdk.cbr.v1.model.VaultBindRules;
-import com.huaweicloud.sdk.cbr.v1.model.VaultResourceIntancesResp;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,109 +22,19 @@ public class UpdateVaultResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billing")
+    @JsonProperty(value="vault")
     
-    private Billing billing = null;
+    private Vault vault = null;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
-    private String description;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
-    private String projectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider_id")
-    
-    private String providerId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
-    private List<VaultResourceIntancesResp> resources = new ArrayList<>();
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
-    private List<TagsResp> tags = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
-    private String enterpriseProjectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_bind")
-    
-    private Boolean autoBind;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_rules")
-    
-    private VaultBindRules bindRules = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_expand")
-    
-    private Boolean autoExpand;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
-    private String userId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
-    private String createdAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
-    private String updatedAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
-    private String version;
-
-    public UpdateVaultResponse withBilling(Billing billing) {
-        this.billing = billing;
+    public UpdateVaultResponse withVault(Vault vault) {
+        this.vault = vault;
         return this;
     }
 
-    public UpdateVaultResponse withBilling(Consumer<Billing> billingSetter) {
-        if(this.billing == null ){
-            this.billing = new Billing();
-            billingSetter.accept(this.billing);
+    public UpdateVaultResponse withVault(Consumer<Vault> vaultSetter) {
+        if(this.vault == null ){
+            this.vault = new Vault();
+            vaultSetter.accept(this.vault);
         }
         
         return this;
@@ -138,347 +42,15 @@ public class UpdateVaultResponse extends SdkResponse {
 
 
     /**
-     * Get billing
-     * @return billing
+     * Get vault
+     * @return vault
      */
-    public Billing getBilling() {
-        return billing;
+    public Vault getVault() {
+        return vault;
     }
 
-    public void setBilling(Billing billing) {
-        this.billing = billing;
-    }
-
-    public UpdateVaultResponse withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public UpdateVaultResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 保管库id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public UpdateVaultResponse withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 保管库名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public UpdateVaultResponse withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 项目id
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
-    public UpdateVaultResponse withProviderId(String providerId) {
-        this.providerId = providerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 
-     * @return providerId
-     */
-    public String getProviderId() {
-        return providerId;
-    }
-
-    public void setProviderId(String providerId) {
-        this.providerId = providerId;
-    }
-
-    public UpdateVaultResponse withResources(List<VaultResourceIntancesResp> resources) {
-        this.resources = resources;
-        return this;
-    }
-
-    
-    public UpdateVaultResponse addResourcesItem(VaultResourceIntancesResp resourcesItem) {
-        this.resources.add(resourcesItem);
-        return this;
-    }
-
-    public UpdateVaultResponse withResources(Consumer<List<VaultResourceIntancesResp>> resourcesSetter) {
-        if(this.resources == null ){
-            this.resources = new ArrayList<>();
-        }
-        resourcesSetter.accept(this.resources);
-        return this;
-    }
-
-    /**
-     * 资源
-     * @return resources
-     */
-    public List<VaultResourceIntancesResp> getResources() {
-        return resources;
-    }
-
-    public void setResources(List<VaultResourceIntancesResp> resources) {
-        this.resources = resources;
-    }
-
-    public UpdateVaultResponse withTags(List<TagsResp> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    
-    public UpdateVaultResponse addTagsItem(TagsResp tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public UpdateVaultResponse withTags(Consumer<List<TagsResp>> tagsSetter) {
-        if(this.tags == null ){
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * 标签
-     * @return tags
-     */
-    public List<TagsResp> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<TagsResp> tags) {
-        this.tags = tags;
-    }
-
-    public UpdateVaultResponse withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 企业项目id
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public UpdateVaultResponse withAutoBind(Boolean autoBind) {
-        this.autoBind = autoBind;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否自动绑定，默认为false，不支持。
-     * @return autoBind
-     */
-    public Boolean getAutoBind() {
-        return autoBind;
-    }
-
-    public void setAutoBind(Boolean autoBind) {
-        this.autoBind = autoBind;
-    }
-
-    public UpdateVaultResponse withBindRules(VaultBindRules bindRules) {
-        this.bindRules = bindRules;
-        return this;
-    }
-
-    public UpdateVaultResponse withBindRules(Consumer<VaultBindRules> bindRulesSetter) {
-        if(this.bindRules == null ){
-            this.bindRules = new VaultBindRules();
-            bindRulesSetter.accept(this.bindRules);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get bindRules
-     * @return bindRules
-     */
-    public VaultBindRules getBindRules() {
-        return bindRules;
-    }
-
-    public void setBindRules(VaultBindRules bindRules) {
-        this.bindRules = bindRules;
-    }
-
-    public UpdateVaultResponse withAutoExpand(Boolean autoExpand) {
-        this.autoExpand = autoExpand;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否开启存储库自动扩容能力（只支持按需存储库）。
-     * @return autoExpand
-     */
-    public Boolean getAutoExpand() {
-        return autoExpand;
-    }
-
-    public void setAutoExpand(Boolean autoExpand) {
-        this.autoExpand = autoExpand;
-    }
-
-    public UpdateVaultResponse withUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 用户id
-     * @return userId
-     */
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public UpdateVaultResponse withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 创建时间,例如:\"2020-02-05T10:38:34.209782\"
-     * @return createdAt
-     */
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public UpdateVaultResponse withUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 更新时间,例如:\"2020-02-05T10:38:34.209782\"
-     * @return updatedAt
-     */
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public UpdateVaultResponse withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 版本
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
+    public void setVault(Vault vault) {
+        this.vault = vault;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -489,47 +61,17 @@ public class UpdateVaultResponse extends SdkResponse {
             return false;
         }
         UpdateVaultResponse updateVaultResponse = (UpdateVaultResponse) o;
-        return Objects.equals(this.billing, updateVaultResponse.billing) &&
-            Objects.equals(this.description, updateVaultResponse.description) &&
-            Objects.equals(this.id, updateVaultResponse.id) &&
-            Objects.equals(this.name, updateVaultResponse.name) &&
-            Objects.equals(this.projectId, updateVaultResponse.projectId) &&
-            Objects.equals(this.providerId, updateVaultResponse.providerId) &&
-            Objects.equals(this.resources, updateVaultResponse.resources) &&
-            Objects.equals(this.tags, updateVaultResponse.tags) &&
-            Objects.equals(this.enterpriseProjectId, updateVaultResponse.enterpriseProjectId) &&
-            Objects.equals(this.autoBind, updateVaultResponse.autoBind) &&
-            Objects.equals(this.bindRules, updateVaultResponse.bindRules) &&
-            Objects.equals(this.autoExpand, updateVaultResponse.autoExpand) &&
-            Objects.equals(this.userId, updateVaultResponse.userId) &&
-            Objects.equals(this.createdAt, updateVaultResponse.createdAt) &&
-            Objects.equals(this.updatedAt, updateVaultResponse.updatedAt) &&
-            Objects.equals(this.version, updateVaultResponse.version);
+        return Objects.equals(this.vault, updateVaultResponse.vault);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(billing, description, id, name, projectId, providerId, resources, tags, enterpriseProjectId, autoBind, bindRules, autoExpand, userId, createdAt, updatedAt, version);
+        return Objects.hash(vault);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateVaultResponse {\n");
-        sb.append("    billing: ").append(toIndentedString(billing)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
-        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    autoBind: ").append(toIndentedString(autoBind)).append("\n");
-        sb.append("    bindRules: ").append(toIndentedString(bindRules)).append("\n");
-        sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
-        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    vault: ").append(toIndentedString(vault)).append("\n");
         sb.append("}");
         return sb.toString();
     }

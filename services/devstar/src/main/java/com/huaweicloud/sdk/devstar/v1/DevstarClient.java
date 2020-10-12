@@ -12,7 +12,7 @@ public class DevstarClient {
     }
 
     public static ClientBuilder<DevstarClient> newBuilder() {
-        return new ClientBuilder<>(DevstarClient::new);
+        return new ClientBuilder<>(DevstarClient::new, "GlobalCredentials");
     }
 
 
