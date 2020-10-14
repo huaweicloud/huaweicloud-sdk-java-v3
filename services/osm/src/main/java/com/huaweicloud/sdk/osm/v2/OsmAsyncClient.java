@@ -34,22 +34,22 @@ public class OsmAsyncClient {
      * 是否需要验证
      * 是否需要验证
      *
-     * @param CheckNeedVerifyCodeRequest 请求对象
-     * @return CompletableFuture<CheckNeedVerifyCodeResponse>
+     * @param CheckNeedVerifyRequest 请求对象
+     * @return CompletableFuture<CheckNeedVerifyResponse>
      */
-    public CompletableFuture<CheckNeedVerifyCodeResponse> checkNeedVerifyCodeAsync(CheckNeedVerifyCodeRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.checkNeedVerifyCode);
+    public CompletableFuture<CheckNeedVerifyResponse> checkNeedVerifyAsync(CheckNeedVerifyRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.checkNeedVerify);
     }
 
     /**
      * 验证联系方式
      * 验证联系方式
      *
-     * @param CheckVerifyCodeRequest 请求对象
-     * @return CompletableFuture<CheckVerifyCodeResponse>
+     * @param CheckVerifyCodesRequest 请求对象
+     * @return CompletableFuture<CheckVerifyCodesResponse>
      */
-    public CompletableFuture<CheckVerifyCodeResponse> checkVerifyCodeAsync(CheckVerifyCodeRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.checkVerifyCode);
+    public CompletableFuture<CheckVerifyCodesResponse> checkVerifyCodesAsync(CheckVerifyCodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.checkVerifyCodes);
     }
 
     /**
@@ -262,6 +262,17 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询工单抄送邮箱
+     * 查询工单抄送邮箱
+     *
+     * @param ListCaseCCEmailsRequest 请求对象
+     * @return CompletableFuture<ListCaseCCEmailsResponse>
+     */
+    public CompletableFuture<ListCaseCCEmailsResponse> listCaseCCEmailsAsync(ListCaseCCEmailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listCaseCCEmails);
+    }
+
+    /**
      * 查询工单类目列表
      * 查询工单类目列表
      *
@@ -270,6 +281,17 @@ public class OsmAsyncClient {
      */
     public CompletableFuture<ListCaseCategoriesResponse> listCaseCategoriesAsync(ListCaseCategoriesRequest request) {
         return hcClient.asyncInvokeHttp(request, OsmMeta.listCaseCategories);
+    }
+
+    /**
+     * 统计各状态工单数量
+     * 统计各状态工单数量
+     *
+     * @param ListCaseCountsRequest 请求对象
+     * @return CompletableFuture<ListCaseCountsResponse>
+     */
+    public CompletableFuture<ListCaseCountsResponse> listCaseCountsAsync(ListCaseCountsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listCaseCounts);
     }
 
     /**
@@ -292,6 +314,17 @@ public class OsmAsyncClient {
      */
     public CompletableFuture<ListCaseLimitsResponse> listCaseLimitsAsync(ListCaseLimitsRequest request) {
         return hcClient.asyncInvokeHttp(request, OsmMeta.listCaseLimits);
+    }
+
+    /**
+     * 查询工单操作日志
+     * 查询工单操作日志
+     *
+     * @param ListCaseOperateLogsRequest 请求对象
+     * @return CompletableFuture<ListCaseOperateLogsResponse>
+     */
+    public CompletableFuture<ListCaseOperateLogsResponse> listCaseOperateLogsAsync(ListCaseOperateLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listCaseOperateLogs);
     }
 
     /**
@@ -342,11 +375,11 @@ public class OsmAsyncClient {
      * 查询已验证的列表
      * 查询已验证的列表
      *
-     * @param ListHasVerifiedContactRequest 请求对象
-     * @return CompletableFuture<ListHasVerifiedContactResponse>
+     * @param ListHasVerifiedContactsRequest 请求对象
+     * @return CompletableFuture<ListHasVerifiedContactsResponse>
      */
-    public CompletableFuture<ListHasVerifiedContactResponse> listHasVerifiedContactAsync(ListHasVerifiedContactRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.listHasVerifiedContact);
+    public CompletableFuture<ListHasVerifiedContactsResponse> listHasVerifiedContactsAsync(ListHasVerifiedContactsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.listHasVerifiedContacts);
     }
 
     /**
@@ -369,39 +402,6 @@ public class OsmAsyncClient {
      */
     public CompletableFuture<ListHistorySessionsResponse> listHistorySessionsAsync(ListHistorySessionsRequest request) {
         return hcClient.asyncInvokeHttp(request, OsmMeta.listHistorySessions);
-    }
-
-    /**
-     * 统计各状态工单数量
-     * 统计各状态工单数量
-     *
-     * @param ListIncidentCountRequest 请求对象
-     * @return CompletableFuture<ListIncidentCountResponse>
-     */
-    public CompletableFuture<ListIncidentCountResponse> listIncidentCountAsync(ListIncidentCountRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.listIncidentCount);
-    }
-
-    /**
-     * 查询工单操作日志
-     * 查询工单操作日志
-     *
-     * @param ListIncidentOperateLogRequest 请求对象
-     * @return CompletableFuture<ListIncidentOperateLogResponse>
-     */
-    public CompletableFuture<ListIncidentOperateLogResponse> listIncidentOperateLogAsync(ListIncidentOperateLogRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.listIncidentOperateLog);
-    }
-
-    /**
-     * 查询工单抄送邮箱
-     * 查询工单抄送邮箱
-     *
-     * @param ListIncidentOrderCCEmailRequest 请求对象
-     * @return CompletableFuture<ListIncidentOrderCCEmailResponse>
-     */
-    public CompletableFuture<ListIncidentOrderCCEmailResponse> listIncidentOrderCCEmailAsync(ListIncidentOrderCCEmailRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.listIncidentOrderCCEmail);
     }
 
     /**
@@ -529,17 +529,6 @@ public class OsmAsyncClient {
      * 查询子用户信息
      * 查询子用户信息
      *
-     * @param ListSubCustomerRequest 请求对象
-     * @return CompletableFuture<ListSubCustomerResponse>
-     */
-    public CompletableFuture<ListSubCustomerResponse> listSubCustomerAsync(ListSubCustomerRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.listSubCustomer);
-    }
-
-    /**
-     * 查询子用户信息
-     * 查询子用户信息
-     *
      * @param ListSubCustomersRequest 请求对象
      * @return CompletableFuture<ListSubCustomersResponse>
      */
@@ -573,11 +562,11 @@ public class OsmAsyncClient {
      * 获取验证码
      * 获取验证码
      *
-     * @param SendVerifyCodeRequest 请求对象
-     * @return CompletableFuture<SendVerifyCodeResponse>
+     * @param SendVerifyCodesRequest 请求对象
+     * @return CompletableFuture<SendVerifyCodesResponse>
      */
-    public CompletableFuture<SendVerifyCodeResponse> sendVerifyCodeAsync(SendVerifyCodeRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.sendVerifyCode);
+    public CompletableFuture<SendVerifyCodesResponse> sendVerifyCodesAsync(SendVerifyCodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.sendVerifyCodes);
     }
 
     /**
@@ -603,6 +592,17 @@ public class OsmAsyncClient {
     }
 
     /**
+     * 查询工单详情
+     * 查询工单详情
+     *
+     * @param ShowCaseDetailRequest 请求对象
+     * @return CompletableFuture<ShowCaseDetailResponse>
+     */
+    public CompletableFuture<ShowCaseDetailResponse> showCaseDetailAsync(ShowCaseDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.showCaseDetail);
+    }
+
+    /**
      * 查询某个工单状态
      * 查询某个工单状态
      *
@@ -611,17 +611,6 @@ public class OsmAsyncClient {
      */
     public CompletableFuture<ShowCaseStatusResponse> showCaseStatusAsync(ShowCaseStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, OsmMeta.showCaseStatus);
-    }
-
-    /**
-     * 查询工单详情
-     * 查询工单详情
-     *
-     * @param ShowIncidentDetailRequest 请求对象
-     * @return CompletableFuture<ShowIncidentDetailResponse>
-     */
-    public CompletableFuture<ShowIncidentDetailResponse> showIncidentDetailAsync(ShowIncidentDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, OsmMeta.showIncidentDetail);
     }
 
     /**

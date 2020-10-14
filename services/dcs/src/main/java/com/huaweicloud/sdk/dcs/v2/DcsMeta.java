@@ -76,6 +76,29 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> changeMasterStandby = genForchangeMasterStandby();
+
+    private static HttpRequestDef<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> genForchangeMasterStandby() {
+        // basic
+        HttpRequestDef.Builder<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeMasterStandbyRequest.class, ChangeMasterStandbyResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/swap");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ChangeMasterStandbyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CopyInstanceRequest, CopyInstanceResponse> copyInstance = genForcopyInstance();
 
     private static HttpRequestDef<CopyInstanceRequest, CopyInstanceResponse> genForcopyInstance() {
@@ -108,6 +131,29 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> createBigkeyScanTask = genForcreateBigkeyScanTask();
+
+    private static HttpRequestDef<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> genForcreateBigkeyScanTask() {
+        // basic
+        HttpRequestDef.Builder<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBigkeyScanTaskRequest.class, CreateBigkeyScanTaskResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-task");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateBigkeyScanTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDCSInstanceRequest, CreateDCSInstanceResponse> createDCSInstance = genForcreateDCSInstance();
 
     private static HttpRequestDef<CreateDCSInstanceRequest, CreateDCSInstanceResponse> genForcreateDCSInstance() {
@@ -124,6 +170,29 @@ public class DcsMeta {
             CreateInstanceBody.class,
             f -> f.withMarshaller(CreateDCSInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> createHotkeyScanTask = genForcreateHotkeyScanTask();
+
+    private static HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> genForcreateHotkeyScanTask() {
+        // basic
+        HttpRequestDef.Builder<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateHotkeyScanTaskRequest.class, CreateHotkeyScanTaskResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-task");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateHotkeyScanTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             })
         );
 
@@ -196,6 +265,37 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask = genFordeleteBackgroundTask();
+
+    private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genFordeleteBackgroundTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteBackupFileRequest, DeleteBackupFileResponse> deleteBackupFile = genFordeleteBackupFile();
 
     private static HttpRequestDef<DeleteBackupFileRequest, DeleteBackupFileResponse> genFordeleteBackupFile() {
@@ -219,6 +319,68 @@ public class DcsMeta {
             String.class,
             f -> f.withMarshaller(DeleteBackupFileRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> deleteBigkeyScanTask = genFordeleteBigkeyScanTask();
+
+    private static HttpRequestDef<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> genFordeleteBigkeyScanTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBigkeyScanTaskRequest.class, DeleteBigkeyScanTaskResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteBigkeyScanTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("bigkey_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteBigkeyScanTaskRequest::getBigkeyId, (req, v) -> {
+                req.setBigkeyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> deleteHotkeyScanTask = genFordeleteHotkeyScanTask();
+
+    private static HttpRequestDef<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> genFordeleteHotkeyScanTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHotkeyScanTaskRequest.class, DeleteHotkeyScanTaskResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteHotkeyScanTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("hotkey_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteHotkeyScanTaskRequest::getHotkeyId, (req, v) -> {
+                req.setHotkeyId(v);
             })
         );
 
@@ -352,6 +514,93 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAllDCSInstancesRequest, ListAllDCSInstancesResponse> listAllDCSInstances = genForlistAllDCSInstances();
+
+    private static HttpRequestDef<ListAllDCSInstancesRequest, ListAllDCSInstancesResponse> genForlistAllDCSInstances() {
+        // basic
+        HttpRequestDef.Builder<ListAllDCSInstancesRequest, ListAllDCSInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllDCSInstancesRequest.class, ListAllDCSInstancesResponse.class)
+                .withUri("/v2/{project_id}/instances");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("include_failure",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getIncludeFailure, (req, v) -> {
+                req.setIncludeFailure(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("name_equal",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getNameEqual, (req, v) -> {
+                req.setNameEqual(v);
+            })
+        );
+        builder.withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            })
+        );
+        builder.withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllDCSInstancesRequest::getIp, (req, v) -> {
+                req.setIp(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones = genForlistAvailableZones();
 
     private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
@@ -361,6 +610,61 @@ public class DcsMeta {
                 .withUri("/v2/available-zones");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackgroundTaskRequest, ListBackgroundTaskResponse> listBackgroundTask = genForlistBackgroundTask();
+
+    private static HttpRequestDef<ListBackgroundTaskRequest, ListBackgroundTaskResponse> genForlistBackgroundTask() {
+        // basic
+        HttpRequestDef.Builder<ListBackgroundTaskRequest, ListBackgroundTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTaskRequest.class, ListBackgroundTaskResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/tasks");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBackgroundTaskRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
 
         // response
 
@@ -454,6 +758,53 @@ public class DcsMeta {
             Integer.class,
             f -> f.withMarshaller(ListBackupRecordsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> listBigkeyScanTasks = genForlistBigkeyScanTasks();
+
+    private static HttpRequestDef<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> genForlistBigkeyScanTasks() {
+        // basic
+        HttpRequestDef.Builder<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBigkeyScanTasksRequest.class, ListBigkeyScanTasksResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-tasks");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListBigkeyScanTasksRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListBigkeyScanTasksRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
             })
         );
 
@@ -625,6 +976,53 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> listHotKeyScanTasks = genForlistHotKeyScanTasks();
+
+    private static HttpRequestDef<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> genForlistHotKeyScanTasks() {
+        // basic
+        HttpRequestDef.Builder<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHotKeyScanTasksRequest.class, ListHotKeyScanTasksResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-tasks");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListHotKeyScanTasksRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListHotKeyScanTasksRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> listMaintenanceWindows = genForlistMaintenanceWindows();
 
     private static HttpRequestDef<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> genForlistMaintenanceWindows() {
@@ -722,7 +1120,7 @@ public class DcsMeta {
         builder.withRequestField("include_failure",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            String.class,
             f -> f.withMarshaller(ListNumberOfInstancesInDifferentStatusRequest::getIncludeFailure, (req, v) -> {
                 req.setIncludeFailure(v);
             })
@@ -780,6 +1178,77 @@ public class DcsMeta {
             Integer.class,
             f -> f.withMarshaller(ListRestoreRecordsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSlowlogRequest, ListSlowlogResponse> listSlowlog = genForlistSlowlog();
+
+    private static HttpRequestDef<ListSlowlogRequest, ListSlowlogResponse> genForlistSlowlog() {
+        // basic
+        HttpRequestDef.Builder<ListSlowlogRequest, ListSlowlogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSlowlogRequest.class, ListSlowlogResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/slowlog");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowlogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSlowlogRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSlowlogRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListSlowlogRequest.SortKeyEnum.class,
+            f -> f.withMarshaller(ListSlowlogRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            })
+        );
+        builder.withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListSlowlogRequest.SortDirEnum.class,
+            f -> f.withMarshaller(ListSlowlogRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowlogRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowlogRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
             })
         );
 
@@ -859,6 +1328,83 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> showBigkeyAutoscanConfig = genForshowBigkeyAutoscanConfig();
+
+    private static HttpRequestDef<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> genForshowBigkeyAutoscanConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBigkeyAutoscanConfigRequest.class, ShowBigkeyAutoscanConfigResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/bigkey/autoscan");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBigkeyAutoscanConfigRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> showBigkeyScanTaskDetails = genForshowBigkeyScanTaskDetails();
+
+    private static HttpRequestDef<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> genForshowBigkeyScanTaskDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBigkeyScanTaskDetailsRequest.class, ShowBigkeyScanTaskDetailsResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("bigkey_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getBigkeyId, (req, v) -> {
+                req.setBigkeyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDCSInstanceRequest, ShowDCSInstanceResponse> showDCSInstance = genForshowDCSInstance();
+
+    private static HttpRequestDef<ShowDCSInstanceRequest, ShowDCSInstanceResponse> genForshowDCSInstance() {
+        // basic
+        HttpRequestDef.Builder<ShowDCSInstanceRequest, ShowDCSInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDCSInstanceRequest.class, ShowDCSInstanceResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDCSInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDcsTagsRequest, ShowDcsTagsResponse> showDcsTags = genForshowDcsTags();
 
     private static HttpRequestDef<ShowDcsTagsRequest, ShowDcsTagsResponse> genForshowDcsTags() {
@@ -882,6 +1428,60 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> showHotkeyAutoscanConfig = genForshowHotkeyAutoscanConfig();
+
+    private static HttpRequestDef<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> genForshowHotkeyAutoscanConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHotkeyAutoscanConfigRequest.class, ShowHotkeyAutoscanConfigResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/hotkey/autoscan");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowHotkeyAutoscanConfigRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> showHotkeyTaskDetails = genForshowHotkeyTaskDetails();
+
+    private static HttpRequestDef<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> genForshowHotkeyTaskDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHotkeyTaskDetailsRequest.class, ShowHotkeyTaskDetailsResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowHotkeyTaskDetailsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("hotkey_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowHotkeyTaskDetailsRequest::getHotkeyId, (req, v) -> {
+                req.setHotkeyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMigrationTaskRequest, ShowMigrationTaskResponse> showMigrationTask = genForshowMigrationTask();
 
     private static HttpRequestDef<ShowMigrationTaskRequest, ShowMigrationTaskResponse> genForshowMigrationTask() {
@@ -896,6 +1496,29 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowMigrationTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> showMigrationTaskStats = genForshowMigrationTaskStats();
+
+    private static HttpRequestDef<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> genForshowMigrationTaskStats() {
+        // basic
+        HttpRequestDef.Builder<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMigrationTaskStatsRequest.class, ShowMigrationTaskStatsResponse.class)
+                .withUri("/v2/{project_id}/migration-task/{task_id}/stats");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowMigrationTaskStatsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             })
         );
@@ -935,6 +1558,38 @@ public class DcsMeta {
             String.class,
             f -> f.withMarshaller(StopMigrationTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> updateBigkeyAutoscanConfig = genForupdateBigkeyAutoscanConfig();
+
+    private static HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> genForupdateBigkeyAutoscanConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateBigkeyAutoscanConfigRequest.class, UpdateBigkeyAutoscanConfigResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/bigkey/autoscan")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AutoscanConfigRequest.class,
+            f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -998,6 +1653,38 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ModifyInstanceBody.class,
             f -> f.withMarshaller(UpdateDCSInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> updateHotkeyAutoScanConfig = genForupdateHotkeyAutoScanConfig();
+
+    private static HttpRequestDef<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> genForupdateHotkeyAutoScanConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHotkeyAutoScanConfigRequest.class, UpdateHotkeyAutoScanConfigResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/hotkey/autoscan")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateHotkeyAutoScanConfigRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AutoscanConfigRequest.class,
+            f -> f.withMarshaller(UpdateHotkeyAutoScanConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.mpc.v1.model.AuditReport;
 import com.huaweicloud.sdk.mpc.v1.model.ErrorResponse;
 import com.huaweicloud.sdk.mpc.v1.model.MediaDetail;
 import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
@@ -173,6 +174,30 @@ public class TaskDetailInfo  {
     @JsonProperty(value="output")
     
     private ObsObjInfo output = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="audit_report")
+    
+    private AuditReport auditReport = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="output_url")
+    
+    private String outputUrl;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="error_code")
+    
+    private String errorCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -346,6 +371,93 @@ public class TaskDetailInfo  {
         this.output = output;
     }
 
+    public TaskDetailInfo withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
+    public TaskDetailInfo withAuditReport(AuditReport auditReport) {
+        this.auditReport = auditReport;
+        return this;
+    }
+
+    public TaskDetailInfo withAuditReport(Consumer<AuditReport> auditReportSetter) {
+        if(this.auditReport == null ){
+            this.auditReport = new AuditReport();
+            auditReportSetter.accept(this.auditReport);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get auditReport
+     * @return auditReport
+     */
+    public AuditReport getAuditReport() {
+        return auditReport;
+    }
+
+    public void setAuditReport(AuditReport auditReport) {
+        this.auditReport = auditReport;
+    }
+
+    public TaskDetailInfo withOutputUrl(String outputUrl) {
+        this.outputUrl = outputUrl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 质检文件输出路径 
+     * @return outputUrl
+     */
+    public String getOutputUrl() {
+        return outputUrl;
+    }
+
+    public void setOutputUrl(String outputUrl) {
+        this.outputUrl = outputUrl;
+    }
+
+    public TaskDetailInfo withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 转码任务错误码。 
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     public TaskDetailInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -435,13 +547,17 @@ public class TaskDetailInfo  {
             Objects.equals(this.endTime, taskDetailInfo.endTime) &&
             Objects.equals(this.input, taskDetailInfo.input) &&
             Objects.equals(this.output, taskDetailInfo.output) &&
+            Objects.equals(this.userData, taskDetailInfo.userData) &&
+            Objects.equals(this.auditReport, taskDetailInfo.auditReport) &&
+            Objects.equals(this.outputUrl, taskDetailInfo.outputUrl) &&
+            Objects.equals(this.errorCode, taskDetailInfo.errorCode) &&
             Objects.equals(this.description, taskDetailInfo.description) &&
             Objects.equals(this.mediaDetail, taskDetailInfo.mediaDetail) &&
             Objects.equals(this.xcodeError, taskDetailInfo.xcodeError);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, input, output, description, mediaDetail, xcodeError);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, input, output, userData, auditReport, outputUrl, errorCode, description, mediaDetail, xcodeError);
     }
     @Override
     public String toString() {
@@ -454,6 +570,10 @@ public class TaskDetailInfo  {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    auditReport: ").append(toIndentedString(auditReport)).append("\n");
+        sb.append("    outputUrl: ").append(toIndentedString(outputUrl)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    mediaDetail: ").append(toIndentedString(mediaDetail)).append("\n");
         sb.append("    xcodeError: ").append(toIndentedString(xcodeError)).append("\n");

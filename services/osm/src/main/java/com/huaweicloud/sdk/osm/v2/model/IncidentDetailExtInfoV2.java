@@ -53,6 +53,12 @@ public class IncidentDetailExtInfoV2  {
     
     private String ccEmail;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="commodity_id")
+    
+    private String commodityId;
+
     public IncidentDetailExtInfoV2 withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
@@ -172,6 +178,26 @@ public class IncidentDetailExtInfoV2  {
     public void setCcEmail(String ccEmail) {
         this.ccEmail = ccEmail;
     }
+
+    public IncidentDetailExtInfoV2 withCommodityId(String commodityId) {
+        this.commodityId = commodityId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * ISV商品id
+     * @return commodityId
+     */
+    public String getCommodityId() {
+        return commodityId;
+    }
+
+    public void setCommodityId(String commodityId) {
+        this.commodityId = commodityId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -186,11 +212,12 @@ public class IncidentDetailExtInfoV2  {
             Objects.equals(this.remindMail, incidentDetailExtInfoV2.remindMail) &&
             Objects.equals(this.contactType, incidentDetailExtInfoV2.contactType) &&
             Objects.equals(this.remindTime, incidentDetailExtInfoV2.remindTime) &&
-            Objects.equals(this.ccEmail, incidentDetailExtInfoV2.ccEmail);
+            Objects.equals(this.ccEmail, incidentDetailExtInfoV2.ccEmail) &&
+            Objects.equals(this.commodityId, incidentDetailExtInfoV2.commodityId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(areaCode, remindMobile, remindMail, contactType, remindTime, ccEmail);
+        return Objects.hash(areaCode, remindMobile, remindMail, contactType, remindTime, ccEmail, commodityId);
     }
     @Override
     public String toString() {
@@ -202,6 +229,7 @@ public class IncidentDetailExtInfoV2  {
         sb.append("    contactType: ").append(toIndentedString(contactType)).append("\n");
         sb.append("    remindTime: ").append(toIndentedString(remindTime)).append("\n");
         sb.append("    ccEmail: ").append(toIndentedString(ccEmail)).append("\n");
+        sb.append("    commodityId: ").append(toIndentedString(commodityId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,9 +19,9 @@ public class ListCaseTemplatesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_business_type_id")
+    @JsonProperty(value="business_type_id")
     
-    private String incidentBusinessTypeId;
+    private String businessTypeId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,8 +41,8 @@ public class ListCaseTemplatesRequest  {
     
     private String xTimeZone;
 
-    public ListCaseTemplatesRequest withIncidentBusinessTypeId(String incidentBusinessTypeId) {
-        this.incidentBusinessTypeId = incidentBusinessTypeId;
+    public ListCaseTemplatesRequest withBusinessTypeId(String businessTypeId) {
+        this.businessTypeId = businessTypeId;
         return this;
     }
 
@@ -50,15 +50,15 @@ public class ListCaseTemplatesRequest  {
 
 
     /**
-     * Get incidentBusinessTypeId
-     * @return incidentBusinessTypeId
+     * Get businessTypeId
+     * @return businessTypeId
      */
-    public String getIncidentBusinessTypeId() {
-        return incidentBusinessTypeId;
+    public String getBusinessTypeId() {
+        return businessTypeId;
     }
 
-    public void setIncidentBusinessTypeId(String incidentBusinessTypeId) {
-        this.incidentBusinessTypeId = incidentBusinessTypeId;
+    public void setBusinessTypeId(String businessTypeId) {
+        this.businessTypeId = businessTypeId;
     }
 
     public ListCaseTemplatesRequest withXSite(Integer xSite) {
@@ -137,20 +137,20 @@ public class ListCaseTemplatesRequest  {
             return false;
         }
         ListCaseTemplatesRequest listCaseTemplatesRequest = (ListCaseTemplatesRequest) o;
-        return Objects.equals(this.incidentBusinessTypeId, listCaseTemplatesRequest.incidentBusinessTypeId) &&
+        return Objects.equals(this.businessTypeId, listCaseTemplatesRequest.businessTypeId) &&
             Objects.equals(this.xSite, listCaseTemplatesRequest.xSite) &&
             Objects.equals(this.xLanguage, listCaseTemplatesRequest.xLanguage) &&
             Objects.equals(this.xTimeZone, listCaseTemplatesRequest.xTimeZone);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(incidentBusinessTypeId, xSite, xLanguage, xTimeZone);
+        return Objects.hash(businessTypeId, xSite, xLanguage, xTimeZone);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCaseTemplatesRequest {\n");
-        sb.append("    incidentBusinessTypeId: ").append(toIndentedString(incidentBusinessTypeId)).append("\n");
+        sb.append("    businessTypeId: ").append(toIndentedString(businessTypeId)).append("\n");
         sb.append("    xSite: ").append(toIndentedString(xSite)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    xTimeZone: ").append(toIndentedString(xTimeZone)).append("\n");

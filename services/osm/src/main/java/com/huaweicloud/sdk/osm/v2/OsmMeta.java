@@ -68,12 +68,12 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckNeedVerifyCodeRequest, CheckNeedVerifyCodeResponse> checkNeedVerifyCode = genForcheckNeedVerifyCode();
+    public static final HttpRequestDef<CheckNeedVerifyRequest, CheckNeedVerifyResponse> checkNeedVerify = genForcheckNeedVerify();
 
-    private static HttpRequestDef<CheckNeedVerifyCodeRequest, CheckNeedVerifyCodeResponse> genForcheckNeedVerifyCode() {
+    private static HttpRequestDef<CheckNeedVerifyRequest, CheckNeedVerifyResponse> genForcheckNeedVerify() {
         // basic
-        HttpRequestDef.Builder<CheckNeedVerifyCodeRequest, CheckNeedVerifyCodeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, CheckNeedVerifyCodeRequest.class, CheckNeedVerifyCodeResponse.class)
+        HttpRequestDef.Builder<CheckNeedVerifyRequest, CheckNeedVerifyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckNeedVerifyRequest.class, CheckNeedVerifyResponse.class)
                 .withUri("/v2/servicerequest/verifycodes/need-verify");
 
         // requests
@@ -81,7 +81,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(CheckNeedVerifyCodeRequest::getContactValue, (req, v) -> {
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getContactValue, (req, v) -> {
                 req.setContactValue(v);
             })
         );
@@ -89,7 +89,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             Integer.class,
-            f -> f.withMarshaller(CheckNeedVerifyCodeRequest::getContactWay, (req, v) -> {
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getContactWay, (req, v) -> {
                 req.setContactWay(v);
             })
         );
@@ -97,7 +97,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CheckNeedVerifyCodeRequest::getAreaCode, (req, v) -> {
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getAreaCode, (req, v) -> {
                 req.setAreaCode(v);
             })
         );
@@ -105,7 +105,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(CheckNeedVerifyCodeRequest::getXSite, (req, v) -> {
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getXSite, (req, v) -> {
                 req.setXSite(v);
             })
         );
@@ -113,7 +113,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CheckNeedVerifyCodeRequest::getXLanguage, (req, v) -> {
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -121,7 +121,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CheckNeedVerifyCodeRequest::getXTimeZone, (req, v) -> {
+            f -> f.withMarshaller(CheckNeedVerifyRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );
@@ -131,12 +131,12 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckVerifyCodeRequest, CheckVerifyCodeResponse> checkVerifyCode = genForcheckVerifyCode();
+    public static final HttpRequestDef<CheckVerifyCodesRequest, CheckVerifyCodesResponse> checkVerifyCodes = genForcheckVerifyCodes();
 
-    private static HttpRequestDef<CheckVerifyCodeRequest, CheckVerifyCodeResponse> genForcheckVerifyCode() {
+    private static HttpRequestDef<CheckVerifyCodesRequest, CheckVerifyCodesResponse> genForcheckVerifyCodes() {
         // basic
-        HttpRequestDef.Builder<CheckVerifyCodeRequest, CheckVerifyCodeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CheckVerifyCodeRequest.class, CheckVerifyCodeResponse.class)
+        HttpRequestDef.Builder<CheckVerifyCodesRequest, CheckVerifyCodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckVerifyCodesRequest.class, CheckVerifyCodesResponse.class)
                 .withUri("/v2/servicerequest/verifycodes/")
                 .withContentType("application/json");
 
@@ -145,7 +145,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(CheckVerifyCodeRequest::getXSite, (req, v) -> {
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getXSite, (req, v) -> {
                 req.setXSite(v);
             })
         );
@@ -153,7 +153,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CheckVerifyCodeRequest::getXLanguage, (req, v) -> {
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -161,7 +161,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CheckVerifyCodeRequest::getXTimeZone, (req, v) -> {
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );
@@ -169,7 +169,7 @@ public class OsmMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             VerifyVerifyCodeV2Req.class,
-            f -> f.withMarshaller(CheckVerifyCodeRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(CheckVerifyCodesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -185,16 +185,16 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ConfirmAuthorizationsRequest.class, ConfirmAuthorizationsResponse.class)
-                .withUri("/v2/servicerequest/authorizations/authorization-details/{authorization_detail_id}")
+                .withUri("/v2/servicerequest/authorizations/{authorization_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("authorization_detail_id",
+        builder.withRequestField("authorization_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             Long.class,
-            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getAuthorizationDetailId, (req, v) -> {
-                req.setAuthorizationDetailId(v);
+            f -> f.withMarshaller(ConfirmAuthorizationsRequest::getAuthorizationId, (req, v) -> {
+                req.setAuthorizationId(v);
             })
         );
         builder.withRequestField("X-Site",
@@ -520,7 +520,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreatePrivilegesRequest, CreatePrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivilegesRequest.class, CreatePrivilegesResponse.class)
-                .withUri("/v2/servicerequest/privileges/")
+                .withUri("/v2/servicerequest/privileges")
                 .withContentType("application/json");
 
         // requests
@@ -782,15 +782,15 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteLabelsRequest, DeleteLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLabelsRequest.class, DeleteLabelsResponse.class)
-                .withUri("/v2/servicerequest/labels/{lable_id}");
+                .withUri("/v2/servicerequest/labels/{label_id}");
 
         // requests
-        builder.withRequestField("lable_id",
+        builder.withRequestField("label_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             Integer.class,
-            f -> f.withMarshaller(DeleteLabelsRequest::getLableId, (req, v) -> {
-                req.setLableId(v);
+            f -> f.withMarshaller(DeleteLabelsRequest::getLabelId, (req, v) -> {
+                req.setLabelId(v);
             })
         );
         builder.withRequestField("X-Site",
@@ -1138,7 +1138,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
-                .withUri("/v2/servicerequest/cases/agencies");
+                .withUri("/v2/servicerequest/agencies");
 
         // requests
         builder.withRequestField("X-Site",
@@ -1216,7 +1216,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAuthorizationsRequest, ListAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorizationsRequest.class, ListAuthorizationsResponse.class)
-                .withUri("/v2/servicerequest/authorizations/");
+                .withUri("/v2/servicerequest/authorizations");
 
         // requests
         builder.withRequestField("sub_customer_name",
@@ -1305,6 +1305,45 @@ public class OsmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCaseCCEmailsRequest, ListCaseCCEmailsResponse> listCaseCCEmails = genForlistCaseCCEmails();
+
+    private static HttpRequestDef<ListCaseCCEmailsRequest, ListCaseCCEmailsResponse> genForlistCaseCCEmails() {
+        // basic
+        HttpRequestDef.Builder<ListCaseCCEmailsRequest, ListCaseCCEmailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCaseCCEmailsRequest.class, ListCaseCCEmailsResponse.class)
+                .withUri("/v2/servicerequest/carbon-copy-emails");
+
+        // requests
+        builder.withRequestField("X-Site",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCaseCCEmailsRequest::getXSite, (req, v) -> {
+                req.setXSite(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseCCEmailsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseCCEmailsRequest::getXTimeZone, (req, v) -> {
+                req.setXTimeZone(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCaseCategoriesRequest, ListCaseCategoriesResponse> listCaseCategories = genForlistCaseCategories();
 
     private static HttpRequestDef<ListCaseCategoriesRequest, ListCaseCategoriesResponse> genForlistCaseCategories() {
@@ -1335,6 +1374,53 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListCaseCategoriesRequest::getXTimeZone, (req, v) -> {
+                req.setXTimeZone(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCaseCountsRequest, ListCaseCountsResponse> listCaseCounts = genForlistCaseCounts();
+
+    private static HttpRequestDef<ListCaseCountsRequest, ListCaseCountsResponse> genForlistCaseCounts() {
+        // basic
+        HttpRequestDef.Builder<ListCaseCountsRequest, ListCaseCountsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCaseCountsRequest.class, ListCaseCountsResponse.class)
+                .withUri("/v2/servicerequest/cases/count");
+
+        // requests
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCaseCountsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("X-Site",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCaseCountsRequest::getXSite, (req, v) -> {
+                req.setXSite(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseCountsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseCountsRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );
@@ -1430,6 +1516,77 @@ public class OsmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> listCaseOperateLogs = genForlistCaseOperateLogs();
+
+    private static HttpRequestDef<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> genForlistCaseOperateLogs() {
+        // basic
+        HttpRequestDef.Builder<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCaseOperateLogsRequest.class, ListCaseOperateLogsResponse.class)
+                .withUri("/v2/servicerequest/cases/{case_id}/operate-logs");
+
+        // requests
+        builder.withRequestField("case_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getCaseId, (req, v) -> {
+                req.setCaseId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Site",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXSite, (req, v) -> {
+                req.setXSite(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseOperateLogsRequest::getXTimeZone, (req, v) -> {
+                req.setXTimeZone(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCaseQuotasRequest, ListCaseQuotasResponse> listCaseQuotas = genForlistCaseQuotas();
 
     private static HttpRequestDef<ListCaseQuotasRequest, ListCaseQuotasResponse> genForlistCaseQuotas() {
@@ -1494,12 +1651,12 @@ public class OsmMeta {
                 .withUri("/v2/servicerequest/config/templates");
 
         // requests
-        builder.withRequestField("incident_business_type_id",
+        builder.withRequestField("business_type_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ListCaseTemplatesRequest::getIncidentBusinessTypeId, (req, v) -> {
-                req.setIncidentBusinessTypeId(v);
+            f -> f.withMarshaller(ListCaseTemplatesRequest::getBusinessTypeId, (req, v) -> {
+                req.setBusinessTypeId(v);
             })
         );
         builder.withRequestField("X-Site",
@@ -1686,7 +1843,7 @@ public class OsmMeta {
         // requests
         builder.withRequestField("business_type_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ListExtendsParamsRequest::getBusinessTypeId, (req, v) -> {
                 req.setBusinessTypeId(v);
@@ -1738,12 +1895,12 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListHasVerifiedContactRequest, ListHasVerifiedContactResponse> listHasVerifiedContact = genForlistHasVerifiedContact();
+    public static final HttpRequestDef<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> listHasVerifiedContacts = genForlistHasVerifiedContacts();
 
-    private static HttpRequestDef<ListHasVerifiedContactRequest, ListHasVerifiedContactResponse> genForlistHasVerifiedContact() {
+    private static HttpRequestDef<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> genForlistHasVerifiedContacts() {
         // basic
-        HttpRequestDef.Builder<ListHasVerifiedContactRequest, ListHasVerifiedContactResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListHasVerifiedContactRequest.class, ListHasVerifiedContactResponse.class)
+        HttpRequestDef.Builder<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHasVerifiedContactsRequest.class, ListHasVerifiedContactsResponse.class)
                 .withUri("/v2/servicerequest/verifycodes/has-verified");
 
         // requests
@@ -1751,7 +1908,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getContactWay, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getContactWay, (req, v) -> {
                 req.setContactWay(v);
             })
         );
@@ -1759,7 +1916,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getCustomerId, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getCustomerId, (req, v) -> {
                 req.setCustomerId(v);
             })
         );
@@ -1767,7 +1924,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getSubCustomerId, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getSubCustomerId, (req, v) -> {
                 req.setSubCustomerId(v);
             })
         );
@@ -1775,7 +1932,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getExpiredTime, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getExpiredTime, (req, v) -> {
                 req.setExpiredTime(v);
             })
         );
@@ -1783,7 +1940,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getVerifiedId, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getVerifiedId, (req, v) -> {
                 req.setVerifiedId(v);
             })
         );
@@ -1791,7 +1948,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getContactValue, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getContactValue, (req, v) -> {
                 req.setContactValue(v);
             })
         );
@@ -1799,7 +1956,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getAreaCode, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getAreaCode, (req, v) -> {
                 req.setAreaCode(v);
             })
         );
@@ -1807,7 +1964,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getOffset, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             })
         );
@@ -1815,7 +1972,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getLimit, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             })
         );
@@ -1823,7 +1980,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getXSite, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXSite, (req, v) -> {
                 req.setXSite(v);
             })
         );
@@ -1831,7 +1988,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getXLanguage, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -1839,7 +1996,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListHasVerifiedContactRequest::getXTimeZone, (req, v) -> {
+            f -> f.withMarshaller(ListHasVerifiedContactsRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );
@@ -2014,163 +2171,6 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListHistorySessionsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListIncidentCountRequest, ListIncidentCountResponse> listIncidentCount = genForlistIncidentCount();
-
-    private static HttpRequestDef<ListIncidentCountRequest, ListIncidentCountResponse> genForlistIncidentCount() {
-        // basic
-        HttpRequestDef.Builder<ListIncidentCountRequest, ListIncidentCountResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListIncidentCountRequest.class, ListIncidentCountResponse.class)
-                .withUri("/v2/servicerequest/cases/count");
-
-        // requests
-        builder.withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListIncidentCountRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            })
-        );
-        builder.withRequestField("X-Site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListIncidentCountRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentCountRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("X-Time-Zone",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentCountRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListIncidentOperateLogRequest, ListIncidentOperateLogResponse> listIncidentOperateLog = genForlistIncidentOperateLog();
-
-    private static HttpRequestDef<ListIncidentOperateLogRequest, ListIncidentOperateLogResponse> genForlistIncidentOperateLog() {
-        // basic
-        HttpRequestDef.Builder<ListIncidentOperateLogRequest, ListIncidentOperateLogResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListIncidentOperateLogRequest.class, ListIncidentOperateLogResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/operate-logs");
-
-        // requests
-        builder.withRequestField("case_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListIncidentOperateLogRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            })
-        );
-        builder.withRequestField("group_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentOperateLogRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListIncidentOperateLogRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListIncidentOperateLogRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.withRequestField("X-Site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListIncidentOperateLogRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentOperateLogRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("X-Time-Zone",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentOperateLogRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListIncidentOrderCCEmailRequest, ListIncidentOrderCCEmailResponse> listIncidentOrderCCEmail = genForlistIncidentOrderCCEmail();
-
-    private static HttpRequestDef<ListIncidentOrderCCEmailRequest, ListIncidentOrderCCEmailResponse> genForlistIncidentOrderCCEmail() {
-        // basic
-        HttpRequestDef.Builder<ListIncidentOrderCCEmailRequest, ListIncidentOrderCCEmailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListIncidentOrderCCEmailRequest.class, ListIncidentOrderCCEmailResponse.class)
-                .withUri("/v2/servicerequest/cases/carbon-copy-emails");
-
-        // requests
-        builder.withRequestField("X-Site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListIncidentOrderCCEmailRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentOrderCCEmailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("X-Time-Zone",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentOrderCCEmailRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );
@@ -2470,7 +2470,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListPrivilegesRequest, ListPrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivilegesRequest.class, ListPrivilegesResponse.class)
-                .withUri("/v2/servicerequest/privileges/");
+                .withUri("/v2/servicerequest/privileges");
 
         // requests
         builder.withRequestField("privilege",
@@ -2785,61 +2785,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSubCustomerRequest, ListSubCustomerResponse> listSubCustomer = genForlistSubCustomer();
-
-    private static HttpRequestDef<ListSubCustomerRequest, ListSubCustomerResponse> genForlistSubCustomer() {
-        // basic
-        HttpRequestDef.Builder<ListSubCustomerRequest, ListSubCustomerResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSubCustomerRequest.class, ListSubCustomerResponse.class)
-                .withUri("/v2/servicerequest/cases/sub-customers");
-
-        // requests
-        builder.withRequestField("sub_customer_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubCustomerRequest::getSubCustomerName, (req, v) -> {
-                req.setSubCustomerName(v);
-            })
-        );
-        builder.withRequestField("sub_customer_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubCustomerRequest::getSubCustomerId, (req, v) -> {
-                req.setSubCustomerId(v);
-            })
-        );
-        builder.withRequestField("X-Site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListSubCustomerRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubCustomerRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("X-Time-Zone",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSubCustomerRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> listSubCustomers = genForlistSubCustomers();
 
     private static HttpRequestDef<ListSubCustomersRequest, ListSubCustomersResponse> genForlistSubCustomers() {
@@ -3045,12 +2990,12 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<SendVerifyCodeRequest, SendVerifyCodeResponse> sendVerifyCode = genForsendVerifyCode();
+    public static final HttpRequestDef<SendVerifyCodesRequest, SendVerifyCodesResponse> sendVerifyCodes = genForsendVerifyCodes();
 
-    private static HttpRequestDef<SendVerifyCodeRequest, SendVerifyCodeResponse> genForsendVerifyCode() {
+    private static HttpRequestDef<SendVerifyCodesRequest, SendVerifyCodesResponse> genForsendVerifyCodes() {
         // basic
-        HttpRequestDef.Builder<SendVerifyCodeRequest, SendVerifyCodeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, SendVerifyCodeRequest.class, SendVerifyCodeResponse.class)
+        HttpRequestDef.Builder<SendVerifyCodesRequest, SendVerifyCodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SendVerifyCodesRequest.class, SendVerifyCodesResponse.class)
                 .withUri("/v2/servicerequest/verifycodes/");
 
         // requests
@@ -3058,7 +3003,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(SendVerifyCodeRequest::getContactValue, (req, v) -> {
+            f -> f.withMarshaller(SendVerifyCodesRequest::getContactValue, (req, v) -> {
                 req.setContactValue(v);
             })
         );
@@ -3066,7 +3011,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             Integer.class,
-            f -> f.withMarshaller(SendVerifyCodeRequest::getContactWay, (req, v) -> {
+            f -> f.withMarshaller(SendVerifyCodesRequest::getContactWay, (req, v) -> {
                 req.setContactWay(v);
             })
         );
@@ -3074,7 +3019,7 @@ public class OsmMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(SendVerifyCodeRequest::getAreaCode, (req, v) -> {
+            f -> f.withMarshaller(SendVerifyCodesRequest::getAreaCode, (req, v) -> {
                 req.setAreaCode(v);
             })
         );
@@ -3082,7 +3027,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(SendVerifyCodeRequest::getXSite, (req, v) -> {
+            f -> f.withMarshaller(SendVerifyCodesRequest::getXSite, (req, v) -> {
                 req.setXSite(v);
             })
         );
@@ -3090,7 +3035,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(SendVerifyCodeRequest::getXLanguage, (req, v) -> {
+            f -> f.withMarshaller(SendVerifyCodesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -3098,7 +3043,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(SendVerifyCodeRequest::getXTimeZone, (req, v) -> {
+            f -> f.withMarshaller(SendVerifyCodesRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );
@@ -3202,6 +3147,61 @@ public class OsmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCaseDetailRequest, ShowCaseDetailResponse> showCaseDetail = genForshowCaseDetail();
+
+    private static HttpRequestDef<ShowCaseDetailRequest, ShowCaseDetailResponse> genForshowCaseDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowCaseDetailRequest, ShowCaseDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCaseDetailRequest.class, ShowCaseDetailResponse.class)
+                .withUri("/v2/servicerequest/cases/{case_id}");
+
+        // requests
+        builder.withRequestField("case_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowCaseDetailRequest::getCaseId, (req, v) -> {
+                req.setCaseId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCaseDetailRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("X-Site",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowCaseDetailRequest::getXSite, (req, v) -> {
+                req.setXSite(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCaseDetailRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCaseDetailRequest::getXTimeZone, (req, v) -> {
+                req.setXTimeZone(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCaseStatusRequest, ShowCaseStatusResponse> showCaseStatus = genForshowCaseStatus();
 
     private static HttpRequestDef<ShowCaseStatusRequest, ShowCaseStatusResponse> genForshowCaseStatus() {
@@ -3249,68 +3249,13 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIncidentDetailRequest, ShowIncidentDetailResponse> showIncidentDetail = genForshowIncidentDetail();
-
-    private static HttpRequestDef<ShowIncidentDetailRequest, ShowIncidentDetailResponse> genForshowIncidentDetail() {
-        // basic
-        HttpRequestDef.Builder<ShowIncidentDetailRequest, ShowIncidentDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowIncidentDetailRequest.class, ShowIncidentDetailResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}");
-
-        // requests
-        builder.withRequestField("case_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowIncidentDetailRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            })
-        );
-        builder.withRequestField("group_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowIncidentDetailRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("X-Site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ShowIncidentDetailRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowIncidentDetailRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("X-Time-Zone",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowIncidentDetailRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowPartnersCasesProcessingPrivilegeRequest, ShowPartnersCasesProcessingPrivilegeResponse> showPartnersCasesProcessingPrivilege = genForshowPartnersCasesProcessingPrivilege();
 
     private static HttpRequestDef<ShowPartnersCasesProcessingPrivilegeRequest, ShowPartnersCasesProcessingPrivilegeResponse> genForshowPartnersCasesProcessingPrivilege() {
         // basic
         HttpRequestDef.Builder<ShowPartnersCasesProcessingPrivilegeRequest, ShowPartnersCasesProcessingPrivilegeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartnersCasesProcessingPrivilegeRequest.class, ShowPartnersCasesProcessingPrivilegeResponse.class)
-                .withUri("/v2/servicerequest/partners/privilege/cases-processing");
+                .withUri("/v2/servicerequest/cases/partners/privilege/cases-processing");
 
         // requests
         builder.withRequestField("X-Site",
@@ -3349,7 +3294,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartnersServiceInfoRequest.class, ShowPartnersServiceInfoResponse.class)
-                .withUri("/v2/servicerequest/partners/service-info");
+                .withUri("/v2/servicerequest/cases/partners/service-info");
 
         // requests
         builder.withRequestField("case_sub_type_id",
@@ -3532,16 +3477,16 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<UpdateLabelsRequest, UpdateLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLabelsRequest.class, UpdateLabelsResponse.class)
-                .withUri("/v2/servicerequest/labels/{lable_id}")
+                .withUri("/v2/servicerequest/labels/{label_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("lable_id",
+        builder.withRequestField("label_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             Integer.class,
-            f -> f.withMarshaller(UpdateLabelsRequest::getLableId, (req, v) -> {
-                req.setLableId(v);
+            f -> f.withMarshaller(UpdateLabelsRequest::getLabelId, (req, v) -> {
+                req.setLabelId(v);
             })
         );
         builder.withRequestField("X-Site",

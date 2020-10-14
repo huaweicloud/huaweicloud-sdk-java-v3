@@ -1,0 +1,258 @@
+package com.huaweicloud.sdk.dcs.v2.model;
+
+
+
+
+import java.util.Collections;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class ListBigkeyScanTasksRequest  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_id")
+    
+    private String instanceId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Integer offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+    /**
+     * Gets or Sets status
+     */
+    public static final class StatusEnum {
+
+        
+        /**
+         * Enum WAITING for value: "waiting"
+         */
+        public static final StatusEnum WAITING = new StatusEnum("waiting");
+        
+        /**
+         * Enum RUNNING for value: "running"
+         */
+        public static final StatusEnum RUNNING = new StatusEnum("running");
+        
+        /**
+         * Enum SUCCESS for value: "success"
+         */
+        public static final StatusEnum SUCCESS = new StatusEnum("success");
+        
+        /**
+         * Enum FAILED for value: "failed"
+         */
+        public static final StatusEnum FAILED = new StatusEnum("failed");
+        
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("waiting", WAITING);
+            map.put("running", RUNNING);
+            map.put("success", SUCCESS);
+            map.put("failed", FAILED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    private StatusEnum status;
+
+    public ListBigkeyScanTasksRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get instanceId
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ListBigkeyScanTasksRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get offset
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListBigkeyScanTasksRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get limit
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListBigkeyScanTasksRequest withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get status
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ListBigkeyScanTasksRequest listBigkeyScanTasksRequest = (ListBigkeyScanTasksRequest) o;
+        return Objects.equals(this.instanceId, listBigkeyScanTasksRequest.instanceId) &&
+            Objects.equals(this.offset, listBigkeyScanTasksRequest.offset) &&
+            Objects.equals(this.limit, listBigkeyScanTasksRequest.limit) &&
+            Objects.equals(this.status, listBigkeyScanTasksRequest.status);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(instanceId, offset, limit, status);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListBigkeyScanTasksRequest {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

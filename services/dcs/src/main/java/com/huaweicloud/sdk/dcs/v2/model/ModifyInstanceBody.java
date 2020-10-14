@@ -143,7 +143,7 @@ public class ModifyInstanceBody  {
 
 
     /**
-     * 安全组ID 可从虚拟私有云服务的控制台界面或者API接口查询得到。 
+     * 安全组ID  可从虚拟私有云服务的控制台界面或者API接口查询得到。  约束：只有Redis 3.0支持 
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

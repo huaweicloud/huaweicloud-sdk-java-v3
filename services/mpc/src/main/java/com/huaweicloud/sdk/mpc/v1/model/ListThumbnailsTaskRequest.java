@@ -25,6 +25,12 @@ public class ListThumbnailsTaskRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="x-language")
+    
+    private String xLanguage;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_id")
     
     private List<String> taskId = null;
@@ -154,6 +160,28 @@ public class ListThumbnailsTaskRequest  {
     @JsonProperty(value="size")
     
     private Integer size = 10;
+
+    public ListThumbnailsTaskRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get xLanguage
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ListThumbnailsTaskRequest withTaskId(List<String> taskId) {
         this.taskId = taskId;
@@ -301,7 +329,8 @@ public class ListThumbnailsTaskRequest  {
             return false;
         }
         ListThumbnailsTaskRequest listThumbnailsTaskRequest = (ListThumbnailsTaskRequest) o;
-        return Objects.equals(this.taskId, listThumbnailsTaskRequest.taskId) &&
+        return Objects.equals(this.xLanguage, listThumbnailsTaskRequest.xLanguage) &&
+            Objects.equals(this.taskId, listThumbnailsTaskRequest.taskId) &&
             Objects.equals(this.status, listThumbnailsTaskRequest.status) &&
             Objects.equals(this.startTime, listThumbnailsTaskRequest.startTime) &&
             Objects.equals(this.endTime, listThumbnailsTaskRequest.endTime) &&
@@ -310,12 +339,13 @@ public class ListThumbnailsTaskRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, startTime, endTime, page, size);
+        return Objects.hash(xLanguage, taskId, status, startTime, endTime, page, size);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListThumbnailsTaskRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

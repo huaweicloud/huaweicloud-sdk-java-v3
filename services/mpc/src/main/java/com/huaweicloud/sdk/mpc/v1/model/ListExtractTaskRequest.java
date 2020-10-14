@@ -25,6 +25,12 @@ public class ListExtractTaskRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="x-language")
+    
+    private String xLanguage;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_id")
     
     private List<String> taskId = null;
@@ -160,6 +166,28 @@ public class ListExtractTaskRequest  {
     @JsonProperty(value="size")
     
     private Integer size = 10;
+
+    public ListExtractTaskRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get xLanguage
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ListExtractTaskRequest withTaskId(List<String> taskId) {
         this.taskId = taskId;
@@ -307,7 +335,8 @@ public class ListExtractTaskRequest  {
             return false;
         }
         ListExtractTaskRequest listExtractTaskRequest = (ListExtractTaskRequest) o;
-        return Objects.equals(this.taskId, listExtractTaskRequest.taskId) &&
+        return Objects.equals(this.xLanguage, listExtractTaskRequest.xLanguage) &&
+            Objects.equals(this.taskId, listExtractTaskRequest.taskId) &&
             Objects.equals(this.status, listExtractTaskRequest.status) &&
             Objects.equals(this.startTime, listExtractTaskRequest.startTime) &&
             Objects.equals(this.endTime, listExtractTaskRequest.endTime) &&
@@ -316,12 +345,13 @@ public class ListExtractTaskRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, startTime, endTime, page, size);
+        return Objects.hash(xLanguage, taskId, status, startTime, endTime, page, size);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListExtractTaskRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

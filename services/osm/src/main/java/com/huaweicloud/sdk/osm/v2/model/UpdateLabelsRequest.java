@@ -20,9 +20,9 @@ public class UpdateLabelsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lable_id")
+    @JsonProperty(value="label_id")
     
-    private Integer lableId;
+    private Integer labelId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,8 +48,8 @@ public class UpdateLabelsRequest  {
     
     private UpdateLabelsReq body = null;
 
-    public UpdateLabelsRequest withLableId(Integer lableId) {
-        this.lableId = lableId;
+    public UpdateLabelsRequest withLabelId(Integer labelId) {
+        this.labelId = labelId;
         return this;
     }
 
@@ -57,17 +57,17 @@ public class UpdateLabelsRequest  {
 
 
     /**
-     * Get lableId
+     * Get labelId
      * minimum: 0
      * maximum: 65535
-     * @return lableId
+     * @return labelId
      */
-    public Integer getLableId() {
-        return lableId;
+    public Integer getLabelId() {
+        return labelId;
     }
 
-    public void setLableId(Integer lableId) {
-        this.lableId = lableId;
+    public void setLabelId(Integer labelId) {
+        this.labelId = labelId;
     }
 
     public UpdateLabelsRequest withXSite(Integer xSite) {
@@ -173,7 +173,7 @@ public class UpdateLabelsRequest  {
             return false;
         }
         UpdateLabelsRequest updateLabelsRequest = (UpdateLabelsRequest) o;
-        return Objects.equals(this.lableId, updateLabelsRequest.lableId) &&
+        return Objects.equals(this.labelId, updateLabelsRequest.labelId) &&
             Objects.equals(this.xSite, updateLabelsRequest.xSite) &&
             Objects.equals(this.xLanguage, updateLabelsRequest.xLanguage) &&
             Objects.equals(this.xTimeZone, updateLabelsRequest.xTimeZone) &&
@@ -181,13 +181,13 @@ public class UpdateLabelsRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(lableId, xSite, xLanguage, xTimeZone, body);
+        return Objects.hash(labelId, xSite, xLanguage, xTimeZone, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateLabelsRequest {\n");
-        sb.append("    lableId: ").append(toIndentedString(lableId)).append("\n");
+        sb.append("    labelId: ").append(toIndentedString(labelId)).append("\n");
         sb.append("    xSite: ").append(toIndentedString(xSite)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    xTimeZone: ").append(toIndentedString(xTimeZone)).append("\n");

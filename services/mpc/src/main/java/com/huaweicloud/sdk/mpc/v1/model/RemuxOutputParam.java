@@ -109,7 +109,7 @@ public class RemuxOutputParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="segment_duration")
     
-    private Integer segmentDuration;
+    private Integer segmentDuration = 5;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -147,6 +147,8 @@ public class RemuxOutputParam  {
 
     /**
      * 分片时长，仅当“format”为“HLS”时有效。  取值范围：[2，10]。  默认值： 5。  单位：秒。 
+     * minimum: 0
+     * maximum: 20
      * @return segmentDuration
      */
     public Integer getSegmentDuration() {

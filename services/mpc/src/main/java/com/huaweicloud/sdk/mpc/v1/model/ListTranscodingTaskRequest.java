@@ -21,6 +21,12 @@ public class ListTranscodingTaskRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="x-language")
+    
+    private String xLanguage;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_id")
     
     private List<Long> taskId = null;
@@ -54,6 +60,28 @@ public class ListTranscodingTaskRequest  {
     @JsonProperty(value="size")
     
     private Integer size = 10;
+
+    public ListTranscodingTaskRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get xLanguage
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
 
     public ListTranscodingTaskRequest withTaskId(List<Long> taskId) {
         this.taskId = taskId;
@@ -201,7 +229,8 @@ public class ListTranscodingTaskRequest  {
             return false;
         }
         ListTranscodingTaskRequest listTranscodingTaskRequest = (ListTranscodingTaskRequest) o;
-        return Objects.equals(this.taskId, listTranscodingTaskRequest.taskId) &&
+        return Objects.equals(this.xLanguage, listTranscodingTaskRequest.xLanguage) &&
+            Objects.equals(this.taskId, listTranscodingTaskRequest.taskId) &&
             Objects.equals(this.status, listTranscodingTaskRequest.status) &&
             Objects.equals(this.startTime, listTranscodingTaskRequest.startTime) &&
             Objects.equals(this.endTime, listTranscodingTaskRequest.endTime) &&
@@ -210,12 +239,13 @@ public class ListTranscodingTaskRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, startTime, endTime, page, size);
+        return Objects.hash(xLanguage, taskId, status, startTime, endTime, page, size);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTranscodingTaskRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

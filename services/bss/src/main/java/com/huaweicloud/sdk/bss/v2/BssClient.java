@@ -215,6 +215,17 @@ public class BssClient {
     }
 
     /**
+     * 查询流水账单
+     * 功能描述：客户在客户自建平台查询自己的流水账单
+     *
+     * @param ListCustomerBillsFeeRecordsRequest 请求对象
+     * @return ListCustomerBillsFeeRecordsResponse
+     */
+    public ListCustomerBillsFeeRecordsResponse listCustomerBillsFeeRecords(ListCustomerBillsFeeRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listCustomerBillsFeeRecords);
+    }
+
+    /**
      * 查询客户按需资源列表
      * 功能描述：查询客户按需资源列表
      *
@@ -278,6 +289,28 @@ public class BssClient {
      */
     public ListEnterpriseMultiAccountResponse listEnterpriseMultiAccount(ListEnterpriseMultiAccountRequest request) {
         return hcClient.syncInvokeHttp(request, BssMeta.listEnterpriseMultiAccount);
+    }
+
+    /**
+     * 查询企业组织结构
+     * 功能描述：企业主账号在客户自建平台查询企业组织结构
+     *
+     * @param ListEnterpriseOrganizationsRequest 请求对象
+     * @return ListEnterpriseOrganizationsResponse
+     */
+    public ListEnterpriseOrganizationsResponse listEnterpriseOrganizations(ListEnterpriseOrganizationsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listEnterpriseOrganizations);
+    }
+
+    /**
+     * 查询企业子账号列表
+     * 功能描述：企业主账号在客户自建平台查询企业子账号信息列表
+     *
+     * @param ListEnterpriseSubCustomersRequest 请求对象
+     * @return ListEnterpriseSubCustomersResponse
+     */
+    public ListEnterpriseSubCustomersResponse listEnterpriseSubCustomers(ListEnterpriseSubCustomersRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listEnterpriseSubCustomers);
     }
 
     /**

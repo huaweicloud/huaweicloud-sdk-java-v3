@@ -39,7 +39,7 @@ public class AccessoryJsonFormatReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="accessory_data")
     
-    private byte[] accessoryData;
+    private String accessoryData;
 
     public AccessoryJsonFormatReq withAccessoryName(String accessoryName) {
         this.accessoryName = accessoryName;
@@ -103,7 +103,7 @@ public class AccessoryJsonFormatReq  {
         this.uploadType = uploadType;
     }
 
-    public AccessoryJsonFormatReq withAccessoryData(byte[] accessoryData) {
+    public AccessoryJsonFormatReq withAccessoryData(String accessoryData) {
         this.accessoryData = accessoryData;
         return this;
     }
@@ -112,14 +112,14 @@ public class AccessoryJsonFormatReq  {
 
 
     /**
-     * 文件字节流
+     * 文件内容，Base64格式
      * @return accessoryData
      */
-    public byte[] getAccessoryData() {
+    public String getAccessoryData() {
         return accessoryData;
     }
 
-    public void setAccessoryData(byte[] accessoryData) {
+    public void setAccessoryData(String accessoryData) {
         this.accessoryData = accessoryData;
     }
     @Override

@@ -116,6 +116,14 @@ public class MpcMeta {
                 req.setSize(v);
             })
         );
+        builder.withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAnimatedGraphicsTaskRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
 
         // response
 
@@ -334,6 +342,14 @@ public class MpcMeta {
             Integer.class,
             f -> f.withMarshaller(ListExtractTaskRequest::getSize, (req, v) -> {
                 req.setSize(v);
+            })
+        );
+        builder.withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListExtractTaskRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 
@@ -760,6 +776,14 @@ public class MpcMeta {
                 req.setSize(v);
             })
         );
+        builder.withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListThumbnailsTaskRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
 
         // response
 
@@ -868,6 +892,14 @@ public class MpcMeta {
             Integer.class,
             f -> f.withMarshaller(ListTranscodingTaskRequest::getSize, (req, v) -> {
                 req.setSize(v);
+            })
+        );
+        builder.withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTranscodingTaskRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 

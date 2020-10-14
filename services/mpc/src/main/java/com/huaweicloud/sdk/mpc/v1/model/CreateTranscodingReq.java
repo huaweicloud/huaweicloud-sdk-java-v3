@@ -21,6 +21,7 @@ import com.huaweicloud.sdk.mpc.v1.model.QualityEnhance;
 import com.huaweicloud.sdk.mpc.v1.model.SpecialEffect;
 import com.huaweicloud.sdk.mpc.v1.model.Subtitle;
 import com.huaweicloud.sdk.mpc.v1.model.SystemProcess;
+import com.huaweicloud.sdk.mpc.v1.model.TemplateExtend;
 import com.huaweicloud.sdk.mpc.v1.model.Thumbnail;
 import com.huaweicloud.sdk.mpc.v1.model.VideoProcess;
 import com.huaweicloud.sdk.mpc.v1.model.WatermarkRequest;
@@ -61,6 +62,12 @@ public class CreateTranscodingReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="watermarks")
     
     private List<WatermarkRequest> watermarks = null;
@@ -82,12 +89,6 @@ public class CreateTranscodingReq  {
     @JsonProperty(value="project_id")
     
     private String projectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="canonicalGrant_id")
-    
-    private String canonicalGrantId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -191,6 +192,12 @@ public class CreateTranscodingReq  {
     
     private List<AvParameters> avParameters = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="template_extend")
+    
+    private TemplateExtend templateExtend = null;
+
     public CreateTranscodingReq withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -313,6 +320,26 @@ public class CreateTranscodingReq  {
         this.outputFilenames = outputFilenames;
     }
 
+    public CreateTranscodingReq withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public CreateTranscodingReq withWatermarks(List<WatermarkRequest> watermarks) {
         this.watermarks = watermarks;
         return this;
@@ -419,26 +446,6 @@ public class CreateTranscodingReq  {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public CreateTranscodingReq withCanonicalGrantId(String canonicalGrantId) {
-        this.canonicalGrantId = canonicalGrantId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 项目ID
-     * @return canonicalGrantId
-     */
-    public String getCanonicalGrantId() {
-        return canonicalGrantId;
-    }
-
-    public void setCanonicalGrantId(String canonicalGrantId) {
-        this.canonicalGrantId = canonicalGrantId;
     }
 
     public CreateTranscodingReq withVipUser(Boolean vipUser) {
@@ -873,6 +880,33 @@ public class CreateTranscodingReq  {
     public void setAvParameters(List<AvParameters> avParameters) {
         this.avParameters = avParameters;
     }
+
+    public CreateTranscodingReq withTemplateExtend(TemplateExtend templateExtend) {
+        this.templateExtend = templateExtend;
+        return this;
+    }
+
+    public CreateTranscodingReq withTemplateExtend(Consumer<TemplateExtend> templateExtendSetter) {
+        if(this.templateExtend == null ){
+            this.templateExtend = new TemplateExtend();
+            templateExtendSetter.accept(this.templateExtend);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get templateExtend
+     * @return templateExtend
+     */
+    public TemplateExtend getTemplateExtend() {
+        return templateExtend;
+    }
+
+    public void setTemplateExtend(TemplateExtend templateExtend) {
+        this.templateExtend = templateExtend;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -886,11 +920,11 @@ public class CreateTranscodingReq  {
             Objects.equals(this.output, createTranscodingReq.output) &&
             Objects.equals(this.transTemplateId, createTranscodingReq.transTemplateId) &&
             Objects.equals(this.outputFilenames, createTranscodingReq.outputFilenames) &&
+            Objects.equals(this.userData, createTranscodingReq.userData) &&
             Objects.equals(this.watermarks, createTranscodingReq.watermarks) &&
             Objects.equals(this.thumbnail, createTranscodingReq.thumbnail) &&
             Objects.equals(this.digitalWatermark, createTranscodingReq.digitalWatermark) &&
             Objects.equals(this.projectId, createTranscodingReq.projectId) &&
-            Objects.equals(this.canonicalGrantId, createTranscodingReq.canonicalGrantId) &&
             Objects.equals(this.vipUser, createTranscodingReq.vipUser) &&
             Objects.equals(this.taskId, createTranscodingReq.taskId) &&
             Objects.equals(this.domainName, createTranscodingReq.domainName) &&
@@ -907,11 +941,12 @@ public class CreateTranscodingReq  {
             Objects.equals(this.audioProcess, createTranscodingReq.audioProcess) &&
             Objects.equals(this.qualityEnhance, createTranscodingReq.qualityEnhance) &&
             Objects.equals(this.systemProcess, createTranscodingReq.systemProcess) &&
-            Objects.equals(this.avParameters, createTranscodingReq.avParameters);
+            Objects.equals(this.avParameters, createTranscodingReq.avParameters) &&
+            Objects.equals(this.templateExtend, createTranscodingReq.templateExtend);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, transTemplateId, outputFilenames, watermarks, thumbnail, digitalWatermark, projectId, canonicalGrantId, vipUser, taskId, domainName, tenantProjectId, priority, audit, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, avParameters);
+        return Objects.hash(input, output, transTemplateId, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, projectId, vipUser, taskId, domainName, tenantProjectId, priority, audit, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, avParameters, templateExtend);
     }
     @Override
     public String toString() {
@@ -921,11 +956,11 @@ public class CreateTranscodingReq  {
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    transTemplateId: ").append(toIndentedString(transTemplateId)).append("\n");
         sb.append("    outputFilenames: ").append(toIndentedString(outputFilenames)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    watermarks: ").append(toIndentedString(watermarks)).append("\n");
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    digitalWatermark: ").append(toIndentedString(digitalWatermark)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    canonicalGrantId: ").append(toIndentedString(canonicalGrantId)).append("\n");
         sb.append("    vipUser: ").append(toIndentedString(vipUser)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
@@ -943,6 +978,7 @@ public class CreateTranscodingReq  {
         sb.append("    qualityEnhance: ").append(toIndentedString(qualityEnhance)).append("\n");
         sb.append("    systemProcess: ").append(toIndentedString(systemProcess)).append("\n");
         sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
+        sb.append("    templateExtend: ").append(toIndentedString(templateExtend)).append("\n");
         sb.append("}");
         return sb.toString();
     }

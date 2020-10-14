@@ -24,6 +24,60 @@ public class CreateInstanceBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="engine")
+    
+    private String engine;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="engine_version")
+    
+    private String engineVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="capacity")
+    
+    private Float capacity;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="spec_code")
+    
+    private String specCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="az_codes")
+    
+    private List<String> azCodes = new ArrayList<>();
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vpc_id")
+    
+    private String vpcId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="subnet_id")
+    
+    private String subnetId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="security_group_id")
+    
+    private String securityGroupId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicip_id")
     
     private String publicipId = "false";
@@ -42,21 +96,9 @@ public class CreateInstanceBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
-    private String vpcId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
-    private String securityGroupId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,12 +111,6 @@ public class CreateInstanceBody  {
     @JsonProperty(value="private_ip")
     
     private String privateIp;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capacity")
-    
-    private Float capacity;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,24 +138,6 @@ public class CreateInstanceBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine")
-    
-    private String engine;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_version")
-    
-    private String engineVersion;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
-    private String specCode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="no_password_access")
     
     private Boolean noPasswordAccess = false;
@@ -136,12 +154,6 @@ public class CreateInstanceBody  {
     
     private BackupPolicy instanceBackupPolicy = null;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_codes")
-    
-    private List<String> azCodes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
@@ -162,18 +174,6 @@ public class CreateInstanceBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
-    private String subnetId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
     private Integer port;
@@ -183,6 +183,197 @@ public class CreateInstanceBody  {
     @JsonProperty(value="rename_commands")
     
     private Object renameCommands = null;
+
+    public CreateInstanceBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例名称。  由英文字符开头，只能由英文字母、数字、中划线和下划线组成。  创建单个实例时，名称长度为4到64位的字符串。批量创建实例时，名称长度为4到56位的字符串，且实例名称格式为“自定义名称-n”，其中n从000开始，依次递增。例如，批量创建两个实例，自定义名称为dcs_demo，则两个实例的名称为dcs_demo-000和dcs_demo-001。 
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public CreateInstanceBody withEngine(String engine) {
+        this.engine = engine;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 缓存引擎：Redis和Memcached。
+     * @return engine
+     */
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    public CreateInstanceBody withEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 缓存版本，当缓存引擎为Redis时，取值为3.0、4.0或5.0。
+     * @return engineVersion
+     */
+    public String getEngineVersion() {
+        return engineVersion;
+    }
+
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
+    public CreateInstanceBody withCapacity(Float capacity) {
+        this.capacity = capacity;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 缓存容量（G Byte） - Redis3.0：单机和主备类型实例取值：2、4、8、16、32、64。Proxy集群实例规格支持64、128、256、512和1024。 - Redis4.0和Redis5.0：单机和主备类型实例取值：0.125、0.25、0.5、1、2、4、8、16、32、64。Cluster集群实例规格支持24、32、48、64、96、128、192、256、384、512、768、1024。 - Memcached：单机和主备类型实例取值：2、4、8、16、32、64。 
+     * @return capacity
+     */
+    public Float getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Float capacity) {
+        this.capacity = capacity;
+    }
+
+    public CreateInstanceBody withSpecCode(String specCode) {
+        this.specCode = specCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 产品规格编码。具体查询方法，请参考[查询产品规格](https://support.huaweicloud.com/api-dcs/ListFlavors.html)。 
+     * @return specCode
+     */
+    public String getSpecCode() {
+        return specCode;
+    }
+
+    public void setSpecCode(String specCode) {
+        this.specCode = specCode;
+    }
+
+    public CreateInstanceBody withAzCodes(List<String> azCodes) {
+        this.azCodes = azCodes;
+        return this;
+    }
+
+    
+    public CreateInstanceBody addAzCodesItem(String azCodesItem) {
+        this.azCodes.add(azCodesItem);
+        return this;
+    }
+
+    public CreateInstanceBody withAzCodes(Consumer<List<String>> azCodesSetter) {
+        if(this.azCodes == null ){
+            this.azCodes = new ArrayList<>();
+        }
+        azCodesSetter.accept(this.azCodes);
+        return this;
+    }
+
+    /**
+     * 创建缓存节点到指定且有资源的可用区Code。创建缓存节点到指定且有资源的可用区Code。具体查询方法，请参考[查询可用区信息](https://support.huaweicloud.com/api-dcs/ListAvailableZones.html)，在查询时，请注意查看该可用区是否有资源。  如果是创建主备、Proxy集群、Cluster集群实例，支持跨可用区部署，可以为备节点指定备可用区。在为节点指定可用区时，用逗号分隔开，具体请查看示例。 
+     * @return azCodes
+     */
+    public List<String> getAzCodes() {
+        return azCodes;
+    }
+
+    public void setAzCodes(List<String> azCodes) {
+        this.azCodes = azCodes;
+    }
+
+    public CreateInstanceBody withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 虚拟私有云ID。  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。 
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public CreateInstanceBody withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 子网的网络ID。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。 
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public CreateInstanceBody withSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指定实例所属的安全组。  当前仅Redis3.0支持安全组访问控制，Redis4.0和Redis5.0版本实例不支持安全组控制访问，只支持白名单控制，在创建Redis4.0/5.0实例时，不支持配置该参数。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0002.html)。 
+     * @return securityGroupId
+     */
+    public String getSecurityGroupId() {
+        return securityGroupId;
+    }
+
+    public void setSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+    }
 
     public CreateInstanceBody withPublicipId(String publicipId) {
         this.publicipId = publicipId;
@@ -244,26 +435,6 @@ public class CreateInstanceBody  {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
-    public CreateInstanceBody withVpcId(String vpcId) {
-        this.vpcId = vpcId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 虚拟私有云ID。  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html) 
-     * @return vpcId
-     */
-    public String getVpcId() {
-        return vpcId;
-    }
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
     public CreateInstanceBody withDescription(String description) {
         this.description = description;
         return this;
@@ -282,26 +453,6 @@ public class CreateInstanceBody  {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public CreateInstanceBody withSecurityGroupId(String securityGroupId) {
-        this.securityGroupId = securityGroupId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定实例所属的安全组。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0002.html) 
-     * @return securityGroupId
-     */
-    public String getSecurityGroupId() {
-        return securityGroupId;
-    }
-
-    public void setSecurityGroupId(String securityGroupId) {
-        this.securityGroupId = securityGroupId;
     }
 
     public CreateInstanceBody withEnableSsl(Boolean enableSsl) {
@@ -344,26 +495,6 @@ public class CreateInstanceBody  {
         this.privateIp = privateIp;
     }
 
-    public CreateInstanceBody withCapacity(Float capacity) {
-        this.capacity = capacity;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 缓存容量（G Byte） - Redis3.0：单机和主备类型实例取值：2、4、8、16、32、64。Proxy集群实例规格支持64、128、256、512和1024。 - Redis4.0和Redis5.0：单机和主备类型实例取值：0.125、0.25、0.5、1、2、4、8、16、32、64。Cluster集群实例规格支持24、32、48、64、96、128、192、256、384、512、768、1024。 - Memcached：单机和主备类型实例取值：2、4、8、16、32、64。 
-     * @return capacity
-     */
-    public Float getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(Float capacity) {
-        this.capacity = capacity;
-    }
-
     public CreateInstanceBody withInstanceNum(Integer instanceNum) {
         this.instanceNum = instanceNum;
         return this;
@@ -393,7 +524,7 @@ public class CreateInstanceBody  {
 
 
     /**
-     * 维护时间窗开始时间，格式为HH:mm:ss - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00:00。 
+     * 维护时间窗开始时间，格式为HH:mm:ss - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 开始时间必须为22:00:00、02:00:00、06:00:00、10:00:00、14:00:00和18:00:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00:00。 
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -413,7 +544,7 @@ public class CreateInstanceBody  {
 
 
     /**
-     * 维护时间窗结束时间，格式为HH:mm:ss。 - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00:00。 
+     * 维护时间窗结束时间，格式为HH:mm:ss。 - 维护时间窗开始和结束时间必须为指定的时间段，可参考[查询维护时间窗时间段](https://support.huaweicloud.com/api-dcs/ListMaintenanceWindows.html)获取。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00:00时，结束时间为02:00:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00:00。 
      * @return maintainEnd
      */
     public String getMaintainEnd() {
@@ -442,66 +573,6 @@ public class CreateInstanceBody  {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public CreateInstanceBody withEngine(String engine) {
-        this.engine = engine;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 缓存引擎：Redis和Memcached。
-     * @return engine
-     */
-    public String getEngine() {
-        return engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
-
-    public CreateInstanceBody withEngineVersion(String engineVersion) {
-        this.engineVersion = engineVersion;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 缓存版本，当缓存引擎为Redis时，取值为3.0、4.0或5.0。
-     * @return engineVersion
-     */
-    public String getEngineVersion() {
-        return engineVersion;
-    }
-
-    public void setEngineVersion(String engineVersion) {
-        this.engineVersion = engineVersion;
-    }
-
-    public CreateInstanceBody withSpecCode(String specCode) {
-        this.specCode = specCode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 产品规格编码。
-     * @return specCode
-     */
-    public String getSpecCode() {
-        return specCode;
-    }
-
-    public void setSpecCode(String specCode) {
-        this.specCode = specCode;
     }
 
     public CreateInstanceBody withNoPasswordAccess(Boolean noPasswordAccess) {
@@ -578,40 +649,6 @@ public class CreateInstanceBody  {
         this.instanceBackupPolicy = instanceBackupPolicy;
     }
 
-    public CreateInstanceBody withAzCodes(List<String> azCodes) {
-        this.azCodes = azCodes;
-        return this;
-    }
-
-    
-    public CreateInstanceBody addAzCodesItem(String azCodesItem) {
-        if (this.azCodes == null) {
-            this.azCodes = new ArrayList<>();
-        }
-        this.azCodes.add(azCodesItem);
-        return this;
-    }
-
-    public CreateInstanceBody withAzCodes(Consumer<List<String>> azCodesSetter) {
-        if(this.azCodes == null ){
-            this.azCodes = new ArrayList<>();
-        }
-        azCodesSetter.accept(this.azCodes);
-        return this;
-    }
-
-    /**
-     * 创建缓存节点到指定且有资源的可用区Code。创建缓存节点到指定且有资源的可用区Code。具体查询方法，请参考[查询可用区信息](https://support.huaweicloud.com/api-dcs/ListAvailableZones.html),，在查询时，请注意查看该可用区是否有资源。  如果是创建主备、Proxy集群、Cluster集群实例，支持跨可用区部署，可以为备节点指定备可用区。在为节点指定可用区时，用逗号分隔开，具体请查看示例。 
-     * @return azCodes
-     */
-    public List<String> getAzCodes() {
-        return azCodes;
-    }
-
-    public void setAzCodes(List<String> azCodes) {
-        this.azCodes = azCodes;
-    }
-
     public CreateInstanceBody withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -686,46 +723,6 @@ public class CreateInstanceBody  {
         this.enablePublicip = enablePublicip;
     }
 
-    public CreateInstanceBody withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 实例名称。 由英文字符开头，只能由英文字母、数字、中划线和下划线组成。 创建单个实例时，名称长度为4到64位的字符串。批量创建实例时，名称长度为4到56位的字符串，且实例名称格式为“自定义名称-n”，其中n从000开始，依次递增。例如，批量创建两个实例，自定义名称为dcs_demo，则两个实例的名称为dcs_demo-000和dcs_demo-001。 
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public CreateInstanceBody withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 子网的网络ID。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html) 
-     * @return subnetId
-     */
-    public String getSubnetId() {
-        return subnetId;
-    }
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
     public CreateInstanceBody withPort(Integer port) {
         this.port = port;
         return this;
@@ -774,67 +771,67 @@ public class CreateInstanceBody  {
             return false;
         }
         CreateInstanceBody createInstanceBody = (CreateInstanceBody) o;
-        return Objects.equals(this.publicipId, createInstanceBody.publicipId) &&
+        return Objects.equals(this.name, createInstanceBody.name) &&
+            Objects.equals(this.engine, createInstanceBody.engine) &&
+            Objects.equals(this.engineVersion, createInstanceBody.engineVersion) &&
+            Objects.equals(this.capacity, createInstanceBody.capacity) &&
+            Objects.equals(this.specCode, createInstanceBody.specCode) &&
+            Objects.equals(this.azCodes, createInstanceBody.azCodes) &&
+            Objects.equals(this.vpcId, createInstanceBody.vpcId) &&
+            Objects.equals(this.subnetId, createInstanceBody.subnetId) &&
+            Objects.equals(this.securityGroupId, createInstanceBody.securityGroupId) &&
+            Objects.equals(this.publicipId, createInstanceBody.publicipId) &&
             Objects.equals(this.enterpriseProjectId, createInstanceBody.enterpriseProjectId) &&
             Objects.equals(this.enterpriseProjectName, createInstanceBody.enterpriseProjectName) &&
-            Objects.equals(this.vpcId, createInstanceBody.vpcId) &&
             Objects.equals(this.description, createInstanceBody.description) &&
-            Objects.equals(this.securityGroupId, createInstanceBody.securityGroupId) &&
             Objects.equals(this.enableSsl, createInstanceBody.enableSsl) &&
             Objects.equals(this.privateIp, createInstanceBody.privateIp) &&
-            Objects.equals(this.capacity, createInstanceBody.capacity) &&
             Objects.equals(this.instanceNum, createInstanceBody.instanceNum) &&
             Objects.equals(this.maintainBegin, createInstanceBody.maintainBegin) &&
             Objects.equals(this.maintainEnd, createInstanceBody.maintainEnd) &&
             Objects.equals(this.password, createInstanceBody.password) &&
-            Objects.equals(this.engine, createInstanceBody.engine) &&
-            Objects.equals(this.engineVersion, createInstanceBody.engineVersion) &&
-            Objects.equals(this.specCode, createInstanceBody.specCode) &&
             Objects.equals(this.noPasswordAccess, createInstanceBody.noPasswordAccess) &&
             Objects.equals(this.bssParam, createInstanceBody.bssParam) &&
             Objects.equals(this.instanceBackupPolicy, createInstanceBody.instanceBackupPolicy) &&
-            Objects.equals(this.azCodes, createInstanceBody.azCodes) &&
             Objects.equals(this.tags, createInstanceBody.tags) &&
             Objects.equals(this.accessUser, createInstanceBody.accessUser) &&
             Objects.equals(this.enablePublicip, createInstanceBody.enablePublicip) &&
-            Objects.equals(this.name, createInstanceBody.name) &&
-            Objects.equals(this.subnetId, createInstanceBody.subnetId) &&
             Objects.equals(this.port, createInstanceBody.port) &&
             Objects.equals(this.renameCommands, createInstanceBody.renameCommands);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(publicipId, enterpriseProjectId, enterpriseProjectName, vpcId, description, securityGroupId, enableSsl, privateIp, capacity, instanceNum, maintainBegin, maintainEnd, password, engine, engineVersion, specCode, noPasswordAccess, bssParam, instanceBackupPolicy, azCodes, tags, accessUser, enablePublicip, name, subnetId, port, renameCommands);
+        return Objects.hash(name, engine, engineVersion, capacity, specCode, azCodes, vpcId, subnetId, securityGroupId, publicipId, enterpriseProjectId, enterpriseProjectName, description, enableSsl, privateIp, instanceNum, maintainBegin, maintainEnd, password, noPasswordAccess, bssParam, instanceBackupPolicy, tags, accessUser, enablePublicip, port, renameCommands);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceBody {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
+        sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
-        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
-        sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
         sb.append("    instanceNum: ").append(toIndentedString(instanceNum)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
-        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
-        sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
-        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    noPasswordAccess: ").append(toIndentedString(noPasswordAccess)).append("\n");
         sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
         sb.append("    instanceBackupPolicy: ").append(toIndentedString(instanceBackupPolicy)).append("\n");
-        sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    renameCommands: ").append(toIndentedString(renameCommands)).append("\n");
         sb.append("}");

@@ -34,9 +34,15 @@ public class CreateAnimatedGraphicsTaskReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync")
     
-    private Integer sync;
+    private Integer sync = 0;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,6 +104,26 @@ public class CreateAnimatedGraphicsTaskReq  {
         this.output = output;
     }
 
+    public CreateAnimatedGraphicsTaskReq withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public CreateAnimatedGraphicsTaskReq withSync(Integer sync) {
         this.sync = sync;
         return this;
@@ -108,6 +134,8 @@ public class CreateAnimatedGraphicsTaskReq  {
 
     /**
      * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
+     * minimum: 0
+     * maximum: 2
      * @return sync
      */
     public Integer getSync() {
@@ -155,12 +183,13 @@ public class CreateAnimatedGraphicsTaskReq  {
         CreateAnimatedGraphicsTaskReq createAnimatedGraphicsTaskReq = (CreateAnimatedGraphicsTaskReq) o;
         return Objects.equals(this.input, createAnimatedGraphicsTaskReq.input) &&
             Objects.equals(this.output, createAnimatedGraphicsTaskReq.output) &&
+            Objects.equals(this.userData, createAnimatedGraphicsTaskReq.userData) &&
             Objects.equals(this.sync, createAnimatedGraphicsTaskReq.sync) &&
             Objects.equals(this.outputParam, createAnimatedGraphicsTaskReq.outputParam);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, sync, outputParam);
+        return Objects.hash(input, output, userData, sync, outputParam);
     }
     @Override
     public String toString() {
@@ -168,6 +197,7 @@ public class CreateAnimatedGraphicsTaskReq  {
         sb.append("class CreateAnimatedGraphicsTaskReq {\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("}");

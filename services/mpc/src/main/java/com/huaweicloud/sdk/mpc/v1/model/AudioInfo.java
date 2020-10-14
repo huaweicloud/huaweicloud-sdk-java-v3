@@ -41,6 +41,12 @@ public class AudioInfo  {
     
     private Integer bitrate;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bitrate_bps")
+    
+    private Long bitrateBps;
+
     public AudioInfo withCodec(String codec) {
         this.codec = codec;
         return this;
@@ -110,7 +116,7 @@ public class AudioInfo  {
 
 
     /**
-     * 音频码率
+     * 音频码率，单位: kbit/s 
      * @return bitrate
      */
     public Integer getBitrate() {
@@ -119,6 +125,28 @@ public class AudioInfo  {
 
     public void setBitrate(Integer bitrate) {
         this.bitrate = bitrate;
+    }
+
+    public AudioInfo withBitrateBps(Long bitrateBps) {
+        this.bitrateBps = bitrateBps;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 音频码率，单位: bit/s 
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return bitrateBps
+     */
+    public Long getBitrateBps() {
+        return bitrateBps;
+    }
+
+    public void setBitrateBps(Long bitrateBps) {
+        this.bitrateBps = bitrateBps;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -132,11 +160,12 @@ public class AudioInfo  {
         return Objects.equals(this.codec, audioInfo.codec) &&
             Objects.equals(this.sample, audioInfo.sample) &&
             Objects.equals(this.channels, audioInfo.channels) &&
-            Objects.equals(this.bitrate, audioInfo.bitrate);
+            Objects.equals(this.bitrate, audioInfo.bitrate) &&
+            Objects.equals(this.bitrateBps, audioInfo.bitrateBps);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(codec, sample, channels, bitrate);
+        return Objects.hash(codec, sample, channels, bitrate, bitrateBps);
     }
     @Override
     public String toString() {
@@ -146,6 +175,7 @@ public class AudioInfo  {
         sb.append("    sample: ").append(toIndentedString(sample)).append("\n");
         sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");
+        sb.append("    bitrateBps: ").append(toIndentedString(bitrateBps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

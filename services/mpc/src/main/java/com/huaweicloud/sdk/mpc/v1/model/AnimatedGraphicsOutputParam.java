@@ -159,7 +159,7 @@ public class AnimatedGraphicsOutputParam  {
 
     /**
      * 输出动图的宽。  取值范围：0，-1或[32,3840]之间2的倍数。  >- 若设置为-1， 则宽根据高来自适应，此时“height”不能取-1或0。 >- 若设置为0，则取原始视频的宽，此时“height”只能取0。 
-     * minimum: 0
+     * minimum: -1
      * maximum: 3840
      * @return width
      */
@@ -181,7 +181,7 @@ public class AnimatedGraphicsOutputParam  {
 
     /**
      * 输出动图的高。  取值范围：0，-1或[32,2160]之间2的倍数。  >- 若设置为-1， 则高根据宽来自适应，此时“width”不能取-1或0。 >- 若设置为0，则取原始视频的高，此时“width”只能取0。 
-     * minimum: 0
+     * minimum: -1
      * maximum: 2160
      * @return height
      */

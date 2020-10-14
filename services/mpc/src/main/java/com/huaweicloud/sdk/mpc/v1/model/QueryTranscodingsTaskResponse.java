@@ -185,6 +185,12 @@ public class QueryTranscodingsTaskResponse  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
     private String errorCode;
@@ -439,6 +445,26 @@ public class QueryTranscodingsTaskResponse  {
         this.outputFileName = outputFileName;
     }
 
+    public QueryTranscodingsTaskResponse withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public QueryTranscodingsTaskResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -670,6 +696,7 @@ public class QueryTranscodingsTaskResponse  {
             Objects.equals(this.input, queryTranscodingsTaskResponse.input) &&
             Objects.equals(this.output, queryTranscodingsTaskResponse.output) &&
             Objects.equals(this.outputFileName, queryTranscodingsTaskResponse.outputFileName) &&
+            Objects.equals(this.userData, queryTranscodingsTaskResponse.userData) &&
             Objects.equals(this.errorCode, queryTranscodingsTaskResponse.errorCode) &&
             Objects.equals(this.description, queryTranscodingsTaskResponse.description) &&
             Objects.equals(this.tips, queryTranscodingsTaskResponse.tips) &&
@@ -682,7 +709,7 @@ public class QueryTranscodingsTaskResponse  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, endTime, transTemplateId, input, output, outputFileName, errorCode, description, tips, outputUrl, transcodeDetail, thumbnailOutput, thumbnailOutputname, picInfo, auditReport);
+        return Objects.hash(taskId, status, createTime, endTime, transTemplateId, input, output, outputFileName, userData, errorCode, description, tips, outputUrl, transcodeDetail, thumbnailOutput, thumbnailOutputname, picInfo, auditReport);
     }
     @Override
     public String toString() {
@@ -696,6 +723,7 @@ public class QueryTranscodingsTaskResponse  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    outputFileName: ").append(toIndentedString(outputFileName)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    tips: ").append(toIndentedString(tips)).append("\n");

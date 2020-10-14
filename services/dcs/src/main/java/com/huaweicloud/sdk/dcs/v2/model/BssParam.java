@@ -111,7 +111,7 @@ public class BssParam  {
     
     private IsAutoRenewEnum isAutoRenew = IsAutoRenewEnum.FALSE;
     /**
-     * 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid -预付费，即包年包月； - postPaid -后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
+     * 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid：预付费，即包年包月； - postPaid：后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
      */
     public static final class ChargingModeEnum {
 
@@ -398,7 +398,7 @@ public class BssParam  {
 
 
     /**
-     * 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid -预付费，即包年包月； - postPaid -后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
+     * 功能说明：付费方式（预付费、按需付费；预付费，即包周期付费）。 取值范围： - prePaid：预付费，即包年包月； - postPaid：后付费，即按需付费； 默认值是postPaid。 后付费的场景下，bss_param参数的其他字段都会被忽略。 
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -458,7 +458,7 @@ public class BssParam  {
 
 
     /**
-     * 功能说明：订购周期数 取值范围：(后续会随运营策略变化) - period_type为month时，为[1,9]， - period_type为year时，为[1,3] 约束：同period_type约束。 
+     * 功能说明：订购周期数 取值范围：(后续会随运营策略变化) - period_type为month时，为[1,9]， - period_type为year时，为[1,3]  约束：同period_type约束。 
      * @return periodNum
      */
     public Integer getPeriodNum() {

@@ -19,9 +19,9 @@ public class DeleteLabelsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lable_id")
+    @JsonProperty(value="label_id")
     
-    private Integer lableId;
+    private Integer labelId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,8 +41,8 @@ public class DeleteLabelsRequest  {
     
     private String xTimeZone;
 
-    public DeleteLabelsRequest withLableId(Integer lableId) {
-        this.lableId = lableId;
+    public DeleteLabelsRequest withLabelId(Integer labelId) {
+        this.labelId = labelId;
         return this;
     }
 
@@ -50,17 +50,17 @@ public class DeleteLabelsRequest  {
 
 
     /**
-     * Get lableId
+     * Get labelId
      * minimum: 0
      * maximum: 65535
-     * @return lableId
+     * @return labelId
      */
-    public Integer getLableId() {
-        return lableId;
+    public Integer getLabelId() {
+        return labelId;
     }
 
-    public void setLableId(Integer lableId) {
-        this.lableId = lableId;
+    public void setLabelId(Integer labelId) {
+        this.labelId = labelId;
     }
 
     public DeleteLabelsRequest withXSite(Integer xSite) {
@@ -139,20 +139,20 @@ public class DeleteLabelsRequest  {
             return false;
         }
         DeleteLabelsRequest deleteLabelsRequest = (DeleteLabelsRequest) o;
-        return Objects.equals(this.lableId, deleteLabelsRequest.lableId) &&
+        return Objects.equals(this.labelId, deleteLabelsRequest.labelId) &&
             Objects.equals(this.xSite, deleteLabelsRequest.xSite) &&
             Objects.equals(this.xLanguage, deleteLabelsRequest.xLanguage) &&
             Objects.equals(this.xTimeZone, deleteLabelsRequest.xTimeZone);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(lableId, xSite, xLanguage, xTimeZone);
+        return Objects.hash(labelId, xSite, xLanguage, xTimeZone);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteLabelsRequest {\n");
-        sb.append("    lableId: ").append(toIndentedString(lableId)).append("\n");
+        sb.append("    labelId: ").append(toIndentedString(labelId)).append("\n");
         sb.append("    xSite: ").append(toIndentedString(xSite)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    xTimeZone: ").append(toIndentedString(xTimeZone)).append("\n");

@@ -214,7 +214,7 @@ public class CreateMigrationTaskBody  {
     
     private BackupFilesBody backupFiles = null;
     /**
-     * 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 取值范围： - vpc - vpn 
+     * 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 
      */
     public static final class NetworkTypeEnum {
 
@@ -426,7 +426,7 @@ public class CreateMigrationTaskBody  {
 
 
     /**
-     * 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 取值范围： - vpc - vpn 
+     * 迁移任务类型为在线迁移时，表示源Redis和目标Redis联通的网络类型，包括vpc和vpn两种类型。 
      * @return networkType
      */
     public NetworkTypeEnum getNetworkType() {

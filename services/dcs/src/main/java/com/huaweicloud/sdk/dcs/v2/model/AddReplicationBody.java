@@ -32,7 +32,7 @@ public class AddReplicationBody  {
 
 
     /**
-     * 表示指定副本所在的可用区编码。 可用区编码可通过[查询可用区信息](https://support.huaweicloud.com/api-dcs/dcs-api-0514010.html)接口查询，可用区必须是有资源的，否则添加失败。 
+     * 表示指定副本所在的可用区编码。 可用区编码可通过[查询可用区信息](https://support.huaweicloud.com/api-dcs/ListAvailableZones.html)接口查询，可用区必须是有资源的，否则添加失败。 
      * @return azCode
      */
     public String getAzCode() {

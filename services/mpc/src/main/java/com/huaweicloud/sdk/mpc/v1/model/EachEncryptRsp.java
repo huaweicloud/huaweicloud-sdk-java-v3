@@ -64,6 +64,12 @@ public class EachEncryptRsp  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
@@ -236,6 +242,26 @@ public class EachEncryptRsp  {
         this.outputFileName = outputFileName;
     }
 
+    public EachEncryptRsp withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public EachEncryptRsp withDescription(String description) {
         this.description = description;
         return this;
@@ -271,11 +297,12 @@ public class EachEncryptRsp  {
             Objects.equals(this.input, eachEncryptRsp.input) &&
             Objects.equals(this.output, eachEncryptRsp.output) &&
             Objects.equals(this.outputFileName, eachEncryptRsp.outputFileName) &&
+            Objects.equals(this.userData, eachEncryptRsp.userData) &&
             Objects.equals(this.description, eachEncryptRsp.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, endTime, input, output, outputFileName, description);
+        return Objects.hash(taskId, status, createTime, endTime, input, output, outputFileName, userData, description);
     }
     @Override
     public String toString() {
@@ -288,6 +315,7 @@ public class EachEncryptRsp  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    outputFileName: ").append(toIndentedString(outputFileName)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

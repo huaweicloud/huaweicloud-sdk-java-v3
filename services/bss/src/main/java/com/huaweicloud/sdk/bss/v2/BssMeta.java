@@ -541,6 +541,149 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> listCustomerBillsFeeRecords = genForlistCustomerBillsFeeRecords();
+
+    private static HttpRequestDef<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> genForlistCustomerBillsFeeRecords() {
+        // basic
+        HttpRequestDef.Builder<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomerBillsFeeRecordsRequest.class, ListCustomerBillsFeeRecordsResponse.class)
+                .withUri("/v2/bills/customer-bills/fee-records");
+
+        // requests
+        builder.withRequestField("bill_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillCycle, (req, v) -> {
+                req.setBillCycle(v);
+            })
+        );
+        builder.withRequestField("provider_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getProviderType, (req, v) -> {
+                req.setProviderType(v);
+            })
+        );
+        builder.withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            })
+        );
+        builder.withRequestField("resource_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getResourceTypeCode, (req, v) -> {
+                req.setResourceTypeCode(v);
+            })
+        );
+        builder.withRequestField("region_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getRegionCode, (req, v) -> {
+                req.setRegionCode(v);
+            })
+        );
+        builder.withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getChargingMode, (req, v) -> {
+                req.setChargingMode(v);
+            })
+        );
+        builder.withRequestField("bill_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getBillType, (req, v) -> {
+                req.setBillType(v);
+            })
+        );
+        builder.withRequestField("trade_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getTradeId, (req, v) -> {
+                req.setTradeId(v);
+            })
+        );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
+        builder.withRequestField("include_zero_record",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getIncludeZeroRecord, (req, v) -> {
+                req.setIncludeZeroRecord(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getMethod, (req, v) -> {
+                req.setMethod(v);
+            })
+        );
+        builder.withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsFeeRecordsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResources = genForlistCustomerOnDemandResources();
 
     private static HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> genForlistCustomerOnDemandResources() {
@@ -845,6 +988,14 @@ public class BssMeta {
                 req.setSubCustomerId(v);
             })
         );
+        builder.withRequestField("trade_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getTradeId, (req, v) -> {
+                req.setTradeId(v);
+            })
+        );
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -898,6 +1049,100 @@ public class BssMeta {
             Integer.class,
             f -> f.withMarshaller(ListEnterpriseMultiAccountRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> listEnterpriseOrganizations = genForlistEnterpriseOrganizations();
+
+    private static HttpRequestDef<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> genForlistEnterpriseOrganizations() {
+        // basic
+        HttpRequestDef.Builder<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseOrganizationsRequest.class, ListEnterpriseOrganizationsResponse.class)
+                .withUri("/v2/enterprises/multi-accounts/enterprise-organizations");
+
+        // requests
+        builder.withRequestField("recursive_query",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEnterpriseOrganizationsRequest::getRecursiveQuery, (req, v) -> {
+                req.setRecursiveQuery(v);
+            })
+        );
+        builder.withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEnterpriseOrganizationsRequest::getParentId, (req, v) -> {
+                req.setParentId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomers = genForlistEnterpriseSubCustomers();
+
+    private static HttpRequestDef<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> genForlistEnterpriseSubCustomers() {
+        // basic
+        HttpRequestDef.Builder<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseSubCustomersRequest.class, ListEnterpriseSubCustomersResponse.class)
+                .withUri("/v2/enterprises/multi-accounts/sub-customers");
+
+        // requests
+        builder.withRequestField("sub_customer_account_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerAccountName, (req, v) -> {
+                req.setSubCustomerAccountName(v);
+            })
+        );
+        builder.withRequestField("sub_customer_display_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerDisplayName, (req, v) -> {
+                req.setSubCustomerDisplayName(v);
+            })
+        );
+        builder.withRequestField("fuzzy_query",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getFuzzyQuery, (req, v) -> {
+                req.setFuzzyQuery(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("org_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOrgId, (req, v) -> {
+                req.setOrgId(v);
             })
         );
 

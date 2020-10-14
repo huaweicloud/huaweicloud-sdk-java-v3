@@ -35,6 +35,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
@@ -124,11 +125,11 @@ public class HcClient implements CustomizationConfigure {
             validHttpRequestStage = credential.processAuthRequest(httpRequest, this.httpClient);
         }
         return validHttpRequestStage
-            .thenCompose(vaildHttpRequest -> httpClient.asyncInvokeHttp(vaildHttpRequest).thenApply(httpResponse -> {
-                printAccessLog(vaildHttpRequest, httpResponse);
+            .thenCompose(validHttpRequest -> httpClient.asyncInvokeHttp(validHttpRequest).thenApply(httpResponse -> {
+                printAccessLog(validHttpRequest, httpResponse);
                 if (httpResponse.getStatusCode() >= STATUS_CODE_WITH_RESPONSE_ERROR) {
                     logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                        vaildHttpRequest.getUrl().getHost(), vaildHttpRequest.getUrl(),
+                        validHttpRequest.getUrl().getHost(), validHttpRequest.getUrl(),
                         extractErrorMessage(httpResponse));
                     throw ServiceResponseException.mapException(httpResponse.getStatusCode(),
                         extractErrorMessage(httpResponse));
@@ -254,6 +255,8 @@ public class HcClient implements CustomizationConfigure {
             if (resT instanceof SdkResponse) {
                 SdkResponse sdkResponse = (SdkResponse) resT;
                 sdkResponse.setHttpStatusCode(httpResponse.getStatusCode());
+                // reflect header parameter in response.
+                setResponseHeaders(httpResponse, sdkResponse);
             }
             return resT;
         } catch (InstantiationException | IllegalAccessException e) {
@@ -263,6 +266,28 @@ public class HcClient implements CustomizationConfigure {
             logger.error("can not parse json result to response object", e);
             throw new ServerResponseException(httpResponse.getStatusCode(), null, httpResponse.getBodyAsString(),
                 httpResponse.getHeader("X-Request-Id"));
+        }
+    }
+
+    private <ResT> void setResponseHeaders(HttpResponse httpResponse, ResT resT) {
+        if (httpResponse.getHeaders().size() == 0) {
+            return;
+        }
+        try {
+            java.lang.reflect.Field[] fields = resT.getClass().getDeclaredFields();
+            for (java.lang.reflect.Field field : fields) {
+                boolean fieldHasAno = field.isAnnotationPresent(JsonProperty.class);
+                if (fieldHasAno) {
+                    JsonProperty fieldProperty = field.getAnnotation(JsonProperty.class);
+                    String jsonValue = fieldProperty.value();
+                    if (Objects.nonNull(httpResponse.getHeader(jsonValue))) {
+                        field.setAccessible(true);
+                        field.set(resT, httpResponse.getHeader(jsonValue));
+                    }
+                }
+            }
+        } catch (IllegalAccessException e) {
+            throw new SdkException(e);
         }
     }
 

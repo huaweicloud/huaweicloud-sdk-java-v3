@@ -29,6 +29,12 @@ public class SourceInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="duration_ms")
+    
+    private Long durationMs;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="format")
     
     private String format;
@@ -60,7 +66,7 @@ public class SourceInfo  {
 
 
     /**
-     * 片源时长
+     * 片源时长，单位：秒
      * @return duration
      */
     public Integer getDuration() {
@@ -69,6 +75,28 @@ public class SourceInfo  {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
+    }
+
+    public SourceInfo withDurationMs(Long durationMs) {
+        this.durationMs = durationMs;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 片源时长，单位：毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return durationMs
+     */
+    public Long getDurationMs() {
+        return durationMs;
+    }
+
+    public void setDurationMs(Long durationMs) {
+        this.durationMs = durationMs;
     }
 
     public SourceInfo withFormat(String format) {
@@ -183,6 +211,7 @@ public class SourceInfo  {
         }
         SourceInfo sourceInfo = (SourceInfo) o;
         return Objects.equals(this.duration, sourceInfo.duration) &&
+            Objects.equals(this.durationMs, sourceInfo.durationMs) &&
             Objects.equals(this.format, sourceInfo.format) &&
             Objects.equals(this.size, sourceInfo.size) &&
             Objects.equals(this.videoInfo, sourceInfo.videoInfo) &&
@@ -190,13 +219,14 @@ public class SourceInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(duration, format, size, videoInfo, audioInfo);
+        return Objects.hash(duration, durationMs, format, size, videoInfo, audioInfo);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SourceInfo {\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    videoInfo: ").append(toIndentedString(videoInfo)).append("\n");

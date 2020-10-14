@@ -50,7 +50,7 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     
     private String description;
     /**
-     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING。
+     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED。
      */
     public static final class StatusEnum {
 
@@ -70,6 +70,11 @@ public class ShowMigrationTaskResponse extends SdkResponse {
          */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
         
+        /**
+         * Enum TERMINATED for value: "TERMINATED"
+         */
+        public static final StatusEnum TERMINATED = new StatusEnum("TERMINATED");
+        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,6 +83,7 @@ public class ShowMigrationTaskResponse extends SdkResponse {
             map.put("SUCCESS", SUCCESS);
             map.put("FAILED", FAILED);
             map.put("MIGRATING", MIGRATING);
+            map.put("TERMINATED", TERMINATED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -491,7 +497,7 @@ public class ShowMigrationTaskResponse extends SdkResponse {
 
 
     /**
-     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING。
+     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED。
      * @return status
      */
     public StatusEnum getStatus() {

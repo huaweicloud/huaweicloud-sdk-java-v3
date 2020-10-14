@@ -8,6 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.dcs.v2.model.InstanceReplicationDimensionsInfo;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -53,6 +56,18 @@ public class InstanceReplicationListInfo  {
     
     private String status;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="az_code")
+    
+    private String azCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dimensions")
+    
+    private List<InstanceReplicationDimensionsInfo> dimensions = null;
+    
     public InstanceReplicationListInfo withReplicationRole(String replicationRole) {
         this.replicationRole = replicationRole;
         return this;
@@ -172,6 +187,60 @@ public class InstanceReplicationListInfo  {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public InstanceReplicationListInfo withAzCode(String azCode) {
+        this.azCode = azCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 副本所在的可用区
+     * @return azCode
+     */
+    public String getAzCode() {
+        return azCode;
+    }
+
+    public void setAzCode(String azCode) {
+        this.azCode = azCode;
+    }
+
+    public InstanceReplicationListInfo withDimensions(List<InstanceReplicationDimensionsInfo> dimensions) {
+        this.dimensions = dimensions;
+        return this;
+    }
+
+    
+    public InstanceReplicationListInfo addDimensionsItem(InstanceReplicationDimensionsInfo dimensionsItem) {
+        if (this.dimensions == null) {
+            this.dimensions = new ArrayList<>();
+        }
+        this.dimensions.add(dimensionsItem);
+        return this;
+    }
+
+    public InstanceReplicationListInfo withDimensions(Consumer<List<InstanceReplicationDimensionsInfo>> dimensionsSetter) {
+        if(this.dimensions == null ){
+            this.dimensions = new ArrayList<>();
+        }
+        dimensionsSetter.accept(this.dimensions);
+        return this;
+    }
+
+    /**
+     * 副本对应的监控指标维度信息。可用于调用云监控服务的查询监控数据指标相关接口 - 副本的监控维度为多维度，返回数组中包含两个维度信息。从云监控查询监控数据时，要按多维度传递指标维度参数，才能查询到监控指标值 - 第一个维度为副本父维度信息，维度名称为dcs_instance_id，维度值对应副本所在的实例ID - 第二个维度，维度名称为dcs_cluster_redis_node,维度值为副本的监控对象ID，与副本ID和节点ID不同。 
+     * @return dimensions
+     */
+    public List<InstanceReplicationDimensionsInfo> getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(List<InstanceReplicationDimensionsInfo> dimensions) {
+        this.dimensions = dimensions;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -186,11 +255,13 @@ public class InstanceReplicationListInfo  {
             Objects.equals(this.isReplication, instanceReplicationListInfo.isReplication) &&
             Objects.equals(this.replicationId, instanceReplicationListInfo.replicationId) &&
             Objects.equals(this.nodeId, instanceReplicationListInfo.nodeId) &&
-            Objects.equals(this.status, instanceReplicationListInfo.status);
+            Objects.equals(this.status, instanceReplicationListInfo.status) &&
+            Objects.equals(this.azCode, instanceReplicationListInfo.azCode) &&
+            Objects.equals(this.dimensions, instanceReplicationListInfo.dimensions);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(replicationRole, replicationIp, isReplication, replicationId, nodeId, status);
+        return Objects.hash(replicationRole, replicationIp, isReplication, replicationId, nodeId, status, azCode, dimensions);
     }
     @Override
     public String toString() {
@@ -202,6 +273,8 @@ public class InstanceReplicationListInfo  {
         sb.append("    replicationId: ").append(toIndentedString(replicationId)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
+        sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

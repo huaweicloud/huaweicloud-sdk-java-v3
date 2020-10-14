@@ -37,6 +37,12 @@ public class CreateEncryptReq  {
     
     private Encryption encryption = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
     public CreateEncryptReq withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -117,6 +123,26 @@ public class CreateEncryptReq  {
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
+
+    public CreateEncryptReq withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -128,11 +154,12 @@ public class CreateEncryptReq  {
         CreateEncryptReq createEncryptReq = (CreateEncryptReq) o;
         return Objects.equals(this.input, createEncryptReq.input) &&
             Objects.equals(this.output, createEncryptReq.output) &&
-            Objects.equals(this.encryption, createEncryptReq.encryption);
+            Objects.equals(this.encryption, createEncryptReq.encryption) &&
+            Objects.equals(this.userData, createEncryptReq.userData);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, encryption);
+        return Objects.hash(input, output, encryption, userData);
     }
     @Override
     public String toString() {
@@ -141,6 +168,7 @@ public class CreateEncryptReq  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

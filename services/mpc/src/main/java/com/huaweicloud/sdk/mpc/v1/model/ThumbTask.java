@@ -171,6 +171,12 @@ public class ThumbTask  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
@@ -335,6 +341,26 @@ public class ThumbTask  {
         this.outputFileName = outputFileName;
     }
 
+    public ThumbTask withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public ThumbTask withDescription(String description) {
         this.description = description;
         return this;
@@ -404,12 +430,13 @@ public class ThumbTask  {
             Objects.equals(this.input, thumbTask.input) &&
             Objects.equals(this.output, thumbTask.output) &&
             Objects.equals(this.outputFileName, thumbTask.outputFileName) &&
+            Objects.equals(this.userData, thumbTask.userData) &&
             Objects.equals(this.description, thumbTask.description) &&
             Objects.equals(this.thumbnailInfo, thumbTask.thumbnailInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, endTime, input, output, outputFileName, description, thumbnailInfo);
+        return Objects.hash(taskId, status, createTime, endTime, input, output, outputFileName, userData, description, thumbnailInfo);
     }
     @Override
     public String toString() {
@@ -422,6 +449,7 @@ public class ThumbTask  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    outputFileName: ").append(toIndentedString(outputFileName)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    thumbnailInfo: ").append(toIndentedString(thumbnailInfo)).append("\n");
         sb.append("}");

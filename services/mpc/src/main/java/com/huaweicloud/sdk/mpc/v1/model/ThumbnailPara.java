@@ -153,13 +153,13 @@ public class ThumbnailPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="format")
     
-    private Integer format;
+    private Integer format = 1;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aspect_ratio")
     
-    private Integer aspectRatio;
+    private Integer aspectRatio = 0;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -177,7 +177,7 @@ public class ThumbnailPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="max_length")
     
-    private Integer maxLength;
+    private Integer maxLength = 480;
 
     public ThumbnailPara withType(TypeEnum type) {
         this.type = type;
@@ -349,6 +349,8 @@ public class ThumbnailPara  {
 
     /**
      * 截图文件格式。  取值如下：  1：表示jpg格式 
+     * minimum: 0
+     * maximum: 100
      * @return format
      */
     public Integer getFormat() {
@@ -369,6 +371,8 @@ public class ThumbnailPara  {
 
     /**
      * 纵横比。 
+     * minimum: 0
+     * maximum: 2147483647
      * @return aspectRatio
      */
     public Integer getAspectRatio() {
@@ -429,6 +433,8 @@ public class ThumbnailPara  {
 
     /**
      * 截图最长边的尺寸。宽边尺寸按照该尺寸与原始视频像素等比缩放计算。  取值范围：[240,3840]  单位：像素 > 该参数和width/height选择使用，以width/height优先，若width/height都不等于0，则图片尺寸按width/height得出；反之，则图片尺寸按 max_length 得出。 
+     * minimum: 0
+     * maximum: 3840
      * @return maxLength
      */
     public Integer getMaxLength() {

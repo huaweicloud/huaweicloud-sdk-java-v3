@@ -23,9 +23,9 @@ public class CreateTransTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    private Integer templateId;
+    private Long templateId;
 
-    public CreateTransTemplateResponse withTemplateId(Integer templateId) {
+    public CreateTransTemplateResponse withTemplateId(Long templateId) {
         this.templateId = templateId;
         return this;
     }
@@ -35,13 +35,15 @@ public class CreateTransTemplateResponse extends SdkResponse {
 
     /**
      * 自定义转码模板编号。 
+     * minimum: 0
+     * maximum: 1000000
      * @return templateId
      */
-    public Integer getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
-    public void setTemplateId(Integer templateId) {
+    public void setTemplateId(Long templateId) {
         this.templateId = templateId;
     }
     @Override

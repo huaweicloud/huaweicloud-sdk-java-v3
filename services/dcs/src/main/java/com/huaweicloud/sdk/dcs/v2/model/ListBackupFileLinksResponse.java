@@ -69,7 +69,7 @@ public class ListBackupFileLinksResponse extends SdkResponse {
 
 
     /**
-     * OBS桶名
+     * OBS桶名。
      * @return bucketName
      */
     public String getBucketName() {

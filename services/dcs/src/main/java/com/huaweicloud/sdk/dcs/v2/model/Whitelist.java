@@ -29,7 +29,7 @@ public class Whitelist  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_list")
     
-    private List<String> ipList = null;
+    private List<String> ipList = new ArrayList<>();
     
     public Whitelist withGroupName(String groupName) {
         this.groupName = groupName;
@@ -58,9 +58,6 @@ public class Whitelist  {
 
     
     public Whitelist addIpListItem(String ipListItem) {
-        if (this.ipList == null) {
-            this.ipList = new ArrayList<>();
-        }
         this.ipList.add(ipListItem);
         return this;
     }

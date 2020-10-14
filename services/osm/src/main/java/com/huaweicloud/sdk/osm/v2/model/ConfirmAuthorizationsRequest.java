@@ -20,9 +20,9 @@ public class ConfirmAuthorizationsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorization_detail_id")
+    @JsonProperty(value="authorization_id")
     
-    private Long authorizationDetailId;
+    private Long authorizationId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,8 +48,8 @@ public class ConfirmAuthorizationsRequest  {
     
     private AgreeTenantAuthorizationV2Req body = null;
 
-    public ConfirmAuthorizationsRequest withAuthorizationDetailId(Long authorizationDetailId) {
-        this.authorizationDetailId = authorizationDetailId;
+    public ConfirmAuthorizationsRequest withAuthorizationId(Long authorizationId) {
+        this.authorizationId = authorizationId;
         return this;
     }
 
@@ -57,17 +57,17 @@ public class ConfirmAuthorizationsRequest  {
 
 
     /**
-     * Get authorizationDetailId
+     * Get authorizationId
      * minimum: 0
      * maximum: 9223372036854775807
-     * @return authorizationDetailId
+     * @return authorizationId
      */
-    public Long getAuthorizationDetailId() {
-        return authorizationDetailId;
+    public Long getAuthorizationId() {
+        return authorizationId;
     }
 
-    public void setAuthorizationDetailId(Long authorizationDetailId) {
-        this.authorizationDetailId = authorizationDetailId;
+    public void setAuthorizationId(Long authorizationId) {
+        this.authorizationId = authorizationId;
     }
 
     public ConfirmAuthorizationsRequest withXSite(Integer xSite) {
@@ -173,7 +173,7 @@ public class ConfirmAuthorizationsRequest  {
             return false;
         }
         ConfirmAuthorizationsRequest confirmAuthorizationsRequest = (ConfirmAuthorizationsRequest) o;
-        return Objects.equals(this.authorizationDetailId, confirmAuthorizationsRequest.authorizationDetailId) &&
+        return Objects.equals(this.authorizationId, confirmAuthorizationsRequest.authorizationId) &&
             Objects.equals(this.xSite, confirmAuthorizationsRequest.xSite) &&
             Objects.equals(this.xLanguage, confirmAuthorizationsRequest.xLanguage) &&
             Objects.equals(this.xTimeZone, confirmAuthorizationsRequest.xTimeZone) &&
@@ -181,13 +181,13 @@ public class ConfirmAuthorizationsRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(authorizationDetailId, xSite, xLanguage, xTimeZone, body);
+        return Objects.hash(authorizationId, xSite, xLanguage, xTimeZone, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfirmAuthorizationsRequest {\n");
-        sb.append("    authorizationDetailId: ").append(toIndentedString(authorizationDetailId)).append("\n");
+        sb.append("    authorizationId: ").append(toIndentedString(authorizationId)).append("\n");
         sb.append("    xSite: ").append(toIndentedString(xSite)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    xTimeZone: ").append(toIndentedString(xTimeZone)).append("\n");

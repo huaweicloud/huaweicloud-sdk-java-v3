@@ -70,15 +70,15 @@ public class RemuxTask  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_param")
-    
-    private RemuxOutputParam outputParam = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_data")
     
     private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="output_param")
+    
+    private RemuxOutputParam outputParam = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -260,6 +260,26 @@ public class RemuxTask  {
         this.output = output;
     }
 
+    public RemuxTask withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public RemuxTask withOutputParam(RemuxOutputParam outputParam) {
         this.outputParam = outputParam;
         return this;
@@ -285,26 +305,6 @@ public class RemuxTask  {
 
     public void setOutputParam(RemuxOutputParam outputParam) {
         this.outputParam = outputParam;
-    }
-
-    public RemuxTask withUserData(String userData) {
-        this.userData = userData;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 用户数据。 
-     * @return userData
-     */
-    public String getUserData() {
-        return userData;
-    }
-
-    public void setUserData(String userData) {
-        this.userData = userData;
     }
 
     public RemuxTask withCompleteRatio(Integer completeRatio) {
@@ -343,13 +343,13 @@ public class RemuxTask  {
             Objects.equals(this.description, remuxTask.description) &&
             Objects.equals(this.input, remuxTask.input) &&
             Objects.equals(this.output, remuxTask.output) &&
-            Objects.equals(this.outputParam, remuxTask.outputParam) &&
             Objects.equals(this.userData, remuxTask.userData) &&
+            Objects.equals(this.outputParam, remuxTask.outputParam) &&
             Objects.equals(this.completeRatio, remuxTask.completeRatio);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, outputParam, userData, completeRatio);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, userData, outputParam, completeRatio);
     }
     @Override
     public String toString() {
@@ -363,8 +363,8 @@ public class RemuxTask  {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
-        sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("    completeRatio: ").append(toIndentedString(completeRatio)).append("\n");
         sb.append("}");
         return sb.toString();

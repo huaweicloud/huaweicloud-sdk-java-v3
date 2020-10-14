@@ -218,6 +218,17 @@ public class BssAsyncClient {
     }
 
     /**
+     * 查询流水账单
+     * 功能描述：客户在客户自建平台查询自己的流水账单
+     *
+     * @param ListCustomerBillsFeeRecordsRequest 请求对象
+     * @return CompletableFuture<ListCustomerBillsFeeRecordsResponse>
+     */
+    public CompletableFuture<ListCustomerBillsFeeRecordsResponse> listCustomerBillsFeeRecordsAsync(ListCustomerBillsFeeRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listCustomerBillsFeeRecords);
+    }
+
+    /**
      * 查询客户按需资源列表
      * 功能描述：查询客户按需资源列表
      *
@@ -281,6 +292,28 @@ public class BssAsyncClient {
      */
     public CompletableFuture<ListEnterpriseMultiAccountResponse> listEnterpriseMultiAccountAsync(ListEnterpriseMultiAccountRequest request) {
         return hcClient.asyncInvokeHttp(request, BssMeta.listEnterpriseMultiAccount);
+    }
+
+    /**
+     * 查询企业组织结构
+     * 功能描述：企业主账号在客户自建平台查询企业组织结构
+     *
+     * @param ListEnterpriseOrganizationsRequest 请求对象
+     * @return CompletableFuture<ListEnterpriseOrganizationsResponse>
+     */
+    public CompletableFuture<ListEnterpriseOrganizationsResponse> listEnterpriseOrganizationsAsync(ListEnterpriseOrganizationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listEnterpriseOrganizations);
+    }
+
+    /**
+     * 查询企业子账号列表
+     * 功能描述：企业主账号在客户自建平台查询企业子账号信息列表
+     *
+     * @param ListEnterpriseSubCustomersRequest 请求对象
+     * @return CompletableFuture<ListEnterpriseSubCustomersResponse>
+     */
+    public CompletableFuture<ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomersAsync(ListEnterpriseSubCustomersRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listEnterpriseSubCustomers);
     }
 
     /**

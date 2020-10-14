@@ -21,9 +21,9 @@ public class ListNumberOfInstancesInDifferentStatusRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="include_failure")
     
-    private Boolean includeFailure;
+    private String includeFailure;
 
-    public ListNumberOfInstancesInDifferentStatusRequest withIncludeFailure(Boolean includeFailure) {
+    public ListNumberOfInstancesInDifferentStatusRequest withIncludeFailure(String includeFailure) {
         this.includeFailure = includeFailure;
         return this;
     }
@@ -35,11 +35,11 @@ public class ListNumberOfInstancesInDifferentStatusRequest  {
      * Get includeFailure
      * @return includeFailure
      */
-    public Boolean getIncludeFailure() {
+    public String getIncludeFailure() {
         return includeFailure;
     }
 
-    public void setIncludeFailure(Boolean includeFailure) {
+    public void setIncludeFailure(String includeFailure) {
         this.includeFailure = includeFailure;
     }
     @Override

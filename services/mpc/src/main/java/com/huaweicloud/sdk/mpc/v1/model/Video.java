@@ -37,6 +37,11 @@ public class Video  {
          */
         public static final OutputPolicyEnum DISCARD = new OutputPolicyEnum("discard");
         
+        /**
+         * Enum COPY for value: "copy"
+         */
+        public static final OutputPolicyEnum COPY = new OutputPolicyEnum("copy");
+        
 
         private static final Map<String, OutputPolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -44,6 +49,7 @@ public class Video  {
             Map<String, OutputPolicyEnum> map = new HashMap<>();
             map.put("transcode", TRANSCODE);
             map.put("discard", DISCARD);
+            map.put("copy", COPY);
             return Collections.unmodifiableMap(map);
         }
 

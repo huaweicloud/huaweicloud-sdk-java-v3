@@ -29,9 +29,15 @@ public class MetaData  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="duration_ms")
+    
+    private Double durationMs;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    private Integer duration;
+    private Long duration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -79,7 +85,29 @@ public class MetaData  {
         this.size = size;
     }
 
-    public MetaData withDuration(Integer duration) {
+    public MetaData withDurationMs(Double durationMs) {
+        this.durationMs = durationMs;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 视频时长，带小数位显示。单位：秒。 
+     * minimum: 0
+     * maximum: 2147483647
+     * @return durationMs
+     */
+    public Double getDurationMs() {
+        return durationMs;
+    }
+
+    public void setDurationMs(Double durationMs) {
+        this.durationMs = durationMs;
+    }
+
+    public MetaData withDuration(Long duration) {
         this.duration = duration;
         return this;
     }
@@ -93,11 +121,11 @@ public class MetaData  {
      * maximum: 2147483647
      * @return duration
      */
-    public Integer getDuration() {
+    public Long getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Long duration) {
         this.duration = duration;
     }
 
@@ -220,6 +248,7 @@ public class MetaData  {
         }
         MetaData metaData = (MetaData) o;
         return Objects.equals(this.size, metaData.size) &&
+            Objects.equals(this.durationMs, metaData.durationMs) &&
             Objects.equals(this.duration, metaData.duration) &&
             Objects.equals(this.format, metaData.format) &&
             Objects.equals(this.bitrate, metaData.bitrate) &&
@@ -228,13 +257,14 @@ public class MetaData  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(size, duration, format, bitrate, video, audio);
+        return Objects.hash(size, durationMs, duration, format, bitrate, video, audio);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetaData {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");

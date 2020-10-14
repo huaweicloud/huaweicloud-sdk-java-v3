@@ -258,7 +258,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
 
 
     /**
-     * 功能说明：订购周期数  取值范围：(后续会随运营策略变化)  period_type为month时，为[1,9]  period_type为year时，为[1,1]  约束：同period_type约束。
+     * 功能说明：订购周期数  取值范围：(后续会随运营策略变化)  period_type为month时，为[1,9]  period_type为year时，为[1,3]  约束：同period_type约束。
      * minimum: 1
      * maximum: 9
      * @return periodNum

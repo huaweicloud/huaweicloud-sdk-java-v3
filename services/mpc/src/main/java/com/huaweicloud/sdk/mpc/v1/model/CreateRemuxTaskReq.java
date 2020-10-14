@@ -34,21 +34,21 @@ public class CreateRemuxTaskReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync")
     
-    private Integer sync;
+    private Integer sync = 0;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_param")
     
     private RemuxOutputParam outputParam = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
-    private String userData;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -110,6 +110,26 @@ public class CreateRemuxTaskReq  {
         this.output = output;
     }
 
+    public CreateRemuxTaskReq withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public CreateRemuxTaskReq withSync(Integer sync) {
         this.sync = sync;
         return this;
@@ -120,6 +140,8 @@ public class CreateRemuxTaskReq  {
 
     /**
      * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
+     * minimum: 0
+     * maximum: 2
      * @return sync
      */
     public Integer getSync() {
@@ -157,26 +179,6 @@ public class CreateRemuxTaskReq  {
         this.outputParam = outputParam;
     }
 
-    public CreateRemuxTaskReq withUserData(String userData) {
-        this.userData = userData;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 用户自定义数据。 
-     * @return userData
-     */
-    public String getUserData() {
-        return userData;
-    }
-
-    public void setUserData(String userData) {
-        this.userData = userData;
-    }
-
     public CreateRemuxTaskReq withNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
         return this;
@@ -207,14 +209,14 @@ public class CreateRemuxTaskReq  {
         CreateRemuxTaskReq createRemuxTaskReq = (CreateRemuxTaskReq) o;
         return Objects.equals(this.input, createRemuxTaskReq.input) &&
             Objects.equals(this.output, createRemuxTaskReq.output) &&
+            Objects.equals(this.userData, createRemuxTaskReq.userData) &&
             Objects.equals(this.sync, createRemuxTaskReq.sync) &&
             Objects.equals(this.outputParam, createRemuxTaskReq.outputParam) &&
-            Objects.equals(this.userData, createRemuxTaskReq.userData) &&
             Objects.equals(this.notifyUrl, createRemuxTaskReq.notifyUrl);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, sync, outputParam, userData, notifyUrl);
+        return Objects.hash(input, output, userData, sync, outputParam, notifyUrl);
     }
     @Override
     public String toString() {
@@ -222,9 +224,9 @@ public class CreateRemuxTaskReq  {
         sb.append("class CreateRemuxTaskReq {\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
-        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    notifyUrl: ").append(toIndentedString(notifyUrl)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -70,6 +70,12 @@ public class ExtractTask  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
     private MetaData metadata = null;
@@ -248,6 +254,26 @@ public class ExtractTask  {
         this.output = output;
     }
 
+    public ExtractTask withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public ExtractTask withMetadata(MetaData metadata) {
         this.metadata = metadata;
         return this;
@@ -291,11 +317,12 @@ public class ExtractTask  {
             Objects.equals(this.description, extractTask.description) &&
             Objects.equals(this.input, extractTask.input) &&
             Objects.equals(this.output, extractTask.output) &&
+            Objects.equals(this.userData, extractTask.userData) &&
             Objects.equals(this.metadata, extractTask.metadata);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, metadata);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, userData, metadata);
     }
     @Override
     public String toString() {
@@ -309,6 +336,7 @@ public class ExtractTask  {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();

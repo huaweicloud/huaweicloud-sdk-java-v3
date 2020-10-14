@@ -66,6 +66,12 @@ public class CommonTask  {
     
     private ObsObjInfo output = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
     public CommonTask withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -239,6 +245,26 @@ public class CommonTask  {
     public void setOutput(ObsObjInfo output) {
         this.output = output;
     }
+
+    public CommonTask withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -255,11 +281,12 @@ public class CommonTask  {
             Objects.equals(this.endTime, commonTask.endTime) &&
             Objects.equals(this.description, commonTask.description) &&
             Objects.equals(this.input, commonTask.input) &&
-            Objects.equals(this.output, commonTask.output);
+            Objects.equals(this.output, commonTask.output) &&
+            Objects.equals(this.userData, commonTask.userData);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, userData);
     }
     @Override
     public String toString() {
@@ -273,6 +300,7 @@ public class CommonTask  {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

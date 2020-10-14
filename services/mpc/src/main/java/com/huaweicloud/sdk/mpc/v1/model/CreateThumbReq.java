@@ -33,6 +33,12 @@ public class CreateThumbReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="thumbnail_para")
     
     private ThumbnailPara thumbnailPara = null;
@@ -131,6 +137,26 @@ public class CreateThumbReq  {
 
     public void setOutput(ObsObjInfo output) {
         this.output = output;
+    }
+
+    public CreateThumbReq withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
     }
 
     public CreateThumbReq withThumbnailPara(ThumbnailPara thumbnailPara) {
@@ -316,6 +342,7 @@ public class CreateThumbReq  {
         CreateThumbReq createThumbReq = (CreateThumbReq) o;
         return Objects.equals(this.input, createThumbReq.input) &&
             Objects.equals(this.output, createThumbReq.output) &&
+            Objects.equals(this.userData, createThumbReq.userData) &&
             Objects.equals(this.thumbnailPara, createThumbReq.thumbnailPara) &&
             Objects.equals(this.tar, createThumbReq.tar) &&
             Objects.equals(this.sync, createThumbReq.sync) &&
@@ -327,7 +354,7 @@ public class CreateThumbReq  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, thumbnailPara, tar, sync, originalDir, projectId, tenantProjectId, domainName, canonicalGrantId);
+        return Objects.hash(input, output, userData, thumbnailPara, tar, sync, originalDir, projectId, tenantProjectId, domainName, canonicalGrantId);
     }
     @Override
     public String toString() {
@@ -335,6 +362,7 @@ public class CreateThumbReq  {
         sb.append("class CreateThumbReq {\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    thumbnailPara: ").append(toIndentedString(thumbnailPara)).append("\n");
         sb.append("    tar: ").append(toIndentedString(tar)).append("\n");
         sb.append("    sync: ").append(toIndentedString(sync)).append("\n");

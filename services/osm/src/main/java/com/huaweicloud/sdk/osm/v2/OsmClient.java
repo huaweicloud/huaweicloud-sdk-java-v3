@@ -31,22 +31,22 @@ public class OsmClient {
      * 是否需要验证
      * 是否需要验证
      *
-     * @param CheckNeedVerifyCodeRequest 请求对象
-     * @return CheckNeedVerifyCodeResponse
+     * @param CheckNeedVerifyRequest 请求对象
+     * @return CheckNeedVerifyResponse
      */
-    public CheckNeedVerifyCodeResponse checkNeedVerifyCode(CheckNeedVerifyCodeRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.checkNeedVerifyCode);
+    public CheckNeedVerifyResponse checkNeedVerify(CheckNeedVerifyRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.checkNeedVerify);
     }
 
     /**
      * 验证联系方式
      * 验证联系方式
      *
-     * @param CheckVerifyCodeRequest 请求对象
-     * @return CheckVerifyCodeResponse
+     * @param CheckVerifyCodesRequest 请求对象
+     * @return CheckVerifyCodesResponse
      */
-    public CheckVerifyCodeResponse checkVerifyCode(CheckVerifyCodeRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.checkVerifyCode);
+    public CheckVerifyCodesResponse checkVerifyCodes(CheckVerifyCodesRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.checkVerifyCodes);
     }
 
     /**
@@ -259,6 +259,17 @@ public class OsmClient {
     }
 
     /**
+     * 查询工单抄送邮箱
+     * 查询工单抄送邮箱
+     *
+     * @param ListCaseCCEmailsRequest 请求对象
+     * @return ListCaseCCEmailsResponse
+     */
+    public ListCaseCCEmailsResponse listCaseCCEmails(ListCaseCCEmailsRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listCaseCCEmails);
+    }
+
+    /**
      * 查询工单类目列表
      * 查询工单类目列表
      *
@@ -267,6 +278,17 @@ public class OsmClient {
      */
     public ListCaseCategoriesResponse listCaseCategories(ListCaseCategoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseCategories);
+    }
+
+    /**
+     * 统计各状态工单数量
+     * 统计各状态工单数量
+     *
+     * @param ListCaseCountsRequest 请求对象
+     * @return ListCaseCountsResponse
+     */
+    public ListCaseCountsResponse listCaseCounts(ListCaseCountsRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listCaseCounts);
     }
 
     /**
@@ -289,6 +311,17 @@ public class OsmClient {
      */
     public ListCaseLimitsResponse listCaseLimits(ListCaseLimitsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseLimits);
+    }
+
+    /**
+     * 查询工单操作日志
+     * 查询工单操作日志
+     *
+     * @param ListCaseOperateLogsRequest 请求对象
+     * @return ListCaseOperateLogsResponse
+     */
+    public ListCaseOperateLogsResponse listCaseOperateLogs(ListCaseOperateLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listCaseOperateLogs);
     }
 
     /**
@@ -339,11 +372,11 @@ public class OsmClient {
      * 查询已验证的列表
      * 查询已验证的列表
      *
-     * @param ListHasVerifiedContactRequest 请求对象
-     * @return ListHasVerifiedContactResponse
+     * @param ListHasVerifiedContactsRequest 请求对象
+     * @return ListHasVerifiedContactsResponse
      */
-    public ListHasVerifiedContactResponse listHasVerifiedContact(ListHasVerifiedContactRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.listHasVerifiedContact);
+    public ListHasVerifiedContactsResponse listHasVerifiedContacts(ListHasVerifiedContactsRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listHasVerifiedContacts);
     }
 
     /**
@@ -366,39 +399,6 @@ public class OsmClient {
      */
     public ListHistorySessionsResponse listHistorySessions(ListHistorySessionsRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listHistorySessions);
-    }
-
-    /**
-     * 统计各状态工单数量
-     * 统计各状态工单数量
-     *
-     * @param ListIncidentCountRequest 请求对象
-     * @return ListIncidentCountResponse
-     */
-    public ListIncidentCountResponse listIncidentCount(ListIncidentCountRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.listIncidentCount);
-    }
-
-    /**
-     * 查询工单操作日志
-     * 查询工单操作日志
-     *
-     * @param ListIncidentOperateLogRequest 请求对象
-     * @return ListIncidentOperateLogResponse
-     */
-    public ListIncidentOperateLogResponse listIncidentOperateLog(ListIncidentOperateLogRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.listIncidentOperateLog);
-    }
-
-    /**
-     * 查询工单抄送邮箱
-     * 查询工单抄送邮箱
-     *
-     * @param ListIncidentOrderCCEmailRequest 请求对象
-     * @return ListIncidentOrderCCEmailResponse
-     */
-    public ListIncidentOrderCCEmailResponse listIncidentOrderCCEmail(ListIncidentOrderCCEmailRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.listIncidentOrderCCEmail);
     }
 
     /**
@@ -526,17 +526,6 @@ public class OsmClient {
      * 查询子用户信息
      * 查询子用户信息
      *
-     * @param ListSubCustomerRequest 请求对象
-     * @return ListSubCustomerResponse
-     */
-    public ListSubCustomerResponse listSubCustomer(ListSubCustomerRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.listSubCustomer);
-    }
-
-    /**
-     * 查询子用户信息
-     * 查询子用户信息
-     *
      * @param ListSubCustomersRequest 请求对象
      * @return ListSubCustomersResponse
      */
@@ -570,11 +559,11 @@ public class OsmClient {
      * 获取验证码
      * 获取验证码
      *
-     * @param SendVerifyCodeRequest 请求对象
-     * @return SendVerifyCodeResponse
+     * @param SendVerifyCodesRequest 请求对象
+     * @return SendVerifyCodesResponse
      */
-    public SendVerifyCodeResponse sendVerifyCode(SendVerifyCodeRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.sendVerifyCode);
+    public SendVerifyCodesResponse sendVerifyCodes(SendVerifyCodesRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.sendVerifyCodes);
     }
 
     /**
@@ -600,6 +589,17 @@ public class OsmClient {
     }
 
     /**
+     * 查询工单详情
+     * 查询工单详情
+     *
+     * @param ShowCaseDetailRequest 请求对象
+     * @return ShowCaseDetailResponse
+     */
+    public ShowCaseDetailResponse showCaseDetail(ShowCaseDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showCaseDetail);
+    }
+
+    /**
      * 查询某个工单状态
      * 查询某个工单状态
      *
@@ -608,17 +608,6 @@ public class OsmClient {
      */
     public ShowCaseStatusResponse showCaseStatus(ShowCaseStatusRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.showCaseStatus);
-    }
-
-    /**
-     * 查询工单详情
-     * 查询工单详情
-     *
-     * @param ShowIncidentDetailRequest 请求对象
-     * @return ShowIncidentDetailResponse
-     */
-    public ShowIncidentDetailResponse showIncidentDetail(ShowIncidentDetailRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.showIncidentDetail);
     }
 
     /**

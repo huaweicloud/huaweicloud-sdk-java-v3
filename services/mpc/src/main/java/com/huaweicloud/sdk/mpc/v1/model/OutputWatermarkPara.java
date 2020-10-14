@@ -33,6 +33,8 @@ public class OutputWatermarkPara  {
 
     /**
      * 水印时长 
+     * minimum: 0
+     * maximum: 2147483647
      * @return timeDuration
      */
     public Integer getTimeDuration() {

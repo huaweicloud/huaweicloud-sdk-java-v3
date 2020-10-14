@@ -32,9 +32,15 @@ public class CommonCreateTaskReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user_data")
+    
+    private String userData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sync")
     
-    private Integer sync;
+    private Integer sync = 0;
 
     public CommonCreateTaskReq withInput(ObsObjInfo input) {
         this.input = input;
@@ -90,6 +96,26 @@ public class CommonCreateTaskReq  {
         this.output = output;
     }
 
+    public CommonCreateTaskReq withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义数据。 
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     public CommonCreateTaskReq withSync(Integer sync) {
         this.sync = sync;
         return this;
@@ -100,6 +126,8 @@ public class CommonCreateTaskReq  {
 
     /**
      * 是否同步处理, - 0：排队处理 - 1：同步处理  默认值：0 
+     * minimum: 0
+     * maximum: 2
      * @return sync
      */
     public Integer getSync() {
@@ -120,11 +148,12 @@ public class CommonCreateTaskReq  {
         CommonCreateTaskReq commonCreateTaskReq = (CommonCreateTaskReq) o;
         return Objects.equals(this.input, commonCreateTaskReq.input) &&
             Objects.equals(this.output, commonCreateTaskReq.output) &&
+            Objects.equals(this.userData, commonCreateTaskReq.userData) &&
             Objects.equals(this.sync, commonCreateTaskReq.sync);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, sync);
+        return Objects.hash(input, output, userData, sync);
     }
     @Override
     public String toString() {
@@ -132,6 +161,7 @@ public class CommonCreateTaskReq  {
         sb.append("class CommonCreateTaskReq {\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
         sb.append("}");
         return sb.toString();

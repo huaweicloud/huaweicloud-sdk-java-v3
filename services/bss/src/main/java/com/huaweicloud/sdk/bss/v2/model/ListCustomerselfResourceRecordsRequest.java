@@ -95,6 +95,12 @@ public class ListCustomerselfResourceRecordsRequest  {
     
     private String subCustomerId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="trade_id")
+    
+    private String tradeId;
+
     public ListCustomerselfResourceRecordsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -362,6 +368,26 @@ public class ListCustomerselfResourceRecordsRequest  {
     public void setSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
     }
+
+    public ListCustomerselfResourceRecordsRequest withTradeId(String tradeId) {
+        this.tradeId = tradeId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get tradeId
+     * @return tradeId
+     */
+    public String getTradeId() {
+        return tradeId;
+    }
+
+    public void setTradeId(String tradeId) {
+        this.tradeId = tradeId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -383,11 +409,12 @@ public class ListCustomerselfResourceRecordsRequest  {
             Objects.equals(this.enterpriseProjectId, listCustomerselfResourceRecordsRequest.enterpriseProjectId) &&
             Objects.equals(this.includeZeroRecord, listCustomerselfResourceRecordsRequest.includeZeroRecord) &&
             Objects.equals(this.method, listCustomerselfResourceRecordsRequest.method) &&
-            Objects.equals(this.subCustomerId, listCustomerselfResourceRecordsRequest.subCustomerId);
+            Objects.equals(this.subCustomerId, listCustomerselfResourceRecordsRequest.subCustomerId) &&
+            Objects.equals(this.tradeId, listCustomerselfResourceRecordsRequest.tradeId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, enterpriseProjectId, includeZeroRecord, method, subCustomerId);
+        return Objects.hash(xLanguage, cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, enterpriseProjectId, includeZeroRecord, method, subCustomerId, tradeId);
     }
     @Override
     public String toString() {
@@ -406,6 +433,7 @@ public class ListCustomerselfResourceRecordsRequest  {
         sb.append("    includeZeroRecord: ").append(toIndentedString(includeZeroRecord)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
+        sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

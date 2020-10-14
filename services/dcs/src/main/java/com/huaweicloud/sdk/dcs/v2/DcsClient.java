@@ -39,6 +39,17 @@ public class DcsClient {
     }
 
     /**
+     * 主备切换
+     * 切换实例主备节点，只有主备实例支持该操作。
+     *
+     * @param ChangeMasterStandbyRequest 请求对象
+     * @return ChangeMasterStandbyResponse
+     */
+    public ChangeMasterStandbyResponse changeMasterStandby(ChangeMasterStandbyRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.changeMasterStandby);
+    }
+
+    /**
      * 备份指定实例
      * 备份指定的缓存实例。 &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。 
      *
@@ -50,6 +61,17 @@ public class DcsClient {
     }
 
     /**
+     * 创建大key分析任务
+     * 为Redis实例创建大key分析任务。
+     *
+     * @param CreateBigkeyScanTaskRequest 请求对象
+     * @return CreateBigkeyScanTaskResponse
+     */
+    public CreateBigkeyScanTaskResponse createBigkeyScanTask(CreateBigkeyScanTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.createBigkeyScanTask);
+    }
+
+    /**
      * 创建缓存实例
      * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
      *
@@ -58,6 +80,17 @@ public class DcsClient {
      */
     public CreateDCSInstanceResponse createDCSInstance(CreateDCSInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.createDCSInstance);
+    }
+
+    /**
+     * 创建热key分析任务
+     * 创建热key分析任务，Redis 3.0 不支持热key分析。  热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。 
+     *
+     * @param CreateHotkeyScanTaskRequest 请求对象
+     * @return CreateHotkeyScanTaskResponse
+     */
+    public CreateHotkeyScanTaskResponse createHotkeyScanTask(CreateHotkeyScanTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.createHotkeyScanTask);
     }
 
     /**
@@ -83,6 +116,17 @@ public class DcsClient {
     }
 
     /**
+     * 删除后台任务
+     * 删除后台任务
+     *
+     * @param DeleteBackgroundTaskRequest 请求对象
+     * @return DeleteBackgroundTaskResponse
+     */
+    public DeleteBackgroundTaskResponse deleteBackgroundTask(DeleteBackgroundTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.deleteBackgroundTask);
+    }
+
+    /**
      * 删除备份文件
      * 删除缓存实例已备份的文件。
      *
@@ -91,6 +135,28 @@ public class DcsClient {
      */
     public DeleteBackupFileResponse deleteBackupFile(DeleteBackupFileRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.deleteBackupFile);
+    }
+
+    /**
+     * 删除大key分析记录
+     * 删除大key分析记录。
+     *
+     * @param DeleteBigkeyScanTaskRequest 请求对象
+     * @return DeleteBigkeyScanTaskResponse
+     */
+    public DeleteBigkeyScanTaskResponse deleteBigkeyScanTask(DeleteBigkeyScanTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.deleteBigkeyScanTask);
+    }
+
+    /**
+     * 删除热key分析任务
+     * 删除热key分析任务。
+     *
+     * @param DeleteHotkeyScanTaskRequest 请求对象
+     * @return DeleteHotkeyScanTaskResponse
+     */
+    public DeleteHotkeyScanTaskResponse deleteHotkeyScanTask(DeleteHotkeyScanTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.deleteHotkeyScanTask);
     }
 
     /**
@@ -138,6 +204,17 @@ public class DcsClient {
     }
 
     /**
+     * 查询所有实例列表
+     * 查询租户的缓存实例列表，支持按照条件查询。
+     *
+     * @param ListAllDCSInstancesRequest 请求对象
+     * @return ListAllDCSInstancesResponse
+     */
+    public ListAllDCSInstancesResponse listAllDCSInstances(ListAllDCSInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listAllDCSInstances);
+    }
+
+    /**
      * 查询可用区信息
      * 查询所在局点的可用区信息
      *
@@ -146,6 +223,17 @@ public class DcsClient {
      */
     public ListAvailableZonesResponse listAvailableZones(ListAvailableZonesRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listAvailableZones);
+    }
+
+    /**
+     * 查询后台任务列表
+     * 查询后台任务列表
+     *
+     * @param ListBackgroundTaskRequest 请求对象
+     * @return ListBackgroundTaskResponse
+     */
+    public ListBackgroundTaskResponse listBackgroundTask(ListBackgroundTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listBackgroundTask);
     }
 
     /**
@@ -168,6 +256,17 @@ public class DcsClient {
      */
     public ListBackupRecordsResponse listBackupRecords(ListBackupRecordsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listBackupRecords);
+    }
+
+    /**
+     * 查询大key分析任务列表
+     * 查询大key分析任务列表。
+     *
+     * @param ListBigkeyScanTasksRequest 请求对象
+     * @return ListBigkeyScanTasksResponse
+     */
+    public ListBigkeyScanTasksResponse listBigkeyScanTasks(ListBigkeyScanTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listBigkeyScanTasks);
     }
 
     /**
@@ -226,6 +325,17 @@ public class DcsClient {
     }
 
     /**
+     * 查询热key分析任务列表
+     * 查询热key分析历史记录。
+     *
+     * @param ListHotKeyScanTasksRequest 请求对象
+     * @return ListHotKeyScanTasksResponse
+     */
+    public ListHotKeyScanTasksResponse listHotKeyScanTasks(ListHotKeyScanTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listHotKeyScanTasks);
+    }
+
+    /**
      * 查询维护时间窗时间段
      * 查询维护时间窗开始时间和结束时间。
      *
@@ -281,6 +391,17 @@ public class DcsClient {
     }
 
     /**
+     * 查询慢日志
+     * 查询慢日志。
+     *
+     * @param ListSlowlogRequest 请求对象
+     * @return ListSlowlogResponse
+     */
+    public ListSlowlogResponse listSlowlog(ListSlowlogRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listSlowlog);
+    }
+
+    /**
      * 查询运行中实例的统计信息
      * 查询当前租户下处于“运行中”状态的缓存实例的统计信息。
      *
@@ -314,14 +435,69 @@ public class DcsClient {
     }
 
     /**
+     * 查询大key自动分析配置
+     * 查询大key自动分析配置。
+     *
+     * @param ShowBigkeyAutoscanConfigRequest 请求对象
+     * @return ShowBigkeyAutoscanConfigResponse
+     */
+    public ShowBigkeyAutoscanConfigResponse showBigkeyAutoscanConfig(ShowBigkeyAutoscanConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showBigkeyAutoscanConfig);
+    }
+
+    /**
+     * 查询大key分析详情
+     * 查询大key分析详情。
+     *
+     * @param ShowBigkeyScanTaskDetailsRequest 请求对象
+     * @return ShowBigkeyScanTaskDetailsResponse
+     */
+    public ShowBigkeyScanTaskDetailsResponse showBigkeyScanTaskDetails(ShowBigkeyScanTaskDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showBigkeyScanTaskDetails);
+    }
+
+    /**
+     * 查询指定实例
+     * 通过实例ID查询实例的详细信息。
+     *
+     * @param ShowDCSInstanceRequest 请求对象
+     * @return ShowDCSInstanceResponse
+     */
+    public ShowDCSInstanceResponse showDCSInstance(ShowDCSInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showDCSInstance);
+    }
+
+    /**
      * 查询单个实例标签
-     * 通过实例id查询标签。
+     * 通过实例ID查询标签。
      *
      * @param ShowDcsTagsRequest 请求对象
      * @return ShowDcsTagsResponse
      */
     public ShowDcsTagsResponse showDcsTags(ShowDcsTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.showDcsTags);
+    }
+
+    /**
+     * 查询热key自动分析配置
+     * 查询热key自动分析配置。
+     *
+     * @param ShowHotkeyAutoscanConfigRequest 请求对象
+     * @return ShowHotkeyAutoscanConfigResponse
+     */
+    public ShowHotkeyAutoscanConfigResponse showHotkeyAutoscanConfig(ShowHotkeyAutoscanConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showHotkeyAutoscanConfig);
+    }
+
+    /**
+     * 查询热key分析详情
+     * 查询热key分析详情。
+     *
+     * @param ShowHotkeyTaskDetailsRequest 请求对象
+     * @return ShowHotkeyTaskDetailsResponse
+     */
+    public ShowHotkeyTaskDetailsResponse showHotkeyTaskDetails(ShowHotkeyTaskDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showHotkeyTaskDetails);
     }
 
     /**
@@ -333,6 +509,17 @@ public class DcsClient {
      */
     public ShowMigrationTaskResponse showMigrationTask(ShowMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.showMigrationTask);
+    }
+
+    /**
+     * 查询在线迁移进度明细
+     * 查询在线迁移进度明细。
+     *
+     * @param ShowMigrationTaskStatsRequest 请求对象
+     * @return ShowMigrationTaskStatsResponse
+     */
+    public ShowMigrationTaskStatsResponse showMigrationTaskStats(ShowMigrationTaskStatsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showMigrationTaskStats);
     }
 
     /**
@@ -358,6 +545,17 @@ public class DcsClient {
     }
 
     /**
+     * 设置大key自动分析配置
+     * 设置大key自动分析配置。
+     *
+     * @param UpdateBigkeyAutoscanConfigRequest 请求对象
+     * @return UpdateBigkeyAutoscanConfigResponse
+     */
+    public UpdateBigkeyAutoscanConfigResponse updateBigkeyAutoscanConfig(UpdateBigkeyAutoscanConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateBigkeyAutoscanConfig);
+    }
+
+    /**
      * 修改实例配置参数
      * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
      *
@@ -377,6 +575,17 @@ public class DcsClient {
      */
     public UpdateDCSInstanceResponse updateDCSInstance(UpdateDCSInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.updateDCSInstance);
+    }
+
+    /**
+     * 设置热key自动分析配置
+     * 设置热key自动分析配置。
+     *
+     * @param UpdateHotkeyAutoScanConfigRequest 请求对象
+     * @return UpdateHotkeyAutoScanConfigResponse
+     */
+    public UpdateHotkeyAutoScanConfigResponse updateHotkeyAutoScanConfig(UpdateHotkeyAutoScanConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateHotkeyAutoScanConfig);
     }
 
     /**
@@ -414,7 +623,7 @@ public class DcsClient {
 
     /**
      * 设置IP白名单分组
-     * 为指定实例设置IP白名单分组
+     * 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能
      *
      * @param UpdateIpWhitelistRequest 请求对象
      * @return UpdateIpWhitelistResponse
