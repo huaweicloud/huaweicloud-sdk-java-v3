@@ -130,7 +130,7 @@ public class CreateIpGroupOption  {
     }
 
     /**
-     * IP地址组中包含的ip或网段列表。 []，表示不放通或不禁止任何ip。 单ipgroup下的ip或网段总和不超过300个。
+     * IP地址组中包含的ip或网段列表。[]表示任意ip。
      * @return ipList
      */
     public List<CreateIpGroupIpOption> getIpList() {

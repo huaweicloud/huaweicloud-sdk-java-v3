@@ -44,7 +44,7 @@ public class PageInfo  {
 
 
     /**
-     * 分页查询中上页的ID
+     * 分页查询结果中第一条记录的ID
      * @return previousMarker
      */
     public String getPreviousMarker() {
@@ -64,7 +64,7 @@ public class PageInfo  {
 
 
     /**
-     * 分页查询中下页的ID。 注：分页的场合输出该字段。
+     * 分页查询结果中最后一条记录的ID。
      * @return nextMarker
      */
     public String getNextMarker() {

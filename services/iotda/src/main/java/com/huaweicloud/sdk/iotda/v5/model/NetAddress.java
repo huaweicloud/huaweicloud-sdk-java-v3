@@ -65,6 +65,7 @@ public class NetAddress  {
 
     /**
      * 服务对应端口
+     * minimum: 0
      * maximum: 65535
      * @return port
      */

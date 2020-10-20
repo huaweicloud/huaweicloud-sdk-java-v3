@@ -17,6 +17,61 @@ public class IoTDAClient {
 
 
     /**
+     * 生成接入凭证
+     * 接入凭证是用于客户端使用AMQP等协议与平台建链的一个认证凭据。只保留一条记录，如果重复调用只会重置接入凭证，使得之前的失效。
+     *
+     * @param CreateAccessCodeRequest 请求对象
+     * @return CreateAccessCodeResponse
+     */
+    public CreateAccessCodeResponse createAccessCode(CreateAccessCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createAccessCode);
+    }
+
+    /**
+     * 创建AMQP队列
+     * 应用服务器可调用此接口在物联网平台创建一个AMQP队列。每个租户只能创建100个队列，若超过规格，则创建失败，若队列名称与已有的队列名称相同，则创建失败。
+     *
+     * @param AddQueueRequest 请求对象
+     * @return AddQueueResponse
+     */
+    public AddQueueResponse addQueue(AddQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.addQueue);
+    }
+
+    /**
+     * 查询AMQP列表
+     * 应用服务器可调用此接口查询物联网平台中的AMQP队列信息列表。可通过队列名称作模糊查询，支持分页。
+     *
+     * @param BatchShowQueueRequest 请求对象
+     * @return BatchShowQueueResponse
+     */
+    public BatchShowQueueResponse batchShowQueue(BatchShowQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.batchShowQueue);
+    }
+
+    /**
+     * 删除AMQP队列
+     * 应用服务器可调用此接口在物联网平台上删除指定AMQP队列。若当前队列正在使用，则会删除失败。
+     *
+     * @param DeleteQueueRequest 请求对象
+     * @return DeleteQueueResponse
+     */
+    public DeleteQueueResponse deleteQueue(DeleteQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteQueue);
+    }
+
+    /**
+     * 查询单个AMQP队列
+     * 应用服务器可调用此接口查询物联网平台中指定队列的详细信息。
+     *
+     * @param ShowQueueRequest 请求对象
+     * @return ShowQueueResponse
+     */
+    public ShowQueueResponse showQueue(ShowQueueRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showQueue);
+    }
+
+    /**
      * 创建资源空间
      * 资源空间对应的是物联网平台原有的应用，在物联网平台的含义与应用一致，只是变更了名称。应用服务器可以调用此接口创建资源空间。
      *
@@ -487,6 +542,116 @@ public class IoTDAClient {
      */
     public UpdatePropertiesResponse updateProperties(UpdatePropertiesRequest request) {
         return hcClient.syncInvokeHttp(request, IoTDAMeta.updateProperties);
+    }
+
+    /**
+     * 创建规则触发条件
+     * 应用服务器可调用此接口在物联网平台创建一条规则触发条件。
+     *
+     * @param CreateRoutingRuleRequest 请求对象
+     * @return CreateRoutingRuleResponse
+     */
+    public CreateRoutingRuleResponse createRoutingRule(CreateRoutingRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createRoutingRule);
+    }
+
+    /**
+     * 创建规则动作
+     * 应用服务器可调用此接口在物联网平台创建一条规则动作。
+     *
+     * @param CreateRuleActionRequest 请求对象
+     * @return CreateRuleActionResponse
+     */
+    public CreateRuleActionResponse createRuleAction(CreateRuleActionRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createRuleAction);
+    }
+
+    /**
+     * 删除规则触发条件
+     * 应用服务器可调用此接口删除物联网平台中的指定规则条件。
+     *
+     * @param DeleteRoutingRuleRequest 请求对象
+     * @return DeleteRoutingRuleResponse
+     */
+    public DeleteRoutingRuleResponse deleteRoutingRule(DeleteRoutingRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteRoutingRule);
+    }
+
+    /**
+     * 删除规则动作
+     * 应用服务器可调用此接口删除物联网平台中的指定规则动作。
+     *
+     * @param DeleteRuleActionRequest 请求对象
+     * @return DeleteRuleActionResponse
+     */
+    public DeleteRuleActionResponse deleteRuleAction(DeleteRuleActionRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteRuleAction);
+    }
+
+    /**
+     * 查询规则条件列表
+     * 应用服务器可调用此接口查询物联网平台中设置的规则条件列表。
+     *
+     * @param ListRoutingRulesRequest 请求对象
+     * @return ListRoutingRulesResponse
+     */
+    public ListRoutingRulesResponse listRoutingRules(ListRoutingRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listRoutingRules);
+    }
+
+    /**
+     * 查询规则动作列表
+     * 应用服务器可调用此接口查询物联网平台中设置的规则动作列表。
+     *
+     * @param ListRuleActionsRequest 请求对象
+     * @return ListRuleActionsResponse
+     */
+    public ListRuleActionsResponse listRuleActions(ListRuleActionsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listRuleActions);
+    }
+
+    /**
+     * 查询规则条件
+     * 应用服务器可调用此接口查询物联网平台中指定规则条件的配置信息。
+     *
+     * @param ShowRoutingRuleRequest 请求对象
+     * @return ShowRoutingRuleResponse
+     */
+    public ShowRoutingRuleResponse showRoutingRule(ShowRoutingRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showRoutingRule);
+    }
+
+    /**
+     * 查询规则动作
+     * 应用服务器可调用此接口查询物联网平台中指定规则动作的配置信息。
+     *
+     * @param ShowRuleActionRequest 请求对象
+     * @return ShowRuleActionResponse
+     */
+    public ShowRuleActionResponse showRuleAction(ShowRuleActionRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showRuleAction);
+    }
+
+    /**
+     * 修改规则触发条件
+     * 应用服务器可调用此接口修改物联网平台中指定规则条件的配置参数。
+     *
+     * @param UpdateRoutingRuleRequest 请求对象
+     * @return UpdateRoutingRuleResponse
+     */
+    public UpdateRoutingRuleResponse updateRoutingRule(UpdateRoutingRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateRoutingRule);
+    }
+
+    /**
+     * 修改规则动作
+     * 应用服务器可调用此接口修改物联网平台中指定规则动作的配置。
+     *
+     * @param UpdateRuleActionRequest 请求对象
+     * @return UpdateRuleActionResponse
+     */
+    public UpdateRuleActionResponse updateRuleAction(UpdateRuleActionRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateRuleAction);
     }
 
     /**

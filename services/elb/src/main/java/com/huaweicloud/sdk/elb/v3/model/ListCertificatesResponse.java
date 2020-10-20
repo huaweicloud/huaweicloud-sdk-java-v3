@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.Certificate;
+import com.huaweicloud.sdk.elb.v3.model.CertificateInfo;
 import com.huaweicloud.sdk.elb.v3.model.PageInfo;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class ListCertificatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificates")
     
-    private List<Certificate> certificates = null;
+    private List<CertificateInfo> certificates = null;
     
     public ListCertificatesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -88,13 +88,13 @@ public class ListCertificatesResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    public ListCertificatesResponse withCertificates(List<Certificate> certificates) {
+    public ListCertificatesResponse withCertificates(List<CertificateInfo> certificates) {
         this.certificates = certificates;
         return this;
     }
 
     
-    public ListCertificatesResponse addCertificatesItem(Certificate certificatesItem) {
+    public ListCertificatesResponse addCertificatesItem(CertificateInfo certificatesItem) {
         if (this.certificates == null) {
             this.certificates = new ArrayList<>();
         }
@@ -102,7 +102,7 @@ public class ListCertificatesResponse extends SdkResponse {
         return this;
     }
 
-    public ListCertificatesResponse withCertificates(Consumer<List<Certificate>> certificatesSetter) {
+    public ListCertificatesResponse withCertificates(Consumer<List<CertificateInfo>> certificatesSetter) {
         if(this.certificates == null ){
             this.certificates = new ArrayList<>();
         }
@@ -114,11 +114,11 @@ public class ListCertificatesResponse extends SdkResponse {
      * 证书对象列表。
      * @return certificates
      */
-    public List<Certificate> getCertificates() {
+    public List<CertificateInfo> getCertificates() {
         return certificates;
     }
 
-    public void setCertificates(List<Certificate> certificates) {
+    public void setCertificates(List<CertificateInfo> certificates) {
         this.certificates = certificates;
     }
     @Override

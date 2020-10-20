@@ -142,6 +142,12 @@ public class RestScheduleConfDTO  {
     
     private String vmrID;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="concurrentParticipants")
+    
+    private Integer concurrentParticipants;
+
     public RestScheduleConfDTO withConferenceType(Integer conferenceType) {
         this.conferenceType = conferenceType;
         return this;
@@ -585,6 +591,26 @@ public class RestScheduleConfDTO  {
     public void setVmrID(String vmrID) {
         this.vmrID = vmrID;
     }
+
+    public RestScheduleConfDTO withConcurrentParticipants(Integer concurrentParticipants) {
+        this.concurrentParticipants = concurrentParticipants;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议方数，会议最大与会人数限制
+     * @return concurrentParticipants
+     */
+    public Integer getConcurrentParticipants() {
+        return concurrentParticipants;
+    }
+
+    public void setConcurrentParticipants(Integer concurrentParticipants) {
+        this.concurrentParticipants = concurrentParticipants;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -613,11 +639,12 @@ public class RestScheduleConfDTO  {
             Objects.equals(this.recordAuthType, restScheduleConfDTO.recordAuthType) &&
             Objects.equals(this.vmrFlag, restScheduleConfDTO.vmrFlag) &&
             Objects.equals(this.cycleParams, restScheduleConfDTO.cycleParams) &&
-            Objects.equals(this.vmrID, restScheduleConfDTO.vmrID);
+            Objects.equals(this.vmrID, restScheduleConfDTO.vmrID) &&
+            Objects.equals(this.concurrentParticipants, restScheduleConfDTO.concurrentParticipants);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceType, startTime, length, subject, mediaTypes, groupuri, attendees, isAutoRecord, encryptMode, language, timeZoneID, recordType, liveAddress, auxAddress, recordAuxStream, confConfigInfo, recordAuthType, vmrFlag, cycleParams, vmrID);
+        return Objects.hash(conferenceType, startTime, length, subject, mediaTypes, groupuri, attendees, isAutoRecord, encryptMode, language, timeZoneID, recordType, liveAddress, auxAddress, recordAuxStream, confConfigInfo, recordAuthType, vmrFlag, cycleParams, vmrID, concurrentParticipants);
     }
     @Override
     public String toString() {
@@ -643,6 +670,7 @@ public class RestScheduleConfDTO  {
         sb.append("    vmrFlag: ").append(toIndentedString(vmrFlag)).append("\n");
         sb.append("    cycleParams: ").append(toIndentedString(cycleParams)).append("\n");
         sb.append("    vmrID: ").append(toIndentedString(vmrID)).append("\n");
+        sb.append("    concurrentParticipants: ").append(toIndentedString(concurrentParticipants)).append("\n");
         sb.append("}");
         return sb.toString();
     }

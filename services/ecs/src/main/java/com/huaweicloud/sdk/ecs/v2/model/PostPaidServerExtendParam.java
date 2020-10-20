@@ -145,7 +145,7 @@ public class PostPaidServerExtendParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="interruption_policy")
     
-    private InterruptionPolicyEnum interruptionPolicy = InterruptionPolicyEnum.IMMEDIATE;
+    private InterruptionPolicyEnum interruptionPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -12,12 +12,12 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class DcsMeta {
 
-    public static final HttpRequestDef<BatchCreateOrDeleteDcsTagsRequest, BatchCreateOrDeleteDcsTagsResponse> batchCreateOrDeleteDcsTags = genForbatchCreateOrDeleteDcsTags();
+    public static final HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTags = genForbatchCreateOrDeleteTags();
 
-    private static HttpRequestDef<BatchCreateOrDeleteDcsTagsRequest, BatchCreateOrDeleteDcsTagsResponse> genForbatchCreateOrDeleteDcsTags() {
+    private static HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> genForbatchCreateOrDeleteTags() {
         // basic
-        HttpRequestDef.Builder<BatchCreateOrDeleteDcsTagsRequest, BatchCreateOrDeleteDcsTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteDcsTagsRequest.class, BatchCreateOrDeleteDcsTagsResponse.class)
+        HttpRequestDef.Builder<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteTagsRequest.class, BatchCreateOrDeleteTagsResponse.class)
                 .withUri("/v2/{project_id}/dcs/{instance_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -26,7 +26,7 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(BatchCreateOrDeleteDcsTagsRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );
@@ -34,7 +34,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             CreateOrDeleteInstanceTags.class,
-            f -> f.withMarshaller(BatchCreateOrDeleteDcsTagsRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -44,12 +44,12 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteDCSInstancesRequest, BatchDeleteDCSInstancesResponse> batchDeleteDCSInstances = genForbatchDeleteDCSInstances();
+    public static final HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstances = genForbatchDeleteInstances();
 
-    private static HttpRequestDef<BatchDeleteDCSInstancesRequest, BatchDeleteDCSInstancesResponse> genForbatchDeleteDCSInstances() {
+    private static HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> genForbatchDeleteInstances() {
         // basic
-        HttpRequestDef.Builder<BatchDeleteDCSInstancesRequest, BatchDeleteDCSInstancesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteDCSInstancesRequest.class, BatchDeleteDCSInstancesResponse.class)
+        HttpRequestDef.Builder<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteInstancesRequest.class, BatchDeleteInstancesResponse.class)
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -58,7 +58,7 @@ public class DcsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             Boolean.class,
-            f -> f.withMarshaller(BatchDeleteDCSInstancesRequest::getAllFailure, (req, v) -> {
+            f -> f.withMarshaller(BatchDeleteInstancesRequest::getAllFailure, (req, v) -> {
                 req.setAllFailure(v);
             })
         );
@@ -66,7 +66,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchDeleteBody.class,
-            f -> f.withMarshaller(BatchDeleteDCSInstancesRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(BatchDeleteInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -154,30 +154,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDCSInstanceRequest, CreateDCSInstanceResponse> createDCSInstance = genForcreateDCSInstance();
-
-    private static HttpRequestDef<CreateDCSInstanceRequest, CreateDCSInstanceResponse> genForcreateDCSInstance() {
-        // basic
-        HttpRequestDef.Builder<CreateDCSInstanceRequest, CreateDCSInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateDCSInstanceRequest.class, CreateDCSInstanceResponse.class)
-                .withUri("/v2/{project_id}/instances")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            CreateInstanceBody.class,
-            f -> f.withMarshaller(CreateDCSInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> createHotkeyScanTask = genForcreateHotkeyScanTask();
 
     private static HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> genForcreateHotkeyScanTask() {
@@ -193,6 +169,30 @@ public class DcsMeta {
             String.class,
             f -> f.withMarshaller(CreateHotkeyScanTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance = genForcreateInstance();
+
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
+                .withUri("/v2/{project_id}/instances")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateInstanceBody.class,
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -491,12 +491,12 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSingleDCSInstanceRequest, DeleteSingleDCSInstanceResponse> deleteSingleDCSInstance = genFordeleteSingleDCSInstance();
+    public static final HttpRequestDef<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> deleteSingleInstance = genFordeleteSingleInstance();
 
-    private static HttpRequestDef<DeleteSingleDCSInstanceRequest, DeleteSingleDCSInstanceResponse> genFordeleteSingleDCSInstance() {
+    private static HttpRequestDef<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> genFordeleteSingleInstance() {
         // basic
-        HttpRequestDef.Builder<DeleteSingleDCSInstanceRequest, DeleteSingleDCSInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSingleDCSInstanceRequest.class, DeleteSingleDCSInstanceResponse.class)
+        HttpRequestDef.Builder<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSingleInstanceRequest.class, DeleteSingleInstanceResponse.class)
                 .withUri("/v2/{project_id}/instances/{instance_id}");
 
         // requests
@@ -504,95 +504,8 @@ public class DcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(DeleteSingleDCSInstanceRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(DeleteSingleInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAllDCSInstancesRequest, ListAllDCSInstancesResponse> listAllDCSInstances = genForlistAllDCSInstances();
-
-    private static HttpRequestDef<ListAllDCSInstancesRequest, ListAllDCSInstancesResponse> genForlistAllDCSInstances() {
-        // basic
-        HttpRequestDef.Builder<ListAllDCSInstancesRequest, ListAllDCSInstancesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAllDCSInstancesRequest.class, ListAllDCSInstancesResponse.class)
-                .withUri("/v2/{project_id}/instances");
-
-        // requests
-        builder.withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getId, (req, v) -> {
-                req.setId(v);
-            })
-        );
-        builder.withRequestField("include_failure",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getIncludeFailure, (req, v) -> {
-                req.setIncludeFailure(v);
-            })
-        );
-        builder.withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getName, (req, v) -> {
-                req.setName(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            })
-        );
-        builder.withRequestField("name_equal",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getNameEqual, (req, v) -> {
-                req.setNameEqual(v);
-            })
-        );
-        builder.withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getTags, (req, v) -> {
-                req.setTags(v);
-            })
-        );
-        builder.withRequestField("ip",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAllDCSInstancesRequest::getIp, (req, v) -> {
-                req.setIp(v);
             })
         );
 
@@ -875,21 +788,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDcsTagsOfTenantRequest, ListDcsTagsOfTenantResponse> listDcsTagsOfTenant = genForlistDcsTagsOfTenant();
-
-    private static HttpRequestDef<ListDcsTagsOfTenantRequest, ListDcsTagsOfTenantResponse> genForlistDcsTagsOfTenant() {
-        // basic
-        HttpRequestDef.Builder<ListDcsTagsOfTenantRequest, ListDcsTagsOfTenantResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListDcsTagsOfTenantRequest.class, ListDcsTagsOfTenantResponse.class)
-                .withUri("/v2/{project_id}/dcs/tags");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
@@ -1015,6 +913,93 @@ public class DcsMeta {
             ListHotKeyScanTasksRequest.StatusEnum.class,
             f -> f.withMarshaller(ListHotKeyScanTasksRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances = genForlistInstances();
+
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
+                .withUri("/v2/{project_id}/instances");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("include_failure",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, (req, v) -> {
+                req.setIncludeFailure(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("name_equal",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getNameEqual, (req, v) -> {
+                req.setNameEqual(v);
+            })
+        );
+        builder.withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            })
+        );
+        builder.withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getIp, (req, v) -> {
+                req.setIp(v);
             })
         );
 
@@ -1272,12 +1257,27 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestartOrFlushDCSInstancesRequest, RestartOrFlushDCSInstancesResponse> restartOrFlushDCSInstances = genForrestartOrFlushDCSInstances();
+    public static final HttpRequestDef<ListTagsOfTenantRequest, ListTagsOfTenantResponse> listTagsOfTenant = genForlistTagsOfTenant();
 
-    private static HttpRequestDef<RestartOrFlushDCSInstancesRequest, RestartOrFlushDCSInstancesResponse> genForrestartOrFlushDCSInstances() {
+    private static HttpRequestDef<ListTagsOfTenantRequest, ListTagsOfTenantResponse> genForlistTagsOfTenant() {
         // basic
-        HttpRequestDef.Builder<RestartOrFlushDCSInstancesRequest, RestartOrFlushDCSInstancesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, RestartOrFlushDCSInstancesRequest.class, RestartOrFlushDCSInstancesResponse.class)
+        HttpRequestDef.Builder<ListTagsOfTenantRequest, ListTagsOfTenantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsOfTenantRequest.class, ListTagsOfTenantResponse.class)
+                .withUri("/v2/{project_id}/dcs/tags");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> restartOrFlushInstances = genForrestartOrFlushInstances();
+
+    private static HttpRequestDef<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> genForrestartOrFlushInstances() {
+        // basic
+        HttpRequestDef.Builder<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RestartOrFlushInstancesRequest.class, RestartOrFlushInstancesResponse.class)
                 .withUri("/v2/{project_id}/instances/status")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1286,7 +1286,7 @@ public class DcsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             ChangeInstanceStatusBody.class,
-            f -> f.withMarshaller(RestartOrFlushDCSInstancesRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(RestartOrFlushInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -1382,52 +1382,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDCSInstanceRequest, ShowDCSInstanceResponse> showDCSInstance = genForshowDCSInstance();
-
-    private static HttpRequestDef<ShowDCSInstanceRequest, ShowDCSInstanceResponse> genForshowDCSInstance() {
-        // basic
-        HttpRequestDef.Builder<ShowDCSInstanceRequest, ShowDCSInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDCSInstanceRequest.class, ShowDCSInstanceResponse.class)
-                .withUri("/v2/{project_id}/instances/{instance_id}");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowDCSInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowDcsTagsRequest, ShowDcsTagsResponse> showDcsTags = genForshowDcsTags();
-
-    private static HttpRequestDef<ShowDcsTagsRequest, ShowDcsTagsResponse> genForshowDcsTags() {
-        // basic
-        HttpRequestDef.Builder<ShowDcsTagsRequest, ShowDcsTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDcsTagsRequest.class, ShowDcsTagsResponse.class)
-                .withUri("/v2/{project_id}/instances/{instance_id}/tags");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowDcsTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> showHotkeyAutoscanConfig = genForshowHotkeyAutoscanConfig();
 
     private static HttpRequestDef<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> genForshowHotkeyAutoscanConfig() {
@@ -1474,6 +1428,29 @@ public class DcsMeta {
             String.class,
             f -> f.withMarshaller(ShowHotkeyTaskDetailsRequest::getHotkeyId, (req, v) -> {
                 req.setHotkeyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             })
         );
 
@@ -1537,6 +1514,29 @@ public class DcsMeta {
                 .withUri("/v2/{project_id}/quota");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForshowTags();
+
+    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForshowTags() {
+        // basic
+        HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagsRequest.class, ShowTagsResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/tags");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
 
         // response
 
@@ -1630,38 +1630,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDCSInstanceRequest, UpdateDCSInstanceResponse> updateDCSInstance = genForupdateDCSInstance();
-
-    private static HttpRequestDef<UpdateDCSInstanceRequest, UpdateDCSInstanceResponse> genForupdateDCSInstance() {
-        // basic
-        HttpRequestDef.Builder<UpdateDCSInstanceRequest, UpdateDCSInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateDCSInstanceRequest.class, UpdateDCSInstanceResponse.class)
-                .withUri("/v2/{project_id}/instances/{instance_id}")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateDCSInstanceRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ModifyInstanceBody.class,
-            f -> f.withMarshaller(UpdateDCSInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> updateHotkeyAutoScanConfig = genForupdateHotkeyAutoScanConfig();
 
     private static HttpRequestDef<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> genForupdateHotkeyAutoScanConfig() {
@@ -1685,6 +1653,38 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             AutoscanConfigRequest.class,
             f -> f.withMarshaller(UpdateHotkeyAutoScanConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance = genForupdateInstance();
+
+    private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ModifyInstanceBody.class,
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

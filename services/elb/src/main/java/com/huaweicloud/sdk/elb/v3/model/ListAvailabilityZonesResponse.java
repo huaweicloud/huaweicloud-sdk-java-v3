@@ -57,7 +57,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * 可用区列表
+     * 可用区列表  > 获取可用区列表后，在（如创建LB时）设置可用区，选择的多个可用区必须同时在同一个子集中
      * @return availabilityZones
      */
     public List<List<AvailabilityZone>> getAvailabilityZones() {

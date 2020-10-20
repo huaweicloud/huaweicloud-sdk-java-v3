@@ -149,7 +149,7 @@ public class IpGroup  {
     }
 
     /**
-     * IP地址组中包含的ip对象。
+     * IP地址组中包含的ip或网段列表。[]表示任意ip。
      * @return ipList
      */
     public List<IpInfo> getIpList() {

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.Certificate;
+import com.huaweicloud.sdk.elb.v3.model.CertificateInfo;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,7 +30,7 @@ public class CreateCertificateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificate")
     
-    private Certificate certificate = null;
+    private CertificateInfo certificate = null;
 
     public CreateCertificateResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -52,14 +52,14 @@ public class CreateCertificateResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public CreateCertificateResponse withCertificate(Certificate certificate) {
+    public CreateCertificateResponse withCertificate(CertificateInfo certificate) {
         this.certificate = certificate;
         return this;
     }
 
-    public CreateCertificateResponse withCertificate(Consumer<Certificate> certificateSetter) {
+    public CreateCertificateResponse withCertificate(Consumer<CertificateInfo> certificateSetter) {
         if(this.certificate == null ){
-            this.certificate = new Certificate();
+            this.certificate = new CertificateInfo();
             certificateSetter.accept(this.certificate);
         }
         
@@ -71,11 +71,11 @@ public class CreateCertificateResponse extends SdkResponse {
      * Get certificate
      * @return certificate
      */
-    public Certificate getCertificate() {
+    public CertificateInfo getCertificate() {
         return certificate;
     }
 
-    public void setCertificate(Certificate certificate) {
+    public void setCertificate(CertificateInfo certificate) {
         this.certificate = certificate;
     }
     @Override

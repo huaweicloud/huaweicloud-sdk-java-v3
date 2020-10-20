@@ -245,6 +245,12 @@ public class ConferenceInfo  {
     
     private String vmrID;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="concurrentParticipants")
+    
+    private Integer concurrentParticipants;
+
     public ConferenceInfo withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
         return this;
@@ -1026,6 +1032,26 @@ public class ConferenceInfo  {
     public void setVmrID(String vmrID) {
         this.vmrID = vmrID;
     }
+
+    public ConferenceInfo withConcurrentParticipants(Integer concurrentParticipants) {
+        this.concurrentParticipants = concurrentParticipants;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议方数，会议最大与会人数限制
+     * @return concurrentParticipants
+     */
+    public Integer getConcurrentParticipants() {
+        return concurrentParticipants;
+    }
+
+    public void setConcurrentParticipants(Integer concurrentParticipants) {
+        this.concurrentParticipants = concurrentParticipants;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1071,11 +1097,12 @@ public class ConferenceInfo  {
             Objects.equals(this.terminlCount, conferenceInfo.terminlCount) &&
             Objects.equals(this.normalCount, conferenceInfo.normalCount) &&
             Objects.equals(this.deptName, conferenceInfo.deptName) &&
-            Objects.equals(this.vmrID, conferenceInfo.vmrID);
+            Objects.equals(this.vmrID, conferenceInfo.vmrID) &&
+            Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceID, subject, size, timeZoneID, startTime, endTime, mediaTypes, conferenceState, language, accessNumber, passwordEntry, userUUID, scheduserName, conferenceType, confType, cycleParams, isAutoMute, isAutoRecord, chairJoinUri, guestJoinUri, audienceJoinUri, recordType, auxAddress, liveAddress, recordAuxStream, recordAuthType, liveUrl, confConfigInfo, vmrFlag, isHasRecordFile, vmrConferenceID, confUUID, partAttendeeInfo, terminlCount, normalCount, deptName, vmrID);
+        return Objects.hash(conferenceID, subject, size, timeZoneID, startTime, endTime, mediaTypes, conferenceState, language, accessNumber, passwordEntry, userUUID, scheduserName, conferenceType, confType, cycleParams, isAutoMute, isAutoRecord, chairJoinUri, guestJoinUri, audienceJoinUri, recordType, auxAddress, liveAddress, recordAuxStream, recordAuthType, liveUrl, confConfigInfo, vmrFlag, isHasRecordFile, vmrConferenceID, confUUID, partAttendeeInfo, terminlCount, normalCount, deptName, vmrID, concurrentParticipants);
     }
     @Override
     public String toString() {
@@ -1118,6 +1145,7 @@ public class ConferenceInfo  {
         sb.append("    normalCount: ").append(toIndentedString(normalCount)).append("\n");
         sb.append("    deptName: ").append(toIndentedString(deptName)).append("\n");
         sb.append("    vmrID: ").append(toIndentedString(vmrID)).append("\n");
+        sb.append("    concurrentParticipants: ").append(toIndentedString(concurrentParticipants)).append("\n");
         sb.append("}");
         return sb.toString();
     }

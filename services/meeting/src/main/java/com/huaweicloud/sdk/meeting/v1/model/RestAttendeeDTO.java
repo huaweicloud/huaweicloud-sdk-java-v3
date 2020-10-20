@@ -107,6 +107,12 @@ public class RestAttendeeDTO  {
     
     private String deptName;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="appId")
+    
+    private String appId;
+
     public RestAttendeeDTO withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -412,6 +418,26 @@ public class RestAttendeeDTO  {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
+
+    public RestAttendeeDTO withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议Paas服务APPID。
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -435,11 +461,12 @@ public class RestAttendeeDTO  {
             Objects.equals(this.type, restAttendeeDTO.type) &&
             Objects.equals(this.address, restAttendeeDTO.address) &&
             Objects.equals(this.deptUUID, restAttendeeDTO.deptUUID) &&
-            Objects.equals(this.deptName, restAttendeeDTO.deptName);
+            Objects.equals(this.deptName, restAttendeeDTO.deptName) &&
+            Objects.equals(this.appId, restAttendeeDTO.appId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(userUUID, accountId, name, role, phone, phone2, phone3, email, sms, isMute, isAutoInvite, type, address, deptUUID, deptName);
+        return Objects.hash(userUUID, accountId, name, role, phone, phone2, phone3, email, sms, isMute, isAutoInvite, type, address, deptUUID, deptName, appId);
     }
     @Override
     public String toString() {
@@ -460,6 +487,7 @@ public class RestAttendeeDTO  {
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    deptUUID: ").append(toIndentedString(deptUUID)).append("\n");
         sb.append("    deptName: ").append(toIndentedString(deptName)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

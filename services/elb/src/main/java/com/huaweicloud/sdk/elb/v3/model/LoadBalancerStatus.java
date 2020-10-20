@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerListenerStatus;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerPoolStatus;
+import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusListener;
+import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusPool;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -37,13 +37,13 @@ public class LoadBalancerStatus  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<LoadBalancerListenerStatus> listeners = new ArrayList<>();
+    private List<LoadBalancerStatusListener> listeners = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<LoadBalancerPoolStatus> pools = new ArrayList<>();
+    private List<LoadBalancerStatusPool> pools = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,18 +97,18 @@ public class LoadBalancerStatus  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    public LoadBalancerStatus withListeners(List<LoadBalancerListenerStatus> listeners) {
+    public LoadBalancerStatus withListeners(List<LoadBalancerStatusListener> listeners) {
         this.listeners = listeners;
         return this;
     }
 
     
-    public LoadBalancerStatus addListenersItem(LoadBalancerListenerStatus listenersItem) {
+    public LoadBalancerStatus addListenersItem(LoadBalancerStatusListener listenersItem) {
         this.listeners.add(listenersItem);
         return this;
     }
 
-    public LoadBalancerStatus withListeners(Consumer<List<LoadBalancerListenerStatus>> listenersSetter) {
+    public LoadBalancerStatus withListeners(Consumer<List<LoadBalancerStatusListener>> listenersSetter) {
         if(this.listeners == null ){
             this.listeners = new ArrayList<>();
         }
@@ -120,26 +120,26 @@ public class LoadBalancerStatus  {
      * 负载均衡器关联的监听器列表。
      * @return listeners
      */
-    public List<LoadBalancerListenerStatus> getListeners() {
+    public List<LoadBalancerStatusListener> getListeners() {
         return listeners;
     }
 
-    public void setListeners(List<LoadBalancerListenerStatus> listeners) {
+    public void setListeners(List<LoadBalancerStatusListener> listeners) {
         this.listeners = listeners;
     }
 
-    public LoadBalancerStatus withPools(List<LoadBalancerPoolStatus> pools) {
+    public LoadBalancerStatus withPools(List<LoadBalancerStatusPool> pools) {
         this.pools = pools;
         return this;
     }
 
     
-    public LoadBalancerStatus addPoolsItem(LoadBalancerPoolStatus poolsItem) {
+    public LoadBalancerStatus addPoolsItem(LoadBalancerStatusPool poolsItem) {
         this.pools.add(poolsItem);
         return this;
     }
 
-    public LoadBalancerStatus withPools(Consumer<List<LoadBalancerPoolStatus>> poolsSetter) {
+    public LoadBalancerStatus withPools(Consumer<List<LoadBalancerStatusPool>> poolsSetter) {
         if(this.pools == null ){
             this.pools = new ArrayList<>();
         }
@@ -151,11 +151,11 @@ public class LoadBalancerStatus  {
      * 负载均衡器关联的后端云服务器组列表。
      * @return pools
      */
-    public List<LoadBalancerPoolStatus> getPools() {
+    public List<LoadBalancerStatusPool> getPools() {
         return pools;
     }
 
-    public void setPools(List<LoadBalancerPoolStatus> pools) {
+    public void setPools(List<LoadBalancerStatusPool> pools) {
         this.pools = pools;
     }
 

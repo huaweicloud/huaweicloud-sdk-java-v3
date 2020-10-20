@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.elb.v3.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -304,12 +306,90 @@ public class LoadBalancer  {
     @JsonProperty(value="elb_virsubnet_ids")
     
     private List<String> elbVirsubnetIds = null;
-    
+        /**
+     * 功能描述：下联面子网类型
+     */
+    public static final class ElbVirsubnetTypeEnum {
+
+        
+        /**
+         * Enum IPV4 for value: "ipv4"
+         */
+        public static final ElbVirsubnetTypeEnum IPV4 = new ElbVirsubnetTypeEnum("ipv4");
+        
+        /**
+         * Enum DUALSTACK for value: "dualstack"
+         */
+        public static final ElbVirsubnetTypeEnum DUALSTACK = new ElbVirsubnetTypeEnum("dualstack");
+        
+
+        private static final Map<String, ElbVirsubnetTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ElbVirsubnetTypeEnum> createStaticFields() {
+            Map<String, ElbVirsubnetTypeEnum> map = new HashMap<>();
+            map.put("ipv4", IPV4);
+            map.put("dualstack", DUALSTACK);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ElbVirsubnetTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ElbVirsubnetTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ElbVirsubnetTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ElbVirsubnetTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ElbVirsubnetTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ElbVirsubnetTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ElbVirsubnetTypeEnum) {
+                return this.value.equals(((ElbVirsubnetTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elb_virsubnet_type")
     
-    private String elbVirsubnetType;
+    private ElbVirsubnetTypeEnum elbVirsubnetType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1018,7 +1098,7 @@ public class LoadBalancer  {
         this.elbVirsubnetIds = elbVirsubnetIds;
     }
 
-    public LoadBalancer withElbVirsubnetType(String elbVirsubnetType) {
+    public LoadBalancer withElbVirsubnetType(ElbVirsubnetTypeEnum elbVirsubnetType) {
         this.elbVirsubnetType = elbVirsubnetType;
         return this;
     }
@@ -1030,11 +1110,11 @@ public class LoadBalancer  {
      * 功能描述：下联面子网类型
      * @return elbVirsubnetType
      */
-    public String getElbVirsubnetType() {
+    public ElbVirsubnetTypeEnum getElbVirsubnetType() {
         return elbVirsubnetType;
     }
 
-    public void setElbVirsubnetType(String elbVirsubnetType) {
+    public void setElbVirsubnetType(ElbVirsubnetTypeEnum elbVirsubnetType) {
         this.elbVirsubnetType = elbVirsubnetType;
     }
 

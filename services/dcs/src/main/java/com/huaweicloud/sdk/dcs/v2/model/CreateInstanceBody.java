@@ -233,7 +233,7 @@ public class CreateInstanceBody  {
 
 
     /**
-     * 缓存版本，当缓存引擎为Redis时，取值为3.0、4.0或5.0。
+     * 缓存版本。  当缓存引擎为Redis时，取值为3.0、4.0或5.0。  当缓存引擎为Memcached时，该字段为可选，取值为空。 
      * @return engineVersion
      */
     public String getEngineVersion() {

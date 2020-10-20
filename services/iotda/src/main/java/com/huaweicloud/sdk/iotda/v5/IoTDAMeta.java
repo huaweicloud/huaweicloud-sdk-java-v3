@@ -12,6 +12,212 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class IoTDAMeta {
 
+    public static final HttpRequestDef<CreateAccessCodeRequest, CreateAccessCodeResponse> createAccessCode = genForcreateAccessCode();
+
+    private static HttpRequestDef<CreateAccessCodeRequest, CreateAccessCodeResponse> genForcreateAccessCode() {
+        // basic
+        HttpRequestDef.Builder<CreateAccessCodeRequest, CreateAccessCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAccessCodeRequest.class, CreateAccessCodeResponse.class)
+                .withUri("/v5/iot/{project_id}/auth/accesscode")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAccessCodeRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAccessCodeRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAccessCodeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateAccessCodeRequestBody.class,
+            f -> f.withMarshaller(CreateAccessCodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddQueueRequest, AddQueueResponse> addQueue = genForaddQueue();
+
+    private static HttpRequestDef<AddQueueRequest, AddQueueResponse> genForaddQueue() {
+        // basic
+        HttpRequestDef.Builder<AddQueueRequest, AddQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddQueueRequest.class, AddQueueResponse.class)
+                .withUri("/v5/iot/{project_id}/amqp-queues")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddQueueRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            QueueInfo.class,
+            f -> f.withMarshaller(AddQueueRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchShowQueueRequest, BatchShowQueueResponse> batchShowQueue = genForbatchShowQueue();
+
+    private static HttpRequestDef<BatchShowQueueRequest, BatchShowQueueResponse> genForbatchShowQueue() {
+        // basic
+        HttpRequestDef.Builder<BatchShowQueueRequest, BatchShowQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchShowQueueRequest.class, BatchShowQueueResponse.class)
+                .withUri("/v5/iot/{project_id}/amqp-queues");
+
+        // requests
+        builder.withRequestField("queue_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchShowQueueRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(BatchShowQueueRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchShowQueueRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(BatchShowQueueRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchShowQueueRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteQueueRequest, DeleteQueueResponse> deleteQueue = genFordeleteQueue();
+
+    private static HttpRequestDef<DeleteQueueRequest, DeleteQueueResponse> genFordeleteQueue() {
+        // basic
+        HttpRequestDef.Builder<DeleteQueueRequest, DeleteQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteQueueRequest.class, DeleteQueueResponse.class)
+                .withUri("/v5/iot/{project_id}/amqp-queues/{queue_id}");
+
+        // requests
+        builder.withRequestField("queue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteQueueRequest::getQueueId, (req, v) -> {
+                req.setQueueId(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteQueueRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteQueueResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQueueRequest, ShowQueueResponse> showQueue = genForshowQueue();
+
+    private static HttpRequestDef<ShowQueueRequest, ShowQueueResponse> genForshowQueue() {
+        // basic
+        HttpRequestDef.Builder<ShowQueueRequest, ShowQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQueueRequest.class, ShowQueueResponse.class)
+                .withUri("/v5/iot/{project_id}/amqp-queues/{queue_id}");
+
+        // requests
+        builder.withRequestField("queue_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowQueueRequest::getQueueId, (req, v) -> {
+                req.setQueueId(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowQueueRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddApplicationRequest, AddApplicationResponse> addApplication = genForaddApplication();
 
     private static HttpRequestDef<AddApplicationRequest, AddApplicationResponse> genForaddApplication() {
@@ -1850,6 +2056,538 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             DevicePropertiesRequest.class,
             f -> f.withMarshaller(UpdatePropertiesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRoutingRuleRequest, CreateRoutingRuleResponse> createRoutingRule = genForcreateRoutingRule();
+
+    private static HttpRequestDef<CreateRoutingRuleRequest, CreateRoutingRuleResponse> genForcreateRoutingRule() {
+        // basic
+        HttpRequestDef.Builder<CreateRoutingRuleRequest, CreateRoutingRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRoutingRuleRequest.class, CreateRoutingRuleResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRoutingRuleRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRoutingRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AddRuleReq.class,
+            f -> f.withMarshaller(CreateRoutingRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRuleActionRequest, CreateRuleActionResponse> createRuleAction = genForcreateRuleAction();
+
+    private static HttpRequestDef<CreateRuleActionRequest, CreateRuleActionResponse> genForcreateRuleAction() {
+        // basic
+        HttpRequestDef.Builder<CreateRuleActionRequest, CreateRuleActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRuleActionRequest.class, CreateRuleActionResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/actions")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRuleActionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRuleActionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AddActionReq.class,
+            f -> f.withMarshaller(CreateRuleActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> deleteRoutingRule = genFordeleteRoutingRule();
+
+    private static HttpRequestDef<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> genFordeleteRoutingRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRoutingRuleRequest.class, DeleteRoutingRuleResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/rules/{rule_id}");
+
+        // requests
+        builder.withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteRoutingRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRoutingRuleRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRoutingRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRoutingRuleResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRuleActionRequest, DeleteRuleActionResponse> deleteRuleAction = genFordeleteRuleAction();
+
+    private static HttpRequestDef<DeleteRuleActionRequest, DeleteRuleActionResponse> genFordeleteRuleAction() {
+        // basic
+        HttpRequestDef.Builder<DeleteRuleActionRequest, DeleteRuleActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleActionRequest.class, DeleteRuleActionResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/actions/{action_id}");
+
+        // requests
+        builder.withRequestField("action_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteRuleActionRequest::getActionId, (req, v) -> {
+                req.setActionId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRuleActionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRuleActionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteRuleActionResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRoutingRulesRequest, ListRoutingRulesResponse> listRoutingRules = genForlistRoutingRules();
+
+    private static HttpRequestDef<ListRoutingRulesRequest, ListRoutingRulesResponse> genForlistRoutingRules() {
+        // basic
+        HttpRequestDef.Builder<ListRoutingRulesRequest, ListRoutingRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRoutingRulesRequest.class, ListRoutingRulesResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/rules");
+
+        // requests
+        builder.withRequestField("resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getResource, (req, v) -> {
+                req.setResource(v);
+            })
+        );
+        builder.withRequestField("event",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getEvent, (req, v) -> {
+                req.setEvent(v);
+            })
+        );
+        builder.withRequestField("app_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getAppType, (req, v) -> {
+                req.setAppType(v);
+            })
+        );
+        builder.withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("rule_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getRuleName, (req, v) -> {
+                req.setRuleName(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRoutingRulesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRuleActionsRequest, ListRuleActionsResponse> listRuleActions = genForlistRuleActions();
+
+    private static HttpRequestDef<ListRuleActionsRequest, ListRuleActionsResponse> genForlistRuleActions() {
+        // basic
+        HttpRequestDef.Builder<ListRuleActionsRequest, ListRuleActionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRuleActionsRequest.class, ListRuleActionsResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/actions");
+
+        // requests
+        builder.withRequestField("rule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            })
+        );
+        builder.withRequestField("channel",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getChannel, (req, v) -> {
+                req.setChannel(v);
+            })
+        );
+        builder.withRequestField("app_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getAppType, (req, v) -> {
+                req.setAppType(v);
+            })
+        );
+        builder.withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRuleActionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRoutingRuleRequest, ShowRoutingRuleResponse> showRoutingRule = genForshowRoutingRule();
+
+    private static HttpRequestDef<ShowRoutingRuleRequest, ShowRoutingRuleResponse> genForshowRoutingRule() {
+        // basic
+        HttpRequestDef.Builder<ShowRoutingRuleRequest, ShowRoutingRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRoutingRuleRequest.class, ShowRoutingRuleResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/rules/{rule_id}");
+
+        // requests
+        builder.withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRoutingRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRoutingRuleRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRoutingRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRuleActionRequest, ShowRuleActionResponse> showRuleAction = genForshowRuleAction();
+
+    private static HttpRequestDef<ShowRuleActionRequest, ShowRuleActionResponse> genForshowRuleAction() {
+        // basic
+        HttpRequestDef.Builder<ShowRuleActionRequest, ShowRuleActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRuleActionRequest.class, ShowRuleActionResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/actions/{action_id}");
+
+        // requests
+        builder.withRequestField("action_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRuleActionRequest::getActionId, (req, v) -> {
+                req.setActionId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRuleActionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRuleActionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> updateRoutingRule = genForupdateRoutingRule();
+
+    private static HttpRequestDef<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> genForupdateRoutingRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRoutingRuleRequest.class, UpdateRoutingRuleResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRoutingRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateRoutingRuleRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateRoutingRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateRuleReq.class,
+            f -> f.withMarshaller(UpdateRoutingRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRuleActionRequest, UpdateRuleActionResponse> updateRuleAction = genForupdateRuleAction();
+
+    private static HttpRequestDef<UpdateRuleActionRequest, UpdateRuleActionResponse> genForupdateRuleAction() {
+        // basic
+        HttpRequestDef.Builder<UpdateRuleActionRequest, UpdateRuleActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRuleActionRequest.class, UpdateRuleActionResponse.class)
+                .withUri("/v5/iot/{project_id}/routing-rule/actions/{action_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("action_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRuleActionRequest::getActionId, (req, v) -> {
+                req.setActionId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateRuleActionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateRuleActionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateActionReq.class,
+            f -> f.withMarshaller(UpdateRuleActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

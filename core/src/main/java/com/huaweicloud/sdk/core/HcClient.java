@@ -35,7 +35,6 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
@@ -252,13 +251,20 @@ public class HcClient implements CustomizationConfigure {
             if (Objects.isNull(resT)) {
                 resT = reqDef.getResponseType().newInstance();
             }
-            if (resT instanceof SdkResponse) {
-                SdkResponse sdkResponse = (SdkResponse) resT;
+
+            ResT finalResT = resT;
+            reqDef.getResponseFields().forEach(resTField -> {
+                if (resTField.getLocation() == LocationType.Header) {
+                    fillHeaderField(httpResponse, finalResT, resTField);
+                }
+            });
+
+            if (finalResT instanceof SdkResponse) {
+                SdkResponse sdkResponse = (SdkResponse) finalResT;
                 sdkResponse.setHttpStatusCode(httpResponse.getStatusCode());
-                // reflect header parameter in response.
-                setResponseHeaders(httpResponse, sdkResponse);
             }
-            return resT;
+
+            return finalResT;
         } catch (InstantiationException | IllegalAccessException e) {
             logger.error("Can not create response instance", e);
             return null;
@@ -266,28 +272,6 @@ public class HcClient implements CustomizationConfigure {
             logger.error("can not parse json result to response object", e);
             throw new ServerResponseException(httpResponse.getStatusCode(), null, httpResponse.getBodyAsString(),
                 httpResponse.getHeader("X-Request-Id"));
-        }
-    }
-
-    private <ResT> void setResponseHeaders(HttpResponse httpResponse, ResT resT) {
-        if (httpResponse.getHeaders().size() == 0) {
-            return;
-        }
-        try {
-            java.lang.reflect.Field[] fields = resT.getClass().getDeclaredFields();
-            for (java.lang.reflect.Field field : fields) {
-                boolean fieldHasAno = field.isAnnotationPresent(JsonProperty.class);
-                if (fieldHasAno) {
-                    JsonProperty fieldProperty = field.getAnnotation(JsonProperty.class);
-                    String jsonValue = fieldProperty.value();
-                    if (Objects.nonNull(httpResponse.getHeader(jsonValue))) {
-                        field.setAccessible(true);
-                        field.set(resT, httpResponse.getHeader(jsonValue));
-                    }
-                }
-            }
-        } catch (IllegalAccessException e) {
-            throw new SdkException(e);
         }
     }
 
@@ -301,6 +285,23 @@ public class HcClient implements CustomizationConfigure {
             obj = respBody;
         }
         return obj;
+    }
+
+    private <ResT> void fillHeaderField(HttpResponse httpResponse, ResT wrapperResponse, Field<ResT, ?> field) {
+        List<String> infos = httpResponse.getHeaders().get(field.getName());
+        if (Objects.nonNull(infos) && infos.size() > 0) {
+            if (field.getFieldType().isAssignableFrom(List.class)) {
+                field.writeValueSafe(wrapperResponse, infos, List.class);
+            } else {
+                field.writeValueSafe(wrapperResponse, infos.get(0), String.class);
+                if (infos.size() > 1) {
+                    logger.error("field {} passed list {}, but configured as single value", field.getName(),
+                        infos.stream().collect(Collectors.joining(",")));
+                }
+            }
+        } else {
+            logger.warn("field {} in header read response value is empty", field.getName());
+        }
     }
 
     @Override

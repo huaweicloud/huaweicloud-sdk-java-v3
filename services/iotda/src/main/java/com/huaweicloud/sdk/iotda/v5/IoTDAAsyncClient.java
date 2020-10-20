@@ -20,6 +20,61 @@ public class IoTDAAsyncClient {
 
 
     /**
+     * 生成接入凭证
+     * 接入凭证是用于客户端使用AMQP等协议与平台建链的一个认证凭据。只保留一条记录，如果重复调用只会重置接入凭证，使得之前的失效。
+     *
+     * @param CreateAccessCodeRequest 请求对象
+     * @return CompletableFuture<CreateAccessCodeResponse>
+     */
+    public CompletableFuture<CreateAccessCodeResponse> createAccessCodeAsync(CreateAccessCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createAccessCode);
+    }
+
+    /**
+     * 创建AMQP队列
+     * 应用服务器可调用此接口在物联网平台创建一个AMQP队列。每个租户只能创建100个队列，若超过规格，则创建失败，若队列名称与已有的队列名称相同，则创建失败。
+     *
+     * @param AddQueueRequest 请求对象
+     * @return CompletableFuture<AddQueueResponse>
+     */
+    public CompletableFuture<AddQueueResponse> addQueueAsync(AddQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.addQueue);
+    }
+
+    /**
+     * 查询AMQP列表
+     * 应用服务器可调用此接口查询物联网平台中的AMQP队列信息列表。可通过队列名称作模糊查询，支持分页。
+     *
+     * @param BatchShowQueueRequest 请求对象
+     * @return CompletableFuture<BatchShowQueueResponse>
+     */
+    public CompletableFuture<BatchShowQueueResponse> batchShowQueueAsync(BatchShowQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.batchShowQueue);
+    }
+
+    /**
+     * 删除AMQP队列
+     * 应用服务器可调用此接口在物联网平台上删除指定AMQP队列。若当前队列正在使用，则会删除失败。
+     *
+     * @param DeleteQueueRequest 请求对象
+     * @return CompletableFuture<DeleteQueueResponse>
+     */
+    public CompletableFuture<DeleteQueueResponse> deleteQueueAsync(DeleteQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteQueue);
+    }
+
+    /**
+     * 查询单个AMQP队列
+     * 应用服务器可调用此接口查询物联网平台中指定队列的详细信息。
+     *
+     * @param ShowQueueRequest 请求对象
+     * @return CompletableFuture<ShowQueueResponse>
+     */
+    public CompletableFuture<ShowQueueResponse> showQueueAsync(ShowQueueRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showQueue);
+    }
+
+    /**
      * 创建资源空间
      * 资源空间对应的是物联网平台原有的应用，在物联网平台的含义与应用一致，只是变更了名称。应用服务器可以调用此接口创建资源空间。
      *
@@ -490,6 +545,116 @@ public class IoTDAAsyncClient {
      */
     public CompletableFuture<UpdatePropertiesResponse> updatePropertiesAsync(UpdatePropertiesRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateProperties);
+    }
+
+    /**
+     * 创建规则触发条件
+     * 应用服务器可调用此接口在物联网平台创建一条规则触发条件。
+     *
+     * @param CreateRoutingRuleRequest 请求对象
+     * @return CompletableFuture<CreateRoutingRuleResponse>
+     */
+    public CompletableFuture<CreateRoutingRuleResponse> createRoutingRuleAsync(CreateRoutingRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createRoutingRule);
+    }
+
+    /**
+     * 创建规则动作
+     * 应用服务器可调用此接口在物联网平台创建一条规则动作。
+     *
+     * @param CreateRuleActionRequest 请求对象
+     * @return CompletableFuture<CreateRuleActionResponse>
+     */
+    public CompletableFuture<CreateRuleActionResponse> createRuleActionAsync(CreateRuleActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.createRuleAction);
+    }
+
+    /**
+     * 删除规则触发条件
+     * 应用服务器可调用此接口删除物联网平台中的指定规则条件。
+     *
+     * @param DeleteRoutingRuleRequest 请求对象
+     * @return CompletableFuture<DeleteRoutingRuleResponse>
+     */
+    public CompletableFuture<DeleteRoutingRuleResponse> deleteRoutingRuleAsync(DeleteRoutingRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteRoutingRule);
+    }
+
+    /**
+     * 删除规则动作
+     * 应用服务器可调用此接口删除物联网平台中的指定规则动作。
+     *
+     * @param DeleteRuleActionRequest 请求对象
+     * @return CompletableFuture<DeleteRuleActionResponse>
+     */
+    public CompletableFuture<DeleteRuleActionResponse> deleteRuleActionAsync(DeleteRuleActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteRuleAction);
+    }
+
+    /**
+     * 查询规则条件列表
+     * 应用服务器可调用此接口查询物联网平台中设置的规则条件列表。
+     *
+     * @param ListRoutingRulesRequest 请求对象
+     * @return CompletableFuture<ListRoutingRulesResponse>
+     */
+    public CompletableFuture<ListRoutingRulesResponse> listRoutingRulesAsync(ListRoutingRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listRoutingRules);
+    }
+
+    /**
+     * 查询规则动作列表
+     * 应用服务器可调用此接口查询物联网平台中设置的规则动作列表。
+     *
+     * @param ListRuleActionsRequest 请求对象
+     * @return CompletableFuture<ListRuleActionsResponse>
+     */
+    public CompletableFuture<ListRuleActionsResponse> listRuleActionsAsync(ListRuleActionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listRuleActions);
+    }
+
+    /**
+     * 查询规则条件
+     * 应用服务器可调用此接口查询物联网平台中指定规则条件的配置信息。
+     *
+     * @param ShowRoutingRuleRequest 请求对象
+     * @return CompletableFuture<ShowRoutingRuleResponse>
+     */
+    public CompletableFuture<ShowRoutingRuleResponse> showRoutingRuleAsync(ShowRoutingRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showRoutingRule);
+    }
+
+    /**
+     * 查询规则动作
+     * 应用服务器可调用此接口查询物联网平台中指定规则动作的配置信息。
+     *
+     * @param ShowRuleActionRequest 请求对象
+     * @return CompletableFuture<ShowRuleActionResponse>
+     */
+    public CompletableFuture<ShowRuleActionResponse> showRuleActionAsync(ShowRuleActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.showRuleAction);
+    }
+
+    /**
+     * 修改规则触发条件
+     * 应用服务器可调用此接口修改物联网平台中指定规则条件的配置参数。
+     *
+     * @param UpdateRoutingRuleRequest 请求对象
+     * @return CompletableFuture<UpdateRoutingRuleResponse>
+     */
+    public CompletableFuture<UpdateRoutingRuleResponse> updateRoutingRuleAsync(UpdateRoutingRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateRoutingRule);
+    }
+
+    /**
+     * 修改规则动作
+     * 应用服务器可调用此接口修改物联网平台中指定规则动作的配置。
+     *
+     * @param UpdateRuleActionRequest 请求对象
+     * @return CompletableFuture<UpdateRuleActionResponse>
+     */
+    public CompletableFuture<UpdateRuleActionResponse> updateRuleActionAsync(UpdateRuleActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.updateRuleAction);
     }
 
     /**

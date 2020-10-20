@@ -51,9 +51,9 @@ public class ListFlavorsRequest  {
 
         
         /**
-         * Enum X86_64 for value: "X86_64"
+         * Enum X86_64 for value: "x86_64"
          */
-        public static final CpuTypeEnum X86_64 = new CpuTypeEnum("X86_64");
+        public static final CpuTypeEnum X86_64 = new CpuTypeEnum("x86_64");
         
         /**
          * Enum AARCH64 for value: "aarch64"
@@ -65,7 +65,7 @@ public class ListFlavorsRequest  {
 
         private static Map<String, CpuTypeEnum> createStaticFields() {
             Map<String, CpuTypeEnum> map = new HashMap<>();
-            map.put("X86_64", X86_64);
+            map.put("x86_64", X86_64);
             map.put("aarch64", AARCH64);
             return Collections.unmodifiableMap(map);
         }

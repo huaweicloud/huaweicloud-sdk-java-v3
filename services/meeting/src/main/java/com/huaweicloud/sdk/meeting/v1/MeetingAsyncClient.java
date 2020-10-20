@@ -845,6 +845,17 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 设置自定义多画面
+     * 场景描述：会议管理员在confportal手动设置多画面 功能描述：提供给会议管理员手动设置多画面的功能
+     *
+     * @param SetCustomMultiPictureRequest 请求对象
+     * @return CompletableFuture<SetCustomMultiPictureResponse>
+     */
+    public CompletableFuture<SetCustomMultiPictureResponse> setCustomMultiPictureAsync(SetCustomMultiPictureRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setCustomMultiPicture);
+    }
+
+    /**
      * 主持人选看
      * 用于主持人轮询、主持人选看多画面、主持人选看会场操作。目前只适用于硬终端为主持人的场景。
      *

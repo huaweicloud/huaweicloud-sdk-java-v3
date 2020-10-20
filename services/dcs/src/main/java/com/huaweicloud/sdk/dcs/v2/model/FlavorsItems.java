@@ -266,7 +266,7 @@ public class FlavorsItems  {
 
 
     /**
-     * CPU架构类型。取值范围如下： - X86_64：X86架构 - aarch64: ARM架构 
+     * CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64: ARM架构 
      * @return cpuType
      */
     public String getCpuType() {

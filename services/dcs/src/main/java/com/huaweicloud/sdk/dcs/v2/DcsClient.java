@@ -20,22 +20,22 @@ public class DcsClient {
      * 批量添加或删除标签
      * 为指定实例批量添加标签，或批量删除标签。
      *
-     * @param BatchCreateOrDeleteDcsTagsRequest 请求对象
-     * @return BatchCreateOrDeleteDcsTagsResponse
+     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @return BatchCreateOrDeleteTagsResponse
      */
-    public BatchCreateOrDeleteDcsTagsResponse batchCreateOrDeleteDcsTags(BatchCreateOrDeleteDcsTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.batchCreateOrDeleteDcsTags);
+    public BatchCreateOrDeleteTagsResponse batchCreateOrDeleteTags(BatchCreateOrDeleteTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.batchCreateOrDeleteTags);
     }
 
     /**
      * 批量删除实例
      * 批量删除多个缓存实例。
      *
-     * @param BatchDeleteDCSInstancesRequest 请求对象
-     * @return BatchDeleteDCSInstancesResponse
+     * @param BatchDeleteInstancesRequest 请求对象
+     * @return BatchDeleteInstancesResponse
      */
-    public BatchDeleteDCSInstancesResponse batchDeleteDCSInstances(BatchDeleteDCSInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.batchDeleteDCSInstances);
+    public BatchDeleteInstancesResponse batchDeleteInstances(BatchDeleteInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.batchDeleteInstances);
     }
 
     /**
@@ -72,17 +72,6 @@ public class DcsClient {
     }
 
     /**
-     * 创建缓存实例
-     * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
-     *
-     * @param CreateDCSInstanceRequest 请求对象
-     * @return CreateDCSInstanceResponse
-     */
-    public CreateDCSInstanceResponse createDCSInstance(CreateDCSInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.createDCSInstance);
-    }
-
-    /**
      * 创建热key分析任务
      * 创建热key分析任务，Redis 3.0 不支持热key分析。  热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。 
      *
@@ -91,6 +80,17 @@ public class DcsClient {
      */
     public CreateHotkeyScanTaskResponse createHotkeyScanTask(CreateHotkeyScanTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.createHotkeyScanTask);
+    }
+
+    /**
+     * 创建缓存实例
+     * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return CreateInstanceResponse
+     */
+    public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.createInstance);
     }
 
     /**
@@ -196,22 +196,11 @@ public class DcsClient {
      * 删除实例
      * 删除指定的缓存实例，释放该实例的所有资源。  &gt; 如果是删除按需资源，请按照本章节执行；如果是删除包周期资源，即退订，请参考[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html#section2)。 
      *
-     * @param DeleteSingleDCSInstanceRequest 请求对象
-     * @return DeleteSingleDCSInstanceResponse
+     * @param DeleteSingleInstanceRequest 请求对象
+     * @return DeleteSingleInstanceResponse
      */
-    public DeleteSingleDCSInstanceResponse deleteSingleDCSInstance(DeleteSingleDCSInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.deleteSingleDCSInstance);
-    }
-
-    /**
-     * 查询所有实例列表
-     * 查询租户的缓存实例列表，支持按照条件查询。
-     *
-     * @param ListAllDCSInstancesRequest 请求对象
-     * @return ListAllDCSInstancesResponse
-     */
-    public ListAllDCSInstancesResponse listAllDCSInstances(ListAllDCSInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.listAllDCSInstances);
+    public DeleteSingleInstanceResponse deleteSingleInstance(DeleteSingleInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.deleteSingleInstance);
     }
 
     /**
@@ -292,17 +281,6 @@ public class DcsClient {
     }
 
     /**
-     * 查询租户所有标签
-     * 查询租户在指定Project中实例类型的所有资源标签集合。
-     *
-     * @param ListDcsTagsOfTenantRequest 请求对象
-     * @return ListDcsTagsOfTenantResponse
-     */
-    public ListDcsTagsOfTenantResponse listDcsTagsOfTenant(ListDcsTagsOfTenantRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.listDcsTagsOfTenant);
-    }
-
-    /**
      * 查询产品规格
      * 在创建缓存实例时，需要配置订购的产品规格编码（spec_code），可通过该接口查询产品规格，查询条件不选时默认查询全部。
      *
@@ -333,6 +311,17 @@ public class DcsClient {
      */
     public ListHotKeyScanTasksResponse listHotKeyScanTasks(ListHotKeyScanTasksRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listHotKeyScanTasks);
+    }
+
+    /**
+     * 查询所有实例列表
+     * 查询租户的缓存实例列表，支持按照条件查询。
+     *
+     * @param ListInstancesRequest 请求对象
+     * @return ListInstancesResponse
+     */
+    public ListInstancesResponse listInstances(ListInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listInstances);
     }
 
     /**
@@ -413,14 +402,25 @@ public class DcsClient {
     }
 
     /**
+     * 查询租户所有标签
+     * 查询租户在指定Project中实例类型的所有资源标签集合。
+     *
+     * @param ListTagsOfTenantRequest 请求对象
+     * @return ListTagsOfTenantResponse
+     */
+    public ListTagsOfTenantResponse listTagsOfTenant(ListTagsOfTenantRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listTagsOfTenant);
+    }
+
+    /**
      * 重启实例或清空数据
      * 重启运行中的DCS缓存实例。  清空Redis4.0/Redis5.0的实例数据，数据清空后，无法撤销，且无法恢复，请谨慎操作。 
      *
-     * @param RestartOrFlushDCSInstancesRequest 请求对象
-     * @return RestartOrFlushDCSInstancesResponse
+     * @param RestartOrFlushInstancesRequest 请求对象
+     * @return RestartOrFlushInstancesResponse
      */
-    public RestartOrFlushDCSInstancesResponse restartOrFlushDCSInstances(RestartOrFlushDCSInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.restartOrFlushDCSInstances);
+    public RestartOrFlushInstancesResponse restartOrFlushInstances(RestartOrFlushInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.restartOrFlushInstances);
     }
 
     /**
@@ -457,28 +457,6 @@ public class DcsClient {
     }
 
     /**
-     * 查询指定实例
-     * 通过实例ID查询实例的详细信息。
-     *
-     * @param ShowDCSInstanceRequest 请求对象
-     * @return ShowDCSInstanceResponse
-     */
-    public ShowDCSInstanceResponse showDCSInstance(ShowDCSInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.showDCSInstance);
-    }
-
-    /**
-     * 查询单个实例标签
-     * 通过实例ID查询标签。
-     *
-     * @param ShowDcsTagsRequest 请求对象
-     * @return ShowDcsTagsResponse
-     */
-    public ShowDcsTagsResponse showDcsTags(ShowDcsTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.showDcsTags);
-    }
-
-    /**
      * 查询热key自动分析配置
      * 查询热key自动分析配置。
      *
@@ -498,6 +476,17 @@ public class DcsClient {
      */
     public ShowHotkeyTaskDetailsResponse showHotkeyTaskDetails(ShowHotkeyTaskDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.showHotkeyTaskDetails);
+    }
+
+    /**
+     * 查询指定实例
+     * 通过实例ID查询实例的详细信息。
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return ShowInstanceResponse
+     */
+    public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showInstance);
     }
 
     /**
@@ -534,6 +523,17 @@ public class DcsClient {
     }
 
     /**
+     * 查询单个实例标签
+     * 通过实例ID查询标签。
+     *
+     * @param ShowTagsRequest 请求对象
+     * @return ShowTagsResponse
+     */
+    public ShowTagsResponse showTags(ShowTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showTags);
+    }
+
+    /**
      * 停止数据迁移任务
      * 停止数据迁移任务。
      *
@@ -567,17 +567,6 @@ public class DcsClient {
     }
 
     /**
-     * 修改实例信息
-     * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
-     *
-     * @param UpdateDCSInstanceRequest 请求对象
-     * @return UpdateDCSInstanceResponse
-     */
-    public UpdateDCSInstanceResponse updateDCSInstance(UpdateDCSInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.updateDCSInstance);
-    }
-
-    /**
      * 设置热key自动分析配置
      * 设置热key自动分析配置。
      *
@@ -586,6 +575,17 @@ public class DcsClient {
      */
     public UpdateHotkeyAutoScanConfigResponse updateHotkeyAutoScanConfig(UpdateHotkeyAutoScanConfigRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.updateHotkeyAutoScanConfig);
+    }
+
+    /**
+     * 修改实例信息
+     * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return UpdateInstanceResponse
+     */
+    public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateInstance);
     }
 
     /**

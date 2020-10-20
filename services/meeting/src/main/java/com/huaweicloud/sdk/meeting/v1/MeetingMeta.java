@@ -3866,6 +3866,46 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> setCustomMultiPicture = genForsetCustomMultiPicture();
+
+    private static HttpRequestDef<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> genForsetCustomMultiPicture() {
+        // basic
+        HttpRequestDef.Builder<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetCustomMultiPictureRequest.class, SetCustomMultiPictureResponse.class)
+                .withUri("/v1/mmc/control/conferences/display/customMultiPicture")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetCustomMultiPictureRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            })
+        );
+        builder.withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetCustomMultiPictureRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RestCustomMultiPictureBody.class,
+            f -> f.withMarshaller(SetCustomMultiPictureRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetHostViewRequest, SetHostViewResponse> setHostView = genForsetHostView();
 
     private static HttpRequestDef<SetHostViewRequest, SetHostViewResponse> genForsetHostView() {

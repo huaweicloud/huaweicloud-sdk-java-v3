@@ -23,22 +23,22 @@ public class DcsAsyncClient {
      * 批量添加或删除标签
      * 为指定实例批量添加标签，或批量删除标签。
      *
-     * @param BatchCreateOrDeleteDcsTagsRequest 请求对象
-     * @return CompletableFuture<BatchCreateOrDeleteDcsTagsResponse>
+     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateOrDeleteTagsResponse>
      */
-    public CompletableFuture<BatchCreateOrDeleteDcsTagsResponse> batchCreateOrDeleteDcsTagsAsync(BatchCreateOrDeleteDcsTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.batchCreateOrDeleteDcsTags);
+    public CompletableFuture<BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsync(BatchCreateOrDeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.batchCreateOrDeleteTags);
     }
 
     /**
      * 批量删除实例
      * 批量删除多个缓存实例。
      *
-     * @param BatchDeleteDCSInstancesRequest 请求对象
-     * @return CompletableFuture<BatchDeleteDCSInstancesResponse>
+     * @param BatchDeleteInstancesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteInstancesResponse>
      */
-    public CompletableFuture<BatchDeleteDCSInstancesResponse> batchDeleteDCSInstancesAsync(BatchDeleteDCSInstancesRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.batchDeleteDCSInstances);
+    public CompletableFuture<BatchDeleteInstancesResponse> batchDeleteInstancesAsync(BatchDeleteInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.batchDeleteInstances);
     }
 
     /**
@@ -75,17 +75,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 创建缓存实例
-     * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
-     *
-     * @param CreateDCSInstanceRequest 请求对象
-     * @return CompletableFuture<CreateDCSInstanceResponse>
-     */
-    public CompletableFuture<CreateDCSInstanceResponse> createDCSInstanceAsync(CreateDCSInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.createDCSInstance);
-    }
-
-    /**
      * 创建热key分析任务
      * 创建热key分析任务，Redis 3.0 不支持热key分析。  热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。 
      *
@@ -94,6 +83,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<CreateHotkeyScanTaskResponse> createHotkeyScanTaskAsync(CreateHotkeyScanTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.createHotkeyScanTask);
+    }
+
+    /**
+     * 创建缓存实例
+     * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return CompletableFuture<CreateInstanceResponse>
+     */
+    public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createInstance);
     }
 
     /**
@@ -199,22 +199,11 @@ public class DcsAsyncClient {
      * 删除实例
      * 删除指定的缓存实例，释放该实例的所有资源。  &gt; 如果是删除按需资源，请按照本章节执行；如果是删除包周期资源，即退订，请参考[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html#section2)。 
      *
-     * @param DeleteSingleDCSInstanceRequest 请求对象
-     * @return CompletableFuture<DeleteSingleDCSInstanceResponse>
+     * @param DeleteSingleInstanceRequest 请求对象
+     * @return CompletableFuture<DeleteSingleInstanceResponse>
      */
-    public CompletableFuture<DeleteSingleDCSInstanceResponse> deleteSingleDCSInstanceAsync(DeleteSingleDCSInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.deleteSingleDCSInstance);
-    }
-
-    /**
-     * 查询所有实例列表
-     * 查询租户的缓存实例列表，支持按照条件查询。
-     *
-     * @param ListAllDCSInstancesRequest 请求对象
-     * @return CompletableFuture<ListAllDCSInstancesResponse>
-     */
-    public CompletableFuture<ListAllDCSInstancesResponse> listAllDCSInstancesAsync(ListAllDCSInstancesRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.listAllDCSInstances);
+    public CompletableFuture<DeleteSingleInstanceResponse> deleteSingleInstanceAsync(DeleteSingleInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.deleteSingleInstance);
     }
 
     /**
@@ -295,17 +284,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 查询租户所有标签
-     * 查询租户在指定Project中实例类型的所有资源标签集合。
-     *
-     * @param ListDcsTagsOfTenantRequest 请求对象
-     * @return CompletableFuture<ListDcsTagsOfTenantResponse>
-     */
-    public CompletableFuture<ListDcsTagsOfTenantResponse> listDcsTagsOfTenantAsync(ListDcsTagsOfTenantRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.listDcsTagsOfTenant);
-    }
-
-    /**
      * 查询产品规格
      * 在创建缓存实例时，需要配置订购的产品规格编码（spec_code），可通过该接口查询产品规格，查询条件不选时默认查询全部。
      *
@@ -336,6 +314,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListHotKeyScanTasksResponse> listHotKeyScanTasksAsync(ListHotKeyScanTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listHotKeyScanTasks);
+    }
+
+    /**
+     * 查询所有实例列表
+     * 查询租户的缓存实例列表，支持按照条件查询。
+     *
+     * @param ListInstancesRequest 请求对象
+     * @return CompletableFuture<ListInstancesResponse>
+     */
+    public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listInstances);
     }
 
     /**
@@ -416,14 +405,25 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询租户所有标签
+     * 查询租户在指定Project中实例类型的所有资源标签集合。
+     *
+     * @param ListTagsOfTenantRequest 请求对象
+     * @return CompletableFuture<ListTagsOfTenantResponse>
+     */
+    public CompletableFuture<ListTagsOfTenantResponse> listTagsOfTenantAsync(ListTagsOfTenantRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listTagsOfTenant);
+    }
+
+    /**
      * 重启实例或清空数据
      * 重启运行中的DCS缓存实例。  清空Redis4.0/Redis5.0的实例数据，数据清空后，无法撤销，且无法恢复，请谨慎操作。 
      *
-     * @param RestartOrFlushDCSInstancesRequest 请求对象
-     * @return CompletableFuture<RestartOrFlushDCSInstancesResponse>
+     * @param RestartOrFlushInstancesRequest 请求对象
+     * @return CompletableFuture<RestartOrFlushInstancesResponse>
      */
-    public CompletableFuture<RestartOrFlushDCSInstancesResponse> restartOrFlushDCSInstancesAsync(RestartOrFlushDCSInstancesRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.restartOrFlushDCSInstances);
+    public CompletableFuture<RestartOrFlushInstancesResponse> restartOrFlushInstancesAsync(RestartOrFlushInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.restartOrFlushInstances);
     }
 
     /**
@@ -460,28 +460,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 查询指定实例
-     * 通过实例ID查询实例的详细信息。
-     *
-     * @param ShowDCSInstanceRequest 请求对象
-     * @return CompletableFuture<ShowDCSInstanceResponse>
-     */
-    public CompletableFuture<ShowDCSInstanceResponse> showDCSInstanceAsync(ShowDCSInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.showDCSInstance);
-    }
-
-    /**
-     * 查询单个实例标签
-     * 通过实例ID查询标签。
-     *
-     * @param ShowDcsTagsRequest 请求对象
-     * @return CompletableFuture<ShowDcsTagsResponse>
-     */
-    public CompletableFuture<ShowDcsTagsResponse> showDcsTagsAsync(ShowDcsTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.showDcsTags);
-    }
-
-    /**
      * 查询热key自动分析配置
      * 查询热key自动分析配置。
      *
@@ -501,6 +479,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ShowHotkeyTaskDetailsResponse> showHotkeyTaskDetailsAsync(ShowHotkeyTaskDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.showHotkeyTaskDetails);
+    }
+
+    /**
+     * 查询指定实例
+     * 通过实例ID查询实例的详细信息。
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return CompletableFuture<ShowInstanceResponse>
+     */
+    public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showInstance);
     }
 
     /**
@@ -537,6 +526,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询单个实例标签
+     * 通过实例ID查询标签。
+     *
+     * @param ShowTagsRequest 请求对象
+     * @return CompletableFuture<ShowTagsResponse>
+     */
+    public CompletableFuture<ShowTagsResponse> showTagsAsync(ShowTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showTags);
+    }
+
+    /**
      * 停止数据迁移任务
      * 停止数据迁移任务。
      *
@@ -570,17 +570,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 修改实例信息
-     * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
-     *
-     * @param UpdateDCSInstanceRequest 请求对象
-     * @return CompletableFuture<UpdateDCSInstanceResponse>
-     */
-    public CompletableFuture<UpdateDCSInstanceResponse> updateDCSInstanceAsync(UpdateDCSInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.updateDCSInstance);
-    }
-
-    /**
      * 设置热key自动分析配置
      * 设置热key自动分析配置。
      *
@@ -589,6 +578,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<UpdateHotkeyAutoScanConfigResponse> updateHotkeyAutoScanConfigAsync(UpdateHotkeyAutoScanConfigRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.updateHotkeyAutoScanConfig);
+    }
+
+    /**
+     * 修改实例信息
+     * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceResponse>
+     */
+    public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateInstance);
     }
 
     /**
