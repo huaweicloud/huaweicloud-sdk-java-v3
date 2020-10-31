@@ -1,3 +1,87 @@
+## 3.0.19-beta 2020-10-31
+## HuaweiCloud SDK CBR
+ - ### 新增特性
+    - 新增支持接口：TAG标签相关接口
+ - ### 解决问题
+    - [Issue 17](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/issues/17) 修复ListBackups接口响应体问题
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK CES
+ - ### 新增特性
+    - 新增支持接口：告警规则管理相关接口，资源分组管理相关接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK CodeCheck
+ - ### 新增特性
+    - 支持代码检查服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK CTS
+ - ### 新增特性
+    - 新增支持接口：ListQuotas（查询租户追踪器配额信息）
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK EPS
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 接口名称调整，原有的`*EP`接口展开为`*EnterpriseProject`，涉及接口：
+     1. ListEP → ListEnterpriseProject
+     2. CreateEP → CreateEnterpriseProject
+     3. ShowEP → ShowEnterpriseProject
+     4. ModifyEP → ModifyEnterpriseProject
+     5. EnableEP → EnableEnterpriseProject
+     6. ShowEPQuota → ShowEnterpriseProjectQuota
+     7. ShowResourceBindEP → ShowResourceBindEnterpriseProject
+     8. DisableEP → DisableEnterpriseProject
+
+## HuaweiCloud SDK FunctionGraph
+ - ### 新增特性
+    - 新增支持接口：更新触发器、获取指定时间段的函数运行指标、租户函数统计信息、查询租户配额
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK Iam
+ - ### 新增特性
+    - 无
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 接口名称调整，涉及接口：
+     1. KeystoneCreateUserTokenByPasswordAndMFA → KeystoneCreateUserTokenByPasswordAndMfa
+     2. CreateUnscopeTokenByIDPInitiated → CreateUnscopeTokenByIdpInitiated
+
+## HuaweiCloud SDK ProjectMan
+ - ### 新增特性
+    - 新增支持接口：迭代信息、用户信息、项目成员、项目信息、项目指标、项目统计等相关方法的接口
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+## HuaweiCloud SDK SMS
+ - ### 新增特性
+    - 支持主机迁移服务
+ - ### 解决问题
+    - 无
+ - ### 特性变更
+    - 无
+
+
 ## 3.0.18-beta 2020-10-20
 ## HuaweiCloud SDK DCS
  - ### 新增特性
@@ -584,16 +668,6 @@
     - 支持查询模板详情
     - 支持查询任务状态
     - 支持通过DevStar模板创建生成应用代码任务
- - ### 解决问题
-    - 无
- - ### 特性变更
-    - 无    
-
-# 3.0.17-beta 2020-10-16
-## HuaweiCloud SDK DevStar
- - ### 新增特性
-    - title由Devstar更改为DevStar
-    - 补充DevStar自动化测试用例
  - ### 解决问题
     - 无
  - ### 特性变更

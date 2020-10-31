@@ -101,7 +101,7 @@ public class EditMeetingRequest  {
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -123,7 +123,7 @@ public class EditMeetingRequest  {
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }

@@ -471,6 +471,17 @@ public class BssAsyncClient {
     }
 
     /**
+     * 查询资源类型
+     * 功能描述：查询资源类型
+     *
+     * @param ListResourceTypesRequest 请求对象
+     * @return CompletableFuture<ListResourceTypesResponse>
+     */
+    public CompletableFuture<ListResourceTypesResponse> listResourceTypesAsync(ListResourceTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listResourceTypes);
+    }
+
+    /**
      * 查询套餐内使用量
      * 功能描述：查询套餐内使用量
      *
@@ -479,6 +490,28 @@ public class BssAsyncClient {
      */
     public CompletableFuture<ListResourceUsagesResponse> listResourceUsagesAsync(ListResourceUsagesRequest request) {
         return hcClient.asyncInvokeHttp(request, BssMeta.listResourceUsages);
+    }
+
+    /**
+     * 根据云服务类型查询资源列表
+     * 功能描述：根据云服务类型查询资源列表
+     *
+     * @param ListServiceResourcesRequest 请求对象
+     * @return CompletableFuture<ListServiceResourcesResponse>
+     */
+    public CompletableFuture<ListServiceResourcesResponse> listServiceResourcesAsync(ListServiceResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listServiceResources);
+    }
+
+    /**
+     * 查询云服务类型列表
+     * 功能描述：查询云服务类型列表
+     *
+     * @param ListServiceTypesRequest 请求对象
+     * @return CompletableFuture<ListServiceTypesResponse>
+     */
+    public CompletableFuture<ListServiceTypesResponse> listServiceTypesAsync(ListServiceTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listServiceTypes);
     }
 
     /**

@@ -1,0 +1,480 @@
+package com.huaweicloud.sdk.sms.v3.model;
+
+
+
+
+import java.util.Collections;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.sms.v3.model.Template;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * 批量查询迁移项目返回的迁移项目信息
+ */
+public class MigprojectsResponseBody  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="isdefault")
+    
+    private Boolean isdefault;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="template")
+    
+    private Template template = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region")
+    
+    private String region;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="start_target_server")
+    
+    private String startTargetServer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="use_public_ip")
+    
+    private Boolean usePublicIp;
+    /**
+     * 迁移项目默认迁移类型 MIGRATE_BLOCK：块迁移,MIGRATE_FILE：文件级迁移
+     */
+    public static final class TypeEnum {
+
+        
+        /**
+         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         */
+        public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
+        
+        /**
+         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         */
+        public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
+        
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("MIGRATE_BLOCK", MIGRATE_BLOCK);
+            map.put("MIGRATE_FILE", MIGRATE_FILE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
+    
+    private TypeEnum type;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project")
+    
+    private String enterpriseProject;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="speed_limit")
+    
+    private Long speedLimit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="exist_server")
+    
+    private Boolean existServer;
+
+    public MigprojectsResponseBody withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public MigprojectsResponseBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public MigprojectsResponseBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public MigprojectsResponseBody withIsdefault(Boolean isdefault) {
+        this.isdefault = isdefault;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为默认模板
+     * @return isdefault
+     */
+    public Boolean getIsdefault() {
+        return isdefault;
+    }
+
+    public void setIsdefault(Boolean isdefault) {
+        this.isdefault = isdefault;
+    }
+
+    public MigprojectsResponseBody withTemplate(Template template) {
+        this.template = template;
+        return this;
+    }
+
+    public MigprojectsResponseBody withTemplate(Consumer<Template> templateSetter) {
+        if(this.template == null ){
+            this.template = new Template();
+            templateSetter.accept(this.template);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get template
+     * @return template
+     */
+    public Template getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(Template template) {
+        this.template = template;
+    }
+
+    public MigprojectsResponseBody withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 区域名称
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public MigprojectsResponseBody withStartTargetServer(String startTargetServer) {
+        this.startTargetServer = startTargetServer;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移后是否启动目的端虚拟机
+     * @return startTargetServer
+     */
+    public String getStartTargetServer() {
+        return startTargetServer;
+    }
+
+    public void setStartTargetServer(String startTargetServer) {
+        this.startTargetServer = startTargetServer;
+    }
+
+    public MigprojectsResponseBody withUsePublicIp(Boolean usePublicIp) {
+        this.usePublicIp = usePublicIp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否使用公网IP迁移
+     * @return usePublicIp
+     */
+    public Boolean getUsePublicIp() {
+        return usePublicIp;
+    }
+
+    public void setUsePublicIp(Boolean usePublicIp) {
+        this.usePublicIp = usePublicIp;
+    }
+
+    public MigprojectsResponseBody withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目默认迁移类型 MIGRATE_BLOCK：块迁移,MIGRATE_FILE：文件级迁移
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public MigprojectsResponseBody withEnterpriseProject(String enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目所属的企业项目名称
+     * @return enterpriseProject
+     */
+    public String getEnterpriseProject() {
+        return enterpriseProject;
+    }
+
+    public void setEnterpriseProject(String enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+    }
+
+    public MigprojectsResponseBody withSpeedLimit(Long speedLimit) {
+        this.speedLimit = speedLimit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 模板中配置的限速信息，单位：Mbps
+     * minimum: 1
+     * maximum: 10240
+     * @return speedLimit
+     */
+    public Long getSpeedLimit() {
+        return speedLimit;
+    }
+
+    public void setSpeedLimit(Long speedLimit) {
+        this.speedLimit = speedLimit;
+    }
+
+    public MigprojectsResponseBody withExistServer(Boolean existServer) {
+        this.existServer = existServer;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目下是否存在服务器
+     * @return existServer
+     */
+    public Boolean getExistServer() {
+        return existServer;
+    }
+
+    public void setExistServer(Boolean existServer) {
+        this.existServer = existServer;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        MigprojectsResponseBody migprojectsResponseBody = (MigprojectsResponseBody) o;
+        return Objects.equals(this.id, migprojectsResponseBody.id) &&
+            Objects.equals(this.name, migprojectsResponseBody.name) &&
+            Objects.equals(this.description, migprojectsResponseBody.description) &&
+            Objects.equals(this.isdefault, migprojectsResponseBody.isdefault) &&
+            Objects.equals(this.template, migprojectsResponseBody.template) &&
+            Objects.equals(this.region, migprojectsResponseBody.region) &&
+            Objects.equals(this.startTargetServer, migprojectsResponseBody.startTargetServer) &&
+            Objects.equals(this.usePublicIp, migprojectsResponseBody.usePublicIp) &&
+            Objects.equals(this.type, migprojectsResponseBody.type) &&
+            Objects.equals(this.enterpriseProject, migprojectsResponseBody.enterpriseProject) &&
+            Objects.equals(this.speedLimit, migprojectsResponseBody.speedLimit) &&
+            Objects.equals(this.existServer, migprojectsResponseBody.existServer);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, isdefault, template, region, startTargetServer, usePublicIp, type, enterpriseProject, speedLimit, existServer);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class MigprojectsResponseBody {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
+        sb.append("    template: ").append(toIndentedString(template)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
+        sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
+        sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
+        sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

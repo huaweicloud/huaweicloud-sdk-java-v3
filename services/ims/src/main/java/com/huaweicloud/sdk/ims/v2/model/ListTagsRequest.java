@@ -684,7 +684,7 @@ public class ListTagsRequest  {
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__imagetype")
     public ImagetypeEnum getImagetype() {
         return imagetype;
     }
@@ -786,7 +786,7 @@ public class ListTagsRequest  {
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__platform")
     public String getPlatform() {
         return platform;
     }
@@ -808,7 +808,7 @@ public class ListTagsRequest  {
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }

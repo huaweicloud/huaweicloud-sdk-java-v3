@@ -55,7 +55,7 @@ public class CreateHookRequest  {
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }

@@ -530,6 +530,14 @@ public class BssintlMeta {
                 req.setSubCustomerId(v);
             })
         );
+        builder.withRequestField("trade_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getTradeId, (req, v) -> {
+                req.setTradeId(v);
+            })
+        );
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -639,6 +647,37 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypes = genForlistResourceTypes();
+
+    private static HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> genForlistResourceTypes() {
+        // basic
+        HttpRequestDef.Builder<ListResourceTypesRequest, ListResourceTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourceTypesRequest.class, ListResourceTypesResponse.class)
+                .withUri("/v2/bases/resource-types");
+
+        // requests
+        builder.withRequestField("resource_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourceTypesRequest::getResourceTypeCode, (req, v) -> {
+                req.setResourceTypeCode(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourceTypesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListResourceUsagesRequest, ListResourceUsagesResponse> listResourceUsages = genForlistResourceUsages();
 
     private static HttpRequestDef<ListResourceUsagesRequest, ListResourceUsagesResponse> genForlistResourceUsages() {
@@ -653,6 +692,84 @@ public class BssintlMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListResourceUsagesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServiceResourcesRequest, ListServiceResourcesResponse> listServiceResources = genForlistServiceResources();
+
+    private static HttpRequestDef<ListServiceResourcesRequest, ListServiceResourcesResponse> genForlistServiceResources() {
+        // basic
+        HttpRequestDef.Builder<ListServiceResourcesRequest, ListServiceResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListServiceResourcesRequest.class, ListServiceResourcesResponse.class)
+                .withUri("/v2/products/service-resources");
+
+        // requests
+        builder.withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListServiceResourcesRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListServiceResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListServiceResourcesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListServiceResourcesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServiceTypesRequest, ListServiceTypesResponse> listServiceTypes = genForlistServiceTypes();
+
+    private static HttpRequestDef<ListServiceTypesRequest, ListServiceTypesResponse> genForlistServiceTypes() {
+        // basic
+        HttpRequestDef.Builder<ListServiceTypesRequest, ListServiceTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListServiceTypesRequest.class, ListServiceTypesResponse.class)
+                .withUri("/v2/bases/service-types");
+
+        // requests
+        builder.withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListServiceTypesRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListServiceTypesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

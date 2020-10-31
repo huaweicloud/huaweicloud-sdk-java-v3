@@ -119,6 +119,39 @@ public class IamAsyncClient {
     }
 
     /**
+     * 获取自定义代理登录票据
+     * 该接口用于用于获取自定义代理登录票据logintoken。logintoken是系统颁发给自定义代理用户的登录票据，承载用户的身份、session等信息。调用自定义代理URL登录云服务控制台时，可以使用本接口获取的logintoken进行认证。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。    &gt; - logintoken的有效期为10分钟。
+     *
+     * @param CreateLoginTokenRequest 请求对象
+     * @return CompletableFuture<CreateLoginTokenResponse>
+     */
+    public CompletableFuture<CreateLoginTokenResponse> createLoginTokenAsync(CreateLoginTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createLoginToken);
+    }
+
+    /**
+     * 导入Metadata文件
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)导入Metadata文件。    账号在使用联邦认证功能前，需要先将Metadata文件导入到IAM中。Metadata文件是SAML 2.0协议约定的接口文件，包含访问接口地址和证书信息，请找企业管理员获取企业IdP的Metadata文件。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param CreateMetadataRequest 请求对象
+     * @return CompletableFuture<CreateMetadataResponse>
+     */
+    public CompletableFuture<CreateMetadataResponse> createMetadataAsync(CreateMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createMetadata);
+    }
+
+    /**
+     * 获取联邦认证unscoped token(IdP initiated)
+     * 该接口可以用于通过IdP initiated的联邦认证方式获取unscoped token。    Unscoped token不能用来鉴权，若联邦用户需要使用token进行鉴权，请参考[获取联邦认证scoped token](https://support.huaweicloud.com/api-iam/iam_13_0604.html)获取scoped token。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。     &gt; - 该接口支持在命令行侧调用，需要客户端使用IdP initiated的联邦认证方式获取SAMLResponse，并采用浏览器提交表单数据的方式，获取unscoped token。
+     *
+     * @param CreateUnscopeTokenByIdpInitiatedRequest 请求对象
+     * @return CompletableFuture<CreateUnscopeTokenByIdpInitiatedResponse>
+     */
+    public CompletableFuture<CreateUnscopeTokenByIdpInitiatedResponse> createUnscopeTokenByIdpInitiatedAsync(CreateUnscopeTokenByIdpInitiatedRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createUnscopeTokenByIdpInitiated);
+    }
+
+    /**
      * 删除委托
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除委托。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -229,6 +262,28 @@ public class IamAsyncClient {
     }
 
     /**
+     * 注册身份提供商
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册身份提供商。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneCreateIdentityProviderRequest 请求对象
+     * @return CompletableFuture<KeystoneCreateIdentityProviderResponse>
+     */
+    public CompletableFuture<KeystoneCreateIdentityProviderResponse> keystoneCreateIdentityProviderAsync(KeystoneCreateIdentityProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCreateIdentityProvider);
+    }
+
+    /**
+     * 注册映射
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册映射。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneCreateMappingRequest 请求对象
+     * @return CompletableFuture<KeystoneCreateMappingResponse>
+     */
+    public CompletableFuture<KeystoneCreateMappingResponse> keystoneCreateMappingAsync(KeystoneCreateMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCreateMapping);
+    }
+
+    /**
      * 创建项目
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建项目。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -240,6 +295,28 @@ public class IamAsyncClient {
     }
 
     /**
+     * 注册协议
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)注册协议（将协议关联到某一身份提供商）。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneCreateProtocolRequest 请求对象
+     * @return CompletableFuture<KeystoneCreateProtocolResponse>
+     */
+    public CompletableFuture<KeystoneCreateProtocolResponse> keystoneCreateProtocolAsync(KeystoneCreateProtocolRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCreateProtocol);
+    }
+
+    /**
+     * 获取联邦认证scoped token
+     * 该接口可以用于通过联邦认证方式获取scoped token。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneCreateScopedTokenRequest 请求对象
+     * @return CompletableFuture<KeystoneCreateScopedTokenResponse>
+     */
+    public CompletableFuture<KeystoneCreateScopedTokenResponse> keystoneCreateScopedTokenAsync(KeystoneCreateScopedTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCreateScopedToken);
+    }
+
+    /**
      * 删除用户组
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除用户组。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -248,6 +325,39 @@ public class IamAsyncClient {
      */
     public CompletableFuture<KeystoneDeleteGroupResponse> keystoneDeleteGroupAsync(KeystoneDeleteGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneDeleteGroup);
+    }
+
+    /**
+     * 删除身份提供商
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html) 删除身份提供商。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneDeleteIdentityProviderRequest 请求对象
+     * @return CompletableFuture<KeystoneDeleteIdentityProviderResponse>
+     */
+    public CompletableFuture<KeystoneDeleteIdentityProviderResponse> keystoneDeleteIdentityProviderAsync(KeystoneDeleteIdentityProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneDeleteIdentityProvider);
+    }
+
+    /**
+     * 删除映射
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除映射。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneDeleteMappingRequest 请求对象
+     * @return CompletableFuture<KeystoneDeleteMappingResponse>
+     */
+    public CompletableFuture<KeystoneDeleteMappingResponse> keystoneDeleteMappingAsync(KeystoneDeleteMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneDeleteMapping);
+    }
+
+    /**
+     * 删除协议
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除协议。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneDeleteProtocolRequest 请求对象
+     * @return CompletableFuture<KeystoneDeleteProtocolResponse>
+     */
+    public CompletableFuture<KeystoneDeleteProtocolResponse> keystoneDeleteProtocolAsync(KeystoneDeleteProtocolRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneDeleteProtocol);
     }
 
     /**
@@ -306,6 +416,28 @@ public class IamAsyncClient {
     }
 
     /**
+     * 查询身份提供商列表
+     * 该接口可以用于查询身份提供商列表。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneListIdentityProvidersRequest 请求对象
+     * @return CompletableFuture<KeystoneListIdentityProvidersResponse>
+     */
+    public CompletableFuture<KeystoneListIdentityProvidersResponse> keystoneListIdentityProvidersAsync(KeystoneListIdentityProvidersRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListIdentityProviders);
+    }
+
+    /**
+     * 查询映射列表
+     * 该接口可以用于查询映射列表。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneListMappingsRequest 请求对象
+     * @return CompletableFuture<KeystoneListMappingsResponse>
+     */
+    public CompletableFuture<KeystoneListMappingsResponse> keystoneListMappingsAsync(KeystoneListMappingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListMappings);
+    }
+
+    /**
      * 查询权限列表
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限列表。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -347,6 +479,17 @@ public class IamAsyncClient {
      */
     public CompletableFuture<KeystoneListProjectsForUserResponse> keystoneListProjectsForUserAsync(KeystoneListProjectsForUserRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListProjectsForUser);
+    }
+
+    /**
+     * 查询协议列表
+     * 该接口可以用于查询协议列表。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneListProtocolsRequest 请求对象
+     * @return CompletableFuture<KeystoneListProtocolsResponse>
+     */
+    public CompletableFuture<KeystoneListProtocolsResponse> keystoneListProtocolsAsync(KeystoneListProtocolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListProtocols);
     }
 
     /**
@@ -460,6 +603,28 @@ public class IamAsyncClient {
     }
 
     /**
+     * 查询身份提供商详情
+     * 该接口可以用于查询身份提供商详情。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneShowIdentityProviderRequest 请求对象
+     * @return CompletableFuture<KeystoneShowIdentityProviderResponse>
+     */
+    public CompletableFuture<KeystoneShowIdentityProviderResponse> keystoneShowIdentityProviderAsync(KeystoneShowIdentityProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneShowIdentityProvider);
+    }
+
+    /**
+     * 查询映射详情
+     * 该接口可以用于查询映射详情。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneShowMappingRequest 请求对象
+     * @return CompletableFuture<KeystoneShowMappingResponse>
+     */
+    public CompletableFuture<KeystoneShowMappingResponse> keystoneShowMappingAsync(KeystoneShowMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneShowMapping);
+    }
+
+    /**
      * 查询权限详情
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询权限详情。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -479,6 +644,17 @@ public class IamAsyncClient {
      */
     public CompletableFuture<KeystoneShowProjectResponse> keystoneShowProjectAsync(KeystoneShowProjectRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneShowProject);
+    }
+
+    /**
+     * 查询协议详情
+     * 该接口可以用于查询协议详情。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneShowProtocolRequest 请求对象
+     * @return CompletableFuture<KeystoneShowProtocolResponse>
+     */
+    public CompletableFuture<KeystoneShowProtocolResponse> keystoneShowProtocolAsync(KeystoneShowProtocolRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneShowProtocol);
     }
 
     /**
@@ -548,6 +724,28 @@ public class IamAsyncClient {
     }
 
     /**
+     * 更新身份提供商
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新身份提供商。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneUpdateIdentityProviderRequest 请求对象
+     * @return CompletableFuture<KeystoneUpdateIdentityProviderResponse>
+     */
+    public CompletableFuture<KeystoneUpdateIdentityProviderResponse> keystoneUpdateIdentityProviderAsync(KeystoneUpdateIdentityProviderRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneUpdateIdentityProvider);
+    }
+
+    /**
+     * 更新映射
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新映射。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneUpdateMappingRequest 请求对象
+     * @return CompletableFuture<KeystoneUpdateMappingResponse>
+     */
+    public CompletableFuture<KeystoneUpdateMappingResponse> keystoneUpdateMappingAsync(KeystoneUpdateMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneUpdateMapping);
+    }
+
+    /**
      * 修改项目信息
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改项目信息。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -556,6 +754,17 @@ public class IamAsyncClient {
      */
     public CompletableFuture<KeystoneUpdateProjectResponse> keystoneUpdateProjectAsync(KeystoneUpdateProjectRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneUpdateProject);
+    }
+
+    /**
+     * 更新协议
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)更新协议。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneUpdateProtocolRequest 请求对象
+     * @return CompletableFuture<KeystoneUpdateProtocolResponse>
+     */
+    public CompletableFuture<KeystoneUpdateProtocolResponse> keystoneUpdateProtocolAsync(KeystoneUpdateProtocolRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneUpdateProtocol);
     }
 
     /**
@@ -732,6 +941,17 @@ public class IamAsyncClient {
      */
     public CompletableFuture<ShowDomainQuotaResponse> showDomainQuotaAsync(ShowDomainQuotaRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.showDomainQuota);
+    }
+
+    /**
+     * 查询Metadata文件
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询身份提供商导入到IAM中的Metadata文件。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param ShowMetadataRequest 请求对象
+     * @return CompletableFuture<ShowMetadataResponse>
+     */
+    public CompletableFuture<ShowMetadataResponse> showMetadataAsync(ShowMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showMetadata);
     }
 
     /**
@@ -1095,6 +1315,50 @@ public class IamAsyncClient {
      */
     public CompletableFuture<UpdateUserInformationResponse> updateUserInformationAsync(UpdateUserInformationRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.updateUserInformation);
+    }
+
+    /**
+     * 获取委托Token
+     * 该接口可以用于获取委托方的token。    例如：A账号希望B账号管理自己的某些资源，所以A账号创建了委托给B账号，则A账号为委托方，B账号为被委托方。那么B账号可以通过该接口获取委托token。B账号仅能使用该token管理A账号的委托资源，不能管理自己账号中的资源。如果B账号需要管理自己账号中的资源，则需要获取自己的用户token。    token是系统颁发给用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的token进行鉴权。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。    &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。
+     *
+     * @param KeystoneCreateAgencyTokenRequest 请求对象
+     * @return CompletableFuture<KeystoneCreateAgencyTokenResponse>
+     */
+    public CompletableFuture<KeystoneCreateAgencyTokenResponse> keystoneCreateAgencyTokenAsync(KeystoneCreateAgencyTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCreateAgencyToken);
+    }
+
+    /**
+     * 获取IAM用户Token（使用密码）
+     * 该接口可以用于通过用户名/密码的方式进行认证来获取IAM用户token。    token是系统颁发给IAM用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的IAM用户token进行鉴权。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。   &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。   &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。   &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     *
+     * @param KeystoneCreateUserTokenByPasswordRequest 请求对象
+     * @return CompletableFuture<KeystoneCreateUserTokenByPasswordResponse>
+     */
+    public CompletableFuture<KeystoneCreateUserTokenByPasswordResponse> keystoneCreateUserTokenByPasswordAsync(KeystoneCreateUserTokenByPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCreateUserTokenByPassword);
+    }
+
+    /**
+     * 获取IAM用户Token（使用密码+虚拟MFA）
+     * 该接口可以用于通过用户名/密码+虚拟MFA的方式进行认证，在IAM用户开启了的登录保护功能，并选择通过虚拟MFA验证时获取IAM用户token。    token是系统颁发给用户的访问令牌，承载用户的身份、权限等信息。调用IAM以及其他云服务的接口时，可以使用本接口获取的token进行鉴权。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。如果使用全局区域的Endpoint调用，该token可以在所有区域使用；如果使用非全局区域的Endpoint调用，则该token仅在该区域生效，不能跨区域使用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。   &gt; - token的有效期为24小时，建议进行缓存，避免频繁调用。   &gt; - 通过Postman获取用户token示例请参见：[如何通过Postman获取用户token](https://support.huaweicloud.com/iam_faq/iam_01_034.html)。   &gt; - 如果需要获取具有Security Administrator权限的token，请参见：[IAM 常见问题](https://support.huaweicloud.com/iam_faq/iam_01_0608.html)。
+     *
+     * @param KeystoneCreateUserTokenByPasswordAndMfaRequest 请求对象
+     * @return CompletableFuture<KeystoneCreateUserTokenByPasswordAndMfaResponse>
+     */
+    public CompletableFuture<KeystoneCreateUserTokenByPasswordAndMfaResponse> keystoneCreateUserTokenByPasswordAndMfaAsync(KeystoneCreateUserTokenByPasswordAndMfaRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCreateUserTokenByPasswordAndMfa);
+    }
+
+    /**
+     * 校验Token的有效性
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)校验本账号中IAM用户token的有效性，或IAM用户校验自己token的有效性。管理员仅能校验本账号中IAM用户token的有效性，不能校验其他账号中IAM用户token的有效性。如果被校验的token有效，则返回该token的详细信息。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneValidateTokenRequest 请求对象
+     * @return CompletableFuture<KeystoneValidateTokenResponse>
+     */
+    public CompletableFuture<KeystoneValidateTokenResponse> keystoneValidateTokenAsync(KeystoneValidateTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneValidateToken);
     }
 
 }

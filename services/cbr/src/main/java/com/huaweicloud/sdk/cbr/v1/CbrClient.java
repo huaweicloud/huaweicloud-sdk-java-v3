@@ -50,6 +50,17 @@ public class CbrClient {
     }
 
     /**
+     * 批量添加删除存储库资源标签
+     * 为指定实例批量添加或删除标签 标签管理服务需要使用该接口批量管理实例的标签。 一个资源上最多有10个标签。 此接口为幂等接口：     创建时如果请求体中存在重复key则报错。     创建时，不允许重复key，如果数据库存在就覆盖。     删除时，允许重复key。     删除时，如果删除的标签不存在，默认处理成功,删除时不对标签字符集范围做校验。key长度127个字符，value为255个字符。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+     *
+     * @param BatchCreateAndDeleteVaultTagsRequest 请求对象
+     * @return BatchCreateAndDeleteVaultTagsResponse
+     */
+    public BatchCreateAndDeleteVaultTagsResponse batchCreateAndDeleteVaultTags(BatchCreateAndDeleteVaultTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.batchCreateAndDeleteVaultTags);
+    }
+
+    /**
      * 复制备份
      * 跨区域复制备份。
      *
@@ -105,6 +116,17 @@ public class CbrClient {
     }
 
     /**
+     * 添加存储库资源标签
+     * 一个资源上最多有10个标签。 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
+     *
+     * @param CreateVaultTagsRequest 请求对象
+     * @return CreateVaultTagsResponse
+     */
+    public CreateVaultTagsResponse createVaultTags(CreateVaultTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.createVaultTags);
+    }
+
+    /**
      * 删除备份
      * 删除单个备份。
      *
@@ -146,6 +168,17 @@ public class CbrClient {
      */
     public DeleteVaultResponse deleteVault(DeleteVaultRequest request) {
         return hcClient.syncInvokeHttp(request, CbrMeta.deleteVault);
+    }
+
+    /**
+     * 删除存储库资源标签
+     * 幂等接口：删除时，如果删除的标签不存在，返回404。Key不能为空或者空字符串。
+     *
+     * @param DeleteVaultTagRequest 请求对象
+     * @return DeleteVaultTagResponse
+     */
+    public DeleteVaultTagResponse deleteVaultTag(DeleteVaultTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.deleteVaultTag);
     }
 
     /**
@@ -344,6 +377,39 @@ public class CbrClient {
      */
     public ShowVaultResponse showVault(ShowVaultRequest request) {
         return hcClient.syncInvokeHttp(request, CbrMeta.showVault);
+    }
+
+    /**
+     * 查询存储库项目标签
+     * 查询租户在指定Region和实例类型的所有标签集合 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能
+     *
+     * @param ShowVaultProjectTagRequest 请求对象
+     * @return ShowVaultProjectTagResponse
+     */
+    public ShowVaultProjectTagResponse showVaultProjectTag(ShowVaultProjectTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.showVaultProjectTag);
+    }
+
+    /**
+     * 查询存储库资源实例
+     * 使用标签过滤实例 标签管理服务需要提供按标签过滤各服务实例并汇总显示在列表中，需要各服务提供查询能力
+     *
+     * @param ShowVaultResourceInstancesRequest 请求对象
+     * @return ShowVaultResourceInstancesResponse
+     */
+    public ShowVaultResourceInstancesResponse showVaultResourceInstances(ShowVaultResourceInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.showVaultResourceInstances);
+    }
+
+    /**
+     * 查询存储库资源标签
+     * 查询指定实例的标签信息 标签管理服务需要使用该接口查询指定实例的全部标签数据
+     *
+     * @param ShowVaultTagRequest 请求对象
+     * @return ShowVaultTagResponse
+     */
+    public ShowVaultTagResponse showVaultTag(ShowVaultTagRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.showVaultTag);
     }
 
     /**

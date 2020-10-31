@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * 可用区
  */
 public class AvailabilityZone  {
 
@@ -38,7 +38,7 @@ public class AvailabilityZone  {
 
 
     /**
-     * 可用区code
+     * 可用区code。
      * @return code
      */
     public String getCode() {
@@ -58,7 +58,7 @@ public class AvailabilityZone  {
 
 
     /**
-     * az状态.取值：  ACTIVE
+     * az状态。  取值：ACTIVE
      * @return state
      */
     public String getState() {

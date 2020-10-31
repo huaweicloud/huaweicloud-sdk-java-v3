@@ -33,7 +33,7 @@ public class ListProjectMembersV4Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private Integer limit = 10;
+    private Integer limit = 100;
 
     public ListProjectMembersV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -66,6 +66,7 @@ public class ListProjectMembersV4Request  {
     /**
      * Get offset
      * minimum: 0
+     * maximum: 10000
      * @return offset
      */
     public Integer getOffset() {
@@ -87,7 +88,7 @@ public class ListProjectMembersV4Request  {
     /**
      * Get limit
      * minimum: 1
-     * maximum: 1000
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

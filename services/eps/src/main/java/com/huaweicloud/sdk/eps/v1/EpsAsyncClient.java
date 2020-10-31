@@ -23,33 +23,33 @@ public class EpsAsyncClient {
      * 创建企业项目
      * 创建企业项目。
      *
-     * @param CreateEPRequest 请求对象
-     * @return CompletableFuture<CreateEPResponse>
+     * @param CreateEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<CreateEnterpriseProjectResponse>
      */
-    public CompletableFuture<CreateEPResponse> createEPAsync(CreateEPRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.createEP);
+    public CompletableFuture<CreateEnterpriseProjectResponse> createEnterpriseProjectAsync(CreateEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.createEnterpriseProject);
     }
 
     /**
      * 停用企业项目
      * 停用企业项目。
      *
-     * @param DisableEPRequest 请求对象
-     * @return CompletableFuture<DisableEPResponse>
+     * @param DisableEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<DisableEnterpriseProjectResponse>
      */
-    public CompletableFuture<DisableEPResponse> disableEPAsync(DisableEPRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.disableEP);
+    public CompletableFuture<DisableEnterpriseProjectResponse> disableEnterpriseProjectAsync(DisableEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.disableEnterpriseProject);
     }
 
     /**
      * 启用企业项目
      * 启用企业项目。
      *
-     * @param EnableEPRequest 请求对象
-     * @return CompletableFuture<EnableEPResponse>
+     * @param EnableEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<EnableEnterpriseProjectResponse>
      */
-    public CompletableFuture<EnableEPResponse> enableEPAsync(EnableEPRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.enableEP);
+    public CompletableFuture<EnableEnterpriseProjectResponse> enableEnterpriseProjectAsync(EnableEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.enableEnterpriseProject);
     }
 
     /**
@@ -67,11 +67,11 @@ public class EpsAsyncClient {
      * 查询企业项目列表
      * 查询当前用户已授权的企业项目列表，用户可以使用企业项目绑定资源。
      *
-     * @param ListEPRequest 请求对象
-     * @return CompletableFuture<ListEPResponse>
+     * @param ListEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ListEnterpriseProjectResponse>
      */
-    public CompletableFuture<ListEPResponse> listEPAsync(ListEPRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.listEP);
+    public CompletableFuture<ListEnterpriseProjectResponse> listEnterpriseProjectAsync(ListEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.listEnterpriseProject);
     }
 
     /**
@@ -89,11 +89,11 @@ public class EpsAsyncClient {
      * 修改企业项目
      * 修改企业项目。当前仅支持修改名称和描述。
      *
-     * @param ModifyEPRequest 请求对象
-     * @return CompletableFuture<ModifyEPResponse>
+     * @param ModifyEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ModifyEnterpriseProjectResponse>
      */
-    public CompletableFuture<ModifyEPResponse> modifyEPAsync(ModifyEPRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.modifyEP);
+    public CompletableFuture<ModifyEnterpriseProjectResponse> modifyEnterpriseProjectAsync(ModifyEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.modifyEnterpriseProject);
     }
 
     /**
@@ -111,33 +111,33 @@ public class EpsAsyncClient {
      * 查询企业项目详情
      * 查询企业项目详情。
      *
-     * @param ShowEPRequest 请求对象
-     * @return CompletableFuture<ShowEPResponse>
+     * @param ShowEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ShowEnterpriseProjectResponse>
      */
-    public CompletableFuture<ShowEPResponse> showEPAsync(ShowEPRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.showEP);
+    public CompletableFuture<ShowEnterpriseProjectResponse> showEnterpriseProjectAsync(ShowEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.showEnterpriseProject);
     }
 
     /**
      * 查询企业项目配额
      * 查询企业项目的配额信息。
      *
-     * @param ShowEPQuotaRequest 请求对象
-     * @return CompletableFuture<ShowEPQuotaResponse>
+     * @param ShowEnterpriseProjectQuotaRequest 请求对象
+     * @return CompletableFuture<ShowEnterpriseProjectQuotaResponse>
      */
-    public CompletableFuture<ShowEPQuotaResponse> showEPQuotaAsync(ShowEPQuotaRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.showEPQuota);
+    public CompletableFuture<ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuotaAsync(ShowEnterpriseProjectQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.showEnterpriseProjectQuota);
     }
 
     /**
      * 查询企业项目绑定的资源列表
      * 查询企业项目下绑定的资源详情。
      *
-     * @param ShowResourceBindEPRequest 请求对象
-     * @return CompletableFuture<ShowResourceBindEPResponse>
+     * @param ShowResourceBindEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<ShowResourceBindEnterpriseProjectResponse>
      */
-    public CompletableFuture<ShowResourceBindEPResponse> showResourceBindEPAsync(ShowResourceBindEPRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.showResourceBindEP);
+    public CompletableFuture<ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsync(ShowResourceBindEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.showResourceBindEnterpriseProject);
     }
 
 }

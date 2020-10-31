@@ -109,7 +109,7 @@ public class UpdateCasesRequest  {
      * @return xSite
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -131,7 +131,7 @@ public class UpdateCasesRequest  {
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -153,7 +153,7 @@ public class UpdateCasesRequest  {
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }

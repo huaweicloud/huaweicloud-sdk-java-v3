@@ -23,11 +23,11 @@ public class VpcAsyncClient {
      * 批量创建辅助弹性网卡
      * 批量创建辅助弹性网卡
      *
-     * @param BatchCreateSubNetworkInterfaceV3Request 请求对象
-     * @return CompletableFuture<BatchCreateSubNetworkInterfaceV3Response>
+     * @param BatchCreateSubNetworkInterfaceRequest 请求对象
+     * @return CompletableFuture<BatchCreateSubNetworkInterfaceResponse>
      */
-    public CompletableFuture<BatchCreateSubNetworkInterfaceV3Response> batchCreateSubNetworkInterfaceV3Async(BatchCreateSubNetworkInterfaceV3Request request) {
-        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateSubNetworkInterfaceV3);
+    public CompletableFuture<BatchCreateSubNetworkInterfaceResponse> batchCreateSubNetworkInterfaceAsync(BatchCreateSubNetworkInterfaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.batchCreateSubNetworkInterface);
     }
 
     /**

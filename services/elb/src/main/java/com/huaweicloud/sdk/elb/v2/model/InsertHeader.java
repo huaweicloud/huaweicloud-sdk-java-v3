@@ -42,7 +42,7 @@ public class InsertHeader  {
      * @return xForwardedELBIP
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Forwarded-ELB-IP")
     public Boolean getXForwardedELBIP() {
         return xForwardedELBIP;
     }
@@ -64,7 +64,7 @@ public class InsertHeader  {
      * @return xForwardedHost
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Forwarded-Host")
     public Boolean getXForwardedHost() {
         return xForwardedHost;
     }

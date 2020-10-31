@@ -57,7 +57,7 @@ public class CheckVerifyCodesRequest  {
      * @return xSite
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -79,7 +79,7 @@ public class CheckVerifyCodesRequest  {
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -101,7 +101,7 @@ public class CheckVerifyCodesRequest  {
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }

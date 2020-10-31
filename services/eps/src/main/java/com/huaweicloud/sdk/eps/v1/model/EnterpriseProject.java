@@ -29,6 +29,12 @@ public class EnterpriseProject  {
     
     private String description;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
+    
+    private String type = "prod";
+
     public EnterpriseProject withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +74,26 @@ public class EnterpriseProject  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public EnterpriseProject withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -78,11 +104,12 @@ public class EnterpriseProject  {
         }
         EnterpriseProject enterpriseProject = (EnterpriseProject) o;
         return Objects.equals(this.name, enterpriseProject.name) &&
-            Objects.equals(this.description, enterpriseProject.description);
+            Objects.equals(this.description, enterpriseProject.description) &&
+            Objects.equals(this.type, enterpriseProject.type);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, description);
+        return Objects.hash(name, description, type);
     }
     @Override
     public String toString() {
@@ -90,6 +117,7 @@ public class EnterpriseProject  {
         sb.append("class EnterpriseProject {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

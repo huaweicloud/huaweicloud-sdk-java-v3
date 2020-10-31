@@ -12,12 +12,12 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class VpcMeta {
 
-    public static final HttpRequestDef<BatchCreateSubNetworkInterfaceV3Request, BatchCreateSubNetworkInterfaceV3Response> batchCreateSubNetworkInterfaceV3 = genForbatchCreateSubNetworkInterfaceV3();
+    public static final HttpRequestDef<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> batchCreateSubNetworkInterface = genForbatchCreateSubNetworkInterface();
 
-    private static HttpRequestDef<BatchCreateSubNetworkInterfaceV3Request, BatchCreateSubNetworkInterfaceV3Response> genForbatchCreateSubNetworkInterfaceV3() {
+    private static HttpRequestDef<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> genForbatchCreateSubNetworkInterface() {
         // basic
-        HttpRequestDef.Builder<BatchCreateSubNetworkInterfaceV3Request, BatchCreateSubNetworkInterfaceV3Response> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateSubNetworkInterfaceV3Request.class, BatchCreateSubNetworkInterfaceV3Response.class)
+        HttpRequestDef.Builder<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateSubNetworkInterfaceRequest.class, BatchCreateSubNetworkInterfaceResponse.class)
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces/batch-create")
                 .withContentType("application/json");
 
@@ -25,8 +25,8 @@ public class VpcMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateSubNetworkInterfaceV3RequestBody.class,
-            f -> f.withMarshaller(BatchCreateSubNetworkInterfaceV3Request::getBody, (req, v) -> {
+            BatchCreateSubNetworkInterfaceRequestBody.class,
+            f -> f.withMarshaller(BatchCreateSubNetworkInterfaceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

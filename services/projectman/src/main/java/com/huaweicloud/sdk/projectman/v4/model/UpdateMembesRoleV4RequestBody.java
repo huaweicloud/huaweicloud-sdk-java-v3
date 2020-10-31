@@ -40,7 +40,7 @@ public class UpdateMembesRoleV4RequestBody  {
 
 
     /**
-     * 成员角色 -1 项目创建者 3 项目经理 4 开发人员 5 测试经理 6 测试人员 7 参与者 8 浏览者
+     * 成员角色 3 项目经理 4 开发人员 5 测试经理 6 测试人员 7 参与者 8 浏览者
      * @return roleId
      */
     public Integer getRoleId() {

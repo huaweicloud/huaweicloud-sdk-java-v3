@@ -21,34 +21,10 @@ public class ListCertificatesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
+    @JsonProperty(value="admin_state_up")
     
-    private String marker;
+    private Boolean adminStateUp;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_reverse")
-    
-    private Boolean pageReverse;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private List<String> id = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private List<String> name = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
@@ -57,24 +33,48 @@ public class ListCertificatesRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
-    private Boolean adminStateUp;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="domain")
     
     private List<String> domain = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private List<String> id = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="marker")
+    
+    private String marker;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private List<String> name = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="page_reverse")
+    
+    private Boolean pageReverse;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
     private List<String> type = null;
     
-    public ListCertificatesRequest withMarker(String marker) {
-        this.marker = marker;
+    public ListCertificatesRequest withAdminStateUp(Boolean adminStateUp) {
+        this.adminStateUp = adminStateUp;
         return this;
     }
 
@@ -82,125 +82,15 @@ public class ListCertificatesRequest  {
 
 
     /**
-     * Get marker
-     * @return marker
+     * Get adminStateUp
+     * @return adminStateUp
      */
-    public String getMarker() {
-        return marker;
+    public Boolean getAdminStateUp() {
+        return adminStateUp;
     }
 
-    public void setMarker(String marker) {
-        this.marker = marker;
-    }
-
-    public ListCertificatesRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get limit
-     * minimum: 0
-     * maximum: 2000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ListCertificatesRequest withPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get pageReverse
-     * @return pageReverse
-     */
-    public Boolean getPageReverse() {
-        return pageReverse;
-    }
-
-    public void setPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
-    }
-
-    public ListCertificatesRequest withId(List<String> id) {
-        this.id = id;
-        return this;
-    }
-
-    
-    public ListCertificatesRequest addIdItem(String idItem) {
-        if (this.id == null) {
-            this.id = new ArrayList<>();
-        }
-        this.id.add(idItem);
-        return this;
-    }
-
-    public ListCertificatesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null ){
-            this.id = new ArrayList<>();
-        }
-        idSetter.accept(this.id);
-        return this;
-    }
-
-    /**
-     * Get id
-     * @return id
-     */
-    public List<String> getId() {
-        return id;
-    }
-
-    public void setId(List<String> id) {
-        this.id = id;
-    }
-
-    public ListCertificatesRequest withName(List<String> name) {
-        this.name = name;
-        return this;
-    }
-
-    
-    public ListCertificatesRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
-        }
-        this.name.add(nameItem);
-        return this;
-    }
-
-    public ListCertificatesRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
-            this.name = new ArrayList<>();
-        }
-        nameSetter.accept(this.name);
-        return this;
-    }
-
-    /**
-     * Get name
-     * @return name
-     */
-    public List<String> getName() {
-        return name;
-    }
-
-    public void setName(List<String> name) {
-        this.name = name;
+    public void setAdminStateUp(Boolean adminStateUp) {
+        this.adminStateUp = adminStateUp;
     }
 
     public ListCertificatesRequest withDescription(List<String> description) {
@@ -237,26 +127,6 @@ public class ListCertificatesRequest  {
         this.description = description;
     }
 
-    public ListCertificatesRequest withAdminStateUp(Boolean adminStateUp) {
-        this.adminStateUp = adminStateUp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get adminStateUp
-     * @return adminStateUp
-     */
-    public Boolean getAdminStateUp() {
-        return adminStateUp;
-    }
-
-    public void setAdminStateUp(Boolean adminStateUp) {
-        this.adminStateUp = adminStateUp;
-    }
-
     public ListCertificatesRequest withDomain(List<String> domain) {
         this.domain = domain;
         return this;
@@ -289,6 +159,136 @@ public class ListCertificatesRequest  {
 
     public void setDomain(List<String> domain) {
         this.domain = domain;
+    }
+
+    public ListCertificatesRequest withId(List<String> id) {
+        this.id = id;
+        return this;
+    }
+
+    
+    public ListCertificatesRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withId(Consumer<List<String>> idSetter) {
+        if(this.id == null ){
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
+        return this;
+    }
+
+    /**
+     * Get id
+     * @return id
+     */
+    public List<String> getId() {
+        return id;
+    }
+
+    public void setId(List<String> id) {
+        this.id = id;
+    }
+
+    public ListCertificatesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get limit
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListCertificatesRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get marker
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListCertificatesRequest withName(List<String> name) {
+        this.name = name;
+        return this;
+    }
+
+    
+    public ListCertificatesRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
+
+    /**
+     * Get name
+     * @return name
+     */
+    public List<String> getName() {
+        return name;
+    }
+
+    public void setName(List<String> name) {
+        this.name = name;
+    }
+
+    public ListCertificatesRequest withPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get pageReverse
+     * @return pageReverse
+     */
+    public Boolean getPageReverse() {
+        return pageReverse;
+    }
+
+    public void setPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
     }
 
     public ListCertificatesRequest withType(List<String> type) {
@@ -333,32 +333,32 @@ public class ListCertificatesRequest  {
             return false;
         }
         ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.marker, listCertificatesRequest.marker) &&
-            Objects.equals(this.limit, listCertificatesRequest.limit) &&
-            Objects.equals(this.pageReverse, listCertificatesRequest.pageReverse) &&
-            Objects.equals(this.id, listCertificatesRequest.id) &&
-            Objects.equals(this.name, listCertificatesRequest.name) &&
+        return Objects.equals(this.adminStateUp, listCertificatesRequest.adminStateUp) &&
             Objects.equals(this.description, listCertificatesRequest.description) &&
-            Objects.equals(this.adminStateUp, listCertificatesRequest.adminStateUp) &&
             Objects.equals(this.domain, listCertificatesRequest.domain) &&
+            Objects.equals(this.id, listCertificatesRequest.id) &&
+            Objects.equals(this.limit, listCertificatesRequest.limit) &&
+            Objects.equals(this.marker, listCertificatesRequest.marker) &&
+            Objects.equals(this.name, listCertificatesRequest.name) &&
+            Objects.equals(this.pageReverse, listCertificatesRequest.pageReverse) &&
             Objects.equals(this.type, listCertificatesRequest.type);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, pageReverse, id, name, description, adminStateUp, domain, type);
+        return Objects.hash(adminStateUp, description, domain, id, limit, marker, name, pageReverse, type);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCertificatesRequest {\n");
-        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();

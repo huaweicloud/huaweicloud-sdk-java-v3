@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ces.v1.model.AlarmActions;
 import com.huaweicloud.sdk.ces.v1.model.Condition;
-import com.huaweicloud.sdk.ces.v1.model.MetricInfo;
+import com.huaweicloud.sdk.ces.v1.model.MetricInfoForAlarm;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +42,7 @@ public class MetricAlarms  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    private MetricInfo metric = null;
+    private MetricInfoForAlarm metric = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -246,14 +246,14 @@ public class MetricAlarms  {
         this.alarmDescription = alarmDescription;
     }
 
-    public MetricAlarms withMetric(MetricInfo metric) {
+    public MetricAlarms withMetric(MetricInfoForAlarm metric) {
         this.metric = metric;
         return this;
     }
 
-    public MetricAlarms withMetric(Consumer<MetricInfo> metricSetter) {
+    public MetricAlarms withMetric(Consumer<MetricInfoForAlarm> metricSetter) {
         if(this.metric == null ){
-            this.metric = new MetricInfo();
+            this.metric = new MetricInfoForAlarm();
             metricSetter.accept(this.metric);
         }
         
@@ -265,11 +265,11 @@ public class MetricAlarms  {
      * Get metric
      * @return metric
      */
-    public MetricInfo getMetric() {
+    public MetricInfoForAlarm getMetric() {
         return metric;
     }
 
-    public void setMetric(MetricInfo metric) {
+    public void setMetric(MetricInfoForAlarm metric) {
         this.metric = metric;
     }
 
@@ -437,7 +437,7 @@ public class MetricAlarms  {
     }
 
     /**
-     * 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
+     * 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notificationList：告警状态发生变化时，被通知对象的列表。
      * @return okActions
      */
     public List<AlarmActions> getOkActions() {

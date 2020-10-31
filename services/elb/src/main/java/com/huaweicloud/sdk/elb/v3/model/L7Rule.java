@@ -220,7 +220,7 @@ public class L7Rule  {
 
 
     /**
-     * 是否反向匹配，true/false。 使用说明：固定为false。该字段能更新但不会生效。
+     * 是否反向匹配。 使用说明：固定为false。该字段能更新但不会生效。
      * @return invert
      */
     public Boolean getInvert() {

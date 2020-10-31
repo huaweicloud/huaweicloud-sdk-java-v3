@@ -51,7 +51,7 @@ public class CreateProjectV4RequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    private String templateId;
+    private Integer templateId;
 
     public CreateProjectV4RequestBody withProjectName(String projectName) {
         this.projectName = projectName;
@@ -153,7 +153,7 @@ public class CreateProjectV4RequestBody  {
         this.enterpriseId = enterpriseId;
     }
 
-    public CreateProjectV4RequestBody withTemplateId(String templateId) {
+    public CreateProjectV4RequestBody withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
     }
@@ -165,11 +165,11 @@ public class CreateProjectV4RequestBody  {
      * 用户创建的项目模板id
      * @return templateId
      */
-    public String getTemplateId() {
+    public Integer getTemplateId() {
         return templateId;
     }
 
-    public void setTemplateId(String templateId) {
+    public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
     @Override

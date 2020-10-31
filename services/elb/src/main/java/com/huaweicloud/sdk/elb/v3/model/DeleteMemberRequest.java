@@ -19,35 +19,15 @@ public class DeleteMemberRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
-    private String poolId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_id")
     
     private String memberId;
 
-    public DeleteMemberRequest withPoolId(String poolId) {
-        this.poolId = poolId;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="pool_id")
     
-
-
-    /**
-     * Get poolId
-     * @return poolId
-     */
-    public String getPoolId() {
-        return poolId;
-    }
-
-    public void setPoolId(String poolId) {
-        this.poolId = poolId;
-    }
+    private String poolId;
 
     public DeleteMemberRequest withMemberId(String memberId) {
         this.memberId = memberId;
@@ -68,6 +48,26 @@ public class DeleteMemberRequest  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    public DeleteMemberRequest withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get poolId
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -77,19 +77,19 @@ public class DeleteMemberRequest  {
             return false;
         }
         DeleteMemberRequest deleteMemberRequest = (DeleteMemberRequest) o;
-        return Objects.equals(this.poolId, deleteMemberRequest.poolId) &&
-            Objects.equals(this.memberId, deleteMemberRequest.memberId);
+        return Objects.equals(this.memberId, deleteMemberRequest.memberId) &&
+            Objects.equals(this.poolId, deleteMemberRequest.poolId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(poolId, memberId);
+        return Objects.hash(memberId, poolId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteMemberRequest {\n");
-        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

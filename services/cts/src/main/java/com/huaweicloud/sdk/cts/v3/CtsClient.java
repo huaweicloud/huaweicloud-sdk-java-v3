@@ -39,6 +39,17 @@ public class CtsClient {
     }
 
     /**
+     * 查询租户追踪器配额信息
+     * 查询租户追踪器配额信息。
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return ListQuotasResponse
+     */
+    public ListQuotasResponse listQuotas(ListQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.listQuotas);
+    }
+
+    /**
      * 查询事件列表
      * 通过事件列表查询接口，可以查出系统记录的7天内资源操作记录。
      *

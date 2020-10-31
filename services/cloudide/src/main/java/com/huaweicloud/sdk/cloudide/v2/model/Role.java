@@ -57,7 +57,7 @@ public class Role  {
      * @return cRole
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="c_role")
     public String getCRole() {
         return cRole;
     }

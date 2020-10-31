@@ -222,7 +222,9 @@ public class UpdateHealthMonitorOption  {
 
 
     /**
-     * 健康检查连续成功多少次后，将后端服务器的健康检查状态由online判定为offline，取值范围[1，10]。
+     * 健康检查连续成功多少次后，将后端服务器的健康检查状态由ONLIEN判定为OFFLINE
+     * minimum: 1
+     * maximum: 10
      * @return maxRetriesDown
      */
     public Integer getMaxRetriesDown() {

@@ -158,7 +158,7 @@ public class Flavor  {
 
 
     /**
-     * 项目ID。包括flavor所属的项目ID及其共享型的项目ID。
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {

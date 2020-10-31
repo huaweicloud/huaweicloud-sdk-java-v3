@@ -42,6 +42,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 创建自定义告警模板
+     * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持10指标的批量查询。
+     *
+     * @param CreateAlarmTemplateRequest 请求对象
+     * @return CompletableFuture<CreateAlarmTemplateResponse>
+     */
+    public CompletableFuture<CreateAlarmTemplateResponse> createAlarmTemplateAsync(CreateAlarmTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.createAlarmTemplate);
+    }
+
+    /**
      * 上报事件
      * 上报自定义事件。
      *
@@ -72,6 +83,39 @@ public class CesAsyncClient {
      */
     public CompletableFuture<DeleteAlarmResponse> deleteAlarmAsync(DeleteAlarmRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.deleteAlarm);
+    }
+
+    /**
+     * 删除自定义告警模板
+     * 根据ID删除自定义告警模板。
+     *
+     * @param DeleteAlarmTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteAlarmTemplateResponse>
+     */
+    public CompletableFuture<DeleteAlarmTemplateResponse> deleteAlarmTemplateAsync(DeleteAlarmTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.deleteAlarmTemplate);
+    }
+
+    /**
+     * 查询告警历史
+     * 查询告警历史列表。
+     *
+     * @param ListAlarmHistoriesRequest 请求对象
+     * @return CompletableFuture<ListAlarmHistoriesResponse>
+     */
+    public CompletableFuture<ListAlarmHistoriesResponse> listAlarmHistoriesAsync(ListAlarmHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.listAlarmHistories);
+    }
+
+    /**
+     * 查询自定义告警模板列表
+     * 查询自定义告警模板列表
+     *
+     * @param ListAlarmTemplatesRequest 请求对象
+     * @return CompletableFuture<ListAlarmTemplatesResponse>
+     */
+    public CompletableFuture<ListAlarmTemplatesResponse> listAlarmTemplatesAsync(ListAlarmTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.listAlarmTemplates);
     }
 
     /**
@@ -141,6 +185,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询资源分组下的资源
+     * 根据资源分组ID查询资源分组下的资源。
+     *
+     * @param ShowResourceGroupRequest 请求对象
+     * @return CompletableFuture<ShowResourceGroupResponse>
+     */
+    public CompletableFuture<ShowResourceGroupResponse> showResourceGroupAsync(ShowResourceGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.showResourceGroup);
+    }
+
+    /**
      * 启停告警规则
      * 启动或停止一条告警规则。
      *
@@ -149,6 +204,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<UpdateAlarmActionResponse> updateAlarmActionAsync(UpdateAlarmActionRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.updateAlarmAction);
+    }
+
+    /**
+     * 更新自定义告警模板
+     * 更新自定义告警模板。
+     *
+     * @param UpdateAlarmTemplateRequest 请求对象
+     * @return CompletableFuture<UpdateAlarmTemplateResponse>
+     */
+    public CompletableFuture<UpdateAlarmTemplateResponse> updateAlarmTemplateAsync(UpdateAlarmTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.updateAlarmTemplate);
     }
 
 }

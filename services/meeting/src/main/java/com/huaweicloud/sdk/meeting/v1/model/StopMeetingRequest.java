@@ -62,7 +62,7 @@ public class StopMeetingRequest  {
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Conference-Authorization")
     public String getXConferenceAuthorization() {
         return xConferenceAuthorization;
     }

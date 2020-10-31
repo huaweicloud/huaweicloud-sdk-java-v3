@@ -1,0 +1,108 @@
+package com.huaweicloud.sdk.cbr.v1.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class DeleteVaultTagRequest  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="key")
+    
+    private String key;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vault_id")
+    
+    private String vaultId;
+
+    public DeleteVaultTagRequest withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get key
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public DeleteVaultTagRequest withVaultId(String vaultId) {
+        this.vaultId = vaultId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get vaultId
+     * @return vaultId
+     */
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    public void setVaultId(String vaultId) {
+        this.vaultId = vaultId;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        DeleteVaultTagRequest deleteVaultTagRequest = (DeleteVaultTagRequest) o;
+        return Objects.equals(this.key, deleteVaultTagRequest.key) &&
+            Objects.equals(this.vaultId, deleteVaultTagRequest.vaultId);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(key, vaultId);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DeleteVaultTagRequest {\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

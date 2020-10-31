@@ -108,6 +108,38 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> batchCreateAndDeleteVaultTags = genForbatchCreateAndDeleteVaultTags();
+
+    private static HttpRequestDef<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> genForbatchCreateAndDeleteVaultTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateAndDeleteVaultTagsRequest.class, BatchCreateAndDeleteVaultTagsResponse.class)
+                .withUri("/v3/{project_id}/vault/{vault_id}/tags/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("vault_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchCreateAndDeleteVaultTagsRequest::getVaultId, (req, v) -> {
+                req.setVaultId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BulkCreateAndDeleteVaultTagsReq.class,
+            f -> f.withMarshaller(BatchCreateAndDeleteVaultTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CopyBackupRequest, CopyBackupResponse> copyBackup = genForcopyBackup();
 
     private static HttpRequestDef<CopyBackupRequest, CopyBackupResponse> genForcopyBackup() {
@@ -236,6 +268,38 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVaultTagsRequest, CreateVaultTagsResponse> createVaultTags = genForcreateVaultTags();
+
+    private static HttpRequestDef<CreateVaultTagsRequest, CreateVaultTagsResponse> genForcreateVaultTags() {
+        // basic
+        HttpRequestDef.Builder<CreateVaultTagsRequest, CreateVaultTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVaultTagsRequest.class, CreateVaultTagsResponse.class)
+                .withUri("/v3/{project_id}/vault/{vault_id}/tags")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("vault_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateVaultTagsRequest::getVaultId, (req, v) -> {
+                req.setVaultId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            VaultTagsCreateReq.class,
+            f -> f.withMarshaller(CreateVaultTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> deleteBackup = genFordeleteBackup();
 
     private static HttpRequestDef<DeleteBackupRequest, DeleteBackupResponse> genFordeleteBackup() {
@@ -327,6 +391,37 @@ public class CbrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(DeleteVaultRequest::getVaultId, (req, v) -> {
+                req.setVaultId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVaultTagRequest, DeleteVaultTagResponse> deleteVaultTag = genFordeleteVaultTag();
+
+    private static HttpRequestDef<DeleteVaultTagRequest, DeleteVaultTagResponse> genFordeleteVaultTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteVaultTagRequest, DeleteVaultTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVaultTagRequest.class, DeleteVaultTagResponse.class)
+                .withUri("/v3/{project_id}/vault/{vault_id}/tags/{key}");
+
+        // requests
+        builder.withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVaultTagRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            })
+        );
+        builder.withRequestField("vault_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteVaultTagRequest::getVaultId, (req, v) -> {
                 req.setVaultId(v);
             })
         );
@@ -1233,6 +1328,68 @@ public class CbrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowVaultRequest::getVaultId, (req, v) -> {
+                req.setVaultId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> showVaultProjectTag = genForshowVaultProjectTag();
+
+    private static HttpRequestDef<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> genForshowVaultProjectTag() {
+        // basic
+        HttpRequestDef.Builder<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVaultProjectTagRequest.class, ShowVaultProjectTagResponse.class)
+                .withUri("/v3/{project_id}/vault/tags");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> showVaultResourceInstances = genForshowVaultResourceInstances();
+
+    private static HttpRequestDef<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> genForshowVaultResourceInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowVaultResourceInstancesRequest.class, ShowVaultResourceInstancesResponse.class)
+                .withUri("/v3/{project_id}/vault/resource_instances/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            VaultResourceInstancesReq.class,
+            f -> f.withMarshaller(ShowVaultResourceInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVaultTagRequest, ShowVaultTagResponse> showVaultTag = genForshowVaultTag();
+
+    private static HttpRequestDef<ShowVaultTagRequest, ShowVaultTagResponse> genForshowVaultTag() {
+        // basic
+        HttpRequestDef.Builder<ShowVaultTagRequest, ShowVaultTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVaultTagRequest.class, ShowVaultTagResponse.class)
+                .withUri("/v3/{project_id}/vault/{vault_id}/tags");
+
+        // requests
+        builder.withRequestField("vault_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowVaultTagRequest::getVaultId, (req, v) -> {
                 req.setVaultId(v);
             })
         );

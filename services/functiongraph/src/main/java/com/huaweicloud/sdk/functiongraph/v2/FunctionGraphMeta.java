@@ -234,6 +234,37 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse> listFunctionStatistics = genForlistFunctionStatistics();
+
+    private static HttpRequestDef<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse> genForlistFunctionStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFunctionStatisticsRequest.class, ListFunctionStatisticsResponse.class)
+                .withUri("/v2/{project_id}/fgs/functions/{func_urn}/statistics/{period}");
+
+        // requests
+        builder.withRequestField("func_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListFunctionStatisticsRequest::getFuncUrn, (req, v) -> {
+                req.setFuncUrn(v);
+            })
+        );
+        builder.withRequestField("period",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListFunctionStatisticsRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFunctionVersionsRequest, ListFunctionVersionsResponse> listFunctionVersions = genForlistFunctionVersions();
 
     private static HttpRequestDef<ListFunctionVersionsRequest, ListFunctionVersionsResponse> genForlistFunctionVersions() {
@@ -296,6 +327,60 @@ public class FunctionGraphMeta {
             String.class,
             f -> f.withMarshaller(ListFunctionsRequest::getMaxitems, (req, v) -> {
                 req.setMaxitems(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withUri("/v2/{project_id}/fgs/quotas");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> listStatistics = genForlistStatistics();
+
+    private static HttpRequestDef<ListStatisticsRequest, ListStatisticsResponse> genForlistStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListStatisticsRequest, ListStatisticsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStatisticsRequest.class, ListStatisticsResponse.class)
+                .withUri("/v2/{project_id}/fgs/functions/statistics");
+
+        // requests
+        builder.withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListStatisticsRequest.FilterEnum.class,
+            f -> f.withMarshaller(ListStatisticsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            })
+        );
+        builder.withRequestField("period",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsRequest::getPeriod, (req, v) -> {
+                req.setPeriod(v);
+            })
+        );
+        builder.withRequestField("month_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListStatisticsRequest.MonthCodeEnum.class,
+            f -> f.withMarshaller(ListStatisticsRequest::getMonthCode, (req, v) -> {
+                req.setMonthCode(v);
             })
         );
 
@@ -674,6 +759,54 @@ public class FunctionGraphMeta {
             String.class,
             f -> f.withMarshaller(ShowFunctionTriggerRequest::getTriggerId, (req, v) -> {
                 req.setTriggerId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTriggerRequest, UpdateTriggerResponse> updateTrigger = genForupdateTrigger();
+
+    private static HttpRequestDef<UpdateTriggerRequest, UpdateTriggerResponse> genForupdateTrigger() {
+        // basic
+        HttpRequestDef.Builder<UpdateTriggerRequest, UpdateTriggerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTriggerRequest.class, UpdateTriggerResponse.class)
+                .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateTriggerRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+        builder.withRequestField("trigger_type_code",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateTriggerRequest.TriggerTypeCodeEnum.class,
+            f -> f.withMarshaller(UpdateTriggerRequest::getTriggerTypeCode, (req, v) -> {
+                req.setTriggerTypeCode(v);
+            })
+        );
+        builder.withRequestField("triggerId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateTriggerRequest::getTriggerId, (req, v) -> {
+                req.setTriggerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateTriggerRequestBody.class,
+            f -> f.withMarshaller(UpdateTriggerRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

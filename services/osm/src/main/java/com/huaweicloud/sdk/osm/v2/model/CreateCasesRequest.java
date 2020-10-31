@@ -69,7 +69,7 @@ public class CreateCasesRequest  {
      * @return xSite
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -91,7 +91,7 @@ public class CreateCasesRequest  {
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -113,7 +113,7 @@ public class CreateCasesRequest  {
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -135,7 +135,7 @@ public class CreateCasesRequest  {
      * @return xPhoneVerifiedid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="x-phone-verifiedid")
     public String getXPhoneVerifiedid() {
         return xPhoneVerifiedid;
     }
@@ -157,7 +157,7 @@ public class CreateCasesRequest  {
      * @return xEmailVerifiedid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="x-email-verifiedid")
     public String getXEmailVerifiedid() {
         return xEmailVerifiedid;
     }

@@ -43,6 +43,38 @@ public class DevStarMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse> runCodehubTemplateJob = genForrunCodehubTemplateJob();
+
+    private static HttpRequestDef<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse> genForrunCodehubTemplateJob() {
+        // basic
+        HttpRequestDef.Builder<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunCodehubTemplateJobRequest.class, RunCodehubTemplateJobResponse.class)
+                .withUri("/v1/jobs/codehub")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            RunCodehubTemplateJobRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(RunCodehubTemplateJobRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CodehubJobInfo.class,
+            f -> f.withMarshaller(RunCodehubTemplateJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> runDevstarTemplateJob = genForrunDevstarTemplateJob();
 
     private static HttpRequestDef<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> genForrunDevstarTemplateJob() {
@@ -106,6 +138,85 @@ public class DevStarMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTemplateFileRequest, ShowTemplateFileResponse> showTemplateFile = genForshowTemplateFile();
+
+    private static HttpRequestDef<ShowTemplateFileRequest, ShowTemplateFileResponse> genForshowTemplateFile() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateFileRequest, ShowTemplateFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTemplateFileRequest.class, ShowTemplateFileResponse.class)
+                .withUri("/v1/templates/{template_id}/files");
+
+        // requests
+        builder.withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowTemplateFileRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.withRequestField("file_path",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowTemplateFileRequest::getFilePath, (req, v) -> {
+                req.setFilePath(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ShowTemplateFileRequest.TypeEnum.class,
+            f -> f.withMarshaller(ShowTemplateFileRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ShowTemplateFileRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ShowTemplateFileRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse> createTemplateViewHistories = genForcreateTemplateViewHistories();
+
+    private static HttpRequestDef<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse> genForcreateTemplateViewHistories() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTemplateViewHistoriesRequest.class, CreateTemplateViewHistoriesResponse.class)
+                .withUri("/v1/templates/view-histories")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            CreateTemplateViewHistoriesRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(CreateTemplateViewHistoriesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TemplatesInfo.class,
+            f -> f.withMarshaller(CreateTemplateViewHistoriesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> listPublishedTemplates = genForlistPublishedTemplates();
 
     private static HttpRequestDef<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> genForlistPublishedTemplates() {
@@ -144,6 +255,108 @@ public class DevStarMeta {
             FieldExistence.NULL_IGNORE,
             ListPublishedTemplatesRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ListPublishedTemplatesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse> listTemplateViewHistories = genForlistTemplateViewHistories();
+
+    private static HttpRequestDef<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse> genForlistTemplateViewHistories() {
+        // basic
+        HttpRequestDef.Builder<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTemplateViewHistoriesRequest.class, ListTemplateViewHistoriesResponse.class)
+                .withUri("/v1/templates/view-histories");
+
+        // requests
+        builder.withRequestField("platform_source",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListTemplateViewHistoriesRequest.PlatformSourceEnum.class,
+            f -> f.withMarshaller(ListTemplateViewHistoriesRequest::getPlatformSource, (req, v) -> {
+                req.setPlatformSource(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ListTemplateViewHistoriesRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ListTemplateViewHistoriesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTemplatesV2Request, ListTemplatesV2Response> listTemplatesV2 = genForlistTemplatesV2();
+
+    private static HttpRequestDef<ListTemplatesV2Request, ListTemplatesV2Response> genForlistTemplatesV2() {
+        // basic
+        HttpRequestDef.Builder<ListTemplatesV2Request, ListTemplatesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTemplatesV2Request.class, ListTemplatesV2Response.class)
+                .withUri("/v2/templates/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("action_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListTemplatesV2Request::getActionId, (req, v) -> {
+                req.setActionId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ListTemplatesV2Request.XLanguageEnum.class,
+            f -> f.withMarshaller(ListTemplatesV2Request::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TemplateQueryV2.class,
+            f -> f.withMarshaller(ListTemplatesV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTemplateV3Request, ShowTemplateV3Response> showTemplateV3 = genForshowTemplateV3();
+
+    private static HttpRequestDef<ShowTemplateV3Request, ShowTemplateV3Response> genForshowTemplateV3() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateV3Request, ShowTemplateV3Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTemplateV3Request.class, ShowTemplateV3Response.class)
+                .withUri("/v3/templates/{template_id}");
+
+        // requests
+        builder.withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowTemplateV3Request::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ShowTemplateV3Request.XLanguageEnum.class,
+            f -> f.withMarshaller(ShowTemplateV3Request::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

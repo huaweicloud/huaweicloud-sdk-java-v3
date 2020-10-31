@@ -1570,7 +1570,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return backupId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__backup_id")
     public String getBackupId() {
         return backupId;
     }
@@ -1592,7 +1592,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return dataOrigin
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__data_origin")
     public String getDataOrigin() {
         return dataOrigin;
     }
@@ -1614,7 +1614,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return description
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__description")
     public String getDescription() {
         return description;
     }
@@ -1636,7 +1636,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return imageSize
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__image_size")
     public String getImageSize() {
         return imageSize;
     }
@@ -1658,7 +1658,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return imageSourceType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__image_source_type")
     public ImageSourceTypeEnum getImageSourceType() {
         return imageSourceType;
     }
@@ -1680,7 +1680,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__imagetype")
     public ImagetypeEnum getImagetype() {
         return imagetype;
     }
@@ -1702,7 +1702,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return isregistered
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__isregistered")
     public IsregisteredEnum getIsregistered() {
         return isregistered;
     }
@@ -1724,7 +1724,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return originalimagename
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__originalimagename")
     public String getOriginalimagename() {
         return originalimagename;
     }
@@ -1746,7 +1746,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return osBit
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_bit")
     public OsBitEnum getOsBit() {
         return osBit;
     }
@@ -1768,7 +1768,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -1790,7 +1790,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return osVersion
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_version")
     public String getOsVersion() {
         return osVersion;
     }
@@ -1812,7 +1812,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__platform")
     public PlatformEnum getPlatform() {
         return platform;
     }
@@ -1834,7 +1834,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return productcode
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__productcode")
     public String getProductcode() {
         return productcode;
     }
@@ -1856,7 +1856,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportDiskintensive
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_diskintensive")
     public String getSupportDiskintensive() {
         return supportDiskintensive;
     }
@@ -1878,7 +1878,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportHighperformance
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_highperformance")
     public String getSupportHighperformance() {
         return supportHighperformance;
     }
@@ -1900,7 +1900,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportKvm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm")
     public String getSupportKvm() {
         return supportKvm;
     }
@@ -1922,7 +1922,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportKvmGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm_gpu_type")
     public String getSupportKvmGpuType() {
         return supportKvmGpuType;
     }
@@ -1944,7 +1944,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportKvmInfiniband
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm_infiniband")
     public String getSupportKvmInfiniband() {
         return supportKvmInfiniband;
     }
@@ -1966,7 +1966,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportLargememory
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_largememory")
     public String getSupportLargememory() {
         return supportLargememory;
     }
@@ -1988,7 +1988,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportXen
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen")
     public String getSupportXen() {
         return supportXen;
     }
@@ -2010,7 +2010,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportXenGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen_gpu_type")
     public String getSupportXenGpuType() {
         return supportXenGpuType;
     }
@@ -2032,7 +2032,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportXenHana
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen_hana")
     public String getSupportXenHana() {
         return supportXenHana;
     }
@@ -2508,7 +2508,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportFcInject
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_fc_inject")
     public SupportFcInjectEnum getSupportFcInject() {
         return supportFcInject;
     }
@@ -2570,7 +2570,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return supportArm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_arm")
     public SupportArmEnum getSupportArm() {
         return supportArm;
     }
@@ -2592,7 +2592,7 @@ public class GlanceShowImageResponse extends SdkResponse {
      * @return isOffshelved
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__is_offshelved")
     public IsOffshelvedEnum getIsOffshelved() {
         return isOffshelved;
     }

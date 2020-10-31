@@ -97,6 +97,17 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 获取指定时间段的函数运行指标
+     * 获取指定时间段的函数运行指标。
+     *
+     * @param ListFunctionStatisticsRequest 请求对象
+     * @return CompletableFuture<ListFunctionStatisticsResponse>
+     */
+    public CompletableFuture<ListFunctionStatisticsResponse> listFunctionStatisticsAsync(ListFunctionStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctionStatistics);
+    }
+
+    /**
      * 获取指定函数的版本列表。
      * 获取指定函数的版本列表。
      *
@@ -116,6 +127,28 @@ public class FunctionGraphAsyncClient {
      */
     public CompletableFuture<ListFunctionsResponse> listFunctionsAsync(ListFunctionsRequest request) {
         return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctions);
+    }
+
+    /**
+     * 查询租户配额
+     * 查询租户配额
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return CompletableFuture<ListQuotasResponse>
+     */
+    public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listQuotas);
+    }
+
+    /**
+     * 租户函数统计信息
+     * 租户函数统计信息。  返回三类的统计信息，函数格式和大小使用情况包括配额和使用量，流量报告。 通过查询参数filter可以进行过滤，查询参数period可以指定返回的时间段。
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return CompletableFuture<ListStatisticsResponse>
+     */
+    public CompletableFuture<ListStatisticsResponse> listStatisticsAsync(ListStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listStatistics);
     }
 
     /**
@@ -248,6 +281,17 @@ public class FunctionGraphAsyncClient {
      */
     public CompletableFuture<ShowFunctionTriggerResponse> showFunctionTriggerAsync(ShowFunctionTriggerRequest request) {
         return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFunctionTrigger);
+    }
+
+    /**
+     * 更新触发器
+     * 更新触发器
+     *
+     * @param UpdateTriggerRequest 请求对象
+     * @return CompletableFuture<UpdateTriggerResponse>
+     */
+    public CompletableFuture<UpdateTriggerResponse> updateTriggerAsync(UpdateTriggerRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateTrigger);
     }
 
 }

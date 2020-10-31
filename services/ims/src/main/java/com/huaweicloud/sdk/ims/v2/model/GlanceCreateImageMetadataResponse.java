@@ -956,7 +956,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return imageSourceType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__image_source_type")
     public String getImageSourceType() {
         return imageSourceType;
     }
@@ -978,7 +978,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return imageSize
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__image_size")
     public String getImageSize() {
         return imageSize;
     }
@@ -1000,7 +1000,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return isregistered
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__isregistered")
     public String getIsregistered() {
         return isregistered;
     }
@@ -1022,7 +1022,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return osVersion
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_version")
     public String getOsVersion() {
         return osVersion;
     }
@@ -1044,7 +1044,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -1066,7 +1066,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__platform")
     public String getPlatform() {
         return platform;
     }
@@ -1088,7 +1088,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return osBit
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_bit")
     public OsBitEnum getOsBit() {
         return osBit;
     }
@@ -1110,7 +1110,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__imagetype")
     public String getImagetype() {
         return imagetype;
     }

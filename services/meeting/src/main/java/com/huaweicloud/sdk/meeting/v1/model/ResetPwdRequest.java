@@ -49,7 +49,7 @@ public class ResetPwdRequest  {
      * @return xRequestID
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Request-ID")
     public String getXRequestID() {
         return xRequestID;
     }

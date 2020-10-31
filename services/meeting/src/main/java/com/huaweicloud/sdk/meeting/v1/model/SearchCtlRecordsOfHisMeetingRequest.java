@@ -152,7 +152,7 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -174,7 +174,7 @@ public class SearchCtlRecordsOfHisMeetingRequest  {
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }

@@ -21,21 +21,9 @@ public class ListPoolsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
+    @JsonProperty(value="admin_state_up")
     
-    private String marker;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_reverse")
-    
-    private Boolean pageReverse;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,10 +33,10 @@ public class ListPoolsRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
+    @JsonProperty(value="enterprise_project_id")
     
-    private Boolean adminStateUp;
-
+    private List<String> enterpriseProjectId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor_id")
@@ -63,21 +51,9 @@ public class ListPoolsRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="ip_version")
     
-    private List<String> name = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancer_id")
-    
-    private List<String> loadbalancerId = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
-    private List<String> protocol = null;
+    private List<String> ipVersion = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,16 +63,22 @@ public class ListPoolsRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
+    @JsonProperty(value="limit")
     
-    private List<String> enterpriseProjectId = null;
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="loadbalancer_id")
+    
+    private List<String> loadbalancerId = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
+    @JsonProperty(value="marker")
     
-    private List<String> ipVersion = null;
-    
+    private String marker;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_address")
@@ -105,18 +87,36 @@ public class ListPoolsRequest  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="member_deletion_protection_enable")
+    
+    private Boolean memberDeletionProtectionEnable;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_device_id")
     
     private List<String> memberDeviceId = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_deletion_protection_enable")
+    @JsonProperty(value="name")
     
-    private Boolean memberDeletionProtectionEnable;
+    private List<String> name = null;
+    
 
-    public ListPoolsRequest withMarker(String marker) {
-        this.marker = marker;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="page_reverse")
+    
+    private Boolean pageReverse;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="protocol")
+    
+    private List<String> protocol = null;
+    
+    public ListPoolsRequest withAdminStateUp(Boolean adminStateUp) {
+        this.adminStateUp = adminStateUp;
         return this;
     }
 
@@ -124,57 +124,15 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get marker
-     * @return marker
+     * Get adminStateUp
+     * @return adminStateUp
      */
-    public String getMarker() {
-        return marker;
+    public Boolean getAdminStateUp() {
+        return adminStateUp;
     }
 
-    public void setMarker(String marker) {
-        this.marker = marker;
-    }
-
-    public ListPoolsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get limit
-     * minimum: 0
-     * maximum: 2000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ListPoolsRequest withPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get pageReverse
-     * @return pageReverse
-     */
-    public Boolean getPageReverse() {
-        return pageReverse;
-    }
-
-    public void setPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
+    public void setAdminStateUp(Boolean adminStateUp) {
+        this.adminStateUp = adminStateUp;
     }
 
     public ListPoolsRequest withDescription(List<String> description) {
@@ -211,24 +169,38 @@ public class ListPoolsRequest  {
         this.description = description;
     }
 
-    public ListPoolsRequest withAdminStateUp(Boolean adminStateUp) {
-        this.adminStateUp = adminStateUp;
+    public ListPoolsRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     
-
-
-    /**
-     * Get adminStateUp
-     * @return adminStateUp
-     */
-    public Boolean getAdminStateUp() {
-        return adminStateUp;
+    public ListPoolsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
     }
 
-    public void setAdminStateUp(Boolean adminStateUp) {
-        this.adminStateUp = adminStateUp;
+    public ListPoolsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if(this.enterpriseProjectId == null ){
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
+
+    /**
+     * Get enterpriseProjectId
+     * @return enterpriseProjectId
+     */
+    public List<String> getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ListPoolsRequest withHealthmonitorId(List<String> healthmonitorId) {
@@ -299,106 +271,38 @@ public class ListPoolsRequest  {
         this.id = id;
     }
 
-    public ListPoolsRequest withName(List<String> name) {
-        this.name = name;
+    public ListPoolsRequest withIpVersion(List<String> ipVersion) {
+        this.ipVersion = ipVersion;
         return this;
     }
 
     
-    public ListPoolsRequest addNameItem(String nameItem) {
-        if (this.name == null) {
-            this.name = new ArrayList<>();
+    public ListPoolsRequest addIpVersionItem(String ipVersionItem) {
+        if (this.ipVersion == null) {
+            this.ipVersion = new ArrayList<>();
         }
-        this.name.add(nameItem);
+        this.ipVersion.add(ipVersionItem);
         return this;
     }
 
-    public ListPoolsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null ){
-            this.name = new ArrayList<>();
+    public ListPoolsRequest withIpVersion(Consumer<List<String>> ipVersionSetter) {
+        if(this.ipVersion == null ){
+            this.ipVersion = new ArrayList<>();
         }
-        nameSetter.accept(this.name);
+        ipVersionSetter.accept(this.ipVersion);
         return this;
     }
 
     /**
-     * Get name
-     * @return name
+     * Get ipVersion
+     * @return ipVersion
      */
-    public List<String> getName() {
-        return name;
+    public List<String> getIpVersion() {
+        return ipVersion;
     }
 
-    public void setName(List<String> name) {
-        this.name = name;
-    }
-
-    public ListPoolsRequest withLoadbalancerId(List<String> loadbalancerId) {
-        this.loadbalancerId = loadbalancerId;
-        return this;
-    }
-
-    
-    public ListPoolsRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
-        if (this.loadbalancerId == null) {
-            this.loadbalancerId = new ArrayList<>();
-        }
-        this.loadbalancerId.add(loadbalancerIdItem);
-        return this;
-    }
-
-    public ListPoolsRequest withLoadbalancerId(Consumer<List<String>> loadbalancerIdSetter) {
-        if(this.loadbalancerId == null ){
-            this.loadbalancerId = new ArrayList<>();
-        }
-        loadbalancerIdSetter.accept(this.loadbalancerId);
-        return this;
-    }
-
-    /**
-     * Get loadbalancerId
-     * @return loadbalancerId
-     */
-    public List<String> getLoadbalancerId() {
-        return loadbalancerId;
-    }
-
-    public void setLoadbalancerId(List<String> loadbalancerId) {
-        this.loadbalancerId = loadbalancerId;
-    }
-
-    public ListPoolsRequest withProtocol(List<String> protocol) {
-        this.protocol = protocol;
-        return this;
-    }
-
-    
-    public ListPoolsRequest addProtocolItem(String protocolItem) {
-        if (this.protocol == null) {
-            this.protocol = new ArrayList<>();
-        }
-        this.protocol.add(protocolItem);
-        return this;
-    }
-
-    public ListPoolsRequest withProtocol(Consumer<List<String>> protocolSetter) {
-        if(this.protocol == null ){
-            this.protocol = new ArrayList<>();
-        }
-        protocolSetter.accept(this.protocol);
-        return this;
-    }
-
-    /**
-     * Get protocol
-     * @return protocol
-     */
-    public List<String> getProtocol() {
-        return protocol;
-    }
-
-    public void setProtocol(List<String> protocol) {
-        this.protocol = protocol;
+    public void setIpVersion(List<String> ipVersion) {
+        this.ipVersion = ipVersion;
     }
 
     public ListPoolsRequest withLbAlgorithm(List<String> lbAlgorithm) {
@@ -435,72 +339,80 @@ public class ListPoolsRequest  {
         this.lbAlgorithm = lbAlgorithm;
     }
 
-    public ListPoolsRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public ListPoolsRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     
-    public ListPoolsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
-        this.enterpriseProjectId.add(enterpriseProjectIdItem);
-        return this;
-    }
 
-    public ListPoolsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null ){
-            this.enterpriseProjectId = new ArrayList<>();
-        }
-        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
-        return this;
-    }
 
     /**
-     * Get enterpriseProjectId
-     * @return enterpriseProjectId
+     * Get limit
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
      */
-    public List<String> getEnterpriseProjectId() {
-        return enterpriseProjectId;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ListPoolsRequest withIpVersion(List<String> ipVersion) {
-        this.ipVersion = ipVersion;
+    public ListPoolsRequest withLoadbalancerId(List<String> loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
         return this;
     }
 
     
-    public ListPoolsRequest addIpVersionItem(String ipVersionItem) {
-        if (this.ipVersion == null) {
-            this.ipVersion = new ArrayList<>();
+    public ListPoolsRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
+        if (this.loadbalancerId == null) {
+            this.loadbalancerId = new ArrayList<>();
         }
-        this.ipVersion.add(ipVersionItem);
+        this.loadbalancerId.add(loadbalancerIdItem);
         return this;
     }
 
-    public ListPoolsRequest withIpVersion(Consumer<List<String>> ipVersionSetter) {
-        if(this.ipVersion == null ){
-            this.ipVersion = new ArrayList<>();
+    public ListPoolsRequest withLoadbalancerId(Consumer<List<String>> loadbalancerIdSetter) {
+        if(this.loadbalancerId == null ){
+            this.loadbalancerId = new ArrayList<>();
         }
-        ipVersionSetter.accept(this.ipVersion);
+        loadbalancerIdSetter.accept(this.loadbalancerId);
         return this;
     }
 
     /**
-     * Get ipVersion
-     * @return ipVersion
+     * Get loadbalancerId
+     * @return loadbalancerId
      */
-    public List<String> getIpVersion() {
-        return ipVersion;
+    public List<String> getLoadbalancerId() {
+        return loadbalancerId;
     }
 
-    public void setIpVersion(List<String> ipVersion) {
-        this.ipVersion = ipVersion;
+    public void setLoadbalancerId(List<String> loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
+
+    public ListPoolsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get marker
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
     }
 
     public ListPoolsRequest withMemberAddress(List<String> memberAddress) {
@@ -537,6 +449,26 @@ public class ListPoolsRequest  {
         this.memberAddress = memberAddress;
     }
 
+    public ListPoolsRequest withMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
+        this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get memberDeletionProtectionEnable
+     * @return memberDeletionProtectionEnable
+     */
+    public Boolean getMemberDeletionProtectionEnable() {
+        return memberDeletionProtectionEnable;
+    }
+
+    public void setMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
+        this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
+    }
+
     public ListPoolsRequest withMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
         return this;
@@ -571,8 +503,42 @@ public class ListPoolsRequest  {
         this.memberDeviceId = memberDeviceId;
     }
 
-    public ListPoolsRequest withMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
-        this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
+    public ListPoolsRequest withName(List<String> name) {
+        this.name = name;
+        return this;
+    }
+
+    
+    public ListPoolsRequest addNameItem(String nameItem) {
+        if (this.name == null) {
+            this.name = new ArrayList<>();
+        }
+        this.name.add(nameItem);
+        return this;
+    }
+
+    public ListPoolsRequest withName(Consumer<List<String>> nameSetter) {
+        if(this.name == null ){
+            this.name = new ArrayList<>();
+        }
+        nameSetter.accept(this.name);
+        return this;
+    }
+
+    /**
+     * Get name
+     * @return name
+     */
+    public List<String> getName() {
+        return name;
+    }
+
+    public void setName(List<String> name) {
+        this.name = name;
+    }
+
+    public ListPoolsRequest withPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
         return this;
     }
 
@@ -580,15 +546,49 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get memberDeletionProtectionEnable
-     * @return memberDeletionProtectionEnable
+     * Get pageReverse
+     * @return pageReverse
      */
-    public Boolean getMemberDeletionProtectionEnable() {
-        return memberDeletionProtectionEnable;
+    public Boolean getPageReverse() {
+        return pageReverse;
     }
 
-    public void setMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
-        this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
+    public void setPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
+    }
+
+    public ListPoolsRequest withProtocol(List<String> protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    
+    public ListPoolsRequest addProtocolItem(String protocolItem) {
+        if (this.protocol == null) {
+            this.protocol = new ArrayList<>();
+        }
+        this.protocol.add(protocolItem);
+        return this;
+    }
+
+    public ListPoolsRequest withProtocol(Consumer<List<String>> protocolSetter) {
+        if(this.protocol == null ){
+            this.protocol = new ArrayList<>();
+        }
+        protocolSetter.accept(this.protocol);
+        return this;
+    }
+
+    /**
+     * Get protocol
+     * @return protocol
+     */
+    public List<String> getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(List<String> protocol) {
+        this.protocol = protocol;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -599,47 +599,47 @@ public class ListPoolsRequest  {
             return false;
         }
         ListPoolsRequest listPoolsRequest = (ListPoolsRequest) o;
-        return Objects.equals(this.marker, listPoolsRequest.marker) &&
-            Objects.equals(this.limit, listPoolsRequest.limit) &&
-            Objects.equals(this.pageReverse, listPoolsRequest.pageReverse) &&
+        return Objects.equals(this.adminStateUp, listPoolsRequest.adminStateUp) &&
             Objects.equals(this.description, listPoolsRequest.description) &&
-            Objects.equals(this.adminStateUp, listPoolsRequest.adminStateUp) &&
+            Objects.equals(this.enterpriseProjectId, listPoolsRequest.enterpriseProjectId) &&
             Objects.equals(this.healthmonitorId, listPoolsRequest.healthmonitorId) &&
             Objects.equals(this.id, listPoolsRequest.id) &&
-            Objects.equals(this.name, listPoolsRequest.name) &&
-            Objects.equals(this.loadbalancerId, listPoolsRequest.loadbalancerId) &&
-            Objects.equals(this.protocol, listPoolsRequest.protocol) &&
-            Objects.equals(this.lbAlgorithm, listPoolsRequest.lbAlgorithm) &&
-            Objects.equals(this.enterpriseProjectId, listPoolsRequest.enterpriseProjectId) &&
             Objects.equals(this.ipVersion, listPoolsRequest.ipVersion) &&
+            Objects.equals(this.lbAlgorithm, listPoolsRequest.lbAlgorithm) &&
+            Objects.equals(this.limit, listPoolsRequest.limit) &&
+            Objects.equals(this.loadbalancerId, listPoolsRequest.loadbalancerId) &&
+            Objects.equals(this.marker, listPoolsRequest.marker) &&
             Objects.equals(this.memberAddress, listPoolsRequest.memberAddress) &&
+            Objects.equals(this.memberDeletionProtectionEnable, listPoolsRequest.memberDeletionProtectionEnable) &&
             Objects.equals(this.memberDeviceId, listPoolsRequest.memberDeviceId) &&
-            Objects.equals(this.memberDeletionProtectionEnable, listPoolsRequest.memberDeletionProtectionEnable);
+            Objects.equals(this.name, listPoolsRequest.name) &&
+            Objects.equals(this.pageReverse, listPoolsRequest.pageReverse) &&
+            Objects.equals(this.protocol, listPoolsRequest.protocol);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, pageReverse, description, adminStateUp, healthmonitorId, id, name, loadbalancerId, protocol, lbAlgorithm, enterpriseProjectId, ipVersion, memberAddress, memberDeviceId, memberDeletionProtectionEnable);
+        return Objects.hash(adminStateUp, description, enterpriseProjectId, healthmonitorId, id, ipVersion, lbAlgorithm, limit, loadbalancerId, marker, memberAddress, memberDeletionProtectionEnable, memberDeviceId, name, pageReverse, protocol);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPoolsRequest {\n");
-        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    healthmonitorId: ").append(toIndentedString(healthmonitorId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
-        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
-        sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    memberAddress: ").append(toIndentedString(memberAddress)).append("\n");
-        sb.append("    memberDeviceId: ").append(toIndentedString(memberDeviceId)).append("\n");
         sb.append("    memberDeletionProtectionEnable: ").append(toIndentedString(memberDeletionProtectionEnable)).append("\n");
+        sb.append("    memberDeviceId: ").append(toIndentedString(memberDeviceId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

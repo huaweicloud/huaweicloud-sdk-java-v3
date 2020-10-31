@@ -186,7 +186,7 @@ public class GlanceCreateImageMetadataRequestBody  {
      * @return osVersion
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_version")
     public String getOsVersion() {
         return osVersion;
     }

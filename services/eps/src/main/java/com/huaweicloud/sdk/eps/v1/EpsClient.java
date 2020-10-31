@@ -20,33 +20,33 @@ public class EpsClient {
      * 创建企业项目
      * 创建企业项目。
      *
-     * @param CreateEPRequest 请求对象
-     * @return CreateEPResponse
+     * @param CreateEnterpriseProjectRequest 请求对象
+     * @return CreateEnterpriseProjectResponse
      */
-    public CreateEPResponse createEP(CreateEPRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.createEP);
+    public CreateEnterpriseProjectResponse createEnterpriseProject(CreateEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.createEnterpriseProject);
     }
 
     /**
      * 停用企业项目
      * 停用企业项目。
      *
-     * @param DisableEPRequest 请求对象
-     * @return DisableEPResponse
+     * @param DisableEnterpriseProjectRequest 请求对象
+     * @return DisableEnterpriseProjectResponse
      */
-    public DisableEPResponse disableEP(DisableEPRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.disableEP);
+    public DisableEnterpriseProjectResponse disableEnterpriseProject(DisableEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.disableEnterpriseProject);
     }
 
     /**
      * 启用企业项目
      * 启用企业项目。
      *
-     * @param EnableEPRequest 请求对象
-     * @return EnableEPResponse
+     * @param EnableEnterpriseProjectRequest 请求对象
+     * @return EnableEnterpriseProjectResponse
      */
-    public EnableEPResponse enableEP(EnableEPRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.enableEP);
+    public EnableEnterpriseProjectResponse enableEnterpriseProject(EnableEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.enableEnterpriseProject);
     }
 
     /**
@@ -64,11 +64,11 @@ public class EpsClient {
      * 查询企业项目列表
      * 查询当前用户已授权的企业项目列表，用户可以使用企业项目绑定资源。
      *
-     * @param ListEPRequest 请求对象
-     * @return ListEPResponse
+     * @param ListEnterpriseProjectRequest 请求对象
+     * @return ListEnterpriseProjectResponse
      */
-    public ListEPResponse listEP(ListEPRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.listEP);
+    public ListEnterpriseProjectResponse listEnterpriseProject(ListEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.listEnterpriseProject);
     }
 
     /**
@@ -86,11 +86,11 @@ public class EpsClient {
      * 修改企业项目
      * 修改企业项目。当前仅支持修改名称和描述。
      *
-     * @param ModifyEPRequest 请求对象
-     * @return ModifyEPResponse
+     * @param ModifyEnterpriseProjectRequest 请求对象
+     * @return ModifyEnterpriseProjectResponse
      */
-    public ModifyEPResponse modifyEP(ModifyEPRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.modifyEP);
+    public ModifyEnterpriseProjectResponse modifyEnterpriseProject(ModifyEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.modifyEnterpriseProject);
     }
 
     /**
@@ -108,33 +108,33 @@ public class EpsClient {
      * 查询企业项目详情
      * 查询企业项目详情。
      *
-     * @param ShowEPRequest 请求对象
-     * @return ShowEPResponse
+     * @param ShowEnterpriseProjectRequest 请求对象
+     * @return ShowEnterpriseProjectResponse
      */
-    public ShowEPResponse showEP(ShowEPRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.showEP);
+    public ShowEnterpriseProjectResponse showEnterpriseProject(ShowEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.showEnterpriseProject);
     }
 
     /**
      * 查询企业项目配额
      * 查询企业项目的配额信息。
      *
-     * @param ShowEPQuotaRequest 请求对象
-     * @return ShowEPQuotaResponse
+     * @param ShowEnterpriseProjectQuotaRequest 请求对象
+     * @return ShowEnterpriseProjectQuotaResponse
      */
-    public ShowEPQuotaResponse showEPQuota(ShowEPQuotaRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.showEPQuota);
+    public ShowEnterpriseProjectQuotaResponse showEnterpriseProjectQuota(ShowEnterpriseProjectQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.showEnterpriseProjectQuota);
     }
 
     /**
      * 查询企业项目绑定的资源列表
      * 查询企业项目下绑定的资源详情。
      *
-     * @param ShowResourceBindEPRequest 请求对象
-     * @return ShowResourceBindEPResponse
+     * @param ShowResourceBindEnterpriseProjectRequest 请求对象
+     * @return ShowResourceBindEnterpriseProjectResponse
      */
-    public ShowResourceBindEPResponse showResourceBindEP(ShowResourceBindEPRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.showResourceBindEP);
+    public ShowResourceBindEnterpriseProjectResponse showResourceBindEnterpriseProject(ShowResourceBindEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.showResourceBindEnterpriseProject);
     }
 
 }

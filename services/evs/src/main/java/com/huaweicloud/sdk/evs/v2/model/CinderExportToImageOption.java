@@ -418,7 +418,7 @@ public class CinderExportToImageOption  {
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }

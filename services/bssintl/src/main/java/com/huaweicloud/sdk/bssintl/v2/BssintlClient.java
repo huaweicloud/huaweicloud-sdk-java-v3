@@ -215,6 +215,17 @@ public class BssintlClient {
     }
 
     /**
+     * 查询资源类型
+     * 功能描述：查询资源类型
+     *
+     * @param ListResourceTypesRequest 请求对象
+     * @return ListResourceTypesResponse
+     */
+    public ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceTypes);
+    }
+
+    /**
      * 查询套餐内使用量
      * 功能描述：查询套餐内使用量
      *
@@ -223,6 +234,28 @@ public class BssintlClient {
      */
     public ListResourceUsagesResponse listResourceUsages(ListResourceUsagesRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceUsages);
+    }
+
+    /**
+     * 根据云服务类型查询资源列表
+     * 功能描述：根据云服务类型查询资源列表
+     *
+     * @param ListServiceResourcesRequest 请求对象
+     * @return ListServiceResourcesResponse
+     */
+    public ListServiceResourcesResponse listServiceResources(ListServiceResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listServiceResources);
+    }
+
+    /**
+     * 查询云服务类型列表
+     * 功能描述：查询云服务类型列表
+     *
+     * @param ListServiceTypesRequest 请求对象
+     * @return ListServiceTypesResponse
+     */
+    public ListServiceTypesResponse listServiceTypes(ListServiceTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listServiceTypes);
     }
 
     /**

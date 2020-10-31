@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Condition
+ * 告警规则设置的告警策略
  */
 public class Condition  {
 

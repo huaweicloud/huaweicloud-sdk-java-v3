@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.18-beta</version>
+        <version>3.0.19-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.18-beta</version>
+    <version>3.0.19-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -27,6 +27,7 @@
         <module>cloudbuild</module>
         <module>rds</module>
         <module>servicestage</module>
+        <module>codecheck</module>
         <module>classroom</module>
         <module>ecs</module>
         <module>as</module>
@@ -44,6 +45,7 @@
         <module>cts</module>
         <module>codehub</module>
         <module>ims</module>
+        <module>sms</module>
         <module>bss</module>
         <module>dcs</module>
         <module>mpc</module>

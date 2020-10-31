@@ -77,6 +77,12 @@ public class CreateCustomerV2Req  {
     
     private String indirectPartnerId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="include_association_result")
+    
+    private Boolean includeAssociationResult;
+
     public CreateCustomerV2Req withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -276,6 +282,26 @@ public class CreateCustomerV2Req  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
+
+    public CreateCustomerV2Req withIncludeAssociationResult(Boolean includeAssociationResult) {
+        this.includeAssociationResult = includeAssociationResult;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：是否返回关联结果| |参数的约束及描述：该参数非必填|
+     * @return includeAssociationResult
+     */
+    public Boolean getIncludeAssociationResult() {
+        return includeAssociationResult;
+    }
+
+    public void setIncludeAssociationResult(Boolean includeAssociationResult) {
+        this.includeAssociationResult = includeAssociationResult;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -294,11 +320,12 @@ public class CreateCustomerV2Req  {
             Objects.equals(this.password, createCustomerV2Req.password) &&
             Objects.equals(this.isCloseMarketMs, createCustomerV2Req.isCloseMarketMs) &&
             Objects.equals(this.cooperationType, createCustomerV2Req.cooperationType) &&
-            Objects.equals(this.indirectPartnerId, createCustomerV2Req.indirectPartnerId);
+            Objects.equals(this.indirectPartnerId, createCustomerV2Req.indirectPartnerId) &&
+            Objects.equals(this.includeAssociationResult, createCustomerV2Req.includeAssociationResult);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domainName, email, verificationCode, domainArea, xaccountId, xaccountType, password, isCloseMarketMs, cooperationType, indirectPartnerId);
+        return Objects.hash(domainName, email, verificationCode, domainArea, xaccountId, xaccountType, password, isCloseMarketMs, cooperationType, indirectPartnerId, includeAssociationResult);
     }
     @Override
     public String toString() {
@@ -314,6 +341,7 @@ public class CreateCustomerV2Req  {
         sb.append("    isCloseMarketMs: ").append(toIndentedString(isCloseMarketMs)).append("\n");
         sb.append("    cooperationType: ").append(toIndentedString(cooperationType)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
+        sb.append("    includeAssociationResult: ").append(toIndentedString(includeAssociationResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -128,7 +128,7 @@ public class ListExtendsParamsRequest  {
      * @return xSite
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -150,7 +150,7 @@ public class ListExtendsParamsRequest  {
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -172,7 +172,7 @@ public class ListExtendsParamsRequest  {
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }

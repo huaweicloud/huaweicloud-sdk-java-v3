@@ -21,12 +21,12 @@ public class ShowCurUserRoleResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role_id")
+    @JsonProperty(value="user_role")
     
-    private String roleId;
+    private Integer userRole;
 
-    public ShowCurUserRoleResponse withRoleId(String roleId) {
-        this.roleId = roleId;
+    public ShowCurUserRoleResponse withUserRole(Integer userRole) {
+        this.userRole = userRole;
         return this;
     }
 
@@ -34,15 +34,15 @@ public class ShowCurUserRoleResponse extends SdkResponse {
 
 
     /**
-     * 用户角色id
-     * @return roleId
+     * 成员角色 -1 项目创建者 3 项目经理 4 开发人员 5 测试经理 6 测试人员 7 参与者 8 浏览
+     * @return userRole
      */
-    public String getRoleId() {
-        return roleId;
+    public Integer getUserRole() {
+        return userRole;
     }
 
-    public void setRoleId(String roleId) {
-        this.roleId = roleId;
+    public void setUserRole(Integer userRole) {
+        this.userRole = userRole;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -53,17 +53,17 @@ public class ShowCurUserRoleResponse extends SdkResponse {
             return false;
         }
         ShowCurUserRoleResponse showCurUserRoleResponse = (ShowCurUserRoleResponse) o;
-        return Objects.equals(this.roleId, showCurUserRoleResponse.roleId);
+        return Objects.equals(this.userRole, showCurUserRoleResponse.userRole);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(roleId);
+        return Objects.hash(userRole);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCurUserRoleResponse {\n");
-        sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+        sb.append("    userRole: ").append(toIndentedString(userRole)).append("\n");
         sb.append("}");
         return sb.toString();
     }

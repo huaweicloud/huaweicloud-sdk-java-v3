@@ -180,7 +180,7 @@ public class ListExtractTaskRequest  {
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="x-language")
     public String getXLanguage() {
         return xLanguage;
     }

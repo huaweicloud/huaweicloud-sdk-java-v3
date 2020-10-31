@@ -60,6 +60,30 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> createAlarmTemplate = genForcreateAlarmTemplate();
+
+    private static HttpRequestDef<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> genForcreateAlarmTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAlarmTemplateRequest.class, CreateAlarmTemplateResponse.class)
+                .withUri("/V1.0/{project_id}/alarm-template")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateAlarmTemplateRequestBody.class,
+            f -> f.withMarshaller(CreateAlarmTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEventsRequest, CreateEventsResponse> createEvents = genForcreateEvents();
 
     private static HttpRequestDef<CreateEventsRequest, CreateEventsResponse> genForcreateEvents() {
@@ -132,6 +156,179 @@ public class CesMeta {
             String.class,
             f -> f.withMarshaller(DeleteAlarmRequest::getAlarmId, (req, v) -> {
                 req.setAlarmId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> deleteAlarmTemplate = genFordeleteAlarmTemplate();
+
+    private static HttpRequestDef<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> genFordeleteAlarmTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlarmTemplateRequest.class, DeleteAlarmTemplateResponse.class)
+                .withUri("/V1.0/{project_id}/alarm-template/{template_id}");
+
+        // requests
+        builder.withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteAlarmTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> listAlarmHistories = genForlistAlarmHistories();
+
+    private static HttpRequestDef<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> genForlistAlarmHistories() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAlarmHistoriesRequest.class, ListAlarmHistoriesResponse.class)
+                .withUri("/V1.0/{project_id}/alarm-histories");
+
+        // requests
+        builder.withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("alarm_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmId, (req, v) -> {
+                req.setAlarmId(v);
+            })
+        );
+        builder.withRequestField("alarm_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmName, (req, v) -> {
+                req.setAlarmName(v);
+            })
+        );
+        builder.withRequestField("alarm_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmStatus, (req, v) -> {
+                req.setAlarmStatus(v);
+            })
+        );
+        builder.withRequestField("alarm_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmLevel, (req, v) -> {
+                req.setAlarmLevel(v);
+            })
+        );
+        builder.withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            })
+        );
+        builder.withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            })
+        );
+        builder.withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> listAlarmTemplates = genForlistAlarmTemplates();
+
+    private static HttpRequestDef<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> genForlistAlarmTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAlarmTemplatesRequest.class, ListAlarmTemplatesResponse.class)
+                .withUri("/V1.0/{project_id}/alarm-template");
+
+        // requests
+        builder.withRequestField("alarmTemplateId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmTemplatesRequest::getAlarmTemplateId, (req, v) -> {
+                req.setAlarmTemplateId(v);
+            })
+        );
+        builder.withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmTemplatesRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("dname",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmTemplatesRequest::getDname, (req, v) -> {
+                req.setDname(v);
+            })
+        );
+        builder.withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmTemplatesRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAlarmTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 
@@ -454,6 +651,69 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowResourceGroupRequest, ShowResourceGroupResponse> showResourceGroup = genForshowResourceGroup();
+
+    private static HttpRequestDef<ShowResourceGroupRequest, ShowResourceGroupResponse> genForshowResourceGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceGroupRequest, ShowResourceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceGroupRequest.class, ShowResourceGroupResponse.class)
+                .withUri("/V1.0/{project_id}/resource-groups/{group_id}");
+
+        // requests
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowResourceGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowResourceGroupRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowResourceGroupRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("dname",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowResourceGroupRequest::getDname, (req, v) -> {
+                req.setDname(v);
+            })
+        );
+        builder.withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowResourceGroupRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowResourceGroupRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAlarmActionRequest, UpdateAlarmActionResponse> updateAlarmAction = genForupdateAlarmAction();
 
     private static HttpRequestDef<UpdateAlarmActionRequest, UpdateAlarmActionResponse> genForupdateAlarmAction() {
@@ -477,6 +737,38 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ModifyAlarmActionReq.class,
             f -> f.withMarshaller(UpdateAlarmActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> updateAlarmTemplate = genForupdateAlarmTemplate();
+
+    private static HttpRequestDef<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> genForupdateAlarmTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAlarmTemplateRequest.class, UpdateAlarmTemplateResponse.class)
+                .withUri("/V1.0/{project_id}/alarm-template/{template_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateAlarmTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateAlarmTemplateRequestBody.class,
+            f -> f.withMarshaller(UpdateAlarmTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

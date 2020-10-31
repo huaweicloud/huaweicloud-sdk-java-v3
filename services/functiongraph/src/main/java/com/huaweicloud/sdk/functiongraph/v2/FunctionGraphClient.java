@@ -94,6 +94,17 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 获取指定时间段的函数运行指标
+     * 获取指定时间段的函数运行指标。
+     *
+     * @param ListFunctionStatisticsRequest 请求对象
+     * @return ListFunctionStatisticsResponse
+     */
+    public ListFunctionStatisticsResponse listFunctionStatistics(ListFunctionStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctionStatistics);
+    }
+
+    /**
      * 获取指定函数的版本列表。
      * 获取指定函数的版本列表。
      *
@@ -113,6 +124,28 @@ public class FunctionGraphClient {
      */
     public ListFunctionsResponse listFunctions(ListFunctionsRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctions);
+    }
+
+    /**
+     * 查询租户配额
+     * 查询租户配额
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return ListQuotasResponse
+     */
+    public ListQuotasResponse listQuotas(ListQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listQuotas);
+    }
+
+    /**
+     * 租户函数统计信息
+     * 租户函数统计信息。  返回三类的统计信息，函数格式和大小使用情况包括配额和使用量，流量报告。 通过查询参数filter可以进行过滤，查询参数period可以指定返回的时间段。
+     *
+     * @param ListStatisticsRequest 请求对象
+     * @return ListStatisticsResponse
+     */
+    public ListStatisticsResponse listStatistics(ListStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listStatistics);
     }
 
     /**
@@ -245,6 +278,17 @@ public class FunctionGraphClient {
      */
     public ShowFunctionTriggerResponse showFunctionTrigger(ShowFunctionTriggerRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFunctionTrigger);
+    }
+
+    /**
+     * 更新触发器
+     * 更新触发器
+     *
+     * @param UpdateTriggerRequest 请求对象
+     * @return UpdateTriggerResponse
+     */
+    public UpdateTriggerResponse updateTrigger(UpdateTriggerRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateTrigger);
     }
 
 }

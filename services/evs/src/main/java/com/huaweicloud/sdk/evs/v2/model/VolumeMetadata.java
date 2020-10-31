@@ -60,7 +60,7 @@ public class VolumeMetadata  {
      * @return systemCmkid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__system__cmkid")
     public String getSystemCmkid() {
         return systemCmkid;
     }
@@ -82,7 +82,7 @@ public class VolumeMetadata  {
      * @return systemEncrypted
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__system__encrypted")
     public String getSystemEncrypted() {
         return systemEncrypted;
     }

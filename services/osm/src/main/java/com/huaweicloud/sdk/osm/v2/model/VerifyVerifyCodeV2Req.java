@@ -148,7 +148,7 @@ public class VerifyVerifyCodeV2Req  {
      * @return xCustomerId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="x_customer_id")
     public String getXCustomerId() {
         return xCustomerId;
     }

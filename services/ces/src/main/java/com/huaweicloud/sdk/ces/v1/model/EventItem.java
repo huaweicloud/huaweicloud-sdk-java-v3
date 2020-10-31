@@ -71,7 +71,7 @@ public class EventItem  {
 
 
     /**
-     * 事件来源。  格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。
+     * 事件来源。 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。
      * @return eventSource
      */
     public String getEventSource() {

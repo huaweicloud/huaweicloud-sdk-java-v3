@@ -77,7 +77,7 @@ public class InvokeFunctionRequest  {
      * @return xCffLogType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Cff-Log-Type")
     public String getXCffLogType() {
         return xCffLogType;
     }
@@ -99,7 +99,7 @@ public class InvokeFunctionRequest  {
      * @return xCFFRequestVersion
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-CFF-Request-Version")
     public String getXCFFRequestVersion() {
         return xCFFRequestVersion;
     }

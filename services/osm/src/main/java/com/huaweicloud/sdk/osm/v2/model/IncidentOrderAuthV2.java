@@ -333,7 +333,7 @@ public class IncidentOrderAuthV2  {
      * @return xCustomerId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="x_customer_id")
     public String getXCustomerId() {
         return xCustomerId;
     }
@@ -355,7 +355,7 @@ public class IncidentOrderAuthV2  {
      * @return xCustomerName
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="x_customer_name")
     public String getXCustomerName() {
         return xCustomerName;
     }

@@ -81,7 +81,7 @@ public class ShowUpBandwidthV2Response extends SdkResponse {
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-request-id")
     public String getXRequestId() {
         return xRequestId;
     }

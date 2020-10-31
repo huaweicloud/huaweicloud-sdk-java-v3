@@ -125,7 +125,7 @@ public class CreateConfigurationRequest  {
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }

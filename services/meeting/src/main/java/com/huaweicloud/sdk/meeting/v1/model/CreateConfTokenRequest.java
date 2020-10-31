@@ -81,7 +81,7 @@ public class CreateConfTokenRequest  {
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Conference-Authorization")
     public String getXConferenceAuthorization() {
         return xConferenceAuthorization;
     }
@@ -103,7 +103,7 @@ public class CreateConfTokenRequest  {
      * @return xPassword
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Password")
     public String getXPassword() {
         return xPassword;
     }
@@ -125,7 +125,7 @@ public class CreateConfTokenRequest  {
      * @return xLoginType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Login-Type")
     public Integer getXLoginType() {
         return xLoginType;
     }
@@ -147,7 +147,7 @@ public class CreateConfTokenRequest  {
      * @return xNonce
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Nonce")
     public String getXNonce() {
         return xNonce;
     }

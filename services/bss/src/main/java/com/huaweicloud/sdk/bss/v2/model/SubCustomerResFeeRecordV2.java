@@ -146,6 +146,12 @@ public class SubCustomerResFeeRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="product_spec_desc")
+    
+    private String productSpecDesc;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ri_usage")
     
     private BigDecimal riUsage = null;
@@ -648,6 +654,26 @@ public class SubCustomerResFeeRecordV2  {
         this.periodType = periodType;
     }
 
+    public SubCustomerResFeeRecordV2 withProductSpecDesc(String productSpecDesc) {
+        this.productSpecDesc = productSpecDesc;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：产品规格描述。| |参数约束及描述：产品规格描述，举例为：普通IO|100.0GB。|
+     * @return productSpecDesc
+     */
+    public String getProductSpecDesc() {
+        return productSpecDesc;
+    }
+
+    public void setProductSpecDesc(String productSpecDesc) {
+        this.productSpecDesc = productSpecDesc;
+    }
+
     public SubCustomerResFeeRecordV2 withRiUsage(BigDecimal riUsage) {
         this.riUsage = riUsage;
         return this;
@@ -957,6 +983,7 @@ public class SubCustomerResFeeRecordV2  {
             Objects.equals(this.resourceId, subCustomerResFeeRecordV2.resourceId) &&
             Objects.equals(this.billType, subCustomerResFeeRecordV2.billType) &&
             Objects.equals(this.periodType, subCustomerResFeeRecordV2.periodType) &&
+            Objects.equals(this.productSpecDesc, subCustomerResFeeRecordV2.productSpecDesc) &&
             Objects.equals(this.riUsage, subCustomerResFeeRecordV2.riUsage) &&
             Objects.equals(this.riUsageMeasureId, subCustomerResFeeRecordV2.riUsageMeasureId) &&
             Objects.equals(this.officialAmount, subCustomerResFeeRecordV2.officialAmount) &&
@@ -974,7 +1001,7 @@ public class SubCustomerResFeeRecordV2  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(effectiveTime, expireTime, productId, productName, orderId, amount, measureId, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, cloudServiceType, region, resourceType, chargeMode, resourceTag, resourceName, resourceId, billType, periodType, riUsage, riUsageMeasureId, officialAmount, discountAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, specSize, specSizeMeasureId);
+        return Objects.hash(effectiveTime, expireTime, productId, productName, orderId, amount, measureId, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, cloudServiceType, region, resourceType, chargeMode, resourceTag, resourceName, resourceId, billType, periodType, productSpecDesc, riUsage, riUsageMeasureId, officialAmount, discountAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, specSize, specSizeMeasureId);
     }
     @Override
     public String toString() {
@@ -1001,6 +1028,7 @@ public class SubCustomerResFeeRecordV2  {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
+        sb.append("    productSpecDesc: ").append(toIndentedString(productSpecDesc)).append("\n");
         sb.append("    riUsage: ").append(toIndentedString(riUsage)).append("\n");
         sb.append("    riUsageMeasureId: ").append(toIndentedString(riUsageMeasureId)).append("\n");
         sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");

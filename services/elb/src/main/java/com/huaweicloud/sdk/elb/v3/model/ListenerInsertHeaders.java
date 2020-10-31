@@ -54,7 +54,7 @@ public class ListenerInsertHeaders  {
      * @return xForwardedELBIP
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Forwarded-ELB-IP")
     public Boolean getXForwardedELBIP() {
         return xForwardedELBIP;
     }
@@ -76,7 +76,7 @@ public class ListenerInsertHeaders  {
      * @return xForwardedPort
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Forwarded-Port")
     public Boolean getXForwardedPort() {
         return xForwardedPort;
     }
@@ -98,7 +98,7 @@ public class ListenerInsertHeaders  {
      * @return xForwardedForPort
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Forwarded-For-Port")
     public Boolean getXForwardedForPort() {
         return xForwardedForPort;
     }
@@ -120,7 +120,7 @@ public class ListenerInsertHeaders  {
      * @return xForwardedHost
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Forwarded-Host")
     public Boolean getXForwardedHost() {
         return xForwardedHost;
     }

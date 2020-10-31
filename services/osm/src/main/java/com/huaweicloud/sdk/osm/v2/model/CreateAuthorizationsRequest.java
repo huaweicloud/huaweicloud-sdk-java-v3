@@ -83,7 +83,7 @@ public class CreateAuthorizationsRequest  {
      * @return xSite
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -105,7 +105,7 @@ public class CreateAuthorizationsRequest  {
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -127,7 +127,7 @@ public class CreateAuthorizationsRequest  {
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }

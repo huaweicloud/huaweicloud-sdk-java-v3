@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.cbr.v1.model.ImageData;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -147,7 +148,7 @@ public class BackupExtendInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_images_data")
     
-    private List<String> osImagesData = null;
+    private List<ImageData> osImagesData = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -287,13 +288,13 @@ public class BackupExtendInfo  {
         this.supportedRestoreMode = supportedRestoreMode;
     }
 
-    public BackupExtendInfo withOsImagesData(List<String> osImagesData) {
+    public BackupExtendInfo withOsImagesData(List<ImageData> osImagesData) {
         this.osImagesData = osImagesData;
         return this;
     }
 
     
-    public BackupExtendInfo addOsImagesDataItem(String osImagesDataItem) {
+    public BackupExtendInfo addOsImagesDataItem(ImageData osImagesDataItem) {
         if (this.osImagesData == null) {
             this.osImagesData = new ArrayList<>();
         }
@@ -301,7 +302,7 @@ public class BackupExtendInfo  {
         return this;
     }
 
-    public BackupExtendInfo withOsImagesData(Consumer<List<String>> osImagesDataSetter) {
+    public BackupExtendInfo withOsImagesData(Consumer<List<ImageData>> osImagesDataSetter) {
         if(this.osImagesData == null ){
             this.osImagesData = new ArrayList<>();
         }
@@ -313,11 +314,11 @@ public class BackupExtendInfo  {
      * 备份注册镜像ID列表
      * @return osImagesData
      */
-    public List<String> getOsImagesData() {
+    public List<ImageData> getOsImagesData() {
         return osImagesData;
     }
 
-    public void setOsImagesData(List<String> osImagesData) {
+    public void setOsImagesData(List<ImageData> osImagesData) {
         this.osImagesData = osImagesData;
     }
 

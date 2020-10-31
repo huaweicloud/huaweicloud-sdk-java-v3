@@ -1580,7 +1580,7 @@ public class ImageInfo  {
      * @return backupId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__backup_id")
     public String getBackupId() {
         return backupId;
     }
@@ -1602,7 +1602,7 @@ public class ImageInfo  {
      * @return dataOrigin
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__data_origin")
     public String getDataOrigin() {
         return dataOrigin;
     }
@@ -1624,7 +1624,7 @@ public class ImageInfo  {
      * @return description
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__description")
     public String getDescription() {
         return description;
     }
@@ -1646,7 +1646,7 @@ public class ImageInfo  {
      * @return imageLocation
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__image_location")
     public String getImageLocation() {
         return imageLocation;
     }
@@ -1668,7 +1668,7 @@ public class ImageInfo  {
      * @return imageSize
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__image_size")
     public String getImageSize() {
         return imageSize;
     }
@@ -1690,7 +1690,7 @@ public class ImageInfo  {
      * @return imageSourceType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__image_source_type")
     public ImageSourceTypeEnum getImageSourceType() {
         return imageSourceType;
     }
@@ -1712,7 +1712,7 @@ public class ImageInfo  {
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__imagetype")
     public ImagetypeEnum getImagetype() {
         return imagetype;
     }
@@ -1734,7 +1734,7 @@ public class ImageInfo  {
      * @return isConfigInit
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__is_config_init")
     public IsConfigInitEnum getIsConfigInit() {
         return isConfigInit;
     }
@@ -1756,7 +1756,7 @@ public class ImageInfo  {
      * @return isregistered
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__isregistered")
     public IsregisteredEnum getIsregistered() {
         return isregistered;
     }
@@ -1778,7 +1778,7 @@ public class ImageInfo  {
      * @return originalimagename
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__originalimagename")
     public String getOriginalimagename() {
         return originalimagename;
     }
@@ -1800,7 +1800,7 @@ public class ImageInfo  {
      * @return osBit
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_bit")
     public OsBitEnum getOsBit() {
         return osBit;
     }
@@ -1822,7 +1822,7 @@ public class ImageInfo  {
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -1844,7 +1844,7 @@ public class ImageInfo  {
      * @return osVersion
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_version")
     public String getOsVersion() {
         return osVersion;
     }
@@ -1866,7 +1866,7 @@ public class ImageInfo  {
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__platform")
     public PlatformEnum getPlatform() {
         return platform;
     }
@@ -1888,7 +1888,7 @@ public class ImageInfo  {
      * @return productcode
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__productcode")
     public String getProductcode() {
         return productcode;
     }
@@ -1910,7 +1910,7 @@ public class ImageInfo  {
      * @return supportDiskintensive
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_diskintensive")
     public String getSupportDiskintensive() {
         return supportDiskintensive;
     }
@@ -1932,7 +1932,7 @@ public class ImageInfo  {
      * @return supportHighperformance
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_highperformance")
     public String getSupportHighperformance() {
         return supportHighperformance;
     }
@@ -1954,7 +1954,7 @@ public class ImageInfo  {
      * @return supportKvm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm")
     public String getSupportKvm() {
         return supportKvm;
     }
@@ -1976,7 +1976,7 @@ public class ImageInfo  {
      * @return supportKvmGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm_gpu_type")
     public String getSupportKvmGpuType() {
         return supportKvmGpuType;
     }
@@ -1998,7 +1998,7 @@ public class ImageInfo  {
      * @return supportKvmInfiniband
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm_infiniband")
     public String getSupportKvmInfiniband() {
         return supportKvmInfiniband;
     }
@@ -2020,7 +2020,7 @@ public class ImageInfo  {
      * @return supportLargememory
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_largememory")
     public String getSupportLargememory() {
         return supportLargememory;
     }
@@ -2042,7 +2042,7 @@ public class ImageInfo  {
      * @return supportXen
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen")
     public String getSupportXen() {
         return supportXen;
     }
@@ -2064,7 +2064,7 @@ public class ImageInfo  {
      * @return supportXenGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen_gpu_type")
     public String getSupportXenGpuType() {
         return supportXenGpuType;
     }
@@ -2086,7 +2086,7 @@ public class ImageInfo  {
      * @return supportXenHana
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen_hana")
     public String getSupportXenHana() {
         return supportXenHana;
     }
@@ -2108,7 +2108,7 @@ public class ImageInfo  {
      * @return systemSupportMarket
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__system_support_market")
     public Boolean getSystemSupportMarket() {
         return systemSupportMarket;
     }
@@ -2583,7 +2583,7 @@ public class ImageInfo  {
      * @return supportFcInject
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_fc_inject")
     public SupportFcInjectEnum getSupportFcInject() {
         return supportFcInject;
     }
@@ -2625,7 +2625,7 @@ public class ImageInfo  {
      * @return supportArm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_arm")
     public SupportArmEnum getSupportArm() {
         return supportArm;
     }
@@ -2667,7 +2667,7 @@ public class ImageInfo  {
      * @return systemCmkid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__system__cmkid")
     public String getSystemCmkid() {
         return systemCmkid;
     }
@@ -2689,7 +2689,7 @@ public class ImageInfo  {
      * @return osFeatureList
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_feature_list")
     public String getOsFeatureList() {
         return osFeatureList;
     }
@@ -2711,7 +2711,7 @@ public class ImageInfo  {
      * @return accountCode
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__account_code")
     public String getAccountCode() {
         return accountCode;
     }

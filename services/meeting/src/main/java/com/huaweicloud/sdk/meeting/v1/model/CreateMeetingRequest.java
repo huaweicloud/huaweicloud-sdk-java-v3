@@ -75,7 +75,7 @@ public class CreateMeetingRequest  {
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -97,7 +97,7 @@ public class CreateMeetingRequest  {
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }

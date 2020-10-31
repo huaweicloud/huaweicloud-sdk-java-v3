@@ -20,11 +20,11 @@ public class VpcClient {
      * 批量创建辅助弹性网卡
      * 批量创建辅助弹性网卡
      *
-     * @param BatchCreateSubNetworkInterfaceV3Request 请求对象
-     * @return BatchCreateSubNetworkInterfaceV3Response
+     * @param BatchCreateSubNetworkInterfaceRequest 请求对象
+     * @return BatchCreateSubNetworkInterfaceResponse
      */
-    public BatchCreateSubNetworkInterfaceV3Response batchCreateSubNetworkInterfaceV3(BatchCreateSubNetworkInterfaceV3Request request) {
-        return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateSubNetworkInterfaceV3);
+    public BatchCreateSubNetworkInterfaceResponse batchCreateSubNetworkInterface(BatchCreateSubNetworkInterfaceRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateSubNetworkInterface);
     }
 
     /**

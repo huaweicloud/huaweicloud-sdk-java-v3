@@ -67,6 +67,21 @@ public class CtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withUri("/v3/{project_id}/quotas");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTracesRequest, ListTracesResponse> listTraces = genForlistTraces();
 
     private static HttpRequestDef<ListTracesRequest, ListTracesResponse> genForlistTraces() {

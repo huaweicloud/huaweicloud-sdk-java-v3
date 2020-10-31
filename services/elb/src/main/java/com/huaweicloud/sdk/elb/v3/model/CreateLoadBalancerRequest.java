@@ -20,38 +20,9 @@ public class CreateLoadBalancerRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Auth-Project-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String xAuthProjectToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private CreateLoadBalancerRequestBody body = null;
-
-    public CreateLoadBalancerRequest withXAuthProjectToken(String xAuthProjectToken) {
-        this.xAuthProjectToken = xAuthProjectToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get xAuthProjectToken
-     * @return xAuthProjectToken
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
-    public String getXAuthProjectToken() {
-        return xAuthProjectToken;
-    }
-
-    public void setXAuthProjectToken(String xAuthProjectToken) {
-        this.xAuthProjectToken = xAuthProjectToken;
-    }
 
     public CreateLoadBalancerRequest withBody(CreateLoadBalancerRequestBody body) {
         this.body = body;
@@ -88,18 +59,16 @@ public class CreateLoadBalancerRequest  {
             return false;
         }
         CreateLoadBalancerRequest createLoadBalancerRequest = (CreateLoadBalancerRequest) o;
-        return Objects.equals(this.xAuthProjectToken, createLoadBalancerRequest.xAuthProjectToken) &&
-            Objects.equals(this.body, createLoadBalancerRequest.body);
+        return Objects.equals(this.body, createLoadBalancerRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xAuthProjectToken, body);
+        return Objects.hash(body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateLoadBalancerRequest {\n");
-        sb.append("    xAuthProjectToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

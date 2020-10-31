@@ -48,7 +48,7 @@ public class ShowUserDetailRequest  {
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }

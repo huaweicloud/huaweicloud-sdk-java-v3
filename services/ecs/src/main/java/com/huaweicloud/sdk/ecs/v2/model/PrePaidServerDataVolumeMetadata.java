@@ -42,7 +42,7 @@ public class PrePaidServerDataVolumeMetadata  {
      * @return systemEncrypted
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__system__encrypted")
     public String getSystemEncrypted() {
         return systemEncrypted;
     }
@@ -64,7 +64,7 @@ public class PrePaidServerDataVolumeMetadata  {
      * @return systemCmkid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__system__cmkid")
     public String getSystemCmkid() {
         return systemCmkid;
     }

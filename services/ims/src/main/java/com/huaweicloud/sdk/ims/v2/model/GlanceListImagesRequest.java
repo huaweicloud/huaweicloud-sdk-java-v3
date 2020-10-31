@@ -892,7 +892,7 @@ public class GlanceListImagesRequest  {
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__imagetype")
     public ImagetypeEnum getImagetype() {
         return imagetype;
     }
@@ -914,7 +914,7 @@ public class GlanceListImagesRequest  {
      * @return isregistered
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__isregistered")
     public Boolean getIsregistered() {
         return isregistered;
     }
@@ -936,7 +936,7 @@ public class GlanceListImagesRequest  {
      * @return osBit
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_bit")
     public OsBitEnum getOsBit() {
         return osBit;
     }
@@ -958,7 +958,7 @@ public class GlanceListImagesRequest  {
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -980,7 +980,7 @@ public class GlanceListImagesRequest  {
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__platform")
     public PlatformEnum getPlatform() {
         return platform;
     }
@@ -1002,7 +1002,7 @@ public class GlanceListImagesRequest  {
      * @return supportDiskintensive
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_diskintensive")
     public String getSupportDiskintensive() {
         return supportDiskintensive;
     }
@@ -1024,7 +1024,7 @@ public class GlanceListImagesRequest  {
      * @return supportHighperformance
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_highperformance")
     public String getSupportHighperformance() {
         return supportHighperformance;
     }
@@ -1046,7 +1046,7 @@ public class GlanceListImagesRequest  {
      * @return supportKvm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm")
     public String getSupportKvm() {
         return supportKvm;
     }
@@ -1068,7 +1068,7 @@ public class GlanceListImagesRequest  {
      * @return supportKvmGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm_gpu_type")
     public String getSupportKvmGpuType() {
         return supportKvmGpuType;
     }
@@ -1090,7 +1090,7 @@ public class GlanceListImagesRequest  {
      * @return supportKvmInfiniband
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_kvm_infiniband")
     public String getSupportKvmInfiniband() {
         return supportKvmInfiniband;
     }
@@ -1112,7 +1112,7 @@ public class GlanceListImagesRequest  {
      * @return supportLargememory
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_largememory")
     public String getSupportLargememory() {
         return supportLargememory;
     }
@@ -1134,7 +1134,7 @@ public class GlanceListImagesRequest  {
      * @return supportXen
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen")
     public String getSupportXen() {
         return supportXen;
     }
@@ -1156,7 +1156,7 @@ public class GlanceListImagesRequest  {
      * @return supportXenGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen_gpu_type")
     public String getSupportXenGpuType() {
         return supportXenGpuType;
     }
@@ -1178,7 +1178,7 @@ public class GlanceListImagesRequest  {
      * @return supportXenHana
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="__support_xen_hana")
     public String getSupportXenHana() {
         return supportXenHana;
     }

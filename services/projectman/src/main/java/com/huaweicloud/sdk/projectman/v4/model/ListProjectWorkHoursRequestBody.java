@@ -59,13 +59,13 @@ public class ListProjectWorkHoursRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private String offset;
+    private Integer offset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
-    private String limit;
+    private Integer limit;
 
     public ListProjectWorkHoursRequestBody withProjectIds(List<String> projectIds) {
         this.projectIds = projectIds;
@@ -215,7 +215,7 @@ public class ListProjectWorkHoursRequestBody  {
         this.endTime = endTime;
     }
 
-    public ListProjectWorkHoursRequestBody withOffset(String offset) {
+    public ListProjectWorkHoursRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -227,15 +227,15 @@ public class ListProjectWorkHoursRequestBody  {
      * 偏移量
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ListProjectWorkHoursRequestBody withLimit(String limit) {
+    public ListProjectWorkHoursRequestBody withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -247,11 +247,11 @@ public class ListProjectWorkHoursRequestBody  {
      * 每页显示数量，每页最多显示100条
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
     @Override

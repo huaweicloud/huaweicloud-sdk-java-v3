@@ -318,6 +318,112 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLoginTokenRequest, CreateLoginTokenResponse> createLoginToken = genForcreateLoginToken();
+
+    private static HttpRequestDef<CreateLoginTokenRequest, CreateLoginTokenResponse> genForcreateLoginToken() {
+        // basic
+        HttpRequestDef.Builder<CreateLoginTokenRequest, CreateLoginTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLoginTokenRequest.class, CreateLoginTokenResponse.class)
+                .withUri("/v3.0/OS-AUTH/securitytoken/logintokens")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateLoginTokenRequestBody.class,
+            f -> f.withMarshaller(CreateLoginTokenRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-Subject-LoginToken",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                CreateLoginTokenResponse::getXSubjectLoginToken,
+                CreateLoginTokenResponse::setXSubjectLoginToken)
+        );
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMetadataRequest, CreateMetadataResponse> createMetadata = genForcreateMetadata();
+
+    private static HttpRequestDef<CreateMetadataRequest, CreateMetadataResponse> genForcreateMetadata() {
+        // basic
+        HttpRequestDef.Builder<CreateMetadataRequest, CreateMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMetadataRequest.class, CreateMetadataResponse.class)
+                .withUri("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateMetadataRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateMetadataRequest::getProtocolId, (req, v) -> {
+                req.setProtocolId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateMetadataRequestBody.class,
+            f -> f.withMarshaller(CreateMetadataRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> createUnscopeTokenByIdpInitiated = genForcreateUnscopeTokenByIdpInitiated();
+
+    private static HttpRequestDef<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> genForcreateUnscopeTokenByIdpInitiated() {
+        // basic
+        HttpRequestDef.Builder<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateUnscopeTokenByIdpInitiatedRequest.class, CreateUnscopeTokenByIdpInitiatedResponse.class)
+                .withUri("/v3.0/OS-FEDERATION/tokens")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.withRequestField("X-Idp-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateUnscopeTokenByIdpInitiatedRequest::getXIdpId, (req, v) -> {
+                req.setXIdpId(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                CreateUnscopeTokenByIdpInitiatedResponse::getXSubjectToken,
+                CreateUnscopeTokenByIdpInitiatedResponse::setXSubjectToken)
+        );
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgency = genFordeleteAgency();
 
     private static HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> genFordeleteAgency() {
@@ -645,6 +751,70 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> keystoneCreateIdentityProvider = genForkeystoneCreateIdentityProvider();
+
+    private static HttpRequestDef<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> genForkeystoneCreateIdentityProvider() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, KeystoneCreateIdentityProviderRequest.class, KeystoneCreateIdentityProviderResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCreateIdentityProviderRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateIdentityProviderRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateIdentityProviderRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> keystoneCreateMapping = genForkeystoneCreateMapping();
+
+    private static HttpRequestDef<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> genForkeystoneCreateMapping() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, KeystoneCreateMappingRequest.class, KeystoneCreateMappingResponse.class)
+                .withUri("/v3/OS-FEDERATION/mappings/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCreateMappingRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateMappingRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateMappingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> keystoneCreateProject = genForkeystoneCreateProject();
 
     private static HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> genForkeystoneCreateProject() {
@@ -669,6 +839,79 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> keystoneCreateProtocol = genForkeystoneCreateProtocol();
+
+    private static HttpRequestDef<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> genForkeystoneCreateProtocol() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, KeystoneCreateProtocolRequest.class, KeystoneCreateProtocolResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getProtocolId, (req, v) -> {
+                req.setProtocolId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateProtocolRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateProtocolRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> keystoneCreateScopedToken = genForkeystoneCreateScopedToken();
+
+    private static HttpRequestDef<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> genForkeystoneCreateScopedToken() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateScopedTokenRequest.class, KeystoneCreateScopedTokenResponse.class)
+                .withUri("/v3/auth/tokens")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateScopedTokenRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateScopedTokenRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                KeystoneCreateScopedTokenResponse::getXSubjectToken,
+                KeystoneCreateScopedTokenResponse::setXSubjectToken)
+        );
+        return builder.build();
+    }
+
     public static final HttpRequestDef<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> keystoneDeleteGroup = genForkeystoneDeleteGroup();
 
     private static HttpRequestDef<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> genForkeystoneDeleteGroup() {
@@ -684,6 +927,83 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(KeystoneDeleteGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> keystoneDeleteIdentityProvider = genForkeystoneDeleteIdentityProvider();
+
+    private static HttpRequestDef<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> genForkeystoneDeleteIdentityProvider() {
+        // basic
+        HttpRequestDef.Builder<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteIdentityProviderRequest.class, KeystoneDeleteIdentityProviderResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{id}");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneDeleteIdentityProviderRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> keystoneDeleteMapping = genForkeystoneDeleteMapping();
+
+    private static HttpRequestDef<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> genForkeystoneDeleteMapping() {
+        // basic
+        HttpRequestDef.Builder<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteMappingRequest.class, KeystoneDeleteMappingResponse.class)
+                .withUri("/v3/OS-FEDERATION/mappings/{id}");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneDeleteMappingRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> keystoneDeleteProtocol = genForkeystoneDeleteProtocol();
+
+    private static HttpRequestDef<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> genForkeystoneDeleteProtocol() {
+        // basic
+        HttpRequestDef.Builder<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteProtocolRequest.class, KeystoneDeleteProtocolResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneDeleteProtocolRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneDeleteProtocolRequest::getProtocolId, (req, v) -> {
+                req.setProtocolId(v);
             })
         );
 
@@ -809,6 +1129,36 @@ public class IamMeta {
                 req.setName(v);
             })
         );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> keystoneListIdentityProviders = genForkeystoneListIdentityProviders();
+
+    private static HttpRequestDef<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> genForkeystoneListIdentityProviders() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListIdentityProvidersRequest.class, KeystoneListIdentityProvidersResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListMappingsRequest, KeystoneListMappingsResponse> keystoneListMappings = genForkeystoneListMappings();
+
+    private static HttpRequestDef<KeystoneListMappingsRequest, KeystoneListMappingsResponse> genForkeystoneListMappings() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListMappingsRequest, KeystoneListMappingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListMappingsRequest.class, KeystoneListMappingsResponse.class)
+                .withUri("/v3/OS-FEDERATION/mappings");
+
+        // requests
 
         // response
 
@@ -963,6 +1313,29 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(KeystoneListProjectsForUserRequest::getUserId, (req, v) -> {
                 req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> keystoneListProtocols = genForkeystoneListProtocols();
+
+    private static HttpRequestDef<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> genForkeystoneListProtocols() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListProtocolsRequest.class, KeystoneListProtocolsResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListProtocolsRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
             })
         );
 
@@ -1217,6 +1590,52 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> keystoneShowIdentityProvider = genForkeystoneShowIdentityProvider();
+
+    private static HttpRequestDef<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> genForkeystoneShowIdentityProvider() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowIdentityProviderRequest.class, KeystoneShowIdentityProviderResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{id}");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowIdentityProviderRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowMappingRequest, KeystoneShowMappingResponse> keystoneShowMapping = genForkeystoneShowMapping();
+
+    private static HttpRequestDef<KeystoneShowMappingRequest, KeystoneShowMappingResponse> genForkeystoneShowMapping() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowMappingRequest, KeystoneShowMappingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowMappingRequest.class, KeystoneShowMappingResponse.class)
+                .withUri("/v3/OS-FEDERATION/mappings/{id}");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowMappingRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> keystoneShowPermission = genForkeystoneShowPermission();
 
     private static HttpRequestDef<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> genForkeystoneShowPermission() {
@@ -1255,6 +1674,37 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(KeystoneShowProjectRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> keystoneShowProtocol = genForkeystoneShowProtocol();
+
+    private static HttpRequestDef<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> genForkeystoneShowProtocol() {
+        // basic
+        HttpRequestDef.Builder<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneShowProtocolRequest.class, KeystoneShowProtocolResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowProtocolRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneShowProtocolRequest::getProtocolId, (req, v) -> {
+                req.setProtocolId(v);
             })
         );
 
@@ -1410,6 +1860,70 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> keystoneUpdateIdentityProvider = genForkeystoneUpdateIdentityProvider();
+
+    private static HttpRequestDef<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> genForkeystoneUpdateIdentityProvider() {
+        // basic
+        HttpRequestDef.Builder<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateIdentityProviderRequest.class, KeystoneUpdateIdentityProviderResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateIdentityProviderRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneUpdateIdentityProviderRequestBody.class,
+            f -> f.withMarshaller(KeystoneUpdateIdentityProviderRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> keystoneUpdateMapping = genForkeystoneUpdateMapping();
+
+    private static HttpRequestDef<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> genForkeystoneUpdateMapping() {
+        // basic
+        HttpRequestDef.Builder<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateMappingRequest.class, KeystoneUpdateMappingResponse.class)
+                .withUri("/v3/OS-FEDERATION/mappings/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateMappingRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneUpdateMappingRequestBody.class,
+            f -> f.withMarshaller(KeystoneUpdateMappingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> keystoneUpdateProject = genForkeystoneUpdateProject();
 
     private static HttpRequestDef<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> genForkeystoneUpdateProject() {
@@ -1433,6 +1947,46 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             KeystoneUpdateProjectRequestBody.class,
             f -> f.withMarshaller(KeystoneUpdateProjectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> keystoneUpdateProtocol = genForkeystoneUpdateProtocol();
+
+    private static HttpRequestDef<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> genForkeystoneUpdateProtocol() {
+        // basic
+        HttpRequestDef.Builder<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateProtocolRequest.class, KeystoneUpdateProtocolResponse.class)
+                .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getProtocolId, (req, v) -> {
+                req.setProtocolId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneUpdateProtocolRequestBody.class,
+            f -> f.withMarshaller(KeystoneUpdateProtocolRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -1890,6 +2444,37 @@ public class IamMeta {
             ShowDomainQuotaRequest.TypeEnum.class,
             f -> f.withMarshaller(ShowDomainQuotaRequest::getType, (req, v) -> {
                 req.setType(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> showMetadata = genForshowMetadata();
+
+    private static HttpRequestDef<ShowMetadataRequest, ShowMetadataResponse> genForshowMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowMetadataRequest, ShowMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMetadataRequest.class, ShowMetadataResponse.class)
+                .withUri("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata");
+
+        // requests
+        builder.withRequestField("idp_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowMetadataRequest::getIdpId, (req, v) -> {
+                req.setIdpId(v);
+            })
+        );
+        builder.withRequestField("protocol_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowMetadataRequest::getProtocolId, (req, v) -> {
+                req.setProtocolId(v);
             })
         );
 
@@ -2793,6 +3378,169 @@ public class IamMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> keystoneCreateAgencyToken = genForkeystoneCreateAgencyToken();
+
+    private static HttpRequestDef<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> genForkeystoneCreateAgencyToken() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateAgencyTokenRequest.class, KeystoneCreateAgencyTokenResponse.class)
+                .withUri("/v3/auth/tokens")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("nocatalog",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneCreateAgencyTokenRequest::getNocatalog, (req, v) -> {
+                req.setNocatalog(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateAgencyTokenRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateAgencyTokenRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                KeystoneCreateAgencyTokenResponse::getXSubjectToken,
+                KeystoneCreateAgencyTokenResponse::setXSubjectToken)
+        );
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> keystoneCreateUserTokenByPassword = genForkeystoneCreateUserTokenByPassword();
+
+    private static HttpRequestDef<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> genForkeystoneCreateUserTokenByPassword() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserTokenByPasswordRequest.class, KeystoneCreateUserTokenByPasswordResponse.class)
+                .withUri("/v3/auth/tokens")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("nocatalog",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordRequest::getNocatalog, (req, v) -> {
+                req.setNocatalog(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateUserTokenByPasswordRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                KeystoneCreateUserTokenByPasswordResponse::getXSubjectToken,
+                KeystoneCreateUserTokenByPasswordResponse::setXSubjectToken)
+        );
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> keystoneCreateUserTokenByPasswordAndMfa = genForkeystoneCreateUserTokenByPasswordAndMfa();
+
+    private static HttpRequestDef<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> genForkeystoneCreateUserTokenByPasswordAndMfa() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserTokenByPasswordAndMfaRequest.class, KeystoneCreateUserTokenByPasswordAndMfaResponse.class)
+                .withUri("/v3/auth/tokens")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("nocatalog",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordAndMfaRequest::getNocatalog, (req, v) -> {
+                req.setNocatalog(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            KeystoneCreateUserTokenByPasswordAndMfaRequestBody.class,
+            f -> f.withMarshaller(KeystoneCreateUserTokenByPasswordAndMfaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                KeystoneCreateUserTokenByPasswordAndMfaResponse::getXSubjectToken,
+                KeystoneCreateUserTokenByPasswordAndMfaResponse::setXSubjectToken)
+        );
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> keystoneValidateToken = genForkeystoneValidateToken();
+
+    private static HttpRequestDef<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> genForkeystoneValidateToken() {
+        // basic
+        HttpRequestDef.Builder<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneValidateTokenRequest.class, KeystoneValidateTokenResponse.class)
+                .withUri("/v3/auth/tokens");
+
+        // requests
+        builder.withRequestField("nocatalog",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneValidateTokenRequest::getNocatalog, (req, v) -> {
+                req.setNocatalog(v);
+            })
+        );
+        builder.withRequestField("X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneValidateTokenRequest::getXSubjectToken, (req, v) -> {
+                req.setXSubjectToken(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                KeystoneValidateTokenResponse::getXSubjectToken,
+                KeystoneValidateTokenResponse::setXSubjectToken)
+        );
         return builder.build();
     }
 

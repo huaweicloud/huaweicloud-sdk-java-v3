@@ -182,7 +182,7 @@ public class DataBucketQuery  {
     }
 
     /**
-     * Get dataEvent
+     * 数据类追踪器追踪对象的桶名。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。 - 追踪器一旦创建追踪桶无法修改。
      * @return dataEvent
      */
     public List<DataEventEnum> getDataEvent() {

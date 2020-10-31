@@ -1,0 +1,88 @@
+package com.huaweicloud.sdk.iam.v3.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.iam.v3.model.ProtocolOption;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * 
+ */
+public class KeystoneUpdateProtocolRequestBody  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="protocol")
+    
+    private ProtocolOption protocol = null;
+
+    public KeystoneUpdateProtocolRequestBody withProtocol(ProtocolOption protocol) {
+        this.protocol = protocol;
+        return this;
+    }
+
+    public KeystoneUpdateProtocolRequestBody withProtocol(Consumer<ProtocolOption> protocolSetter) {
+        if(this.protocol == null ){
+            this.protocol = new ProtocolOption();
+            protocolSetter.accept(this.protocol);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get protocol
+     * @return protocol
+     */
+    public ProtocolOption getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(ProtocolOption protocol) {
+        this.protocol = protocol;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        KeystoneUpdateProtocolRequestBody keystoneUpdateProtocolRequestBody = (KeystoneUpdateProtocolRequestBody) o;
+        return Objects.equals(this.protocol, keystoneUpdateProtocolRequestBody.protocol);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(protocol);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class KeystoneUpdateProtocolRequestBody {\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

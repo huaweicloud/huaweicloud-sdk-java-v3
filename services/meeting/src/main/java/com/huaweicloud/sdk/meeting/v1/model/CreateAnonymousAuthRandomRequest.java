@@ -63,7 +63,7 @@ public class CreateAnonymousAuthRandomRequest  {
      * @return xPassword
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Password")
     public String getXPassword() {
         return xPassword;
     }

@@ -21,10 +21,10 @@ public class CountPreoccupyIpNumRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l7_flavor_id")
+    @JsonProperty(value="availability_zone_id")
     
-    private String l7FlavorId;
-
+    private List<String> availabilityZoneId = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_target_enable")
@@ -39,34 +39,48 @@ public class CountPreoccupyIpNumRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="l7_flavor_id")
+    
+    private String l7FlavorId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancer_id")
     
     private String loadbalancerId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone_id")
-    
-    private List<String> availabilityZoneId = null;
-    
-    public CountPreoccupyIpNumRequest withL7FlavorId(String l7FlavorId) {
-        this.l7FlavorId = l7FlavorId;
+    public CountPreoccupyIpNumRequest withAvailabilityZoneId(List<String> availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
         return this;
     }
 
     
-
-
-    /**
-     * Get l7FlavorId
-     * @return l7FlavorId
-     */
-    public String getL7FlavorId() {
-        return l7FlavorId;
+    public CountPreoccupyIpNumRequest addAvailabilityZoneIdItem(String availabilityZoneIdItem) {
+        if (this.availabilityZoneId == null) {
+            this.availabilityZoneId = new ArrayList<>();
+        }
+        this.availabilityZoneId.add(availabilityZoneIdItem);
+        return this;
     }
 
-    public void setL7FlavorId(String l7FlavorId) {
-        this.l7FlavorId = l7FlavorId;
+    public CountPreoccupyIpNumRequest withAvailabilityZoneId(Consumer<List<String>> availabilityZoneIdSetter) {
+        if(this.availabilityZoneId == null ){
+            this.availabilityZoneId = new ArrayList<>();
+        }
+        availabilityZoneIdSetter.accept(this.availabilityZoneId);
+        return this;
+    }
+
+    /**
+     * Get availabilityZoneId
+     * @return availabilityZoneId
+     */
+    public List<String> getAvailabilityZoneId() {
+        return availabilityZoneId;
+    }
+
+    public void setAvailabilityZoneId(List<String> availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
     }
 
     public CountPreoccupyIpNumRequest withIpTargetEnable(Boolean ipTargetEnable) {
@@ -109,6 +123,26 @@ public class CountPreoccupyIpNumRequest  {
         this.ipVersion = ipVersion;
     }
 
+    public CountPreoccupyIpNumRequest withL7FlavorId(String l7FlavorId) {
+        this.l7FlavorId = l7FlavorId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get l7FlavorId
+     * @return l7FlavorId
+     */
+    public String getL7FlavorId() {
+        return l7FlavorId;
+    }
+
+    public void setL7FlavorId(String l7FlavorId) {
+        this.l7FlavorId = l7FlavorId;
+    }
+
     public CountPreoccupyIpNumRequest withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
@@ -128,40 +162,6 @@ public class CountPreoccupyIpNumRequest  {
     public void setLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
     }
-
-    public CountPreoccupyIpNumRequest withAvailabilityZoneId(List<String> availabilityZoneId) {
-        this.availabilityZoneId = availabilityZoneId;
-        return this;
-    }
-
-    
-    public CountPreoccupyIpNumRequest addAvailabilityZoneIdItem(String availabilityZoneIdItem) {
-        if (this.availabilityZoneId == null) {
-            this.availabilityZoneId = new ArrayList<>();
-        }
-        this.availabilityZoneId.add(availabilityZoneIdItem);
-        return this;
-    }
-
-    public CountPreoccupyIpNumRequest withAvailabilityZoneId(Consumer<List<String>> availabilityZoneIdSetter) {
-        if(this.availabilityZoneId == null ){
-            this.availabilityZoneId = new ArrayList<>();
-        }
-        availabilityZoneIdSetter.accept(this.availabilityZoneId);
-        return this;
-    }
-
-    /**
-     * Get availabilityZoneId
-     * @return availabilityZoneId
-     */
-    public List<String> getAvailabilityZoneId() {
-        return availabilityZoneId;
-    }
-
-    public void setAvailabilityZoneId(List<String> availabilityZoneId) {
-        this.availabilityZoneId = availabilityZoneId;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -171,25 +171,25 @@ public class CountPreoccupyIpNumRequest  {
             return false;
         }
         CountPreoccupyIpNumRequest countPreoccupyIpNumRequest = (CountPreoccupyIpNumRequest) o;
-        return Objects.equals(this.l7FlavorId, countPreoccupyIpNumRequest.l7FlavorId) &&
+        return Objects.equals(this.availabilityZoneId, countPreoccupyIpNumRequest.availabilityZoneId) &&
             Objects.equals(this.ipTargetEnable, countPreoccupyIpNumRequest.ipTargetEnable) &&
             Objects.equals(this.ipVersion, countPreoccupyIpNumRequest.ipVersion) &&
-            Objects.equals(this.loadbalancerId, countPreoccupyIpNumRequest.loadbalancerId) &&
-            Objects.equals(this.availabilityZoneId, countPreoccupyIpNumRequest.availabilityZoneId);
+            Objects.equals(this.l7FlavorId, countPreoccupyIpNumRequest.l7FlavorId) &&
+            Objects.equals(this.loadbalancerId, countPreoccupyIpNumRequest.loadbalancerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(l7FlavorId, ipTargetEnable, ipVersion, loadbalancerId, availabilityZoneId);
+        return Objects.hash(availabilityZoneId, ipTargetEnable, ipVersion, l7FlavorId, loadbalancerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CountPreoccupyIpNumRequest {\n");
-        sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
+        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
-        sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

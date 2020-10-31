@@ -39,6 +39,17 @@ public class CesClient {
     }
 
     /**
+     * 创建自定义告警模板
+     * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持10指标的批量查询。
+     *
+     * @param CreateAlarmTemplateRequest 请求对象
+     * @return CreateAlarmTemplateResponse
+     */
+    public CreateAlarmTemplateResponse createAlarmTemplate(CreateAlarmTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.createAlarmTemplate);
+    }
+
+    /**
      * 上报事件
      * 上报自定义事件。
      *
@@ -69,6 +80,39 @@ public class CesClient {
      */
     public DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.deleteAlarm);
+    }
+
+    /**
+     * 删除自定义告警模板
+     * 根据ID删除自定义告警模板。
+     *
+     * @param DeleteAlarmTemplateRequest 请求对象
+     * @return DeleteAlarmTemplateResponse
+     */
+    public DeleteAlarmTemplateResponse deleteAlarmTemplate(DeleteAlarmTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.deleteAlarmTemplate);
+    }
+
+    /**
+     * 查询告警历史
+     * 查询告警历史列表。
+     *
+     * @param ListAlarmHistoriesRequest 请求对象
+     * @return ListAlarmHistoriesResponse
+     */
+    public ListAlarmHistoriesResponse listAlarmHistories(ListAlarmHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.listAlarmHistories);
+    }
+
+    /**
+     * 查询自定义告警模板列表
+     * 查询自定义告警模板列表
+     *
+     * @param ListAlarmTemplatesRequest 请求对象
+     * @return ListAlarmTemplatesResponse
+     */
+    public ListAlarmTemplatesResponse listAlarmTemplates(ListAlarmTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.listAlarmTemplates);
     }
 
     /**
@@ -138,6 +182,17 @@ public class CesClient {
     }
 
     /**
+     * 查询资源分组下的资源
+     * 根据资源分组ID查询资源分组下的资源。
+     *
+     * @param ShowResourceGroupRequest 请求对象
+     * @return ShowResourceGroupResponse
+     */
+    public ShowResourceGroupResponse showResourceGroup(ShowResourceGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.showResourceGroup);
+    }
+
+    /**
      * 启停告警规则
      * 启动或停止一条告警规则。
      *
@@ -146,6 +201,17 @@ public class CesClient {
      */
     public UpdateAlarmActionResponse updateAlarmAction(UpdateAlarmActionRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.updateAlarmAction);
+    }
+
+    /**
+     * 更新自定义告警模板
+     * 更新自定义告警模板。
+     *
+     * @param UpdateAlarmTemplateRequest 请求对象
+     * @return UpdateAlarmTemplateResponse
+     */
+    public UpdateAlarmTemplateResponse updateAlarmTemplate(UpdateAlarmTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.updateAlarmTemplate);
     }
 
 }

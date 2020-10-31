@@ -12,12 +12,12 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class EpsMeta {
 
-    public static final HttpRequestDef<CreateEPRequest, CreateEPResponse> createEP = genForcreateEP();
+    public static final HttpRequestDef<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> createEnterpriseProject = genForcreateEnterpriseProject();
 
-    private static HttpRequestDef<CreateEPRequest, CreateEPResponse> genForcreateEP() {
+    private static HttpRequestDef<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> genForcreateEnterpriseProject() {
         // basic
-        HttpRequestDef.Builder<CreateEPRequest, CreateEPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateEPRequest.class, CreateEPResponse.class)
+        HttpRequestDef.Builder<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEnterpriseProjectRequest.class, CreateEnterpriseProjectResponse.class)
                 .withUri("/v1.0/enterprise-projects")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -26,7 +26,7 @@ public class EpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             EnterpriseProject.class,
-            f -> f.withMarshaller(CreateEPRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(CreateEnterpriseProjectRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -36,12 +36,12 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DisableEPRequest, DisableEPResponse> disableEP = genFordisableEP();
+    public static final HttpRequestDef<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> disableEnterpriseProject = genFordisableEnterpriseProject();
 
-    private static HttpRequestDef<DisableEPRequest, DisableEPResponse> genFordisableEP() {
+    private static HttpRequestDef<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> genFordisableEnterpriseProject() {
         // basic
-        HttpRequestDef.Builder<DisableEPRequest, DisableEPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DisableEPRequest.class, DisableEPResponse.class)
+        HttpRequestDef.Builder<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableEnterpriseProjectRequest.class, DisableEnterpriseProjectResponse.class)
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -50,7 +50,7 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(DisableEPRequest::getEnterpriseProjectId, (req, v) -> {
+            f -> f.withMarshaller(DisableEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
         );
@@ -58,7 +58,7 @@ public class EpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             DisableAction.class,
-            f -> f.withMarshaller(DisableEPRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(DisableEnterpriseProjectRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -68,12 +68,12 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<EnableEPRequest, EnableEPResponse> enableEP = genForenableEP();
+    public static final HttpRequestDef<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> enableEnterpriseProject = genForenableEnterpriseProject();
 
-    private static HttpRequestDef<EnableEPRequest, EnableEPResponse> genForenableEP() {
+    private static HttpRequestDef<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> genForenableEnterpriseProject() {
         // basic
-        HttpRequestDef.Builder<EnableEPRequest, EnableEPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, EnableEPRequest.class, EnableEPResponse.class)
+        HttpRequestDef.Builder<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableEnterpriseProjectRequest.class, EnableEnterpriseProjectResponse.class)
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -82,7 +82,7 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(EnableEPRequest::getEnterpriseProjectId, (req, v) -> {
+            f -> f.withMarshaller(EnableEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
         );
@@ -90,7 +90,7 @@ public class EpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             EnableAction.class,
-            f -> f.withMarshaller(EnableEPRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(EnableEnterpriseProjectRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -115,12 +115,12 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEPRequest, ListEPResponse> listEP = genForlistEP();
+    public static final HttpRequestDef<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> listEnterpriseProject = genForlistEnterpriseProject();
 
-    private static HttpRequestDef<ListEPRequest, ListEPResponse> genForlistEP() {
+    private static HttpRequestDef<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> genForlistEnterpriseProject() {
         // basic
-        HttpRequestDef.Builder<ListEPRequest, ListEPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListEPRequest.class, ListEPResponse.class)
+        HttpRequestDef.Builder<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseProjectRequest.class, ListEnterpriseProjectResponse.class)
                 .withUri("/v1.0/enterprise-projects");
 
         // requests
@@ -128,56 +128,56 @@ public class EpsMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListEPRequest::getId, (req, v) -> {
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListEPRequest::getName, (req, v) -> {
-                req.setName(v);
-            })
-        );
-        builder.withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListEPRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
             })
         );
         builder.withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ListEPRequest::getLimit, (req, v) -> {
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getName, (req, v) -> {
+                req.setName(v);
             })
         );
         builder.withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             Integer.class,
-            f -> f.withMarshaller(ListEPRequest::getOffset, (req, v) -> {
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("sort_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListEPRequest.SortKeyEnum.class,
-            f -> f.withMarshaller(ListEPRequest::getSortKey, (req, v) -> {
-                req.setSortKey(v);
             })
         );
         builder.withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListEPRequest.SortDirEnum.class,
-            f -> f.withMarshaller(ListEPRequest::getSortDir, (req, v) -> {
+            ListEnterpriseProjectRequest.SortDirEnum.class,
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
+            })
+        );
+        builder.withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListEnterpriseProjectRequest.SortKeyEnum.class,
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
             })
         );
 
@@ -218,12 +218,12 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ModifyEPRequest, ModifyEPResponse> modifyEP = genFormodifyEP();
+    public static final HttpRequestDef<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> modifyEnterpriseProject = genFormodifyEnterpriseProject();
 
-    private static HttpRequestDef<ModifyEPRequest, ModifyEPResponse> genFormodifyEP() {
+    private static HttpRequestDef<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> genFormodifyEnterpriseProject() {
         // basic
-        HttpRequestDef.Builder<ModifyEPRequest, ModifyEPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyEPRequest.class, ModifyEPResponse.class)
+        HttpRequestDef.Builder<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyEnterpriseProjectRequest.class, ModifyEnterpriseProjectResponse.class)
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -232,7 +232,7 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ModifyEPRequest::getEnterpriseProjectId, (req, v) -> {
+            f -> f.withMarshaller(ModifyEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
         );
@@ -240,7 +240,7 @@ public class EpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             EnterpriseProject.class,
-            f -> f.withMarshaller(ModifyEPRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(ModifyEnterpriseProjectRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -273,12 +273,12 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEPRequest, ShowEPResponse> showEP = genForshowEP();
+    public static final HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> showEnterpriseProject = genForshowEnterpriseProject();
 
-    private static HttpRequestDef<ShowEPRequest, ShowEPResponse> genForshowEP() {
+    private static HttpRequestDef<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> genForshowEnterpriseProject() {
         // basic
-        HttpRequestDef.Builder<ShowEPRequest, ShowEPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowEPRequest.class, ShowEPResponse.class)
+        HttpRequestDef.Builder<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEnterpriseProjectRequest.class, ShowEnterpriseProjectResponse.class)
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}");
 
         // requests
@@ -286,7 +286,7 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowEPRequest::getEnterpriseProjectId, (req, v) -> {
+            f -> f.withMarshaller(ShowEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
         );
@@ -296,12 +296,12 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEPQuotaRequest, ShowEPQuotaResponse> showEPQuota = genForshowEPQuota();
+    public static final HttpRequestDef<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuota = genForshowEnterpriseProjectQuota();
 
-    private static HttpRequestDef<ShowEPQuotaRequest, ShowEPQuotaResponse> genForshowEPQuota() {
+    private static HttpRequestDef<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> genForshowEnterpriseProjectQuota() {
         // basic
-        HttpRequestDef.Builder<ShowEPQuotaRequest, ShowEPQuotaResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowEPQuotaRequest.class, ShowEPQuotaResponse.class)
+        HttpRequestDef.Builder<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEnterpriseProjectQuotaRequest.class, ShowEnterpriseProjectQuotaResponse.class)
                 .withUri("/v1.0/enterprise-projects/quotas");
 
         // requests
@@ -311,12 +311,12 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResourceBindEPRequest, ShowResourceBindEPResponse> showResourceBindEP = genForshowResourceBindEP();
+    public static final HttpRequestDef<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProject = genForshowResourceBindEnterpriseProject();
 
-    private static HttpRequestDef<ShowResourceBindEPRequest, ShowResourceBindEPResponse> genForshowResourceBindEP() {
+    private static HttpRequestDef<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> genForshowResourceBindEnterpriseProject() {
         // basic
-        HttpRequestDef.Builder<ShowResourceBindEPRequest, ShowResourceBindEPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ShowResourceBindEPRequest.class, ShowResourceBindEPResponse.class)
+        HttpRequestDef.Builder<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowResourceBindEnterpriseProjectRequest.class, ShowResourceBindEnterpriseProjectResponse.class)
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -325,7 +325,7 @@ public class EpsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowResourceBindEPRequest::getEnterpriseProjectId, (req, v) -> {
+            f -> f.withMarshaller(ShowResourceBindEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
         );
@@ -333,7 +333,7 @@ public class EpsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             ResqEpResouce.class,
-            f -> f.withMarshaller(ShowResourceBindEPRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(ShowResourceBindEnterpriseProjectRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

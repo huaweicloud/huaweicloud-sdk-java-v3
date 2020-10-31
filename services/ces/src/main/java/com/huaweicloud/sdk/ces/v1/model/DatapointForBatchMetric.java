@@ -19,15 +19,79 @@ public class DatapointForBatchMetric  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="max")
+    
+    private Double max;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="min")
+    
+    private Double min;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="average")
     
     private Double average;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sum")
+    
+    private Double sum;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="variance")
+    
+    private String variance;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timestamp")
     
     private Long timestamp;
+
+    public DatapointForBatchMetric withMax(Double max) {
+        this.max = max;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return max
+     */
+    public Double getMax() {
+        return max;
+    }
+
+    public void setMax(Double max) {
+        this.max = max;
+    }
+
+    public DatapointForBatchMetric withMin(Double min) {
+        this.min = min;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return min
+     */
+    public Double getMin() {
+        return min;
+    }
+
+    public void setMin(Double min) {
+        this.min = min;
+    }
 
     public DatapointForBatchMetric withAverage(Double average) {
         this.average = average;
@@ -47,6 +111,46 @@ public class DatapointForBatchMetric  {
 
     public void setAverage(Double average) {
         this.average = average;
+    }
+
+    public DatapointForBatchMetric withSum(Double sum) {
+        this.sum = sum;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return sum
+     */
+    public Double getSum() {
+        return sum;
+    }
+
+    public void setSum(Double sum) {
+        this.sum = sum;
+    }
+
+    public DatapointForBatchMetric withVariance(String variance) {
+        this.variance = variance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return variance
+     */
+    public String getVariance() {
+        return variance;
+    }
+
+    public void setVariance(String variance) {
+        this.variance = variance;
     }
 
     public DatapointForBatchMetric withTimestamp(Long timestamp) {
@@ -77,18 +181,26 @@ public class DatapointForBatchMetric  {
             return false;
         }
         DatapointForBatchMetric datapointForBatchMetric = (DatapointForBatchMetric) o;
-        return Objects.equals(this.average, datapointForBatchMetric.average) &&
+        return Objects.equals(this.max, datapointForBatchMetric.max) &&
+            Objects.equals(this.min, datapointForBatchMetric.min) &&
+            Objects.equals(this.average, datapointForBatchMetric.average) &&
+            Objects.equals(this.sum, datapointForBatchMetric.sum) &&
+            Objects.equals(this.variance, datapointForBatchMetric.variance) &&
             Objects.equals(this.timestamp, datapointForBatchMetric.timestamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(average, timestamp);
+        return Objects.hash(max, min, average, sum, variance, timestamp);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DatapointForBatchMetric {\n");
+        sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("    average: ").append(toIndentedString(average)).append("\n");
+        sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
+        sb.append("    variance: ").append(toIndentedString(variance)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();

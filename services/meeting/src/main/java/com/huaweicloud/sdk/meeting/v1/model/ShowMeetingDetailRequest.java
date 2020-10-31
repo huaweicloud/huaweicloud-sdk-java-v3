@@ -184,7 +184,7 @@ public class ShowMeetingDetailRequest  {
      * @return xType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Type")
     public String getXType() {
         return xType;
     }
@@ -206,7 +206,7 @@ public class ShowMeetingDetailRequest  {
      * @return xQueryType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Query-Type")
     public String getXQueryType() {
         return xQueryType;
     }
@@ -228,7 +228,7 @@ public class ShowMeetingDetailRequest  {
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -250,7 +250,7 @@ public class ShowMeetingDetailRequest  {
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="")
+    @JsonProperty(value="X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }
