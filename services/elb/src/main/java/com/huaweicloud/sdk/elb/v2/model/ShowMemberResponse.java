@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.MemberV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.MemberResp;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowMemberResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member")
     
-    private MemberV2Resp member = null;
+    private MemberResp member = null;
 
-    public ShowMemberResponse withMember(MemberV2Resp member) {
+    public ShowMemberResponse withMember(MemberResp member) {
         this.member = member;
         return this;
     }
 
-    public ShowMemberResponse withMember(Consumer<MemberV2Resp> memberSetter) {
+    public ShowMemberResponse withMember(Consumer<MemberResp> memberSetter) {
         if(this.member == null ){
-            this.member = new MemberV2Resp();
+            this.member = new MemberResp();
             memberSetter.accept(this.member);
         }
         
@@ -45,11 +45,11 @@ public class ShowMemberResponse extends SdkResponse {
      * Get member
      * @return member
      */
-    public MemberV2Resp getMember() {
+    public MemberResp getMember() {
         return member;
     }
 
-    public void setMember(MemberV2Resp member) {
+    public void setMember(MemberResp member) {
         this.member = member;
     }
     @Override

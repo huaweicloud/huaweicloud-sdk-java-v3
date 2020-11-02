@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.HealthmonitorV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.HealthmonitorResp;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowHealthmonitorsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor")
     
-    private HealthmonitorV2Resp healthmonitor = null;
+    private HealthmonitorResp healthmonitor = null;
 
-    public ShowHealthmonitorsResponse withHealthmonitor(HealthmonitorV2Resp healthmonitor) {
+    public ShowHealthmonitorsResponse withHealthmonitor(HealthmonitorResp healthmonitor) {
         this.healthmonitor = healthmonitor;
         return this;
     }
 
-    public ShowHealthmonitorsResponse withHealthmonitor(Consumer<HealthmonitorV2Resp> healthmonitorSetter) {
+    public ShowHealthmonitorsResponse withHealthmonitor(Consumer<HealthmonitorResp> healthmonitorSetter) {
         if(this.healthmonitor == null ){
-            this.healthmonitor = new HealthmonitorV2Resp();
+            this.healthmonitor = new HealthmonitorResp();
             healthmonitorSetter.accept(this.healthmonitor);
         }
         
@@ -45,11 +45,11 @@ public class ShowHealthmonitorsResponse extends SdkResponse {
      * Get healthmonitor
      * @return healthmonitor
      */
-    public HealthmonitorV2Resp getHealthmonitor() {
+    public HealthmonitorResp getHealthmonitor() {
         return healthmonitor;
     }
 
-    public void setHealthmonitor(HealthmonitorV2Resp healthmonitor) {
+    public void setHealthmonitor(HealthmonitorResp healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
     @Override

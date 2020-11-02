@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 创建规则中的监控信息
+ * 创建规则中的监控指标信息
  */
 public class MetricInfoForAlarm  {
 

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ces.v1.model.AlarmHistoryInfo;
-import com.huaweicloud.sdk.ces.v1.model.MetaData;
+import com.huaweicloud.sdk.ces.v1.model.MetaDataForAlarmHistory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -33,7 +33,7 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaData metaData = null;
+    private MetaDataForAlarmHistory metaData = null;
 
     public ListAlarmHistoriesResponse withAlarmHistories(List<AlarmHistoryInfo> alarmHistories) {
         this.alarmHistories = alarmHistories;
@@ -69,14 +69,14 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
         this.alarmHistories = alarmHistories;
     }
 
-    public ListAlarmHistoriesResponse withMetaData(MetaData metaData) {
+    public ListAlarmHistoriesResponse withMetaData(MetaDataForAlarmHistory metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ListAlarmHistoriesResponse withMetaData(Consumer<MetaData> metaDataSetter) {
+    public ListAlarmHistoriesResponse withMetaData(Consumer<MetaDataForAlarmHistory> metaDataSetter) {
         if(this.metaData == null ){
-            this.metaData = new MetaData();
+            this.metaData = new MetaDataForAlarmHistory();
             metaDataSetter.accept(this.metaData);
         }
         
@@ -88,11 +88,11 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
      * Get metaData
      * @return metaData
      */
-    public MetaData getMetaData() {
+    public MetaDataForAlarmHistory getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MetaData metaData) {
+    public void setMetaData(MetaDataForAlarmHistory metaData) {
         this.metaData = metaData;
     }
     @Override

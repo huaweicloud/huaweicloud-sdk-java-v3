@@ -43,7 +43,7 @@ public class CesAsyncClient {
 
     /**
      * 创建自定义告警模板
-     * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持10指标的批量查询。
+     * 创建自定义告警模板。
      *
      * @param CreateAlarmTemplateRequest 请求对象
      * @return CompletableFuture<CreateAlarmTemplateResponse>

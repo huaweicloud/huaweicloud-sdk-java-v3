@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.UpdatePoolV2Req;
+import com.huaweicloud.sdk.elb.v2.model.UpdatePoolReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdatePoolRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool")
     
-    private UpdatePoolV2Req pool = null;
+    private UpdatePoolReq pool = null;
 
-    public UpdatePoolRequestBody withPool(UpdatePoolV2Req pool) {
+    public UpdatePoolRequestBody withPool(UpdatePoolReq pool) {
         this.pool = pool;
         return this;
     }
 
-    public UpdatePoolRequestBody withPool(Consumer<UpdatePoolV2Req> poolSetter) {
+    public UpdatePoolRequestBody withPool(Consumer<UpdatePoolReq> poolSetter) {
         if(this.pool == null ){
-            this.pool = new UpdatePoolV2Req();
+            this.pool = new UpdatePoolReq();
             poolSetter.accept(this.pool);
         }
         
@@ -43,11 +43,11 @@ public class UpdatePoolRequestBody  {
      * Get pool
      * @return pool
      */
-    public UpdatePoolV2Req getPool() {
+    public UpdatePoolReq getPool() {
         return pool;
     }
 
-    public void setPool(UpdatePoolV2Req pool) {
+    public void setPool(UpdatePoolReq pool) {
         this.pool = pool;
     }
     @Override

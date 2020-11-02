@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.CreateL7ruleV2Req;
+import com.huaweicloud.sdk.elb.v2.model.CreateL7ruleReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -20,19 +20,19 @@ public class CreateL7ruleRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l7rule")
+    @JsonProperty(value="rule")
     
-    private CreateL7ruleV2Req l7rule = null;
+    private CreateL7ruleReq rule = null;
 
-    public CreateL7ruleRequestBody withL7rule(CreateL7ruleV2Req l7rule) {
-        this.l7rule = l7rule;
+    public CreateL7ruleRequestBody withRule(CreateL7ruleReq rule) {
+        this.rule = rule;
         return this;
     }
 
-    public CreateL7ruleRequestBody withL7rule(Consumer<CreateL7ruleV2Req> l7ruleSetter) {
-        if(this.l7rule == null ){
-            this.l7rule = new CreateL7ruleV2Req();
-            l7ruleSetter.accept(this.l7rule);
+    public CreateL7ruleRequestBody withRule(Consumer<CreateL7ruleReq> ruleSetter) {
+        if(this.rule == null ){
+            this.rule = new CreateL7ruleReq();
+            ruleSetter.accept(this.rule);
         }
         
         return this;
@@ -40,15 +40,15 @@ public class CreateL7ruleRequestBody  {
 
 
     /**
-     * Get l7rule
-     * @return l7rule
+     * Get rule
+     * @return rule
      */
-    public CreateL7ruleV2Req getL7rule() {
-        return l7rule;
+    public CreateL7ruleReq getRule() {
+        return rule;
     }
 
-    public void setL7rule(CreateL7ruleV2Req l7rule) {
-        this.l7rule = l7rule;
+    public void setRule(CreateL7ruleReq rule) {
+        this.rule = rule;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -59,17 +59,17 @@ public class CreateL7ruleRequestBody  {
             return false;
         }
         CreateL7ruleRequestBody createL7ruleRequestBody = (CreateL7ruleRequestBody) o;
-        return Objects.equals(this.l7rule, createL7ruleRequestBody.l7rule);
+        return Objects.equals(this.rule, createL7ruleRequestBody.rule);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(l7rule);
+        return Objects.hash(rule);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateL7ruleRequestBody {\n");
-        sb.append("    l7rule: ").append(toIndentedString(l7rule)).append("\n");
+        sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
         sb.append("}");
         return sb.toString();
     }

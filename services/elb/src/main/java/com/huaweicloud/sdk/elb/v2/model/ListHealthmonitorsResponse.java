@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.HealthmonitorV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.HealthmonitorResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListHealthmonitorsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitors")
     
-    private List<HealthmonitorV2Resp> healthmonitors = null;
+    private List<HealthmonitorResp> healthmonitors = null;
     
-    public ListHealthmonitorsResponse withHealthmonitors(List<HealthmonitorV2Resp> healthmonitors) {
+    public ListHealthmonitorsResponse withHealthmonitors(List<HealthmonitorResp> healthmonitors) {
         this.healthmonitors = healthmonitors;
         return this;
     }
 
     
-    public ListHealthmonitorsResponse addHealthmonitorsItem(HealthmonitorV2Resp healthmonitorsItem) {
+    public ListHealthmonitorsResponse addHealthmonitorsItem(HealthmonitorResp healthmonitorsItem) {
         if (this.healthmonitors == null) {
             this.healthmonitors = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListHealthmonitorsResponse extends SdkResponse {
         return this;
     }
 
-    public ListHealthmonitorsResponse withHealthmonitors(Consumer<List<HealthmonitorV2Resp>> healthmonitorsSetter) {
+    public ListHealthmonitorsResponse withHealthmonitors(Consumer<List<HealthmonitorResp>> healthmonitorsSetter) {
         if(this.healthmonitors == null ){
             this.healthmonitors = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListHealthmonitorsResponse extends SdkResponse {
      * 健康检查对象的列表
      * @return healthmonitors
      */
-    public List<HealthmonitorV2Resp> getHealthmonitors() {
+    public List<HealthmonitorResp> getHealthmonitors() {
         return healthmonitors;
     }
 
-    public void setHealthmonitors(List<HealthmonitorV2Resp> healthmonitors) {
+    public void setHealthmonitors(List<HealthmonitorResp> healthmonitors) {
         this.healthmonitors = healthmonitors;
     }
     @Override

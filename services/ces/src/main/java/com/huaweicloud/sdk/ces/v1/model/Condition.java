@@ -51,7 +51,7 @@ public class Condition  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    private Integer value;
+    private Double value;
 
     public Condition withComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
@@ -155,7 +155,7 @@ public class Condition  {
         this.unit = unit;
     }
 
-    public Condition withValue(Integer value) {
+    public Condition withValue(Double value) {
         this.value = value;
         return this;
     }
@@ -167,11 +167,11 @@ public class Condition  {
      * 告警阈值，取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。
      * @return value
      */
-    public Integer getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(Double value) {
         this.value = value;
     }
     @Override

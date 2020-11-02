@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.ces.v1.model.AlarmActions;
 import com.huaweicloud.sdk.ces.v1.model.Condition;
-import com.huaweicloud.sdk.ces.v1.model.MetricInfoExt;
+import com.huaweicloud.sdk.ces.v1.model.MetricInfoForAlarm;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +42,7 @@ public class CreateAlarmRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric")
     
-    private MetricInfoExt metric = null;
+    private MetricInfoForAlarm metric = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class CreateAlarmRequestBody  {
     
     private Integer alarmLevel;
     /**
-     * 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
+     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
      */
     public static final class AlarmTypeEnum {
 
@@ -83,6 +83,11 @@ public class CreateAlarmRequestBody  {
          */
         public static final AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
         
+        /**
+         * Enum RESOURCE_GROUP for value: "RESOURCE_GROUP"
+         */
+        public static final AlarmTypeEnum RESOURCE_GROUP = new AlarmTypeEnum("RESOURCE_GROUP");
+        
 
         private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,6 +95,7 @@ public class CreateAlarmRequestBody  {
             Map<String, AlarmTypeEnum> map = new HashMap<>();
             map.put("EVENT.SYS", EVENT_SYS);
             map.put("EVENT.CUSTOM", EVENT_CUSTOM);
+            map.put("RESOURCE_GROUP", RESOURCE_GROUP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -216,14 +222,14 @@ public class CreateAlarmRequestBody  {
         this.alarmDescription = alarmDescription;
     }
 
-    public CreateAlarmRequestBody withMetric(MetricInfoExt metric) {
+    public CreateAlarmRequestBody withMetric(MetricInfoForAlarm metric) {
         this.metric = metric;
         return this;
     }
 
-    public CreateAlarmRequestBody withMetric(Consumer<MetricInfoExt> metricSetter) {
+    public CreateAlarmRequestBody withMetric(Consumer<MetricInfoForAlarm> metricSetter) {
         if(this.metric == null ){
-            this.metric = new MetricInfoExt();
+            this.metric = new MetricInfoForAlarm();
             metricSetter.accept(this.metric);
         }
         
@@ -235,11 +241,11 @@ public class CreateAlarmRequestBody  {
      * Get metric
      * @return metric
      */
-    public MetricInfoExt getMetric() {
+    public MetricInfoForAlarm getMetric() {
         return metric;
     }
 
-    public void setMetric(MetricInfoExt metric) {
+    public void setMetric(MetricInfoForAlarm metric) {
         this.metric = metric;
     }
 
@@ -339,7 +345,7 @@ public class CreateAlarmRequestBody  {
 
 
     /**
-     * 告警类型。 仅针对事件告警的参数，枚举类型：EVENT.SYS或者EVENT.CUSTOM
+     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
      * @return alarmType
      */
     public AlarmTypeEnum getAlarmType() {

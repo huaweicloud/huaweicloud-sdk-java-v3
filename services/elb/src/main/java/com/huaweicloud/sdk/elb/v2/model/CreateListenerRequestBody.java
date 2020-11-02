@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.CreateListenerV2Req;
+import com.huaweicloud.sdk.elb.v2.model.CreateListenerReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateListenerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listener")
     
-    private CreateListenerV2Req listener = null;
+    private CreateListenerReq listener = null;
 
-    public CreateListenerRequestBody withListener(CreateListenerV2Req listener) {
+    public CreateListenerRequestBody withListener(CreateListenerReq listener) {
         this.listener = listener;
         return this;
     }
 
-    public CreateListenerRequestBody withListener(Consumer<CreateListenerV2Req> listenerSetter) {
+    public CreateListenerRequestBody withListener(Consumer<CreateListenerReq> listenerSetter) {
         if(this.listener == null ){
-            this.listener = new CreateListenerV2Req();
+            this.listener = new CreateListenerReq();
             listenerSetter.accept(this.listener);
         }
         
@@ -43,11 +43,11 @@ public class CreateListenerRequestBody  {
      * Get listener
      * @return listener
      */
-    public CreateListenerV2Req getListener() {
+    public CreateListenerReq getListener() {
         return listener;
     }
 
-    public void setListener(CreateListenerV2Req listener) {
+    public void setListener(CreateListenerReq listener) {
         this.listener = listener;
     }
     @Override

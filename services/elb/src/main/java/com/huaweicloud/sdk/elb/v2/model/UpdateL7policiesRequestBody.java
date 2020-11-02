@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.UpdateL7policyV2Req;
+import com.huaweicloud.sdk.elb.v2.model.UpdateL7policyReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdateL7policiesRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7policy")
     
-    private UpdateL7policyV2Req l7policy = null;
+    private UpdateL7policyReq l7policy = null;
 
-    public UpdateL7policiesRequestBody withL7policy(UpdateL7policyV2Req l7policy) {
+    public UpdateL7policiesRequestBody withL7policy(UpdateL7policyReq l7policy) {
         this.l7policy = l7policy;
         return this;
     }
 
-    public UpdateL7policiesRequestBody withL7policy(Consumer<UpdateL7policyV2Req> l7policySetter) {
+    public UpdateL7policiesRequestBody withL7policy(Consumer<UpdateL7policyReq> l7policySetter) {
         if(this.l7policy == null ){
-            this.l7policy = new UpdateL7policyV2Req();
+            this.l7policy = new UpdateL7policyReq();
             l7policySetter.accept(this.l7policy);
         }
         
@@ -43,11 +43,11 @@ public class UpdateL7policiesRequestBody  {
      * Get l7policy
      * @return l7policy
      */
-    public UpdateL7policyV2Req getL7policy() {
+    public UpdateL7policyReq getL7policy() {
         return l7policy;
     }
 
-    public void setL7policy(UpdateL7policyV2Req l7policy) {
+    public void setL7policy(UpdateL7policyReq l7policy) {
         this.l7policy = l7policy;
     }
     @Override

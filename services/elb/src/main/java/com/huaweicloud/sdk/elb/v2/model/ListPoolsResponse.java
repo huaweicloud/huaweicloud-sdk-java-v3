@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.PoolV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.PoolResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListPoolsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pools")
     
-    private List<PoolV2Resp> pools = null;
+    private List<PoolResp> pools = null;
     
-    public ListPoolsResponse withPools(List<PoolV2Resp> pools) {
+    public ListPoolsResponse withPools(List<PoolResp> pools) {
         this.pools = pools;
         return this;
     }
 
     
-    public ListPoolsResponse addPoolsItem(PoolV2Resp poolsItem) {
+    public ListPoolsResponse addPoolsItem(PoolResp poolsItem) {
         if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListPoolsResponse extends SdkResponse {
         return this;
     }
 
-    public ListPoolsResponse withPools(Consumer<List<PoolV2Resp>> poolsSetter) {
+    public ListPoolsResponse withPools(Consumer<List<PoolResp>> poolsSetter) {
         if(this.pools == null ){
             this.pools = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListPoolsResponse extends SdkResponse {
      * 后端云服务器对象组列表
      * @return pools
      */
-    public List<PoolV2Resp> getPools() {
+    public List<PoolResp> getPools() {
         return pools;
     }
 
-    public void setPools(List<PoolV2Resp> pools) {
+    public void setPools(List<PoolResp> pools) {
         this.pools = pools;
     }
     @Override

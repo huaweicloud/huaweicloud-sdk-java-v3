@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.CreatePoolV2Req;
+import com.huaweicloud.sdk.elb.v2.model.CreatePoolReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreatePoolRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool")
     
-    private CreatePoolV2Req pool = null;
+    private CreatePoolReq pool = null;
 
-    public CreatePoolRequestBody withPool(CreatePoolV2Req pool) {
+    public CreatePoolRequestBody withPool(CreatePoolReq pool) {
         this.pool = pool;
         return this;
     }
 
-    public CreatePoolRequestBody withPool(Consumer<CreatePoolV2Req> poolSetter) {
+    public CreatePoolRequestBody withPool(Consumer<CreatePoolReq> poolSetter) {
         if(this.pool == null ){
-            this.pool = new CreatePoolV2Req();
+            this.pool = new CreatePoolReq();
             poolSetter.accept(this.pool);
         }
         
@@ -43,11 +43,11 @@ public class CreatePoolRequestBody  {
      * Get pool
      * @return pool
      */
-    public CreatePoolV2Req getPool() {
+    public CreatePoolReq getPool() {
         return pool;
     }
 
-    public void setPool(CreatePoolV2Req pool) {
+    public void setPool(CreatePoolReq pool) {
         this.pool = pool;
     }
     @Override

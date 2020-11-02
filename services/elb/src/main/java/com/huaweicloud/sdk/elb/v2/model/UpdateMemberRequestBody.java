@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.UpdateMemberV2Req;
+import com.huaweicloud.sdk.elb.v2.model.UpdateMemberReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdateMemberRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member")
     
-    private UpdateMemberV2Req member = null;
+    private UpdateMemberReq member = null;
 
-    public UpdateMemberRequestBody withMember(UpdateMemberV2Req member) {
+    public UpdateMemberRequestBody withMember(UpdateMemberReq member) {
         this.member = member;
         return this;
     }
 
-    public UpdateMemberRequestBody withMember(Consumer<UpdateMemberV2Req> memberSetter) {
+    public UpdateMemberRequestBody withMember(Consumer<UpdateMemberReq> memberSetter) {
         if(this.member == null ){
-            this.member = new UpdateMemberV2Req();
+            this.member = new UpdateMemberReq();
             memberSetter.accept(this.member);
         }
         
@@ -43,11 +43,11 @@ public class UpdateMemberRequestBody  {
      * Get member
      * @return member
      */
-    public UpdateMemberV2Req getMember() {
+    public UpdateMemberReq getMember() {
         return member;
     }
 
-    public void setMember(UpdateMemberV2Req member) {
+    public void setMember(UpdateMemberReq member) {
         this.member = member;
     }
     @Override

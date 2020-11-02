@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.CertificateV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.CertificateResp;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +24,7 @@ public class ListCertificatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificates")
     
-    private CertificateV2Resp certificates = null;
+    private CertificateResp certificates = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,14 +32,14 @@ public class ListCertificatesResponse extends SdkResponse {
     
     private Integer instanceNum;
 
-    public ListCertificatesResponse withCertificates(CertificateV2Resp certificates) {
+    public ListCertificatesResponse withCertificates(CertificateResp certificates) {
         this.certificates = certificates;
         return this;
     }
 
-    public ListCertificatesResponse withCertificates(Consumer<CertificateV2Resp> certificatesSetter) {
+    public ListCertificatesResponse withCertificates(Consumer<CertificateResp> certificatesSetter) {
         if(this.certificates == null ){
-            this.certificates = new CertificateV2Resp();
+            this.certificates = new CertificateResp();
             certificatesSetter.accept(this.certificates);
         }
         
@@ -51,11 +51,11 @@ public class ListCertificatesResponse extends SdkResponse {
      * Get certificates
      * @return certificates
      */
-    public CertificateV2Resp getCertificates() {
+    public CertificateResp getCertificates() {
         return certificates;
     }
 
-    public void setCertificates(CertificateV2Resp certificates) {
+    public void setCertificates(CertificateResp certificates) {
         this.certificates = certificates;
     }
 

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.ListenerV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.ListenerResp;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowListenerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listener")
     
-    private ListenerV2Resp listener = null;
+    private ListenerResp listener = null;
 
-    public ShowListenerResponse withListener(ListenerV2Resp listener) {
+    public ShowListenerResponse withListener(ListenerResp listener) {
         this.listener = listener;
         return this;
     }
 
-    public ShowListenerResponse withListener(Consumer<ListenerV2Resp> listenerSetter) {
+    public ShowListenerResponse withListener(Consumer<ListenerResp> listenerSetter) {
         if(this.listener == null ){
-            this.listener = new ListenerV2Resp();
+            this.listener = new ListenerResp();
             listenerSetter.accept(this.listener);
         }
         
@@ -45,11 +45,11 @@ public class ShowListenerResponse extends SdkResponse {
      * Get listener
      * @return listener
      */
-    public ListenerV2Resp getListener() {
+    public ListenerResp getListener() {
         return listener;
     }
 
-    public void setListener(ListenerV2Resp listener) {
+    public void setListener(ListenerResp listener) {
         this.listener = listener;
     }
     @Override

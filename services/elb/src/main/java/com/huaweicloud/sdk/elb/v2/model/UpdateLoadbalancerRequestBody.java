@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.UpdateLoadbalancerV2Req;
+import com.huaweicloud.sdk.elb.v2.model.UpdateLoadbalancerReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdateLoadbalancerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancer")
     
-    private UpdateLoadbalancerV2Req loadbalancer = null;
+    private UpdateLoadbalancerReq loadbalancer = null;
 
-    public UpdateLoadbalancerRequestBody withLoadbalancer(UpdateLoadbalancerV2Req loadbalancer) {
+    public UpdateLoadbalancerRequestBody withLoadbalancer(UpdateLoadbalancerReq loadbalancer) {
         this.loadbalancer = loadbalancer;
         return this;
     }
 
-    public UpdateLoadbalancerRequestBody withLoadbalancer(Consumer<UpdateLoadbalancerV2Req> loadbalancerSetter) {
+    public UpdateLoadbalancerRequestBody withLoadbalancer(Consumer<UpdateLoadbalancerReq> loadbalancerSetter) {
         if(this.loadbalancer == null ){
-            this.loadbalancer = new UpdateLoadbalancerV2Req();
+            this.loadbalancer = new UpdateLoadbalancerReq();
             loadbalancerSetter.accept(this.loadbalancer);
         }
         
@@ -43,11 +43,11 @@ public class UpdateLoadbalancerRequestBody  {
      * Get loadbalancer
      * @return loadbalancer
      */
-    public UpdateLoadbalancerV2Req getLoadbalancer() {
+    public UpdateLoadbalancerReq getLoadbalancer() {
         return loadbalancer;
     }
 
-    public void setLoadbalancer(UpdateLoadbalancerV2Req loadbalancer) {
+    public void setLoadbalancer(UpdateLoadbalancerReq loadbalancer) {
         this.loadbalancer = loadbalancer;
     }
     @Override

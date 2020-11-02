@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.UpdateL7ruleV2Req;
+import com.huaweicloud.sdk.elb.v2.model.UpdateL7ruleReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdateL7ruleRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule")
     
-    private UpdateL7ruleV2Req rule = null;
+    private UpdateL7ruleReq rule = null;
 
-    public UpdateL7ruleRequestBody withRule(UpdateL7ruleV2Req rule) {
+    public UpdateL7ruleRequestBody withRule(UpdateL7ruleReq rule) {
         this.rule = rule;
         return this;
     }
 
-    public UpdateL7ruleRequestBody withRule(Consumer<UpdateL7ruleV2Req> ruleSetter) {
+    public UpdateL7ruleRequestBody withRule(Consumer<UpdateL7ruleReq> ruleSetter) {
         if(this.rule == null ){
-            this.rule = new UpdateL7ruleV2Req();
+            this.rule = new UpdateL7ruleReq();
             ruleSetter.accept(this.rule);
         }
         
@@ -43,11 +43,11 @@ public class UpdateL7ruleRequestBody  {
      * Get rule
      * @return rule
      */
-    public UpdateL7ruleV2Req getRule() {
+    public UpdateL7ruleReq getRule() {
         return rule;
     }
 
-    public void setRule(UpdateL7ruleV2Req rule) {
+    public void setRule(UpdateL7ruleReq rule) {
         this.rule = rule;
     }
     @Override

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.L7policyV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.L7policyResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListL7policiesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="l7policies")
     
-    private List<L7policyV2Resp> l7policies = null;
+    private List<L7policyResp> l7policies = null;
     
-    public ListL7policiesResponse withL7policies(List<L7policyV2Resp> l7policies) {
+    public ListL7policiesResponse withL7policies(List<L7policyResp> l7policies) {
         this.l7policies = l7policies;
         return this;
     }
 
     
-    public ListL7policiesResponse addL7policiesItem(L7policyV2Resp l7policiesItem) {
+    public ListL7policiesResponse addL7policiesItem(L7policyResp l7policiesItem) {
         if (this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListL7policiesResponse extends SdkResponse {
         return this;
     }
 
-    public ListL7policiesResponse withL7policies(Consumer<List<L7policyV2Resp>> l7policiesSetter) {
+    public ListL7policiesResponse withL7policies(Consumer<List<L7policyResp>> l7policiesSetter) {
         if(this.l7policies == null ){
             this.l7policies = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListL7policiesResponse extends SdkResponse {
      * 转发策略对象的列表
      * @return l7policies
      */
-    public List<L7policyV2Resp> getL7policies() {
+    public List<L7policyResp> getL7policies() {
         return l7policies;
     }
 
-    public void setL7policies(List<L7policyV2Resp> l7policies) {
+    public void setL7policies(List<L7policyResp> l7policies) {
         this.l7policies = l7policies;
     }
     @Override

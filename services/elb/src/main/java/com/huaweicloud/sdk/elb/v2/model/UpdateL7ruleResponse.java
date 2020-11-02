@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.L7ruleV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.L7ruleResp;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class UpdateL7ruleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rule")
     
-    private L7ruleV2Resp rule = null;
+    private L7ruleResp rule = null;
 
-    public UpdateL7ruleResponse withRule(L7ruleV2Resp rule) {
+    public UpdateL7ruleResponse withRule(L7ruleResp rule) {
         this.rule = rule;
         return this;
     }
 
-    public UpdateL7ruleResponse withRule(Consumer<L7ruleV2Resp> ruleSetter) {
+    public UpdateL7ruleResponse withRule(Consumer<L7ruleResp> ruleSetter) {
         if(this.rule == null ){
-            this.rule = new L7ruleV2Resp();
+            this.rule = new L7ruleResp();
             ruleSetter.accept(this.rule);
         }
         
@@ -45,11 +45,11 @@ public class UpdateL7ruleResponse extends SdkResponse {
      * Get rule
      * @return rule
      */
-    public L7ruleV2Resp getRule() {
+    public L7ruleResp getRule() {
         return rule;
     }
 
-    public void setRule(L7ruleV2Resp rule) {
+    public void setRule(L7ruleResp rule) {
         this.rule = rule;
     }
     @Override

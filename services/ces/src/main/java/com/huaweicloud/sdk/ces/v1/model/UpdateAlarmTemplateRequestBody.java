@@ -60,7 +60,7 @@ public class UpdateAlarmTemplateRequestBody  {
 
 
     /**
-     * 自定义告警模板名称，只能包含0-9/a-z/A-Z/_/-或汉字。
+     * 自定义告警模板名称，只能包含0-9/a-z/A-Z/_/-或汉字，长度为1-128。。
      * @return templateName
      */
     public String getTemplateName() {
@@ -100,7 +100,7 @@ public class UpdateAlarmTemplateRequestBody  {
 
 
     /**
-     * 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS
+     * 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS。
      * @return namespace
      */
     public String getNamespace() {
@@ -120,7 +120,7 @@ public class UpdateAlarmTemplateRequestBody  {
 
 
     /**
-     * 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id
+     * 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id。
      * @return dimensionName
      */
     public String getDimensionName() {
@@ -151,7 +151,7 @@ public class UpdateAlarmTemplateRequestBody  {
     }
 
     /**
-     * 创建自定义告警模板添加添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。。
+     * 创建自定义告警模板添加添加一个或者多个指标的告警规则；目前最多可增加30组告警规则策略。
      * @return templateItems
      */
     public List<TemplateItem> getTemplateItems() {

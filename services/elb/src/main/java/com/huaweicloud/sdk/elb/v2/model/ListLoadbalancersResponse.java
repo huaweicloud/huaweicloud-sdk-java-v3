@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.LoadbalancerV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.LoadbalancerResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListLoadbalancersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="loadbalancers")
     
-    private List<LoadbalancerV2Resp> loadbalancers = null;
+    private List<LoadbalancerResp> loadbalancers = null;
     
-    public ListLoadbalancersResponse withLoadbalancers(List<LoadbalancerV2Resp> loadbalancers) {
+    public ListLoadbalancersResponse withLoadbalancers(List<LoadbalancerResp> loadbalancers) {
         this.loadbalancers = loadbalancers;
         return this;
     }
 
     
-    public ListLoadbalancersResponse addLoadbalancersItem(LoadbalancerV2Resp loadbalancersItem) {
+    public ListLoadbalancersResponse addLoadbalancersItem(LoadbalancerResp loadbalancersItem) {
         if (this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListLoadbalancersResponse extends SdkResponse {
         return this;
     }
 
-    public ListLoadbalancersResponse withLoadbalancers(Consumer<List<LoadbalancerV2Resp>> loadbalancersSetter) {
+    public ListLoadbalancersResponse withLoadbalancers(Consumer<List<LoadbalancerResp>> loadbalancersSetter) {
         if(this.loadbalancers == null ){
             this.loadbalancers = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListLoadbalancersResponse extends SdkResponse {
      * 负载均衡器对象列表
      * @return loadbalancers
      */
-    public List<LoadbalancerV2Resp> getLoadbalancers() {
+    public List<LoadbalancerResp> getLoadbalancers() {
         return loadbalancers;
     }
 
-    public void setLoadbalancers(List<LoadbalancerV2Resp> loadbalancers) {
+    public void setLoadbalancers(List<LoadbalancerResp> loadbalancers) {
         this.loadbalancers = loadbalancers;
     }
     @Override

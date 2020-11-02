@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.MemberV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.MemberResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListMenbersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="members")
     
-    private List<MemberV2Resp> members = null;
+    private List<MemberResp> members = null;
     
-    public ListMenbersResponse withMembers(List<MemberV2Resp> members) {
+    public ListMenbersResponse withMembers(List<MemberResp> members) {
         this.members = members;
         return this;
     }
 
     
-    public ListMenbersResponse addMembersItem(MemberV2Resp membersItem) {
+    public ListMenbersResponse addMembersItem(MemberResp membersItem) {
         if (this.members == null) {
             this.members = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListMenbersResponse extends SdkResponse {
         return this;
     }
 
-    public ListMenbersResponse withMembers(Consumer<List<MemberV2Resp>> membersSetter) {
+    public ListMenbersResponse withMembers(Consumer<List<MemberResp>> membersSetter) {
         if(this.members == null ){
             this.members = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListMenbersResponse extends SdkResponse {
      * 后端云服务器对象的列表
      * @return members
      */
-    public List<MemberV2Resp> getMembers() {
+    public List<MemberResp> getMembers() {
         return members;
     }
 
-    public void setMembers(List<MemberV2Resp> members) {
+    public void setMembers(List<MemberResp> members) {
         this.members = members;
     }
     @Override

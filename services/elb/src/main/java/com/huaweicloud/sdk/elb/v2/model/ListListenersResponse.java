@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.ListenerV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.ListenerResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListListenersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="listeners")
     
-    private List<ListenerV2Resp> listeners = null;
+    private List<ListenerResp> listeners = null;
     
-    public ListListenersResponse withListeners(List<ListenerV2Resp> listeners) {
+    public ListListenersResponse withListeners(List<ListenerResp> listeners) {
         this.listeners = listeners;
         return this;
     }
 
     
-    public ListListenersResponse addListenersItem(ListenerV2Resp listenersItem) {
+    public ListListenersResponse addListenersItem(ListenerResp listenersItem) {
         if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListListenersResponse extends SdkResponse {
         return this;
     }
 
-    public ListListenersResponse withListeners(Consumer<List<ListenerV2Resp>> listenersSetter) {
+    public ListListenersResponse withListeners(Consumer<List<ListenerResp>> listenersSetter) {
         if(this.listeners == null ){
             this.listeners = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListListenersResponse extends SdkResponse {
      * 监听器对象列表
      * @return listeners
      */
-    public List<ListenerV2Resp> getListeners() {
+    public List<ListenerResp> getListeners() {
         return listeners;
     }
 
-    public void setListeners(List<ListenerV2Resp> listeners) {
+    public void setListeners(List<ListenerResp> listeners) {
         this.listeners = listeners;
     }
     @Override

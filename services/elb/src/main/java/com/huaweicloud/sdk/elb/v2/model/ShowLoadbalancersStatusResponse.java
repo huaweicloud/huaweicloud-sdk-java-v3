@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.StatusV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.StatusResp;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowLoadbalancersStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="statuses")
     
-    private StatusV2Resp statuses = null;
+    private StatusResp statuses = null;
 
-    public ShowLoadbalancersStatusResponse withStatuses(StatusV2Resp statuses) {
+    public ShowLoadbalancersStatusResponse withStatuses(StatusResp statuses) {
         this.statuses = statuses;
         return this;
     }
 
-    public ShowLoadbalancersStatusResponse withStatuses(Consumer<StatusV2Resp> statusesSetter) {
+    public ShowLoadbalancersStatusResponse withStatuses(Consumer<StatusResp> statusesSetter) {
         if(this.statuses == null ){
-            this.statuses = new StatusV2Resp();
+            this.statuses = new StatusResp();
             statusesSetter.accept(this.statuses);
         }
         
@@ -45,11 +45,11 @@ public class ShowLoadbalancersStatusResponse extends SdkResponse {
      * Get statuses
      * @return statuses
      */
-    public StatusV2Resp getStatuses() {
+    public StatusResp getStatuses() {
         return statuses;
     }
 
-    public void setStatuses(StatusV2Resp statuses) {
+    public void setStatuses(StatusResp statuses) {
         this.statuses = statuses;
     }
     @Override

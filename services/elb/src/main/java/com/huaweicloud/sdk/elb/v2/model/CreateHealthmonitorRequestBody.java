@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.CreateHealthmonitorV2Req;
+import com.huaweicloud.sdk.elb.v2.model.CreateHealthmonitorReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateHealthmonitorRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="healthmonitor")
     
-    private CreateHealthmonitorV2Req healthmonitor = null;
+    private CreateHealthmonitorReq healthmonitor = null;
 
-    public CreateHealthmonitorRequestBody withHealthmonitor(CreateHealthmonitorV2Req healthmonitor) {
+    public CreateHealthmonitorRequestBody withHealthmonitor(CreateHealthmonitorReq healthmonitor) {
         this.healthmonitor = healthmonitor;
         return this;
     }
 
-    public CreateHealthmonitorRequestBody withHealthmonitor(Consumer<CreateHealthmonitorV2Req> healthmonitorSetter) {
+    public CreateHealthmonitorRequestBody withHealthmonitor(Consumer<CreateHealthmonitorReq> healthmonitorSetter) {
         if(this.healthmonitor == null ){
-            this.healthmonitor = new CreateHealthmonitorV2Req();
+            this.healthmonitor = new CreateHealthmonitorReq();
             healthmonitorSetter.accept(this.healthmonitor);
         }
         
@@ -43,11 +43,11 @@ public class CreateHealthmonitorRequestBody  {
      * Get healthmonitor
      * @return healthmonitor
      */
-    public CreateHealthmonitorV2Req getHealthmonitor() {
+    public CreateHealthmonitorReq getHealthmonitor() {
         return healthmonitor;
     }
 
-    public void setHealthmonitor(CreateHealthmonitorV2Req healthmonitor) {
+    public void setHealthmonitor(CreateHealthmonitorReq healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
     @Override

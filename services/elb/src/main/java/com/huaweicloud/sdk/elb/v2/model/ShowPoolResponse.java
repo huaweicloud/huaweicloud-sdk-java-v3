@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.PoolV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.PoolResp;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowPoolResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pool")
     
-    private PoolV2Resp pool = null;
+    private PoolResp pool = null;
 
-    public ShowPoolResponse withPool(PoolV2Resp pool) {
+    public ShowPoolResponse withPool(PoolResp pool) {
         this.pool = pool;
         return this;
     }
 
-    public ShowPoolResponse withPool(Consumer<PoolV2Resp> poolSetter) {
+    public ShowPoolResponse withPool(Consumer<PoolResp> poolSetter) {
         if(this.pool == null ){
-            this.pool = new PoolV2Resp();
+            this.pool = new PoolResp();
             poolSetter.accept(this.pool);
         }
         
@@ -45,11 +45,11 @@ public class ShowPoolResponse extends SdkResponse {
      * Get pool
      * @return pool
      */
-    public PoolV2Resp getPool() {
+    public PoolResp getPool() {
         return pool;
     }
 
-    public void setPool(PoolV2Resp pool) {
+    public void setPool(PoolResp pool) {
         this.pool = pool;
     }
     @Override

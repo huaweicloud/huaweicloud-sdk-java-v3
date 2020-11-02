@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.L7ruleV2Resp;
+import com.huaweicloud.sdk.elb.v2.model.L7ruleResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListL7rulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rules")
     
-    private List<L7ruleV2Resp> rules = null;
+    private List<L7ruleResp> rules = null;
     
-    public ListL7rulesResponse withRules(List<L7ruleV2Resp> rules) {
+    public ListL7rulesResponse withRules(List<L7ruleResp> rules) {
         this.rules = rules;
         return this;
     }
 
     
-    public ListL7rulesResponse addRulesItem(L7ruleV2Resp rulesItem) {
+    public ListL7rulesResponse addRulesItem(L7ruleResp rulesItem) {
         if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListL7rulesResponse extends SdkResponse {
         return this;
     }
 
-    public ListL7rulesResponse withRules(Consumer<List<L7ruleV2Resp>> rulesSetter) {
+    public ListL7rulesResponse withRules(Consumer<List<L7ruleResp>> rulesSetter) {
         if(this.rules == null ){
             this.rules = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListL7rulesResponse extends SdkResponse {
      * 转发规则对象的列表
      * @return rules
      */
-    public List<L7ruleV2Resp> getRules() {
+    public List<L7ruleResp> getRules() {
         return rules;
     }
 
-    public void setRules(List<L7ruleV2Resp> rules) {
+    public void setRules(List<L7ruleResp> rules) {
         this.rules = rules;
     }
     @Override

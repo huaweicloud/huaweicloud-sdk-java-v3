@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.UpdateWhitelistV2Req;
+import com.huaweicloud.sdk.elb.v2.model.UpdateWhitelistReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdateWhitelistRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="whitelist")
     
-    private UpdateWhitelistV2Req whitelist = null;
+    private UpdateWhitelistReq whitelist = null;
 
-    public UpdateWhitelistRequestBody withWhitelist(UpdateWhitelistV2Req whitelist) {
+    public UpdateWhitelistRequestBody withWhitelist(UpdateWhitelistReq whitelist) {
         this.whitelist = whitelist;
         return this;
     }
 
-    public UpdateWhitelistRequestBody withWhitelist(Consumer<UpdateWhitelistV2Req> whitelistSetter) {
+    public UpdateWhitelistRequestBody withWhitelist(Consumer<UpdateWhitelistReq> whitelistSetter) {
         if(this.whitelist == null ){
-            this.whitelist = new UpdateWhitelistV2Req();
+            this.whitelist = new UpdateWhitelistReq();
             whitelistSetter.accept(this.whitelist);
         }
         
@@ -43,11 +43,11 @@ public class UpdateWhitelistRequestBody  {
      * Get whitelist
      * @return whitelist
      */
-    public UpdateWhitelistV2Req getWhitelist() {
+    public UpdateWhitelistReq getWhitelist() {
         return whitelist;
     }
 
-    public void setWhitelist(UpdateWhitelistV2Req whitelist) {
+    public void setWhitelist(UpdateWhitelistReq whitelist) {
         this.whitelist = whitelist;
     }
     @Override
