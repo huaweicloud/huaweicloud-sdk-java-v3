@@ -19,7 +19,7 @@ public class CesMeta {
         HttpRequestDef.Builder<BatchListMetricDataRequest, BatchListMetricDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListMetricDataRequest.class, BatchListMetricDataResponse.class)
                 .withUri("/V1.0/{project_id}/batch-query-metric-data")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -43,7 +43,7 @@ public class CesMeta {
         HttpRequestDef.Builder<CreateAlarmRequest, CreateAlarmResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAlarmRequest.class, CreateAlarmResponse.class)
                 .withUri("/V1.0/{project_id}/alarms")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -67,7 +67,7 @@ public class CesMeta {
         HttpRequestDef.Builder<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAlarmTemplateRequest.class, CreateAlarmTemplateResponse.class)
                 .withUri("/V1.0/{project_id}/alarm-template")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -91,7 +91,7 @@ public class CesMeta {
         HttpRequestDef.Builder<CreateEventsRequest, CreateEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEventsRequest.class, CreateEventsResponse.class)
                 .withUri("/V1.0/{project_id}/events")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -124,7 +124,7 @@ public class CesMeta {
         HttpRequestDef.Builder<CreateMetricDataRequest, CreateMetricDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMetricDataRequest.class, CreateMetricDataResponse.class)
                 .withUri("/V1.0/{project_id}/metric-data")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
@@ -721,7 +721,7 @@ public class CesMeta {
         HttpRequestDef.Builder<UpdateAlarmActionRequest, UpdateAlarmActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAlarmActionRequest.class, UpdateAlarmActionResponse.class)
                 .withUri("/V1.0/{project_id}/alarms/{alarm_id}/action")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("alarm_id",
@@ -753,7 +753,7 @@ public class CesMeta {
         HttpRequestDef.Builder<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAlarmTemplateRequest.class, UpdateAlarmTemplateResponse.class)
                 .withUri("/V1.0/{project_id}/alarm-template/{template_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",

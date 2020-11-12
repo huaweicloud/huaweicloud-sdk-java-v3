@@ -308,7 +308,7 @@ public class ThumbnailPara  {
     }
 
     /**
-     * 指定时间截图时的时间点数组。 
+     * 指定时间截图时的时间点数组，最多支持10个。 
      * @return dots
      */
     public List<Integer> getDots() {
@@ -432,7 +432,7 @@ public class ThumbnailPara  {
 
 
     /**
-     * 截图最长边的尺寸。宽边尺寸按照该尺寸与原始视频像素等比缩放计算。  取值范围：[240,3840]  单位：像素 > 该参数和width/height选择使用，以width/height优先，若width/height都不等于0，则图片尺寸按width/height得出；反之，则图片尺寸按 max_length 得出。 
+     * 截图最长边的尺寸。宽边尺寸按照该尺寸与原始视频像素等比缩放计算。  取值范围：[240,3840]  默认值：480  单位：像素 > 该参数和width/height选择使用，以width/height优先，若width/height都不等于0，则图片尺寸按width/height得出；反之，则图片尺寸按 max_length 得出。 > 若该参数和width/height都未选择，则取max_length默认为480 
      * minimum: 0
      * maximum: 3840
      * @return maxLength

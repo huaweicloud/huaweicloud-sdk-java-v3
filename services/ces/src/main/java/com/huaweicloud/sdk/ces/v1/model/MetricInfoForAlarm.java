@@ -131,7 +131,7 @@ public class MetricInfoForAlarm  {
 
 
     /**
-     * 创建告警规则是选择的资源分组ID，如：rg1603786526428bWbVmk4rP
+     * 创建告警规则时选择的资源分组ID，如：rg1603786526428bWbVmk4rP
      * @return resourceGroupId
      */
     public String getResourceGroupId() {
@@ -151,7 +151,7 @@ public class MetricInfoForAlarm  {
 
 
     /**
-     * 创建告警规则是选择的资源分组名称，如：Resource-Group-ECS-01
+     * 创建告警规则时选择的资源分组名称，如：Resource-Group-ECS-01
      * @return resourceGroupName
      */
     public String getResourceGroupName() {

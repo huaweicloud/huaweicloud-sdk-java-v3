@@ -56,6 +56,12 @@ public class CreateTranscodingReq  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="av_parameters")
+    
+    private List<AvParameters> avParameters = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="output_filenames")
     
     private List<String> outputFilenames = null;
@@ -188,12 +194,6 @@ public class CreateTranscodingReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="av_parameters")
-    
-    private List<AvParameters> avParameters = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_extend")
     
     private TemplateExtend templateExtend = null;
@@ -275,7 +275,7 @@ public class CreateTranscodingReq  {
     }
 
     /**
-     * 转码模板ID，数组，每一路转码输出对应一个转码配置模板ID，最多支持9个模板ID。  多个转码模板中如下参数可变，其他都必须一致：  - 视频bitrate，height，width。 
+     * 转码模板ID，没带av_parameter参数时，必须带该参数，数组，每一路转码输出对应一个转码配置模板ID，最多支持9个模板ID。  多个转码模板中如下参数可变，其他都必须一致：  - 视频bitrate，height，width。 
      * @return transTemplateId
      */
     public List<Integer> getTransTemplateId() {
@@ -284,6 +284,40 @@ public class CreateTranscodingReq  {
 
     public void setTransTemplateId(List<Integer> transTemplateId) {
         this.transTemplateId = transTemplateId;
+    }
+
+    public CreateTranscodingReq withAvParameters(List<AvParameters> avParameters) {
+        this.avParameters = avParameters;
+        return this;
+    }
+
+    
+    public CreateTranscodingReq addAvParametersItem(AvParameters avParametersItem) {
+        if (this.avParameters == null) {
+            this.avParameters = new ArrayList<>();
+        }
+        this.avParameters.add(avParametersItem);
+        return this;
+    }
+
+    public CreateTranscodingReq withAvParameters(Consumer<List<AvParameters>> avParametersSetter) {
+        if(this.avParameters == null ){
+            this.avParameters = new ArrayList<>();
+        }
+        avParametersSetter.accept(this.avParameters);
+        return this;
+    }
+
+    /**
+     * 转码参数。  若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码，不带trans_template_id时，该参数必选。 
+     * @return avParameters
+     */
+    public List<AvParameters> getAvParameters() {
+        return avParameters;
+    }
+
+    public void setAvParameters(List<AvParameters> avParameters) {
+        this.avParameters = avParameters;
     }
 
     public CreateTranscodingReq withOutputFilenames(List<String> outputFilenames) {
@@ -329,7 +363,7 @@ public class CreateTranscodingReq  {
 
 
     /**
-     * 用户自定义数据。 
+     * 用户自定义数据，该字段可在查询接口或消息通知中按原内容透传给用户。 
      * @return userData
      */
     public String getUserData() {
@@ -847,40 +881,6 @@ public class CreateTranscodingReq  {
         this.systemProcess = systemProcess;
     }
 
-    public CreateTranscodingReq withAvParameters(List<AvParameters> avParameters) {
-        this.avParameters = avParameters;
-        return this;
-    }
-
-    
-    public CreateTranscodingReq addAvParametersItem(AvParameters avParametersItem) {
-        if (this.avParameters == null) {
-            this.avParameters = new ArrayList<>();
-        }
-        this.avParameters.add(avParametersItem);
-        return this;
-    }
-
-    public CreateTranscodingReq withAvParameters(Consumer<List<AvParameters>> avParametersSetter) {
-        if(this.avParameters == null ){
-            this.avParameters = new ArrayList<>();
-        }
-        avParametersSetter.accept(this.avParameters);
-        return this;
-    }
-
-    /**
-     * 转码参数。  若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码。 
-     * @return avParameters
-     */
-    public List<AvParameters> getAvParameters() {
-        return avParameters;
-    }
-
-    public void setAvParameters(List<AvParameters> avParameters) {
-        this.avParameters = avParameters;
-    }
-
     public CreateTranscodingReq withTemplateExtend(TemplateExtend templateExtend) {
         this.templateExtend = templateExtend;
         return this;
@@ -919,6 +919,7 @@ public class CreateTranscodingReq  {
         return Objects.equals(this.input, createTranscodingReq.input) &&
             Objects.equals(this.output, createTranscodingReq.output) &&
             Objects.equals(this.transTemplateId, createTranscodingReq.transTemplateId) &&
+            Objects.equals(this.avParameters, createTranscodingReq.avParameters) &&
             Objects.equals(this.outputFilenames, createTranscodingReq.outputFilenames) &&
             Objects.equals(this.userData, createTranscodingReq.userData) &&
             Objects.equals(this.watermarks, createTranscodingReq.watermarks) &&
@@ -941,12 +942,11 @@ public class CreateTranscodingReq  {
             Objects.equals(this.audioProcess, createTranscodingReq.audioProcess) &&
             Objects.equals(this.qualityEnhance, createTranscodingReq.qualityEnhance) &&
             Objects.equals(this.systemProcess, createTranscodingReq.systemProcess) &&
-            Objects.equals(this.avParameters, createTranscodingReq.avParameters) &&
             Objects.equals(this.templateExtend, createTranscodingReq.templateExtend);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, transTemplateId, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, projectId, vipUser, taskId, domainName, tenantProjectId, priority, audit, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, avParameters, templateExtend);
+        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, projectId, vipUser, taskId, domainName, tenantProjectId, priority, audit, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, templateExtend);
     }
     @Override
     public String toString() {
@@ -955,6 +955,7 @@ public class CreateTranscodingReq  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    transTemplateId: ").append(toIndentedString(transTemplateId)).append("\n");
+        sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
         sb.append("    outputFilenames: ").append(toIndentedString(outputFilenames)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    watermarks: ").append(toIndentedString(watermarks)).append("\n");
@@ -977,7 +978,6 @@ public class CreateTranscodingReq  {
         sb.append("    audioProcess: ").append(toIndentedString(audioProcess)).append("\n");
         sb.append("    qualityEnhance: ").append(toIndentedString(qualityEnhance)).append("\n");
         sb.append("    systemProcess: ").append(toIndentedString(systemProcess)).append("\n");
-        sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
         sb.append("    templateExtend: ").append(toIndentedString(templateExtend)).append("\n");
         sb.append("}");
         return sb.toString();

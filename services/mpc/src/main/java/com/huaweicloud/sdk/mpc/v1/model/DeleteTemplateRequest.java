@@ -21,9 +21,9 @@ public class DeleteTemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    private Long templateId;
+    private Integer templateId;
 
-    public DeleteTemplateRequest withTemplateId(Long templateId) {
+    public DeleteTemplateRequest withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
     }
@@ -37,11 +37,11 @@ public class DeleteTemplateRequest  {
      * maximum: 2147483647
      * @return templateId
      */
-    public Long getTemplateId() {
+    public Integer getTemplateId() {
         return templateId;
     }
 
-    public void setTemplateId(Long templateId) {
+    public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
     @Override

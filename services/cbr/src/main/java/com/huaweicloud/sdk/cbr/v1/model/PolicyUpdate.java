@@ -21,12 +21,6 @@ public class PolicyUpdate  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
-    private String description;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enabled")
     
     private Boolean enabled = true;
@@ -48,26 +42,6 @@ public class PolicyUpdate  {
     @JsonProperty(value="trigger")
     
     private PolicyTriggerReq trigger = null;
-
-    public PolicyUpdate withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public PolicyUpdate withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -171,21 +145,19 @@ public class PolicyUpdate  {
             return false;
         }
         PolicyUpdate policyUpdate = (PolicyUpdate) o;
-        return Objects.equals(this.description, policyUpdate.description) &&
-            Objects.equals(this.enabled, policyUpdate.enabled) &&
+        return Objects.equals(this.enabled, policyUpdate.enabled) &&
             Objects.equals(this.name, policyUpdate.name) &&
             Objects.equals(this.operationDefinition, policyUpdate.operationDefinition) &&
             Objects.equals(this.trigger, policyUpdate.trigger);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(description, enabled, name, operationDefinition, trigger);
+        return Objects.hash(enabled, name, operationDefinition, trigger);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyUpdate {\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    operationDefinition: ").append(toIndentedString(operationDefinition)).append("\n");

@@ -10,7 +10,7 @@ import java.util.Map;
 import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
-public class DevcloudpipelineMeta {
+public class CloudPipelineMeta {
 
     public static final HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatus = genForbatchShowPipelinesStatus();
 

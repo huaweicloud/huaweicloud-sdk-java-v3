@@ -7,15 +7,15 @@ import java.util.function.Function;
 
 import com.huaweicloud.sdk.cloudpipeline.v1.model.*;
 
-public class DevcloudpipelineAsyncClient {
+public class CloudPipelineAsyncClient {
     protected HcClient hcClient;
 
-    public DevcloudpipelineAsyncClient(HcClient hcClient) {
+    public CloudPipelineAsyncClient(HcClient hcClient) {
         this.hcClient = hcClient;
     }
 
-    public static ClientBuilder<DevcloudpipelineAsyncClient> newBuilder() {
-        return new ClientBuilder<>(DevcloudpipelineAsyncClient::new);
+    public static ClientBuilder<CloudPipelineAsyncClient> newBuilder() {
+        return new ClientBuilder<>(CloudPipelineAsyncClient::new);
     }
 
 
@@ -27,7 +27,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<BatchShowPipelinesStatusResponse>
      */
     public CompletableFuture<BatchShowPipelinesStatusResponse> batchShowPipelinesStatusAsync(BatchShowPipelinesStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.batchShowPipelinesStatus);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.batchShowPipelinesStatus);
     }
 
     /**
@@ -38,7 +38,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<CreatePipelineByTemplateResponse>
      */
     public CompletableFuture<CreatePipelineByTemplateResponse> createPipelineByTemplateAsync(CreatePipelineByTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.createPipelineByTemplate);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.createPipelineByTemplate);
     }
 
     /**
@@ -49,7 +49,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<ListTemplatesResponse>
      */
     public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.listTemplates);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.listTemplates);
     }
 
     /**
@@ -60,7 +60,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<RegisterAgentResponse>
      */
     public CompletableFuture<RegisterAgentResponse> registerAgentAsync(RegisterAgentRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.registerAgent);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.registerAgent);
     }
 
     /**
@@ -71,7 +71,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<RemovePipelineResponse>
      */
     public CompletableFuture<RemovePipelineResponse> removePipelineAsync(RemovePipelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.removePipeline);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.removePipeline);
     }
 
     /**
@@ -82,7 +82,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<ShowAgentStatusResponse>
      */
     public CompletableFuture<ShowAgentStatusResponse> showAgentStatusAsync(ShowAgentStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.showAgentStatus);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.showAgentStatus);
     }
 
     /**
@@ -93,7 +93,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<ShowInstanceStatusResponse>
      */
     public CompletableFuture<ShowInstanceStatusResponse> showInstanceStatusAsync(ShowInstanceStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.showInstanceStatus);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.showInstanceStatus);
     }
 
     /**
@@ -104,7 +104,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<ShowPipleineStatusResponse>
      */
     public CompletableFuture<ShowPipleineStatusResponse> showPipleineStatusAsync(ShowPipleineStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.showPipleineStatus);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.showPipleineStatus);
     }
 
     /**
@@ -115,7 +115,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<ShowTemplateDetailResponse>
      */
     public CompletableFuture<ShowTemplateDetailResponse> showTemplateDetailAsync(ShowTemplateDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.showTemplateDetail);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.showTemplateDetail);
     }
 
     /**
@@ -126,7 +126,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<StartNewPipelineResponse>
      */
     public CompletableFuture<StartNewPipelineResponse> startNewPipelineAsync(StartNewPipelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.startNewPipeline);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.startNewPipeline);
     }
 
     /**
@@ -137,7 +137,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<StartPipelineResponse>
      */
     public CompletableFuture<StartPipelineResponse> startPipelineAsync(StartPipelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.startPipeline);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.startPipeline);
     }
 
     /**
@@ -148,7 +148,7 @@ public class DevcloudpipelineAsyncClient {
      * @return CompletableFuture<StopPipelineResponse>
      */
     public CompletableFuture<StopPipelineResponse> stopPipelineAsync(StopPipelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, DevcloudpipelineMeta.stopPipeline);
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.stopPipeline);
     }
 
 }

@@ -181,7 +181,7 @@ public class QualityEnhance  {
     
     private ReviveEnum revive;
     /**
-     * 超动态范围，提升视频动态范围，明显提升片源动态范围。单纯该处理操作前后，分辨率、帧率等参数不发生变化，动态范围、色域范围、码率发生变化。 可和normal_ enhance组合使用。SDRtoHDR10（默认）,SDRtoHLG（暂不支持） 
+     * 超动态范围，提升视频动态范围，明显提升片源动态范围。单纯该处理操作前后，分辨率、帧率等参数不发生变化，动态范围、色域范围、码率发生变化。 可和normal_ enhance组合使用。 取值范围： - SDRtoHDR10 ：转换模式1，为标准模式 - SDRtoHDRFLAT”：转换模式2，清新模式，基本不改变源片的饱和度，适用于饱和度高的SDR源片转换为HDR 
      */
     public static final class SdrToHdrEnum {
 
@@ -191,12 +191,18 @@ public class QualityEnhance  {
          */
         public static final SdrToHdrEnum SDRTOHDR10 = new SdrToHdrEnum("SDRtoHDR10");
         
+        /**
+         * Enum SDRTOHDR10FLAT for value: "SDRtoHDR10FLAT"
+         */
+        public static final SdrToHdrEnum SDRTOHDR10FLAT = new SdrToHdrEnum("SDRtoHDR10FLAT");
+        
 
         private static final Map<String, SdrToHdrEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SdrToHdrEnum> createStaticFields() {
             Map<String, SdrToHdrEnum> map = new HashMap<>();
             map.put("SDRtoHDR10", SDRTOHDR10);
+            map.put("SDRtoHDR10FLAT", SDRTOHDR10FLAT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -308,7 +314,7 @@ public class QualityEnhance  {
 
 
     /**
-     * 超动态范围，提升视频动态范围，明显提升片源动态范围。单纯该处理操作前后，分辨率、帧率等参数不发生变化，动态范围、色域范围、码率发生变化。 可和normal_ enhance组合使用。SDRtoHDR10（默认）,SDRtoHLG（暂不支持） 
+     * 超动态范围，提升视频动态范围，明显提升片源动态范围。单纯该处理操作前后，分辨率、帧率等参数不发生变化，动态范围、色域范围、码率发生变化。 可和normal_ enhance组合使用。 取值范围： - SDRtoHDR10 ：转换模式1，为标准模式 - SDRtoHDRFLAT”：转换模式2，清新模式，基本不改变源片的饱和度，适用于饱和度高的SDR源片转换为HDR 
      * @return sdrToHdr
      */
     public SdrToHdrEnum getSdrToHdr() {

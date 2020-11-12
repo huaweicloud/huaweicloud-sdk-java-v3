@@ -208,9 +208,9 @@ public class VideoProcess  {
 
 
     /**
-     * 是否开启上采样，可取值为0,1: 0表示上采样关闭， 1表示上采样开启. 
+     * 是否开启上采样，如支持从480P的片源转为720P，可取值为:  - 0：表示上采样关闭， - 1：表示上采样开启. 
      * minimum: 0
-     * maximum: 2
+     * maximum: 1
      * @return upsample
      */
     public Integer getUpsample() {
