@@ -460,11 +460,11 @@ public class KafkaClient {
      * 修改实例跨VPC访问的内网IP
      * 修改实例跨VPC访问的内网IP。
      *
-     * @param UpdateInstanceCrossVPCIPRequest 请求对象
-     * @return UpdateInstanceCrossVPCIPResponse
+     * @param UpdateInstanceCrossVpcIpRequest 请求对象
+     * @return UpdateInstanceCrossVpcIpResponse
      */
-    public UpdateInstanceCrossVPCIPResponse updateInstanceCrossVPCIP(UpdateInstanceCrossVPCIPRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceCrossVPCIP);
+    public UpdateInstanceCrossVpcIpResponse updateInstanceCrossVpcIp(UpdateInstanceCrossVpcIpRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceCrossVpcIp);
     }
 
     /**

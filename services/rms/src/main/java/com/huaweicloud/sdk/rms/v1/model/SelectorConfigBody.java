@@ -1,0 +1,121 @@
+package com.huaweicloud.sdk.rms.v1.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * tracker 选择器
+ */
+public class SelectorConfigBody  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="all_supported")
+    
+    private Boolean allSupported;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_types")
+    
+    private List<String> resourceTypes = new ArrayList<>();
+    
+    public SelectorConfigBody withAllSupported(Boolean allSupported) {
+        this.allSupported = allSupported;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否选择所有支持的资源
+     * @return allSupported
+     */
+    public Boolean getAllSupported() {
+        return allSupported;
+    }
+
+    public void setAllSupported(Boolean allSupported) {
+        this.allSupported = allSupported;
+    }
+
+    public SelectorConfigBody withResourceTypes(List<String> resourceTypes) {
+        this.resourceTypes = resourceTypes;
+        return this;
+    }
+
+    
+    public SelectorConfigBody addResourceTypesItem(String resourceTypesItem) {
+        this.resourceTypes.add(resourceTypesItem);
+        return this;
+    }
+
+    public SelectorConfigBody withResourceTypes(Consumer<List<String>> resourceTypesSetter) {
+        if(this.resourceTypes == null ){
+            this.resourceTypes = new ArrayList<>();
+        }
+        resourceTypesSetter.accept(this.resourceTypes);
+        return this;
+    }
+
+    /**
+     * 资源类型列表
+     * @return resourceTypes
+     */
+    public List<String> getResourceTypes() {
+        return resourceTypes;
+    }
+
+    public void setResourceTypes(List<String> resourceTypes) {
+        this.resourceTypes = resourceTypes;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SelectorConfigBody selectorConfigBody = (SelectorConfigBody) o;
+        return Objects.equals(this.allSupported, selectorConfigBody.allSupported) &&
+            Objects.equals(this.resourceTypes, selectorConfigBody.resourceTypes);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(allSupported, resourceTypes);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SelectorConfigBody {\n");
+        sb.append("    allSupported: ").append(toIndentedString(allSupported)).append("\n");
+        sb.append("    resourceTypes: ").append(toIndentedString(resourceTypes)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

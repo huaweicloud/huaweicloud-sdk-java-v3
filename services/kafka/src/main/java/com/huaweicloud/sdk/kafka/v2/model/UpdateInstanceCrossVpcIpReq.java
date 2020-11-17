@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * UpdateInstanceCrossVPCIPReq
+ * UpdateInstanceCrossVpcIpReq
  */
-public class UpdateInstanceCrossVPCIPReq  {
+public class UpdateInstanceCrossVpcIpReq  {
 
 
 
@@ -26,19 +26,19 @@ public class UpdateInstanceCrossVPCIPReq  {
     
     private Map<String, String> advertisedIpContents = new HashMap<>();
     
-    public UpdateInstanceCrossVPCIPReq withAdvertisedIpContents(Map<String, String> advertisedIpContents) {
+    public UpdateInstanceCrossVpcIpReq withAdvertisedIpContents(Map<String, String> advertisedIpContents) {
         this.advertisedIpContents = advertisedIpContents;
         return this;
     }
 
     
 
-    public UpdateInstanceCrossVPCIPReq putAdvertisedIpContentsItem(String key, String advertisedIpContentsItem) {
+    public UpdateInstanceCrossVpcIpReq putAdvertisedIpContentsItem(String key, String advertisedIpContentsItem) {
         this.advertisedIpContents.put(key, advertisedIpContentsItem);
         return this;
     }
 
-    public UpdateInstanceCrossVPCIPReq withAdvertisedIpContents(Consumer<Map<String, String>> advertisedIpContentsSetter) {
+    public UpdateInstanceCrossVpcIpReq withAdvertisedIpContents(Consumer<Map<String, String>> advertisedIpContentsSetter) {
         if(this.advertisedIpContents == null ){
             this.advertisedIpContents = new HashMap<>();
         }
@@ -64,8 +64,8 @@ public class UpdateInstanceCrossVPCIPReq  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateInstanceCrossVPCIPReq updateInstanceCrossVPCIPReq = (UpdateInstanceCrossVPCIPReq) o;
-        return Objects.equals(this.advertisedIpContents, updateInstanceCrossVPCIPReq.advertisedIpContents);
+        UpdateInstanceCrossVpcIpReq updateInstanceCrossVpcIpReq = (UpdateInstanceCrossVpcIpReq) o;
+        return Objects.equals(this.advertisedIpContents, updateInstanceCrossVpcIpReq.advertisedIpContents);
     }
     @Override
     public int hashCode() {
@@ -74,7 +74,7 @@ public class UpdateInstanceCrossVPCIPReq  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateInstanceCrossVPCIPReq {\n");
+        sb.append("class UpdateInstanceCrossVpcIpReq {\n");
         sb.append("    advertisedIpContents: ").append(toIndentedString(advertisedIpContents)).append("\n");
         sb.append("}");
         return sb.toString();

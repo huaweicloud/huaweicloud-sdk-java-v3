@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.kafka.v2.model;
+package com.huaweicloud.sdk.nat.v2.model;
 
 
 
@@ -8,30 +8,30 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVPCIPReq;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class UpdateInstanceCrossVPCIPRequest  {
+public class UpdateNatGatewayRequest  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
+    @JsonProperty(value="nat_gateway_id")
     
-    private String instanceId;
+    private String natGatewayId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateInstanceCrossVPCIPReq body = null;
+    private UpdateNatGatewayRequestBody body = null;
 
-    public UpdateInstanceCrossVPCIPRequest withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public UpdateNatGatewayRequest withNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
         return this;
     }
 
@@ -39,25 +39,25 @@ public class UpdateInstanceCrossVPCIPRequest  {
 
 
     /**
-     * Get instanceId
-     * @return instanceId
+     * Get natGatewayId
+     * @return natGatewayId
      */
-    public String getInstanceId() {
-        return instanceId;
+    public String getNatGatewayId() {
+        return natGatewayId;
     }
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public void setNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
     }
 
-    public UpdateInstanceCrossVPCIPRequest withBody(UpdateInstanceCrossVPCIPReq body) {
+    public UpdateNatGatewayRequest withBody(UpdateNatGatewayRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateInstanceCrossVPCIPRequest withBody(Consumer<UpdateInstanceCrossVPCIPReq> bodySetter) {
+    public UpdateNatGatewayRequest withBody(Consumer<UpdateNatGatewayRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateInstanceCrossVPCIPReq();
+            this.body = new UpdateNatGatewayRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -69,11 +69,11 @@ public class UpdateInstanceCrossVPCIPRequest  {
      * Get body
      * @return body
      */
-    public UpdateInstanceCrossVPCIPReq getBody() {
+    public UpdateNatGatewayRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateInstanceCrossVPCIPReq body) {
+    public void setBody(UpdateNatGatewayRequestBody body) {
         this.body = body;
     }
     @Override
@@ -84,19 +84,19 @@ public class UpdateInstanceCrossVPCIPRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateInstanceCrossVPCIPRequest updateInstanceCrossVPCIPRequest = (UpdateInstanceCrossVPCIPRequest) o;
-        return Objects.equals(this.instanceId, updateInstanceCrossVPCIPRequest.instanceId) &&
-            Objects.equals(this.body, updateInstanceCrossVPCIPRequest.body);
+        UpdateNatGatewayRequest updateNatGatewayRequest = (UpdateNatGatewayRequest) o;
+        return Objects.equals(this.natGatewayId, updateNatGatewayRequest.natGatewayId) &&
+            Objects.equals(this.body, updateNatGatewayRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, body);
+        return Objects.hash(natGatewayId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateInstanceCrossVPCIPRequest {\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("class UpdateNatGatewayRequest {\n");
+        sb.append("    natGatewayId: ").append(toIndentedString(natGatewayId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

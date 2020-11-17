@@ -124,7 +124,7 @@ public class CreatePostPaidInstanceReq  {
     
     private EngineEnum engine;
     /**
-     * 消息引擎的版本。取值填写为：1.1.0。
+     * 消息引擎的版本。取值填写为：1.1.0和2.3.0。
      */
     public static final class EngineVersionEnum {
 
@@ -134,12 +134,18 @@ public class CreatePostPaidInstanceReq  {
          */
         public static final EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
         
+        /**
+         * Enum _2_3_0 for value: "2.3.0"
+         */
+        public static final EngineVersionEnum _2_3_0 = new EngineVersionEnum("2.3.0");
+        
 
         private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineVersionEnum> createStaticFields() {
             Map<String, EngineVersionEnum> map = new HashMap<>();
             map.put("1.1.0", _1_1_0);
+            map.put("2.3.0", _2_3_0);
             return Collections.unmodifiableMap(map);
         }
 
@@ -751,7 +757,7 @@ public class CreatePostPaidInstanceReq  {
 
 
     /**
-     * 消息引擎的版本。取值填写为：1.1.0。
+     * 消息引擎的版本。取值填写为：1.1.0和2.3.0。
      * @return engineVersion
      */
     public EngineVersionEnum getEngineVersion() {

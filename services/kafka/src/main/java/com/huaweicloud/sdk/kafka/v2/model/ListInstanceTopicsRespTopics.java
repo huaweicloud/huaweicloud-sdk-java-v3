@@ -19,9 +19,9 @@ public class ListInstanceTopicsRespTopics  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
+    @JsonProperty(value="name")
     
-    private String id;
+    private String name;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,8 +53,8 @@ public class ListInstanceTopicsRespTopics  {
     
     private Boolean syncMessageFlush;
 
-    public ListInstanceTopicsRespTopics withId(String id) {
-        this.id = id;
+    public ListInstanceTopicsRespTopics withName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -63,14 +63,14 @@ public class ListInstanceTopicsRespTopics  {
 
     /**
      * topic名称。
-     * @return id
+     * @return name
      */
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public ListInstanceTopicsRespTopics withReplication(Integer replication) {
@@ -181,7 +181,7 @@ public class ListInstanceTopicsRespTopics  {
             return false;
         }
         ListInstanceTopicsRespTopics listInstanceTopicsRespTopics = (ListInstanceTopicsRespTopics) o;
-        return Objects.equals(this.id, listInstanceTopicsRespTopics.id) &&
+        return Objects.equals(this.name, listInstanceTopicsRespTopics.name) &&
             Objects.equals(this.replication, listInstanceTopicsRespTopics.replication) &&
             Objects.equals(this.partition, listInstanceTopicsRespTopics.partition) &&
             Objects.equals(this.retentionTime, listInstanceTopicsRespTopics.retentionTime) &&
@@ -190,13 +190,13 @@ public class ListInstanceTopicsRespTopics  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, replication, partition, retentionTime, syncReplication, syncMessageFlush);
+        return Objects.hash(name, replication, partition, retentionTime, syncReplication, syncMessageFlush);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceTopicsRespTopics {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    replication: ").append(toIndentedString(replication)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");

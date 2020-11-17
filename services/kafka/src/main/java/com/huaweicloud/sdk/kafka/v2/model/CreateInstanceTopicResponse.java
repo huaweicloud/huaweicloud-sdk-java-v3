@@ -21,12 +21,12 @@ public class CreateInstanceTopicResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
+    @JsonProperty(value="name")
     
-    private String id;
+    private String name;
 
-    public CreateInstanceTopicResponse withId(String id) {
-        this.id = id;
+    public CreateInstanceTopicResponse withName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -35,14 +35,14 @@ public class CreateInstanceTopicResponse extends SdkResponse {
 
     /**
      * topic名称。
-     * @return id
+     * @return name
      */
-    public String getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -53,17 +53,17 @@ public class CreateInstanceTopicResponse extends SdkResponse {
             return false;
         }
         CreateInstanceTopicResponse createInstanceTopicResponse = (CreateInstanceTopicResponse) o;
-        return Objects.equals(this.id, createInstanceTopicResponse.id);
+        return Objects.equals(this.name, createInstanceTopicResponse.name);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(name);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceTopicResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

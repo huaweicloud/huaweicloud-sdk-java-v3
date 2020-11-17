@@ -74,6 +74,7 @@ public class DefaultHttpClient implements HttpClient {
     private static final String OKHTTP_PREEMPTIVE = "OkHttp-Preemptive";
     private static final String PROXY_AUTHENTICATE = "Proxy-Authenticate";
     private static final String PROXY_AUTHORIZATION = "Proxy-Authorization";
+    private static final int DEFAULT_READ_TIMEOUT = 120;
 
     /**
      * Set unique connection pool for synchronous and asynchronous requests
@@ -101,7 +102,8 @@ public class DefaultHttpClient implements HttpClient {
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
         clientBuilder.connectionPool(CONNECTION_POOL);
         clientBuilder.dispatcher(DISPATCHER);
-        clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS);
+        clientBuilder.connectTimeout(httpConfig.getTimeout(), TimeUnit.SECONDS)
+            .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.SECONDS);
         if (httpConfig.isIgnoreSSLVerification()) {
             clientBuilder
                 .hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())

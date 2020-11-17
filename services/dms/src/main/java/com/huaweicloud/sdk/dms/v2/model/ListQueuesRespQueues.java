@@ -31,12 +31,6 @@ public class ListQueuesRespQueues  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
-    private String created;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
@@ -83,12 +77,6 @@ public class ListQueuesRespQueues  {
     
     private Integer groupCount;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eff_date")
-    
-    private String effDate;
-
     public ListQueuesRespQueues withId(String id) {
         this.id = id;
         return this;
@@ -127,26 +115,6 @@ public class ListQueuesRespQueues  {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ListQueuesRespQueues withCreated(String created) {
-        this.created = created;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 创建队列的时间。
-     * @return created
-     */
-    public String getCreated() {
-        return created;
-    }
-
-    public void setCreated(String created) {
-        this.created = created;
     }
 
     public ListQueuesRespQueues withDescription(String description) {
@@ -308,26 +276,6 @@ public class ListQueuesRespQueues  {
     public void setGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
     }
-
-    public ListQueuesRespQueues withEffDate(String effDate) {
-        this.effDate = effDate;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 创建队列的时间。
-     * @return effDate
-     */
-    public String getEffDate() {
-        return effDate;
-    }
-
-    public void setEffDate(String effDate) {
-        this.effDate = effDate;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -339,7 +287,6 @@ public class ListQueuesRespQueues  {
         ListQueuesRespQueues listQueuesRespQueues = (ListQueuesRespQueues) o;
         return Objects.equals(this.id, listQueuesRespQueues.id) &&
             Objects.equals(this.name, listQueuesRespQueues.name) &&
-            Objects.equals(this.created, listQueuesRespQueues.created) &&
             Objects.equals(this.description, listQueuesRespQueues.description) &&
             Objects.equals(this.queueMode, listQueuesRespQueues.queueMode) &&
             Objects.equals(this.reservation, listQueuesRespQueues.reservation) &&
@@ -347,12 +294,11 @@ public class ListQueuesRespQueues  {
             Objects.equals(this.producedMessages, listQueuesRespQueues.producedMessages) &&
             Objects.equals(this.redrivePolicy, listQueuesRespQueues.redrivePolicy) &&
             Objects.equals(this.maxConsumeCount, listQueuesRespQueues.maxConsumeCount) &&
-            Objects.equals(this.groupCount, listQueuesRespQueues.groupCount) &&
-            Objects.equals(this.effDate, listQueuesRespQueues.effDate);
+            Objects.equals(this.groupCount, listQueuesRespQueues.groupCount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, created, description, queueMode, reservation, maxMsgSizeByte, producedMessages, redrivePolicy, maxConsumeCount, groupCount, effDate);
+        return Objects.hash(id, name, description, queueMode, reservation, maxMsgSizeByte, producedMessages, redrivePolicy, maxConsumeCount, groupCount);
     }
     @Override
     public String toString() {
@@ -360,7 +306,6 @@ public class ListQueuesRespQueues  {
         sb.append("class ListQueuesRespQueues {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    queueMode: ").append(toIndentedString(queueMode)).append("\n");
         sb.append("    reservation: ").append(toIndentedString(reservation)).append("\n");
@@ -369,7 +314,6 @@ public class ListQueuesRespQueues  {
         sb.append("    redrivePolicy: ").append(toIndentedString(redrivePolicy)).append("\n");
         sb.append("    maxConsumeCount: ").append(toIndentedString(maxConsumeCount)).append("\n");
         sb.append("    groupCount: ").append(toIndentedString(groupCount)).append("\n");
-        sb.append("    effDate: ").append(toIndentedString(effDate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

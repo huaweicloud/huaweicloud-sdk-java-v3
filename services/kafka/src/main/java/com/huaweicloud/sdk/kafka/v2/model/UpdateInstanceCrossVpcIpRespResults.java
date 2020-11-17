@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * 修改broker跨VPC访问的结果。
  */
-public class UpdateInstanceCrossVPCIPRespResults  {
+public class UpdateInstanceCrossVpcIpRespResults  {
 
 
 
@@ -35,7 +35,7 @@ public class UpdateInstanceCrossVPCIPRespResults  {
     
     private String ip;
 
-    public UpdateInstanceCrossVPCIPRespResults withAdvertisedIp(String advertisedIp) {
+    public UpdateInstanceCrossVpcIpRespResults withAdvertisedIp(String advertisedIp) {
         this.advertisedIp = advertisedIp;
         return this;
     }
@@ -55,7 +55,7 @@ public class UpdateInstanceCrossVPCIPRespResults  {
         this.advertisedIp = advertisedIp;
     }
 
-    public UpdateInstanceCrossVPCIPRespResults withSuccess(String success) {
+    public UpdateInstanceCrossVpcIpRespResults withSuccess(String success) {
         this.success = success;
         return this;
     }
@@ -75,7 +75,7 @@ public class UpdateInstanceCrossVPCIPRespResults  {
         this.success = success;
     }
 
-    public UpdateInstanceCrossVPCIPRespResults withIp(String ip) {
+    public UpdateInstanceCrossVpcIpRespResults withIp(String ip) {
         this.ip = ip;
         return this;
     }
@@ -102,10 +102,10 @@ public class UpdateInstanceCrossVPCIPRespResults  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateInstanceCrossVPCIPRespResults updateInstanceCrossVPCIPRespResults = (UpdateInstanceCrossVPCIPRespResults) o;
-        return Objects.equals(this.advertisedIp, updateInstanceCrossVPCIPRespResults.advertisedIp) &&
-            Objects.equals(this.success, updateInstanceCrossVPCIPRespResults.success) &&
-            Objects.equals(this.ip, updateInstanceCrossVPCIPRespResults.ip);
+        UpdateInstanceCrossVpcIpRespResults updateInstanceCrossVpcIpRespResults = (UpdateInstanceCrossVpcIpRespResults) o;
+        return Objects.equals(this.advertisedIp, updateInstanceCrossVpcIpRespResults.advertisedIp) &&
+            Objects.equals(this.success, updateInstanceCrossVpcIpRespResults.success) &&
+            Objects.equals(this.ip, updateInstanceCrossVpcIpRespResults.ip);
     }
     @Override
     public int hashCode() {
@@ -114,7 +114,7 @@ public class UpdateInstanceCrossVPCIPRespResults  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateInstanceCrossVPCIPRespResults {\n");
+        sb.append("class UpdateInstanceCrossVpcIpRespResults {\n");
         sb.append("    advertisedIp: ").append(toIndentedString(advertisedIp)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");

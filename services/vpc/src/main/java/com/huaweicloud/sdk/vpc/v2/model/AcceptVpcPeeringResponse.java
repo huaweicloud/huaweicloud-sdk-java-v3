@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.vpc.v2.model.VpcInfo;
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -154,13 +155,13 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="created_at")
     
-    private String createdAt;
+    private OffsetDateTime createdAt = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="updated_at")
     
-    private String updatedAt;
+    private OffsetDateTime updatedAt = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -282,7 +283,7 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
         this.acceptVpcInfo = acceptVpcInfo;
     }
 
-    public AcceptVpcPeeringResponse withCreatedAt(String createdAt) {
+    public AcceptVpcPeeringResponse withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -294,15 +295,15 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
      * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
      * @return createdAt
      */
-    public String getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public AcceptVpcPeeringResponse withUpdatedAt(String updatedAt) {
+    public AcceptVpcPeeringResponse withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -314,11 +315,11 @@ public class AcceptVpcPeeringResponse extends SdkResponse {
      * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
      * @return updatedAt
      */
-    public String getUpdatedAt() {
+    public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 

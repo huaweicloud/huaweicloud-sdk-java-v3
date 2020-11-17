@@ -463,11 +463,11 @@ public class KafkaAsyncClient {
      * 修改实例跨VPC访问的内网IP
      * 修改实例跨VPC访问的内网IP。
      *
-     * @param UpdateInstanceCrossVPCIPRequest 请求对象
-     * @return CompletableFuture<UpdateInstanceCrossVPCIPResponse>
+     * @param UpdateInstanceCrossVpcIpRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceCrossVpcIpResponse>
      */
-    public CompletableFuture<UpdateInstanceCrossVPCIPResponse> updateInstanceCrossVPCIPAsync(UpdateInstanceCrossVPCIPRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateInstanceCrossVPCIP);
+    public CompletableFuture<UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIpAsync(UpdateInstanceCrossVpcIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateInstanceCrossVpcIp);
     }
 
     /**

@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -26,7 +25,7 @@ public class ScheduledPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="launch_time")
     
-    private OffsetDateTime launchTime = null;
+    private String launchTime;
     /**
      * 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
      */
@@ -128,15 +127,15 @@ public class ScheduledPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime = null;
+    private String startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime = null;
+    private String endTime;
 
-    public ScheduledPolicy withLaunchTime(OffsetDateTime launchTime) {
+    public ScheduledPolicy withLaunchTime(String launchTime) {
         this.launchTime = launchTime;
         return this;
     }
@@ -148,11 +147,11 @@ public class ScheduledPolicy  {
      * 触发时间，遵循UTC时间。如果scaling_policy_type为SCHEDULED，则格式为：YYYY-MM-DDThh:mmZ。如果scaling_policy_type为RECURRENCE，则格式为：hh:mm。
      * @return launchTime
      */
-    public OffsetDateTime getLaunchTime() {
+    public String getLaunchTime() {
         return launchTime;
     }
 
-    public void setLaunchTime(OffsetDateTime launchTime) {
+    public void setLaunchTime(String launchTime) {
         this.launchTime = launchTime;
     }
 
@@ -196,7 +195,7 @@ public class ScheduledPolicy  {
         this.recurrenceValue = recurrenceValue;
     }
 
-    public ScheduledPolicy withStartTime(OffsetDateTime startTime) {
+    public ScheduledPolicy withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -208,15 +207,15 @@ public class ScheduledPolicy  {
      * 周期策略重复执行开始时间，遵循UTC时间。默认为当前时间，格式为：YYYY-MM-DDThh：mZ
      * @return startTime
      */
-    public OffsetDateTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(OffsetDateTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public ScheduledPolicy withEndTime(OffsetDateTime endTime) {
+    public ScheduledPolicy withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -228,11 +227,11 @@ public class ScheduledPolicy  {
      * 周期策略重复执行结束时间，遵循UTC时间，scaling_policy_type为RECURRENCE时该项必选。当为周期类型策略时，不得早于当前时间和开始时间。格式为：YYYY-MM-DDThh：mmZ
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
     @Override

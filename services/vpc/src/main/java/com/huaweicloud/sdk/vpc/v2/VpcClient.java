@@ -358,6 +358,193 @@ public class VpcClient {
     }
 
     /**
+     * 插入网络ACL规则
+     * 插入一条网络ACL规则到某一网络ACL策略中。
+     *
+     * @param NeutronAddFirewallRuleRequest 请求对象
+     * @return NeutronAddFirewallRuleResponse
+     */
+    public NeutronAddFirewallRuleResponse neutronAddFirewallRule(NeutronAddFirewallRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronAddFirewallRule);
+    }
+
+    /**
+     * 创建网络ACL组
+     * 创建网络ACL组
+     *
+     * @param NeutronCreateFirewallGroupRequest 请求对象
+     * @return NeutronCreateFirewallGroupResponse
+     */
+    public NeutronCreateFirewallGroupResponse neutronCreateFirewallGroup(NeutronCreateFirewallGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateFirewallGroup);
+    }
+
+    /**
+     * 创建网络ACL策略
+     * 创建网络ACL策略。
+     *
+     * @param NeutronCreateFirewallPolicyRequest 请求对象
+     * @return NeutronCreateFirewallPolicyResponse
+     */
+    public NeutronCreateFirewallPolicyResponse neutronCreateFirewallPolicy(NeutronCreateFirewallPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateFirewallPolicy);
+    }
+
+    /**
+     * 创建网络ACL规则
+     * 创建网络ACL规则。
+     *
+     * @param NeutronCreateFirewallRuleRequest 请求对象
+     * @return NeutronCreateFirewallRuleResponse
+     */
+    public NeutronCreateFirewallRuleResponse neutronCreateFirewallRule(NeutronCreateFirewallRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateFirewallRule);
+    }
+
+    /**
+     * 删除网络ACL组
+     * 删除网络ACL组
+     *
+     * @param NeutronDeleteFirewallGroupRequest 请求对象
+     * @return NeutronDeleteFirewallGroupResponse
+     */
+    public NeutronDeleteFirewallGroupResponse neutronDeleteFirewallGroup(NeutronDeleteFirewallGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteFirewallGroup);
+    }
+
+    /**
+     * 删除网络ACL策略
+     * 删除网络ACL策略。
+     *
+     * @param NeutronDeleteFirewallPolicyRequest 请求对象
+     * @return NeutronDeleteFirewallPolicyResponse
+     */
+    public NeutronDeleteFirewallPolicyResponse neutronDeleteFirewallPolicy(NeutronDeleteFirewallPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteFirewallPolicy);
+    }
+
+    /**
+     * 删除网络ACL规则
+     * 删除网络ACL规则。
+     *
+     * @param NeutronDeleteFirewallRuleRequest 请求对象
+     * @return NeutronDeleteFirewallRuleResponse
+     */
+    public NeutronDeleteFirewallRuleResponse neutronDeleteFirewallRule(NeutronDeleteFirewallRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteFirewallRule);
+    }
+
+    /**
+     * 查询所有网络ACL组
+     * 查询提交请求的租户有权限操作的所有网络ACL组信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
+     *
+     * @param NeutronListFirewallGroupsRequest 请求对象
+     * @return NeutronListFirewallGroupsResponse
+     */
+    public NeutronListFirewallGroupsResponse neutronListFirewallGroups(NeutronListFirewallGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListFirewallGroups);
+    }
+
+    /**
+     * 查询所有网络ACL策略
+     * 查询提交请求的租户有权限操作的所有网络ACL策略信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
+     *
+     * @param NeutronListFirewallPoliciesRequest 请求对象
+     * @return NeutronListFirewallPoliciesResponse
+     */
+    public NeutronListFirewallPoliciesResponse neutronListFirewallPolicies(NeutronListFirewallPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListFirewallPolicies);
+    }
+
+    /**
+     * 查询所有网络ACL规则
+     * 查询提交请求的租户有权限操作的所有网络ACL规则信息。单次查询最多返回2000条数据，超过2000后会返回分页标记。
+     *
+     * @param NeutronListFirewallRulesRequest 请求对象
+     * @return NeutronListFirewallRulesResponse
+     */
+    public NeutronListFirewallRulesResponse neutronListFirewallRules(NeutronListFirewallRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListFirewallRules);
+    }
+
+    /**
+     * 移除网络ACL规则
+     * 从某一网络ACL策略中移除一条网络ACL规则。
+     *
+     * @param NeutronRemoveFirewallRuleRequest 请求对象
+     * @return NeutronRemoveFirewallRuleResponse
+     */
+    public NeutronRemoveFirewallRuleResponse neutronRemoveFirewallRule(NeutronRemoveFirewallRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronRemoveFirewallRule);
+    }
+
+    /**
+     * 查询特定网络ACL组详情
+     * 查询特定网络ACL组详情。
+     *
+     * @param NeutronShowFirewallGroupRequest 请求对象
+     * @return NeutronShowFirewallGroupResponse
+     */
+    public NeutronShowFirewallGroupResponse neutronShowFirewallGroup(NeutronShowFirewallGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowFirewallGroup);
+    }
+
+    /**
+     * 查询特定网络ACL策略详情
+     * 查询特定网络ACL策略详情。
+     *
+     * @param NeutronShowFirewallPolicyRequest 请求对象
+     * @return NeutronShowFirewallPolicyResponse
+     */
+    public NeutronShowFirewallPolicyResponse neutronShowFirewallPolicy(NeutronShowFirewallPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowFirewallPolicy);
+    }
+
+    /**
+     * 查询特定网络ACL规则
+     * 查询特定网络ACL规则。
+     *
+     * @param NeutronShowFirewallRuleRequest 请求对象
+     * @return NeutronShowFirewallRuleResponse
+     */
+    public NeutronShowFirewallRuleResponse neutronShowFirewallRule(NeutronShowFirewallRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowFirewallRule);
+    }
+
+    /**
+     * 更新网络ACL组
+     * 更新网络ACL组。
+     *
+     * @param NeutronUpdateFirewallGroupRequest 请求对象
+     * @return NeutronUpdateFirewallGroupResponse
+     */
+    public NeutronUpdateFirewallGroupResponse neutronUpdateFirewallGroup(NeutronUpdateFirewallGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdateFirewallGroup);
+    }
+
+    /**
+     * 更新网络ACL策略
+     * 更新网络ACL策略。
+     *
+     * @param NeutronUpdateFirewallPolicyRequest 请求对象
+     * @return NeutronUpdateFirewallPolicyResponse
+     */
+    public NeutronUpdateFirewallPolicyResponse neutronUpdateFirewallPolicy(NeutronUpdateFirewallPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdateFirewallPolicy);
+    }
+
+    /**
+     * 更新网络ACL规则
+     * 更新网络ACL规则。
+     *
+     * @param NeutronUpdateFirewallRuleRequest 请求对象
+     * @return NeutronUpdateFirewallRuleResponse
+     */
+    public NeutronUpdateFirewallRuleResponse neutronUpdateFirewallRule(NeutronUpdateFirewallRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdateFirewallRule);
+    }
+
+    /**
      * 创建VPC
      * 创建虚拟私有云。
      *

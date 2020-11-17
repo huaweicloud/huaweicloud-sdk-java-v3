@@ -1282,12 +1282,12 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceCrossVPCIPRequest, UpdateInstanceCrossVPCIPResponse> updateInstanceCrossVPCIP = genForupdateInstanceCrossVPCIP();
+    public static final HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIp = genForupdateInstanceCrossVpcIp();
 
-    private static HttpRequestDef<UpdateInstanceCrossVPCIPRequest, UpdateInstanceCrossVPCIPResponse> genForupdateInstanceCrossVPCIP() {
+    private static HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> genForupdateInstanceCrossVpcIp() {
         // basic
-        HttpRequestDef.Builder<UpdateInstanceCrossVPCIPRequest, UpdateInstanceCrossVPCIPResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateInstanceCrossVPCIPRequest.class, UpdateInstanceCrossVPCIPResponse.class)
+        HttpRequestDef.Builder<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateInstanceCrossVpcIpRequest.class, UpdateInstanceCrossVpcIpResponse.class)
                 .withUri("/v2/{project_id}/instances/{instance_id}/crossvpc/modify")
                 .withContentType("application/json");
 
@@ -1296,15 +1296,15 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateInstanceCrossVPCIPRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceCrossVPCIPReq.class,
-            f -> f.withMarshaller(UpdateInstanceCrossVPCIPRequest::getBody, (req, v) -> {
+            UpdateInstanceCrossVpcIpReq.class,
+            f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

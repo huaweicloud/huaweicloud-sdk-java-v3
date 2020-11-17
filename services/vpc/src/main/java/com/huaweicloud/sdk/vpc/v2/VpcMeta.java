@@ -982,6 +982,581 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> neutronAddFirewallRule = genForneutronAddFirewallRule();
+
+    private static HttpRequestDef<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> genForneutronAddFirewallRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronAddFirewallRuleRequest.class, NeutronAddFirewallRuleResponse.class)
+                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/insert_rule")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("firewall_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronAddFirewallRuleRequest::getFirewallPolicyId, (req, v) -> {
+                req.setFirewallPolicyId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronInsertFirewallRuleRequestBody.class,
+            f -> f.withMarshaller(NeutronAddFirewallRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse> neutronCreateFirewallGroup = genForneutronCreateFirewallGroup();
+
+    private static HttpRequestDef<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse> genForneutronCreateFirewallGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateFirewallGroupRequest.class, NeutronCreateFirewallGroupResponse.class)
+                .withUri("/v2.0/fwaas/firewall_groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronCreateFirewallGroupRequestBody.class,
+            f -> f.withMarshaller(NeutronCreateFirewallGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse> neutronCreateFirewallPolicy = genForneutronCreateFirewallPolicy();
+
+    private static HttpRequestDef<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse> genForneutronCreateFirewallPolicy() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateFirewallPolicyRequest.class, NeutronCreateFirewallPolicyResponse.class)
+                .withUri("/v2.0/fwaas/firewall_policies")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronCreateFirewallPolicyRequestBody.class,
+            f -> f.withMarshaller(NeutronCreateFirewallPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse> neutronCreateFirewallRule = genForneutronCreateFirewallRule();
+
+    private static HttpRequestDef<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse> genForneutronCreateFirewallRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateFirewallRuleRequest.class, NeutronCreateFirewallRuleResponse.class)
+                .withUri("/v2.0/fwaas/firewall_rules")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronCreateFirewallRuleRequestBody.class,
+            f -> f.withMarshaller(NeutronCreateFirewallRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> neutronDeleteFirewallGroup = genForneutronDeleteFirewallGroup();
+
+    private static HttpRequestDef<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> genForneutronDeleteFirewallGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallGroupRequest.class, NeutronDeleteFirewallGroupResponse.class)
+                .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}");
+
+        // requests
+        builder.withRequestField("firewall_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronDeleteFirewallGroupRequest::getFirewallGroupId, (req, v) -> {
+                req.setFirewallGroupId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> neutronDeleteFirewallPolicy = genForneutronDeleteFirewallPolicy();
+
+    private static HttpRequestDef<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> genForneutronDeleteFirewallPolicy() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallPolicyRequest.class, NeutronDeleteFirewallPolicyResponse.class)
+                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}");
+
+        // requests
+        builder.withRequestField("firewall_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronDeleteFirewallPolicyRequest::getFirewallPolicyId, (req, v) -> {
+                req.setFirewallPolicyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> neutronDeleteFirewallRule = genForneutronDeleteFirewallRule();
+
+    private static HttpRequestDef<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> genForneutronDeleteFirewallRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallRuleRequest.class, NeutronDeleteFirewallRuleResponse.class)
+                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}");
+
+        // requests
+        builder.withRequestField("firewall_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronDeleteFirewallRuleRequest::getFirewallRuleId, (req, v) -> {
+                req.setFirewallRuleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> neutronListFirewallGroups = genForneutronListFirewallGroups();
+
+    private static HttpRequestDef<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> genForneutronListFirewallGroups() {
+        // basic
+        HttpRequestDef.Builder<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallGroupsRequest.class, NeutronListFirewallGroupsResponse.class)
+                .withUri("/v2.0/fwaas/firewall_groups");
+
+        // requests
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            })
+        );
+        builder.withRequestField("ingress_firewall_policy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getIngressFirewallPolicyId, (req, v) -> {
+                req.setIngressFirewallPolicyId(v);
+            })
+        );
+        builder.withRequestField("egress_firewall_policy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getEgressFirewallPolicyId, (req, v) -> {
+                req.setEgressFirewallPolicyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> neutronListFirewallPolicies = genForneutronListFirewallPolicies();
+
+    private static HttpRequestDef<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> genForneutronListFirewallPolicies() {
+        // basic
+        HttpRequestDef.Builder<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallPoliciesRequest.class, NeutronListFirewallPoliciesResponse.class)
+                .withUri("/v2.0/fwaas/firewall_policies");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            })
+        );
+        builder.withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> neutronListFirewallRules = genForneutronListFirewallRules();
+
+    private static HttpRequestDef<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> genForneutronListFirewallRules() {
+        // basic
+        HttpRequestDef.Builder<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallRulesRequest.class, NeutronListFirewallRulesResponse.class)
+                .withUri("/v2.0/fwaas/firewall_rules");
+
+        // requests
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallRulesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(NeutronListFirewallRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallRulesRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallRulesRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(NeutronListFirewallRulesRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            })
+        );
+        builder.withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallRulesRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            })
+        );
+        builder.withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NeutronListFirewallRulesRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse> neutronRemoveFirewallRule = genForneutronRemoveFirewallRule();
+
+    private static HttpRequestDef<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse> genForneutronRemoveFirewallRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronRemoveFirewallRuleRequest.class, NeutronRemoveFirewallRuleResponse.class)
+                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/remove_rule")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("firewall_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronRemoveFirewallRuleRequest::getFirewallPolicyId, (req, v) -> {
+                req.setFirewallPolicyId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronRemoveFirewallRuleRequestBody.class,
+            f -> f.withMarshaller(NeutronRemoveFirewallRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> neutronShowFirewallGroup = genForneutronShowFirewallGroup();
+
+    private static HttpRequestDef<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> genForneutronShowFirewallGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallGroupRequest.class, NeutronShowFirewallGroupResponse.class)
+                .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}");
+
+        // requests
+        builder.withRequestField("firewall_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronShowFirewallGroupRequest::getFirewallGroupId, (req, v) -> {
+                req.setFirewallGroupId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> neutronShowFirewallPolicy = genForneutronShowFirewallPolicy();
+
+    private static HttpRequestDef<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> genForneutronShowFirewallPolicy() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallPolicyRequest.class, NeutronShowFirewallPolicyResponse.class)
+                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}");
+
+        // requests
+        builder.withRequestField("firewall_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronShowFirewallPolicyRequest::getFirewallPolicyId, (req, v) -> {
+                req.setFirewallPolicyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> neutronShowFirewallRule = genForneutronShowFirewallRule();
+
+    private static HttpRequestDef<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> genForneutronShowFirewallRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallRuleRequest.class, NeutronShowFirewallRuleResponse.class)
+                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}");
+
+        // requests
+        builder.withRequestField("firewall_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronShowFirewallRuleRequest::getFirewallRuleId, (req, v) -> {
+                req.setFirewallRuleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse> neutronUpdateFirewallGroup = genForneutronUpdateFirewallGroup();
+
+    private static HttpRequestDef<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse> genForneutronUpdateFirewallGroup() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateFirewallGroupRequest.class, NeutronUpdateFirewallGroupResponse.class)
+                .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("firewall_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronUpdateFirewallGroupRequest::getFirewallGroupId, (req, v) -> {
+                req.setFirewallGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronUpdateFirewallGroupRequestBody.class,
+            f -> f.withMarshaller(NeutronUpdateFirewallGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse> neutronUpdateFirewallPolicy = genForneutronUpdateFirewallPolicy();
+
+    private static HttpRequestDef<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse> genForneutronUpdateFirewallPolicy() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateFirewallPolicyRequest.class, NeutronUpdateFirewallPolicyResponse.class)
+                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("firewall_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronUpdateFirewallPolicyRequest::getFirewallPolicyId, (req, v) -> {
+                req.setFirewallPolicyId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronUpdateFirewallPolicyRequestBody.class,
+            f -> f.withMarshaller(NeutronUpdateFirewallPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse> neutronUpdateFirewallRule = genForneutronUpdateFirewallRule();
+
+    private static HttpRequestDef<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse> genForneutronUpdateFirewallRule() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateFirewallRuleRequest.class, NeutronUpdateFirewallRuleResponse.class)
+                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("firewall_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NeutronUpdateFirewallRuleRequest::getFirewallRuleId, (req, v) -> {
+                req.setFirewallRuleId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            NeutronUpdateFirewallRuleRequestBody.class,
+            f -> f.withMarshaller(NeutronUpdateFirewallRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateVpcRequest, CreateVpcResponse> createVpc = genForcreateVpc();
 
     private static HttpRequestDef<CreateVpcRequest, CreateVpcResponse> genForcreateVpc() {

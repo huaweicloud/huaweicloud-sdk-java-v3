@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.21-beta</version>
+        <version>3.0.22-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.21-beta</version>
+    <version>3.0.22-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -39,10 +39,12 @@
         <module>oms</module>
         <module>kms</module>
         <module>ces</module>
+        <module>nat</module>
         <module>rabbitmq</module>
         <module>meeting</module>
         <module>bssintl</module>
         <module>cts</module>
+        <module>rms</module>
         <module>codehub</module>
         <module>ims</module>
         <module>sms</module>

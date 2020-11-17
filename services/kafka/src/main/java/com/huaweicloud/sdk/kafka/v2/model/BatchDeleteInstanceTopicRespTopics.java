@@ -27,7 +27,7 @@ public class BatchDeleteInstanceTopicRespTopics  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="success")
     
-    private String success;
+    private Boolean success;
 
     public BatchDeleteInstanceTopicRespTopics withId(String id) {
         this.id = id;
@@ -49,7 +49,7 @@ public class BatchDeleteInstanceTopicRespTopics  {
         this.id = id;
     }
 
-    public BatchDeleteInstanceTopicRespTopics withSuccess(String success) {
+    public BatchDeleteInstanceTopicRespTopics withSuccess(Boolean success) {
         this.success = success;
         return this;
     }
@@ -61,11 +61,11 @@ public class BatchDeleteInstanceTopicRespTopics  {
      * topic名称。
      * @return success
      */
-    public String getSuccess() {
+    public Boolean getSuccess() {
         return success;
     }
 
-    public void setSuccess(String success) {
+    public void setSuccess(Boolean success) {
         this.success = success;
     }
     @Override

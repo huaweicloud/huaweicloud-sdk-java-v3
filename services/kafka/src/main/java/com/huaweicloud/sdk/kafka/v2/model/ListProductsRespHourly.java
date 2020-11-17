@@ -67,7 +67,7 @@ public class ListProductsRespHourly  {
 
 
     /**
-     * 消息引擎的版本，当前仅支持1.1.0。
+     * 消息引擎的版本，当前仅支持1.1.0和2.3.0。
      * @return version
      */
     public String getVersion() {

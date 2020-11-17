@@ -22,12 +22,6 @@ public class TransTemplate  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
-    private String tenantId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_name")
     
     private String templateName;
@@ -49,26 +43,6 @@ public class TransTemplate  {
     @JsonProperty(value="common")
     
     private Common common = null;
-
-    public TransTemplate withTenantId(String tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 租户Id
-     * @return tenantId
-     */
-    public String getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
 
     public TransTemplate withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -179,21 +153,19 @@ public class TransTemplate  {
             return false;
         }
         TransTemplate transTemplate = (TransTemplate) o;
-        return Objects.equals(this.tenantId, transTemplate.tenantId) &&
-            Objects.equals(this.templateName, transTemplate.templateName) &&
+        return Objects.equals(this.templateName, transTemplate.templateName) &&
             Objects.equals(this.video, transTemplate.video) &&
             Objects.equals(this.audio, transTemplate.audio) &&
             Objects.equals(this.common, transTemplate.common);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(tenantId, templateName, video, audio, common);
+        return Objects.hash(templateName, video, audio, common);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TransTemplate {\n");
-        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    audio: ").append(toIndentedString(audio)).append("\n");

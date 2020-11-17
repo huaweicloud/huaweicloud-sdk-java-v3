@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVPCIPRespResults;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpRespResults;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -19,7 +19,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class UpdateInstanceCrossVPCIPResponse extends SdkResponse {
+public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
 
 
 
@@ -32,9 +32,9 @@ public class UpdateInstanceCrossVPCIPResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="results")
     
-    private List<UpdateInstanceCrossVPCIPRespResults> results = null;
+    private List<UpdateInstanceCrossVpcIpRespResults> results = null;
     
-    public UpdateInstanceCrossVPCIPResponse withSuccess(String success) {
+    public UpdateInstanceCrossVpcIpResponse withSuccess(String success) {
         this.success = success;
         return this;
     }
@@ -54,13 +54,13 @@ public class UpdateInstanceCrossVPCIPResponse extends SdkResponse {
         this.success = success;
     }
 
-    public UpdateInstanceCrossVPCIPResponse withResults(List<UpdateInstanceCrossVPCIPRespResults> results) {
+    public UpdateInstanceCrossVpcIpResponse withResults(List<UpdateInstanceCrossVpcIpRespResults> results) {
         this.results = results;
         return this;
     }
 
     
-    public UpdateInstanceCrossVPCIPResponse addResultsItem(UpdateInstanceCrossVPCIPRespResults resultsItem) {
+    public UpdateInstanceCrossVpcIpResponse addResultsItem(UpdateInstanceCrossVpcIpRespResults resultsItem) {
         if (this.results == null) {
             this.results = new ArrayList<>();
         }
@@ -68,7 +68,7 @@ public class UpdateInstanceCrossVPCIPResponse extends SdkResponse {
         return this;
     }
 
-    public UpdateInstanceCrossVPCIPResponse withResults(Consumer<List<UpdateInstanceCrossVPCIPRespResults>> resultsSetter) {
+    public UpdateInstanceCrossVpcIpResponse withResults(Consumer<List<UpdateInstanceCrossVpcIpRespResults>> resultsSetter) {
         if(this.results == null ){
             this.results = new ArrayList<>();
         }
@@ -80,11 +80,11 @@ public class UpdateInstanceCrossVPCIPResponse extends SdkResponse {
      * 修改broker跨VPC访问的结果列表。
      * @return results
      */
-    public List<UpdateInstanceCrossVPCIPRespResults> getResults() {
+    public List<UpdateInstanceCrossVpcIpRespResults> getResults() {
         return results;
     }
 
-    public void setResults(List<UpdateInstanceCrossVPCIPRespResults> results) {
+    public void setResults(List<UpdateInstanceCrossVpcIpRespResults> results) {
         this.results = results;
     }
     @Override
@@ -95,9 +95,9 @@ public class UpdateInstanceCrossVPCIPResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateInstanceCrossVPCIPResponse updateInstanceCrossVPCIPResponse = (UpdateInstanceCrossVPCIPResponse) o;
-        return Objects.equals(this.success, updateInstanceCrossVPCIPResponse.success) &&
-            Objects.equals(this.results, updateInstanceCrossVPCIPResponse.results);
+        UpdateInstanceCrossVpcIpResponse updateInstanceCrossVpcIpResponse = (UpdateInstanceCrossVpcIpResponse) o;
+        return Objects.equals(this.success, updateInstanceCrossVpcIpResponse.success) &&
+            Objects.equals(this.results, updateInstanceCrossVpcIpResponse.results);
     }
     @Override
     public int hashCode() {
@@ -106,7 +106,7 @@ public class UpdateInstanceCrossVPCIPResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateInstanceCrossVPCIPResponse {\n");
+        sb.append("class UpdateInstanceCrossVpcIpResponse {\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    results: ").append(toIndentedString(results)).append("\n");
         sb.append("}");
