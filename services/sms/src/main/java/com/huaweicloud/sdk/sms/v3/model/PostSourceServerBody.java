@@ -82,7 +82,7 @@ public class PostSourceServerBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<Disk> disks = new ArrayList<>();
+    private List<Disk> disks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -397,6 +397,9 @@ public class PostSourceServerBody  {
 
     
     public PostSourceServerBody addDisksItem(Disk disksItem) {
+        if (this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }

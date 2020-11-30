@@ -380,6 +380,17 @@ public class EcsClient {
     }
 
     /**
+     * 查询SSH密钥详情
+     * 根据SSH密钥名称查询指定SSH密钥。
+     *
+     * @param NovaShowKeypairRequest 请求对象
+     * @return NovaShowKeypairResponse
+     */
+    public NovaShowKeypairResponse novaShowKeypair(NovaShowKeypairRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.novaShowKeypair);
+    }
+
+    /**
      * 查询云服务器详情
      * 根据云服务器ID，查询云服务器的详细信息。
      *

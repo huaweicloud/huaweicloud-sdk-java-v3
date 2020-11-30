@@ -726,45 +726,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCESMonitoredObjectsRequest, ListCESMonitoredObjectsResponse> listCESMonitoredObjects = genForlistCESMonitoredObjects();
-
-    private static HttpRequestDef<ListCESMonitoredObjectsRequest, ListCESMonitoredObjectsResponse> genForlistCESMonitoredObjects() {
-        // basic
-        HttpRequestDef.Builder<ListCESMonitoredObjectsRequest, ListCESMonitoredObjectsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListCESMonitoredObjectsRequest.class, ListCESMonitoredObjectsResponse.class)
-                .withUri("/v2/{project_id}/dims/monitored-objects");
-
-        // requests
-        builder.withRequestField("dim_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListCESMonitoredObjectsRequest::getDimName, (req, v) -> {
-                req.setDimName(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListCESMonitoredObjectsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListCESMonitoredObjectsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations = genForlistConfigurations();
 
     private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForlistConfigurations() {
@@ -1054,6 +1015,45 @@ public class DcsMeta {
             String.class,
             f -> f.withMarshaller(ListMigrationTaskRequest::getName, (req, v) -> {
                 req.setName(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> listMonitoredObjects = genForlistMonitoredObjects();
+
+    private static HttpRequestDef<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> genForlistMonitoredObjects() {
+        // basic
+        HttpRequestDef.Builder<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMonitoredObjectsRequest.class, ListMonitoredObjectsResponse.class)
+                .withUri("/v2/{project_id}/dims/monitored-objects");
+
+        // requests
+        builder.withRequestField("dim_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListMonitoredObjectsRequest::getDimName, (req, v) -> {
+                req.setDimName(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMonitoredObjectsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMonitoredObjectsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 

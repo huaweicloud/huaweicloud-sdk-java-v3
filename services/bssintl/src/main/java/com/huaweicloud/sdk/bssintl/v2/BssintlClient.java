@@ -281,6 +281,17 @@ public class BssintlClient {
     }
 
     /**
+     * 查询使用量列表
+     * 功能描述：客户在伙伴销售平台或自建平台查询包年/包月或按需产品的列表
+     *
+     * @param ListUsageTypesRequest 请求对象
+     * @return ListUsageTypesResponse
+     */
+    public ListUsageTypesResponse listUsageTypes(ListUsageTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listUsageTypes);
+    }
+
+    /**
      * 支付包周期订单
      * 功能描述：支付包周期订单
      *
@@ -377,6 +388,17 @@ public class BssintlClient {
      */
     public UnfreezeSubCustomersResponse unfreezeSubCustomers(UnfreezeSubCustomersRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.unfreezeSubCustomers);
+    }
+
+    /**
+     * 设置或者取消包周期资源到期转按需
+     * 功能描述：设置或者取消包周期资源到期转按需
+     *
+     * @param UpdatePeriodToOnDemandRequest 请求对象
+     * @return UpdatePeriodToOnDemandResponse
+     */
+    public UpdatePeriodToOnDemandResponse updatePeriodToOnDemand(UpdatePeriodToOnDemandRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.updatePeriodToOnDemand);
     }
 
     /**

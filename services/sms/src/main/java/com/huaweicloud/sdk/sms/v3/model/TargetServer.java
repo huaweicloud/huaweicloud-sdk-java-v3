@@ -245,14 +245,14 @@ public class TargetServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<TargetDisk> disks = new ArrayList<>();
+    private List<TargetDisk> disks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="btrfs_list")
     
-    private String btrfsList;
-
+    private List<String> btrfsList = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="network")
@@ -614,6 +614,9 @@ public class TargetServer  {
 
     
     public TargetServer addDisksItem(TargetDisk disksItem) {
+        if (this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
         this.disks.add(disksItem);
         return this;
     }
@@ -638,23 +641,37 @@ public class TargetServer  {
         this.disks = disks;
     }
 
-    public TargetServer withBtrfsList(String btrfsList) {
+    public TargetServer withBtrfsList(List<String> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
     
+    public TargetServer addBtrfsListItem(String btrfsListItem) {
+        if (this.btrfsList == null) {
+            this.btrfsList = new ArrayList<>();
+        }
+        this.btrfsList.add(btrfsListItem);
+        return this;
+    }
 
+    public TargetServer withBtrfsList(Consumer<List<String>> btrfsListSetter) {
+        if(this.btrfsList == null ){
+            this.btrfsList = new ArrayList<>();
+        }
+        btrfsListSetter.accept(this.btrfsList);
+        return this;
+    }
 
     /**
      * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
      * @return btrfsList
      */
-    public String getBtrfsList() {
+    public List<String> getBtrfsList() {
         return btrfsList;
     }
 
-    public void setBtrfsList(String btrfsList) {
+    public void setBtrfsList(List<String> btrfsList) {
         this.btrfsList = btrfsList;
     }
 

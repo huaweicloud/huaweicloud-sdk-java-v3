@@ -39,7 +39,7 @@ public class TemplateDisk  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private Long size;
 
     public TemplateDisk withIndex(Integer index) {
         this.index = index;
@@ -101,7 +101,7 @@ public class TemplateDisk  {
         this.disktype = disktype;
     }
 
-    public TemplateDisk withSize(Integer size) {
+    public TemplateDisk withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -113,11 +113,11 @@ public class TemplateDisk  {
      * 磁盘大小，单位：GB
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
     @Override

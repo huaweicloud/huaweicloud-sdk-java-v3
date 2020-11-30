@@ -23,11 +23,11 @@ public class NatAsyncClient {
      * 批量创建DNAT规则
      * 批量创建DNAT规则。
      *
-     * @param BatchCreateDnatRulesRequest 请求对象
-     * @return CompletableFuture<BatchCreateDnatRulesResponse>
+     * @param BatchCreateNatGatewayDnatRulesRequest 请求对象
+     * @return CompletableFuture<BatchCreateNatGatewayDnatRulesResponse>
      */
-    public CompletableFuture<BatchCreateDnatRulesResponse> batchCreateDnatRulesAsync(BatchCreateDnatRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, NatMeta.batchCreateDnatRules);
+    public CompletableFuture<BatchCreateNatGatewayDnatRulesResponse> batchCreateNatGatewayDnatRulesAsync(BatchCreateNatGatewayDnatRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.batchCreateNatGatewayDnatRules);
     }
 
     /**

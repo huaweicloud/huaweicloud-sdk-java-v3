@@ -1134,6 +1134,37 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> novaShowKeypair = genFornovaShowKeypair();
+
+    private static HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> genFornovaShowKeypair() {
+        // basic
+        HttpRequestDef.Builder<NovaShowKeypairRequest, NovaShowKeypairResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NovaShowKeypairRequest.class, NovaShowKeypairResponse.class)
+                .withUri("/v2.1/{project_id}/os-keypairs/{keypair_name}");
+
+        // requests
+        builder.withRequestField("keypair_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(NovaShowKeypairRequest::getKeypairName, (req, v) -> {
+                req.setKeypairName(v);
+            })
+        );
+        builder.withRequestField("OpenStack-API-Version",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(NovaShowKeypairRequest::getOpenStackAPIVersion, (req, v) -> {
+                req.setOpenStackAPIVersion(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> novaShowServer = genFornovaShowServer();
 
     private static HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> genFornovaShowServer() {

@@ -30,7 +30,7 @@ public class VolumeGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="free_size")
     
-    private Integer freeSize;
+    private Long freeSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,7 +48,7 @@ public class VolumeGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private Long size;
 
     public VolumeGroups withComponents(String components) {
         this.components = components;
@@ -70,7 +70,7 @@ public class VolumeGroups  {
         this.components = components;
     }
 
-    public VolumeGroups withFreeSize(Integer freeSize) {
+    public VolumeGroups withFreeSize(Long freeSize) {
         this.freeSize = freeSize;
         return this;
     }
@@ -82,11 +82,11 @@ public class VolumeGroups  {
      * 剩余空间
      * @return freeSize
      */
-    public Integer getFreeSize() {
+    public Long getFreeSize() {
         return freeSize;
     }
 
-    public void setFreeSize(Integer freeSize) {
+    public void setFreeSize(Long freeSize) {
         this.freeSize = freeSize;
     }
 
@@ -144,7 +144,7 @@ public class VolumeGroups  {
         this.name = name;
     }
 
-    public VolumeGroups withSize(Integer size) {
+    public VolumeGroups withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -156,11 +156,11 @@ public class VolumeGroups  {
      * 大小
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
     @Override

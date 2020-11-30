@@ -259,17 +259,6 @@ public class DcsClient {
     }
 
     /**
-     * 查询主维度信息列表
-     * 查询主维度对象列表，主维度ID当前支持dcs_instance_id，dcs_memcached_instance_id。 &gt; 该接口当前仅在中国华南区开放。 
-     *
-     * @param ListCESMonitoredObjectsRequest 请求对象
-     * @return ListCESMonitoredObjectsResponse
-     */
-    public ListCESMonitoredObjectsResponse listCESMonitoredObjects(ListCESMonitoredObjectsRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.listCESMonitoredObjects);
-    }
-
-    /**
      * 查询实例配置参数
      * 查询指定实例的配置参数信息。
      *
@@ -344,6 +333,17 @@ public class DcsClient {
      */
     public ListMigrationTaskResponse listMigrationTask(ListMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.listMigrationTask);
+    }
+
+    /**
+     * 查询主维度信息列表
+     * 查询主维度对象列表，主维度ID当前支持dcs_instance_id，dcs_memcached_instance_id。 &gt; 该接口当前仅在中国华南区开放。 
+     *
+     * @param ListMonitoredObjectsRequest 请求对象
+     * @return ListMonitoredObjectsResponse
+     */
+    public ListMonitoredObjectsResponse listMonitoredObjects(ListMonitoredObjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listMonitoredObjects);
     }
 
     /**

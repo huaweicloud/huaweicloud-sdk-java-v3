@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.Constraint;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.ParamTypeLimits;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -83,14 +85,14 @@ public class TemplateParam  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limits")
     
-    private ParamTypeLimits limits = null;
-
+    private List<ParamTypeLimits> limits = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="constraints")
     
-    private Constraint constraints = null;
-
+    private List<Constraint> constraints = new ArrayList<>();
+    
     public TemplateParam withRequired(String required) {
         this.required = required;
         return this;
@@ -291,57 +293,65 @@ public class TemplateParam  {
         this.isDefault = isDefault;
     }
 
-    public TemplateParam withLimits(ParamTypeLimits limits) {
+    public TemplateParam withLimits(List<ParamTypeLimits> limits) {
         this.limits = limits;
         return this;
     }
 
-    public TemplateParam withLimits(Consumer<ParamTypeLimits> limitsSetter) {
-        if(this.limits == null ){
-            this.limits = new ParamTypeLimits();
-            limitsSetter.accept(this.limits);
-        }
-        
+    
+    public TemplateParam addLimitsItem(ParamTypeLimits limitsItem) {
+        this.limits.add(limitsItem);
         return this;
     }
 
+    public TemplateParam withLimits(Consumer<List<ParamTypeLimits>> limitsSetter) {
+        if(this.limits == null ){
+            this.limits = new ArrayList<>();
+        }
+        limitsSetter.accept(this.limits);
+        return this;
+    }
 
     /**
-     * Get limits
+     * array类型数据
      * @return limits
      */
-    public ParamTypeLimits getLimits() {
+    public List<ParamTypeLimits> getLimits() {
         return limits;
     }
 
-    public void setLimits(ParamTypeLimits limits) {
+    public void setLimits(List<ParamTypeLimits> limits) {
         this.limits = limits;
     }
 
-    public TemplateParam withConstraints(Constraint constraints) {
+    public TemplateParam withConstraints(List<Constraint> constraints) {
         this.constraints = constraints;
         return this;
     }
 
-    public TemplateParam withConstraints(Consumer<Constraint> constraintsSetter) {
-        if(this.constraints == null ){
-            this.constraints = new Constraint();
-            constraintsSetter.accept(this.constraints);
-        }
-        
+    
+    public TemplateParam addConstraintsItem(Constraint constraintsItem) {
+        this.constraints.add(constraintsItem);
         return this;
     }
 
+    public TemplateParam withConstraints(Consumer<List<Constraint>> constraintsSetter) {
+        if(this.constraints == null ){
+            this.constraints = new ArrayList<>();
+        }
+        constraintsSetter.accept(this.constraints);
+        return this;
+    }
 
     /**
-     * Get constraints
+     * array类型数据
      * @return constraints
      */
-    public Constraint getConstraints() {
+    public List<Constraint> getConstraints() {
         return constraints;
     }
 
-    public void setConstraints(Constraint constraints) {
+    public void setConstraints(List<Constraint> constraints) {
         this.constraints = constraints;
     }
     @Override

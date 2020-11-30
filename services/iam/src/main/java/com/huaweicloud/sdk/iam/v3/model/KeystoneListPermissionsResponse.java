@@ -35,6 +35,12 @@ public class KeystoneListPermissionsResponse extends SdkResponse {
     
     private List<RoleResult> roles = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_number")
+    
+    private Integer totalNumber;
+
     public KeystoneListPermissionsResponse withLinks(Links links) {
         this.links = links;
         return this;
@@ -95,6 +101,26 @@ public class KeystoneListPermissionsResponse extends SdkResponse {
     public void setRoles(List<RoleResult> roles) {
         this.roles = roles;
     }
+
+    public KeystoneListPermissionsResponse withTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 在查询参数存在domain_id时，返回自定义策略总数
+     * @return totalNumber
+     */
+    public Integer getTotalNumber() {
+        return totalNumber;
+    }
+
+    public void setTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,11 +131,12 @@ public class KeystoneListPermissionsResponse extends SdkResponse {
         }
         KeystoneListPermissionsResponse keystoneListPermissionsResponse = (KeystoneListPermissionsResponse) o;
         return Objects.equals(this.links, keystoneListPermissionsResponse.links) &&
-            Objects.equals(this.roles, keystoneListPermissionsResponse.roles);
+            Objects.equals(this.roles, keystoneListPermissionsResponse.roles) &&
+            Objects.equals(this.totalNumber, keystoneListPermissionsResponse.totalNumber);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(links, roles);
+        return Objects.hash(links, roles, totalNumber);
     }
     @Override
     public String toString() {
@@ -117,6 +144,7 @@ public class KeystoneListPermissionsResponse extends SdkResponse {
         sb.append("class KeystoneListPermissionsResponse {\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
+        sb.append("    totalNumber: ").append(toIndentedString(totalNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

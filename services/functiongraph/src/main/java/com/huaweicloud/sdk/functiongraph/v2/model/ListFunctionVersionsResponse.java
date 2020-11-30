@@ -32,7 +32,7 @@ public class ListFunctionVersionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="next_marker")
     
-    private String nextMarker;
+    private Long nextMarker;
 
     public ListFunctionVersionsResponse withVersions(List<ListFunctionVersionResult> versions) {
         this.versions = versions;
@@ -68,7 +68,7 @@ public class ListFunctionVersionsResponse extends SdkResponse {
         this.versions = versions;
     }
 
-    public ListFunctionVersionsResponse withNextMarker(String nextMarker) {
+    public ListFunctionVersionsResponse withNextMarker(Long nextMarker) {
         this.nextMarker = nextMarker;
         return this;
     }
@@ -80,11 +80,11 @@ public class ListFunctionVersionsResponse extends SdkResponse {
      * 下一次记录位置
      * @return nextMarker
      */
-    public String getNextMarker() {
+    public Long getNextMarker() {
         return nextMarker;
     }
 
-    public void setNextMarker(String nextMarker) {
+    public void setNextMarker(Long nextMarker) {
         this.nextMarker = nextMarker;
     }
     @Override

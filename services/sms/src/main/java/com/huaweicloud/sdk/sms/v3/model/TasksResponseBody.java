@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.sms.v3.model.CloneServer;
 import com.huaweicloud.sdk.sms.v3.model.PostSourceServerBody;
 import com.huaweicloud.sdk.sms.v3.model.TargetServer;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -249,7 +248,7 @@ public class TasksResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="estimate_complete_time")
     
-    private LocalDate estimateCompleteTime = null;
+    private Long estimateCompleteTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -261,7 +260,7 @@ public class TasksResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_date")
     
-    private LocalDate createDate = null;
+    private Long createDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -635,7 +634,7 @@ public class TasksResponseBody  {
         this.state = state;
     }
 
-    public TasksResponseBody withEstimateCompleteTime(LocalDate estimateCompleteTime) {
+    public TasksResponseBody withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
         return this;
     }
@@ -647,11 +646,11 @@ public class TasksResponseBody  {
      * 预估完成时间
      * @return estimateCompleteTime
      */
-    public LocalDate getEstimateCompleteTime() {
+    public Long getEstimateCompleteTime() {
         return estimateCompleteTime;
     }
 
-    public void setEstimateCompleteTime(LocalDate estimateCompleteTime) {
+    public void setEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
@@ -675,7 +674,7 @@ public class TasksResponseBody  {
         this.connected = connected;
     }
 
-    public TasksResponseBody withCreateDate(LocalDate createDate) {
+    public TasksResponseBody withCreateDate(Long createDate) {
         this.createDate = createDate;
         return this;
     }
@@ -687,11 +686,11 @@ public class TasksResponseBody  {
      * 任务创建时间
      * @return createDate
      */
-    public LocalDate getCreateDate() {
+    public Long getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(LocalDate createDate) {
+    public void setCreateDate(Long createDate) {
         this.createDate = createDate;
     }
 

@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.TemplateView;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -42,8 +44,8 @@ public class ListTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="content")
     
-    private TemplateView content = null;
-
+    private List<TemplateView> content = null;
+    
     public ListTemplatesResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -104,30 +106,37 @@ public class ListTemplatesResponse extends SdkResponse {
         this.pageSize = pageSize;
     }
 
-    public ListTemplatesResponse withContent(TemplateView content) {
+    public ListTemplatesResponse withContent(List<TemplateView> content) {
         this.content = content;
         return this;
     }
 
-    public ListTemplatesResponse withContent(Consumer<TemplateView> contentSetter) {
-        if(this.content == null ){
-            this.content = new TemplateView();
-            contentSetter.accept(this.content);
+    
+    public ListTemplatesResponse addContentItem(TemplateView contentItem) {
+        if (this.content == null) {
+            this.content = new ArrayList<>();
         }
-        
+        this.content.add(contentItem);
         return this;
     }
 
+    public ListTemplatesResponse withContent(Consumer<List<TemplateView>> contentSetter) {
+        if(this.content == null ){
+            this.content = new ArrayList<>();
+        }
+        contentSetter.accept(this.content);
+        return this;
+    }
 
     /**
-     * Get content
+     * 模板数据,list类型数据
      * @return content
      */
-    public TemplateView getContent() {
+    public List<TemplateView> getContent() {
         return content;
     }
 
-    public void setContent(TemplateView content) {
+    public void setContent(List<TemplateView> content) {
         this.content = content;
     }
     @Override

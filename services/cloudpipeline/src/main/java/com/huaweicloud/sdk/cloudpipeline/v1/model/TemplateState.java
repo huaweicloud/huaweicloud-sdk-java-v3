@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudpipeline.v1.model.ExtendedProps;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -58,7 +57,7 @@ public class TemplateState  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    private ExtendedProps parameters = null;
+    private Object parameters = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -228,30 +227,23 @@ public class TemplateState  {
         this.dslMethod = dslMethod;
     }
 
-    public TemplateState withParameters(ExtendedProps parameters) {
+    public TemplateState withParameters(Object parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    public TemplateState withParameters(Consumer<ExtendedProps> parametersSetter) {
-        if(this.parameters == null ){
-            this.parameters = new ExtendedProps();
-            parametersSetter.accept(this.parameters);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get parameters
+     * 任务参数,map类型数据
      * @return parameters
      */
-    public ExtendedProps getParameters() {
+    public Object getParameters() {
         return parameters;
     }
 
-    public void setParameters(ExtendedProps parameters) {
+    public void setParameters(Object parameters) {
         this.parameters = parameters;
     }
 

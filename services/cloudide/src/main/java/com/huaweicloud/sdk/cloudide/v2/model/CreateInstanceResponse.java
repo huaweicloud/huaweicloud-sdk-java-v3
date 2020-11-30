@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudide.v2.model.InstancesVO;
+import com.huaweicloud.sdk.cloudide.v2.model.InstancesResponseInstancesVOResult;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +24,7 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private InstancesVO result = null;
+    private InstancesResponseInstancesVOResult result = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,14 +32,14 @@ public class CreateInstanceResponse extends SdkResponse {
     
     private String status;
 
-    public CreateInstanceResponse withResult(InstancesVO result) {
+    public CreateInstanceResponse withResult(InstancesResponseInstancesVOResult result) {
         this.result = result;
         return this;
     }
 
-    public CreateInstanceResponse withResult(Consumer<InstancesVO> resultSetter) {
+    public CreateInstanceResponse withResult(Consumer<InstancesResponseInstancesVOResult> resultSetter) {
         if(this.result == null ){
-            this.result = new InstancesVO();
+            this.result = new InstancesResponseInstancesVOResult();
             resultSetter.accept(this.result);
         }
         
@@ -51,11 +51,11 @@ public class CreateInstanceResponse extends SdkResponse {
      * Get result
      * @return result
      */
-    public InstancesVO getResult() {
+    public InstancesResponseInstancesVOResult getResult() {
         return result;
     }
 
-    public void setResult(InstancesVO result) {
+    public void setResult(InstancesResponseInstancesVOResult result) {
         this.result = result;
     }
 

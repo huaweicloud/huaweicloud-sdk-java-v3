@@ -42,6 +42,17 @@ public class CloudPipelineAsyncClient {
     }
 
     /**
+     * 获取项目下流水线执行状况
+     * 获取项目下流水线执行状况
+     *
+     * @param ListPipleineBuildResultRequest 请求对象
+     * @return CompletableFuture<ListPipleineBuildResultResponse>
+     */
+    public CompletableFuture<ListPipleineBuildResultResponse> listPipleineBuildResultAsync(ListPipleineBuildResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.listPipleineBuildResult);
+    }
+
+    /**
      * 查询模板列表
      * 查询模板列表，支持分页查询,支持模板名字模糊查询
      *

@@ -86,7 +86,7 @@ public class CreateNatGatewayDnatOption  {
 
 
     /**
-     * DNAT规则的描述。
+     * DNAT规则的描述，长度限制为255。
      * @return description
      */
     public String getDescription() {

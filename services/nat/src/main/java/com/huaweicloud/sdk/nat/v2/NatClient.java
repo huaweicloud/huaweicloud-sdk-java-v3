@@ -20,11 +20,11 @@ public class NatClient {
      * 批量创建DNAT规则
      * 批量创建DNAT规则。
      *
-     * @param BatchCreateDnatRulesRequest 请求对象
-     * @return BatchCreateDnatRulesResponse
+     * @param BatchCreateNatGatewayDnatRulesRequest 请求对象
+     * @return BatchCreateNatGatewayDnatRulesResponse
      */
-    public BatchCreateDnatRulesResponse batchCreateDnatRules(BatchCreateDnatRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, NatMeta.batchCreateDnatRules);
+    public BatchCreateNatGatewayDnatRulesResponse batchCreateNatGatewayDnatRules(BatchCreateNatGatewayDnatRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.batchCreateNatGatewayDnatRules);
     }
 
     /**

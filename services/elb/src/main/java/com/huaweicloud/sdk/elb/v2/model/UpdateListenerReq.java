@@ -48,7 +48,7 @@ public class UpdateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_pool_id")
     
-    private String defaultPoolId = "null";
+    private String defaultPoolId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

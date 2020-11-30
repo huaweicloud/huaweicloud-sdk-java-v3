@@ -171,6 +171,17 @@ public class IamClient {
     }
 
     /**
+     * 移除用户组的所有项目服务权限
+     * 该接口可以用于移除用户组的所有项目服务权限。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param DeleteDomainGroupInheritedRoleRequest 请求对象
+     * @return DeleteDomainGroupInheritedRoleResponse
+     */
+    public DeleteDomainGroupInheritedRoleResponse deleteDomainGroupInheritedRole(DeleteDomainGroupInheritedRoleRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.deleteDomainGroupInheritedRole);
+    }
+
+    /**
      * 添加IAM用户到用户组
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)添加IAM用户到用户组。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -179,17 +190,6 @@ public class IamClient {
      */
     public KeystoneAddUserToGroupResponse keystoneAddUserToGroup(KeystoneAddUserToGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneAddUserToGroup);
-    }
-
-    /**
-     * 为用户组授予所有项目服务权限
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予所有项目服务权限。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     *
-     * @param KeystoneAssociateGroupWithAllProjectPermissionRequest 请求对象
-     * @return KeystoneAssociateGroupWithAllProjectPermissionResponse
-     */
-    public KeystoneAssociateGroupWithAllProjectPermissionResponse keystoneAssociateGroupWithAllProjectPermission(KeystoneAssociateGroupWithAllProjectPermissionRequest request) {
-        return hcClient.syncInvokeHttp(request, IamMeta.keystoneAssociateGroupWithAllProjectPermission);
     }
 
     /**
@@ -245,6 +245,17 @@ public class IamClient {
      */
     public KeystoneCheckUserInGroupResponse keystoneCheckUserInGroup(KeystoneCheckUserInGroupRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckUserInGroup);
+    }
+
+    /**
+     * 查询用户组是否拥有所有项目指定权限
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有所有项目指定权限。  该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneCheckroleForGroupRequest 请求对象
+     * @return KeystoneCheckroleForGroupResponse
+     */
+    public KeystoneCheckroleForGroupResponse keystoneCheckroleForGroup(KeystoneCheckroleForGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.keystoneCheckroleForGroup);
     }
 
     /**
@@ -355,6 +366,17 @@ public class IamClient {
      */
     public KeystoneDeleteProtocolResponse keystoneDeleteProtocol(KeystoneDeleteProtocolRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.keystoneDeleteProtocol);
+    }
+
+    /**
+     * 查询用户组的所有项目权限列表
+     * 该接口可以用于管理员查询用户组所有项目服务权限列表。  \\n\\n该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
+     * @return KeystoneListAllProjectPermissionsForGroupResponse
+     */
+    public KeystoneListAllProjectPermissionsForGroupResponse keystoneListAllProjectPermissionsForGroup(KeystoneListAllProjectPermissionsForGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.keystoneListAllProjectPermissionsForGroup);
     }
 
     /**
@@ -1029,6 +1051,17 @@ public class IamClient {
     }
 
     /**
+     * 为用户组授予所有项目服务权限
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/zh-cn_topic_0079496985.html)为用户组授予所有项目服务权限。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param UpdateDomainGroupInheritRoleRequest 请求对象
+     * @return UpdateDomainGroupInheritRoleResponse
+     */
+    public UpdateDomainGroupInheritRoleResponse updateDomainGroupInheritRole(UpdateDomainGroupInheritRoleRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.updateDomainGroupInheritRole);
+    }
+
+    /**
      * 修改账号登录策略
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号登录策略。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -1150,6 +1183,28 @@ public class IamClient {
     }
 
     /**
+     * 绑定MFA设备
+     * 该接口可以用于绑定MFA设备。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param CreateBindingDeviceRequest 请求对象
+     * @return CreateBindingDeviceResponse
+     */
+    public CreateBindingDeviceResponse createBindingDevice(CreateBindingDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.createBindingDevice);
+    }
+
+    /**
+     * 创建MFA设备
+     * 该接口可以用于创建MFA设备。  该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param CreateMfaDeviceRequest 请求对象
+     * @return CreateMfaDeviceResponse
+     */
+    public CreateMfaDeviceResponse createMfaDevice(CreateMfaDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.createMfaDevice);
+    }
+
+    /**
      * 管理员创建IAM用户（推荐）
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -1158,6 +1213,28 @@ public class IamClient {
      */
     public CreateUserResponse createUser(CreateUserRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.createUser);
+    }
+
+    /**
+     * 解绑MFA设备
+     * 该接口可以用于解绑MFA设备   该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param DeleteBindingDeviceRequest 请求对象
+     * @return DeleteBindingDeviceResponse
+     */
+    public DeleteBindingDeviceResponse deleteBindingDevice(DeleteBindingDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.deleteBindingDevice);
+    }
+
+    /**
+     * 删除MFA设备
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param DeleteMfaDeviceRequest 请求对象
+     * @return DeleteMfaDeviceResponse
+     */
+    public DeleteMfaDeviceResponse deleteMfaDevice(DeleteMfaDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.deleteMfaDevice);
     }
 
     /**
@@ -1249,7 +1326,7 @@ public class IamClient {
     }
 
     /**
-     * 查询IAM用户的MFA绑定信息列表
+     * 该接口可以用于获取MFA设备。
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
      * @param ListUserMfaDevicesRequest 请求对象
@@ -1290,6 +1367,17 @@ public class IamClient {
      */
     public ShowUserMfaDeviceResponse showUserMfaDevice(ShowUserMfaDeviceRequest request) {
         return hcClient.syncInvokeHttp(request, IamMeta.showUserMfaDevice);
+    }
+
+    /**
+     * 修改IAM用户登录保护状态信息
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param UpdateLoginProtectRequest 请求对象
+     * @return UpdateLoginProtectResponse
+     */
+    public UpdateLoginProtectResponse updateLoginProtect(UpdateLoginProtectRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.updateLoginProtect);
     }
 
     /**

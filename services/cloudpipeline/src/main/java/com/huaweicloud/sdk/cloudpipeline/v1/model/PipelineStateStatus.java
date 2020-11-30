@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -81,8 +83,8 @@ public class PipelineStateStatus  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="children")
     
-    private PipelineStateStatus children = null;
-
+    private List<PipelineStateStatus> children = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail_url")
@@ -289,30 +291,34 @@ public class PipelineStateStatus  {
         this.errorMsg = errorMsg;
     }
 
-    public PipelineStateStatus withChildren(PipelineStateStatus children) {
+    public PipelineStateStatus withChildren(List<PipelineStateStatus> children) {
         this.children = children;
         return this;
     }
 
-    public PipelineStateStatus withChildren(Consumer<PipelineStateStatus> childrenSetter) {
-        if(this.children == null ){
-            this.children = new PipelineStateStatus();
-            childrenSetter.accept(this.children);
-        }
-        
+    
+    public PipelineStateStatus addChildrenItem(PipelineStateStatus childrenItem) {
+        this.children.add(childrenItem);
         return this;
     }
 
+    public PipelineStateStatus withChildren(Consumer<List<PipelineStateStatus>> childrenSetter) {
+        if(this.children == null ){
+            this.children = new ArrayList<>();
+        }
+        childrenSetter.accept(this.children);
+        return this;
+    }
 
     /**
-     * Get children
+     * 子任务运行信息(对任务来说是空的)
      * @return children
      */
-    public PipelineStateStatus getChildren() {
+    public List<PipelineStateStatus> getChildren() {
         return children;
     }
 
-    public void setChildren(PipelineStateStatus children) {
+    public void setChildren(List<PipelineStateStatus> children) {
         this.children = children;
     }
 

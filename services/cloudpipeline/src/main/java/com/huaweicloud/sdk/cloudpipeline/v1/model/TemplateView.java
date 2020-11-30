@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudpipeline.v1.model.FlowItem;
-import com.huaweicloud.sdk.cloudpipeline.v1.model.StateItem;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.TemplateParam;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -108,19 +108,19 @@ public class TemplateView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameter")
     
-    private TemplateParam parameter = null;
-
+    private List<TemplateParam> parameter = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flow")
     
-    private FlowItem flow = null;
+    private Object flow = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="states")
     
-    private StateItem states = null;
+    private Object states = null;
 
     public TemplateView withTemplateId(String templateId) {
         this.templateId = templateId;
@@ -402,84 +402,74 @@ public class TemplateView  {
         this.description = description;
     }
 
-    public TemplateView withParameter(TemplateParam parameter) {
+    public TemplateView withParameter(List<TemplateParam> parameter) {
         this.parameter = parameter;
         return this;
     }
 
-    public TemplateView withParameter(Consumer<TemplateParam> parameterSetter) {
-        if(this.parameter == null ){
-            this.parameter = new TemplateParam();
-            parameterSetter.accept(this.parameter);
-        }
-        
+    
+    public TemplateView addParameterItem(TemplateParam parameterItem) {
+        this.parameter.add(parameterItem);
         return this;
     }
 
+    public TemplateView withParameter(Consumer<List<TemplateParam>> parameterSetter) {
+        if(this.parameter == null ){
+            this.parameter = new ArrayList<>();
+        }
+        parameterSetter.accept(this.parameter);
+        return this;
+    }
 
     /**
-     * Get parameter
+     * 模板参数
      * @return parameter
      */
-    public TemplateParam getParameter() {
+    public List<TemplateParam> getParameter() {
         return parameter;
     }
 
-    public void setParameter(TemplateParam parameter) {
+    public void setParameter(List<TemplateParam> parameter) {
         this.parameter = parameter;
     }
 
-    public TemplateView withFlow(FlowItem flow) {
+    public TemplateView withFlow(Object flow) {
         this.flow = flow;
         return this;
     }
 
-    public TemplateView withFlow(Consumer<FlowItem> flowSetter) {
-        if(this.flow == null ){
-            this.flow = new FlowItem();
-            flowSetter.accept(this.flow);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get flow
+     * 编排flow，map类型数据
      * @return flow
      */
-    public FlowItem getFlow() {
+    public Object getFlow() {
         return flow;
     }
 
-    public void setFlow(FlowItem flow) {
+    public void setFlow(Object flow) {
         this.flow = flow;
     }
 
-    public TemplateView withStates(StateItem states) {
+    public TemplateView withStates(Object states) {
         this.states = states;
         return this;
     }
 
-    public TemplateView withStates(Consumer<StateItem> statesSetter) {
-        if(this.states == null ){
-            this.states = new StateItem();
-            statesSetter.accept(this.states);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get states
+     * 子任务states，map类型数据
      * @return states
      */
-    public StateItem getStates() {
+    public Object getStates() {
         return states;
     }
 
-    public void setStates(StateItem states) {
+    public void setStates(Object states) {
         this.states = states;
     }
     @Override

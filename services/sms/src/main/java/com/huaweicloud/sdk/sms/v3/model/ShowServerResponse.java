@@ -25,7 +25,6 @@ import com.huaweicloud.sdk.sms.v3.model.InitTargetServer;
 import com.huaweicloud.sdk.sms.v3.model.NetWork;
 import com.huaweicloud.sdk.sms.v3.model.TaskByServerSource;
 import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -67,7 +66,7 @@ public class ShowServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_date")
     
-    private LocalDate addDate = null;
+    private Long addDate;
     /**
      * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
      */
@@ -677,7 +676,7 @@ public class ShowServerResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    public ShowServerResponse withAddDate(LocalDate addDate) {
+    public ShowServerResponse withAddDate(Long addDate) {
         this.addDate = addDate;
         return this;
     }
@@ -689,11 +688,11 @@ public class ShowServerResponse extends SdkResponse {
      * 源端服务器注册的时间
      * @return addDate
      */
-    public LocalDate getAddDate() {
+    public Long getAddDate() {
         return addDate;
     }
 
-    public void setAddDate(LocalDate addDate) {
+    public void setAddDate(Long addDate) {
         this.addDate = addDate;
     }
 

@@ -24,8 +24,8 @@ public class TargetServerByTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="btrfs_list")
     
-    private String btrfsList;
-
+    private List<String> btrfsList = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
@@ -50,23 +50,37 @@ public class TargetServerByTask  {
     
     private String vmId;
 
-    public TargetServerByTask withBtrfsList(String btrfsList) {
+    public TargetServerByTask withBtrfsList(List<String> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
     
+    public TargetServerByTask addBtrfsListItem(String btrfsListItem) {
+        if (this.btrfsList == null) {
+            this.btrfsList = new ArrayList<>();
+        }
+        this.btrfsList.add(btrfsListItem);
+        return this;
+    }
 
+    public TargetServerByTask withBtrfsList(Consumer<List<String>> btrfsListSetter) {
+        if(this.btrfsList == null ){
+            this.btrfsList = new ArrayList<>();
+        }
+        btrfsListSetter.accept(this.btrfsList);
+        return this;
+    }
 
     /**
      * btrfs信息
      * @return btrfsList
      */
-    public String getBtrfsList() {
+    public List<String> getBtrfsList() {
         return btrfsList;
     }
 
-    public void setBtrfsList(String btrfsList) {
+    public void setBtrfsList(List<String> btrfsList) {
         this.btrfsList = btrfsList;
     }
 

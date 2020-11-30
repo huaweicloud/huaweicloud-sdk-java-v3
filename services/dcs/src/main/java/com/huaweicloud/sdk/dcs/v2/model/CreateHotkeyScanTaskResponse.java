@@ -242,7 +242,7 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="num")
     
-    private String num;
+    private Integer num;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -390,7 +390,7 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.finishedAt = finishedAt;
     }
 
-    public CreateHotkeyScanTaskResponse withNum(String num) {
+    public CreateHotkeyScanTaskResponse withNum(Integer num) {
         this.num = num;
         return this;
     }
@@ -402,11 +402,11 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
      * 热key的数量
      * @return num
      */
-    public String getNum() {
+    public Integer getNum() {
         return num;
     }
 
-    public void setNum(String num) {
+    public void setNum(Integer num) {
         this.num = num;
     }
 

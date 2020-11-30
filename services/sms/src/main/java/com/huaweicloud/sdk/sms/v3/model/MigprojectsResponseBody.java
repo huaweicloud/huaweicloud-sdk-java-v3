@@ -241,7 +241,7 @@ public class MigprojectsResponseBody  {
 
 
     /**
-     * 是否为默认模板
+     * 是否为默认项目
      * @return isdefault
      */
     public Boolean getIsdefault() {

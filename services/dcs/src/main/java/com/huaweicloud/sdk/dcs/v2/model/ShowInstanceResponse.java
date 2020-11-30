@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dcs.v2.model.BackupPolicy;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -132,8 +134,8 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="az_codes")
     
-    private String azCodes;
-
+    private List<String> azCodes = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="access_user")
@@ -627,23 +629,37 @@ public class ShowInstanceResponse extends SdkResponse {
         this.instanceBackupPolicy = instanceBackupPolicy;
     }
 
-    public ShowInstanceResponse withAzCodes(String azCodes) {
+    public ShowInstanceResponse withAzCodes(List<String> azCodes) {
         this.azCodes = azCodes;
         return this;
     }
 
     
+    public ShowInstanceResponse addAzCodesItem(String azCodesItem) {
+        if (this.azCodes == null) {
+            this.azCodes = new ArrayList<>();
+        }
+        this.azCodes.add(azCodesItem);
+        return this;
+    }
 
+    public ShowInstanceResponse withAzCodes(Consumer<List<String>> azCodesSetter) {
+        if(this.azCodes == null ){
+            this.azCodes = new ArrayList<>();
+        }
+        azCodesSetter.accept(this.azCodes);
+        return this;
+    }
 
     /**
      * 实例所在的可用区。返回“可用区Code”
      * @return azCodes
      */
-    public String getAzCodes() {
+    public List<String> getAzCodes() {
         return azCodes;
     }
 
-    public void setAzCodes(String azCodes) {
+    public void setAzCodes(List<String> azCodes) {
         this.azCodes = azCodes;
     }
 

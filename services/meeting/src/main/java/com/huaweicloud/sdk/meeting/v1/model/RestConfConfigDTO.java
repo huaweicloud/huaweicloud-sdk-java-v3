@@ -19,6 +19,12 @@ public class RestConfConfigDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="callInRestriction")
+    
+    private Integer callInRestriction = 0;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isSendNotify")
     
     private Boolean isSendNotify;
@@ -46,6 +52,28 @@ public class RestConfConfigDTO  {
     @JsonProperty(value="isGuestFreePwd")
     
     private Boolean isGuestFreePwd;
+
+    public RestConfConfigDTO withCallInRestriction(Integer callInRestriction) {
+        this.callInRestriction = callInRestriction;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 允许呼入的范围。 - 0: 所有用户。 - 2: 企业内用户。 - 3: 被邀请用户。
+     * minimum: 0
+     * maximum: 3
+     * @return callInRestriction
+     */
+    public Integer getCallInRestriction() {
+        return callInRestriction;
+    }
+
+    public void setCallInRestriction(Integer callInRestriction) {
+        this.callInRestriction = callInRestriction;
+    }
 
     public RestConfConfigDTO withIsSendNotify(Boolean isSendNotify) {
         this.isSendNotify = isSendNotify;
@@ -155,7 +183,8 @@ public class RestConfConfigDTO  {
             return false;
         }
         RestConfConfigDTO restConfConfigDTO = (RestConfConfigDTO) o;
-        return Objects.equals(this.isSendNotify, restConfConfigDTO.isSendNotify) &&
+        return Objects.equals(this.callInRestriction, restConfConfigDTO.callInRestriction) &&
+            Objects.equals(this.isSendNotify, restConfConfigDTO.isSendNotify) &&
             Objects.equals(this.isSendSms, restConfConfigDTO.isSendSms) &&
             Objects.equals(this.isSendCalendar, restConfConfigDTO.isSendCalendar) &&
             Objects.equals(this.isAutoMute, restConfConfigDTO.isAutoMute) &&
@@ -163,12 +192,13 @@ public class RestConfConfigDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(isSendNotify, isSendSms, isSendCalendar, isAutoMute, isGuestFreePwd);
+        return Objects.hash(callInRestriction, isSendNotify, isSendSms, isSendCalendar, isAutoMute, isGuestFreePwd);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RestConfConfigDTO {\n");
+        sb.append("    callInRestriction: ").append(toIndentedString(callInRestriction)).append("\n");
         sb.append("    isSendNotify: ").append(toIndentedString(isSendNotify)).append("\n");
         sb.append("    isSendSms: ").append(toIndentedString(isSendSms)).append("\n");
         sb.append("    isSendCalendar: ").append(toIndentedString(isSendCalendar)).append("\n");

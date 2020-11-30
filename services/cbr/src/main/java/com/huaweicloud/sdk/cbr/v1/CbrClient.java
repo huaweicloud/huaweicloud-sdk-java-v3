@@ -259,6 +259,17 @@ public class CbrClient {
     }
 
     /**
+     * 迁移资源
+     * 支持资源迁移到另一个存储库，不删除备份。
+     *
+     * @param MigrateVaultResourceRequest 请求对象
+     * @return MigrateVaultResourceResponse
+     */
+    public MigrateVaultResourceResponse migrateVaultResource(MigrateVaultResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, CbrMeta.migrateVaultResource);
+    }
+
+    /**
      * 移除资源
      * 移除存储库中的资源，若移除资源，将一并删除该资源在保管库中的备份
      *

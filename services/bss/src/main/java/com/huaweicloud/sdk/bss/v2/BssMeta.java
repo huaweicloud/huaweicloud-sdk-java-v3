@@ -2310,6 +2310,53 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListUsageTypesRequest, ListUsageTypesResponse> listUsageTypes = genForlistUsageTypes();
+
+    private static HttpRequestDef<ListUsageTypesRequest, ListUsageTypesResponse> genForlistUsageTypes() {
+        // basic
+        HttpRequestDef.Builder<ListUsageTypesRequest, ListUsageTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUsageTypesRequest.class, ListUsageTypesResponse.class)
+                .withUri("/v2/products/usage-types");
+
+        // requests
+        builder.withRequestField("resource_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListUsageTypesRequest::getResourceTypeCode, (req, v) -> {
+                req.setResourceTypeCode(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListUsageTypesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListUsageTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListUsageTypesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PayOrdersRequest, PayOrdersResponse> payOrders = genForpayOrders();
 
     private static HttpRequestDef<PayOrdersRequest, PayOrdersResponse> genForpayOrders() {
@@ -2807,6 +2854,30 @@ public class BssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             AdjustToIndirectPartnerReq.class,
             f -> f.withMarshaller(UpdateIndirectPartnerAccountRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> updatePeriodToOnDemand = genForupdatePeriodToOnDemand();
+
+    private static HttpRequestDef<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> genForupdatePeriodToOnDemand() {
+        // basic
+        HttpRequestDef.Builder<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdatePeriodToOnDemandRequest.class, UpdatePeriodToOnDemandResponse.class)
+                .withUri("/v2/orders/subscriptions/resources/to-on-demand")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            PeriodToOnDemandReq.class,
+            f -> f.withMarshaller(UpdatePeriodToOnDemandRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

@@ -44,12 +44,6 @@ public class ResourceProviderResponse  {
     
     private List<ResourceTypeResponse> resourceTypes = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order")
-    
-    private Long order;
-
     public ResourceProviderResponse withProvider(String provider) {
         this.provider = provider;
         return this;
@@ -143,26 +137,6 @@ public class ResourceProviderResponse  {
     public void setResourceTypes(List<ResourceTypeResponse> resourceTypes) {
         this.resourceTypes = resourceTypes;
     }
-
-    public ResourceProviderResponse withOrder(Long order) {
-        this.order = order;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 排序序号
-     * @return order
-     */
-    public Long getOrder() {
-        return order;
-    }
-
-    public void setOrder(Long order) {
-        this.order = order;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -175,12 +149,11 @@ public class ResourceProviderResponse  {
         return Objects.equals(this.provider, resourceProviderResponse.provider) &&
             Objects.equals(this.displayName, resourceProviderResponse.displayName) &&
             Objects.equals(this.categoryDisplayName, resourceProviderResponse.categoryDisplayName) &&
-            Objects.equals(this.resourceTypes, resourceProviderResponse.resourceTypes) &&
-            Objects.equals(this.order, resourceProviderResponse.order);
+            Objects.equals(this.resourceTypes, resourceProviderResponse.resourceTypes);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(provider, displayName, categoryDisplayName, resourceTypes, order);
+        return Objects.hash(provider, displayName, categoryDisplayName, resourceTypes);
     }
     @Override
     public String toString() {
@@ -190,7 +163,6 @@ public class ResourceProviderResponse  {
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    categoryDisplayName: ").append(toIndentedString(categoryDisplayName)).append("\n");
         sb.append("    resourceTypes: ").append(toIndentedString(resourceTypes)).append("\n");
-        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("}");
         return sb.toString();
     }

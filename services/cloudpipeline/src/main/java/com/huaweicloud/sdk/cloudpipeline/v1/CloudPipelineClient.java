@@ -39,6 +39,17 @@ public class CloudPipelineClient {
     }
 
     /**
+     * 获取项目下流水线执行状况
+     * 获取项目下流水线执行状况
+     *
+     * @param ListPipleineBuildResultRequest 请求对象
+     * @return ListPipleineBuildResultResponse
+     */
+    public ListPipleineBuildResultResponse listPipleineBuildResult(ListPipleineBuildResultRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.listPipleineBuildResult);
+    }
+
+    /**
      * 查询模板列表
      * 查询模板列表，支持分页查询,支持模板名字模糊查询
      *

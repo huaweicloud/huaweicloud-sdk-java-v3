@@ -53,6 +53,12 @@ public class Condition  {
     
     private Double value;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="suppress_duration")
+    
+    private Integer suppressDuration;
+
     public Condition withComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
         return this;
@@ -174,6 +180,26 @@ public class Condition  {
     public void setValue(Double value) {
         this.value = value;
     }
+
+    public Condition withSuppressDuration(Integer suppressDuration) {
+        this.suppressDuration = suppressDuration;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 发送告警的周期，值可为0, 300, 600, 900, 1800, 3600, 10800, 21600, 43200, 86400；0表示只告警一次，300表示每5分钟告警一次，600表示每10分钟告警一次，900表示每15分钟告警一次，1800表示每30分钟告警一次，3600表示每1小时告警一次，10800表示每3小时告警一次，21600表示每6小时告警一次，43200表示每12小时告警一次，86400表示每1天告警一次。
+     * @return suppressDuration
+     */
+    public Integer getSuppressDuration() {
+        return suppressDuration;
+    }
+
+    public void setSuppressDuration(Integer suppressDuration) {
+        this.suppressDuration = suppressDuration;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -188,11 +214,12 @@ public class Condition  {
             Objects.equals(this.filter, condition.filter) &&
             Objects.equals(this.period, condition.period) &&
             Objects.equals(this.unit, condition.unit) &&
-            Objects.equals(this.value, condition.value);
+            Objects.equals(this.value, condition.value) &&
+            Objects.equals(this.suppressDuration, condition.suppressDuration);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(comparisonOperator, count, filter, period, unit, value);
+        return Objects.hash(comparisonOperator, count, filter, period, unit, value, suppressDuration);
     }
     @Override
     public String toString() {
@@ -204,6 +231,7 @@ public class Condition  {
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
         sb.append("}");
         return sb.toString();
     }

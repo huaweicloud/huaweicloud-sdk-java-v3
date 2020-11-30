@@ -72,6 +72,17 @@ public class CesClient {
     }
 
     /**
+     * 创建资源分组
+     * 创建资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
+     *
+     * @param CreateResourceGroupRequest 请求对象
+     * @return CreateResourceGroupResponse
+     */
+    public CreateResourceGroupResponse createResourceGroup(CreateResourceGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.createResourceGroup);
+    }
+
+    /**
      * 删除告警规则
      * 删除一条告警规则。
      *
@@ -91,6 +102,17 @@ public class CesClient {
      */
     public DeleteAlarmTemplateResponse deleteAlarmTemplate(DeleteAlarmTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.deleteAlarmTemplate);
+    }
+
+    /**
+     * 删除资源分组
+     * 删除一条资源分组。
+     *
+     * @param DeleteResourceGroupRequest 请求对象
+     * @return DeleteResourceGroupResponse
+     */
+    public DeleteResourceGroupResponse deleteResourceGroup(DeleteResourceGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.deleteResourceGroup);
     }
 
     /**
@@ -127,6 +149,28 @@ public class CesClient {
     }
 
     /**
+     * 查询某一事件监控详情
+     * 根据事件监控名称，查询该事件发生的详细信息。
+     *
+     * @param ListEventDetailRequest 请求对象
+     * @return ListEventDetailResponse
+     */
+    public ListEventDetailResponse listEventDetail(ListEventDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.listEventDetail);
+    }
+
+    /**
+     * 查询事件监控列表
+     * 查询事件监控列表，包括系统事件和自定义事件。
+     *
+     * @param ListEventsRequest 请求对象
+     * @return ListEventsResponse
+     */
+    public ListEventsResponse listEvents(ListEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.listEvents);
+    }
+
+    /**
      * 查询指标列表
      * 查询系统当前可监控指标列表，可以指定指标命名空间、指标名称、维度、排序方式，起始记录和最大记录条数过滤查询结果。
      *
@@ -135,6 +179,17 @@ public class CesClient {
      */
     public ListMetricsResponse listMetrics(ListMetricsRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.listMetrics);
+    }
+
+    /**
+     * 查询所有资源分组
+     * 查询所创建的所有资源分组。
+     *
+     * @param ListResourceGroupRequest 请求对象
+     * @return ListResourceGroupResponse
+     */
+    public ListResourceGroupResponse listResourceGroup(ListResourceGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.listResourceGroup);
     }
 
     /**
@@ -193,6 +248,17 @@ public class CesClient {
     }
 
     /**
+     * 修改告警规则
+     * 修改告警规则。
+     *
+     * @param UpdateAlarmRequest 请求对象
+     * @return UpdateAlarmResponse
+     */
+    public UpdateAlarmResponse updateAlarm(UpdateAlarmRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.updateAlarm);
+    }
+
+    /**
      * 启停告警规则
      * 启动或停止一条告警规则。
      *
@@ -212,6 +278,17 @@ public class CesClient {
      */
     public UpdateAlarmTemplateResponse updateAlarmTemplate(UpdateAlarmTemplateRequest request) {
         return hcClient.syncInvokeHttp(request, CesMeta.updateAlarmTemplate);
+    }
+
+    /**
+     * 更新资源分组
+     * 更新资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
+     *
+     * @param UpdateResourceGroupRequest 请求对象
+     * @return UpdateResourceGroupResponse
+     */
+    public UpdateResourceGroupResponse updateResourceGroup(UpdateResourceGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.updateResourceGroup);
     }
 
 }

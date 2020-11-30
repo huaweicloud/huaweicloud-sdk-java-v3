@@ -191,6 +191,12 @@ public class PostTask  {
     
     private Boolean usePublicIp;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="syncing")
+    
+    private Boolean syncing = true;
+
     public PostTask withName(String name) {
         this.name = name;
         return this;
@@ -504,6 +510,26 @@ public class PostTask  {
     public void setUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
     }
+
+    public PostTask withSyncing(Boolean syncing) {
+        this.syncing = syncing;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 复制或者同步后是否会继续持续同步，不添加则默认是false
+     * @return syncing
+     */
+    public Boolean getSyncing() {
+        return syncing;
+    }
+
+    public void setSyncing(Boolean syncing) {
+        this.syncing = syncing;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -527,11 +553,12 @@ public class PostTask  {
             Objects.equals(this.projectName, postTask.projectName) &&
             Objects.equals(this.projectId, postTask.projectId) &&
             Objects.equals(this.vmTemplateId, postTask.vmTemplateId) &&
-            Objects.equals(this.usePublicIp, postTask.usePublicIp);
+            Objects.equals(this.usePublicIp, postTask.usePublicIp) &&
+            Objects.equals(this.syncing, postTask.syncing);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, startTargetServer, osType, sourceServer, targetServer, autoInstallPvdriver, autoStart, migrationIp, regionName, regionId, projectName, projectId, vmTemplateId, usePublicIp);
+        return Objects.hash(name, type, startTargetServer, osType, sourceServer, targetServer, autoInstallPvdriver, autoStart, migrationIp, regionName, regionId, projectName, projectId, vmTemplateId, usePublicIp, syncing);
     }
     @Override
     public String toString() {
@@ -552,6 +579,7 @@ public class PostTask  {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    vmTemplateId: ").append(toIndentedString(vmTemplateId)).append("\n");
         sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
+        sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("}");
         return sb.toString();
     }

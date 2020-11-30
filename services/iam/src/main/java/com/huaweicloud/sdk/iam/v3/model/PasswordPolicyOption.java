@@ -53,6 +53,12 @@ public class PasswordPolicyOption  {
     
     private Integer passwordValidityPeriod;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="password_char_combination")
+    
+    private Integer passwordCharCombination = 2;
+
     public PasswordPolicyOption withMaximumConsecutiveIdenticalChars(Integer maximumConsecutiveIdenticalChars) {
         this.maximumConsecutiveIdenticalChars = maximumConsecutiveIdenticalChars;
         return this;
@@ -172,6 +178,28 @@ public class PasswordPolicyOption  {
     public void setPasswordValidityPeriod(Integer passwordValidityPeriod) {
         this.passwordValidityPeriod = passwordValidityPeriod;
     }
+
+    public PasswordPolicyOption withPasswordCharCombination(Integer passwordCharCombination) {
+        this.passwordCharCombination = passwordCharCombination;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 至少包含字符种类的个数，取值区间[2,4]。
+     * minimum: 2
+     * maximum: 4
+     * @return passwordCharCombination
+     */
+    public Integer getPasswordCharCombination() {
+        return passwordCharCombination;
+    }
+
+    public void setPasswordCharCombination(Integer passwordCharCombination) {
+        this.passwordCharCombination = passwordCharCombination;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -186,11 +214,12 @@ public class PasswordPolicyOption  {
             Objects.equals(this.minimumPasswordLength, passwordPolicyOption.minimumPasswordLength) &&
             Objects.equals(this.numberOfRecentPasswordsDisallowed, passwordPolicyOption.numberOfRecentPasswordsDisallowed) &&
             Objects.equals(this.passwordNotUsernameOrInvert, passwordPolicyOption.passwordNotUsernameOrInvert) &&
-            Objects.equals(this.passwordValidityPeriod, passwordPolicyOption.passwordValidityPeriod);
+            Objects.equals(this.passwordValidityPeriod, passwordPolicyOption.passwordValidityPeriod) &&
+            Objects.equals(this.passwordCharCombination, passwordPolicyOption.passwordCharCombination);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(maximumConsecutiveIdenticalChars, minimumPasswordAge, minimumPasswordLength, numberOfRecentPasswordsDisallowed, passwordNotUsernameOrInvert, passwordValidityPeriod);
+        return Objects.hash(maximumConsecutiveIdenticalChars, minimumPasswordAge, minimumPasswordLength, numberOfRecentPasswordsDisallowed, passwordNotUsernameOrInvert, passwordValidityPeriod, passwordCharCombination);
     }
     @Override
     public String toString() {
@@ -202,6 +231,7 @@ public class PasswordPolicyOption  {
         sb.append("    numberOfRecentPasswordsDisallowed: ").append(toIndentedString(numberOfRecentPasswordsDisallowed)).append("\n");
         sb.append("    passwordNotUsernameOrInvert: ").append(toIndentedString(passwordNotUsernameOrInvert)).append("\n");
         sb.append("    passwordValidityPeriod: ").append(toIndentedString(passwordValidityPeriod)).append("\n");
+        sb.append("    passwordCharCombination: ").append(toIndentedString(passwordCharCombination)).append("\n");
         sb.append("}");
         return sb.toString();
     }

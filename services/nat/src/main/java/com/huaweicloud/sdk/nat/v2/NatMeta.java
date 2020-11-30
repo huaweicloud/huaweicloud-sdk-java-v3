@@ -12,12 +12,12 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class NatMeta {
 
-    public static final HttpRequestDef<BatchCreateDnatRulesRequest, BatchCreateDnatRulesResponse> batchCreateDnatRules = genForbatchCreateDnatRules();
+    public static final HttpRequestDef<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> batchCreateNatGatewayDnatRules = genForbatchCreateNatGatewayDnatRules();
 
-    private static HttpRequestDef<BatchCreateDnatRulesRequest, BatchCreateDnatRulesResponse> genForbatchCreateDnatRules() {
+    private static HttpRequestDef<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> genForbatchCreateNatGatewayDnatRules() {
         // basic
-        HttpRequestDef.Builder<BatchCreateDnatRulesRequest, BatchCreateDnatRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateDnatRulesRequest.class, BatchCreateDnatRulesResponse.class)
+        HttpRequestDef.Builder<BatchCreateNatGatewayDnatRulesRequest, BatchCreateNatGatewayDnatRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateNatGatewayDnatRulesRequest.class, BatchCreateNatGatewayDnatRulesResponse.class)
                 .withUri("/v2/{project_id}/dnat_rules/batch")
                 .withContentType("application/json");
 
@@ -25,8 +25,8 @@ public class NatMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateDnatRulesRequestBody.class,
-            f -> f.withMarshaller(BatchCreateDnatRulesRequest::getBody, (req, v) -> {
+            BatchCreateNatGatewayDnatRulesRequestBody.class,
+            f -> f.withMarshaller(BatchCreateNatGatewayDnatRulesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

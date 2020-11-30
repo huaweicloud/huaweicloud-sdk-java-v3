@@ -57,7 +57,7 @@ public class QueryRedisConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="param_id")
     
-    private Integer paramId;
+    private String paramId;
 
     public QueryRedisConfig withParamValue(String paramValue) {
         this.paramValue = paramValue;
@@ -179,7 +179,7 @@ public class QueryRedisConfig  {
         this.paramName = paramName;
     }
 
-    public QueryRedisConfig withParamId(Integer paramId) {
+    public QueryRedisConfig withParamId(String paramId) {
         this.paramId = paramId;
         return this;
     }
@@ -191,11 +191,11 @@ public class QueryRedisConfig  {
      * 配置参数ID。
      * @return paramId
      */
-    public Integer getParamId() {
+    public String getParamId() {
         return paramId;
     }
 
-    public void setParamId(Integer paramId) {
+    public void setParamId(String paramId) {
         this.paramId = paramId;
     }
     @Override

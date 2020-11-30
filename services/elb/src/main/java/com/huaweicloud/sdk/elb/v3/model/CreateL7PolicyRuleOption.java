@@ -45,7 +45,7 @@ public class CreateL7PolicyRuleOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key")
     
-    private String key = "null";
+    private String key;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

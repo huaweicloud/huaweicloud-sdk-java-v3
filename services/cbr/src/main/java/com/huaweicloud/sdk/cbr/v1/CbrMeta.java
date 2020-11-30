@@ -994,6 +994,38 @@ public class CbrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<MigrateVaultResourceRequest, MigrateVaultResourceResponse> migrateVaultResource = genFormigrateVaultResource();
+
+    private static HttpRequestDef<MigrateVaultResourceRequest, MigrateVaultResourceResponse> genFormigrateVaultResource() {
+        // basic
+        HttpRequestDef.Builder<MigrateVaultResourceRequest, MigrateVaultResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, MigrateVaultResourceRequest.class, MigrateVaultResourceResponse.class)
+                .withUri("/v3/{project_id}/vaults/{vault_id}/migrateresources")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("vault_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(MigrateVaultResourceRequest::getVaultId, (req, v) -> {
+                req.setVaultId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            VaultMigrateResourceReq.class,
+            f -> f.withMarshaller(MigrateVaultResourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveVaultResourceRequest, RemoveVaultResourceResponse> removeVaultResource = genForremoveVaultResource();
 
     private static HttpRequestDef<RemoveVaultResourceRequest, RemoveVaultResourceResponse> genForremoveVaultResource() {

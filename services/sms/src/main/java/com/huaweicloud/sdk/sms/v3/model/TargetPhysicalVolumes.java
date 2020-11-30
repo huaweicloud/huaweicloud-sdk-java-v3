@@ -139,13 +139,13 @@ public class TargetPhysicalVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private Long size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="used_size")
     
-    private Integer usedSize;
+    private Long usedSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -253,7 +253,7 @@ public class TargetPhysicalVolumes  {
         this.name = name;
     }
 
-    public TargetPhysicalVolumes withSize(Integer size) {
+    public TargetPhysicalVolumes withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -265,15 +265,15 @@ public class TargetPhysicalVolumes  {
      * 大小
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
-    public TargetPhysicalVolumes withUsedSize(Integer usedSize) {
+    public TargetPhysicalVolumes withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
     }
@@ -285,11 +285,11 @@ public class TargetPhysicalVolumes  {
      * 使用大小
      * @return usedSize
      */
-    public Integer getUsedSize() {
+    public Long getUsedSize() {
         return usedSize;
     }
 
-    public void setUsedSize(Integer usedSize) {
+    public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
     }
 

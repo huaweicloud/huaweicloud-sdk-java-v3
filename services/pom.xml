@@ -6,63 +6,65 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.22-beta</version>
+        <version>3.0.23-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.22-beta</version>
+    <version>3.0.23-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
 
     <modules>
-        <module>eps</module>
-        <module>projectman</module>
-        <module>eip</module>
-        <module>tms</module>
-        <module>image</module>
-        <module>moderation</module>
-        <module>cloudbuild</module>
-        <module>rds</module>
-        <module>servicestage</module>
-        <module>codecheck</module>
-        <module>classroom</module>
-        <module>ecs</module>
         <module>as</module>
-        <module>dds</module>
-        <module>live</module>
-        <module>elb</module>
-        <module>kafka</module>
-        <module>evs</module>
-        <module>oms</module>
-        <module>kms</module>
-        <module>ces</module>
-        <module>nat</module>
-        <module>rabbitmq</module>
-        <module>meeting</module>
-        <module>bssintl</module>
-        <module>cts</module>
-        <module>rms</module>
-        <module>codehub</module>
-        <module>ims</module>
-        <module>sms</module>
-        <module>bss</module>
-        <module>dcs</module>
-        <module>mpc</module>
         <module>vpc</module>
-        <module>cloudide</module>
-        <module>cloudpipeline</module>
+        <module>codehub</module>
+        <module>cts</module>
+        <module>ecs</module>
+        <module>live</module>
+        <module>rms</module>
         <module>apig</module>
-        <module>functiongraph</module>
-        <module>dc</module>
-        <module>cloudtest</module>
-        <module>iam</module>
-        <module>devstar</module>
-        <module>dms</module>
-        <module>iotda</module>
         <module>osm</module>
+        <module>bss</module>
+        <module>kms</module>
+        <module>dds</module>
+        <module>dms</module>
+        <module>bms</module>
+        <module>rabbitmq</module>
+        <module>nat</module>
+        <module>evs</module>
+        <module>projectman</module>
+        <module>classroom</module>
+        <module>iam</module>
+        <module>sms</module>
+        <module>codecheck</module>
+        <module>moderation</module>
+        <module>cloudpipeline</module>
+        <module>cloudtest</module>
+        <module>devstar</module>
+        <module>rds</module>
+        <module>functiongraph</module>
+        <module>ces</module>
+        <module>kafka</module>
+        <module>dc</module>
+        <module>dcs</module>
+        <module>bssintl</module>
+        <module>eps</module>
+        <module>iotda</module>
+        <module>oms</module>
+        <module>ims</module>
+        <module>meeting</module>
+        <module>cloudbuild</module>
+        <module>eip</module>
+        <module>bcs</module>
+        <module>image</module>
+        <module>mpc</module>
+        <module>cloudide</module>
+        <module>elb</module>
         <module>cbr</module>
+        <module>servicestage</module>
+        <module>tms</module>
     </modules>
 </project>

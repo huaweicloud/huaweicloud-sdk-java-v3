@@ -470,6 +470,45 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> deleteDomainGroupInheritedRole = genFordeleteDomainGroupInheritedRole();
+
+    private static HttpRequestDef<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> genFordeleteDomainGroupInheritedRole() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainGroupInheritedRoleRequest.class, DeleteDomainGroupInheritedRoleResponse.class)
+                .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> keystoneAddUserToGroup = genForkeystoneAddUserToGroup();
 
     private static HttpRequestDef<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> genForkeystoneAddUserToGroup() {
@@ -493,45 +532,6 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(KeystoneAddUserToGroupRequest::getUserId, (req, v) -> {
                 req.setUserId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<KeystoneAssociateGroupWithAllProjectPermissionRequest, KeystoneAssociateGroupWithAllProjectPermissionResponse> keystoneAssociateGroupWithAllProjectPermission = genForkeystoneAssociateGroupWithAllProjectPermission();
-
-    private static HttpRequestDef<KeystoneAssociateGroupWithAllProjectPermissionRequest, KeystoneAssociateGroupWithAllProjectPermissionResponse> genForkeystoneAssociateGroupWithAllProjectPermission() {
-        // basic
-        HttpRequestDef.Builder<KeystoneAssociateGroupWithAllProjectPermissionRequest, KeystoneAssociateGroupWithAllProjectPermissionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, KeystoneAssociateGroupWithAllProjectPermissionRequest.class, KeystoneAssociateGroupWithAllProjectPermissionResponse.class)
-                .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects");
-
-        // requests
-        builder.withRequestField("domain_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(KeystoneAssociateGroupWithAllProjectPermissionRequest::getDomainId, (req, v) -> {
-                req.setDomainId(v);
-            })
-        );
-        builder.withRequestField("group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(KeystoneAssociateGroupWithAllProjectPermissionRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("role_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(KeystoneAssociateGroupWithAllProjectPermissionRequest::getRoleId, (req, v) -> {
-                req.setRoleId(v);
             })
         );
 
@@ -719,6 +719,45 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(KeystoneCheckUserInGroupRequest::getUserId, (req, v) -> {
                 req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> keystoneCheckroleForGroup = genForkeystoneCheckroleForGroup();
+
+    private static HttpRequestDef<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> genForkeystoneCheckroleForGroup() {
+        // basic
+        HttpRequestDef.Builder<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.HEAD, KeystoneCheckroleForGroupRequest.class, KeystoneCheckroleForGroupResponse.class)
+                .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneCheckroleForGroupRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
             })
         );
 
@@ -1012,6 +1051,37 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> keystoneListAllProjectPermissionsForGroup = genForkeystoneListAllProjectPermissionsForGroup();
+
+    private static HttpRequestDef<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> genForkeystoneListAllProjectPermissionsForGroup() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListAllProjectPermissionsForGroupRequest.class, KeystoneListAllProjectPermissionsForGroupResponse.class)
+                .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListAllProjectPermissionsForGroupRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(KeystoneListAllProjectPermissionsForGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> keystoneListAuthDomains = genForkeystoneListAuthDomains();
 
     private static HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> genForkeystoneListAuthDomains() {
@@ -1188,6 +1258,22 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(KeystoneListPermissionsRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
             })
         );
 
@@ -2075,6 +2161,22 @@ public class IamMeta {
                 .withUri("/v3.0/OS-ROLE/roles");
 
         // requests
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomPoliciesRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomPoliciesRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
+            })
+        );
 
         // response
 
@@ -2689,6 +2791,45 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> updateDomainGroupInheritRole = genForupdateDomainGroupInheritRole();
+
+    private static HttpRequestDef<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> genForupdateDomainGroupInheritRole() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainGroupInheritRoleRequest.class, UpdateDomainGroupInheritRoleResponse.class)
+                .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects");
+
+        // requests
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainGroupInheritRoleRequest::getRoleId, (req, v) -> {
+                req.setRoleId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> updateDomainLoginPolicy = genForupdateDomainLoginPolicy();
 
     private static HttpRequestDef<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> genForupdateDomainLoginPolicy() {
@@ -2990,6 +3131,54 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDevice = genForcreateBindingDevice();
+
+    private static HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> genForcreateBindingDevice() {
+        // basic
+        HttpRequestDef.Builder<CreateBindingDeviceRequest, CreateBindingDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateBindingDeviceRequest.class, CreateBindingDeviceResponse.class)
+                .withUri("/v3.0/OS-MFA/mfa-devices/bind")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BindMfaDevice.class,
+            f -> f.withMarshaller(CreateBindingDeviceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDevice = genForcreateMfaDevice();
+
+    private static HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> genForcreateMfaDevice() {
+        // basic
+        HttpRequestDef.Builder<CreateMfaDeviceRequest, CreateMfaDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMfaDeviceRequest.class, CreateMfaDeviceResponse.class)
+                .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateMfaDeviceReq.class,
+            f -> f.withMarshaller(CreateMfaDeviceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForcreateUser();
 
     private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForcreateUser() {
@@ -3006,6 +3195,61 @@ public class IamMeta {
             CreateUserRequestBody.class,
             f -> f.withMarshaller(CreateUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDevice = genFordeleteBindingDevice();
+
+    private static HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> genFordeleteBindingDevice() {
+        // basic
+        HttpRequestDef.Builder<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, DeleteBindingDeviceRequest.class, DeleteBindingDeviceResponse.class)
+                .withUri("/v3.0/OS-MFA/mfa-devices/unbind")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UnbindMfaDevice.class,
+            f -> f.withMarshaller(DeleteBindingDeviceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDevice = genFordeleteMfaDevice();
+
+    private static HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> genFordeleteMfaDevice() {
+        // basic
+        HttpRequestDef.Builder<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMfaDeviceRequest.class, DeleteMfaDeviceResponse.class)
+                .withUri("/v3.0/OS-MFA/virtual-mfa-devices");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteMfaDeviceRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+        builder.withRequestField("serial_number",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteMfaDeviceRequest::getSerialNumber, (req, v) -> {
+                req.setSerialNumber(v);
             })
         );
 
@@ -3309,6 +3553,38 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(ShowUserMfaDeviceRequest::getUserId, (req, v) -> {
                 req.setUserId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLoginProtectRequest, UpdateLoginProtectResponse> updateLoginProtect = genForupdateLoginProtect();
+
+    private static HttpRequestDef<UpdateLoginProtectRequest, UpdateLoginProtectResponse> genForupdateLoginProtect() {
+        // basic
+        HttpRequestDef.Builder<UpdateLoginProtectRequest, UpdateLoginProtectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLoginProtectRequest.class, UpdateLoginProtectResponse.class)
+                .withUri("/v3.0/OS-USER/users/{user_id}/login-protect")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateLoginProtectRequest::getUserId, (req, v) -> {
+                req.setUserId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateLoginProjectReq.class,
+            f -> f.withMarshaller(UpdateLoginProtectRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

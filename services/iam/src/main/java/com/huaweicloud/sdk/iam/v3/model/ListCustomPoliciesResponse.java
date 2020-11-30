@@ -35,6 +35,12 @@ public class ListCustomPoliciesResponse extends SdkResponse {
     
     private List<PolicyRoleResult> roles = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total_number")
+    
+    private Integer totalNumber;
+
     public ListCustomPoliciesResponse withLinks(Links links) {
         this.links = links;
         return this;
@@ -95,6 +101,26 @@ public class ListCustomPoliciesResponse extends SdkResponse {
     public void setRoles(List<PolicyRoleResult> roles) {
         this.roles = roles;
     }
+
+    public ListCustomPoliciesResponse withTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 返回自定义策略的总条数
+     * @return totalNumber
+     */
+    public Integer getTotalNumber() {
+        return totalNumber;
+    }
+
+    public void setTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,11 +131,12 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         }
         ListCustomPoliciesResponse listCustomPoliciesResponse = (ListCustomPoliciesResponse) o;
         return Objects.equals(this.links, listCustomPoliciesResponse.links) &&
-            Objects.equals(this.roles, listCustomPoliciesResponse.roles);
+            Objects.equals(this.roles, listCustomPoliciesResponse.roles) &&
+            Objects.equals(this.totalNumber, listCustomPoliciesResponse.totalNumber);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(links, roles);
+        return Objects.hash(links, roles, totalNumber);
     }
     @Override
     public String toString() {
@@ -117,6 +144,7 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         sb.append("class ListCustomPoliciesResponse {\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
+        sb.append("    totalNumber: ").append(toIndentedString(totalNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

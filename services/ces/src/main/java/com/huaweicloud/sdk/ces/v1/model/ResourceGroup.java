@@ -101,7 +101,7 @@ public class ResourceGroup  {
 
 
     /**
-     * 资源分组的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
+     * 资源分组中该资源的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
      * @return status
      */
     public String getStatus() {

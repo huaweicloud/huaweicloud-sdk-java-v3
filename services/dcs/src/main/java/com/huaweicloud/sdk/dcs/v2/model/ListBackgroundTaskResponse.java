@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.DetailsBody;
+import com.huaweicloud.sdk.dcs.v2.model.SingleBackgroundTask;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,60 +24,18 @@ public class ListBackgroundTaskResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
+    @JsonProperty(value="task_count")
     
-    private String id;
+    private String taskCount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="tasks")
     
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="details")
+    private List<SingleBackgroundTask> tasks = null;
     
-    private DetailsBody details = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
-    private String userName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
-    private String userId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
-    private String params;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
-    private String status;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
-    private String createdAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
-    private String updatedAt;
-
-    public ListBackgroundTaskResponse withId(String id) {
-        this.id = id;
+    public ListBackgroundTaskResponse withTaskCount(String taskCount) {
+        this.taskCount = taskCount;
         return this;
     }
 
@@ -83,182 +43,49 @@ public class ListBackgroundTaskResponse extends SdkResponse {
 
 
     /**
-     * 后台任务ID
-     * @return id
+     * 任务个数
+     * @return taskCount
      */
-    public String getId() {
-        return id;
+    public String getTaskCount() {
+        return taskCount;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setTaskCount(String taskCount) {
+        this.taskCount = taskCount;
     }
 
-    public ListBackgroundTaskResponse withName(String name) {
-        this.name = name;
+    public ListBackgroundTaskResponse withTasks(List<SingleBackgroundTask> tasks) {
+        this.tasks = tasks;
         return this;
     }
 
     
-
-
-    /**
-     * 后台任务名，目前支持以下取值：  ChangeInstanceSpec：变更规格  BindEip：开启公网访问  UnBindEip：关闭公网访问  AddReplica：添加副本  DelReplica：删除副本  AddWhitelist：设置IP白名单  UpdatePort：修改端口  RemoveIpFromDns：域名摘除IP 
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ListBackgroundTaskResponse withDetails(DetailsBody details) {
-        this.details = details;
-        return this;
-    }
-
-    public ListBackgroundTaskResponse withDetails(Consumer<DetailsBody> detailsSetter) {
-        if(this.details == null ){
-            this.details = new DetailsBody();
-            detailsSetter.accept(this.details);
+    public ListBackgroundTaskResponse addTasksItem(SingleBackgroundTask tasksItem) {
+        if (this.tasks == null) {
+            this.tasks = new ArrayList<>();
         }
-        
+        this.tasks.add(tasksItem);
         return this;
     }
 
-
-    /**
-     * Get details
-     * @return details
-     */
-    public DetailsBody getDetails() {
-        return details;
-    }
-
-    public void setDetails(DetailsBody details) {
-        this.details = details;
-    }
-
-    public ListBackgroundTaskResponse withUserName(String userName) {
-        this.userName = userName;
+    public ListBackgroundTaskResponse withTasks(Consumer<List<SingleBackgroundTask>> tasksSetter) {
+        if(this.tasks == null ){
+            this.tasks = new ArrayList<>();
+        }
+        tasksSetter.accept(this.tasks);
         return this;
     }
 
-    
-
-
     /**
-     * 用户名
-     * @return userName
+     * 任务详情数组
+     * @return tasks
      */
-    public String getUserName() {
-        return userName;
+    public List<SingleBackgroundTask> getTasks() {
+        return tasks;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public ListBackgroundTaskResponse withUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 用户ID
-     * @return userId
-     */
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public ListBackgroundTaskResponse withParams(String params) {
-        this.params = params;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 任务相关参数
-     * @return params
-     */
-    public String getParams() {
-        return params;
-    }
-
-    public void setParams(String params) {
-        this.params = params;
-    }
-
-    public ListBackgroundTaskResponse withStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 任务状态
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public ListBackgroundTaskResponse withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 任务启动时间，格式为2020-06-17T07:38:42.503Z
-     * @return createdAt
-     */
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public ListBackgroundTaskResponse withUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 任务结束时间，格式为2020-06-17T07:38:42.503Z
-     * @return updatedAt
-     */
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setTasks(List<SingleBackgroundTask> tasks) {
+        this.tasks = tasks;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -269,33 +96,19 @@ public class ListBackgroundTaskResponse extends SdkResponse {
             return false;
         }
         ListBackgroundTaskResponse listBackgroundTaskResponse = (ListBackgroundTaskResponse) o;
-        return Objects.equals(this.id, listBackgroundTaskResponse.id) &&
-            Objects.equals(this.name, listBackgroundTaskResponse.name) &&
-            Objects.equals(this.details, listBackgroundTaskResponse.details) &&
-            Objects.equals(this.userName, listBackgroundTaskResponse.userName) &&
-            Objects.equals(this.userId, listBackgroundTaskResponse.userId) &&
-            Objects.equals(this.params, listBackgroundTaskResponse.params) &&
-            Objects.equals(this.status, listBackgroundTaskResponse.status) &&
-            Objects.equals(this.createdAt, listBackgroundTaskResponse.createdAt) &&
-            Objects.equals(this.updatedAt, listBackgroundTaskResponse.updatedAt);
+        return Objects.equals(this.taskCount, listBackgroundTaskResponse.taskCount) &&
+            Objects.equals(this.tasks, listBackgroundTaskResponse.tasks);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, details, userName, userId, params, status, createdAt, updatedAt);
+        return Objects.hash(taskCount, tasks);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBackgroundTaskResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    details: ").append(toIndentedString(details)).append("\n");
-        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-        sb.append("    params: ").append(toIndentedString(params)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    taskCount: ").append(toIndentedString(taskCount)).append("\n");
+        sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
         sb.append("}");
         return sb.toString();
     }

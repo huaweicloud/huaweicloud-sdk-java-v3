@@ -47,13 +47,13 @@ public class TaskByServerSources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="estimate_complete_time")
     
-    private Integer estimateCompleteTime;
+    private Long estimateCompleteTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_date")
     
-    private Integer startDate;
+    private Long startDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,7 +213,7 @@ public class TaskByServerSources  {
         this.state = state;
     }
 
-    public TaskByServerSources withEstimateCompleteTime(Integer estimateCompleteTime) {
+    public TaskByServerSources withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
         return this;
     }
@@ -225,15 +225,15 @@ public class TaskByServerSources  {
      * 预估结束时间
      * @return estimateCompleteTime
      */
-    public Integer getEstimateCompleteTime() {
+    public Long getEstimateCompleteTime() {
         return estimateCompleteTime;
     }
 
-    public void setEstimateCompleteTime(Integer estimateCompleteTime) {
+    public void setEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
-    public TaskByServerSources withStartDate(Integer startDate) {
+    public TaskByServerSources withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -245,11 +245,11 @@ public class TaskByServerSources  {
      * 开始时间
      * @return startDate
      */
-    public Integer getStartDate() {
+    public Long getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Integer startDate) {
+    public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
 

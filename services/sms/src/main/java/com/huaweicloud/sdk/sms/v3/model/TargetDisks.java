@@ -136,13 +136,13 @@ public class TargetDisks  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private Long size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="used_size")
     
-    private Integer usedSize;
+    private Long usedSize;
 
     public TargetDisks withDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
@@ -235,7 +235,7 @@ public class TargetDisks  {
         this.physicalVolumes = physicalVolumes;
     }
 
-    public TargetDisks withSize(Integer size) {
+    public TargetDisks withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -247,15 +247,15 @@ public class TargetDisks  {
      * 大小
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
-    public TargetDisks withUsedSize(Integer usedSize) {
+    public TargetDisks withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
     }
@@ -267,11 +267,11 @@ public class TargetDisks  {
      * 使用大小
      * @return usedSize
      */
-    public Integer getUsedSize() {
+    public Long getUsedSize() {
         return usedSize;
     }
 
-    public void setUsedSize(Integer usedSize) {
+    public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
     }
     @Override

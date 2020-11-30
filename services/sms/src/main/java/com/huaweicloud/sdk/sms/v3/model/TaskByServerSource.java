@@ -47,7 +47,7 @@ public class TaskByServerSource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_date")
     
-    private Integer startDate;
+    private Long startDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -201,7 +201,7 @@ public class TaskByServerSource  {
         this.state = state;
     }
 
-    public TaskByServerSource withStartDate(Integer startDate) {
+    public TaskByServerSource withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -213,11 +213,11 @@ public class TaskByServerSource  {
      * 开始时间
      * @return startDate
      */
-    public Integer getStartDate() {
+    public Long getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Integer startDate) {
+    public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
 

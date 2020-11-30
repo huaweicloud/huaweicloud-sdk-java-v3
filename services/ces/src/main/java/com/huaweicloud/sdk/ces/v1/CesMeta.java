@@ -141,6 +141,30 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateResourceGroupRequest, CreateResourceGroupResponse> createResourceGroup = genForcreateResourceGroup();
+
+    private static HttpRequestDef<CreateResourceGroupRequest, CreateResourceGroupResponse> genForcreateResourceGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateResourceGroupRequest, CreateResourceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateResourceGroupRequest.class, CreateResourceGroupResponse.class)
+                .withUri("/V1.0/{project_id}/resource-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateResourceGroupRequestBody.class,
+            f -> f.withMarshaller(CreateResourceGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAlarmRequest, DeleteAlarmResponse> deleteAlarm = genFordeleteAlarm();
 
     private static HttpRequestDef<DeleteAlarmRequest, DeleteAlarmResponse> genFordeleteAlarm() {
@@ -179,6 +203,29 @@ public class CesMeta {
             String.class,
             f -> f.withMarshaller(DeleteAlarmTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteResourceGroupRequest, DeleteResourceGroupResponse> deleteResourceGroup = genFordeleteResourceGroup();
+
+    private static HttpRequestDef<DeleteResourceGroupRequest, DeleteResourceGroupResponse> genFordeleteResourceGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteResourceGroupRequest, DeleteResourceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceGroupRequest.class, DeleteResourceGroupResponse.class)
+                .withUri("/V1.0/{project_id}/resource-groups/{group_id}");
+
+        // requests
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteResourceGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
             })
         );
 
@@ -376,6 +423,173 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEventDetailRequest, ListEventDetailResponse> listEventDetail = genForlistEventDetail();
+
+    private static HttpRequestDef<ListEventDetailRequest, ListEventDetailResponse> genForlistEventDetail() {
+        // basic
+        HttpRequestDef.Builder<ListEventDetailRequest, ListEventDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventDetailRequest.class, ListEventDetailResponse.class)
+                .withUri("/V1.0/{project_id}/events/{event_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("event_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getEventName, (req, v) -> {
+                req.setEventName(v);
+            })
+        );
+        builder.withRequestField("event_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListEventDetailRequest.EventTypeEnum.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getEventType, (req, v) -> {
+                req.setEventType(v);
+            })
+        );
+        builder.withRequestField("event_source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getEventSource, (req, v) -> {
+                req.setEventSource(v);
+            })
+        );
+        builder.withRequestField("event_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getEventLevel, (req, v) -> {
+                req.setEventLevel(v);
+            })
+        );
+        builder.withRequestField("event_user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getEventUser, (req, v) -> {
+                req.setEventUser(v);
+            })
+        );
+        builder.withRequestField("event_state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getEventState, (req, v) -> {
+                req.setEventState(v);
+            })
+        );
+        builder.withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Long.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            })
+        );
+        builder.withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Long.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            })
+        );
+        builder.withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            List.class,
+            f -> f.withMarshaller(ListEventDetailRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(EventItem.class)
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEventsRequest, ListEventsResponse> listEvents = genForlistEvents();
+
+    private static HttpRequestDef<ListEventsRequest, ListEventsResponse> genForlistEvents() {
+        // basic
+        HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventsRequest.class, ListEventsResponse.class)
+                .withUri("/V1.0/{project_id}/events");
+
+        // requests
+        builder.withRequestField("event_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListEventsRequest.EventTypeEnum.class,
+            f -> f.withMarshaller(ListEventsRequest::getEventType, (req, v) -> {
+                req.setEventType(v);
+            })
+        );
+        builder.withRequestField("event_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEventsRequest::getEventName, (req, v) -> {
+                req.setEventName(v);
+            })
+        );
+        builder.withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Long.class,
+            f -> f.withMarshaller(ListEventsRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            })
+        );
+        builder.withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Long.class,
+            f -> f.withMarshaller(ListEventsRequest::getTo, (req, v) -> {
+                req.setTo(v);
+            })
+        );
+        builder.withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEventsRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEventsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMetricsRequest, ListMetricsResponse> listMetrics = genForlistMetrics();
 
     private static HttpRequestDef<ListMetricsRequest, ListMetricsResponse> genForlistMetrics() {
@@ -447,6 +661,61 @@ public class CesMeta {
             String.class,
             f -> f.withMarshaller(ListMetricsRequest::getStart, (req, v) -> {
                 req.setStart(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceGroupRequest, ListResourceGroupResponse> listResourceGroup = genForlistResourceGroup();
+
+    private static HttpRequestDef<ListResourceGroupRequest, ListResourceGroupResponse> genForlistResourceGroup() {
+        // basic
+        HttpRequestDef.Builder<ListResourceGroupRequest, ListResourceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourceGroupRequest.class, ListResourceGroupResponse.class)
+                .withUri("/V1.0/{project_id}/resource-groups");
+
+        // requests
+        builder.withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourceGroupRequest::getGroupName, (req, v) -> {
+                req.setGroupName(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourceGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourceGroupRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListResourceGroupRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListResourceGroupRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 
@@ -714,6 +983,38 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAlarmRequest, UpdateAlarmResponse> updateAlarm = genForupdateAlarm();
+
+    private static HttpRequestDef<UpdateAlarmRequest, UpdateAlarmResponse> genForupdateAlarm() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmRequest, UpdateAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAlarmRequest.class, UpdateAlarmResponse.class)
+                .withUri("/V1.0/{project_id}/alarms/{alarm_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateAlarmRequest::getAlarmId, (req, v) -> {
+                req.setAlarmId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateAlarmRequestBody.class,
+            f -> f.withMarshaller(UpdateAlarmRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAlarmActionRequest, UpdateAlarmActionResponse> updateAlarmAction = genForupdateAlarmAction();
 
     private static HttpRequestDef<UpdateAlarmActionRequest, UpdateAlarmActionResponse> genForupdateAlarmAction() {
@@ -769,6 +1070,38 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateAlarmTemplateRequestBody.class,
             f -> f.withMarshaller(UpdateAlarmTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateResourceGroupRequest, UpdateResourceGroupResponse> updateResourceGroup = genForupdateResourceGroup();
+
+    private static HttpRequestDef<UpdateResourceGroupRequest, UpdateResourceGroupResponse> genForupdateResourceGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateResourceGroupRequest, UpdateResourceGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateResourceGroupRequest.class, UpdateResourceGroupResponse.class)
+                .withUri("/V1.0/{project_id}/resource-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateResourceGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateResourceGroupRequestBody.class,
+            f -> f.withMarshaller(UpdateResourceGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

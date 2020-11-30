@@ -32,7 +32,7 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_count")
     
-    private String groupCount;
+    private Integer groupCount;
 
     public ListGroupReplicationInfoResponse withGroupList(List<InstanceGroupListInfo> groupList) {
         this.groupList = groupList;
@@ -68,7 +68,7 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
         this.groupList = groupList;
     }
 
-    public ListGroupReplicationInfoResponse withGroupCount(String groupCount) {
+    public ListGroupReplicationInfoResponse withGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
         return this;
     }
@@ -80,11 +80,11 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
      * 实例分片总数。
      * @return groupCount
      */
-    public String getGroupCount() {
+    public Integer getGroupCount() {
         return groupCount;
     }
 
-    public void setGroupCount(String groupCount) {
+    public void setGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
     }
     @Override

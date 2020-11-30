@@ -112,15 +112,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteMigprojectResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }
@@ -238,15 +229,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteTemplateResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }
@@ -271,15 +253,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteTemplatesResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }
@@ -726,15 +699,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateDefaultMigprojectResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }
@@ -746,7 +710,7 @@ public class SmsMeta {
         HttpRequestDef.Builder<UpdateMigprojectRequest, UpdateMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMigprojectRequest.class, UpdateMigprojectResponse.class)
                 .withUri("/v3/migprojects/{mig_project_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("mig_project_id",
@@ -767,15 +731,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateMigprojectResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }
@@ -787,7 +742,7 @@ public class SmsMeta {
         HttpRequestDef.Builder<UpdateServerNameRequest, UpdateServerNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServerNameRequest.class, UpdateServerNameResponse.class)
                 .withUri("/v3/sources/{source_id}")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("source_id",
@@ -808,15 +763,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateServerNameResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }
@@ -828,7 +774,7 @@ public class SmsMeta {
         HttpRequestDef.Builder<UpdateSpeedRequest, UpdateSpeedResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSpeedRequest.class, UpdateSpeedResponse.class)
                 .withUri("/v3/tasks/{task_id}/speedlimit")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -849,15 +795,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateSpeedResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }
@@ -890,15 +827,6 @@ public class SmsMeta {
         );
 
         // response
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateTaskStatusResponse::getBody, (response, data)->{
-                response.setBody(data);
-            })
-        );
 
         return builder.build();
     }

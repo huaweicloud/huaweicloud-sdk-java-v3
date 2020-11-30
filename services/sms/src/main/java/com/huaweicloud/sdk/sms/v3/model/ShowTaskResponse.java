@@ -18,7 +18,6 @@ import com.huaweicloud.sdk.sms.v3.model.CloneServer;
 import com.huaweicloud.sdk.sms.v3.model.PostSourceServerBody;
 import com.huaweicloud.sdk.sms.v3.model.SubTask;
 import com.huaweicloud.sdk.sms.v3.model.TargetServer;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -282,7 +281,7 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="estimate_complete_time")
     
-    private LocalDate estimateCompleteTime = null;
+    private Long estimateCompleteTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -294,19 +293,19 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_date")
     
-    private LocalDate createDate = null;
+    private Long createDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_date")
     
-    private LocalDate startDate = null;
+    private Long startDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="finish_date")
     
-    private LocalDate finishDate = null;
+    private Long finishDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -672,7 +671,7 @@ public class ShowTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    public ShowTaskResponse withEstimateCompleteTime(LocalDate estimateCompleteTime) {
+    public ShowTaskResponse withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
         return this;
     }
@@ -684,11 +683,11 @@ public class ShowTaskResponse extends SdkResponse {
      * 预估完成时间
      * @return estimateCompleteTime
      */
-    public LocalDate getEstimateCompleteTime() {
+    public Long getEstimateCompleteTime() {
         return estimateCompleteTime;
     }
 
-    public void setEstimateCompleteTime(LocalDate estimateCompleteTime) {
+    public void setEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
@@ -712,7 +711,7 @@ public class ShowTaskResponse extends SdkResponse {
         this.connected = connected;
     }
 
-    public ShowTaskResponse withCreateDate(LocalDate createDate) {
+    public ShowTaskResponse withCreateDate(Long createDate) {
         this.createDate = createDate;
         return this;
     }
@@ -724,15 +723,15 @@ public class ShowTaskResponse extends SdkResponse {
      * 任务创建时间
      * @return createDate
      */
-    public LocalDate getCreateDate() {
+    public Long getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(LocalDate createDate) {
+    public void setCreateDate(Long createDate) {
         this.createDate = createDate;
     }
 
-    public ShowTaskResponse withStartDate(LocalDate startDate) {
+    public ShowTaskResponse withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -744,15 +743,15 @@ public class ShowTaskResponse extends SdkResponse {
      * 任务开始时间
      * @return startDate
      */
-    public LocalDate getStartDate() {
+    public Long getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
 
-    public ShowTaskResponse withFinishDate(LocalDate finishDate) {
+    public ShowTaskResponse withFinishDate(Long finishDate) {
         this.finishDate = finishDate;
         return this;
     }
@@ -764,11 +763,11 @@ public class ShowTaskResponse extends SdkResponse {
      * 任务结束时间
      * @return finishDate
      */
-    public LocalDate getFinishDate() {
+    public Long getFinishDate() {
         return finishDate;
     }
 
-    public void setFinishDate(LocalDate finishDate) {
+    public void setFinishDate(Long finishDate) {
         this.finishDate = finishDate;
     }
 

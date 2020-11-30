@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.PipelineParam;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.Source;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -23,14 +25,14 @@ public class Workflow  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameter")
     
-    private PipelineParam parameter = null;
-
+    private List<PipelineParam> parameter = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source")
     
-    private Source source = null;
-
+    private List<Source> source = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
@@ -49,57 +51,65 @@ public class Workflow  {
     
     private String projectName;
 
-    public Workflow withParameter(PipelineParam parameter) {
+    public Workflow withParameter(List<PipelineParam> parameter) {
         this.parameter = parameter;
         return this;
     }
 
-    public Workflow withParameter(Consumer<PipelineParam> parameterSetter) {
-        if(this.parameter == null ){
-            this.parameter = new PipelineParam();
-            parameterSetter.accept(this.parameter);
-        }
-        
+    
+    public Workflow addParameterItem(PipelineParam parameterItem) {
+        this.parameter.add(parameterItem);
         return this;
     }
 
+    public Workflow withParameter(Consumer<List<PipelineParam>> parameterSetter) {
+        if(this.parameter == null ){
+            this.parameter = new ArrayList<>();
+        }
+        parameterSetter.accept(this.parameter);
+        return this;
+    }
 
     /**
-     * Get parameter
+     * 任务类型,list类型数据
      * @return parameter
      */
-    public PipelineParam getParameter() {
+    public List<PipelineParam> getParameter() {
         return parameter;
     }
 
-    public void setParameter(PipelineParam parameter) {
+    public void setParameter(List<PipelineParam> parameter) {
         this.parameter = parameter;
     }
 
-    public Workflow withSource(Source source) {
+    public Workflow withSource(List<Source> source) {
         this.source = source;
         return this;
     }
 
-    public Workflow withSource(Consumer<Source> sourceSetter) {
-        if(this.source == null ){
-            this.source = new Source();
-            sourceSetter.accept(this.source);
-        }
-        
+    
+    public Workflow addSourceItem(Source sourceItem) {
+        this.source.add(sourceItem);
         return this;
     }
 
+    public Workflow withSource(Consumer<List<Source>> sourceSetter) {
+        if(this.source == null ){
+            this.source = new ArrayList<>();
+        }
+        sourceSetter.accept(this.source);
+        return this;
+    }
 
     /**
-     * Get source
+     * 源码仓,list类型数据
      * @return source
      */
-    public Source getSource() {
+    public List<Source> getSource() {
         return source;
     }
 
-    public void setSource(Source source) {
+    public void setSource(List<Source> source) {
         this.source = source;
     }
 

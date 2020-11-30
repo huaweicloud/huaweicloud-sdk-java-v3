@@ -39,6 +39,15 @@ public class CloudPipelineMeta {
         );
 
         // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(BatchShowPipelinesStatusResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(PipelineExecuteStates.class)
+        );
 
         return builder.build();
     }
@@ -67,6 +76,69 @@ public class CloudPipelineMeta {
             TemplateCddl.class,
             f -> f.withMarshaller(CreatePipelineByTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> listPipleineBuildResult = genForlistPipleineBuildResult();
+
+    private static HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> genForlistPipleineBuildResult() {
+        // basic
+        HttpRequestDef.Builder<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPipleineBuildResultRequest.class, ListPipleineBuildResultResponse.class)
+                .withUri("/v3/pipelines/build-result");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            })
+        );
+        builder.withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPipleineBuildResultRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 
@@ -403,7 +475,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<StartPipelineRequest, StartPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartPipelineRequest.class, StartPipelineResponse.class)
-                .withUri("/v3/pipelines/start");
+                .withUri("/v3/pipelines/start")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pipeline_id",
@@ -420,6 +493,14 @@ public class CloudPipelineMeta {
             String.class,
             f -> f.withMarshaller(StartPipelineRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            StartPipelineParameters.class,
+            f -> f.withMarshaller(StartPipelineRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

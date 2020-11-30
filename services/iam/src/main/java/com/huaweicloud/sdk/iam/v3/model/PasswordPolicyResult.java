@@ -65,6 +65,12 @@ public class PasswordPolicyResult  {
     
     private Integer passwordValidityPeriod;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="password_char_combination")
+    
+    private Integer passwordCharCombination;
+
     public PasswordPolicyResult withMaximumConsecutiveIdenticalChars(Integer maximumConsecutiveIdenticalChars) {
         this.maximumConsecutiveIdenticalChars = maximumConsecutiveIdenticalChars;
         return this;
@@ -224,6 +230,26 @@ public class PasswordPolicyResult  {
     public void setPasswordValidityPeriod(Integer passwordValidityPeriod) {
         this.passwordValidityPeriod = passwordValidityPeriod;
     }
+
+    public PasswordPolicyResult withPasswordCharCombination(Integer passwordCharCombination) {
+        this.passwordCharCombination = passwordCharCombination;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 至少包含字符种类的个数，取值区间[2,4]。
+     * @return passwordCharCombination
+     */
+    public Integer getPasswordCharCombination() {
+        return passwordCharCombination;
+    }
+
+    public void setPasswordCharCombination(Integer passwordCharCombination) {
+        this.passwordCharCombination = passwordCharCombination;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -240,11 +266,12 @@ public class PasswordPolicyResult  {
             Objects.equals(this.numberOfRecentPasswordsDisallowed, passwordPolicyResult.numberOfRecentPasswordsDisallowed) &&
             Objects.equals(this.passwordNotUsernameOrInvert, passwordPolicyResult.passwordNotUsernameOrInvert) &&
             Objects.equals(this.passwordRequirements, passwordPolicyResult.passwordRequirements) &&
-            Objects.equals(this.passwordValidityPeriod, passwordPolicyResult.passwordValidityPeriod);
+            Objects.equals(this.passwordValidityPeriod, passwordPolicyResult.passwordValidityPeriod) &&
+            Objects.equals(this.passwordCharCombination, passwordPolicyResult.passwordCharCombination);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(maximumConsecutiveIdenticalChars, maximumPasswordLength, minimumPasswordAge, minimumPasswordLength, numberOfRecentPasswordsDisallowed, passwordNotUsernameOrInvert, passwordRequirements, passwordValidityPeriod);
+        return Objects.hash(maximumConsecutiveIdenticalChars, maximumPasswordLength, minimumPasswordAge, minimumPasswordLength, numberOfRecentPasswordsDisallowed, passwordNotUsernameOrInvert, passwordRequirements, passwordValidityPeriod, passwordCharCombination);
     }
     @Override
     public String toString() {
@@ -258,6 +285,7 @@ public class PasswordPolicyResult  {
         sb.append("    passwordNotUsernameOrInvert: ").append(toIndentedString(passwordNotUsernameOrInvert)).append("\n");
         sb.append("    passwordRequirements: ").append(toIndentedString(passwordRequirements)).append("\n");
         sb.append("    passwordValidityPeriod: ").append(toIndentedString(passwordValidityPeriod)).append("\n");
+        sb.append("    passwordCharCombination: ").append(toIndentedString(passwordCharCombination)).append("\n");
         sb.append("}");
         return sb.toString();
     }

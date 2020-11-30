@@ -88,11 +88,6 @@ public class ListNatGatewaysRequest  {
         public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
         
         /**
-         * Enum EIP_FREEZED for value: "EIP_FREEZED"
-         */
-        public static final StatusEnum EIP_FREEZED = new StatusEnum("EIP_FREEZED");
-        
-        /**
          * Enum INACTIVE for value: "INACTIVE"
          */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
@@ -106,7 +101,6 @@ public class ListNatGatewaysRequest  {
             map.put("PENDING_CREATE", PENDING_CREATE);
             map.put("PENDING_UPDATE", PENDING_UPDATE);
             map.put("PENDING_DELETE", PENDING_DELETE);
-            map.put("EIP_FREEZED", EIP_FREEZED);
             map.put("INACTIVE", INACTIVE);
             return Collections.unmodifiableMap(map);
         }

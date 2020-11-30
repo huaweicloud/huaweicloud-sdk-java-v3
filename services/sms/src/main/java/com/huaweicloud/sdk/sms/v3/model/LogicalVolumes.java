@@ -27,7 +27,7 @@ public class LogicalVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_size")
     
-    private Integer blockSize;
+    private Long blockSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,13 +57,13 @@ public class LogicalVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private Long size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="used_size")
     
-    private Integer usedSize;
+    private Long usedSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,7 +92,7 @@ public class LogicalVolumes  {
         this.blockCount = blockCount;
     }
 
-    public LogicalVolumes withBlockSize(Integer blockSize) {
+    public LogicalVolumes withBlockSize(Long blockSize) {
         this.blockSize = blockSize;
         return this;
     }
@@ -105,11 +105,11 @@ public class LogicalVolumes  {
      * minimum: 0
      * @return blockSize
      */
-    public Integer getBlockSize() {
+    public Long getBlockSize() {
         return blockSize;
     }
 
-    public void setBlockSize(Integer blockSize) {
+    public void setBlockSize(Long blockSize) {
         this.blockSize = blockSize;
     }
 
@@ -193,7 +193,7 @@ public class LogicalVolumes  {
         this.name = name;
     }
 
-    public LogicalVolumes withSize(Integer size) {
+    public LogicalVolumes withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -206,15 +206,15 @@ public class LogicalVolumes  {
      * minimum: 0
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
-    public LogicalVolumes withUsedSize(Integer usedSize) {
+    public LogicalVolumes withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
     }
@@ -227,11 +227,11 @@ public class LogicalVolumes  {
      * minimum: 0
      * @return usedSize
      */
-    public Integer getUsedSize() {
+    public Long getUsedSize() {
         return usedSize;
     }
 
-    public void setUsedSize(Integer usedSize) {
+    public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
     }
 

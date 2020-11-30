@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.cloudpipeline.v1.model.StartPipelineParameters;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,6 +29,12 @@ public class StartPipelineRequest  {
     @JsonProperty(value="pipeline_id")
     
     private String pipelineId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="body")
+    
+    private StartPipelineParameters body = null;
 
     public StartPipelineRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -70,6 +77,33 @@ public class StartPipelineRequest  {
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
+
+    public StartPipelineRequest withBody(StartPipelineParameters body) {
+        this.body = body;
+        return this;
+    }
+
+    public StartPipelineRequest withBody(Consumer<StartPipelineParameters> bodySetter) {
+        if(this.body == null ){
+            this.body = new StartPipelineParameters();
+            bodySetter.accept(this.body);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get body
+     * @return body
+     */
+    public StartPipelineParameters getBody() {
+        return body;
+    }
+
+    public void setBody(StartPipelineParameters body) {
+        this.body = body;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -80,11 +114,12 @@ public class StartPipelineRequest  {
         }
         StartPipelineRequest startPipelineRequest = (StartPipelineRequest) o;
         return Objects.equals(this.xLanguage, startPipelineRequest.xLanguage) &&
-            Objects.equals(this.pipelineId, startPipelineRequest.pipelineId);
+            Objects.equals(this.pipelineId, startPipelineRequest.pipelineId) &&
+            Objects.equals(this.body, startPipelineRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, pipelineId);
+        return Objects.hash(xLanguage, pipelineId, body);
     }
     @Override
     public String toString() {
@@ -92,6 +127,7 @@ public class StartPipelineRequest  {
         sb.append("class StartPipelineRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

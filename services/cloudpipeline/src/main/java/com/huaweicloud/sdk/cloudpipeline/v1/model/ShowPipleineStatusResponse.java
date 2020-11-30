@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.PipelineParameter;
 import com.huaweicloud.sdk.cloudpipeline.v1.model.PipelineStateStatus;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -61,14 +63,14 @@ public class ShowPipleineStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    private PipelineParameter parameters = null;
-
+    private List<PipelineParameter> parameters = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="states")
     
-    private PipelineStateStatus states = null;
-
+    private List<PipelineStateStatus> states = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="elapsed_time")
@@ -213,57 +215,71 @@ public class ShowPipleineStatusResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    public ShowPipleineStatusResponse withParameters(PipelineParameter parameters) {
+    public ShowPipleineStatusResponse withParameters(List<PipelineParameter> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    public ShowPipleineStatusResponse withParameters(Consumer<PipelineParameter> parametersSetter) {
-        if(this.parameters == null ){
-            this.parameters = new PipelineParameter();
-            parametersSetter.accept(this.parameters);
+    
+    public ShowPipleineStatusResponse addParametersItem(PipelineParameter parametersItem) {
+        if (this.parameters == null) {
+            this.parameters = new ArrayList<>();
         }
-        
+        this.parameters.add(parametersItem);
         return this;
     }
 
+    public ShowPipleineStatusResponse withParameters(Consumer<List<PipelineParameter>> parametersSetter) {
+        if(this.parameters == null ){
+            this.parameters = new ArrayList<>();
+        }
+        parametersSetter.accept(this.parameters);
+        return this;
+    }
 
     /**
-     * Get parameters
+     * 流水线参数
      * @return parameters
      */
-    public PipelineParameter getParameters() {
+    public List<PipelineParameter> getParameters() {
         return parameters;
     }
 
-    public void setParameters(PipelineParameter parameters) {
+    public void setParameters(List<PipelineParameter> parameters) {
         this.parameters = parameters;
     }
 
-    public ShowPipleineStatusResponse withStates(PipelineStateStatus states) {
+    public ShowPipleineStatusResponse withStates(List<PipelineStateStatus> states) {
         this.states = states;
         return this;
     }
 
-    public ShowPipleineStatusResponse withStates(Consumer<PipelineStateStatus> statesSetter) {
-        if(this.states == null ){
-            this.states = new PipelineStateStatus();
-            statesSetter.accept(this.states);
+    
+    public ShowPipleineStatusResponse addStatesItem(PipelineStateStatus statesItem) {
+        if (this.states == null) {
+            this.states = new ArrayList<>();
         }
-        
+        this.states.add(statesItem);
         return this;
     }
 
+    public ShowPipleineStatusResponse withStates(Consumer<List<PipelineStateStatus>> statesSetter) {
+        if(this.states == null ){
+            this.states = new ArrayList<>();
+        }
+        statesSetter.accept(this.states);
+        return this;
+    }
 
     /**
-     * Get states
+     * 流水线执行情况
      * @return states
      */
-    public PipelineStateStatus getStates() {
+    public List<PipelineStateStatus> getStates() {
         return states;
     }
 
-    public void setStates(PipelineStateStatus states) {
+    public void setStates(List<PipelineStateStatus> states) {
         this.states = states;
     }
 

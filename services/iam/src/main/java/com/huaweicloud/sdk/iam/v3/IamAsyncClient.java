@@ -174,6 +174,17 @@ public class IamAsyncClient {
     }
 
     /**
+     * 移除用户组的所有项目服务权限
+     * 该接口可以用于移除用户组的所有项目服务权限。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param DeleteDomainGroupInheritedRoleRequest 请求对象
+     * @return CompletableFuture<DeleteDomainGroupInheritedRoleResponse>
+     */
+    public CompletableFuture<DeleteDomainGroupInheritedRoleResponse> deleteDomainGroupInheritedRoleAsync(DeleteDomainGroupInheritedRoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deleteDomainGroupInheritedRole);
+    }
+
+    /**
      * 添加IAM用户到用户组
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)添加IAM用户到用户组。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -182,17 +193,6 @@ public class IamAsyncClient {
      */
     public CompletableFuture<KeystoneAddUserToGroupResponse> keystoneAddUserToGroupAsync(KeystoneAddUserToGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneAddUserToGroup);
-    }
-
-    /**
-     * 为用户组授予所有项目服务权限
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)为用户组授予所有项目服务权限。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     *
-     * @param KeystoneAssociateGroupWithAllProjectPermissionRequest 请求对象
-     * @return CompletableFuture<KeystoneAssociateGroupWithAllProjectPermissionResponse>
-     */
-    public CompletableFuture<KeystoneAssociateGroupWithAllProjectPermissionResponse> keystoneAssociateGroupWithAllProjectPermissionAsync(KeystoneAssociateGroupWithAllProjectPermissionRequest request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneAssociateGroupWithAllProjectPermission);
     }
 
     /**
@@ -248,6 +248,17 @@ public class IamAsyncClient {
      */
     public CompletableFuture<KeystoneCheckUserInGroupResponse> keystoneCheckUserInGroupAsync(KeystoneCheckUserInGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCheckUserInGroup);
+    }
+
+    /**
+     * 查询用户组是否拥有所有项目指定权限
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组是否拥有所有项目指定权限。  该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneCheckroleForGroupRequest 请求对象
+     * @return CompletableFuture<KeystoneCheckroleForGroupResponse>
+     */
+    public CompletableFuture<KeystoneCheckroleForGroupResponse> keystoneCheckroleForGroupAsync(KeystoneCheckroleForGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneCheckroleForGroup);
     }
 
     /**
@@ -358,6 +369,17 @@ public class IamAsyncClient {
      */
     public CompletableFuture<KeystoneDeleteProtocolResponse> keystoneDeleteProtocolAsync(KeystoneDeleteProtocolRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.keystoneDeleteProtocol);
+    }
+
+    /**
+     * 查询用户组的所有项目权限列表
+     * 该接口可以用于管理员查询用户组所有项目服务权限列表。  \\n\\n该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param KeystoneListAllProjectPermissionsForGroupRequest 请求对象
+     * @return CompletableFuture<KeystoneListAllProjectPermissionsForGroupResponse>
+     */
+    public CompletableFuture<KeystoneListAllProjectPermissionsForGroupResponse> keystoneListAllProjectPermissionsForGroupAsync(KeystoneListAllProjectPermissionsForGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListAllProjectPermissionsForGroup);
     }
 
     /**
@@ -1032,6 +1054,17 @@ public class IamAsyncClient {
     }
 
     /**
+     * 为用户组授予所有项目服务权限
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/zh-cn_topic_0079496985.html)为用户组授予所有项目服务权限。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param UpdateDomainGroupInheritRoleRequest 请求对象
+     * @return CompletableFuture<UpdateDomainGroupInheritRoleResponse>
+     */
+    public CompletableFuture<UpdateDomainGroupInheritRoleResponse> updateDomainGroupInheritRoleAsync(UpdateDomainGroupInheritRoleRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateDomainGroupInheritRole);
+    }
+
+    /**
      * 修改账号登录策略
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号登录策略。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -1153,6 +1186,28 @@ public class IamAsyncClient {
     }
 
     /**
+     * 绑定MFA设备
+     * 该接口可以用于绑定MFA设备。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param CreateBindingDeviceRequest 请求对象
+     * @return CompletableFuture<CreateBindingDeviceResponse>
+     */
+    public CompletableFuture<CreateBindingDeviceResponse> createBindingDeviceAsync(CreateBindingDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createBindingDevice);
+    }
+
+    /**
+     * 创建MFA设备
+     * 该接口可以用于创建MFA设备。  该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param CreateMfaDeviceRequest 请求对象
+     * @return CompletableFuture<CreateMfaDeviceResponse>
+     */
+    public CompletableFuture<CreateMfaDeviceResponse> createMfaDeviceAsync(CreateMfaDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createMfaDevice);
+    }
+
+    /**
      * 管理员创建IAM用户（推荐）
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
@@ -1161,6 +1216,28 @@ public class IamAsyncClient {
      */
     public CompletableFuture<CreateUserResponse> createUserAsync(CreateUserRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.createUser);
+    }
+
+    /**
+     * 解绑MFA设备
+     * 该接口可以用于解绑MFA设备   该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param DeleteBindingDeviceRequest 请求对象
+     * @return CompletableFuture<DeleteBindingDeviceResponse>
+     */
+    public CompletableFuture<DeleteBindingDeviceResponse> deleteBindingDeviceAsync(DeleteBindingDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deleteBindingDevice);
+    }
+
+    /**
+     * 删除MFA设备
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param DeleteMfaDeviceRequest 请求对象
+     * @return CompletableFuture<DeleteMfaDeviceResponse>
+     */
+    public CompletableFuture<DeleteMfaDeviceResponse> deleteMfaDeviceAsync(DeleteMfaDeviceRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deleteMfaDevice);
     }
 
     /**
@@ -1252,7 +1329,7 @@ public class IamAsyncClient {
     }
 
     /**
-     * 查询IAM用户的MFA绑定信息列表
+     * 该接口可以用于获取MFA设备。
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
      *
      * @param ListUserMfaDevicesRequest 请求对象
@@ -1293,6 +1370,17 @@ public class IamAsyncClient {
      */
     public CompletableFuture<ShowUserMfaDeviceResponse> showUserMfaDeviceAsync(ShowUserMfaDeviceRequest request) {
         return hcClient.asyncInvokeHttp(request, IamMeta.showUserMfaDevice);
+    }
+
+    /**
+     * 修改IAM用户登录保护状态信息
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)修改账号操作保护。    该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     *
+     * @param UpdateLoginProtectRequest 请求对象
+     * @return CompletableFuture<UpdateLoginProtectResponse>
+     */
+    public CompletableFuture<UpdateLoginProtectResponse> updateLoginProtectAsync(UpdateLoginProtectRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateLoginProtect);
     }
 
     /**

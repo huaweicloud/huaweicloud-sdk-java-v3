@@ -108,6 +108,18 @@ public class ShowUserResult  {
     
     private String pwdStength;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_domain_owner")
+    
+    private Boolean isDomainOwner;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public ShowUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -414,6 +426,46 @@ public class ShowUserResult  {
     public void setPwdStength(String pwdStength) {
         this.pwdStength = pwdStength;
     }
+
+    public ShowUserResult withIsDomainOwner(Boolean isDomainOwner) {
+        this.isDomainOwner = isDomainOwner;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户是否为根用户。
+     * @return isDomainOwner
+     */
+    public Boolean getIsDomainOwner() {
+        return isDomainOwner;
+    }
+
+    public void setIsDomainOwner(Boolean isDomainOwner) {
+        this.isDomainOwner = isDomainOwner;
+    }
+
+    public ShowUserResult withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户描述信息
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -437,11 +489,13 @@ public class ShowUserResult  {
             Objects.equals(this.updateTime, showUserResult.updateTime) &&
             Objects.equals(this.createTime, showUserResult.createTime) &&
             Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime) &&
-            Objects.equals(this.pwdStength, showUserResult.pwdStength);
+            Objects.equals(this.pwdStength, showUserResult.pwdStength) &&
+            Objects.equals(this.isDomainOwner, showUserResult.isDomainOwner) &&
+            Objects.equals(this.description, showUserResult.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStength);
+        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStength, isDomainOwner, description);
     }
     @Override
     public String toString() {
@@ -462,6 +516,8 @@ public class ShowUserResult  {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    lastLoginTime: ").append(toIndentedString(lastLoginTime)).append("\n");
         sb.append("    pwdStength: ").append(toIndentedString(pwdStength)).append("\n");
+        sb.append("    isDomainOwner: ").append(toIndentedString(isDomainOwner)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

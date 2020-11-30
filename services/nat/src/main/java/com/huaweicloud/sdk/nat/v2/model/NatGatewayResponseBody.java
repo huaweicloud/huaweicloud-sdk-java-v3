@@ -170,11 +170,6 @@ public class NatGatewayResponseBody  {
         public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
         
         /**
-         * Enum EIP_FREEZED for value: "EIP_FREEZED"
-         */
-        public static final StatusEnum EIP_FREEZED = new StatusEnum("EIP_FREEZED");
-        
-        /**
          * Enum INACTIVE for value: "INACTIVE"
          */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
@@ -188,7 +183,6 @@ public class NatGatewayResponseBody  {
             map.put("PENDING_CREATE", PENDING_CREATE);
             map.put("PENDING_UPDATE", PENDING_UPDATE);
             map.put("PENDING_DELETE", PENDING_DELETE);
-            map.put("EIP_FREEZED", EIP_FREEZED);
             map.put("INACTIVE", INACTIVE);
             return Collections.unmodifiableMap(map);
         }
@@ -331,7 +325,7 @@ public class NatGatewayResponseBody  {
 
 
     /**
-     * 公网NAT网关实例的名字。
+     * 公网NAT网关实例的名字，长度限制为64。
      * @return name
      */
     public String getName() {
@@ -351,7 +345,7 @@ public class NatGatewayResponseBody  {
 
 
     /**
-     * 公网NAT网关实例的描述。
+     * 公网NAT网关实例的描述，长度限制为255。
      * @return description
      */
     public String getDescription() {
@@ -471,7 +465,7 @@ public class NatGatewayResponseBody  {
 
 
     /**
-     * NAT网关下行口（DVR的下一跳）所属的network id。
+     * 公网NAT网关下行口（DVR的下一跳）所属的network id。
      * @return internalNetworkId
      */
     public String getInternalNetworkId() {

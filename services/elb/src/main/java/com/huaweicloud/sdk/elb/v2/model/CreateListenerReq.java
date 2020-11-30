@@ -174,7 +174,7 @@ public class CreateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="default_pool_id")
     
-    private String defaultPoolId = "null";
+    private String defaultPoolId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -186,7 +186,7 @@ public class CreateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_ca_tls_container_ref")
     
-    private String clientCaTlsContainerRef = "null";
+    private String clientCaTlsContainerRef;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

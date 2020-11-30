@@ -84,7 +84,7 @@ public class UpdateNatGatewaySnatRuleOption  {
 
 
     /**
-     * SNAT规则的描述。
+     * SNAT规则的描述，长度限制为255。
      * @return description
      */
     public String getDescription() {
