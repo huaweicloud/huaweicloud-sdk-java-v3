@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.23-beta</version>
+        <version>3.0.24-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.23-beta</version>
+    <version>3.0.24-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -42,6 +42,7 @@
         <module>codecheck</module>
         <module>moderation</module>
         <module>cloudpipeline</module>
+        <module>smn</module>
         <module>cloudtest</module>
         <module>devstar</module>
         <module>rds</module>

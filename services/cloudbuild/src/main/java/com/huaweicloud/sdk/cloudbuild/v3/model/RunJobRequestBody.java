@@ -82,7 +82,7 @@ public class RunJobRequestBody  {
     }
 
     /**
-     * Get parameter
+     * 自定义参数
      * @return parameter
      */
     public List<ParameterItem> getParameter() {

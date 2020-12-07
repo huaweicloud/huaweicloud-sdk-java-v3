@@ -111,9 +111,10 @@ public class AKSKSigner {
 
         // Step 1.3 combine all headers
         Map<String, String> allHeaders = new TreeMap<String, String>();
-        allHeaders.putAll(request.getHeaders().entrySet().stream()
-            .collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue().get(0))));
-        allHeaders.putAll(authenticationHeaders);
+        allHeaders.putAll(request.getHeaders().entrySet().stream().collect(
+            Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), entry -> entry.getValue().get(0))));
+        allHeaders.putAll(authenticationHeaders.entrySet().stream().collect(
+            Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), Map.Entry::getValue)));
 
         // Step 2: Create Canonical URI -- the part of the URI from domain to query
         String pathOld = url.getPath();
@@ -137,7 +138,7 @@ public class AKSKSigner {
         // signed_headers lists those that you want to be included in the
         // hash of the request. "Host" and "x-sdk-date" are always required.
         // In V4 signer, we only use required header - host & x-sdk-date.
-        String signedHeaderNames = String.join(";", allHeaders.keySet()).toLowerCase(Locale.ROOT);
+        String signedHeaderNames = String.join(";", allHeaders.keySet());
 
         // Step 5: Create the canonical headers and signed headers. Header names
         // and value must be trimmed and lower-case, and sorted in ASCII order.
@@ -246,7 +247,7 @@ public class AKSKSigner {
     private static String buildCanonicalHeaders(Map<String, String> heads) {
         StringBuilder sb = new StringBuilder();
         heads.forEach((key, value) -> {
-            sb.append(key.toLowerCase(Locale.ROOT)).append(":").append(value);
+            sb.append(key).append(":").append(value);
             sb.append(Constants.LINE_SEPARATOR);
         });
         return sb.toString();

@@ -186,7 +186,7 @@ public class EipAsyncClient {
 
     /**
      * 删除弹性公网IP
-     * 删除弹性公网IP。
+     * 删除弹性公网IP,绑定状态eip不允许直接删除。
      *
      * @param DeletePublicipRequest 请求对象
      * @return CompletableFuture<DeletePublicipResponse>
