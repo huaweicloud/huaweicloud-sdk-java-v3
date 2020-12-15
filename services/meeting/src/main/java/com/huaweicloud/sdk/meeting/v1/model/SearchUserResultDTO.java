@@ -125,6 +125,48 @@ public class SearchUserResultDTO  {
     
     private Boolean hidePhone;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="thirdAccount")
+    
+    private String thirdAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="visionAccount")
+    
+    private String visionAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="license")
+    
+    private Integer license;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="activeTime")
+    
+    private Long activeTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="activeCodeExpireTime")
+    
+    private Long activeCodeExpireTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="expireTime")
+    
+    private Long expireTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="activeCode")
+    
+    private String activeCode;
+
     public SearchUserResultDTO withId(String id) {
         this.id = id;
         return this;
@@ -434,7 +476,7 @@ public class SearchUserResultDTO  {
 
 
     /**
-     * 用户状态，0、正常，1、停用
+     * 用户状态 * 0：正常 * 1：停用 
      * @return status
      */
     public Integer getStatus() {
@@ -484,6 +526,146 @@ public class SearchUserResultDTO  {
     public void setHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
     }
+
+    public SearchUserResultDTO withThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 第三方账号自动开户的第三方账号、Ideahub账号的sn等
+     * @return thirdAccount
+     */
+    public String getThirdAccount() {
+        return thirdAccount;
+    }
+
+    public void setThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
+    }
+
+    public SearchUserResultDTO withVisionAccount(String visionAccount) {
+        this.visionAccount = visionAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 智慧屏账号
+     * @return visionAccount
+     */
+    public String getVisionAccount() {
+        return visionAccount;
+    }
+
+    public void setVisionAccount(String visionAccount) {
+        this.visionAccount = visionAccount;
+    }
+
+    public SearchUserResultDTO withLicense(Integer license) {
+        this.license = license;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 许可证 * 0：商用 * 1：免费试用 
+     * @return license
+     */
+    public Integer getLicense() {
+        return license;
+    }
+
+    public void setLicense(Integer license) {
+        this.license = license;
+    }
+
+    public SearchUserResultDTO withActiveTime(Long activeTime) {
+        this.activeTime = activeTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 激活时间，utc时间戳
+     * @return activeTime
+     */
+    public Long getActiveTime() {
+        return activeTime;
+    }
+
+    public void setActiveTime(Long activeTime) {
+        this.activeTime = activeTime;
+    }
+
+    public SearchUserResultDTO withActiveCodeExpireTime(Long activeCodeExpireTime) {
+        this.activeCodeExpireTime = activeCodeExpireTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 激活码到期时间,utc时间戳
+     * @return activeCodeExpireTime
+     */
+    public Long getActiveCodeExpireTime() {
+        return activeCodeExpireTime;
+    }
+
+    public void setActiveCodeExpireTime(Long activeCodeExpireTime) {
+        this.activeCodeExpireTime = activeCodeExpireTime;
+    }
+
+    public SearchUserResultDTO withExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 已激活的终端到期时间,utc时间戳
+     * @return expireTime
+     */
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public SearchUserResultDTO withActiveCode(String activeCode) {
+        this.activeCode = activeCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 激活码
+     * @return activeCode
+     */
+    public String getActiveCode() {
+        return activeCode;
+    }
+
+    public void setActiveCode(String activeCode) {
+        this.activeCode = activeCode;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -510,11 +692,18 @@ public class SearchUserResultDTO  {
             Objects.equals(this.desc, searchUserResultDTO.desc) &&
             Objects.equals(this.status, searchUserResultDTO.status) &&
             Objects.equals(this.sortLevel, searchUserResultDTO.sortLevel) &&
-            Objects.equals(this.hidePhone, searchUserResultDTO.hidePhone);
+            Objects.equals(this.hidePhone, searchUserResultDTO.hidePhone) &&
+            Objects.equals(this.thirdAccount, searchUserResultDTO.thirdAccount) &&
+            Objects.equals(this.visionAccount, searchUserResultDTO.visionAccount) &&
+            Objects.equals(this.license, searchUserResultDTO.license) &&
+            Objects.equals(this.activeTime, searchUserResultDTO.activeTime) &&
+            Objects.equals(this.activeCodeExpireTime, searchUserResultDTO.activeCodeExpireTime) &&
+            Objects.equals(this.expireTime, searchUserResultDTO.expireTime) &&
+            Objects.equals(this.activeCode, searchUserResultDTO.activeCode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, userAccount, name, englishName, phone, country, email, vmrId, deptCode, deptNamePath, userType, adminType, signature, title, desc, status, sortLevel, hidePhone);
+        return Objects.hash(id, userAccount, name, englishName, phone, country, email, vmrId, deptCode, deptNamePath, userType, adminType, signature, title, desc, status, sortLevel, hidePhone, thirdAccount, visionAccount, license, activeTime, activeCodeExpireTime, expireTime, activeCode);
     }
     @Override
     public String toString() {
@@ -538,6 +727,13 @@ public class SearchUserResultDTO  {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    sortLevel: ").append(toIndentedString(sortLevel)).append("\n");
         sb.append("    hidePhone: ").append(toIndentedString(hidePhone)).append("\n");
+        sb.append("    thirdAccount: ").append(toIndentedString(thirdAccount)).append("\n");
+        sb.append("    visionAccount: ").append(toIndentedString(visionAccount)).append("\n");
+        sb.append("    license: ").append(toIndentedString(license)).append("\n");
+        sb.append("    activeTime: ").append(toIndentedString(activeTime)).append("\n");
+        sb.append("    activeCodeExpireTime: ").append(toIndentedString(activeCodeExpireTime)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    activeCode: ").append(toIndentedString(activeCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

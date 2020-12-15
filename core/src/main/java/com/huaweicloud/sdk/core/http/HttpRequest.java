@@ -269,9 +269,19 @@ public interface HttpRequest {
 
         private Impl buildQueryParamsString() {
             StringBuilder sb = new StringBuilder();
-            queryParams.forEach((key, values) -> values.forEach(value -> {
-                sb.append(String.format("%s=%s&", key, value));
-            }));
+            queryParams.forEach((key, values) -> {
+                if (values.size() == 0) {
+                    sb.append(String.format("%s&", key));
+                } else {
+                    values.forEach(value -> {
+                        if (value.length() == 0) {
+                            sb.append(String.format("%s&", key));
+                        } else {
+                            sb.append(String.format("%s=%s&", key, value));
+                        }
+                    });
+                }
+            });
             this.queryParamsString = sb.length() > 0 ? sb.deleteCharAt(sb.length() - 1).toString() : sb.toString();
             return this;
         }

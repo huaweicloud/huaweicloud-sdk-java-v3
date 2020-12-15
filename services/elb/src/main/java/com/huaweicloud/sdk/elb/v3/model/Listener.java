@@ -27,7 +27,7 @@ public class Listener  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class Listener  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http2_enable")
     
-    private Boolean http2Enable = true;
+    private Boolean http2Enable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

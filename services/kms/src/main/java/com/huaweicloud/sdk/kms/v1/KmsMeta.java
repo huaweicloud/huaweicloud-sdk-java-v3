@@ -514,7 +514,8 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/{key_id}/tags/{key}");
+                .withUri("/{version_id}/{project_id}/kms/{key_id}/tags/{key}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("key_id",
@@ -913,7 +914,8 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ListKmsTagsRequest, ListKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListKmsTagsRequest.class, ListKmsTagsResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/tags");
+                .withUri("/{version_id}/{project_id}/kms/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("version_id",
@@ -1000,7 +1002,8 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowKmsTagsRequest, ShowKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowKmsTagsRequest.class, ShowKmsTagsResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/{key_id}/tags");
+                .withUri("/{version_id}/{project_id}/kms/{key_id}/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("version_id",
@@ -1031,7 +1034,8 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowUserInstancesRequest, ShowUserInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserInstancesRequest.class, ShowUserInstancesResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/user-instances");
+                .withUri("/{version_id}/{project_id}/kms/user-instances")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("version_id",
@@ -1054,7 +1058,8 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowUserQuotasRequest, ShowUserQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserQuotasRequest.class, ShowUserQuotasResponse.class)
-                .withUri("/{version_id}/{project_id}/kms/user-quotas");
+                .withUri("/{version_id}/{project_id}/kms/user-quotas")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("version_id",
@@ -1173,7 +1178,8 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
-                .withUri("/{version_id}");
+                .withUri("/{version_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("version_id",
@@ -1196,7 +1202,8 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowVersionsRequest, ShowVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionsRequest.class, ShowVersionsResponse.class)
-                .withUri("/");
+                .withUri("/")
+                .withContentType("application/json");
 
         // requests
 

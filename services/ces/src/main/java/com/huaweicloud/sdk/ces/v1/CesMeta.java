@@ -171,7 +171,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<DeleteAlarmRequest, DeleteAlarmResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlarmRequest.class, DeleteAlarmResponse.class)
-                .withUri("/V1.0/{project_id}/alarms/{alarm_id}");
+                .withUri("/V1.0/{project_id}/alarms/{alarm_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("alarm_id",
@@ -194,7 +195,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlarmTemplateRequest.class, DeleteAlarmTemplateResponse.class)
-                .withUri("/V1.0/{project_id}/alarm-template/{template_id}");
+                .withUri("/V1.0/{project_id}/alarm-template/{template_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
@@ -217,7 +219,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<DeleteResourceGroupRequest, DeleteResourceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceGroupRequest.class, DeleteResourceGroupResponse.class)
-                .withUri("/V1.0/{project_id}/resource-groups/{group_id}");
+                .withUri("/V1.0/{project_id}/resource-groups/{group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("group_id",
@@ -240,7 +243,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAlarmHistoriesRequest.class, ListAlarmHistoriesResponse.class)
-                .withUri("/V1.0/{project_id}/alarm-histories");
+                .withUri("/V1.0/{project_id}/alarm-histories")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("group_id",
@@ -335,7 +339,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAlarmTemplatesRequest.class, ListAlarmTemplatesResponse.class)
-                .withUri("/V1.0/{project_id}/alarm-template");
+                .withUri("/V1.0/{project_id}/alarm-template")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("alarmTemplateId",
@@ -390,7 +395,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ListAlarmsRequest, ListAlarmsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAlarmsRequest.class, ListAlarmsResponse.class)
-                .withUri("/V1.0/{project_id}/alarms");
+                .withUri("/V1.0/{project_id}/alarms")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -429,7 +435,7 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ListEventDetailRequest, ListEventDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventDetailRequest.class, ListEventDetailResponse.class)
-                .withUri("/V1.0/{project_id}/events/{event_name}")
+                .withUri("/V1.0/{project_id}/event/{event_name}")
                 .withContentType("application/json");
 
         // requests
@@ -513,14 +519,6 @@ public class CesMeta {
                 req.setLimit(v);
             })
         );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            List.class,
-            f -> f.withMarshaller(ListEventDetailRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(EventItem.class)
-        );
 
         // response
 
@@ -533,7 +531,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventsRequest.class, ListEventsResponse.class)
-                .withUri("/V1.0/{project_id}/events");
+                .withUri("/V1.0/{project_id}/events")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("event_type",
@@ -596,7 +595,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ListMetricsRequest, ListMetricsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMetricsRequest.class, ListMetricsResponse.class)
-                .withUri("/V1.0/{project_id}/metrics");
+                .withUri("/V1.0/{project_id}/metrics")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("dim.0",
@@ -675,7 +675,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ListResourceGroupRequest, ListResourceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceGroupRequest.class, ListResourceGroupResponse.class)
-                .withUri("/V1.0/{project_id}/resource-groups");
+                .withUri("/V1.0/{project_id}/resource-groups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("group_name",
@@ -730,7 +731,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ShowAlarmRequest, ShowAlarmResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAlarmRequest.class, ShowAlarmResponse.class)
-                .withUri("/V1.0/{project_id}/alarms/{alarm_id}");
+                .withUri("/V1.0/{project_id}/alarms/{alarm_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("alarm_id",
@@ -753,9 +755,18 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ShowEventDataRequest, ShowEventDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEventDataRequest.class, ShowEventDataResponse.class)
-                .withUri("/V1.0/{project_id}/event-data");
+                .withUri("/V1.0/{project_id}/event-data")
+                .withContentType("application/json");
 
         // requests
+        builder.withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowEventDataRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
         builder.withRequestField("dim.0",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -780,28 +791,12 @@ public class CesMeta {
                 req.setDim2(v);
             })
         );
-        builder.withRequestField("from",
+        builder.withRequestField("dim.3",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
-            f -> f.withMarshaller(ShowEventDataRequest::getFrom, (req, v) -> {
-                req.setFrom(v);
-            })
-        );
-        builder.withRequestField("namespace",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowEventDataRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("to",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
-            f -> f.withMarshaller(ShowEventDataRequest::getTo, (req, v) -> {
-                req.setTo(v);
+            f -> f.withMarshaller(ShowEventDataRequest::getDim3, (req, v) -> {
+                req.setDim3(v);
             })
         );
         builder.withRequestField("type",
@@ -810,6 +805,22 @@ public class CesMeta {
             String.class,
             f -> f.withMarshaller(ShowEventDataRequest::getType, (req, v) -> {
                 req.setType(v);
+            })
+        );
+        builder.withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ShowEventDataRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
+            })
+        );
+        builder.withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ShowEventDataRequest::getTo, (req, v) -> {
+                req.setTo(v);
             })
         );
 
@@ -824,9 +835,26 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ShowMetricDataRequest, ShowMetricDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMetricDataRequest.class, ShowMetricDataResponse.class)
-                .withUri("/V1.0/{project_id}/metric-data");
+                .withUri("/V1.0/{project_id}/metric-data")
+                .withContentType("application/json");
 
         // requests
+        builder.withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowMetricDataRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("metric_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowMetricDataRequest::getMetricName, (req, v) -> {
+                req.setMetricName(v);
+            })
+        );
         builder.withRequestField("dim.0",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -851,6 +879,14 @@ public class CesMeta {
                 req.setDim2(v);
             })
         );
+        builder.withRequestField("dim.3",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowMetricDataRequest::getDim3, (req, v) -> {
+                req.setDim3(v);
+            })
+        );
         builder.withRequestField("filter",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -859,36 +895,20 @@ public class CesMeta {
                 req.setFilter(v);
             })
         );
-        builder.withRequestField("from",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
-            f -> f.withMarshaller(ShowMetricDataRequest::getFrom, (req, v) -> {
-                req.setFrom(v);
-            })
-        );
-        builder.withRequestField("metric_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowMetricDataRequest::getMetricName, (req, v) -> {
-                req.setMetricName(v);
-            })
-        );
-        builder.withRequestField("namespace",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowMetricDataRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            })
-        );
         builder.withRequestField("period",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             Integer.class,
             f -> f.withMarshaller(ShowMetricDataRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
+            })
+        );
+        builder.withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ShowMetricDataRequest::getFrom, (req, v) -> {
+                req.setFrom(v);
             })
         );
         builder.withRequestField("to",
@@ -911,7 +931,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
-                .withUri("/V1.0/{project_id}/quotas");
+                .withUri("/V1.0/{project_id}/quotas")
+                .withContentType("application/json");
 
         // requests
 
@@ -926,7 +947,8 @@ public class CesMeta {
         // basic
         HttpRequestDef.Builder<ShowResourceGroupRequest, ShowResourceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceGroupRequest.class, ShowResourceGroupResponse.class)
-                .withUri("/V1.0/{project_id}/resource-groups/{group_id}");
+                .withUri("/V1.0/{project_id}/resource-groups/{group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("group_id",

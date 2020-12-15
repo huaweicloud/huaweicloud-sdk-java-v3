@@ -98,7 +98,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<DeleteRecordConfigRequest, DeleteRecordConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordConfigRequest.class, DeleteRecordConfigResponse.class)
-                .withUri("/v1/{project_id}/record/config");
+                .withUri("/v1/{project_id}/record/config")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("domain",
@@ -129,7 +130,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStreamForbiddenRequest.class, DeleteStreamForbiddenResponse.class)
-                .withUri("/v1/{project_id}/stream/blocks");
+                .withUri("/v1/{project_id}/stream/blocks")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("specify_project",
@@ -176,7 +178,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTranscodingsTemplateRequest.class, DeleteTranscodingsTemplateResponse.class)
-                .withUri("/v1/{project_id}/template/transcodings");
+                .withUri("/v1/{project_id}/template/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("domain",
@@ -207,7 +210,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListRecordConfigsRequest, ListRecordConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordConfigsRequest.class, ListRecordConfigsResponse.class)
-                .withUri("/v1/{project_id}/record/config");
+                .withUri("/v1/{project_id}/record/config")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("domain",
@@ -270,7 +274,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListStreamForbiddenRequest, ListStreamForbiddenResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStreamForbiddenRequest.class, ListStreamForbiddenResponse.class)
-                .withUri("/v1/{project_id}/stream/blocks");
+                .withUri("/v1/{project_id}/stream/blocks")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("specify_project",
@@ -333,7 +338,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowBandwidthRequest, ShowBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthRequest.class, ShowBandwidthResponse.class)
-                .withUri("/v1/{project_id}/stream/bandwidth");
+                .withUri("/v1/{project_id}/stream/bandwidth")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("domain",
@@ -380,7 +386,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowOnlineUsersRequest, ShowOnlineUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOnlineUsersRequest.class, ShowOnlineUsersResponse.class)
-                .withUri("/v1/{project_id}/stream/users");
+                .withUri("/v1/{project_id}/stream/users")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("domain",
@@ -443,7 +450,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowTrafficRequest, ShowTrafficResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTrafficRequest.class, ShowTrafficResponse.class)
-                .withUri("/v1/{project_id}/stream/traffic");
+                .withUri("/v1/{project_id}/stream/traffic")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("domain",
@@ -490,7 +498,8 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTranscodingsTemplateRequest.class, ShowTranscodingsTemplateResponse.class)
-                .withUri("/v1/{project_id}/template/transcodings");
+                .withUri("/v1/{project_id}/template/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("domain",

@@ -24,7 +24,7 @@ public class ModifyTransTemplateReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_id")
     
-    private Integer templateId;
+    private Long templateId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,7 +50,7 @@ public class ModifyTransTemplateReq  {
     
     private Common common = null;
 
-    public ModifyTransTemplateReq withTemplateId(Integer templateId) {
+    public ModifyTransTemplateReq withTemplateId(Long templateId) {
         this.templateId = templateId;
         return this;
     }
@@ -61,14 +61,14 @@ public class ModifyTransTemplateReq  {
     /**
      * 转码模板ID 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 9223372036854775807
      * @return templateId
      */
-    public Integer getTemplateId() {
+    public Long getTemplateId() {
         return templateId;
     }
 
-    public void setTemplateId(Integer templateId) {
+    public void setTemplateId(Long templateId) {
         this.templateId = templateId;
     }
 

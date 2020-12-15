@@ -208,7 +208,7 @@ public class RmsAsyncClient {
 
     /**
      * 列举指定类型的资源
-     * 返回当前租户下特定资源类型的资源，需要当前用户需要有rms:resources:list权限
+     * 返回当前租户下特定资源类型的资源，需要当前用户有rms:resources:list权限。比如查询云服务器，对应的RMS资源类型是ecs.cloudservers，其中provider为ecs，type为cloudservers。RMS支持的服务和资源类型参见[支持的服务和区域](https://console.huaweicloud.com/eps/#/resources/supported)。
      *
      * @param ListResourcesRequest 请求对象
      * @return CompletableFuture<ListResourcesResponse>
@@ -219,7 +219,7 @@ public class RmsAsyncClient {
 
     /**
      * 查询单个资源
-     * 指定资源ID，返回该资源的详细信息
+     * 指定资源ID，返回该资源的详细信息，需要当前用户有rms:resources:get权限。比如查询云服务器，对应的RMS资源类型是ecs.cloudservers，其中provider为ecs，type为cloudservers。RMS支持的服务和资源类型参见[支持的服务和区域](https://console.huaweicloud.com/eps/#/resources/supported)。
      *
      * @param ShowResourceByIdRequest 请求对象
      * @return CompletableFuture<ShowResourceByIdResponse>

@@ -30,7 +30,7 @@ public class L7Policy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,7 +72,7 @@ public class L7Policy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provisioning_status")
     
-    private String provisioningStatus = "ACTIVE";
+    private String provisioningStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -106,7 +106,8 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
-                .withUri("/");
+                .withUri("/")
+                .withContentType("application/json");
 
         // requests
 
@@ -121,7 +122,8 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseProjectRequest.class, ListEnterpriseProjectResponse.class)
-                .withUri("/v1.0/enterprise-projects");
+                .withUri("/v1.0/enterprise-projects")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -256,7 +258,8 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
-                .withUri("/{api_version}");
+                .withUri("/{api_version}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("api_version",
@@ -279,7 +282,8 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnterpriseProjectRequest.class, ShowEnterpriseProjectResponse.class)
-                .withUri("/v1.0/enterprise-projects/{enterprise_project_id}");
+                .withUri("/v1.0/enterprise-projects/{enterprise_project_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("enterprise_project_id",
@@ -302,7 +306,8 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnterpriseProjectQuotaRequest.class, ShowEnterpriseProjectQuotaResponse.class)
-                .withUri("/v1.0/enterprise-projects/quotas");
+                .withUri("/v1.0/enterprise-projects/quotas")
+                .withContentType("application/json");
 
         // requests
 

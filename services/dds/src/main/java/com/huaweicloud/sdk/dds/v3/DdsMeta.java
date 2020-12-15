@@ -162,7 +162,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}");
+                .withUri("/v3/{project_id}/instances/{instance_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -185,7 +186,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteManualBackupRequest, DeleteManualBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteManualBackupRequest.class, DeleteManualBackupResponse.class)
-                .withUri("/v3/{project_id}/backups/{backup_id}");
+                .withUri("/v3/{project_id}/backups/{backup_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("backup_id",
@@ -208,7 +210,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
-                .withUri("/v3/{project_id}/backups");
+                .withUri("/v3/{project_id}/backups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -287,7 +290,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatastoreVersionsRequest.class, ListDatastoreVersionsResponse.class)
-                .withUri("/v3/{project_id}/datastores/{datastore_name}/versions");
+                .withUri("/v3/{project_id}/datastores/{datastore_name}/versions")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("datastore_name",
@@ -310,7 +314,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
-                .withUri("/v3/{project_id}/flavors");
+                .withUri("/v3/{project_id}/flavors")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("region",
@@ -341,7 +346,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/tags");
+                .withUri("/v3/{project_id}/instances/{instance_id}/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -364,7 +370,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
-                .withUri("/v3/{project_id}/instances");
+                .withUri("/v3/{project_id}/instances")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -467,7 +474,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
-                .withUri("/v3/{project_id}/tags");
+                .withUri("/v3/{project_id}/tags")
+                .withContentType("application/json");
 
         // requests
 
@@ -610,7 +618,8 @@ public class DdsMeta {
         // basic
         HttpRequestDef.Builder<ShowBackupPolicyRequest, ShowBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupPolicyRequest.class, ShowBackupPolicyResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/backups/policy");
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/policy")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",

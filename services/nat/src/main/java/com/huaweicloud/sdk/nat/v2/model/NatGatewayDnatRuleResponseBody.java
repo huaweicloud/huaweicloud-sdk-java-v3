@@ -375,7 +375,7 @@ public class NatGatewayDnatRuleResponseBody  {
 
 
     /**
-     * 虚拟机或者裸机的Port ID，与private_ip参数二选一。
+     * 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
      * @return portId
      */
     public String getPortId() {
@@ -395,7 +395,7 @@ public class NatGatewayDnatRuleResponseBody  {
 
 
     /**
-     * 用户私有IP地址，例如专线连接的私有云地址，与port_id参数二选一。
+     * 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
      * @return privateIp
      */
     public String getPrivateIp() {

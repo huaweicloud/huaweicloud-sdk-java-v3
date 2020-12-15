@@ -35,7 +35,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id = " 自动生成 ";
+    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,13 +53,13 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provider")
     
-    private String provider = "vlb";
+    private String provider;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -173,7 +173,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operating_status")
     
-    private OperatingStatusEnum operatingStatus = OperatingStatusEnum.ONLINE;
+    private OperatingStatusEnum operatingStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -227,7 +227,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="guaranteed")
     
-    private Boolean guaranteed = true;
+    private Boolean guaranteed;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -245,7 +245,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_vip_address")
     
-    private String ipv6VipAddress = "空";
+    private String ipv6VipAddress;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -395,7 +395,7 @@ public class LoadBalancer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_target_enable")
     
-    private Boolean ipTargetEnable = false;
+    private Boolean ipTargetEnable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

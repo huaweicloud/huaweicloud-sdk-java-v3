@@ -100,7 +100,7 @@ public class UpdateAlarmTemplateRequestBody  {
 
 
     /**
-     * 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS。
+     * 创建自定义告警模板选择的资源类型，即服务命名空间，如：选择弹性云服务器，则命名空间为SYS.ECS；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return namespace
      */
     public String getNamespace() {
@@ -120,7 +120,7 @@ public class UpdateAlarmTemplateRequestBody  {
 
 
     /**
-     * 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id。
+     * 资源类型对应的指标监控维度，选择弹性云服务器，则维度为云服务器，dimension_name值为instance_id；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return dimensionName
      */
     public String getDimensionName() {

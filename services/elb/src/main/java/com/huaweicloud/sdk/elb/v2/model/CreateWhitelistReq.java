@@ -33,13 +33,13 @@ public class CreateWhitelistReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_whitelist")
     
-    private Boolean enableWhitelist = true;
+    private Boolean enableWhitelist;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="whitelist")
     
-    private String whitelist = "\"\"";
+    private String whitelist;
 
     public CreateWhitelistReq withTenantId(String tenantId) {
         this.tenantId = tenantId;

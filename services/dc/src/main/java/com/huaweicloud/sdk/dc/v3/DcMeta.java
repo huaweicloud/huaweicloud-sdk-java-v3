@@ -90,7 +90,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteDirectConnectRequest, BatchDeleteDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteDirectConnectRequest.class, BatchDeleteDirectConnectResponse.class)
-                .withUri("/v3/{project_id}/dcaas/direct-connects/{id}");
+                .withUri("/v3/{project_id}/dcaas/direct-connects/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -122,7 +123,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteVirtualGatewaysRequest, BatchDeleteVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteVirtualGatewaysRequest.class, BatchDeleteVirtualGatewaysResponse.class)
-                .withUri("/v3/{project_id}/dcaas/virtual-gateways/{id}");
+                .withUri("/v3/{project_id}/dcaas/virtual-gateways/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -154,7 +156,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteVirtualInterfaceRequest, BatchDeleteVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteVirtualInterfaceRequest.class, BatchDeleteVirtualInterfaceResponse.class)
-                .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{id}");
+                .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -282,7 +285,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ListDirectConnectRequest, ListDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDirectConnectRequest.class, ListDirectConnectResponse.class)
-                .withUri("/v3/{project_id}/dcaas/direct-connects");
+                .withUri("/v3/{project_id}/dcaas/direct-connects")
+                .withContentType("application/json");
 
         // requests
 
@@ -297,7 +301,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVirtualGatewaysRequest.class, ListVirtualGatewaysResponse.class)
-                .withUri("/v3/{project_id}/dcaas/virtual-gateways");
+                .withUri("/v3/{project_id}/dcaas/virtual-gateways")
+                .withContentType("application/json");
 
         // requests
 
@@ -312,7 +317,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ListVirtualInterfaceRequest, ListVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVirtualInterfaceRequest.class, ListVirtualInterfaceResponse.class)
-                .withUri("/v3/{project_id}/dcaas/virtual-interfaces");
+                .withUri("/v3/{project_id}/dcaas/virtual-interfaces")
+                .withContentType("application/json");
 
         // requests
 
@@ -327,7 +333,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ShowDirectConnectRequest, ShowDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDirectConnectRequest.class, ShowDirectConnectResponse.class)
-                .withUri("/v3/{project_id}/dcaas/direct-connects/{id}");
+                .withUri("/v3/{project_id}/dcaas/direct-connects/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -350,7 +357,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ShowVirtualGatewaysRequest, ShowVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVirtualGatewaysRequest.class, ShowVirtualGatewaysResponse.class)
-                .withUri("/v3/{project_id}/dcaas/virtual-gateways/{id}");
+                .withUri("/v3/{project_id}/dcaas/virtual-gateways/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -373,7 +381,8 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVirtualInterfaceRequest.class, ShowVirtualInterfaceResponse.class)
-                .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{id}");
+                .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",

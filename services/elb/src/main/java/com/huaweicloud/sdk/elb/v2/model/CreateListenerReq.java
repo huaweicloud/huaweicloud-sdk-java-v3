@@ -162,13 +162,13 @@ public class CreateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connection_limit")
     
-    private Integer connectionLimit = -1;
+    private Integer connectionLimit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http2_enable")
     
-    private Boolean http2Enable = false;
+    private Boolean http2Enable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -294,7 +294,7 @@ public class CreateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tls_ciphers_policy")
     
-    private TlsCiphersPolicyEnum tlsCiphersPolicy = TlsCiphersPolicyEnum.TLS_1_0;
+    private TlsCiphersPolicyEnum tlsCiphersPolicy;
 
     public CreateListenerReq withLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;

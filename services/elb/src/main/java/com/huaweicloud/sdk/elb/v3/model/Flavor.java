@@ -42,7 +42,7 @@ public class Flavor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="shared")
     
-    private Boolean shared = true;
+    private Boolean shared;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

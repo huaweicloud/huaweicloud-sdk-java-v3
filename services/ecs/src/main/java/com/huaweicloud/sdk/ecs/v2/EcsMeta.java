@@ -386,7 +386,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServerGroupRequest, DeleteServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerGroupRequest.class, DeleteServerGroupResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}");
+                .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_group_id",
@@ -441,7 +442,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServerMetadataRequest, DeleteServerMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerMetadataRequest.class, DeleteServerMetadataResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata/{key}");
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata/{key}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("key",
@@ -496,7 +498,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DetachServerVolumeRequest, DetachServerVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DetachServerVolumeRequest.class, DetachServerVolumeResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/detachvolume/{volume_id}");
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/detachvolume/{volume_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -535,7 +538,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/flavors");
+                .withUri("/v1/{project_id}/cloudservers/flavors")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("availability_zone",
@@ -558,7 +562,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListResizeFlavorsRequest, ListResizeFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResizeFlavorsRequest.class, ListResizeFlavorsResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/resize_flavors");
+                .withUri("/v1/{project_id}/cloudservers/resize_flavors")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_uuid",
@@ -629,7 +634,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServerBlockDevicesRequest.class, ListServerBlockDevicesResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/block_device");
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/block_device")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -652,7 +658,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListServerInterfacesRequest, ListServerInterfacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServerInterfacesRequest.class, ListServerInterfacesResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface");
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -675,7 +682,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListServersDetailsRequest, ListServersDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServersDetailsRequest.class, ListServersDetailsResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/detail");
+                .withUri("/v1/{project_id}/cloudservers/detail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("enterprise_project_id",
@@ -866,7 +874,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NovaDeleteKeypairRequest.class, NovaDeleteKeypairResponse.class)
-                .withUri("/v2.1/{project_id}/os-keypairs/{keypair_name}");
+                .withUri("/v2.1/{project_id}/os-keypairs/{keypair_name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("keypair_name",
@@ -889,7 +898,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaDeleteServerRequest, NovaDeleteServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NovaDeleteServerRequest.class, NovaDeleteServerResponse.class)
-                .withUri("/v2.1/{project_id}/servers/{server_id}");
+                .withUri("/v2.1/{project_id}/servers/{server_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -944,7 +954,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListAvailabilityZonesRequest.class, NovaListAvailabilityZonesResponse.class)
-                .withUri("/v2.1/{project_id}/os-availability-zone");
+                .withUri("/v2.1/{project_id}/os-availability-zone")
+                .withContentType("application/json");
 
         // requests
 
@@ -959,7 +970,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListKeypairsRequest, NovaListKeypairsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListKeypairsRequest.class, NovaListKeypairsResponse.class)
-                .withUri("/v2.1/{project_id}/os-keypairs");
+                .withUri("/v2.1/{project_id}/os-keypairs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -998,7 +1010,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListServerSecurityGroupsRequest.class, NovaListServerSecurityGroupsResponse.class)
-                .withUri("/v2.1/{project_id}/servers/{server_id}/os-security-groups");
+                .withUri("/v2.1/{project_id}/servers/{server_id}/os-security-groups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -1021,7 +1034,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListServersDetailsRequest, NovaListServersDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListServersDetailsRequest.class, NovaListServersDetailsResponse.class)
-                .withUri("/v2.1/{project_id}/servers/detail");
+                .withUri("/v2.1/{project_id}/servers/detail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("changes-since",
@@ -1140,7 +1154,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaShowKeypairRequest, NovaShowKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaShowKeypairRequest.class, NovaShowKeypairResponse.class)
-                .withUri("/v2.1/{project_id}/os-keypairs/{keypair_name}");
+                .withUri("/v2.1/{project_id}/os-keypairs/{keypair_name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("keypair_name",
@@ -1171,7 +1186,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaShowServerRequest, NovaShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaShowServerRequest.class, NovaShowServerResponse.class)
-                .withUri("/v2.1/{project_id}/servers/{server_id}");
+                .withUri("/v2.1/{project_id}/servers/{server_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -1330,7 +1346,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResetPasswordFlagRequest.class, ShowResetPasswordFlagResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-resetpwd-flag");
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-resetpwd-flag")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -1353,7 +1370,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerRequest, ShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerRequest.class, ShowServerResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}");
+                .withUri("/v1/{project_id}/cloudservers/{server_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -1376,7 +1394,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerLimitsRequest, ShowServerLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerLimitsRequest.class, ShowServerLimitsResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/limits");
+                .withUri("/v1/{project_id}/cloudservers/limits")
+                .withContentType("application/json");
 
         // requests
 
@@ -1423,7 +1442,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerTagsRequest, ShowServerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerTagsRequest.class, ShowServerTagsResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/tags");
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("server_id",
@@ -1510,7 +1530,8 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
-                .withUri("/v1/{project_id}/jobs/{job_id}");
+                .withUri("/v1/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",

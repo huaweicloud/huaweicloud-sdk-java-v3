@@ -226,7 +226,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteHealthmonitorRequest, DeleteHealthmonitorResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteHealthmonitorRequest.class, DeleteHealthmonitorResponse.class)
-                .withUri("/v2/{project_id}/elb/healthmonitors/{healthmonitor_id}");
+                .withUri("/v2/{project_id}/elb/healthmonitors/{healthmonitor_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("healthmonitor_id",
@@ -249,7 +250,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteL7policyRequest, DeleteL7policyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteL7policyRequest.class, DeleteL7policyResponse.class)
-                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}");
+                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -272,7 +274,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteL7ruleRequest, DeleteL7ruleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteL7ruleRequest.class, DeleteL7ruleResponse.class)
-                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}");
+                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -303,7 +306,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteListenerRequest, DeleteListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteListenerRequest.class, DeleteListenerResponse.class)
-                .withUri("/v2/{project_id}/elb/listeners/{listener_id}");
+                .withUri("/v2/{project_id}/elb/listeners/{listener_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("listener_id",
@@ -334,7 +338,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteLoadbalancerRequest, DeleteLoadbalancerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLoadbalancerRequest.class, DeleteLoadbalancerResponse.class)
-                .withUri("/v2/{project_id}/elb/loadbalancers/{loadbalancer_id}");
+                .withUri("/v2/{project_id}/elb/loadbalancers/{loadbalancer_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("loadbalancer_id",
@@ -365,7 +370,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteMemberRequest, DeleteMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMemberRequest.class, DeleteMemberResponse.class)
-                .withUri("/v2/{project_id}/elb/pools/{pool_id}/members/{member_id}");
+                .withUri("/v2/{project_id}/elb/pools/{pool_id}/members/{member_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pool_id",
@@ -396,7 +402,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeletePoolRequest, DeletePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePoolRequest.class, DeletePoolResponse.class)
-                .withUri("/v2/{project_id}/elb/pools/{pool_id}");
+                .withUri("/v2/{project_id}/elb/pools/{pool_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pool_id",
@@ -419,7 +426,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteWhitelistRequest, DeleteWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWhitelistRequest.class, DeleteWhitelistResponse.class)
-                .withUri("/v2/{project_id}/elb/whitelists/{whitelist_id}");
+                .withUri("/v2/{project_id}/elb/whitelists/{whitelist_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("whitelist_id",
@@ -442,7 +450,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListHealthmonitorsRequest, ListHealthmonitorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHealthmonitorsRequest.class, ListHealthmonitorsResponse.class)
-                .withUri("/v2/{project_id}/elb/healthmonitors");
+                .withUri("/v2/{project_id}/elb/healthmonitors")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -577,7 +586,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListL7policiesRequest, ListL7policiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListL7policiesRequest.class, ListL7policiesResponse.class)
-                .withUri("/v2/{project_id}/elb/l7policies");
+                .withUri("/v2/{project_id}/elb/l7policies")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -720,7 +730,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListL7rulesRequest, ListL7rulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListL7rulesRequest.class, ListL7rulesResponse.class)
-                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules");
+                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -831,7 +842,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListListenersRequest, ListListenersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListListenersRequest.class, ListListenersResponse.class)
-                .withUri("/v2/{project_id}/elb/listeners");
+                .withUri("/v2/{project_id}/elb/listeners")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -974,7 +986,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListLoadbalancersRequest, ListLoadbalancersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLoadbalancersRequest.class, ListLoadbalancersResponse.class)
-                .withUri("/v2/{project_id}/elb/loadbalancers");
+                .withUri("/v2/{project_id}/elb/loadbalancers")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -1117,7 +1130,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListMenbersRequest, ListMenbersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMenbersRequest.class, ListMenbersResponse.class)
-                .withUri("/v2/{project_id}/elb/pools/{pool_id}/members");
+                .withUri("/v2/{project_id}/elb/pools/{pool_id}/members")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pool_id",
@@ -1220,7 +1234,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListPoolsRequest, ListPoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPoolsRequest.class, ListPoolsResponse.class)
-                .withUri("/v2/{project_id}/elb/pools");
+                .withUri("/v2/{project_id}/elb/pools")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -1339,7 +1354,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListWhitelistsRequest, ListWhitelistsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWhitelistsRequest.class, ListWhitelistsResponse.class)
-                .withUri("/v2/{project_id}/elb/whitelists");
+                .withUri("/v2/{project_id}/elb/whitelists")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -1410,7 +1426,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowHealthmonitorsRequest, ShowHealthmonitorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHealthmonitorsRequest.class, ShowHealthmonitorsResponse.class)
-                .withUri("/v2/{project_id}/elb/healthmonitors/{healthmonitor_id}");
+                .withUri("/v2/{project_id}/elb/healthmonitors/{healthmonitor_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("healthmonitor_id",
@@ -1433,7 +1450,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowL7policyRequest, ShowL7policyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowL7policyRequest.class, ShowL7policyResponse.class)
-                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}");
+                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -1456,7 +1474,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowL7ruleRequest, ShowL7ruleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowL7ruleRequest.class, ShowL7ruleResponse.class)
-                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}");
+                .withUri("/v2/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("l7policy_id",
@@ -1487,7 +1506,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowListenerRequest, ShowListenerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowListenerRequest.class, ShowListenerResponse.class)
-                .withUri("/v2/{project_id}/elb/listeners/{listener_id}");
+                .withUri("/v2/{project_id}/elb/listeners/{listener_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("listener_id",
@@ -1510,7 +1530,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowLoadbalancerRequest, ShowLoadbalancerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLoadbalancerRequest.class, ShowLoadbalancerResponse.class)
-                .withUri("/v2/{project_id}/elb/loadbalancers/{loadbalancer_id}");
+                .withUri("/v2/{project_id}/elb/loadbalancers/{loadbalancer_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("loadbalancer_id",
@@ -1533,7 +1554,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowLoadbalancersStatusRequest, ShowLoadbalancersStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLoadbalancersStatusRequest.class, ShowLoadbalancersStatusResponse.class)
-                .withUri("/v2/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses");
+                .withUri("/v2/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("loadbalancer_id",
@@ -1556,7 +1578,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowMemberRequest, ShowMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMemberRequest.class, ShowMemberResponse.class)
-                .withUri("/v2/{project_id}/elb/pools/{pool_id}/members/{member_id}");
+                .withUri("/v2/{project_id}/elb/pools/{pool_id}/members/{member_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pool_id",
@@ -1587,7 +1610,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowPoolRequest, ShowPoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPoolRequest.class, ShowPoolResponse.class)
-                .withUri("/v2/{project_id}/elb/pools/{pool_id}");
+                .withUri("/v2/{project_id}/elb/pools/{pool_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pool_id",
@@ -1610,7 +1634,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowWhitelistRequest, ShowWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWhitelistRequest.class, ShowWhitelistResponse.class)
-                .withUri("/v2/{project_id}/elb/whitelists/{whitelist_id}");
+                .withUri("/v2/{project_id}/elb/whitelists/{whitelist_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("whitelist_id",
@@ -1929,7 +1954,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
-                .withUri("/v2/{project_id}/elb/certificates/{certificate_id}");
+                .withUri("/v2/{project_id}/elb/certificates/{certificate_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("certificate_id",
@@ -1952,7 +1978,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
-                .withUri("/v2/{project_id}/elb/certificates");
+                .withUri("/v2/{project_id}/elb/certificates")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -2047,7 +2074,8 @@ public class ElbMeta {
         // basic
         HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
-                .withUri("/v2/{project_id}/elb/certificates/{certificate_id}");
+                .withUri("/v2/{project_id}/elb/certificates/{certificate_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("certificate_id",

@@ -66,7 +66,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<DeleteNatGatewayDnatRuleRequest, DeleteNatGatewayDnatRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNatGatewayDnatRuleRequest.class, DeleteNatGatewayDnatRuleResponse.class)
-                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}/dnat_rules/{dnat_rule_id}");
+                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}/dnat_rules/{dnat_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("nat_gateway_id",
@@ -97,7 +98,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<ListNatGatewayDnatRulesRequest, ListNatGatewayDnatRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNatGatewayDnatRulesRequest.class, ListNatGatewayDnatRulesResponse.class)
-                .withUri("/v2/{project_id}/dnat_rules");
+                .withUri("/v2/{project_id}/dnat_rules")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("admin_state_up",
@@ -224,7 +226,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<ShowNatGatewayDnatRuleRequest, ShowNatGatewayDnatRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNatGatewayDnatRuleRequest.class, ShowNatGatewayDnatRuleResponse.class)
-                .withUri("/v2/{project_id}/dnat_rules/{dnat_rule_id}");
+                .withUri("/v2/{project_id}/dnat_rules/{dnat_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("dnat_rule_id",
@@ -303,7 +306,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<DeleteNatGatewayRequest, DeleteNatGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNatGatewayRequest.class, DeleteNatGatewayResponse.class)
-                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}");
+                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("nat_gateway_id",
@@ -326,7 +330,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<ListNatGatewaysRequest, ListNatGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNatGatewaysRequest.class, ListNatGatewaysResponse.class)
-                .withUri("/v2/{project_id}/nat_gateways");
+                .withUri("/v2/{project_id}/nat_gateways")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("tenant_id",
@@ -437,7 +442,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<ShowNatGatewayRequest, ShowNatGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNatGatewayRequest.class, ShowNatGatewayResponse.class)
-                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}");
+                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("nat_gateway_id",
@@ -516,7 +522,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<DeleteNatGatewaySnatRuleRequest, DeleteNatGatewaySnatRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNatGatewaySnatRuleRequest.class, DeleteNatGatewaySnatRuleResponse.class)
-                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}/snat_rules/{snat_rule_id}");
+                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}/snat_rules/{snat_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("nat_gateway_id",
@@ -547,7 +554,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<ListNatGatewaySnatRulesRequest, ListNatGatewaySnatRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNatGatewaySnatRulesRequest.class, ListNatGatewaySnatRulesResponse.class)
-                .withUri("/v2/{project_id}/snat_rules");
+                .withUri("/v2/{project_id}/snat_rules")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("admin_state_up",
@@ -658,7 +666,8 @@ public class NatMeta {
         // basic
         HttpRequestDef.Builder<ShowNatGatewaySnatRuleRequest, ShowNatGatewaySnatRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNatGatewaySnatRuleRequest.class, ShowNatGatewaySnatRuleResponse.class)
-                .withUri("/v2/{project_id}/snat_rules/{snat_rule_id}");
+                .withUri("/v2/{project_id}/snat_rules/{snat_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("snat_rule_id",

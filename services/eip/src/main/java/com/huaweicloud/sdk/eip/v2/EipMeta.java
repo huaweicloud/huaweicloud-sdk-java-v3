@@ -98,7 +98,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSharedBandwidthRequest.class, DeleteSharedBandwidthResponse.class)
-                .withUri("/v2.0/{project_id}/bandwidths/{bandwidth_id}");
+                .withUri("/v2.0/{project_id}/bandwidths/{bandwidth_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("bandwidth_id",
@@ -121,7 +122,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<ListBandwidthsRequest, ListBandwidthsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBandwidthsRequest.class, ListBandwidthsResponse.class)
-                .withUri("/v1/{project_id}/bandwidths");
+                .withUri("/v1/{project_id}/bandwidths")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("marker",
@@ -168,7 +170,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
-                .withUri("/v1/{project_id}/quotas");
+                .withUri("/v1/{project_id}/quotas")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("type",
@@ -223,7 +226,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<ShowBandwidthRequest, ShowBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthRequest.class, ShowBandwidthResponse.class)
-                .withUri("/v1/{project_id}/bandwidths/{bandwidth_id}");
+                .withUri("/v1/{project_id}/bandwidths/{bandwidth_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("bandwidth_id",
@@ -454,7 +458,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<DeletePublicipRequest, DeletePublicipResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicipRequest.class, DeletePublicipResponse.class)
-                .withUri("/v1/{project_id}/publicips/{publicip_id}");
+                .withUri("/v1/{project_id}/publicips/{publicip_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("publicip_id",
@@ -477,7 +482,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<DeletePublicipTagRequest, DeletePublicipTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicipTagRequest.class, DeletePublicipTagResponse.class)
-                .withUri("/v2.0/{project_id}/publicips/{publicip_id}/tags/{key}");
+                .withUri("/v2.0/{project_id}/publicips/{publicip_id}/tags/{key}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("publicip_id",
@@ -508,7 +514,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<ListPublicipTagsRequest, ListPublicipTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublicipTagsRequest.class, ListPublicipTagsResponse.class)
-                .withUri("/v2.0/{project_id}/publicips/tags");
+                .withUri("/v2.0/{project_id}/publicips/tags")
+                .withContentType("application/json");
 
         // requests
 
@@ -523,7 +530,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<ListPublicipsRequest, ListPublicipsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublicipsRequest.class, ListPublicipsResponse.class)
-                .withUri("/v1/{project_id}/publicips");
+                .withUri("/v1/{project_id}/publicips")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("marker",
@@ -626,7 +634,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<ShowPublicipRequest, ShowPublicipResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicipRequest.class, ShowPublicipResponse.class)
-                .withUri("/v1/{project_id}/publicips/{publicip_id}");
+                .withUri("/v1/{project_id}/publicips/{publicip_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("publicip_id",
@@ -649,7 +658,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<ShowPublicipTagsRequest, ShowPublicipTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicipTagsRequest.class, ShowPublicipTagsResponse.class)
-                .withUri("/v2.0/{project_id}/publicips/{publicip_id}/tags");
+                .withUri("/v2.0/{project_id}/publicips/{publicip_id}/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("publicip_id",
@@ -728,7 +738,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFloatingIpRequest.class, NeutronDeleteFloatingIpResponse.class)
-                .withUri("/v2.0/floatingips/{floatingip_id}");
+                .withUri("/v2.0/floatingips/{floatingip_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("floatingip_id",
@@ -751,7 +762,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronListFloatingIpsRequest.class, NeutronListFloatingIpsResponse.class)
-                .withUri("/v2.0/floatingips");
+                .withUri("/v2.0/floatingips")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -846,7 +858,8 @@ public class EipMeta {
         // basic
         HttpRequestDef.Builder<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronShowFloatingIpRequest.class, NeutronShowFloatingIpResponse.class)
-                .withUri("/v2.0/floatingips/{floatingip_id}");
+                .withUri("/v2.0/floatingips/{floatingip_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("floatingip_id",

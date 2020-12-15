@@ -36,7 +36,7 @@ public class LoadBalancerStatusPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="provisioning_status")
     
-    private String provisioningStatus = "ACTIVE";
+    private String provisioningStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

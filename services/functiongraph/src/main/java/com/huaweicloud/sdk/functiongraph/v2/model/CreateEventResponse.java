@@ -1,0 +1,167 @@
+package com.huaweicloud.sdk.functiongraph.v2.model;
+
+
+
+
+import com.huaweicloud.sdk.core.SdkResponse;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.math.BigDecimal;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * Response Object
+ */
+public class CreateEventResponse extends SdkResponse {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="content")
+    
+    private String content;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="last_modified")
+    
+    private BigDecimal lastModified = null;
+
+    public CreateEventResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 测试事件ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public CreateEventResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 测试事件名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public CreateEventResponse withContent(String content) {
+        this.content = content;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 测试事件content。
+     * @return content
+     */
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public CreateEventResponse withLastModified(BigDecimal lastModified) {
+        this.lastModified = lastModified;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 上次修改的时间。
+     * @return lastModified
+     */
+    public BigDecimal getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(BigDecimal lastModified) {
+        this.lastModified = lastModified;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        CreateEventResponse createEventResponse = (CreateEventResponse) o;
+        return Objects.equals(this.id, createEventResponse.id) &&
+            Objects.equals(this.name, createEventResponse.name) &&
+            Objects.equals(this.content, createEventResponse.content) &&
+            Objects.equals(this.lastModified, createEventResponse.lastModified);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, content, lastModified);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class CreateEventResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
+        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

@@ -18,7 +18,8 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunCheckResultRequest, RunCheckResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, RunCheckResultRequest.class, RunCheckResultResponse.class)
-                .withUri("/v1.0/moderation/image/batch");
+                .withUri("/v1.0/moderation/image/batch")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",
@@ -41,7 +42,8 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, RunCheckTaskJobsRequest.class, RunCheckTaskJobsResponse.class)
-                .withUri("/v1.0/moderation/image/batch/jobs");
+                .withUri("/v1.0/moderation/image/batch/jobs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("status",

@@ -189,12 +189,6 @@ public class TaskDetailInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_url")
-    
-    private String outputUrl;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_code")
     
     private String errorCode;
@@ -418,26 +412,6 @@ public class TaskDetailInfo  {
         this.auditReport = auditReport;
     }
 
-    public TaskDetailInfo withOutputUrl(String outputUrl) {
-        this.outputUrl = outputUrl;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 质检文件输出路径 
-     * @return outputUrl
-     */
-    public String getOutputUrl() {
-        return outputUrl;
-    }
-
-    public void setOutputUrl(String outputUrl) {
-        this.outputUrl = outputUrl;
-    }
-
     public TaskDetailInfo withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -549,7 +523,6 @@ public class TaskDetailInfo  {
             Objects.equals(this.output, taskDetailInfo.output) &&
             Objects.equals(this.userData, taskDetailInfo.userData) &&
             Objects.equals(this.auditReport, taskDetailInfo.auditReport) &&
-            Objects.equals(this.outputUrl, taskDetailInfo.outputUrl) &&
             Objects.equals(this.errorCode, taskDetailInfo.errorCode) &&
             Objects.equals(this.description, taskDetailInfo.description) &&
             Objects.equals(this.mediaDetail, taskDetailInfo.mediaDetail) &&
@@ -557,7 +530,7 @@ public class TaskDetailInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, input, output, userData, auditReport, outputUrl, errorCode, description, mediaDetail, xcodeError);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, input, output, userData, auditReport, errorCode, description, mediaDetail, xcodeError);
     }
     @Override
     public String toString() {
@@ -572,7 +545,6 @@ public class TaskDetailInfo  {
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    auditReport: ").append(toIndentedString(auditReport)).append("\n");
-        sb.append("    outputUrl: ").append(toIndentedString(outputUrl)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    mediaDetail: ").append(toIndentedString(mediaDetail)).append("\n");

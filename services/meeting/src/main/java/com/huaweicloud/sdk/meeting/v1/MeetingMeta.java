@@ -62,6 +62,14 @@ public class MeetingMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(AddCorpAdminRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
+            })
+        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -446,6 +454,14 @@ public class MeetingMeta {
                 req.setAccount(v);
             })
         );
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(AssociateVmrRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
+            })
+        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -486,6 +502,14 @@ public class MeetingMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(BatchDeleteCorpAdminsRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
+            })
+        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -686,6 +710,14 @@ public class MeetingMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(BatchDeleteUsersRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
+            })
+        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -782,6 +814,14 @@ public class MeetingMeta {
                 req.setValue(v);
             })
         );
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(BatchUpdateUserStatusRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
+            })
+        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -818,7 +858,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BroadcastParticipantRequest, BroadcastParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BroadcastParticipantRequest.class, BroadcastParticipantResponse.class)
-                .withUri("/v1/mmc/control/conferences/participants/broadcast");
+                .withUri("/v1/mmc/control/conferences/participants/broadcast")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -857,7 +898,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CancelMeetingRequest, CancelMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelMeetingRequest.class, CancelMeetingResponse.class)
-                .withUri("/v1/mmc/management/conferences");
+                .withUri("/v1/mmc/management/conferences")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -1072,7 +1114,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CreateAnonymousAuthRandomRequest.class, CreateAnonymousAuthRandomResponse.class)
-                .withUri("/v1/mmc/management/conferences/anonymous/auth");
+                .withUri("/v1/mmc/management/conferences/anonymous/auth")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -1103,7 +1146,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CreateConfTokenRequest, CreateConfTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CreateConfTokenRequest.class, CreateConfTokenResponse.class)
-                .withUri("/v1/mmc/control/conferences/token");
+                .withUri("/v1/mmc/control/conferences/token")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -1209,6 +1253,38 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> createPortalRefNonce = genForcreatePortalRefNonce();
+
+    private static HttpRequestDef<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> genForcreatePortalRefNonce() {
+        // basic
+        HttpRequestDef.Builder<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePortalRefNonceRequest.class, CreatePortalRefNonceResponse.class)
+                .withUri("/v1/usg/acs/auth/portal-ref-nonce")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePortalRefNonceRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePortalRefNonceRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> deleteAttendees = genFordeleteAttendees();
 
     private static HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> genFordeleteAttendees() {
@@ -1255,7 +1331,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteCorpRequest, DeleteCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCorpRequest.class, DeleteCorpResponse.class)
-                .withUri("/v1/usg/dcs/sp/corp/{id}");
+                .withUri("/v1/usg/dcs/sp/corp/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -1342,7 +1419,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteDepartmentRequest, DeleteDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDepartmentRequest.class, DeleteDepartmentResponse.class)
-                .withUri("/v1/usg/dcs/corp/dept/{dept_code}");
+                .withUri("/v1/usg/dcs/corp/dept/{dept_code}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("dept_code",
@@ -1381,7 +1459,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteRecordingsRequest, DeleteRecordingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordingsRequest.class, DeleteRecordingsResponse.class)
-                .withUri("/v1/mmc/management/record/files");
+                .withUri("/v1/mmc/management/record/files")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("confUUIDs",
@@ -1494,6 +1573,14 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(DisassociateVmrRequest::getAccount, (req, v) -> {
                 req.setAccount(v);
+            })
+        );
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(DisassociateVmrRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
             })
         );
         builder.withRequestField("X-Request-Id",
@@ -2212,7 +2299,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<RollcallParticipantRequest, RollcallParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RollcallParticipantRequest.class, RollcallParticipantResponse.class)
-                .withUri("/v1/mmc/control/conferences/participants/rollCall");
+                .withUri("/v1/mmc/control/conferences/participants/rollCall")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -2251,7 +2339,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchAttendanceRecordsOfHisMeetingRequest.class, SearchAttendanceRecordsOfHisMeetingResponse.class)
-                .withUri("/v1/mmc/management/conferences/history/confAttendeeRecord");
+                .withUri("/v1/mmc/management/conferences/history/confAttendeeRecord")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("confUUID",
@@ -2330,7 +2419,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpRequest, SearchCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpRequest.class, SearchCorpResponse.class)
-                .withUri("/v1/usg/dcs/sp/corp");
+                .withUri("/v1/usg/dcs/sp/corp")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2385,7 +2475,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpAdminsRequest, SearchCorpAdminsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpAdminsRequest.class, SearchCorpAdminsResponse.class)
-                .withUri("/v1/usg/dcs/corp/admin");
+                .withUri("/v1/usg/dcs/corp/admin")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2440,7 +2531,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpDirRequest, SearchCorpDirResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpDirRequest.class, SearchCorpDirResponse.class)
-                .withUri("/v1/usg/abs/users");
+                .withUri("/v1/usg/abs/users")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2519,7 +2611,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpVmrRequest, SearchCorpVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpVmrRequest.class, SearchCorpVmrResponse.class)
-                .withUri("/v1/usg/dcs/corp/vmr");
+                .withUri("/v1/usg/dcs/corp/vmr")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2582,7 +2675,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCtlRecordsOfHisMeetingRequest.class, SearchCtlRecordsOfHisMeetingResponse.class)
-                .withUri("/v1/mmc/management/conferences/history/confCtlRecord");
+                .withUri("/v1/mmc/management/conferences/history/confCtlRecord")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("confUUID",
@@ -2653,7 +2747,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchDepartmentByNameRequest.class, SearchDepartmentByNameResponse.class)
-                .withUri("/v1/usg/dcs/member/dept");
+                .withUri("/v1/usg/dcs/member/dept")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("deptName",
@@ -2701,7 +2796,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchDevicesRequest, SearchDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchDevicesRequest.class, SearchDevicesResponse.class)
-                .withUri("/v1/usg/dcs/corp/device");
+                .withUri("/v1/usg/dcs/corp/device")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2780,7 +2876,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchHisMeetingsRequest, SearchHisMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchHisMeetingsRequest.class, SearchHisMeetingsResponse.class)
-                .withUri("/v1/mmc/management/conferences/history");
+                .withUri("/v1/mmc/management/conferences/history")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("userUUID",
@@ -2875,7 +2972,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMaterialsRequest, SearchMaterialsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMaterialsRequest.class, SearchMaterialsResponse.class)
-                .withUri("/v1/usg/sss/materials");
+                .withUri("/v1/usg/sss/materials")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2930,7 +3028,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMeetingFileListRequest, SearchMeetingFileListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMeetingFileListRequest.class, SearchMeetingFileListResponse.class)
-                .withUri("/v1/usg/sss/meeting-files");
+                .withUri("/v1/usg/sss/meeting-files")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2985,7 +3084,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMeetingsRequest, SearchMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMeetingsRequest.class, SearchMeetingsResponse.class)
-                .withUri("/v1/mmc/management/conferences");
+                .withUri("/v1/mmc/management/conferences")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("userUUID",
@@ -3072,7 +3172,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMemberVmrRequest, SearchMemberVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMemberVmrRequest.class, SearchMemberVmrResponse.class)
-                .withUri("/v1/usg/dcs/member/vmr");
+                .withUri("/v1/usg/dcs/member/vmr")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -3135,7 +3236,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchOnlineMeetingsRequest.class, SearchOnlineMeetingsResponse.class)
-                .withUri("/v1/mmc/management/conferences/online");
+                .withUri("/v1/mmc/management/conferences/online")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("userUUID",
@@ -3206,7 +3308,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchProgramsRequest, SearchProgramsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchProgramsRequest.class, SearchProgramsResponse.class)
-                .withUri("/v1/usg/sss/programs");
+                .withUri("/v1/usg/sss/programs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -3261,7 +3364,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchPublicationsRequest, SearchPublicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchPublicationsRequest.class, SearchPublicationsResponse.class)
-                .withUri("/v1/usg/sss/publications");
+                .withUri("/v1/usg/sss/publications")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -3316,7 +3420,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchRecordingsRequest, SearchRecordingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchRecordingsRequest.class, SearchRecordingsResponse.class)
-                .withUri("/v1/mmc/management/record/files");
+                .withUri("/v1/mmc/management/record/files")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("userUUID",
@@ -3411,7 +3516,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchResourceRequest, SearchResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchResourceRequest.class, SearchResourceResponse.class)
-                .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource");
+                .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("corp_id",
@@ -3514,7 +3620,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchResourceOpRecordRequest.class, SearchResourceOpRecordResponse.class)
-                .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource-record");
+                .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource-record")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("corp_id",
@@ -3633,7 +3740,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchUsersRequest, SearchUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchUsersRequest.class, SearchUsersResponse.class)
-                .withUri("/v1/usg/dcs/corp/member");
+                .withUri("/v1/usg/dcs/corp/member")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -4088,7 +4196,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowConfOrgRequest, ShowConfOrgResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfOrgRequest.class, ShowConfOrgResponse.class)
-                .withUri("/v1/mmc/management/conferences/confOrg");
+                .withUri("/v1/mmc/management/conferences/confOrg")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -4111,7 +4220,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpRequest, ShowCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpRequest.class, ShowCorpResponse.class)
-                .withUri("/v1/usg/dcs/sp/corp/{id}");
+                .withUri("/v1/usg/dcs/sp/corp/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -4150,7 +4260,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpAdminRequest, ShowCorpAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpAdminRequest.class, ShowCorpAdminResponse.class)
-                .withUri("/v1/usg/dcs/corp/admin/{account}");
+                .withUri("/v1/usg/dcs/corp/admin/{account}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("account",
@@ -4159,6 +4270,14 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(ShowCorpAdminRequest::getAccount, (req, v) -> {
                 req.setAccount(v);
+            })
+        );
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowCorpAdminRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
             })
         );
         builder.withRequestField("X-Request-Id",
@@ -4189,7 +4308,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpBasicInfoRequest.class, ShowCorpBasicInfoResponse.class)
-                .withUri("/v1/usg/dcs/corp");
+                .withUri("/v1/usg/dcs/corp")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Request-Id",
@@ -4220,7 +4340,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpResourceRequest, ShowCorpResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpResourceRequest.class, ShowCorpResourceResponse.class)
-                .withUri("/v1/usg/dcs/corp/resource");
+                .withUri("/v1/usg/dcs/corp/resource")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Request-Id",
@@ -4251,7 +4372,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeptAndChildDeptRequest.class, ShowDeptAndChildDeptResponse.class)
-                .withUri("/v1/usg/dcs/member/dept/{dept_code}");
+                .withUri("/v1/usg/dcs/member/dept/{dept_code}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("dept_code",
@@ -4290,7 +4412,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceDetailRequest, ShowDeviceDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceDetailRequest.class, ShowDeviceDetailResponse.class)
-                .withUri("/v1/usg/dcs/corp/device/{sn}");
+                .withUri("/v1/usg/dcs/corp/device/{sn}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("sn",
@@ -4378,7 +4501,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceTypesRequest, ShowDeviceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceTypesRequest.class, ShowDeviceTypesResponse.class)
-                .withUri("/v1/usg/dcs/termdevtype");
+                .withUri("/v1/usg/dcs/termdevtype")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Request-Id",
@@ -4418,7 +4542,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHisMeetingDetailRequest.class, ShowHisMeetingDetailResponse.class)
-                .withUri("/v1/mmc/management/conferences/history/confDetail");
+                .withUri("/v1/mmc/management/conferences/history/confDetail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("confUUID",
@@ -4505,7 +4630,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowMeetingDetailRequest, ShowMeetingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeetingDetailRequest.class, ShowMeetingDetailResponse.class)
-                .withUri("/v1/mmc/management/conferences/confDetail");
+                .withUri("/v1/mmc/management/conferences/confDetail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -4592,7 +4718,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowMeetingFileRequest, ShowMeetingFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeetingFileRequest.class, ShowMeetingFileResponse.class)
-                .withUri("/v1/usg/sss/meeting-files/{file_code}");
+                .withUri("/v1/usg/sss/meeting-files/{file_code}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("file_code",
@@ -4671,7 +4798,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowMyInfoRequest, ShowMyInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMyInfoRequest.class, ShowMyInfoResponse.class)
-                .withUri("/v1/usg/dcs/member");
+                .withUri("/v1/usg/dcs/member")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Request-Id",
@@ -4702,7 +4830,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOnlineMeetingDetailRequest.class, ShowOnlineMeetingDetailResponse.class)
-                .withUri("/v1/mmc/management/conferences/online/confDetail");
+                .withUri("/v1/mmc/management/conferences/online/confDetail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -4789,7 +4918,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowProgramRequest, ShowProgramResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProgramRequest.class, ShowProgramResponse.class)
-                .withUri("/v1/usg/sss/programs/{id}");
+                .withUri("/v1/usg/sss/programs/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -4828,7 +4958,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowPublicationRequest, ShowPublicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicationRequest.class, ShowPublicationResponse.class)
-                .withUri("/v1/usg/sss/publications/{id}");
+                .withUri("/v1/usg/sss/publications/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -4867,7 +4998,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRealTimeInfoOfMeetingRequest.class, ShowRealTimeInfoOfMeetingResponse.class)
-                .withUri("/v1/mmc/control/conferences/realTimeInfo");
+                .withUri("/v1/mmc/control/conferences/realTimeInfo")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -4898,7 +5030,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowRecordingDetailRequest, ShowRecordingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordingDetailRequest.class, ShowRecordingDetailResponse.class)
-                .withUri("/v1/mmc/management/conferences/record/files");
+                .withUri("/v1/mmc/management/conferences/record/files")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("confUUID",
@@ -4945,7 +5078,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRegionInfoOfMeetingRequest.class, ShowRegionInfoOfMeetingResponse.class)
-                .withUri("/v1/mmc/management/conferences/region/info");
+                .withUri("/v1/mmc/management/conferences/region/info")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -4968,7 +5102,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowSpResRequest, ShowSpResResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSpResRequest.class, ShowSpResResponse.class)
-                .withUri("/v1/mmc/management/spRes");
+                .withUri("/v1/mmc/management/spRes")
+                .withContentType("application/json");
 
         // requests
 
@@ -4983,7 +5118,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowUserDetailRequest, ShowUserDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserDetailRequest.class, ShowUserDetailResponse.class)
-                .withUri("/v1/usg/dcs/corp/member/{account}");
+                .withUri("/v1/usg/dcs/corp/member/{account}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("account",
@@ -4992,6 +5128,14 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(ShowUserDetailRequest::getAccount, (req, v) -> {
                 req.setAccount(v);
+            })
+        );
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowUserDetailRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
             })
         );
         builder.withRequestField("X-Request-Id",
@@ -5022,7 +5166,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<StopMeetingRequest, StopMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StopMeetingRequest.class, StopMeetingResponse.class)
-                .withUri("/v1/mmc/control/conferences/stop");
+                .withUri("/v1/mmc/control/conferences/stop")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("conferenceID",
@@ -5645,7 +5790,8 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateTokenRequest, UpdateTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTokenRequest.class, UpdateTokenResponse.class)
-                .withUri("/v1/usg/acs/token");
+                .withUri("/v1/usg/acs/token")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Request-ID",
@@ -5686,6 +5832,14 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(UpdateUserRequest::getAccount, (req, v) -> {
                 req.setAccount(v);
+            })
+        );
+        builder.withRequestField("accountType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(UpdateUserRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
             })
         );
         builder.withRequestField("X-Request-Id",

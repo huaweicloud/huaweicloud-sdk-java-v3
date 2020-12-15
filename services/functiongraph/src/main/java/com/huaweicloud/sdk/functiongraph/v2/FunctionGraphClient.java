@@ -28,6 +28,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 创建依赖包
+     * 创建依赖包。
+     *
+     * @param CreateDependencyRequest 请求对象
+     * @return CreateDependencyResponse
+     */
+    public CreateDependencyResponse createDependency(CreateDependencyRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createDependency);
+    }
+
+    /**
+     * 创建测试事件
+     * 创建测试事件。
+     *
+     * @param CreateEventRequest 请求对象
+     * @return CreateEventResponse
+     */
+    public CreateEventResponse createEvent(CreateEventRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.createEvent);
+    }
+
+    /**
      * 创建函数。
      * 创建指定的函数。
      *
@@ -61,6 +83,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 删除依赖包
+     * 删除指定的依赖包。
+     *
+     * @param DeleteDependencyRequest 请求对象
+     * @return DeleteDependencyResponse
+     */
+    public DeleteDependencyResponse deleteDependency(DeleteDependencyRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteDependency);
+    }
+
+    /**
+     * 删除测试事件
+     * 删除测试事件。
+     *
+     * @param DeleteEventRequest 请求对象
+     * @return DeleteEventResponse
+     */
+    public DeleteEventResponse deleteEvent(DeleteEventRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteEvent);
+    }
+
+    /**
      * 删除函数/版本。
      * 删除指定的函数或者特定的版本（不允许删除latest版本）。  如果URN中包含函数版本或者别名，则删除特定的函数版本或者别名指向的版本以及该版本关联的trigger。 如果URN中不包含版本或者别名，则删除整个函数，包含所有版本以及别名，触发器。
      *
@@ -91,6 +135,28 @@ public class FunctionGraphClient {
      */
     public InvokeFunctionResponse invokeFunction(InvokeFunctionRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.invokeFunction);
+    }
+
+    /**
+     * 获取依赖包列表
+     * 获取依赖包列表。
+     *
+     * @param ListDependenciesRequest 请求对象
+     * @return ListDependenciesResponse
+     */
+    public ListDependenciesResponse listDependencies(ListDependenciesRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listDependencies);
+    }
+
+    /**
+     * 获取测试事件列表
+     * 获取指定函数的测试事件列表。
+     *
+     * @param ListEventsRequest 请求对象
+     * @return ListEventsResponse
+     */
+    public ListEventsResponse listEvents(ListEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listEvents);
     }
 
     /**
@@ -160,6 +226,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 获取指定依赖包
+     * 获取指定依赖包。
+     *
+     * @param ShowDependencyRequest 请求对象
+     * @return ShowDependencyResponse
+     */
+    public ShowDependencyResponse showDependency(ShowDependencyRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showDependency);
+    }
+
+    /**
+     * 获取测试事件详细信息
+     * 获取测试事件详细信息。
+     *
+     * @param ShowEventRequest 请求对象
+     * @return ShowEventResponse
+     */
+    public ShowEventResponse showEvent(ShowEventRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showEvent);
+    }
+
+    /**
      * 获取指定函数代码。
      * 获取指定函数的代码。
      *
@@ -193,6 +281,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 更新依赖包指定依赖包
+     * 更新依赖包指定依赖包。
+     *
+     * @param UpdateDependencyRequest 请求对象
+     * @return UpdateDependencyResponse
+     */
+    public UpdateDependencyResponse updateDependency(UpdateDependencyRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateDependency);
+    }
+
+    /**
+     * 更新测试事件
+     * 更新测试事件。
+     *
+     * @param UpdateEventRequest 请求对象
+     * @return UpdateEventResponse
+     */
+    public UpdateEventResponse updateEvent(UpdateEventRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateEvent);
+    }
+
+    /**
      * 修改函数代码。
      * 修改指定的函数的代码。
      *
@@ -212,6 +322,17 @@ public class FunctionGraphClient {
      */
     public UpdateFunctionConfigResponse updateFunctionConfig(UpdateFunctionConfigRequest request) {
         return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateFunctionConfig);
+    }
+
+    /**
+     * 更新函数预留实例个数
+     * 为函数绑定预留实例
+     *
+     * @param UpdateFunctionReservedInstancesRequest 请求对象
+     * @return UpdateFunctionReservedInstancesResponse
+     */
+    public UpdateFunctionReservedInstancesResponse updateFunctionReservedInstances(UpdateFunctionReservedInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateFunctionReservedInstances);
     }
 
     /**
@@ -238,7 +359,7 @@ public class FunctionGraphClient {
 
     /**
      * 创建触发器。
-     * 创建触发器。  - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。 - DDS和KAFKA触发器创建时默认为DISABLE状态，其他触发器默认为ACTIVE状态。 - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
+     * 创建触发器。  - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。 - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。 - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
      *
      * @param CreateFunctionTriggerRequest 请求对象
      * @return CreateFunctionTriggerResponse

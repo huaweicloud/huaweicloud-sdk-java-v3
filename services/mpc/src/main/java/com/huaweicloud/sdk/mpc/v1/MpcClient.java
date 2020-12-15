@@ -260,7 +260,7 @@ public class MpcClient {
 
     /**
      * 新建转码任务
-     * 新建转码任务可以将视频进行转码，并在转码过程中压制水印、内容质检、视频截图等。视频转码前需要配置转码模板。 待转码的音视频需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。 
+     * 新建转码任务可以将视频进行转码，并在转码过程中压制水印、视频截图等。视频转码前需要配置转码模板。 待转码的音视频需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。 
      *
      * @param CreateTranscodingTaskRequest 请求对象
      * @return CreateTranscodingTaskResponse

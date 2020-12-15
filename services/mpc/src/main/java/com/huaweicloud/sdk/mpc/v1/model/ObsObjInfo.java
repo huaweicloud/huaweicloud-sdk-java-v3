@@ -70,7 +70,7 @@ public class ObsObjInfo  {
 
 
     /**
-     * 输入OBS Bucket所在数据中心（OBS Location）。 
+     * OBS桶所在的区域，且必须与使用的MPC区域保持一致。 
      * @return location
      */
     public String getLocation() {

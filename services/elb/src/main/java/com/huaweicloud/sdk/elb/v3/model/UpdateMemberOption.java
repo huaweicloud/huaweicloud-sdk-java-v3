@@ -33,7 +33,7 @@ public class UpdateMemberOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="weight")
     
-    private Integer weight = 1;
+    private Integer weight;
 
     public UpdateMemberOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;

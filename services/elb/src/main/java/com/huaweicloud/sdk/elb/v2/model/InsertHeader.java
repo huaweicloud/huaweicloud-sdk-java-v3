@@ -27,7 +27,7 @@ public class InsertHeader  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Forwarded-Host")
     
-    private Boolean xForwardedHost = true;
+    private Boolean xForwardedHost;
 
     public InsertHeader withXForwardedELBIP(Boolean xForwardedELBIP) {
         this.xForwardedELBIP = xForwardedELBIP;

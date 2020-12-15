@@ -21,7 +21,7 @@ public class UpdateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,13 +39,13 @@ public class UpdateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expected_codes")
     
-    private String expectedCodes = "200";
+    private String expectedCodes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http_method")
     
-    private String httpMethod = "GET";
+    private String httpMethod;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,7 +81,7 @@ public class UpdateHealthMonitorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="url_path")
     
-    private String urlPath = "/";
+    private String urlPath;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -17,6 +17,17 @@ public class CloudBuildClient {
 
 
     /**
+     * KeyStore文件下载
+     * KeyStore文件下载
+     *
+     * @param DownloadKeystoreRequest 请求对象
+     * @return DownloadKeystoreResponse
+     */
+    public DownloadKeystoreResponse downloadKeystore(DownloadKeystoreRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudBuildMeta.downloadKeystore);
+    }
+
+    /**
      * 执行构建任务
      * 执行构建任务,可传自定义参数。
      *

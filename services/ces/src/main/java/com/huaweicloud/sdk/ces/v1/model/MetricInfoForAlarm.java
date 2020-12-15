@@ -23,10 +23,10 @@ public class MetricInfoForAlarm  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
+    @JsonProperty(value="namespace")
     
-    private List<MetricsDimension> dimensions = new ArrayList<>();
-    
+    private String namespace;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
@@ -35,10 +35,10 @@ public class MetricInfoForAlarm  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
+    @JsonProperty(value="dimensions")
     
-    private String namespace;
-
+    private List<MetricsDimension> dimensions = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_group_id")
@@ -50,6 +50,46 @@ public class MetricInfoForAlarm  {
     @JsonProperty(value="resource_group_name")
     
     private String resourceGroupName;
+
+    public MetricInfoForAlarm withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 服务指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符总长度最短为3，最大为32。说明： 当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为空；如：弹性云服务器的命名空间为SYS.ECS，文档数据库的命名空间为SYS.DDS，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public MetricInfoForAlarm withMetricName(String metricName) {
+        this.metricName = metricName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return metricName
+     */
+    public String getMetricName() {
+        return metricName;
+    }
+
+    public void setMetricName(String metricName) {
+        this.metricName = metricName;
+    }
 
     public MetricInfoForAlarm withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
@@ -71,7 +111,7 @@ public class MetricInfoForAlarm  {
     }
 
     /**
-     * 指标维度
+     * 指标维度，目前最大可添加4个维度。
      * @return dimensions
      */
     public List<MetricsDimension> getDimensions() {
@@ -80,46 +120,6 @@ public class MetricInfoForAlarm  {
 
     public void setDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
-    }
-
-    public MetricInfoForAlarm withMetricName(String metricName) {
-        this.metricName = metricName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，长度最短为1，最大为64。  具体指标名请参见查询指标列表中查询出的指标名。
-     * @return metricName
-     */
-    public String getMetricName() {
-        return metricName;
-    }
-
-    public void setMetricName(String metricName) {
-        this.metricName = metricName;
-    }
-
-    public MetricInfoForAlarm withNamespace(String namespace) {
-        this.namespace = namespace;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指标命名空间，，例如弹性云服务器命名空间。格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。说明： 当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为空。
-     * @return namespace
-     */
-    public String getNamespace() {
-        return namespace;
-    }
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
     }
 
     public MetricInfoForAlarm withResourceGroupId(String resourceGroupId) {
@@ -170,23 +170,23 @@ public class MetricInfoForAlarm  {
             return false;
         }
         MetricInfoForAlarm metricInfoForAlarm = (MetricInfoForAlarm) o;
-        return Objects.equals(this.dimensions, metricInfoForAlarm.dimensions) &&
+        return Objects.equals(this.namespace, metricInfoForAlarm.namespace) &&
             Objects.equals(this.metricName, metricInfoForAlarm.metricName) &&
-            Objects.equals(this.namespace, metricInfoForAlarm.namespace) &&
+            Objects.equals(this.dimensions, metricInfoForAlarm.dimensions) &&
             Objects.equals(this.resourceGroupId, metricInfoForAlarm.resourceGroupId) &&
             Objects.equals(this.resourceGroupName, metricInfoForAlarm.resourceGroupName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(dimensions, metricName, namespace, resourceGroupId, resourceGroupName);
+        return Objects.hash(namespace, metricName, dimensions, resourceGroupId, resourceGroupName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetricInfoForAlarm {\n");
-        sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
-        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
+        sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("    resourceGroupId: ").append(toIndentedString(resourceGroupId)).append("\n");
         sb.append("    resourceGroupName: ").append(toIndentedString(resourceGroupName)).append("\n");
         sb.append("}");

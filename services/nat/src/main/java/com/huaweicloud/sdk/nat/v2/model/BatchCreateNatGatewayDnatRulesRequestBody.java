@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayDnatRuleOption;
+import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayDnatOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -24,20 +24,20 @@ public class BatchCreateNatGatewayDnatRulesRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dnat_rules")
     
-    private List<CreateNatGatewayDnatRuleOption> dnatRules = new ArrayList<>();
+    private List<CreateNatGatewayDnatOption> dnatRules = new ArrayList<>();
     
-    public BatchCreateNatGatewayDnatRulesRequestBody withDnatRules(List<CreateNatGatewayDnatRuleOption> dnatRules) {
+    public BatchCreateNatGatewayDnatRulesRequestBody withDnatRules(List<CreateNatGatewayDnatOption> dnatRules) {
         this.dnatRules = dnatRules;
         return this;
     }
 
     
-    public BatchCreateNatGatewayDnatRulesRequestBody addDnatRulesItem(CreateNatGatewayDnatRuleOption dnatRulesItem) {
+    public BatchCreateNatGatewayDnatRulesRequestBody addDnatRulesItem(CreateNatGatewayDnatOption dnatRulesItem) {
         this.dnatRules.add(dnatRulesItem);
         return this;
     }
 
-    public BatchCreateNatGatewayDnatRulesRequestBody withDnatRules(Consumer<List<CreateNatGatewayDnatRuleOption>> dnatRulesSetter) {
+    public BatchCreateNatGatewayDnatRulesRequestBody withDnatRules(Consumer<List<CreateNatGatewayDnatOption>> dnatRulesSetter) {
         if(this.dnatRules == null ){
             this.dnatRules = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class BatchCreateNatGatewayDnatRulesRequestBody  {
      * DNAT规则批量创建对象的请求体。
      * @return dnatRules
      */
-    public List<CreateNatGatewayDnatRuleOption> getDnatRules() {
+    public List<CreateNatGatewayDnatOption> getDnatRules() {
         return dnatRules;
     }
 
-    public void setDnatRules(List<CreateNatGatewayDnatRuleOption> dnatRules) {
+    public void setDnatRules(List<CreateNatGatewayDnatOption> dnatRules) {
         this.dnatRules = dnatRules;
     }
     @Override

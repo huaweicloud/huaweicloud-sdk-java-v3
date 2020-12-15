@@ -23,7 +23,13 @@ public class OriginPara  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    private Long duration;
+    private Integer duration;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="duration_ms")
+    
+    private Long durationMs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,7 +49,7 @@ public class OriginPara  {
     
     private AudioInfo audio = null;
 
-    public OriginPara withDuration(Long duration) {
+    public OriginPara withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
@@ -52,17 +58,37 @@ public class OriginPara  {
 
 
     /**
-     * 片源时长 
-     * minimum: 0
-     * maximum: 2147483647
+     * 片源时长，单位：秒
      * @return duration
      */
-    public Long getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
-    public void setDuration(Long duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
+    }
+
+    public OriginPara withDurationMs(Long durationMs) {
+        this.durationMs = durationMs;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 片源时长，单位：毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return durationMs
+     */
+    public Long getDurationMs() {
+        return durationMs;
+    }
+
+    public void setDurationMs(Long durationMs) {
+        this.durationMs = durationMs;
     }
 
     public OriginPara withFileFormat(String fileFormat) {
@@ -148,19 +174,21 @@ public class OriginPara  {
         }
         OriginPara originPara = (OriginPara) o;
         return Objects.equals(this.duration, originPara.duration) &&
+            Objects.equals(this.durationMs, originPara.durationMs) &&
             Objects.equals(this.fileFormat, originPara.fileFormat) &&
             Objects.equals(this.video, originPara.video) &&
             Objects.equals(this.audio, originPara.audio);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(duration, fileFormat, video, audio);
+        return Objects.hash(duration, durationMs, fileFormat, video, audio);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OriginPara {\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    fileFormat: ").append(toIndentedString(fileFormat)).append("\n");
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    audio: ").append(toIndentedString(audio)).append("\n");

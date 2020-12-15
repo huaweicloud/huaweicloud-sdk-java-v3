@@ -59,7 +59,7 @@ public class UpdateListenerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http2_enable")
     
-    private Boolean http2Enable = true;
+    private Boolean http2Enable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -191,19 +191,19 @@ public class UpdateListenerOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable_member_retry")
     
-    private Boolean enableMemberRetry = false;
+    private Boolean enableMemberRetry;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_timeout")
     
-    private Integer memberTimeout = 60;
+    private Integer memberTimeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="client_timeout")
     
-    private Integer clientTimeout = 60;
+    private Integer clientTimeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -18,7 +18,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListClassroomMembersRequest, ListClassroomMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClassroomMembersRequest.class, ListClassroomMembersResponse.class)
-                .withUri("/v3/classrooms/{classroom_id}/members");
+                .withUri("/v3/classrooms/{classroom_id}/members")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("classroom_id",
@@ -65,7 +66,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListClassroomsRequest, ListClassroomsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClassroomsRequest.class, ListClassroomsResponse.class)
-                .withUri("/v3/classrooms");
+                .withUri("/v3/classrooms")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -104,7 +106,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ShowClassroomDetailRequest, ShowClassroomDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClassroomDetailRequest.class, ShowClassroomDetailResponse.class)
-                .withUri("/v3/classrooms/{classroom_id}");
+                .withUri("/v3/classrooms/{classroom_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("classroom_id",
@@ -127,7 +130,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClassroomMemberJobsRequest.class, ListClassroomMemberJobsResponse.class)
-                .withUri("/v3/classrooms/{classroom_id}/jobs");
+                .withUri("/v3/classrooms/{classroom_id}/jobs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("classroom_id",
@@ -174,7 +178,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
-                .withUri("/v3/jobs");
+                .withUri("/v3/jobs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("source_from",
@@ -221,7 +226,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMemberJobRecordsRequest.class, ListMemberJobRecordsResponse.class)
-                .withUri("/v3/jobs/{job_id}/exercises/{exercise_id}/records");
+                .withUri("/v3/jobs/{job_id}/exercises/{exercise_id}/records")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",
@@ -276,7 +282,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
-                .withUri("/v3/jobs/{job_id}");
+                .withUri("/v3/jobs/{job_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",
@@ -299,7 +306,8 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ShowJobExercisesRequest, ShowJobExercisesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobExercisesRequest.class, ShowJobExercisesResponse.class)
-                .withUri("/v3/jobs/{job_id}/exercises");
+                .withUri("/v3/jobs/{job_id}/exercises")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",

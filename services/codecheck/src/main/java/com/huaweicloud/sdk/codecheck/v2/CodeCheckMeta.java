@@ -82,7 +82,8 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<ShowProgressDetailV2Request, ShowProgressDetailV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProgressDetailV2Request.class, ShowProgressDetailV2Response.class)
-                .withUri("/v2/tasks/{task_id}/progress");
+                .withUri("/v2/tasks/{task_id}/progress")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -105,7 +106,8 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskDetailV2Request, ShowTaskDetailV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskDetailV2Request.class, ShowTaskDetailV2Response.class)
-                .withUri("/v2/tasks/{task_id}/defects-summary");
+                .withUri("/v2/tasks/{task_id}/defects-summary")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -128,7 +130,8 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskListByProjectIdV2Request, ShowTaskListByProjectIdV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskListByProjectIdV2Request.class, ShowTaskListByProjectIdV2Response.class)
-                .withUri("/v2/{project_id}/tasks");
+                .withUri("/v2/{project_id}/tasks")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -167,7 +170,8 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<StopTaskByIdV2Request, StopTaskByIdV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopTaskByIdV2Request.class, StopTaskByIdV2Response.class)
-                .withUri("/v2/tasks/{task_id}/stop");
+                .withUri("/v2/tasks/{task_id}/stop")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",

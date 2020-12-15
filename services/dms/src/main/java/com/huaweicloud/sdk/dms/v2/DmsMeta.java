@@ -130,7 +130,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ConsumeDeadlettersMessageRequest.class, ConsumeDeadlettersMessageResponse.class)
-                .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/deadletters");
+                .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/deadletters")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("queue_id",
@@ -194,7 +195,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ConsumeMessagesRequest, ConsumeMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ConsumeMessagesRequest.class, ConsumeMessagesResponse.class)
-                .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/messages");
+                .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/messages")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("queue_id",
@@ -330,7 +332,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteQueueRequest, DeleteQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteQueueRequest.class, DeleteQueueResponse.class)
-                .withUri("/v2/{project_id}/queues/{queue_id}");
+                .withUri("/v2/{project_id}/queues/{queue_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("queue_id",
@@ -353,7 +356,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSpecifiedConsumerGroupRequest.class, DeleteSpecifiedConsumerGroupResponse.class)
-                .withUri("/v2/{project_id}/queues/{queue_id}/groups/{group_id}");
+                .withUri("/v2/{project_id}/queues/{queue_id}/groups/{group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("queue_id",
@@ -384,7 +388,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ListConsumerGroupsRequest, ListConsumerGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConsumerGroupsRequest.class, ListConsumerGroupsResponse.class)
-                .withUri("/v2/{project_id}/queues/{queue_id}/groups");
+                .withUri("/v2/{project_id}/queues/{queue_id}/groups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("queue_id",
@@ -439,7 +444,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ListQueuesRequest, ListQueuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQueuesRequest.class, ListQueuesResponse.class)
-                .withUri("/v2/{project_id}/queues");
+                .withUri("/v2/{project_id}/queues")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("include_deadletter",
@@ -494,7 +500,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectTagsRequest, ShowProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsRequest.class, ShowProjectTagsResponse.class)
-                .withUri("/v2/{project_id}/queue/tags");
+                .withUri("/v2/{project_id}/queue/tags")
+                .withContentType("application/json");
 
         // requests
 
@@ -509,7 +516,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowQueueRequest, ShowQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQueueRequest.class, ShowQueueResponse.class)
-                .withUri("/v2/{project_id}/queues/{queue_id}");
+                .withUri("/v2/{project_id}/queues/{queue_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("queue_id",
@@ -540,7 +548,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowQueueTagsRequest, ShowQueueTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQueueTagsRequest.class, ShowQueueTagsResponse.class)
-                .withUri("/v2/{project_id}/queue/{queue_id}/tags");
+                .withUri("/v2/{project_id}/queue/{queue_id}/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("queue_id",
@@ -563,7 +572,8 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
-                .withUri("/v2/{project_id}/quotas");
+                .withUri("/v2/{project_id}/quotas")
+                .withContentType("application/json");
 
         // requests
 

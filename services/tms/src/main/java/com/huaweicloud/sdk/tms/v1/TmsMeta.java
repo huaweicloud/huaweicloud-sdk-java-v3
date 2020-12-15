@@ -66,7 +66,8 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
-                .withUri("/");
+                .withUri("/")
+                .withContentType("application/json");
 
         // requests
 
@@ -81,7 +82,8 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<ListPredefineTagsRequest, ListPredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPredefineTagsRequest.class, ListPredefineTagsResponse.class)
-                .withUri("/v1.0/predefine_tags");
+                .withUri("/v1.0/predefine_tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("key",
@@ -144,7 +146,8 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
-                .withUri("/{api_version}");
+                .withUri("/{api_version}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("api_version",

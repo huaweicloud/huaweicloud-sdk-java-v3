@@ -24,7 +24,7 @@ public class HealthMonitor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -42,13 +42,13 @@ public class HealthMonitor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expected_codes")
     
-    private String expectedCodes = "200";
+    private String expectedCodes;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http_method")
     
-    private String httpMethod = "GET";
+    private String httpMethod;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,7 +108,7 @@ public class HealthMonitor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="url_path")
     
-    private String urlPath = "/";
+    private String urlPath;
 
     public HealthMonitor withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -119,7 +119,7 @@ public class HealthMonitor  {
 
 
     /**
-     * 功能说明：管理状态true/false。使用说明：默认为true，true表示开启健康检查，false表示关闭健康检查。
+     * 功能说明：管理状态true/false。true表示开启健康检查，false表示关闭健康检查。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -420,7 +420,7 @@ public class HealthMonitor  {
 
 
     /**
-     * 功能说明：健康检查测试member健康时发送的http请求路径。默认为“/”。使用说明：以“/”开头。仅当type为HTTP时生效。
+     * 功能说明：健康检查测试member健康时发送的http请求路径。使用说明：以“/”开头。仅当type为HTTP时生效。
      * @return urlPath
      */
     public String getUrlPath() {

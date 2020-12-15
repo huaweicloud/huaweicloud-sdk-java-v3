@@ -122,7 +122,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteConfigurationRequest, DeleteConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteConfigurationRequest.class, DeleteConfigurationResponse.class)
-                .withUri("/v3/{project_id}/configurations/{config_id}");
+                .withUri("/v3/{project_id}/configurations/{config_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("config_id",
@@ -153,7 +154,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}");
+                .withUri("/v3/{project_id}/instances/{instance_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -216,7 +218,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListAuditlogsRequest, ListAuditlogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuditlogsRequest.class, ListAuditlogsResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/auditlog");
+                .withUri("/v3/{project_id}/instances/{instance_id}/auditlog")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -279,7 +282,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
-                .withUri("/v3/{project_id}/backups");
+                .withUri("/v3/{project_id}/backups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -358,7 +362,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListCollationsRequest, ListCollationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCollationsRequest.class, ListCollationsResponse.class)
-                .withUri("/v3/{project_id}/collations");
+                .withUri("/v3/{project_id}/collations")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Language",
@@ -381,7 +386,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListDatastoresRequest, ListDatastoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatastoresRequest.class, ListDatastoresResponse.class)
-                .withUri("/v3/{project_id}/datastores/{database_name}");
+                .withUri("/v3/{project_id}/datastores/{database_name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("database_name",
@@ -412,7 +418,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListErrorLogsRequest, ListErrorLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListErrorLogsRequest.class, ListErrorLogsResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/errorlog");
+                .withUri("/v3/{project_id}/instances/{instance_id}/errorlog")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -483,7 +490,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
-                .withUri("/v3/{project_id}/flavors/{database_name}");
+                .withUri("/v3/{project_id}/flavors/{database_name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("database_name",
@@ -530,7 +538,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
-                .withUri("/v3/{project_id}/instances");
+                .withUri("/v3/{project_id}/instances")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -625,7 +634,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListSlowLogsRequest, ListSlowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSlowLogsRequest.class, ListSlowLogsResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog");
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -696,7 +706,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListStorageTypesRequest, ListStorageTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStorageTypesRequest.class, ListStorageTypesResponse.class)
-                .withUri("/v3/{project_id}/storage-type/{database_name}");
+                .withUri("/v3/{project_id}/storage-type/{database_name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("database_name",
@@ -855,7 +866,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuditlogPolicyRequest.class, ShowAuditlogPolicyResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/auditlog-policy");
+                .withUri("/v3/{project_id}/instances/{instance_id}/auditlog-policy")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -886,7 +898,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowBackupPolicyRequest, ShowBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupPolicyRequest.class, ShowBackupPolicyResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/backups/policy");
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/policy")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -917,7 +930,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowConfigurationRequest, ShowConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfigurationRequest.class, ShowConfigurationResponse.class)
-                .withUri("/v3/{project_id}/configurations/{config_id}");
+                .withUri("/v3/{project_id}/configurations/{config_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("config_id",
@@ -948,7 +962,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceConfigurationRequest.class, ShowInstanceConfigurationResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/configurations");
+                .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1219,7 +1234,8 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/database/{db_name}");
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/{db_name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",

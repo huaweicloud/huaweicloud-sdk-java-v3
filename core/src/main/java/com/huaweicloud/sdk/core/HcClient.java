@@ -23,10 +23,12 @@ package com.huaweicloud.sdk.core;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Stack;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
@@ -202,12 +204,7 @@ public class HcClient implements CustomizationConfigure {
                 if (field.getLocation() == LocationType.Header) {
                     httpRequestBuilder.addHeader(field.getName(), reqValue.toString());
                 } else if (field.getLocation() == LocationType.Query) {
-                    if (reqValue instanceof Collection) {
-                        httpRequestBuilder.addQueryParam(field.getName(),
-                            ((List<Object>) reqValue).stream().map(Object::toString).collect(Collectors.toList()));
-                    } else {
-                        httpRequestBuilder.addQueryParam(field.getName(), Arrays.asList(reqValue.toString()));
-                    }
+                    buildQueryParams(httpRequestBuilder, field.getName(), reqValue);
                 } else if (field.getLocation() == LocationType.Path) {
                     httpRequestBuilder.addPathParam(field.getName(), reqValue.toString());
                 } else if (field.getLocation() == LocationType.Body) {
@@ -225,6 +222,56 @@ public class HcClient implements CustomizationConfigure {
         HttpRequest httpRequest = httpRequestBuilder.build();
 
         return httpRequest;
+    }
+
+    private void buildQueryParams(HttpRequest.HttpRequestBuilder httpRequestBuilder, String fieldName,
+                                  Object reqValue) {
+        if (reqValue instanceof Collection) {
+            httpRequestBuilder.addQueryParam(fieldName, buildCollectionQueryParams(reqValue));
+        } else if (reqValue instanceof Map) {
+            Map<String, List<String>> params = buildMapQueryParamsLoop(fieldName, (Map) reqValue);
+            for (Map.Entry entry : params.entrySet()) {
+                httpRequestBuilder.addQueryParam((String) entry.getKey(), (List<String>) entry.getValue());
+            }
+        } else {
+            httpRequestBuilder.addQueryParam(fieldName, buildStringQueryParams(reqValue));
+        }
+    }
+
+    private List<String> buildStringQueryParams(Object reqValue) {
+        return Arrays.asList(reqValue.toString());
+    }
+
+    private List<String> buildCollectionQueryParams(Object reqValue) {
+        return ((List<Object>) reqValue).stream().map(Object::toString).collect(Collectors.toList());
+    }
+
+    private Map<String, List<String>> buildMapQueryParamsLoop(String key, Map reqValue) {
+        Map<String, List<String>> result = new HashMap<>();
+        Stack<Map<String, List<String>>> stack = new Stack<>();
+
+        reqValue.forEach((k, v) -> stack.push(buildMapQueryParams(key, k.toString(), v)));
+
+        while (!stack.isEmpty()) {
+            Map<String, List<String>> temp = stack.pop();
+            temp.forEach(result::put);
+        }
+
+        return result;
+    }
+
+    private Map<String, List<String>> buildMapQueryParams(String key, String entryKey, Object entryValue) {
+        Map<String, List<String>> res = new HashMap<>();
+        if (entryValue instanceof Map) {
+            ((Map<?, ?>) entryValue).forEach((k, v) -> {
+                res.putAll(buildMapQueryParams(key + "[" + entryKey + "]", k.toString(), v));
+            });
+        } else if (entryValue instanceof Collection) {
+            res.put(key + "[" + entryKey + "]", buildCollectionQueryParams(entryValue));
+        } else {
+            res.put(key + "[" + entryKey + "]", buildStringQueryParams(entryValue));
+        }
+        return res;
     }
 
     private <ReqT, ResT> ResT extractResponse(HttpResponse httpResponse, HttpRequestDef<ReqT, ResT> reqDef) {

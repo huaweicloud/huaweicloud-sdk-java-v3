@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -244,8 +243,8 @@ public class CreateFunctionTriggerRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="event_data")
     
-    private Map<String, String> eventData = new HashMap<>();
-    
+    private Object eventData = null;
+
     public CreateFunctionTriggerRequestBody withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
         return this;
@@ -306,34 +305,23 @@ public class CreateFunctionTriggerRequestBody  {
         this.eventTypeCode = eventTypeCode;
     }
 
-    public CreateFunctionTriggerRequestBody withEventData(Map<String, String> eventData) {
+    public CreateFunctionTriggerRequestBody withEventData(Object eventData) {
         this.eventData = eventData;
         return this;
     }
 
     
 
-    public CreateFunctionTriggerRequestBody putEventDataItem(String key, String eventDataItem) {
-        this.eventData.put(key, eventDataItem);
-        return this;
-    }
 
-    public CreateFunctionTriggerRequestBody withEventData(Consumer<Map<String, String>> eventDataSetter) {
-        if(this.eventData == null ){
-            this.eventData = new HashMap<>();
-        }
-        eventDataSetter.accept(this.eventData);
-        return this;
-    }
     /**
      * 事件结构体。
      * @return eventData
      */
-    public Map<String, String> getEventData() {
+    public Object getEventData() {
         return eventData;
     }
 
-    public void setEventData(Map<String, String> eventData) {
+    public void setEventData(Object eventData) {
         this.eventData = eventData;
     }
     @Override

@@ -306,7 +306,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentV2Request.class, DeleteEnvironmentV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/envs/{env_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/envs/{env_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -337,7 +338,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentVariableV2Request.class, DeleteEnvironmentVariableV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/env-variables/{env_variable_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/env-variables/{env_variable_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -368,7 +370,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRequestThrottlingPolicyV2Request.class, DeleteRequestThrottlingPolicyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -399,7 +402,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSignatureKeyV2Request.class, DeleteSignatureKeyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/signs/{sign_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/signs/{sign_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -430,7 +434,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSpecialThrottlingConfigurationV2Request.class, DeleteSpecialThrottlingConfigurationV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials/{strategy_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials/{strategy_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -469,7 +474,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DisassociateCertificateV2Request, DisassociateCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateCertificateV2Request.class, DisassociateCertificateV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificate/{certificate_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificate/{certificate_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -516,7 +522,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DisassociateDomainV2Request, DisassociateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateDomainV2Request.class, DisassociateDomainV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -555,7 +562,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateSignatureKeyV2Request.class, DisassociateSignatureKeyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/{sign_bindings_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/{sign_bindings_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -586,7 +594,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApiGroupsQuantitiesV2Request, ListApiGroupsQuantitiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiGroupsQuantitiesV2Request.class, ListApiGroupsQuantitiesV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/resources/outline/groups");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/resources/outline/groups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -609,7 +618,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApiQuantitiesV2Request, ListApiQuantitiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiQuantitiesV2Request.class, ListApiQuantitiesV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/resources/outline/apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/resources/outline/apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -632,7 +642,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisBindedToSignatureKeyV2Request.class, ListApisBindedToSignatureKeyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/binded-apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/binded-apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -711,7 +722,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisNotBoundWithSignatureKeyV2Request.class, ListApisNotBoundWithSignatureKeyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/unbinded-apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/unbinded-apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -790,7 +802,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppQuantitiesV2Request.class, ListAppQuantitiesV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/resources/outline/apps");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/resources/outline/apps")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -813,7 +826,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentVariablesV2Request.class, ListEnvironmentVariablesV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/env-variables");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/env-variables")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -884,7 +898,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListEnvironmentsV2Request, ListEnvironmentsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsV2Request.class, ListEnvironmentsV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/envs");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/envs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -931,7 +946,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRequestThrottlingPolicyV2Request.class, ListRequestThrottlingPolicyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -994,7 +1010,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSignatureKeysBindedToApiV2Request.class, ListSignatureKeysBindedToApiV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/binded-signs");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/sign-bindings/binded-signs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1065,7 +1082,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysV2Request, ListSignatureKeysV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSignatureKeysV2Request.class, ListSignatureKeysV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/signs");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/signs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1128,7 +1146,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSpecialThrottlingConfigurationsV2Request.class, ListSpecialThrottlingConfigurationsV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}/throttle-specials")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1191,7 +1210,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfDomainNameCertificateV2Request.class, ShowDetailsOfDomainNameCertificateV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificate/{certificate_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificate/{certificate_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1238,7 +1258,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfEnvironmentVariableV2Request.class, ShowDetailsOfEnvironmentVariableV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/env-variables/{env_variable_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/env-variables/{env_variable_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1269,7 +1290,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfRequestThrottlingPolicyV2Request.class, ShowDetailsOfRequestThrottlingPolicyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttles/{throttle_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1636,7 +1658,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteApiGroupV2Request, DeleteApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiGroupV2Request.class, DeleteApiGroupV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1667,7 +1690,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteApiV2Request, DeleteApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiV2Request.class, DeleteApiV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1698,7 +1722,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateRequestThrottlingPolicyV2Request.class, DisassociateRequestThrottlingPolicyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/{throttle_binding_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/{throttle_binding_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1729,7 +1754,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApiGroupsV2Request, ListApiGroupsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiGroupsV2Request.class, ListApiGroupsV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1792,7 +1818,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisBindedToRequestThrottlingPolicyV2Request.class, ListApisBindedToRequestThrottlingPolicyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/binded-apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/binded-apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1871,7 +1898,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisUnbindedToRequestThrottlingPolicyV2Request.class, ListApisUnbindedToRequestThrottlingPolicyV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/unbinded-apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/unbinded-apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -1950,7 +1978,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApisV2Request, ListApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisV2Request.class, ListApisV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2069,7 +2098,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRequestThrottlingPoliciesBindedToApiV2Request.class, ListRequestThrottlingPoliciesBindedToApiV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/binded-throttles");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/throttle-bindings/binded-throttles")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2140,7 +2170,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfApiGroupV2Request.class, ShowDetailsOfApiGroupV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2171,7 +2202,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfApiV2Request.class, ShowDetailsOfApiV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/{api_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2282,7 +2314,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelingAuthorizationV2Request.class, CancelingAuthorizationV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/{app_auth_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/{app_auth_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2313,7 +2346,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<CheckAppV2Request, CheckAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckAppV2Request.class, CheckAppV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/validation/{app_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/validation/{app_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2408,7 +2442,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<DeleteAppV2Request, DeleteAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppV2Request.class, DeleteAppV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2439,7 +2474,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisBindedToAppV2Request.class, ListApisBindedToAppV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/binded-apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/binded-apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2526,7 +2562,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisUnbindedToAppV2Request.class, ListApisUnbindedToAppV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/unbinded-apis");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/unbinded-apis")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2605,7 +2642,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsBindedToApiV2Request.class, ListAppsBindedToApiV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/binded-apps");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-auths/binded-apps")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2676,7 +2714,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ListAppsV2Request, ListAppsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsV2Request.class, ListAppsV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -2803,7 +2842,8 @@ public class ApigMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppV2Request.class, ShowDetailsOfAppV2Response.class)
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}");
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",

@@ -32,6 +32,12 @@ public class AddCorpAdminRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="accountType")
+    
+    private Integer accountType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private CorpAdminDTO body = null;
@@ -78,6 +84,28 @@ public class AddCorpAdminRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    public AddCorpAdminRequest withAccountType(Integer accountType) {
+        this.accountType = accountType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get accountType
+     * minimum: 0
+     * maximum: 1
+     * @return accountType
+     */
+    public Integer getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(Integer accountType) {
+        this.accountType = accountType;
+    }
+
     public AddCorpAdminRequest withBody(CorpAdminDTO body) {
         this.body = body;
         return this;
@@ -115,11 +143,12 @@ public class AddCorpAdminRequest  {
         AddCorpAdminRequest addCorpAdminRequest = (AddCorpAdminRequest) o;
         return Objects.equals(this.xRequestId, addCorpAdminRequest.xRequestId) &&
             Objects.equals(this.acceptLanguage, addCorpAdminRequest.acceptLanguage) &&
+            Objects.equals(this.accountType, addCorpAdminRequest.accountType) &&
             Objects.equals(this.body, addCorpAdminRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, body);
+        return Objects.hash(xRequestId, acceptLanguage, accountType, body);
     }
     @Override
     public String toString() {
@@ -127,6 +156,7 @@ public class AddCorpAdminRequest  {
         sb.append("class AddCorpAdminRequest {\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
+        sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

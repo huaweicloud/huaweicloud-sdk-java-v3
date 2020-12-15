@@ -42,7 +42,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteAnimatedGraphicsTaskRequest, DeleteAnimatedGraphicsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAnimatedGraphicsTaskRequest.class, DeleteAnimatedGraphicsTaskResponse.class)
-                .withUri("/v1/{project_id}/animated-graphics");
+                .withUri("/v1/{project_id}/animated-graphics")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -65,7 +66,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListAnimatedGraphicsTaskRequest, ListAnimatedGraphicsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAnimatedGraphicsTaskRequest.class, ListAnimatedGraphicsTaskResponse.class)
-                .withUri("/v1/{project_id}/animated-graphics");
+                .withUri("/v1/{project_id}/animated-graphics")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -160,7 +162,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteEncryptTaskRequest, DeleteEncryptTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEncryptTaskRequest.class, DeleteEncryptTaskResponse.class)
-                .withUri("/v1/{project_id}/encryptions");
+                .withUri("/v1/{project_id}/encryptions")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -183,7 +186,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListEncryptTaskRequest, ListEncryptTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEncryptTaskRequest.class, ListEncryptTaskResponse.class)
-                .withUri("/v1/{project_id}/encryptions");
+                .withUri("/v1/{project_id}/encryptions")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -270,7 +274,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteExtractTaskRequest, DeleteExtractTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteExtractTaskRequest.class, DeleteExtractTaskResponse.class)
-                .withUri("/v1/{project_id}/extract-metadata");
+                .withUri("/v1/{project_id}/extract-metadata")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -293,7 +298,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListExtractTaskRequest, ListExtractTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExtractTaskRequest.class, ListExtractTaskResponse.class)
-                .withUri("/v1/{project_id}/extract-metadata");
+                .withUri("/v1/{project_id}/extract-metadata")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -364,7 +370,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListTranscodeDetailRequest, ListTranscodeDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTranscodeDetailRequest.class, ListTranscodeDetailResponse.class)
-                .withUri("/v1/{project_id}/transcodings/detail");
+                .withUri("/v1/{project_id}/transcodings/detail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -387,7 +394,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<CancelRemuxTaskRequest, CancelRemuxTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelRemuxTaskRequest.class, CancelRemuxTaskResponse.class)
-                .withUri("/v1/{project_id}/remux");
+                .withUri("/v1/{project_id}/remux")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -458,7 +466,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteRemuxTaskRequest, DeleteRemuxTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRemuxTaskRequest.class, DeleteRemuxTaskResponse.class)
-                .withUri("/v1/{project_id}/remux/task");
+                .withUri("/v1/{project_id}/remux/task")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -481,7 +490,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListRemuxTaskRequest, ListRemuxTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRemuxTaskRequest.class, ListRemuxTaskResponse.class)
-                .withUri("/v1/{project_id}/remux");
+                .withUri("/v1/{project_id}/remux")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -584,7 +594,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateGroupRequest.class, DeleteTemplateGroupResponse.class)
-                .withUri("/v1/{project_id}/template_group/transcodings");
+                .withUri("/v1/{project_id}/template_group/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("group_id",
@@ -607,7 +618,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListTemplateGroupRequest, ListTemplateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateGroupRequest.class, ListTemplateGroupResponse.class)
-                .withUri("/v1/{project_id}/template_group/transcodings");
+                .withUri("/v1/{project_id}/template_group/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("group_id",
@@ -702,7 +714,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteThumbnailsTaskRequest, DeleteThumbnailsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteThumbnailsTaskRequest.class, DeleteThumbnailsTaskResponse.class)
-                .withUri("/v1/{project_id}/thumbnails");
+                .withUri("/v1/{project_id}/thumbnails")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -725,7 +738,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListThumbnailsTaskRequest, ListThumbnailsTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListThumbnailsTaskRequest.class, ListThumbnailsTaskResponse.class)
-                .withUri("/v1/{project_id}/thumbnails");
+                .withUri("/v1/{project_id}/thumbnails")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -820,7 +834,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteTranscodingTaskRequest, DeleteTranscodingTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTranscodingTaskRequest.class, DeleteTranscodingTaskResponse.class)
-                .withUri("/v1/{project_id}/transcodings");
+                .withUri("/v1/{project_id}/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -843,7 +858,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListTranscodingTaskRequest, ListTranscodingTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTranscodingTaskRequest.class, ListTranscodingTaskResponse.class)
-                .withUri("/v1/{project_id}/transcodings");
+                .withUri("/v1/{project_id}/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -938,7 +954,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
-                .withUri("/v1/{project_id}/template/transcodings");
+                .withUri("/v1/{project_id}/template/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
@@ -961,7 +978,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListTemplateRequest, ListTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateRequest.class, ListTemplateResponse.class)
-                .withUri("/v1/{project_id}/template/transcodings");
+                .withUri("/v1/{project_id}/template/transcodings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
@@ -1048,7 +1066,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWatermarkTemplateRequest.class, DeleteWatermarkTemplateResponse.class)
-                .withUri("/v1/{project_id}/template/watermark");
+                .withUri("/v1/{project_id}/template/watermark")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
@@ -1071,7 +1090,8 @@ public class MpcMeta {
         // basic
         HttpRequestDef.Builder<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWatermarkTemplateRequest.class, ListWatermarkTemplateResponse.class)
-                .withUri("/v1/{project_id}/template/watermark");
+                .withUri("/v1/{project_id}/template/watermark")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",

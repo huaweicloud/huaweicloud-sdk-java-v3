@@ -59,7 +59,7 @@ public class UpdatePoolOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_deletion_protection_enable")
     
-    private Boolean memberDeletionProtectionEnable = false;
+    private Boolean memberDeletionProtectionEnable;
 
     public UpdatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;

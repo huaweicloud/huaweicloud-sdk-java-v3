@@ -145,9 +145,16 @@ public class DefaultHttpClient implements HttpClient {
         HttpUrl.Builder urlBuilder = HttpUrl.parse(httpRequest.getEndpoint()
             + httpRequest.getPathParamsString()).newBuilder();
 
-        httpRequest.getQueryParams().forEach((key, values) -> values.forEach(value -> {
-            urlBuilder.addQueryParameter(key, value);
-        }));
+        httpRequest.getQueryParams().forEach((key, values) -> {
+                if (values.size() == 0) {
+                    urlBuilder.addQueryParameter(key, null);
+                } else {
+                    values.forEach(value -> {
+                        urlBuilder.addQueryParameter(key, value);
+                    });
+                }
+            }
+        );
 
         requestBuilder.url(urlBuilder.build());
 

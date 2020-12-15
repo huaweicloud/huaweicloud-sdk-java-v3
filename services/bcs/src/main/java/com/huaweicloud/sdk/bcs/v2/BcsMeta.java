@@ -130,7 +130,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteBlockchainRequest, DeleteBlockchainResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBlockchainRequest.class, DeleteBlockchainResponse.class)
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}");
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("blockchain_id",
@@ -169,7 +170,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadBlockchainCertRequest.class, DownloadBlockchainCertResponse.class)
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/cert");
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/cert")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("blockchain_id",
@@ -296,7 +298,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBlockchainChannelsRequest.class, ListBlockchainChannelsResponse.class)
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/channels");
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/channels")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("blockchain_id",
@@ -319,7 +322,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ListBlockchainsRequest, ListBlockchainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBlockchainsRequest.class, ListBlockchainsResponse.class)
-                .withUri("/v2/{project_id}/blockchains");
+                .withUri("/v2/{project_id}/blockchains")
+                .withContentType("application/json");
 
         // requests
 
@@ -398,7 +402,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ListMembersRequest, ListMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMembersRequest.class, ListMembersResponse.class)
-                .withUri("/v2/{project_id}/members");
+                .withUri("/v2/{project_id}/members")
+                .withContentType("application/json");
 
         // requests
 
@@ -413,7 +418,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ListNotificationsRequest, ListNotificationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNotificationsRequest.class, ListNotificationsResponse.class)
-                .withUri("/v2/{project_id}/notifications");
+                .withUri("/v2/{project_id}/notifications")
+                .withContentType("application/json");
 
         // requests
 
@@ -428,7 +434,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
-                .withUri("/v2/{project_id}/quotas");
+                .withUri("/v2/{project_id}/quotas")
+                .withContentType("application/json");
 
         // requests
 
@@ -443,7 +450,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBlockchainDetailRequest.class, ShowBlockchainDetailResponse.class)
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}");
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("blockchain_id",
@@ -466,7 +474,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBlockchainNodesRequest.class, ShowBlockchainNodesResponse.class)
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/nodes");
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/nodes")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("blockchain_id",
@@ -489,7 +498,8 @@ public class BcsMeta {
         // basic
         HttpRequestDef.Builder<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBlockchainStatusRequest.class, ShowBlockchainStatusResponse.class)
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/status");
+                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/status")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("blockchain_id",

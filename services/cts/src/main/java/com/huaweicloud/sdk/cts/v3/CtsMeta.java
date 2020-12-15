@@ -42,7 +42,8 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTrackerRequest, DeleteTrackerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTrackerRequest.class, DeleteTrackerResponse.class)
-                .withUri("/v3/{project_id}/trackers");
+                .withUri("/v3/{project_id}/trackers")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("tracker_name",
@@ -73,7 +74,8 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
-                .withUri("/v3/{project_id}/quotas");
+                .withUri("/v3/{project_id}/quotas")
+                .withContentType("application/json");
 
         // requests
 
@@ -88,7 +90,8 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<ListTracesRequest, ListTracesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTracesRequest.class, ListTracesResponse.class)
-                .withUri("/v3/{project_id}/traces");
+                .withUri("/v3/{project_id}/traces")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("trace_type",
@@ -215,7 +218,8 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<ListTrackersRequest, ListTrackersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTrackersRequest.class, ListTrackersResponse.class)
-                .withUri("/v3/{project_id}/trackers");
+                .withUri("/v3/{project_id}/trackers")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("tracker_name",

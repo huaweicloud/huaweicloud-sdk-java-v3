@@ -42,7 +42,8 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
-                .withUri("/v2/{project_id}/tasks/{task_id}");
+                .withUri("/v2/{project_id}/tasks/{task_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -65,7 +66,8 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
-                .withUri("/v2/{project_id}/tasks");
+                .withUri("/v2/{project_id}/tasks")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("group_id",
@@ -112,7 +114,8 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
-                .withUri("/v2/{project_id}/tasks/{task_id}");
+                .withUri("/v2/{project_id}/tasks/{task_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -167,7 +170,8 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<StopTaskRequest, StopTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopTaskRequest.class, StopTaskResponse.class)
-                .withUri("/v2/{project_id}/tasks/{task_id}/stop");
+                .withUri("/v2/{project_id}/tasks/{task_id}/stop")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -222,7 +226,8 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
-                .withUri("/");
+                .withUri("/")
+                .withContentType("application/json");
 
         // requests
 
@@ -237,7 +242,8 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ShowApiInfoRequest, ShowApiInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiInfoRequest.class, ShowApiInfoResponse.class)
-                .withUri("/{version}");
+                .withUri("/{version}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("version",

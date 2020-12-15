@@ -18,7 +18,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AcceptVpcPeeringRequest.class, AcceptVpcPeeringResponse.class)
-                .withUri("/v2.0/vpc/peerings/{peering_id}/accept");
+                .withUri("/v2.0/vpc/peerings/{peering_id}/accept")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("peering_id",
@@ -161,7 +162,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeletePortRequest, DeletePortResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePortRequest.class, DeletePortResponse.class)
-                .withUri("/v1/{project_id}/ports/{port_id}");
+                .withUri("/v1/{project_id}/ports/{port_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("port_id",
@@ -184,7 +186,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRequest.class, DeleteSecurityGroupResponse.class)
-                .withUri("/v1/{project_id}/security-groups/{security_group_id}");
+                .withUri("/v1/{project_id}/security-groups/{security_group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("security_group_id",
@@ -207,7 +210,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRuleRequest.class, DeleteSecurityGroupRuleResponse.class)
-                .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}");
+                .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("security_group_rule_id",
@@ -230,7 +234,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteSubnetRequest, DeleteSubnetResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubnetRequest.class, DeleteSubnetResponse.class)
-                .withUri("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}");
+                .withUri("/v1/{project_id}/vpcs/{vpc_id}/subnets/{subnet_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("vpc_id",
@@ -261,7 +266,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcPeeringRequest.class, DeleteVpcPeeringResponse.class)
-                .withUri("/v2.0/vpc/peerings/{peering_id}");
+                .withUri("/v2.0/vpc/peerings/{peering_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("peering_id",
@@ -284,7 +290,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListPortsRequest, ListPortsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPortsRequest.class, ListPortsResponse.class)
-                .withUri("/v1/{project_id}/ports");
+                .withUri("/v1/{project_id}/ports")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("name",
@@ -395,7 +402,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecurityGroupRulesRequest.class, ListSecurityGroupRulesResponse.class)
-                .withUri("/v1/{project_id}/security-group-rules");
+                .withUri("/v1/{project_id}/security-group-rules")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("marker",
@@ -434,7 +442,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListSecurityGroupsRequest, ListSecurityGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecurityGroupsRequest.class, ListSecurityGroupsResponse.class)
-                .withUri("/v1/{project_id}/security-groups");
+                .withUri("/v1/{project_id}/security-groups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -481,7 +490,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListSubnetsRequest, ListSubnetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubnetsRequest.class, ListSubnetsResponse.class)
-                .withUri("/v1/{project_id}/subnets");
+                .withUri("/v1/{project_id}/subnets")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -520,7 +530,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListVpcPeeringsRequest, ListVpcPeeringsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcPeeringsRequest.class, ListVpcPeeringsResponse.class)
-                .withUri("/v2.0/vpc/peerings");
+                .withUri("/v2.0/vpc/peerings")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -591,7 +602,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<RejectVpcPeeringRequest, RejectVpcPeeringResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RejectVpcPeeringRequest.class, RejectVpcPeeringResponse.class)
-                .withUri("/v2.0/vpc/peerings/{peering_id}/reject");
+                .withUri("/v2.0/vpc/peerings/{peering_id}/reject")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("peering_id",
@@ -614,7 +626,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowPortRequest, ShowPortResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPortRequest.class, ShowPortResponse.class)
-                .withUri("/v1/{project_id}/ports/{port_id}");
+                .withUri("/v1/{project_id}/ports/{port_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("port_id",
@@ -637,7 +650,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
-                .withUri("/v1/{project_id}/quotas");
+                .withUri("/v1/{project_id}/quotas")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("type",
@@ -660,7 +674,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowSecurityGroupRequest, ShowSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecurityGroupRequest.class, ShowSecurityGroupResponse.class)
-                .withUri("/v1/{project_id}/security-groups/{security_group_id}");
+                .withUri("/v1/{project_id}/security-groups/{security_group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("security_group_id",
@@ -683,7 +698,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecurityGroupRuleRequest.class, ShowSecurityGroupRuleResponse.class)
-                .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}");
+                .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("security_group_rule_id",
@@ -706,7 +722,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowSubnetRequest, ShowSubnetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSubnetRequest.class, ShowSubnetResponse.class)
-                .withUri("/v1/{project_id}/subnets/{subnet_id}");
+                .withUri("/v1/{project_id}/subnets/{subnet_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("subnet_id",
@@ -729,7 +746,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowVpcPeeringRequest, ShowVpcPeeringResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVpcPeeringRequest.class, ShowVpcPeeringResponse.class)
-                .withUri("/v2.0/vpc/peerings/{peering_id}");
+                .withUri("/v2.0/vpc/peerings/{peering_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("peering_id",
@@ -880,7 +898,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeletePrivateipRequest, DeletePrivateipResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateipRequest.class, DeletePrivateipResponse.class)
-                .withUri("/v1/{project_id}/privateips/{privateip_id}");
+                .withUri("/v1/{project_id}/privateips/{privateip_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("privateip_id",
@@ -903,7 +922,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListPrivateipsRequest, ListPrivateipsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivateipsRequest.class, ListPrivateipsResponse.class)
-                .withUri("/v1/{project_id}/subnets/{subnet_id}/privateips");
+                .withUri("/v1/{project_id}/subnets/{subnet_id}/privateips")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("subnet_id",
@@ -942,7 +962,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNetworkIpAvailabilitiesRequest.class, ShowNetworkIpAvailabilitiesResponse.class)
-                .withUri("/v2.0/network-ip-availabilities/{network_id}");
+                .withUri("/v2.0/network-ip-availabilities/{network_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("network_id",
@@ -965,7 +986,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowPrivateipRequest, ShowPrivateipResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPrivateipRequest.class, ShowPrivateipResponse.class)
-                .withUri("/v1/{project_id}/privateips/{privateip_id}");
+                .withUri("/v1/{project_id}/privateips/{privateip_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("privateip_id",
@@ -1092,7 +1114,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallGroupRequest.class, NeutronDeleteFirewallGroupResponse.class)
-                .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}");
+                .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("firewall_group_id",
@@ -1115,7 +1138,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallPolicyRequest.class, NeutronDeleteFirewallPolicyResponse.class)
-                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}");
+                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("firewall_policy_id",
@@ -1138,7 +1162,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallRuleRequest.class, NeutronDeleteFirewallRuleResponse.class)
-                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}");
+                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("firewall_rule_id",
@@ -1161,7 +1186,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallGroupsRequest.class, NeutronListFirewallGroupsResponse.class)
-                .withUri("/v2.0/fwaas/firewall_groups");
+                .withUri("/v2.0/fwaas/firewall_groups")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("marker",
@@ -1232,7 +1258,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallPoliciesRequest.class, NeutronListFirewallPoliciesResponse.class)
-                .withUri("/v2.0/fwaas/firewall_policies");
+                .withUri("/v2.0/fwaas/firewall_policies")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -1295,7 +1322,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallRulesRequest.class, NeutronListFirewallRulesResponse.class)
-                .withUri("/v2.0/fwaas/firewall_rules");
+                .withUri("/v2.0/fwaas/firewall_rules")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("marker",
@@ -1398,7 +1426,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallGroupRequest.class, NeutronShowFirewallGroupResponse.class)
-                .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}");
+                .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("firewall_group_id",
@@ -1421,7 +1450,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallPolicyRequest.class, NeutronShowFirewallPolicyResponse.class)
-                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}");
+                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("firewall_policy_id",
@@ -1444,7 +1474,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallRuleRequest.class, NeutronShowFirewallRuleResponse.class)
-                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}");
+                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("firewall_rule_id",
@@ -1611,7 +1642,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteVpcRequest, DeleteVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcRequest.class, DeleteVpcResponse.class)
-                .withUri("/v1/{project_id}/vpcs/{vpc_id}");
+                .withUri("/v1/{project_id}/vpcs/{vpc_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("vpc_id",
@@ -1634,7 +1666,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteVpcRouteRequest, DeleteVpcRouteResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcRouteRequest.class, DeleteVpcRouteResponse.class)
-                .withUri("/v2.0/vpc/routes/{route_id}");
+                .withUri("/v2.0/vpc/routes/{route_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("route_id",
@@ -1657,7 +1690,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListVpcRoutesRequest, ListVpcRoutesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcRoutesRequest.class, ListVpcRoutesResponse.class)
-                .withUri("/v2.0/vpc/routes");
+                .withUri("/v2.0/vpc/routes")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -1728,7 +1762,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListVpcsRequest, ListVpcsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcsRequest.class, ListVpcsResponse.class)
-                .withUri("/v1/{project_id}/vpcs");
+                .withUri("/v1/{project_id}/vpcs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -1775,7 +1810,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowVpcRequest, ShowVpcResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVpcRequest.class, ShowVpcResponse.class)
-                .withUri("/v1/{project_id}/vpcs/{vpc_id}");
+                .withUri("/v1/{project_id}/vpcs/{vpc_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("vpc_id",
@@ -1798,7 +1834,8 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowVpcRouteRequest, ShowVpcRouteResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVpcRouteRequest.class, ShowVpcRouteResponse.class)
-                .withUri("/v2.0/vpc/routes/{route_id}");
+                .withUri("/v2.0/vpc/routes/{route_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("route_id",

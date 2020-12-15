@@ -18,7 +18,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<ListProjectTemplatesRequest, ListProjectTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTemplatesRequest.class, ListProjectTemplatesResponse.class)
-                .withUri("/v2/templates");
+                .withUri("/v2/templates")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("arch",
@@ -49,7 +50,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<ListStacksByTagRequest, ListStacksByTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStacksByTagRequest.class, ListStacksByTagResponse.class)
-                .withUri("/v2/stacks");
+                .withUri("/v2/stacks")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("tags",
@@ -72,7 +74,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<ShowPriceRequest, ShowPriceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPriceRequest.class, ShowPriceResponse.class)
-                .withUri("/v2/stacks/price");
+                .withUri("/v2/stacks/price")
+                .withContentType("application/json");
 
         // requests
 
@@ -87,7 +90,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<CheckNameRequest, CheckNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckNameRequest.class, CheckNameResponse.class)
-                .withUri("/v2/instances/duplicate");
+                .withUri("/v2/instances/duplicate")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("display_name",
@@ -174,7 +178,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
-                .withUri("/v2/instances/{instance_id}");
+                .withUri("/v2/instances/{instance_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -197,7 +202,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
-                .withUri("/v2/instances");
+                .withUri("/v2/instances")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -252,7 +258,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<ListOrgInstancesRequest, ListOrgInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOrgInstancesRequest.class, ListOrgInstancesResponse.class)
-                .withUri("/v2/{org_id}/instances");
+                .withUri("/v2/{org_id}/instances")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("org_id",
@@ -307,7 +314,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
-                .withUri("/v2/instances/{instance_id}");
+                .withUri("/v2/instances/{instance_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -330,7 +338,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<StartInstanceRequest, StartInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StartInstanceRequest.class, StartInstanceResponse.class)
-                .withUri("/v2/instances/{instance_id}/runtime");
+                .withUri("/v2/instances/{instance_id}/runtime")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",
@@ -353,7 +362,8 @@ public class CloudIDEMeta {
         // basic
         HttpRequestDef.Builder<StopInstanceRequest, StopInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, StopInstanceRequest.class, StopInstanceResponse.class)
-                .withUri("/v2/instances/{instance_id}/runtime");
+                .withUri("/v2/instances/{instance_id}/runtime")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("instance_id",

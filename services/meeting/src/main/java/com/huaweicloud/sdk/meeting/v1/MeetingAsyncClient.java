@@ -328,6 +328,17 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 获取页面免登陆跳转的nonce信息
+     * 通过token生成页面免登陆跳转到华为云会议的Portal的nonce信息。获取到nonce信息后，通过链接https://bmeeting.huaweicloud.com/?lang&#x3D;zh-CN&amp;nonce&#x3D;xxxxxxxxxxxxx#/login进行免登陆跳转。
+     *
+     * @param CreatePortalRefNonceRequest 请求对象
+     * @return CompletableFuture<CreatePortalRefNonceResponse>
+     */
+    public CompletableFuture<CreatePortalRefNonceResponse> createPortalRefNonceAsync(CreatePortalRefNonceRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.createPortalRefNonce);
+    }
+
+    /**
      * 删除与会者
      * 删除与会者。
      *

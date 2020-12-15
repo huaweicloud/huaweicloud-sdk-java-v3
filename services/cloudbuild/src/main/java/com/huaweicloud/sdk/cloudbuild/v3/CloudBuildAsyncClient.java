@@ -20,6 +20,17 @@ public class CloudBuildAsyncClient {
 
 
     /**
+     * KeyStore文件下载
+     * KeyStore文件下载
+     *
+     * @param DownloadKeystoreRequest 请求对象
+     * @return CompletableFuture<DownloadKeystoreResponse>
+     */
+    public CompletableFuture<DownloadKeystoreResponse> downloadKeystoreAsync(DownloadKeystoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudBuildMeta.downloadKeystore);
+    }
+
+    /**
      * 执行构建任务
      * 执行构建任务,可传自定义参数。
      *

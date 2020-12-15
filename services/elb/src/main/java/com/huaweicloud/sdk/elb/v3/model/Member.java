@@ -27,7 +27,7 @@ public class Member  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,13 +69,13 @@ public class Member  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="weight")
     
-    private Integer weight = 1;
+    private Integer weight;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_version")
     
-    private String ipVersion = "v4";
+    private String ipVersion;
 
     public Member withAddress(String address) {
         this.address = address;

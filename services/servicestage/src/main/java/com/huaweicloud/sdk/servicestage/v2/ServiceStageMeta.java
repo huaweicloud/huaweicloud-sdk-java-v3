@@ -354,7 +354,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteApplicationRequest, DeleteApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationRequest.class, DeleteApplicationResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -377,7 +378,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationConfigurationRequest.class, DeleteApplicationConfigurationResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/configuration");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/configuration")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -408,7 +410,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteComponentRequest, DeleteComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteComponentRequest.class, DeleteComponentResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -447,7 +450,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentRequest, DeleteEnvironmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentRequest.class, DeleteEnvironmentResponse.class)
-                .withUri("/v2/{project_id}/cas/environments/{environment_id}");
+                .withUri("/v2/{project_id}/cas/environments/{environment_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("environment_id",
@@ -470,7 +474,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances/{instance_id}");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances/{instance_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -517,7 +522,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListApplicationsRequest, ListApplicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApplicationsRequest.class, ListApplicationsResponse.class)
-                .withUri("/v2/{project_id}/cas/applications");
+                .withUri("/v2/{project_id}/cas/applications")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -564,7 +570,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListComponentsRequest, ListComponentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListComponentsRequest.class, ListComponentsResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/components");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/components")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -619,7 +626,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsRequest.class, ListEnvironmentsResponse.class)
-                .withUri("/v2/{project_id}/cas/environments");
+                .withUri("/v2/{project_id}/cas/environments")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -666,7 +674,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListInstanceSnapshotsRequest, ListInstanceSnapshotsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceSnapshotsRequest.class, ListInstanceSnapshotsResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances/{instance_id}/snapshots");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances/{instance_id}/snapshots")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -737,7 +746,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -800,7 +810,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplicationConfigurationRequest.class, ShowApplicationConfigurationResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/configuration");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/configuration")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -831,7 +842,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowApplicationDetailRequest, ShowApplicationDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplicationDetailRequest.class, ShowApplicationDetailResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -854,7 +866,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowComponentDetailRequest, ShowComponentDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowComponentDetailRequest.class, ShowComponentDetailResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -885,7 +898,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowEnvironmentDetailRequest, ShowEnvironmentDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnvironmentDetailRequest.class, ShowEnvironmentDetailResponse.class)
-                .withUri("/v2/{project_id}/cas/environments/{environment_id}");
+                .withUri("/v2/{project_id}/cas/environments/{environment_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("environment_id",
@@ -908,7 +922,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceDetailRequest, ShowInstanceDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceDetailRequest.class, ShowInstanceDetailResponse.class)
-                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances/{instance_id}");
+                .withUri("/v2/{project_id}/cas/applications/{application_id}/components/{component_id}/instances/{instance_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("application_id",
@@ -947,7 +962,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
-                .withUri("/v2/{project_id}/cas/jobs/{job_id}");
+                .withUri("/v2/{project_id}/cas/jobs/{job_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",
@@ -1362,7 +1378,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteAuthorizeRequest, DeleteAuthorizeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAuthorizeRequest.class, DeleteAuthorizeResponse.class)
-                .withUri("/v1/{project_id}/git/auths/{name}");
+                .withUri("/v1/{project_id}/git/auths/{name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("name",
@@ -1385,7 +1402,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteFileRequest, DeleteFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFileRequest.class, DeleteFileResponse.class)
-                .withUri("/v1/{project_id}/git/files/{namespace}/{project}/{path}");
+                .withUri("/v1/{project_id}/git/files/{namespace}/{project}/{path}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1456,7 +1474,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteHookRequest, DeleteHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteHookRequest.class, DeleteHookResponse.class)
-                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/hooks/{hook_id}");
+                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/hooks/{hook_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1503,7 +1522,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
-                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/tags/{tag_name}");
+                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/tags/{tag_name}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1550,7 +1570,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListAuthorizationsRequest, ListAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorizationsRequest.class, ListAuthorizationsResponse.class)
-                .withUri("/v1/{project_id}/git/auths");
+                .withUri("/v1/{project_id}/git/auths")
+                .withContentType("application/json");
 
         // requests
 
@@ -1565,7 +1586,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListBranchesRequest, ListBranchesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBranchesRequest.class, ListBranchesResponse.class)
-                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/branches");
+                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/branches")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1604,7 +1626,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListCommitsRequest, ListCommitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCommitsRequest.class, ListCommitsResponse.class)
-                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/commits");
+                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/commits")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1651,7 +1674,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListHooksRequest, ListHooksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHooksRequest.class, ListHooksResponse.class)
-                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/hooks");
+                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/hooks")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1690,7 +1714,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListNamespacesRequest, ListNamespacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNamespacesRequest.class, ListNamespacesResponse.class)
-                .withUri("/v1/{project_id}/git/repos/namespaces");
+                .withUri("/v1/{project_id}/git/repos/namespaces")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Repo-Auth",
@@ -1713,7 +1738,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListProjectsRequest, ListProjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectsRequest.class, ListProjectsResponse.class)
-                .withUri("/v1/{project_id}/git/repos/{namespace}/projects");
+                .withUri("/v1/{project_id}/git/repos/{namespace}/projects")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1744,7 +1770,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
-                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/tags");
+                .withUri("/v1/{project_id}/git/repos/{namespace}/{project}/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1783,7 +1810,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListTreesRequest, ListTreesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTreesRequest.class, ListTreesResponse.class)
-                .withUri("/v1/{project_id}/git/files/{namespace}/{project}/trees");
+                .withUri("/v1/{project_id}/git/files/{namespace}/{project}/trees")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1830,7 +1858,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowContentRequest, ShowContentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowContentRequest.class, ShowContentResponse.class)
-                .withUri("/v1/{project_id}/git/files/{namespace}/{project}/{path}");
+                .withUri("/v1/{project_id}/git/files/{namespace}/{project}/{path}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("namespace",
@@ -1885,7 +1914,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectDetailRequest, ShowProjectDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectDetailRequest.class, ShowProjectDetailResponse.class)
-                .withUri("/v1/{project_id}/git/repos/project-info");
+                .withUri("/v1/{project_id}/git/repos/project-info")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("clone_url",
@@ -1916,7 +1946,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ShowRedirectUrlRequest, ShowRedirectUrlResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRedirectUrlRequest.class, ShowRedirectUrlResponse.class)
-                .withUri("/v1/{project_id}/git/auths/{repo_type}/redirect");
+                .withUri("/v1/{project_id}/git/auths/{repo_type}/redirect")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("repo_type",
@@ -2011,7 +2042,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
-                .withUri("/v2/{project_id}/cas/metadata/flavors");
+                .withUri("/v2/{project_id}/cas/metadata/flavors")
+                .withContentType("application/json");
 
         // requests
 
@@ -2026,7 +2058,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListRuntimesRequest, ListRuntimesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRuntimesRequest.class, ListRuntimesResponse.class)
-                .withUri("/v2/{project_id}/cas/metadata/runtimes");
+                .withUri("/v2/{project_id}/cas/metadata/runtimes")
+                .withContentType("application/json");
 
         // requests
 
@@ -2041,7 +2074,8 @@ public class ServiceStageMeta {
         // basic
         HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
-                .withUri("/v2/{project_id}/cas/metadata/templates");
+                .withUri("/v2/{project_id}/cas/metadata/templates")
+                .withContentType("application/json");
 
         // requests
 

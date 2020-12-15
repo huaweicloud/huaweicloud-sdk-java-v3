@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mpc.v1.model.CommonTask;
+import com.huaweicloud.sdk.mpc.v1.model.MetaData;
 import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
 import com.huaweicloud.sdk.mpc.v1.model.RemuxOutputParam;
 import java.util.function.Consumer;
@@ -85,6 +86,12 @@ public class RemuxTask  {
     @JsonProperty(value="complete_ratio")
     
     private Integer completeRatio;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="output_metadata")
+    
+    private MetaData outputMetadata = null;
 
     public RemuxTask withTaskId(String taskId) {
         this.taskId = taskId;
@@ -326,6 +333,33 @@ public class RemuxTask  {
     public void setCompleteRatio(Integer completeRatio) {
         this.completeRatio = completeRatio;
     }
+
+    public RemuxTask withOutputMetadata(MetaData outputMetadata) {
+        this.outputMetadata = outputMetadata;
+        return this;
+    }
+
+    public RemuxTask withOutputMetadata(Consumer<MetaData> outputMetadataSetter) {
+        if(this.outputMetadata == null ){
+            this.outputMetadata = new MetaData();
+            outputMetadataSetter.accept(this.outputMetadata);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get outputMetadata
+     * @return outputMetadata
+     */
+    public MetaData getOutputMetadata() {
+        return outputMetadata;
+    }
+
+    public void setOutputMetadata(MetaData outputMetadata) {
+        this.outputMetadata = outputMetadata;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -345,11 +379,12 @@ public class RemuxTask  {
             Objects.equals(this.output, remuxTask.output) &&
             Objects.equals(this.userData, remuxTask.userData) &&
             Objects.equals(this.outputParam, remuxTask.outputParam) &&
-            Objects.equals(this.completeRatio, remuxTask.completeRatio);
+            Objects.equals(this.completeRatio, remuxTask.completeRatio) &&
+            Objects.equals(this.outputMetadata, remuxTask.outputMetadata);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, userData, outputParam, completeRatio);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, userData, outputParam, completeRatio, outputMetadata);
     }
     @Override
     public String toString() {
@@ -366,6 +401,7 @@ public class RemuxTask  {
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
         sb.append("    completeRatio: ").append(toIndentedString(completeRatio)).append("\n");
+        sb.append("    outputMetadata: ").append(toIndentedString(outputMetadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

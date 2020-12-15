@@ -32,9 +32,9 @@ public class UpdateTriggerRequestBody  {
         public static final TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
         
         /**
-         * Enum DISABLE for value: "DISABLE"
+         * Enum DISABLED for value: "DISABLED"
          */
-        public static final TriggerStatusEnum DISABLE = new TriggerStatusEnum("DISABLE");
+        public static final TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
         
 
         private static final Map<String, TriggerStatusEnum> STATIC_FIELDS = createStaticFields();
@@ -42,7 +42,7 @@ public class UpdateTriggerRequestBody  {
         private static Map<String, TriggerStatusEnum> createStaticFields() {
             Map<String, TriggerStatusEnum> map = new HashMap<>();
             map.put("ACTIVE", ACTIVE);
-            map.put("DISABLE", DISABLE);
+            map.put("DISABLED", DISABLED);
             return Collections.unmodifiableMap(map);
         }
 

@@ -33,6 +33,12 @@ public class BatchDeleteCorpAdminsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="accountType")
+    
+    private Integer accountType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private List<String> body = null;
@@ -79,6 +85,28 @@ public class BatchDeleteCorpAdminsRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
+    public BatchDeleteCorpAdminsRequest withAccountType(Integer accountType) {
+        this.accountType = accountType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get accountType
+     * minimum: 0
+     * maximum: 1
+     * @return accountType
+     */
+    public Integer getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(Integer accountType) {
+        this.accountType = accountType;
+    }
+
     public BatchDeleteCorpAdminsRequest withBody(List<String> body) {
         this.body = body;
         return this;
@@ -123,11 +151,12 @@ public class BatchDeleteCorpAdminsRequest  {
         BatchDeleteCorpAdminsRequest batchDeleteCorpAdminsRequest = (BatchDeleteCorpAdminsRequest) o;
         return Objects.equals(this.xRequestId, batchDeleteCorpAdminsRequest.xRequestId) &&
             Objects.equals(this.acceptLanguage, batchDeleteCorpAdminsRequest.acceptLanguage) &&
+            Objects.equals(this.accountType, batchDeleteCorpAdminsRequest.accountType) &&
             Objects.equals(this.body, batchDeleteCorpAdminsRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, body);
+        return Objects.hash(xRequestId, acceptLanguage, accountType, body);
     }
     @Override
     public String toString() {
@@ -135,6 +164,7 @@ public class BatchDeleteCorpAdminsRequest  {
         sb.append("class BatchDeleteCorpAdminsRequest {\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
+        sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

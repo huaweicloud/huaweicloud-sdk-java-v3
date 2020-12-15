@@ -18,7 +18,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AutoRenewalResourcesRequest.class, AutoRenewalResourcesResponse.class)
-                .withUri("/v2/orders/subscriptions/resources/autorenew/{resource_id}");
+                .withUri("/v2/orders/subscriptions/resources/autorenew/{resource_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("resource_id",
@@ -41,7 +42,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelAutoRenewalResourcesRequest.class, CancelAutoRenewalResourcesResponse.class)
-                .withUri("/v2/orders/subscriptions/resources/autorenew/{resource_id}");
+                .withUri("/v2/orders/subscriptions/resources/autorenew/{resource_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("resource_id",
@@ -288,7 +290,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListCustomerOrdersRequest, ListCustomerOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomerOrdersRequest.class, ListCustomerOrdersResponse.class)
-                .withUri("/v2/orders/customer-orders");
+                .withUri("/v2/orders/customer-orders")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("order_id",
@@ -431,7 +434,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomerselfResourceRecordsRequest.class, ListCustomerselfResourceRecordsResponse.class)
-                .withUri("/v2/bills/customer-bills/res-fee-records");
+                .withUri("/v2/bills/customer-bills/res-fee-records")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("cycle",
@@ -582,7 +586,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOrderCouponsByOrderIdRequest.class, ListOrderCouponsByOrderIdResponse.class)
-                .withUri("/v2/orders/customer-orders/order-coupons");
+                .withUri("/v2/orders/customer-orders/order-coupons")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("order_id",
@@ -653,7 +658,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListResourceTypesRequest, ListResourceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTypesRequest.class, ListResourceTypesResponse.class)
-                .withUri("/v2/bases/resource-types");
+                .withUri("/v2/bases/resource-types")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("resource_type_code",
@@ -684,7 +690,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListResourceUsagesRequest, ListResourceUsagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourceUsagesRequest.class, ListResourceUsagesResponse.class)
-                .withUri("/v2/payments/free-resources/usages/query");
+                .withUri("/v2/payments/free-resources/usages/query")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Language",
@@ -707,7 +714,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListServiceResourcesRequest, ListServiceResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceResourcesRequest.class, ListServiceResourcesResponse.class)
-                .withUri("/v2/products/service-resources");
+                .withUri("/v2/products/service-resources")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("service_type_code",
@@ -754,7 +762,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListServiceTypesRequest, ListServiceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceTypesRequest.class, ListServiceTypesResponse.class)
-                .withUri("/v2/bases/service-types");
+                .withUri("/v2/bases/service-types")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("service_type_code",
@@ -785,7 +794,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubCustomerCouponsRequest.class, ListSubCustomerCouponsResponse.class)
-                .withUri("/v2/promotions/benefits/coupons");
+                .withUri("/v2/promotions/benefits/coupons")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("coupon_id",
@@ -912,7 +922,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ListUsageTypesRequest, ListUsageTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsageTypesRequest.class, ListUsageTypesResponse.class)
-                .withUri("/v2/products/usage-types");
+                .withUri("/v2/products/usage-types")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("resource_type_code",
@@ -1031,7 +1042,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCustomerMonthlySumRequest.class, ShowCustomerMonthlySumResponse.class)
-                .withUri("/v2/bills/customer-bills/monthly-sum");
+                .withUri("/v2/bills/customer-bills/monthly-sum")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("bill_cycle",
@@ -1102,7 +1114,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCustomerOrderDetailsRequest.class, ShowCustomerOrderDetailsResponse.class)
-                .withUri("/v2/orders/customer-orders/details/{order_id}");
+                .withUri("/v2/orders/customer-orders/details/{order_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("order_id",
@@ -1149,7 +1162,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRealnameAuthenticationReviewResultRequest.class, ShowRealnameAuthenticationReviewResultResponse.class)
-                .withUri("/v2/customers/realname-auths/result");
+                .withUri("/v2/customers/realname-auths/result")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("customer_id",
@@ -1172,7 +1186,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRefundOrderDetailsRequest.class, ShowRefundOrderDetailsResponse.class)
-                .withUri("/v2/orders/customer-orders/refund-orders");
+                .withUri("/v2/orders/customer-orders/refund-orders")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("order_id",
@@ -1195,7 +1210,8 @@ public class BssintlMeta {
         // basic
         HttpRequestDef.Builder<ShowSubCustomerBudgetRequest, ShowSubCustomerBudgetResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSubCustomerBudgetRequest.class, ShowSubCustomerBudgetResponse.class)
-                .withUri("/v2/partners/sub-customers/budget");
+                .withUri("/v2/partners/sub-customers/budget")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("customer_id",

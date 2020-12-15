@@ -38,6 +38,12 @@ public class UpdateUserRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="accountType")
+    
+    private Integer accountType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private ModUserDTO body = null;
@@ -104,6 +110,28 @@ public class UpdateUserRequest  {
         this.account = account;
     }
 
+    public UpdateUserRequest withAccountType(Integer accountType) {
+        this.accountType = accountType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get accountType
+     * minimum: 0
+     * maximum: 1
+     * @return accountType
+     */
+    public Integer getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(Integer accountType) {
+        this.accountType = accountType;
+    }
+
     public UpdateUserRequest withBody(ModUserDTO body) {
         this.body = body;
         return this;
@@ -142,11 +170,12 @@ public class UpdateUserRequest  {
         return Objects.equals(this.xRequestId, updateUserRequest.xRequestId) &&
             Objects.equals(this.acceptLanguage, updateUserRequest.acceptLanguage) &&
             Objects.equals(this.account, updateUserRequest.account) &&
+            Objects.equals(this.accountType, updateUserRequest.accountType) &&
             Objects.equals(this.body, updateUserRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, account, body);
+        return Objects.hash(xRequestId, acceptLanguage, account, accountType, body);
     }
     @Override
     public String toString() {
@@ -155,6 +184,7 @@ public class UpdateUserRequest  {
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
         sb.append("    account: ").append(toIndentedString(account)).append("\n");
+        sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -18,7 +18,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowPipelinesStatusRequest.class, BatchShowPipelinesStatusResponse.class)
-                .withUri("/v3/pipelines/status");
+                .withUri("/v3/pipelines/status")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pipeline_ids",
@@ -90,7 +91,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPipleineBuildResultRequest.class, ListPipleineBuildResultResponse.class)
-                .withUri("/v3/pipelines/build-result");
+                .withUri("/v3/pipelines/build-result")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -153,7 +155,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
-                .withUri("/v3/templates");
+                .withUri("/v3/templates")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_type",
@@ -256,7 +259,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<RemovePipelineRequest, RemovePipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemovePipelineRequest.class, RemovePipelineResponse.class)
-                .withUri("/v3/pipelines/{pipeline_id}");
+                .withUri("/v3/pipelines/{pipeline_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pipeline_id",
@@ -287,7 +291,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowAgentStatusRequest, ShowAgentStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgentStatusRequest.class, ShowAgentStatusResponse.class)
-                .withUri("/v1/agents/{agent_id}/status");
+                .withUri("/v1/agents/{agent_id}/status")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("agent_id",
@@ -318,7 +323,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceStatusRequest, ShowInstanceStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceStatusRequest.class, ShowInstanceStatusResponse.class)
-                .withUri("/v3/templates/{task_id}/status");
+                .withUri("/v3/templates/{task_id}/status")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -349,7 +355,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowPipleineStatusRequest, ShowPipleineStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPipleineStatusRequest.class, ShowPipleineStatusResponse.class)
-                .withUri("/v3/pipelines/{pipeline_id}/status");
+                .withUri("/v3/pipelines/{pipeline_id}/status")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pipeline_id",
@@ -388,7 +395,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateDetailRequest, ShowTemplateDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateDetailRequest.class, ShowTemplateDetailResponse.class)
-                .withUri("/v3/templates/{template_id}");
+                .withUri("/v3/templates/{template_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
@@ -515,7 +523,8 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<StopPipelineRequest, StopPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopPipelineRequest.class, StopPipelineResponse.class)
-                .withUri("/v3/pipelines/stop");
+                .withUri("/v3/pipelines/stop")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("pipeline_id",

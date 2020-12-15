@@ -12,6 +12,38 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class CloudBuildMeta {
 
+    public static final HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> downloadKeystore = genFordownloadKeystore();
+
+    private static HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> genFordownloadKeystore() {
+        // basic
+        HttpRequestDef.Builder<DownloadKeystoreRequest, DownloadKeystoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadKeystoreRequest.class, DownloadKeystoreResponse.class)
+                .withUri("/v3/keystore")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DownloadKeystoreRequest::getFileName, (req, v) -> {
+                req.setFileName(v);
+            })
+        );
+        builder.withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DownloadKeystoreRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunJobRequest, RunJobResponse> runJob = genForrunJob();
 
     private static HttpRequestDef<RunJobRequest, RunJobResponse> genForrunJob() {
@@ -42,7 +74,8 @@ public class CloudBuildMeta {
         // basic
         HttpRequestDef.Builder<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobListByProjectIdRequest.class, ShowJobListByProjectIdResponse.class)
-                .withUri("/v3/{project_id}/jobs");
+                .withUri("/v3/{project_id}/jobs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -81,7 +114,8 @@ public class CloudBuildMeta {
         // basic
         HttpRequestDef.Builder<ShowJobStatusRequest, ShowJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatusRequest.class, ShowJobStatusResponse.class)
-                .withUri("/v3/jobs/{job_id}/status");
+                .withUri("/v3/jobs/{job_id}/status")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",

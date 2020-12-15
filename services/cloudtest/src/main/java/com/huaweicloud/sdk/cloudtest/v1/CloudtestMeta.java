@@ -114,7 +114,8 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<DeleteServiceRequest, DeleteServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceRequest.class, DeleteServiceResponse.class)
-                .withUri("/v1/services/{service_id}");
+                .withUri("/v1/services/{service_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("service_id",
@@ -137,7 +138,8 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<ShowRegisterServiceRequest, ShowRegisterServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRegisterServiceRequest.class, ShowRegisterServiceResponse.class)
-                .withUri("/v1/services");
+                .withUri("/v1/services")
+                .withContentType("application/json");
 
         // requests
 
@@ -280,7 +282,8 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTestCaseDetailRequest.class, ShowTestCaseDetailResponse.class)
-                .withUri("/v1/projects/{project_id}/testcases/{testcase_id}");
+                .withUri("/v1/projects/{project_id}/testcases/{testcase_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -311,7 +314,8 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTestCaseDetailV2Request.class, ShowTestCaseDetailV2Response.class)
-                .withUri("/v1/projects/{project_id}/testcase");
+                .withUri("/v1/projects/{project_id}/testcase")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",

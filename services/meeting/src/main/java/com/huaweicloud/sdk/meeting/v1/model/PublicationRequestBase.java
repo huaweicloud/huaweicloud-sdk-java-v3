@@ -41,13 +41,13 @@ public class PublicationRequestBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deptList")
     
-    private List<String> deptList = null;
+    private List<String> deptList = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deviceList")
     
-    private List<String> deviceList = null;
+    private List<String> deviceList = new ArrayList<>();
     
     public PublicationRequestBase withPublishName(String publishName) {
         this.publishName = publishName;
@@ -116,9 +116,6 @@ public class PublicationRequestBase  {
 
     
     public PublicationRequestBase addDeptListItem(String deptListItem) {
-        if (this.deptList == null) {
-            this.deptList = new ArrayList<>();
-        }
         this.deptList.add(deptListItem);
         return this;
     }
@@ -150,9 +147,6 @@ public class PublicationRequestBase  {
 
     
     public PublicationRequestBase addDeviceListItem(String deviceListItem) {
-        if (this.deviceList == null) {
-            this.deviceList = new ArrayList<>();
-        }
         this.deviceList.add(deviceListItem);
         return this;
     }

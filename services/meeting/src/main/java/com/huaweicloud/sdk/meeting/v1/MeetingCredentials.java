@@ -50,6 +50,13 @@ public class MeetingCredentials implements ICredential {
                 () -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
         }
 
+        // 新增获取页面免登陆跳转nonce信息接口也需上送X-Access-Token头域，但不是用户登陆的token，需用户自己上送
+        // 如果用户自己上送了，则设置用户自带的token， 否则则设置通过用户名密码获取的token
+        if (httpRequest.getPath().startsWith("/v1/usg/acs/auth/portal-ref-nonce") && StringUtils.isNotBlank(token)) {
+            return CompletableFuture.supplyAsync(
+                () -> httpRequest.builder().addHeader("X-Access-Token", this.token).build());
+        }
+
         if (Objects.isNull(userName) || Objects.isNull(userPassword)) {
             throw new SdkException("Input your user name and password");
         }

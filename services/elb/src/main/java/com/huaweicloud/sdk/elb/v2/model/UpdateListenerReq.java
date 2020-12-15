@@ -36,13 +36,13 @@ public class UpdateListenerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="connection_limit")
     
-    private Integer connectionLimit = -1;
+    private Integer connectionLimit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="http2_enable")
     
-    private Boolean http2Enable = false;
+    private Boolean http2Enable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

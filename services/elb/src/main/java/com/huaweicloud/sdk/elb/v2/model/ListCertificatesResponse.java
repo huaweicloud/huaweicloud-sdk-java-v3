@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.elb.v2.model.CertificateResp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,38 +26,45 @@ public class ListCertificatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificates")
     
-    private CertificateResp certificates = null;
-
+    private List<CertificateResp> certificates = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance_num")
     
     private Integer instanceNum;
 
-    public ListCertificatesResponse withCertificates(CertificateResp certificates) {
+    public ListCertificatesResponse withCertificates(List<CertificateResp> certificates) {
         this.certificates = certificates;
         return this;
     }
 
-    public ListCertificatesResponse withCertificates(Consumer<CertificateResp> certificatesSetter) {
-        if(this.certificates == null ){
-            this.certificates = new CertificateResp();
-            certificatesSetter.accept(this.certificates);
+    
+    public ListCertificatesResponse addCertificatesItem(CertificateResp certificatesItem) {
+        if (this.certificates == null) {
+            this.certificates = new ArrayList<>();
         }
-        
+        this.certificates.add(certificatesItem);
         return this;
     }
 
+    public ListCertificatesResponse withCertificates(Consumer<List<CertificateResp>> certificatesSetter) {
+        if(this.certificates == null ){
+            this.certificates = new ArrayList<>();
+        }
+        certificatesSetter.accept(this.certificates);
+        return this;
+    }
 
     /**
-     * Get certificates
+     * SSL证书列表对象
      * @return certificates
      */
-    public CertificateResp getCertificates() {
+    public List<CertificateResp> getCertificates() {
         return certificates;
     }
 
-    public void setCertificates(CertificateResp certificates) {
+    public void setCertificates(List<CertificateResp> certificates) {
         this.certificates = certificates;
     }
 

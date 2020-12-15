@@ -10,10 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.EventItem;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -162,12 +159,6 @@ public class ListEventDetailRequest  {
     
     private Integer limit;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
-    private List<EventItem> body = null;
-    
     public ListEventDetailRequest withEventName(String eventName) {
         this.eventName = eventName;
         return this;
@@ -367,40 +358,6 @@ public class ListEventDetailRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    public ListEventDetailRequest withBody(List<EventItem> body) {
-        this.body = body;
-        return this;
-    }
-
-    
-    public ListEventDetailRequest addBodyItem(EventItem bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        this.body.add(bodyItem);
-        return this;
-    }
-
-    public ListEventDetailRequest withBody(Consumer<List<EventItem>> bodySetter) {
-        if(this.body == null ){
-            this.body = new ArrayList<>();
-        }
-        bodySetter.accept(this.body);
-        return this;
-    }
-
-    /**
-     * 上报自定义事件。请求参数。
-     * @return body
-     */
-    public List<EventItem> getBody() {
-        return body;
-    }
-
-    public void setBody(List<EventItem> body) {
-        this.body = body;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -419,12 +376,11 @@ public class ListEventDetailRequest  {
             Objects.equals(this.from, listEventDetailRequest.from) &&
             Objects.equals(this.to, listEventDetailRequest.to) &&
             Objects.equals(this.start, listEventDetailRequest.start) &&
-            Objects.equals(this.limit, listEventDetailRequest.limit) &&
-            Objects.equals(this.body, listEventDetailRequest.body);
+            Objects.equals(this.limit, listEventDetailRequest.limit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(eventName, eventType, eventSource, eventLevel, eventUser, eventState, from, to, start, limit, body);
+        return Objects.hash(eventName, eventType, eventSource, eventLevel, eventUser, eventState, from, to, start, limit);
     }
     @Override
     public String toString() {
@@ -440,7 +396,6 @@ public class ListEventDetailRequest  {
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

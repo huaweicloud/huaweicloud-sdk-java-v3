@@ -48,6 +48,12 @@ public class AddUserDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="thirdAccount")
+    
+    private String thirdAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="phone")
     
     private String phone;
@@ -280,6 +286,26 @@ public class AddUserDTO  {
 
     public void setAccount(String account) {
         this.account = account;
+    }
+
+    public AddUserDTO withThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指定第三方账号开户
+     * @return thirdAccount
+     */
+    public String getThirdAccount() {
+        return thirdAccount;
+    }
+
+    public void setThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
     }
 
     public AddUserDTO withPhone(String phone) {
@@ -561,6 +587,7 @@ public class AddUserDTO  {
             Objects.equals(this.name, addUserDTO.name) &&
             Objects.equals(this.englishName, addUserDTO.englishName) &&
             Objects.equals(this.account, addUserDTO.account) &&
+            Objects.equals(this.thirdAccount, addUserDTO.thirdAccount) &&
             Objects.equals(this.phone, addUserDTO.phone) &&
             Objects.equals(this.country, addUserDTO.country) &&
             Objects.equals(this.pwd, addUserDTO.pwd) &&
@@ -577,7 +604,7 @@ public class AddUserDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, englishName, account, phone, country, pwd, email, deptCode, signature, title, desc, status, function, sendNotify, sortLevel, hidePhone);
+        return Objects.hash(id, name, englishName, account, thirdAccount, phone, country, pwd, email, deptCode, signature, title, desc, status, function, sendNotify, sortLevel, hidePhone);
     }
     @Override
     public String toString() {
@@ -587,6 +614,7 @@ public class AddUserDTO  {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    englishName: ").append(toIndentedString(englishName)).append("\n");
         sb.append("    account: ").append(toIndentedString(account)).append("\n");
+        sb.append("    thirdAccount: ").append(toIndentedString(thirdAccount)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    pwd: ").append(toIndentedString(pwd)).append("\n");

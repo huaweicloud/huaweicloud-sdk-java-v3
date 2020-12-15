@@ -35,6 +35,12 @@ public class ShowCorpAdminRequest  {
     
     private String account;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="accountType")
+    
+    private Integer accountType;
+
     public ShowCorpAdminRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -96,6 +102,28 @@ public class ShowCorpAdminRequest  {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    public ShowCorpAdminRequest withAccountType(Integer accountType) {
+        this.accountType = accountType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get accountType
+     * minimum: 0
+     * maximum: 1
+     * @return accountType
+     */
+    public Integer getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(Integer accountType) {
+        this.accountType = accountType;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -107,11 +135,12 @@ public class ShowCorpAdminRequest  {
         ShowCorpAdminRequest showCorpAdminRequest = (ShowCorpAdminRequest) o;
         return Objects.equals(this.xRequestId, showCorpAdminRequest.xRequestId) &&
             Objects.equals(this.acceptLanguage, showCorpAdminRequest.acceptLanguage) &&
-            Objects.equals(this.account, showCorpAdminRequest.account);
+            Objects.equals(this.account, showCorpAdminRequest.account) &&
+            Objects.equals(this.accountType, showCorpAdminRequest.accountType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, account);
+        return Objects.hash(xRequestId, acceptLanguage, account, accountType);
     }
     @Override
     public String toString() {
@@ -120,6 +149,7 @@ public class ShowCorpAdminRequest  {
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
         sb.append("    account: ").append(toIndentedString(account)).append("\n");
+        sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

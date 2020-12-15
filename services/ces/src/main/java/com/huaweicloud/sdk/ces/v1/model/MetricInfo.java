@@ -22,10 +22,10 @@ public class MetricInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
+    @JsonProperty(value="namespace")
     
-    private List<MetricsDimension> dimensions = new ArrayList<>();
-    
+    private String namespace;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metric_name")
@@ -34,9 +34,49 @@ public class MetricInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
+    @JsonProperty(value="dimensions")
     
-    private String namespace;
+    private List<MetricsDimension> dimensions = new ArrayList<>();
+    
+    public MetricInfo withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 服务指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符总长度最短为3，最大为32。说明： 当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为空；如：弹性云服务器的命名空间为SYS.ECS，文档数据库的命名空间为SYS.DDS，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public MetricInfo withMetricName(String metricName) {
+        this.metricName = metricName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * @return metricName
+     */
+    public String getMetricName() {
+        return metricName;
+    }
+
+    public void setMetricName(String metricName) {
+        this.metricName = metricName;
+    }
 
     public MetricInfo withDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
@@ -58,7 +98,7 @@ public class MetricInfo  {
     }
 
     /**
-     * 指标维度
+     * 指标维度，目前最大可添加4个维度。
      * @return dimensions
      */
     public List<MetricsDimension> getDimensions() {
@@ -67,46 +107,6 @@ public class MetricInfo  {
 
     public void setDimensions(List<MetricsDimension> dimensions) {
         this.dimensions = dimensions;
-    }
-
-    public MetricInfo withMetricName(String metricName) {
-        this.metricName = metricName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，长度最短为1，最大为64。  具体指标名请参见查询指标列表中查询出的指标名。
-     * @return metricName
-     */
-    public String getMetricName() {
-        return metricName;
-    }
-
-    public void setMetricName(String metricName) {
-        this.metricName = metricName;
-    }
-
-    public MetricInfo withNamespace(String namespace) {
-        this.namespace = namespace;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指标命名空间，，例如弹性云服务器命名空间。格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32。说明： 当alarm_type为（EVENT.SYS| EVENT.CUSTOM）时允许为空。
-     * @return namespace
-     */
-    public String getNamespace() {
-        return namespace;
-    }
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -117,21 +117,21 @@ public class MetricInfo  {
             return false;
         }
         MetricInfo metricInfo = (MetricInfo) o;
-        return Objects.equals(this.dimensions, metricInfo.dimensions) &&
+        return Objects.equals(this.namespace, metricInfo.namespace) &&
             Objects.equals(this.metricName, metricInfo.metricName) &&
-            Objects.equals(this.namespace, metricInfo.namespace);
+            Objects.equals(this.dimensions, metricInfo.dimensions);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(dimensions, metricName, namespace);
+        return Objects.hash(namespace, metricName, dimensions);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetricInfo {\n");
-        sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
-        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
+        sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

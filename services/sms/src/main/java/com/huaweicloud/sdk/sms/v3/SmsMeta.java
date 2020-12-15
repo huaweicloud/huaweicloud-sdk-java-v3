@@ -99,7 +99,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteMigprojectRequest, DeleteMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMigprojectRequest.class, DeleteMigprojectResponse.class)
-                .withUri("/v3/migprojects/{mig_project_id}");
+                .withUri("/v3/migprojects/{mig_project_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("mig_project_id",
@@ -122,7 +123,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServerRequest, DeleteServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerRequest.class, DeleteServerResponse.class)
-                .withUri("/v3/sources/{source_id}");
+                .withUri("/v3/sources/{source_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("source_id",
@@ -169,7 +171,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
-                .withUri("/v3/tasks/{task_id}");
+                .withUri("/v3/tasks/{task_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -216,7 +219,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
-                .withUri("/v3/vm/templates/{id}");
+                .withUri("/v3/vm/templates/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -263,7 +267,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListErrorServersRequest, ListErrorServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListErrorServersRequest.class, ListErrorServersResponse.class)
-                .withUri("/v3/errors");
+                .withUri("/v3/errors")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -302,7 +307,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListMigprojectsRequest, ListMigprojectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMigprojectsRequest.class, ListMigprojectsResponse.class)
-                .withUri("/v3/migprojects");
+                .withUri("/v3/migprojects")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("limit",
@@ -333,7 +339,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListServersRequest, ListServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServersRequest.class, ListServersResponse.class)
-                .withUri("/v3/sources");
+                .withUri("/v3/sources")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -420,7 +427,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
-                .withUri("/v3/tasks");
+                .withUri("/v3/tasks")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("state",
@@ -507,7 +515,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowMigprojectRequest, ShowMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMigprojectRequest.class, ShowMigprojectResponse.class)
-                .withUri("/v3/migprojects/{mig_project_id}");
+                .withUri("/v3/migprojects/{mig_project_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("mig_project_id",
@@ -530,7 +539,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerRequest, ShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerRequest.class, ShowServerResponse.class)
-                .withUri("/v3/sources/{source_id}");
+                .withUri("/v3/sources/{source_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("source_id",
@@ -553,7 +563,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
-                .withUri("/v3/tasks/{task_id}");
+                .withUri("/v3/tasks/{task_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -576,7 +587,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateRequest, ShowTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateRequest.class, ShowTemplateResponse.class)
-                .withUri("/v3/vm/templates/{id}");
+                .withUri("/v3/vm/templates/{id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("id",
@@ -599,7 +611,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplatesRequest, ShowTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplatesRequest.class, ShowTemplatesResponse.class)
-                .withUri("/v3/vm/templates");
+                .withUri("/v3/vm/templates")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("name",
@@ -654,7 +667,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowsSpeedLimitsRequest.class, ShowsSpeedLimitsResponse.class)
-                .withUri("/v3/tasks/{task_id}/speed-limit");
+                .withUri("/v3/tasks/{task_id}/speed-limit")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("task_id",
@@ -686,7 +700,8 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDefaultMigprojectRequest.class, UpdateDefaultMigprojectResponse.class)
-                .withUri("/v3/migprojects/{mig_project_id}/default");
+                .withUri("/v3/migprojects/{mig_project_id}/default")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("mig_project_id",

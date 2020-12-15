@@ -28,7 +28,7 @@ public class Pool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -100,7 +100,7 @@ public class Pool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ip_version")
     
-    private String ipVersion = "dualstack";
+    private String ipVersion;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,7 +112,7 @@ public class Pool  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="member_deletion_protection_enable")
     
-    private Boolean memberDeletionProtectionEnable = false;
+    private Boolean memberDeletionProtectionEnable;
 
     public Pool withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;

@@ -21,13 +21,13 @@ public class SlowStart  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enable")
     
-    private Boolean enable = false;
+    private Boolean enable;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    private Integer duration = 30;
+    private Integer duration;
 
     public SlowStart withEnable(Boolean enable) {
         this.enable = enable;

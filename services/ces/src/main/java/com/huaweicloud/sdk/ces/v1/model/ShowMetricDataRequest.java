@@ -23,6 +23,18 @@ public class ShowMetricDataRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="namespace")
+    
+    private String namespace;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="metric_name")
+    
+    private String metricName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dim.0")
     
     private String dim0;
@@ -38,6 +50,12 @@ public class ShowMetricDataRequest  {
     @JsonProperty(value="dim.2")
     
     private String dim2;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dim.3")
+    
+    private String dim3;
     /**
      * Gets or Sets filter
      */
@@ -143,33 +161,61 @@ public class ShowMetricDataRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="from")
-    
-    private Long from;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_name")
-    
-    private String metricName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
-    private String namespace;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="period")
     
     private Integer period;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="from")
+    
+    private Long from;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="to")
     
     private Long to;
+
+    public ShowMetricDataRequest withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get namespace
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public ShowMetricDataRequest withMetricName(String metricName) {
+        this.metricName = metricName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get metricName
+     * @return metricName
+     */
+    public String getMetricName() {
+        return metricName;
+    }
+
+    public void setMetricName(String metricName) {
+        this.metricName = metricName;
+    }
 
     public ShowMetricDataRequest withDim0(String dim0) {
         this.dim0 = dim0;
@@ -231,6 +277,26 @@ public class ShowMetricDataRequest  {
         this.dim2 = dim2;
     }
 
+    public ShowMetricDataRequest withDim3(String dim3) {
+        this.dim3 = dim3;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get dim3
+     * @return dim3
+     */
+    public String getDim3() {
+        return dim3;
+    }
+
+    public void setDim3(String dim3) {
+        this.dim3 = dim3;
+    }
+
     public ShowMetricDataRequest withFilter(FilterEnum filter) {
         this.filter = filter;
         return this;
@@ -251,66 +317,6 @@ public class ShowMetricDataRequest  {
         this.filter = filter;
     }
 
-    public ShowMetricDataRequest withFrom(Long from) {
-        this.from = from;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get from
-     * @return from
-     */
-    public Long getFrom() {
-        return from;
-    }
-
-    public void setFrom(Long from) {
-        this.from = from;
-    }
-
-    public ShowMetricDataRequest withMetricName(String metricName) {
-        this.metricName = metricName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get metricName
-     * @return metricName
-     */
-    public String getMetricName() {
-        return metricName;
-    }
-
-    public void setMetricName(String metricName) {
-        this.metricName = metricName;
-    }
-
-    public ShowMetricDataRequest withNamespace(String namespace) {
-        this.namespace = namespace;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get namespace
-     * @return namespace
-     */
-    public String getNamespace() {
-        return namespace;
-    }
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
-
     public ShowMetricDataRequest withPeriod(Integer period) {
         this.period = period;
         return this;
@@ -329,6 +335,26 @@ public class ShowMetricDataRequest  {
 
     public void setPeriod(Integer period) {
         this.period = period;
+    }
+
+    public ShowMetricDataRequest withFrom(Long from) {
+        this.from = from;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get from
+     * @return from
+     */
+    public Long getFrom() {
+        return from;
+    }
+
+    public void setFrom(Long from) {
+        this.from = from;
     }
 
     public ShowMetricDataRequest withTo(Long to) {
@@ -359,32 +385,34 @@ public class ShowMetricDataRequest  {
             return false;
         }
         ShowMetricDataRequest showMetricDataRequest = (ShowMetricDataRequest) o;
-        return Objects.equals(this.dim0, showMetricDataRequest.dim0) &&
+        return Objects.equals(this.namespace, showMetricDataRequest.namespace) &&
+            Objects.equals(this.metricName, showMetricDataRequest.metricName) &&
+            Objects.equals(this.dim0, showMetricDataRequest.dim0) &&
             Objects.equals(this.dim1, showMetricDataRequest.dim1) &&
             Objects.equals(this.dim2, showMetricDataRequest.dim2) &&
+            Objects.equals(this.dim3, showMetricDataRequest.dim3) &&
             Objects.equals(this.filter, showMetricDataRequest.filter) &&
-            Objects.equals(this.from, showMetricDataRequest.from) &&
-            Objects.equals(this.metricName, showMetricDataRequest.metricName) &&
-            Objects.equals(this.namespace, showMetricDataRequest.namespace) &&
             Objects.equals(this.period, showMetricDataRequest.period) &&
+            Objects.equals(this.from, showMetricDataRequest.from) &&
             Objects.equals(this.to, showMetricDataRequest.to);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(dim0, dim1, dim2, filter, from, metricName, namespace, period, to);
+        return Objects.hash(namespace, metricName, dim0, dim1, dim2, dim3, filter, period, from, to);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMetricDataRequest {\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
         sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
         sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
+        sb.append("    dim3: ").append(toIndentedString(dim3)).append("\n");
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
-        sb.append("    from: ").append(toIndentedString(from)).append("\n");
-        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
-        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("}");
         return sb.toString();

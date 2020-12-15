@@ -51,7 +51,7 @@ public class CreateCertificateRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="admin_state_up")
     
-    private Boolean adminStateUp = true;
+    private Boolean adminStateUp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class CreateCertificateRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
-    private String enterpriseProjectId = "0";
+    private String enterpriseProjectId;
 
     public CreateCertificateRequestBody withCertificate(String certificate) {
         this.certificate = certificate;

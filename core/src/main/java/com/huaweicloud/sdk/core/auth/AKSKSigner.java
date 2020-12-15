@@ -228,6 +228,9 @@ public class AKSKSigner {
                     builder.append("&");
                 }
             }
+            if (pair.getValue().size() == 0) {
+                builder.append(pair.getKey());
+            }
             if (itr.hasNext()) {
                 builder.append("&");
             }

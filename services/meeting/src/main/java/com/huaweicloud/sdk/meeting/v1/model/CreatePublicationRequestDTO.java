@@ -42,13 +42,13 @@ public class CreatePublicationRequestDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deptList")
     
-    private List<String> deptList = null;
+    private List<String> deptList = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deviceList")
     
-    private List<String> deviceList = null;
+    private List<String> deviceList = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,9 +123,6 @@ public class CreatePublicationRequestDTO  {
 
     
     public CreatePublicationRequestDTO addDeptListItem(String deptListItem) {
-        if (this.deptList == null) {
-            this.deptList = new ArrayList<>();
-        }
         this.deptList.add(deptListItem);
         return this;
     }
@@ -157,9 +154,6 @@ public class CreatePublicationRequestDTO  {
 
     
     public CreatePublicationRequestDTO addDeviceListItem(String deviceListItem) {
-        if (this.deviceList == null) {
-            this.deviceList = new ArrayList<>();
-        }
         this.deviceList.add(deviceListItem);
         return this;
     }

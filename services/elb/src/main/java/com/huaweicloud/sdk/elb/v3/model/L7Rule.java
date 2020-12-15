@@ -63,7 +63,7 @@ public class L7Rule  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invert")
     
-    private Boolean invert = false;
+    private Boolean invert;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

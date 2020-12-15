@@ -114,7 +114,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CinderListAvailabilityZonesRequest.class, CinderListAvailabilityZonesResponse.class)
-                .withUri("/v2/{project_id}/os-availability-zone");
+                .withUri("/v2/{project_id}/os-availability-zone")
+                .withContentType("application/json");
 
         // requests
 
@@ -129,7 +130,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CinderListQuotasRequest, CinderListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CinderListQuotasRequest.class, CinderListQuotasResponse.class)
-                .withUri("/v2/{project_id}/os-quota-sets/{target_project_id}");
+                .withUri("/v2/{project_id}/os-quota-sets/{target_project_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("target_project_id",
@@ -160,7 +162,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CinderListVolumeTypesRequest.class, CinderListVolumeTypesResponse.class)
-                .withUri("/v2/{project_id}/types");
+                .withUri("/v2/{project_id}/types")
+                .withContentType("application/json");
 
         // requests
 
@@ -223,7 +226,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<DeleteSnapshotRequest, DeleteSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSnapshotRequest.class, DeleteSnapshotResponse.class)
-                .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}");
+                .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("snapshot_id",
@@ -246,7 +250,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<DeleteVolumeRequest, DeleteVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVolumeRequest.class, DeleteVolumeResponse.class)
-                .withUri("/v2/{project_id}/cloudvolumes/{volume_id}");
+                .withUri("/v2/{project_id}/cloudvolumes/{volume_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("volume_id",
@@ -269,7 +274,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ListSnapshotsRequest, ListSnapshotsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotsRequest.class, ListSnapshotsResponse.class)
-                .withUri("/v2/{project_id}/cloudsnapshots/detail");
+                .withUri("/v2/{project_id}/cloudsnapshots/detail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -372,7 +378,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ListVolumeTagsRequest, ListVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumeTagsRequest.class, ListVolumeTagsResponse.class)
-                .withUri("/v2/{project_id}/cloudvolumes/tags");
+                .withUri("/v2/{project_id}/cloudvolumes/tags")
+                .withContentType("application/json");
 
         // requests
 
@@ -387,7 +394,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ListVolumesRequest, ListVolumesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumesRequest.class, ListVolumesResponse.class)
-                .withUri("/v2/{project_id}/cloudvolumes/detail");
+                .withUri("/v2/{project_id}/cloudvolumes/detail")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("marker",
@@ -626,7 +634,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
-                .withUri("/v1/{project_id}/jobs/{job_id}");
+                .withUri("/v1/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",
@@ -649,7 +658,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowSnapshotRequest, ShowSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSnapshotRequest.class, ShowSnapshotResponse.class)
-                .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}");
+                .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("snapshot_id",
@@ -672,7 +682,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowVolumeRequest, ShowVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVolumeRequest.class, ShowVolumeResponse.class)
-                .withUri("/v2/{project_id}/cloudvolumes/{volume_id}");
+                .withUri("/v2/{project_id}/cloudvolumes/{volume_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("volume_id",
@@ -695,7 +706,8 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowVolumeTagsRequest, ShowVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVolumeTagsRequest.class, ShowVolumeTagsResponse.class)
-                .withUri("/v2/{project_id}/cloudvolumes/{volume_id}/tags");
+                .withUri("/v2/{project_id}/cloudvolumes/{volume_id}/tags")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("volume_id",

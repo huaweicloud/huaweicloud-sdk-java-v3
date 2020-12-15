@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.meeting.v1.model.CorpBasicInfoDTO;
+import com.huaweicloud.sdk.meeting.v1.model.QueryDeviceInfoResultDTO;
 import com.huaweicloud.sdk.meeting.v1.model.UserFunctionDTO;
 import com.huaweicloud.sdk.meeting.v1.model.UserVmrDTO;
 import java.util.ArrayList;
@@ -140,6 +141,12 @@ public class ShowUserDetailResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="devType")
+    
+    private QueryDeviceInfoResultDTO devType = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
     private Integer status;
@@ -155,6 +162,30 @@ public class ShowUserDetailResponse extends SdkResponse {
     @JsonProperty(value="hidePhone")
     
     private Boolean hidePhone;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="visionAccount")
+    
+    private String visionAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="thirdAccount")
+    
+    private String thirdAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="license")
+    
+    private Integer license;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="activeTime")
+    
+    private Long activeTime;
 
     public ShowUserDetailResponse withId(String id) {
         this.id = id;
@@ -564,6 +595,33 @@ public class ShowUserDetailResponse extends SdkResponse {
         this.function = function;
     }
 
+    public ShowUserDetailResponse withDevType(QueryDeviceInfoResultDTO devType) {
+        this.devType = devType;
+        return this;
+    }
+
+    public ShowUserDetailResponse withDevType(Consumer<QueryDeviceInfoResultDTO> devTypeSetter) {
+        if(this.devType == null ){
+            this.devType = new QueryDeviceInfoResultDTO();
+            devTypeSetter.accept(this.devType);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get devType
+     * @return devType
+     */
+    public QueryDeviceInfoResultDTO getDevType() {
+        return devType;
+    }
+
+    public void setDevType(QueryDeviceInfoResultDTO devType) {
+        this.devType = devType;
+    }
+
     public ShowUserDetailResponse withStatus(Integer status) {
         this.status = status;
         return this;
@@ -623,6 +681,86 @@ public class ShowUserDetailResponse extends SdkResponse {
     public void setHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
     }
+
+    public ShowUserDetailResponse withVisionAccount(String visionAccount) {
+        this.visionAccount = visionAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 智慧屏唯一账号
+     * @return visionAccount
+     */
+    public String getVisionAccount() {
+        return visionAccount;
+    }
+
+    public void setVisionAccount(String visionAccount) {
+        this.visionAccount = visionAccount;
+    }
+
+    public ShowUserDetailResponse withThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 第三方账号，自动开户的第三方账号、Ideahub账号的sn等
+     * @return thirdAccount
+     */
+    public String getThirdAccount() {
+        return thirdAccount;
+    }
+
+    public void setThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
+    }
+
+    public ShowUserDetailResponse withLicense(Integer license) {
+        this.license = license;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 许可证 * 0：商用； * 1：免费试用。 
+     * @return license
+     */
+    public Integer getLicense() {
+        return license;
+    }
+
+    public void setLicense(Integer license) {
+        this.license = license;
+    }
+
+    public ShowUserDetailResponse withActiveTime(Long activeTime) {
+        this.activeTime = activeTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 激活时间，utc时间戳
+     * @return activeTime
+     */
+    public Long getActiveTime() {
+        return activeTime;
+    }
+
+    public void setActiveTime(Long activeTime) {
+        this.activeTime = activeTime;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -651,13 +789,18 @@ public class ShowUserDetailResponse extends SdkResponse {
             Objects.equals(this.desc, showUserDetailResponse.desc) &&
             Objects.equals(this.corp, showUserDetailResponse.corp) &&
             Objects.equals(this.function, showUserDetailResponse.function) &&
+            Objects.equals(this.devType, showUserDetailResponse.devType) &&
             Objects.equals(this.status, showUserDetailResponse.status) &&
             Objects.equals(this.sortLevel, showUserDetailResponse.sortLevel) &&
-            Objects.equals(this.hidePhone, showUserDetailResponse.hidePhone);
+            Objects.equals(this.hidePhone, showUserDetailResponse.hidePhone) &&
+            Objects.equals(this.visionAccount, showUserDetailResponse.visionAccount) &&
+            Objects.equals(this.thirdAccount, showUserDetailResponse.thirdAccount) &&
+            Objects.equals(this.license, showUserDetailResponse.license) &&
+            Objects.equals(this.activeTime, showUserDetailResponse.activeTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, userAccount, name, englishName, phone, country, email, sipNum, vmrList, deptCode, deptName, deptNamePath, userType, adminType, signature, title, desc, corp, function, status, sortLevel, hidePhone);
+        return Objects.hash(id, userAccount, name, englishName, phone, country, email, sipNum, vmrList, deptCode, deptName, deptNamePath, userType, adminType, signature, title, desc, corp, function, devType, status, sortLevel, hidePhone, visionAccount, thirdAccount, license, activeTime);
     }
     @Override
     public String toString() {
@@ -682,9 +825,14 @@ public class ShowUserDetailResponse extends SdkResponse {
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    corp: ").append(toIndentedString(corp)).append("\n");
         sb.append("    function: ").append(toIndentedString(function)).append("\n");
+        sb.append("    devType: ").append(toIndentedString(devType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    sortLevel: ").append(toIndentedString(sortLevel)).append("\n");
         sb.append("    hidePhone: ").append(toIndentedString(hidePhone)).append("\n");
+        sb.append("    visionAccount: ").append(toIndentedString(visionAccount)).append("\n");
+        sb.append("    thirdAccount: ").append(toIndentedString(thirdAccount)).append("\n");
+        sb.append("    license: ").append(toIndentedString(license)).append("\n");
+        sb.append("    activeTime: ").append(toIndentedString(activeTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

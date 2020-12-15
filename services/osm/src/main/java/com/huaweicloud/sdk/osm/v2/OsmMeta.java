@@ -74,7 +74,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CheckNeedVerifyRequest, CheckNeedVerifyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckNeedVerifyRequest.class, CheckNeedVerifyResponse.class)
-                .withUri("/v2/servicerequest/verifycodes/need-verify");
+                .withUri("/v2/servicerequest/verifycodes/need-verify")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("contact_value",
@@ -297,7 +298,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreateCaseLabelsRequest, CreateCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCaseLabelsRequest.class, CreateCaseLabelsResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/labels");
+                .withUri("/v2/servicerequest/cases/{case_id}/labels")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -680,7 +682,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteAccessoriesRequest, DeleteAccessoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessoriesRequest.class, DeleteAccessoriesResponse.class)
-                .withUri("/v2/servicerequest/accessorys/{accessory_id}");
+                .withUri("/v2/servicerequest/accessorys/{accessory_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("accessory_id",
@@ -727,7 +730,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCaseLabelsRequest.class, DeleteCaseLabelsResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/labels");
+                .withUri("/v2/servicerequest/cases/{case_id}/labels")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -782,7 +786,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteLabelsRequest, DeleteLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLabelsRequest.class, DeleteLabelsResponse.class)
-                .withUri("/v2/servicerequest/labels/{label_id}");
+                .withUri("/v2/servicerequest/labels/{label_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("label_id",
@@ -885,7 +890,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DownloadAccessoriesRequest, DownloadAccessoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadAccessoriesRequest.class, DownloadAccessoriesResponse.class)
-                .withUri("/v2/servicerequest/accessorys/{accessory_id}");
+                .withUri("/v2/servicerequest/accessorys/{accessory_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("accessory_id",
@@ -940,7 +946,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DownloadCasesRequest, DownloadCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadCasesRequest.class, DownloadCasesResponse.class)
-                .withUri("/v2/servicerequest/cases/export");
+                .withUri("/v2/servicerequest/cases/export")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("language",
@@ -1083,7 +1090,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DownloadImagesRequest, DownloadImagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadImagesRequest.class, DownloadImagesResponse.class)
-                .withUri("/v2/servicerequest/accessorys/{accessory_id}/image");
+                .withUri("/v2/servicerequest/accessorys/{accessory_id}/image")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("accessory_id",
@@ -1138,7 +1146,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
-                .withUri("/v2/servicerequest/agencies");
+                .withUri("/v2/servicerequest/agencies")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -1177,7 +1186,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAreaCodesRequest, ListAreaCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAreaCodesRequest.class, ListAreaCodesResponse.class)
-                .withUri("/v2/servicerequest/config/area-codes");
+                .withUri("/v2/servicerequest/config/area-codes")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -1216,7 +1226,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAuthorizationsRequest, ListAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorizationsRequest.class, ListAuthorizationsResponse.class)
-                .withUri("/v2/servicerequest/authorizations");
+                .withUri("/v2/servicerequest/authorizations")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("sub_customer_name",
@@ -1311,7 +1322,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseCCEmailsRequest, ListCaseCCEmailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCCEmailsRequest.class, ListCaseCCEmailsResponse.class)
-                .withUri("/v2/servicerequest/carbon-copy-emails");
+                .withUri("/v2/servicerequest/carbon-copy-emails")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -1350,7 +1362,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseCategoriesRequest, ListCaseCategoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCategoriesRequest.class, ListCaseCategoriesResponse.class)
-                .withUri("/v2/servicerequest/config/categories");
+                .withUri("/v2/servicerequest/config/categories")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -1389,7 +1402,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseCountsRequest, ListCaseCountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCountsRequest.class, ListCaseCountsResponse.class)
-                .withUri("/v2/servicerequest/cases/count");
+                .withUri("/v2/servicerequest/cases/count")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("status",
@@ -1436,7 +1450,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseLabelsRequest, ListCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseLabelsRequest.class, ListCaseLabelsResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/labels");
+                .withUri("/v2/servicerequest/cases/{case_id}/labels")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -1483,7 +1498,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseLimitsRequest, ListCaseLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseLimitsRequest.class, ListCaseLimitsResponse.class)
-                .withUri("/v2/servicerequest/config/limits");
+                .withUri("/v2/servicerequest/config/limits")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -1522,7 +1538,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseOperateLogsRequest.class, ListCaseOperateLogsResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/operate-logs");
+                .withUri("/v2/servicerequest/cases/{case_id}/operate-logs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -1593,7 +1610,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseQuotasRequest, ListCaseQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseQuotasRequest.class, ListCaseQuotasResponse.class)
-                .withUri("/v2/servicerequest/quotas");
+                .withUri("/v2/servicerequest/quotas")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("product_category_id",
@@ -1648,7 +1666,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseTemplatesRequest, ListCaseTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseTemplatesRequest.class, ListCaseTemplatesResponse.class)
-                .withUri("/v2/servicerequest/config/templates");
+                .withUri("/v2/servicerequest/config/templates")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("business_type_id",
@@ -1695,7 +1714,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCasesRequest, ListCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCasesRequest.class, ListCasesResponse.class)
-                .withUri("/v2/servicerequest/cases");
+                .withUri("/v2/servicerequest/cases")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("search_key",
@@ -1838,7 +1858,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListExtendsParamsRequest, ListExtendsParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExtendsParamsRequest.class, ListExtendsParamsResponse.class)
-                .withUri("/v2/servicerequest/config/extends-map");
+                .withUri("/v2/servicerequest/config/extends-map")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("business_type_id",
@@ -1901,7 +1922,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHasVerifiedContactsRequest.class, ListHasVerifiedContactsResponse.class)
-                .withUri("/v2/servicerequest/verifycodes/has-verified");
+                .withUri("/v2/servicerequest/verifycodes/has-verified")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("contact_way",
@@ -2012,7 +2034,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistoryOperateLogsRequest.class, ListHistoryOperateLogsResponse.class)
-                .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/sessions/{session_id}/operation-logs");
+                .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/sessions/{session_id}/operation-logs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("authorization_id",
@@ -2107,7 +2130,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListHistorySessionsRequest, ListHistorySessionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistorySessionsRequest.class, ListHistorySessionsResponse.class)
-                .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/history-sessions");
+                .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/history-sessions")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("authorization_id",
@@ -2186,7 +2210,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListLabelsRequest, ListLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLabelsRequest.class, ListLabelsResponse.class)
-                .withUri("/v2/servicerequest/labels");
+                .withUri("/v2/servicerequest/labels")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -2257,7 +2282,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListMessagesRequest, ListMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessagesRequest.class, ListMessagesResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/messages");
+                .withUri("/v2/servicerequest/cases/{case_id}/messages")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -2328,7 +2354,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMoreInstantMessagesRequest.class, ListMoreInstantMessagesResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/instant-messages/more");
+                .withUri("/v2/servicerequest/cases/{case_id}/instant-messages/more")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -2407,7 +2434,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNewInstantMessagesRequest.class, ListNewInstantMessagesResponse.class)
-                .withUri("/v2/servicerequest/cases/instant-messages");
+                .withUri("/v2/servicerequest/cases/instant-messages")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_ids",
@@ -2470,7 +2498,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListPrivilegesRequest, ListPrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivilegesRequest.class, ListPrivilegesResponse.class)
-                .withUri("/v2/servicerequest/privileges");
+                .withUri("/v2/servicerequest/privileges")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("privilege",
@@ -2517,7 +2546,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListProblemTypesRequest, ListProblemTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProblemTypesRequest.class, ListProblemTypesResponse.class)
-                .withUri("/v2/servicerequest/config/problems");
+                .withUri("/v2/servicerequest/config/problems")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("product_category_id",
@@ -2564,7 +2594,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListProductCategoriesRequest, ListProductCategoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductCategoriesRequest.class, ListProductCategoriesResponse.class)
-                .withUri("/v2/servicerequest/config/product-categories");
+                .withUri("/v2/servicerequest/config/product-categories")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("product_category_name",
@@ -2611,7 +2642,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
-                .withUri("/v2/servicerequest/config/regions");
+                .withUri("/v2/servicerequest/config/regions")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -2650,7 +2682,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListRelationRequest, ListRelationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationRequest.class, ListRelationResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/relations");
+                .withUri("/v2/servicerequest/cases/{case_id}/relations")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -2697,7 +2730,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSatisfactionDimensionsRequest.class, ListSatisfactionDimensionsResponse.class)
-                .withUri("/v2/servicerequest/config/satisfaction-dimensions");
+                .withUri("/v2/servicerequest/config/satisfaction-dimensions")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -2736,7 +2770,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListSeveritiesRequest, ListSeveritiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSeveritiesRequest.class, ListSeveritiesResponse.class)
-                .withUri("/v2/servicerequest/config/severities");
+                .withUri("/v2/servicerequest/config/severities")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("product_category_id",
@@ -2791,7 +2826,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListSubCustomersRequest, ListSubCustomersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubCustomersRequest.class, ListSubCustomersResponse.class)
-                .withUri("/v2/servicerequest/customers/sub-customers");
+                .withUri("/v2/servicerequest/customers/sub-customers")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("sub_customer_name",
@@ -2846,7 +2882,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListTransportHistoriesRequest, ListTransportHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTransportHistoriesRequest.class, ListTransportHistoriesResponse.class)
-                .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/sessions/{session_id}/operation-file-logs");
+                .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/sessions/{session_id}/operation-file-logs")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("authorization_id",
@@ -2941,7 +2978,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUnreadNewInstantMessagesRequest.class, ListUnreadNewInstantMessagesResponse.class)
-                .withUri("/v2/servicerequest/cases/instant-messages/unread");
+                .withUri("/v2/servicerequest/cases/instant-messages/unread")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_ids",
@@ -2996,7 +3034,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<SendVerifyCodesRequest, SendVerifyCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SendVerifyCodesRequest.class, SendVerifyCodesResponse.class)
-                .withUri("/v2/servicerequest/verifycodes/");
+                .withUri("/v2/servicerequest/verifycodes/")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("contact_value",
@@ -3059,7 +3098,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccessoryLimitsRequest.class, ShowAccessoryLimitsResponse.class)
-                .withUri("/v2/servicerequest/accessorys/limits");
+                .withUri("/v2/servicerequest/accessorys/limits")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -3098,7 +3138,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuthorizationDetailRequest.class, ShowAuthorizationDetailResponse.class)
-                .withUri("/v2/servicerequest/authorizations/{authorization_id}");
+                .withUri("/v2/servicerequest/authorizations/{authorization_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("authorization_id",
@@ -3153,7 +3194,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowCaseDetailRequest, ShowCaseDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCaseDetailRequest.class, ShowCaseDetailResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}");
+                .withUri("/v2/servicerequest/cases/{case_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -3208,7 +3250,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowCaseStatusRequest, ShowCaseStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCaseStatusRequest.class, ShowCaseStatusResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/status");
+                .withUri("/v2/servicerequest/cases/{case_id}/status")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_id",
@@ -3255,7 +3298,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowPartnersCasesProcessingPrivilegeRequest, ShowPartnersCasesProcessingPrivilegeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartnersCasesProcessingPrivilegeRequest.class, ShowPartnersCasesProcessingPrivilegeResponse.class)
-                .withUri("/v2/servicerequest/cases/partners/privilege/cases-processing");
+                .withUri("/v2/servicerequest/cases/partners/privilege/cases-processing")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("X-Site",
@@ -3294,7 +3338,8 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartnersServiceInfoRequest.class, ShowPartnersServiceInfoResponse.class)
-                .withUri("/v2/servicerequest/cases/partners/service-info");
+                .withUri("/v2/servicerequest/cases/partners/service-info")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("case_sub_type_id",

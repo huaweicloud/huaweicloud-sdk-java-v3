@@ -18,7 +18,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<AddApplyJoinProjectForAgcRequest, AddApplyJoinProjectForAgcResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, AddApplyJoinProjectForAgcRequest.class, AddApplyJoinProjectForAgcResponse.class)
-                .withUri("/v4/projects/{project_id}/members/agc-join");
+                .withUri("/v4/projects/{project_id}/members/agc-join")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -265,7 +266,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<DeleteIterationV4Request, DeleteIterationV4Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteIterationV4Request.class, DeleteIterationV4Response.class)
-                .withUri("/v4/projects/{project_id}/iterations/{iteration_id}");
+                .withUri("/v4/projects/{project_id}/iterations/{iteration_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -296,7 +298,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<DeleteProjectV4Request, DeleteProjectV4Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProjectV4Request.class, DeleteProjectV4Response.class)
-                .withUri("/v4/projects/{project_id}");
+                .withUri("/v4/projects/{project_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -319,7 +322,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListDomainNotAddedProjectsV4Request, ListDomainNotAddedProjectsV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainNotAddedProjectsV4Request.class, ListDomainNotAddedProjectsV4Response.class)
-                .withUri("/v4/projects/domain/not-added");
+                .withUri("/v4/projects/domain/not-added")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -350,7 +354,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListProjectBugStaticsV4Request, ListProjectBugStaticsV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectBugStaticsV4Request.class, ListProjectBugStaticsV4Response.class)
-                .withUri("/v4/projects/{project_id}/bug-statistic");
+                .withUri("/v4/projects/{project_id}/bug-statistic")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -373,7 +378,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListProjectDemandStaticV4Request, ListProjectDemandStaticV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectDemandStaticV4Request.class, ListProjectDemandStaticV4Response.class)
-                .withUri("/v4/projects/{project_id}/demand-statistic");
+                .withUri("/v4/projects/{project_id}/demand-statistic")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -396,7 +402,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListProjectIterationsV4Request, ListProjectIterationsV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectIterationsV4Request.class, ListProjectIterationsV4Response.class)
-                .withUri("/v4/projects/{project_id}/iterations");
+                .withUri("/v4/projects/{project_id}/iterations")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -419,7 +426,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListProjectMembersV4Request, ListProjectMembersV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectMembersV4Request.class, ListProjectMembersV4Response.class)
-                .withUri("/v4/projects/{project_id}/members");
+                .withUri("/v4/projects/{project_id}/members")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -458,7 +466,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListProjectsV4Request, ListProjectsV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectsV4Request.class, ListProjectsV4Response.class)
-                .withUri("/v4/projects");
+                .withUri("/v4/projects")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("offset",
@@ -529,7 +538,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<RemoveProjectRequest, RemoveProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemoveProjectRequest.class, RemoveProjectResponse.class)
-                .withUri("/v4/projects/{project_id}/quit");
+                .withUri("/v4/projects/{project_id}/quit")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -552,7 +562,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ShowCurUserInfoRequest, ShowCurUserInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCurUserInfoRequest.class, ShowCurUserInfoResponse.class)
-                .withUri("/v4/user");
+                .withUri("/v4/user")
+                .withContentType("application/json");
 
         // requests
 
@@ -567,7 +578,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ShowCurUserRoleRequest, ShowCurUserRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCurUserRoleRequest.class, ShowCurUserRoleResponse.class)
-                .withUri("/v4/projects/{project_id}/user-role");
+                .withUri("/v4/projects/{project_id}/user-role")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -590,7 +602,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ShowIterationV4Request, ShowIterationV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIterationV4Request.class, ShowIterationV4Response.class)
-                .withUri("/v4/iterations/{iteration_id}");
+                .withUri("/v4/iterations/{iteration_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("iteration_id",
@@ -613,7 +626,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectSummaryV4Request, ShowProjectSummaryV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectSummaryV4Request.class, ShowProjectSummaryV4Response.class)
-                .withUri("/v4/projects/{project_id}/summary");
+                .withUri("/v4/projects/{project_id}/summary")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -828,7 +842,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<DeleteIssueV4Request, DeleteIssueV4Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteIssueV4Request.class, DeleteIssueV4Response.class)
-                .withUri("/v4/projects/{project_id}/issues/{issue_id}");
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -859,7 +874,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListChildIssuesV4Request, ListChildIssuesV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListChildIssuesV4Request.class, ListChildIssuesV4Response.class)
-                .withUri("/v4/projects/{project_id}/issues/{issue_id}/child");
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/child")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -890,7 +906,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListIssueCommentsV4Request, ListIssueCommentsV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIssueCommentsV4Request.class, ListIssueCommentsV4Response.class)
-                .withUri("/v4/projects/{project_id}/issues/{issue_id}/comments");
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}/comments")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -937,7 +954,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ListIssueRecordsV4Request, ListIssueRecordsV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIssueRecordsV4Request.class, ListIssueRecordsV4Response.class)
-                .withUri("/v4/projects/{project_id}/issue/{issue_id}/records");
+                .withUri("/v4/projects/{project_id}/issue/{issue_id}/records")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -1040,7 +1058,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ShowIssueV4Request, ShowIssueV4Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIssueV4Request.class, ShowIssueV4Response.class)
-                .withUri("/v4/projects/{project_id}/issues/{issue_id}");
+                .withUri("/v4/projects/{project_id}/issues/{issue_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",
@@ -1103,7 +1122,8 @@ public class ProjectManMeta {
         // basic
         HttpRequestDef.Builder<ShowtIssueCompletionRateRequest, ShowtIssueCompletionRateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowtIssueCompletionRateRequest.class, ShowtIssueCompletionRateResponse.class)
-                .withUri("/v4/projects/{project_id}/issue-completion-rate");
+                .withUri("/v4/projects/{project_id}/issue-completion-rate")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("project_id",

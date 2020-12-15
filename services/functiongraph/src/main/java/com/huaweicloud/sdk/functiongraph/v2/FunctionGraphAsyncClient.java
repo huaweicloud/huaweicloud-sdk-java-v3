@@ -31,6 +31,28 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 创建依赖包
+     * 创建依赖包。
+     *
+     * @param CreateDependencyRequest 请求对象
+     * @return CompletableFuture<CreateDependencyResponse>
+     */
+    public CompletableFuture<CreateDependencyResponse> createDependencyAsync(CreateDependencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createDependency);
+    }
+
+    /**
+     * 创建测试事件
+     * 创建测试事件。
+     *
+     * @param CreateEventRequest 请求对象
+     * @return CompletableFuture<CreateEventResponse>
+     */
+    public CompletableFuture<CreateEventResponse> createEventAsync(CreateEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createEvent);
+    }
+
+    /**
      * 创建函数。
      * 创建指定的函数。
      *
@@ -64,6 +86,28 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 删除依赖包
+     * 删除指定的依赖包。
+     *
+     * @param DeleteDependencyRequest 请求对象
+     * @return CompletableFuture<DeleteDependencyResponse>
+     */
+    public CompletableFuture<DeleteDependencyResponse> deleteDependencyAsync(DeleteDependencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteDependency);
+    }
+
+    /**
+     * 删除测试事件
+     * 删除测试事件。
+     *
+     * @param DeleteEventRequest 请求对象
+     * @return CompletableFuture<DeleteEventResponse>
+     */
+    public CompletableFuture<DeleteEventResponse> deleteEventAsync(DeleteEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteEvent);
+    }
+
+    /**
      * 删除函数/版本。
      * 删除指定的函数或者特定的版本（不允许删除latest版本）。  如果URN中包含函数版本或者别名，则删除特定的函数版本或者别名指向的版本以及该版本关联的trigger。 如果URN中不包含版本或者别名，则删除整个函数，包含所有版本以及别名，触发器。
      *
@@ -94,6 +138,28 @@ public class FunctionGraphAsyncClient {
      */
     public CompletableFuture<InvokeFunctionResponse> invokeFunctionAsync(InvokeFunctionRequest request) {
         return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.invokeFunction);
+    }
+
+    /**
+     * 获取依赖包列表
+     * 获取依赖包列表。
+     *
+     * @param ListDependenciesRequest 请求对象
+     * @return CompletableFuture<ListDependenciesResponse>
+     */
+    public CompletableFuture<ListDependenciesResponse> listDependenciesAsync(ListDependenciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listDependencies);
+    }
+
+    /**
+     * 获取测试事件列表
+     * 获取指定函数的测试事件列表。
+     *
+     * @param ListEventsRequest 请求对象
+     * @return CompletableFuture<ListEventsResponse>
+     */
+    public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listEvents);
     }
 
     /**
@@ -163,6 +229,28 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 获取指定依赖包
+     * 获取指定依赖包。
+     *
+     * @param ShowDependencyRequest 请求对象
+     * @return CompletableFuture<ShowDependencyResponse>
+     */
+    public CompletableFuture<ShowDependencyResponse> showDependencyAsync(ShowDependencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showDependency);
+    }
+
+    /**
+     * 获取测试事件详细信息
+     * 获取测试事件详细信息。
+     *
+     * @param ShowEventRequest 请求对象
+     * @return CompletableFuture<ShowEventResponse>
+     */
+    public CompletableFuture<ShowEventResponse> showEventAsync(ShowEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showEvent);
+    }
+
+    /**
      * 获取指定函数代码。
      * 获取指定函数的代码。
      *
@@ -196,6 +284,28 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 更新依赖包指定依赖包
+     * 更新依赖包指定依赖包。
+     *
+     * @param UpdateDependencyRequest 请求对象
+     * @return CompletableFuture<UpdateDependencyResponse>
+     */
+    public CompletableFuture<UpdateDependencyResponse> updateDependencyAsync(UpdateDependencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateDependency);
+    }
+
+    /**
+     * 更新测试事件
+     * 更新测试事件。
+     *
+     * @param UpdateEventRequest 请求对象
+     * @return CompletableFuture<UpdateEventResponse>
+     */
+    public CompletableFuture<UpdateEventResponse> updateEventAsync(UpdateEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateEvent);
+    }
+
+    /**
      * 修改函数代码。
      * 修改指定的函数的代码。
      *
@@ -215,6 +325,17 @@ public class FunctionGraphAsyncClient {
      */
     public CompletableFuture<UpdateFunctionConfigResponse> updateFunctionConfigAsync(UpdateFunctionConfigRequest request) {
         return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateFunctionConfig);
+    }
+
+    /**
+     * 更新函数预留实例个数
+     * 为函数绑定预留实例
+     *
+     * @param UpdateFunctionReservedInstancesRequest 请求对象
+     * @return CompletableFuture<UpdateFunctionReservedInstancesResponse>
+     */
+    public CompletableFuture<UpdateFunctionReservedInstancesResponse> updateFunctionReservedInstancesAsync(UpdateFunctionReservedInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateFunctionReservedInstances);
     }
 
     /**
@@ -241,7 +362,7 @@ public class FunctionGraphAsyncClient {
 
     /**
      * 创建触发器。
-     * 创建触发器。  - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。 - DDS和KAFKA触发器创建时默认为DISABLE状态，其他触发器默认为ACTIVE状态。 - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
+     * 创建触发器。  - 可以创建的触发器类型包括TIMER、APIG、CTS、DDS、DMS、DIS、LTS、OBS、SMN、KAFKA。 - DDS和KAFKA触发器创建时默认为DISABLED状态，其他触发器默认为ACTIVE状态。 - TIMER、DDS、DMS、KAFKA、LTS触发器支持禁用，其他触发器不支持。
      *
      * @param CreateFunctionTriggerRequest 请求对象
      * @return CompletableFuture<CreateFunctionTriggerResponse>

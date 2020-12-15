@@ -18,7 +18,8 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadApplicationCodeRequest.class, DownloadApplicationCodeResponse.class)
-                .withUri("/v1/application-codes");
+                .withUri("/v1/application-codes")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",
@@ -113,7 +114,8 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
-                .withUri("/v1/jobs/{job_id}");
+                .withUri("/v1/jobs/{job_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("job_id",
@@ -144,7 +146,8 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateFileRequest, ShowTemplateFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateFileRequest.class, ShowTemplateFileResponse.class)
-                .withUri("/v1/templates/{template_id}/files");
+                .withUri("/v1/templates/{template_id}/files")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
@@ -223,7 +226,8 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublishedTemplatesRequest.class, ListPublishedTemplatesResponse.class)
-                .withUri("/v1/templates");
+                .withUri("/v1/templates")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("keyword",
@@ -270,7 +274,8 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateViewHistoriesRequest.class, ListTemplateViewHistoriesResponse.class)
-                .withUri("/v1/templates/view-histories");
+                .withUri("/v1/templates/view-histories")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("platform_source",
@@ -341,7 +346,8 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateV3Request, ShowTemplateV3Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateV3Request.class, ShowTemplateV3Response.class)
-                .withUri("/v3/templates/{template_id}");
+                .withUri("/v3/templates/{template_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
@@ -372,7 +378,8 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateDetailRequest, ShowTemplateDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateDetailRequest.class, ShowTemplateDetailResponse.class)
-                .withUri("/v1/templates/{template_id}");
+                .withUri("/v1/templates/{template_id}")
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("template_id",
