@@ -8,10 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 import java.util.function.Consumer;
-import java.util.Objects;
 
 /**
  * PublishMessageRequestBody
@@ -46,8 +45,8 @@ public class PublishMessageRequestBody  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
-    
-    private List<String> tags = null;
+
+    private Map<String,String> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -135,24 +134,26 @@ public class PublishMessageRequestBody  {
         this.messageTemplateName = messageTemplateName;
     }
 
-    public PublishMessageRequestBody withTags(List<String> tags) {
+    public PublishMessageRequestBody withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
-    public PublishMessageRequestBody addTagsItem(String tagsItem) {
+
+    public PublishMessageRequestBody addTagsItem(String tagsItemKey, String tagsItemValue) {
         if (this.tags == null) {
-            this.tags = new ArrayList<>();
+            this.tags = new HashMap<>();
         }
-        this.tags.add(tagsItem);
+
+        this.tags.put(tagsItemKey, tagsItemValue);
         return this;
     }
 
-    public PublishMessageRequestBody withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null ){
-            this.tags = new ArrayList<>();
+    public PublishMessageRequestBody withTags(Consumer<Map<String, String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new HashMap<>();
         }
+
         tagsSetter.accept(this.tags);
         return this;
     }
@@ -161,11 +162,11 @@ public class PublishMessageRequestBody  {
      * tag以及替换tag的参数组成的字典。消息模板中的标签对应的值。使用消息模板方式的消息发布必须携带该参数。
      * @return tags
      */
-    public List<String> getTags() {
+    public Map<String, String> getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
 
