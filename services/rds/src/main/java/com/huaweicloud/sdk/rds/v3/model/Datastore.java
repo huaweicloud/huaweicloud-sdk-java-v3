@@ -21,7 +21,7 @@ import java.util.Objects;
 public class Datastore  {
 
     /**
-     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     * 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer
      */
     public static final class TypeEnum {
 
@@ -126,7 +126,7 @@ public class Datastore  {
 
 
     /**
-     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     * 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer
      * @return type
      */
     public TypeEnum getType() {

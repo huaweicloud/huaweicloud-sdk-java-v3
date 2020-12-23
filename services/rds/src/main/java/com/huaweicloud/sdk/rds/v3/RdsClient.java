@@ -17,6 +17,17 @@ public class RdsClient {
 
 
     /**
+     * 绑定和解绑弹性公网IP
+     * 绑定和解绑弹性公网IP。
+     *
+     * @param AttachEipRequest 请求对象
+     * @return AttachEipResponse
+     */
+    public AttachEipResponse attachEip(AttachEipRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.attachEip);
+    }
+
+    /**
      * 批量添加删除标签
      * 批量添加删除标签。
      *
@@ -25,6 +36,39 @@ public class RdsClient {
      */
     public BatchTagActionResponse batchTagAction(BatchTagActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.batchTagAction);
+    }
+
+    /**
+     * 更改主备实例的同步模式
+     * 更改主备实例的同步模式.
+     *
+     * @param ChangeFailoverModeRequest 请求对象
+     * @return ChangeFailoverModeResponse
+     */
+    public ChangeFailoverModeResponse changeFailoverMode(ChangeFailoverModeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.changeFailoverMode);
+    }
+
+    /**
+     * 切换主备实例的倒换策略
+     * 切换主备实例的倒换策略.
+     *
+     * @param ChangeFailoverStrategyRequest 请求对象
+     * @return ChangeFailoverStrategyResponse
+     */
+    public ChangeFailoverStrategyResponse changeFailoverStrategy(ChangeFailoverStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.changeFailoverStrategy);
+    }
+
+    /**
+     * 设置可维护时间段
+     * 设置可维护时间段
+     *
+     * @param ChangeOpsWindowRequest 请求对象
+     * @return ChangeOpsWindowResponse
+     */
+    public ChangeOpsWindowResponse changeOpsWindow(ChangeOpsWindowRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.changeOpsWindow);
     }
 
     /**
@@ -72,6 +116,17 @@ public class RdsClient {
     }
 
     /**
+     * 删除手动备份
+     * 删除手动备份。
+     *
+     * @param DeleteManualBackupRequest 请求对象
+     * @return DeleteManualBackupResponse
+     */
+    public DeleteManualBackupResponse deleteManualBackup(DeleteManualBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteManualBackup);
+    }
+
+    /**
      * 创建手动备份
      * 创建手动备份。
      *
@@ -80,6 +135,28 @@ public class RdsClient {
      */
     public DoManualBackupResponse doManualBackup(DoManualBackupRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.doManualBackup);
+    }
+
+    /**
+     * 获取日志信息
+     * 获取日志信息
+     *
+     * @param DownloadSlowlogRequest 请求对象
+     * @return DownloadSlowlogResponse
+     */
+    public DownloadSlowlogResponse downloadSlowlog(DownloadSlowlogRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.downloadSlowlog);
+    }
+
+    /**
+     * 应用参数模板
+     * 应用参数模板。
+     *
+     * @param EnableConfigurationRequest 请求对象
+     * @return EnableConfigurationResponse
+     */
+    public EnableConfigurationResponse enableConfiguration(EnableConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.enableConfiguration);
     }
 
     /**
@@ -113,6 +190,17 @@ public class RdsClient {
      */
     public ListCollationsResponse listCollations(ListCollationsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listCollations);
+    }
+
+    /**
+     * 获取参数模板列表
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return ListConfigurationsResponse
+     */
+    public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listConfigurations);
     }
 
     /**
@@ -160,6 +248,50 @@ public class RdsClient {
     }
 
     /**
+     * 获取任务信息
+     * 获取任务信息。
+     *
+     * @param ListJobInfoRequest 请求对象
+     * @return ListJobInfoResponse
+     */
+    public ListJobInfoResponse listJobInfo(ListJobInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listJobInfo);
+    }
+
+    /**
+     * 获取所有任务详细信息
+     * 获取所有任务详细信息。
+     *
+     * @param ListJobInfoDetailRequest 请求对象
+     * @return ListJobInfoDetailResponse
+     */
+    public ListJobInfoDetailResponse listJobInfoDetail(ListJobInfoDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listJobInfoDetail);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return ListProjectTagsResponse
+     */
+    public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listProjectTags);
+    }
+
+    /**
+     * 查询可恢复时间段
+     * 查询可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return ListRestoreTimesResponse
+     */
+    public ListRestoreTimesResponse listRestoreTimes(ListRestoreTimesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listRestoreTimes);
+    }
+
+    /**
      * 查询数据库慢日志
      * 查询数据库慢日志。
      *
@@ -168,6 +300,17 @@ public class RdsClient {
      */
     public ListSlowLogsResponse listSlowLogs(ListSlowLogsRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.listSlowLogs);
+    }
+
+    /**
+     * 获取慢日志统计信息
+     * 获取慢日志统计信息
+     *
+     * @param ListSlowlogStatisticsRequest 请求对象
+     * @return ListSlowlogStatisticsResponse
+     */
+    public ListSlowlogStatisticsResponse listSlowlogStatistics(ListSlowlogStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listSlowlogStatistics);
     }
 
     /**
@@ -182,6 +325,39 @@ public class RdsClient {
     }
 
     /**
+     * 迁移主备实例的备机
+     * 迁移主备实例的备机
+     *
+     * @param MigrateFollowerRequest 请求对象
+     * @return MigrateFollowerResponse
+     */
+    public MigrateFollowerResponse migrateFollower(MigrateFollowerRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.migrateFollower);
+    }
+
+    /**
+     * 修改参数模板参数
+     * 修改参数模板参数。
+     *
+     * @param ModifyConfigurationRequest 请求对象
+     * @return ModifyConfigurationResponse
+     */
+    public ModifyConfigurationResponse modifyConfiguration(ModifyConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.modifyConfiguration);
+    }
+
+    /**
+     * 修改指定实例的参数
+     * 修改指定实例的参数。
+     *
+     * @param ModifyInstanceConfigurationRequest 请求对象
+     * @return ModifyInstanceConfigurationResponse
+     */
+    public ModifyInstanceConfigurationResponse modifyInstanceConfiguration(ModifyInstanceConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.modifyInstanceConfiguration);
+    }
+
+    /**
      * 重置数据库密码
      * 重置数据库密码.
      *
@@ -190,6 +366,28 @@ public class RdsClient {
      */
     public ResetPwdResponse resetPwd(ResetPwdRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.resetPwd);
+    }
+
+    /**
+     * 表级时间点恢复
+     * 表级时间点恢复。
+     *
+     * @param RestoreTablesRequest 请求对象
+     * @return RestoreTablesResponse
+     */
+    public RestoreTablesResponse restoreTables(RestoreTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.restoreTables);
+    }
+
+    /**
+     * 恢复到已有实例
+     * 恢复到已有实例。
+     *
+     * @param RestoreToExistingInstanceRequest 请求对象
+     * @return RestoreToExistingInstanceResponse
+     */
+    public RestoreToExistingInstanceResponse restoreToExistingInstance(RestoreToExistingInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.restoreToExistingInstance);
     }
 
     /**
@@ -215,6 +413,28 @@ public class RdsClient {
     }
 
     /**
+     * 修改安全组
+     * 修改安全组
+     *
+     * @param SetSecurityGroupRequest 请求对象
+     * @return SetSecurityGroupResponse
+     */
+    public SetSecurityGroupResponse setSecurityGroup(SetSecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setSecurityGroup);
+    }
+
+    /**
+     * 生成审计日志下载链接
+     * 生成审计日志下载链接。
+     *
+     * @param ShowAuditlogDownloadLinkRequest 请求对象
+     * @return ShowAuditlogDownloadLinkResponse
+     */
+    public ShowAuditlogDownloadLinkResponse showAuditlogDownloadLink(ShowAuditlogDownloadLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showAuditlogDownloadLink);
+    }
+
+    /**
      * 查询审计日志策略
      * 查询审计日志策略。
      *
@@ -223,6 +443,17 @@ public class RdsClient {
      */
     public ShowAuditlogPolicyResponse showAuditlogPolicy(ShowAuditlogPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showAuditlogPolicy);
+    }
+
+    /**
+     * 获取备份下载链接
+     * 获取备份下载链接。
+     *
+     * @param ShowBackupDownloadLinkRequest 请求对象
+     * @return ShowBackupDownloadLinkResponse
+     */
+    public ShowBackupDownloadLinkResponse showBackupDownloadLink(ShowBackupDownloadLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showBackupDownloadLink);
     }
 
     /**
@@ -259,6 +490,17 @@ public class RdsClient {
     }
 
     /**
+     * 手动倒换主备实例
+     * 手动倒换主备.
+     *
+     * @param StartFailoverRequest 请求对象
+     * @return StartFailoverResponse
+     */
+    public StartFailoverResponse startFailover(StartFailoverRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.startFailover);
+    }
+
+    /**
      * 变更实例规格/扩容实例磁盘/重启实例/单机转主备
      * 变更实例规格/扩容实例磁盘/重启实例/单机转主备。
      *
@@ -267,6 +509,17 @@ public class RdsClient {
      */
     public StartInstanceActionResponse startInstanceAction(StartInstanceActionRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.startInstanceAction);
+    }
+
+    /**
+     * SSL开关
+     * SSL开关
+     *
+     * @param SwitchSslRequest 请求对象
+     * @return SwitchSslResponse
+     */
+    public SwitchSslResponse switchSsl(SwitchSslRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.switchSsl);
     }
 
     /**
@@ -333,6 +586,72 @@ public class RdsClient {
      */
     public DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.deleteDatabase);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteDbUserRequest 请求对象
+     * @return DeleteDbUserResponse
+     */
+    public DeleteDbUserResponse deleteDbUser(DeleteDbUserRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteDbUser);
+    }
+
+    /**
+     * 查询指定用户的已授权数据库
+     * 查询指定用户的已授权数据库。
+     *
+     * @param ListAuthorizedDatabasesRequest 请求对象
+     * @return ListAuthorizedDatabasesResponse
+     */
+    public ListAuthorizedDatabasesResponse listAuthorizedDatabases(ListAuthorizedDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listAuthorizedDatabases);
+    }
+
+    /**
+     * 查询指定数据库的已授权用户
+     * 查询指定数据库的已授权用户。
+     *
+     * @param ListAuthorizedDbUsersRequest 请求对象
+     * @return ListAuthorizedDbUsersResponse
+     */
+    public ListAuthorizedDbUsersResponse listAuthorizedDbUsers(ListAuthorizedDbUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listAuthorizedDbUsers);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListDatabasesRequest 请求对象
+     * @return ListDatabasesResponse
+     */
+    public ListDatabasesResponse listDatabases(ListDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listDatabases);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return ListDbUsersResponse
+     */
+    public ListDbUsersResponse listDbUsers(ListDbUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listDbUsers);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     * 解除数据库帐号权限。
+     *
+     * @param RevokeRequest 请求对象
+     * @return RevokeResponse
+     */
+    public RevokeResponse revoke(RevokeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.revoke);
     }
 
     /**

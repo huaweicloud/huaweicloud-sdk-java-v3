@@ -12,8 +12,11 @@ import com.huaweicloud.sdk.rds.v3.model.BackupStrategy;
 import com.huaweicloud.sdk.rds.v3.model.ChargeInfo;
 import com.huaweicloud.sdk.rds.v3.model.Datastore;
 import com.huaweicloud.sdk.rds.v3.model.Ha;
+import com.huaweicloud.sdk.rds.v3.model.InstanceRequestTags;
 import com.huaweicloud.sdk.rds.v3.model.RestorePoint;
 import com.huaweicloud.sdk.rds.v3.model.Volume;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -115,6 +118,12 @@ public class InstanceRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="data_vip")
+    
+    private String dataVip;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_group_id")
     
     private String securityGroupId;
@@ -149,6 +158,12 @@ public class InstanceRequest  {
     
     private RestorePoint restorePoint = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private List<InstanceRequestTags> tags = null;
+    
     public InstanceRequest withName(String name) {
         this.name = name;
         return this;
@@ -477,6 +492,26 @@ public class InstanceRequest  {
         this.subnetId = subnetId;
     }
 
+    public InstanceRequest withDataVip(String dataVip) {
+        this.dataVip = dataVip;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指定实例的内网IP
+     * @return dataVip
+     */
+    public String getDataVip() {
+        return dataVip;
+    }
+
+    public void setDataVip(String dataVip) {
+        this.dataVip = dataVip;
+    }
+
     public InstanceRequest withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -610,6 +645,40 @@ public class InstanceRequest  {
     public void setRestorePoint(RestorePoint restorePoint) {
         this.restorePoint = restorePoint;
     }
+
+    public InstanceRequest withTags(List<InstanceRequestTags> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public InstanceRequest addTagsItem(InstanceRequestTags tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public InstanceRequest withTags(Consumer<List<InstanceRequestTags>> tagsSetter) {
+        if(this.tags == null ){
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。单个实例总标签数上限10个。
+     * @return tags
+     */
+    public List<InstanceRequestTags> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<InstanceRequestTags> tags) {
+        this.tags = tags;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -634,16 +703,18 @@ public class InstanceRequest  {
             Objects.equals(this.availabilityZone, instanceRequest.availabilityZone) &&
             Objects.equals(this.vpcId, instanceRequest.vpcId) &&
             Objects.equals(this.subnetId, instanceRequest.subnetId) &&
+            Objects.equals(this.dataVip, instanceRequest.dataVip) &&
             Objects.equals(this.securityGroupId, instanceRequest.securityGroupId) &&
             Objects.equals(this.chargeInfo, instanceRequest.chargeInfo) &&
             Objects.equals(this.timeZone, instanceRequest.timeZone) &&
             Objects.equals(this.dsspoolId, instanceRequest.dsspoolId) &&
             Objects.equals(this.replicaOfId, instanceRequest.replicaOfId) &&
-            Objects.equals(this.restorePoint, instanceRequest.restorePoint);
+            Objects.equals(this.restorePoint, instanceRequest.restorePoint) &&
+            Objects.equals(this.tags, instanceRequest.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, datastore, ha, configurationId, port, password, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, availabilityZone, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, dsspoolId, replicaOfId, restorePoint);
+        return Objects.hash(name, datastore, ha, configurationId, port, password, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, availabilityZone, vpcId, subnetId, dataVip, securityGroupId, chargeInfo, timeZone, dsspoolId, replicaOfId, restorePoint, tags);
     }
     @Override
     public String toString() {
@@ -664,12 +735,14 @@ public class InstanceRequest  {
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    dataVip: ").append(toIndentedString(dataVip)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    dsspoolId: ").append(toIndentedString(dsspoolId)).append("\n");
         sb.append("    replicaOfId: ").append(toIndentedString(replicaOfId)).append("\n");
         sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

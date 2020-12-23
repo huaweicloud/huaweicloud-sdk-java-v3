@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.bms.v1.model.LinksInfo;
 import com.huaweicloud.sdk.bms.v1.model.OsExtraSpecs;
-import com.huaweicloud.sdk.bms.v1.model.ServerAttachableQuantity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -105,12 +104,6 @@ public class FlavorsResp  {
     @JsonProperty(value="os_extra_specs")
     
     private OsExtraSpecs osExtraSpecs = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attachableQuantity")
-    
-    private ServerAttachableQuantity attachableQuantity = null;
 
     public FlavorsResp withId(String id) {
         this.id = id;
@@ -412,33 +405,6 @@ public class FlavorsResp  {
     public void setOsExtraSpecs(OsExtraSpecs osExtraSpecs) {
         this.osExtraSpecs = osExtraSpecs;
     }
-
-    public FlavorsResp withAttachableQuantity(ServerAttachableQuantity attachableQuantity) {
-        this.attachableQuantity = attachableQuantity;
-        return this;
-    }
-
-    public FlavorsResp withAttachableQuantity(Consumer<ServerAttachableQuantity> attachableQuantitySetter) {
-        if(this.attachableQuantity == null ){
-            this.attachableQuantity = new ServerAttachableQuantity();
-            attachableQuantitySetter.accept(this.attachableQuantity);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get attachableQuantity
-     * @return attachableQuantity
-     */
-    public ServerAttachableQuantity getAttachableQuantity() {
-        return attachableQuantity;
-    }
-
-    public void setAttachableQuantity(ServerAttachableQuantity attachableQuantity) {
-        this.attachableQuantity = attachableQuantity;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -461,12 +427,11 @@ public class FlavorsResp  {
             Objects.equals(this.rxtxCap, flavorsResp.rxtxCap) &&
             Objects.equals(this.osFlavorAccessIsPublic, flavorsResp.osFlavorAccessIsPublic) &&
             Objects.equals(this.links, flavorsResp.links) &&
-            Objects.equals(this.osExtraSpecs, flavorsResp.osExtraSpecs) &&
-            Objects.equals(this.attachableQuantity, flavorsResp.attachableQuantity);
+            Objects.equals(this.osExtraSpecs, flavorsResp.osExtraSpecs);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, vcpus, ram, disk, swap, osFLVEXTDATAEphemeral, osFLVDISABLEDDisabled, rxtxFactor, rxtxQuota, rxtxCap, osFlavorAccessIsPublic, links, osExtraSpecs, attachableQuantity);
+        return Objects.hash(id, name, vcpus, ram, disk, swap, osFLVEXTDATAEphemeral, osFLVDISABLEDDisabled, rxtxFactor, rxtxQuota, rxtxCap, osFlavorAccessIsPublic, links, osExtraSpecs);
     }
     @Override
     public String toString() {
@@ -486,7 +451,6 @@ public class FlavorsResp  {
         sb.append("    osFlavorAccessIsPublic: ").append(toIndentedString(osFlavorAccessIsPublic)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    osExtraSpecs: ").append(toIndentedString(osExtraSpecs)).append("\n");
-        sb.append("    attachableQuantity: ").append(toIndentedString(attachableQuantity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

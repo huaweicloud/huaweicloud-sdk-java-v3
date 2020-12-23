@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.25-beta</version>
+        <version>3.0.26-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.25-beta</version>
+    <version>3.0.26-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -20,7 +20,6 @@
     <modules>
         <module>as</module>
         <module>vpc</module>
-        <module>codehub</module>
         <module>cts</module>
         <module>ecs</module>
         <module>live</module>
@@ -41,6 +40,7 @@
         <module>iam</module>
         <module>sms</module>
         <module>codecheck</module>
+        <module>antiddos</module>
         <module>moderation</module>
         <module>cloudpipeline</module>
         <module>smn</module>
@@ -48,6 +48,7 @@
         <module>devstar</module>
         <module>rds</module>
         <module>functiongraph</module>
+        <module>dli</module>
         <module>ces</module>
         <module>kafka</module>
         <module>dc</module>
@@ -59,7 +60,6 @@
         <module>ims</module>
         <module>cce</module>
         <module>meeting</module>
-        <module>ddm</module>
         <module>cloudbuild</module>
         <module>eip</module>
         <module>bcs</module>

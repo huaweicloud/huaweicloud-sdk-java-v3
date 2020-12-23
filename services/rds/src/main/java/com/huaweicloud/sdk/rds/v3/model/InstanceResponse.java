@@ -47,6 +47,12 @@ public class InstanceResponse  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="private_dns_names")
+    
+    private List<String> privateDnsNames = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ips")
     
     private List<String> publicIps = new ArrayList<>();
@@ -91,14 +97,14 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodes")
     
-    private NodeResponse nodes = null;
-
+    private List<NodeResponse> nodes = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="related_instance")
     
-    private RelatedInstance relatedInstance = null;
-
+    private List<RelatedInstance> relatedInstance = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
@@ -193,8 +199,8 @@ public class InstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private TagResponse tags = null;
-
+    private List<TagResponse> tags = new ArrayList<>();
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_used_space")
@@ -206,6 +212,18 @@ public class InstanceResponse  {
     @JsonProperty(value="storage_used_space")
     
     private Double storageUsedSpace;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="order_id")
+    
+    private String orderId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="associated_with_ddm")
+    
+    private Boolean associatedWithDdm;
 
     public InstanceResponse withId(String id) {
         this.id = id;
@@ -276,6 +294,40 @@ public class InstanceResponse  {
 
     public void setPrivateIps(List<String> privateIps) {
         this.privateIps = privateIps;
+    }
+
+    public InstanceResponse withPrivateDnsNames(List<String> privateDnsNames) {
+        this.privateDnsNames = privateDnsNames;
+        return this;
+    }
+
+    
+    public InstanceResponse addPrivateDnsNamesItem(String privateDnsNamesItem) {
+        if (this.privateDnsNames == null) {
+            this.privateDnsNames = new ArrayList<>();
+        }
+        this.privateDnsNames.add(privateDnsNamesItem);
+        return this;
+    }
+
+    public InstanceResponse withPrivateDnsNames(Consumer<List<String>> privateDnsNamesSetter) {
+        if(this.privateDnsNames == null ){
+            this.privateDnsNames = new ArrayList<>();
+        }
+        privateDnsNamesSetter.accept(this.privateDnsNames);
+        return this;
+    }
+
+    /**
+     * Get privateDnsNames
+     * @return privateDnsNames
+     */
+    public List<String> getPrivateDnsNames() {
+        return privateDnsNames;
+    }
+
+    public void setPrivateDnsNames(List<String> privateDnsNames) {
+        this.privateDnsNames = privateDnsNames;
     }
 
     public InstanceResponse withPublicIps(List<String> publicIps) {
@@ -429,57 +481,65 @@ public class InstanceResponse  {
         this.maintenanceWindow = maintenanceWindow;
     }
 
-    public InstanceResponse withNodes(NodeResponse nodes) {
+    public InstanceResponse withNodes(List<NodeResponse> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    public InstanceResponse withNodes(Consumer<NodeResponse> nodesSetter) {
-        if(this.nodes == null ){
-            this.nodes = new NodeResponse();
-            nodesSetter.accept(this.nodes);
-        }
-        
+    
+    public InstanceResponse addNodesItem(NodeResponse nodesItem) {
+        this.nodes.add(nodesItem);
         return this;
     }
 
+    public InstanceResponse withNodes(Consumer<List<NodeResponse>> nodesSetter) {
+        if(this.nodes == null ){
+            this.nodes = new ArrayList<>();
+        }
+        nodesSetter.accept(this.nodes);
+        return this;
+    }
 
     /**
      * Get nodes
      * @return nodes
      */
-    public NodeResponse getNodes() {
+    public List<NodeResponse> getNodes() {
         return nodes;
     }
 
-    public void setNodes(NodeResponse nodes) {
+    public void setNodes(List<NodeResponse> nodes) {
         this.nodes = nodes;
     }
 
-    public InstanceResponse withRelatedInstance(RelatedInstance relatedInstance) {
+    public InstanceResponse withRelatedInstance(List<RelatedInstance> relatedInstance) {
         this.relatedInstance = relatedInstance;
         return this;
     }
 
-    public InstanceResponse withRelatedInstance(Consumer<RelatedInstance> relatedInstanceSetter) {
-        if(this.relatedInstance == null ){
-            this.relatedInstance = new RelatedInstance();
-            relatedInstanceSetter.accept(this.relatedInstance);
-        }
-        
+    
+    public InstanceResponse addRelatedInstanceItem(RelatedInstance relatedInstanceItem) {
+        this.relatedInstance.add(relatedInstanceItem);
         return this;
     }
 
+    public InstanceResponse withRelatedInstance(Consumer<List<RelatedInstance>> relatedInstanceSetter) {
+        if(this.relatedInstance == null ){
+            this.relatedInstance = new ArrayList<>();
+        }
+        relatedInstanceSetter.accept(this.relatedInstance);
+        return this;
+    }
 
     /**
      * Get relatedInstance
      * @return relatedInstance
      */
-    public RelatedInstance getRelatedInstance() {
+    public List<RelatedInstance> getRelatedInstance() {
         return relatedInstance;
     }
 
-    public void setRelatedInstance(RelatedInstance relatedInstance) {
+    public void setRelatedInstance(List<RelatedInstance> relatedInstance) {
         this.relatedInstance = relatedInstance;
     }
 
@@ -818,30 +878,34 @@ public class InstanceResponse  {
         this.timeZone = timeZone;
     }
 
-    public InstanceResponse withTags(TagResponse tags) {
+    public InstanceResponse withTags(List<TagResponse> tags) {
         this.tags = tags;
         return this;
     }
 
-    public InstanceResponse withTags(Consumer<TagResponse> tagsSetter) {
-        if(this.tags == null ){
-            this.tags = new TagResponse();
-            tagsSetter.accept(this.tags);
-        }
-        
+    
+    public InstanceResponse addTagsItem(TagResponse tagsItem) {
+        this.tags.add(tagsItem);
         return this;
     }
 
+    public InstanceResponse withTags(Consumer<List<TagResponse>> tagsSetter) {
+        if(this.tags == null ){
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
 
     /**
      * Get tags
      * @return tags
      */
-    public TagResponse getTags() {
+    public List<TagResponse> getTags() {
         return tags;
     }
 
-    public void setTags(TagResponse tags) {
+    public void setTags(List<TagResponse> tags) {
         this.tags = tags;
     }
 
@@ -884,6 +948,46 @@ public class InstanceResponse  {
     public void setStorageUsedSpace(Double storageUsedSpace) {
         this.storageUsedSpace = storageUsedSpace;
     }
+
+    public InstanceResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 订单ID，仅包周期场景返回。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public InstanceResponse withAssociatedWithDdm(Boolean associatedWithDdm) {
+        this.associatedWithDdm = associatedWithDdm;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否已被DDM实例关联。
+     * @return associatedWithDdm
+     */
+    public Boolean getAssociatedWithDdm() {
+        return associatedWithDdm;
+    }
+
+    public void setAssociatedWithDdm(Boolean associatedWithDdm) {
+        this.associatedWithDdm = associatedWithDdm;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -896,6 +1000,7 @@ public class InstanceResponse  {
         return Objects.equals(this.id, instanceResponse.id) &&
             Objects.equals(this.status, instanceResponse.status) &&
             Objects.equals(this.privateIps, instanceResponse.privateIps) &&
+            Objects.equals(this.privateDnsNames, instanceResponse.privateDnsNames) &&
             Objects.equals(this.publicIps, instanceResponse.publicIps) &&
             Objects.equals(this.type, instanceResponse.type) &&
             Objects.equals(this.created, instanceResponse.created) &&
@@ -922,11 +1027,13 @@ public class InstanceResponse  {
             Objects.equals(this.timeZone, instanceResponse.timeZone) &&
             Objects.equals(this.tags, instanceResponse.tags) &&
             Objects.equals(this.backupUsedSpace, instanceResponse.backupUsedSpace) &&
-            Objects.equals(this.storageUsedSpace, instanceResponse.storageUsedSpace);
+            Objects.equals(this.storageUsedSpace, instanceResponse.storageUsedSpace) &&
+            Objects.equals(this.orderId, instanceResponse.orderId) &&
+            Objects.equals(this.associatedWithDdm, instanceResponse.associatedWithDdm);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, privateIps, publicIps, type, created, updated, dbUserName, switchStrategy, maintenanceWindow, nodes, relatedInstance, name, datastore, ha, port, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, tags, backupUsedSpace, storageUsedSpace);
+        return Objects.hash(id, status, privateIps, privateDnsNames, publicIps, type, created, updated, dbUserName, switchStrategy, maintenanceWindow, nodes, relatedInstance, name, datastore, ha, port, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, tags, backupUsedSpace, storageUsedSpace, orderId, associatedWithDdm);
     }
     @Override
     public String toString() {
@@ -935,6 +1042,7 @@ public class InstanceResponse  {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    privateIps: ").append(toIndentedString(privateIps)).append("\n");
+        sb.append("    privateDnsNames: ").append(toIndentedString(privateDnsNames)).append("\n");
         sb.append("    publicIps: ").append(toIndentedString(publicIps)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -962,6 +1070,8 @@ public class InstanceResponse  {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    backupUsedSpace: ").append(toIndentedString(backupUsedSpace)).append("\n");
         sb.append("    storageUsedSpace: ").append(toIndentedString(storageUsedSpace)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    associatedWithDdm: ").append(toIndentedString(associatedWithDdm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

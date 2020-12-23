@@ -141,6 +141,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询播放画像信息接口
+     * 查询播放画像信息。  最大查询跨度1天，最大查询周期31天。
+     *
+     * @param ShowStreamPortraitRequest 请求对象
+     * @return CompletableFuture<ShowStreamPortraitResponse>
+     */
+    public CompletableFuture<ShowStreamPortraitResponse> showStreamPortraitAsync(ShowStreamPortraitRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showStreamPortrait);
+    }
+
+    /**
      * 查询上行带宽数据接口
      * 查询上行带宽数据。  最大查询跨度31天，最大查询周期90天。
      *

@@ -364,6 +364,478 @@ public class MpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateMbTasksReportRequest, CreateMbTasksReportResponse> createMbTasksReport = genForcreateMbTasksReport();
+
+    private static HttpRequestDef<CreateMbTasksReportRequest, CreateMbTasksReportResponse> genForcreateMbTasksReport() {
+        // basic
+        HttpRequestDef.Builder<CreateMbTasksReportRequest, CreateMbTasksReportResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateMbTasksReportRequest.class, CreateMbTasksReportResponse.class)
+                .withUri("/v1/mediabox/tasks/report")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            MbTasksReportReq.class,
+            f -> f.withMarshaller(CreateMbTasksReportRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> createMergeChannelsTask = genForcreateMergeChannelsTask();
+
+    private static HttpRequestDef<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> genForcreateMergeChannelsTask() {
+        // basic
+        HttpRequestDef.Builder<CreateMergeChannelsTaskRequest, CreateMergeChannelsTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMergeChannelsTaskRequest.class, CreateMergeChannelsTaskResponse.class)
+                .withUri("/v1/{project_id}/audio/services/merge_channels/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateMergeChannelsReq.class,
+            f -> f.withMarshaller(CreateMergeChannelsTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> createResetTracksTask = genForcreateResetTracksTask();
+
+    private static HttpRequestDef<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> genForcreateResetTracksTask() {
+        // basic
+        HttpRequestDef.Builder<CreateResetTracksTaskRequest, CreateResetTracksTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateResetTracksTaskRequest.class, CreateResetTracksTaskResponse.class)
+                .withUri("/v1/{project_id}/audio/services/reset_tracks/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateResetTracksReq.class,
+            f -> f.withMarshaller(CreateResetTracksTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> deleteMergeChannelsTask = genFordeleteMergeChannelsTask();
+
+    private static HttpRequestDef<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> genFordeleteMergeChannelsTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteMergeChannelsTaskRequest, DeleteMergeChannelsTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMergeChannelsTaskRequest.class, DeleteMergeChannelsTaskResponse.class)
+                .withUri("/v1/{project_id}/audio/services/merge_channels/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteMergeChannelsTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> deleteResetTracksTask = genFordeleteResetTracksTask();
+
+    private static HttpRequestDef<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> genFordeleteResetTracksTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteResetTracksTaskRequest, DeleteResetTracksTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteResetTracksTaskRequest.class, DeleteResetTracksTaskResponse.class)
+                .withUri("/v1/{project_id}/audio/services/reset_tracks/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteResetTracksTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> listMergeChannelsTask = genForlistMergeChannelsTask();
+
+    private static HttpRequestDef<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> genForlistMergeChannelsTask() {
+        // basic
+        HttpRequestDef.Builder<ListMergeChannelsTaskRequest, ListMergeChannelsTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMergeChannelsTaskRequest.class, ListMergeChannelsTaskResponse.class)
+                .withUri("/v1/{project_id}/audio/services/merge_channels/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListMergeChannelsTaskRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMergeChannelsTaskRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResetTracksTaskRequest, ListResetTracksTaskResponse> listResetTracksTask = genForlistResetTracksTask();
+
+    private static HttpRequestDef<ListResetTracksTaskRequest, ListResetTracksTaskResponse> genForlistResetTracksTask() {
+        // basic
+        HttpRequestDef.Builder<ListResetTracksTaskRequest, ListResetTracksTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResetTracksTaskRequest.class, ListResetTracksTaskResponse.class)
+                .withUri("/v1/{project_id}/audio/services/reset_tracks/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListResetTracksTaskRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListResetTracksTaskRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> createMediaProcessTask = genForcreateMediaProcessTask();
+
+    private static HttpRequestDef<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> genForcreateMediaProcessTask() {
+        // basic
+        HttpRequestDef.Builder<CreateMediaProcessTaskRequest, CreateMediaProcessTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMediaProcessTaskRequest.class, CreateMediaProcessTaskResponse.class)
+                .withUri("/v1/{project_id}/enhancements")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateMediaProcessReq.class,
+            f -> f.withMarshaller(CreateMediaProcessTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> deleteMediaProcessTask = genFordeleteMediaProcessTask();
+
+    private static HttpRequestDef<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> genFordeleteMediaProcessTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteMediaProcessTaskRequest, DeleteMediaProcessTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMediaProcessTaskRequest.class, DeleteMediaProcessTaskResponse.class)
+                .withUri("/v1/{project_id}/enhancements")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteMediaProcessTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> listMediaProcessTask = genForlistMediaProcessTask();
+
+    private static HttpRequestDef<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> genForlistMediaProcessTask() {
+        // basic
+        HttpRequestDef.Builder<ListMediaProcessTaskRequest, ListMediaProcessTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMediaProcessTaskRequest.class, ListMediaProcessTaskResponse.class)
+                .withUri("/v1/{project_id}/enhancements")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListMediaProcessTaskRequest.StatusEnum.class,
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListMediaProcessTaskRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMpeCallBackRequest, CreateMpeCallBackResponse> createMpeCallBack = genForcreateMpeCallBack();
+
+    private static HttpRequestDef<CreateMpeCallBackRequest, CreateMpeCallBackResponse> genForcreateMpeCallBack() {
+        // basic
+        HttpRequestDef.Builder<CreateMpeCallBackRequest, CreateMpeCallBackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMpeCallBackRequest.class, CreateMpeCallBackResponse.class)
+                .withUri("/v1/mpe/notification")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            MpeCallBackReq.class,
+            f -> f.withMarshaller(CreateMpeCallBackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> createQualityEnhanceTemplate = genForcreateQualityEnhanceTemplate();
+
+    private static HttpRequestDef<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> genForcreateQualityEnhanceTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateQualityEnhanceTemplateRequest, CreateQualityEnhanceTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateQualityEnhanceTemplateRequest.class, CreateQualityEnhanceTemplateResponse.class)
+                .withUri("/v1/{project_id}/template/qualityenhance")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            QualityEnhanceTemplate.class,
+            f -> f.withMarshaller(CreateQualityEnhanceTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> deleteQualityEnhanceTemplate = genFordeleteQualityEnhanceTemplate();
+
+    private static HttpRequestDef<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> genFordeleteQualityEnhanceTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteQualityEnhanceTemplateRequest, DeleteQualityEnhanceTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteQualityEnhanceTemplateRequest.class, DeleteQualityEnhanceTemplateResponse.class)
+                .withUri("/v1/{project_id}/template/qualityenhance")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(DeleteQualityEnhanceTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> listQualityEnhanceDefaultTemplate = genForlistQualityEnhanceDefaultTemplate();
+
+    private static HttpRequestDef<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> genForlistQualityEnhanceDefaultTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListQualityEnhanceDefaultTemplateRequest, ListQualityEnhanceDefaultTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQualityEnhanceDefaultTemplateRequest.class, ListQualityEnhanceDefaultTemplateResponse.class)
+                .withUri("/v1/{project_id}/template/qualityenhance/default")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> updateQualityEnhanceTemplate = genForupdateQualityEnhanceTemplate();
+
+    private static HttpRequestDef<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> genForupdateQualityEnhanceTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateQualityEnhanceTemplateRequest, UpdateQualityEnhanceTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateQualityEnhanceTemplateRequest.class, UpdateQualityEnhanceTemplateResponse.class)
+                .withUri("/v1/{project_id}/template/qualityenhance")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateQualityEnhanceTemplateReq.class,
+            f -> f.withMarshaller(UpdateQualityEnhanceTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTranscodeDetailRequest, ListTranscodeDetailResponse> listTranscodeDetail = genForlistTranscodeDetail();
 
     private static HttpRequestDef<ListTranscodeDetailRequest, ListTranscodeDetailResponse> genForlistTranscodeDetail() {

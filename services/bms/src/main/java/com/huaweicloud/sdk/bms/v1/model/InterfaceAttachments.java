@@ -139,6 +139,18 @@ public class InterfaceAttachments  {
     
     private String macAddr;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="driver_mode")
+    
+    private String driverMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="pci_address")
+    
+    private String pciAddress;
+
     public InterfaceAttachments withPortState(PortStateEnum portState) {
         this.portState = portState;
         return this;
@@ -252,6 +264,46 @@ public class InterfaceAttachments  {
     public void setMacAddr(String macAddr) {
         this.macAddr = macAddr;
     }
+
+    public InterfaceAttachments withDriverMode(String driverMode) {
+        this.driverMode = driverMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 从guest os中，网卡的驱动类型
+     * @return driverMode
+     */
+    public String getDriverMode() {
+        return driverMode;
+    }
+
+    public void setDriverMode(String driverMode) {
+        this.driverMode = driverMode;
+    }
+
+    public InterfaceAttachments withPciAddress(String pciAddress) {
+        this.pciAddress = pciAddress;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 弹性网卡在Linux GuestOS里的BDF号
+     * @return pciAddress
+     */
+    public String getPciAddress() {
+        return pciAddress;
+    }
+
+    public void setPciAddress(String pciAddress) {
+        this.pciAddress = pciAddress;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -265,11 +317,13 @@ public class InterfaceAttachments  {
             Objects.equals(this.fixedIps, interfaceAttachments.fixedIps) &&
             Objects.equals(this.netId, interfaceAttachments.netId) &&
             Objects.equals(this.portId, interfaceAttachments.portId) &&
-            Objects.equals(this.macAddr, interfaceAttachments.macAddr);
+            Objects.equals(this.macAddr, interfaceAttachments.macAddr) &&
+            Objects.equals(this.driverMode, interfaceAttachments.driverMode) &&
+            Objects.equals(this.pciAddress, interfaceAttachments.pciAddress);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(portState, fixedIps, netId, portId, macAddr);
+        return Objects.hash(portState, fixedIps, netId, portId, macAddr, driverMode, pciAddress);
     }
     @Override
     public String toString() {
@@ -280,6 +334,8 @@ public class InterfaceAttachments  {
         sb.append("    netId: ").append(toIndentedString(netId)).append("\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    macAddr: ").append(toIndentedString(macAddr)).append("\n");
+        sb.append("    driverMode: ").append(toIndentedString(driverMode)).append("\n");
+        sb.append("    pciAddress: ").append(toIndentedString(pciAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

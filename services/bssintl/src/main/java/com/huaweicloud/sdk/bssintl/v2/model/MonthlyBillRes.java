@@ -162,6 +162,18 @@ public class MonthlyBillRes  {
     
     private String customerId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sku_code")
+    
+    private String skuCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region_name")
+    
+    private String regionName;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -641,6 +653,46 @@ public class MonthlyBillRes  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
+
+    public MonthlyBillRes withSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：SKU编码| |参数的约束及描述：sku编码|
+     * @return skuCode
+     */
+    public String getSkuCode() {
+        return skuCode;
+    }
+
+    public void setSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+    }
+
+    public MonthlyBillRes withRegionName(String regionName) {
+        this.regionName = regionName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务区名称| |参数的约束及描述：云服务区名称|
+     * @return regionName
+     */
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -673,11 +725,13 @@ public class MonthlyBillRes  {
             Objects.equals(this.enterpriseProjectName, monthlyBillRes.enterpriseProjectName) &&
             Objects.equals(this.chargeMode, monthlyBillRes.chargeMode) &&
             Objects.equals(this.billType, monthlyBillRes.billType) &&
-            Objects.equals(this.customerId, monthlyBillRes.customerId);
+            Objects.equals(this.customerId, monthlyBillRes.customerId) &&
+            Objects.equals(this.skuCode, monthlyBillRes.skuCode) &&
+            Objects.equals(this.regionName, monthlyBillRes.regionName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(cycle, cloudServiceType, region, resourceTypeCode, resInstanceId, resourceName, resourceTag, consumeAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, officialAmount, discountAmount, measureId, enterpriseProjectId, enterpriseProjectName, chargeMode, billType, customerId);
+        return Objects.hash(cycle, cloudServiceType, region, resourceTypeCode, resInstanceId, resourceName, resourceTag, consumeAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, officialAmount, discountAmount, measureId, enterpriseProjectId, enterpriseProjectName, chargeMode, billType, customerId, skuCode, regionName);
     }
     @Override
     public String toString() {
@@ -707,6 +761,8 @@ public class MonthlyBillRes  {
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
         sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    skuCode: ").append(toIndentedString(skuCode)).append("\n");
+        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,6 +12,46 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class RdsMeta {
 
+    public static final HttpRequestDef<AttachEipRequest, AttachEipResponse> attachEip = genForattachEip();
+
+    private static HttpRequestDef<AttachEipRequest, AttachEipResponse> genForattachEip() {
+        // basic
+        HttpRequestDef.Builder<AttachEipRequest, AttachEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AttachEipRequest.class, AttachEipResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/public-ip")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AttachEipRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            AttachEipRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(AttachEipRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BindEipRequest.class,
+            f -> f.withMarshaller(AttachEipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction = genForbatchTagAction();
 
     private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForbatchTagAction() {
@@ -43,6 +83,126 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchTagActionRequestBody.class,
             f -> f.withMarshaller(BatchTagActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeFailoverModeRequest, ChangeFailoverModeResponse> changeFailoverMode = genForchangeFailoverMode();
+
+    private static HttpRequestDef<ChangeFailoverModeRequest, ChangeFailoverModeResponse> genForchangeFailoverMode() {
+        // basic
+        HttpRequestDef.Builder<ChangeFailoverModeRequest, ChangeFailoverModeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeFailoverModeRequest.class, ChangeFailoverModeResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/failover/mode")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ChangeFailoverModeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ChangeFailoverModeRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ChangeFailoverModeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            FailoverModeRequest.class,
+            f -> f.withMarshaller(ChangeFailoverModeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse> changeFailoverStrategy = genForchangeFailoverStrategy();
+
+    private static HttpRequestDef<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse> genForchangeFailoverStrategy() {
+        // basic
+        HttpRequestDef.Builder<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeFailoverStrategyRequest.class, ChangeFailoverStrategyResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/failover/strategy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ChangeFailoverStrategyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ChangeFailoverStrategyRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ChangeFailoverStrategyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            FailoverStrategyRequest.class,
+            f -> f.withMarshaller(ChangeFailoverStrategyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeOpsWindowRequest, ChangeOpsWindowResponse> changeOpsWindow = genForchangeOpsWindow();
+
+    private static HttpRequestDef<ChangeOpsWindowRequest, ChangeOpsWindowResponse> genForchangeOpsWindow() {
+        // basic
+        HttpRequestDef.Builder<ChangeOpsWindowRequest, ChangeOpsWindowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeOpsWindowRequest.class, ChangeOpsWindowResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops-window")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ChangeOpsWindowRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ChangeOpsWindowRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ChangeOpsWindowRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            OpsWindowRequest.class,
+            f -> f.withMarshaller(ChangeOpsWindowRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -180,6 +340,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackup = genFordeleteManualBackup();
+
+    private static HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> genFordeleteManualBackup() {
+        // basic
+        HttpRequestDef.Builder<DeleteManualBackupRequest, DeleteManualBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteManualBackupRequest.class, DeleteManualBackupResponse.class)
+                .withUri("/v3/{project_id}/backups/{backup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteManualBackupRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DoManualBackupRequest, DoManualBackupResponse> doManualBackup = genFordoManualBackup();
 
     private static HttpRequestDef<DoManualBackupRequest, DoManualBackupResponse> genFordoManualBackup() {
@@ -203,6 +395,86 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             DoManualBackupRequestBody.class,
             f -> f.withMarshaller(DoManualBackupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadSlowlogRequest, DownloadSlowlogResponse> downloadSlowlog = genFordownloadSlowlog();
+
+    private static HttpRequestDef<DownloadSlowlogRequest, DownloadSlowlogResponse> genFordownloadSlowlog() {
+        // basic
+        HttpRequestDef.Builder<DownloadSlowlogRequest, DownloadSlowlogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadSlowlogRequest.class, DownloadSlowlogResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-download")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DownloadSlowlogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            DownloadSlowlogRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(DownloadSlowlogRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SlowlogDownloadRequest.class,
+            f -> f.withMarshaller(DownloadSlowlogRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableConfigurationRequest, EnableConfigurationResponse> enableConfiguration = genForenableConfiguration();
+
+    private static HttpRequestDef<EnableConfigurationRequest, EnableConfigurationResponse> genForenableConfiguration() {
+        // basic
+        HttpRequestDef.Builder<EnableConfigurationRequest, EnableConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, EnableConfigurationRequest.class, EnableConfigurationResponse.class)
+                .withUri("/v3/{project_id}/configurations/{config_id}/apply")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(EnableConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(EnableConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ApplyConfigurationRequest.class,
+            f -> f.withMarshaller(EnableConfigurationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -371,6 +643,30 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             ListCollationsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ListCollationsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurations = genForlistConfigurations();
+
+    private static HttpRequestDef<ListConfigurationsRequest, ListConfigurationsResponse> genForlistConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListConfigurationsRequest, ListConfigurationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigurationsRequest.class, ListConfigurationsResponse.class)
+                .withUri("/v3/{project_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ListConfigurationsRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ListConfigurationsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -628,6 +924,150 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListJobInfoRequest, ListJobInfoResponse> listJobInfo = genForlistJobInfo();
+
+    private static HttpRequestDef<ListJobInfoRequest, ListJobInfoResponse> genForlistJobInfo() {
+        // basic
+        HttpRequestDef.Builder<ListJobInfoRequest, ListJobInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobInfoRequest.class, ListJobInfoResponse.class)
+                .withUri("/v3/{project_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListJobInfoRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListJobInfoRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobInfoDetailRequest, ListJobInfoDetailResponse> listJobInfoDetail = genForlistJobInfoDetail();
+
+    private static HttpRequestDef<ListJobInfoDetailRequest, ListJobInfoDetailResponse> genForlistJobInfoDetail() {
+        // basic
+        HttpRequestDef.Builder<ListJobInfoDetailRequest, ListJobInfoDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobInfoDetailRequest.class, ListJobInfoDetailResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/tasklist/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListJobInfoDetailRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListJobInfoDetailRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListJobInfoDetailRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListJobInfoDetailRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags = genForlistProjectTags();
+
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
+                .withUri("/v3/{project_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProjectTagsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimes = genForlistRestoreTimes();
+
+    private static HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> genForlistRestoreTimes() {
+        // basic
+        HttpRequestDef.Builder<ListRestoreTimesRequest, ListRestoreTimesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRestoreTimesRequest.class, ListRestoreTimesResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/restore-time")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListRestoreTimesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRestoreTimesRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForlistSlowLogs();
 
     private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForlistSlowLogs() {
@@ -700,6 +1140,78 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse> listSlowlogStatistics = genForlistSlowlogStatistics();
+
+    private static HttpRequestDef<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse> genForlistSlowlogStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSlowlogStatisticsRequest.class, ListSlowlogStatisticsResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog/statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("cur_page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getCurPage, (req, v) -> {
+                req.setCurPage(v);
+            })
+        );
+        builder.withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getPerPage, (req, v) -> {
+                req.setPerPage(v);
+            })
+        );
+        builder.withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            })
+        );
+        builder.withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListSlowlogStatisticsRequest.TypeEnum.class,
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ListSlowlogStatisticsRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ListSlowlogStatisticsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypes = genForlistStorageTypes();
 
     private static HttpRequestDef<ListStorageTypesRequest, ListStorageTypesResponse> genForlistStorageTypes() {
@@ -726,12 +1238,140 @@ public class RdsMeta {
                 req.setVersionName(v);
             })
         );
+        builder.withRequestField("ha_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListStorageTypesRequest.HaModeEnum.class,
+            f -> f.withMarshaller(ListStorageTypesRequest::getHaMode, (req, v) -> {
+                req.setHaMode(v);
+            })
+        );
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListStorageTypesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<MigrateFollowerRequest, MigrateFollowerResponse> migrateFollower = genFormigrateFollower();
+
+    private static HttpRequestDef<MigrateFollowerRequest, MigrateFollowerResponse> genFormigrateFollower() {
+        // basic
+        HttpRequestDef.Builder<MigrateFollowerRequest, MigrateFollowerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, MigrateFollowerRequest.class, MigrateFollowerResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/migrateslave")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(MigrateFollowerRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            MigrateFollowerRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(MigrateFollowerRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            FollowerMigrateRequest.class,
+            f -> f.withMarshaller(MigrateFollowerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyConfigurationRequest, ModifyConfigurationResponse> modifyConfiguration = genFormodifyConfiguration();
+
+    private static HttpRequestDef<ModifyConfigurationRequest, ModifyConfigurationResponse> genFormodifyConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ModifyConfigurationRequest, ModifyConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyConfigurationRequest.class, ModifyConfigurationResponse.class)
+                .withUri("/v3/{project_id}/configurations/{config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ModifyConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ModifyConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ConfigurationForUpdate.class,
+            f -> f.withMarshaller(ModifyConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> modifyInstanceConfiguration = genFormodifyInstanceConfiguration();
+
+    private static HttpRequestDef<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> genFormodifyInstanceConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyInstanceConfigurationRequest.class, ModifyInstanceConfigurationResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ModifyInstanceConfigurationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ModifyInstanceConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ModifyInstanceConfigurationRequest.class,
+            f -> f.withMarshaller(ModifyInstanceConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -771,6 +1411,78 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             PwdResetRequest.class,
             f -> f.withMarshaller(ResetPwdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreTablesRequest, RestoreTablesResponse> restoreTables = genForrestoreTables();
+
+    private static HttpRequestDef<RestoreTablesRequest, RestoreTablesResponse> genForrestoreTables() {
+        // basic
+        HttpRequestDef.Builder<RestoreTablesRequest, RestoreTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreTablesRequest.class, RestoreTablesResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/restore/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RestoreTablesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RestoreTablesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RestoreTablesRequestBody.class,
+            f -> f.withMarshaller(RestoreTablesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse> restoreToExistingInstance = genForrestoreToExistingInstance();
+
+    private static HttpRequestDef<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse> genForrestoreToExistingInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreToExistingInstanceRequest.class, RestoreToExistingInstanceResponse.class)
+                .withUri("/v3/{project_id}/instances/recovery")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RestoreToExistingInstanceRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RestoreToExistingInstanceRequestBody.class,
+            f -> f.withMarshaller(RestoreToExistingInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -860,6 +1572,86 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetSecurityGroupRequest, SetSecurityGroupResponse> setSecurityGroup = genForsetSecurityGroup();
+
+    private static HttpRequestDef<SetSecurityGroupRequest, SetSecurityGroupResponse> genForsetSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<SetSecurityGroupRequest, SetSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetSecurityGroupRequest.class, SetSecurityGroupResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/security-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetSecurityGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            SetSecurityGroupRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(SetSecurityGroupRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SecurityGroupRequest.class,
+            f -> f.withMarshaller(SetSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> showAuditlogDownloadLink = genForshowAuditlogDownloadLink();
+
+    private static HttpRequestDef<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> genForshowAuditlogDownloadLink() {
+        // basic
+        HttpRequestDef.Builder<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowAuditlogDownloadLinkRequest.class, ShowAuditlogDownloadLinkResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/auditlog-links")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowAuditlogDownloadLinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAuditlogDownloadLinkRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            GenerateAuditlogDownloadLinkRequest.class,
+            f -> f.withMarshaller(ShowAuditlogDownloadLinkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicy = genForshowAuditlogPolicy();
 
     private static HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> genForshowAuditlogPolicy() {
@@ -883,6 +1675,38 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowAuditlogPolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLink = genForshowBackupDownloadLink();
+
+    private static HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> genForshowBackupDownloadLink() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupDownloadLinkRequest.class, ShowBackupDownloadLinkResponse.class)
+                .withUri("/v3/{project_id}/backup-files")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -988,6 +1812,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartFailoverRequest, StartFailoverResponse> startFailover = genForstartFailover();
+
+    private static HttpRequestDef<StartFailoverRequest, StartFailoverResponse> genForstartFailover() {
+        // basic
+        HttpRequestDef.Builder<StartFailoverRequest, StartFailoverResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StartFailoverRequest.class, StartFailoverResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/failover")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(StartFailoverRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            StartFailoverRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(StartFailoverRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartInstanceActionRequest, StartInstanceActionResponse> startInstanceAction = genForstartInstanceAction();
 
     private static HttpRequestDef<StartInstanceActionRequest, StartInstanceActionResponse> genForstartInstanceAction() {
@@ -1019,6 +1875,46 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             InstanceActionRequest.class,
             f -> f.withMarshaller(StartInstanceActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSslRequest, SwitchSslResponse> switchSsl = genForswitchSsl();
+
+    private static HttpRequestDef<SwitchSslRequest, SwitchSslResponse> genForswitchSsl() {
+        // basic
+        HttpRequestDef.Builder<SwitchSslRequest, SwitchSslResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchSslRequest.class, SwitchSslResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/ssl")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SwitchSslRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            SwitchSslRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(SwitchSslRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SslOptionRequestBody.class,
+            f -> f.withMarshaller(SwitchSslRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -1260,6 +2156,294 @@ public class RdsMeta {
             String.class,
             f -> f.withMarshaller(DeleteDatabaseRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> deleteDbUser = genFordeleteDbUser();
+
+    private static HttpRequestDef<DeleteDbUserRequest, DeleteDbUserResponse> genFordeleteDbUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteDbUserRequest, DeleteDbUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDbUserRequest.class, DeleteDbUserResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDbUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDbUserRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDbUserRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse> listAuthorizedDatabases = genForlistAuthorizedDatabases();
+
+    private static HttpRequestDef<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse> genForlistAuthorizedDatabases() {
+        // basic
+        HttpRequestDef.Builder<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAuthorizedDatabasesRequest.class, ListAuthorizedDatabasesResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_user/database")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedDatabasesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("user-name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedDatabasesRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListAuthorizedDatabasesRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListAuthorizedDatabasesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedDatabasesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse> listAuthorizedDbUsers = genForlistAuthorizedDbUsers();
+
+    private static HttpRequestDef<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse> genForlistAuthorizedDbUsers() {
+        // basic
+        HttpRequestDef.Builder<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAuthorizedDbUsersRequest.class, ListAuthorizedDbUsersResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/db_user")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedDbUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("db-name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedDbUsersRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListAuthorizedDbUsersRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListAuthorizedDbUsersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAuthorizedDbUsersRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases = genForlistDatabases();
+
+    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForlistDatabases() {
+        // basic
+        HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListDatabasesRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListDatabasesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDatabasesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForlistDbUsers();
+
+    private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForlistDbUsers() {
+        // basic
+        HttpRequestDef.Builder<ListDbUsersRequest, ListDbUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDbUsersRequest.class, ListDbUsersResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_user/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListDbUsersRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ListDbUsersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeRequest, RevokeResponse> revoke = genForrevoke();
+
+    private static HttpRequestDef<RevokeRequest, RevokeResponse> genForrevoke() {
+        // basic
+        HttpRequestDef.Builder<RevokeRequest, RevokeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, RevokeRequest.class, RevokeResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_privilege")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RevokeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RevokeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RevokeRequestBody.class,
+            f -> f.withMarshaller(RevokeRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

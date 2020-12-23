@@ -27,5 +27,21 @@ import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 
 public interface ICredential {
+    /**
+     * Handle endpoint resolver and fill projectId/domainId automatically.
+     *
+     * @param httpClient instance of HttpClient
+     * @param regionId   region id such as "cn-north-4"
+     * @return null
+     */
+    CompletableFuture<ICredential> processAuthParams(HttpClient httpClient, String regionId);
+
+    /**
+     * Handle auth request before sending to API Gateway.
+     *
+     * @param httpRequest instance of HttpRequest
+     * @param httpClient  instance of HttpClient
+     * @return null
+     */
     CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient);
 }

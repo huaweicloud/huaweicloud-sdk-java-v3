@@ -23,6 +23,12 @@ public class DatabaseForCreation  {
     
     private String name;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="character_set")
+    
+    private String characterSet;
+
     public DatabaseForCreation withName(String name) {
         this.name = name;
         return this;
@@ -42,6 +48,26 @@ public class DatabaseForCreation  {
     public void setName(String name) {
         this.name = name;
     }
+
+    public DatabaseForCreation withCharacterSet(String characterSet) {
+        this.characterSet = characterSet;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库使用的字符集。
+     * @return characterSet
+     */
+    public String getCharacterSet() {
+        return characterSet;
+    }
+
+    public void setCharacterSet(String characterSet) {
+        this.characterSet = characterSet;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -51,17 +77,19 @@ public class DatabaseForCreation  {
             return false;
         }
         DatabaseForCreation databaseForCreation = (DatabaseForCreation) o;
-        return Objects.equals(this.name, databaseForCreation.name);
+        return Objects.equals(this.name, databaseForCreation.name) &&
+            Objects.equals(this.characterSet, databaseForCreation.characterSet);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, characterSet);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DatabaseForCreation {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    characterSet: ").append(toIndentedString(characterSet)).append("\n");
         sb.append("}");
         return sb.toString();
     }

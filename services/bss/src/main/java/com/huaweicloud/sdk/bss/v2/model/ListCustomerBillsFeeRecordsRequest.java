@@ -270,7 +270,7 @@ public class ListCustomerBillsFeeRecordsRequest  {
     /**
      * Get billType
      * minimum: 1
-     * maximum: 16
+     * maximum: 17
      * @return billType
      */
     public Integer getBillType() {

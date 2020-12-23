@@ -23,6 +23,12 @@ public class EnlargeVolume  {
     
     private Integer size;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_auto_pay")
+    
+    private Boolean isAutoPay;
+
     public EnlargeVolume withSize(Integer size) {
         this.size = size;
         return this;
@@ -42,6 +48,26 @@ public class EnlargeVolume  {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    public EnlargeVolume withIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 变更包周期实例的规格时可指定，表示是否自动从客户的账户中支付。
+     * @return isAutoPay
+     */
+    public Boolean getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -51,17 +77,19 @@ public class EnlargeVolume  {
             return false;
         }
         EnlargeVolume enlargeVolume = (EnlargeVolume) o;
-        return Objects.equals(this.size, enlargeVolume.size);
+        return Objects.equals(this.size, enlargeVolume.size) &&
+            Objects.equals(this.isAutoPay, enlargeVolume.isAutoPay);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(size);
+        return Objects.hash(size, isAutoPay);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnlargeVolume {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -32,11 +32,13 @@ import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.region.Region;
 
 public class ClientBuilder<T> {
     private Function<HcClient, T> creator;
     private ICredential credential;
     private HttpConfig httpConfig;
+    private Region region;
     private String endpoint;
     private List<String> credentialType = new ArrayList<>(Arrays.asList(BasicCredentials.class.getSimpleName()));
 
@@ -61,6 +63,11 @@ public class ClientBuilder<T> {
         return this;
     }
 
+    public ClientBuilder<T> withRegion(Region region) {
+        this.region = region;
+        return this;
+    }
+
     public ClientBuilder<T> withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
@@ -81,8 +88,13 @@ public class ClientBuilder<T> {
             }
         }
 
-        hcClient.withEndpoint(this.endpoint)
-            .withCredential(this.credential);
+        if (Objects.nonNull(region)) {
+            hcClient.withRegion(region)
+                .withCredential(credential);
+        } else {
+            hcClient.withEndpoint(this.endpoint)
+                .withCredential(this.credential);
+        }
 
         T t = creator.apply(hcClient);
         ClientCustomization clientCustomization = loadClientCustomization(t);

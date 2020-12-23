@@ -51,6 +51,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
+import com.huaweicloud.sdk.core.region.Region;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 
 public class HcClient implements CustomizationConfigure {
@@ -67,9 +68,15 @@ public class HcClient implements CustomizationConfigure {
     private static final int STATUS_CODE_WITH_RESPONSE_ERROR = 400;
 
     private HttpClient httpClient;
+    private Region region;
     private String endpoint;
     private ICredential credential;
     private HttpConfig httpConfig;
+
+    HcClient withRegion(Region region) {
+        this.region = region;
+        return this;
+    }
 
     HcClient withEndpoint(String endpoint) {
         this.endpoint = endpoint;
@@ -94,6 +101,14 @@ public class HcClient implements CustomizationConfigure {
         throws ServiceResponseException {
 
         HttpRequest httpRequest = buildRequest(request, reqDef);
+
+        if (Objects.nonNull(region)) {
+            try {
+                credential = credential.processAuthParams(this.httpClient, region.getId()).get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new SdkException(e);
+            }
+        }
 
         // 鉴权，处理project_id，domain_id信息
         if (Objects.nonNull(credential)) {
@@ -191,6 +206,10 @@ public class HcClient implements CustomizationConfigure {
     }
 
     private <ReqT, ResT> HttpRequest buildRequest(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
+        if (Objects.nonNull(region)) {
+            this.endpoint = region.getEndpoint();
+        }
+
         HttpRequest.HttpRequestBuilder httpRequestBuilder = HttpRequest.newBuilder();
         httpRequestBuilder.withMethod(reqDef.getMethod())
             .withContentType(reqDef.getContentType())

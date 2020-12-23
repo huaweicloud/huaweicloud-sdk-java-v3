@@ -119,6 +119,171 @@ public class MpcAsyncClient {
     }
 
     /**
+     * 合并多声道任务、重置声轨任务上报接口
+     * ## 典型场景 ##   合并音频多声道文件任务、重置音频文件声轨任务上报结果接口。 ## 接口功能 ##   合并音频多声道文件任务、重置音频文件声轨任务上报结果接口。 ## 接口约束 ##   无。 
+     *
+     * @param CreateMbTasksReportRequest 请求对象
+     * @return CompletableFuture<CreateMbTasksReportResponse>
+     */
+    public CompletableFuture<CreateMbTasksReportResponse> createMbTasksReportAsync(CreateMbTasksReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createMbTasksReport);
+    }
+
+    /**
+     * 创建声道合并任务
+     * 创建声道合并任务，合并声道任务支持将每个声道各放一个文件中的片源，合并为单个音频文件。 执行合并声道的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。 
+     *
+     * @param CreateMergeChannelsTaskRequest 请求对象
+     * @return CompletableFuture<CreateMergeChannelsTaskResponse>
+     */
+    public CompletableFuture<CreateMergeChannelsTaskResponse> createMergeChannelsTaskAsync(CreateMergeChannelsTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createMergeChannelsTask);
+    }
+
+    /**
+     * 创建音轨重置任务
+     * 创建音轨重置任务，重置音轨任务支持按人工指定关系声道layout，语言标签，转封装片源，使其满足转码输入。 执行音轨重置的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。 
+     *
+     * @param CreateResetTracksTaskRequest 请求对象
+     * @return CompletableFuture<CreateResetTracksTaskResponse>
+     */
+    public CompletableFuture<CreateResetTracksTaskResponse> createResetTracksTaskAsync(CreateResetTracksTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createResetTracksTask);
+    }
+
+    /**
+     * 取消声道合并任务
+     * 取消合并音频多声道文件。 
+     *
+     * @param DeleteMergeChannelsTaskRequest 请求对象
+     * @return CompletableFuture<DeleteMergeChannelsTaskResponse>
+     */
+    public CompletableFuture<DeleteMergeChannelsTaskResponse> deleteMergeChannelsTaskAsync(DeleteMergeChannelsTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteMergeChannelsTask);
+    }
+
+    /**
+     * 取消音轨重置任务
+     * 取消重置音频文件声轨任务。 
+     *
+     * @param DeleteResetTracksTaskRequest 请求对象
+     * @return CompletableFuture<DeleteResetTracksTaskResponse>
+     */
+    public CompletableFuture<DeleteResetTracksTaskResponse> deleteResetTracksTaskAsync(DeleteResetTracksTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteResetTracksTask);
+    }
+
+    /**
+     * 查询声道合并任务
+     * 查询声道合并任务的状态。 
+     *
+     * @param ListMergeChannelsTaskRequest 请求对象
+     * @return CompletableFuture<ListMergeChannelsTaskResponse>
+     */
+    public CompletableFuture<ListMergeChannelsTaskResponse> listMergeChannelsTaskAsync(ListMergeChannelsTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listMergeChannelsTask);
+    }
+
+    /**
+     * 查询音轨重置任务
+     * 查询音轨重置任务的状态。 
+     *
+     * @param ListResetTracksTaskRequest 请求对象
+     * @return CompletableFuture<ListResetTracksTaskResponse>
+     */
+    public CompletableFuture<ListResetTracksTaskResponse> listResetTracksTaskAsync(ListResetTracksTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listResetTracksTask);
+    }
+
+    /**
+     * 创建视频增强任务
+     * ## 典型场景 ##   创建视频增强任务。  ## 接口功能 ##   创建视频增强任务。  ## 接口约束 ##   无。 
+     *
+     * @param CreateMediaProcessTaskRequest 请求对象
+     * @return CompletableFuture<CreateMediaProcessTaskResponse>
+     */
+    public CompletableFuture<CreateMediaProcessTaskResponse> createMediaProcessTaskAsync(CreateMediaProcessTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createMediaProcessTask);
+    }
+
+    /**
+     * 取消视频增强任务
+     * ## 典型场景 ##   取消视频增强任务。  ## 接口功能 ##   取消视频增强任务。  ## 接口约束 ##   仅可删除正在排队中的任务。 
+     *
+     * @param DeleteMediaProcessTaskRequest 请求对象
+     * @return CompletableFuture<DeleteMediaProcessTaskResponse>
+     */
+    public CompletableFuture<DeleteMediaProcessTaskResponse> deleteMediaProcessTaskAsync(DeleteMediaProcessTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteMediaProcessTask);
+    }
+
+    /**
+     * 查询视频增强任务
+     * ## 典型场景 ##   查询视频增强任务。  ## 接口功能 ##   查询视频增强任务。  ## 接口约束 ##   无。 
+     *
+     * @param ListMediaProcessTaskRequest 请求对象
+     * @return CompletableFuture<ListMediaProcessTaskResponse>
+     */
+    public CompletableFuture<ListMediaProcessTaskResponse> listMediaProcessTaskAsync(ListMediaProcessTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listMediaProcessTask);
+    }
+
+    /**
+     * mpe通知mpc
+     * ## 典型场景 ##   mpe通知mpc。 ## 接口功能 ##   mpe调用此接口通知mpc转封装等结果。 ## 接口约束 ##   无。 
+     *
+     * @param CreateMpeCallBackRequest 请求对象
+     * @return CompletableFuture<CreateMpeCallBackResponse>
+     */
+    public CompletableFuture<CreateMpeCallBackResponse> createMpeCallBackAsync(CreateMpeCallBackRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createMpeCallBack);
+    }
+
+    /**
+     * 创建视频增强模板
+     * 创建视频增强模板
+     *
+     * @param CreateQualityEnhanceTemplateRequest 请求对象
+     * @return CompletableFuture<CreateQualityEnhanceTemplateResponse>
+     */
+    public CompletableFuture<CreateQualityEnhanceTemplateResponse> createQualityEnhanceTemplateAsync(CreateQualityEnhanceTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.createQualityEnhanceTemplate);
+    }
+
+    /**
+     * 删除用户视频增强模板
+     * 删除用户视频增强模板。
+     *
+     * @param DeleteQualityEnhanceTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteQualityEnhanceTemplateResponse>
+     */
+    public CompletableFuture<DeleteQualityEnhanceTemplateResponse> deleteQualityEnhanceTemplateAsync(DeleteQualityEnhanceTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.deleteQualityEnhanceTemplate);
+    }
+
+    /**
+     * 查询视频增强预置模板
+     * 查询视频增强预置模板，返回所有结果。 
+     *
+     * @param ListQualityEnhanceDefaultTemplateRequest 请求对象
+     * @return CompletableFuture<ListQualityEnhanceDefaultTemplateResponse>
+     */
+    public CompletableFuture<ListQualityEnhanceDefaultTemplateResponse> listQualityEnhanceDefaultTemplateAsync(ListQualityEnhanceDefaultTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.listQualityEnhanceDefaultTemplate);
+    }
+
+    /**
+     * 更新视频增强模板
+     * 更新视频增强模板。
+     *
+     * @param UpdateQualityEnhanceTemplateRequest 请求对象
+     * @return CompletableFuture<UpdateQualityEnhanceTemplateResponse>
+     */
+    public CompletableFuture<UpdateQualityEnhanceTemplateResponse> updateQualityEnhanceTemplateAsync(UpdateQualityEnhanceTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, MpcMeta.updateQualityEnhanceTemplate);
+    }
+
+    /**
      * 查询媒资转码详情
      * 查询媒资转码详情
      *

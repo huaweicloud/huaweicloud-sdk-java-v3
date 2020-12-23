@@ -19,9 +19,33 @@ public class Datapoint  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="max")
+    
+    private Double max;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="min")
+    
+    private Double min;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="average")
     
     private Double average;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sum")
+    
+    private Double sum;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="variance")
+    
+    private Double variance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,6 +58,46 @@ public class Datapoint  {
     @JsonProperty(value="unit")
     
     private String unit;
+
+    public Datapoint withMax(Double max) {
+        this.max = max;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return max
+     */
+    public Double getMax() {
+        return max;
+    }
+
+    public void setMax(Double max) {
+        this.max = max;
+    }
+
+    public Datapoint withMin(Double min) {
+        this.min = min;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return min
+     */
+    public Double getMin() {
+        return min;
+    }
+
+    public void setMin(Double min) {
+        this.min = min;
+    }
 
     public Datapoint withAverage(Double average) {
         this.average = average;
@@ -53,6 +117,46 @@ public class Datapoint  {
 
     public void setAverage(Double average) {
         this.average = average;
+    }
+
+    public Datapoint withSum(Double sum) {
+        this.sum = sum;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return sum
+     */
+    public Double getSum() {
+        return sum;
+    }
+
+    public void setSum(Double sum) {
+        this.sum = sum;
+    }
+
+    public Datapoint withVariance(Double variance) {
+        this.variance = variance;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * @return variance
+     */
+    public Double getVariance() {
+        return variance;
+    }
+
+    public void setVariance(Double variance) {
+        this.variance = variance;
     }
 
     public Datapoint withTimestamp(Long timestamp) {
@@ -103,19 +207,27 @@ public class Datapoint  {
             return false;
         }
         Datapoint datapoint = (Datapoint) o;
-        return Objects.equals(this.average, datapoint.average) &&
+        return Objects.equals(this.max, datapoint.max) &&
+            Objects.equals(this.min, datapoint.min) &&
+            Objects.equals(this.average, datapoint.average) &&
+            Objects.equals(this.sum, datapoint.sum) &&
+            Objects.equals(this.variance, datapoint.variance) &&
             Objects.equals(this.timestamp, datapoint.timestamp) &&
             Objects.equals(this.unit, datapoint.unit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(average, timestamp, unit);
+        return Objects.hash(max, min, average, sum, variance, timestamp, unit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Datapoint {\n");
+        sb.append("    max: ").append(toIndentedString(max)).append("\n");
+        sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("    average: ").append(toIndentedString(average)).append("\n");
+        sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
+        sb.append("    variance: ").append(toIndentedString(variance)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("}");

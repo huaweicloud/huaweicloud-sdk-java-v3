@@ -252,6 +252,38 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConversionsRequest, ListConversionsResponse> listConversions = genForlistConversions();
+
+    private static HttpRequestDef<ListConversionsRequest, ListConversionsResponse> genForlistConversions() {
+        // basic
+        HttpRequestDef.Builder<ListConversionsRequest, ListConversionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConversionsRequest.class, ListConversionsResponse.class)
+                .withUri("/v2/bases/conversions")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("measure_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListConversionsRequest::getMeasureType, (req, v) -> {
+                req.setMeasureType(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListConversionsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResources = genForlistCustomerOnDemandResources();
 
     private static HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> genForlistCustomerOnDemandResources() {
@@ -464,7 +496,7 @@ public class BssintlMeta {
         );
         builder.withRequestField("charge_mode",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getChargeMode, (req, v) -> {
                 req.setChargeMode(v);
@@ -556,6 +588,30 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnits = genForlistMeasureUnits();
+
+    private static HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> genForlistMeasureUnits() {
+        // basic
+        HttpRequestDef.Builder<ListMeasureUnitsRequest, ListMeasureUnitsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMeasureUnitsRequest.class, ListMeasureUnitsResponse.class)
+                .withUri("/v2/bases/measurements")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListMeasureUnitsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> listOnDemandResourceRatings = genForlistOnDemandResourceRatings();
 
     private static HttpRequestDef<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> genForlistOnDemandResourceRatings() {
@@ -620,6 +676,30 @@ public class BssintlMeta {
             QueryResourcesReq.class,
             f -> f.withMarshaller(ListPayPerUseCustomerResourcesRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPostpaidBillSumRequest, ListPostpaidBillSumResponse> listPostpaidBillSum = genForlistPostpaidBillSum();
+
+    private static HttpRequestDef<ListPostpaidBillSumRequest, ListPostpaidBillSumResponse> genForlistPostpaidBillSum() {
+        // basic
+        HttpRequestDef.Builder<ListPostpaidBillSumRequest, ListPostpaidBillSumResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPostpaidBillSumRequest.class, ListPostpaidBillSumResponse.class)
+                .withUri("/v2/bills/partner-bills/postpaid-bill-summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("bill_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListPostpaidBillSumRequest::getBillCycle, (req, v) -> {
+                req.setBillCycle(v);
             })
         );
 

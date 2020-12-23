@@ -138,6 +138,17 @@ public class LiveClient {
     }
 
     /**
+     * 查询播放画像信息接口
+     * 查询播放画像信息。  最大查询跨度1天，最大查询周期31天。
+     *
+     * @param ShowStreamPortraitRequest 请求对象
+     * @return ShowStreamPortraitResponse
+     */
+    public ShowStreamPortraitResponse showStreamPortrait(ShowStreamPortraitRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showStreamPortrait);
+    }
+
+    /**
      * 查询上行带宽数据接口
      * 查询上行带宽数据。  最大查询跨度31天，最大查询周期90天。
      *

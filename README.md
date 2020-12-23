@@ -51,6 +51,8 @@ You could obtain and install Java SDK through following methods:
     import com.huaweicloud.sdk.core.http.HttpConfig;
     // {Service}Client, replace Vpc to your specified service, take VpcClient for example
     import com.huaweicloud.sdk.vpc.v2.VpcClient;
+    // {Service}Region, replace Vpc to your specified service, take VpcRegion for example
+    import com.huaweicloud.sdk.vpc.v2.VpcRegion;
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
     // Logger
@@ -71,7 +73,7 @@ You could obtain and install Java SDK through following methods:
 
     ``` java
     // Use proxy if needed
-    config.withProxyHost("http://proxy.huaweicloud.com")
+    config.withProxyHost("proxy.huawei.com")
         .withProxyPort(8080)
         .withProxyUsername("test")
         .withProxyPassword("test");
@@ -110,11 +112,13 @@ You could obtain and install Java SDK through following methods:
     ```
     
     **where:**
-    Global services currently only support IAM, TMS, EPS.
+    Global services currently only support BSS, DevStar, EPS, IAM, OSM, RMS, TMS.
     
     For Regional services' authentication, projectId is required. 
-    For global services' authentication, domainId is required, projectId should be null. 
+    For global services' authentication, domainId is required, projectId should be null.
 
+    If you use {Service}Region to initialize {Service}Client, projectId/domainId supports automatic acquisition, you don't need to configure it when initializing Credentials.  Multiple ProjectId situation is not supported.
+ 
     - `ak` is the access key ID for your account.
     - `sk` is the secret access key for your account.
     - `projectId` is the ID of your project depending on your region which you want to operate.
@@ -142,9 +146,11 @@ You could obtain and install Java SDK through following methods:
             .withSk(sk)
             .withSecurityToken(securityToken)
             .withDomainId(domainId);
+    ```
 
-4. Initialize the {Service}Client instance
+4. Initialize the {Service}Client instance (Two ways)
 
+    4.1 Specify Endpoint when initializing the instance of {Service}Client
     ``` java
     // Initialize specified service client instance, take VpcClient for example
     VpcClient vpcClient = VpcClient.newBuilder()
@@ -156,6 +162,21 @@ You could obtain and install Java SDK through following methods:
 
     **where:**
     - `endpoint` is the service specific endpoints, see [Regions and Endpoints](https://developer.huaweicloud.com/intl/en-us/endpoint).
+
+    4.2 Specify Region when initializing {Service}Client **(Recommended)**
+
+    ``` java
+    // Initialize specified service client instance, take IamClient for example
+    IamClient iamClient = IamClient.newBuilder()
+        .withHttpConfig(config)
+        .withCredential(credentials)
+        .withRegion(IamRegion.CN_NORTH_4)
+        .build();
+    ```
+
+    **where:**
+    - If you use {Service}Region to initialize {Service}Client, projectId/domainId supports automatic acquisition, you don't need to configure it when initializing Credentials.
+    - Multiple ProjectId situation is not supported.  
 
 5. Send a request and print response
 

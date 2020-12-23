@@ -36,6 +36,11 @@ public class MeetingCredentials implements ICredential {
     private final static int EXPIRE_HOUR_HALF = EXPIRE_HOUR / 2;
 
     @Override
+    public CompletableFuture<ICredential> processAuthParams(HttpClient httpClient, String regionId) {
+        return CompletableFuture.completedFuture(this);
+    }
+
+    @Override
     public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
 
         if (httpRequest.getPath().startsWith("/v1/mmc/control/conferences")

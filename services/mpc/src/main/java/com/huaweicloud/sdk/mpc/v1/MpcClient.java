@@ -116,6 +116,171 @@ public class MpcClient {
     }
 
     /**
+     * 合并多声道任务、重置声轨任务上报接口
+     * ## 典型场景 ##   合并音频多声道文件任务、重置音频文件声轨任务上报结果接口。 ## 接口功能 ##   合并音频多声道文件任务、重置音频文件声轨任务上报结果接口。 ## 接口约束 ##   无。 
+     *
+     * @param CreateMbTasksReportRequest 请求对象
+     * @return CreateMbTasksReportResponse
+     */
+    public CreateMbTasksReportResponse createMbTasksReport(CreateMbTasksReportRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.createMbTasksReport);
+    }
+
+    /**
+     * 创建声道合并任务
+     * 创建声道合并任务，合并声道任务支持将每个声道各放一个文件中的片源，合并为单个音频文件。 执行合并声道的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。 
+     *
+     * @param CreateMergeChannelsTaskRequest 请求对象
+     * @return CreateMergeChannelsTaskResponse
+     */
+    public CreateMergeChannelsTaskResponse createMergeChannelsTask(CreateMergeChannelsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.createMergeChannelsTask);
+    }
+
+    /**
+     * 创建音轨重置任务
+     * 创建音轨重置任务，重置音轨任务支持按人工指定关系声道layout，语言标签，转封装片源，使其满足转码输入。 执行音轨重置的源音频文件需要存储在与媒体处理服务同区域的OBS桶中，且该OBS桶已授权。 
+     *
+     * @param CreateResetTracksTaskRequest 请求对象
+     * @return CreateResetTracksTaskResponse
+     */
+    public CreateResetTracksTaskResponse createResetTracksTask(CreateResetTracksTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.createResetTracksTask);
+    }
+
+    /**
+     * 取消声道合并任务
+     * 取消合并音频多声道文件。 
+     *
+     * @param DeleteMergeChannelsTaskRequest 请求对象
+     * @return DeleteMergeChannelsTaskResponse
+     */
+    public DeleteMergeChannelsTaskResponse deleteMergeChannelsTask(DeleteMergeChannelsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.deleteMergeChannelsTask);
+    }
+
+    /**
+     * 取消音轨重置任务
+     * 取消重置音频文件声轨任务。 
+     *
+     * @param DeleteResetTracksTaskRequest 请求对象
+     * @return DeleteResetTracksTaskResponse
+     */
+    public DeleteResetTracksTaskResponse deleteResetTracksTask(DeleteResetTracksTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.deleteResetTracksTask);
+    }
+
+    /**
+     * 查询声道合并任务
+     * 查询声道合并任务的状态。 
+     *
+     * @param ListMergeChannelsTaskRequest 请求对象
+     * @return ListMergeChannelsTaskResponse
+     */
+    public ListMergeChannelsTaskResponse listMergeChannelsTask(ListMergeChannelsTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.listMergeChannelsTask);
+    }
+
+    /**
+     * 查询音轨重置任务
+     * 查询音轨重置任务的状态。 
+     *
+     * @param ListResetTracksTaskRequest 请求对象
+     * @return ListResetTracksTaskResponse
+     */
+    public ListResetTracksTaskResponse listResetTracksTask(ListResetTracksTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.listResetTracksTask);
+    }
+
+    /**
+     * 创建视频增强任务
+     * ## 典型场景 ##   创建视频增强任务。  ## 接口功能 ##   创建视频增强任务。  ## 接口约束 ##   无。 
+     *
+     * @param CreateMediaProcessTaskRequest 请求对象
+     * @return CreateMediaProcessTaskResponse
+     */
+    public CreateMediaProcessTaskResponse createMediaProcessTask(CreateMediaProcessTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.createMediaProcessTask);
+    }
+
+    /**
+     * 取消视频增强任务
+     * ## 典型场景 ##   取消视频增强任务。  ## 接口功能 ##   取消视频增强任务。  ## 接口约束 ##   仅可删除正在排队中的任务。 
+     *
+     * @param DeleteMediaProcessTaskRequest 请求对象
+     * @return DeleteMediaProcessTaskResponse
+     */
+    public DeleteMediaProcessTaskResponse deleteMediaProcessTask(DeleteMediaProcessTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.deleteMediaProcessTask);
+    }
+
+    /**
+     * 查询视频增强任务
+     * ## 典型场景 ##   查询视频增强任务。  ## 接口功能 ##   查询视频增强任务。  ## 接口约束 ##   无。 
+     *
+     * @param ListMediaProcessTaskRequest 请求对象
+     * @return ListMediaProcessTaskResponse
+     */
+    public ListMediaProcessTaskResponse listMediaProcessTask(ListMediaProcessTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.listMediaProcessTask);
+    }
+
+    /**
+     * mpe通知mpc
+     * ## 典型场景 ##   mpe通知mpc。 ## 接口功能 ##   mpe调用此接口通知mpc转封装等结果。 ## 接口约束 ##   无。 
+     *
+     * @param CreateMpeCallBackRequest 请求对象
+     * @return CreateMpeCallBackResponse
+     */
+    public CreateMpeCallBackResponse createMpeCallBack(CreateMpeCallBackRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.createMpeCallBack);
+    }
+
+    /**
+     * 创建视频增强模板
+     * 创建视频增强模板
+     *
+     * @param CreateQualityEnhanceTemplateRequest 请求对象
+     * @return CreateQualityEnhanceTemplateResponse
+     */
+    public CreateQualityEnhanceTemplateResponse createQualityEnhanceTemplate(CreateQualityEnhanceTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.createQualityEnhanceTemplate);
+    }
+
+    /**
+     * 删除用户视频增强模板
+     * 删除用户视频增强模板。
+     *
+     * @param DeleteQualityEnhanceTemplateRequest 请求对象
+     * @return DeleteQualityEnhanceTemplateResponse
+     */
+    public DeleteQualityEnhanceTemplateResponse deleteQualityEnhanceTemplate(DeleteQualityEnhanceTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.deleteQualityEnhanceTemplate);
+    }
+
+    /**
+     * 查询视频增强预置模板
+     * 查询视频增强预置模板，返回所有结果。 
+     *
+     * @param ListQualityEnhanceDefaultTemplateRequest 请求对象
+     * @return ListQualityEnhanceDefaultTemplateResponse
+     */
+    public ListQualityEnhanceDefaultTemplateResponse listQualityEnhanceDefaultTemplate(ListQualityEnhanceDefaultTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.listQualityEnhanceDefaultTemplate);
+    }
+
+    /**
+     * 更新视频增强模板
+     * 更新视频增强模板。
+     *
+     * @param UpdateQualityEnhanceTemplateRequest 请求对象
+     * @return UpdateQualityEnhanceTemplateResponse
+     */
+    public UpdateQualityEnhanceTemplateResponse updateQualityEnhanceTemplate(UpdateQualityEnhanceTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, MpcMeta.updateQualityEnhanceTemplate);
+    }
+
+    /**
      * 查询媒资转码详情
      * 查询媒资转码详情
      *

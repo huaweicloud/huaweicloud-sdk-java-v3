@@ -21,19 +21,23 @@
 
 package com.huaweicloud.sdk.core.auth;
 
-import com.huaweicloud.sdk.core.Constants;
-import com.huaweicloud.sdk.core.exception.SdkException;
-import com.huaweicloud.sdk.core.http.HttpClient;
-import com.huaweicloud.sdk.core.http.HttpRequest;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+
+import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.http.HttpClient;
+import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 
 public class GlobalCredentials extends AbstractCredentials {
 
     private String domainId;
+
+    private String iamEndpoint;
 
     public GlobalCredentials withAk(String ak) {
         setAk(ak);
@@ -47,6 +51,23 @@ public class GlobalCredentials extends AbstractCredentials {
 
     public GlobalCredentials withSecurityToken(String securityToken) {
         setSecurityToken(securityToken);
+        return this;
+    }
+
+    public String getIamEndpoint() {
+        return iamEndpoint;
+    }
+
+    public void setIamEndpoint(String iamEndpoint) {
+        this.iamEndpoint = iamEndpoint;
+    }
+
+    /**
+     * @param iamEndpoint endpoint can be override when using development environment.
+     * @return GlobalCredentials with override endpoint.
+     */
+    public GlobalCredentials withIamEndpoint(String iamEndpoint) {
+        setIamEndpoint(iamEndpoint);
         return this;
     }
 
@@ -72,16 +93,33 @@ public class GlobalCredentials extends AbstractCredentials {
     }
 
     @Override
-    public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
-
-        if (Objects.isNull(getDomainId())) {
-            throw new SdkException("This is a global service and the domain id must be provided.");
+    public CompletableFuture<ICredential> processAuthParams(HttpClient httpClient, String regionId) {
+        if (!StringUtils.isEmpty(this.domainId)) {
+            return CompletableFuture.completedFuture(this);
         }
 
+        HttpRequest signedRequest = null;
+        try {
+            // When using `getCredentialFromEnvironment`, iamEndpoint will lose while initializing Credentials.
+            iamEndpoint = Objects.nonNull(iamEndpoint) ? iamEndpoint : Iam.DEFAULT_IAM_ENDPOINT;
+            signedRequest = this.processAuthRequest(
+                Iam.getKeystoneListAuthDomainsRequest(iamEndpoint), httpClient).get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new SdkException(e);
+        }
+
+        this.domainId = Iam.keystoneListAuthDomains(httpClient, signedRequest);
+        return CompletableFuture.completedFuture(this);
+    }
+
+    @Override
+    public CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
         return CompletableFuture.supplyAsync(() -> {
             HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
-            builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());
+            if (Objects.nonNull(getDomainId())) {
+                builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());
+            }
 
             if (Objects.nonNull(getSecurityToken())) {
                 builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());

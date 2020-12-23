@@ -20,6 +20,17 @@ public class RdsAsyncClient {
 
 
     /**
+     * 绑定和解绑弹性公网IP
+     * 绑定和解绑弹性公网IP。
+     *
+     * @param AttachEipRequest 请求对象
+     * @return CompletableFuture<AttachEipResponse>
+     */
+    public CompletableFuture<AttachEipResponse> attachEipAsync(AttachEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.attachEip);
+    }
+
+    /**
      * 批量添加删除标签
      * 批量添加删除标签。
      *
@@ -28,6 +39,39 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<BatchTagActionResponse> batchTagActionAsync(BatchTagActionRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.batchTagAction);
+    }
+
+    /**
+     * 更改主备实例的同步模式
+     * 更改主备实例的同步模式.
+     *
+     * @param ChangeFailoverModeRequest 请求对象
+     * @return CompletableFuture<ChangeFailoverModeResponse>
+     */
+    public CompletableFuture<ChangeFailoverModeResponse> changeFailoverModeAsync(ChangeFailoverModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.changeFailoverMode);
+    }
+
+    /**
+     * 切换主备实例的倒换策略
+     * 切换主备实例的倒换策略.
+     *
+     * @param ChangeFailoverStrategyRequest 请求对象
+     * @return CompletableFuture<ChangeFailoverStrategyResponse>
+     */
+    public CompletableFuture<ChangeFailoverStrategyResponse> changeFailoverStrategyAsync(ChangeFailoverStrategyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.changeFailoverStrategy);
+    }
+
+    /**
+     * 设置可维护时间段
+     * 设置可维护时间段
+     *
+     * @param ChangeOpsWindowRequest 请求对象
+     * @return CompletableFuture<ChangeOpsWindowResponse>
+     */
+    public CompletableFuture<ChangeOpsWindowResponse> changeOpsWindowAsync(ChangeOpsWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.changeOpsWindow);
     }
 
     /**
@@ -75,6 +119,17 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 删除手动备份
+     * 删除手动备份。
+     *
+     * @param DeleteManualBackupRequest 请求对象
+     * @return CompletableFuture<DeleteManualBackupResponse>
+     */
+    public CompletableFuture<DeleteManualBackupResponse> deleteManualBackupAsync(DeleteManualBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteManualBackup);
+    }
+
+    /**
      * 创建手动备份
      * 创建手动备份。
      *
@@ -83,6 +138,28 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<DoManualBackupResponse> doManualBackupAsync(DoManualBackupRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.doManualBackup);
+    }
+
+    /**
+     * 获取日志信息
+     * 获取日志信息
+     *
+     * @param DownloadSlowlogRequest 请求对象
+     * @return CompletableFuture<DownloadSlowlogResponse>
+     */
+    public CompletableFuture<DownloadSlowlogResponse> downloadSlowlogAsync(DownloadSlowlogRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.downloadSlowlog);
+    }
+
+    /**
+     * 应用参数模板
+     * 应用参数模板。
+     *
+     * @param EnableConfigurationRequest 请求对象
+     * @return CompletableFuture<EnableConfigurationResponse>
+     */
+    public CompletableFuture<EnableConfigurationResponse> enableConfigurationAsync(EnableConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.enableConfiguration);
     }
 
     /**
@@ -116,6 +193,17 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<ListCollationsResponse> listCollationsAsync(ListCollationsRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.listCollations);
+    }
+
+    /**
+     * 获取参数模板列表
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListConfigurationsResponse>
+     */
+    public CompletableFuture<ListConfigurationsResponse> listConfigurationsAsync(ListConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listConfigurations);
     }
 
     /**
@@ -163,6 +251,50 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取任务信息
+     * 获取任务信息。
+     *
+     * @param ListJobInfoRequest 请求对象
+     * @return CompletableFuture<ListJobInfoResponse>
+     */
+    public CompletableFuture<ListJobInfoResponse> listJobInfoAsync(ListJobInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listJobInfo);
+    }
+
+    /**
+     * 获取所有任务详细信息
+     * 获取所有任务详细信息。
+     *
+     * @param ListJobInfoDetailRequest 请求对象
+     * @return CompletableFuture<ListJobInfoDetailResponse>
+     */
+    public CompletableFuture<ListJobInfoDetailResponse> listJobInfoDetailAsync(ListJobInfoDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listJobInfoDetail);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectTagsResponse>
+     */
+    public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listProjectTags);
+    }
+
+    /**
+     * 查询可恢复时间段
+     * 查询可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return CompletableFuture<ListRestoreTimesResponse>
+     */
+    public CompletableFuture<ListRestoreTimesResponse> listRestoreTimesAsync(ListRestoreTimesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listRestoreTimes);
+    }
+
+    /**
      * 查询数据库慢日志
      * 查询数据库慢日志。
      *
@@ -171,6 +303,17 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<ListSlowLogsResponse> listSlowLogsAsync(ListSlowLogsRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.listSlowLogs);
+    }
+
+    /**
+     * 获取慢日志统计信息
+     * 获取慢日志统计信息
+     *
+     * @param ListSlowlogStatisticsRequest 请求对象
+     * @return CompletableFuture<ListSlowlogStatisticsResponse>
+     */
+    public CompletableFuture<ListSlowlogStatisticsResponse> listSlowlogStatisticsAsync(ListSlowlogStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSlowlogStatistics);
     }
 
     /**
@@ -185,6 +328,39 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 迁移主备实例的备机
+     * 迁移主备实例的备机
+     *
+     * @param MigrateFollowerRequest 请求对象
+     * @return CompletableFuture<MigrateFollowerResponse>
+     */
+    public CompletableFuture<MigrateFollowerResponse> migrateFollowerAsync(MigrateFollowerRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.migrateFollower);
+    }
+
+    /**
+     * 修改参数模板参数
+     * 修改参数模板参数。
+     *
+     * @param ModifyConfigurationRequest 请求对象
+     * @return CompletableFuture<ModifyConfigurationResponse>
+     */
+    public CompletableFuture<ModifyConfigurationResponse> modifyConfigurationAsync(ModifyConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.modifyConfiguration);
+    }
+
+    /**
+     * 修改指定实例的参数
+     * 修改指定实例的参数。
+     *
+     * @param ModifyInstanceConfigurationRequest 请求对象
+     * @return CompletableFuture<ModifyInstanceConfigurationResponse>
+     */
+    public CompletableFuture<ModifyInstanceConfigurationResponse> modifyInstanceConfigurationAsync(ModifyInstanceConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.modifyInstanceConfiguration);
+    }
+
+    /**
      * 重置数据库密码
      * 重置数据库密码.
      *
@@ -193,6 +369,28 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<ResetPwdResponse> resetPwdAsync(ResetPwdRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.resetPwd);
+    }
+
+    /**
+     * 表级时间点恢复
+     * 表级时间点恢复。
+     *
+     * @param RestoreTablesRequest 请求对象
+     * @return CompletableFuture<RestoreTablesResponse>
+     */
+    public CompletableFuture<RestoreTablesResponse> restoreTablesAsync(RestoreTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.restoreTables);
+    }
+
+    /**
+     * 恢复到已有实例
+     * 恢复到已有实例。
+     *
+     * @param RestoreToExistingInstanceRequest 请求对象
+     * @return CompletableFuture<RestoreToExistingInstanceResponse>
+     */
+    public CompletableFuture<RestoreToExistingInstanceResponse> restoreToExistingInstanceAsync(RestoreToExistingInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.restoreToExistingInstance);
     }
 
     /**
@@ -218,6 +416,28 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改安全组
+     * 修改安全组
+     *
+     * @param SetSecurityGroupRequest 请求对象
+     * @return CompletableFuture<SetSecurityGroupResponse>
+     */
+    public CompletableFuture<SetSecurityGroupResponse> setSecurityGroupAsync(SetSecurityGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setSecurityGroup);
+    }
+
+    /**
+     * 生成审计日志下载链接
+     * 生成审计日志下载链接。
+     *
+     * @param ShowAuditlogDownloadLinkRequest 请求对象
+     * @return CompletableFuture<ShowAuditlogDownloadLinkResponse>
+     */
+    public CompletableFuture<ShowAuditlogDownloadLinkResponse> showAuditlogDownloadLinkAsync(ShowAuditlogDownloadLinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showAuditlogDownloadLink);
+    }
+
+    /**
      * 查询审计日志策略
      * 查询审计日志策略。
      *
@@ -226,6 +446,17 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<ShowAuditlogPolicyResponse> showAuditlogPolicyAsync(ShowAuditlogPolicyRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.showAuditlogPolicy);
+    }
+
+    /**
+     * 获取备份下载链接
+     * 获取备份下载链接。
+     *
+     * @param ShowBackupDownloadLinkRequest 请求对象
+     * @return CompletableFuture<ShowBackupDownloadLinkResponse>
+     */
+    public CompletableFuture<ShowBackupDownloadLinkResponse> showBackupDownloadLinkAsync(ShowBackupDownloadLinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showBackupDownloadLink);
     }
 
     /**
@@ -262,6 +493,17 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 手动倒换主备实例
+     * 手动倒换主备.
+     *
+     * @param StartFailoverRequest 请求对象
+     * @return CompletableFuture<StartFailoverResponse>
+     */
+    public CompletableFuture<StartFailoverResponse> startFailoverAsync(StartFailoverRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.startFailover);
+    }
+
+    /**
      * 变更实例规格/扩容实例磁盘/重启实例/单机转主备
      * 变更实例规格/扩容实例磁盘/重启实例/单机转主备。
      *
@@ -270,6 +512,17 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<StartInstanceActionResponse> startInstanceActionAsync(StartInstanceActionRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.startInstanceAction);
+    }
+
+    /**
+     * SSL开关
+     * SSL开关
+     *
+     * @param SwitchSslRequest 请求对象
+     * @return CompletableFuture<SwitchSslResponse>
+     */
+    public CompletableFuture<SwitchSslResponse> switchSslAsync(SwitchSslRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.switchSsl);
     }
 
     /**
@@ -336,6 +589,72 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<DeleteDatabaseResponse> deleteDatabaseAsync(DeleteDatabaseRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.deleteDatabase);
+    }
+
+    /**
+     * 删除数据库用户
+     * 删除数据库用户。
+     *
+     * @param DeleteDbUserRequest 请求对象
+     * @return CompletableFuture<DeleteDbUserResponse>
+     */
+    public CompletableFuture<DeleteDbUserResponse> deleteDbUserAsync(DeleteDbUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteDbUser);
+    }
+
+    /**
+     * 查询指定用户的已授权数据库
+     * 查询指定用户的已授权数据库。
+     *
+     * @param ListAuthorizedDatabasesRequest 请求对象
+     * @return CompletableFuture<ListAuthorizedDatabasesResponse>
+     */
+    public CompletableFuture<ListAuthorizedDatabasesResponse> listAuthorizedDatabasesAsync(ListAuthorizedDatabasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listAuthorizedDatabases);
+    }
+
+    /**
+     * 查询指定数据库的已授权用户
+     * 查询指定数据库的已授权用户。
+     *
+     * @param ListAuthorizedDbUsersRequest 请求对象
+     * @return CompletableFuture<ListAuthorizedDbUsersResponse>
+     */
+    public CompletableFuture<ListAuthorizedDbUsersResponse> listAuthorizedDbUsersAsync(ListAuthorizedDbUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listAuthorizedDbUsers);
+    }
+
+    /**
+     * 查询数据库列表
+     * 查询数据库列表。
+     *
+     * @param ListDatabasesRequest 请求对象
+     * @return CompletableFuture<ListDatabasesResponse>
+     */
+    public CompletableFuture<ListDatabasesResponse> listDatabasesAsync(ListDatabasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDatabases);
+    }
+
+    /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListDbUsersRequest 请求对象
+     * @return CompletableFuture<ListDbUsersResponse>
+     */
+    public CompletableFuture<ListDbUsersResponse> listDbUsersAsync(ListDbUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDbUsers);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     * 解除数据库帐号权限。
+     *
+     * @param RevokeRequest 请求对象
+     * @return CompletableFuture<RevokeResponse>
+     */
+    public CompletableFuture<RevokeResponse> revokeAsync(RevokeRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.revoke);
     }
 
     /**

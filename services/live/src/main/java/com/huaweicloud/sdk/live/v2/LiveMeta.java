@@ -759,6 +759,55 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowStreamPortraitRequest, ShowStreamPortraitResponse> showStreamPortrait = genForshowStreamPortrait();
+
+    private static HttpRequestDef<ShowStreamPortraitRequest, ShowStreamPortraitResponse> genForshowStreamPortrait() {
+        // basic
+        HttpRequestDef.Builder<ShowStreamPortraitRequest, ShowStreamPortraitResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStreamPortraitRequest.class, ShowStreamPortraitResponse.class)
+                .withUri("/v2/{project_id}/stats/stream-portraits")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("play_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowStreamPortraitRequest::getPlayDomain, (req, v) -> {
+                req.setPlayDomain(v);
+            })
+        );
+        builder.withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowStreamPortraitRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            })
+        );
+        builder.withRequestField("time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowStreamPortraitRequest::getTime, (req, v) -> {
+                req.setTime(v);
+            })
+        );
+
+        // response
+
+        builder.withResponseField(
+            "X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                ShowStreamPortraitResponse::getXRequestId,
+                ShowStreamPortraitResponse::setXRequestId)
+        );
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowUpBandwidthRequest, ShowUpBandwidthResponse> showUpBandwidth = genForshowUpBandwidth();
 
     private static HttpRequestDef<ShowUpBandwidthRequest, ShowUpBandwidthResponse> genForshowUpBandwidth() {

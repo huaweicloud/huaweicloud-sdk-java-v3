@@ -420,6 +420,38 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConversionsRequest, ListConversionsResponse> listConversions = genForlistConversions();
+
+    private static HttpRequestDef<ListConversionsRequest, ListConversionsResponse> genForlistConversions() {
+        // basic
+        HttpRequestDef.Builder<ListConversionsRequest, ListConversionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConversionsRequest.class, ListConversionsResponse.class)
+                .withUri("/v2/bases/conversions")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("measure_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListConversionsRequest::getMeasureType, (req, v) -> {
+                req.setMeasureType(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListConversionsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCountiesRequest, ListCountiesResponse> listCounties = genForlistCounties();
 
     private static HttpRequestDef<ListCountiesRequest, ListCountiesResponse> genForlistCounties() {
@@ -928,7 +960,7 @@ public class BssMeta {
         );
         builder.withRequestField("charge_mode",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getChargeMode, (req, v) -> {
                 req.setChargeMode(v);
@@ -1364,6 +1396,30 @@ public class BssMeta {
             String.class,
             f -> f.withMarshaller(ListIssuedPartnerCouponsRequest::getIndirectPartnerId, (req, v) -> {
                 req.setIndirectPartnerId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnits = genForlistMeasureUnits();
+
+    private static HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> genForlistMeasureUnits() {
+        // basic
+        HttpRequestDef.Builder<ListMeasureUnitsRequest, ListMeasureUnitsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMeasureUnitsRequest.class, ListMeasureUnitsResponse.class)
+                .withUri("/v2/bases/measurements")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListMeasureUnitsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 

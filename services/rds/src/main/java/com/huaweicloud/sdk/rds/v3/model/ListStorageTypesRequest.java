@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.rds.v3.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -122,6 +124,96 @@ public class ListStorageTypesRequest  {
     @JsonProperty(value="version_name")
     
     private String versionName;
+    /**
+     * Gets or Sets haMode
+     */
+    public static final class HaModeEnum {
+
+        
+        /**
+         * Enum HA for value: "ha"
+         */
+        public static final HaModeEnum HA = new HaModeEnum("ha");
+        
+        /**
+         * Enum SINGLE for value: "single"
+         */
+        public static final HaModeEnum SINGLE = new HaModeEnum("single");
+        
+        /**
+         * Enum REPLICA for value: "replica"
+         */
+        public static final HaModeEnum REPLICA = new HaModeEnum("replica");
+        
+
+        private static final Map<String, HaModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HaModeEnum> createStaticFields() {
+            Map<String, HaModeEnum> map = new HashMap<>();
+            map.put("ha", HA);
+            map.put("single", SINGLE);
+            map.put("replica", REPLICA);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HaModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HaModeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            HaModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new HaModeEnum(value);
+            }
+            return result;
+        }
+
+        public static HaModeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            HaModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof HaModeEnum) {
+                return this.value.equals(((HaModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ha_mode")
+    
+    private HaModeEnum haMode;
 
     public ListStorageTypesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -184,6 +276,26 @@ public class ListStorageTypesRequest  {
     public void setVersionName(String versionName) {
         this.versionName = versionName;
     }
+
+    public ListStorageTypesRequest withHaMode(HaModeEnum haMode) {
+        this.haMode = haMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get haMode
+     * @return haMode
+     */
+    public HaModeEnum getHaMode() {
+        return haMode;
+    }
+
+    public void setHaMode(HaModeEnum haMode) {
+        this.haMode = haMode;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -195,11 +307,12 @@ public class ListStorageTypesRequest  {
         ListStorageTypesRequest listStorageTypesRequest = (ListStorageTypesRequest) o;
         return Objects.equals(this.xLanguage, listStorageTypesRequest.xLanguage) &&
             Objects.equals(this.databaseName, listStorageTypesRequest.databaseName) &&
-            Objects.equals(this.versionName, listStorageTypesRequest.versionName);
+            Objects.equals(this.versionName, listStorageTypesRequest.versionName) &&
+            Objects.equals(this.haMode, listStorageTypesRequest.haMode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, databaseName, versionName);
+        return Objects.hash(xLanguage, databaseName, versionName, haMode);
     }
     @Override
     public String toString() {
@@ -208,6 +321,7 @@ public class ListStorageTypesRequest  {
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    versionName: ").append(toIndentedString(versionName)).append("\n");
+        sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

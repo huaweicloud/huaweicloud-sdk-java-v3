@@ -29,7 +29,7 @@ public class BssClient {
 
     /**
      * 设置伙伴折扣
-     * 功能描述：设置伙伴折扣
+     * 功能描述：合作伙伴可以为客户设置产品折扣，可指定有效期。被授予折扣后，客户在购买华为云产品（特殊产品除外）时，可享受伙伴授予折扣。
      *
      * @param BatchSetSubCustomerDiscountRequest 请求对象
      * @return BatchSetSubCustomerDiscountResponse
@@ -50,8 +50,8 @@ public class BssClient {
     }
 
     /**
-     * 取消包周期订单
-     * 功能描述：取消包周期订单
+     * 取消待支付订单
+     * 功能描述：客户可以对待支付的订单进行取消操作
      *
      * @param CancelCustomerOrderRequest 请求对象
      * @return CancelCustomerOrderResponse
@@ -61,8 +61,8 @@ public class BssClient {
     }
 
     /**
-     * 退订包周期资源
-     * 功能描述：退订包周期资源
+     * 退订包年包月资源
+     * 功能描述：客户购买包年包月资源后，支持客户退订包年包月实例。退订资源实例包括资源续费部分和当前正在使用的部分，退订后资源将无法使用
      *
      * @param CancelResourcesSubscriptionRequest 请求对象
      * @return CancelResourcesSubscriptionResponse
@@ -72,8 +72,8 @@ public class BssClient {
     }
 
     /**
-     * 实名认证变更申请
-     * 功能描述：实名认证变更申请
+     * 申请实名认证变更
+     * 功能描述：客户可以进行实名认证变更申请。
      *
      * @param ChangeEnterpriseRealnameAuthenticationRequest 请求对象
      * @return ChangeEnterpriseRealnameAuthenticationResponse
@@ -83,8 +83,8 @@ public class BssClient {
     }
 
     /**
-     * 校验客户的注册信息
-     * 功能描述：校验客户的注册信息
+     * 校验客户注册信息
+     * 功能描述：客户注册时可检查客户的登录名称、手机号或者邮箱是否可以用于注册。
      *
      * @param CheckUserIdentityRequest 请求对象
      * @return CheckUserIdentityResponse
@@ -94,8 +94,8 @@ public class BssClient {
     }
 
     /**
-     * 开通企业项目
-     * 功能描述：客户开通自身的企业项目功能
+     * 开通客户企业项目权限
+     * 功能描述：客户在客户自建平台开通客户企业项目权限
      *
      * @param CreateEnterpriseProjectAuthRequest 请求对象
      * @return CreateEnterpriseProjectAuthResponse
@@ -105,8 +105,8 @@ public class BssClient {
     }
 
     /**
-     * 企业实名认证申请
-     * 功能描述：企业实名认证申请V2
+     * 申请企业实名认证
+     * 功能描述：企业客户可以进行企业实名认证申请。
      *
      * @param CreateEnterpriseRealnameAuthenticationRequest 请求对象
      * @return CreateEnterpriseRealnameAuthenticationResponse
@@ -116,8 +116,8 @@ public class BssClient {
     }
 
     /**
-     * 伙伴给子客户发券
-     * 功能描述：伙伴给子客户发券
+     * 发放优惠券
+     * 功能描述：伙伴在伙伴销售平台使用额度为客户发放优惠券。
      *
      * @param CreatePartnerCouponsRequest 请求对象
      * @return CreatePartnerCouponsResponse
@@ -127,8 +127,8 @@ public class BssClient {
     }
 
     /**
-     * 个人实名认证申请
-     * 功能描述：个人实名认证申请
+     * 申请个人实名认证
+     * 功能描述：个人客户可以进行个人实名认证申请。
      *
      * @param CreatePersonalRealnameAuthRequest 请求对象
      * @return CreatePersonalRealnameAuthResponse
@@ -139,7 +139,7 @@ public class BssClient {
 
     /**
      * 新增邮寄地址
-     * 功能描述：新增邮寄地址
+     * 功能描述：客户可以新增自己的邮寄地址信息。
      *
      * @param CreatePostalRequest 请求对象
      * @return CreatePostalResponse
@@ -149,8 +149,8 @@ public class BssClient {
     }
 
     /**
-     * 创建客户（V2）
-     * 功能描述：在伙伴销售平台创建客户时同步创建华为云账号，并将客户在伙伴销售平台上的账号与华为云账号进行映射。同时，创建的华为云账号与伙伴账号关联绑定。
+     * 创建客户
+     * 功能描述：在伙伴销售平台创建客户时同步创建华为云账号，并将客户在伙伴销售平台上的账号与华为云账号进行映射。同时，创建的华为云账号与伙伴账号关联绑定。华为云伙伴能力中心（一级经销商）可以注册精英服务商伙伴（二级经销商）的子客户。注册完成后，子客户可以自动和精英服务商伙伴绑定。
      *
      * @param CreateSubCustomerRequest 请求对象
      * @return CreateSubCustomerResponse
@@ -161,7 +161,7 @@ public class BssClient {
 
     /**
      * 创建企业子账号
-     * 功能描述：创建企业子账号
+     * 功能描述：企业主账号在客户自建平台创建企业子账号
      *
      * @param CreateSubEnterpriseAccountRequest 请求对象
      * @return CreateSubEnterpriseAccountResponse
@@ -172,7 +172,7 @@ public class BssClient {
 
     /**
      * 删除邮寄地址
-     * 功能描述：删除邮寄地址
+     * 功能描述：客户可以删除自己的邮寄地址信息。
      *
      * @param DeletePostalRequest 请求对象
      * @return DeletePostalResponse
@@ -182,8 +182,8 @@ public class BssClient {
     }
 
     /**
-     * 根据省份查询城市信息
-     * 功能描述：根据省份查询城市列表
+     * 查询城市信息
+     * 功能描述：伙伴在伙伴销售平台上查询城市信息。
      *
      * @param ListCitiesRequest 请求对象
      * @return ListCitiesResponse
@@ -193,8 +193,19 @@ public class BssClient {
     }
 
     /**
-     * 根据城市查询区县信息
-     * 功能描述：根据城市查询区县列表
+     * 查询用量单位进制
+     * 功能描述：查询用量单位进制
+     *
+     * @param ListConversionsRequest 请求对象
+     * @return ListConversionsResponse
+     */
+    public ListConversionsResponse listConversions(ListConversionsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listConversions);
+    }
+
+    /**
+     * 查询区县信息
+     * 功能描述：伙伴在伙伴销售平台上查询区县信息。
      *
      * @param ListCountiesRequest 请求对象
      * @return ListCountiesResponse
@@ -227,7 +238,7 @@ public class BssClient {
 
     /**
      * 查询客户按需资源列表
-     * 功能描述：查询客户按需资源列表
+     * 功能描述：客户在伙伴销售平台查询已开通的按需资源
      *
      * @param ListCustomerOnDemandResourcesRequest 请求对象
      * @return ListCustomerOnDemandResourcesResponse
@@ -237,8 +248,8 @@ public class BssClient {
     }
 
     /**
-     * 查询订单列表V2
-     * 功能描述：查询订单列表
+     * 查询订单列表
+     * 功能描述：客户购买包年包月资源后，可以查看待审核、处理中、已取消、已完成和待支付等状态的订单
      *
      * @param ListCustomerOrdersRequest 请求对象
      * @return ListCustomerOrdersResponse
@@ -259,7 +270,7 @@ public class BssClient {
     }
 
     /**
-     * 查询资源详单V2（客户）
+     * 查询资源详单
      * 功能描述：客户在客户自建平台查询自己的资源详单，用于反映各类资源的消耗情况。资源详单数据有延迟，最大延迟24小时。
      *
      * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
@@ -270,8 +281,8 @@ public class BssClient {
     }
 
     /**
-     * 查询资源消费记录（客户）
-     * 功能描述：查询资源消费记录（客户）
+     * 查询资源消费记录
+     * 功能描述：客户在客户自建平台查询每个资源的消费明细数据
      *
      * @param ListCustomerselfResourceRecordsRequest 请求对象
      * @return ListCustomerselfResourceRecordsResponse
@@ -281,8 +292,8 @@ public class BssClient {
     }
 
     /**
-     * 查询企业子可回收余额
-     * 功能描述：查询企业子可回收余额
+     * 查询企业子账号可回收余额
+     * 功能描述：企业主账号在客户自建平台查询企业子账号的可回收余额
      *
      * @param ListEnterpriseMultiAccountRequest 请求对象
      * @return ListEnterpriseMultiAccountResponse
@@ -315,7 +326,7 @@ public class BssClient {
 
     /**
      * 查询精英服务商列表
-     * 功能描述：查询精英服务商列表
+     * 功能描述：华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
      *
      * @param ListIndirectPartnersRequest 请求对象
      * @return ListIndirectPartnersResponse
@@ -336,14 +347,25 @@ public class BssClient {
     }
 
     /**
-     * 查询已发放的优惠券列表
-     * 功能描述：查询已发放的优惠券列表
+     * 查询已发放的优惠券
+     * 功能描述：合作伙伴可以查询已发放的优惠券列表。
      *
      * @param ListIssuedPartnerCouponsRequest 请求对象
      * @return ListIssuedPartnerCouponsResponse
      */
     public ListIssuedPartnerCouponsResponse listIssuedPartnerCoupons(ListIssuedPartnerCouponsRequest request) {
         return hcClient.syncInvokeHttp(request, BssMeta.listIssuedPartnerCoupons);
+    }
+
+    /**
+     * 查询用量单位列表
+     * 功能描述：查询用量单位列表
+     *
+     * @param ListMeasureUnitsRequest 请求对象
+     * @return ListMeasureUnitsResponse
+     */
+    public ListMeasureUnitsResponse listMeasureUnits(ListMeasureUnitsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listMeasureUnits);
     }
 
     /**
@@ -359,7 +381,7 @@ public class BssClient {
 
     /**
      * 查询订单可用优惠券
-     * 功能描述：查询订单详情
+     * 功能描述：客户在客户自建平台查看订单可用的优惠券列表
      *
      * @param ListOrderCouponsByOrderIdRequest 请求对象
      * @return ListOrderCouponsByOrderIdResponse
@@ -392,7 +414,7 @@ public class BssClient {
 
     /**
      * 查询优惠券的发放回收记录
-     * 功能描述：查询优惠券的发放回收记录
+     * 功能描述：合作伙伴可查看给客户发放和回收优惠券的操作记录。
      *
      * @param ListPartnerCouponsRecordRequest 请求对象
      * @return ListPartnerCouponsRecordResponse
@@ -403,7 +425,7 @@ public class BssClient {
 
     /**
      * 查询伙伴代付订单列表
-     * 功能描述：查询伙伴代付订单列表
+     * 功能描述：伙伴在伙伴销售平台查询客户的代支付订单列表。
      *
      * @param ListPartnerPayOrdersRequest 请求对象
      * @return ListPartnerPayOrdersResponse
@@ -414,7 +436,7 @@ public class BssClient {
 
     /**
      * 查询客户包年包月资源列表
-     * 功能描述：查询客户包年/包月资源列表
+     * 功能描述：客户在客户自建平台查询某个或所有的包年包月资源
      *
      * @param ListPayPerUseCustomerResourcesRequest 请求对象
      * @return ListPayPerUseCustomerResourcesResponse
@@ -425,7 +447,7 @@ public class BssClient {
 
     /**
      * 查询邮寄地址
-     * 功能描述：查询邮寄地址
+     * 功能描述：客户可以查询自己的邮寄地址信息。
      *
      * @param ListPostalAddressRequest 请求对象
      * @return ListPostalAddressResponse
@@ -435,8 +457,8 @@ public class BssClient {
     }
 
     /**
-     * 根据国家查询省份信息
-     * 功能描述：根据国家查询省份列表
+     * 查询省份信息
+     * 功能描述：伙伴在伙伴销售平台上查询省份信息。
      *
      * @param ListProvincesRequest 请求对象
      * @return ListProvincesResponse
@@ -446,8 +468,8 @@ public class BssClient {
     }
 
     /**
-     * 查询优惠券额度列表
-     * 功能描述：查询优惠券额度列表
+     * 查询优惠券额度
+     * 功能描述：合作伙伴可以查看所拥有的优惠劵额度。
      *
      * @param ListQuotaCouponsRequest 请求对象
      * @return ListQuotaCouponsResponse
@@ -468,8 +490,8 @@ public class BssClient {
     }
 
     /**
-     * 查询资源类型
-     * 功能描述：查询资源类型
+     * 查询资源类型列表
+     * 功能描述：客户在客户自建平台查询资源类型的列表。
      *
      * @param ListResourceTypesRequest 请求对象
      * @return ListResourceTypesResponse
@@ -480,7 +502,7 @@ public class BssClient {
 
     /**
      * 查询套餐内使用量
-     * 功能描述：查询套餐内使用量
+     * 功能描述：客户在客户自建平台查询套餐内的使用量
      *
      * @param ListResourceUsagesRequest 请求对象
      * @return ListResourceUsagesResponse
@@ -491,7 +513,7 @@ public class BssClient {
 
     /**
      * 根据云服务类型查询资源列表
-     * 功能描述：根据云服务类型查询资源列表
+     * 功能描述：伙伴在伙伴销售平台根据云服务类型查询关联的资源类型编码和名称，用于查询按需产品的价格或包年/包月产品的价格。
      *
      * @param ListServiceResourcesRequest 请求对象
      * @return ListServiceResourcesResponse
@@ -502,7 +524,7 @@ public class BssClient {
 
     /**
      * 查询云服务类型列表
-     * 功能描述：查询云服务类型列表
+     * 功能描述：伙伴在伙伴销售平台查询云服务类型的列表。
      *
      * @param ListServiceTypesRequest 请求对象
      * @return ListServiceTypesResponse
@@ -524,7 +546,7 @@ public class BssClient {
 
     /**
      * 查询优惠券列表
-     * 功能描述：查询优惠券列表
+     * 功能描述：伙伴可以查询自身的优惠券信息。
      *
      * @param ListSubCustomerCouponsRequest 请求对象
      * @return ListSubCustomerCouponsResponse
@@ -535,7 +557,7 @@ public class BssClient {
 
     /**
      * 查询伙伴折扣
-     * 功能描述：查询伙伴折扣
+     * 功能描述：合作伙伴可以查看为客户设置的折扣，每次查询一个客户。如果该客户没有设置折扣，返回null。精英服务商（二级经销商）也可以通过该接口查询子客户的折扣。
      *
      * @param ListSubCustomerDiscountsRequest 请求对象
      * @return ListSubCustomerDiscountsResponse
@@ -546,7 +568,7 @@ public class BssClient {
 
     /**
      * 查询客户消费记录
-     * 功能描述：查询客户消费记录
+     * 功能描述：合作伙伴可以查看客户的消费记录
      *
      * @param ListSubCustomerResFeeRecordsRequest 请求对象
      * @return ListSubCustomerResFeeRecordsResponse
@@ -557,7 +579,7 @@ public class BssClient {
 
     /**
      * 查询客户列表
-     * 功能描述：查询客户列表
+     * 功能描述：伙伴可以查询合作伙伴的客户信息列表。
      *
      * @param ListSubCustomersRequest 请求对象
      * @return ListSubCustomersResponse
@@ -567,7 +589,7 @@ public class BssClient {
     }
 
     /**
-     * 查询客户月度消费账单（V2）
+     * 查询客户月度消费账单
      * 功能描述：合作伙伴可查询客户的消费汇总账单，消费按月汇总
      *
      * @param ListSubcustomerMonthlyBillsRequest 请求对象
@@ -578,8 +600,8 @@ public class BssClient {
     }
 
     /**
-     * 查询使用量列表
-     * 功能描述：客户在伙伴销售平台或自建平台查询包年/包月或按需产品的列表
+     * 查询使用量类型列表
+     * 功能描述：伙伴在伙伴销售平台查询资源的使用量类型列表。
      *
      * @param ListUsageTypesRequest 请求对象
      * @return ListUsageTypesResponse
@@ -589,8 +611,8 @@ public class BssClient {
     }
 
     /**
-     * 支付包周期订单
-     * 功能描述：支付包周期订单
+     * 支付包年包月产品订单
+     * 功能描述：客户可以对待支付状态的包年包月产品订单进行支付
      *
      * @param PayOrdersRequest 请求对象
      * @return PayOrdersResponse
@@ -622,8 +644,8 @@ public class BssClient {
     }
 
     /**
-     * 伙伴回收子客户优惠券
-     * 功能描述：伙伴回收子客户优惠券
+     * 回收优惠券
+     * 功能描述：对于合作伙伴已经下发给客户的优惠券，如遇发错或其他特殊情况，合作伙伴有回收的权利。优惠券回收后，客户将不再拥有该优惠券。
      *
      * @param ReclaimPartnerCouponsRequest 请求对象
      * @return ReclaimPartnerCouponsResponse
@@ -634,7 +656,7 @@ public class BssClient {
 
     /**
      * 企业主账号从企业子账号回收拨款
-     * 功能描述：企业主账号从企业子账号回收拨款
+     * 功能描述：企业主账号在客户自建平台回收给企业子账号的拨款
      *
      * @param ReclaimSubEnterpriseAmountRequest 请求对象
      * @return ReclaimSubEnterpriseAmountResponse
@@ -655,8 +677,8 @@ public class BssClient {
     }
 
     /**
-     * 续订包周期资源
-     * 功能描述：续订包周期资源
+     * 续订包年包月资源
+     * 功能描述：客户的包年包月资源即将到期时，可进行包年包月资源的续订
      *
      * @param RenewalResourcesRequest 请求对象
      * @return RenewalResourcesResponse
@@ -667,7 +689,7 @@ public class BssClient {
 
     /**
      * 发送短信验证码
-     * 功能描述：发送短信验证码
+     * 功能描述：企业主账号在客户自建平台发送短信验证码
      *
      * @param SendSmsVerificationCodeRequest 请求对象
      * @return SendSmsVerificationCodeResponse
@@ -677,8 +699,8 @@ public class BssClient {
     }
 
     /**
-     * 短信验证码
-     * 功能描述：发送验证码
+     * 发送验证码
+     * 功能描述：客户注册时，如果填写了手机号，可以向对应的手机发送注册验证码，校验信息的正确性。使用个人银行卡方式进行实名认证时，通过该接口向指定的手机发送验证码。
      *
      * @param SendVerificationMessageCodeRequest 请求对象
      * @return SendVerificationMessageCodeResponse
@@ -699,8 +721,8 @@ public class BssClient {
     }
 
     /**
-     * 查询客户消费汇总
-     * 功能描述：客户可以查询自身的消费汇总单的功能，消费按月汇总。每天刷新一次，更新前一天的数据。
+     * 查询汇总账单
+     * 功能描述：客户在客户自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。消费汇总账单数据仅包含前一天24点前的数据
      *
      * @param ShowCustomerMonthlySumRequest 请求对象
      * @return ShowCustomerMonthlySumResponse
@@ -710,8 +732,8 @@ public class BssClient {
     }
 
     /**
-     * 查询订单详情V2
-     * 功能描述：查询订单详情
+     * 查询订单详情
+     * 功能描述：客户可以查看订单详情
      *
      * @param ShowCustomerOrderDetailsRequest 请求对象
      * @return ShowCustomerOrderDetailsResponse
@@ -721,8 +743,8 @@ public class BssClient {
     }
 
     /**
-     * 查询企业主的可拨款余额
-     * 功能描述：查询企业主的可拨款余额
+     * 查询企业主账号可拨款余额
+     * 功能描述：企业主账号在客户自建平台查询自己的可拨款余额
      *
      * @param ShowMultiAccountTransferAmountRequest 请求对象
      * @return ShowMultiAccountTransferAmountResponse
@@ -733,7 +755,7 @@ public class BssClient {
 
     /**
      * 查询实名认证审核结果
-     * 功能描述：查询实名认证审核结果
+     * 功能描述：如果实名认证申请或实名认证变更申请的响应中，显示需要人工审核，使用该接口查询审核结果。
      *
      * @param ShowRealnameAuthenticationReviewResultRequest 请求对象
      * @return ShowRealnameAuthenticationReviewResultResponse
@@ -743,8 +765,8 @@ public class BssClient {
     }
 
     /**
-     * 查询退款订单的金额详情V2
-     * 功能描述：查询退款订单的金额详情
+     * 查询退款订单的金额详情
+     * 功能描述：客户在伙伴销售平台查询某次退订订单或者降配订单的退款金额来自哪些资源和对应订单
      *
      * @param ShowRefundOrderDetailsRequest 请求对象
      * @return ShowRefundOrderDetailsResponse
@@ -787,8 +809,8 @@ public class BssClient {
     }
 
     /**
-     * 设置或者取消包周期资源到期转按需
-     * 功能描述：设置或者取消包周期资源到期转按需
+     * 设置或者取消包年包月资源到期转按需
+     * 功能描述：客户可以设置包年包月资源到期后转为按需资源计费。包年包月计费模式到期后，按需的计费模式即生效
      *
      * @param UpdatePeriodToOnDemandRequest 请求对象
      * @return UpdatePeriodToOnDemandResponse
@@ -799,7 +821,7 @@ public class BssClient {
 
     /**
      * 修改邮寄地址
-     * 功能描述：修改邮寄地址
+     * 功能描述：客户可以修改自己的邮寄地址信息。
      *
      * @param UpdatePostalRequest 请求对象
      * @return UpdatePostalResponse
@@ -810,7 +832,7 @@ public class BssClient {
 
     /**
      * 企业主账号向企业子账号拨款
-     * 功能描述：企业主账号向企业子账号拨款
+     * 功能描述：企业主账号在客户自建平台向企业子账号拨款
      *
      * @param UpdateSubEnterpriseAmountRequest 请求对象
      * @return UpdateSubEnterpriseAmountResponse

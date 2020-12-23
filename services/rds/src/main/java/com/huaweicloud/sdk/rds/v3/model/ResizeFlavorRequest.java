@@ -23,6 +23,12 @@ public class ResizeFlavorRequest  {
     
     private String specCode;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_auto_pay")
+    
+    private Boolean isAutoPay;
+
     public ResizeFlavorRequest withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -42,6 +48,26 @@ public class ResizeFlavorRequest  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
+
+    public ResizeFlavorRequest withIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 变更包周期实例的规格时可指定，表示是否自动从客户的账户中支付。
+     * @return isAutoPay
+     */
+    public Boolean getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -51,17 +77,19 @@ public class ResizeFlavorRequest  {
             return false;
         }
         ResizeFlavorRequest resizeFlavorRequest = (ResizeFlavorRequest) o;
-        return Objects.equals(this.specCode, resizeFlavorRequest.specCode);
+        return Objects.equals(this.specCode, resizeFlavorRequest.specCode) &&
+            Objects.equals(this.isAutoPay, resizeFlavorRequest.isAutoPay);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(specCode);
+        return Objects.hash(specCode, isAutoPay);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeFlavorRequest {\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

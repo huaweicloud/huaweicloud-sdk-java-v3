@@ -174,6 +174,12 @@ public class MonthlyBillRecord  {
     
     private BigDecimal writeoffAmount = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region_name")
+    
+    private String regionName;
+
     public MonthlyBillRecord withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -693,6 +699,26 @@ public class MonthlyBillRecord  {
     public void setWriteoffAmount(BigDecimal writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
     }
+
+    public MonthlyBillRecord withRegionName(String regionName) {
+        this.regionName = regionName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务区名称| |参数的约束及描述：云服务区名称|
+     * @return regionName
+     */
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -727,11 +753,12 @@ public class MonthlyBillRecord  {
             Objects.equals(this.storedValueCardAmount, monthlyBillRecord.storedValueCardAmount) &&
             Objects.equals(this.bonusAmount, monthlyBillRecord.bonusAmount) &&
             Objects.equals(this.debtAmount, monthlyBillRecord.debtAmount) &&
-            Objects.equals(this.writeoffAmount, monthlyBillRecord.writeoffAmount);
+            Objects.equals(this.writeoffAmount, monthlyBillRecord.writeoffAmount) &&
+            Objects.equals(this.regionName, monthlyBillRecord.regionName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(billCycle, customerId, serviceTypeCode, resourceTypeCode, regionCode, enterpriseProjectId, enterpriseProjectName, chargingMode, consumeTime, tradeTime, providerType, tradeId, billType, status, officialAmount, officialDiscountAmount, eraseAmount, consumeAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedValueCardAmount, bonusAmount, debtAmount, writeoffAmount);
+        return Objects.hash(billCycle, customerId, serviceTypeCode, resourceTypeCode, regionCode, enterpriseProjectId, enterpriseProjectName, chargingMode, consumeTime, tradeTime, providerType, tradeId, billType, status, officialAmount, officialDiscountAmount, eraseAmount, consumeAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedValueCardAmount, bonusAmount, debtAmount, writeoffAmount, regionName);
     }
     @Override
     public String toString() {
@@ -763,6 +790,7 @@ public class MonthlyBillRecord  {
         sb.append("    bonusAmount: ").append(toIndentedString(bonusAmount)).append("\n");
         sb.append("    debtAmount: ").append(toIndentedString(debtAmount)).append("\n");
         sb.append("    writeoffAmount: ").append(toIndentedString(writeoffAmount)).append("\n");
+        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

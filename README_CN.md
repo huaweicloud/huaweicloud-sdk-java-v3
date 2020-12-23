@@ -24,7 +24,7 @@
 - 通过 Maven 安装依赖（推荐）
 
     通过 Maven 安装项目依赖是使用 Java SDK 的推荐方法，首先您需要在您的操作系统中[下载]( https://maven.apache.org/download.cgi )并[安装 Maven]( https://maven.apache.org/install.html ) ，安装完成后您只需在 Java 项目的 `pom.xml` 文件加入相应的依赖项即可。
-    
+
     无论您要使用哪个产品/服务的开发工具包，都必须安装`huaweicloud-sdk-core`。以使用虚拟私有云VPC SDK为例，您需要安装`huaweicloud-sdk-core`和`huaweicloud-sdk-vpc`：
 
     ``` xml
@@ -54,9 +54,13 @@
     import com.huaweicloud.sdk.core.http.HttpConfig;
     // 导入指定云服务的 {Service}Client，此处以 VpcClient 为例
     import com.huaweicloud.sdk.vpc.v2.VpcClient;
+    // 导入指定云服务的 {Service}Region，此处以 VpcRegion 为例
+    import com.huaweicloud.sdk.vpc.v2.VpcRegion;
+
     // 导入待请求接口的 request 和 response 类
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
+
     // 日志打印
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
@@ -75,7 +79,7 @@
 
     ``` java
     // 使用代理服务器（可选）
-    config.withProxyHost("http://proxy.huaweicloud.com")
+    config.withProxyHost("proxy.huaweicloud.com")
         .withProxyPort(8080)
         .withProxyUsername("test")
         .withProxyPassword("test");
@@ -98,14 +102,14 @@
 3. 初始化认证信息
 
     3.1 使用永久AK/SK
-    
+
     ``` java
     // Region级服务
     BasicCredentials credentials = new BasicCredentials()
         .withAk(ak)
         .withSk(sk)
         .withProjectId(projectId)
-   
+
     // Global级服务
     GlobalCredentials credentials = new GlobalCredentials()
         .withAk(ak)
@@ -114,23 +118,25 @@
     ```
 
     **说明**：
-    全局服务当前仅支持IAM, TMS, EPS。
-    
+    全局服务当前仅支持 BSS, DevStar, EPS, IAM, OSM, RMS, TMS。
+
     Region级服务仅需要提供 projectId。Global级服务需要提供domainId。
+
+    使用Region创建客户端场景projectId、domainId在支持自动获取，无需再次配置。
 
     - `ak` 华为云账号 Access Key 。
     - `sk` 华为云账号 Secret Access Key 。
     - `projectId` 云服务所在项目 ID ，根据你想操作的项目所属区域选择对应的项目 ID 。
     - `domainId` 华为云账号ID 。
-    
+
     3.2 使用临时AK/SK
-    
+
     首选需要获得临时AK、SK和SecurityToken，获取可以从永久AK/SK获得，或者通过委托授权首选获得
-    
+
     通过永久AK/SK获得可以参考文档：https://support.huaweicloud.com/api-iam/iam_04_0002.html, 对应IAM SDK 中的createTemporaryAccessKeyByToken方法。
-    
+
     通过委托授权获得可以参考文档：https://support.huaweicloud.com/api-iam/iam_04_0101.html, 对应IAM SDK 中的createTemporaryAccessKeyByAgency方法。
-    
+
     ``` java
         // Region级服务
         BasicCredentials credentials = new BasicCredentials()
@@ -138,7 +144,7 @@
             .withSk(sk)
             .withSecurityToken(securityToken)
             .withProjectId(projectId)
-       
+
         // Global级服务
         GlobalCredentials credentials = new GlobalCredentials()
             .withAk(ak)
@@ -146,20 +152,46 @@
             .withSecurityToken(securityToken)
             .withDomainId(domainId);
         ```
-    
-4. 初始化客户端
 
-    ``` java
-   // 初始化指定云服务的客户端 {Service}Client ，以初始化 VpcClient 为例
-    VpcClient vpcClient = VpcClient.newBuilder()
-        .withHttpConfig(config)
-        .withCredential(credentials)
-        .withEndpoint(endpoint)
-        .build();
-    ```
+4. 初始化客户端（两种方式）
+
+    4.1 指定云服务Endpoint方式
+
+        ``` java
+        BasicCredentials credentials = new BasicCredentials()
+            .withAk(ak)
+            .withSk(sk)
+            .withProjectId(projectId);
+
+        // 初始化指定云服务的客户端 {Service}Client ，以初始化 VpcClient 为例
+        VpcClient vpcClient = VpcClient.newBuilder()
+            .withHttpConfig(config)
+            .withCredential(credentials)
+            .withEndpoint(endpoint)
+            .build();
+        ```
 
     **说明：**
     - `endpoint` 华为云各服务应用区域和各服务的终端节点，详情请查看[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
+
+    4.2 指定Region方式（推荐）
+
+        ``` java
+        GlobalCredentials credentials = new GlobalCredentials()
+            .withAk(ak)
+            .withSk(sk);
+
+        // 初始化指定云服务的客户端 {Service}Client ，以初始化 IamClient 为例
+        IamClient iamClient = IamClient.newBuilder()
+            .withHttpConfig(config)
+            .withCredential(credentials)
+            .withRegion(IamRegion.CN_NORTH_4)
+            .build();
+        ```
+
+    **说明：**
+    - 指定Region方式创建客户端场景，支持自动获取用户的regionId以及domainId，认证Credential中无需再次指定；
+    - 不适用于`多ProjectId`场景。
 
 5. 发送请求并查看响应
 
@@ -207,7 +239,6 @@
 
     // 获取异步请求结果
     ListVpcsResponse response = future.get();
-    logger.info(response.toString());
     ```
 
 8. 访问日志

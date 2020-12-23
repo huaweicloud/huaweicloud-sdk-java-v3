@@ -214,7 +214,7 @@ public class ListCustomerselfResourceRecordsRequest  {
     /**
      * Get billType
      * minimum: 0
-     * maximum: 16
+     * maximum: 17
      * @return billType
      */
     public Integer getBillType() {

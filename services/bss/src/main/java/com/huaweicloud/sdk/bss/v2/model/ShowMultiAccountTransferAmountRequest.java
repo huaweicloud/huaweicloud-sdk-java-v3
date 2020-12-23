@@ -87,7 +87,7 @@ public class ShowMultiAccountTransferAmountRequest  {
 
     /**
      * Get limit
-     * minimum: 1
+     * minimum: 0
      * maximum: 100
      * @return limit
      */
