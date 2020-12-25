@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ListProjectTagsResult;
+import com.huaweicloud.sdk.dds.v3.model.QueryProjectTagItem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListProjectTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ListProjectTagsResult> tags = null;
+    private List<QueryProjectTagItem> tags = null;
     
-    public ListProjectTagsResponse withTags(List<ListProjectTagsResult> tags) {
+    public ListProjectTagsResponse withTags(List<QueryProjectTagItem> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public ListProjectTagsResponse addTagsItem(ListProjectTagsResult tagsItem) {
+    public ListProjectTagsResponse addTagsItem(QueryProjectTagItem tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListProjectTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ListProjectTagsResponse withTags(Consumer<List<ListProjectTagsResult>> tagsSetter) {
+    public ListProjectTagsResponse withTags(Consumer<List<QueryProjectTagItem>> tagsSetter) {
         if(this.tags == null ){
             this.tags = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListProjectTagsResponse extends SdkResponse {
      * 标签列表。
      * @return tags
      */
-    public List<ListProjectTagsResult> getTags() {
+    public List<QueryProjectTagItem> getTags() {
         return tags;
     }
 
-    public void setTags(List<ListProjectTagsResult> tags) {
+    public void setTags(List<QueryProjectTagItem> tags) {
         this.tags = tags;
     }
     @Override

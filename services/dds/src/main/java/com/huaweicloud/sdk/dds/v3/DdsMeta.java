@@ -33,7 +33,7 @@ public class DdsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AddShardingNodeRequestBody.class,
+            EnlargeInstanceRequestBody.class,
             f -> f.withMarshaller(AddShardingNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -44,29 +44,29 @@ public class DdsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchCreateInstanceTagsRequest, BatchCreateInstanceTagsResponse> batchCreateInstanceTags = genForbatchCreateInstanceTags();
+    public static final HttpRequestDef<AttachEipRequest, AttachEipResponse> attachEip = genForattachEip();
 
-    private static HttpRequestDef<BatchCreateInstanceTagsRequest, BatchCreateInstanceTagsResponse> genForbatchCreateInstanceTags() {
+    private static HttpRequestDef<AttachEipRequest, AttachEipResponse> genForattachEip() {
         // basic
-        HttpRequestDef.Builder<BatchCreateInstanceTagsRequest, BatchCreateInstanceTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateInstanceTagsRequest.class, BatchCreateInstanceTagsResponse.class)
-                .withUri("/v3/{project_id}/instances/{instance_id}/tags/action")
+        HttpRequestDef.Builder<AttachEipRequest, AttachEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachEipRequest.class, AttachEipResponse.class)
+                .withUri("/v3/{project_id}/nodes/{node_id}/bind-eip")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(BatchCreateInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
+            f -> f.withMarshaller(AttachEipRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
             })
         );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateInstanceTagsRequestBody.class,
-            f -> f.withMarshaller(BatchCreateInstanceTagsRequest::getBody, (req, v) -> {
+            AttachEipRequestBody.class,
+            f -> f.withMarshaller(AttachEipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -76,12 +76,44 @@ public class DdsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteInstanceTagsRequest, BatchDeleteInstanceTagsResponse> batchDeleteInstanceTags = genForbatchDeleteInstanceTags();
+    public static final HttpRequestDef<AttachInternalIpRequest, AttachInternalIpResponse> attachInternalIp = genForattachInternalIp();
 
-    private static HttpRequestDef<BatchDeleteInstanceTagsRequest, BatchDeleteInstanceTagsResponse> genForbatchDeleteInstanceTags() {
+    private static HttpRequestDef<AttachInternalIpRequest, AttachInternalIpResponse> genForattachInternalIp() {
         // basic
-        HttpRequestDef.Builder<BatchDeleteInstanceTagsRequest, BatchDeleteInstanceTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteInstanceTagsRequest.class, BatchDeleteInstanceTagsResponse.class)
+        HttpRequestDef.Builder<AttachInternalIpRequest, AttachInternalIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachInternalIpRequest.class, AttachInternalIpResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/modify-internal-ip")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AttachInternalIpRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AttachInternalIpRequestBody.class,
+            f -> f.withMarshaller(AttachInternalIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction = genForbatchTagAction();
+
+    private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForbatchTagAction() {
+        // basic
+        HttpRequestDef.Builder<BatchTagActionRequest, BatchTagActionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchTagActionRequest.class, BatchTagActionResponse.class)
                 .withUri("/v3/{project_id}/instances/{instance_id}/tags/action")
                 .withContentType("application/json");
 
@@ -90,15 +122,103 @@ public class DdsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(BatchDeleteInstanceTagsRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(BatchTagActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteInstanceTagsRequestBody.class,
-            f -> f.withMarshaller(BatchDeleteInstanceTagsRequest::getBody, (req, v) -> {
+            BatchOperateInstanceTagRequestBody.class,
+            f -> f.withMarshaller(BatchTagActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelEipRequest, CancelEipResponse> cancelEip = genForcancelEip();
+
+    private static HttpRequestDef<CancelEipRequest, CancelEipResponse> genForcancelEip() {
+        // basic
+        HttpRequestDef.Builder<CancelEipRequest, CancelEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelEipRequest.class, CancelEipResponse.class)
+                .withUri("/v3/{project_id}/nodes/{node_id}/unbind-eip")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CancelEipRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> createDatabaseRole = genForcreateDatabaseRole();
+
+    private static HttpRequestDef<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> genForcreateDatabaseRole() {
+        // basic
+        HttpRequestDef.Builder<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseRoleRequest.class, CreateDatabaseRoleResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-role")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateDatabaseRoleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateDatabaseRoleRequestBody.class,
+            f -> f.withMarshaller(CreateDatabaseRoleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatabaseUserRequest, CreateDatabaseUserResponse> createDatabaseUser = genForcreateDatabaseUser();
+
+    private static HttpRequestDef<CreateDatabaseUserRequest, CreateDatabaseUserResponse> genForcreateDatabaseUser() {
+        // basic
+        HttpRequestDef.Builder<CreateDatabaseUserRequest, CreateDatabaseUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseUserRequest.class, CreateDatabaseUserResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-user")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateDatabaseUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateDatabaseUserRequestBody.class,
+            f -> f.withMarshaller(CreateDatabaseUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -204,6 +324,38 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadSlowlogRequest, DownloadSlowlogResponse> downloadSlowlog = genFordownloadSlowlog();
+
+    private static HttpRequestDef<DownloadSlowlogRequest, DownloadSlowlogResponse> genFordownloadSlowlog() {
+        // basic
+        HttpRequestDef.Builder<DownloadSlowlogRequest, DownloadSlowlogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadSlowlogRequest.class, DownloadSlowlogResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-download")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DownloadSlowlogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DownloadSlowlogRequestBody.class,
+            f -> f.withMarshaller(DownloadSlowlogRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBackupsRequest, ListBackupsResponse> listBackups = genForlistBackups();
 
     private static HttpRequestDef<ListBackupsRequest, ListBackupsResponse> genForlistBackups() {
@@ -276,6 +428,118 @@ public class DdsMeta {
             ListBackupsRequest.ModeEnum.class,
             f -> f.withMarshaller(ListBackupsRequest::getMode, (req, v) -> {
                 req.setMode(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatabaseRolesRequest, ListDatabaseRolesResponse> listDatabaseRoles = genForlistDatabaseRoles();
+
+    private static HttpRequestDef<ListDatabaseRolesRequest, ListDatabaseRolesResponse> genForlistDatabaseRoles() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseRolesRequest, ListDatabaseRolesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabaseRolesRequest.class, ListDatabaseRolesResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-roles")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDatabaseRolesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("role_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDatabaseRolesRequest::getRoleName, (req, v) -> {
+                req.setRoleName(v);
+            })
+        );
+        builder.withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDatabaseRolesRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListDatabaseRolesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListDatabaseRolesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsers = genForlistDatabaseUsers();
+
+    private static HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> genForlistDatabaseUsers() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseUsersRequest, ListDatabaseUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabaseUsersRequest.class, ListDatabaseUsersResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-user/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            })
+        );
+        builder.withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListDatabaseUsersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 
@@ -484,6 +748,134 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogs = genForlistSlowLogs();
+
+    private static HttpRequestDef<ListSlowLogsRequest, ListSlowLogsResponse> genForlistSlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListSlowLogsRequest, ListSlowLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSlowLogsRequest.class, ListSlowLogsResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/slowlog")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowLogsRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            })
+        );
+        builder.withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListSlowLogsRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            })
+        );
+        builder.withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSlowLogsRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListSlowLogsRequest.TypeEnum.class,
+            f -> f.withMarshaller(ListSlowLogsRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSlowLogsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListSlowLogsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStorageTypeRequest, ListStorageTypeResponse> listStorageType = genForlistStorageType();
+
+    private static HttpRequestDef<ListStorageTypeRequest, ListStorageTypeResponse> genForlistStorageType() {
+        // basic
+        HttpRequestDef.Builder<ListStorageTypeRequest, ListStorageTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStorageTypeRequest.class, ListStorageTypeResponse.class)
+                .withUri("/v3/{project_id}/storage-type")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("engine_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListStorageTypeRequest.EngineNameEnum.class,
+            f -> f.withMarshaller(ListStorageTypeRequest::getEngineName, (req, v) -> {
+                req.setEngineName(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword = genForresetPassword();
+
+    private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
+        // basic
+        HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetPasswordRequest.class, ResetPasswordResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/reset-password")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResetPasswordRequestBody.class,
+            f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance = genForresizeInstance();
 
     private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
@@ -612,6 +1004,46 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLink = genForshowBackupDownloadLink();
+
+    private static HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> genForshowBackupDownloadLink() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupDownloadLinkRequest.class, ShowBackupDownloadLinkResponse.class)
+                .withUri("/v3/{project_id}/backups/download-file")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicy = genForshowBackupPolicy();
 
     private static HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> genForshowBackupPolicy() {
@@ -628,6 +1060,158 @@ public class DdsMeta {
             String.class,
             f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSslRequest, SwitchSslResponse> switchSsl = genForswitchSsl();
+
+    private static HttpRequestDef<SwitchSslRequest, SwitchSslResponse> genForswitchSsl() {
+        // basic
+        HttpRequestDef.Builder<SwitchSslRequest, SwitchSslResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchSslRequest.class, SwitchSslResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/switch-ssl")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SwitchSslRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SwitchSslRequestBody.class,
+            f -> f.withMarshaller(SwitchSslRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> switchoverReplicaSet = genForswitchoverReplicaSet();
+
+    private static HttpRequestDef<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> genForswitchoverReplicaSet() {
+        // basic
+        HttpRequestDef.Builder<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchoverReplicaSetRequest.class, SwitchoverReplicaSetResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/switchover")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SwitchoverReplicaSetRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName = genForupdateInstanceName();
+
+    private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForupdateInstanceName() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceNameRequest, UpdateInstanceNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceNameRequest.class, UpdateInstanceNameResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/modify-name")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateNameRequestBody.class,
+            f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstancePortRequest, UpdateInstancePortResponse> updateInstancePort = genForupdateInstancePort();
+
+    private static HttpRequestDef<UpdateInstancePortRequest, UpdateInstancePortResponse> genForupdateInstancePort() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstancePortRequest, UpdateInstancePortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateInstancePortRequest.class, UpdateInstancePortResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/modify-port")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateInstancePortRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdatePortRequestBody.class,
+            f -> f.withMarshaller(UpdateInstancePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroup = genForupdateSecurityGroup();
+
+    private static HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> genForupdateSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateSecurityGroupRequest.class, UpdateSecurityGroupResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/modify-security-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateSecurityGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateSecurityGroupRequestBody.class,
+            f -> f.withMarshaller(UpdateSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

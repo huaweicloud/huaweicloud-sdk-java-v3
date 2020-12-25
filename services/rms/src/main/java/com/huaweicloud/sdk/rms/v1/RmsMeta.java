@@ -516,6 +516,30 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForlistRegions();
+
+    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForlistRegions() {
+        // basic
+        HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
+                .withUri("/v1/resource-manager/domains/{domain_id}/regions")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ListRegionsRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ListRegionsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowResourceRelationsRequest, ShowResourceRelationsResponse> showResourceRelations = genForshowResourceRelations();
 
     private static HttpRequestDef<ShowResourceRelationsRequest, ShowResourceRelationsResponse> genForshowResourceRelations() {
@@ -564,6 +588,62 @@ public class RmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAllResourcesRequest, ListAllResourcesResponse> listAllResources = genForlistAllResources();
+
+    private static HttpRequestDef<ListAllResourcesRequest, ListAllResourcesResponse> genForlistAllResources() {
+        // basic
+        HttpRequestDef.Builder<ListAllResourcesRequest, ListAllResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllResourcesRequest.class, ListAllResourcesResponse.class)
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllResourcesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            })
+        );
+        builder.withRequestField("ep_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllResourcesRequest::getEpId, (req, v) -> {
+                req.setEpId(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllResourcesRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAllResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAllResourcesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProvidersRequest, ListProvidersResponse> listProviders = genForlistProviders();
 
     private static HttpRequestDef<ListProvidersRequest, ListProvidersResponse> genForlistProviders() {
@@ -593,7 +673,7 @@ public class RmsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            ListProvidersRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ListProvidersRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })

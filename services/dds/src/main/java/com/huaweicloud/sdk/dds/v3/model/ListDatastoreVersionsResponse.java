@@ -50,7 +50,7 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 数据库版本。DDS社区版支持3.4、3.2和4.0版本，DDS增强版仅支持3.4版本。
+     * 数据库版本。支持3.4、3.2和4.0版本。
      * @return versions
      */
     public List<String> getVersions() {

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.AddShardingNodeRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.EnlargeInstanceRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class AddShardingNodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AddShardingNodeRequestBody body = null;
+    private EnlargeInstanceRequestBody body = null;
 
     public AddShardingNodeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -50,14 +50,14 @@ public class AddShardingNodeRequest  {
         this.instanceId = instanceId;
     }
 
-    public AddShardingNodeRequest withBody(AddShardingNodeRequestBody body) {
+    public AddShardingNodeRequest withBody(EnlargeInstanceRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public AddShardingNodeRequest withBody(Consumer<AddShardingNodeRequestBody> bodySetter) {
+    public AddShardingNodeRequest withBody(Consumer<EnlargeInstanceRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new AddShardingNodeRequestBody();
+            this.body = new EnlargeInstanceRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -69,11 +69,11 @@ public class AddShardingNodeRequest  {
      * Get body
      * @return body
      */
-    public AddShardingNodeRequestBody getBody() {
+    public EnlargeInstanceRequestBody getBody() {
         return body;
     }
 
-    public void setBody(AddShardingNodeRequestBody body) {
+    public void setBody(EnlargeInstanceRequestBody body) {
         this.body = body;
     }
     @Override

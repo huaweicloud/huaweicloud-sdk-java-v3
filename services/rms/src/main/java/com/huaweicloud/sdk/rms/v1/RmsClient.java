@@ -182,6 +182,17 @@ public class RmsClient {
     }
 
     /**
+     * 查询租户可见的区域
+     * Returns a list of domain-visible regions
+     *
+     * @param ListRegionsRequest 请求对象
+     * @return ListRegionsResponse
+     */
+    public ListRegionsResponse listRegions(ListRegionsRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listRegions);
+    }
+
+    /**
      * 列举资源关系
      * 指定资源ID，查询该资源与其他资源的关联关系，可以指定关系方向为\&quot;in\&quot; 或者\&quot;out\&quot;
      *
@@ -190,6 +201,17 @@ public class RmsClient {
      */
     public ShowResourceRelationsResponse showResourceRelations(ShowResourceRelationsRequest request) {
         return hcClient.syncInvokeHttp(request, RmsMeta.showResourceRelations);
+    }
+
+    /**
+     * 列举所有资源
+     * 返回当前租户下所有资源，需要当前用户有rms:resources:list权限。
+     *
+     * @param ListAllResourcesRequest 请求对象
+     * @return ListAllResourcesResponse
+     */
+    public ListAllResourcesResponse listAllResources(ListAllResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, RmsMeta.listAllResources);
     }
 
     /**

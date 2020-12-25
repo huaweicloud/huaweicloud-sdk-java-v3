@@ -50,6 +50,11 @@ public class ListBackupsRequest  {
          */
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("Manual");
         
+        /**
+         * Enum INCREMENTAL for value: "Incremental"
+         */
+        public static final BackupTypeEnum INCREMENTAL = new BackupTypeEnum("Incremental");
+        
 
         private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -57,6 +62,7 @@ public class ListBackupsRequest  {
             Map<String, BackupTypeEnum> map = new HashMap<>();
             map.put("Auto", AUTO);
             map.put("Manual", MANUAL);
+            map.put("Incremental", INCREMENTAL);
             return Collections.unmodifiableMap(map);
         }
 

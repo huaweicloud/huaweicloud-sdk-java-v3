@@ -236,62 +236,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAuthorizationsRequest, CreateAuthorizationsResponse> createAuthorizations = genForcreateAuthorizations();
-
-    private static HttpRequestDef<CreateAuthorizationsRequest, CreateAuthorizationsResponse> genForcreateAuthorizations() {
-        // basic
-        HttpRequestDef.Builder<CreateAuthorizationsRequest, CreateAuthorizationsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAuthorizationsRequest.class, CreateAuthorizationsResponse.class)
-                .withUri("/v2/servicerequest/cases/{case_id}/authorizations")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("case_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(CreateAuthorizationsRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            })
-        );
-        builder.withRequestField("X-Site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(CreateAuthorizationsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateAuthorizationsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("X-Time-Zone",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateAuthorizationsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            CreateUserCenterAuthorizationV2Req.class,
-            f -> f.withMarshaller(CreateAuthorizationsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateCaseLabelsRequest, CreateCaseLabelsResponse> createCaseLabels = genForcreateCaseLabels();
 
     private static HttpRequestDef<CreateCaseLabelsRequest, CreateCaseLabelsResponse> genForcreateCaseLabels() {
@@ -1316,46 +1260,6 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCaseCCEmailsRequest, ListCaseCCEmailsResponse> listCaseCCEmails = genForlistCaseCCEmails();
-
-    private static HttpRequestDef<ListCaseCCEmailsRequest, ListCaseCCEmailsResponse> genForlistCaseCCEmails() {
-        // basic
-        HttpRequestDef.Builder<ListCaseCCEmailsRequest, ListCaseCCEmailsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListCaseCCEmailsRequest.class, ListCaseCCEmailsResponse.class)
-                .withUri("/v2/servicerequest/carbon-copy-emails")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("X-Site",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListCaseCCEmailsRequest::getXSite, (req, v) -> {
-                req.setXSite(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListCaseCCEmailsRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("X-Time-Zone",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListCaseCCEmailsRequest::getXTimeZone, (req, v) -> {
-                req.setXTimeZone(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListCaseCategoriesRequest, ListCaseCategoriesResponse> listCaseCategories = genForlistCaseCategories();
 
     private static HttpRequestDef<ListCaseCategoriesRequest, ListCaseCategoriesResponse> genForlistCaseCategories() {
@@ -1387,6 +1291,46 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListCaseCategoriesRequest::getXTimeZone, (req, v) -> {
+                req.setXTimeZone(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> listCaseCcEmails = genForlistCaseCcEmails();
+
+    private static HttpRequestDef<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> genForlistCaseCcEmails() {
+        // basic
+        HttpRequestDef.Builder<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCaseCcEmailsRequest.class, ListCaseCcEmailsResponse.class)
+                .withUri("/v2/servicerequest/carbon-copy-emails")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Site",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXSite, (req, v) -> {
+                req.setXSite(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCaseCcEmailsRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );
@@ -3292,12 +3236,12 @@ public class OsmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPartnersCasesProcessingPrivilegeRequest, ShowPartnersCasesProcessingPrivilegeResponse> showPartnersCasesProcessingPrivilege = genForshowPartnersCasesProcessingPrivilege();
+    public static final HttpRequestDef<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> showPartnersCasesPrivilege = genForshowPartnersCasesPrivilege();
 
-    private static HttpRequestDef<ShowPartnersCasesProcessingPrivilegeRequest, ShowPartnersCasesProcessingPrivilegeResponse> genForshowPartnersCasesProcessingPrivilege() {
+    private static HttpRequestDef<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> genForshowPartnersCasesPrivilege() {
         // basic
-        HttpRequestDef.Builder<ShowPartnersCasesProcessingPrivilegeRequest, ShowPartnersCasesProcessingPrivilegeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPartnersCasesProcessingPrivilegeRequest.class, ShowPartnersCasesProcessingPrivilegeResponse.class)
+        HttpRequestDef.Builder<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPartnersCasesPrivilegeRequest.class, ShowPartnersCasesPrivilegeResponse.class)
                 .withUri("/v2/servicerequest/cases/partners/privilege/cases-processing")
                 .withContentType("application/json");
 
@@ -3306,7 +3250,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ShowPartnersCasesProcessingPrivilegeRequest::getXSite, (req, v) -> {
+            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXSite, (req, v) -> {
                 req.setXSite(v);
             })
         );
@@ -3314,7 +3258,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowPartnersCasesProcessingPrivilegeRequest::getXLanguage, (req, v) -> {
+            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -3322,7 +3266,7 @@ public class OsmMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowPartnersCasesProcessingPrivilegeRequest::getXTimeZone, (req, v) -> {
+            f -> f.withMarshaller(ShowPartnersCasesPrivilegeRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             })
         );

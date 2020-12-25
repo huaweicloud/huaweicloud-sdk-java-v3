@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ListInstancesTagOption;
-import com.huaweicloud.sdk.dds.v3.model.Match;
+import com.huaweicloud.sdk.dds.v3.model.QueryMatchItem;
+import com.huaweicloud.sdk.dds.v3.model.QueryTagItem;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -125,13 +125,13 @@ public class ListInstancesByTagsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="matches")
     
-    private List<Match> matches = null;
+    private List<QueryMatchItem> matches = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ListInstancesTagOption> tags = null;
+    private List<QueryTagItem> tags = null;
     
     public ListInstancesByTagsRequestBody withOffset(String offset) {
         this.offset = offset;
@@ -193,13 +193,13 @@ public class ListInstancesByTagsRequestBody  {
         this.action = action;
     }
 
-    public ListInstancesByTagsRequestBody withMatches(List<Match> matches) {
+    public ListInstancesByTagsRequestBody withMatches(List<QueryMatchItem> matches) {
         this.matches = matches;
         return this;
     }
 
     
-    public ListInstancesByTagsRequestBody addMatchesItem(Match matchesItem) {
+    public ListInstancesByTagsRequestBody addMatchesItem(QueryMatchItem matchesItem) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -207,7 +207,7 @@ public class ListInstancesByTagsRequestBody  {
         return this;
     }
 
-    public ListInstancesByTagsRequestBody withMatches(Consumer<List<Match>> matchesSetter) {
+    public ListInstancesByTagsRequestBody withMatches(Consumer<List<QueryMatchItem>> matchesSetter) {
         if(this.matches == null ){
             this.matches = new ArrayList<>();
         }
@@ -219,21 +219,21 @@ public class ListInstancesByTagsRequestBody  {
      * 搜索字段。   - 该字段值为空，表示不按照实例名称或实例ID查询。   - 该字段值不为空
      * @return matches
      */
-    public List<Match> getMatches() {
+    public List<QueryMatchItem> getMatches() {
         return matches;
     }
 
-    public void setMatches(List<Match> matches) {
+    public void setMatches(List<QueryMatchItem> matches) {
         this.matches = matches;
     }
 
-    public ListInstancesByTagsRequestBody withTags(List<ListInstancesTagOption> tags) {
+    public ListInstancesByTagsRequestBody withTags(List<QueryTagItem> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public ListInstancesByTagsRequestBody addTagsItem(ListInstancesTagOption tagsItem) {
+    public ListInstancesByTagsRequestBody addTagsItem(QueryTagItem tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -241,7 +241,7 @@ public class ListInstancesByTagsRequestBody  {
         return this;
     }
 
-    public ListInstancesByTagsRequestBody withTags(Consumer<List<ListInstancesTagOption>> tagsSetter) {
+    public ListInstancesByTagsRequestBody withTags(Consumer<List<QueryTagItem>> tagsSetter) {
         if(this.tags == null ){
             this.tags = new ArrayList<>();
         }
@@ -253,11 +253,11 @@ public class ListInstancesByTagsRequestBody  {
      * 包含标签，最多包含10个key。
      * @return tags
      */
-    public List<ListInstancesTagOption> getTags() {
+    public List<QueryTagItem> getTags() {
         return tags;
     }
 
-    public void setTags(List<ListInstancesTagOption> tags) {
+    public void setTags(List<QueryTagItem> tags) {
         this.tags = tags;
     }
     @Override

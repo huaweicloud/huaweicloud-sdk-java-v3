@@ -8,10 +8,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.CreateInstanceBackupStrategyOption;
-import com.huaweicloud.sdk.dds.v3.model.CreateInstanceDatastoreOption;
+import com.huaweicloud.sdk.dds.v3.model.BackupStrategy;
 import com.huaweicloud.sdk.dds.v3.model.CreateInstanceFlavorOption;
-import com.huaweicloud.sdk.dds.v3.model.CreateInstanceStorageOption;
+import com.huaweicloud.sdk.dds.v3.model.Datastore;
+import com.huaweicloud.sdk.dds.v3.model.RestorePoint;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -33,7 +33,7 @@ public class CreateInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private CreateInstanceDatastoreOption datastore = null;
+    private Datastore datastore = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -91,15 +91,9 @@ public class CreateInstanceRequestBody  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage")
-    
-    private CreateInstanceStorageOption storage = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private CreateInstanceBackupStrategyOption backupStrategy = null;
+    private BackupStrategy backupStrategy = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -112,6 +106,24 @@ public class CreateInstanceRequestBody  {
     @JsonProperty(value="ssl_option")
     
     private String sslOption;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dss_pool_id")
+    
+    private String dssPoolId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="server_group_policies")
+    
+    private List<String> serverGroupPolicies = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="restore_point")
+    
+    private RestorePoint restorePoint = null;
 
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
@@ -133,14 +145,14 @@ public class CreateInstanceRequestBody  {
         this.name = name;
     }
 
-    public CreateInstanceRequestBody withDatastore(CreateInstanceDatastoreOption datastore) {
+    public CreateInstanceRequestBody withDatastore(Datastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public CreateInstanceRequestBody withDatastore(Consumer<CreateInstanceDatastoreOption> datastoreSetter) {
+    public CreateInstanceRequestBody withDatastore(Consumer<Datastore> datastoreSetter) {
         if(this.datastore == null ){
-            this.datastore = new CreateInstanceDatastoreOption();
+            this.datastore = new Datastore();
             datastoreSetter.accept(this.datastore);
         }
         
@@ -152,11 +164,11 @@ public class CreateInstanceRequestBody  {
      * Get datastore
      * @return datastore
      */
-    public CreateInstanceDatastoreOption getDatastore() {
+    public Datastore getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(CreateInstanceDatastoreOption datastore) {
+    public void setDatastore(Datastore datastore) {
         this.datastore = datastore;
     }
 
@@ -169,7 +181,7 @@ public class CreateInstanceRequestBody  {
 
 
     /**
-     * 区域ID。
+     * 区域ID，恢复到新实例时不可选。
      * @return region
      */
     public String getRegion() {
@@ -289,7 +301,7 @@ public class CreateInstanceRequestBody  {
 
 
     /**
-     * 磁盘加密时的密钥ID，严格UUID正则校验。仅支持社区版引擎。 不传该参数时，表示不进行磁盘加密。
+     * 磁盘加密时的密钥ID，严格UUID正则校验。 不传该参数时，表示不进行磁盘加密。
      * @return diskEncryptionId
      */
     public String getDiskEncryptionId() {
@@ -351,41 +363,14 @@ public class CreateInstanceRequestBody  {
         this.flavor = flavor;
     }
 
-    public CreateInstanceRequestBody withStorage(CreateInstanceStorageOption storage) {
-        this.storage = storage;
-        return this;
-    }
-
-    public CreateInstanceRequestBody withStorage(Consumer<CreateInstanceStorageOption> storageSetter) {
-        if(this.storage == null ){
-            this.storage = new CreateInstanceStorageOption();
-            storageSetter.accept(this.storage);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get storage
-     * @return storage
-     */
-    public CreateInstanceStorageOption getStorage() {
-        return storage;
-    }
-
-    public void setStorage(CreateInstanceStorageOption storage) {
-        this.storage = storage;
-    }
-
-    public CreateInstanceRequestBody withBackupStrategy(CreateInstanceBackupStrategyOption backupStrategy) {
+    public CreateInstanceRequestBody withBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
-    public CreateInstanceRequestBody withBackupStrategy(Consumer<CreateInstanceBackupStrategyOption> backupStrategySetter) {
+    public CreateInstanceRequestBody withBackupStrategy(Consumer<BackupStrategy> backupStrategySetter) {
         if(this.backupStrategy == null ){
-            this.backupStrategy = new CreateInstanceBackupStrategyOption();
+            this.backupStrategy = new BackupStrategy();
             backupStrategySetter.accept(this.backupStrategy);
         }
         
@@ -397,11 +382,11 @@ public class CreateInstanceRequestBody  {
      * Get backupStrategy
      * @return backupStrategy
      */
-    public CreateInstanceBackupStrategyOption getBackupStrategy() {
+    public BackupStrategy getBackupStrategy() {
         return backupStrategy;
     }
 
-    public void setBackupStrategy(CreateInstanceBackupStrategyOption backupStrategy) {
+    public void setBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
     }
 
@@ -444,6 +429,87 @@ public class CreateInstanceRequestBody  {
     public void setSslOption(String sslOption) {
         this.sslOption = sslOption;
     }
+
+    public CreateInstanceRequestBody withDssPoolId(String dssPoolId) {
+        this.dssPoolId = dssPoolId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建新实例所在专属存储池ID，仅专属云创建实例时有效。
+     * @return dssPoolId
+     */
+    public String getDssPoolId() {
+        return dssPoolId;
+    }
+
+    public void setDssPoolId(String dssPoolId) {
+        this.dssPoolId = dssPoolId;
+    }
+
+    public CreateInstanceRequestBody withServerGroupPolicies(List<String> serverGroupPolicies) {
+        this.serverGroupPolicies = serverGroupPolicies;
+        return this;
+    }
+
+    
+    public CreateInstanceRequestBody addServerGroupPoliciesItem(String serverGroupPoliciesItem) {
+        if (this.serverGroupPolicies == null) {
+            this.serverGroupPolicies = new ArrayList<>();
+        }
+        this.serverGroupPolicies.add(serverGroupPoliciesItem);
+        return this;
+    }
+
+    public CreateInstanceRequestBody withServerGroupPolicies(Consumer<List<String>> serverGroupPoliciesSetter) {
+        if(this.serverGroupPolicies == null ){
+            this.serverGroupPolicies = new ArrayList<>();
+        }
+        serverGroupPoliciesSetter.accept(this.serverGroupPolicies);
+        return this;
+    }
+
+    /**
+     * 创建新实例设置云服务器组关联的策略名称列表，仅专属云创建实例时有效。 取值    - 取“anti-affinity”，表示DDS实例开启反亲和部署，反亲和部署是出于高可用性考虑，将您的Primary、Secondary和Hidden节点分别创建在不同的物理机上。当前仅支持该值，不传该值默认不开启反亲和部署。
+     * @return serverGroupPolicies
+     */
+    public List<String> getServerGroupPolicies() {
+        return serverGroupPolicies;
+    }
+
+    public void setServerGroupPolicies(List<String> serverGroupPolicies) {
+        this.serverGroupPolicies = serverGroupPolicies;
+    }
+
+    public CreateInstanceRequestBody withRestorePoint(RestorePoint restorePoint) {
+        this.restorePoint = restorePoint;
+        return this;
+    }
+
+    public CreateInstanceRequestBody withRestorePoint(Consumer<RestorePoint> restorePointSetter) {
+        if(this.restorePoint == null ){
+            this.restorePoint = new RestorePoint();
+            restorePointSetter.accept(this.restorePoint);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get restorePoint
+     * @return restorePoint
+     */
+    public RestorePoint getRestorePoint() {
+        return restorePoint;
+    }
+
+    public void setRestorePoint(RestorePoint restorePoint) {
+        this.restorePoint = restorePoint;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -464,14 +530,16 @@ public class CreateInstanceRequestBody  {
             Objects.equals(this.diskEncryptionId, createInstanceRequestBody.diskEncryptionId) &&
             Objects.equals(this.mode, createInstanceRequestBody.mode) &&
             Objects.equals(this.flavor, createInstanceRequestBody.flavor) &&
-            Objects.equals(this.storage, createInstanceRequestBody.storage) &&
             Objects.equals(this.backupStrategy, createInstanceRequestBody.backupStrategy) &&
             Objects.equals(this.enterpriseProjectId, createInstanceRequestBody.enterpriseProjectId) &&
-            Objects.equals(this.sslOption, createInstanceRequestBody.sslOption);
+            Objects.equals(this.sslOption, createInstanceRequestBody.sslOption) &&
+            Objects.equals(this.dssPoolId, createInstanceRequestBody.dssPoolId) &&
+            Objects.equals(this.serverGroupPolicies, createInstanceRequestBody.serverGroupPolicies) &&
+            Objects.equals(this.restorePoint, createInstanceRequestBody.restorePoint);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, datastore, region, availabilityZone, vpcId, subnetId, securityGroupId, password, diskEncryptionId, mode, flavor, storage, backupStrategy, enterpriseProjectId, sslOption);
+        return Objects.hash(name, datastore, region, availabilityZone, vpcId, subnetId, securityGroupId, password, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, serverGroupPolicies, restorePoint);
     }
     @Override
     public String toString() {
@@ -488,10 +556,12 @@ public class CreateInstanceRequestBody  {
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-        sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
+        sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
+        sb.append("    serverGroupPolicies: ").append(toIndentedString(serverGroupPolicies)).append("\n");
+        sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

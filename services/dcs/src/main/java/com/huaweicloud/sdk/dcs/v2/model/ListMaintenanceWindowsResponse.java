@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.MaintainWindows;
+import com.huaweicloud.sdk.dcs.v2.model.MaintainWindowsEntity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListMaintenanceWindowsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maintain_windows")
     
-    private List<MaintainWindows> maintainWindows = null;
+    private List<MaintainWindowsEntity> maintainWindows = null;
     
-    public ListMaintenanceWindowsResponse withMaintainWindows(List<MaintainWindows> maintainWindows) {
+    public ListMaintenanceWindowsResponse withMaintainWindows(List<MaintainWindowsEntity> maintainWindows) {
         this.maintainWindows = maintainWindows;
         return this;
     }
 
     
-    public ListMaintenanceWindowsResponse addMaintainWindowsItem(MaintainWindows maintainWindowsItem) {
+    public ListMaintenanceWindowsResponse addMaintainWindowsItem(MaintainWindowsEntity maintainWindowsItem) {
         if (this.maintainWindows == null) {
             this.maintainWindows = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListMaintenanceWindowsResponse extends SdkResponse {
         return this;
     }
 
-    public ListMaintenanceWindowsResponse withMaintainWindows(Consumer<List<MaintainWindows>> maintainWindowsSetter) {
+    public ListMaintenanceWindowsResponse withMaintainWindows(Consumer<List<MaintainWindowsEntity>> maintainWindowsSetter) {
         if(this.maintainWindows == null ){
             this.maintainWindows = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListMaintenanceWindowsResponse extends SdkResponse {
      * 支持的维护时间窗列表。
      * @return maintainWindows
      */
-    public List<MaintainWindows> getMaintainWindows() {
+    public List<MaintainWindowsEntity> getMaintainWindows() {
         return maintainWindows;
     }
 
-    public void setMaintainWindows(List<MaintainWindows> maintainWindows) {
+    public void setMaintainWindows(List<MaintainWindowsEntity> maintainWindows) {
         this.maintainWindows = maintainWindows;
     }
     @Override

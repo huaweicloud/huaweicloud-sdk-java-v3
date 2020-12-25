@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ShowBackupPolicyResult;
+import com.huaweicloud.sdk.dds.v3.model.BackupPolicyItem;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowBackupPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_policy")
     
-    private ShowBackupPolicyResult backupPolicy = null;
+    private BackupPolicyItem backupPolicy = null;
 
-    public ShowBackupPolicyResponse withBackupPolicy(ShowBackupPolicyResult backupPolicy) {
+    public ShowBackupPolicyResponse withBackupPolicy(BackupPolicyItem backupPolicy) {
         this.backupPolicy = backupPolicy;
         return this;
     }
 
-    public ShowBackupPolicyResponse withBackupPolicy(Consumer<ShowBackupPolicyResult> backupPolicySetter) {
+    public ShowBackupPolicyResponse withBackupPolicy(Consumer<BackupPolicyItem> backupPolicySetter) {
         if(this.backupPolicy == null ){
-            this.backupPolicy = new ShowBackupPolicyResult();
+            this.backupPolicy = new BackupPolicyItem();
             backupPolicySetter.accept(this.backupPolicy);
         }
         
@@ -45,11 +45,11 @@ public class ShowBackupPolicyResponse extends SdkResponse {
      * Get backupPolicy
      * @return backupPolicy
      */
-    public ShowBackupPolicyResult getBackupPolicy() {
+    public BackupPolicyItem getBackupPolicy() {
         return backupPolicy;
     }
 
-    public void setBackupPolicy(ShowBackupPolicyResult backupPolicy) {
+    public void setBackupPolicy(BackupPolicyItem backupPolicy) {
         this.backupPolicy = backupPolicy;
     }
     @Override

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ListBackupsResult;
+import com.huaweicloud.sdk.dds.v3.model.BackupForList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ListBackupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backups")
     
-    private List<ListBackupsResult> backups = null;
+    private List<BackupForList> backups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,13 +34,13 @@ public class ListBackupsResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListBackupsResponse withBackups(List<ListBackupsResult> backups) {
+    public ListBackupsResponse withBackups(List<BackupForList> backups) {
         this.backups = backups;
         return this;
     }
 
     
-    public ListBackupsResponse addBackupsItem(ListBackupsResult backupsItem) {
+    public ListBackupsResponse addBackupsItem(BackupForList backupsItem) {
         if (this.backups == null) {
             this.backups = new ArrayList<>();
         }
@@ -48,7 +48,7 @@ public class ListBackupsResponse extends SdkResponse {
         return this;
     }
 
-    public ListBackupsResponse withBackups(Consumer<List<ListBackupsResult>> backupsSetter) {
+    public ListBackupsResponse withBackups(Consumer<List<BackupForList>> backupsSetter) {
         if(this.backups == null ){
             this.backups = new ArrayList<>();
         }
@@ -60,11 +60,11 @@ public class ListBackupsResponse extends SdkResponse {
      * 备份列表。
      * @return backups
      */
-    public List<ListBackupsResult> getBackups() {
+    public List<BackupForList> getBackups() {
         return backups;
     }
 
-    public void setBackups(List<ListBackupsResult> backups) {
+    public void setBackups(List<BackupForList> backups) {
         this.backups = backups;
     }
 

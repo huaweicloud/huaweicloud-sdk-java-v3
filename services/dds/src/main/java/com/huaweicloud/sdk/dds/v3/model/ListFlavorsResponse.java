@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ListFlavorsResult;
+import com.huaweicloud.sdk.dds.v3.model.Flavor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListFlavorsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavors")
     
-    private List<ListFlavorsResult> flavors = null;
+    private List<Flavor> flavors = null;
     
-    public ListFlavorsResponse withFlavors(List<ListFlavorsResult> flavors) {
+    public ListFlavorsResponse withFlavors(List<Flavor> flavors) {
         this.flavors = flavors;
         return this;
     }
 
     
-    public ListFlavorsResponse addFlavorsItem(ListFlavorsResult flavorsItem) {
+    public ListFlavorsResponse addFlavorsItem(Flavor flavorsItem) {
         if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListFlavorsResponse extends SdkResponse {
         return this;
     }
 
-    public ListFlavorsResponse withFlavors(Consumer<List<ListFlavorsResult>> flavorsSetter) {
+    public ListFlavorsResponse withFlavors(Consumer<List<Flavor>> flavorsSetter) {
         if(this.flavors == null ){
             this.flavors = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListFlavorsResponse extends SdkResponse {
      * 实例规格信息列表。
      * @return flavors
      */
-    public List<ListFlavorsResult> getFlavors() {
+    public List<Flavor> getFlavors() {
         return flavors;
     }
 
-    public void setFlavors(List<ListFlavorsResult> flavors) {
+    public void setFlavors(List<Flavor> flavors) {
         this.flavors = flavors;
     }
     @Override

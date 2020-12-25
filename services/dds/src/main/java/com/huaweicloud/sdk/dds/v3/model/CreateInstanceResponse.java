@@ -10,10 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.CreateInstanceBackupStrategyResult;
-import com.huaweicloud.sdk.dds.v3.model.CreateInstanceDatastoreResult;
-import com.huaweicloud.sdk.dds.v3.model.CreateInstanceFlavorResult;
-import com.huaweicloud.sdk.dds.v3.model.CreateInstanceStorageResult;
+import com.huaweicloud.sdk.dds.v3.model.BackupStrategy;
+import com.huaweicloud.sdk.dds.v3.model.CreateInstanceFlavorOption;
+import com.huaweicloud.sdk.dds.v3.model.Datastore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -35,7 +34,7 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private CreateInstanceDatastoreResult datastore = null;
+    private Datastore datastore = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,19 +100,13 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flavor")
     
-    private List<CreateInstanceFlavorResult> flavor = null;
+    private List<CreateInstanceFlavorOption> flavor = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage")
-    
-    private CreateInstanceStorageResult storage = null;
-
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="backup_strategy")
     
-    private CreateInstanceBackupStrategyResult backupStrategy = null;
+    private BackupStrategy backupStrategy = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -126,6 +119,12 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonProperty(value="ssl_option")
     
     private String sslOption;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dss_pool_id")
+    
+    private String dssPoolId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,14 +152,14 @@ public class CreateInstanceResponse extends SdkResponse {
         this.id = id;
     }
 
-    public CreateInstanceResponse withDatastore(CreateInstanceDatastoreResult datastore) {
+    public CreateInstanceResponse withDatastore(Datastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public CreateInstanceResponse withDatastore(Consumer<CreateInstanceDatastoreResult> datastoreSetter) {
+    public CreateInstanceResponse withDatastore(Consumer<Datastore> datastoreSetter) {
         if(this.datastore == null ){
-            this.datastore = new CreateInstanceDatastoreResult();
+            this.datastore = new Datastore();
             datastoreSetter.accept(this.datastore);
         }
         
@@ -172,11 +171,11 @@ public class CreateInstanceResponse extends SdkResponse {
      * Get datastore
      * @return datastore
      */
-    public CreateInstanceDatastoreResult getDatastore() {
+    public Datastore getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(CreateInstanceDatastoreResult datastore) {
+    public void setDatastore(Datastore datastore) {
         this.datastore = datastore;
     }
 
@@ -380,13 +379,13 @@ public class CreateInstanceResponse extends SdkResponse {
         this.mode = mode;
     }
 
-    public CreateInstanceResponse withFlavor(List<CreateInstanceFlavorResult> flavor) {
+    public CreateInstanceResponse withFlavor(List<CreateInstanceFlavorOption> flavor) {
         this.flavor = flavor;
         return this;
     }
 
     
-    public CreateInstanceResponse addFlavorItem(CreateInstanceFlavorResult flavorItem) {
+    public CreateInstanceResponse addFlavorItem(CreateInstanceFlavorOption flavorItem) {
         if (this.flavor == null) {
             this.flavor = new ArrayList<>();
         }
@@ -394,7 +393,7 @@ public class CreateInstanceResponse extends SdkResponse {
         return this;
     }
 
-    public CreateInstanceResponse withFlavor(Consumer<List<CreateInstanceFlavorResult>> flavorSetter) {
+    public CreateInstanceResponse withFlavor(Consumer<List<CreateInstanceFlavorOption>> flavorSetter) {
         if(this.flavor == null ){
             this.flavor = new ArrayList<>();
         }
@@ -406,49 +405,22 @@ public class CreateInstanceResponse extends SdkResponse {
      * 实例规格详情，与请求参数相同。
      * @return flavor
      */
-    public List<CreateInstanceFlavorResult> getFlavor() {
+    public List<CreateInstanceFlavorOption> getFlavor() {
         return flavor;
     }
 
-    public void setFlavor(List<CreateInstanceFlavorResult> flavor) {
+    public void setFlavor(List<CreateInstanceFlavorOption> flavor) {
         this.flavor = flavor;
     }
 
-    public CreateInstanceResponse withStorage(CreateInstanceStorageResult storage) {
-        this.storage = storage;
-        return this;
-    }
-
-    public CreateInstanceResponse withStorage(Consumer<CreateInstanceStorageResult> storageSetter) {
-        if(this.storage == null ){
-            this.storage = new CreateInstanceStorageResult();
-            storageSetter.accept(this.storage);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get storage
-     * @return storage
-     */
-    public CreateInstanceStorageResult getStorage() {
-        return storage;
-    }
-
-    public void setStorage(CreateInstanceStorageResult storage) {
-        this.storage = storage;
-    }
-
-    public CreateInstanceResponse withBackupStrategy(CreateInstanceBackupStrategyResult backupStrategy) {
+    public CreateInstanceResponse withBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
-    public CreateInstanceResponse withBackupStrategy(Consumer<CreateInstanceBackupStrategyResult> backupStrategySetter) {
+    public CreateInstanceResponse withBackupStrategy(Consumer<BackupStrategy> backupStrategySetter) {
         if(this.backupStrategy == null ){
-            this.backupStrategy = new CreateInstanceBackupStrategyResult();
+            this.backupStrategy = new BackupStrategy();
             backupStrategySetter.accept(this.backupStrategy);
         }
         
@@ -460,11 +432,11 @@ public class CreateInstanceResponse extends SdkResponse {
      * Get backupStrategy
      * @return backupStrategy
      */
-    public CreateInstanceBackupStrategyResult getBackupStrategy() {
+    public BackupStrategy getBackupStrategy() {
         return backupStrategy;
     }
 
-    public void setBackupStrategy(CreateInstanceBackupStrategyResult backupStrategy) {
+    public void setBackupStrategy(BackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
     }
 
@@ -508,6 +480,26 @@ public class CreateInstanceResponse extends SdkResponse {
         this.sslOption = sslOption;
     }
 
+    public CreateInstanceResponse withDssPoolId(String dssPoolId) {
+        this.dssPoolId = dssPoolId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 专属存储池ID。
+     * @return dssPoolId
+     */
+    public String getDssPoolId() {
+        return dssPoolId;
+    }
+
+    public void setDssPoolId(String dssPoolId) {
+        this.dssPoolId = dssPoolId;
+    }
+
     public CreateInstanceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -549,15 +541,15 @@ public class CreateInstanceResponse extends SdkResponse {
             Objects.equals(this.diskEncryptionId, createInstanceResponse.diskEncryptionId) &&
             Objects.equals(this.mode, createInstanceResponse.mode) &&
             Objects.equals(this.flavor, createInstanceResponse.flavor) &&
-            Objects.equals(this.storage, createInstanceResponse.storage) &&
             Objects.equals(this.backupStrategy, createInstanceResponse.backupStrategy) &&
             Objects.equals(this.enterpriseProjectId, createInstanceResponse.enterpriseProjectId) &&
             Objects.equals(this.sslOption, createInstanceResponse.sslOption) &&
+            Objects.equals(this.dssPoolId, createInstanceResponse.dssPoolId) &&
             Objects.equals(this.jobId, createInstanceResponse.jobId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, datastore, name, created, status, region, availabilityZone, vpcId, subnetId, securityGroupId, diskEncryptionId, mode, flavor, storage, backupStrategy, enterpriseProjectId, sslOption, jobId);
+        return Objects.hash(id, datastore, name, created, status, region, availabilityZone, vpcId, subnetId, securityGroupId, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, jobId);
     }
     @Override
     public String toString() {
@@ -576,10 +568,10 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
-        sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
+        sb.append("    dssPoolId: ").append(toIndentedString(dssPoolId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();

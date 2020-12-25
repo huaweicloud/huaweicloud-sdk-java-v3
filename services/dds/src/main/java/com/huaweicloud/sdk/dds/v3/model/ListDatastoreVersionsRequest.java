@@ -31,18 +31,12 @@ public class ListDatastoreVersionsRequest  {
          */
         public static final DatastoreNameEnum DDS_COMMUNITY = new DatastoreNameEnum("DDS-Community");
         
-        /**
-         * Enum DDS_ENHANCED for value: "DDS-Enhanced"
-         */
-        public static final DatastoreNameEnum DDS_ENHANCED = new DatastoreNameEnum("DDS-Enhanced");
-        
 
         private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreNameEnum> createStaticFields() {
             Map<String, DatastoreNameEnum> map = new HashMap<>();
             map.put("DDS-Community", DDS_COMMUNITY);
-            map.put("DDS-Enhanced", DDS_ENHANCED);
             return Collections.unmodifiableMap(map);
         }
 

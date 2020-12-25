@@ -19,12 +19,12 @@ public class TenantConfigV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_case_cc_email_max_count")
+    @JsonProperty(value="create_case_ccemail_max_count")
     
-    private Integer createCaseCcEmailMaxCount;
+    private Integer createCaseCcemailMaxCount;
 
-    public TenantConfigV2 withCreateCaseCcEmailMaxCount(Integer createCaseCcEmailMaxCount) {
-        this.createCaseCcEmailMaxCount = createCaseCcEmailMaxCount;
+    public TenantConfigV2 withCreateCaseCcemailMaxCount(Integer createCaseCcemailMaxCount) {
+        this.createCaseCcemailMaxCount = createCaseCcemailMaxCount;
         return this;
     }
 
@@ -35,14 +35,14 @@ public class TenantConfigV2  {
      * 抄送邮箱最大个数
      * minimum: 0
      * maximum: 65535
-     * @return createCaseCcEmailMaxCount
+     * @return createCaseCcemailMaxCount
      */
-    public Integer getCreateCaseCcEmailMaxCount() {
-        return createCaseCcEmailMaxCount;
+    public Integer getCreateCaseCcemailMaxCount() {
+        return createCaseCcemailMaxCount;
     }
 
-    public void setCreateCaseCcEmailMaxCount(Integer createCaseCcEmailMaxCount) {
-        this.createCaseCcEmailMaxCount = createCaseCcEmailMaxCount;
+    public void setCreateCaseCcemailMaxCount(Integer createCaseCcemailMaxCount) {
+        this.createCaseCcemailMaxCount = createCaseCcemailMaxCount;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -53,17 +53,17 @@ public class TenantConfigV2  {
             return false;
         }
         TenantConfigV2 tenantConfigV2 = (TenantConfigV2) o;
-        return Objects.equals(this.createCaseCcEmailMaxCount, tenantConfigV2.createCaseCcEmailMaxCount);
+        return Objects.equals(this.createCaseCcemailMaxCount, tenantConfigV2.createCaseCcemailMaxCount);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(createCaseCcEmailMaxCount);
+        return Objects.hash(createCaseCcemailMaxCount);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TenantConfigV2 {\n");
-        sb.append("    createCaseCcEmailMaxCount: ").append(toIndentedString(createCaseCcEmailMaxCount)).append("\n");
+        sb.append("    createCaseCcemailMaxCount: ").append(toIndentedString(createCaseCcemailMaxCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

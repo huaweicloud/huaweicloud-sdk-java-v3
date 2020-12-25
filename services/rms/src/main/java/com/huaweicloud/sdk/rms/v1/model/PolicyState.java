@@ -25,6 +25,12 @@ public class PolicyState  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region_id")
+    
+    private String regionId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="resource_id")
     
     private String resourceId;
@@ -61,6 +67,12 @@ public class PolicyState  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="policy_assignment_name")
+    
+    private String policyAssignmentName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_definition_id")
     
     private String policyDefinitionId;
@@ -89,6 +101,26 @@ public class PolicyState  {
 
     public void setDomainId(String domainId) {
         this.domainId = domainId;
+    }
+
+    public PolicyState withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 合规状态所属资源区域ID
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
     }
 
     public PolicyState withResourceId(String resourceId) {
@@ -211,6 +243,26 @@ public class PolicyState  {
         this.policyAssignmentId = policyAssignmentId;
     }
 
+    public PolicyState withPolicyAssignmentName(String policyAssignmentName) {
+        this.policyAssignmentName = policyAssignmentName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 合规状态所属规则名字
+     * @return policyAssignmentName
+     */
+    public String getPolicyAssignmentName() {
+        return policyAssignmentName;
+    }
+
+    public void setPolicyAssignmentName(String policyAssignmentName) {
+        this.policyAssignmentName = policyAssignmentName;
+    }
+
     public PolicyState withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
         return this;
@@ -260,30 +312,34 @@ public class PolicyState  {
         }
         PolicyState policyState = (PolicyState) o;
         return Objects.equals(this.domainId, policyState.domainId) &&
+            Objects.equals(this.regionId, policyState.regionId) &&
             Objects.equals(this.resourceId, policyState.resourceId) &&
             Objects.equals(this.resourceName, policyState.resourceName) &&
             Objects.equals(this.resourceProvider, policyState.resourceProvider) &&
             Objects.equals(this.resourceType, policyState.resourceType) &&
             Objects.equals(this.complianceState, policyState.complianceState) &&
             Objects.equals(this.policyAssignmentId, policyState.policyAssignmentId) &&
+            Objects.equals(this.policyAssignmentName, policyState.policyAssignmentName) &&
             Objects.equals(this.policyDefinitionId, policyState.policyDefinitionId) &&
             Objects.equals(this.evaluationTime, policyState.evaluationTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, resourceId, resourceName, resourceProvider, resourceType, complianceState, policyAssignmentId, policyDefinitionId, evaluationTime);
+        return Objects.hash(domainId, regionId, resourceId, resourceName, resourceProvider, resourceType, complianceState, policyAssignmentId, policyAssignmentName, policyDefinitionId, evaluationTime);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyState {\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceProvider: ").append(toIndentedString(resourceProvider)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    complianceState: ").append(toIndentedString(complianceState)).append("\n");
         sb.append("    policyAssignmentId: ").append(toIndentedString(policyAssignmentId)).append("\n");
+        sb.append("    policyAssignmentName: ").append(toIndentedString(policyAssignmentName)).append("\n");
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
         sb.append("    evaluationTime: ").append(toIndentedString(evaluationTime)).append("\n");
         sb.append("}");

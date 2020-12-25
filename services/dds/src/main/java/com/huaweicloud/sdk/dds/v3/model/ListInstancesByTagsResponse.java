@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsResult;
+import com.huaweicloud.sdk.dds.v3.model.InstanceItem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ListInstancesByTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
     
-    private List<ListInstancesByTagsResult> instances = null;
+    private List<InstanceItem> instances = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,13 +34,13 @@ public class ListInstancesByTagsResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListInstancesByTagsResponse withInstances(List<ListInstancesByTagsResult> instances) {
+    public ListInstancesByTagsResponse withInstances(List<InstanceItem> instances) {
         this.instances = instances;
         return this;
     }
 
     
-    public ListInstancesByTagsResponse addInstancesItem(ListInstancesByTagsResult instancesItem) {
+    public ListInstancesByTagsResponse addInstancesItem(InstanceItem instancesItem) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -48,7 +48,7 @@ public class ListInstancesByTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ListInstancesByTagsResponse withInstances(Consumer<List<ListInstancesByTagsResult>> instancesSetter) {
+    public ListInstancesByTagsResponse withInstances(Consumer<List<InstanceItem>> instancesSetter) {
         if(this.instances == null ){
             this.instances = new ArrayList<>();
         }
@@ -60,11 +60,11 @@ public class ListInstancesByTagsResponse extends SdkResponse {
      * 实例列表。
      * @return instances
      */
-    public List<ListInstancesByTagsResult> getInstances() {
+    public List<InstanceItem> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<ListInstancesByTagsResult> instances) {
+    public void setInstances(List<InstanceItem> instances) {
         this.instances = instances;
     }
 

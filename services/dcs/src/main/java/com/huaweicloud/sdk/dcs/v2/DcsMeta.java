@@ -910,12 +910,12 @@ public class DcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListInstancesRequest::getId, (req, v) -> {
-                req.setId(v);
+            f -> f.withMarshaller(ListInstancesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             })
         );
         builder.withRequestField("include_failure",

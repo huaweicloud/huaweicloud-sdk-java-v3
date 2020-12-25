@@ -24,42 +24,42 @@ public class ListRelationResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="case_realtion_list")
+    @JsonProperty(value="case_relation_list")
     
-    private List<CaseRealtionInfo> caseRealtionList = null;
+    private List<CaseRealtionInfo> caseRelationList = null;
     
-    public ListRelationResponse withCaseRealtionList(List<CaseRealtionInfo> caseRealtionList) {
-        this.caseRealtionList = caseRealtionList;
+    public ListRelationResponse withCaseRelationList(List<CaseRealtionInfo> caseRelationList) {
+        this.caseRelationList = caseRelationList;
         return this;
     }
 
     
-    public ListRelationResponse addCaseRealtionListItem(CaseRealtionInfo caseRealtionListItem) {
-        if (this.caseRealtionList == null) {
-            this.caseRealtionList = new ArrayList<>();
+    public ListRelationResponse addCaseRelationListItem(CaseRealtionInfo caseRelationListItem) {
+        if (this.caseRelationList == null) {
+            this.caseRelationList = new ArrayList<>();
         }
-        this.caseRealtionList.add(caseRealtionListItem);
+        this.caseRelationList.add(caseRelationListItem);
         return this;
     }
 
-    public ListRelationResponse withCaseRealtionList(Consumer<List<CaseRealtionInfo>> caseRealtionListSetter) {
-        if(this.caseRealtionList == null ){
-            this.caseRealtionList = new ArrayList<>();
+    public ListRelationResponse withCaseRelationList(Consumer<List<CaseRealtionInfo>> caseRelationListSetter) {
+        if(this.caseRelationList == null ){
+            this.caseRelationList = new ArrayList<>();
         }
-        caseRealtionListSetter.accept(this.caseRealtionList);
+        caseRelationListSetter.accept(this.caseRelationList);
         return this;
     }
 
     /**
      * 关联工单列表
-     * @return caseRealtionList
+     * @return caseRelationList
      */
-    public List<CaseRealtionInfo> getCaseRealtionList() {
-        return caseRealtionList;
+    public List<CaseRealtionInfo> getCaseRelationList() {
+        return caseRelationList;
     }
 
-    public void setCaseRealtionList(List<CaseRealtionInfo> caseRealtionList) {
-        this.caseRealtionList = caseRealtionList;
+    public void setCaseRelationList(List<CaseRealtionInfo> caseRelationList) {
+        this.caseRelationList = caseRelationList;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -70,17 +70,17 @@ public class ListRelationResponse extends SdkResponse {
             return false;
         }
         ListRelationResponse listRelationResponse = (ListRelationResponse) o;
-        return Objects.equals(this.caseRealtionList, listRelationResponse.caseRealtionList);
+        return Objects.equals(this.caseRelationList, listRelationResponse.caseRelationList);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(caseRealtionList);
+        return Objects.hash(caseRelationList);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRelationResponse {\n");
-        sb.append("    caseRealtionList: ").append(toIndentedString(caseRealtionList)).append("\n");
+        sb.append("    caseRelationList: ").append(toIndentedString(caseRelationList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

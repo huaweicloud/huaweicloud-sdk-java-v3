@@ -19,15 +19,15 @@ public class SimpleIncidentBusinessTypeV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_business_type_id")
+    @JsonProperty(value="business_type_id")
     
-    private String incidentBusinessTypeId;
+    private String businessTypeId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_business_type_name")
+    @JsonProperty(value="business_type_name")
     
-    private String incidentBusinessTypeName;
+    private String businessTypeName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,8 +41,8 @@ public class SimpleIncidentBusinessTypeV2  {
     
     private Boolean canUseSupportPlan;
 
-    public SimpleIncidentBusinessTypeV2 withIncidentBusinessTypeId(String incidentBusinessTypeId) {
-        this.incidentBusinessTypeId = incidentBusinessTypeId;
+    public SimpleIncidentBusinessTypeV2 withBusinessTypeId(String businessTypeId) {
+        this.businessTypeId = businessTypeId;
         return this;
     }
 
@@ -51,18 +51,18 @@ public class SimpleIncidentBusinessTypeV2  {
 
     /**
      * 问题类型id
-     * @return incidentBusinessTypeId
+     * @return businessTypeId
      */
-    public String getIncidentBusinessTypeId() {
-        return incidentBusinessTypeId;
+    public String getBusinessTypeId() {
+        return businessTypeId;
     }
 
-    public void setIncidentBusinessTypeId(String incidentBusinessTypeId) {
-        this.incidentBusinessTypeId = incidentBusinessTypeId;
+    public void setBusinessTypeId(String businessTypeId) {
+        this.businessTypeId = businessTypeId;
     }
 
-    public SimpleIncidentBusinessTypeV2 withIncidentBusinessTypeName(String incidentBusinessTypeName) {
-        this.incidentBusinessTypeName = incidentBusinessTypeName;
+    public SimpleIncidentBusinessTypeV2 withBusinessTypeName(String businessTypeName) {
+        this.businessTypeName = businessTypeName;
         return this;
     }
 
@@ -71,14 +71,14 @@ public class SimpleIncidentBusinessTypeV2  {
 
     /**
      * 问题类型名称
-     * @return incidentBusinessTypeName
+     * @return businessTypeName
      */
-    public String getIncidentBusinessTypeName() {
-        return incidentBusinessTypeName;
+    public String getBusinessTypeName() {
+        return businessTypeName;
     }
 
-    public void setIncidentBusinessTypeName(String incidentBusinessTypeName) {
-        this.incidentBusinessTypeName = incidentBusinessTypeName;
+    public void setBusinessTypeName(String businessTypeName) {
+        this.businessTypeName = businessTypeName;
     }
 
     public SimpleIncidentBusinessTypeV2 withCaseType(String caseType) {
@@ -129,21 +129,21 @@ public class SimpleIncidentBusinessTypeV2  {
             return false;
         }
         SimpleIncidentBusinessTypeV2 simpleIncidentBusinessTypeV2 = (SimpleIncidentBusinessTypeV2) o;
-        return Objects.equals(this.incidentBusinessTypeId, simpleIncidentBusinessTypeV2.incidentBusinessTypeId) &&
-            Objects.equals(this.incidentBusinessTypeName, simpleIncidentBusinessTypeV2.incidentBusinessTypeName) &&
+        return Objects.equals(this.businessTypeId, simpleIncidentBusinessTypeV2.businessTypeId) &&
+            Objects.equals(this.businessTypeName, simpleIncidentBusinessTypeV2.businessTypeName) &&
             Objects.equals(this.caseType, simpleIncidentBusinessTypeV2.caseType) &&
             Objects.equals(this.canUseSupportPlan, simpleIncidentBusinessTypeV2.canUseSupportPlan);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(incidentBusinessTypeId, incidentBusinessTypeName, caseType, canUseSupportPlan);
+        return Objects.hash(businessTypeId, businessTypeName, caseType, canUseSupportPlan);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SimpleIncidentBusinessTypeV2 {\n");
-        sb.append("    incidentBusinessTypeId: ").append(toIndentedString(incidentBusinessTypeId)).append("\n");
-        sb.append("    incidentBusinessTypeName: ").append(toIndentedString(incidentBusinessTypeName)).append("\n");
+        sb.append("    businessTypeId: ").append(toIndentedString(businessTypeId)).append("\n");
+        sb.append("    businessTypeName: ").append(toIndentedString(businessTypeName)).append("\n");
         sb.append("    caseType: ").append(toIndentedString(caseType)).append("\n");
         sb.append("    canUseSupportPlan: ").append(toIndentedString(canUseSupportPlan)).append("\n");
         sb.append("}");

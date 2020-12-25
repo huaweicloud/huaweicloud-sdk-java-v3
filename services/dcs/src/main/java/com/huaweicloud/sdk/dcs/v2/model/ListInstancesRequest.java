@@ -19,9 +19,9 @@ public class ListInstancesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
+    @JsonProperty(value="instance_id")
     
-    private String id;
+    private String instanceId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -71,8 +71,8 @@ public class ListInstancesRequest  {
     
     private String ip;
 
-    public ListInstancesRequest withId(String id) {
-        this.id = id;
+    public ListInstancesRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
@@ -80,15 +80,15 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get id
-     * @return id
+     * Get instanceId
+     * @return instanceId
      */
-    public String getId() {
-        return id;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     public ListInstancesRequest withIncludeFailure(String includeFailure) {
@@ -259,7 +259,7 @@ public class ListInstancesRequest  {
             return false;
         }
         ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.id, listInstancesRequest.id) &&
+        return Objects.equals(this.instanceId, listInstancesRequest.instanceId) &&
             Objects.equals(this.includeFailure, listInstancesRequest.includeFailure) &&
             Objects.equals(this.name, listInstancesRequest.name) &&
             Objects.equals(this.offset, listInstancesRequest.offset) &&
@@ -271,13 +271,13 @@ public class ListInstancesRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, includeFailure, name, offset, limit, status, nameEqual, tags, ip);
+        return Objects.hash(instanceId, includeFailure, name, offset, limit, status, nameEqual, tags, ip);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesRequest {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    includeFailure: ").append(toIndentedString(includeFailure)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

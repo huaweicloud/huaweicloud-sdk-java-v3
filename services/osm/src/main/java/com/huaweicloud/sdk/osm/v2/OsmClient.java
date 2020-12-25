@@ -61,17 +61,6 @@ public class OsmClient {
     }
 
     /**
-     * 创建授权
-     * 创建授权
-     *
-     * @param CreateAuthorizationsRequest 请求对象
-     * @return CreateAuthorizationsResponse
-     */
-    public CreateAuthorizationsResponse createAuthorizations(CreateAuthorizationsRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.createAuthorizations);
-    }
-
-    /**
      * 添加工单关联标签接口
      * 添加工单关联标签接口
      *
@@ -259,17 +248,6 @@ public class OsmClient {
     }
 
     /**
-     * 查询工单抄送邮箱
-     * 查询工单抄送邮箱
-     *
-     * @param ListCaseCCEmailsRequest 请求对象
-     * @return ListCaseCCEmailsResponse
-     */
-    public ListCaseCCEmailsResponse listCaseCCEmails(ListCaseCCEmailsRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.listCaseCCEmails);
-    }
-
-    /**
      * 查询工单类目列表
      * 查询工单类目列表
      *
@@ -278,6 +256,17 @@ public class OsmClient {
      */
     public ListCaseCategoriesResponse listCaseCategories(ListCaseCategoriesRequest request) {
         return hcClient.syncInvokeHttp(request, OsmMeta.listCaseCategories);
+    }
+
+    /**
+     * 查询工单抄送邮箱
+     * 查询工单抄送邮箱
+     *
+     * @param ListCaseCcEmailsRequest 请求对象
+     * @return ListCaseCcEmailsResponse
+     */
+    public ListCaseCcEmailsResponse listCaseCcEmails(ListCaseCcEmailsRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.listCaseCcEmails);
     }
 
     /**
@@ -380,8 +369,8 @@ public class OsmClient {
     }
 
     /**
-     * 查询历史操作记录
-     * 查询历史操作记录
+     * 查询堡垒机历史操作记录
+     * 查询堡垒机历史操作记录
      *
      * @param ListHistoryOperateLogsRequest 请求对象
      * @return ListHistoryOperateLogsResponse
@@ -391,8 +380,8 @@ public class OsmClient {
     }
 
     /**
-     * 查询历史会话列表
-     * 查询历史会话列
+     * 查询堡垒机历史会话列表
+     * 查询堡垒机历史会话列
      *
      * @param ListHistorySessionsRequest 请求对象
      * @return ListHistorySessionsResponse
@@ -424,8 +413,8 @@ public class OsmClient {
     }
 
     /**
-     * 查询更多
-     * 查询更多
+     * 查询更多留言
+     * 查询更多留言
      *
      * @param ListMoreInstantMessagesRequest 请求对象
      * @return ListMoreInstantMessagesResponse
@@ -490,7 +479,7 @@ public class OsmClient {
     }
 
     /**
-     * 查询关联
+     * 查询关联工单
      * 查询工单的关联，返回关联工单的简要信息
      *
      * @param ListRelationRequest 请求对象
@@ -534,8 +523,8 @@ public class OsmClient {
     }
 
     /**
-     * 查询文件传输记录
-     * 查询文件传输记录
+     * 查询堡垒机文件传输记录
+     * 查询堡垒机文件传输记录
      *
      * @param ListTransportHistoriesRequest 请求对象
      * @return ListTransportHistoriesResponse
@@ -611,14 +600,14 @@ public class OsmClient {
     }
 
     /**
-     * 查询伙伴处理工单权限
-     * 查询伙伴处理工单权限
+     * 查询伙伴工单权限
+     * 查询伙伴工单权限
      *
-     * @param ShowPartnersCasesProcessingPrivilegeRequest 请求对象
-     * @return ShowPartnersCasesProcessingPrivilegeResponse
+     * @param ShowPartnersCasesPrivilegeRequest 请求对象
+     * @return ShowPartnersCasesPrivilegeResponse
      */
-    public ShowPartnersCasesProcessingPrivilegeResponse showPartnersCasesProcessingPrivilege(ShowPartnersCasesProcessingPrivilegeRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.showPartnersCasesProcessingPrivilege);
+    public ShowPartnersCasesPrivilegeResponse showPartnersCasesPrivilege(ShowPartnersCasesPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showPartnersCasesPrivilege);
     }
 
     /**

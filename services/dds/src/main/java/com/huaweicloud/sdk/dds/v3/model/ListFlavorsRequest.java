@@ -37,18 +37,12 @@ public class ListFlavorsRequest  {
          */
         public static final EngineNameEnum DDS_COMMUNITY = new EngineNameEnum("DDS-Community");
         
-        /**
-         * Enum DDS_ENHANCED for value: "DDS-Enhanced"
-         */
-        public static final EngineNameEnum DDS_ENHANCED = new EngineNameEnum("DDS-Enhanced");
-        
 
         private static final Map<String, EngineNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineNameEnum> createStaticFields() {
             Map<String, EngineNameEnum> map = new HashMap<>();
             map.put("DDS-Community", DDS_COMMUNITY);
-            map.put("DDS-Enhanced", DDS_ENHANCED);
             return Collections.unmodifiableMap(map);
         }
 

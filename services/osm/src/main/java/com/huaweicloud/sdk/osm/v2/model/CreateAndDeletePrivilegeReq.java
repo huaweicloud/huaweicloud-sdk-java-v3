@@ -38,7 +38,7 @@ public class CreateAndDeletePrivilegeReq  {
 
 
     /**
-     * 执行的操作
+     * 执行的操作(create|delete)
      * @return operation
      */
     public String getOperation() {

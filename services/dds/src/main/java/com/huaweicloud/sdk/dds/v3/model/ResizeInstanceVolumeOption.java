@@ -38,7 +38,7 @@ public class ResizeInstanceVolumeOption  {
 
 
     /**
-     * 角色组ID。 - 对于集群实例，该参数为shard组ID。 - 对于副本集实例，不传该参数。 - 对于副本集和单节点实例，不传该参数。
+     * 角色组ID。 - 对于集群实例，该参数为shard组ID。 - 对于副本集和单节点实例，不传该参数。
      * @return groupId
      */
     public String getGroupId() {

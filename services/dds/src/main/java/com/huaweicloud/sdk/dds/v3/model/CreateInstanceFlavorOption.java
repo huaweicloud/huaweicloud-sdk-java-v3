@@ -21,7 +21,7 @@ import java.util.Objects;
 public class CreateInstanceFlavorOption  {
 
     /**
-     * 节点类型。 取值：   - 社区版集群实例包含mongos、shard和config节点，各节点下该参数取值分别为“mongos”、“shard”和“config”。   - 增强版集群实例下该参数取值为“shard”。   - 社区版副本集实例下该参数取值为“replica”。   - 社区版单节点实例下该参数取值为“single”。
+     * 节点类型。 取值：   - 集群实例包含mongos、shard和config节点，各节点下该参数取值分别为“mongos”、“shard”和“config”。   - 副本集实例下该参数取值为“replica”。   - 单节点实例下该参数取值为“single”。
      */
     public static final class TypeEnum {
 
@@ -156,7 +156,7 @@ public class CreateInstanceFlavorOption  {
 
 
     /**
-     * 节点类型。 取值：   - 社区版集群实例包含mongos、shard和config节点，各节点下该参数取值分别为“mongos”、“shard”和“config”。   - 增强版集群实例下该参数取值为“shard”。   - 社区版副本集实例下该参数取值为“replica”。   - 社区版单节点实例下该参数取值为“single”。
+     * 节点类型。 取值：   - 集群实例包含mongos、shard和config节点，各节点下该参数取值分别为“mongos”、“shard”和“config”。   - 副本集实例下该参数取值为“replica”。   - 单节点实例下该参数取值为“single”。
      * @return type
      */
     public TypeEnum getType() {
@@ -176,7 +176,7 @@ public class CreateInstanceFlavorOption  {
 
 
     /**
-     * 节点数量。 取值：   - 社区版集群实例下“mongos”类型的节点数量可取2~16。   - 社区版集群实例下“shard”类型的组数量可取2~16，增强版集群实例下“shard”类型的组数量可取2~12。   - “shard”类型的组数量可取2~16。   - “config”类型的组数量只能取1。   - “replica”类型的组数量只能取1。   - “single”类型的节点数量只能取1。
+     * 节点数量。 取值：   - 集群实例下“mongos”类型的节点数量可取2~16。   - 集群实例下“shard”类型的组数量可取2~16。   - “shard”类型的组数量可取2~16，恢复到新实例不传该参数。   - “config”类型的组数量只能取1。   - “replica”类型的组数量只能取1。   - “single”类型的节点数量只能取1。
      * @return num
      */
     public Integer getNum() {
@@ -196,7 +196,7 @@ public class CreateInstanceFlavorOption  {
 
 
     /**
-     * 磁盘类型。 取值：ULTRAHIGH，表示SSD。   - 对于社区版集群实例的shard和config节点、副本集、以及单节点实例，该参数有效。mongos节点不涉及选择磁盘，该参数无意义。   - 对于增强版集群实例，不传该参数。
+     * 磁盘类型。 取值：ULTRAHIGH，表示SSD。   - 对于集群实例的shard和config节点、副本集、以及单节点实例，该参数有效。mongos节点不涉及选择磁盘，该参数无意义。   - 恢复到新实例，不传该参数。
      * @return storage
      */
     public String getStorage() {
@@ -216,7 +216,7 @@ public class CreateInstanceFlavorOption  {
 
 
     /**
-     * 磁盘大小。 取值：必须为10的整数倍。单位为GB。   - 对于社区版集群实例，shard组可取10GB~2000GB，config组仅可取20GB。mongos节点不涉及选择磁盘，该参数无意义。   - 对于增强版集群实例，不传该参数。   - 对于社区版副本集实例，可取10GB~2000GB。   - 对于社区版单节点实例，可取10GB~1000GB。
+     * 磁盘大小。 取值：必须为10的整数倍。单位为GB。   - 对于集群实例，shard组可取10GB~2000GB，config组仅可取20GB。mongos节点不涉及选择磁盘，该参数无意义。   - 对于副本集实例，可取10GB~2000GB。   - 对于单节点实例，可取10GB~1000GB。
      * @return size
      */
     public Integer getSize() {

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ListInstanceTagsResult;
+import com.huaweicloud.sdk.dds.v3.model.QueryResourceTagItem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListInstanceTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<ListInstanceTagsResult> tags = null;
+    private List<QueryResourceTagItem> tags = null;
     
-    public ListInstanceTagsResponse withTags(List<ListInstanceTagsResult> tags) {
+    public ListInstanceTagsResponse withTags(List<QueryResourceTagItem> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public ListInstanceTagsResponse addTagsItem(ListInstanceTagsResult tagsItem) {
+    public ListInstanceTagsResponse addTagsItem(QueryResourceTagItem tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListInstanceTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ListInstanceTagsResponse withTags(Consumer<List<ListInstanceTagsResult>> tagsSetter) {
+    public ListInstanceTagsResponse withTags(Consumer<List<QueryResourceTagItem>> tagsSetter) {
         if(this.tags == null ){
             this.tags = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListInstanceTagsResponse extends SdkResponse {
      * 标签列表。
      * @return tags
      */
-    public List<ListInstanceTagsResult> getTags() {
+    public List<QueryResourceTagItem> getTags() {
         return tags;
     }
 
-    public void setTags(List<ListInstanceTagsResult> tags) {
+    public void setTags(List<QueryResourceTagItem> tags) {
         this.tags = tags;
     }
     @Override

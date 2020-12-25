@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ListInstancesResult;
+import com.huaweicloud.sdk.dds.v3.model.QueryInstanceResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,7 +26,7 @@ public class ListInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instances")
     
-    private List<ListInstancesResult> instances = null;
+    private List<QueryInstanceResponse> instances = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,13 +34,13 @@ public class ListInstancesResponse extends SdkResponse {
     
     private Integer totalCount;
 
-    public ListInstancesResponse withInstances(List<ListInstancesResult> instances) {
+    public ListInstancesResponse withInstances(List<QueryInstanceResponse> instances) {
         this.instances = instances;
         return this;
     }
 
     
-    public ListInstancesResponse addInstancesItem(ListInstancesResult instancesItem) {
+    public ListInstancesResponse addInstancesItem(QueryInstanceResponse instancesItem) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -48,7 +48,7 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    public ListInstancesResponse withInstances(Consumer<List<ListInstancesResult>> instancesSetter) {
+    public ListInstancesResponse withInstances(Consumer<List<QueryInstanceResponse>> instancesSetter) {
         if(this.instances == null ){
             this.instances = new ArrayList<>();
         }
@@ -60,11 +60,11 @@ public class ListInstancesResponse extends SdkResponse {
      * 实例信息。
      * @return instances
      */
-    public List<ListInstancesResult> getInstances() {
+    public List<QueryInstanceResponse> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<ListInstancesResult> instances) {
+    public void setInstances(List<QueryInstanceResponse> instances) {
         this.instances = instances;
     }
 
