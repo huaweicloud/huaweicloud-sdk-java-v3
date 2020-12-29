@@ -112,9 +112,9 @@ public class AKSKSigner {
         // Step 1.3 combine all headers
         Map<String, String> allHeaders = new TreeMap<String, String>();
         allHeaders.putAll(request.getHeaders().entrySet().stream().collect(
-            Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), entry -> entry.getValue().get(0))));
+                Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), entry -> entry.getValue().get(0))));
         allHeaders.putAll(authenticationHeaders.entrySet().stream().collect(
-            Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), Map.Entry::getValue)));
+                Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), Map.Entry::getValue)));
 
         // Step 2: Create Canonical URI -- the part of the URI from domain to query
         String pathOld = url.getPath();
@@ -151,7 +151,7 @@ public class AKSKSigner {
 
         // Step 7: Combine elements to create canonical request
         String canonicalRequest = buildCanonicalRequest(request.getMethod().name(), canonicalURI, canonicalQueryString,
-            canonicalHeaders, signedHeaderNames, payloadHash);
+                canonicalHeaders, signedHeaderNames, payloadHash);
         String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
         // ************* TASK 2: CREATE THE STRING TO SIGN*************
         // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256 (recommended)
@@ -175,48 +175,26 @@ public class AKSKSigner {
     }
 
     private static String buildCanonicalQueryString(String query, Map<String, List<String>> parameters) {
-        SortedMap<String, List<String>> sorted = new TreeMap<>();
-
-        // get parameters from path query string
-        if (query != null && !query.isEmpty()) {
-            String[] splitArr = query.split("&");
-            for (String split : splitArr) {
-                String[] kv = split.split("=");
-                if (kv.length == 2) {
-                    if (!sorted.containsKey(urlEncode(kv[0]))) {
-                        List<String> values = new ArrayList<>();
-                        values.add(urlEncode(kv[1]));
-                        sorted.put(urlEncode(kv[0]), values);
-                    } else {
-                        sorted.get(urlEncode(kv[0])).add(urlEncode(kv[1]));
-                    }
-                }
-            }
-        }
-
-        if (parameters != null && !parameters.isEmpty()) {
-            Iterator<Map.Entry<String, List<String>>> iterator = parameters.entrySet().iterator();
-            while (iterator.hasNext()) {
-                Map.Entry<String, List<String>> pair = iterator.next();
-                String key = pair.getKey();
-                List<String> values = pair.getValue();
-                List<String> escapedValues = new ArrayList<>();
-                for (String value : values) {
-                    String temp = value;
-                    if ("tags".equals(key) || "metadata".equals(key)) {
-                        if (temp.contains("%7B") || temp.contains("%7D") || temp.contains("%7b")
-                            || temp.contains("%7d")) {
-                            temp = temp.replace("%7B", "{").replace("%7b", "{").replace("%7D", "}")
-                                .replace("%7d", "}");
-                        }
-                    }
-                    escapedValues.add(urlEncode(temp));
-                }
-                sorted.put(urlEncode(key), escapedValues);
-            }
-        }
-
+        SortedMap<String, List<String>> sorted = convertQuery2SortedMap(query);
         StringBuilder builder = new StringBuilder();
+
+        if (parameters == null || parameters.isEmpty()) {
+            builder.toString();
+        }
+
+
+        Iterator<Map.Entry<String, List<String>>> iterator = parameters.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, List<String>> pair = iterator.next();
+            String key = pair.getKey();
+            List<String> values = pair.getValue();
+            List<String> escapedValues = new ArrayList<>();
+            for (String value : values) {
+                escapedValues.add(urlEncode(value));
+            }
+            sorted.put(urlEncode(key), escapedValues);
+        }
+
         Iterator<Map.Entry<String, List<String>>> itr = sorted.entrySet().iterator();
         while (itr.hasNext()) {
             Map.Entry<String, List<String>> pair = itr.next();
@@ -237,6 +215,30 @@ public class AKSKSigner {
         }
 
         return builder.toString();
+    }
+
+    private static SortedMap<String, List<String>> convertQuery2SortedMap(String query) {
+        SortedMap<String, List<String>> sorted = new TreeMap<>();
+
+        if (query == null || query.isEmpty()) {
+            return sorted;
+        }
+
+        // get parameters from path query string
+        String[] splitArr = query.split("&");
+        for (String split : splitArr) {
+            String[] kv = split.split("=");
+            if (kv.length == 2) {
+                if (!sorted.containsKey(urlEncode(kv[0]))) {
+                    List<String> values = new ArrayList<>();
+                    values.add(urlEncode(kv[1]));
+                    sorted.put(urlEncode(kv[0]), values);
+                } else {
+                    sorted.get(urlEncode(kv[0])).add(urlEncode(kv[1]));
+                }
+            }
+        }
+        return sorted;
     }
 
     /**

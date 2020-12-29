@@ -153,16 +153,21 @@ public class FieldImpl<R, FieldT> implements Field<R, FieldT> {
      * @return 如果是enum且匹配上了值，则返回匹配的enum field，否则返回empty。
      */
     private <T> Optional<FieldT> tryFindEnumField(R request, Object value, Class<T> clazz) {
-        if (fieldType.isEnum() && clazz.isAssignableFrom(String.class)) {
-            FieldT[] enumValues = fieldType.getEnumConstants();
-            if (enumValues != null) {
-                for (FieldT enumValue : enumValues) {
-                    if (enumValue.toString().equals(value)) {
-                        return Optional.of(enumValue);
-                    }
-                }
+        if (!(fieldType.isEnum() && clazz.isAssignableFrom(String.class))) {
+            return Optional.empty();
+        }
+
+        FieldT[] enumValues = fieldType.getEnumConstants();
+        if (enumValues == null) {
+            return Optional.empty();
+        }
+
+        for (FieldT enumValue : enumValues) {
+            if (enumValue.toString().equals(value)) {
+                return Optional.of(enumValue);
             }
         }
+
         return Optional.empty();
     }
 

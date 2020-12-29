@@ -168,7 +168,7 @@ public class InstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    private String port;
+    private Integer port;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -698,7 +698,7 @@ public class InstanceListInfo  {
         this.enablePublicip = enablePublicip;
     }
 
-    public InstanceListInfo withPort(String port) {
+    public InstanceListInfo withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -710,11 +710,11 @@ public class InstanceListInfo  {
      * 缓存的端口。
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 

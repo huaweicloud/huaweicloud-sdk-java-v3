@@ -1,29 +1,24 @@
 package com.huaweicloud.sdk.core;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import java.util.Stack;
-import java.util.stream.Collectors;
 
+import com.huaweicloud.sdk.core.http.HttpConfig;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.http.Field;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.core.utils.JsonUtils;
 
 public class TestMapQueryParameters {
     TestRequest request;
@@ -160,80 +155,6 @@ public class TestMapQueryParameters {
         return builder.build();
     }
 
-    private <ReqT, ResT> HttpRequest buildRequest(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
-        HttpRequest.HttpRequestBuilder httpRequestBuilder = HttpRequest.newBuilder();
-        httpRequestBuilder.withMethod(reqDef.getMethod())
-            .withContentType(reqDef.getContentType())
-            .withEndpoint("https://ecs.cn-north-1.myhuaweicloud.com")
-            .withPath(reqDef.getUri());
-
-        for (Field<ReqT, ?> field : reqDef.getRequestFields()) {
-            Optional<?> reqValueOption = field.readValue(request);
-            if (reqValueOption.isPresent()) {
-                Object reqValue = reqValueOption.get();
-                if (field.getLocation() == LocationType.Header) {
-                    httpRequestBuilder.addHeader(field.getName(), reqValue.toString());
-                } else if (field.getLocation() == LocationType.Query) {
-                    if (reqValue instanceof Collection) {
-                        httpRequestBuilder.addQueryParam(field.getName(), buildCollectionQueryParams(reqValue));
-                    } else if (reqValue instanceof Map) {
-                        Map<String, List<String>> params = buildMapQueryParamsLoop(field.getName(), (Map) reqValue);
-                        for (Map.Entry entry : params.entrySet()) {
-                            httpRequestBuilder.addQueryParam((String) entry.getKey(), (List<String>) entry.getValue());
-                        }
-                    } else {
-                        httpRequestBuilder.addQueryParam(
-                            field.getName(), buildStringQueryParams(reqValue));
-                    }
-                } else if (field.getLocation() == LocationType.Path) {
-                    httpRequestBuilder.addPathParam(field.getName(), reqValue.toString());
-                } else if (field.getLocation() == LocationType.Body) {
-                    httpRequestBuilder.withBodyAsString(JsonUtils.toJSON(reqValue));
-                }
-            }
-        }
-
-        HttpRequest httpRequest = httpRequestBuilder.build();
-
-        return httpRequest;
-    }
-
-    private List<String> buildStringQueryParams(Object reqValue) {
-        return Arrays.asList(reqValue.toString());
-    }
-
-    private List<String> buildCollectionQueryParams(Object reqValue) {
-        return ((List<Object>) reqValue).stream().map(Object::toString).collect(Collectors.toList());
-    }
-
-    private Map<String, List<String>> buildMapQueryParamsLoop(String key, Map reqValue) {
-        Map<String, List<String>> result = new HashMap<>();
-        Stack<Map<String, List<String>>> stack = new Stack<>();
-
-        reqValue.forEach((k, v) -> stack.push(buildMapQueryParams(key, k.toString(), v)));
-
-        while (!stack.isEmpty()) {
-            Map<String, List<String>> temp = stack.pop();
-            temp.forEach(result::put);
-        }
-
-        return result;
-    }
-
-    private Map<String, List<String>> buildMapQueryParams(String key, String entryKey, Object entryValue) {
-        Map<String, List<String>> res = new HashMap<>();
-        if (entryValue instanceof Map) {
-            ((Map<?, ?>) entryValue).forEach((k, v) -> {
-                res.putAll(buildMapQueryParams(key + "[" + entryKey + "]", k.toString(), v));
-            });
-        } else if (entryValue instanceof Collection) {
-            res.put(key + "[" + entryKey + "]", buildCollectionQueryParams(entryValue));
-        } else {
-            res.put(key + "[" + entryKey + "]", buildStringQueryParams(entryValue));
-        }
-        return res;
-    }
-
     @Before
     public void init() {
         String map1 = "p1";
@@ -267,7 +188,10 @@ public class TestMapQueryParameters {
 
     @Test
     public void buildQuery() {
-        HttpRequest httpRequest = buildRequest(request, genFortest());
+
+        HcClient hcClient = new HcClient(new HttpConfig()).withEndpoint("https://ecs.cn-north-1.myhuaweicloud.com");
+
+        HttpRequest httpRequest = hcClient.buildRequest(request, genFortest());
         // 当类型为 Map<String, List<Object>> 时，由于堆栈先进后出，此处参数的顺序为逆序
         Assert.assertEquals("p1=p1&p2[id]=p2&p3[id3]&p3[id2]=p33&p3[id2]=p34&p3[id1]=p31&p3[id1]=p32"
             + "&p4[id][id1]=p41&p4[id][id2]=p42&p5=p51&p5=p52", httpRequest.getQueryParamsString());

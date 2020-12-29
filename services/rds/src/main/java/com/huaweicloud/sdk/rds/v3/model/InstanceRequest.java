@@ -160,6 +160,12 @@ public class InstanceRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="collation")
+    
+    private String collation;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
     private List<InstanceRequestTags> tags = null;
@@ -646,6 +652,26 @@ public class InstanceRequest  {
         this.restorePoint = restorePoint;
     }
 
+    public InstanceRequest withCollation(String collation) {
+        this.collation = collation;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 仅限Microsoft SQL Server实例使用。取值范围：根据查询SQL Server可用字符集的字符集查询列表查询可设置的字符集。
+     * @return collation
+     */
+    public String getCollation() {
+        return collation;
+    }
+
+    public void setCollation(String collation) {
+        this.collation = collation;
+    }
+
     public InstanceRequest withTags(List<InstanceRequestTags> tags) {
         this.tags = tags;
         return this;
@@ -710,11 +736,12 @@ public class InstanceRequest  {
             Objects.equals(this.dsspoolId, instanceRequest.dsspoolId) &&
             Objects.equals(this.replicaOfId, instanceRequest.replicaOfId) &&
             Objects.equals(this.restorePoint, instanceRequest.restorePoint) &&
+            Objects.equals(this.collation, instanceRequest.collation) &&
             Objects.equals(this.tags, instanceRequest.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, datastore, ha, configurationId, port, password, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, availabilityZone, vpcId, subnetId, dataVip, securityGroupId, chargeInfo, timeZone, dsspoolId, replicaOfId, restorePoint, tags);
+        return Objects.hash(name, datastore, ha, configurationId, port, password, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, volume, region, availabilityZone, vpcId, subnetId, dataVip, securityGroupId, chargeInfo, timeZone, dsspoolId, replicaOfId, restorePoint, collation, tags);
     }
     @Override
     public String toString() {
@@ -742,6 +769,7 @@ public class InstanceRequest  {
         sb.append("    dsspoolId: ").append(toIndentedString(dsspoolId)).append("\n");
         sb.append("    replicaOfId: ").append(toIndentedString(replicaOfId)).append("\n");
         sb.append("    restorePoint: ").append(toIndentedString(restorePoint)).append("\n");
+        sb.append("    collation: ").append(toIndentedString(collation)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

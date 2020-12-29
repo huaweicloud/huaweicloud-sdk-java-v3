@@ -162,27 +162,37 @@ public class DefaultHttpClient implements HttpClient {
             values.forEach(value -> requestBuilder.header(key, value)));
 
         if (Objects.isNull(httpRequest.getBodyAsString())) {
-            if (Objects.isNull(httpRequest.getBody())) {
-                if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
-                    requestBuilder.method(httpRequest.getMethod().toString(),
-                        RequestBody.create(null, new byte[0]));
-                } else {
-                    requestBuilder.method(httpRequest.getMethod().toString(), null);
+            return buildOkHttpRequestWithoutTextBody(httpRequest, requestBuilder);
+        } else {
+            return buildOkHttpRequestWithTextBody(httpRequest, requestBuilder);
+        }
+
+    }
+
+    private Request buildOkHttpRequestWithTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
+        requestBuilder.method(httpRequest.getMethod().toString(),
+            new RequestBody() {
+
+                @Override
+                public MediaType contentType() {
+                    return MediaType.parse(httpRequest.getContentType());
                 }
-            } else {
+
+                @Override
+                public void writeTo(BufferedSink bufferedSink) throws IOException {
+                    bufferedSink.writeUtf8(httpRequest.getBodyAsString());
+                }
+            });
+        return requestBuilder.build();
+    }
+
+    private Request buildOkHttpRequestWithoutTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
+        if (Objects.isNull(httpRequest.getBody())) {
+            if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
                 requestBuilder.method(httpRequest.getMethod().toString(),
-                    new RequestBody() {
-
-                        @Override
-                        public MediaType contentType() {
-                            return MediaType.parse(httpRequest.getContentType());
-                        }
-
-                        @Override
-                        public void writeTo(BufferedSink bufferedSink) throws IOException {
-                            bufferedSink.writeAll(Okio.source(httpRequest.getBody()));
-                        }
-                    });
+                    RequestBody.create(null, new byte[0]));
+            } else {
+                requestBuilder.method(httpRequest.getMethod().toString(), null);
             }
         } else {
             requestBuilder.method(httpRequest.getMethod().toString(),
@@ -195,11 +205,10 @@ public class DefaultHttpClient implements HttpClient {
 
                     @Override
                     public void writeTo(BufferedSink bufferedSink) throws IOException {
-                        bufferedSink.writeUtf8(httpRequest.getBodyAsString());
+                        bufferedSink.writeAll(Okio.source(httpRequest.getBody()));
                     }
                 });
         }
-
         return requestBuilder.build();
     }
 
