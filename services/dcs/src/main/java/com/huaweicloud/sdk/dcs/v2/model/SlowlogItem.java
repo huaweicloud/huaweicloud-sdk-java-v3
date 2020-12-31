@@ -39,7 +39,7 @@ public class SlowlogItem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="duration")
     
-    private Integer duration;
+    private String duration;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -107,7 +107,7 @@ public class SlowlogItem  {
         this.startTime = startTime;
     }
 
-    public SlowlogItem withDuration(Integer duration) {
+    public SlowlogItem withDuration(String duration) {
         this.duration = duration;
         return this;
     }
@@ -119,11 +119,11 @@ public class SlowlogItem  {
      * 持续时间，单位是ms
      * @return duration
      */
-    public Integer getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 

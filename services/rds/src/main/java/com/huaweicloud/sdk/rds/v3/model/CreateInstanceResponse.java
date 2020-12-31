@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.InstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRespItem;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,7 +24,7 @@ public class CreateInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    private InstanceRequest instance = null;
+    private CreateInstanceRespItem instance = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -38,14 +38,14 @@ public class CreateInstanceResponse extends SdkResponse {
     
     private String orderId;
 
-    public CreateInstanceResponse withInstance(InstanceRequest instance) {
+    public CreateInstanceResponse withInstance(CreateInstanceRespItem instance) {
         this.instance = instance;
         return this;
     }
 
-    public CreateInstanceResponse withInstance(Consumer<InstanceRequest> instanceSetter) {
+    public CreateInstanceResponse withInstance(Consumer<CreateInstanceRespItem> instanceSetter) {
         if(this.instance == null ){
-            this.instance = new InstanceRequest();
+            this.instance = new CreateInstanceRespItem();
             instanceSetter.accept(this.instance);
         }
         
@@ -57,11 +57,11 @@ public class CreateInstanceResponse extends SdkResponse {
      * Get instance
      * @return instance
      */
-    public InstanceRequest getInstance() {
+    public CreateInstanceRespItem getInstance() {
         return instance;
     }
 
-    public void setInstance(InstanceRequest instance) {
+    public void setInstance(CreateInstanceRespItem instance) {
         this.instance = instance;
     }
 

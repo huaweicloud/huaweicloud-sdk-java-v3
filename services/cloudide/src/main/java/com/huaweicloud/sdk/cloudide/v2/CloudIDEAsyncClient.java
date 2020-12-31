@@ -42,6 +42,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 查询当前账号访问权限
+     * 查询当前账号访问权限
+     *
+     * @param ShowAccountStatusRequest 请求对象
+     * @return CompletableFuture<ShowAccountStatusResponse>
+     */
+    public CompletableFuture<ShowAccountStatusResponse> showAccountStatusAsync(ShowAccountStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.showAccountStatus);
+    }
+
+    /**
      * 获取技术栈计费信息
      * 获取技术栈计费信息
      *

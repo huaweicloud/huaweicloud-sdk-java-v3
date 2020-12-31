@@ -39,6 +39,17 @@ public class CloudIDEClient {
     }
 
     /**
+     * 查询当前账号访问权限
+     * 查询当前账号访问权限
+     *
+     * @param ShowAccountStatusRequest 请求对象
+     * @return ShowAccountStatusResponse
+     */
+    public ShowAccountStatusResponse showAccountStatus(ShowAccountStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudIDEMeta.showAccountStatus);
+    }
+
+    /**
      * 获取技术栈计费信息
      * 获取技术栈计费信息
      *

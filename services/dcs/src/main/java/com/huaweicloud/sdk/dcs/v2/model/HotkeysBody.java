@@ -139,7 +139,7 @@ public class HotkeysBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="db")
     
-    private String db;
+    private Integer db;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -208,7 +208,7 @@ public class HotkeysBody  {
 
 
     /**
-     * 大key所在的分片，仅在实例类型为集群时支持,格式为ip:port
+     * 热key所在的分片，仅在实例类型为集群时支持,格式为ip:port
      * @return shard
      */
     public String getShard() {
@@ -219,7 +219,7 @@ public class HotkeysBody  {
         this.shard = shard;
     }
 
-    public HotkeysBody withDb(String db) {
+    public HotkeysBody withDb(Integer db) {
         this.db = db;
         return this;
     }
@@ -228,14 +228,14 @@ public class HotkeysBody  {
 
 
     /**
-     * 大key所在的db
+     * 热key所在的db
      * @return db
      */
-    public String getDb() {
+    public Integer getDb() {
         return db;
     }
 
-    public void setDb(String db) {
+    public void setDb(Integer db) {
         this.db = db;
     }
 

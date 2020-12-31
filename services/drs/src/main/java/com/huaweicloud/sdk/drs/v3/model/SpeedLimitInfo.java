@@ -1,0 +1,164 @@
+package com.huaweicloud.sdk.drs.v3.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * 限制迁移速度请求体
+ */
+public class SpeedLimitInfo  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="begin")
+    
+    private String begin;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="end")
+    
+    private String end;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_utc")
+    
+    private Boolean isUtc;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="speed")
+    
+    private String speed;
+
+    public SpeedLimitInfo withBegin(String begin) {
+        this.begin = begin;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 开始限速时间
+     * @return begin
+     */
+    public String getBegin() {
+        return begin;
+    }
+
+    public void setBegin(String begin) {
+        this.begin = begin;
+    }
+
+    public SpeedLimitInfo withEnd(String end) {
+        this.end = end;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 结束时间
+     * @return end
+     */
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
+    }
+
+    public SpeedLimitInfo withIsUtc(Boolean isUtc) {
+        this.isUtc = isUtc;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为UTC时间
+     * @return isUtc
+     */
+    public Boolean getIsUtc() {
+        return isUtc;
+    }
+
+    public void setIsUtc(Boolean isUtc) {
+        this.isUtc = isUtc;
+    }
+
+    public SpeedLimitInfo withSpeed(String speed) {
+        this.speed = speed;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 限速
+     * @return speed
+     */
+    public String getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(String speed) {
+        this.speed = speed;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SpeedLimitInfo speedLimitInfo = (SpeedLimitInfo) o;
+        return Objects.equals(this.begin, speedLimitInfo.begin) &&
+            Objects.equals(this.end, speedLimitInfo.end) &&
+            Objects.equals(this.isUtc, speedLimitInfo.isUtc) &&
+            Objects.equals(this.speed, speedLimitInfo.speed);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(begin, end, isUtc, speed);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SpeedLimitInfo {\n");
+        sb.append("    begin: ").append(toIndentedString(begin)).append("\n");
+        sb.append("    end: ").append(toIndentedString(end)).append("\n");
+        sb.append("    isUtc: ").append(toIndentedString(isUtc)).append("\n");
+        sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

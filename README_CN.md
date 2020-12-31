@@ -55,7 +55,7 @@
     // 导入指定云服务的 {Service}Client，此处以 VpcClient 为例
     import com.huaweicloud.sdk.vpc.v2.VpcClient;
     // 导入指定云服务的 {Service}Region，此处以 VpcRegion 为例
-    import com.huaweicloud.sdk.vpc.v2.VpcRegion;
+    import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
 
     // 导入待请求接口的 request 和 response 类
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;

@@ -31,6 +31,18 @@ public class ListInstancesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_temporary")
+    
+    private Boolean isTemporary;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="label")
+    
+    private String label;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="search")
     
     private String search;
@@ -89,6 +101,46 @@ public class ListInstancesRequest  {
 
     public void setOffset(Long offset) {
         this.offset = offset;
+    }
+
+    public ListInstancesRequest withIsTemporary(Boolean isTemporary) {
+        this.isTemporary = isTemporary;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get isTemporary
+     * @return isTemporary
+     */
+    public Boolean getIsTemporary() {
+        return isTemporary;
+    }
+
+    public void setIsTemporary(Boolean isTemporary) {
+        this.isTemporary = isTemporary;
+    }
+
+    public ListInstancesRequest withLabel(String label) {
+        this.label = label;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get label
+     * @return label
+     */
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public ListInstancesRequest withSearch(String search) {
@@ -161,13 +213,15 @@ public class ListInstancesRequest  {
         ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
         return Objects.equals(this.limit, listInstancesRequest.limit) &&
             Objects.equals(this.offset, listInstancesRequest.offset) &&
+            Objects.equals(this.isTemporary, listInstancesRequest.isTemporary) &&
+            Objects.equals(this.label, listInstancesRequest.label) &&
             Objects.equals(this.search, listInstancesRequest.search) &&
             Objects.equals(this.sortDir, listInstancesRequest.sortDir) &&
             Objects.equals(this.sortKey, listInstancesRequest.sortKey);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, search, sortDir, sortKey);
+        return Objects.hash(limit, offset, isTemporary, label, search, sortDir, sortKey);
     }
     @Override
     public String toString() {
@@ -175,6 +229,8 @@ public class ListInstancesRequest  {
         sb.append("class ListInstancesRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    isTemporary: ").append(toIndentedString(isTemporary)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    search: ").append(toIndentedString(search)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");

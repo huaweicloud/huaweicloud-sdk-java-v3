@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.Tag;
+import com.huaweicloud.sdk.dcs.v2.model.ResourceTag;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -210,7 +210,7 @@ public class InstanceListInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<Tag> tags = null;
+    private List<ResourceTag> tags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -838,13 +838,13 @@ public class InstanceListInfo  {
         this.status = status;
     }
 
-    public InstanceListInfo withTags(List<Tag> tags) {
+    public InstanceListInfo withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public InstanceListInfo addTagsItem(Tag tagsItem) {
+    public InstanceListInfo addTagsItem(ResourceTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -852,7 +852,7 @@ public class InstanceListInfo  {
         return this;
     }
 
-    public InstanceListInfo withTags(Consumer<List<Tag>> tagsSetter) {
+    public InstanceListInfo withTags(Consumer<List<ResourceTag>> tagsSetter) {
         if(this.tags == null ){
             this.tags = new ArrayList<>();
         }
@@ -864,11 +864,11 @@ public class InstanceListInfo  {
      * 实例标签键值。
      * @return tags
      */
-    public List<Tag> getTags() {
+    public List<ResourceTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
 

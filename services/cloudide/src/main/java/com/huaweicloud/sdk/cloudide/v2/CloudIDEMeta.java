@@ -68,6 +68,22 @@ public class CloudIDEMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAccountStatusRequest, ShowAccountStatusResponse> showAccountStatus = genForshowAccountStatus();
+
+    private static HttpRequestDef<ShowAccountStatusRequest, ShowAccountStatusResponse> genForshowAccountStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowAccountStatusRequest, ShowAccountStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAccountStatusRequest.class, ShowAccountStatusResponse.class)
+                .withUri("/v2/permission/account/status")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPriceRequest, ShowPriceResponse> showPrice = genForshowPrice();
 
     private static HttpRequestDef<ShowPriceRequest, ShowPriceResponse> genForshowPrice() {
@@ -222,6 +238,22 @@ public class CloudIDEMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("is_temporary",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListInstancesRequest::getIsTemporary, (req, v) -> {
+                req.setIsTemporary(v);
+            })
+        );
+        builder.withRequestField("label",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getLabel, (req, v) -> {
+                req.setLabel(v);
+            })
+        );
         builder.withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -348,6 +380,14 @@ public class CloudIDEMeta {
             String.class,
             f -> f.withMarshaller(StartInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            StartInstanceParam.class,
+            f -> f.withMarshaller(StartInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

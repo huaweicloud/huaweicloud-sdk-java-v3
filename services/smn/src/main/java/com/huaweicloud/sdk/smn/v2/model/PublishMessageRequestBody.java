@@ -8,6 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -45,8 +48,8 @@ public class PublishMessageRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private Object tags = null;
-
+    private Map<String, String> tags = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_to_live")
@@ -133,23 +136,37 @@ public class PublishMessageRequestBody  {
         this.messageTemplateName = messageTemplateName;
     }
 
-    public PublishMessageRequestBody withTags(Object tags) {
+    public PublishMessageRequestBody withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
     }
 
     
 
+    public PublishMessageRequestBody putTagsItem(String key, String tagsItem) {
+         if (this.tags == null) {
+            this.tags = new HashMap<>();
+         }
+        this.tags.put(key, tagsItem);
+        return this;
+    }
 
+    public PublishMessageRequestBody withTags(Consumer<Map<String, String>> tagsSetter) {
+        if(this.tags == null ){
+            this.tags = new HashMap<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
     /**
      * tag以及替换tag的参数组成的字典。消息模板中的标签对应的值。使用消息模板方式的消息发布必须携带该参数。字典中的key为消息模板中的参数名称，不超过21个字符。字典中的value为消息模板中的参数被替换后的值，不超过1KB。
      * @return tags
      */
-    public Object getTags() {
+    public Map<String, String> getTags() {
         return tags;
     }
 
-    public void setTags(Object tags) {
+    public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
 

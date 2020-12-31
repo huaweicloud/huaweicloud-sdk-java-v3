@@ -248,7 +248,19 @@ public class InstanceParam  {
     @JsonProperty(value="plugin_vars")
     
     private Map<String, String> pluginVars = null;
-        /**
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="port_id")
+    
+    private String portId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="private_ip")
+    
+    private String privateIp;
+    /**
      * PVC规格 5GB|10GB|20GB
      */
     public static final class PvcQuantityEnum {
@@ -368,6 +380,12 @@ public class InstanceParam  {
     @JsonProperty(value="token")
     
     private String token;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vpc_id")
+    
+    private String vpcId;
 
     public InstanceParam withAgentId(String agentId) {
         this.agentId = agentId;
@@ -577,6 +595,46 @@ public class InstanceParam  {
         this.pluginVars = pluginVars;
     }
 
+    public InstanceParam withPortId(String portId) {
+        this.portId = portId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云服务器对应的portId，标签为webshell-internal时使用
+     * @return portId
+     */
+    public String getPortId() {
+        return portId;
+    }
+
+    public void setPortId(String portId) {
+        this.portId = portId;
+    }
+
+    public InstanceParam withPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云服务器ip，标签为webshell-internal时使用
+     * @return privateIp
+     */
+    public String getPrivateIp() {
+        return privateIp;
+    }
+
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
+
     public InstanceParam withPvcQuantity(PvcQuantityEnum pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
         return this;
@@ -698,6 +756,26 @@ public class InstanceParam  {
     public void setToken(String token) {
         this.token = token;
     }
+
+    public InstanceParam withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云服务器对应的vpcId，标签为webshell-internal时使用
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -716,16 +794,19 @@ public class InstanceParam  {
             Objects.equals(this.labelTag, instanceParam.labelTag) &&
             Objects.equals(this.pluginEnableList, instanceParam.pluginEnableList) &&
             Objects.equals(this.pluginVars, instanceParam.pluginVars) &&
+            Objects.equals(this.portId, instanceParam.portId) &&
+            Objects.equals(this.privateIp, instanceParam.privateIp) &&
             Objects.equals(this.pvcQuantity, instanceParam.pvcQuantity) &&
             Objects.equals(this.refreshInterval, instanceParam.refreshInterval) &&
             Objects.equals(this.repositoryId, instanceParam.repositoryId) &&
             Objects.equals(this.stackId, instanceParam.stackId) &&
             Objects.equals(this.taskType, instanceParam.taskType) &&
-            Objects.equals(this.token, instanceParam.token);
+            Objects.equals(this.token, instanceParam.token) &&
+            Objects.equals(this.vpcId, instanceParam.vpcId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(agentId, arch, cpuMemory, description, displayName, isTemporary, labelTag, pluginEnableList, pluginVars, pvcQuantity, refreshInterval, repositoryId, stackId, taskType, token);
+        return Objects.hash(agentId, arch, cpuMemory, description, displayName, isTemporary, labelTag, pluginEnableList, pluginVars, portId, privateIp, pvcQuantity, refreshInterval, repositoryId, stackId, taskType, token, vpcId);
     }
     @Override
     public String toString() {
@@ -740,12 +821,15 @@ public class InstanceParam  {
         sb.append("    labelTag: ").append(toIndentedString(labelTag)).append("\n");
         sb.append("    pluginEnableList: ").append(toIndentedString(pluginEnableList)).append("\n");
         sb.append("    pluginVars: ").append(toIndentedString(pluginVars)).append("\n");
+        sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
+        sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    pvcQuantity: ").append(toIndentedString(pvcQuantity)).append("\n");
         sb.append("    refreshInterval: ").append(toIndentedString(refreshInterval)).append("\n");
         sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
         sb.append("    stackId: ").append(toIndentedString(stackId)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

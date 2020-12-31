@@ -1,0 +1,294 @@
+package com.huaweicloud.sdk.drs.v3.model;
+
+
+
+
+import java.util.Collections;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.drs.v3.model.BatchQueryJobReqPage;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class BatchListStructDetailRequest  {
+
+    /**
+     * Gets or Sets type
+     */
+    public static final class TypeEnum {
+
+        
+        /**
+         * Enum DATABASE for value: "database"
+         */
+        public static final TypeEnum DATABASE = new TypeEnum("database");
+        
+        /**
+         * Enum SCHEMA for value: "schema"
+         */
+        public static final TypeEnum SCHEMA = new TypeEnum("schema");
+        
+        /**
+         * Enum TABLE for value: "table"
+         */
+        public static final TypeEnum TABLE = new TypeEnum("table");
+        
+        /**
+         * Enum COLUMN for value: "column"
+         */
+        public static final TypeEnum COLUMN = new TypeEnum("column");
+        
+        /**
+         * Enum VIEW for value: "view"
+         */
+        public static final TypeEnum VIEW = new TypeEnum("view");
+        
+        /**
+         * Enum FUNCTION for value: "function"
+         */
+        public static final TypeEnum FUNCTION = new TypeEnum("function");
+        
+        /**
+         * Enum PROCEDURE for value: "procedure"
+         */
+        public static final TypeEnum PROCEDURE = new TypeEnum("procedure");
+        
+        /**
+         * Enum ROUTINE for value: "routine"
+         */
+        public static final TypeEnum ROUTINE = new TypeEnum("routine");
+        
+        /**
+         * Enum TRIGGER for value: "trigger"
+         */
+        public static final TypeEnum TRIGGER = new TypeEnum("trigger");
+        
+        /**
+         * Enum INDEX for value: "index"
+         */
+        public static final TypeEnum INDEX = new TypeEnum("index");
+        
+        /**
+         * Enum TABLE_INDEXS for value: "table_indexs"
+         */
+        public static final TypeEnum TABLE_INDEXS = new TypeEnum("table_indexs");
+        
+        /**
+         * Enum TABLE_STRUCTURE for value: "table_structure"
+         */
+        public static final TypeEnum TABLE_STRUCTURE = new TypeEnum("table_structure");
+        
+        /**
+         * Enum EVENT for value: "event"
+         */
+        public static final TypeEnum EVENT = new TypeEnum("event");
+        
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("database", DATABASE);
+            map.put("schema", SCHEMA);
+            map.put("table", TABLE);
+            map.put("column", COLUMN);
+            map.put("view", VIEW);
+            map.put("function", FUNCTION);
+            map.put("procedure", PROCEDURE);
+            map.put("routine", ROUTINE);
+            map.put("trigger", TRIGGER);
+            map.put("index", INDEX);
+            map.put("table_indexs", TABLE_INDEXS);
+            map.put("table_structure", TABLE_STRUCTURE);
+            map.put("event", EVENT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
+    
+    private TypeEnum type;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Language")
+    
+    private String xLanguage;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="body")
+    
+    private BatchQueryJobReqPage body = null;
+
+    public BatchListStructDetailRequest withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get type
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public BatchListStructDetailRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get xLanguage
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
+
+    public BatchListStructDetailRequest withBody(BatchQueryJobReqPage body) {
+        this.body = body;
+        return this;
+    }
+
+    public BatchListStructDetailRequest withBody(Consumer<BatchQueryJobReqPage> bodySetter) {
+        if(this.body == null ){
+            this.body = new BatchQueryJobReqPage();
+            bodySetter.accept(this.body);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get body
+     * @return body
+     */
+    public BatchQueryJobReqPage getBody() {
+        return body;
+    }
+
+    public void setBody(BatchQueryJobReqPage body) {
+        this.body = body;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BatchListStructDetailRequest batchListStructDetailRequest = (BatchListStructDetailRequest) o;
+        return Objects.equals(this.type, batchListStructDetailRequest.type) &&
+            Objects.equals(this.xLanguage, batchListStructDetailRequest.xLanguage) &&
+            Objects.equals(this.body, batchListStructDetailRequest.body);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, xLanguage, body);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BatchListStructDetailRequest {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

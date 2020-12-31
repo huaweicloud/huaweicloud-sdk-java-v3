@@ -52,7 +52,7 @@ You could obtain and install Java SDK through following methods:
     // {Service}Client, replace Vpc to your specified service, take VpcClient for example
     import com.huaweicloud.sdk.vpc.v2.VpcClient;
     // {Service}Region, replace Vpc to your specified service, take VpcRegion for example
-    import com.huaweicloud.sdk.vpc.v2.VpcRegion;
+    import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
     import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
     // Logger

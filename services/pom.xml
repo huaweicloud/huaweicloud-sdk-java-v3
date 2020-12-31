@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.28-beta</version>
+        <version>3.0.29-beta</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.28-beta</version>
+    <version>3.0.29-beta</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -26,6 +26,7 @@
         <module>rms</module>
         <module>apig</module>
         <module>osm</module>
+        <module>drs</module>
         <module>bss</module>
         <module>kms</module>
         <module>dds</module>
@@ -60,9 +61,13 @@
         <module>ims</module>
         <module>cce</module>
         <module>meeting</module>
+        <module>mrs</module>
+        <module>roma</module>
+        <module>dgc</module>
         <module>cloudbuild</module>
         <module>eip</module>
         <module>bcs</module>
+        <module>aom</module>
         <module>image</module>
         <module>mpc</module>
         <module>cloudide</module>
