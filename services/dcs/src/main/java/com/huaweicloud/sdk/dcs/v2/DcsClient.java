@@ -105,17 +105,6 @@ public class DcsClient {
     }
 
     /**
-     * 添加副本
-     * 为Cluster集群实例的分片添加副本。
-     *
-     * @param CreateReplicationRequest 请求对象
-     * @return CreateReplicationResponse
-     */
-    public CreateReplicationResponse createReplication(CreateReplicationRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.createReplication);
-    }
-
-    /**
      * 删除后台任务
      * 删除后台任务
      *
@@ -179,17 +168,6 @@ public class DcsClient {
      */
     public DeleteMigrationTaskResponse deleteMigrationTask(DeleteMigrationTaskRequest request) {
         return hcClient.syncInvokeHttp(request, DcsMeta.deleteMigrationTask);
-    }
-
-    /**
-     * 删除副本
-     * 为Cluster集群删除指定副本
-     *
-     * @param DeleteReplicationRequest 请求对象
-     * @return DeleteReplicationResponse
-     */
-    public DeleteReplicationResponse deleteReplication(DeleteReplicationRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.deleteReplication);
     }
 
     /**

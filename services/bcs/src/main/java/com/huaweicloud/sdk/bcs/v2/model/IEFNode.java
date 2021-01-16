@@ -64,7 +64,7 @@ public class IEFNode  {
 
 
     /**
-     * 节点状态
+     * 节点状态:\"ACTIVE\"
      * @return status
      */
     public String getStatus() {

@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.29-beta</version>
+        <version>3.0.30-rc</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.29-beta</version>
+    <version>3.0.30-rc</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -35,6 +35,7 @@
         <module>rabbitmq</module>
         <module>nat</module>
         <module>evs</module>
+        <module>swr</module>
         <module>projectman</module>
         <module>classroom</module>
         <module>dws</module>
@@ -45,6 +46,7 @@
         <module>moderation</module>
         <module>cloudpipeline</module>
         <module>smn</module>
+        <module>scm</module>
         <module>cloudtest</module>
         <module>devstar</module>
         <module>rds</module>

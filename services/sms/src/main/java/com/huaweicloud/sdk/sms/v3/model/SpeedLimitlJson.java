@@ -85,6 +85,8 @@ public class SpeedLimitlJson  {
 
     /**
      * 时间段的速率，0-1000的整数，单位：Mbit/s。
+     * minimum: 0
+     * maximum: 10000
      * @return speed
      */
     public Integer getSpeed() {

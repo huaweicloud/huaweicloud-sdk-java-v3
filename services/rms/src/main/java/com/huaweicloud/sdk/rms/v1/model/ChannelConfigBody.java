@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Tracker 信息发送通道
+ * tracker通道配置
  */
 public class ChannelConfigBody  {
 

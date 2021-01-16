@@ -204,6 +204,62 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> listLiveStreamsOnline = genForlistLiveStreamsOnline();
+
+    private static HttpRequestDef<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> genForlistLiveStreamsOnline() {
+        // basic
+        HttpRequestDef.Builder<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLiveStreamsOnlineRequest.class, ListLiveStreamsOnlineResponse.class)
+                .withUri("/v1/{project_id}/realtime/streams")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
+            })
+        );
+        builder.withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getApp, (req, v) -> {
+                req.setApp(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getStream, (req, v) -> {
+                req.setStream(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRecordConfigsRequest, ListRecordConfigsResponse> listRecordConfigs = genForlistRecordConfigs();
 
     private static HttpRequestDef<ListRecordConfigsRequest, ListRecordConfigsResponse> genForlistRecordConfigs() {

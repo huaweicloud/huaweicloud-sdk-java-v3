@@ -11,8 +11,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -67,90 +65,12 @@ public class ShowServerResponse extends SdkResponse {
     @JsonProperty(value="add_date")
     
     private Long addDate;
-    /**
-     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     */
-    public static final class OsTypeEnum {
-
-        
-        /**
-         * Enum WINDOWS for value: "Windows"
-         */
-        public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-        
-        /**
-         * Enum LINUX for value: "Linux"
-         */
-        public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-        
-
-        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, OsTypeEnum> createStaticFields() {
-            Map<String, OsTypeEnum> map = new HashMap<>();
-            map.put("Windows", WINDOWS);
-            map.put("Linux", LINUX);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        OsTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
-                return this.value.equals(((OsTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_type")
     
-    private OsTypeEnum osType;
+    private String osType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,88 +84,88 @@ public class ShowServerResponse extends SdkResponse {
     
     private Boolean oemSystem;
     /**
-     * 当前源端服务器状态 unavailable:环境校验不通过,waiting:等待,initialize:初始化,replicate:复制,syncing:持续同步,stopping:暂停中,stopped:已暂停,deleting:删除中,error:错误,cloning:等待克隆完成,testing:启动目的端中,finished:启动目的端完成
+     * 当前源端服务器状态
      */
     public static final class StateEnum {
 
         
         /**
-         * Enum UNAVAILABLE for value: "unavailable"
+         * Enum UNAVAILABLE_ for value: "unavailable:环境校验不通过"
          */
-        public static final StateEnum UNAVAILABLE = new StateEnum("unavailable");
+        public static final StateEnum UNAVAILABLE_ = new StateEnum("unavailable:环境校验不通过");
         
         /**
-         * Enum WAITING for value: "waiting"
+         * Enum WAITING_ for value: "waiting:等待"
          */
-        public static final StateEnum WAITING = new StateEnum("waiting");
+        public static final StateEnum WAITING_ = new StateEnum("waiting:等待");
         
         /**
-         * Enum INITIALIZE for value: "initialize"
+         * Enum INITIALIZE_ for value: "initialize:初始化"
          */
-        public static final StateEnum INITIALIZE = new StateEnum("initialize");
+        public static final StateEnum INITIALIZE_ = new StateEnum("initialize:初始化");
         
         /**
-         * Enum REPLICATE for value: "replicate"
+         * Enum REPLICATE_ for value: "replicate:复制"
          */
-        public static final StateEnum REPLICATE = new StateEnum("replicate");
+        public static final StateEnum REPLICATE_ = new StateEnum("replicate:复制");
         
         /**
-         * Enum SYNCING for value: "syncing"
+         * Enum SYNCING_ for value: "syncing:持续同步"
          */
-        public static final StateEnum SYNCING = new StateEnum("syncing");
+        public static final StateEnum SYNCING_ = new StateEnum("syncing:持续同步");
         
         /**
-         * Enum STOPPING for value: "stopping"
+         * Enum STOPPING_ for value: "stopping:暂停中"
          */
-        public static final StateEnum STOPPING = new StateEnum("stopping");
+        public static final StateEnum STOPPING_ = new StateEnum("stopping:暂停中");
         
         /**
-         * Enum STOPPED for value: "stopped"
+         * Enum STOPPED_ for value: "stopped:已暂停"
          */
-        public static final StateEnum STOPPED = new StateEnum("stopped");
+        public static final StateEnum STOPPED_ = new StateEnum("stopped:已暂停");
         
         /**
-         * Enum DELETING for value: "deleting"
+         * Enum DELETING_ for value: "deleting:删除中"
          */
-        public static final StateEnum DELETING = new StateEnum("deleting");
+        public static final StateEnum DELETING_ = new StateEnum("deleting:删除中");
         
         /**
-         * Enum ERROR for value: "error"
+         * Enum ERROR_ for value: "error:错误"
          */
-        public static final StateEnum ERROR = new StateEnum("error");
+        public static final StateEnum ERROR_ = new StateEnum("error:错误");
         
         /**
-         * Enum CLONING for value: "cloning"
+         * Enum CLONING_ for value: "cloning:等待克隆完成"
          */
-        public static final StateEnum CLONING = new StateEnum("cloning");
+        public static final StateEnum CLONING_ = new StateEnum("cloning:等待克隆完成");
         
         /**
-         * Enum TESTING for value: "testing"
+         * Enum TESTING_ for value: "testing:启动目的端中"
          */
-        public static final StateEnum TESTING = new StateEnum("testing");
+        public static final StateEnum TESTING_ = new StateEnum("testing:启动目的端中");
         
         /**
-         * Enum FINISHED for value: "finished"
+         * Enum _FINISHED_ for value: " finished:启动目的端完成"
          */
-        public static final StateEnum FINISHED = new StateEnum("finished");
+        public static final StateEnum _FINISHED_ = new StateEnum(" finished:启动目的端完成");
         
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
             Map<String, StateEnum> map = new HashMap<>();
-            map.put("unavailable", UNAVAILABLE);
-            map.put("waiting", WAITING);
-            map.put("initialize", INITIALIZE);
-            map.put("replicate", REPLICATE);
-            map.put("syncing", SYNCING);
-            map.put("stopping", STOPPING);
-            map.put("stopped", STOPPED);
-            map.put("deleting", DELETING);
-            map.put("error", ERROR);
-            map.put("cloning", CLONING);
-            map.put("testing", TESTING);
-            map.put("finished", FINISHED);
+            map.put("unavailable:环境校验不通过", UNAVAILABLE_);
+            map.put("waiting:等待", WAITING_);
+            map.put("initialize:初始化", INITIALIZE_);
+            map.put("replicate:复制", REPLICATE_);
+            map.put("syncing:持续同步", SYNCING_);
+            map.put("stopping:暂停中", STOPPING_);
+            map.put("stopped:已暂停", STOPPED_);
+            map.put("deleting:删除中", DELETING_);
+            map.put("error:错误", ERROR_);
+            map.put("cloning:等待克隆完成", CLONING_);
+            map.put("testing:启动目的端中", TESTING_);
+            map.put(" finished:启动目的端完成", _FINISHED_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -452,52 +372,52 @@ public class ShowServerResponse extends SdkResponse {
     
     private List<EnvironmentCheck> checks = null;
         /**
-     * 迁移周期 cutovering:启动目的端中,cutovered:迁移完成,checking:源端校验,setting:设置目的端,replicating:数据复制中,syncing:同步中
+     * 迁移周期
      */
     public static final class MigrationCycleEnum {
 
         
         /**
-         * Enum CUTOVERING for value: "cutovering"
+         * Enum CUTOVERING_ for value: "cutovering:启动目的端中"
          */
-        public static final MigrationCycleEnum CUTOVERING = new MigrationCycleEnum("cutovering");
+        public static final MigrationCycleEnum CUTOVERING_ = new MigrationCycleEnum("cutovering:启动目的端中");
         
         /**
-         * Enum CUTOVERED for value: "cutovered"
+         * Enum CUTOVERED_ for value: "cutovered:迁移完成"
          */
-        public static final MigrationCycleEnum CUTOVERED = new MigrationCycleEnum("cutovered");
+        public static final MigrationCycleEnum CUTOVERED_ = new MigrationCycleEnum("cutovered:迁移完成");
         
         /**
-         * Enum CHECKING for value: "checking"
+         * Enum CHECKING_ for value: "checking:源端校验"
          */
-        public static final MigrationCycleEnum CHECKING = new MigrationCycleEnum("checking");
+        public static final MigrationCycleEnum CHECKING_ = new MigrationCycleEnum("checking:源端校验");
         
         /**
-         * Enum SETTING for value: "setting"
+         * Enum SETTING_ for value: "setting:设置目的端"
          */
-        public static final MigrationCycleEnum SETTING = new MigrationCycleEnum("setting");
+        public static final MigrationCycleEnum SETTING_ = new MigrationCycleEnum("setting:设置目的端");
         
         /**
-         * Enum REPLICATING for value: "replicating"
+         * Enum REPLICATING_ for value: "replicating:数据复制中"
          */
-        public static final MigrationCycleEnum REPLICATING = new MigrationCycleEnum("replicating");
+        public static final MigrationCycleEnum REPLICATING_ = new MigrationCycleEnum("replicating:数据复制中");
         
         /**
-         * Enum SYNCING for value: "syncing"
+         * Enum SYNCING_ for value: "syncing:同步中"
          */
-        public static final MigrationCycleEnum SYNCING = new MigrationCycleEnum("syncing");
+        public static final MigrationCycleEnum SYNCING_ = new MigrationCycleEnum("syncing:同步中");
         
 
         private static final Map<String, MigrationCycleEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, MigrationCycleEnum> createStaticFields() {
             Map<String, MigrationCycleEnum> map = new HashMap<>();
-            map.put("cutovering", CUTOVERING);
-            map.put("cutovered", CUTOVERED);
-            map.put("checking", CHECKING);
-            map.put("setting", SETTING);
-            map.put("replicating", REPLICATING);
-            map.put("syncing", SYNCING);
+            map.put("cutovering:启动目的端中", CUTOVERING_);
+            map.put("cutovered:迁移完成", CUTOVERED_);
+            map.put("checking:源端校验", CHECKING_);
+            map.put("setting:设置目的端", SETTING_);
+            map.put("replicating:数据复制中", REPLICATING_);
+            map.put("syncing:同步中", SYNCING_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -686,6 +606,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * 源端服务器注册的时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return addDate
      */
     public Long getAddDate() {
@@ -696,7 +618,7 @@ public class ShowServerResponse extends SdkResponse {
         this.addDate = addDate;
     }
 
-    public ShowServerResponse withOsType(OsTypeEnum osType) {
+    public ShowServerResponse withOsType(String osType) {
         this.osType = osType;
         return this;
     }
@@ -708,11 +630,11 @@ public class ShowServerResponse extends SdkResponse {
      * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
      * @return osType
      */
-    public OsTypeEnum getOsType() {
+    public String getOsType() {
         return osType;
     }
 
-    public void setOsType(OsTypeEnum osType) {
+    public void setOsType(String osType) {
         this.osType = osType;
     }
 
@@ -765,7 +687,7 @@ public class ShowServerResponse extends SdkResponse {
 
 
     /**
-     * 当前源端服务器状态 unavailable:环境校验不通过,waiting:等待,initialize:初始化,replicate:复制,syncing:持续同步,stopping:暂停中,stopped:已暂停,deleting:删除中,error:错误,cloning:等待克隆完成,testing:启动目的端中,finished:启动目的端完成
+     * 当前源端服务器状态
      * @return state
      */
     public StateEnum getState() {
@@ -853,6 +775,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * 源端CPU核心数
+     * minimum: 0
+     * maximum: 65535
      * @return cpuQuantity
      */
     public Integer getCpuQuantity() {
@@ -873,6 +797,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * 源端服务器物理内存大小，单位MB
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return memory
      */
     public Long getMemory() {
@@ -1089,7 +1015,7 @@ public class ShowServerResponse extends SdkResponse {
 
 
     /**
-     * 迁移周期 cutovering:启动目的端中,cutovered:迁移完成,checking:源端校验,setting:设置目的端,replicating:数据复制中,syncing:同步中
+     * 迁移周期
      * @return migrationCycle
      */
     public MigrationCycleEnum getMigrationCycle() {
@@ -1110,6 +1036,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * 源端状态（state）上次发生变化的时间戳
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return stateActionTime
      */
     public Long getStateActionTime() {
@@ -1130,6 +1058,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * 已经完成迁移的大小（B）
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return replicatesize
      */
     public Long getReplicatesize() {
@@ -1150,6 +1080,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * 需要迁移的数据量总大小（B）
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return totalsize
      */
     public Long getTotalsize() {
@@ -1170,6 +1102,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * agent上一次连接状态发生变化的时间戳
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return lastVisitTime
      */
     public Long getLastVisitTime() {
@@ -1190,6 +1124,8 @@ public class ShowServerResponse extends SdkResponse {
 
     /**
      * 迁移周期（migration_cycle）上一次变化的时间戳
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return stageActionTime
      */
     public Long getStageActionTime() {

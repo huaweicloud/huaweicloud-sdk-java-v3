@@ -25,13 +25,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
 import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
 import com.huaweicloud.sdk.core.region.Region;
 
 public class ClientBuilder<T> {
@@ -74,8 +77,13 @@ public class ClientBuilder<T> {
     }
 
     public T build() {
-        HcClient hcClient = new HcClient(Objects.nonNull(this.httpConfig)
-            ? this.httpConfig : HttpConfig.getDefaultHttpConfig());
+        if (Objects.isNull(this.httpConfig)) {
+            this.httpConfig = HttpConfig.getDefaultHttpConfig();
+        }
+
+        HttpClient httpClient = new DefaultHttpClient(this.httpConfig);
+        HcClient hcClient = new HcClient(this.httpConfig, httpClient);
+
         // apply credential to hcClient
         if (Objects.isNull(this.credential)) {
             credential = AbstractCredentials.getCredentialFromEnvironment(creator.apply(hcClient),
@@ -89,12 +97,15 @@ public class ClientBuilder<T> {
         }
 
         if (Objects.nonNull(region)) {
-            hcClient.withRegion(region)
-                .withCredential(credential);
-        } else {
-            hcClient.withEndpoint(this.endpoint)
-                .withCredential(this.credential);
+            this.endpoint = region.getEndpoint();
+            try {
+                this.credential = credential.processAuthParams(httpClient, region.getId()).get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new SdkException(e);
+            }
         }
+
+        hcClient.withEndpoint(this.endpoint).withCredential(this.credential);
 
         T t = creator.apply(hcClient);
         ClientCustomization clientCustomization = loadClientCustomization(t);

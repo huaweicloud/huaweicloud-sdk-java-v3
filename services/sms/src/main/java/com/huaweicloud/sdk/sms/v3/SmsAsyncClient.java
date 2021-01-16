@@ -20,6 +20,17 @@ public class SmsAsyncClient {
 
 
     /**
+     * 校验目的端是否能满足迁移要求
+     * 校验目的端是否满足迁移要求
+     *
+     * @param CheckTargetRequest 请求对象
+     * @return CompletableFuture<CheckTargetResponse>
+     */
+    public CompletableFuture<CheckTargetResponse> checkTargetAsync(CheckTargetRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.checkTarget);
+    }
+
+    /**
      * 新建迁移项目
      * 新建迁移项目
      *
@@ -174,6 +185,17 @@ public class SmsAsyncClient {
     }
 
     /**
+     * 查询模板列表
+     * 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return CompletableFuture<ListTemplatesResponse>
+     */
+    public CompletableFuture<ListTemplatesResponse> listTemplatesAsync(ListTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.listTemplates);
+    }
+
+    /**
      * 上报源端服务器基本信息
      * 上报源端服务器信息，上报成功后会在sms服务器列表中看到对应的源端服务器信息。
      *
@@ -182,6 +204,28 @@ public class SmsAsyncClient {
      */
     public CompletableFuture<RegisterServerResponse> registerServerAsync(RegisterServerRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.registerServer);
+    }
+
+    /**
+     * 获取SSL目的端证书和私钥
+     * 当源端服务器为Windows操作系统时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载目的端服务器所需要的证书和私钥(PEM格式)。
+     *
+     * @param ShowCertKeyRequest 请求对象
+     * @return CompletableFuture<ShowCertKeyResponse>
+     */
+    public CompletableFuture<ShowCertKeyResponse> showCertKeyAsync(ShowCertKeyRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.showCertKey);
+    }
+
+    /**
+     * 获取服务端命令
+     * 迁移Agent调用该接口从SMS服务端获取下发给指定源端迁移Agent的命令。
+     *
+     * @param ShowCommandRequest 请求对象
+     * @return CompletableFuture<ShowCommandResponse>
+     */
+    public CompletableFuture<ShowCommandResponse> showCommandAsync(ShowCommandRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.showCommand);
     }
 
     /**
@@ -229,17 +273,6 @@ public class SmsAsyncClient {
     }
 
     /**
-     * 查询模板列表
-     * 查询弹性云服务器模板列表，迁移时选择“新建服务器”时可使用该模板创建弹性云服务器。
-     *
-     * @param ShowTemplatesRequest 请求对象
-     * @return CompletableFuture<ShowTemplatesResponse>
-     */
-    public CompletableFuture<ShowTemplatesResponse> showTemplatesAsync(ShowTemplatesRequest request) {
-        return hcClient.asyncInvokeHttp(request, SmsMeta.showTemplates);
-    }
-
-    /**
      * 查询任务限速规则
      * 按时间段查询迁移任务的迁移速率
      *
@@ -251,6 +284,17 @@ public class SmsAsyncClient {
     }
 
     /**
+     * 上报服务端命令执行结果
+     * 迁移Agent调用该接口向SMS服务端反馈指定指令的执行结果。
+     *
+     * @param UpdateCommandResultRequest 请求对象
+     * @return CompletableFuture<UpdateCommandResultResponse>
+     */
+    public CompletableFuture<UpdateCommandResultResponse> updateCommandResultAsync(UpdateCommandResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.updateCommandResult);
+    }
+
+    /**
      * 更新默认迁移项目
      * 更改默认迁移项目，注册源端会注册在当前的默认项目下。
      *
@@ -259,6 +303,17 @@ public class SmsAsyncClient {
      */
     public CompletableFuture<UpdateDefaultMigprojectResponse> updateDefaultMigprojectAsync(UpdateDefaultMigprojectRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateDefaultMigproject);
+    }
+
+    /**
+     * 更新磁盘信息
+     * 更新服务器的磁盘信息，此接口会把服务器原有磁盘信息清空，然后更新成新磁盘信息
+     *
+     * @param UpdateDiskInfoRequest 请求对象
+     * @return CompletableFuture<UpdateDiskInfoResponse>
+     */
+    public CompletableFuture<UpdateDiskInfoResponse> updateDiskInfoAsync(UpdateDiskInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.updateDiskInfo);
     }
 
     /**
@@ -292,6 +347,17 @@ public class SmsAsyncClient {
      */
     public CompletableFuture<UpdateSpeedResponse> updateSpeedAsync(UpdateSpeedRequest request) {
         return hcClient.asyncInvokeHttp(request, SmsMeta.updateSpeed);
+    }
+
+    /**
+     * 上报数据迁移进度和速率
+     * 此接口由安装在源端服务器上的迁移Agent在数据迁移阶段调用，用来将迁移的具体进度上报给SMS服务端。   迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
+     *
+     * @param UpdateTaskSpeedRequest 请求对象
+     * @return CompletableFuture<UpdateTaskSpeedResponse>
+     */
+    public CompletableFuture<UpdateTaskSpeedResponse> updateTaskSpeedAsync(UpdateTaskSpeedRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.updateTaskSpeed);
     }
 
     /**

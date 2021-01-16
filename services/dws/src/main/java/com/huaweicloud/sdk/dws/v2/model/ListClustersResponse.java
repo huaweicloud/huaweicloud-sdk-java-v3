@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dws.v2.model.Clusters;
+import com.huaweicloud.sdk.dws.v2.model.ClusterInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ListClustersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clusters")
     
-    private List<Clusters> clusters = null;
+    private List<ClusterInfo> clusters = null;
     
-    public ListClustersResponse withClusters(List<Clusters> clusters) {
+    public ListClustersResponse withClusters(List<ClusterInfo> clusters) {
         this.clusters = clusters;
         return this;
     }
 
     
-    public ListClustersResponse addClustersItem(Clusters clustersItem) {
+    public ListClustersResponse addClustersItem(ClusterInfo clustersItem) {
         if (this.clusters == null) {
             this.clusters = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListClustersResponse extends SdkResponse {
         return this;
     }
 
-    public ListClustersResponse withClusters(Consumer<List<Clusters>> clustersSetter) {
+    public ListClustersResponse withClusters(Consumer<List<ClusterInfo>> clustersSetter) {
         if(this.clusters == null ){
             this.clusters = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ListClustersResponse extends SdkResponse {
      * 集群对象列表
      * @return clusters
      */
-    public List<Clusters> getClusters() {
+    public List<ClusterInfo> getClusters() {
         return clusters;
     }
 
-    public void setClusters(List<Clusters> clusters) {
+    public void setClusters(List<ClusterInfo> clusters) {
         this.clusters = clusters;
     }
     @Override

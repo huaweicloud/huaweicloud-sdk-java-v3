@@ -31,36 +31,36 @@ public class DiskIntargetServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private String size;
+    private Long size;
     /**
-     * 磁盘的作用： BOOT：启动盘,OS：系统盘,NORMAL：普通数据盘
+     * 磁盘的作用 
      */
     public static final class DeviceUseEnum {
 
         
         /**
-         * Enum BOOT for value: "BOOT"
+         * Enum BOOT_ for value: "BOOT：启动盘"
          */
-        public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
+        public static final DeviceUseEnum BOOT_ = new DeviceUseEnum("BOOT：启动盘");
         
         /**
-         * Enum OS for value: "OS"
+         * Enum OS_ for value: "OS：系统盘"
          */
-        public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
+        public static final DeviceUseEnum OS_ = new DeviceUseEnum("OS：系统盘");
         
         /**
-         * Enum NORMAL for value: "NORMAL"
+         * Enum NORMAL_ for value: "NORMAL：普通数据盘"
          */
-        public static final DeviceUseEnum NORMAL = new DeviceUseEnum("NORMAL");
+        public static final DeviceUseEnum NORMAL_ = new DeviceUseEnum("NORMAL：普通数据盘");
         
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DeviceUseEnum> createStaticFields() {
             Map<String, DeviceUseEnum> map = new HashMap<>();
-            map.put("BOOT", BOOT);
-            map.put("OS", OS);
-            map.put("NORMAL", NORMAL);
+            map.put("BOOT：启动盘", BOOT_);
+            map.put("OS：系统盘", OS_);
+            map.put("NORMAL：普通数据盘", NORMAL_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -143,7 +143,7 @@ public class DiskIntargetServer  {
         this.name = name;
     }
 
-    public DiskIntargetServer withSize(String size) {
+    public DiskIntargetServer withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -153,13 +153,15 @@ public class DiskIntargetServer  {
 
     /**
      * 磁盘大小，单位：字节
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
-    public String getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
@@ -172,7 +174,7 @@ public class DiskIntargetServer  {
 
 
     /**
-     * 磁盘的作用： BOOT：启动盘,OS：系统盘,NORMAL：普通数据盘
+     * 磁盘的作用 
      * @return deviceUse
      */
     public DeviceUseEnum getDeviceUse() {

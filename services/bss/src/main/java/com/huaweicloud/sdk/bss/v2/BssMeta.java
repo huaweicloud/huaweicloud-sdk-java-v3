@@ -1038,6 +1038,22 @@ public class BssMeta {
                 req.setTradeId(v);
             })
         );
+        builder.withRequestField("bill_date_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateBegin, (req, v) -> {
+                req.setBillDateBegin(v);
+            })
+        );
+        builder.withRequestField("bill_date_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateEnd, (req, v) -> {
+                req.setBillDateEnd(v);
+            })
+        );
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2660,12 +2676,12 @@ public class BssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCusotmerAccountBalancesRequest, ShowCusotmerAccountBalancesResponse> showCusotmerAccountBalances = genForshowCusotmerAccountBalances();
+    public static final HttpRequestDef<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> showCustomerAccountBalances = genForshowCustomerAccountBalances();
 
-    private static HttpRequestDef<ShowCusotmerAccountBalancesRequest, ShowCusotmerAccountBalancesResponse> genForshowCusotmerAccountBalances() {
+    private static HttpRequestDef<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> genForshowCustomerAccountBalances() {
         // basic
-        HttpRequestDef.Builder<ShowCusotmerAccountBalancesRequest, ShowCusotmerAccountBalancesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowCusotmerAccountBalancesRequest.class, ShowCusotmerAccountBalancesResponse.class)
+        HttpRequestDef.Builder<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCustomerAccountBalancesRequest.class, ShowCustomerAccountBalancesResponse.class)
                 .withUri("/v2/accounts/customer-accounts/balances")
                 .withContentType("application/json");
 

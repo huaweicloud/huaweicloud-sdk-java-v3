@@ -307,6 +307,7 @@ public class Disk  {
     /**
      * 磁盘总大小，以字节为单位
      * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
     public Long getSize() {
@@ -328,6 +329,7 @@ public class Disk  {
     /**
      * 磁盘已使用大小，以字节为单位
      * minimum: 0
+     * maximum: 9223372036854775807
      * @return usedSize
      */
     public Long getUsedSize() {

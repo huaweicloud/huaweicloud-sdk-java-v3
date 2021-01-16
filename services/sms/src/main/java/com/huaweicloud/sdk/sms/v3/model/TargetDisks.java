@@ -245,6 +245,8 @@ public class TargetDisks  {
 
     /**
      * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
     public Long getSize() {
@@ -265,6 +267,8 @@ public class TargetDisks  {
 
     /**
      * 使用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return usedSize
      */
     public Long getUsedSize() {

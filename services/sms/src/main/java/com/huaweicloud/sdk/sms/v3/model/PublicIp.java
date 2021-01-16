@@ -21,7 +21,7 @@ public class PublicIp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private String type = "5_bgp";
+    private String type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

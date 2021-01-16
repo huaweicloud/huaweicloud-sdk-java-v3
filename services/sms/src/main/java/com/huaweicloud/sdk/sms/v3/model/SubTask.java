@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.LocalDate;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,19 +27,19 @@ public class SubTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="progress")
     
-    private String progress;
+    private Integer progress;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_date")
     
-    private LocalDate startDate = null;
+    private Long startDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_date")
     
-    private LocalDate endDate = null;
+    private Long endDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +73,7 @@ public class SubTask  {
         this.name = name;
     }
 
-    public SubTask withProgress(String progress) {
+    public SubTask withProgress(Integer progress) {
         this.progress = progress;
         return this;
     }
@@ -84,17 +83,19 @@ public class SubTask  {
 
     /**
      * 子任务的进度，取值为0-100之间的整数
+     * minimum: 0
+     * maximum: 100
      * @return progress
      */
-    public String getProgress() {
+    public Integer getProgress() {
         return progress;
     }
 
-    public void setProgress(String progress) {
+    public void setProgress(Integer progress) {
         this.progress = progress;
     }
 
-    public SubTask withStartDate(LocalDate startDate) {
+    public SubTask withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -104,17 +105,19 @@ public class SubTask  {
 
     /**
      * 子任务开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return startDate
      */
-    public LocalDate getStartDate() {
+    public Long getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
 
-    public SubTask withEndDate(LocalDate endDate) {
+    public SubTask withEndDate(Long endDate) {
         this.endDate = endDate;
         return this;
     }
@@ -124,13 +127,15 @@ public class SubTask  {
 
     /**
      * 子任务结束时间（如果子任务还没有结束，则为空）
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return endDate
      */
-    public LocalDate getEndDate() {
+    public Long getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(Long endDate) {
         this.endDate = endDate;
     }
 
@@ -144,6 +149,8 @@ public class SubTask  {
 
     /**
      * 迁移速率，Mbit/s
+     * minimum: 0
+     * maximum: 1E+4
      * @return migrateSpeed
      */
     public Double getMigrateSpeed() {

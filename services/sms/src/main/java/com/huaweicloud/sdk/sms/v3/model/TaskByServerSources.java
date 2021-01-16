@@ -131,7 +131,7 @@ public class TaskByServerSources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remain_seconds")
     
-    private Integer remainSeconds;
+    private Long remainSeconds;
 
     public TaskByServerSources withId(String id) {
         this.id = id;
@@ -223,6 +223,8 @@ public class TaskByServerSources  {
 
     /**
      * 预估结束时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return estimateCompleteTime
      */
     public Long getEstimateCompleteTime() {
@@ -243,6 +245,8 @@ public class TaskByServerSources  {
 
     /**
      * 开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return startDate
      */
     public Long getStartDate() {
@@ -263,6 +267,8 @@ public class TaskByServerSources  {
 
     /**
      * 限速
+     * minimum: 0
+     * maximum: 10000
      * @return speedLimit
      */
     public Integer getSpeedLimit() {
@@ -283,6 +289,8 @@ public class TaskByServerSources  {
 
     /**
      * 迁移速率
+     * minimum: 0
+     * maximum: 10000
      * @return migrateSpeed
      */
     public Integer getMigrateSpeed() {
@@ -507,7 +515,7 @@ public class TaskByServerSources  {
         this.cloneServer = cloneServer;
     }
 
-    public TaskByServerSources withRemainSeconds(Integer remainSeconds) {
+    public TaskByServerSources withRemainSeconds(Long remainSeconds) {
         this.remainSeconds = remainSeconds;
         return this;
     }
@@ -517,13 +525,15 @@ public class TaskByServerSources  {
 
     /**
      * 已迁移时长
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return remainSeconds
      */
-    public Integer getRemainSeconds() {
+    public Long getRemainSeconds() {
         return remainSeconds;
     }
 
-    public void setRemainSeconds(Integer remainSeconds) {
+    public void setRemainSeconds(Long remainSeconds) {
         this.remainSeconds = remainSeconds;
     }
     @Override

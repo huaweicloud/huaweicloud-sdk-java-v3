@@ -24,7 +24,7 @@ public class BatchCreateChannelsRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channels")
     
-    private List<ChannelCreateInfo> channels = null;
+    private List<ChannelCreateInfo> channels = new ArrayList<>();
     
     public BatchCreateChannelsRequestBody withChannels(List<ChannelCreateInfo> channels) {
         this.channels = channels;
@@ -33,9 +33,6 @@ public class BatchCreateChannelsRequestBody  {
 
     
     public BatchCreateChannelsRequestBody addChannelsItem(ChannelCreateInfo channelsItem) {
-        if (this.channels == null) {
-            this.channels = new ArrayList<>();
-        }
         this.channels.add(channelsItem);
         return this;
     }

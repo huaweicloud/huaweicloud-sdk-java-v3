@@ -24,7 +24,7 @@ public class BatchAddPeersToChannelRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="channel_peers")
     
-    private List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers = null;
+    private List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers = new ArrayList<>();
     
     public BatchAddPeersToChannelRequestBody withChannelPeers(List<BatchAddPeersToChannelRequestBodyChannelPeers> channelPeers) {
         this.channelPeers = channelPeers;
@@ -33,9 +33,6 @@ public class BatchAddPeersToChannelRequestBody  {
 
     
     public BatchAddPeersToChannelRequestBody addChannelPeersItem(BatchAddPeersToChannelRequestBodyChannelPeers channelPeersItem) {
-        if (this.channelPeers == null) {
-            this.channelPeers = new ArrayList<>();
-        }
         this.channelPeers.add(channelPeersItem);
         return this;
     }

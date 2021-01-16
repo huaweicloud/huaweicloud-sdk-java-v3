@@ -19,15 +19,35 @@ public class PublicIp  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="public_bind_type")
+    
+    private String publicBindType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip_id")
     
     private String eipId;
 
+    public PublicIp withPublicBindType(String publicBindType) {
+        this.publicBindType = publicBindType;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_bind_type")
     
-    private String publicBindType;
+
+
+    /**
+     * 弹性IP绑定类型，取值如下：  auto_assign：自动绑定  not_use：暂未使用  bind_existing ：使用已有
+     * @return publicBindType
+     */
+    public String getPublicBindType() {
+        return publicBindType;
+    }
+
+    public void setPublicBindType(String publicBindType) {
+        this.publicBindType = publicBindType;
+    }
 
     public PublicIp withEipId(String eipId) {
         this.eipId = eipId;
@@ -48,26 +68,6 @@ public class PublicIp  {
     public void setEipId(String eipId) {
         this.eipId = eipId;
     }
-
-    public PublicIp withPublicBindType(String publicBindType) {
-        this.publicBindType = publicBindType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 弹性IP绑定类型
-     * @return publicBindType
-     */
-    public String getPublicBindType() {
-        return publicBindType;
-    }
-
-    public void setPublicBindType(String publicBindType) {
-        this.publicBindType = publicBindType;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -77,19 +77,19 @@ public class PublicIp  {
             return false;
         }
         PublicIp publicIp = (PublicIp) o;
-        return Objects.equals(this.eipId, publicIp.eipId) &&
-            Objects.equals(this.publicBindType, publicIp.publicBindType);
+        return Objects.equals(this.publicBindType, publicIp.publicBindType) &&
+            Objects.equals(this.eipId, publicIp.eipId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(eipId, publicBindType);
+        return Objects.hash(publicBindType, eipId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PublicIp {\n");
-        sb.append("    eipId: ").append(toIndentedString(eipId)).append("\n");
         sb.append("    publicBindType: ").append(toIndentedString(publicBindType)).append("\n");
+        sb.append("    eipId: ").append(toIndentedString(eipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

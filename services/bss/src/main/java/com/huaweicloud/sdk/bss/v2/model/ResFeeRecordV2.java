@@ -20,6 +20,48 @@ public class ResFeeRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bill_date")
+    
+    private String billDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bill_type")
+    
+    private Integer billType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="customer_id")
+    
+    private String customerId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region")
+    
+    private String region;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region_name")
+    
+    private String regionName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cloud_service_type")
+    
+    private String cloudServiceType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_type")
+    
+    private String resourceType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="effective_time")
     
     private String effectiveTime;
@@ -29,6 +71,24 @@ public class ResFeeRecordV2  {
     @JsonProperty(value="expire_time")
     
     private String expireTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_id")
+    
+    private String resourceId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_name")
+    
+    private String resourceName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="resource_tag")
+    
+    private String resourceTag;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,21 +110,57 @@ public class ResFeeRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sku_code")
+    
+    private String skuCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="spec_size")
+    
+    private BigDecimal specSize = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="spec_size_measure_id")
+    
+    private Integer specSizeMeasureId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="trade_id")
+    
+    private String tradeId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_name")
+    
+    private String enterpriseProjectName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="charge_mode")
+    
+    private String chargeMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
     private String orderId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
+    @JsonProperty(value="period_type")
     
-    private BigDecimal amount = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
-    private Integer measureId;
+    private String periodType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,72 +194,6 @@ public class ResFeeRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_service_type")
-    
-    private String cloudServiceType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
-    private String region;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
-    private String resourceType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
-    private String chargeMode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_tag")
-    
-    private String resourceTag;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
-    private String resourceName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
-    private String resourceId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_type")
-    
-    private Integer billType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
-    private String enterpriseProjectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_name")
-    
-    private String enterpriseProjectName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_type")
-    
-    private String periodType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ri_usage")
     
     private BigDecimal riUsage = null;
@@ -176,6 +206,18 @@ public class ResFeeRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="unit_price")
+    
+    private BigDecimal unitPrice = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="unit")
+    
+    private String unit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_amount")
     
     private BigDecimal officialAmount = null;
@@ -185,6 +227,12 @@ public class ResFeeRecordV2  {
     @JsonProperty(value="discount_amount")
     
     private BigDecimal discountAmount = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="amount")
+    
+    private BigDecimal amount = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -236,27 +284,149 @@ public class ResFeeRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_size")
+    @JsonProperty(value="measure_id")
     
-    private BigDecimal specSize = null;
+    private Integer measureId;
 
+    public ResFeeRecordV2 withBillDate(String billDate) {
+        this.billDate = billDate;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_size_measure_id")
     
-    private Integer specSizeMeasureId;
 
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
+    /**
+     * |参数名称：消费记录日期：格式：YYYY-MM-DD。按照东八区截取| |参数约束及描述：消费记录日期：格式：YYYY-MM-DD。按照东八区截取|
+     * @return billDate
+     */
+    public String getBillDate() {
+        return billDate;
+    }
+
+    public void setBillDate(String billDate) {
+        this.billDate = billDate;
+    }
+
+    public ResFeeRecordV2 withBillType(Integer billType) {
+        this.billType = billType;
+        return this;
+    }
+
     
-    private String customerId;
 
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trade_id")
+    /**
+     * |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费16：调账-扣费| |参数的约束及描述：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费 15消费-税金16：调账-扣费17：消费-保底差额 100：退款-退订税金 101：调账-补偿税金 102：调账-扣费税金|
+     * @return billType
+     */
+    public Integer getBillType() {
+        return billType;
+    }
+
+    public void setBillType(Integer billType) {
+        this.billType = billType;
+    }
+
+    public ResFeeRecordV2 withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
     
-    private String tradeId;
+
+
+    /**
+     * |参数名称：消费的客户账号ID。| |参数约束及描述：如果是查询自己，这个地方是自身的ID; 如果是查询某个企业子客户，这个地方是企业子客户ID如果是查询以及下面的所有子客户，这个地方是消费的实际客户ID; 如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。|
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public ResFeeRecordV2 withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public ResFeeRecordV2 withRegionName(String regionName) {
+        this.regionName = regionName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务区名称| |参数约束及描述：云服务区名称|
+     * @return regionName
+     */
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
+
+    public ResFeeRecordV2 withCloudServiceType(String cloudServiceType) {
+        this.cloudServiceType = cloudServiceType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * @return cloudServiceType
+     */
+    public String getCloudServiceType() {
+        return cloudServiceType;
+    }
+
+    public void setCloudServiceType(String cloudServiceType) {
+        this.cloudServiceType = cloudServiceType;
+    }
+
+    public ResFeeRecordV2 withResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。| |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
+     * @return resourceType
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
 
     public ResFeeRecordV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
@@ -296,6 +466,66 @@ public class ResFeeRecordV2  {
 
     public void setExpireTime(String expireTime) {
         this.expireTime = expireTime;
+    }
+
+    public ResFeeRecordV2 withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：资源ID。| |参数约束及描述：资源ID。|
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public ResFeeRecordV2 withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：资源名称。| |参数约束及描述：资源名称。|
+     * @return resourceName
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    public ResFeeRecordV2 withResourceTag(String resourceTag) {
+        this.resourceTag = resourceTag;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：资源标签。| |参数约束及描述：资源标签。|
+     * @return resourceTag
+     */
+    public String getResourceTag() {
+        return resourceTag;
+    }
+
+    public void setResourceTag(String resourceTag) {
+        this.resourceTag = resourceTag;
     }
 
     public ResFeeRecordV2 withProductId(String productId) {
@@ -358,6 +588,146 @@ public class ResFeeRecordV2  {
         this.productSpecDesc = productSpecDesc;
     }
 
+    public ResFeeRecordV2 withSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：sku编码| |参数约束及描述：sku编码|
+     * @return skuCode
+     */
+    public String getSkuCode() {
+        return skuCode;
+    }
+
+    public void setSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+    }
+
+    public ResFeeRecordV2 withSpecSize(BigDecimal specSize) {
+        this.specSize = specSize;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：线性大小| |参数约束及描述： 线性大小|
+     * @return specSize
+     */
+    public BigDecimal getSpecSize() {
+        return specSize;
+    }
+
+    public void setSpecSize(BigDecimal specSize) {
+        this.specSize = specSize;
+    }
+
+    public ResFeeRecordV2 withSpecSizeMeasureId(Integer specSizeMeasureId) {
+        this.specSizeMeasureId = specSizeMeasureId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：线性大小单位| |参数的约束及描述：线性大小单位|
+     * @return specSizeMeasureId
+     */
+    public Integer getSpecSizeMeasureId() {
+        return specSizeMeasureId;
+    }
+
+    public void setSpecSizeMeasureId(Integer specSizeMeasureId) {
+        this.specSizeMeasureId = specSizeMeasureId;
+    }
+
+    public ResFeeRecordV2 withTradeId(String tradeId) {
+        this.tradeId = tradeId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：订单ID 或 交易ID，扣费维度的唯一标识| |参数约束及描述：订单ID 或 交易ID，扣费维度的唯一标识|
+     * @return tradeId
+     */
+    public String getTradeId() {
+        return tradeId;
+    }
+
+    public void setTradeId(String tradeId) {
+        this.tradeId = tradeId;
+    }
+
+    public ResFeeRecordV2 withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：企业项目ID。| |参数约束及描述：企业项目ID。|
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ResFeeRecordV2 withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：企业项目名称。| |参数约束及描述：企业项目名称。|
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
+    public ResFeeRecordV2 withChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：1 : 包周期；3: 按需。10: 预留实例。| |参数约束及描述：1 : 包周期；3: 按需。10: 预留实例。|
+     * @return chargeMode
+     */
+    public String getChargeMode() {
+        return chargeMode;
+    }
+
+    public void setChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+    }
+
     public ResFeeRecordV2 withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -378,8 +748,8 @@ public class ResFeeRecordV2  {
         this.orderId = orderId;
     }
 
-    public ResFeeRecordV2 withAmount(BigDecimal amount) {
-        this.amount = amount;
+    public ResFeeRecordV2 withPeriodType(String periodType) {
+        this.periodType = periodType;
         return this;
     }
 
@@ -387,35 +757,15 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：消费金额，包括现金券和代金券金额，精确到小数点后2位。| |参数约束及描述： 消费金额，包括现金券和代金券金额，精确到小数点后2位。|
-     * @return amount
+     * |参数名称：周期类型：19：年；20：月；24：天；25：小时；5：分钟；6：秒。| |参数约束及描述：周期类型：19：年；20：月；24：天；25：小时；5：分钟；6：秒。|
+     * @return periodType
      */
-    public BigDecimal getAmount() {
-        return amount;
+    public String getPeriodType() {
+        return periodType;
     }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public ResFeeRecordV2 withMeasureId(Integer measureId) {
-        this.measureId = measureId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：金额单位：1：元；2：角；3：分。| |参数的约束及描述：金额单位：1：元；2：角；3：分。|
-     * @return measureId
-     */
-    public Integer getMeasureId() {
-        return measureId;
-    }
-
-    public void setMeasureId(Integer measureId) {
-        this.measureId = measureId;
+    public void setPeriodType(String periodType) {
+        this.periodType = periodType;
     }
 
     public ResFeeRecordV2 withUsageType(String usageType) {
@@ -518,226 +868,6 @@ public class ResFeeRecordV2  {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
 
-    public ResFeeRecordV2 withCloudServiceType(String cloudServiceType) {
-        this.cloudServiceType = cloudServiceType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * @return cloudServiceType
-     */
-    public String getCloudServiceType() {
-        return cloudServiceType;
-    }
-
-    public void setCloudServiceType(String cloudServiceType) {
-        this.cloudServiceType = cloudServiceType;
-    }
-
-    public ResFeeRecordV2 withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public ResFeeRecordV2 withResourceType(String resourceType) {
-        this.resourceType = resourceType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。| |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
-     * @return resourceType
-     */
-    public String getResourceType() {
-        return resourceType;
-    }
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
-    public ResFeeRecordV2 withChargeMode(String chargeMode) {
-        this.chargeMode = chargeMode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：1 : 包周期；3: 按需。10: 预留实例。| |参数约束及描述：1 : 包周期；3: 按需。10: 预留实例。|
-     * @return chargeMode
-     */
-    public String getChargeMode() {
-        return chargeMode;
-    }
-
-    public void setChargeMode(String chargeMode) {
-        this.chargeMode = chargeMode;
-    }
-
-    public ResFeeRecordV2 withResourceTag(String resourceTag) {
-        this.resourceTag = resourceTag;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：资源标签。| |参数约束及描述：资源标签。|
-     * @return resourceTag
-     */
-    public String getResourceTag() {
-        return resourceTag;
-    }
-
-    public void setResourceTag(String resourceTag) {
-        this.resourceTag = resourceTag;
-    }
-
-    public ResFeeRecordV2 withResourceName(String resourceName) {
-        this.resourceName = resourceName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：资源名称。| |参数约束及描述：资源名称。|
-     * @return resourceName
-     */
-    public String getResourceName() {
-        return resourceName;
-    }
-
-    public void setResourceName(String resourceName) {
-        this.resourceName = resourceName;
-    }
-
-    public ResFeeRecordV2 withResourceId(String resourceId) {
-        this.resourceId = resourceId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：资源ID。| |参数约束及描述：资源ID。|
-     * @return resourceId
-     */
-    public String getResourceId() {
-        return resourceId;
-    }
-
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
-    }
-
-    public ResFeeRecordV2 withBillType(Integer billType) {
-        this.billType = billType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费16：调账-扣费| |参数的约束及描述：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费16：调账-扣费|
-     * @return billType
-     */
-    public Integer getBillType() {
-        return billType;
-    }
-
-    public void setBillType(Integer billType) {
-        this.billType = billType;
-    }
-
-    public ResFeeRecordV2 withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：企业项目ID。| |参数约束及描述：企业项目ID。|
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public ResFeeRecordV2 withEnterpriseProjectName(String enterpriseProjectName) {
-        this.enterpriseProjectName = enterpriseProjectName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：企业项目名称。| |参数约束及描述：企业项目名称。|
-     * @return enterpriseProjectName
-     */
-    public String getEnterpriseProjectName() {
-        return enterpriseProjectName;
-    }
-
-    public void setEnterpriseProjectName(String enterpriseProjectName) {
-        this.enterpriseProjectName = enterpriseProjectName;
-    }
-
-    public ResFeeRecordV2 withPeriodType(String periodType) {
-        this.periodType = periodType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：周期类型：19：年；20：月；24：天；25：小时；5：分钟；6：秒。| |参数约束及描述：周期类型：19：年；20：月；24：天；25：小时；5：分钟；6：秒。|
-     * @return periodType
-     */
-    public String getPeriodType() {
-        return periodType;
-    }
-
-    public void setPeriodType(String periodType) {
-        this.periodType = periodType;
-    }
-
     public ResFeeRecordV2 withRiUsage(BigDecimal riUsage) {
         this.riUsage = riUsage;
         return this;
@@ -778,6 +908,46 @@ public class ResFeeRecordV2  {
         this.riUsageMeasureId = riUsageMeasureId;
     }
 
+    public ResFeeRecordV2 withUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：单价| |参数约束及描述：单价|
+     * @return unitPrice
+     */
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public ResFeeRecordV2 withUnit(String unit) {
+        this.unit = unit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：单价单位| |参数约束及描述：单价单位|
+     * @return unit
+     */
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     public ResFeeRecordV2 withOfficialAmount(BigDecimal officialAmount) {
         this.officialAmount = officialAmount;
         return this;
@@ -816,6 +986,26 @@ public class ResFeeRecordV2  {
 
     public void setDiscountAmount(BigDecimal discountAmount) {
         this.discountAmount = discountAmount;
+    }
+
+    public ResFeeRecordV2 withAmount(BigDecimal amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：消费金额，包括现金券和代金券金额，精确到小数点后2位。| |参数约束及描述： 消费金额，包括现金券和代金券金额，精确到小数点后2位。|
+     * @return amount
+     */
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public ResFeeRecordV2 withCashAmount(BigDecimal cashAmount) {
@@ -978,8 +1168,8 @@ public class ResFeeRecordV2  {
         this.adjustmentAmount = adjustmentAmount;
     }
 
-    public ResFeeRecordV2 withSpecSize(BigDecimal specSize) {
-        this.specSize = specSize;
+    public ResFeeRecordV2 withMeasureId(Integer measureId) {
+        this.measureId = measureId;
         return this;
     }
 
@@ -987,75 +1177,15 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：线性大小| |参数约束及描述： 线性大小|
-     * @return specSize
+     * |参数名称：金额单位 1：元| |参数的约束及描述：金额单位 1：元|
+     * @return measureId
      */
-    public BigDecimal getSpecSize() {
-        return specSize;
+    public Integer getMeasureId() {
+        return measureId;
     }
 
-    public void setSpecSize(BigDecimal specSize) {
-        this.specSize = specSize;
-    }
-
-    public ResFeeRecordV2 withSpecSizeMeasureId(Integer specSizeMeasureId) {
-        this.specSizeMeasureId = specSizeMeasureId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：线性大小单位| |参数的约束及描述：线性大小单位|
-     * @return specSizeMeasureId
-     */
-    public Integer getSpecSizeMeasureId() {
-        return specSizeMeasureId;
-    }
-
-    public void setSpecSizeMeasureId(Integer specSizeMeasureId) {
-        this.specSizeMeasureId = specSizeMeasureId;
-    }
-
-    public ResFeeRecordV2 withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：消费的客户账号ID。| |参数约束及描述：如果是查询自己，这个地方是自身的ID; 如果是查询某个企业子客户，这个地方是企业子客户ID如果是查询以及下面的所有子客户，这个地方是消费的实际客户ID; 如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。|
-     * @return customerId
-     */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
-    public ResFeeRecordV2 withTradeId(String tradeId) {
-        this.tradeId = tradeId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：订单ID 或 交易ID，扣费维度的唯一标识| |参数约束及描述：订单ID 或 交易ID，扣费维度的唯一标识|
-     * @return tradeId
-     */
-    public String getTradeId() {
-        return tradeId;
-    }
-
-    public void setTradeId(String tradeId) {
-        this.tradeId = tradeId;
+    public void setMeasureId(Integer measureId) {
+        this.measureId = measureId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1066,34 +1196,42 @@ public class ResFeeRecordV2  {
             return false;
         }
         ResFeeRecordV2 resFeeRecordV2 = (ResFeeRecordV2) o;
-        return Objects.equals(this.effectiveTime, resFeeRecordV2.effectiveTime) &&
+        return Objects.equals(this.billDate, resFeeRecordV2.billDate) &&
+            Objects.equals(this.billType, resFeeRecordV2.billType) &&
+            Objects.equals(this.customerId, resFeeRecordV2.customerId) &&
+            Objects.equals(this.region, resFeeRecordV2.region) &&
+            Objects.equals(this.regionName, resFeeRecordV2.regionName) &&
+            Objects.equals(this.cloudServiceType, resFeeRecordV2.cloudServiceType) &&
+            Objects.equals(this.resourceType, resFeeRecordV2.resourceType) &&
+            Objects.equals(this.effectiveTime, resFeeRecordV2.effectiveTime) &&
             Objects.equals(this.expireTime, resFeeRecordV2.expireTime) &&
+            Objects.equals(this.resourceId, resFeeRecordV2.resourceId) &&
+            Objects.equals(this.resourceName, resFeeRecordV2.resourceName) &&
+            Objects.equals(this.resourceTag, resFeeRecordV2.resourceTag) &&
             Objects.equals(this.productId, resFeeRecordV2.productId) &&
             Objects.equals(this.productName, resFeeRecordV2.productName) &&
             Objects.equals(this.productSpecDesc, resFeeRecordV2.productSpecDesc) &&
+            Objects.equals(this.skuCode, resFeeRecordV2.skuCode) &&
+            Objects.equals(this.specSize, resFeeRecordV2.specSize) &&
+            Objects.equals(this.specSizeMeasureId, resFeeRecordV2.specSizeMeasureId) &&
+            Objects.equals(this.tradeId, resFeeRecordV2.tradeId) &&
+            Objects.equals(this.enterpriseProjectId, resFeeRecordV2.enterpriseProjectId) &&
+            Objects.equals(this.enterpriseProjectName, resFeeRecordV2.enterpriseProjectName) &&
+            Objects.equals(this.chargeMode, resFeeRecordV2.chargeMode) &&
             Objects.equals(this.orderId, resFeeRecordV2.orderId) &&
-            Objects.equals(this.amount, resFeeRecordV2.amount) &&
-            Objects.equals(this.measureId, resFeeRecordV2.measureId) &&
+            Objects.equals(this.periodType, resFeeRecordV2.periodType) &&
             Objects.equals(this.usageType, resFeeRecordV2.usageType) &&
             Objects.equals(this.usage, resFeeRecordV2.usage) &&
             Objects.equals(this.usageMeasureId, resFeeRecordV2.usageMeasureId) &&
             Objects.equals(this.freeResourceUsage, resFeeRecordV2.freeResourceUsage) &&
             Objects.equals(this.freeResourceMeasureId, resFeeRecordV2.freeResourceMeasureId) &&
-            Objects.equals(this.cloudServiceType, resFeeRecordV2.cloudServiceType) &&
-            Objects.equals(this.region, resFeeRecordV2.region) &&
-            Objects.equals(this.resourceType, resFeeRecordV2.resourceType) &&
-            Objects.equals(this.chargeMode, resFeeRecordV2.chargeMode) &&
-            Objects.equals(this.resourceTag, resFeeRecordV2.resourceTag) &&
-            Objects.equals(this.resourceName, resFeeRecordV2.resourceName) &&
-            Objects.equals(this.resourceId, resFeeRecordV2.resourceId) &&
-            Objects.equals(this.billType, resFeeRecordV2.billType) &&
-            Objects.equals(this.enterpriseProjectId, resFeeRecordV2.enterpriseProjectId) &&
-            Objects.equals(this.enterpriseProjectName, resFeeRecordV2.enterpriseProjectName) &&
-            Objects.equals(this.periodType, resFeeRecordV2.periodType) &&
             Objects.equals(this.riUsage, resFeeRecordV2.riUsage) &&
             Objects.equals(this.riUsageMeasureId, resFeeRecordV2.riUsageMeasureId) &&
+            Objects.equals(this.unitPrice, resFeeRecordV2.unitPrice) &&
+            Objects.equals(this.unit, resFeeRecordV2.unit) &&
             Objects.equals(this.officialAmount, resFeeRecordV2.officialAmount) &&
             Objects.equals(this.discountAmount, resFeeRecordV2.discountAmount) &&
+            Objects.equals(this.amount, resFeeRecordV2.amount) &&
             Objects.equals(this.cashAmount, resFeeRecordV2.cashAmount) &&
             Objects.equals(this.creditAmount, resFeeRecordV2.creditAmount) &&
             Objects.equals(this.couponAmount, resFeeRecordV2.couponAmount) &&
@@ -1102,47 +1240,52 @@ public class ResFeeRecordV2  {
             Objects.equals(this.bonusAmount, resFeeRecordV2.bonusAmount) &&
             Objects.equals(this.debtAmount, resFeeRecordV2.debtAmount) &&
             Objects.equals(this.adjustmentAmount, resFeeRecordV2.adjustmentAmount) &&
-            Objects.equals(this.specSize, resFeeRecordV2.specSize) &&
-            Objects.equals(this.specSizeMeasureId, resFeeRecordV2.specSizeMeasureId) &&
-            Objects.equals(this.customerId, resFeeRecordV2.customerId) &&
-            Objects.equals(this.tradeId, resFeeRecordV2.tradeId);
+            Objects.equals(this.measureId, resFeeRecordV2.measureId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(effectiveTime, expireTime, productId, productName, productSpecDesc, orderId, amount, measureId, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, cloudServiceType, region, resourceType, chargeMode, resourceTag, resourceName, resourceId, billType, enterpriseProjectId, enterpriseProjectName, periodType, riUsage, riUsageMeasureId, officialAmount, discountAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, specSize, specSizeMeasureId, customerId, tradeId);
+        return Objects.hash(billDate, billType, customerId, region, regionName, cloudServiceType, resourceType, effectiveTime, expireTime, resourceId, resourceName, resourceTag, productId, productName, productSpecDesc, skuCode, specSize, specSizeMeasureId, tradeId, enterpriseProjectId, enterpriseProjectName, chargeMode, orderId, periodType, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, riUsage, riUsageMeasureId, unitPrice, unit, officialAmount, discountAmount, amount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, measureId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResFeeRecordV2 {\n");
+        sb.append("    billDate: ").append(toIndentedString(billDate)).append("\n");
+        sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
+        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    resourceTag: ").append(toIndentedString(resourceTag)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    productSpecDesc: ").append(toIndentedString(productSpecDesc)).append("\n");
+        sb.append("    skuCode: ").append(toIndentedString(skuCode)).append("\n");
+        sb.append("    specSize: ").append(toIndentedString(specSize)).append("\n");
+        sb.append("    specSizeMeasureId: ").append(toIndentedString(specSizeMeasureId)).append("\n");
+        sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
+        sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    usageType: ").append(toIndentedString(usageType)).append("\n");
         sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
         sb.append("    usageMeasureId: ").append(toIndentedString(usageMeasureId)).append("\n");
         sb.append("    freeResourceUsage: ").append(toIndentedString(freeResourceUsage)).append("\n");
         sb.append("    freeResourceMeasureId: ").append(toIndentedString(freeResourceMeasureId)).append("\n");
-        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
-        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
-        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
-        sb.append("    resourceTag: ").append(toIndentedString(resourceTag)).append("\n");
-        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
-        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-        sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
-        sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    riUsage: ").append(toIndentedString(riUsage)).append("\n");
         sb.append("    riUsageMeasureId: ").append(toIndentedString(riUsageMeasureId)).append("\n");
+        sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+        sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    cashAmount: ").append(toIndentedString(cashAmount)).append("\n");
         sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
         sb.append("    couponAmount: ").append(toIndentedString(couponAmount)).append("\n");
@@ -1151,10 +1294,7 @@ public class ResFeeRecordV2  {
         sb.append("    bonusAmount: ").append(toIndentedString(bonusAmount)).append("\n");
         sb.append("    debtAmount: ").append(toIndentedString(debtAmount)).append("\n");
         sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
-        sb.append("    specSize: ").append(toIndentedString(specSize)).append("\n");
-        sb.append("    specSizeMeasureId: ").append(toIndentedString(specSizeMeasureId)).append("\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-        sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -13,6 +13,7 @@ import com.huaweicloud.sdk.bcs.v2.model.CreateRequestBodyBlockInfo;
 import com.huaweicloud.sdk.bcs.v2.model.CreateRequestBodyCceClusterInfo;
 import com.huaweicloud.sdk.bcs.v2.model.CreateRequestBodyCceCreateInfo;
 import com.huaweicloud.sdk.bcs.v2.model.CreateRequestBodyCouchdbInfo;
+import com.huaweicloud.sdk.bcs.v2.model.CreateRequestBodyInvitorInfos;
 import com.huaweicloud.sdk.bcs.v2.model.CreateRequestBodyKafkaCreateInfo;
 import com.huaweicloud.sdk.bcs.v2.model.CreateRequestBodyTurboInfo;
 import com.huaweicloud.sdk.bcs.v2.model.IEFNode;
@@ -120,18 +121,6 @@ public class CreateRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tc3_need")
-    
-    private Boolean tc3Need;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restful_api_support")
-    
-    private Boolean restfulApiSupport;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_type")
     
     private String clusterType;
@@ -202,6 +191,30 @@ public class CreateRequestBody  {
     
     private CreateRequestBodyKafkaCreateInfo kafkaCreateInfo = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tc3_need")
+    
+    private Boolean tc3Need;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="restful_api_support")
+    
+    private Boolean restfulApiSupport;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_invitee")
+    
+    private Boolean isInvitee;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="invitor_infos")
+    
+    private CreateRequestBodyInvitorInfos invitorInfos = null;
+
     public CreateRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -251,7 +264,7 @@ public class CreateRequestBody  {
 
 
     /**
-     * Fabric版本，可选：“1.4”，“2.0”
+     * Fabric版本，可选：\"1.4\"，\"2.0\"。目前HCS只支持1.4
      * @return fabricVersion
      */
     public String getFabricVersion() {
@@ -291,7 +304,7 @@ public class CreateRequestBody  {
 
 
     /**
-     * BCS服务的共识策略，可选：（etcdraft）、快速拜占庭容错算法（SFLIC）、测试策略（solo）、Kafka共识（kafka）
+     * BCS服务的共识策略，可选：（etcdraft,1.4版本不支持raft共识算法）、快速拜占庭容错算法（SFLIC）、测试策略（solo）、Kafka共识（kafka）
      * @return consensus
      */
     public String getConsensus() {
@@ -351,7 +364,7 @@ public class CreateRequestBody  {
 
 
     /**
-     * CCE集群存储卷类型，可选：云硬盘存储卷（evs），文件存储卷（nfs）, 极速文件存储卷（efs）
+     * CCE集群存储卷类型，根据实际环境可选：云硬盘存储卷（evs），文件存储卷（nfs）, 极速文件存储卷（efs）
      * @return volumeType
      */
     public String getVolumeType() {
@@ -371,7 +384,7 @@ public class CreateRequestBody  {
 
 
     /**
-     * 云硬盘存储卷类型，可选：普通I/O（SATA），高I/O（SAS），超高I/O（SSD）
+     * 云硬盘存储卷类型，volume_type选择evs时必填，可选：普通I/O（SATA），高I/O（SAS），超高I/O（SSD）
      * @return evsDiskType
      */
     public String getEvsDiskType() {
@@ -391,7 +404,7 @@ public class CreateRequestBody  {
 
 
     /**
-     * 节点组织存储容量(GB),基础版至少40GB，专业版和企业版至少100GB，铂金版至少500GB
+     * [节点组织存储容量，基础版至少40GB，专业版和企业版至少100GB，铂金版至少500GB](tag:online)[节点组织存储容量GB，至少为100GB](tag:hcs)
      * @return orgDiskSize
      */
     public Integer getOrgDiskSize() {
@@ -451,7 +464,7 @@ public class CreateRequestBody  {
 
 
     /**
-     * 共识组织节点数
+     * 共识组织节点数，被邀请方创实例时可不填
      * @return ordererNodeNumber
      */
     public Integer getOrdererNodeNumber() {
@@ -502,46 +515,6 @@ public class CreateRequestBody  {
         this.bandwidthSize = bandwidthSize;
     }
 
-    public CreateRequestBody withTc3Need(Boolean tc3Need) {
-        this.tc3Need = tc3Need;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否添加可信计算平台
-     * @return tc3Need
-     */
-    public Boolean getTc3Need() {
-        return tc3Need;
-    }
-
-    public void setTc3Need(Boolean tc3Need) {
-        this.tc3Need = tc3Need;
-    }
-
-    public CreateRequestBody withRestfulApiSupport(Boolean restfulApiSupport) {
-        this.restfulApiSupport = restfulApiSupport;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否添加restful API支持
-     * @return restfulApiSupport
-     */
-    public Boolean getRestfulApiSupport() {
-        return restfulApiSupport;
-    }
-
-    public void setRestfulApiSupport(Boolean restfulApiSupport) {
-        this.restfulApiSupport = restfulApiSupport;
-    }
-
     public CreateRequestBody withClusterType(String clusterType) {
         this.clusterType = clusterType;
         return this;
@@ -551,7 +524,7 @@ public class CreateRequestBody  {
 
 
     /**
-     * 集群类型，可选：CCE集群（cce），边缘集群（ief）
+     * 集群类型，[可选：CCE集群（cce），边缘集群（ief）](tag:online)[目前线下混合云模式下只支持CCE集群](tag:hcs)
      * @return clusterType
      */
     public String getClusterType() {
@@ -865,6 +838,93 @@ public class CreateRequestBody  {
     public void setKafkaCreateInfo(CreateRequestBodyKafkaCreateInfo kafkaCreateInfo) {
         this.kafkaCreateInfo = kafkaCreateInfo;
     }
+
+    public CreateRequestBody withTc3Need(Boolean tc3Need) {
+        this.tc3Need = tc3Need;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否添加可信计算平台
+     * @return tc3Need
+     */
+    public Boolean getTc3Need() {
+        return tc3Need;
+    }
+
+    public void setTc3Need(Boolean tc3Need) {
+        this.tc3Need = tc3Need;
+    }
+
+    public CreateRequestBody withRestfulApiSupport(Boolean restfulApiSupport) {
+        this.restfulApiSupport = restfulApiSupport;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否添加restful API支持
+     * @return restfulApiSupport
+     */
+    public Boolean getRestfulApiSupport() {
+        return restfulApiSupport;
+    }
+
+    public void setRestfulApiSupport(Boolean restfulApiSupport) {
+        this.restfulApiSupport = restfulApiSupport;
+    }
+
+    public CreateRequestBody withIsInvitee(Boolean isInvitee) {
+        this.isInvitee = isInvitee;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否是被邀请方创建实例
+     * @return isInvitee
+     */
+    public Boolean getIsInvitee() {
+        return isInvitee;
+    }
+
+    public void setIsInvitee(Boolean isInvitee) {
+        this.isInvitee = isInvitee;
+    }
+
+    public CreateRequestBody withInvitorInfos(CreateRequestBodyInvitorInfos invitorInfos) {
+        this.invitorInfos = invitorInfos;
+        return this;
+    }
+
+    public CreateRequestBody withInvitorInfos(Consumer<CreateRequestBodyInvitorInfos> invitorInfosSetter) {
+        if(this.invitorInfos == null ){
+            this.invitorInfos = new CreateRequestBodyInvitorInfos();
+            invitorInfosSetter.accept(this.invitorInfos);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get invitorInfos
+     * @return invitorInfos
+     */
+    public CreateRequestBodyInvitorInfos getInvitorInfos() {
+        return invitorInfos;
+    }
+
+    public void setInvitorInfos(CreateRequestBodyInvitorInfos invitorInfos) {
+        this.invitorInfos = invitorInfos;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -889,8 +949,6 @@ public class CreateRequestBody  {
             Objects.equals(this.ordererNodeNumber, createRequestBody.ordererNodeNumber) &&
             Objects.equals(this.useEip, createRequestBody.useEip) &&
             Objects.equals(this.bandwidthSize, createRequestBody.bandwidthSize) &&
-            Objects.equals(this.tc3Need, createRequestBody.tc3Need) &&
-            Objects.equals(this.restfulApiSupport, createRequestBody.restfulApiSupport) &&
             Objects.equals(this.clusterType, createRequestBody.clusterType) &&
             Objects.equals(this.createNewCluster, createRequestBody.createNewCluster) &&
             Objects.equals(this.cceClusterInfo, createRequestBody.cceClusterInfo) &&
@@ -902,11 +960,15 @@ public class CreateRequestBody  {
             Objects.equals(this.couchdbInfo, createRequestBody.couchdbInfo) &&
             Objects.equals(this.turboInfo, createRequestBody.turboInfo) &&
             Objects.equals(this.blockInfo, createRequestBody.blockInfo) &&
-            Objects.equals(this.kafkaCreateInfo, createRequestBody.kafkaCreateInfo);
+            Objects.equals(this.kafkaCreateInfo, createRequestBody.kafkaCreateInfo) &&
+            Objects.equals(this.tc3Need, createRequestBody.tc3Need) &&
+            Objects.equals(this.restfulApiSupport, createRequestBody.restfulApiSupport) &&
+            Objects.equals(this.isInvitee, createRequestBody.isInvitee) &&
+            Objects.equals(this.invitorInfos, createRequestBody.invitorInfos);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, versionType, fabricVersion, blockchainType, consensus, signAlgorithm, enterpriseProjectId, volumeType, evsDiskType, orgDiskSize, databaseType, resourcePassword, ordererNodeNumber, useEip, bandwidthSize, tc3Need, restfulApiSupport, clusterType, createNewCluster, cceClusterInfo, cceCreateInfo, iefDeployMode, iefNodesInfo, peerOrgs, channels, couchdbInfo, turboInfo, blockInfo, kafkaCreateInfo);
+        return Objects.hash(name, versionType, fabricVersion, blockchainType, consensus, signAlgorithm, enterpriseProjectId, volumeType, evsDiskType, orgDiskSize, databaseType, resourcePassword, ordererNodeNumber, useEip, bandwidthSize, clusterType, createNewCluster, cceClusterInfo, cceCreateInfo, iefDeployMode, iefNodesInfo, peerOrgs, channels, couchdbInfo, turboInfo, blockInfo, kafkaCreateInfo, tc3Need, restfulApiSupport, isInvitee, invitorInfos);
     }
     @Override
     public String toString() {
@@ -927,8 +989,6 @@ public class CreateRequestBody  {
         sb.append("    ordererNodeNumber: ").append(toIndentedString(ordererNodeNumber)).append("\n");
         sb.append("    useEip: ").append(toIndentedString(useEip)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
-        sb.append("    tc3Need: ").append(toIndentedString(tc3Need)).append("\n");
-        sb.append("    restfulApiSupport: ").append(toIndentedString(restfulApiSupport)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    createNewCluster: ").append(toIndentedString(createNewCluster)).append("\n");
         sb.append("    cceClusterInfo: ").append(toIndentedString(cceClusterInfo)).append("\n");
@@ -941,6 +1001,10 @@ public class CreateRequestBody  {
         sb.append("    turboInfo: ").append(toIndentedString(turboInfo)).append("\n");
         sb.append("    blockInfo: ").append(toIndentedString(blockInfo)).append("\n");
         sb.append("    kafkaCreateInfo: ").append(toIndentedString(kafkaCreateInfo)).append("\n");
+        sb.append("    tc3Need: ").append(toIndentedString(tc3Need)).append("\n");
+        sb.append("    restfulApiSupport: ").append(toIndentedString(restfulApiSupport)).append("\n");
+        sb.append("    isInvitee: ").append(toIndentedString(isInvitee)).append("\n");
+        sb.append("    invitorInfos: ").append(toIndentedString(invitorInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

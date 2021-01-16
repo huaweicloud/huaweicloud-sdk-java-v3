@@ -83,6 +83,17 @@ public class RomaClient {
     }
 
     /**
+     * 批量删除设备
+     * 批量删除设备
+     *
+     * @param BatchDeleteDevicesRequest 请求对象
+     * @return BatchDeleteDevicesResponse
+     */
+    public BatchDeleteDevicesResponse batchDeleteDevices(BatchDeleteDevicesRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.batchDeleteDevices);
+    }
+
+    /**
      * 批量删除Topic
      * 批量删除Topic。
      *
@@ -124,6 +135,17 @@ public class RomaClient {
      */
     public CheckLivedataApisV2Response checkLivedataApisV2(CheckLivedataApisV2Request request) {
         return hcClient.syncInvokeHttp(request, RomaMeta.checkLivedataApisV2);
+    }
+
+    /**
+     * 设备数量统计
+     * 设备数量统计
+     *
+     * @param CountDevicesRequest 请求对象
+     * @return CountDevicesResponse
+     */
+    public CountDevicesResponse countDevices(CountDevicesRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.countDevices);
     }
 
     /**
@@ -633,6 +655,17 @@ public class RomaClient {
     }
 
     /**
+     * 删除服务属性
+     * 删除服务属性
+     *
+     * @param DeletePropertyRequest 请求对象
+     * @return DeletePropertyResponse
+     */
+    public DeletePropertyResponse deleteProperty(DeletePropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteProperty);
+    }
+
+    /**
      * 删除请求属性
      * 删除请求属性
      *
@@ -872,6 +905,17 @@ public class RomaClient {
      */
     public ListAppQuotasResponse listAppQuotas(ListAppQuotasRequest request) {
         return hcClient.syncInvokeHttp(request, RomaMeta.listAppQuotas);
+    }
+
+    /**
+     * 不同调用应用请求的指标统计值TopN
+     * 查询统计时长内所有、某个集成应用或者某个API被不同调用应用请求的指标统计值TopN。
+     *
+     * @param ListAppUsagesTopNRequest 请求对象
+     * @return ListAppUsagesTopNResponse
+     */
+    public ListAppUsagesTopNResponse listAppUsagesTopN(ListAppUsagesTopNRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listAppUsagesTopN);
     }
 
     /**
@@ -1161,6 +1205,17 @@ public class RomaClient {
     }
 
     /**
+     * 查询所有集成应用的指标统计值TopN
+     * 查询统计时长内所有集成应用的指标统计值TopN，要求主账号权限。
+     *
+     * @param ListRomaAppUsagesTopNRequest 请求对象
+     * @return ListRomaAppUsagesTopNResponse
+     */
+    public ListRomaAppUsagesTopNResponse listRomaAppUsagesTopN(ListRomaAppUsagesTopNRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listRomaAppUsagesTopN);
+    }
+
+    /**
      * 查询规则
      * 查询规则
      *
@@ -1249,6 +1304,28 @@ public class RomaClient {
     }
 
     /**
+     * 按照集成应用维度查询调用应用指标统计值
+     * 根据传入的当前时间和查询维度类型，查询统计时长内的某个应用请求不同API产品的指标统计值
+     *
+     * @param ListStatisticsConsumerAppForSplitRomaAppsRequest 请求对象
+     * @return ListStatisticsConsumerAppForSplitRomaAppsResponse
+     */
+    public ListStatisticsConsumerAppForSplitRomaAppsResponse listStatisticsConsumerAppForSplitRomaApps(ListStatisticsConsumerAppForSplitRomaAppsRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listStatisticsConsumerAppForSplitRomaApps);
+    }
+
+    /**
+     * 查询应用请求的指标统计值
+     * 查询统计时长内所有或某个应用请求的指标统计值。
+     *
+     * @param ListStatisticsRomaAppRequest 请求对象
+     * @return ListStatisticsRomaAppResponse
+     */
+    public ListStatisticsRomaAppResponse listStatisticsRomaApp(ListStatisticsRomaAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listStatisticsRomaApp);
+    }
+
+    /**
      * 查询子设备
      * 查询子设备
      *
@@ -1323,6 +1400,17 @@ public class RomaClient {
      */
     public ResetProductAuthenticationResponse resetProductAuthentication(ResetProductAuthenticationRequest request) {
         return hcClient.syncInvokeHttp(request, RomaMeta.resetProductAuthentication);
+    }
+
+    /**
+     * 手工触发单个任务
+     * 手工触发一次任务调度
+     *
+     * @param RunTaskRequest 请求对象
+     * @return RunTaskResponse
+     */
+    public RunTaskResponse runTask(RunTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.runTask);
     }
 
     /**
@@ -1513,6 +1601,17 @@ public class RomaClient {
     }
 
     /**
+     * 查询设备分组内设备
+     * 查询设备分组内设备
+     *
+     * @param ShowDevicesInGroupRequest 请求对象
+     * @return ShowDevicesInGroupResponse
+     */
+    public ShowDevicesInGroupResponse showDevicesInGroup(ShowDevicesInGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showDevicesInGroup);
+    }
+
+    /**
      * 查询后端API详情
      * 查询后端API的详细信息。
      *
@@ -1568,6 +1667,39 @@ public class RomaClient {
     }
 
     /**
+     * 查询产品模板详情
+     * 查询产品模板详情
+     *
+     * @param ShowProductTemplateRequest 请求对象
+     * @return ShowProductTemplateResponse
+     */
+    public ShowProductTemplateResponse showProductTemplate(ShowProductTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showProductTemplate);
+    }
+
+    /**
+     * 查询服务属性详情
+     * 查询服务属性详情
+     *
+     * @param ShowPropertyRequest 请求对象
+     * @return ShowPropertyResponse
+     */
+    public ShowPropertyResponse showProperty(ShowPropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showProperty);
+    }
+
+    /**
+     * 查询请求属性详情
+     * 查询请求属性详情
+     *
+     * @param ShowRequestPropertyRequest 请求对象
+     * @return ShowRequestPropertyResponse
+     */
+    public ShowRequestPropertyResponse showRequestProperty(ShowRequestPropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showRequestProperty);
+    }
+
+    /**
      * 查询响应属性详情
      * 查询响应属性详情
      *
@@ -1576,6 +1708,17 @@ public class RomaClient {
      */
     public ShowResponsePropertyResponse showResponseProperty(ShowResponsePropertyRequest request) {
         return hcClient.syncInvokeHttp(request, RomaMeta.showResponseProperty);
+    }
+
+    /**
+     * 查看ROMA Connect实例约束信息
+     * 查看ROMA Connect实例约束信息
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return ShowRestrictionOfInstanceV2Response
+     */
+    public ShowRestrictionOfInstanceV2Response showRestrictionOfInstanceV2(ShowRestrictionOfInstanceV2Request request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.showRestrictionOfInstanceV2);
     }
 
     /**
@@ -1774,6 +1917,17 @@ public class RomaClient {
      */
     public UpdateProductTopicResponse updateProductTopic(UpdateProductTopicRequest request) {
         return hcClient.syncInvokeHttp(request, RomaMeta.updateProductTopic);
+    }
+
+    /**
+     * 修改服务属性
+     * 修改服务属性
+     *
+     * @param UpdatePropertyRequest 请求对象
+     * @return UpdatePropertyResponse
+     */
+    public UpdatePropertyResponse updateProperty(UpdatePropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateProperty);
     }
 
     /**
@@ -2005,6 +2159,17 @@ public class RomaClient {
      */
     public CheckApisV2Response checkApisV2(CheckApisV2Request request) {
         return hcClient.syncInvokeHttp(request, RomaMeta.checkApisV2);
+    }
+
+    /**
+     * 后端连通性检测接口
+     * 后端连通性检测接口
+     *
+     * @param CheckBackendConnectivityRequest 请求对象
+     * @return CheckBackendConnectivityResponse
+     */
+    public CheckBackendConnectivityResponse checkBackendConnectivity(CheckBackendConnectivityRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkBackendConnectivity);
     }
 
     /**
@@ -2357,6 +2522,204 @@ public class RomaClient {
      */
     public ListDuplicateApisForAppV2Response listDuplicateApisForAppV2(ListDuplicateApisForAppV2Request request) {
         return hcClient.syncInvokeHttp(request, RomaMeta.listDuplicateApisForAppV2);
+    }
+
+    /**
+     * 设置用户成员
+     * - 设置应用的用户成员，为空数组时会清空已有应用成员列表 - 设置动作为全量更新非增量更新，应用的成员列表都会替换为当次请求的应用成员列表 
+     *
+     * @param AddUserToAppRequest 请求对象
+     * @return AddUserToAppResponse
+     */
+    public AddUserToAppResponse addUserToApp(AddUserToAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.addUserToApp);
+    }
+
+    /**
+     * 查询用户成员列表
+     * 查询用户成列表
+     *
+     * @param CheckAuthUsersOfAppRequest 请求对象
+     * @return CheckAuthUsersOfAppResponse
+     */
+    public CheckAuthUsersOfAppResponse checkAuthUsersOfApp(CheckAuthUsersOfAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkAuthUsersOfApp);
+    }
+
+    /**
+     * 查询候选用户成员
+     * 查询应用的候选用户成员列表,会过滤掉异常状态用户
+     *
+     * @param CheckCanAuthUsersOfAppRequest 请求对象
+     * @return CheckCanAuthUsersOfAppResponse
+     */
+    public CheckCanAuthUsersOfAppResponse checkCanAuthUsersOfApp(CheckCanAuthUsersOfAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkCanAuthUsersOfApp);
+    }
+
+    /**
+     * 查询应用详情
+     * 查询应用详情
+     *
+     * @param CheckRomaAppDetailsRequest 请求对象
+     * @return CheckRomaAppDetailsResponse
+     */
+    public CheckRomaAppDetailsResponse checkRomaAppDetails(CheckRomaAppDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkRomaAppDetails);
+    }
+
+    /**
+     * 查询应用密钥
+     * 查询应用密钥
+     *
+     * @param CheckRomaAppSecretRequest 请求对象
+     * @return CheckRomaAppSecretResponse
+     */
+    public CheckRomaAppSecretResponse checkRomaAppSecret(CheckRomaAppSecretRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkRomaAppSecret);
+    }
+
+    /**
+     * 创建应用
+     * 创建应用
+     *
+     * @param CreateRomaAppRequest 请求对象
+     * @return CreateRomaAppResponse
+     */
+    public CreateRomaAppResponse createRomaApp(CreateRomaAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createRomaApp);
+    }
+
+    /**
+     * 删除应用
+     * 删除单个应用
+     *
+     * @param DeleteRomaAppRequest 请求对象
+     * @return DeleteRomaAppResponse
+     */
+    public DeleteRomaAppResponse deleteRomaApp(DeleteRomaAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteRomaApp);
+    }
+
+    /**
+     * 查询应用列表
+     * 查询应用列表，支持条件查询，所有条件是并且的关系
+     *
+     * @param ListRomaAppRequest 请求对象
+     * @return ListRomaAppResponse
+     */
+    public ListRomaAppResponse listRomaApp(ListRomaAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listRomaApp);
+    }
+
+    /**
+     * 重置应用密钥
+     * 重置应用密钥
+     *
+     * @param ResetRomaAppSecretRequest 请求对象
+     * @return ResetRomaAppSecretResponse
+     */
+    public ResetRomaAppSecretResponse resetRomaAppSecret(ResetRomaAppSecretRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.resetRomaAppSecret);
+    }
+
+    /**
+     * 更新应用
+     * 更新应用
+     *
+     * @param UpdateRomaAppRequest 请求对象
+     * @return UpdateRomaAppResponse
+     */
+    public UpdateRomaAppResponse updateRomaApp(UpdateRomaAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateRomaApp);
+    }
+
+    /**
+     * 校验应用是否存在
+     * 校验指定条件的应用是否存在
+     *
+     * @param ValidateRomaAppRequest 请求对象
+     * @return ValidateRomaAppResponse
+     */
+    public ValidateRomaAppResponse validateRomaApp(ValidateRomaAppRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.validateRomaApp);
+    }
+
+    /**
+     * 查询作业进度
+     * 查询作业进度
+     *
+     * @param CheckAssetJobStatusRequest 请求对象
+     * @return CheckAssetJobStatusResponse
+     */
+    public CheckAssetJobStatusResponse checkAssetJobStatus(CheckAssetJobStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkAssetJobStatus);
+    }
+
+    /**
+     * 查询字典详情
+     * 查询字典详情,
+     *
+     * @param CheckDictionaryRequest 请求对象
+     * @return CheckDictionaryResponse
+     */
+    public CheckDictionaryResponse checkDictionary(CheckDictionaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.checkDictionary);
+    }
+
+    /**
+     * 创建字典
+     * 创建字典
+     *
+     * @param CreateDictionaryRequest 请求对象
+     * @return CreateDictionaryResponse
+     */
+    public CreateDictionaryResponse createDictionary(CreateDictionaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.createDictionary);
+    }
+
+    /**
+     * 删除字典
+     * 删除单个字典，会同时删除该字典的所有子字典
+     *
+     * @param DeleteDictionaryRequest 请求对象
+     * @return DeleteDictionaryResponse
+     */
+    public DeleteDictionaryResponse deleteDictionary(DeleteDictionaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.deleteDictionary);
+    }
+
+    /**
+     * 查询字典列表
+     * 查询字典列表
+     *
+     * @param ListDictionaryRequest 请求对象
+     * @return ListDictionaryResponse
+     */
+    public ListDictionaryResponse listDictionary(ListDictionaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.listDictionary);
+    }
+
+    /**
+     * 更新字典
+     * 更新字典
+     *
+     * @param UpdateDictionaryRequest 请求对象
+     * @return UpdateDictionaryResponse
+     */
+    public UpdateDictionaryResponse updateDictionary(UpdateDictionaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.updateDictionary);
+    }
+
+    /**
+     * 校验字典是否存在
+     * 校验指定条件的字典是否存在，支持字典名称和字典编码
+     *
+     * @param ValidateDictionaryRequest 请求对象
+     * @return ValidateDictionaryResponse
+     */
+    public ValidateDictionaryResponse validateDictionary(ValidateDictionaryRequest request) {
+        return hcClient.syncInvokeHttp(request, RomaMeta.validateDictionary);
     }
 
     /**

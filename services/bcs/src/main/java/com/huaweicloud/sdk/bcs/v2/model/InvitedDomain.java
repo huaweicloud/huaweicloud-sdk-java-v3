@@ -19,12 +19,12 @@ public class InvitedDomain  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invited_username")
+    @JsonProperty(value="invited_user")
     
-    private String invitedUsername;
+    private String invitedUser;
 
-    public InvitedDomain withInvitedUsername(String invitedUsername) {
-        this.invitedUsername = invitedUsername;
+    public InvitedDomain withInvitedUser(String invitedUser) {
+        this.invitedUser = invitedUser;
         return this;
     }
 
@@ -32,15 +32,15 @@ public class InvitedDomain  {
 
 
     /**
-     * 被邀请方租户名
-     * @return invitedUsername
+     * 被邀请方租户，hcs模式下是邀请方的租户ID
+     * @return invitedUser
      */
-    public String getInvitedUsername() {
-        return invitedUsername;
+    public String getInvitedUser() {
+        return invitedUser;
     }
 
-    public void setInvitedUsername(String invitedUsername) {
-        this.invitedUsername = invitedUsername;
+    public void setInvitedUser(String invitedUser) {
+        this.invitedUser = invitedUser;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -51,17 +51,17 @@ public class InvitedDomain  {
             return false;
         }
         InvitedDomain invitedDomain = (InvitedDomain) o;
-        return Objects.equals(this.invitedUsername, invitedDomain.invitedUsername);
+        return Objects.equals(this.invitedUser, invitedDomain.invitedUser);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(invitedUsername);
+        return Objects.hash(invitedUser);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InvitedDomain {\n");
-        sb.append("    invitedUsername: ").append(toIndentedString(invitedUsername)).append("\n");
+        sb.append("    invitedUser: ").append(toIndentedString(invitedUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

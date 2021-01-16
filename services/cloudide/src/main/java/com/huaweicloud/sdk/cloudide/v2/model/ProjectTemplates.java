@@ -292,7 +292,7 @@ public class ProjectTemplates  {
     /**
      * 模板id
      * minimum: 1
-     * maximum: 9223372036854775807
+     * maximum: -9223372036854775616
      * @return templateId
      */
     public Long getTemplateId() {

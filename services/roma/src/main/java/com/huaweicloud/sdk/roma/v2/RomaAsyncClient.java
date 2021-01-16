@@ -86,6 +86,17 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 批量删除设备
+     * 批量删除设备
+     *
+     * @param BatchDeleteDevicesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteDevicesResponse>
+     */
+    public CompletableFuture<BatchDeleteDevicesResponse> batchDeleteDevicesAsync(BatchDeleteDevicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.batchDeleteDevices);
+    }
+
+    /**
      * 批量删除Topic
      * 批量删除Topic。
      *
@@ -127,6 +138,17 @@ public class RomaAsyncClient {
      */
     public CompletableFuture<CheckLivedataApisV2Response> checkLivedataApisV2Async(CheckLivedataApisV2Request request) {
         return hcClient.asyncInvokeHttp(request, RomaMeta.checkLivedataApisV2);
+    }
+
+    /**
+     * 设备数量统计
+     * 设备数量统计
+     *
+     * @param CountDevicesRequest 请求对象
+     * @return CompletableFuture<CountDevicesResponse>
+     */
+    public CompletableFuture<CountDevicesResponse> countDevicesAsync(CountDevicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.countDevices);
     }
 
     /**
@@ -636,6 +658,17 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 删除服务属性
+     * 删除服务属性
+     *
+     * @param DeletePropertyRequest 请求对象
+     * @return CompletableFuture<DeletePropertyResponse>
+     */
+    public CompletableFuture<DeletePropertyResponse> deletePropertyAsync(DeletePropertyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.deleteProperty);
+    }
+
+    /**
      * 删除请求属性
      * 删除请求属性
      *
@@ -875,6 +908,17 @@ public class RomaAsyncClient {
      */
     public CompletableFuture<ListAppQuotasResponse> listAppQuotasAsync(ListAppQuotasRequest request) {
         return hcClient.asyncInvokeHttp(request, RomaMeta.listAppQuotas);
+    }
+
+    /**
+     * 不同调用应用请求的指标统计值TopN
+     * 查询统计时长内所有、某个集成应用或者某个API被不同调用应用请求的指标统计值TopN。
+     *
+     * @param ListAppUsagesTopNRequest 请求对象
+     * @return CompletableFuture<ListAppUsagesTopNResponse>
+     */
+    public CompletableFuture<ListAppUsagesTopNResponse> listAppUsagesTopNAsync(ListAppUsagesTopNRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listAppUsagesTopN);
     }
 
     /**
@@ -1164,6 +1208,17 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 查询所有集成应用的指标统计值TopN
+     * 查询统计时长内所有集成应用的指标统计值TopN，要求主账号权限。
+     *
+     * @param ListRomaAppUsagesTopNRequest 请求对象
+     * @return CompletableFuture<ListRomaAppUsagesTopNResponse>
+     */
+    public CompletableFuture<ListRomaAppUsagesTopNResponse> listRomaAppUsagesTopNAsync(ListRomaAppUsagesTopNRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listRomaAppUsagesTopN);
+    }
+
+    /**
      * 查询规则
      * 查询规则
      *
@@ -1252,6 +1307,28 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 按照集成应用维度查询调用应用指标统计值
+     * 根据传入的当前时间和查询维度类型，查询统计时长内的某个应用请求不同API产品的指标统计值
+     *
+     * @param ListStatisticsConsumerAppForSplitRomaAppsRequest 请求对象
+     * @return CompletableFuture<ListStatisticsConsumerAppForSplitRomaAppsResponse>
+     */
+    public CompletableFuture<ListStatisticsConsumerAppForSplitRomaAppsResponse> listStatisticsConsumerAppForSplitRomaAppsAsync(ListStatisticsConsumerAppForSplitRomaAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listStatisticsConsumerAppForSplitRomaApps);
+    }
+
+    /**
+     * 查询应用请求的指标统计值
+     * 查询统计时长内所有或某个应用请求的指标统计值。
+     *
+     * @param ListStatisticsRomaAppRequest 请求对象
+     * @return CompletableFuture<ListStatisticsRomaAppResponse>
+     */
+    public CompletableFuture<ListStatisticsRomaAppResponse> listStatisticsRomaAppAsync(ListStatisticsRomaAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listStatisticsRomaApp);
+    }
+
+    /**
      * 查询子设备
      * 查询子设备
      *
@@ -1326,6 +1403,17 @@ public class RomaAsyncClient {
      */
     public CompletableFuture<ResetProductAuthenticationResponse> resetProductAuthenticationAsync(ResetProductAuthenticationRequest request) {
         return hcClient.asyncInvokeHttp(request, RomaMeta.resetProductAuthentication);
+    }
+
+    /**
+     * 手工触发单个任务
+     * 手工触发一次任务调度
+     *
+     * @param RunTaskRequest 请求对象
+     * @return CompletableFuture<RunTaskResponse>
+     */
+    public CompletableFuture<RunTaskResponse> runTaskAsync(RunTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.runTask);
     }
 
     /**
@@ -1516,6 +1604,17 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 查询设备分组内设备
+     * 查询设备分组内设备
+     *
+     * @param ShowDevicesInGroupRequest 请求对象
+     * @return CompletableFuture<ShowDevicesInGroupResponse>
+     */
+    public CompletableFuture<ShowDevicesInGroupResponse> showDevicesInGroupAsync(ShowDevicesInGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showDevicesInGroup);
+    }
+
+    /**
      * 查询后端API详情
      * 查询后端API的详细信息。
      *
@@ -1571,6 +1670,39 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 查询产品模板详情
+     * 查询产品模板详情
+     *
+     * @param ShowProductTemplateRequest 请求对象
+     * @return CompletableFuture<ShowProductTemplateResponse>
+     */
+    public CompletableFuture<ShowProductTemplateResponse> showProductTemplateAsync(ShowProductTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showProductTemplate);
+    }
+
+    /**
+     * 查询服务属性详情
+     * 查询服务属性详情
+     *
+     * @param ShowPropertyRequest 请求对象
+     * @return CompletableFuture<ShowPropertyResponse>
+     */
+    public CompletableFuture<ShowPropertyResponse> showPropertyAsync(ShowPropertyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showProperty);
+    }
+
+    /**
+     * 查询请求属性详情
+     * 查询请求属性详情
+     *
+     * @param ShowRequestPropertyRequest 请求对象
+     * @return CompletableFuture<ShowRequestPropertyResponse>
+     */
+    public CompletableFuture<ShowRequestPropertyResponse> showRequestPropertyAsync(ShowRequestPropertyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showRequestProperty);
+    }
+
+    /**
      * 查询响应属性详情
      * 查询响应属性详情
      *
@@ -1579,6 +1711,17 @@ public class RomaAsyncClient {
      */
     public CompletableFuture<ShowResponsePropertyResponse> showResponsePropertyAsync(ShowResponsePropertyRequest request) {
         return hcClient.asyncInvokeHttp(request, RomaMeta.showResponseProperty);
+    }
+
+    /**
+     * 查看ROMA Connect实例约束信息
+     * 查看ROMA Connect实例约束信息
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return CompletableFuture<ShowRestrictionOfInstanceV2Response>
+     */
+    public CompletableFuture<ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Async(ShowRestrictionOfInstanceV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showRestrictionOfInstanceV2);
     }
 
     /**
@@ -1777,6 +1920,17 @@ public class RomaAsyncClient {
      */
     public CompletableFuture<UpdateProductTopicResponse> updateProductTopicAsync(UpdateProductTopicRequest request) {
         return hcClient.asyncInvokeHttp(request, RomaMeta.updateProductTopic);
+    }
+
+    /**
+     * 修改服务属性
+     * 修改服务属性
+     *
+     * @param UpdatePropertyRequest 请求对象
+     * @return CompletableFuture<UpdatePropertyResponse>
+     */
+    public CompletableFuture<UpdatePropertyResponse> updatePropertyAsync(UpdatePropertyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.updateProperty);
     }
 
     /**
@@ -2008,6 +2162,17 @@ public class RomaAsyncClient {
      */
     public CompletableFuture<CheckApisV2Response> checkApisV2Async(CheckApisV2Request request) {
         return hcClient.asyncInvokeHttp(request, RomaMeta.checkApisV2);
+    }
+
+    /**
+     * 后端连通性检测接口
+     * 后端连通性检测接口
+     *
+     * @param CheckBackendConnectivityRequest 请求对象
+     * @return CompletableFuture<CheckBackendConnectivityResponse>
+     */
+    public CompletableFuture<CheckBackendConnectivityResponse> checkBackendConnectivityAsync(CheckBackendConnectivityRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkBackendConnectivity);
     }
 
     /**
@@ -2360,6 +2525,204 @@ public class RomaAsyncClient {
      */
     public CompletableFuture<ListDuplicateApisForAppV2Response> listDuplicateApisForAppV2Async(ListDuplicateApisForAppV2Request request) {
         return hcClient.asyncInvokeHttp(request, RomaMeta.listDuplicateApisForAppV2);
+    }
+
+    /**
+     * 设置用户成员
+     * - 设置应用的用户成员，为空数组时会清空已有应用成员列表 - 设置动作为全量更新非增量更新，应用的成员列表都会替换为当次请求的应用成员列表 
+     *
+     * @param AddUserToAppRequest 请求对象
+     * @return CompletableFuture<AddUserToAppResponse>
+     */
+    public CompletableFuture<AddUserToAppResponse> addUserToAppAsync(AddUserToAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.addUserToApp);
+    }
+
+    /**
+     * 查询用户成员列表
+     * 查询用户成列表
+     *
+     * @param CheckAuthUsersOfAppRequest 请求对象
+     * @return CompletableFuture<CheckAuthUsersOfAppResponse>
+     */
+    public CompletableFuture<CheckAuthUsersOfAppResponse> checkAuthUsersOfAppAsync(CheckAuthUsersOfAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkAuthUsersOfApp);
+    }
+
+    /**
+     * 查询候选用户成员
+     * 查询应用的候选用户成员列表,会过滤掉异常状态用户
+     *
+     * @param CheckCanAuthUsersOfAppRequest 请求对象
+     * @return CompletableFuture<CheckCanAuthUsersOfAppResponse>
+     */
+    public CompletableFuture<CheckCanAuthUsersOfAppResponse> checkCanAuthUsersOfAppAsync(CheckCanAuthUsersOfAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkCanAuthUsersOfApp);
+    }
+
+    /**
+     * 查询应用详情
+     * 查询应用详情
+     *
+     * @param CheckRomaAppDetailsRequest 请求对象
+     * @return CompletableFuture<CheckRomaAppDetailsResponse>
+     */
+    public CompletableFuture<CheckRomaAppDetailsResponse> checkRomaAppDetailsAsync(CheckRomaAppDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkRomaAppDetails);
+    }
+
+    /**
+     * 查询应用密钥
+     * 查询应用密钥
+     *
+     * @param CheckRomaAppSecretRequest 请求对象
+     * @return CompletableFuture<CheckRomaAppSecretResponse>
+     */
+    public CompletableFuture<CheckRomaAppSecretResponse> checkRomaAppSecretAsync(CheckRomaAppSecretRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkRomaAppSecret);
+    }
+
+    /**
+     * 创建应用
+     * 创建应用
+     *
+     * @param CreateRomaAppRequest 请求对象
+     * @return CompletableFuture<CreateRomaAppResponse>
+     */
+    public CompletableFuture<CreateRomaAppResponse> createRomaAppAsync(CreateRomaAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.createRomaApp);
+    }
+
+    /**
+     * 删除应用
+     * 删除单个应用
+     *
+     * @param DeleteRomaAppRequest 请求对象
+     * @return CompletableFuture<DeleteRomaAppResponse>
+     */
+    public CompletableFuture<DeleteRomaAppResponse> deleteRomaAppAsync(DeleteRomaAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.deleteRomaApp);
+    }
+
+    /**
+     * 查询应用列表
+     * 查询应用列表，支持条件查询，所有条件是并且的关系
+     *
+     * @param ListRomaAppRequest 请求对象
+     * @return CompletableFuture<ListRomaAppResponse>
+     */
+    public CompletableFuture<ListRomaAppResponse> listRomaAppAsync(ListRomaAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listRomaApp);
+    }
+
+    /**
+     * 重置应用密钥
+     * 重置应用密钥
+     *
+     * @param ResetRomaAppSecretRequest 请求对象
+     * @return CompletableFuture<ResetRomaAppSecretResponse>
+     */
+    public CompletableFuture<ResetRomaAppSecretResponse> resetRomaAppSecretAsync(ResetRomaAppSecretRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.resetRomaAppSecret);
+    }
+
+    /**
+     * 更新应用
+     * 更新应用
+     *
+     * @param UpdateRomaAppRequest 请求对象
+     * @return CompletableFuture<UpdateRomaAppResponse>
+     */
+    public CompletableFuture<UpdateRomaAppResponse> updateRomaAppAsync(UpdateRomaAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.updateRomaApp);
+    }
+
+    /**
+     * 校验应用是否存在
+     * 校验指定条件的应用是否存在
+     *
+     * @param ValidateRomaAppRequest 请求对象
+     * @return CompletableFuture<ValidateRomaAppResponse>
+     */
+    public CompletableFuture<ValidateRomaAppResponse> validateRomaAppAsync(ValidateRomaAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.validateRomaApp);
+    }
+
+    /**
+     * 查询作业进度
+     * 查询作业进度
+     *
+     * @param CheckAssetJobStatusRequest 请求对象
+     * @return CompletableFuture<CheckAssetJobStatusResponse>
+     */
+    public CompletableFuture<CheckAssetJobStatusResponse> checkAssetJobStatusAsync(CheckAssetJobStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkAssetJobStatus);
+    }
+
+    /**
+     * 查询字典详情
+     * 查询字典详情,
+     *
+     * @param CheckDictionaryRequest 请求对象
+     * @return CompletableFuture<CheckDictionaryResponse>
+     */
+    public CompletableFuture<CheckDictionaryResponse> checkDictionaryAsync(CheckDictionaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.checkDictionary);
+    }
+
+    /**
+     * 创建字典
+     * 创建字典
+     *
+     * @param CreateDictionaryRequest 请求对象
+     * @return CompletableFuture<CreateDictionaryResponse>
+     */
+    public CompletableFuture<CreateDictionaryResponse> createDictionaryAsync(CreateDictionaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.createDictionary);
+    }
+
+    /**
+     * 删除字典
+     * 删除单个字典，会同时删除该字典的所有子字典
+     *
+     * @param DeleteDictionaryRequest 请求对象
+     * @return CompletableFuture<DeleteDictionaryResponse>
+     */
+    public CompletableFuture<DeleteDictionaryResponse> deleteDictionaryAsync(DeleteDictionaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.deleteDictionary);
+    }
+
+    /**
+     * 查询字典列表
+     * 查询字典列表
+     *
+     * @param ListDictionaryRequest 请求对象
+     * @return CompletableFuture<ListDictionaryResponse>
+     */
+    public CompletableFuture<ListDictionaryResponse> listDictionaryAsync(ListDictionaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listDictionary);
+    }
+
+    /**
+     * 更新字典
+     * 更新字典
+     *
+     * @param UpdateDictionaryRequest 请求对象
+     * @return CompletableFuture<UpdateDictionaryResponse>
+     */
+    public CompletableFuture<UpdateDictionaryResponse> updateDictionaryAsync(UpdateDictionaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.updateDictionary);
+    }
+
+    /**
+     * 校验字典是否存在
+     * 校验指定条件的字典是否存在，支持字典名称和字典编码
+     *
+     * @param ValidateDictionaryRequest 请求对象
+     * @return CompletableFuture<ValidateDictionaryResponse>
+     */
+    public CompletableFuture<ValidateDictionaryResponse> validateDictionaryAsync(ValidateDictionaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.validateDictionary);
     }
 
     /**

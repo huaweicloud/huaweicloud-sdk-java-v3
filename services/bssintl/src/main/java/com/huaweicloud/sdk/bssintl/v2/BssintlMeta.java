@@ -574,6 +574,22 @@ public class BssintlMeta {
                 req.setTradeId(v);
             })
         );
+        builder.withRequestField("bill_date_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateBegin, (req, v) -> {
+                req.setBillDateBegin(v);
+            })
+        );
+        builder.withRequestField("bill_date_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getBillDateEnd, (req, v) -> {
+                req.setBillDateEnd(v);
+            })
+        );
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

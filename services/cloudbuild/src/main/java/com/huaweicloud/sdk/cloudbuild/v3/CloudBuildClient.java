@@ -18,7 +18,7 @@ public class CloudBuildClient {
 
     /**
      * KeyStore文件下载
-     * KeyStore文件下载
+     * 下载指定租户下的KeyStore文件
      *
      * @param DownloadKeystoreRequest 请求对象
      * @return DownloadKeystoreResponse
@@ -58,6 +58,17 @@ public class CloudBuildClient {
      */
     public ShowJobStatusResponse showJobStatus(ShowJobStatusRequest request) {
         return hcClient.syncInvokeHttp(request, CloudBuildMeta.showJobStatus);
+    }
+
+    /**
+     * 查看构建任务的构建历史列表
+     * 查看构建任务的构建历史列表
+     *
+     * @param ShowListHistoryRequest 请求对象
+     * @return ShowListHistoryResponse
+     */
+    public ShowListHistoryResponse showListHistory(ShowListHistoryRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudBuildMeta.showListHistory);
     }
 
 }

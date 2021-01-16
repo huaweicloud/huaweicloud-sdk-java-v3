@@ -101,6 +101,24 @@ public class ParticipantInfo  {
     
     private String userUUID;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="appId")
+    
+    private String appId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="isAutoInvite")
+    
+    private Integer isAutoInvite;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="isNotOverlayPidName")
+    
+    private Boolean isNotOverlayPidName;
+
     public ParticipantInfo withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
@@ -380,6 +398,68 @@ public class ParticipantInfo  {
     public void setUserUUID(String userUUID) {
         this.userUUID = userUUID;
     }
+
+    public ParticipantInfo withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 第三方应用ID。
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
+    public ParticipantInfo withIsAutoInvite(Integer isAutoInvite) {
+        this.isAutoInvite = isAutoInvite;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议开始时是否自动邀请该与会者。
+     * minimum: 0
+     * maximum: 1
+     * @return isAutoInvite
+     */
+    public Integer getIsAutoInvite() {
+        return isAutoInvite;
+    }
+
+    public void setIsAutoInvite(Integer isAutoInvite) {
+        this.isAutoInvite = isAutoInvite;
+    }
+
+    public ParticipantInfo withIsNotOverlayPidName(Boolean isNotOverlayPidName) {
+        this.isNotOverlayPidName = isNotOverlayPidName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否不叠加会场名。
+     * @return isNotOverlayPidName
+     */
+    public Boolean getIsNotOverlayPidName() {
+        return isNotOverlayPidName;
+    }
+
+    public void setIsNotOverlayPidName(Boolean isNotOverlayPidName) {
+        this.isNotOverlayPidName = isNotOverlayPidName;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -402,11 +482,14 @@ public class ParticipantInfo  {
             Objects.equals(this.email, participantInfo.email) &&
             Objects.equals(this.sms, participantInfo.sms) &&
             Objects.equals(this.deptName, participantInfo.deptName) &&
-            Objects.equals(this.userUUID, participantInfo.userUUID);
+            Objects.equals(this.userUUID, participantInfo.userUUID) &&
+            Objects.equals(this.appId, participantInfo.appId) &&
+            Objects.equals(this.isAutoInvite, participantInfo.isAutoInvite) &&
+            Objects.equals(this.isNotOverlayPidName, participantInfo.isNotOverlayPidName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(participantID, name, subscriberID, role, state, address, attendeeType, accountId, phone2, phone3, email, sms, deptName, userUUID);
+        return Objects.hash(participantID, name, subscriberID, role, state, address, attendeeType, accountId, phone2, phone3, email, sms, deptName, userUUID, appId, isAutoInvite, isNotOverlayPidName);
     }
     @Override
     public String toString() {
@@ -426,6 +509,9 @@ public class ParticipantInfo  {
         sb.append("    sms: ").append(toIndentedString(sms)).append("\n");
         sb.append("    deptName: ").append(toIndentedString(deptName)).append("\n");
         sb.append("    userUUID: ").append(toIndentedString(userUUID)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    isAutoInvite: ").append(toIndentedString(isAutoInvite)).append("\n");
+        sb.append("    isNotOverlayPidName: ").append(toIndentedString(isNotOverlayPidName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

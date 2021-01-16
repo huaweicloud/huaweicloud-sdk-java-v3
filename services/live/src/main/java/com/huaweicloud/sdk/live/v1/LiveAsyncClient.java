@@ -86,6 +86,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询直播中的流信息
+     * 查询直播中的流信息
+     *
+     * @param ListLiveStreamsOnlineRequest 请求对象
+     * @return CompletableFuture<ListLiveStreamsOnlineResponse>
+     */
+    public CompletableFuture<ListLiveStreamsOnlineResponse> listLiveStreamsOnlineAsync(ListLiveStreamsOnlineRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listLiveStreamsOnline);
+    }
+
+    /**
      * 查询录制配置
      * 查询录制配置接口
      *

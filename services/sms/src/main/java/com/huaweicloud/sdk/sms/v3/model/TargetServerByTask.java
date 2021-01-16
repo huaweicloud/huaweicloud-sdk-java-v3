@@ -8,7 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.sms.v3.model.BtrfsFileSystem;
 import com.huaweicloud.sdk.sms.v3.model.TargetDisks;
+import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -24,20 +26,14 @@ public class TargetServerByTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="btrfs_list")
     
-    private List<String> btrfsList = null;
+    private List<BtrfsFileSystem> btrfsList = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<TargetDisks> disks = null;
+    private List<TargetDisks> disks = new ArrayList<>();
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor")
-    
-    private String flavor;
-
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
@@ -50,13 +46,19 @@ public class TargetServerByTask  {
     
     private String vmId;
 
-    public TargetServerByTask withBtrfsList(List<String> btrfsList) {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="volume_groups")
+    
+    private List<VolumeGroups> volumeGroups = null;
+    
+    public TargetServerByTask withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
     
-    public TargetServerByTask addBtrfsListItem(String btrfsListItem) {
+    public TargetServerByTask addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
         if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
@@ -64,7 +66,7 @@ public class TargetServerByTask  {
         return this;
     }
 
-    public TargetServerByTask withBtrfsList(Consumer<List<String>> btrfsListSetter) {
+    public TargetServerByTask withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
         if(this.btrfsList == null ){
             this.btrfsList = new ArrayList<>();
         }
@@ -73,14 +75,14 @@ public class TargetServerByTask  {
     }
 
     /**
-     * btrfs信息
+     * btrfs信息，数据从源端获取
      * @return btrfsList
      */
-    public List<String> getBtrfsList() {
+    public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
 
-    public void setBtrfsList(List<String> btrfsList) {
+    public void setBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
     }
 
@@ -91,9 +93,6 @@ public class TargetServerByTask  {
 
     
     public TargetServerByTask addDisksItem(TargetDisks disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
         this.disks.add(disksItem);
         return this;
     }
@@ -116,26 +115,6 @@ public class TargetServerByTask  {
 
     public void setDisks(List<TargetDisks> disks) {
         this.disks = disks;
-    }
-
-    public TargetServerByTask withFlavor(String flavor) {
-        this.flavor = flavor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 规格
-     * @return flavor
-     */
-    public String getFlavor() {
-        return flavor;
-    }
-
-    public void setFlavor(String flavor) {
-        this.flavor = flavor;
     }
 
     public TargetServerByTask withName(String name) {
@@ -177,6 +156,40 @@ public class TargetServerByTask  {
     public void setVmId(String vmId) {
         this.vmId = vmId;
     }
+
+    public TargetServerByTask withVolumeGroups(List<VolumeGroups> volumeGroups) {
+        this.volumeGroups = volumeGroups;
+        return this;
+    }
+
+    
+    public TargetServerByTask addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
+        if (this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
+        this.volumeGroups.add(volumeGroupsItem);
+        return this;
+    }
+
+    public TargetServerByTask withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
+        if(this.volumeGroups == null ){
+            this.volumeGroups = new ArrayList<>();
+        }
+        volumeGroupsSetter.accept(this.volumeGroups);
+        return this;
+    }
+
+    /**
+     * 卷组，数据从源端获取
+     * @return volumeGroups
+     */
+    public List<VolumeGroups> getVolumeGroups() {
+        return volumeGroups;
+    }
+
+    public void setVolumeGroups(List<VolumeGroups> volumeGroups) {
+        this.volumeGroups = volumeGroups;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -188,13 +201,13 @@ public class TargetServerByTask  {
         TargetServerByTask targetServerByTask = (TargetServerByTask) o;
         return Objects.equals(this.btrfsList, targetServerByTask.btrfsList) &&
             Objects.equals(this.disks, targetServerByTask.disks) &&
-            Objects.equals(this.flavor, targetServerByTask.flavor) &&
             Objects.equals(this.name, targetServerByTask.name) &&
-            Objects.equals(this.vmId, targetServerByTask.vmId);
+            Objects.equals(this.vmId, targetServerByTask.vmId) &&
+            Objects.equals(this.volumeGroups, targetServerByTask.volumeGroups);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(btrfsList, disks, flavor, name, vmId);
+        return Objects.hash(btrfsList, disks, name, vmId, volumeGroups);
     }
     @Override
     public String toString() {
@@ -202,9 +215,9 @@ public class TargetServerByTask  {
         sb.append("class TargetServerByTask {\n");
         sb.append("    btrfsList: ").append(toIndentedString(btrfsList)).append("\n");
         sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
-        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    vmId: ").append(toIndentedString(vmId)).append("\n");
+        sb.append("    volumeGroups: ").append(toIndentedString(volumeGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

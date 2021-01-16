@@ -21,7 +21,7 @@ public class CloudBuildAsyncClient {
 
     /**
      * KeyStore文件下载
-     * KeyStore文件下载
+     * 下载指定租户下的KeyStore文件
      *
      * @param DownloadKeystoreRequest 请求对象
      * @return CompletableFuture<DownloadKeystoreResponse>
@@ -61,6 +61,17 @@ public class CloudBuildAsyncClient {
      */
     public CompletableFuture<ShowJobStatusResponse> showJobStatusAsync(ShowJobStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudBuildMeta.showJobStatus);
+    }
+
+    /**
+     * 查看构建任务的构建历史列表
+     * 查看构建任务的构建历史列表
+     *
+     * @param ShowListHistoryRequest 请求对象
+     * @return CompletableFuture<ShowListHistoryResponse>
+     */
+    public CompletableFuture<ShowListHistoryResponse> showListHistoryAsync(ShowListHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudBuildMeta.showListHistory);
     }
 
 }

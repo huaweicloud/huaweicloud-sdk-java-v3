@@ -116,7 +116,7 @@ public class PhysicalVolumes  {
     /**
      * 顺序
      * minimum: 0
-     * maximum: 1024
+     * maximum: 2147483647
      * @return index
      */
     public Integer getIndex() {
@@ -178,6 +178,7 @@ public class PhysicalVolumes  {
     /**
      * 大小
      * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
     public Long getSize() {
@@ -199,6 +200,7 @@ public class PhysicalVolumes  {
     /**
      * 使用大小
      * minimum: 0
+     * maximum: 9223372036854775807
      * @return usedSize
      */
     public Long getUsedSize() {

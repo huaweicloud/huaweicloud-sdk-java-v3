@@ -1004,6 +1004,150 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse> listOffSiteBackups = genForlistOffSiteBackups();
+
+    private static HttpRequestDef<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse> genForlistOffSiteBackups() {
+        // basic
+        HttpRequestDef.Builder<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOffSiteBackupsRequest.class, ListOffSiteBackupsResponse.class)
+                .withUri("/v3/{project_id}/offsite-backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            })
+        );
+        builder.withRequestField("backup_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListOffSiteBackupsRequest.BackupTypeEnum.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getBackupType, (req, v) -> {
+                req.setBackupType(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteBackupsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse> listOffSiteInstances = genForlistOffSiteInstances();
+
+    private static HttpRequestDef<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse> genForlistOffSiteInstances() {
+        // basic
+        HttpRequestDef.Builder<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOffSiteInstancesRequest.class, ListOffSiteInstancesResponse.class)
+                .withUri("/v3/backups/offsite-backup-instance")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ListOffSiteInstancesRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ListOffSiteInstancesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse> listOffSiteRestoreTimes = genForlistOffSiteRestoreTimes();
+
+    private static HttpRequestDef<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse> genForlistOffSiteRestoreTimes() {
+        // basic
+        HttpRequestDef.Builder<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOffSiteRestoreTimesRequest.class, ListOffSiteRestoreTimesResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/offsite-restore-time")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteRestoreTimesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteRestoreTimesRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOffSiteRestoreTimesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags = genForlistProjectTags();
 
     private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
@@ -1572,6 +1716,46 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicy = genForsetOffSiteBackupPolicy();
+
+    private static HttpRequestDef<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> genForsetOffSiteBackupPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetOffSiteBackupPolicyRequest.class, SetOffSiteBackupPolicyResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetOffSiteBackupPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetOffSiteBackupPolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SetOffSiteBackupPolicyRequestBody.class,
+            f -> f.withMarshaller(SetOffSiteBackupPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetSecurityGroupRequest, SetSecurityGroupResponse> setSecurityGroup = genForsetSecurityGroup();
 
     private static HttpRequestDef<SetSecurityGroupRequest, SetSecurityGroupResponse> genForsetSecurityGroup() {
@@ -1803,6 +1987,38 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowInstanceConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse> showOffSiteBackupPolicy = genForshowOffSiteBackupPolicy();
+
+    private static HttpRequestDef<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse> genForshowOffSiteBackupPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOffSiteBackupPolicyRequest.class, ShowOffSiteBackupPolicyResponse.class)
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowOffSiteBackupPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowOffSiteBackupPolicyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

@@ -329,6 +329,12 @@ public class Port  {
     
     private Boolean portSecurityEnabled;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="zone_id")
+    
+    private String zoneId;
+
     public Port withId(String id) {
         this.id = id;
         return this;
@@ -803,6 +809,26 @@ public class Port  {
     public void setPortSecurityEnabled(Boolean portSecurityEnabled) {
         this.portSecurityEnabled = portSecurityEnabled;
     }
+
+    public Port withZoneId(String zoneId) {
+        this.zoneId = zoneId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：port所属的可用分区
+     * @return zoneId
+     */
+    public String getZoneId() {
+        return zoneId;
+    }
+
+    public void setZoneId(String zoneId) {
+        this.zoneId = zoneId;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -832,11 +858,12 @@ public class Port  {
             Objects.equals(this.bindingProfile, port.bindingProfile) &&
             Objects.equals(this.instanceId, port.instanceId) &&
             Objects.equals(this.instanceType, port.instanceType) &&
-            Objects.equals(this.portSecurityEnabled, port.portSecurityEnabled);
+            Objects.equals(this.portSecurityEnabled, port.portSecurityEnabled) &&
+            Objects.equals(this.zoneId, port.zoneId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, networkId, adminStateUp, macAddress, fixedIps, deviceId, deviceOwner, tenantId, status, securityGroups, allowedAddressPairs, extraDhcpOpts, bindingVnicType, dnsAssignment, dnsName, bindingVifDetails, bindingProfile, instanceId, instanceType, portSecurityEnabled);
+        return Objects.hash(id, name, networkId, adminStateUp, macAddress, fixedIps, deviceId, deviceOwner, tenantId, status, securityGroups, allowedAddressPairs, extraDhcpOpts, bindingVnicType, dnsAssignment, dnsName, bindingVifDetails, bindingProfile, instanceId, instanceType, portSecurityEnabled, zoneId);
     }
     @Override
     public String toString() {
@@ -863,6 +890,7 @@ public class Port  {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    portSecurityEnabled: ").append(toIndentedString(portSecurityEnabled)).append("\n");
+        sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

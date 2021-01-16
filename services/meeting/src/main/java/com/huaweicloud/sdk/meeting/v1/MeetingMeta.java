@@ -4912,6 +4912,22 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowOrgResRequest, ShowOrgResResponse> showOrgRes = genForshowOrgRes();
+
+    private static HttpRequestDef<ShowOrgResRequest, ShowOrgResResponse> genForshowOrgRes() {
+        // basic
+        HttpRequestDef.Builder<ShowOrgResRequest, ShowOrgResResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOrgResRequest.class, ShowOrgResResponse.class)
+                .withUri("/v1/mmc/management/orgRes")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProgramRequest, ShowProgramResponse> showProgram = genForshowProgram();
 
     private static HttpRequestDef<ShowProgramRequest, ShowProgramResponse> genForshowProgram() {

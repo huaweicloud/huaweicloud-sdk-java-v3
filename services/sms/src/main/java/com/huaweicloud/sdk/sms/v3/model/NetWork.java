@@ -150,7 +150,7 @@ public class NetWork  {
     /**
      * Linux必选，网卡的MTU
      * minimum: 0
-     * maximum: 1024
+     * maximum: 2147483647
      * @return mtu
      */
     public Integer getMtu() {

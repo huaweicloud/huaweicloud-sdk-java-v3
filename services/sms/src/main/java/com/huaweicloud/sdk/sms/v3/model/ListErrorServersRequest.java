@@ -68,7 +68,7 @@ public class ListErrorServersRequest  {
     /**
      * Get offset
      * minimum: 0
-     * maximum: 100
+     * maximum: 65535
      * @return offset
      */
     public Integer getOffset() {

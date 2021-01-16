@@ -51,6 +51,8 @@ public class TemplateDisk  {
 
     /**
      * 磁盘序号，从0开始
+     * minimum: 0
+     * maximum: 2147483647
      * @return index
      */
     public Integer getIndex() {
@@ -111,6 +113,8 @@ public class TemplateDisk  {
 
     /**
      * 磁盘大小，单位：GB
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
     public Long getSize() {

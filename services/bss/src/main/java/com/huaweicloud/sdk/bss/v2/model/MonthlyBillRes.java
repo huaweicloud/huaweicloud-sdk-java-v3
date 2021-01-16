@@ -26,15 +26,33 @@ public class MonthlyBillRes  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_service_type")
+    @JsonProperty(value="bill_type")
     
-    private String cloudServiceType;
+    private Integer billType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="customer_id")
+    
+    private String customerId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="region")
     
     private String region;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region_name")
+    
+    private String regionName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cloud_service_type")
+    
+    private String cloudServiceType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,6 +77,30 @@ public class MonthlyBillRes  {
     @JsonProperty(value="resource_tag")
     
     private String resourceTag;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sku_code")
+    
+    private String skuCode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_name")
+    
+    private String enterpriseProjectName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="charge_mode")
+    
+    private Integer chargeMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -132,48 +174,6 @@ public class MonthlyBillRes  {
     
     private Integer measureId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
-    private String enterpriseProjectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_name")
-    
-    private String enterpriseProjectName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
-    private Integer chargeMode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_type")
-    
-    private Integer billType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
-    private String customerId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sku_code")
-    
-    private String skuCode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_name")
-    
-    private String regionName;
-
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -183,7 +183,7 @@ public class MonthlyBillRes  {
 
 
     /**
-     * |参数名称：消费月份| |参数的约束及描述：该参数非必填|
+     * |参数名称：消费月份| |参数的约束及描述：格式为YYYY-MM|
      * @return cycle
      */
     public String getCycle() {
@@ -194,8 +194,8 @@ public class MonthlyBillRes  {
         this.cycle = cycle;
     }
 
-    public MonthlyBillRes withCloudServiceType(String cloudServiceType) {
-        this.cloudServiceType = cloudServiceType;
+    public MonthlyBillRes withBillType(Integer billType) {
+        this.billType = billType;
         return this;
     }
 
@@ -203,15 +203,35 @@ public class MonthlyBillRes  {
 
 
     /**
-     * |参数名称：云服务类型编码| |参数的约束及描述：该参数非必填,，例如ECS的云服务类型编码为“hws.service.type.ec2”|
-     * @return cloudServiceType
+     * |参数名称：账单类型| |参数的约束及描述：该参数非必填，1：消费-新购；2：消费-续订；3：消费-变更；4：退款-退订；5：消费-使用；8：消费-自动续订；9：调账-补偿；12：消费-按时计费；13：消费-退订手续费； 15消费-税金；14：消费-服务支持计划月末扣费；16：调账-扣费 100：退款-退订税金 101：调账-补偿税金 102：调账-扣费税金|
+     * @return billType
      */
-    public String getCloudServiceType() {
-        return cloudServiceType;
+    public Integer getBillType() {
+        return billType;
     }
 
-    public void setCloudServiceType(String cloudServiceType) {
-        this.cloudServiceType = cloudServiceType;
+    public void setBillType(Integer billType) {
+        this.billType = billType;
+    }
+
+    public MonthlyBillRes withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：消费的客户账号ID。| |参数约束及描述：如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID; 如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。|
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public MonthlyBillRes withRegion(String region) {
@@ -232,6 +252,46 @@ public class MonthlyBillRes  {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public MonthlyBillRes withRegionName(String regionName) {
+        this.regionName = regionName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务区名称| |参数的约束及描述：云服务区名称|
+     * @return regionName
+     */
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
+
+    public MonthlyBillRes withCloudServiceType(String cloudServiceType) {
+        this.cloudServiceType = cloudServiceType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务类型编码| |参数的约束及描述：该参数非必填,，例如ECS的云服务类型编码为“hws.service.type.ec2”|
+     * @return cloudServiceType
+     */
+    public String getCloudServiceType() {
+        return cloudServiceType;
+    }
+
+    public void setCloudServiceType(String cloudServiceType) {
+        this.cloudServiceType = cloudServiceType;
     }
 
     public MonthlyBillRes withResourceTypeCode(String resourceTypeCode) {
@@ -283,7 +343,7 @@ public class MonthlyBillRes  {
 
 
     /**
-     * |参数名称：资源名称| |参数的约束及描述：该参数非必填|
+     * |参数名称：资源名称| |参数的约束及描述：客户在创建资源的时候，可以输入资源名称，有些资源也可以在管理资源时，修改资源名称|
      * @return resourceName
      */
     public String getResourceName() {
@@ -303,7 +363,7 @@ public class MonthlyBillRes  {
 
 
     /**
-     * |参数名称：资源标签| |参数的约束及描述：该参数非必填|
+     * |参数名称：资源标签| |参数的约束及描述：客户在创建资源的时候，可以输入资源名称，有些资源也可以在管理资源时，修改资源名称|
      * @return resourceTag
      */
     public String getResourceTag() {
@@ -312,6 +372,86 @@ public class MonthlyBillRes  {
 
     public void setResourceTag(String resourceTag) {
         this.resourceTag = resourceTag;
+    }
+
+    public MonthlyBillRes withSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：SKU编码| |参数的约束及描述：SKU（Stock Keeping Unit，库存量单元）编码，产品下的SKU分类属性|
+     * @return skuCode
+     */
+    public String getSkuCode() {
+        return skuCode;
+    }
+
+    public void setSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+    }
+
+    public MonthlyBillRes withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：企业项目ID| |参数的约束及描述：该参数非必填|
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public MonthlyBillRes withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：企业项目名称| |参数的约束及描述：该参数非必填|
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
+    public MonthlyBillRes withChargeMode(Integer chargeMode) {
+        this.chargeMode = chargeMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：计费模式| |参数的约束及描述：1 : 包年/包月；3: 按需。10: 预留实例|
+     * @return chargeMode
+     */
+    public Integer getChargeMode() {
+        return chargeMode;
+    }
+
+    public void setChargeMode(Integer chargeMode) {
+        this.chargeMode = chargeMode;
     }
 
     public MonthlyBillRes withConsumeAmount(BigDecimal consumeAmount) {
@@ -543,7 +683,7 @@ public class MonthlyBillRes  {
 
 
     /**
-     * |参数名称：金额单位。枚举型1、元;2、角;3、分| |参数的约束及描述：该参数非必填|
+     * |参数名称：金额单位。1:元| |参数的约束及描述：该参数非必填|
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -552,146 +692,6 @@ public class MonthlyBillRes  {
 
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
-    }
-
-    public MonthlyBillRes withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：企业项目ID| |参数的约束及描述：该参数非必填|
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public MonthlyBillRes withEnterpriseProjectName(String enterpriseProjectName) {
-        this.enterpriseProjectName = enterpriseProjectName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：企业项目名称| |参数的约束及描述：该参数非必填|
-     * @return enterpriseProjectName
-     */
-    public String getEnterpriseProjectName() {
-        return enterpriseProjectName;
-    }
-
-    public void setEnterpriseProjectName(String enterpriseProjectName) {
-        this.enterpriseProjectName = enterpriseProjectName;
-    }
-
-    public MonthlyBillRes withChargeMode(Integer chargeMode) {
-        this.chargeMode = chargeMode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：支付方式：1 : 包周期；3: 按需。10: 预留实例| |参数的约束及描述：该参数非必填|
-     * @return chargeMode
-     */
-    public Integer getChargeMode() {
-        return chargeMode;
-    }
-
-    public void setChargeMode(Integer chargeMode) {
-        this.chargeMode = chargeMode;
-    }
-
-    public MonthlyBillRes withBillType(Integer billType) {
-        this.billType = billType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：账单类型| |参数的约束及描述：该参数非必填，1：消费-新购；2：消费-续订；3：消费-变更；4：退款-退订；5：消费-使用；8：消费-自动续订；9：调账-补偿；12：消费-按时计费；13：消费-退订手续费；14：消费-服务支持计划月末扣费；16：调账-扣费|
-     * @return billType
-     */
-    public Integer getBillType() {
-        return billType;
-    }
-
-    public void setBillType(Integer billType) {
-        this.billType = billType;
-    }
-
-    public MonthlyBillRes withCustomerId(String customerId) {
-        this.customerId = customerId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：消费的客户账号ID。| |参数约束及描述：如果是查询自己，这个地方是自身的ID; 如果是查询某个企业子客户，这个地方是企业子客户ID如果是查询以及下面的所有子客户，这个地方是消费的实际客户ID; 如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。|
-     * @return customerId
-     */
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
-    public MonthlyBillRes withSkuCode(String skuCode) {
-        this.skuCode = skuCode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：SKU编码| |参数的约束及描述：sku编码|
-     * @return skuCode
-     */
-    public String getSkuCode() {
-        return skuCode;
-    }
-
-    public void setSkuCode(String skuCode) {
-        this.skuCode = skuCode;
-    }
-
-    public MonthlyBillRes withRegionName(String regionName) {
-        this.regionName = regionName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：云服务区名称| |参数的约束及描述：云服务区名称|
-     * @return regionName
-     */
-    public String getRegionName() {
-        return regionName;
-    }
-
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -703,12 +703,19 @@ public class MonthlyBillRes  {
         }
         MonthlyBillRes monthlyBillRes = (MonthlyBillRes) o;
         return Objects.equals(this.cycle, monthlyBillRes.cycle) &&
-            Objects.equals(this.cloudServiceType, monthlyBillRes.cloudServiceType) &&
+            Objects.equals(this.billType, monthlyBillRes.billType) &&
+            Objects.equals(this.customerId, monthlyBillRes.customerId) &&
             Objects.equals(this.region, monthlyBillRes.region) &&
+            Objects.equals(this.regionName, monthlyBillRes.regionName) &&
+            Objects.equals(this.cloudServiceType, monthlyBillRes.cloudServiceType) &&
             Objects.equals(this.resourceTypeCode, monthlyBillRes.resourceTypeCode) &&
             Objects.equals(this.resInstanceId, monthlyBillRes.resInstanceId) &&
             Objects.equals(this.resourceName, monthlyBillRes.resourceName) &&
             Objects.equals(this.resourceTag, monthlyBillRes.resourceTag) &&
+            Objects.equals(this.skuCode, monthlyBillRes.skuCode) &&
+            Objects.equals(this.enterpriseProjectId, monthlyBillRes.enterpriseProjectId) &&
+            Objects.equals(this.enterpriseProjectName, monthlyBillRes.enterpriseProjectName) &&
+            Objects.equals(this.chargeMode, monthlyBillRes.chargeMode) &&
             Objects.equals(this.consumeAmount, monthlyBillRes.consumeAmount) &&
             Objects.equals(this.cashAmount, monthlyBillRes.cashAmount) &&
             Objects.equals(this.creditAmount, monthlyBillRes.creditAmount) &&
@@ -720,30 +727,30 @@ public class MonthlyBillRes  {
             Objects.equals(this.adjustmentAmount, monthlyBillRes.adjustmentAmount) &&
             Objects.equals(this.officialAmount, monthlyBillRes.officialAmount) &&
             Objects.equals(this.discountAmount, monthlyBillRes.discountAmount) &&
-            Objects.equals(this.measureId, monthlyBillRes.measureId) &&
-            Objects.equals(this.enterpriseProjectId, monthlyBillRes.enterpriseProjectId) &&
-            Objects.equals(this.enterpriseProjectName, monthlyBillRes.enterpriseProjectName) &&
-            Objects.equals(this.chargeMode, monthlyBillRes.chargeMode) &&
-            Objects.equals(this.billType, monthlyBillRes.billType) &&
-            Objects.equals(this.customerId, monthlyBillRes.customerId) &&
-            Objects.equals(this.skuCode, monthlyBillRes.skuCode) &&
-            Objects.equals(this.regionName, monthlyBillRes.regionName);
+            Objects.equals(this.measureId, monthlyBillRes.measureId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(cycle, cloudServiceType, region, resourceTypeCode, resInstanceId, resourceName, resourceTag, consumeAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, officialAmount, discountAmount, measureId, enterpriseProjectId, enterpriseProjectName, chargeMode, billType, customerId, skuCode, regionName);
+        return Objects.hash(cycle, billType, customerId, region, regionName, cloudServiceType, resourceTypeCode, resInstanceId, resourceName, resourceTag, skuCode, enterpriseProjectId, enterpriseProjectName, chargeMode, consumeAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, officialAmount, discountAmount, measureId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MonthlyBillRes {\n");
         sb.append("    cycle: ").append(toIndentedString(cycle)).append("\n");
-        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
+        sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
+        sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    resourceTypeCode: ").append(toIndentedString(resourceTypeCode)).append("\n");
         sb.append("    resInstanceId: ").append(toIndentedString(resInstanceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceTag: ").append(toIndentedString(resourceTag)).append("\n");
+        sb.append("    skuCode: ").append(toIndentedString(skuCode)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    consumeAmount: ").append(toIndentedString(consumeAmount)).append("\n");
         sb.append("    cashAmount: ").append(toIndentedString(cashAmount)).append("\n");
         sb.append("    creditAmount: ").append(toIndentedString(creditAmount)).append("\n");
@@ -756,13 +763,6 @@ public class MonthlyBillRes  {
         sb.append("    officialAmount: ").append(toIndentedString(officialAmount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
-        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
-        sb.append("    billType: ").append(toIndentedString(billType)).append("\n");
-        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-        sb.append("    skuCode: ").append(toIndentedString(skuCode)).append("\n");
-        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

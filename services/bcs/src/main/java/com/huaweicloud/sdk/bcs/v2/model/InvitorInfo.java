@@ -49,6 +49,12 @@ public class InvitorInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="invitor_project_id")
+    
+    private String invitorProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitor_cluster_type")
     
     private String invitorClusterType;
@@ -181,6 +187,26 @@ public class InvitorInfo  {
 
     public void setInvitorConsensus(String invitorConsensus) {
         this.invitorConsensus = invitorConsensus;
+    }
+
+    public InvitorInfo withInvitorProjectId(String invitorProjectId) {
+        this.invitorProjectId = invitorProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 邀请方的projectID
+     * @return invitorProjectId
+     */
+    public String getInvitorProjectId() {
+        return invitorProjectId;
+    }
+
+    public void setInvitorProjectId(String invitorProjectId) {
+        this.invitorProjectId = invitorProjectId;
     }
 
     public InvitorInfo withInvitorClusterType(String invitorClusterType) {
@@ -316,6 +342,7 @@ public class InvitorInfo  {
             Objects.equals(this.invitorBcsId, invitorInfo.invitorBcsId) &&
             Objects.equals(this.invitorBcsName, invitorInfo.invitorBcsName) &&
             Objects.equals(this.invitorConsensus, invitorInfo.invitorConsensus) &&
+            Objects.equals(this.invitorProjectId, invitorInfo.invitorProjectId) &&
             Objects.equals(this.invitorClusterType, invitorInfo.invitorClusterType) &&
             Objects.equals(this.invitorDatabaseType, invitorInfo.invitorDatabaseType) &&
             Objects.equals(this.invitorSignatureAlgorithm, invitorInfo.invitorSignatureAlgorithm) &&
@@ -325,7 +352,7 @@ public class InvitorInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(invitorId, invitorName, invitorBcsId, invitorBcsName, invitorConsensus, invitorClusterType, invitorDatabaseType, invitorSignatureAlgorithm, invitorFabricVersion, orderFadeEnabled, orderFadeCache);
+        return Objects.hash(invitorId, invitorName, invitorBcsId, invitorBcsName, invitorConsensus, invitorProjectId, invitorClusterType, invitorDatabaseType, invitorSignatureAlgorithm, invitorFabricVersion, orderFadeEnabled, orderFadeCache);
     }
     @Override
     public String toString() {
@@ -336,6 +363,7 @@ public class InvitorInfo  {
         sb.append("    invitorBcsId: ").append(toIndentedString(invitorBcsId)).append("\n");
         sb.append("    invitorBcsName: ").append(toIndentedString(invitorBcsName)).append("\n");
         sb.append("    invitorConsensus: ").append(toIndentedString(invitorConsensus)).append("\n");
+        sb.append("    invitorProjectId: ").append(toIndentedString(invitorProjectId)).append("\n");
         sb.append("    invitorClusterType: ").append(toIndentedString(invitorClusterType)).append("\n");
         sb.append("    invitorDatabaseType: ").append(toIndentedString(invitorDatabaseType)).append("\n");
         sb.append("    invitorSignatureAlgorithm: ").append(toIndentedString(invitorSignatureAlgorithm)).append("\n");

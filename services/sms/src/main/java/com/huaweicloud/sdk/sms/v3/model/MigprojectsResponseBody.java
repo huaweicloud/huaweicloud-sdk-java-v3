@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.Template;
+import com.huaweicloud.sdk.sms.v3.model.TemplateRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -50,7 +50,7 @@ public class MigprojectsResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    private Template template = null;
+    private TemplateRequest template = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,28 +70,28 @@ public class MigprojectsResponseBody  {
     
     private Boolean usePublicIp;
     /**
-     * 迁移项目默认迁移类型 MIGRATE_BLOCK：块迁移,MIGRATE_FILE：文件级迁移
+     * 迁移项目默认迁移类型
      */
     public static final class TypeEnum {
 
         
         /**
-         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         * Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块迁移"
          */
-        public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
+        public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块迁移");
         
         /**
-         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         * Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移"
          */
-        public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
+        public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级迁移");
         
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("MIGRATE_BLOCK", MIGRATE_BLOCK);
-            map.put("MIGRATE_FILE", MIGRATE_FILE);
+            map.put("MIGRATE_BLOCK：块迁移", MIGRATE_BLOCK_);
+            map.put("MIGRATE_FILE：文件级迁移", MIGRATE_FILE_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -241,7 +241,7 @@ public class MigprojectsResponseBody  {
 
 
     /**
-     * 是否为默认项目
+     * 是否为默认模板
      * @return isdefault
      */
     public Boolean getIsdefault() {
@@ -252,14 +252,14 @@ public class MigprojectsResponseBody  {
         this.isdefault = isdefault;
     }
 
-    public MigprojectsResponseBody withTemplate(Template template) {
+    public MigprojectsResponseBody withTemplate(TemplateRequest template) {
         this.template = template;
         return this;
     }
 
-    public MigprojectsResponseBody withTemplate(Consumer<Template> templateSetter) {
+    public MigprojectsResponseBody withTemplate(Consumer<TemplateRequest> templateSetter) {
         if(this.template == null ){
-            this.template = new Template();
+            this.template = new TemplateRequest();
             templateSetter.accept(this.template);
         }
         
@@ -271,11 +271,11 @@ public class MigprojectsResponseBody  {
      * Get template
      * @return template
      */
-    public Template getTemplate() {
+    public TemplateRequest getTemplate() {
         return template;
     }
 
-    public void setTemplate(Template template) {
+    public void setTemplate(TemplateRequest template) {
         this.template = template;
     }
 
@@ -348,7 +348,7 @@ public class MigprojectsResponseBody  {
 
 
     /**
-     * 迁移项目默认迁移类型 MIGRATE_BLOCK：块迁移,MIGRATE_FILE：文件级迁移
+     * 迁移项目默认迁移类型
      * @return type
      */
     public TypeEnum getType() {
@@ -389,8 +389,8 @@ public class MigprojectsResponseBody  {
 
     /**
      * 模板中配置的限速信息，单位：Mbps
-     * minimum: 1
-     * maximum: 10240
+     * minimum: 0
+     * maximum: 10000
      * @return speedLimit
      */
     public Long getSpeedLimit() {

@@ -234,6 +234,12 @@ public class SubCustomerResFeeRecordV2  {
     
     private Integer specSizeMeasureId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="region_name")
+    
+    private String regionName;
+
     public SubCustomerResFeeRecordV2 withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
@@ -953,6 +959,26 @@ public class SubCustomerResFeeRecordV2  {
     public void setSpecSizeMeasureId(Integer specSizeMeasureId) {
         this.specSizeMeasureId = specSizeMeasureId;
     }
+
+    public SubCustomerResFeeRecordV2 withRegionName(String regionName) {
+        this.regionName = regionName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：云服务区名称| |参数的约束及描述：云服务区名称|
+     * @return regionName
+     */
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -997,11 +1023,12 @@ public class SubCustomerResFeeRecordV2  {
             Objects.equals(this.debtAmount, subCustomerResFeeRecordV2.debtAmount) &&
             Objects.equals(this.adjustmentAmount, subCustomerResFeeRecordV2.adjustmentAmount) &&
             Objects.equals(this.specSize, subCustomerResFeeRecordV2.specSize) &&
-            Objects.equals(this.specSizeMeasureId, subCustomerResFeeRecordV2.specSizeMeasureId);
+            Objects.equals(this.specSizeMeasureId, subCustomerResFeeRecordV2.specSizeMeasureId) &&
+            Objects.equals(this.regionName, subCustomerResFeeRecordV2.regionName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(effectiveTime, expireTime, productId, productName, orderId, amount, measureId, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, cloudServiceType, region, resourceType, chargeMode, resourceTag, resourceName, resourceId, billType, periodType, productSpecDesc, riUsage, riUsageMeasureId, officialAmount, discountAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, specSize, specSizeMeasureId);
+        return Objects.hash(effectiveTime, expireTime, productId, productName, orderId, amount, measureId, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, cloudServiceType, region, resourceType, chargeMode, resourceTag, resourceName, resourceId, billType, periodType, productSpecDesc, riUsage, riUsageMeasureId, officialAmount, discountAmount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, specSize, specSizeMeasureId, regionName);
     }
     @Override
     public String toString() {
@@ -1043,6 +1070,7 @@ public class SubCustomerResFeeRecordV2  {
         sb.append("    adjustmentAmount: ").append(toIndentedString(adjustmentAmount)).append("\n");
         sb.append("    specSize: ").append(toIndentedString(specSize)).append("\n");
         sb.append("    specSizeMeasureId: ").append(toIndentedString(specSizeMeasureId)).append("\n");
+        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

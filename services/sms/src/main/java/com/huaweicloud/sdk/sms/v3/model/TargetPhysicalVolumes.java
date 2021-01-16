@@ -203,6 +203,8 @@ public class TargetPhysicalVolumes  {
 
     /**
      * 编号
+     * minimum: 0
+     * maximum: 2147483647
      * @return index
      */
     public Integer getIndex() {
@@ -263,6 +265,8 @@ public class TargetPhysicalVolumes  {
 
     /**
      * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
     public Long getSize() {
@@ -283,6 +287,8 @@ public class TargetPhysicalVolumes  {
 
     /**
      * 使用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return usedSize
      */
     public Long getUsedSize() {

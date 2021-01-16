@@ -76,13 +76,13 @@ public class PostSourceServerBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="memory")
     
-    private Integer memory;
+    private Long memory;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<Disk> disks = null;
+    private List<Disk> disks = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -172,7 +172,7 @@ public class PostSourceServerBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="boot_dir_normal")
     
-    private String bootDirNormal;
+    private Boolean bootDirNormal = true;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -360,6 +360,8 @@ public class PostSourceServerBody  {
 
     /**
      * cpu
+     * minimum: 0
+     * maximum: 65535
      * @return cpuQuantity
      */
     public Integer getCpuQuantity() {
@@ -370,7 +372,7 @@ public class PostSourceServerBody  {
         this.cpuQuantity = cpuQuantity;
     }
 
-    public PostSourceServerBody withMemory(Integer memory) {
+    public PostSourceServerBody withMemory(Long memory) {
         this.memory = memory;
         return this;
     }
@@ -380,13 +382,15 @@ public class PostSourceServerBody  {
 
     /**
      * 内存
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return memory
      */
-    public Integer getMemory() {
+    public Long getMemory() {
         return memory;
     }
 
-    public void setMemory(Integer memory) {
+    public void setMemory(Long memory) {
         this.memory = memory;
     }
 
@@ -397,9 +401,6 @@ public class PostSourceServerBody  {
 
     
     public PostSourceServerBody addDisksItem(Disk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
         this.disks.add(disksItem);
         return this;
     }
@@ -746,7 +747,7 @@ public class PostSourceServerBody  {
         this.agentVersion = agentVersion;
     }
 
-    public PostSourceServerBody withBootDirNormal(String bootDirNormal) {
+    public PostSourceServerBody withBootDirNormal(Boolean bootDirNormal) {
         this.bootDirNormal = bootDirNormal;
         return this;
     }
@@ -758,11 +759,11 @@ public class PostSourceServerBody  {
      * boot目录是否正常(Linux)
      * @return bootDirNormal
      */
-    public String getBootDirNormal() {
+    public Boolean getBootDirNormal() {
         return bootDirNormal;
     }
 
-    public void setBootDirNormal(String bootDirNormal) {
+    public void setBootDirNormal(Boolean bootDirNormal) {
         this.bootDirNormal = bootDirNormal;
     }
 

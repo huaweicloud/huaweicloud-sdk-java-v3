@@ -228,46 +228,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateReplicationRequest, CreateReplicationResponse> createReplication = genForcreateReplication();
-
-    private static HttpRequestDef<CreateReplicationRequest, CreateReplicationResponse> genForcreateReplication() {
-        // basic
-        HttpRequestDef.Builder<CreateReplicationRequest, CreateReplicationResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateReplicationRequest.class, CreateReplicationResponse.class)
-                .withUri("/v2/{project_id}/instance/{instance_id}/groups/{group_id}/replications")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(CreateReplicationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(CreateReplicationRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            AddReplicationBody.class,
-            f -> f.withMarshaller(CreateReplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask = genFordeleteBackgroundTask();
 
     private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genFordeleteBackgroundTask() {
@@ -452,46 +412,6 @@ public class DcsMeta {
             DeleteMigrateTaskRequest.class,
             f -> f.withMarshaller(DeleteMigrationTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteReplicationRequest, DeleteReplicationResponse> deleteReplication = genFordeleteReplication();
-
-    private static HttpRequestDef<DeleteReplicationRequest, DeleteReplicationResponse> genFordeleteReplication() {
-        // basic
-        HttpRequestDef.Builder<DeleteReplicationRequest, DeleteReplicationResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteReplicationRequest.class, DeleteReplicationResponse.class)
-                .withUri("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(DeleteReplicationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(DeleteReplicationRequest::getGroupId, (req, v) -> {
-                req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("node_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(DeleteReplicationRequest::getNodeId, (req, v) -> {
-                req.setNodeId(v);
             })
         );
 

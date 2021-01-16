@@ -8,6 +8,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.sms.v3.model.PutDisk;
+import com.huaweicloud.sdk.sms.v3.model.PutVolumeGroups;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -29,6 +33,18 @@ public class PutSourceServerBody  {
     
     private String migprojectid;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="disks")
+    
+    private List<PutDisk> disks = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="volume_groups")
+    
+    private List<PutVolumeGroups> volumeGroups = null;
+    
     public PutSourceServerBody withName(String name) {
         this.name = name;
         return this;
@@ -68,6 +84,74 @@ public class PutSourceServerBody  {
     public void setMigprojectid(String migprojectid) {
         this.migprojectid = migprojectid;
     }
+
+    public PutSourceServerBody withDisks(List<PutDisk> disks) {
+        this.disks = disks;
+        return this;
+    }
+
+    
+    public PutSourceServerBody addDisksItem(PutDisk disksItem) {
+        if (this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
+        this.disks.add(disksItem);
+        return this;
+    }
+
+    public PutSourceServerBody withDisks(Consumer<List<PutDisk>> disksSetter) {
+        if(this.disks == null ){
+            this.disks = new ArrayList<>();
+        }
+        disksSetter.accept(this.disks);
+        return this;
+    }
+
+    /**
+     * 磁盘
+     * @return disks
+     */
+    public List<PutDisk> getDisks() {
+        return disks;
+    }
+
+    public void setDisks(List<PutDisk> disks) {
+        this.disks = disks;
+    }
+
+    public PutSourceServerBody withVolumeGroups(List<PutVolumeGroups> volumeGroups) {
+        this.volumeGroups = volumeGroups;
+        return this;
+    }
+
+    
+    public PutSourceServerBody addVolumeGroupsItem(PutVolumeGroups volumeGroupsItem) {
+        if (this.volumeGroups == null) {
+            this.volumeGroups = new ArrayList<>();
+        }
+        this.volumeGroups.add(volumeGroupsItem);
+        return this;
+    }
+
+    public PutSourceServerBody withVolumeGroups(Consumer<List<PutVolumeGroups>> volumeGroupsSetter) {
+        if(this.volumeGroups == null ){
+            this.volumeGroups = new ArrayList<>();
+        }
+        volumeGroupsSetter.accept(this.volumeGroups);
+        return this;
+    }
+
+    /**
+     * 卷组
+     * @return volumeGroups
+     */
+    public List<PutVolumeGroups> getVolumeGroups() {
+        return volumeGroups;
+    }
+
+    public void setVolumeGroups(List<PutVolumeGroups> volumeGroups) {
+        this.volumeGroups = volumeGroups;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -78,11 +162,13 @@ public class PutSourceServerBody  {
         }
         PutSourceServerBody putSourceServerBody = (PutSourceServerBody) o;
         return Objects.equals(this.name, putSourceServerBody.name) &&
-            Objects.equals(this.migprojectid, putSourceServerBody.migprojectid);
+            Objects.equals(this.migprojectid, putSourceServerBody.migprojectid) &&
+            Objects.equals(this.disks, putSourceServerBody.disks) &&
+            Objects.equals(this.volumeGroups, putSourceServerBody.volumeGroups);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, migprojectid);
+        return Objects.hash(name, migprojectid, disks, volumeGroups);
     }
     @Override
     public String toString() {
@@ -90,6 +176,8 @@ public class PutSourceServerBody  {
         sb.append("class PutSourceServerBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    migprojectid: ").append(toIndentedString(migprojectid)).append("\n");
+        sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
+        sb.append("    volumeGroups: ").append(toIndentedString(volumeGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

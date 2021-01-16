@@ -29,12 +29,6 @@ public class CreateRequestBodyCceClusterInfo  {
     
     private String clusterName;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_platform_type")
-    
-    private String clusterPlatformType;
-
     public CreateRequestBodyCceClusterInfo withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -74,26 +68,6 @@ public class CreateRequestBodyCceClusterInfo  {
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
     }
-
-    public CreateRequestBodyCceClusterInfo withClusterPlatformType(String clusterPlatformType) {
-        this.clusterPlatformType = clusterPlatformType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群架构类型：X86（VirtualMachine），ARM（ARM64）
-     * @return clusterPlatformType
-     */
-    public String getClusterPlatformType() {
-        return clusterPlatformType;
-    }
-
-    public void setClusterPlatformType(String clusterPlatformType) {
-        this.clusterPlatformType = clusterPlatformType;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +78,11 @@ public class CreateRequestBodyCceClusterInfo  {
         }
         CreateRequestBodyCceClusterInfo createRequestBodyCceClusterInfo = (CreateRequestBodyCceClusterInfo) o;
         return Objects.equals(this.clusterId, createRequestBodyCceClusterInfo.clusterId) &&
-            Objects.equals(this.clusterName, createRequestBodyCceClusterInfo.clusterName) &&
-            Objects.equals(this.clusterPlatformType, createRequestBodyCceClusterInfo.clusterPlatformType);
+            Objects.equals(this.clusterName, createRequestBodyCceClusterInfo.clusterName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, clusterPlatformType);
+        return Objects.hash(clusterId, clusterName);
     }
     @Override
     public String toString() {
@@ -117,7 +90,6 @@ public class CreateRequestBodyCceClusterInfo  {
         sb.append("class CreateRequestBodyCceClusterInfo {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
-        sb.append("    clusterPlatformType: ").append(toIndentedString(clusterPlatformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -387,6 +387,18 @@ public class InstanceParam  {
     
     private String vpcId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_user_domain_name")
+    
+    private String instanceUserDomainName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_user_name")
+    
+    private String instanceUserName;
+
     public InstanceParam withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
@@ -396,7 +408,7 @@ public class InstanceParam  {
 
 
     /**
-     * 代理商id，标签为tutorial时使用
+     * 代理商id，教程活动场景下使用
      * @return agentId
      */
     public String getAgentId() {
@@ -496,7 +508,7 @@ public class InstanceParam  {
 
 
     /**
-     * 是否临时实例。 false页面会显示
+     * 是否页面显示（以标签配置为准）
      * @return isTemporary
      */
     public Boolean getIsTemporary() {
@@ -516,7 +528,7 @@ public class InstanceParam  {
 
 
     /**
-     * 场景标签
+     * 实例标签（不同的第三方需要和CloudIDE服务共同设定标签），不传默认为default
      * @return labelTag
      */
     public String getLabelTag() {
@@ -550,7 +562,7 @@ public class InstanceParam  {
     }
 
     /**
-     * 场景插件列表
+     * 预装插件列表
      * @return pluginEnableList
      */
     public List<String> getPluginEnableList() {
@@ -584,7 +596,7 @@ public class InstanceParam  {
         return this;
     }
     /**
-     * 场景插件参数
+     * 预装插件参数
      * @return pluginVars
      */
     public Map<String, String> getPluginVars() {
@@ -604,7 +616,7 @@ public class InstanceParam  {
 
 
     /**
-     * 云服务器对应的portId，标签为webshell-internal时使用
+     * 云服务器对应的portId，小网连接ecs的场景下使用
      * @return portId
      */
     public String getPortId() {
@@ -624,7 +636,7 @@ public class InstanceParam  {
 
 
     /**
-     * 云服务器ip，标签为webshell-internal时使用
+     * 云服务器ip，小网连接ecs的场景下使用
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -664,7 +676,7 @@ public class InstanceParam  {
 
 
     /**
-     * 实例的生命周期 arm架构,生命周期只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例在到达生命周期后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
+     * 实例的生命周期。 arm架构,生命周期只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例在到达生命周期后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
      * @return refreshInterval
      */
     public String getRefreshInterval() {
@@ -684,9 +696,9 @@ public class InstanceParam  {
 
 
     /**
-     * 解放号的仓库id，标签为jfh时使用
+     * 解放号的仓库id，解放号场景下使用
      * minimum: 1
-     * maximum: 9223372036854775807
+     * maximum: -9223372036854775616
      * @return repositoryId
      */
     public Long getRepositoryId() {
@@ -706,7 +718,7 @@ public class InstanceParam  {
 
 
     /**
-     * 技术栈ID 目前可取值all，java，go，python，cpp，nodejs，quantum，blockchain，dcn，vue，ruby。
+     * 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
      * @return stackId
      */
     public String getStackId() {
@@ -726,7 +738,7 @@ public class InstanceParam  {
 
 
     /**
-     * 任务类型，标签为tutorial时使用
+     * 任务类型，教程活动场景下使用
      * @return taskType
      */
     public String getTaskType() {
@@ -746,7 +758,7 @@ public class InstanceParam  {
 
 
     /**
-     * 解放号的token，标签为jfh时使用
+     * 解放号的token，解放号场景下使用
      * @return token
      */
     public String getToken() {
@@ -766,7 +778,7 @@ public class InstanceParam  {
 
 
     /**
-     * 云服务器对应的vpcId，标签为webshell-internal时使用
+     * 云服务器对应的vpcId，小网连接ecs的场景下使用
      * @return vpcId
      */
     public String getVpcId() {
@@ -775,6 +787,46 @@ public class InstanceParam  {
 
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
+    }
+
+    public InstanceParam withInstanceUserDomainName(String instanceUserDomainName) {
+        this.instanceUserDomainName = instanceUserDomainName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例授权用户组织名
+     * @return instanceUserDomainName
+     */
+    public String getInstanceUserDomainName() {
+        return instanceUserDomainName;
+    }
+
+    public void setInstanceUserDomainName(String instanceUserDomainName) {
+        this.instanceUserDomainName = instanceUserDomainName;
+    }
+
+    public InstanceParam withInstanceUserName(String instanceUserName) {
+        this.instanceUserName = instanceUserName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例授权用户名
+     * @return instanceUserName
+     */
+    public String getInstanceUserName() {
+        return instanceUserName;
+    }
+
+    public void setInstanceUserName(String instanceUserName) {
+        this.instanceUserName = instanceUserName;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -802,11 +854,13 @@ public class InstanceParam  {
             Objects.equals(this.stackId, instanceParam.stackId) &&
             Objects.equals(this.taskType, instanceParam.taskType) &&
             Objects.equals(this.token, instanceParam.token) &&
-            Objects.equals(this.vpcId, instanceParam.vpcId);
+            Objects.equals(this.vpcId, instanceParam.vpcId) &&
+            Objects.equals(this.instanceUserDomainName, instanceParam.instanceUserDomainName) &&
+            Objects.equals(this.instanceUserName, instanceParam.instanceUserName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(agentId, arch, cpuMemory, description, displayName, isTemporary, labelTag, pluginEnableList, pluginVars, portId, privateIp, pvcQuantity, refreshInterval, repositoryId, stackId, taskType, token, vpcId);
+        return Objects.hash(agentId, arch, cpuMemory, description, displayName, isTemporary, labelTag, pluginEnableList, pluginVars, portId, privateIp, pvcQuantity, refreshInterval, repositoryId, stackId, taskType, token, vpcId, instanceUserDomainName, instanceUserName);
     }
     @Override
     public String toString() {
@@ -830,6 +884,8 @@ public class InstanceParam  {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    instanceUserDomainName: ").append(toIndentedString(instanceUserDomainName)).append("\n");
+        sb.append("    instanceUserName: ").append(toIndentedString(instanceUserName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

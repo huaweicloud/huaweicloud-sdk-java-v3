@@ -25,12 +25,6 @@ public class MeasureUnitRest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_type")
-    
-    private Integer measureType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="measure_name")
     
     private String measureName;
@@ -40,6 +34,12 @@ public class MeasureUnitRest  {
     @JsonProperty(value="abbreviation")
     
     private String abbreviation;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="measure_type")
+    
+    private Integer measureType;
 
     public MeasureUnitRest withMeasureId(Integer measureId) {
         this.measureId = measureId;
@@ -59,26 +59,6 @@ public class MeasureUnitRest  {
 
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
-    }
-
-    public MeasureUnitRest withMeasureType(Integer measureType) {
-        this.measureType = measureType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |参数名称：度量类型| |参数的约束及描述：度量类型|
-     * @return measureType
-     */
-    public Integer getMeasureType() {
-        return measureType;
-    }
-
-    public void setMeasureType(Integer measureType) {
-        this.measureType = measureType;
     }
 
     public MeasureUnitRest withMeasureName(String measureName) {
@@ -120,6 +100,26 @@ public class MeasureUnitRest  {
     public void setAbbreviation(String abbreviation) {
         this.abbreviation = abbreviation;
     }
+
+    public MeasureUnitRest withMeasureType(Integer measureType) {
+        this.measureType = measureType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：度量类型| |参数的约束及描述：度量类型|
+     * @return measureType
+     */
+    public Integer getMeasureType() {
+        return measureType;
+    }
+
+    public void setMeasureType(Integer measureType) {
+        this.measureType = measureType;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -130,22 +130,22 @@ public class MeasureUnitRest  {
         }
         MeasureUnitRest measureUnitRest = (MeasureUnitRest) o;
         return Objects.equals(this.measureId, measureUnitRest.measureId) &&
-            Objects.equals(this.measureType, measureUnitRest.measureType) &&
             Objects.equals(this.measureName, measureUnitRest.measureName) &&
-            Objects.equals(this.abbreviation, measureUnitRest.abbreviation);
+            Objects.equals(this.abbreviation, measureUnitRest.abbreviation) &&
+            Objects.equals(this.measureType, measureUnitRest.measureType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(measureId, measureType, measureName, abbreviation);
+        return Objects.hash(measureId, measureName, abbreviation, measureType);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MeasureUnitRest {\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    measureType: ").append(toIndentedString(measureType)).append("\n");
         sb.append("    measureName: ").append(toIndentedString(measureName)).append("\n");
         sb.append("    abbreviation: ").append(toIndentedString(abbreviation)).append("\n");
+        sb.append("    measureType: ").append(toIndentedString(measureType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

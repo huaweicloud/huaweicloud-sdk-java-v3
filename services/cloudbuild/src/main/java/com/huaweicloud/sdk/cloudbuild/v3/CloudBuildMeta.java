@@ -132,4 +132,52 @@ public class CloudBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> showListHistory = genForshowListHistory();
+
+    private static HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> genForshowListHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowListHistoryRequest, ShowListHistoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowListHistoryRequest.class, ShowListHistoryResponse.class)
+                .withUri("/v3/jobs/{job_id}/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowListHistoryRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowListHistoryRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowListHistoryRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowListHistoryRequest::getInterval, (req, v) -> {
+                req.setInterval(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
 }

@@ -47,6 +47,12 @@ public class CreateRequestBodyCceCreateInfo  {
     
     private String az;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cluster_platform_type")
+    
+    private String clusterPlatformType;
+
     public CreateRequestBodyCceCreateInfo withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
@@ -146,6 +152,26 @@ public class CreateRequestBodyCceCreateInfo  {
     public void setAz(String az) {
         this.az = az;
     }
+
+    public CreateRequestBodyCceCreateInfo withClusterPlatformType(String clusterPlatformType) {
+        this.clusterPlatformType = clusterPlatformType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 集群CPU架构类型：X86（VirtualMachine），ARM（ARM64）
+     * @return clusterPlatformType
+     */
+    public String getClusterPlatformType() {
+        return clusterPlatformType;
+    }
+
+    public void setClusterPlatformType(String clusterPlatformType) {
+        this.clusterPlatformType = clusterPlatformType;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -159,11 +185,12 @@ public class CreateRequestBodyCceCreateInfo  {
             Objects.equals(this.nodeFlavor, createRequestBodyCceCreateInfo.nodeFlavor) &&
             Objects.equals(this.cceFlavor, createRequestBodyCceCreateInfo.cceFlavor) &&
             Objects.equals(this.initNodePwd, createRequestBodyCceCreateInfo.initNodePwd) &&
-            Objects.equals(this.az, createRequestBodyCceCreateInfo.az);
+            Objects.equals(this.az, createRequestBodyCceCreateInfo.az) &&
+            Objects.equals(this.clusterPlatformType, createRequestBodyCceCreateInfo.clusterPlatformType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(nodeNum, nodeFlavor, cceFlavor, initNodePwd, az);
+        return Objects.hash(nodeNum, nodeFlavor, cceFlavor, initNodePwd, az, clusterPlatformType);
     }
     @Override
     public String toString() {
@@ -174,6 +201,7 @@ public class CreateRequestBodyCceCreateInfo  {
         sb.append("    cceFlavor: ").append(toIndentedString(cceFlavor)).append("\n");
         sb.append("    initNodePwd: ").append(toIndentedString(initNodePwd)).append("\n");
         sb.append("    az: ").append(toIndentedString(az)).append("\n");
+        sb.append("    clusterPlatformType: ").append(toIndentedString(clusterPlatformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

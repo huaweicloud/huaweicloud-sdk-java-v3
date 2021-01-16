@@ -63,7 +63,7 @@ public class CreateUserResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_domain_owner")
     
-    private String isDomainOwner;
+    private Boolean isDomainOwner;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -259,7 +259,7 @@ public class CreateUserResult  {
         this.phone = phone;
     }
 
-    public CreateUserResult withIsDomainOwner(String isDomainOwner) {
+    public CreateUserResult withIsDomainOwner(Boolean isDomainOwner) {
         this.isDomainOwner = isDomainOwner;
         return this;
     }
@@ -271,11 +271,11 @@ public class CreateUserResult  {
      * IAM用户是否为账号管理员。
      * @return isDomainOwner
      */
-    public String getIsDomainOwner() {
+    public Boolean getIsDomainOwner() {
         return isDomainOwner;
     }
 
-    public void setIsDomainOwner(String isDomainOwner) {
+    public void setIsDomainOwner(Boolean isDomainOwner) {
         this.isDomainOwner = isDomainOwner;
     }
 

@@ -17,8 +17,8 @@ public class BssClient {
 
 
     /**
-     * 设置包年包月资源自动续费
-     * 功能描述：设置包周期资源自动续费
+     * 设置包年/包月资源自动续费
+     * 功能描述：客户可以设置包年/包月资源到期后转为按需资源计费
      *
      * @param AutoRenewalResourcesRequest 请求对象
      * @return AutoRenewalResourcesResponse
@@ -39,7 +39,7 @@ public class BssClient {
     }
 
     /**
-     * 取消包年包月资源自动续费
+     * 取消包年/包月资源自动续费
      * 功能描述：取消包年/包月资源自动续费
      *
      * @param CancelAutoRenewalResourcesRequest 请求对象
@@ -61,8 +61,8 @@ public class BssClient {
     }
 
     /**
-     * 退订包年包月资源
-     * 功能描述：客户购买包年包月资源后，支持客户退订包年包月实例。退订资源实例包括资源续费部分和当前正在使用的部分，退订后资源将无法使用
+     * 退订包年/包月资源
+     * 功能描述：客户购买包年/包月资源后，支持客户退订包年/包月实例。退订资源实例包括资源续费部分和当前正在使用的部分，退订后资源将无法使用
      *
      * @param CancelResourcesSubscriptionRequest 请求对象
      * @return CancelResourcesSubscriptionResponse
@@ -117,7 +117,7 @@ public class BssClient {
 
     /**
      * 发放优惠券
-     * 功能描述：伙伴在伙伴销售平台使用额度为客户发放优惠券。
+     * 功能描述：合作伙伴可以在拥有的代金券额度范围内为客户下发优惠券。
      *
      * @param CreatePartnerCouponsRequest 请求对象
      * @return CreatePartnerCouponsResponse
@@ -193,8 +193,8 @@ public class BssClient {
     }
 
     /**
-     * 查询用量单位进制
-     * 功能描述：查询用量单位进制
+     * 查询使用量单位进制
+     * 功能描述：伙伴在伙伴销售平台上查询使用量单位的进制转换信息，用于不同度量单位之间的转换。
      *
      * @param ListConversionsRequest 请求对象
      * @return ListConversionsResponse
@@ -215,8 +215,8 @@ public class BssClient {
     }
 
     /**
-     * 查询优惠券额度发放回收记录
-     * 功能描述：查询优惠券额度发放回收记录
+     * 查询代金券额度的发放回收记录
+     * 功能描述：华为云伙伴能力中心（一级经销商）可以在伙伴中心查看给精英服务商（二级经销商）发放或回收代金券额度的操作记录。
      *
      * @param ListCouponQuotasRecordsRequest 请求对象
      * @return ListCouponQuotasRecordsResponse
@@ -336,8 +336,8 @@ public class BssClient {
     }
 
     /**
-     * 查询已发放优惠券额度
-     * 功能描述：一级经销商查询发给二级经销商的额度
+     * 查询已发放的代金券额度
+     * 功能描述：华为云伙伴能力中心（一级经销商）可以在伙伴中心查看发放给精英服务商（二级经销商）的代金券额度列表。
      *
      * @param ListIssuedCouponQuotasRequest 请求对象
      * @return ListIssuedCouponQuotasResponse
@@ -358,8 +358,8 @@ public class BssClient {
     }
 
     /**
-     * 查询用量单位列表
-     * 功能描述：查询用量单位列表
+     * 查询使用量单位列表
+     * 功能描述：伙伴在伙伴销售平台上查询资源使用量的度量单位及名称，度量单位类型等。
      *
      * @param ListMeasureUnitsRequest 请求对象
      * @return ListMeasureUnitsResponse
@@ -391,8 +391,8 @@ public class BssClient {
     }
 
     /**
-     * 查询调账回收记录
-     * 功能描述：查询调账回收记录
+     * 查询调账记录
+     * 功能描述：伙伴在伙伴销售平台查询向客户及关联的精英服务商（二级经销商）拨款或回收的调账记录
      *
      * @param ListPartnerAdjustRecordsRequest 请求对象
      * @return ListPartnerAdjustRecordsResponse
@@ -402,8 +402,8 @@ public class BssClient {
     }
 
     /**
-     * 查询账户余额
-     * 功能描述：查询伙伴账户余额
+     * 查询伙伴/精英服务商账户余额
+     * 功能描述：合作伙伴可以查询自己及关联的精英服务商的账户余额。
      *
      * @param ListPartnerBalancesRequest 请求对象
      * @return ListPartnerBalancesResponse
@@ -435,8 +435,8 @@ public class BssClient {
     }
 
     /**
-     * 查询客户包年包月资源列表
-     * 功能描述：客户在客户自建平台查询某个或所有的包年包月资源
+     * 查询客户包年/包月资源列表
+     * 功能描述：客户在客户自建平台查询某个或所有的包年/包月资源
      *
      * @param ListPayPerUseCustomerResourcesRequest 请求对象
      * @return ListPayPerUseCustomerResourcesResponse
@@ -479,8 +479,8 @@ public class BssClient {
     }
 
     /**
-     * 包周期资源订购询价
-     * 功能描述：包周期资源订购询价
+     * 查询包年/包月产品价格
+     * 功能描述：客户在自建平台按照条件查询包年/包月产品开通时候的价格
      *
      * @param ListRateOnPeriodDetailRequest 请求对象
      * @return ListRateOnPeriodDetailResponse
@@ -534,8 +534,8 @@ public class BssClient {
     }
 
     /**
-     * 库存查询
-     * 功能描述：查询硬件库存
+     * 查询硬件库存
+     * 功能描述：客户在购买硬件产品时，可以在客户自建平台上查询硬件产品的库存
      *
      * @param ListSkuInventoriesRequest 请求对象
      * @return ListSkuInventoriesResponse
@@ -611,8 +611,8 @@ public class BssClient {
     }
 
     /**
-     * 支付包年包月产品订单
-     * 功能描述：客户可以对待支付状态的包年包月产品订单进行支付
+     * 支付包年/包月产品订单
+     * 功能描述：客户可以对待支付状态的包年/包月产品订单进行支付
      *
      * @param PayOrdersRequest 请求对象
      * @return PayOrdersResponse
@@ -622,8 +622,8 @@ public class BssClient {
     }
 
     /**
-     * 回收优惠券额度
-     * 功能描述：一级经销商给二级经销商回收额度
+     * 回收代金券额度
+     * 功能描述：华为云伙伴能力中心（一级经销商）可以在伙伴中心回收已发放给精英服务商（二级经销商）的代金券额度。
      *
      * @param ReclaimCouponQuotasRequest 请求对象
      * @return ReclaimCouponQuotasResponse
@@ -666,8 +666,8 @@ public class BssClient {
     }
 
     /**
-     * 回收子客户余额（支持一级回收二级的子客户余额）
-     * 功能描述：回收子客户余额（支持一级回收二级的子客户余额）
+     * 回收客户账户余额
+     * 功能描述：当客户不再使用华为云产品时，合作伙伴可以回收垫付类客户账户余额。（支持一级回收二级的子客户余额）
      *
      * @param ReclaimToPartnerAccountRequest 请求对象
      * @return ReclaimToPartnerAccountResponse
@@ -677,8 +677,8 @@ public class BssClient {
     }
 
     /**
-     * 续订包年包月资源
-     * 功能描述：客户的包年包月资源即将到期时，可进行包年包月资源的续订
+     * 续订包年/包月资源
+     * 功能描述：客户的包年包/月资源即将到期时，可进行包年/包月资源的续订
      *
      * @param RenewalResourcesRequest 请求对象
      * @return RenewalResourcesResponse
@@ -710,14 +710,14 @@ public class BssClient {
     }
 
     /**
-     * 查询客户账户余额
-     * 功能描述：查询客户账户余额
+     * 查询账户余额
+     * 功能描述：查询账户余额
      *
-     * @param ShowCusotmerAccountBalancesRequest 请求对象
-     * @return ShowCusotmerAccountBalancesResponse
+     * @param ShowCustomerAccountBalancesRequest 请求对象
+     * @return ShowCustomerAccountBalancesResponse
      */
-    public ShowCusotmerAccountBalancesResponse showCusotmerAccountBalances(ShowCusotmerAccountBalancesRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.showCusotmerAccountBalances);
+    public ShowCustomerAccountBalancesResponse showCustomerAccountBalances(ShowCustomerAccountBalancesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.showCustomerAccountBalances);
     }
 
     /**
@@ -777,7 +777,7 @@ public class BssClient {
 
     /**
      * 向精英服务商发放代金券额度
-     * 功能描述：向精英服务商发放代金券额度
+     * 功能描述：华为云伙伴能力中心（一级经销商）可以在伙伴中心向精英服务商（二级经销商）发放代金券额度。
      *
      * @param UpdateCouponQuotasRequest 请求对象
      * @return UpdateCouponQuotasResponse
@@ -787,8 +787,8 @@ public class BssClient {
     }
 
     /**
-     * 调账
-     * 功能描述：从伙伴账户调账给子客户
+     * 向客户账户拨款
+     * 功能描述：合作伙伴可以为垫付类客户账户拨款。
      *
      * @param UpdateCustomerAccountAmountRequest 请求对象
      * @return UpdateCustomerAccountAmountResponse
@@ -798,8 +798,8 @@ public class BssClient {
     }
 
     /**
-     * 向二级渠道账户拨款
-     * 功能描述：从伙伴账户调账给二级渠道
+     * 向精英服务商账户拨款
+     * 功能描述：华为云伙伴能力中心（一级经销商）可以向精英服务商（二级经销商）账户拨款
      *
      * @param UpdateIndirectPartnerAccountRequest 请求对象
      * @return UpdateIndirectPartnerAccountResponse
@@ -809,8 +809,8 @@ public class BssClient {
     }
 
     /**
-     * 设置或者取消包年包月资源到期转按需
-     * 功能描述：客户可以设置包年包月资源到期后转为按需资源计费。包年包月计费模式到期后，按需的计费模式即生效
+     * 设置或者取消包年/包月资源到期转按需
+     * 功能描述：客户可以设置包年/包月资源到期后转为按需资源计费。包年/包月计费模式到期后，按需的计费模式即生效
      *
      * @param UpdatePeriodToOnDemandRequest 请求对象
      * @return UpdatePeriodToOnDemandResponse

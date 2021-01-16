@@ -98,18 +98,22 @@ public class GlobalCredentials extends AbstractCredentials {
             return CompletableFuture.completedFuture(this);
         }
 
-        HttpRequest signedRequest = null;
+        HttpRequest signedRequest;
         try {
             // When using `getCredentialFromEnvironment`, iamEndpoint will lose while initializing Credentials.
-            iamEndpoint = Objects.nonNull(iamEndpoint) ? iamEndpoint : Iam.DEFAULT_IAM_ENDPOINT;
+            iamEndpoint = Objects.nonNull(iamEndpoint) ? iamEndpoint : IamService.DEFAULT_IAM_ENDPOINT;
             signedRequest = this.processAuthRequest(
-                Iam.getKeystoneListAuthDomainsRequest(iamEndpoint), httpClient).get();
+                IamService.getKeystoneListAuthDomainsRequest(iamEndpoint), httpClient).get();
         } catch (InterruptedException | ExecutionException e) {
             throw new SdkException(e);
         }
 
-        this.domainId = Iam.keystoneListAuthDomains(httpClient, signedRequest);
-        return CompletableFuture.completedFuture(this);
+        try {
+            this.domainId = IamService.keystoneListAuthDomains(httpClient, signedRequest);
+            return CompletableFuture.completedFuture(this);
+        } catch (SdkException e) {
+            throw new SdkException("Failed to get domain id, " + e.getMessage());
+        }
     }
 
     @Override

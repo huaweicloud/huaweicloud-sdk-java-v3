@@ -12,6 +12,30 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class SmsMeta {
 
+    public static final HttpRequestDef<CheckTargetRequest, CheckTargetResponse> checkTarget = genForcheckTarget();
+
+    private static HttpRequestDef<CheckTargetRequest, CheckTargetResponse> genForcheckTarget() {
+        // basic
+        HttpRequestDef.Builder<CheckTargetRequest, CheckTargetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckTargetRequest.class, CheckTargetResponse.class)
+                .withUri("/v3/targetcheck")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ChecktargetReq.class,
+            f -> f.withMarshaller(CheckTargetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateMigprojectRequest, CreateMigprojectResponse> createMigproject = genForcreateMigproject();
 
     private static HttpRequestDef<CreateMigprojectRequest, CreateMigprojectResponse> genForcreateMigproject() {
@@ -19,13 +43,13 @@ public class SmsMeta {
         HttpRequestDef.Builder<CreateMigprojectRequest, CreateMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMigprojectRequest.class, CreateMigprojectResponse.class)
                 .withUri("/v3/migprojects")
-                .withContentType("application/json;charset=UTF-8");
+                .withContentType("application/json");
 
         // requests
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            MigProject.class,
+            PostMigProjectBody.class,
             f -> f.withMarshaller(CreateMigprojectRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -343,12 +367,12 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListServersRequest::getId, (req, v) -> {
-                req.setId(v);
+            ListServersRequest.StateEnum.class,
+            f -> f.withMarshaller(ListServersRequest::getState, (req, v) -> {
+                req.setState(v);
             })
         );
         builder.withRequestField("name",
@@ -359,6 +383,14 @@ public class SmsMeta {
                 req.setName(v);
             })
         );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListServersRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
         builder.withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -367,20 +399,28 @@ public class SmsMeta {
                 req.setIp(v);
             })
         );
-        builder.withRequestField("state",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListServersRequest.StateEnum.class,
-            f -> f.withMarshaller(ListServersRequest::getState, (req, v) -> {
-                req.setState(v);
-            })
-        );
         builder.withRequestField("migproject",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListServersRequest::getMigproject, (req, v) -> {
                 req.setMigproject(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListServersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListServersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             })
         );
         builder.withRequestField("migration_cycle",
@@ -397,22 +437,6 @@ public class SmsMeta {
             Boolean.class,
             f -> f.withMarshaller(ListServersRequest::getConnected, (req, v) -> {
                 req.setConnected(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
-            f -> f.withMarshaller(ListServersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
-            f -> f.withMarshaller(ListServersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
             })
         );
 
@@ -485,6 +509,62 @@ public class SmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates = genForlistTemplates();
+
+    private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withUri("/v3/vm/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTemplatesRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTemplatesRequest::getAvailabilityZone, (req, v) -> {
+                req.setAvailabilityZone(v);
+            })
+        );
+        builder.withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTemplatesRequest::getRegion, (req, v) -> {
+                req.setRegion(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListTemplatesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RegisterServerRequest, RegisterServerResponse> registerServer = genForregisterServer();
 
     private static HttpRequestDef<RegisterServerRequest, RegisterServerResponse> genForregisterServer() {
@@ -501,6 +581,54 @@ public class SmsMeta {
             PostSourceServerBody.class,
             f -> f.withMarshaller(RegisterServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCertKeyRequest, ShowCertKeyResponse> showCertKey = genForshowCertKey();
+
+    private static HttpRequestDef<ShowCertKeyRequest, ShowCertKeyResponse> genForshowCertKey() {
+        // basic
+        HttpRequestDef.Builder<ShowCertKeyRequest, ShowCertKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCertKeyRequest.class, ShowCertKeyResponse.class)
+                .withUri("/v3/tasks/{task_id}/certkey")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowCertKeyRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCommandRequest, ShowCommandResponse> showCommand = genForshowCommand();
+
+    private static HttpRequestDef<ShowCommandRequest, ShowCommandResponse> genForshowCommand() {
+        // basic
+        HttpRequestDef.Builder<ShowCommandRequest, ShowCommandResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCommandRequest.class, ShowCommandResponse.class)
+                .withUri("/v3/sources/{server_id}/command")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowCommandRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
             })
         );
 
@@ -605,62 +733,6 @@ public class SmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTemplatesRequest, ShowTemplatesResponse> showTemplates = genForshowTemplates();
-
-    private static HttpRequestDef<ShowTemplatesRequest, ShowTemplatesResponse> genForshowTemplates() {
-        // basic
-        HttpRequestDef.Builder<ShowTemplatesRequest, ShowTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTemplatesRequest.class, ShowTemplatesResponse.class)
-                .withUri("/v3/vm/templates")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTemplatesRequest::getName, (req, v) -> {
-                req.setName(v);
-            })
-        );
-        builder.withRequestField("availability_zone",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTemplatesRequest::getAvailabilityZone, (req, v) -> {
-                req.setAvailabilityZone(v);
-            })
-        );
-        builder.withRequestField("region",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTemplatesRequest::getRegion, (req, v) -> {
-                req.setRegion(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ShowTemplatesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ShowTemplatesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> showsSpeedLimits = genForshowsSpeedLimits();
 
     private static HttpRequestDef<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> genForshowsSpeedLimits() {
@@ -694,6 +766,38 @@ public class SmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateCommandResultRequest, UpdateCommandResultResponse> updateCommandResult = genForupdateCommandResult();
+
+    private static HttpRequestDef<UpdateCommandResultRequest, UpdateCommandResultResponse> genForupdateCommandResult() {
+        // basic
+        HttpRequestDef.Builder<UpdateCommandResultRequest, UpdateCommandResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateCommandResultRequest.class, UpdateCommandResultResponse.class)
+                .withUri("/v3/sources/{server_id}/command-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateCommandResultRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CommandBody.class,
+            f -> f.withMarshaller(UpdateCommandResultRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> updateDefaultMigproject = genForupdateDefaultMigproject();
 
     private static HttpRequestDef<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> genForupdateDefaultMigproject() {
@@ -710,6 +814,38 @@ public class SmsMeta {
             String.class,
             f -> f.withMarshaller(UpdateDefaultMigprojectRequest::getMigProjectId, (req, v) -> {
                 req.setMigProjectId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDiskInfoRequest, UpdateDiskInfoResponse> updateDiskInfo = genForupdateDiskInfo();
+
+    private static HttpRequestDef<UpdateDiskInfoRequest, UpdateDiskInfoResponse> genForupdateDiskInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateDiskInfoRequest, UpdateDiskInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDiskInfoRequest.class, UpdateDiskInfoResponse.class)
+                .withUri("/v3/sources/{source_id}/diskinfo")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("source_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDiskInfoRequest::getSourceId, (req, v) -> {
+                req.setSourceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            PutDiskInfoReq.class,
+            f -> f.withMarshaller(UpdateDiskInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -746,6 +882,15 @@ public class SmsMeta {
         );
 
         // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateMigprojectResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
 
         return builder.build();
     }
@@ -805,6 +950,38 @@ public class SmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             SpeedLimit.class,
             f -> f.withMarshaller(UpdateSpeedRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> updateTaskSpeed = genForupdateTaskSpeed();
+
+    private static HttpRequestDef<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> genForupdateTaskSpeed() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskSpeedRequest.class, UpdateTaskSpeedResponse.class)
+                .withUri("/v3/tasks/{task_id}/progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateTaskSpeedRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateTaskSpeedReq.class,
+            f -> f.withMarshaller(UpdateTaskSpeedRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

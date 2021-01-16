@@ -32,12 +32,6 @@ public class TemplateRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     private String name;
@@ -46,7 +40,7 @@ public class TemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_template")
     
-    private String isTemplate;
+    private Boolean isTemplate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,34 +66,34 @@ public class TemplateRequest  {
     
     private String availabilityZone;
     /**
-     * 磁盘类型    SAS：高I/O,SSD：超高I/O,SATA：普通I/O
+     * 磁盘类型
      */
     public static final class VolumetypeEnum {
 
         
         /**
-         * Enum SAS for value: "SAS"
+         * Enum SAS_I_O for value: "SAS：高I/O"
          */
-        public static final VolumetypeEnum SAS = new VolumetypeEnum("SAS");
+        public static final VolumetypeEnum SAS_I_O = new VolumetypeEnum("SAS：高I/O");
         
         /**
-         * Enum SSD for value: "SSD"
+         * Enum SSD_I_O for value: "SSD：超高I/O"
          */
-        public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
+        public static final VolumetypeEnum SSD_I_O = new VolumetypeEnum("SSD：超高I/O");
         
         /**
-         * Enum SATA for value: "SATA"
+         * Enum SATA_I_O for value: "SATA：普通I/O"
          */
-        public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
+        public static final VolumetypeEnum SATA_I_O = new VolumetypeEnum("SATA：普通I/O");
         
 
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumetypeEnum> createStaticFields() {
             Map<String, VolumetypeEnum> map = new HashMap<>();
-            map.put("SAS", SAS);
-            map.put("SSD", SSD);
-            map.put("SATA", SATA);
+            map.put("SAS：高I/O", SAS_I_O);
+            map.put("SSD：超高I/O", SSD_I_O);
+            map.put("SATA：普通I/O", SATA_I_O);
             return Collections.unmodifiableMap(map);
         }
 
@@ -178,13 +172,13 @@ public class TemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nics")
     
-    private List<Nics> nics = new ArrayList<>();
+    private List<Nics> nics = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="security_groups")
     
-    private List<SgObject> securityGroups = new ArrayList<>();
+    private List<SgObject> securityGroups = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -196,7 +190,7 @@ public class TemplateRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk")
     
-    private List<TemplateDisk> disk = new ArrayList<>();
+    private List<TemplateDisk> disk = null;
         /**
      * 数据盘磁盘类型
      */
@@ -294,26 +288,6 @@ public class TemplateRequest  {
     
     private String targetPassword;
 
-    public TemplateRequest withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 模板ID
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public TemplateRequest withName(String name) {
         this.name = name;
         return this;
@@ -334,7 +308,7 @@ public class TemplateRequest  {
         this.name = name;
     }
 
-    public TemplateRequest withIsTemplate(String isTemplate) {
+    public TemplateRequest withIsTemplate(Boolean isTemplate) {
         this.isTemplate = isTemplate;
         return this;
     }
@@ -346,11 +320,11 @@ public class TemplateRequest  {
      * 是否是通用模板，如果模板关联一个任务，则不算通用模板
      * @return isTemplate
      */
-    public String getIsTemplate() {
+    public Boolean getIsTemplate() {
         return isTemplate;
     }
 
-    public void setIsTemplate(String isTemplate) {
+    public void setIsTemplate(Boolean isTemplate) {
         this.isTemplate = isTemplate;
     }
 
@@ -443,7 +417,7 @@ public class TemplateRequest  {
 
 
     /**
-     * 磁盘类型    SAS：高I/O,SSD：超高I/O,SATA：普通I/O
+     * 磁盘类型
      * @return volumetype
      */
     public VolumetypeEnum getVolumetype() {
@@ -508,6 +482,9 @@ public class TemplateRequest  {
 
     
     public TemplateRequest addNicsItem(Nics nicsItem) {
+        if (this.nics == null) {
+            this.nics = new ArrayList<>();
+        }
         this.nics.add(nicsItem);
         return this;
     }
@@ -539,6 +516,9 @@ public class TemplateRequest  {
 
     
     public TemplateRequest addSecurityGroupsItem(SgObject securityGroupsItem) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
@@ -597,6 +577,9 @@ public class TemplateRequest  {
 
     
     public TemplateRequest addDiskItem(TemplateDisk diskItem) {
+        if (this.disk == null) {
+            this.disk = new ArrayList<>();
+        }
         this.disk.add(diskItem);
         return this;
     }
@@ -669,8 +652,7 @@ public class TemplateRequest  {
             return false;
         }
         TemplateRequest templateRequest = (TemplateRequest) o;
-        return Objects.equals(this.id, templateRequest.id) &&
-            Objects.equals(this.name, templateRequest.name) &&
+        return Objects.equals(this.name, templateRequest.name) &&
             Objects.equals(this.isTemplate, templateRequest.isTemplate) &&
             Objects.equals(this.region, templateRequest.region) &&
             Objects.equals(this.projectid, templateRequest.projectid) &&
@@ -688,13 +670,12 @@ public class TemplateRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, isTemplate, region, projectid, targetServerName, availabilityZone, volumetype, flavor, vpc, nics, securityGroups, publicip, disk, dataVolumeType, targetPassword);
+        return Objects.hash(name, isTemplate, region, projectid, targetServerName, availabilityZone, volumetype, flavor, vpc, nics, securityGroups, publicip, disk, dataVolumeType, targetPassword);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TemplateRequest {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    isTemplate: ").append(toIndentedString(isTemplate)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

@@ -547,6 +547,8 @@ public class Server  {
 
     /**
      * CPU个数，单位vCPU
+     * minimum: 0
+     * maximum: 65535
      * @return cpuQuantity
      */
     public Integer getCpuQuantity() {
@@ -567,6 +569,8 @@ public class Server  {
 
     /**
      * 内存大小，单位MB
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return memory
      */
     public Long getMemory() {

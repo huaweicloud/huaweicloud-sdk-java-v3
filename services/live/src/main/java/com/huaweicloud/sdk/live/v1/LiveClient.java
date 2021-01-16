@@ -83,6 +83,17 @@ public class LiveClient {
     }
 
     /**
+     * 查询直播中的流信息
+     * 查询直播中的流信息
+     *
+     * @param ListLiveStreamsOnlineRequest 请求对象
+     * @return ListLiveStreamsOnlineResponse
+     */
+    public ListLiveStreamsOnlineResponse listLiveStreamsOnline(ListLiveStreamsOnlineRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listLiveStreamsOnline);
+    }
+
+    /**
      * 查询录制配置
      * 查询录制配置接口
      *

@@ -19,35 +19,15 @@ public class Tags  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
-    private String key;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
     private String value;
 
-    public Tags withKey(String key) {
-        this.key = key;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="key")
     
-
-
-    /**
-     * 键。输入标签键的最大长度为36个unicode字符，不能为空字符串，且首尾字符不能为空格。 不能包含“=”,“*”,“<”,“>”,“\\\\”,“,”,“|”,“/”。 只能包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）和特殊字符（中划线-、下划线_）以及中文字符。 
-     * @return key
-     */
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
+    private String key;
 
     public Tags withValue(String value) {
         this.value = value;
@@ -68,6 +48,26 @@ public class Tags  {
     public void setValue(String value) {
         this.value = value;
     }
+
+    public Tags withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 键。输入标签键的最大长度为36个unicode字符，不能为空字符串，且首尾字符不能为空格。 不能包含“=”,“*”,“<”,“>”,“\\\\”,“,”,“|”,“/”。 只能包含大写字母（A-Z）、小写字母（a-z）、数字（0-9）和特殊字符（中划线-、下划线_）以及中文字符。 
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -77,19 +77,19 @@ public class Tags  {
             return false;
         }
         Tags tags = (Tags) o;
-        return Objects.equals(this.key, tags.key) &&
-            Objects.equals(this.value, tags.value);
+        return Objects.equals(this.value, tags.value) &&
+            Objects.equals(this.key, tags.key);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(key, value);
+        return Objects.hash(value, key);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Tags {\n");
-        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -35,6 +35,12 @@ public class DeleteBlockchainRequest  {
     
     private Boolean isDeleteObs;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_delete_resource")
+    
+    private Boolean isDeleteResource;
+
     public DeleteBlockchainRequest withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
         return this;
@@ -94,6 +100,26 @@ public class DeleteBlockchainRequest  {
     public void setIsDeleteObs(Boolean isDeleteObs) {
         this.isDeleteObs = isDeleteObs;
     }
+
+    public DeleteBlockchainRequest withIsDeleteResource(Boolean isDeleteResource) {
+        this.isDeleteResource = isDeleteResource;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get isDeleteResource
+     * @return isDeleteResource
+     */
+    public Boolean getIsDeleteResource() {
+        return isDeleteResource;
+    }
+
+    public void setIsDeleteResource(Boolean isDeleteResource) {
+        this.isDeleteResource = isDeleteResource;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,11 +131,12 @@ public class DeleteBlockchainRequest  {
         DeleteBlockchainRequest deleteBlockchainRequest = (DeleteBlockchainRequest) o;
         return Objects.equals(this.blockchainId, deleteBlockchainRequest.blockchainId) &&
             Objects.equals(this.isDeleteStorage, deleteBlockchainRequest.isDeleteStorage) &&
-            Objects.equals(this.isDeleteObs, deleteBlockchainRequest.isDeleteObs);
+            Objects.equals(this.isDeleteObs, deleteBlockchainRequest.isDeleteObs) &&
+            Objects.equals(this.isDeleteResource, deleteBlockchainRequest.isDeleteResource);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(blockchainId, isDeleteStorage, isDeleteObs);
+        return Objects.hash(blockchainId, isDeleteStorage, isDeleteObs, isDeleteResource);
     }
     @Override
     public String toString() {
@@ -118,6 +145,7 @@ public class DeleteBlockchainRequest  {
         sb.append("    blockchainId: ").append(toIndentedString(blockchainId)).append("\n");
         sb.append("    isDeleteStorage: ").append(toIndentedString(isDeleteStorage)).append("\n");
         sb.append("    isDeleteObs: ").append(toIndentedString(isDeleteObs)).append("\n");
+        sb.append("    isDeleteResource: ").append(toIndentedString(isDeleteResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

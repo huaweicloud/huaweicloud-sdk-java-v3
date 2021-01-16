@@ -56,7 +56,7 @@ public class StartInstanceParam  {
     }
 
     /**
-     * 场景插件列表
+     * 插件列表
      * @return pluginEnableList
      */
     public List<String> getPluginEnableList() {
@@ -90,7 +90,7 @@ public class StartInstanceParam  {
         return this;
     }
     /**
-     * 场景插件参数
+     * 插件参数
      * @return pluginVars
      */
     public Map<String, String> getPluginVars() {

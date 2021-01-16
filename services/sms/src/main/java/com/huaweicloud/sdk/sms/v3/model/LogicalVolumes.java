@@ -21,13 +21,13 @@ public class LogicalVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_count")
     
-    private Integer blockCount;
+    private Integer blockCount = 0;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="block_size")
     
-    private Long blockSize;
+    private Long blockSize = 0l;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,9 +67,9 @@ public class LogicalVolumes  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="uuid")
+    @JsonProperty(value="free_size")
     
-    private String uuid;
+    private Long freeSize;
 
     public LogicalVolumes withBlockCount(Integer blockCount) {
         this.blockCount = blockCount;
@@ -82,6 +82,7 @@ public class LogicalVolumes  {
     /**
      * 块数量
      * minimum: 0
+     * maximum: 4294967296
      * @return blockCount
      */
     public Integer getBlockCount() {
@@ -103,6 +104,7 @@ public class LogicalVolumes  {
     /**
      * 块大小
      * minimum: 0
+     * maximum: 1048576
      * @return blockSize
      */
     public Long getBlockSize() {
@@ -143,6 +145,8 @@ public class LogicalVolumes  {
 
     /**
      * inode数量
+     * minimum: 0
+     * maximum: 4294967296
      * @return inodeSize
      */
     public Integer getInodeSize() {
@@ -204,6 +208,7 @@ public class LogicalVolumes  {
     /**
      * 大小
      * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
     public Long getSize() {
@@ -225,6 +230,7 @@ public class LogicalVolumes  {
     /**
      * 使用大小
      * minimum: 0
+     * maximum: 9223372036854775807
      * @return usedSize
      */
     public Long getUsedSize() {
@@ -235,8 +241,8 @@ public class LogicalVolumes  {
         this.usedSize = usedSize;
     }
 
-    public LogicalVolumes withUuid(String uuid) {
-        this.uuid = uuid;
+    public LogicalVolumes withFreeSize(Long freeSize) {
+        this.freeSize = freeSize;
         return this;
     }
 
@@ -244,15 +250,17 @@ public class LogicalVolumes  {
 
 
     /**
-     * uuid
-     * @return uuid
+     * 剩余空间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return freeSize
      */
-    public String getUuid() {
-        return uuid;
+    public Long getFreeSize() {
+        return freeSize;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setFreeSize(Long freeSize) {
+        this.freeSize = freeSize;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -271,11 +279,11 @@ public class LogicalVolumes  {
             Objects.equals(this.name, logicalVolumes.name) &&
             Objects.equals(this.size, logicalVolumes.size) &&
             Objects.equals(this.usedSize, logicalVolumes.usedSize) &&
-            Objects.equals(this.uuid, logicalVolumes.uuid);
+            Objects.equals(this.freeSize, logicalVolumes.freeSize);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(blockCount, blockSize, fileSystem, inodeSize, mountPoint, name, size, usedSize, uuid);
+        return Objects.hash(blockCount, blockSize, fileSystem, inodeSize, mountPoint, name, size, usedSize, freeSize);
     }
     @Override
     public String toString() {
@@ -289,7 +297,7 @@ public class LogicalVolumes  {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
-        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    freeSize: ").append(toIndentedString(freeSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

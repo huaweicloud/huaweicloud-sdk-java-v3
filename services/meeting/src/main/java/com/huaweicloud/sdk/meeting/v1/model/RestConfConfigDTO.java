@@ -53,6 +53,12 @@ public class RestConfConfigDTO  {
     
     private Boolean isGuestFreePwd;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="allowGuestStartConf")
+    
+    private Boolean allowGuestStartConf;
+
     public RestConfConfigDTO withCallInRestriction(Integer callInRestriction) {
         this.callInRestriction = callInRestriction;
         return this;
@@ -174,6 +180,26 @@ public class RestConfConfigDTO  {
     public void setIsGuestFreePwd(Boolean isGuestFreePwd) {
         this.isGuestFreePwd = isGuestFreePwd;
     }
+
+    public RestConfConfigDTO withAllowGuestStartConf(Boolean allowGuestStartConf) {
+        this.allowGuestStartConf = allowGuestStartConf;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否允许来宾启动会议(随机会议)。 - True: 允许来宾启动会议。 - False: 禁止来宾启动会议。
+     * @return allowGuestStartConf
+     */
+    public Boolean getAllowGuestStartConf() {
+        return allowGuestStartConf;
+    }
+
+    public void setAllowGuestStartConf(Boolean allowGuestStartConf) {
+        this.allowGuestStartConf = allowGuestStartConf;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -188,11 +214,12 @@ public class RestConfConfigDTO  {
             Objects.equals(this.isSendSms, restConfConfigDTO.isSendSms) &&
             Objects.equals(this.isSendCalendar, restConfConfigDTO.isSendCalendar) &&
             Objects.equals(this.isAutoMute, restConfConfigDTO.isAutoMute) &&
-            Objects.equals(this.isGuestFreePwd, restConfConfigDTO.isGuestFreePwd);
+            Objects.equals(this.isGuestFreePwd, restConfConfigDTO.isGuestFreePwd) &&
+            Objects.equals(this.allowGuestStartConf, restConfConfigDTO.allowGuestStartConf);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(callInRestriction, isSendNotify, isSendSms, isSendCalendar, isAutoMute, isGuestFreePwd);
+        return Objects.hash(callInRestriction, isSendNotify, isSendSms, isSendCalendar, isAutoMute, isGuestFreePwd, allowGuestStartConf);
     }
     @Override
     public String toString() {
@@ -204,6 +231,7 @@ public class RestConfConfigDTO  {
         sb.append("    isSendCalendar: ").append(toIndentedString(isSendCalendar)).append("\n");
         sb.append("    isAutoMute: ").append(toIndentedString(isAutoMute)).append("\n");
         sb.append("    isGuestFreePwd: ").append(toIndentedString(isGuestFreePwd)).append("\n");
+        sb.append("    allowGuestStartConf: ").append(toIndentedString(allowGuestStartConf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

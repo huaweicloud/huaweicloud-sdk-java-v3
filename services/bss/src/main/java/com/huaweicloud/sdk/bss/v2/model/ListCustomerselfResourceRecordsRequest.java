@@ -101,6 +101,18 @@ public class ListCustomerselfResourceRecordsRequest  {
     
     private String tradeId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bill_date_begin")
+    
+    private String billDateBegin;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bill_date_end")
+    
+    private String billDateEnd;
+
     public ListCustomerselfResourceRecordsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -214,7 +226,7 @@ public class ListCustomerselfResourceRecordsRequest  {
     /**
      * Get billType
      * minimum: 0
-     * maximum: 17
+     * maximum: 127
      * @return billType
      */
     public Integer getBillType() {
@@ -388,6 +400,46 @@ public class ListCustomerselfResourceRecordsRequest  {
     public void setTradeId(String tradeId) {
         this.tradeId = tradeId;
     }
+
+    public ListCustomerselfResourceRecordsRequest withBillDateBegin(String billDateBegin) {
+        this.billDateBegin = billDateBegin;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get billDateBegin
+     * @return billDateBegin
+     */
+    public String getBillDateBegin() {
+        return billDateBegin;
+    }
+
+    public void setBillDateBegin(String billDateBegin) {
+        this.billDateBegin = billDateBegin;
+    }
+
+    public ListCustomerselfResourceRecordsRequest withBillDateEnd(String billDateEnd) {
+        this.billDateEnd = billDateEnd;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get billDateEnd
+     * @return billDateEnd
+     */
+    public String getBillDateEnd() {
+        return billDateEnd;
+    }
+
+    public void setBillDateEnd(String billDateEnd) {
+        this.billDateEnd = billDateEnd;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -410,11 +462,13 @@ public class ListCustomerselfResourceRecordsRequest  {
             Objects.equals(this.includeZeroRecord, listCustomerselfResourceRecordsRequest.includeZeroRecord) &&
             Objects.equals(this.method, listCustomerselfResourceRecordsRequest.method) &&
             Objects.equals(this.subCustomerId, listCustomerselfResourceRecordsRequest.subCustomerId) &&
-            Objects.equals(this.tradeId, listCustomerselfResourceRecordsRequest.tradeId);
+            Objects.equals(this.tradeId, listCustomerselfResourceRecordsRequest.tradeId) &&
+            Objects.equals(this.billDateBegin, listCustomerselfResourceRecordsRequest.billDateBegin) &&
+            Objects.equals(this.billDateEnd, listCustomerselfResourceRecordsRequest.billDateEnd);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, enterpriseProjectId, includeZeroRecord, method, subCustomerId, tradeId);
+        return Objects.hash(xLanguage, cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, enterpriseProjectId, includeZeroRecord, method, subCustomerId, tradeId, billDateBegin, billDateEnd);
     }
     @Override
     public String toString() {
@@ -434,6 +488,8 @@ public class ListCustomerselfResourceRecordsRequest  {
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    billDateBegin: ").append(toIndentedString(billDateBegin)).append("\n");
+        sb.append("    billDateEnd: ").append(toIndentedString(billDateEnd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -20,8 +20,8 @@ public class BssintlAsyncClient {
 
 
     /**
-     * 设置包年包月资源自动续费
-     * 功能描述：设置包周期资源自动续费
+     * 设置包年/包月资源自动续费
+     * 功能描述：客户可以设置包年/包月资源到期后转为按需资源计费
      *
      * @param AutoRenewalResourcesRequest 请求对象
      * @return CompletableFuture<AutoRenewalResourcesResponse>
@@ -31,7 +31,7 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 取消包年包月资源自动续费
+     * 取消包年/包月资源自动续费
      * 功能描述：取消包年/包月资源自动续费
      *
      * @param CancelAutoRenewalResourcesRequest 请求对象
@@ -53,8 +53,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 退订包年包月资源
-     * 功能描述：客户购买包年包月资源后，支持客户退订包年包月实例。退订资源实例包括资源续费部分和当前正在使用的部分，退订后资源将无法使用
+     * 退订包年/包月资源
+     * 功能描述：客户购买包年/包月资源后，支持客户退订包年/包月实例。退订资源实例包括资源续费部分和当前正在使用的部分，退订后资源将无法使用
      *
      * @param CancelResourcesSubscriptionRequest 请求对象
      * @return CompletableFuture<CancelResourcesSubscriptionResponse>
@@ -130,8 +130,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 查询用量单位进制
-     * 功能描述：查询用量单位进制
+     * 查询使用量单位进制
+     * 功能描述：伙伴在伙伴销售平台上查询使用量单位的进制转换信息，用于不同度量单位之间的转换。
      *
      * @param ListConversionsRequest 请求对象
      * @return CompletableFuture<ListConversionsResponse>
@@ -185,8 +185,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 查询用量单位列表
-     * 功能描述：查询用量单位列表
+     * 查询使用量单位列表
+     * 功能描述：伙伴在伙伴销售平台上查询资源使用量的度量单位及名称，度量单位类型等。
      *
      * @param ListMeasureUnitsRequest 请求对象
      * @return CompletableFuture<ListMeasureUnitsResponse>
@@ -218,8 +218,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 查询客户包年包月资源列表
-     * 功能描述：客户在客户自建平台查询某个或所有的包年包月资源
+     * 查询客户包年/包月资源列表
+     * 功能描述：客户在客户自建平台查询某个或所有的包年/包月资源
      *
      * @param ListPayPerUseCustomerResourcesRequest 请求对象
      * @return CompletableFuture<ListPayPerUseCustomerResourcesResponse>
@@ -240,8 +240,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 包周期资源订购询价
-     * 功能描述：包周期资源订购询价
+     * 查询包年/包月产品价格
+     * 功能描述：客户在自建平台按照条件查询包年/包月产品开通时候的价格
      *
      * @param ListRateOnPeriodDetailRequest 请求对象
      * @return CompletableFuture<ListRateOnPeriodDetailResponse>
@@ -328,8 +328,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 支付包年包月产品订单
-     * 功能描述：客户可以对待支付状态的包年包月产品订单进行支付
+     * 支付包年/包月产品订单
+     * 功能描述：客户可以对待支付状态的包年/包月产品订单进行支付
      *
      * @param PayOrdersRequest 请求对象
      * @return CompletableFuture<PayOrdersResponse>
@@ -339,8 +339,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 续订包年包月资源
-     * 功能描述：客户的包年包月资源即将到期时，可进行包年包月资源的续订
+     * 续订包年/包月资源
+     * 功能描述：客户的包年包/月资源即将到期时，可进行包年/包月资源的续订
      *
      * @param RenewalResourcesRequest 请求对象
      * @return CompletableFuture<RenewalResourcesResponse>
@@ -427,8 +427,8 @@ public class BssintlAsyncClient {
     }
 
     /**
-     * 设置或者取消包年包月资源到期转按需
-     * 功能描述：客户可以设置包年包月资源到期后转为按需资源计费。包年包月计费模式到期后，按需的计费模式即生效
+     * 设置或者取消包年/包月资源到期转按需
+     * 功能描述：客户可以设置包年/包月资源到期后转为按需资源计费。包年/包月计费模式到期后，按需的计费模式即生效
      *
      * @param UpdatePeriodToOnDemandRequest 请求对象
      * @return CompletableFuture<UpdatePeriodToOnDemandResponse>

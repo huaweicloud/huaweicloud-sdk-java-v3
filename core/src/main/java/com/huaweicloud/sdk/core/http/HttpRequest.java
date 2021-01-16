@@ -271,11 +271,11 @@ public interface HttpRequest {
             StringBuilder sb = new StringBuilder();
             queryParams.forEach((key, values) -> {
                 if (values.size() == 0) {
-                    sb.append(String.format("%s&", key));
+                    sb.append(String.format("%s=&", key));
                 }
                 values.forEach(value -> {
                     if (value.isEmpty()) {
-                        sb.append(String.format("%s&", key));
+                        sb.append(String.format("%s=&", key));
                     } else {
                         sb.append(String.format("%s=%s&", key, value));
                     }

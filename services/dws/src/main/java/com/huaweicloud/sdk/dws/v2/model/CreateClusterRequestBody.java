@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dws.v2.model.CreateClusterReq;
+import com.huaweicloud.sdk.dws.v2.model.CreateClusterInfo;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateClusterRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster")
     
-    private CreateClusterReq cluster = null;
+    private CreateClusterInfo cluster = null;
 
-    public CreateClusterRequestBody withCluster(CreateClusterReq cluster) {
+    public CreateClusterRequestBody withCluster(CreateClusterInfo cluster) {
         this.cluster = cluster;
         return this;
     }
 
-    public CreateClusterRequestBody withCluster(Consumer<CreateClusterReq> clusterSetter) {
+    public CreateClusterRequestBody withCluster(Consumer<CreateClusterInfo> clusterSetter) {
         if(this.cluster == null ){
-            this.cluster = new CreateClusterReq();
+            this.cluster = new CreateClusterInfo();
             clusterSetter.accept(this.cluster);
         }
         
@@ -43,11 +43,11 @@ public class CreateClusterRequestBody  {
      * Get cluster
      * @return cluster
      */
-    public CreateClusterReq getCluster() {
+    public CreateClusterInfo getCluster() {
         return cluster;
     }
 
-    public void setCluster(CreateClusterReq cluster) {
+    public void setCluster(CreateClusterInfo cluster) {
         this.cluster = cluster;
     }
     @Override

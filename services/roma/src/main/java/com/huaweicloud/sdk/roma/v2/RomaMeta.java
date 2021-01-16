@@ -261,6 +261,38 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> batchDeleteDevices = genForbatchDeleteDevices();
+
+    private static HttpRequestDef<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> genForbatchDeleteDevices() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteDevicesRequest.class, BatchDeleteDevicesResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/devices")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteDevicesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteDevicesRequestBody.class,
+            f -> f.withMarshaller(BatchDeleteDevicesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> batchDeleteMqsInstanceTopic = genForbatchDeleteMqsInstanceTopic();
 
     private static HttpRequestDef<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> genForbatchDeleteMqsInstanceTopic() {
@@ -381,6 +413,30 @@ public class RomaMeta {
             LdApiCheckInfo.class,
             f -> f.withMarshaller(CheckLivedataApisV2Request::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountDevicesRequest, CountDevicesResponse> countDevices = genForcountDevices();
+
+    private static HttpRequestDef<CountDevicesRequest, CountDevicesResponse> genForcountDevices() {
+        // basic
+        HttpRequestDef.Builder<CountDevicesRequest, CountDevicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountDevicesRequest.class, CountDevicesResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/statistics/devices-count")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CountDevicesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             })
         );
 
@@ -2021,6 +2077,46 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeletePropertyRequest, DeletePropertyResponse> deleteProperty = genFordeleteProperty();
+
+    private static HttpRequestDef<DeletePropertyRequest, DeletePropertyResponse> genFordeleteProperty() {
+        // basic
+        HttpRequestDef.Builder<DeletePropertyRequest, DeletePropertyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePropertyRequest.class, DeletePropertyResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties/{property_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeletePropertyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeletePropertyRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            })
+        );
+        builder.withRequestField("property_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(DeletePropertyRequest::getPropertyId, (req, v) -> {
+                req.setPropertyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> deleteRequestProperty = genFordeleteRequestProperty();
 
     private static HttpRequestDef<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> genFordeleteRequestProperty() {
@@ -3013,6 +3109,86 @@ public class RomaMeta {
             Integer.class,
             f -> f.withMarshaller(ListAppQuotasRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> listAppUsagesTopN = genForlistAppUsagesTopN();
+
+    private static HttpRequestDef<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> genForlistAppUsagesTopN() {
+        // basic
+        HttpRequestDef.Builder<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppUsagesTopNRequest.class, ListAppUsagesTopNResponse.class)
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/app-usages")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListAppUsagesTopNRequest.ModeEnum.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getMode, (req, v) -> {
+                req.setMode(v);
+            })
+        );
+        builder.withRequestField("roma_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getRomaAppId, (req, v) -> {
+                req.setRomaAppId(v);
+            })
+        );
+        builder.withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            })
+        );
+        builder.withRequestField("cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListAppUsagesTopNRequest.CycleEnum.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getCycle, (req, v) -> {
+                req.setCycle(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("duration",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppUsagesTopNRequest::getDuration, (req, v) -> {
+                req.setDuration(v);
             })
         );
 
@@ -4589,6 +4765,62 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> listRomaAppUsagesTopN = genForlistRomaAppUsagesTopN();
+
+    private static HttpRequestDef<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> genForlistRomaAppUsagesTopN() {
+        // basic
+        HttpRequestDef.Builder<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRomaAppUsagesTopNRequest.class, ListRomaAppUsagesTopNResponse.class)
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/roma-app-usages")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListRomaAppUsagesTopNRequest.CycleEnum.class,
+            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getCycle, (req, v) -> {
+                req.setCycle(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("duration",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getDuration, (req, v) -> {
+                req.setDuration(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRulesRequest, ListRulesResponse> listRules = genForlistRules();
 
     private static HttpRequestDef<ListRulesRequest, ListRulesResponse> genForlistRules() {
@@ -5110,6 +5342,158 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> listStatisticsConsumerAppForSplitRomaApps = genForlistStatisticsConsumerAppForSplitRomaApps();
+
+    private static HttpRequestDef<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> genForlistStatisticsConsumerAppForSplitRomaApps() {
+        // basic
+        HttpRequestDef.Builder<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStatisticsConsumerAppForSplitRomaAppsRequest.class, ListStatisticsConsumerAppForSplitRomaAppsResponse.class)
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/apps/{consumer_app_id}/roma-apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("consumer_app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getConsumerAppId, (req, v) -> {
+                req.setConsumerAppId(v);
+            })
+        );
+        builder.withRequestField("roma_app_ids",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getRomaAppIds, (req, v) -> {
+                req.setRomaAppIds(v);
+            })
+        );
+        builder.withRequestField("cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListStatisticsConsumerAppForSplitRomaAppsRequest.CycleEnum.class,
+            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getCycle, (req, v) -> {
+                req.setCycle(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("duration",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getDuration, (req, v) -> {
+                req.setDuration(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> listStatisticsRomaApp = genForlistStatisticsRomaApp();
+
+    private static HttpRequestDef<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> genForlistStatisticsRomaApp() {
+        // basic
+        HttpRequestDef.Builder<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListStatisticsRomaAppRequest.class, ListStatisticsRomaAppResponse.class)
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/roma-app")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListStatisticsRomaAppRequest.ModeEnum.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getMode, (req, v) -> {
+                req.setMode(v);
+            })
+        );
+        builder.withRequestField("consumer_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getConsumerAppId, (req, v) -> {
+                req.setConsumerAppId(v);
+            })
+        );
+        builder.withRequestField("roma_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getRomaAppId, (req, v) -> {
+                req.setRomaAppId(v);
+            })
+        );
+        builder.withRequestField("cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListStatisticsRomaAppRequest.CycleEnum.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getCycle, (req, v) -> {
+                req.setCycle(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("duration",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getDuration, (req, v) -> {
+                req.setDuration(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSubsetsRequest, ListSubsetsResponse> listSubsets = genForlistSubsets();
 
     private static HttpRequestDef<ListSubsetsRequest, ListSubsetsResponse> genForlistSubsets() {
@@ -5406,6 +5790,38 @@ public class RomaMeta {
             Integer.class,
             f -> f.withMarshaller(ResetProductAuthenticationRequest::getProductId, (req, v) -> {
                 req.setProductId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunTaskRequest, RunTaskResponse> runTask = genForrunTask();
+
+    private static HttpRequestDef<RunTaskRequest, RunTaskResponse> genForrunTask() {
+        // basic
+        HttpRequestDef.Builder<RunTaskRequest, RunTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunTaskRequest.class, RunTaskResponse.class)
+                .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}/run")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RunTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RunTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             })
         );
 
@@ -5998,6 +6414,70 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> showDevicesInGroup = genForshowDevicesInGroup();
+
+    private static HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> genForshowDevicesInGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDevicesInGroupRequest.class, ShowDevicesInGroupResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups/{group_id}/devices")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("product_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getProductName, (req, v) -> {
+                req.setProductName(v);
+            })
+        );
+        builder.withRequestField("device_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getDeviceName, (req, v) -> {
+                req.setDeviceName(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> showLiveDataApiV2 = genForshowLiveDataApiV2();
 
     private static HttpRequestDef<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> genForshowLiveDataApiV2() {
@@ -6238,6 +6718,126 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProductTemplateRequest, ShowProductTemplateResponse> showProductTemplate = genForshowProductTemplate();
+
+    private static HttpRequestDef<ShowProductTemplateRequest, ShowProductTemplateResponse> genForshowProductTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowProductTemplateRequest, ShowProductTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProductTemplateRequest.class, ShowProductTemplateResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/product-templates/{product_template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowProductTemplateRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("product_template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowProductTemplateRequest::getProductTemplateId, (req, v) -> {
+                req.setProductTemplateId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPropertyRequest, ShowPropertyResponse> showProperty = genForshowProperty();
+
+    private static HttpRequestDef<ShowPropertyRequest, ShowPropertyResponse> genForshowProperty() {
+        // basic
+        HttpRequestDef.Builder<ShowPropertyRequest, ShowPropertyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPropertyRequest.class, ShowPropertyResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties/{property_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPropertyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPropertyRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            })
+        );
+        builder.withRequestField("property_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowPropertyRequest::getPropertyId, (req, v) -> {
+                req.setPropertyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRequestPropertyRequest, ShowRequestPropertyResponse> showRequestProperty = genForshowRequestProperty();
+
+    private static HttpRequestDef<ShowRequestPropertyRequest, ShowRequestPropertyResponse> genForshowRequestProperty() {
+        // basic
+        HttpRequestDef.Builder<ShowRequestPropertyRequest, ShowRequestPropertyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRequestPropertyRequest.class, ShowRequestPropertyResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/requests/{property_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            })
+        );
+        builder.withRequestField("command_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getCommandId, (req, v) -> {
+                req.setCommandId(v);
+            })
+        );
+        builder.withRequestField("property_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowRequestPropertyRequest::getPropertyId, (req, v) -> {
+                req.setPropertyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowResponsePropertyRequest, ShowResponsePropertyResponse> showResponseProperty = genForshowResponseProperty();
 
     private static HttpRequestDef<ShowResponsePropertyRequest, ShowResponsePropertyResponse> genForshowResponseProperty() {
@@ -6278,6 +6878,30 @@ public class RomaMeta {
             Integer.class,
             f -> f.withMarshaller(ShowResponsePropertyRequest::getPropertyId, (req, v) -> {
                 req.setPropertyId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2 = genForshowRestrictionOfInstanceV2();
+
+    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForshowRestrictionOfInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRestrictionOfInstanceV2Request.class, ShowRestrictionOfInstanceV2Response.class)
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/restriction")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             })
         );
 
@@ -6997,6 +7621,54 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateProductTopicRequestBody.class,
             f -> f.withMarshaller(UpdateProductTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePropertyRequest, UpdatePropertyResponse> updateProperty = genForupdateProperty();
+
+    private static HttpRequestDef<UpdatePropertyRequest, UpdatePropertyResponse> genForupdateProperty() {
+        // basic
+        HttpRequestDef.Builder<UpdatePropertyRequest, UpdatePropertyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePropertyRequest.class, UpdatePropertyResponse.class)
+                .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties/{property_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdatePropertyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdatePropertyRequest::getServiceId, (req, v) -> {
+                req.setServiceId(v);
+            })
+        );
+        builder.withRequestField("property_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(UpdatePropertyRequest::getPropertyId, (req, v) -> {
+                req.setPropertyId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdatePropertyRequestBody.class,
+            f -> f.withMarshaller(UpdatePropertyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -7845,6 +8517,38 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ApiCheckInfo.class,
             f -> f.withMarshaller(CheckApisV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivity = genForcheckBackendConnectivity();
+
+    private static HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> genForcheckBackendConnectivity() {
+        // basic
+        HttpRequestDef.Builder<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckBackendConnectivityRequest.class, CheckBackendConnectivityResponse.class)
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/backend/connectivity/check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckBackendConnectivityRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CheckBackendConnectivityReq.class,
+            f -> f.withMarshaller(CheckBackendConnectivityRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -9486,6 +10190,734 @@ public class RomaMeta {
             String.class,
             f -> f.withMarshaller(ListDuplicateApisForAppV2Request::getAppId, (req, v) -> {
                 req.setAppId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddUserToAppRequest, AddUserToAppResponse> addUserToApp = genForaddUserToApp();
+
+    private static HttpRequestDef<AddUserToAppRequest, AddUserToAppResponse> genForaddUserToApp() {
+        // basic
+        HttpRequestDef.Builder<AddUserToAppRequest, AddUserToAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddUserToAppRequest.class, AddUserToAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AddUserToAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AddUserToAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AddUserToApp.class,
+            f -> f.withMarshaller(AddUserToAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> checkAuthUsersOfApp = genForcheckAuthUsersOfApp();
+
+    private static HttpRequestDef<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> genForcheckAuthUsersOfApp() {
+        // basic
+        HttpRequestDef.Builder<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckAuthUsersOfAppRequest.class, CheckAuthUsersOfAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckAuthUsersOfAppRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> checkCanAuthUsersOfApp = genForcheckCanAuthUsersOfApp();
+
+    private static HttpRequestDef<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> genForcheckCanAuthUsersOfApp() {
+        // basic
+        HttpRequestDef.Builder<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckCanAuthUsersOfAppRequest.class, CheckCanAuthUsersOfAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/candidates")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckCanAuthUsersOfAppRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> checkRomaAppDetails = genForcheckRomaAppDetails();
+
+    private static HttpRequestDef<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> genForcheckRomaAppDetails() {
+        // basic
+        HttpRequestDef.Builder<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckRomaAppDetailsRequest.class, CheckRomaAppDetailsResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckRomaAppDetailsRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckRomaAppDetailsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> checkRomaAppSecret = genForcheckRomaAppSecret();
+
+    private static HttpRequestDef<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> genForcheckRomaAppSecret() {
+        // basic
+        HttpRequestDef.Builder<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckRomaAppSecretRequest.class, CheckRomaAppSecretResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/secret")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckRomaAppSecretRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckRomaAppSecretRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRomaAppRequest, CreateRomaAppResponse> createRomaApp = genForcreateRomaApp();
+
+    private static HttpRequestDef<CreateRomaAppRequest, CreateRomaAppResponse> genForcreateRomaApp() {
+        // basic
+        HttpRequestDef.Builder<CreateRomaAppRequest, CreateRomaAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRomaAppRequest.class, CreateRomaAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateRomaAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateAppReq.class,
+            f -> f.withMarshaller(CreateRomaAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRomaAppRequest, DeleteRomaAppResponse> deleteRomaApp = genFordeleteRomaApp();
+
+    private static HttpRequestDef<DeleteRomaAppRequest, DeleteRomaAppResponse> genFordeleteRomaApp() {
+        // basic
+        HttpRequestDef.Builder<DeleteRomaAppRequest, DeleteRomaAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRomaAppRequest.class, DeleteRomaAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteRomaAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteRomaAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRomaAppRequest, ListRomaAppResponse> listRomaApp = genForlistRomaApp();
+
+    private static HttpRequestDef<ListRomaAppRequest, ListRomaAppResponse> genForlistRomaApp() {
+        // basic
+        HttpRequestDef.Builder<ListRomaAppRequest, ListRomaAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRomaAppRequest.class, ListRomaAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("favorite",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getFavorite, (req, v) -> {
+                req.setFavorite(v);
+            })
+        );
+        builder.withRequestField("auth_role",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getAuthRole, (req, v) -> {
+                req.setAuthRole(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getOwner, (req, v) -> {
+                req.setOwner(v);
+            })
+        );
+        builder.withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRomaAppRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> resetRomaAppSecret = genForresetRomaAppSecret();
+
+    private static HttpRequestDef<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> genForresetRomaAppSecret() {
+        // basic
+        HttpRequestDef.Builder<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetRomaAppSecretRequest.class, ResetRomaAppSecretResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/secret")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResetRomaAppSecretRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResetRomaAppSecretRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateAppSecretReq.class,
+            f -> f.withMarshaller(ResetRomaAppSecretRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRomaAppRequest, UpdateRomaAppResponse> updateRomaApp = genForupdateRomaApp();
+
+    private static HttpRequestDef<UpdateRomaAppRequest, UpdateRomaAppResponse> genForupdateRomaApp() {
+        // basic
+        HttpRequestDef.Builder<UpdateRomaAppRequest, UpdateRomaAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRomaAppRequest.class, UpdateRomaAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRomaAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRomaAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateAppReq.class,
+            f -> f.withMarshaller(UpdateRomaAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateRomaAppRequest, ValidateRomaAppResponse> validateRomaApp = genForvalidateRomaApp();
+
+    private static HttpRequestDef<ValidateRomaAppRequest, ValidateRomaAppResponse> genForvalidateRomaApp() {
+        // basic
+        HttpRequestDef.Builder<ValidateRomaAppRequest, ValidateRomaAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ValidateRomaAppRequest.class, ValidateRomaAppResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/validate-apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ValidateRomaAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ValidateRomaAppRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ValidateRomaAppRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ValidateRomaAppRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> checkAssetJobStatus = genForcheckAssetJobStatus();
+
+    private static HttpRequestDef<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> genForcheckAssetJobStatus() {
+        // basic
+        HttpRequestDef.Builder<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckAssetJobStatusRequest.class, CheckAssetJobStatusResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/assets/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckAssetJobStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckAssetJobStatusRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckDictionaryRequest, CheckDictionaryResponse> checkDictionary = genForcheckDictionary();
+
+    private static HttpRequestDef<CheckDictionaryRequest, CheckDictionaryResponse> genForcheckDictionary() {
+        // basic
+        HttpRequestDef.Builder<CheckDictionaryRequest, CheckDictionaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckDictionaryRequest.class, CheckDictionaryResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("dict_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckDictionaryRequest::getDictId, (req, v) -> {
+                req.setDictId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CheckDictionaryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDictionaryRequest, CreateDictionaryResponse> createDictionary = genForcreateDictionary();
+
+    private static HttpRequestDef<CreateDictionaryRequest, CreateDictionaryResponse> genForcreateDictionary() {
+        // basic
+        HttpRequestDef.Builder<CreateDictionaryRequest, CreateDictionaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDictionaryRequest.class, CreateDictionaryResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateDictionaryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateDictionary.class,
+            f -> f.withMarshaller(CreateDictionaryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDictionaryRequest, DeleteDictionaryResponse> deleteDictionary = genFordeleteDictionary();
+
+    private static HttpRequestDef<DeleteDictionaryRequest, DeleteDictionaryResponse> genFordeleteDictionary() {
+        // basic
+        HttpRequestDef.Builder<DeleteDictionaryRequest, DeleteDictionaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDictionaryRequest.class, DeleteDictionaryResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("dict_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDictionaryRequest::getDictId, (req, v) -> {
+                req.setDictId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDictionaryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDictionaryRequest, ListDictionaryResponse> listDictionary = genForlistDictionary();
+
+    private static HttpRequestDef<ListDictionaryRequest, ListDictionaryResponse> genForlistDictionary() {
+        // basic
+        HttpRequestDef.Builder<ListDictionaryRequest, ListDictionaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDictionaryRequest.class, ListDictionaryResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDictionaryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDictionaryRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDictionaryRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("parent_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDictionaryRequest::getParentCode, (req, v) -> {
+                req.setParentCode(v);
+            })
+        );
+        builder.withRequestField("code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDictionaryRequest::getCode, (req, v) -> {
+                req.setCode(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDictionaryRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDictionaryRequest, UpdateDictionaryResponse> updateDictionary = genForupdateDictionary();
+
+    private static HttpRequestDef<UpdateDictionaryRequest, UpdateDictionaryResponse> genForupdateDictionary() {
+        // basic
+        HttpRequestDef.Builder<UpdateDictionaryRequest, UpdateDictionaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDictionaryRequest.class, UpdateDictionaryResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("dict_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDictionaryRequest::getDictId, (req, v) -> {
+                req.setDictId(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDictionaryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateDictionary.class,
+            f -> f.withMarshaller(UpdateDictionaryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateDictionaryRequest, ValidateDictionaryResponse> validateDictionary = genForvalidateDictionary();
+
+    private static HttpRequestDef<ValidateDictionaryRequest, ValidateDictionaryResponse> genForvalidateDictionary() {
+        // basic
+        HttpRequestDef.Builder<ValidateDictionaryRequest, ValidateDictionaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ValidateDictionaryRequest.class, ValidateDictionaryResponse.class)
+                .withUri("/v2/{project_id}/instances/{instance_id}/validate-dictionaries")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ValidateDictionaryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ValidateDictionaryRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ValidateDictionaryRequest::getCode, (req, v) -> {
+                req.setCode(v);
             })
         );
 

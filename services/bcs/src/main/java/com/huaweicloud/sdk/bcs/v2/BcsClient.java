@@ -106,7 +106,7 @@ public class BcsClient {
 
     /**
      * 查询BCS服务实例监控数据
-     * 该接口用于查询BCS服务的监控数据，可以指定相应的指标名称。
+     * [该接口用于查询BCS服务的监控数据，可以指定相应的指标名称,目前不支持IEF节点](tag:online)[该接口用于查询BCS服务的监控数据，可以指定相应的指标名称](tag:hcs)
      *
      * @param ListBcsMetricRequest 请求对象
      * @return ListBcsMetricResponse

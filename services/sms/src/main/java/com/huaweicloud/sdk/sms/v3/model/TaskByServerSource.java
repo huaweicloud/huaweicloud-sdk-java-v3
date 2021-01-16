@@ -211,6 +211,8 @@ public class TaskByServerSource  {
 
     /**
      * 开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return startDate
      */
     public Long getStartDate() {
@@ -231,6 +233,8 @@ public class TaskByServerSource  {
 
     /**
      * 限速
+     * minimum: 0
+     * maximum: 10000
      * @return speedLimit
      */
     public Integer getSpeedLimit() {
@@ -251,6 +255,8 @@ public class TaskByServerSource  {
 
     /**
      * 迁移速率
+     * minimum: 0
+     * maximum: 10000
      * @return migrateSpeed
      */
     public Integer getMigrateSpeed() {

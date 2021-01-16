@@ -273,6 +273,39 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取跨区域备份列表
+     * 获取跨区域备份列表。
+     *
+     * @param ListOffSiteBackupsRequest 请求对象
+     * @return CompletableFuture<ListOffSiteBackupsResponse>
+     */
+    public CompletableFuture<ListOffSiteBackupsResponse> listOffSiteBackupsAsync(ListOffSiteBackupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listOffSiteBackups);
+    }
+
+    /**
+     * 查询跨区域备份实例列表
+     * 查询跨区域备份实例列表。
+     *
+     * @param ListOffSiteInstancesRequest 请求对象
+     * @return CompletableFuture<ListOffSiteInstancesResponse>
+     */
+    public CompletableFuture<ListOffSiteInstancesResponse> listOffSiteInstancesAsync(ListOffSiteInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listOffSiteInstances);
+    }
+
+    /**
+     * 查询跨区域可恢复时间段
+     * 查询跨区域可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     *
+     * @param ListOffSiteRestoreTimesRequest 请求对象
+     * @return CompletableFuture<ListOffSiteRestoreTimesResponse>
+     */
+    public CompletableFuture<ListOffSiteRestoreTimesResponse> listOffSiteRestoreTimesAsync(ListOffSiteRestoreTimesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listOffSiteRestoreTimes);
+    }
+
+    /**
      * 查询项目标签
      * 查询项目标签。
      *
@@ -416,6 +449,17 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 设置跨区域备份策略
+     * 设置跨区域备份策略。
+     *
+     * @param SetOffSiteBackupPolicyRequest 请求对象
+     * @return CompletableFuture<SetOffSiteBackupPolicyResponse>
+     */
+    public CompletableFuture<SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicyAsync(SetOffSiteBackupPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setOffSiteBackupPolicy);
+    }
+
+    /**
      * 修改安全组
      * 修改安全组
      *
@@ -490,6 +534,17 @@ public class RdsAsyncClient {
      */
     public CompletableFuture<ShowInstanceConfigurationResponse> showInstanceConfigurationAsync(ShowInstanceConfigurationRequest request) {
         return hcClient.asyncInvokeHttp(request, RdsMeta.showInstanceConfiguration);
+    }
+
+    /**
+     * 查询跨区域备份策略
+     * 查询跨区域备份策略。
+     *
+     * @param ShowOffSiteBackupPolicyRequest 请求对象
+     * @return CompletableFuture<ShowOffSiteBackupPolicyResponse>
+     */
+    public CompletableFuture<ShowOffSiteBackupPolicyResponse> showOffSiteBackupPolicyAsync(ShowOffSiteBackupPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showOffSiteBackupPolicy);
     }
 
     /**

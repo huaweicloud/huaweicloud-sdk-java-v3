@@ -270,6 +270,39 @@ public class RdsClient {
     }
 
     /**
+     * 获取跨区域备份列表
+     * 获取跨区域备份列表。
+     *
+     * @param ListOffSiteBackupsRequest 请求对象
+     * @return ListOffSiteBackupsResponse
+     */
+    public ListOffSiteBackupsResponse listOffSiteBackups(ListOffSiteBackupsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listOffSiteBackups);
+    }
+
+    /**
+     * 查询跨区域备份实例列表
+     * 查询跨区域备份实例列表。
+     *
+     * @param ListOffSiteInstancesRequest 请求对象
+     * @return ListOffSiteInstancesResponse
+     */
+    public ListOffSiteInstancesResponse listOffSiteInstances(ListOffSiteInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listOffSiteInstances);
+    }
+
+    /**
+     * 查询跨区域可恢复时间段
+     * 查询跨区域可恢复时间段。 如果您备份策略中的保存天数设置较长，建议您传入查询日期“date”。
+     *
+     * @param ListOffSiteRestoreTimesRequest 请求对象
+     * @return ListOffSiteRestoreTimesResponse
+     */
+    public ListOffSiteRestoreTimesResponse listOffSiteRestoreTimes(ListOffSiteRestoreTimesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listOffSiteRestoreTimes);
+    }
+
+    /**
      * 查询项目标签
      * 查询项目标签。
      *
@@ -413,6 +446,17 @@ public class RdsClient {
     }
 
     /**
+     * 设置跨区域备份策略
+     * 设置跨区域备份策略。
+     *
+     * @param SetOffSiteBackupPolicyRequest 请求对象
+     * @return SetOffSiteBackupPolicyResponse
+     */
+    public SetOffSiteBackupPolicyResponse setOffSiteBackupPolicy(SetOffSiteBackupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setOffSiteBackupPolicy);
+    }
+
+    /**
      * 修改安全组
      * 修改安全组
      *
@@ -487,6 +531,17 @@ public class RdsClient {
      */
     public ShowInstanceConfigurationResponse showInstanceConfiguration(ShowInstanceConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, RdsMeta.showInstanceConfiguration);
+    }
+
+    /**
+     * 查询跨区域备份策略
+     * 查询跨区域备份策略。
+     *
+     * @param ShowOffSiteBackupPolicyRequest 请求对象
+     * @return ShowOffSiteBackupPolicyResponse
+     */
+    public ShowOffSiteBackupPolicyResponse showOffSiteBackupPolicy(ShowOffSiteBackupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showOffSiteBackupPolicy);
     }
 
     /**

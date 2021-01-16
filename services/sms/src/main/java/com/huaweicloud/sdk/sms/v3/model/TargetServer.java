@@ -245,7 +245,7 @@ public class TargetServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<TargetDisk> disks = null;
+    private List<TargetDisk> disks = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -577,6 +577,8 @@ public class TargetServer  {
 
     /**
      * CPU个数，单位vCPU
+     * minimum: 0
+     * maximum: 65535
      * @return cpuQuantity
      */
     public Integer getCpuQuantity() {
@@ -597,6 +599,8 @@ public class TargetServer  {
 
     /**
      * 内存大小，单位MB
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return memory
      */
     public Long getMemory() {
@@ -614,9 +618,6 @@ public class TargetServer  {
 
     
     public TargetServer addDisksItem(TargetDisk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
         this.disks.add(disksItem);
         return this;
     }

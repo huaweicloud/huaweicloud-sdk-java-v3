@@ -42,7 +42,7 @@ public class BatchInviteMembersToChannelRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invited_userinfo")
     
-    private List<InvitedDomain> invitedUserinfo = null;
+    private List<InvitedDomain> invitedUserinfo = new ArrayList<>();
     
     public BatchInviteMembersToChannelRequestBody withBcsId(String bcsId) {
         this.bcsId = bcsId;
@@ -111,9 +111,6 @@ public class BatchInviteMembersToChannelRequestBody  {
 
     
     public BatchInviteMembersToChannelRequestBody addInvitedUserinfoItem(InvitedDomain invitedUserinfoItem) {
-        if (this.invitedUserinfo == null) {
-            this.invitedUserinfo = new ArrayList<>();
-        }
         this.invitedUserinfo.add(invitedUserinfoItem);
         return this;
     }

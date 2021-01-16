@@ -25,6 +25,12 @@ public class HandleNotificationInvitee  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="invitee_bcs_name")
+    
+    private String inviteeBcsName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitee_project_id")
     
     private String inviteeProjectId;
@@ -53,6 +59,26 @@ public class HandleNotificationInvitee  {
 
     public void setInviteeBcsId(String inviteeBcsId) {
         this.inviteeBcsId = inviteeBcsId;
+    }
+
+    public HandleNotificationInvitee withInviteeBcsName(String inviteeBcsName) {
+        this.inviteeBcsName = inviteeBcsName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 被邀请方服务实例名称，同意联盟邀请时比填
+     * @return inviteeBcsName
+     */
+    public String getInviteeBcsName() {
+        return inviteeBcsName;
+    }
+
+    public void setInviteeBcsName(String inviteeBcsName) {
+        this.inviteeBcsName = inviteeBcsName;
     }
 
     public HandleNotificationInvitee withInviteeProjectId(String inviteeProjectId) {
@@ -104,18 +130,20 @@ public class HandleNotificationInvitee  {
         }
         HandleNotificationInvitee handleNotificationInvitee = (HandleNotificationInvitee) o;
         return Objects.equals(this.inviteeBcsId, handleNotificationInvitee.inviteeBcsId) &&
+            Objects.equals(this.inviteeBcsName, handleNotificationInvitee.inviteeBcsName) &&
             Objects.equals(this.inviteeProjectId, handleNotificationInvitee.inviteeProjectId) &&
             Objects.equals(this.inviteeUserId, handleNotificationInvitee.inviteeUserId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(inviteeBcsId, inviteeProjectId, inviteeUserId);
+        return Objects.hash(inviteeBcsId, inviteeBcsName, inviteeProjectId, inviteeUserId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class HandleNotificationInvitee {\n");
         sb.append("    inviteeBcsId: ").append(toIndentedString(inviteeBcsId)).append("\n");
+        sb.append("    inviteeBcsName: ").append(toIndentedString(inviteeBcsName)).append("\n");
         sb.append("    inviteeProjectId: ").append(toIndentedString(inviteeProjectId)).append("\n");
         sb.append("    inviteeUserId: ").append(toIndentedString(inviteeUserId)).append("\n");
         sb.append("}");

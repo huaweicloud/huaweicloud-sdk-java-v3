@@ -222,6 +222,12 @@ public class Subnet  {
     
     private List<ExtraDhcpOption> extraDhcpOpts = new ArrayList<>();
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="scope")
+    
+    private String scope;
+
     public Subnet withId(String id) {
         this.id = id;
         return this;
@@ -623,6 +629,26 @@ public class Subnet  {
     public void setExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
     }
+
+    public Subnet withScope(String scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：子网作用域 取值范围：center-表示作用域为中心；{azId}表示作用域为具体的AZ
+     * @return scope
+     */
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -650,11 +676,12 @@ public class Subnet  {
             Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId) &&
             Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId) &&
             Objects.equals(this.neutronSubnetIdV6, subnet.neutronSubnetIdV6) &&
-            Objects.equals(this.extraDhcpOpts, subnet.extraDhcpOpts);
+            Objects.equals(this.extraDhcpOpts, subnet.extraDhcpOpts) &&
+            Objects.equals(this.scope, subnet.scope);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, cidr, gatewayIp, ipv6Enable, cidrV6, gatewayIpV6, dhcpEnable, primaryDns, secondaryDns, dnsList, availabilityZone, vpcId, status, neutronNetworkId, neutronSubnetId, neutronSubnetIdV6, extraDhcpOpts);
+        return Objects.hash(id, name, description, cidr, gatewayIp, ipv6Enable, cidrV6, gatewayIpV6, dhcpEnable, primaryDns, secondaryDns, dnsList, availabilityZone, vpcId, status, neutronNetworkId, neutronSubnetId, neutronSubnetIdV6, extraDhcpOpts, scope);
     }
     @Override
     public String toString() {
@@ -679,6 +706,7 @@ public class Subnet  {
         sb.append("    neutronSubnetId: ").append(toIndentedString(neutronSubnetId)).append("\n");
         sb.append("    neutronSubnetIdV6: ").append(toIndentedString(neutronSubnetIdV6)).append("\n");
         sb.append("    extraDhcpOpts: ").append(toIndentedString(extraDhcpOpts)).append("\n");
+        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("}");
         return sb.toString();
     }

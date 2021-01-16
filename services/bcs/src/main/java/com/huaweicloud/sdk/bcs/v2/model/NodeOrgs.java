@@ -84,7 +84,7 @@ public class NodeOrgs  {
 
 
     /**
-     * pvc名称
+     * pvc名称，添加组织时需要提供pvc_name
      * @return pvcName
      */
     public String getPvcName() {

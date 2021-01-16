@@ -48,19 +48,19 @@ public class BtrfsFileSystem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private String size;
+    private Long size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodesize")
     
-    private String nodesize;
+    private Long nodesize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sectorsize")
     
-    private String sectorsize;
+    private Integer sectorsize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -90,7 +90,7 @@ public class BtrfsFileSystem  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="g_vol_used_size")
     
-    private String gVolUsedSize;
+    private Long gVolUsedSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -196,7 +196,7 @@ public class BtrfsFileSystem  {
         this.device = device;
     }
 
-    public BtrfsFileSystem withSize(String size) {
+    public BtrfsFileSystem withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -206,17 +206,19 @@ public class BtrfsFileSystem  {
 
     /**
      * 文件系统数据占用大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
-    public String getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
-    public BtrfsFileSystem withNodesize(String nodesize) {
+    public BtrfsFileSystem withNodesize(Long nodesize) {
         this.nodesize = nodesize;
         return this;
     }
@@ -226,17 +228,19 @@ public class BtrfsFileSystem  {
 
     /**
      * btrfs节点大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return nodesize
      */
-    public String getNodesize() {
+    public Long getNodesize() {
         return nodesize;
     }
 
-    public void setNodesize(String nodesize) {
+    public void setNodesize(Long nodesize) {
         this.nodesize = nodesize;
     }
 
-    public BtrfsFileSystem withSectorsize(String sectorsize) {
+    public BtrfsFileSystem withSectorsize(Integer sectorsize) {
         this.sectorsize = sectorsize;
         return this;
     }
@@ -246,13 +250,15 @@ public class BtrfsFileSystem  {
 
     /**
      * 扇区大小
+     * minimum: 0
+     * maximum: 2147483647
      * @return sectorsize
      */
-    public String getSectorsize() {
+    public Integer getSectorsize() {
         return sectorsize;
     }
 
-    public void setSectorsize(String sectorsize) {
+    public void setSectorsize(Integer sectorsize) {
         this.sectorsize = sectorsize;
     }
 
@@ -336,7 +342,7 @@ public class BtrfsFileSystem  {
         this.globalReserve1 = globalReserve1;
     }
 
-    public BtrfsFileSystem withGVolUsedSize(String gVolUsedSize) {
+    public BtrfsFileSystem withGVolUsedSize(Long gVolUsedSize) {
         this.gVolUsedSize = gVolUsedSize;
         return this;
     }
@@ -345,16 +351,18 @@ public class BtrfsFileSystem  {
 
 
     /**
-     * Btrfs文件系统信息
+     * Btrfs卷已使用空间大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return gVolUsedSize
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="g_vol_used_size")
-    public String getGVolUsedSize() {
+    public Long getGVolUsedSize() {
         return gVolUsedSize;
     }
 
-    public void setGVolUsedSize(String gVolUsedSize) {
+    public void setGVolUsedSize(Long gVolUsedSize) {
         this.gVolUsedSize = gVolUsedSize;
     }
 

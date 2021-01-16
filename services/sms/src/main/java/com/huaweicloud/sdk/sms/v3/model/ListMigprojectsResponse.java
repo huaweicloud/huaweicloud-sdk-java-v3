@@ -45,6 +45,7 @@ public class ListMigprojectsResponse extends SdkResponse {
     /**
      * 查询到的迁移项目的数量
      * minimum: 0
+     * maximum: 2147483647
      * @return count
      */
     public Integer getCount() {

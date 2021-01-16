@@ -24,7 +24,7 @@ public class UpdateInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_orgs")
     
-    private List<NodeOrgs> nodeOrgs = null;
+    private List<NodeOrgs> nodeOrgs = new ArrayList<>();
     
     public UpdateInstanceRequestBody withNodeOrgs(List<NodeOrgs> nodeOrgs) {
         this.nodeOrgs = nodeOrgs;
@@ -33,9 +33,6 @@ public class UpdateInstanceRequestBody  {
 
     
     public UpdateInstanceRequestBody addNodeOrgsItem(NodeOrgs nodeOrgsItem) {
-        if (this.nodeOrgs == null) {
-            this.nodeOrgs = new ArrayList<>();
-        }
         this.nodeOrgs.add(nodeOrgsItem);
         return this;
     }

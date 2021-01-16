@@ -48,7 +48,7 @@ public class RunJobRequestBody  {
 
 
     /**
-     * 构建任务ID
+     * 构建任务ID；编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串
      * @return jobId
      */
     public String getJobId() {

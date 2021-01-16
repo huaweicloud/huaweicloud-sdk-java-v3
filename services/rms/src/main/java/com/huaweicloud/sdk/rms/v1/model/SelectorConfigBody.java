@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * tracker 选择器
+ * tracker选择器
  */
 public class SelectorConfigBody  {
 

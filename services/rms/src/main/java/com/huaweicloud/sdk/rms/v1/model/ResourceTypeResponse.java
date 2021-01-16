@@ -164,7 +164,7 @@ public class ResourceTypeResponse  {
 
 
     /**
-     * console对应的地址
+     * console终端id
      * @return consoleEndpointId
      */
     public String getConsoleEndpointId() {

@@ -299,7 +299,7 @@ public class ResourceEntity  {
 
 
     /**
-     * 资源详情摘要
+     * 资源详情校验码
      * @return checksum
      */
     public String getChecksum() {
@@ -359,7 +359,7 @@ public class ResourceEntity  {
 
 
     /**
-     * 资源发放状态
+     * 资源操作状态
      * @return provisioningState
      */
     public String getProvisioningState() {

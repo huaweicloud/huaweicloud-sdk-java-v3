@@ -511,7 +511,7 @@ public class ShowInstanceResponse extends SdkResponse {
 
 
     /**
-     * 维护时间窗开始时间，格式为HH:mm:ss
+     * 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -531,7 +531,7 @@ public class ShowInstanceResponse extends SdkResponse {
 
 
     /**
-     * 维护时间窗结束时间，格式为HH:mm:ss
+     * 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss
      * @return maintainEnd
      */
     public String getMaintainEnd() {

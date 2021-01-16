@@ -20,8 +20,8 @@ public class DevStarAsyncClient {
 
 
     /**
-     * 下载模板产物
-     * 下载模板产物
+     * 下载代码工程
+     * 通过任务ID下载ZIP格式的代码工程。
      *
      * @param DownloadApplicationCodeRequest 请求对象
      * @return CompletableFuture<DownloadApplicationCodeResponse>

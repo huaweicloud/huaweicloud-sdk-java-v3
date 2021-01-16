@@ -217,7 +217,7 @@ public class Stacks  {
     /**
      * id
      * minimum: 1
-     * maximum: 9223372036854775807
+     * maximum: -9223372036854775616
      * @return id
      */
     public Long getId() {
@@ -317,7 +317,7 @@ public class Stacks  {
 
 
     /**
-     * 技术栈ID 目前可取值all，java，go，python，cpp，nodejs，quantum，blockchain，dcn，vue，ruby。
+     * 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
      * @return stackId
      */
     public String getStackId() {

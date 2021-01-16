@@ -39,7 +39,6 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.huaweicloud.sdk.core.auth.ICredential;
-import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.exception.ServerResponseException;
 import com.huaweicloud.sdk.core.exception.ServiceResponseException;
@@ -51,7 +50,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.impl.DefaultHttpClient;
-import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 
 public class HcClient implements CustomizationConfigure {
@@ -68,15 +67,9 @@ public class HcClient implements CustomizationConfigure {
     private static final int STATUS_CODE_WITH_RESPONSE_ERROR = 400;
 
     private HttpClient httpClient;
-    private Region region;
     private String endpoint;
     private ICredential credential;
     private HttpConfig httpConfig;
-
-    HcClient withRegion(Region region) {
-        this.region = region;
-        return this;
-    }
 
     HcClient withEndpoint(String endpoint) {
         this.endpoint = endpoint;
@@ -93,6 +86,11 @@ public class HcClient implements CustomizationConfigure {
         httpClient = new DefaultHttpClient(this.httpConfig);
     }
 
+    HcClient(HttpConfig httpConfig, HttpClient httpClient) {
+        this.httpConfig = httpConfig;
+        this.httpClient = httpClient;
+    }
+
     public HttpConfig getHttpConfig() {
         return httpConfig;
     }
@@ -101,14 +99,6 @@ public class HcClient implements CustomizationConfigure {
         throws ServiceResponseException {
 
         HttpRequest httpRequest = buildRequest(request, reqDef);
-
-        if (Objects.nonNull(region)) {
-            try {
-                credential = credential.processAuthParams(this.httpClient, region.getId()).get();
-            } catch (InterruptedException | ExecutionException e) {
-                throw new SdkException(e);
-            }
-        }
 
         // 鉴权，处理project_id，domain_id信息
         if (Objects.nonNull(credential)) {
@@ -124,10 +114,11 @@ public class HcClient implements CustomizationConfigure {
 
         if (httpResponse.getStatusCode() >= STATUS_CODE_WITH_RESPONSE_ERROR) {
             logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                httpRequest.getUrl().getHost(), httpRequest.getUrl(), extractErrorMessage(httpResponse));
+                httpRequest.getUrl().getHost(), httpRequest.getUrl(),
+                ExceptionUtils.extractErrorMessage(httpResponse));
 
             throw ServiceResponseException.mapException(httpResponse.getStatusCode(),
-                extractErrorMessage(httpResponse));
+                ExceptionUtils.extractErrorMessage(httpResponse));
         }
 
         return extractResponse(httpResponse, reqDef);
@@ -146,83 +137,16 @@ public class HcClient implements CustomizationConfigure {
                 if (httpResponse.getStatusCode() >= STATUS_CODE_WITH_RESPONSE_ERROR) {
                     logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
                         validHttpRequest.getUrl().getHost(), validHttpRequest.getUrl(),
-                        extractErrorMessage(httpResponse));
+                        ExceptionUtils.extractErrorMessage(httpResponse));
                     throw ServiceResponseException.mapException(httpResponse.getStatusCode(),
-                        extractErrorMessage(httpResponse));
+                        ExceptionUtils.extractErrorMessage(httpResponse));
                 }
                 ResT response = extractResponse(httpResponse, reqDef);
                 return response;
             }));
     }
 
-    private SdkErrorMessage extractErrorMessage(HttpResponse httpResponse) {
-        String strBody = httpResponse.getBodyAsString();
-        SdkErrorMessage sdkErrorMessage = new SdkErrorMessage(httpResponse.getStatusCode());
-        if (Objects.isNull(strBody)) {
-            return sdkErrorMessage;
-        }
-        try {
-            Map errResult = JsonUtils.toObject(strBody, Map.class);
-
-            if (Objects.isNull(errResult)) {
-                return sdkErrorMessage;
-            }
-            processErrorMessageFromMap(sdkErrorMessage, errResult);
-            processErrorMessageFromNestedMap(sdkErrorMessage, errResult);
-            if (Objects.isNull(sdkErrorMessage.getErrorMsg())) {
-                sdkErrorMessage.setErrorMsg(strBody);
-            }
-
-            if (Objects.isNull(sdkErrorMessage.getRequestId())
-                && Objects.nonNull(httpResponse.getHeader(Constants.X_REQUEST_ID))) {
-                sdkErrorMessage.setRequestId(httpResponse.getHeader(Constants.X_REQUEST_ID));
-            }
-        } catch (SdkException e) {
-            sdkErrorMessage.setErrorMsg(httpResponse.getBodyAsString());
-        }
-
-        return sdkErrorMessage;
-    }
-
-    private void processErrorMessageFromMap(SdkErrorMessage sdkErrorMessage, Map errResult) {
-        sdkErrorMessage
-            .withErrorCode(
-                errResult.containsKey(Constants.ERROR_CODE) ? errResult.get(Constants.ERROR_CODE).toString()
-                    : errResult.containsKey(Constants.CODE) ? errResult.get(Constants.CODE).toString() : null)
-            .withErrorMsg(
-                errResult.containsKey(Constants.ERROR_MSG) ? errResult.get(Constants.ERROR_MSG).toString()
-                    : errResult.containsKey(Constants.MESSAGE) ? errResult.get(Constants.MESSAGE).toString()
-                    : null)
-            .withRequestId(
-                errResult.containsKey(Constants.REQUEST_ID) ? errResult.get(Constants.REQUEST_ID).toString()
-                    : null);
-    }
-
-    private void processErrorMessageFromNestedMap(SdkErrorMessage sdkErrorMessage, Map errResult) {
-        if (!(Objects.isNull(sdkErrorMessage.getErrorCode()) || Objects.isNull(sdkErrorMessage.getErrorMsg()))) {
-            return;
-        }
-
-        errResult.forEach((key, value) -> {
-            if (value instanceof Map) {
-                Map valueMap = ((Map) value);
-                if (Objects.isNull(sdkErrorMessage.getErrorCode())
-                        && valueMap.containsKey(Constants.CODE)) {
-                    sdkErrorMessage.setErrorCode(valueMap.get(Constants.CODE).toString());
-                }
-                if (Objects.isNull(sdkErrorMessage.getErrorMsg())
-                        && valueMap.containsKey(Constants.MESSAGE)) {
-                    sdkErrorMessage.setErrorMsg(valueMap.get(Constants.MESSAGE).toString());
-                }
-            }
-        });
-    }
-
-    protected  <ReqT, ResT> HttpRequest buildRequest(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
-        if (Objects.nonNull(region)) {
-            this.endpoint = region.getEndpoint();
-        }
-
+    protected <ReqT, ResT> HttpRequest buildRequest(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
         HttpRequest.HttpRequestBuilder httpRequestBuilder = HttpRequest.newBuilder();
         httpRequestBuilder.withMethod(reqDef.getMethod())
             .withContentType(reqDef.getContentType())
@@ -244,7 +168,7 @@ public class HcClient implements CustomizationConfigure {
                 }
             }
         }
-        //upload
+        // upload
         if (request instanceof SdkStreamRequest) {
             httpRequestBuilder.withBody(((SdkStreamRequest) request).getBody());
         }

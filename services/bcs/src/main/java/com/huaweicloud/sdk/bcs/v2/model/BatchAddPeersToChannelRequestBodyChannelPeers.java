@@ -30,7 +30,7 @@ public class BatchAddPeersToChannelRequestBodyChannelPeers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="peers")
     
-    private Map<String, Integer> peers = null;
+    private Map<String, Integer> peers = new HashMap<>();
     
     public BatchAddPeersToChannelRequestBodyChannelPeers withChannelName(String channelName) {
         this.channelName = channelName;
@@ -60,9 +60,6 @@ public class BatchAddPeersToChannelRequestBodyChannelPeers  {
     
 
     public BatchAddPeersToChannelRequestBodyChannelPeers putPeersItem(String key, Integer peersItem) {
-         if (this.peers == null) {
-            this.peers = new HashMap<>();
-         }
         this.peers.put(key, peersItem);
         return this;
     }

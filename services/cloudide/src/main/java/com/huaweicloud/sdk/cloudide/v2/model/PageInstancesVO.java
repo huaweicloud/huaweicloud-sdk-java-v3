@@ -159,7 +159,7 @@ public class PageInstancesVO  {
     /**
      * 总数
      * minimum: 1
-     * maximum: 9223372036854775807
+     * maximum: -9223372036854775616
      * @return totalItemsCount
      */
     public Long getTotalItemsCount() {

@@ -251,7 +251,7 @@ public class HandleNotificationRequestBody  {
     }
 
     /**
-     * 加入联盟的组织
+     * 加入联盟的组织，同意加入时必填
      * @return invitedOrgs
      */
     public List<HandleNotificationOrg> getInvitedOrgs() {

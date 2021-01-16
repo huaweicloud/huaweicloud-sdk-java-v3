@@ -22,58 +22,58 @@ import java.util.Objects;
 public class UpdateTaskStatusReq  {
 
     /**
-     * 操作任务的具体动作 start：启动任务,stop：停止任务,collect_log：搜集日志,test：启动目的端,clone_test：克隆目的端,restart：恢复实时同步,sync_failed_rollback：同步失败回滚
+     * 操作任务的具体动作
      */
     public static final class OperationEnum {
 
         
         /**
-         * Enum START for value: "start"
+         * Enum START_ for value: "start：启动任务"
          */
-        public static final OperationEnum START = new OperationEnum("start");
+        public static final OperationEnum START_ = new OperationEnum("start：启动任务");
         
         /**
-         * Enum STOP for value: "stop"
+         * Enum STOP_ for value: "stop：停止任务"
          */
-        public static final OperationEnum STOP = new OperationEnum("stop");
+        public static final OperationEnum STOP_ = new OperationEnum("stop：停止任务");
         
         /**
-         * Enum COLLECT_LOG for value: "collect_log"
+         * Enum COLLECT_LOG_ for value: "collect_log：搜集日志"
          */
-        public static final OperationEnum COLLECT_LOG = new OperationEnum("collect_log");
+        public static final OperationEnum COLLECT_LOG_ = new OperationEnum("collect_log：搜集日志");
         
         /**
-         * Enum TEST for value: "test"
+         * Enum TEST_ for value: "test：启动目的端"
          */
-        public static final OperationEnum TEST = new OperationEnum("test");
+        public static final OperationEnum TEST_ = new OperationEnum("test：启动目的端");
         
         /**
-         * Enum CLONE_TEST for value: "clone_test"
+         * Enum CLONE_TEST_ for value: "clone_test：克隆目的端"
          */
-        public static final OperationEnum CLONE_TEST = new OperationEnum("clone_test");
+        public static final OperationEnum CLONE_TEST_ = new OperationEnum("clone_test：克隆目的端");
         
         /**
-         * Enum RESTART for value: "restart"
+         * Enum RESTART_ for value: "restart：恢复实时同步"
          */
-        public static final OperationEnum RESTART = new OperationEnum("restart");
+        public static final OperationEnum RESTART_ = new OperationEnum("restart：恢复实时同步");
         
         /**
-         * Enum SYNC_FAILED_ROLLBACK for value: "sync_failed_rollback"
+         * Enum SYNC_FAILED_ROLLBACK_ for value: "sync_failed_rollback：同步失败回滚"
          */
-        public static final OperationEnum SYNC_FAILED_ROLLBACK = new OperationEnum("sync_failed_rollback");
+        public static final OperationEnum SYNC_FAILED_ROLLBACK_ = new OperationEnum("sync_failed_rollback：同步失败回滚");
         
 
         private static final Map<String, OperationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, OperationEnum> createStaticFields() {
             Map<String, OperationEnum> map = new HashMap<>();
-            map.put("start", START);
-            map.put("stop", STOP);
-            map.put("collect_log", COLLECT_LOG);
-            map.put("test", TEST);
-            map.put("clone_test", CLONE_TEST);
-            map.put("restart", RESTART);
-            map.put("sync_failed_rollback", SYNC_FAILED_ROLLBACK);
+            map.put("start：启动任务", START_);
+            map.put("stop：停止任务", STOP_);
+            map.put("collect_log：搜集日志", COLLECT_LOG_);
+            map.put("test：启动目的端", TEST_);
+            map.put("clone_test：克隆目的端", CLONE_TEST_);
+            map.put("restart：恢复实时同步", RESTART_);
+            map.put("sync_failed_rollback：同步失败回滚", SYNC_FAILED_ROLLBACK_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -151,7 +151,7 @@ public class UpdateTaskStatusReq  {
 
 
     /**
-     * 操作任务的具体动作 start：启动任务,stop：停止任务,collect_log：搜集日志,test：启动目的端,clone_test：克隆目的端,restart：恢复实时同步,sync_failed_rollback：同步失败回滚
+     * 操作任务的具体动作
      * @return operation
      */
     public OperationEnum getOperation() {

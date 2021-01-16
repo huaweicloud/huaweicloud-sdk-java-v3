@@ -144,7 +144,7 @@ public class BcsMeta {
         );
         builder.withRequestField("is_delete_storage",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             Boolean.class,
             f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteStorage, (req, v) -> {
                 req.setIsDeleteStorage(v);
@@ -156,6 +156,14 @@ public class BcsMeta {
             Boolean.class,
             f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteObs, (req, v) -> {
                 req.setIsDeleteObs(v);
+            })
+        );
+        builder.withRequestField("is_delete_resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteResource, (req, v) -> {
+                req.setIsDeleteResource(v);
             })
         );
 

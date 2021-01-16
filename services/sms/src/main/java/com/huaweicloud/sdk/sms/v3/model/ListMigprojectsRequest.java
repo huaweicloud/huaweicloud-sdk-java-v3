@@ -27,7 +27,7 @@ public class ListMigprojectsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
-    private Integer offset = 50;
+    private Integer offset = 0;
 
     public ListMigprojectsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -62,7 +62,7 @@ public class ListMigprojectsRequest  {
     /**
      * Get offset
      * minimum: 0
-     * maximum: 100
+     * maximum: 65535
      * @return offset
      */
     public Integer getOffset() {

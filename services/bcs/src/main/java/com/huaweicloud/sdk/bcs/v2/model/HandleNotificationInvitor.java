@@ -25,15 +25,21 @@ public class HandleNotificationInvitor  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="invitor_bcs_name")
+    
+    private String invitorBcsName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="invitor_project_id")
     
     private String invitorProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_username")
+    @JsonProperty(value="invitor_user_id")
     
-    private String invitorUsername;
+    private String invitorUserId;
 
     public HandleNotificationInvitor withInvitorBcsId(String invitorBcsId) {
         this.invitorBcsId = invitorBcsId;
@@ -53,6 +59,26 @@ public class HandleNotificationInvitor  {
 
     public void setInvitorBcsId(String invitorBcsId) {
         this.invitorBcsId = invitorBcsId;
+    }
+
+    public HandleNotificationInvitor withInvitorBcsName(String invitorBcsName) {
+        this.invitorBcsName = invitorBcsName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 邀请方实例名称，同意联盟邀请时比填
+     * @return invitorBcsName
+     */
+    public String getInvitorBcsName() {
+        return invitorBcsName;
+    }
+
+    public void setInvitorBcsName(String invitorBcsName) {
+        this.invitorBcsName = invitorBcsName;
     }
 
     public HandleNotificationInvitor withInvitorProjectId(String invitorProjectId) {
@@ -75,8 +101,8 @@ public class HandleNotificationInvitor  {
         this.invitorProjectId = invitorProjectId;
     }
 
-    public HandleNotificationInvitor withInvitorUsername(String invitorUsername) {
-        this.invitorUsername = invitorUsername;
+    public HandleNotificationInvitor withInvitorUserId(String invitorUserId) {
+        this.invitorUserId = invitorUserId;
         return this;
     }
 
@@ -84,15 +110,15 @@ public class HandleNotificationInvitor  {
 
 
     /**
-     * 邀请方租户名
-     * @return invitorUsername
+     * 邀请方租户,hcs模式下是邀请方租户id
+     * @return invitorUserId
      */
-    public String getInvitorUsername() {
-        return invitorUsername;
+    public String getInvitorUserId() {
+        return invitorUserId;
     }
 
-    public void setInvitorUsername(String invitorUsername) {
-        this.invitorUsername = invitorUsername;
+    public void setInvitorUserId(String invitorUserId) {
+        this.invitorUserId = invitorUserId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -104,20 +130,22 @@ public class HandleNotificationInvitor  {
         }
         HandleNotificationInvitor handleNotificationInvitor = (HandleNotificationInvitor) o;
         return Objects.equals(this.invitorBcsId, handleNotificationInvitor.invitorBcsId) &&
+            Objects.equals(this.invitorBcsName, handleNotificationInvitor.invitorBcsName) &&
             Objects.equals(this.invitorProjectId, handleNotificationInvitor.invitorProjectId) &&
-            Objects.equals(this.invitorUsername, handleNotificationInvitor.invitorUsername);
+            Objects.equals(this.invitorUserId, handleNotificationInvitor.invitorUserId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(invitorBcsId, invitorProjectId, invitorUsername);
+        return Objects.hash(invitorBcsId, invitorBcsName, invitorProjectId, invitorUserId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class HandleNotificationInvitor {\n");
         sb.append("    invitorBcsId: ").append(toIndentedString(invitorBcsId)).append("\n");
+        sb.append("    invitorBcsName: ").append(toIndentedString(invitorBcsName)).append("\n");
         sb.append("    invitorProjectId: ").append(toIndentedString(invitorProjectId)).append("\n");
-        sb.append("    invitorUsername: ").append(toIndentedString(invitorUsername)).append("\n");
+        sb.append("    invitorUserId: ").append(toIndentedString(invitorUserId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

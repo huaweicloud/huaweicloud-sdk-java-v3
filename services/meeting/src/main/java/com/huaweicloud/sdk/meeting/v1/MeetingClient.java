@@ -1073,6 +1073,17 @@ public class MeetingClient {
     }
 
     /**
+     * 查询企业的资源使用信息
+     * 企业管理员查询资源使用信息
+     *
+     * @param ShowOrgResRequest 请求对象
+     * @return ShowOrgResResponse
+     */
+    public ShowOrgResResponse showOrgRes(ShowOrgResRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showOrgRes);
+    }
+
+    /**
      * 根据ID查询节目详情
      * 根据ID获取节目详情
      *

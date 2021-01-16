@@ -37,28 +37,28 @@ public class ShowTaskResponse extends SdkResponse {
     
     private String name;
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE：文件级,MIGRATE_BLOCK：块级
+     * 任务类型，创建时必选，更新时可选 
      */
     public static final class TypeEnum {
 
         
         /**
-         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
+         * Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级"
          */
-        public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
+        public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级");
         
         /**
-         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
+         * Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块级"
          */
-        public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
+        public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块级");
         
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("MIGRATE_FILE", MIGRATE_FILE);
-            map.put("MIGRATE_BLOCK", MIGRATE_BLOCK);
+            map.put("MIGRATE_FILE：文件级", MIGRATE_FILE_);
+            map.put("MIGRATE_BLOCK：块级", MIGRATE_BLOCK_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -384,7 +384,7 @@ public class ShowTaskResponse extends SdkResponse {
 
 
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE：文件级,MIGRATE_BLOCK：块级
+     * 任务类型，创建时必选，更新时可选 
      * @return type
      */
     public TypeEnum getType() {
@@ -446,7 +446,7 @@ public class ShowTaskResponse extends SdkResponse {
     /**
      * 进程优先级  0：低  1：标准（默认）  2：高 
      * minimum: 0
-     * maximum: 3
+     * maximum: 2
      * @return priority
      */
     public Integer getPriority() {
@@ -681,6 +681,8 @@ public class ShowTaskResponse extends SdkResponse {
 
     /**
      * 预估完成时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return estimateCompleteTime
      */
     public Long getEstimateCompleteTime() {
@@ -721,6 +723,8 @@ public class ShowTaskResponse extends SdkResponse {
 
     /**
      * 任务创建时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return createDate
      */
     public Long getCreateDate() {
@@ -741,6 +745,8 @@ public class ShowTaskResponse extends SdkResponse {
 
     /**
      * 任务开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return startDate
      */
     public Long getStartDate() {
@@ -761,6 +767,8 @@ public class ShowTaskResponse extends SdkResponse {
 
     /**
      * 任务结束时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return finishDate
      */
     public Long getFinishDate() {
@@ -781,6 +789,8 @@ public class ShowTaskResponse extends SdkResponse {
 
     /**
      * 迁移速率，单位：MB/S
+     * minimum: 0
+     * maximum: 1E+4
      * @return migrateSpeed
      */
     public Double getMigrateSpeed() {
@@ -821,6 +831,8 @@ public class ShowTaskResponse extends SdkResponse {
 
     /**
      * 任务总耗时
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return totalTime
      */
     public Long getTotalTime() {
@@ -861,6 +873,8 @@ public class ShowTaskResponse extends SdkResponse {
 
     /**
      * 迁移剩余时间（秒）
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return remainSeconds
      */
     public Long getRemainSeconds() {

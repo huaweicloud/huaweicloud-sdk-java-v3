@@ -38,7 +38,7 @@ public class PageInfo  {
 
 
     /**
-     * 当前页数量
+     * 当前页的资源数量
      * minimum: 0
      * maximum: 200
      * @return currentCount
@@ -60,7 +60,7 @@ public class PageInfo  {
 
 
     /**
-     * 下一页地址marker
+     * 下一页的marker
      * @return nextMarker
      */
     public String getNextMarker() {

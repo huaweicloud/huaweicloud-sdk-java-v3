@@ -108,17 +108,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 添加副本
-     * 为Cluster集群实例的分片添加副本。
-     *
-     * @param CreateReplicationRequest 请求对象
-     * @return CompletableFuture<CreateReplicationResponse>
-     */
-    public CompletableFuture<CreateReplicationResponse> createReplicationAsync(CreateReplicationRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.createReplication);
-    }
-
-    /**
      * 删除后台任务
      * 删除后台任务
      *
@@ -182,17 +171,6 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<DeleteMigrationTaskResponse> deleteMigrationTaskAsync(DeleteMigrationTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.deleteMigrationTask);
-    }
-
-    /**
-     * 删除副本
-     * 为Cluster集群删除指定副本
-     *
-     * @param DeleteReplicationRequest 请求对象
-     * @return CompletableFuture<DeleteReplicationResponse>
-     */
-    public CompletableFuture<DeleteReplicationResponse> deleteReplicationAsync(DeleteReplicationRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.deleteReplication);
     }
 
     /**

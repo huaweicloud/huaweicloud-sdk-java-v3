@@ -45,6 +45,7 @@ public class ShowJobListByProjectIdRequest  {
 
     /**
      * Get pageIndex
+     * minimum: 0
      * @return pageIndex
      */
     public Integer getPageIndex() {
@@ -65,6 +66,8 @@ public class ShowJobListByProjectIdRequest  {
 
     /**
      * Get pageSize
+     * minimum: 0
+     * maximum: 100
      * @return pageSize
      */
     public Integer getPageSize() {

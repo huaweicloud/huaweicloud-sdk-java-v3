@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.dcs.v2.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dcs.v2.model.InstanceReplicationDimensionsInfo;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -49,12 +53,90 @@ public class InstanceReplicationListInfo  {
     @JsonProperty(value="node_id")
     
     private String nodeId;
+    /**
+     * 副本状态。
+     */
+    public static final class StatusEnum {
+
+        
+        /**
+         * Enum ACTIVE for value: "Active"
+         */
+        public static final StatusEnum ACTIVE = new StatusEnum("Active");
+        
+        /**
+         * Enum INACTIVE for value: "Inactive"
+         */
+        public static final StatusEnum INACTIVE = new StatusEnum("Inactive");
+        
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("Active", ACTIVE);
+            map.put("Inactive", INACTIVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private String status;
+    private StatusEnum status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -168,7 +250,7 @@ public class InstanceReplicationListInfo  {
         this.nodeId = nodeId;
     }
 
-    public InstanceReplicationListInfo withStatus(String status) {
+    public InstanceReplicationListInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -180,11 +262,11 @@ public class InstanceReplicationListInfo  {
      * 副本状态。
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

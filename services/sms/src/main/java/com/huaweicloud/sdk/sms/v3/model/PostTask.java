@@ -117,7 +117,7 @@ public class PostTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private Boolean startTargetServer;
+    private Boolean startTargetServer = true;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -136,18 +136,6 @@ public class PostTask  {
     @JsonProperty(value="target_server")
     
     private TargetServerByTask targetServer = null;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_install_pvdriver")
-    
-    private Boolean autoInstallPvdriver;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_start")
-    
-    private Boolean autoStart;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -189,13 +177,13 @@ public class PostTask  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="use_public_ip")
     
-    private Boolean usePublicIp;
+    private Boolean usePublicIp = true;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="syncing")
     
-    private Boolean syncing = true;
+    private Boolean syncing = false;
 
     public PostTask withName(String name) {
         this.name = name;
@@ -331,46 +319,6 @@ public class PostTask  {
         this.targetServer = targetServer;
     }
 
-    public PostTask withAutoInstallPvdriver(Boolean autoInstallPvdriver) {
-        this.autoInstallPvdriver = autoInstallPvdriver;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 自动安装驱动
-     * @return autoInstallPvdriver
-     */
-    public Boolean getAutoInstallPvdriver() {
-        return autoInstallPvdriver;
-    }
-
-    public void setAutoInstallPvdriver(Boolean autoInstallPvdriver) {
-        this.autoInstallPvdriver = autoInstallPvdriver;
-    }
-
-    public PostTask withAutoStart(Boolean autoStart) {
-        this.autoStart = autoStart;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否立即启动
-     * @return autoStart
-     */
-    public Boolean getAutoStart() {
-        return autoStart;
-    }
-
-    public void setAutoStart(Boolean autoStart) {
-        this.autoStart = autoStart;
-    }
-
     public PostTask withMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
         return this;
@@ -380,7 +328,7 @@ public class PostTask  {
 
 
     /**
-     * 迁移ip
+     * 迁移ip，如果是自动创建虚拟机，不需要此参数
      * @return migrationIp
      */
     public String getMigrationIp() {
@@ -545,8 +493,6 @@ public class PostTask  {
             Objects.equals(this.osType, postTask.osType) &&
             Objects.equals(this.sourceServer, postTask.sourceServer) &&
             Objects.equals(this.targetServer, postTask.targetServer) &&
-            Objects.equals(this.autoInstallPvdriver, postTask.autoInstallPvdriver) &&
-            Objects.equals(this.autoStart, postTask.autoStart) &&
             Objects.equals(this.migrationIp, postTask.migrationIp) &&
             Objects.equals(this.regionName, postTask.regionName) &&
             Objects.equals(this.regionId, postTask.regionId) &&
@@ -558,7 +504,7 @@ public class PostTask  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, startTargetServer, osType, sourceServer, targetServer, autoInstallPvdriver, autoStart, migrationIp, regionName, regionId, projectName, projectId, vmTemplateId, usePublicIp, syncing);
+        return Objects.hash(name, type, startTargetServer, osType, sourceServer, targetServer, migrationIp, regionName, regionId, projectName, projectId, vmTemplateId, usePublicIp, syncing);
     }
     @Override
     public String toString() {
@@ -570,8 +516,6 @@ public class PostTask  {
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    sourceServer: ").append(toIndentedString(sourceServer)).append("\n");
         sb.append("    targetServer: ").append(toIndentedString(targetServer)).append("\n");
-        sb.append("    autoInstallPvdriver: ").append(toIndentedString(autoInstallPvdriver)).append("\n");
-        sb.append("    autoStart: ").append(toIndentedString(autoStart)).append("\n");
         sb.append("    migrationIp: ").append(toIndentedString(migrationIp)).append("\n");
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");

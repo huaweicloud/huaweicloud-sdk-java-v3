@@ -1,3 +1,71 @@
+## 3.0.30-rc 2021-01-15
+## HuaweiCloud SDK Core
+- ### Features
+    - Support function `valueOf` to get region information.
+- ### Bug Fix
+    - Fix response exception when using temporary AK/SK.
+    - Fix verification failure when request has query parameter of type `List`.
+- ### Change
+    - None
+
+## HuaweiCloud SDK DGC
+- ### Features
+    - Support more interfaces: `Job` related interfaces, `Script` related interfaces, `Resource` related interfaces.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK IAM
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Modify the data type of response field `is_domain_owner` from string to boolean of interface `ShowUser` and `CreateUser`.
+
+## HuaweiCloud SDK Meeting
+- ### Features
+    - Support more interface: ShowOrgRes
+- ### Bug Fix
+    - None
+- ### Change
+    - Interface `CreateMeeting` supports parameter `allowGuestStartConf`.
+    - Add response fields of `ShowMeetingDetail`: `appId`, `isAutoInvite`, `isNotOverlayPidName`.
+
+## HuaweiCloud SDK RDS
+- ### Features
+    - Support more interfaces: ShowOffSiteBackupPolicy, SetOffSiteBackupPolicy, ListOffSiteBackups, ListOffSiteRestoreTimes, ListOffSiteRestoreTimes, ListApiVersion, ShowApiVersion.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK ROMA
+- ### Features
+    - Support more groups of interfaces: group of ApplicationManagement, group of AssetManagement, group of DictionaryManagement, group of PublicManagement.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK SCM
+- ### Features
+    - Support `SSL Certificate Manager` service.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK SWR
+- ### Features
+    - Support `Software Repository for Container` service.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+
 ## 3.0.29-beta 2020-12-31
 ## HuaweiCloud SDK AOM
  - ### Features

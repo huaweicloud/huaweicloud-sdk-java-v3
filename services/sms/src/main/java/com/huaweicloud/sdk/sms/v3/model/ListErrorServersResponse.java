@@ -45,6 +45,7 @@ public class ListErrorServersResponse extends SdkResponse {
     /**
      * 迁移过程中发生错误的源端数量
      * minimum: 0
+     * maximum: 2147483647
      * @return count
      */
     public Integer getCount() {

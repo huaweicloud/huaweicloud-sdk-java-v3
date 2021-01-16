@@ -5,11 +5,15 @@ package com.huaweicloud.sdk.sms.v3.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -53,7 +57,7 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private String startTargetServer = "true";
+    private Boolean startTargetServer = true;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,18 +76,102 @@ public class ShowMigprojectResponse extends SdkResponse {
     @JsonProperty(value="exist_server")
     
     private Boolean existServer = true;
+    /**
+     * 迁移项目类型
+     */
+    public static final class TypeEnum {
+
+        
+        /**
+         * Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块迁移"
+         */
+        public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块迁移");
+        
+        /**
+         * Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移"
+         */
+        public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级迁移");
+        
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("MIGRATE_BLOCK：块迁移", MIGRATE_BLOCK_);
+            map.put("MIGRATE_FILE：文件级迁移", MIGRATE_FILE_);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private String type;
+    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project")
     
     private String enterpriseProject = "default";
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="syncing")
+    
+    private Boolean syncing = false;
 
     public ShowMigprojectResponse withName(String name) {
         this.name = name;
@@ -154,7 +242,7 @@ public class ShowMigprojectResponse extends SdkResponse {
 
 
     /**
-     * 是否为默认项目
+     * 是否为默认模板
      * @return isdefault
      */
     public Boolean getIsdefault() {
@@ -185,7 +273,7 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.region = region;
     }
 
-    public ShowMigprojectResponse withStartTargetServer(String startTargetServer) {
+    public ShowMigprojectResponse withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
     }
@@ -197,11 +285,11 @@ public class ShowMigprojectResponse extends SdkResponse {
      * 迁移后是否启动目的端虚拟机
      * @return startTargetServer
      */
-    public String getStartTargetServer() {
+    public Boolean getStartTargetServer() {
         return startTargetServer;
     }
 
-    public void setStartTargetServer(String startTargetServer) {
+    public void setStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
     }
 
@@ -216,6 +304,7 @@ public class ShowMigprojectResponse extends SdkResponse {
     /**
      * 限制迁移速率，单位：Mbps
      * minimum: 0
+     * maximum: 10000
      * @return speedLimit
      */
     public Integer getSpeedLimit() {
@@ -266,7 +355,7 @@ public class ShowMigprojectResponse extends SdkResponse {
         this.existServer = existServer;
     }
 
-    public ShowMigprojectResponse withType(String type) {
+    public ShowMigprojectResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -278,11 +367,11 @@ public class ShowMigprojectResponse extends SdkResponse {
      * 迁移项目类型
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -305,6 +394,26 @@ public class ShowMigprojectResponse extends SdkResponse {
     public void setEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
     }
+
+    public ShowMigprojectResponse withSyncing(Boolean syncing) {
+        this.syncing = syncing;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 首次复制或者同步后 是否继续持续同步
+     * @return syncing
+     */
+    public Boolean getSyncing() {
+        return syncing;
+    }
+
+    public void setSyncing(Boolean syncing) {
+        this.syncing = syncing;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -324,11 +433,12 @@ public class ShowMigprojectResponse extends SdkResponse {
             Objects.equals(this.usePublicIp, showMigprojectResponse.usePublicIp) &&
             Objects.equals(this.existServer, showMigprojectResponse.existServer) &&
             Objects.equals(this.type, showMigprojectResponse.type) &&
-            Objects.equals(this.enterpriseProject, showMigprojectResponse.enterpriseProject);
+            Objects.equals(this.enterpriseProject, showMigprojectResponse.enterpriseProject) &&
+            Objects.equals(this.syncing, showMigprojectResponse.syncing);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, domainId, description, isdefault, region, startTargetServer, speedLimit, usePublicIp, existServer, type, enterpriseProject);
+        return Objects.hash(name, domainId, description, isdefault, region, startTargetServer, speedLimit, usePublicIp, existServer, type, enterpriseProject, syncing);
     }
     @Override
     public String toString() {
@@ -345,6 +455,7 @@ public class ShowMigprojectResponse extends SdkResponse {
         sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
+        sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("}");
         return sb.toString();
     }

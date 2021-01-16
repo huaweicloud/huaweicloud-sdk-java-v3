@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.Template;
+import com.huaweicloud.sdk.sms.v3.model.TemplateResponseBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template")
     
-    private Template template = null;
+    private TemplateResponseBody template = null;
 
-    public ShowTemplateResponse withTemplate(Template template) {
+    public ShowTemplateResponse withTemplate(TemplateResponseBody template) {
         this.template = template;
         return this;
     }
 
-    public ShowTemplateResponse withTemplate(Consumer<Template> templateSetter) {
+    public ShowTemplateResponse withTemplate(Consumer<TemplateResponseBody> templateSetter) {
         if(this.template == null ){
-            this.template = new Template();
+            this.template = new TemplateResponseBody();
             templateSetter.accept(this.template);
         }
         
@@ -45,11 +45,11 @@ public class ShowTemplateResponse extends SdkResponse {
      * Get template
      * @return template
      */
-    public Template getTemplate() {
+    public TemplateResponseBody getTemplate() {
         return template;
     }
 
-    public void setTemplate(Template template) {
+    public void setTemplate(TemplateResponseBody template) {
         this.template = template;
     }
     @Override

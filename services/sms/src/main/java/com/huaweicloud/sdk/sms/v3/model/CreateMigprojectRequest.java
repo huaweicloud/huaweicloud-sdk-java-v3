@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.MigProject;
+import com.huaweicloud.sdk.sms.v3.model.PostMigProjectBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateMigprojectRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private MigProject body = null;
+    private PostMigProjectBody body = null;
 
-    public CreateMigprojectRequest withBody(MigProject body) {
+    public CreateMigprojectRequest withBody(PostMigProjectBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateMigprojectRequest withBody(Consumer<MigProject> bodySetter) {
+    public CreateMigprojectRequest withBody(Consumer<PostMigProjectBody> bodySetter) {
         if(this.body == null ){
-            this.body = new MigProject();
+            this.body = new PostMigProjectBody();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class CreateMigprojectRequest  {
      * Get body
      * @return body
      */
-    public MigProject getBody() {
+    public PostMigProjectBody getBody() {
         return body;
     }
 
-    public void setBody(MigProject body) {
+    public void setBody(PostMigProjectBody body) {
         this.body = body;
     }
     @Override

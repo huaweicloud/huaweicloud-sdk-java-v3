@@ -44,6 +44,8 @@ public class ListTasksResponse extends SdkResponse {
 
     /**
      * 符合要求的任务数量，不受分页影响
+     * minimum: 0
+     * maximum: 2147483647
      * @return count
      */
     public Integer getCount() {

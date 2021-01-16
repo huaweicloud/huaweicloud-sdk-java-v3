@@ -80,6 +80,8 @@ public class VolumeGroups  {
 
     /**
      * 剩余空间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return freeSize
      */
     public Long getFreeSize() {
@@ -154,6 +156,8 @@ public class VolumeGroups  {
 
     /**
      * 大小
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return size
      */
     public Long getSize() {

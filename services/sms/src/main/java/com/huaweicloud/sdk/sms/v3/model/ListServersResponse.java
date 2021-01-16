@@ -44,6 +44,8 @@ public class ListServersResponse extends SdkResponse {
 
     /**
      * 符合查询条件的源端总数量，不受limit和offset影响
+     * minimum: 0
+     * maximum: 2147483647
      * @return count
      */
     public Integer getCount() {

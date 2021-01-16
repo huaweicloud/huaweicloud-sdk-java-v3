@@ -241,7 +241,7 @@ public class CreateSubnetOption  {
 
 
     /**
-     * 功能说明：子网dns服务器地址1 约束：ip格式，不支持IPv6地址
+     * 功能说明：子网dns服务器地址1 约束：ip格式，不支持IPv6地址 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
      * @return primaryDns
      */
     public String getPrimaryDns() {
@@ -261,7 +261,7 @@ public class CreateSubnetOption  {
 
 
     /**
-     * 功能说明：子网dns服务器地址2 约束：ip格式，不支持IPv6地址
+     * 功能说明：子网dns服务器地址2 约束：ip格式，不支持IPv6地址 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
      * @return secondaryDns
      */
     public String getSecondaryDns() {
@@ -295,7 +295,7 @@ public class CreateSubnetOption  {
     }
 
     /**
-     * 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集，不支持IPv6地址。
+     * 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集，不支持IPv6地址。 默认值：不填时为空，无法使用云内网DNS功能 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
      * @return dnsList
      */
     public List<String> getDnsList() {

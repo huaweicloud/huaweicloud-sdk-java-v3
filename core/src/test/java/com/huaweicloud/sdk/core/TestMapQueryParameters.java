@@ -193,7 +193,7 @@ public class TestMapQueryParameters {
 
         HttpRequest httpRequest = hcClient.buildRequest(request, genFortest());
         // 当类型为 Map<String, List<Object>> 时，由于堆栈先进后出，此处参数的顺序为逆序
-        Assert.assertEquals("p1=p1&p2[id]=p2&p3[id3]&p3[id2]=p33&p3[id2]=p34&p3[id1]=p31&p3[id1]=p32"
+        Assert.assertEquals("p1=p1&p2[id]=p2&p3[id3]=&p3[id2]=p33&p3[id2]=p34&p3[id1]=p31&p3[id1]=p32"
             + "&p4[id][id1]=p41&p4[id][id2]=p42&p5=p51&p5=p52", httpRequest.getQueryParamsString());
     }
 }
