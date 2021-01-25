@@ -24,7 +24,7 @@ public class SmsMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ChecktargetReq.class,
             f -> f.withMarshaller(CheckTargetRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -273,7 +273,7 @@ public class SmsMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             DeletetemplatesReq.class,
             f -> f.withMarshaller(DeleteTemplatesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -842,7 +842,7 @@ public class SmsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             PutDiskInfoReq.class,
             f -> f.withMarshaller(UpdateDiskInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -874,7 +874,7 @@ public class SmsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             MigProject.class,
             f -> f.withMarshaller(UpdateMigprojectRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -979,7 +979,7 @@ public class SmsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateTaskSpeedReq.class,
             f -> f.withMarshaller(UpdateTaskSpeedRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1043,7 +1043,7 @@ public class SmsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateTemplateReq.class,
             f -> f.withMarshaller(UpdateTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);

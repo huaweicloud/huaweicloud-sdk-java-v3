@@ -1016,7 +1016,7 @@ public class ProjectManMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ListIssueRequestV4.class,
             f -> f.withMarshaller(ListIssuesV4Request::getBody, (req, v) -> {
                 req.setBody(v);

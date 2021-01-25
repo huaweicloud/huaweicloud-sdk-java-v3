@@ -683,7 +683,7 @@ public class MonthlyBillRes  {
 
 
     /**
-     * |参数名称：金额单位。1:元| |参数的约束及描述：该参数非必填|
+     * |参数名称：金额单位。1: 元| |参数的约束及描述：该参数非必填|
      * @return measureId
      */
     public Integer getMeasureId() {

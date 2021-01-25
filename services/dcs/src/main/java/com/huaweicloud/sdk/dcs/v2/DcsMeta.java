@@ -64,7 +64,7 @@ public class DcsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BatchDeleteBody.class,
             f -> f.withMarshaller(BatchDeleteInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -120,7 +120,7 @@ public class DcsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BackupInstanceBody.class,
             f -> f.withMarshaller(CopyInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1264,7 +1264,7 @@ public class DcsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             RestoreInstanceBody.class,
             f -> f.withMarshaller(RestoreInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1640,7 +1640,7 @@ public class DcsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ModifyInstanceBody.class,
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1672,7 +1672,7 @@ public class DcsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ModifyInstancePasswordBody.class,
             f -> f.withMarshaller(UpdatePasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);

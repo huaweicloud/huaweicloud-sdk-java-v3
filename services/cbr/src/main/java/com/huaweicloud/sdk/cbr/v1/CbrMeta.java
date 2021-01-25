@@ -128,7 +128,7 @@ public class CbrMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BulkCreateAndDeleteVaultTagsReq.class,
             f -> f.withMarshaller(BatchCreateAndDeleteVaultTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -288,7 +288,7 @@ public class CbrMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             VaultTagsCreateReq.class,
             f -> f.withMarshaller(CreateVaultTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1416,7 +1416,7 @@ public class CbrMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             VaultResourceInstancesReq.class,
             f -> f.withMarshaller(ShowVaultResourceInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1480,7 +1480,7 @@ public class CbrMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateMember.class,
             f -> f.withMarshaller(UpdateMemberStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);

@@ -238,7 +238,7 @@ public class CreateOrderIncidentV2Req  {
 
 
     /**
-     * 工单来源
+     * 工单来源，当前固定为83aeb0f2834c4df49826c781d32a963e
      * @return sourceId
      */
     public String getSourceId() {
@@ -340,7 +340,7 @@ public class CreateOrderIncidentV2Req  {
 
 
     /**
-     * 提醒时间
+     * 提醒时间，如果是任意时间传0，如果是指定时间，传客户首选项对应时区的时间，比如09:00-18:00
      * @return remindTime
      */
     public String getRemindTime() {
@@ -360,7 +360,7 @@ public class CreateOrderIncidentV2Req  {
 
 
     /**
-     * ProjectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

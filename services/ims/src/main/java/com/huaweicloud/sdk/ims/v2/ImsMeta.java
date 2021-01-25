@@ -1001,7 +1001,7 @@ public class ImsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             GlanceDeleteImageRequestBody.class,
             f -> f.withMarshaller(GlanceDeleteImageRequest::getBody, (req, v) -> {
                 req.setBody(v);

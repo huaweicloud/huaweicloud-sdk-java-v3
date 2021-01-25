@@ -56,7 +56,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             VerifyHostV2Req.class,
             f -> f.withMarshaller(CheckHostsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -168,7 +168,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             VerifyVerifyCodeV2Req.class,
             f -> f.withMarshaller(CheckVerifyCodesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -224,7 +224,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             AgreeTenantAuthorizationV2Req.class,
             f -> f.withMarshaller(ConfirmAuthorizationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -344,7 +344,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateOrderIncidentV2Req.class,
             f -> f.withMarshaller(CreateCasesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -448,7 +448,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateMessageV2Req.class,
             f -> f.withMarshaller(CreateMessagesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -496,7 +496,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateAndDeletePrivilegeReq.class,
             f -> f.withMarshaller(CreatePrivilegesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -608,7 +608,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateScoreV2Req.class,
             f -> f.withMarshaller(CreateScoresRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3384,7 +3384,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             OperateAuthorizationV2Req.class,
             f -> f.withMarshaller(UpdateAuthorizationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3448,7 +3448,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             WorkOrderOperateV2Req.class,
             f -> f.withMarshaller(UpdateCasesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3560,7 +3560,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateUnreadNewInstantMsgV2Req.class,
             f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3608,7 +3608,7 @@ public class OsmMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             AccessoryJsonFormatReq.class,
             f -> f.withMarshaller(UploadJsonAccessoriesRequest::getBody, (req, v) -> {
                 req.setBody(v);

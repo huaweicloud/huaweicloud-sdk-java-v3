@@ -24,9 +24,9 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
+    @JsonProperty(value="count")
     
-    private Integer totalCount;
+    private Integer count;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,8 +34,8 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
     
     private List<QueryMessageInfoV2> messageList = null;
     
-    public ListMoreInstantMessagesResponse withTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public ListMoreInstantMessagesResponse withCount(Integer count) {
+        this.count = count;
         return this;
     }
 
@@ -46,14 +46,14 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
      * 总数
      * minimum: 0
      * maximum: 65535
-     * @return totalCount
+     * @return count
      */
-    public Integer getTotalCount() {
-        return totalCount;
+    public Integer getCount() {
+        return count;
     }
 
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public ListMoreInstantMessagesResponse withMessageList(List<QueryMessageInfoV2> messageList) {
@@ -98,18 +98,18 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
             return false;
         }
         ListMoreInstantMessagesResponse listMoreInstantMessagesResponse = (ListMoreInstantMessagesResponse) o;
-        return Objects.equals(this.totalCount, listMoreInstantMessagesResponse.totalCount) &&
+        return Objects.equals(this.count, listMoreInstantMessagesResponse.count) &&
             Objects.equals(this.messageList, listMoreInstantMessagesResponse.messageList);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, messageList);
+        return Objects.hash(count, messageList);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListMoreInstantMessagesResponse {\n");
-        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    messageList: ").append(toIndentedString(messageList)).append("\n");
         sb.append("}");
         return sb.toString();

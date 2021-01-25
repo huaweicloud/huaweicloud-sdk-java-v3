@@ -328,7 +328,7 @@ public class DevStarMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TemplateQueryV2.class,
             f -> f.withMarshaller(ListTemplatesV2Request::getBody, (req, v) -> {
                 req.setBody(v);

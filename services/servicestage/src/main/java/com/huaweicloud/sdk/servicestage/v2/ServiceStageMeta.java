@@ -32,7 +32,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ApplicationModify.class,
             f -> f.withMarshaller(ChangeApplicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -64,7 +64,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ApplicationConfigModify.class,
             f -> f.withMarshaller(ChangeApplicationConfigurationRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -104,7 +104,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ComponentModify.class,
             f -> f.withMarshaller(ChangeComponentRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -136,7 +136,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             EnvironmentModify.class,
             f -> f.withMarshaller(ChangeEnvironmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -184,7 +184,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             InstanceModify.class,
             f -> f.withMarshaller(ChangeInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -216,7 +216,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             EnvironmentResourceModify.class,
             f -> f.withMarshaller(ChangeResourceInEnvironmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -240,7 +240,7 @@ public class ServiceStageMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ApplicationCreate.class,
             f -> f.withMarshaller(CreateApplicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -272,7 +272,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ComponentCreate.class,
             f -> f.withMarshaller(CreateComponentRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -296,7 +296,7 @@ public class ServiceStageMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             EnvironmentCreate.class,
             f -> f.withMarshaller(CreateEnvironmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -336,7 +336,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             InstanceCreate.class,
             f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1048,7 +1048,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             InstanceAction.class,
             f -> f.withMarshaller(UpdateInstanceActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1112,7 +1112,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             FileCreate.class,
             f -> f.withMarshaller(CreateFileRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1160,7 +1160,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             HookCreate.class,
             f -> f.withMarshaller(CreateHookRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1200,7 +1200,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             OAuth.class,
             f -> f.withMarshaller(CreateOAuthRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1232,7 +1232,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             AccessPassword.class,
             f -> f.withMarshaller(CreatePasswordAuthRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1264,7 +1264,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             AccessToken.class,
             f -> f.withMarshaller(CreatePersonalAuthRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1304,7 +1304,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ProjectCreate.class,
             f -> f.withMarshaller(CreateProjectRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1360,7 +1360,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TagCreate.class,
             f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -2024,7 +2024,7 @@ public class ServiceStageMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             FileUpdate.class,
             f -> f.withMarshaller(UpdateFileRequest::getBody, (req, v) -> {
                 req.setBody(v);

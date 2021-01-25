@@ -39,6 +39,12 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.json.OffsetDateTimeDeserializer;
 import com.huaweicloud.sdk.core.json.SensitiveStringSerializer;
+import com.huaweicloud.sdk.core.json.StrictBooleanDeserializer;
+import com.huaweicloud.sdk.core.json.StrictDoubleDeserializer;
+import com.huaweicloud.sdk.core.json.StrictFloatDeserializer;
+import com.huaweicloud.sdk.core.json.StrictIntegerDeserializer;
+import com.huaweicloud.sdk.core.json.StrictLongDeserializer;
+import com.huaweicloud.sdk.core.json.StrictStringDeserializer;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -87,6 +93,12 @@ public class JsonUtils {
             .registerModule(new JavaTimeModule())
             .registerModule(new Jdk8Module())
             .registerModule(new SimpleModule().addDeserializer(OffsetDateTime.class, new OffsetDateTimeDeserializer()))
+            .registerModule(new SimpleModule().addDeserializer(Boolean.class, new StrictBooleanDeserializer()))
+            .registerModule(new SimpleModule().addDeserializer(Integer.class, new StrictIntegerDeserializer()))
+            .registerModule(new SimpleModule().addDeserializer(Long.class, new StrictLongDeserializer()))
+            .registerModule(new SimpleModule().addDeserializer(Double.class, new StrictDoubleDeserializer()))
+            .registerModule(new SimpleModule().addDeserializer(Float.class, new StrictFloatDeserializer()))
+            .registerModule(new SimpleModule().addDeserializer(String.class, new StrictStringDeserializer()))
             .setFilterProvider(new SimpleFilterProvider().setFailOnUnknownId(false));
 
         DeserializationConfig readConfig = mapper.getDeserializationConfig()

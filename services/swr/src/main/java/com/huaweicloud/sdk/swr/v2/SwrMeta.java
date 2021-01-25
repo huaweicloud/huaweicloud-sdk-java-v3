@@ -1262,7 +1262,7 @@ public class SwrMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateRetentionRequestBody.class,
             f -> f.withMarshaller(UpdateRetentionRequest::getBody, (req, v) -> {
                 req.setBody(v);

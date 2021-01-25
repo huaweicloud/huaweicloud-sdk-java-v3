@@ -760,7 +760,7 @@ public class MpcMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             QualityEnhanceTemplate.class,
             f -> f.withMarshaller(CreateQualityEnhanceTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1288,7 +1288,7 @@ public class MpcMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateTranscodingReq.class,
             f -> f.withMarshaller(CreateTranscodingTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1408,7 +1408,7 @@ public class MpcMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TransTemplate.class,
             f -> f.withMarshaller(CreateTransTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1496,7 +1496,7 @@ public class MpcMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ModifyTransTemplateReq.class,
             f -> f.withMarshaller(UpdateTransTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1520,7 +1520,7 @@ public class MpcMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             WatermarkTemplate.class,
             f -> f.withMarshaller(CreateWatermarkTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1608,7 +1608,7 @@ public class MpcMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             WatermarkTemplate.class,
             f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);

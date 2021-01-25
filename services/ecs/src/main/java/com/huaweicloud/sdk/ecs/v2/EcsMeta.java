@@ -1460,6 +1460,38 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAutoTerminateTimeServerRequest, UpdateAutoTerminateTimeServerResponse> updateAutoTerminateTimeServer = genForupdateAutoTerminateTimeServer();
+
+    private static HttpRequestDef<UpdateAutoTerminateTimeServerRequest, UpdateAutoTerminateTimeServerResponse> genForupdateAutoTerminateTimeServer() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutoTerminateTimeServerRequest, UpdateAutoTerminateTimeServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateAutoTerminateTimeServerRequest.class, UpdateAutoTerminateTimeServerResponse.class)
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/actions/update-auto-terminate-time")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateAutoTerminateTimeServerRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateAutoTerminateTimeServerRequestBody.class,
+            f -> f.withMarshaller(UpdateAutoTerminateTimeServerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateServerRequest, UpdateServerResponse> updateServer = genForupdateServer();
 
     private static HttpRequestDef<UpdateServerRequest, UpdateServerResponse> genForupdateServer() {

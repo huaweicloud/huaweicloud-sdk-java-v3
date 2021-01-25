@@ -220,7 +220,7 @@ public class CustomerOrderEntity  {
 
 
     /**
-     * |参数名称：订单金额度量单位：1：元2：角3：分| |参数的约束及描述：订单金额度量单位：1：元2：角3：分|
+     * |参数名称：订单金额度量单位：1：元| |参数的约束及描述：订单金额度量单位：1：元|
      * @return measureId
      */
     public Integer getMeasureId() {

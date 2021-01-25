@@ -32,7 +32,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             AddSubscriptionRequestBody.class,
             f -> f.withMarshaller(AddSubscriptionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -72,7 +72,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BatchCreateOrDeleteResourceTagsRequestBody.class,
             f -> f.withMarshaller(BatchCreateOrDeleteResourceTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -120,7 +120,7 @@ public class SmnMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateMessageTemplateRequestBody.class,
             f -> f.withMarshaller(CreateMessageTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -160,7 +160,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateResourceTagRequestBody.class,
             f -> f.withMarshaller(CreateResourceTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -456,7 +456,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ListInstanceRequestBody.class,
             f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -720,7 +720,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             PublishMessageRequestBody.class,
             f -> f.withMarshaller(PublishMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -752,7 +752,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateMessageTemplateRequestBody.class,
             f -> f.withMarshaller(UpdateMessageTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -848,7 +848,7 @@ public class SmnMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateApplicationRequestBody.class,
             f -> f.withMarshaller(CreateApplicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -976,7 +976,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             PublishAppMessageRequestBody.class,
             f -> f.withMarshaller(PublishAppMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1008,7 +1008,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateApplicationRequestBody.class,
             f -> f.withMarshaller(UpdateApplicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1040,7 +1040,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateApplicationEndpointRequestBody.class,
             f -> f.withMarshaller(CreateApplicationEndpointRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1184,7 +1184,7 @@ public class SmnMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateApplicationEndpointRequestBody.class,
             f -> f.withMarshaller(UpdateApplicationEndpointRequest::getBody, (req, v) -> {
                 req.setBody(v);

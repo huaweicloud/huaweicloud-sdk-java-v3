@@ -73,7 +73,7 @@ public class CreateScoreV2Req  {
 
 
     /**
-     * 类型，可删除
+     * 类型
      * minimum: 0
      * maximum: 1
      * @return type

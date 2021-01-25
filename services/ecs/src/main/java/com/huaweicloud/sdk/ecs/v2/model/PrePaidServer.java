@@ -31,6 +31,12 @@ public class PrePaidServer  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auto_terminate_time")
+    
+    private String autoTerminateTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="imageRef")
     
     private String imageRef;
@@ -154,6 +160,26 @@ public class PrePaidServer  {
     @JsonProperty(value="description")
     
     private String description;
+
+    public PrePaidServer withAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+     * @return autoTerminateTime
+     */
+    public String getAutoTerminateTime() {
+        return autoTerminateTime;
+    }
+
+    public void setAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
+    }
 
     public PrePaidServer withImageRef(String imageRef) {
         this.imageRef = imageRef;
@@ -694,7 +720,8 @@ public class PrePaidServer  {
             return false;
         }
         PrePaidServer prePaidServer = (PrePaidServer) o;
-        return Objects.equals(this.imageRef, prePaidServer.imageRef) &&
+        return Objects.equals(this.autoTerminateTime, prePaidServer.autoTerminateTime) &&
+            Objects.equals(this.imageRef, prePaidServer.imageRef) &&
             Objects.equals(this.flavorRef, prePaidServer.flavorRef) &&
             Objects.equals(this.name, prePaidServer.name) &&
             Objects.equals(this.userData, prePaidServer.userData) &&
@@ -718,12 +745,13 @@ public class PrePaidServer  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(imageRef, flavorRef, name, userData, adminPass, keyName, vpcid, nics, publicip, count, isAutoRename, rootVolume, dataVolumes, securityGroups, availabilityZone, extendparam, metadata, osSchedulerHints, tags, serverTags, description);
+        return Objects.hash(autoTerminateTime, imageRef, flavorRef, name, userData, adminPass, keyName, vpcid, nics, publicip, count, isAutoRename, rootVolume, dataVolumes, securityGroups, availabilityZone, extendparam, metadata, osSchedulerHints, tags, serverTags, description);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PrePaidServer {\n");
+        sb.append("    autoTerminateTime: ").append(toIndentedString(autoTerminateTime)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -577,7 +577,7 @@ public class DgcMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ResourceInfo.class,
             f -> f.withMarshaller(ModifyResourceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -673,7 +673,7 @@ public class DgcMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             StartJobReq.class,
             f -> f.withMarshaller(RunOnceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -881,7 +881,7 @@ public class DgcMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             StartJobReq.class,
             f -> f.withMarshaller(StartJobRequest::getBody, (req, v) -> {
                 req.setBody(v);

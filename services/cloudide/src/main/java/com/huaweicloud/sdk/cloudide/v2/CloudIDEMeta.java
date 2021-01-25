@@ -384,7 +384,7 @@ public class CloudIDEMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             StartInstanceParam.class,
             f -> f.withMarshaller(StartInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);

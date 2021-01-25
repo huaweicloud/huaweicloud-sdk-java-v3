@@ -925,7 +925,7 @@ public class IoTDAMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             AddDeviceGroupDTO.class,
             f -> f.withMarshaller(AddDeviceGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1818,7 +1818,7 @@ public class IoTDAMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             AddProduct.class,
             f -> f.withMarshaller(CreateProductRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -2894,7 +2894,7 @@ public class IoTDAMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             CreateSubReq.class,
             f -> f.withMarshaller(CreateSubscriptionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3095,7 +3095,7 @@ public class IoTDAMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateSubReq.class,
             f -> f.withMarshaller(UpdateSubscriptionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3151,7 +3151,7 @@ public class IoTDAMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             QueryResourceByTagsDTO.class,
             f -> f.withMarshaller(ListResourcesByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3183,7 +3183,7 @@ public class IoTDAMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BindTagsDTO.class,
             f -> f.withMarshaller(TagDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -3224,7 +3224,7 @@ public class IoTDAMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UnbindTagsDTO.class,
             f -> f.withMarshaller(UntagDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);

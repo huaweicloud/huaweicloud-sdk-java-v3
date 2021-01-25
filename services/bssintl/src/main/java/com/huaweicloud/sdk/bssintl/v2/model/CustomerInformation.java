@@ -92,6 +92,24 @@ public class CustomerInformation  {
     
     private List<AccountManager> accountManagers = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="xaccount_id")
+    
+    private String xaccountId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="xaccount_type")
+    
+    private String xaccountType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="customer_level")
+    
+    private String customerLevel;
+
     public CustomerInformation withCustomer(String customer) {
         this.customer = customer;
         return this;
@@ -345,6 +363,66 @@ public class CustomerInformation  {
     public void setAccountManagers(List<AccountManager> accountManagers) {
         this.accountManagers = accountManagers;
     }
+
+    public CustomerInformation withXaccountId(String xaccountId) {
+        this.xaccountId = xaccountId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：伙伴销售平台的用户唯一标识| |参数的约束及描述：该标识的具体值由伙伴分配|
+     * @return xaccountId
+     */
+    public String getXaccountId() {
+        return xaccountId;
+    }
+
+    public void setXaccountId(String xaccountId) {
+        this.xaccountId = xaccountId;
+    }
+
+    public CustomerInformation withXaccountType(String xaccountType) {
+        this.xaccountType = xaccountType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：华为分给合作伙伴的平台标识| |参数的约束及描述：该标识的具体值由华为分配|
+     * @return xaccountType
+     */
+    public String getXaccountType() {
+        return xaccountType;
+    }
+
+    public void setXaccountType(String xaccountType) {
+        this.xaccountType = xaccountType;
+    }
+
+    public CustomerInformation withCustomerLevel(String customerLevel) {
+        this.customerLevel = customerLevel;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：客户等级| |参数的约束及描述：V0、V1、V2、V3、V4、V5|
+     * @return customerLevel
+     */
+    public String getCustomerLevel() {
+        return customerLevel;
+    }
+
+    public void setCustomerLevel(String customerLevel) {
+        this.customerLevel = customerLevel;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -365,11 +443,14 @@ public class CustomerInformation  {
             Objects.equals(this.countryCode, customerInformation.countryCode) &&
             Objects.equals(this.customerType, customerInformation.customerType) &&
             Objects.equals(this.isFrozen, customerInformation.isFrozen) &&
-            Objects.equals(this.accountManagers, customerInformation.accountManagers);
+            Objects.equals(this.accountManagers, customerInformation.accountManagers) &&
+            Objects.equals(this.xaccountId, customerInformation.xaccountId) &&
+            Objects.equals(this.xaccountType, customerInformation.xaccountType) &&
+            Objects.equals(this.customerLevel, customerInformation.customerLevel);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(customer, accountName, customerId, associatedOn, associationType, label, telephone, verifiedStatus, countryCode, customerType, isFrozen, accountManagers);
+        return Objects.hash(customer, accountName, customerId, associatedOn, associationType, label, telephone, verifiedStatus, countryCode, customerType, isFrozen, accountManagers, xaccountId, xaccountType, customerLevel);
     }
     @Override
     public String toString() {
@@ -387,6 +468,9 @@ public class CustomerInformation  {
         sb.append("    customerType: ").append(toIndentedString(customerType)).append("\n");
         sb.append("    isFrozen: ").append(toIndentedString(isFrozen)).append("\n");
         sb.append("    accountManagers: ").append(toIndentedString(accountManagers)).append("\n");
+        sb.append("    xaccountId: ").append(toIndentedString(xaccountId)).append("\n");
+        sb.append("    xaccountType: ").append(toIndentedString(xaccountType)).append("\n");
+        sb.append("    customerLevel: ").append(toIndentedString(customerLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

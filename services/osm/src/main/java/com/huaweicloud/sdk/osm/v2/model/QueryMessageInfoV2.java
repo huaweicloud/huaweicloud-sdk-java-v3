@@ -84,7 +84,7 @@ public class QueryMessageInfoV2  {
 
 
     /**
-     * 类型，可以删除
+     * 类型，0客户留言 1华为工程师留言
      * minimum: 0
      * maximum: 1
      * @return type
@@ -106,7 +106,7 @@ public class QueryMessageInfoV2  {
 
 
     /**
-     * 回复人类型
+     * 回复人类型，0客户留言 1华为工程师留言 2第三方留言
      * minimum: 0
      * maximum: 3
      * @return replierType

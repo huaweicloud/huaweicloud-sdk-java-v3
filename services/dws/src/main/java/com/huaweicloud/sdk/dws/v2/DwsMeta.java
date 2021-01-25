@@ -264,7 +264,7 @@ public class DwsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             ResizeClusterRequestBody.class,
             f -> f.withMarshaller(ResizeClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);

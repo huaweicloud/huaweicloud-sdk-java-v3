@@ -28,6 +28,12 @@ public class NovaCreateServersOption  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auto_terminate_time")
+    
+    private String autoTerminateTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="imageRef")
     
     private String imageRef;
@@ -205,6 +211,26 @@ public class NovaCreateServersOption  {
     @JsonProperty(value="description")
     
     private String description;
+
+    public NovaCreateServersOption withAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+     * @return autoTerminateTime
+     */
+    public String getAutoTerminateTime() {
+        return autoTerminateTime;
+    }
+
+    public void setAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
+    }
 
     public NovaCreateServersOption withImageRef(String imageRef) {
         this.imageRef = imageRef;
@@ -607,7 +633,8 @@ public class NovaCreateServersOption  {
             return false;
         }
         NovaCreateServersOption novaCreateServersOption = (NovaCreateServersOption) o;
-        return Objects.equals(this.imageRef, novaCreateServersOption.imageRef) &&
+        return Objects.equals(this.autoTerminateTime, novaCreateServersOption.autoTerminateTime) &&
+            Objects.equals(this.imageRef, novaCreateServersOption.imageRef) &&
             Objects.equals(this.flavorRef, novaCreateServersOption.flavorRef) &&
             Objects.equals(this.name, novaCreateServersOption.name) &&
             Objects.equals(this.metadata, novaCreateServersOption.metadata) &&
@@ -627,12 +654,13 @@ public class NovaCreateServersOption  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(imageRef, flavorRef, name, metadata, adminPass, blockDeviceMappingV2, configDrive, securityGroups, networks, keyName, userData, availabilityZone, returnReservationId, minCount, maxCount, osDCFDiskConfig, description);
+        return Objects.hash(autoTerminateTime, imageRef, flavorRef, name, metadata, adminPass, blockDeviceMappingV2, configDrive, securityGroups, networks, keyName, userData, availabilityZone, returnReservationId, minCount, maxCount, osDCFDiskConfig, description);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NovaCreateServersOption {\n");
+        sb.append("    autoTerminateTime: ").append(toIndentedString(autoTerminateTime)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

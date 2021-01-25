@@ -164,7 +164,7 @@ public class BssintlAsyncClient {
 
     /**
      * 查询资源详单
-     * 功能描述：客户在客户自建平台查询自己的资源详单，用于反映各类资源的消耗情况。资源详单数据有延迟，最大延迟24小时。
+     * 功能描述：客户在客户自建平台查询自己的资源详单，用于反映各类资源的消耗情况。
      *
      * @param ListCustomerselfResourceRecordDetailsRequest 请求对象
      * @return CompletableFuture<ListCustomerselfResourceRecordDetailsResponse>
@@ -215,6 +215,17 @@ public class BssintlAsyncClient {
      */
     public CompletableFuture<ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderIdAsync(ListOrderCouponsByOrderIdRequest request) {
         return hcClient.asyncInvokeHttp(request, BssintlMeta.listOrderCouponsByOrderId);
+    }
+
+    /**
+     * 查询订单可用折扣
+     * 功能描述：功能介绍客户在伙伴销售平台支付待支付订单时，查询可使用的折扣。只返回商务合同折扣和伙伴授权折扣客户在客户自建平台查看订单可用的优惠券列表。
+     *
+     * @param ListOrderDiscountsRequest 请求对象
+     * @return CompletableFuture<ListOrderDiscountsResponse>
+     */
+    public CompletableFuture<ListOrderDiscountsResponse> listOrderDiscountsAsync(ListOrderDiscountsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listOrderDiscounts);
     }
 
     /**
@@ -361,8 +372,19 @@ public class BssintlAsyncClient {
     }
 
     /**
+     * 查询账户余额
+     * 功能描述：查询账户余额
+     *
+     * @param ShowCustomerAccountBalancesRequest 请求对象
+     * @return CompletableFuture<ShowCustomerAccountBalancesResponse>
+     */
+    public CompletableFuture<ShowCustomerAccountBalancesResponse> showCustomerAccountBalancesAsync(ShowCustomerAccountBalancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.showCustomerAccountBalances);
+    }
+
+    /**
      * 查询汇总账单
-     * 功能描述：客户在客户自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。消费汇总账单数据仅包含前一天24点前的数据
+     * 功能描述：客户在客户自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。
      *
      * @param ShowCustomerMonthlySumRequest 请求对象
      * @return CompletableFuture<ShowCustomerMonthlySumResponse>

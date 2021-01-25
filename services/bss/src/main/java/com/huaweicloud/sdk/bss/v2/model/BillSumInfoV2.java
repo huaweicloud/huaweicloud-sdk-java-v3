@@ -256,7 +256,7 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：金额单位。1：元；2：角；3：分| |参数的约束及描述：金额单位。1：元；2：角；3：分|
+     * |参数名称：金额单位。1：元| |参数的约束及描述：金额单位。1：元|
      * @return measureId
      */
     public Integer getMeasureId() {

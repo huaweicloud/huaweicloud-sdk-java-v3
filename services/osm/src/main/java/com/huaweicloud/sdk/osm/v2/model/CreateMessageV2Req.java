@@ -72,7 +72,7 @@ public class CreateMessageV2Req  {
 
 
     /**
-     * 类型，可以删除
+     * 类型
      * minimum: 0
      * maximum: 1
      * @return type

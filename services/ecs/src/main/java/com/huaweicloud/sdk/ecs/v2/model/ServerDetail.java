@@ -43,6 +43,12 @@ public class ServerDetail  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auto_terminate_time")
+    
+    private String autoTerminateTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostId")
     
     private String hostId;
@@ -331,6 +337,26 @@ public class ServerDetail  {
 
     public void setUpdated(String updated) {
         this.updated = updated;
+    }
+
+    public ServerDetail withAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+     * @return autoTerminateTime
+     */
+    public String getAutoTerminateTime() {
+        return autoTerminateTime;
+    }
+
+    public void setAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
     }
 
     public ServerDetail withHostId(String hostId) {
@@ -1283,6 +1309,7 @@ public class ServerDetail  {
         ServerDetail serverDetail = (ServerDetail) o;
         return Objects.equals(this.status, serverDetail.status) &&
             Objects.equals(this.updated, serverDetail.updated) &&
+            Objects.equals(this.autoTerminateTime, serverDetail.autoTerminateTime) &&
             Objects.equals(this.hostId, serverDetail.hostId) &&
             Objects.equals(this.osEXTSRVATTRHost, serverDetail.osEXTSRVATTRHost) &&
             Objects.equals(this.addresses, serverDetail.addresses) &&
@@ -1328,7 +1355,7 @@ public class ServerDetail  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(status, updated, hostId, osEXTSRVATTRHost, addresses, keyName, image, osEXTSTSTaskState, osEXTSTSVmState, osEXTSRVATTRInstanceName, osEXTSRVATTRHypervisorHostname, flavor, id, securityGroups, osEXTAZAvailabilityZone, userId, name, created, tenantId, osDCFDiskConfig, accessIPv4, accessIPv6, fault, progress, osEXTSTSPowerState, configDrive, metadata, osSRVUSGLaunchedAt, osSRVUSGTerminatedAt, osExtendedVolumesVolumesAttached, description, hostStatus, osEXTSRVATTRHostname, osEXTSRVATTRReservationId, osEXTSRVATTRLaunchIndex, osEXTSRVATTRKernelId, osEXTSRVATTRRamdiskId, osEXTSRVATTRRootDeviceName, osEXTSRVATTRUserData, locked, tags, osSchedulerHints, enterpriseProjectId, sysTags);
+        return Objects.hash(status, updated, autoTerminateTime, hostId, osEXTSRVATTRHost, addresses, keyName, image, osEXTSTSTaskState, osEXTSTSVmState, osEXTSRVATTRInstanceName, osEXTSRVATTRHypervisorHostname, flavor, id, securityGroups, osEXTAZAvailabilityZone, userId, name, created, tenantId, osDCFDiskConfig, accessIPv4, accessIPv6, fault, progress, osEXTSTSPowerState, configDrive, metadata, osSRVUSGLaunchedAt, osSRVUSGTerminatedAt, osExtendedVolumesVolumesAttached, description, hostStatus, osEXTSRVATTRHostname, osEXTSRVATTRReservationId, osEXTSRVATTRLaunchIndex, osEXTSRVATTRKernelId, osEXTSRVATTRRamdiskId, osEXTSRVATTRRootDeviceName, osEXTSRVATTRUserData, locked, tags, osSchedulerHints, enterpriseProjectId, sysTags);
     }
     @Override
     public String toString() {
@@ -1336,6 +1363,7 @@ public class ServerDetail  {
         sb.append("class ServerDetail {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    autoTerminateTime: ").append(toIndentedString(autoTerminateTime)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    osEXTSRVATTRHost: ").append(toIndentedString(osEXTSRVATTRHost)).append("\n");
         sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");

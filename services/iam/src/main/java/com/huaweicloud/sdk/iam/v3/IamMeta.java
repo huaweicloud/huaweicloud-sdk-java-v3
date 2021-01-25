@@ -2851,7 +2851,7 @@ public class IamMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdateDomainConsoleAclPolicyRequestBody.class,
             f -> f.withMarshaller(UpdateDomainConsoleAclPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);

@@ -4002,7 +4002,7 @@ public class MeetingMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             RestCustomMultiPictureBody.class,
             f -> f.withMarshaller(SetCustomMultiPictureRequest::getBody, (req, v) -> {
                 req.setBody(v);

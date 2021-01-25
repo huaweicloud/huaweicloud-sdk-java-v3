@@ -249,7 +249,7 @@ public class RomaMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BatchAddDeviceToGroupRequestBody.class,
             f -> f.withMarshaller(BatchAddDeviceToGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -281,7 +281,7 @@ public class RomaMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BatchDeleteDevicesRequestBody.class,
             f -> f.withMarshaller(BatchDeleteDevicesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -377,7 +377,7 @@ public class RomaMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             BatchFreezeDevicesRequestBody.class,
             f -> f.withMarshaller(BatchFreezeDevicesRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1441,7 +1441,7 @@ public class RomaMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             LdApiTest.class,
             f -> f.withMarshaller(DebugLiveDataApiV2Request::getBody, (req, v) -> {
                 req.setBody(v);
@@ -7722,7 +7722,7 @@ public class RomaMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdatePropertyRequestBody.class,
             f -> f.withMarshaller(UpdateRequestPropertyRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -7818,7 +7818,7 @@ public class RomaMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             UpdatePropertyRequestBody.class,
             f -> f.withMarshaller(UpdateResponsePropertyRequest::getBody, (req, v) -> {
                 req.setBody(v);

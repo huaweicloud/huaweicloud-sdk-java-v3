@@ -88,7 +88,7 @@ public class RmsMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             PolicyAssignmentRequestBody.class,
             f -> f.withMarshaller(CreatePolicyAssignmentsRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -504,7 +504,7 @@ public class RmsMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             PolicyAssignmentRequestBody.class,
             f -> f.withMarshaller(UpdatePolicyAssignmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -800,7 +800,7 @@ public class RmsMeta {
         // requests
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TrackerConfigBody.class,
             f -> f.withMarshaller(CreateTrackerConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);

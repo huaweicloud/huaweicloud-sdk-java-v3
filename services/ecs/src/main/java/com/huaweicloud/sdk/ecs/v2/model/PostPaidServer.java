@@ -31,6 +31,12 @@ public class PostPaidServer  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="auto_terminate_time")
+    
+    private String autoTerminateTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adminPass")
     
     private String adminPass;
@@ -154,6 +160,26 @@ public class PostPaidServer  {
     @JsonProperty(value="description")
     
     private String description;
+
+    public PostPaidServer withAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+     * @return autoTerminateTime
+     */
+    public String getAutoTerminateTime() {
+        return autoTerminateTime;
+    }
+
+    public void setAutoTerminateTime(String autoTerminateTime) {
+        this.autoTerminateTime = autoTerminateTime;
+    }
 
     public PostPaidServer withAdminPass(String adminPass) {
         this.adminPass = adminPass;
@@ -693,7 +719,8 @@ public class PostPaidServer  {
             return false;
         }
         PostPaidServer postPaidServer = (PostPaidServer) o;
-        return Objects.equals(this.adminPass, postPaidServer.adminPass) &&
+        return Objects.equals(this.autoTerminateTime, postPaidServer.autoTerminateTime) &&
+            Objects.equals(this.adminPass, postPaidServer.adminPass) &&
             Objects.equals(this.availabilityZone, postPaidServer.availabilityZone) &&
             Objects.equals(this.count, postPaidServer.count) &&
             Objects.equals(this.dataVolumes, postPaidServer.dataVolumes) &&
@@ -717,12 +744,13 @@ public class PostPaidServer  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(adminPass, availabilityZone, count, dataVolumes, extendparam, flavorRef, imageRef, isAutoRename, keyName, metadata, name, nics, osSchedulerHints, publicip, rootVolume, securityGroups, serverTags, tags, userData, vpcid, description);
+        return Objects.hash(autoTerminateTime, adminPass, availabilityZone, count, dataVolumes, extendparam, flavorRef, imageRef, isAutoRename, keyName, metadata, name, nics, osSchedulerHints, publicip, rootVolume, securityGroups, serverTags, tags, userData, vpcid, description);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServer {\n");
+        sb.append("    autoTerminateTime: ").append(toIndentedString(autoTerminateTime)).append("\n");
         sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");

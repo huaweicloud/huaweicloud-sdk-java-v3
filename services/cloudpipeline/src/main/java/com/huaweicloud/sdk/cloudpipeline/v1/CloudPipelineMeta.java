@@ -465,7 +465,7 @@ public class CloudPipelineMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             StartPipelineParameters.class,
             f -> f.withMarshaller(StartNewPipelineRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -505,7 +505,7 @@ public class CloudPipelineMeta {
         );
         builder.withRequestField("body",
             LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             StartPipelineParameters.class,
             f -> f.withMarshaller(StartPipelineRequest::getBody, (req, v) -> {
                 req.setBody(v);

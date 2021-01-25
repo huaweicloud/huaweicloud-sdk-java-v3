@@ -504,6 +504,17 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 修改云服务器云主机销毁时间
+     * 修改按需服务器，设置定时销毁时间。如果设置的销毁时间为空，表示取消销毁时间。  该接口支持企业项目细粒度权限的校验，具体细粒度请参见 ecs:cloudServers:put。
+     *
+     * @param UpdateAutoTerminateTimeServerRequest 请求对象
+     * @return CompletableFuture<UpdateAutoTerminateTimeServerResponse>
+     */
+    public CompletableFuture<UpdateAutoTerminateTimeServerResponse> updateAutoTerminateTimeServerAsync(UpdateAutoTerminateTimeServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.updateAutoTerminateTimeServer);
+    }
+
+    /**
      * 修改云服务器
      * 修改云服务器信息，目前支持修改云服务器名称及描述和hostname。
      *
