@@ -18,6 +18,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ShowResourceHistoryRequest, ShowResourceHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceHistoryRequest.class, ShowResourceHistoryResponse.class)
+                .withName("ShowResourceHistory")
                 .withUri("/v1/resource-manager/domains/{domain_id}/resources/{resource_id}/history")
                 .withContentType("application/json");
 
@@ -82,6 +83,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<CreatePolicyAssignmentsRequest, CreatePolicyAssignmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreatePolicyAssignmentsRequest.class, CreatePolicyAssignmentsResponse.class)
+                .withName("CreatePolicyAssignments")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments")
                 .withContentType("application/json");
 
@@ -106,6 +108,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<DeletePolicyAssignmentRequest, DeletePolicyAssignmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyAssignmentRequest.class, DeletePolicyAssignmentResponse.class)
+                .withName("DeletePolicyAssignment")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}")
                 .withContentType("application/json");
 
@@ -130,6 +133,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<DisablePolicyAssignmentRequest, DisablePolicyAssignmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisablePolicyAssignmentRequest.class, DisablePolicyAssignmentResponse.class)
+                .withName("DisablePolicyAssignment")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/disable")
                 .withContentType("application/json");
 
@@ -154,6 +158,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<EnablePolicyAssignmentRequest, EnablePolicyAssignmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnablePolicyAssignmentRequest.class, EnablePolicyAssignmentResponse.class)
+                .withName("EnablePolicyAssignment")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/enable")
                 .withContentType("application/json");
 
@@ -178,6 +183,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListBuiltInPolicyDefinitionsRequest, ListBuiltInPolicyDefinitionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBuiltInPolicyDefinitionsRequest.class, ListBuiltInPolicyDefinitionsResponse.class)
+                .withName("ListBuiltInPolicyDefinitions")
                 .withUri("/v1/resource-manager/policy-definitions")
                 .withContentType("application/json");
 
@@ -202,6 +208,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListPolicyAssignmentsRequest, ListPolicyAssignmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyAssignmentsRequest.class, ListPolicyAssignmentsResponse.class)
+                .withName("ListPolicyAssignments")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments")
                 .withContentType("application/json");
 
@@ -218,6 +225,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListPolicyStatesByAssignmentIdRequest, ListPolicyStatesByAssignmentIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyStatesByAssignmentIdRequest.class, ListPolicyStatesByAssignmentIdResponse.class)
+                .withName("ListPolicyStatesByAssignmentId")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/policy-states")
                 .withContentType("application/json");
 
@@ -282,6 +290,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListPolicyStatesByDomainIdRequest, ListPolicyStatesByDomainIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyStatesByDomainIdRequest.class, ListPolicyStatesByDomainIdResponse.class)
+                .withName("ListPolicyStatesByDomainId")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-states")
                 .withContentType("application/json");
 
@@ -338,6 +347,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListPolicyStatesByResourceIdRequest, ListPolicyStatesByResourceIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPolicyStatesByResourceIdRequest.class, ListPolicyStatesByResourceIdResponse.class)
+                .withName("ListPolicyStatesByResourceId")
                 .withUri("/v1/resource-manager/domains/{domain_id}/resources/{resource_id}/policy-states")
                 .withContentType("application/json");
 
@@ -386,6 +396,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<RunEvaluationByPolicyAssignmentIdRequest, RunEvaluationByPolicyAssignmentIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunEvaluationByPolicyAssignmentIdRequest.class, RunEvaluationByPolicyAssignmentIdResponse.class)
+                .withName("RunEvaluationByPolicyAssignmentId")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/policy-states/run-evaluation")
                 .withContentType("application/json");
 
@@ -410,6 +421,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ShowBuiltInPolicyDefinitionRequest, ShowBuiltInPolicyDefinitionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBuiltInPolicyDefinitionRequest.class, ShowBuiltInPolicyDefinitionResponse.class)
+                .withName("ShowBuiltInPolicyDefinition")
                 .withUri("/v1/resource-manager/policy-definitions/{policy_definition_id}")
                 .withContentType("application/json");
 
@@ -442,6 +454,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ShowEvaluationStateByAssignmentIdRequest, ShowEvaluationStateByAssignmentIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEvaluationStateByAssignmentIdRequest.class, ShowEvaluationStateByAssignmentIdResponse.class)
+                .withName("ShowEvaluationStateByAssignmentId")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/policy-states/evaluation-state")
                 .withContentType("application/json");
 
@@ -466,6 +479,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ShowPolicyAssignmentRequest, ShowPolicyAssignmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPolicyAssignmentRequest.class, ShowPolicyAssignmentResponse.class)
+                .withName("ShowPolicyAssignment")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}")
                 .withContentType("application/json");
 
@@ -490,6 +504,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<UpdatePolicyAssignmentRequest, UpdatePolicyAssignmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyAssignmentRequest.class, UpdatePolicyAssignmentResponse.class)
+                .withName("UpdatePolicyAssignment")
                 .withUri("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}")
                 .withContentType("application/json");
 
@@ -522,6 +537,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
+                .withName("ListRegions")
                 .withUri("/v1/resource-manager/domains/{domain_id}/regions")
                 .withContentType("application/json");
 
@@ -546,6 +562,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ShowResourceRelationsRequest, ShowResourceRelationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceRelationsRequest.class, ShowResourceRelationsResponse.class)
+                .withName("ShowResourceRelations")
                 .withUri("/v1/resource-manager/domains/{domain_id}/resources/{resource_id}/relations")
                 .withContentType("application/json");
 
@@ -594,6 +611,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListAllResourcesRequest, ListAllResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllResourcesRequest.class, ListAllResourcesResponse.class)
+                .withName("ListAllResources")
                 .withUri("/v1/resource-manager/domains/{domain_id}/all-resources")
                 .withContentType("application/json");
 
@@ -650,6 +668,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListProvidersRequest, ListProvidersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProvidersRequest.class, ListProvidersResponse.class)
+                .withName("ListProviders")
                 .withUri("/v1/resource-manager/domains/{domain_id}/providers")
                 .withContentType("application/json");
 
@@ -690,6 +709,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ListResourcesRequest, ListResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourcesRequest.class, ListResourcesResponse.class)
+                .withName("ListResources")
                 .withUri("/v1/resource-manager/domains/{domain_id}/provider/{provider}/type/{type}/resources")
                 .withContentType("application/json");
 
@@ -754,6 +774,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ShowResourceByIdRequest, ShowResourceByIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceByIdRequest.class, ShowResourceByIdResponse.class)
+                .withName("ShowResourceById")
                 .withUri("/v1/resource-manager/domains/{domain_id}/provider/{provider}/type/{type}/resources/{resource_id}")
                 .withContentType("application/json");
 
@@ -794,6 +815,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<CreateTrackerConfigRequest, CreateTrackerConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateTrackerConfigRequest.class, CreateTrackerConfigResponse.class)
+                .withName("CreateTrackerConfig")
                 .withUri("/v1/resource-manager/domains/{domain_id}/tracker-config")
                 .withContentType("application/json");
 
@@ -818,6 +840,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTrackerConfigRequest, DeleteTrackerConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTrackerConfigRequest.class, DeleteTrackerConfigResponse.class)
+                .withName("DeleteTrackerConfig")
                 .withUri("/v1/resource-manager/domains/{domain_id}/tracker-config")
                 .withContentType("application/json");
 
@@ -834,6 +857,7 @@ public class RmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTrackerConfigRequest, ShowTrackerConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTrackerConfigRequest.class, ShowTrackerConfigResponse.class)
+                .withName("ShowTrackerConfig")
                 .withUri("/v1/resource-manager/domains/{domain_id}/tracker-config")
                 .withContentType("application/json");
 

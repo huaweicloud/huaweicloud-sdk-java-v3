@@ -18,6 +18,7 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<CreatePredefineTagsRequest, CreatePredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePredefineTagsRequest.class, CreatePredefineTagsResponse.class)
+                .withName("CreatePredefineTags")
                 .withUri("/v1.0/predefine_tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<DeletePredefineTagsRequest, DeletePredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeletePredefineTagsRequest.class, DeletePredefineTagsResponse.class)
+                .withName("DeletePredefineTags")
                 .withUri("/v1.0/predefine_tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -66,6 +68,7 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
+                .withName("ListApiVersions")
                 .withUri("/")
                 .withContentType("application/json");
 
@@ -82,6 +85,7 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<ListPredefineTagsRequest, ListPredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPredefineTagsRequest.class, ListPredefineTagsResponse.class)
+                .withName("ListPredefineTags")
                 .withUri("/v1.0/predefine_tags")
                 .withContentType("application/json");
 
@@ -146,6 +150,7 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
+                .withName("ShowApiVersion")
                 .withUri("/{api_version}")
                 .withContentType("application/json");
 
@@ -170,6 +175,7 @@ public class TmsMeta {
         // basic
         HttpRequestDef.Builder<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePredefineTagsRequest.class, UpdatePredefineTagsResponse.class)
+                .withName("UpdatePredefineTags")
                 .withUri("/v1.0/predefine_tags")
                 .withContentType("application/json;charset=UTF-8");
 

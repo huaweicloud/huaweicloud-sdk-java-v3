@@ -116,7 +116,7 @@ public class EnlargeInstanceRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="num")
     
-    private Integer num;
+    private String num;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -164,7 +164,7 @@ public class EnlargeInstanceRequestBody  {
         this.specCode = specCode;
     }
 
-    public EnlargeInstanceRequestBody withNum(Integer num) {
+    public EnlargeInstanceRequestBody withNum(String num) {
         this.num = num;
         return this;
     }
@@ -176,11 +176,11 @@ public class EnlargeInstanceRequestBody  {
      * 一个集群实例下，最多支持16个mongos节点和16个shard组。
      * @return num
      */
-    public Integer getNum() {
+    public String getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(String num) {
         this.num = num;
     }
 

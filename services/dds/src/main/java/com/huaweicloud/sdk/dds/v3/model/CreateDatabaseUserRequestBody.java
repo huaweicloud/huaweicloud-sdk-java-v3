@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dds.v3.model.RolesOption;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -40,8 +42,8 @@ public class CreateDatabaseUserRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roles")
     
-    private RolesOption roles = null;
-
+    private List<RolesOption> roles = new ArrayList<>();
+    
     public CreateDatabaseUserRequestBody withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -102,30 +104,34 @@ public class CreateDatabaseUserRequestBody  {
         this.dbName = dbName;
     }
 
-    public CreateDatabaseUserRequestBody withRoles(RolesOption roles) {
+    public CreateDatabaseUserRequestBody withRoles(List<RolesOption> roles) {
         this.roles = roles;
         return this;
     }
 
-    public CreateDatabaseUserRequestBody withRoles(Consumer<RolesOption> rolesSetter) {
-        if(this.roles == null ){
-            this.roles = new RolesOption();
-            rolesSetter.accept(this.roles);
-        }
-        
+    
+    public CreateDatabaseUserRequestBody addRolesItem(RolesOption rolesItem) {
+        this.roles.add(rolesItem);
         return this;
     }
 
+    public CreateDatabaseUserRequestBody withRoles(Consumer<List<RolesOption>> rolesSetter) {
+        if(this.roles == null ){
+            this.roles = new ArrayList<>();
+        }
+        rolesSetter.accept(this.roles);
+        return this;
+    }
 
     /**
-     * Get roles
+     * 新用户所拥有的角色。
      * @return roles
      */
-    public RolesOption getRoles() {
+    public List<RolesOption> getRoles() {
         return roles;
     }
 
-    public void setRoles(RolesOption roles) {
+    public void setRoles(List<RolesOption> roles) {
         this.roles = roles;
     }
     @Override

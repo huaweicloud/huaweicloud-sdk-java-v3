@@ -18,6 +18,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<CancelScriptRequest, CancelScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelScriptRequest.class, CancelScriptResponse.class)
+                .withName("CancelScript")
                 .withUri("/v1/{project_id}/scripts/{script_name}/instances/{instance_id}/stop")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<CreateConnectionRequest, CreateConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConnectionRequest.class, CreateConnectionResponse.class)
+                .withName("CreateConnection")
                 .withUri("/v1/{project_id}/connections")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -74,6 +76,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<CreateJobRequest, CreateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateJobRequest.class, CreateJobResponse.class)
+                .withName("CreateJob")
                 .withUri("/v1/{project_id}/jobs")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -98,6 +101,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<CreateResourceRequest, CreateResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceRequest.class, CreateResourceResponse.class)
+                .withName("CreateResource")
                 .withUri("/v1/{project_id}/resources")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -131,6 +135,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<CreateScriptRequest, CreateScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScriptRequest.class, CreateScriptResponse.class)
+                .withName("CreateScript")
                 .withUri("/v1/{project_id}/scripts")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -155,6 +160,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<DeleteConnctionRequest, DeleteConnctionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteConnctionRequest.class, DeleteConnctionResponse.class)
+                .withName("DeleteConnction")
                 .withUri("/v1/{project_id}/connections/{connection_name}")
                 .withContentType("application/json");
 
@@ -179,6 +185,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<DeleteJobRequest, DeleteJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
+                .withName("DeleteJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}")
                 .withContentType("application/json");
 
@@ -203,6 +210,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<DeleteResourceRequest, DeleteResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceRequest.class, DeleteResourceResponse.class)
+                .withName("DeleteResource")
                 .withUri("/v1/{project_id}/resources/{resource_id}")
                 .withContentType("application/json");
 
@@ -227,6 +235,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<DeleteScriptRequest, DeleteScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScriptRequest.class, DeleteScriptResponse.class)
+                .withName("DeleteScript")
                 .withUri("/v1/{project_id}/scripts/{script_name}")
                 .withContentType("application/json");
 
@@ -251,6 +260,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ExecuteScriptRequest, ExecuteScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteScriptRequest.class, ExecuteScriptResponse.class)
+                .withName("ExecuteScript")
                 .withUri("/v1/{project_id}/scripts/{script_name}/execute")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -283,6 +293,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ExportConnectionsRequest, ExportConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportConnectionsRequest.class, ExportConnectionsResponse.class)
+                .withName("ExportConnections")
                 .withUri("/v1/{project_id}/connections/export")
                 .withContentType("application/json");
 
@@ -299,6 +310,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ExportJobRequest, ExportJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportJobRequest.class, ExportJobResponse.class)
+                .withName("ExportJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}/export")
                 .withContentType("application/json");
 
@@ -323,6 +335,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ExportJobListRequest, ExportJobListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportJobListRequest.class, ExportJobListResponse.class)
+                .withName("ExportJobList")
                 .withUri("/v1/{project_id}/jobs/batch-export")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -347,6 +360,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ImportConnectionsRequest, ImportConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportConnectionsRequest.class, ImportConnectionsResponse.class)
+                .withName("ImportConnections")
                 .withUri("/v1/{project_id}/connections/import")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -371,6 +385,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ImportJobRequest, ImportJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportJobRequest.class, ImportJobResponse.class)
+                .withName("ImportJob")
                 .withUri("/v1/{project_id}/jobs/import")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -395,6 +410,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ListConnectionsRequest, ListConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConnectionsRequest.class, ListConnectionsResponse.class)
+                .withName("ListConnections")
                 .withUri("/v1/{project_id}/connections")
                 .withContentType("application/json");
 
@@ -411,6 +427,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ListJobInstancesRequest, ListJobInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobInstancesRequest.class, ListJobInstancesResponse.class)
+                .withName("ListJobInstances")
                 .withUri("/v1/{project_id}/jobs/instances/detail")
                 .withContentType("application/json");
 
@@ -427,6 +444,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
+                .withName("ListJobs")
                 .withUri("/v1/{project_id}/jobs")
                 .withContentType("application/json");
 
@@ -443,6 +461,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ListResourcesRequest, ListResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourcesRequest.class, ListResourcesResponse.class)
+                .withName("ListResources")
                 .withUri("/v1/{project_id}/resources")
                 .withContentType("application/json");
 
@@ -459,6 +478,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ListScriptResultsRequest, ListScriptResultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScriptResultsRequest.class, ListScriptResultsResponse.class)
+                .withName("ListScriptResults")
                 .withUri("/v1/{project_id}/scripts/{script_name}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -491,6 +511,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ListScriptsRequest, ListScriptsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScriptsRequest.class, ListScriptsResponse.class)
+                .withName("ListScripts")
                 .withUri("/v1/{project_id}/scripts")
                 .withContentType("application/json");
 
@@ -507,6 +528,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ListSystemTasksRequest, ListSystemTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSystemTasksRequest.class, ListSystemTasksResponse.class)
+                .withName("ListSystemTasks")
                 .withUri("/v1/{project_id}/system-tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -531,6 +553,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ModifyJobRequest, ModifyJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyJobRequest.class, ModifyJobResponse.class)
+                .withName("ModifyJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -563,6 +586,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ModifyResourceRequest, ModifyResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyResourceRequest.class, ModifyResourceResponse.class)
+                .withName("ModifyResource")
                 .withUri("/v1/{project_id}/resources/{resource_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -595,6 +619,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ModifyScriptRequest, ModifyScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyScriptRequest.class, ModifyScriptResponse.class)
+                .withName("ModifyScript")
                 .withUri("/v1/{project_id}/scripts/{script_name}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -627,6 +652,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<RestoreJobInstanceRequest, RestoreJobInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreJobInstanceRequest.class, RestoreJobInstanceResponse.class)
+                .withName("RestoreJobInstance")
                 .withUri("/v1/{project_id}/jobs/{job_name}/instances/{instance_id}/restart")
                 .withContentType("application/json");
 
@@ -659,6 +685,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<RunOnceRequest, RunOnceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunOnceRequest.class, RunOnceResponse.class)
+                .withName("RunOnce")
                 .withUri("/v1/{project_id}/jobs/{job_name}/run-immediate")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -691,6 +718,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ShowConnectionRequest, ShowConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConnectionRequest.class, ShowConnectionResponse.class)
+                .withName("ShowConnection")
                 .withUri("/v1/{project_id}/connections/{connection_name}")
                 .withContentType("application/json");
 
@@ -715,6 +743,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ShowFileInfoRequest, ShowFileInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowFileInfoRequest.class, ShowFileInfoResponse.class)
+                .withName("ShowFileInfo")
                 .withUri("/v1/{project_id}/jobs/check-file")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -739,6 +768,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
+                .withName("ShowJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}")
                 .withContentType("application/json");
 
@@ -763,6 +793,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ShowJobInstanceRequest, ShowJobInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobInstanceRequest.class, ShowJobInstanceResponse.class)
+                .withName("ShowJobInstance")
                 .withUri("/v1/{project_id}/jobs/{job_name}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -795,6 +826,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ShowJobStatusRequest, ShowJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatusRequest.class, ShowJobStatusResponse.class)
+                .withName("ShowJobStatus")
                 .withUri("/v1/{project_id}/jobs/{job_name}/status")
                 .withContentType("application/json");
 
@@ -819,6 +851,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ShowResourceRequest, ShowResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceRequest.class, ShowResourceResponse.class)
+                .withName("ShowResource")
                 .withUri("/v1/{project_id}/resources/{resource_id}")
                 .withContentType("application/json");
 
@@ -843,6 +876,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<ShowScriptRequest, ShowScriptResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScriptRequest.class, ShowScriptResponse.class)
+                .withName("ShowScript")
                 .withUri("/v1/{project_id}/scripts/{script_name}")
                 .withContentType("application/json");
 
@@ -867,6 +901,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<StartJobRequest, StartJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartJobRequest.class, StartJobResponse.class)
+                .withName("StartJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}/start")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -899,6 +934,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<StopJobRequest, StopJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopJobRequest.class, StopJobResponse.class)
+                .withName("StopJob")
                 .withUri("/v1/{project_id}/jobs/{job_name}/stop")
                 .withContentType("application/json");
 
@@ -923,6 +959,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<StopJobInstanceRequest, StopJobInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopJobInstanceRequest.class, StopJobInstanceResponse.class)
+                .withName("StopJobInstance")
                 .withUri("/v1/{project_id}/jobs/{job_name}/instances/{instance_id}/stop")
                 .withContentType("application/json");
 
@@ -955,6 +992,7 @@ public class DgcMeta {
         // basic
         HttpRequestDef.Builder<UpdateConnectionRequest, UpdateConnectionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConnectionRequest.class, UpdateConnectionResponse.class)
+                .withName("UpdateConnection")
                 .withUri("/v1/{project_id}/connections/{connection_name}")
                 .withContentType("application/json;charset=UTF-8");
 

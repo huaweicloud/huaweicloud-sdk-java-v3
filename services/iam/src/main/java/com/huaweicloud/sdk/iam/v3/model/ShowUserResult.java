@@ -116,6 +116,12 @@ public class ShowUserResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="access_mode")
+    
+    private String accessMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
@@ -447,6 +453,26 @@ public class ShowUserResult  {
         this.isDomainOwner = isDomainOwner;
     }
 
+    public ShowUserResult withAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户访问模式。
+     * @return accessMode
+     */
+    public String getAccessMode() {
+        return accessMode;
+    }
+
+    public void setAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+    }
+
     public ShowUserResult withDescription(String description) {
         this.description = description;
         return this;
@@ -491,11 +517,12 @@ public class ShowUserResult  {
             Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime) &&
             Objects.equals(this.pwdStength, showUserResult.pwdStength) &&
             Objects.equals(this.isDomainOwner, showUserResult.isDomainOwner) &&
+            Objects.equals(this.accessMode, showUserResult.accessMode) &&
             Objects.equals(this.description, showUserResult.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStength, isDomainOwner, description);
+        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStength, isDomainOwner, accessMode, description);
     }
     @Override
     public String toString() {
@@ -517,6 +544,7 @@ public class ShowUserResult  {
         sb.append("    lastLoginTime: ").append(toIndentedString(lastLoginTime)).append("\n");
         sb.append("    pwdStength: ").append(toIndentedString(pwdStength)).append("\n");
         sb.append("    isDomainOwner: ").append(toIndentedString(isDomainOwner)).append("\n");
+        sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

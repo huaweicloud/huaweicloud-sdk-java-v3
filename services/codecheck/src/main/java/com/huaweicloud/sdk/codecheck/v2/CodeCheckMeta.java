@@ -18,6 +18,7 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<CreateTaskV2Request, CreateTaskV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskV2Request.class, CreateTaskV2Response.class)
+                .withName("CreateTaskV2")
                 .withUri("/v2/{project_id}/task")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<RunTaskV2Request, RunTaskV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTaskV2Request.class, RunTaskV2Response.class)
+                .withName("RunTaskV2")
                 .withUri("/v2/tasks/{task_id}/run")
                 .withContentType("application/json");
 
@@ -82,6 +84,7 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<ShowProgressDetailV2Request, ShowProgressDetailV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProgressDetailV2Request.class, ShowProgressDetailV2Response.class)
+                .withName("ShowProgressDetailV2")
                 .withUri("/v2/tasks/{task_id}/progress")
                 .withContentType("application/json");
 
@@ -106,6 +109,7 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskDetailV2Request, ShowTaskDetailV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskDetailV2Request.class, ShowTaskDetailV2Response.class)
+                .withName("ShowTaskDetailV2")
                 .withUri("/v2/tasks/{task_id}/defects-summary")
                 .withContentType("application/json");
 
@@ -130,6 +134,7 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskListByProjectIdV2Request, ShowTaskListByProjectIdV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskListByProjectIdV2Request.class, ShowTaskListByProjectIdV2Response.class)
+                .withName("ShowTaskListByProjectIdV2")
                 .withUri("/v2/{project_id}/tasks")
                 .withContentType("application/json");
 
@@ -170,6 +175,7 @@ public class CodeCheckMeta {
         // basic
         HttpRequestDef.Builder<StopTaskByIdV2Request, StopTaskByIdV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopTaskByIdV2Request.class, StopTaskByIdV2Response.class)
+                .withName("StopTaskByIdV2")
                 .withUri("/v2/tasks/{task_id}/stop")
                 .withContentType("application/json");
 

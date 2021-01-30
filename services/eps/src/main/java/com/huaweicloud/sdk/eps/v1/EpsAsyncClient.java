@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.eps.v1.model.*;
 
 public class EpsAsyncClient {
@@ -31,6 +31,17 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 创建企业项目
+     * 创建企业项目。
+     *
+     * @param CreateEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> createEnterpriseProjectAsyncInvoker(CreateEnterpriseProjectRequest request) {
+        return new AsyncInvoker<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse>(request, EpsMeta.createEnterpriseProject, hcClient);
+    }
+
+    /**
      * 停用企业项目
      * 停用企业项目。
      *
@@ -39,6 +50,17 @@ public class EpsAsyncClient {
      */
     public CompletableFuture<DisableEnterpriseProjectResponse> disableEnterpriseProjectAsync(DisableEnterpriseProjectRequest request) {
         return hcClient.asyncInvokeHttp(request, EpsMeta.disableEnterpriseProject);
+    }
+
+    /**
+     * 停用企业项目
+     * 停用企业项目。
+     *
+     * @param DisableEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> disableEnterpriseProjectAsyncInvoker(DisableEnterpriseProjectRequest request) {
+        return new AsyncInvoker<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse>(request, EpsMeta.disableEnterpriseProject, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 启用企业项目
+     * 启用企业项目。
+     *
+     * @param EnableEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> enableEnterpriseProjectAsyncInvoker(EnableEnterpriseProjectRequest request) {
+        return new AsyncInvoker<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse>(request, EpsMeta.enableEnterpriseProject, hcClient);
+    }
+
+    /**
      * 查询API版本列表
      * 查询企业项目的API版本列表。
      *
@@ -61,6 +94,17 @@ public class EpsAsyncClient {
      */
     public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
         return hcClient.asyncInvokeHttp(request, EpsMeta.listApiVersions);
+    }
+
+    /**
+     * 查询API版本列表
+     * 查询企业项目的API版本列表。
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
+     */
+    public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(ListApiVersionsRequest request) {
+        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, EpsMeta.listApiVersions, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 查询企业项目列表
+     * 查询当前用户已授权的企业项目列表，用户可以使用企业项目绑定资源。
+     *
+     * @param ListEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> listEnterpriseProjectAsyncInvoker(ListEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse>(request, EpsMeta.listEnterpriseProject, hcClient);
+    }
+
+    /**
      * 迁移资源
      * 迁移资源到目标企业项目。
      *
@@ -83,6 +138,17 @@ public class EpsAsyncClient {
      */
     public CompletableFuture<MigrateResourceResponse> migrateResourceAsync(MigrateResourceRequest request) {
         return hcClient.asyncInvokeHttp(request, EpsMeta.migrateResource);
+    }
+
+    /**
+     * 迁移资源
+     * 迁移资源到目标企业项目。
+     *
+     * @param MigrateResourceRequest 请求对象
+     * @return AsyncInvoker<MigrateResourceRequest, MigrateResourceResponse>
+     */
+    public AsyncInvoker<MigrateResourceRequest, MigrateResourceResponse> migrateResourceAsyncInvoker(MigrateResourceRequest request) {
+        return new AsyncInvoker<MigrateResourceRequest, MigrateResourceResponse>(request, EpsMeta.migrateResource, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 修改企业项目
+     * 修改企业项目。当前仅支持修改名称和描述。
+     *
+     * @param ModifyEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> modifyEnterpriseProjectAsyncInvoker(ModifyEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse>(request, EpsMeta.modifyEnterpriseProject, hcClient);
+    }
+
+    /**
      * 查询API版本号详情
      * 查询指定的企业项目API版本号详情
      *
@@ -105,6 +182,17 @@ public class EpsAsyncClient {
      */
     public CompletableFuture<ShowApiVersionResponse> showApiVersionAsync(ShowApiVersionRequest request) {
         return hcClient.asyncInvokeHttp(request, EpsMeta.showApiVersion);
+    }
+
+    /**
+     * 查询API版本号详情
+     * 查询指定的企业项目API版本号详情
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
+     */
+    public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(ShowApiVersionRequest request) {
+        return new AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, EpsMeta.showApiVersion, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 查询企业项目详情
+     * 查询企业项目详情。
+     *
+     * @param ShowEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> showEnterpriseProjectAsyncInvoker(ShowEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse>(request, EpsMeta.showEnterpriseProject, hcClient);
+    }
+
+    /**
      * 查询企业项目配额
      * 查询企业项目的配额信息。
      *
@@ -130,6 +229,17 @@ public class EpsAsyncClient {
     }
 
     /**
+     * 查询企业项目配额
+     * 查询企业项目的配额信息。
+     *
+     * @param ShowEnterpriseProjectQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse>
+     */
+    public AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> showEnterpriseProjectQuotaAsyncInvoker(ShowEnterpriseProjectQuotaRequest request) {
+        return new AsyncInvoker<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse>(request, EpsMeta.showEnterpriseProjectQuota, hcClient);
+    }
+
+    /**
      * 查询企业项目绑定的资源列表
      * 查询企业项目下绑定的资源详情。
      *
@@ -138,6 +248,17 @@ public class EpsAsyncClient {
      */
     public CompletableFuture<ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsync(ShowResourceBindEnterpriseProjectRequest request) {
         return hcClient.asyncInvokeHttp(request, EpsMeta.showResourceBindEnterpriseProject);
+    }
+
+    /**
+     * 查询企业项目绑定的资源列表
+     * 查询企业项目下绑定的资源详情。
+     *
+     * @param ShowResourceBindEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsyncInvoker(ShowResourceBindEnterpriseProjectRequest request) {
+        return new AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>(request, EpsMeta.showResourceBindEnterpriseProject, hcClient);
     }
 
 }

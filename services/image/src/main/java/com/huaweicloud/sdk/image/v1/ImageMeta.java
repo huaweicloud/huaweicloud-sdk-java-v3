@@ -18,6 +18,7 @@ public class ImageMeta {
         // basic
         HttpRequestDef.Builder<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunCelebrityRecognitionRequest.class, RunCelebrityRecognitionResponse.class)
+                .withName("RunCelebrityRecognition")
                 .withUri("/v1.0/image/celebrity-recognition")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class ImageMeta {
         // basic
         HttpRequestDef.Builder<RunImageTaggingRequest, RunImageTaggingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunImageTaggingRequest.class, RunImageTaggingResponse.class)
+                .withName("RunImageTagging")
                 .withUri("/v1.0/image/tagging")
                 .withContentType("application/json;charset=UTF-8");
 

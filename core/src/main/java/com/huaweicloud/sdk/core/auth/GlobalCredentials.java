@@ -25,51 +25,20 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.internal.InnerIamMeta;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
-public class GlobalCredentials extends AbstractCredentials {
+public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     private String domainId;
-
-    private String iamEndpoint;
-
-    public GlobalCredentials withAk(String ak) {
-        setAk(ak);
-        return this;
-    }
-
-    public GlobalCredentials withSk(String sk) {
-        setSk(sk);
-        return this;
-    }
-
-    public GlobalCredentials withSecurityToken(String securityToken) {
-        setSecurityToken(securityToken);
-        return this;
-    }
-
-    public String getIamEndpoint() {
-        return iamEndpoint;
-    }
-
-    public void setIamEndpoint(String iamEndpoint) {
-        this.iamEndpoint = iamEndpoint;
-    }
-
-    /**
-     * @param iamEndpoint endpoint can be override when using development environment.
-     * @return GlobalCredentials with override endpoint.
-     */
-    public GlobalCredentials withIamEndpoint(String iamEndpoint) {
-        setIamEndpoint(iamEndpoint);
-        return this;
-    }
 
     public String getDomainId() {
         return domainId;
@@ -93,27 +62,30 @@ public class GlobalCredentials extends AbstractCredentials {
     }
 
     @Override
-    public CompletableFuture<ICredential> processAuthParams(HttpClient httpClient, String regionId) {
+    public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
         if (!StringUtils.isEmpty(this.domainId)) {
             return CompletableFuture.completedFuture(this);
         }
 
-        HttpRequest signedRequest;
-        try {
-            // When using `getCredentialFromEnvironment`, iamEndpoint will lose while initializing Credentials.
-            iamEndpoint = Objects.nonNull(iamEndpoint) ? iamEndpoint : IamService.DEFAULT_IAM_ENDPOINT;
-            signedRequest = this.processAuthRequest(
-                IamService.getKeystoneListAuthDomainsRequest(iamEndpoint), httpClient).get();
-        } catch (InterruptedException | ExecutionException e) {
-            throw new SdkException(e);
+        // Confirm if current ak has been cached in AuthCache, key of authMap when searching domain info is ak
+        String akWithName = getAk();
+        if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
+            this.domainId = AuthCache.getAuth(akWithName);
+            return CompletableFuture.completedFuture(this);
         }
 
-        try {
-            this.domainId = IamService.keystoneListAuthDomains(httpClient, signedRequest);
-            return CompletableFuture.completedFuture(this);
-        } catch (SdkException e) {
-            throw new SdkException("Failed to get domain id, " + e.getMessage());
+        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
+        HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
+
+        KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
+        KeystoneListAuthDomainsResponse response =
+            inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+        if (Objects.isNull(response)) {
+            throw new SdkException("failed to get domain id");
         }
+        this.domainId = response.getDomains().get(0).getId();
+        AuthCache.putAuth(akWithName, domainId);
+        return CompletableFuture.completedFuture(this);
     }
 
     @Override
@@ -139,6 +111,16 @@ public class GlobalCredentials extends AbstractCredentials {
 
             return builder.build();
         });
+    }
+
+    @Override
+    public GlobalCredentials deepClone() {
+        return new GlobalCredentials()
+                .withDomainId(this.domainId)
+                .withAk(this.getAk())
+                .withSk(this.getSk())
+                .withIamEndpoint(this.getIamEndpoint())
+                .withSecurityToken(this.getSecurityToken());
     }
 
 }

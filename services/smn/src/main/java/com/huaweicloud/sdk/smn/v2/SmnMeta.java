@@ -18,6 +18,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<AddSubscriptionRequest, AddSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddSubscriptionRequest.class, AddSubscriptionResponse.class)
+                .withName("AddSubscription")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -50,6 +51,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteResourceTagsRequest.class, BatchCreateOrDeleteResourceTagsResponse.class)
+                .withName("BatchCreateOrDeleteResourceTags")
                 .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -90,6 +92,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<CancelSubscriptionRequest, CancelSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelSubscriptionRequest.class, CancelSubscriptionResponse.class)
+                .withName("CancelSubscription")
                 .withUri("/v2/{project_id}/notifications/subscriptions/{subscription_urn}")
                 .withContentType("application/json");
 
@@ -114,6 +117,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<CreateMessageTemplateRequest, CreateMessageTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMessageTemplateRequest.class, CreateMessageTemplateResponse.class)
+                .withName("CreateMessageTemplate")
                 .withUri("/v2/{project_id}/notifications/message_template")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -138,6 +142,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<CreateResourceTagRequest, CreateResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResourceTagRequest.class, CreateResourceTagResponse.class)
+                .withName("CreateResourceTag")
                 .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -178,6 +183,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<CreateTopicRequest, CreateTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTopicRequest.class, CreateTopicResponse.class)
+                .withName("CreateTopic")
                 .withUri("/v2/{project_id}/notifications/topics")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -202,6 +208,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMessageTemplateRequest.class, DeleteMessageTemplateResponse.class)
+                .withName("DeleteMessageTemplate")
                 .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
                 .withContentType("application/json");
 
@@ -226,6 +233,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<DeleteResourceTagRequest, DeleteResourceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceTagRequest.class, DeleteResourceTagResponse.class)
+                .withName("DeleteResourceTag")
                 .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/{key}")
                 .withContentType("application/json");
 
@@ -266,6 +274,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<DeleteTopicRequest, DeleteTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTopicRequest.class, DeleteTopicResponse.class)
+                .withName("DeleteTopic")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}")
                 .withContentType("application/json");
 
@@ -290,6 +299,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTopicAttributeByNameRequest.class, DeleteTopicAttributeByNameResponse.class)
+                .withName("DeleteTopicAttributeByName")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes/{name}")
                 .withContentType("application/json");
 
@@ -322,6 +332,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTopicAttributesRequest.class, DeleteTopicAttributesResponse.class)
+                .withName("DeleteTopicAttributes")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes")
                 .withContentType("application/json");
 
@@ -346,6 +357,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessageTemplateDetailsRequest.class, ListMessageTemplateDetailsResponse.class)
+                .withName("ListMessageTemplateDetails")
                 .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
                 .withContentType("application/json");
 
@@ -370,6 +382,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListMessageTemplatesRequest, ListMessageTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessageTemplatesRequest.class, ListMessageTemplatesResponse.class)
+                .withName("ListMessageTemplates")
                 .withUri("/v2/{project_id}/notifications/message_template")
                 .withContentType("application/json");
 
@@ -418,6 +431,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
+                .withName("ListProjectTags")
                 .withUri("/v2/{project_id}/{resource_type}/tags")
                 .withContentType("application/json");
 
@@ -442,6 +456,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
+                .withName("ListResourceInstances")
                 .withUri("/v2/{project_id}/{resource_type}/resource_instances/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -474,6 +489,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListResourceTagsRequest, ListResourceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTagsRequest.class, ListResourceTagsResponse.class)
+                .withName("ListResourceTags")
                 .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags")
                 .withContentType("application/json");
 
@@ -506,6 +522,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListSubscriptionsRequest, ListSubscriptionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubscriptionsRequest.class, ListSubscriptionsResponse.class)
+                .withName("ListSubscriptions")
                 .withUri("/v2/{project_id}/notifications/subscriptions")
                 .withContentType("application/json");
 
@@ -538,6 +555,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubscriptionsByTopicRequest.class, ListSubscriptionsByTopicResponse.class)
+                .withName("ListSubscriptionsByTopic")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions")
                 .withContentType("application/json");
 
@@ -578,6 +596,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListTopicAttributesRequest, ListTopicAttributesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopicAttributesRequest.class, ListTopicAttributesResponse.class)
+                .withName("ListTopicAttributes")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes")
                 .withContentType("application/json");
 
@@ -610,6 +629,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListTopicDetailsRequest, ListTopicDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopicDetailsRequest.class, ListTopicDetailsResponse.class)
+                .withName("ListTopicDetails")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}")
                 .withContentType("application/json");
 
@@ -634,6 +654,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListTopicsRequest, ListTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopicsRequest.class, ListTopicsResponse.class)
+                .withName("ListTopics")
                 .withUri("/v2/{project_id}/notifications/topics")
                 .withContentType("application/json");
 
@@ -666,6 +687,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListVersionRequest, ListVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVersionRequest.class, ListVersionResponse.class)
+                .withName("ListVersion")
                 .withUri("/{api_version}")
                 .withContentType("application/json");
 
@@ -690,6 +712,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListVersionsRequest, ListVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVersionsRequest.class, ListVersionsResponse.class)
+                .withName("ListVersions")
                 .withUri("/")
                 .withContentType("application/json");
 
@@ -706,6 +729,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<PublishMessageRequest, PublishMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishMessageRequest.class, PublishMessageResponse.class)
+                .withName("PublishMessage")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/publish")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -738,6 +762,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMessageTemplateRequest.class, UpdateMessageTemplateResponse.class)
+                .withName("UpdateMessageTemplate")
                 .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -770,6 +795,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<UpdateTopicRequest, UpdateTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTopicRequest.class, UpdateTopicResponse.class)
+                .withName("UpdateTopic")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -802,6 +828,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTopicAttributeRequest.class, UpdateTopicAttributeResponse.class)
+                .withName("UpdateTopicAttribute")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes/{name}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -842,6 +869,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<CreateApplicationRequest, CreateApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApplicationRequest.class, CreateApplicationResponse.class)
+                .withName("CreateApplication")
                 .withUri("/v2/{project_id}/notifications/applications")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -866,6 +894,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<DeleteApplicationRequest, DeleteApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationRequest.class, DeleteApplicationResponse.class)
+                .withName("DeleteApplication")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}")
                 .withContentType("application/json");
 
@@ -890,6 +919,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListApplicationAttributesRequest, ListApplicationAttributesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApplicationAttributesRequest.class, ListApplicationAttributesResponse.class)
+                .withName("ListApplicationAttributes")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}")
                 .withContentType("application/json");
 
@@ -914,6 +944,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListApplicationsRequest, ListApplicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApplicationsRequest.class, ListApplicationsResponse.class)
+                .withName("ListApplications")
                 .withUri("/v2/{project_id}/notifications/applications")
                 .withContentType("application/json");
 
@@ -962,6 +993,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<PublishAppMessageRequest, PublishAppMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishAppMessageRequest.class, PublishAppMessageResponse.class)
+                .withName("PublishAppMessage")
                 .withUri("/v2/{project_id}/notifications/endpoints/{endpoint_urn}/publish")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -994,6 +1026,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<UpdateApplicationRequest, UpdateApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApplicationRequest.class, UpdateApplicationResponse.class)
+                .withName("UpdateApplication")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1026,6 +1059,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApplicationEndpointRequest.class, CreateApplicationEndpointResponse.class)
+                .withName("CreateApplicationEndpoint")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}/endpoints")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1058,6 +1092,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationEndpointRequest.class, DeleteApplicationEndpointResponse.class)
+                .withName("DeleteApplicationEndpoint")
                 .withUri("/v2/{project_id}/notifications/endpoints/{endpoint_urn}")
                 .withContentType("application/json");
 
@@ -1082,6 +1117,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApplicationEndpointAttributesRequest.class, ListApplicationEndpointAttributesResponse.class)
+                .withName("ListApplicationEndpointAttributes")
                 .withUri("/v2/{project_id}/notifications/endpoints/{endpoint_urn}")
                 .withContentType("application/json");
 
@@ -1106,6 +1142,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApplicationEndpointsRequest.class, ListApplicationEndpointsResponse.class)
+                .withName("ListApplicationEndpoints")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}/endpoints")
                 .withContentType("application/json");
 
@@ -1170,6 +1207,7 @@ public class SmnMeta {
         // basic
         HttpRequestDef.Builder<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApplicationEndpointRequest.class, UpdateApplicationEndpointResponse.class)
+                .withName("UpdateApplicationEndpoint")
                 .withUri("/v2/{project_id}/notifications/endpoints/{endpoint_urn}")
                 .withContentType("application/json;charset=UTF-8");
 

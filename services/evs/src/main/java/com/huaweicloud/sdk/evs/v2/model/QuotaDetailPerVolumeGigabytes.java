@@ -40,7 +40,7 @@ public class QuotaDetailPerVolumeGigabytes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allocated")
     
-    private String allocated;
+    private Integer allocated;
 
     public QuotaDetailPerVolumeGigabytes withInUse(Integer inUse) {
         this.inUse = inUse;
@@ -102,7 +102,7 @@ public class QuotaDetailPerVolumeGigabytes  {
         this.reserved = reserved;
     }
 
-    public QuotaDetailPerVolumeGigabytes withAllocated(String allocated) {
+    public QuotaDetailPerVolumeGigabytes withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
     }
@@ -114,11 +114,11 @@ public class QuotaDetailPerVolumeGigabytes  {
      * 预留属性。
      * @return allocated
      */
-    public String getAllocated() {
+    public Integer getAllocated() {
         return allocated;
     }
 
-    public void setAllocated(String allocated) {
+    public void setAllocated(Integer allocated) {
         this.allocated = allocated;
     }
     @Override

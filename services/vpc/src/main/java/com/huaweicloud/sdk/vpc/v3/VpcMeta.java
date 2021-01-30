@@ -18,6 +18,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateSubNetworkInterfaceRequest.class, BatchCreateSubNetworkInterfaceResponse.class)
+                .withName("BatchCreateSubNetworkInterface")
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces/batch-create")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<CreateSecurityGroupRequest, CreateSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecurityGroupRequest.class, CreateSecurityGroupResponse.class)
+                .withName("CreateSecurityGroup")
                 .withUri("/v3/{project_id}/vpc/security-groups")
                 .withContentType("application/json");
 
@@ -66,6 +68,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecurityGroupRuleRequest.class, CreateSecurityGroupRuleResponse.class)
+                .withName("CreateSecurityGroupRule")
                 .withUri("/v3/{project_id}/vpc/security-group-rules")
                 .withContentType("application/json");
 
@@ -90,6 +93,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<CreateSubNetworkInterfaceRequest, CreateSubNetworkInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubNetworkInterfaceRequest.class, CreateSubNetworkInterfaceResponse.class)
+                .withName("CreateSubNetworkInterface")
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces")
                 .withContentType("application/json");
 
@@ -114,6 +118,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRequest.class, DeleteSecurityGroupResponse.class)
+                .withName("DeleteSecurityGroup")
                 .withUri("/v3/{project_id}/vpc/security-groups/{security_group_id}")
                 .withContentType("application/json");
 
@@ -138,6 +143,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRuleRequest.class, DeleteSecurityGroupRuleResponse.class)
+                .withName("DeleteSecurityGroupRule")
                 .withUri("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}")
                 .withContentType("application/json");
 
@@ -162,6 +168,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubNetworkInterfaceRequest.class, DeleteSubNetworkInterfaceResponse.class)
+                .withName("DeleteSubNetworkInterface")
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}")
                 .withContentType("application/json");
 
@@ -186,6 +193,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecurityGroupRulesRequest.class, ListSecurityGroupRulesResponse.class)
+                .withName("ListSecurityGroupRules")
                 .withUri("/v3/{project_id}/vpc/security-group-rules")
                 .withContentType("application/json");
 
@@ -274,6 +282,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListSecurityGroupsRequest, ListSecurityGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSecurityGroupsRequest.class, ListSecurityGroupsResponse.class)
+                .withName("ListSecurityGroups")
                 .withUri("/v3/{project_id}/vpc/security-groups")
                 .withContentType("application/json");
 
@@ -338,6 +347,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ListSubNetworkInterfacesRequest, ListSubNetworkInterfacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubNetworkInterfacesRequest.class, ListSubNetworkInterfacesResponse.class)
+                .withName("ListSubNetworkInterfaces")
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces")
                 .withContentType("application/json");
 
@@ -426,6 +436,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowSecurityGroupRequest, ShowSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecurityGroupRequest.class, ShowSecurityGroupResponse.class)
+                .withName("ShowSecurityGroup")
                 .withUri("/v3/{project_id}/vpc/security-groups/{security_group_id}")
                 .withContentType("application/json");
 
@@ -450,6 +461,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSecurityGroupRuleRequest.class, ShowSecurityGroupRuleResponse.class)
+                .withName("ShowSecurityGroupRule")
                 .withUri("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}")
                 .withContentType("application/json");
 
@@ -474,6 +486,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowSubNetworkInterfaceRequest, ShowSubNetworkInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSubNetworkInterfaceRequest.class, ShowSubNetworkInterfaceResponse.class)
+                .withName("ShowSubNetworkInterface")
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}")
                 .withContentType("application/json");
 
@@ -498,6 +511,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<ShowSubNetworkInterfacesQuantityRequest, ShowSubNetworkInterfacesQuantityResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSubNetworkInterfacesQuantityRequest.class, ShowSubNetworkInterfacesQuantityResponse.class)
+                .withName("ShowSubNetworkInterfacesQuantity")
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces/count")
                 .withContentType("application/json");
 
@@ -514,6 +528,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSecurityGroupRequest.class, UpdateSecurityGroupResponse.class)
+                .withName("UpdateSecurityGroup")
                 .withUri("/v3/{project_id}/vpc/security-groups/{security_group_id}")
                 .withContentType("application/json");
 
@@ -546,6 +561,7 @@ public class VpcMeta {
         // basic
         HttpRequestDef.Builder<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSubNetworkInterfaceRequest.class, UpdateSubNetworkInterfaceResponse.class)
+                .withName("UpdateSubNetworkInterface")
                 .withUri("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}")
                 .withContentType("application/json");
 

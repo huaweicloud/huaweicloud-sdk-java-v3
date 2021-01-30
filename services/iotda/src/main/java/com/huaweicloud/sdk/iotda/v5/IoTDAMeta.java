@@ -18,6 +18,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateAccessCodeRequest, CreateAccessCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAccessCodeRequest.class, CreateAccessCodeResponse.class)
+                .withName("CreateAccessCode")
                 .withUri("/v5/iot/{project_id}/auth/accesscode")
                 .withContentType("application/json");
 
@@ -66,6 +67,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<AddQueueRequest, AddQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddQueueRequest.class, AddQueueResponse.class)
+                .withName("AddQueue")
                 .withUri("/v5/iot/{project_id}/amqp-queues")
                 .withContentType("application/json");
 
@@ -98,6 +100,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<BatchShowQueueRequest, BatchShowQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowQueueRequest.class, BatchShowQueueResponse.class)
+                .withName("BatchShowQueue")
                 .withUri("/v5/iot/{project_id}/amqp-queues")
                 .withContentType("application/json");
 
@@ -154,6 +157,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteQueueRequest, DeleteQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteQueueRequest.class, DeleteQueueResponse.class)
+                .withName("DeleteQueue")
                 .withUri("/v5/iot/{project_id}/amqp-queues/{queue_id}")
                 .withContentType("application/json");
 
@@ -195,6 +199,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowQueueRequest, ShowQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQueueRequest.class, ShowQueueResponse.class)
+                .withName("ShowQueue")
                 .withUri("/v5/iot/{project_id}/amqp-queues/{queue_id}")
                 .withContentType("application/json");
 
@@ -227,6 +232,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<AddApplicationRequest, AddApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddApplicationRequest.class, AddApplicationResponse.class)
+                .withName("AddApplication")
                 .withUri("/v5/iot/{project_id}/apps")
                 .withContentType("application/json");
 
@@ -259,6 +265,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteApplicationRequest, DeleteApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationRequest.class, DeleteApplicationResponse.class)
+                .withName("DeleteApplication")
                 .withUri("/v5/iot/{project_id}/apps/{app_id}")
                 .withContentType("application/json");
 
@@ -300,6 +307,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowApplicationRequest, ShowApplicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplicationRequest.class, ShowApplicationResponse.class)
+                .withName("ShowApplication")
                 .withUri("/v5/iot/{project_id}/apps/{app_id}")
                 .withContentType("application/json");
 
@@ -332,6 +340,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowApplicationsRequest, ShowApplicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApplicationsRequest.class, ShowApplicationsResponse.class)
+                .withName("ShowApplications")
                 .withUri("/v5/iot/{project_id}/apps")
                 .withContentType("application/json");
 
@@ -364,6 +373,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateAsyncCommandRequest, CreateAsyncCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAsyncCommandRequest.class, CreateAsyncCommandResponse.class)
+                .withName("CreateAsyncCommand")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands")
                 .withContentType("application/json");
 
@@ -412,6 +422,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAsyncDeviceCommandRequest.class, ShowAsyncDeviceCommandResponse.class)
+                .withName("ShowAsyncDeviceCommand")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands/{command_id}")
                 .withContentType("application/json");
 
@@ -460,6 +471,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateBatchTaskRequest, CreateBatchTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBatchTaskRequest.class, CreateBatchTaskResponse.class)
+                .withName("CreateBatchTask")
                 .withUri("/v5/iot/{project_id}/batchtasks")
                 .withContentType("application/json");
 
@@ -492,6 +504,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListBatchTasksRequest, ListBatchTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBatchTasksRequest.class, ListBatchTasksResponse.class)
+                .withName("ListBatchTasks")
                 .withUri("/v5/iot/{project_id}/batchtasks")
                 .withContentType("application/json");
 
@@ -564,6 +577,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowBatchTaskRequest, ShowBatchTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBatchTaskRequest.class, ShowBatchTaskResponse.class)
+                .withName("ShowBatchTask")
                 .withUri("/v5/iot/{project_id}/batchtasks/{task_id}")
                 .withContentType("application/json");
 
@@ -620,6 +634,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBatchTaskFileRequest.class, DeleteBatchTaskFileResponse.class)
+                .withName("DeleteBatchTaskFile")
                 .withUri("/v5/iot/{project_id}/batchtask-files/{file_id}")
                 .withContentType("application/json");
 
@@ -661,6 +676,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBatchTaskFilesRequest.class, ListBatchTaskFilesResponse.class)
+                .withName("ListBatchTaskFiles")
                 .withUri("/v5/iot/{project_id}/batchtask-files")
                 .withContentType("application/json");
 
@@ -685,6 +701,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<AddCertificateRequest, AddCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddCertificateRequest.class, AddCertificateResponse.class)
+                .withName("AddCertificate")
                 .withUri("/v5/iot/{project_id}/certificates")
                 .withContentType("application/json");
 
@@ -717,6 +734,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CheckCertificateRequest, CheckCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckCertificateRequest.class, CheckCertificateResponse.class)
+                .withName("CheckCertificate")
                 .withUri("/v5/iot/{project_id}/certificates/{certificate_id}/action")
                 .withContentType("application/json");
 
@@ -774,6 +792,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
+                .withName("DeleteCertificate")
                 .withUri("/v5/iot/{project_id}/certificates/{certificate_id}")
                 .withContentType("application/json");
 
@@ -815,6 +834,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
+                .withName("ListCertificates")
                 .withUri("/v5/iot/{project_id}/certificates")
                 .withContentType("application/json");
 
@@ -871,6 +891,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateCommandRequest, CreateCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCommandRequest.class, CreateCommandResponse.class)
+                .withName("CreateCommand")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/commands")
                 .withContentType("application/json");
 
@@ -911,6 +932,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<AddDeviceGroupRequest, AddDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDeviceGroupRequest.class, AddDeviceGroupResponse.class)
+                .withName("AddDeviceGroup")
                 .withUri("/v5/iot/{project_id}/device-group")
                 .withContentType("application/json");
 
@@ -943,6 +965,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateOrDeleteDeviceInGroupRequest.class, CreateOrDeleteDeviceInGroupResponse.class)
+                .withName("CreateOrDeleteDeviceInGroup")
                 .withUri("/v5/iot/{project_id}/device-group/{group_id}/action")
                 .withContentType("application/json");
 
@@ -1000,6 +1023,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceGroupRequest.class, DeleteDeviceGroupResponse.class)
+                .withName("DeleteDeviceGroup")
                 .withUri("/v5/iot/{project_id}/device-group/{group_id}")
                 .withContentType("application/json");
 
@@ -1041,6 +1065,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListDeviceGroupsRequest, ListDeviceGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDeviceGroupsRequest.class, ListDeviceGroupsResponse.class)
+                .withName("ListDeviceGroups")
                 .withUri("/v5/iot/{project_id}/device-group")
                 .withContentType("application/json");
 
@@ -1105,6 +1130,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceGroupRequest, ShowDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceGroupRequest.class, ShowDeviceGroupResponse.class)
+                .withName("ShowDeviceGroup")
                 .withUri("/v5/iot/{project_id}/device-group/{group_id}")
                 .withContentType("application/json");
 
@@ -1137,6 +1163,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDevicesInGroupRequest.class, ShowDevicesInGroupResponse.class)
+                .withName("ShowDevicesInGroup")
                 .withUri("/v5/iot/{project_id}/device-group/{group_id}/devices")
                 .withContentType("application/json");
 
@@ -1193,6 +1220,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceGroupRequest.class, UpdateDeviceGroupResponse.class)
+                .withName("UpdateDeviceGroup")
                 .withUri("/v5/iot/{project_id}/device-group/{group_id}")
                 .withContentType("application/json");
 
@@ -1233,6 +1261,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<AddDeviceRequest, AddDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDeviceRequest.class, AddDeviceResponse.class)
+                .withName("AddDevice")
                 .withUri("/v5/iot/{project_id}/devices")
                 .withContentType("application/json");
 
@@ -1265,6 +1294,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteDeviceRequest, DeleteDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceRequest.class, DeleteDeviceResponse.class)
+                .withName("DeleteDevice")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}")
                 .withContentType("application/json");
 
@@ -1306,6 +1336,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<FreezeDeviceRequest, FreezeDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, FreezeDeviceRequest.class, FreezeDeviceResponse.class)
+                .withName("FreezeDevice")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/freeze")
                 .withContentType("application/json");
 
@@ -1347,6 +1378,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListDevicesRequest, ListDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDevicesRequest.class, ListDevicesResponse.class)
+                .withName("ListDevices")
                 .withUri("/v5/iot/{project_id}/devices")
                 .withContentType("application/json");
 
@@ -1459,6 +1491,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ResetDeviceSecretRequest, ResetDeviceSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetDeviceSecretRequest.class, ResetDeviceSecretResponse.class)
+                .withName("ResetDeviceSecret")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/action")
                 .withContentType("application/json");
 
@@ -1507,6 +1540,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceRequest, ShowDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceRequest.class, ShowDeviceResponse.class)
+                .withName("ShowDevice")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}")
                 .withContentType("application/json");
 
@@ -1539,6 +1573,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UnfreezeDeviceRequest, UnfreezeDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnfreezeDeviceRequest.class, UnfreezeDeviceResponse.class)
+                .withName("UnfreezeDevice")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/unfreeze")
                 .withContentType("application/json");
 
@@ -1580,6 +1615,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateDeviceRequest, UpdateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceRequest.class, UpdateDeviceResponse.class)
+                .withName("UpdateDevice")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}")
                 .withContentType("application/json");
 
@@ -1620,6 +1656,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceShadowRequest, ShowDeviceShadowResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceShadowRequest.class, ShowDeviceShadowResponse.class)
+                .withName("ShowDeviceShadow")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/shadow")
                 .withContentType("application/json");
 
@@ -1652,6 +1689,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceShadowDesiredDataRequest.class, UpdateDeviceShadowDesiredDataResponse.class)
+                .withName("UpdateDeviceShadowDesiredData")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/shadow")
                 .withContentType("application/json");
 
@@ -1692,6 +1730,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateMessageRequest, CreateMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMessageRequest.class, CreateMessageResponse.class)
+                .withName("CreateMessage")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/messages")
                 .withContentType("application/json");
 
@@ -1732,6 +1771,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListDeviceMessagesRequest, ListDeviceMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDeviceMessagesRequest.class, ListDeviceMessagesResponse.class)
+                .withName("ListDeviceMessages")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/messages")
                 .withContentType("application/json");
 
@@ -1764,6 +1804,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceMessageRequest, ShowDeviceMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceMessageRequest.class, ShowDeviceMessageResponse.class)
+                .withName("ShowDeviceMessage")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/messages/{message_id}")
                 .withContentType("application/json");
 
@@ -1804,6 +1845,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateProductRequest, CreateProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductRequest.class, CreateProductResponse.class)
+                .withName("CreateProduct")
                 .withUri("/v5/iot/{project_id}/products")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1836,6 +1878,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteProductRequest, DeleteProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductRequest.class, DeleteProductResponse.class)
+                .withName("DeleteProduct")
                 .withUri("/v5/iot/{project_id}/products/{product_id}")
                 .withContentType("application/json");
 
@@ -1885,6 +1928,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
+                .withName("ListProducts")
                 .withUri("/v5/iot/{project_id}/products")
                 .withContentType("application/json");
 
@@ -1941,6 +1985,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowProductRequest, ShowProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductRequest.class, ShowProductResponse.class)
+                .withName("ShowProduct")
                 .withUri("/v5/iot/{project_id}/products/{product_id}")
                 .withContentType("application/json");
 
@@ -1981,6 +2026,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateProductRequest, UpdateProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProductRequest.class, UpdateProductResponse.class)
+                .withName("UpdateProduct")
                 .withUri("/v5/iot/{project_id}/products/{product_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2021,6 +2067,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListPropertiesRequest, ListPropertiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPropertiesRequest.class, ListPropertiesResponse.class)
+                .withName("ListProperties")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/properties")
                 .withContentType("application/json");
 
@@ -2061,6 +2108,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdatePropertiesRequest, UpdatePropertiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePropertiesRequest.class, UpdatePropertiesResponse.class)
+                .withName("UpdateProperties")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/properties")
                 .withContentType("application/json");
 
@@ -2101,6 +2149,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateRoutingRuleRequest, CreateRoutingRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRoutingRuleRequest.class, CreateRoutingRuleResponse.class)
+                .withName("CreateRoutingRule")
                 .withUri("/v5/iot/{project_id}/routing-rule/rules")
                 .withContentType("application/json");
 
@@ -2141,6 +2190,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateRuleActionRequest, CreateRuleActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRuleActionRequest.class, CreateRuleActionResponse.class)
+                .withName("CreateRuleAction")
                 .withUri("/v5/iot/{project_id}/routing-rule/actions")
                 .withContentType("application/json");
 
@@ -2181,6 +2231,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRoutingRuleRequest.class, DeleteRoutingRuleResponse.class)
+                .withName("DeleteRoutingRule")
                 .withUri("/v5/iot/{project_id}/routing-rule/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -2230,6 +2281,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteRuleActionRequest, DeleteRuleActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleActionRequest.class, DeleteRuleActionResponse.class)
+                .withName("DeleteRuleAction")
                 .withUri("/v5/iot/{project_id}/routing-rule/actions/{action_id}")
                 .withContentType("application/json");
 
@@ -2279,6 +2331,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListRoutingRulesRequest, ListRoutingRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRoutingRulesRequest.class, ListRoutingRulesResponse.class)
+                .withName("ListRoutingRules")
                 .withUri("/v5/iot/{project_id}/routing-rule/rules")
                 .withContentType("application/json");
 
@@ -2375,6 +2428,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListRuleActionsRequest, ListRuleActionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRuleActionsRequest.class, ListRuleActionsResponse.class)
+                .withName("ListRuleActions")
                 .withUri("/v5/iot/{project_id}/routing-rule/actions")
                 .withContentType("application/json");
 
@@ -2463,6 +2517,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowRoutingRuleRequest, ShowRoutingRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRoutingRuleRequest.class, ShowRoutingRuleResponse.class)
+                .withName("ShowRoutingRule")
                 .withUri("/v5/iot/{project_id}/routing-rule/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -2503,6 +2558,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowRuleActionRequest, ShowRuleActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRuleActionRequest.class, ShowRuleActionResponse.class)
+                .withName("ShowRuleAction")
                 .withUri("/v5/iot/{project_id}/routing-rule/actions/{action_id}")
                 .withContentType("application/json");
 
@@ -2543,6 +2599,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRoutingRuleRequest.class, UpdateRoutingRuleResponse.class)
+                .withName("UpdateRoutingRule")
                 .withUri("/v5/iot/{project_id}/routing-rule/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -2591,6 +2648,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateRuleActionRequest, UpdateRuleActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRuleActionRequest.class, UpdateRuleActionResponse.class)
+                .withName("UpdateRuleAction")
                 .withUri("/v5/iot/{project_id}/routing-rule/actions/{action_id}")
                 .withContentType("application/json");
 
@@ -2639,6 +2697,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ChangeRuleStatusRequest, ChangeRuleStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeRuleStatusRequest.class, ChangeRuleStatusResponse.class)
+                .withName("ChangeRuleStatus")
                 .withUri("/v5/iot/{project_id}/rules/{rule_id}/status")
                 .withContentType("application/json");
 
@@ -2679,6 +2738,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateRuleRequest, CreateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRuleRequest.class, CreateRuleResponse.class)
+                .withName("CreateRule")
                 .withUri("/v5/iot/{project_id}/rules")
                 .withContentType("application/json");
 
@@ -2711,6 +2771,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteRuleRequest, DeleteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleRequest.class, DeleteRuleResponse.class)
+                .withName("DeleteRule")
                 .withUri("/v5/iot/{project_id}/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -2752,6 +2813,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListRulesRequest, ListRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRulesRequest.class, ListRulesResponse.class)
+                .withName("ListRules")
                 .withUri("/v5/iot/{project_id}/rules")
                 .withContentType("application/json");
 
@@ -2808,6 +2870,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowRuleRequest, ShowRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRuleRequest.class, ShowRuleResponse.class)
+                .withName("ShowRule")
                 .withUri("/v5/iot/{project_id}/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -2840,6 +2903,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateRuleRequest, UpdateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRuleRequest.class, UpdateRuleResponse.class)
+                .withName("UpdateRule")
                 .withUri("/v5/iot/{project_id}/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -2880,6 +2944,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<CreateSubscriptionRequest, CreateSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubscriptionRequest.class, CreateSubscriptionResponse.class)
+                .withName("CreateSubscription")
                 .withUri("/v5/iot/{project_id}/subscriptions")
                 .withContentType("application/json");
 
@@ -2912,6 +2977,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<DeleteSubscriptionRequest, DeleteSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubscriptionRequest.class, DeleteSubscriptionResponse.class)
+                .withName("DeleteSubscription")
                 .withUri("/v5/iot/{project_id}/subscriptions/{subscription_id}")
                 .withContentType("application/json");
 
@@ -2953,6 +3019,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListSubscriptionsRequest, ListSubscriptionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubscriptionsRequest.class, ListSubscriptionsResponse.class)
+                .withName("ListSubscriptions")
                 .withUri("/v5/iot/{project_id}/subscriptions")
                 .withContentType("application/json");
 
@@ -3041,6 +3108,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ShowSubscriptionRequest, ShowSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSubscriptionRequest.class, ShowSubscriptionResponse.class)
+                .withName("ShowSubscription")
                 .withUri("/v5/iot/{project_id}/subscriptions/{subscription_id}")
                 .withContentType("application/json");
 
@@ -3073,6 +3141,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UpdateSubscriptionRequest, UpdateSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSubscriptionRequest.class, UpdateSubscriptionResponse.class)
+                .withName("UpdateSubscription")
                 .withUri("/v5/iot/{project_id}/subscriptions/{subscription_id}")
                 .withContentType("application/json");
 
@@ -3113,6 +3182,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<ListResourcesByTagsRequest, ListResourcesByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourcesByTagsRequest.class, ListResourcesByTagsResponse.class)
+                .withName("ListResourcesByTags")
                 .withUri("/v5/iot/{project_id}/tags/query-resources")
                 .withContentType("application/json");
 
@@ -3169,6 +3239,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<TagDeviceRequest, TagDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, TagDeviceRequest.class, TagDeviceResponse.class)
+                .withName("TagDevice")
                 .withUri("/v5/iot/{project_id}/tags/bind-resource")
                 .withContentType("application/json");
 
@@ -3210,6 +3281,7 @@ public class IoTDAMeta {
         // basic
         HttpRequestDef.Builder<UntagDeviceRequest, UntagDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UntagDeviceRequest.class, UntagDeviceResponse.class)
+                .withName("UntagDevice")
                 .withUri("/v5/iot/{project_id}/tags/unbind-resource")
                 .withContentType("application/json");
 

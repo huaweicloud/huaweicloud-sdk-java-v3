@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.devstar.v1.model.*;
 
 public class DevStarAsyncClient {
@@ -31,6 +31,17 @@ public class DevStarAsyncClient {
     }
 
     /**
+     * 下载代码工程
+     * 通过任务ID下载ZIP格式的代码工程。
+     *
+     * @param DownloadApplicationCodeRequest 请求对象
+     * @return AsyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse>
+     */
+    public AsyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> downloadApplicationCodeAsyncInvoker(DownloadApplicationCodeRequest request) {
+        return new AsyncInvoker<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse>(request, DevStarMeta.downloadApplicationCode, hcClient);
+    }
+
+    /**
      * CodeHub 模板生成代码
      * 通过 Codehub 的模板进行应用代码创建  通过 Codehub 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中或者生成代码压缩包，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
      *
@@ -39,6 +50,17 @@ public class DevStarAsyncClient {
      */
     public CompletableFuture<RunCodehubTemplateJobResponse> runCodehubTemplateJobAsync(RunCodehubTemplateJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.runCodehubTemplateJob);
+    }
+
+    /**
+     * CodeHub 模板生成代码
+     * 通过 Codehub 的模板进行应用代码创建  通过 Codehub 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中或者生成代码压缩包，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     *
+     * @param RunCodehubTemplateJobRequest 请求对象
+     * @return AsyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse>
+     */
+    public AsyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse> runCodehubTemplateJobAsyncInvoker(RunCodehubTemplateJobRequest request) {
+        return new AsyncInvoker<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse>(request, DevStarMeta.runCodehubTemplateJob, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class DevStarAsyncClient {
     }
 
     /**
+     * Devstar 模板生成代码
+     * 通过DevStar的模板进行应用代码创建  通过 DevStar 模板创建生成应用代码的任务，并将应用代码存储于指定的 CodeHub 仓库中，可以通过返回的任务 ID 查询相关任务状态  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址。
+     *
+     * @param RunDevstarTemplateJobRequest 请求对象
+     * @return AsyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse>
+     */
+    public AsyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> runDevstarTemplateJobAsyncInvoker(RunDevstarTemplateJobRequest request) {
+        return new AsyncInvoker<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse>(request, DevStarMeta.runDevstarTemplateJob, hcClient);
+    }
+
+    /**
      * 查询任务详情
      * 查询任务的详情  通过任务ID可以查看任务的状态 当任务结束时返回应用代码存放的位置  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址
      *
@@ -61,6 +94,17 @@ public class DevStarAsyncClient {
      */
     public CompletableFuture<ShowJobDetailResponse> showJobDetailAsync(ShowJobDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.showJobDetail);
+    }
+
+    /**
+     * 查询任务详情
+     * 查询任务的详情  通过任务ID可以查看任务的状态 当任务结束时返回应用代码存放的位置  - 接口鉴权方式 通过华为云服务获取的用户token  - 代码生成位置 应用代码生成后的地址，目前支持codehub地址和压缩包下载地址
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
+     */
+    public AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailAsyncInvoker(ShowJobDetailRequest request) {
+        return new AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, DevStarMeta.showJobDetail, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class DevStarAsyncClient {
     }
 
     /**
+     * 读取模板文件
+     * 读取模板文件
+     *
+     * @param ShowTemplateFileRequest 请求对象
+     * @return AsyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse>
+     */
+    public AsyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse> showTemplateFileAsyncInvoker(ShowTemplateFileRequest request) {
+        return new AsyncInvoker<ShowTemplateFileRequest, ShowTemplateFileResponse>(request, DevStarMeta.showTemplateFile, hcClient);
+    }
+
+    /**
      * 生成模板浏览历史记录
      * 生成模板浏览记录 
      *
@@ -83,6 +138,17 @@ public class DevStarAsyncClient {
      */
     public CompletableFuture<CreateTemplateViewHistoriesResponse> createTemplateViewHistoriesAsync(CreateTemplateViewHistoriesRequest request) {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.createTemplateViewHistories);
+    }
+
+    /**
+     * 生成模板浏览历史记录
+     * 生成模板浏览记录 
+     *
+     * @param CreateTemplateViewHistoriesRequest 请求对象
+     * @return AsyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse>
+     */
+    public AsyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse> createTemplateViewHistoriesAsyncInvoker(CreateTemplateViewHistoriesRequest request) {
+        return new AsyncInvoker<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse>(request, DevStarMeta.createTemplateViewHistories, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class DevStarAsyncClient {
     }
 
     /**
+     * 查询模板列表
+     * 查询模板列表
+     *
+     * @param ListPublishedTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>
+     */
+    public AsyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> listPublishedTemplatesAsyncInvoker(ListPublishedTemplatesRequest request) {
+        return new AsyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>(request, DevStarMeta.listPublishedTemplates, hcClient);
+    }
+
+    /**
      * 我浏览的模板记录
      * 查询用户浏览过的模板(只返回最近浏览的5个模板) 
      *
@@ -105,6 +182,17 @@ public class DevStarAsyncClient {
      */
     public CompletableFuture<ListTemplateViewHistoriesResponse> listTemplateViewHistoriesAsync(ListTemplateViewHistoriesRequest request) {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.listTemplateViewHistories);
+    }
+
+    /**
+     * 我浏览的模板记录
+     * 查询用户浏览过的模板(只返回最近浏览的5个模板) 
+     *
+     * @param ListTemplateViewHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>
+     */
+    public AsyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse> listTemplateViewHistoriesAsyncInvoker(ListTemplateViewHistoriesRequest request) {
+        return new AsyncInvoker<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse>(request, DevStarMeta.listTemplateViewHistories, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class DevStarAsyncClient {
     }
 
     /**
+     * 查询模板列表
+     * 查询模板列表
+     *
+     * @param ListTemplatesV2Request 请求对象
+     * @return AsyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>
+     */
+    public AsyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response> listTemplatesV2AsyncInvoker(ListTemplatesV2Request request) {
+        return new AsyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>(request, DevStarMeta.listTemplatesV2, hcClient);
+    }
+
+    /**
      * 模板详情
      * 获取模板详情-模板id、名称、描述、作者、标签、上架时间等信息。 
      *
@@ -130,6 +229,17 @@ public class DevStarAsyncClient {
     }
 
     /**
+     * 模板详情
+     * 获取模板详情-模板id、名称、描述、作者、标签、上架时间等信息。 
+     *
+     * @param ShowTemplateV3Request 请求对象
+     * @return AsyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response>
+     */
+    public AsyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response> showTemplateV3AsyncInvoker(ShowTemplateV3Request request) {
+        return new AsyncInvoker<ShowTemplateV3Request, ShowTemplateV3Response>(request, DevStarMeta.showTemplateV3, hcClient);
+    }
+
+    /**
      * 查询模板详情
      * 查询模板详情
      *
@@ -138,6 +248,17 @@ public class DevStarAsyncClient {
      */
     public CompletableFuture<ShowTemplateDetailResponse> showTemplateDetailAsync(ShowTemplateDetailRequest request) {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.showTemplateDetail);
+    }
+
+    /**
+     * 查询模板详情
+     * 查询模板详情
+     *
+     * @param ShowTemplateDetailRequest 请求对象
+     * @return AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>
+     */
+    public AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse> showTemplateDetailAsyncInvoker(ShowTemplateDetailRequest request) {
+        return new AsyncInvoker<ShowTemplateDetailRequest, ShowTemplateDetailResponse>(request, DevStarMeta.showTemplateDetail, hcClient);
     }
 
 }

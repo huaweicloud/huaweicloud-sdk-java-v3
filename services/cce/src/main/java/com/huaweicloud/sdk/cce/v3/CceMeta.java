@@ -18,6 +18,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<AwakeClusterRequest, AwakeClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AwakeClusterRequest.class, AwakeClusterResponse.class)
+                .withName("AwakeCluster")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/awake")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<CreateAddonInstanceRequest, CreateAddonInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAddonInstanceRequest.class, CreateAddonInstanceResponse.class)
+                .withName("CreateAddonInstance")
                 .withUri("/api/v3/addons")
                 .withContentType("application/json");
 
@@ -66,6 +68,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<CreateCloudPersistentVolumeClaimsRequest, CreateCloudPersistentVolumeClaimsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCloudPersistentVolumeClaimsRequest.class, CreateCloudPersistentVolumeClaimsResponse.class)
+                .withName("CreateCloudPersistentVolumeClaims")
                 .withUri("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims")
                 .withContentType("application/json");
 
@@ -106,6 +109,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
+                .withName("CreateCluster")
                 .withUri("/api/v3/projects/{project_id}/clusters")
                 .withContentType("application/json");
 
@@ -130,6 +134,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<CreateKubernetesClusterCertRequest, CreateKubernetesClusterCertResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateKubernetesClusterCertRequest.class, CreateKubernetesClusterCertResponse.class)
+                .withName("CreateKubernetesClusterCert")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/clustercert")
                 .withContentType("application/json");
 
@@ -162,6 +167,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<CreateNodeRequest, CreateNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNodeRequest.class, CreateNodeResponse.class)
+                .withName("CreateNode")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes")
                 .withContentType("application/json");
 
@@ -202,6 +208,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<CreateNodePoolRequest, CreateNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNodePoolRequest.class, CreateNodePoolResponse.class)
+                .withName("CreateNodePool")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools")
                 .withContentType("application/json");
 
@@ -234,6 +241,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAddonInstanceRequest.class, DeleteAddonInstanceResponse.class)
+                .withName("DeleteAddonInstance")
                 .withUri("/api/v3/addons/{id}")
                 .withContentType("application/json");
 
@@ -275,6 +283,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<DeleteCloudPersistentVolumeClaimsRequest, DeleteCloudPersistentVolumeClaimsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCloudPersistentVolumeClaimsRequest.class, DeleteCloudPersistentVolumeClaimsResponse.class)
+                .withName("DeleteCloudPersistentVolumeClaims")
                 .withUri("/api/v1/namespaces/{namespace}/cloudpersistentvolumeclaims/{name}")
                 .withContentType("application/json");
 
@@ -315,6 +324,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
+                .withName("DeleteCluster")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}")
                 .withContentType("application/json");
 
@@ -395,6 +405,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<DeleteNodeRequest, DeleteNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNodeRequest.class, DeleteNodeResponse.class)
+                .withName("DeleteNode")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}")
                 .withContentType("application/json");
 
@@ -443,6 +454,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<DeleteNodePoolRequest, DeleteNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNodePoolRequest.class, DeleteNodePoolResponse.class)
+                .withName("DeleteNodePool")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}")
                 .withContentType("application/json");
 
@@ -483,6 +495,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<HibernateClusterRequest, HibernateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, HibernateClusterRequest.class, HibernateClusterResponse.class)
+                .withName("HibernateCluster")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/hibernate")
                 .withContentType("application/json");
 
@@ -507,6 +520,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ListAddonInstancesRequest, ListAddonInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddonInstancesRequest.class, ListAddonInstancesResponse.class)
+                .withName("ListAddonInstances")
                 .withUri("/api/v3/addons")
                 .withContentType("application/json");
 
@@ -531,6 +545,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ListAddonTemplatesRequest, ListAddonTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAddonTemplatesRequest.class, ListAddonTemplatesResponse.class)
+                .withName("ListAddonTemplates")
                 .withUri("/api/v3/addontemplates")
                 .withContentType("application/json");
 
@@ -555,6 +570,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
+                .withName("ListClusters")
                 .withUri("/api/v3/projects/{project_id}/clusters")
                 .withContentType("application/json");
 
@@ -611,6 +627,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ListNodePoolsRequest, ListNodePoolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodePoolsRequest.class, ListNodePoolsResponse.class)
+                .withName("ListNodePools")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools")
                 .withContentType("application/json");
 
@@ -651,6 +668,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ListNodesRequest, ListNodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodesRequest.class, ListNodesResponse.class)
+                .withName("ListNodes")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes")
                 .withContentType("application/json");
 
@@ -683,6 +701,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ShowAddonInstanceRequest, ShowAddonInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAddonInstanceRequest.class, ShowAddonInstanceResponse.class)
+                .withName("ShowAddonInstance")
                 .withUri("/api/v3/addons/{id}")
                 .withContentType("application/json");
 
@@ -715,6 +734,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ShowClusterRequest, ShowClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterRequest.class, ShowClusterResponse.class)
+                .withName("ShowCluster")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}")
                 .withContentType("application/json");
 
@@ -755,6 +775,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
+                .withName("ShowJob")
                 .withUri("/api/v3/projects/{project_id}/jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -779,6 +800,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ShowNodeRequest, ShowNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNodeRequest.class, ShowNodeResponse.class)
+                .withName("ShowNode")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}")
                 .withContentType("application/json");
 
@@ -819,6 +841,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<ShowNodePoolRequest, ShowNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNodePoolRequest.class, ShowNodePoolResponse.class)
+                .withName("ShowNodePool")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}")
                 .withContentType("application/json");
 
@@ -859,6 +882,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAddonInstanceRequest.class, UpdateAddonInstanceResponse.class)
+                .withName("UpdateAddonInstance")
                 .withUri("/api/v3/addons/{id}")
                 .withContentType("application/json");
 
@@ -891,6 +915,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<UpdateClusterRequest, UpdateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateClusterRequest.class, UpdateClusterResponse.class)
+                .withName("UpdateCluster")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}")
                 .withContentType("application/json");
 
@@ -931,6 +956,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<UpdateNodeRequest, UpdateNodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNodeRequest.class, UpdateNodeResponse.class)
+                .withName("UpdateNode")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}")
                 .withContentType("application/json");
 
@@ -979,6 +1005,7 @@ public class CceMeta {
         // basic
         HttpRequestDef.Builder<UpdateNodePoolRequest, UpdateNodePoolResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateNodePoolRequest.class, UpdateNodePoolResponse.class)
+                .withName("UpdateNodePool")
                 .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}")
                 .withContentType("application/json");
 

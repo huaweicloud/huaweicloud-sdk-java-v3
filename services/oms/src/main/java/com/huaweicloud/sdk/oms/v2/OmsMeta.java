@@ -18,6 +18,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
+                .withName("CreateTask")
                 .withUri("/v2/{project_id}/tasks")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
+                .withName("DeleteTask")
                 .withUri("/v2/{project_id}/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -66,6 +68,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
+                .withName("ListTasks")
                 .withUri("/v2/{project_id}/tasks")
                 .withContentType("application/json");
 
@@ -114,6 +117,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
+                .withName("ShowTask")
                 .withUri("/v2/{project_id}/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -138,6 +142,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<StartTaskRequest, StartTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartTaskRequest.class, StartTaskResponse.class)
+                .withName("StartTask")
                 .withUri("/v2/{project_id}/tasks/{task_id}/start")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -170,6 +175,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<StopTaskRequest, StopTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopTaskRequest.class, StopTaskResponse.class)
+                .withName("StopTask")
                 .withUri("/v2/{project_id}/tasks/{task_id}/stop")
                 .withContentType("application/json");
 
@@ -194,6 +200,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateBandwidthPolicyRequest.class, UpdateBandwidthPolicyResponse.class)
+                .withName("UpdateBandwidthPolicy")
                 .withUri("/v2/{project_id}/tasks/{task_id}/bandwidth-policy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -226,6 +233,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
+                .withName("ListApiVersions")
                 .withUri("/")
                 .withContentType("application/json");
 
@@ -242,6 +250,7 @@ public class OmsMeta {
         // basic
         HttpRequestDef.Builder<ShowApiInfoRequest, ShowApiInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiInfoRequest.class, ShowApiInfoResponse.class)
+                .withName("ShowApiInfo")
                 .withUri("/{version}")
                 .withContentType("application/json");
 

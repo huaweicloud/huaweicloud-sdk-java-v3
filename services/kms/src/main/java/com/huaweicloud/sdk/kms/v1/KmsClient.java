@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.kms.v1;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.kms.v1.model.*;
 
 public class KmsClient {
@@ -28,6 +29,17 @@ public class KmsClient {
     }
 
     /**
+     * 批量添加删除密钥标签
+     * - 功能介绍：批量添加删除密钥标签。
+     *
+     * @param BatchCreateKmsTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse>
+     */
+    public SyncInvoker<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> batchCreateKmsTagsInvoker(BatchCreateKmsTagsRequest request) {
+        return new SyncInvoker<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse>(request, KmsMeta.batchCreateKmsTags, hcClient);
+    }
+
+    /**
      * 撤销授权
      * - 功能介绍：撤销授权，授权用户撤销被授权用户操作密钥的权限。 - 说明：    - 创建密钥的用户才能撤销该密钥授权。
      *
@@ -36,6 +48,17 @@ public class KmsClient {
      */
     public CancelGrantResponse cancelGrant(CancelGrantRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.cancelGrant);
+    }
+
+    /**
+     * 撤销授权
+     * - 功能介绍：撤销授权，授权用户撤销被授权用户操作密钥的权限。 - 说明：    - 创建密钥的用户才能撤销该密钥授权。
+     *
+     * @param CancelGrantRequest 请求对象
+     * @return SyncInvoker<CancelGrantRequest, CancelGrantResponse>
+     */
+    public SyncInvoker<CancelGrantRequest, CancelGrantResponse> cancelGrantInvoker(CancelGrantRequest request) {
+        return new SyncInvoker<CancelGrantRequest, CancelGrantResponse>(request, KmsMeta.cancelGrant, hcClient);
     }
 
     /**
@@ -50,6 +73,17 @@ public class KmsClient {
     }
 
     /**
+     * 取消计划删除密钥
+     * - 功能介绍：取消计划删除密钥。  - 说明：密钥处于“计划删除”状态才能取消计划删除密钥。
+     *
+     * @param CancelKeyDeletionRequest 请求对象
+     * @return SyncInvoker<CancelKeyDeletionRequest, CancelKeyDeletionResponse>
+     */
+    public SyncInvoker<CancelKeyDeletionRequest, CancelKeyDeletionResponse> cancelKeyDeletionInvoker(CancelKeyDeletionRequest request) {
+        return new SyncInvoker<CancelKeyDeletionRequest, CancelKeyDeletionResponse>(request, KmsMeta.cancelKeyDeletion, hcClient);
+    }
+
+    /**
      * 退役授权
      * - 功能介绍：退役授权，表示被授权用户不再具有授权密钥的操作权。   例如：用户A授权用户B可以操作密钥A/key，同时授权用户C可以撤销该授权，   那么用户A、B、C均可退役该授权，退役授权后，用户B不再可以使用A/key。 - 须知：      可执行退役授权的主体包括：    - 创建授权的用户；    - 授权中retiring_principal指向的用户；    - 当授权的操作列表中包含retire-grant时，grantee_principal指向的用户。
      *
@@ -58,6 +92,17 @@ public class KmsClient {
      */
     public CancelSelfGrantResponse cancelSelfGrant(CancelSelfGrantRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.cancelSelfGrant);
+    }
+
+    /**
+     * 退役授权
+     * - 功能介绍：退役授权，表示被授权用户不再具有授权密钥的操作权。   例如：用户A授权用户B可以操作密钥A/key，同时授权用户C可以撤销该授权，   那么用户A、B、C均可退役该授权，退役授权后，用户B不再可以使用A/key。 - 须知：      可执行退役授权的主体包括：    - 创建授权的用户；    - 授权中retiring_principal指向的用户；    - 当授权的操作列表中包含retire-grant时，grantee_principal指向的用户。
+     *
+     * @param CancelSelfGrantRequest 请求对象
+     * @return SyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse>
+     */
+    public SyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse> cancelSelfGrantInvoker(CancelSelfGrantRequest request) {
+        return new SyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse>(request, KmsMeta.cancelSelfGrant, hcClient);
     }
 
     /**
@@ -72,6 +117,17 @@ public class KmsClient {
     }
 
     /**
+     * 创建数据密钥
+     * - 功能介绍：创建数据密钥，返回结果包含明文和密文。
+     *
+     * @param CreateDatakeyRequest 请求对象
+     * @return SyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse>
+     */
+    public SyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse> createDatakeyInvoker(CreateDatakeyRequest request) {
+        return new SyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse>(request, KmsMeta.createDatakey, hcClient);
+    }
+
+    /**
      * 创建不含明文数据密钥
      * - 功能介绍：创建数据密钥，返回结果只包含密文。
      *
@@ -80,6 +136,17 @@ public class KmsClient {
      */
     public CreateDatakeyWithoutPlaintextResponse createDatakeyWithoutPlaintext(CreateDatakeyWithoutPlaintextRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createDatakeyWithoutPlaintext);
+    }
+
+    /**
+     * 创建不含明文数据密钥
+     * - 功能介绍：创建数据密钥，返回结果只包含密文。
+     *
+     * @param CreateDatakeyWithoutPlaintextRequest 请求对象
+     * @return SyncInvoker<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse>
+     */
+    public SyncInvoker<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse> createDatakeyWithoutPlaintextInvoker(CreateDatakeyWithoutPlaintextRequest request) {
+        return new SyncInvoker<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse>(request, KmsMeta.createDatakeyWithoutPlaintext, hcClient);
     }
 
     /**
@@ -94,6 +161,17 @@ public class KmsClient {
     }
 
     /**
+     * 创建授权
+     * - 功能介绍：创建授权，被授权用户可以对授权密钥进行操作。 - 说明：    - 服务默认主密钥（密钥别名后缀为“/default”）不可以授权。
+     *
+     * @param CreateGrantRequest 请求对象
+     * @return SyncInvoker<CreateGrantRequest, CreateGrantResponse>
+     */
+    public SyncInvoker<CreateGrantRequest, CreateGrantResponse> createGrantInvoker(CreateGrantRequest request) {
+        return new SyncInvoker<CreateGrantRequest, CreateGrantResponse>(request, KmsMeta.createGrant, hcClient);
+    }
+
+    /**
      * 创建密钥
      * - 功能介绍：创建用户主密钥，可用来加密数据密钥。  - 说明： 别名“/default”为服务默认主密钥的后缀名，由服务自动创建。因此用户创建的主密钥别名不能与服务默认主密钥的别名相同，即后缀名不能为“/default”。对于开通企业项目的用户，服务默认主密钥属于且只能属于默认企业项目下，且不支持企业资源的迁入迁出。服务默认主密钥为用户提供基础的云上加密功能，满足合规要求。因此，在企业多项目下，其他非默认企业项目下的用户均可使用该密钥。若客户有企业管理资源诉求，请自行创建和使用密钥。
      *
@@ -102,6 +180,17 @@ public class KmsClient {
      */
     public CreateKeyResponse createKey(CreateKeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createKey);
+    }
+
+    /**
+     * 创建密钥
+     * - 功能介绍：创建用户主密钥，可用来加密数据密钥。  - 说明： 别名“/default”为服务默认主密钥的后缀名，由服务自动创建。因此用户创建的主密钥别名不能与服务默认主密钥的别名相同，即后缀名不能为“/default”。对于开通企业项目的用户，服务默认主密钥属于且只能属于默认企业项目下，且不支持企业资源的迁入迁出。服务默认主密钥为用户提供基础的云上加密功能，满足合规要求。因此，在企业多项目下，其他非默认企业项目下的用户均可使用该密钥。若客户有企业管理资源诉求，请自行创建和使用密钥。
+     *
+     * @param CreateKeyRequest 请求对象
+     * @return SyncInvoker<CreateKeyRequest, CreateKeyResponse>
+     */
+    public SyncInvoker<CreateKeyRequest, CreateKeyResponse> createKeyInvoker(CreateKeyRequest request) {
+        return new SyncInvoker<CreateKeyRequest, CreateKeyResponse>(request, KmsMeta.createKey, hcClient);
     }
 
     /**
@@ -116,6 +205,17 @@ public class KmsClient {
     }
 
     /**
+     * 添加密钥标签
+     * - 功能介绍：添加密钥标签。
+     *
+     * @param CreateKmsTagRequest 请求对象
+     * @return SyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse>
+     */
+    public SyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse> createKmsTagInvoker(CreateKmsTagRequest request) {
+        return new SyncInvoker<CreateKmsTagRequest, CreateKmsTagResponse>(request, KmsMeta.createKmsTag, hcClient);
+    }
+
+    /**
      * 获取密钥导入参数
      * - 功能介绍：获取导入密钥的必要参数，包括密钥导入令牌和密钥加密公钥。 - 说明：返回的公钥类型默认为RSA_2048。
      *
@@ -124,6 +224,17 @@ public class KmsClient {
      */
     public CreateParametersForImportResponse createParametersForImport(CreateParametersForImportRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.createParametersForImport);
+    }
+
+    /**
+     * 获取密钥导入参数
+     * - 功能介绍：获取导入密钥的必要参数，包括密钥导入令牌和密钥加密公钥。 - 说明：返回的公钥类型默认为RSA_2048。
+     *
+     * @param CreateParametersForImportRequest 请求对象
+     * @return SyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse>
+     */
+    public SyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse> createParametersForImportInvoker(CreateParametersForImportRequest request) {
+        return new SyncInvoker<CreateParametersForImportRequest, CreateParametersForImportResponse>(request, KmsMeta.createParametersForImport, hcClient);
     }
 
     /**
@@ -138,6 +249,17 @@ public class KmsClient {
     }
 
     /**
+     * 创建随机数
+     * - 功能介绍：   生成8~8192bit范围内的随机数。   生成512bit的随机数。
+     *
+     * @param CreateRandomRequest 请求对象
+     * @return SyncInvoker<CreateRandomRequest, CreateRandomResponse>
+     */
+    public SyncInvoker<CreateRandomRequest, CreateRandomResponse> createRandomInvoker(CreateRandomRequest request) {
+        return new SyncInvoker<CreateRandomRequest, CreateRandomResponse>(request, KmsMeta.createRandom, hcClient);
+    }
+
+    /**
      * 解密数据
      * - 功能介绍：解密数据。
      *
@@ -146,6 +268,17 @@ public class KmsClient {
      */
     public DecryptDataResponse decryptData(DecryptDataRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.decryptData);
+    }
+
+    /**
+     * 解密数据
+     * - 功能介绍：解密数据。
+     *
+     * @param DecryptDataRequest 请求对象
+     * @return SyncInvoker<DecryptDataRequest, DecryptDataResponse>
+     */
+    public SyncInvoker<DecryptDataRequest, DecryptDataResponse> decryptDataInvoker(DecryptDataRequest request) {
+        return new SyncInvoker<DecryptDataRequest, DecryptDataResponse>(request, KmsMeta.decryptData, hcClient);
     }
 
     /**
@@ -160,6 +293,17 @@ public class KmsClient {
     }
 
     /**
+     * 解密数据密钥
+     * - 功能介绍：解密数据密钥，用指定的主密钥解密数据密钥。
+     *
+     * @param DecryptDatakeyRequest 请求对象
+     * @return SyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse>
+     */
+    public SyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse> decryptDatakeyInvoker(DecryptDatakeyRequest request) {
+        return new SyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse>(request, KmsMeta.decryptDatakey, hcClient);
+    }
+
+    /**
      * 删除密钥材料
      * - 功能介绍：删除密钥材料信息。
      *
@@ -168,6 +312,17 @@ public class KmsClient {
      */
     public DeleteImportedKeyMaterialResponse deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.deleteImportedKeyMaterial);
+    }
+
+    /**
+     * 删除密钥材料
+     * - 功能介绍：删除密钥材料信息。
+     *
+     * @param DeleteImportedKeyMaterialRequest 请求对象
+     * @return SyncInvoker<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse>
+     */
+    public SyncInvoker<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse> deleteImportedKeyMaterialInvoker(DeleteImportedKeyMaterialRequest request) {
+        return new SyncInvoker<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse>(request, KmsMeta.deleteImportedKeyMaterial, hcClient);
     }
 
     /**
@@ -182,6 +337,17 @@ public class KmsClient {
     }
 
     /**
+     * 计划删除密钥
+     * - 功能介绍：计划多少天后删除密钥，可设置7天～1096天内删除密钥。
+     *
+     * @param DeleteKeyRequest 请求对象
+     * @return SyncInvoker<DeleteKeyRequest, DeleteKeyResponse>
+     */
+    public SyncInvoker<DeleteKeyRequest, DeleteKeyResponse> deleteKeyInvoker(DeleteKeyRequest request) {
+        return new SyncInvoker<DeleteKeyRequest, DeleteKeyResponse>(request, KmsMeta.deleteKey, hcClient);
+    }
+
+    /**
      * 删除密钥标签
      * - 功能介绍：删除密钥标签。
      *
@@ -190,6 +356,17 @@ public class KmsClient {
      */
     public DeleteTagResponse deleteTag(DeleteTagRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.deleteTag);
+    }
+
+    /**
+     * 删除密钥标签
+     * - 功能介绍：删除密钥标签。
+     *
+     * @param DeleteTagRequest 请求对象
+     * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
+     */
+    public SyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagInvoker(DeleteTagRequest request) {
+        return new SyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, KmsMeta.deleteTag, hcClient);
     }
 
     /**
@@ -204,6 +381,17 @@ public class KmsClient {
     }
 
     /**
+     * 禁用密钥
+     * - 功能介绍：禁用密钥，密钥禁用后不可以使用。  - 说明：密钥为启用状态才能禁用密钥。
+     *
+     * @param DisableKeyRequest 请求对象
+     * @return SyncInvoker<DisableKeyRequest, DisableKeyResponse>
+     */
+    public SyncInvoker<DisableKeyRequest, DisableKeyResponse> disableKeyInvoker(DisableKeyRequest request) {
+        return new SyncInvoker<DisableKeyRequest, DisableKeyResponse>(request, KmsMeta.disableKey, hcClient);
+    }
+
+    /**
      * 关闭密钥轮换
      * - 功能介绍：关闭用户主密钥轮换。
      *
@@ -212,6 +400,17 @@ public class KmsClient {
      */
     public DisableKeyRotationResponse disableKeyRotation(DisableKeyRotationRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.disableKeyRotation);
+    }
+
+    /**
+     * 关闭密钥轮换
+     * - 功能介绍：关闭用户主密钥轮换。
+     *
+     * @param DisableKeyRotationRequest 请求对象
+     * @return SyncInvoker<DisableKeyRotationRequest, DisableKeyRotationResponse>
+     */
+    public SyncInvoker<DisableKeyRotationRequest, DisableKeyRotationResponse> disableKeyRotationInvoker(DisableKeyRotationRequest request) {
+        return new SyncInvoker<DisableKeyRotationRequest, DisableKeyRotationResponse>(request, KmsMeta.disableKeyRotation, hcClient);
     }
 
     /**
@@ -226,6 +425,17 @@ public class KmsClient {
     }
 
     /**
+     * 启用密钥
+     * - 功能介绍：启用密钥，密钥启用后才可以使用。  - 说明：密钥为禁用状态才能启用密钥。
+     *
+     * @param EnableKeyRequest 请求对象
+     * @return SyncInvoker<EnableKeyRequest, EnableKeyResponse>
+     */
+    public SyncInvoker<EnableKeyRequest, EnableKeyResponse> enableKeyInvoker(EnableKeyRequest request) {
+        return new SyncInvoker<EnableKeyRequest, EnableKeyResponse>(request, KmsMeta.enableKey, hcClient);
+    }
+
+    /**
      * 开启密钥轮换
      * - 功能介绍：开启用户主密钥轮换。 - 说明：   - 开启密钥轮换后，默认轮询间隔时间为365天。   - 默认主密钥及外部导入密钥不支持轮换操作。
      *
@@ -234,6 +444,17 @@ public class KmsClient {
      */
     public EnableKeyRotationResponse enableKeyRotation(EnableKeyRotationRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.enableKeyRotation);
+    }
+
+    /**
+     * 开启密钥轮换
+     * - 功能介绍：开启用户主密钥轮换。 - 说明：   - 开启密钥轮换后，默认轮询间隔时间为365天。   - 默认主密钥及外部导入密钥不支持轮换操作。
+     *
+     * @param EnableKeyRotationRequest 请求对象
+     * @return SyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse>
+     */
+    public SyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse> enableKeyRotationInvoker(EnableKeyRotationRequest request) {
+        return new SyncInvoker<EnableKeyRotationRequest, EnableKeyRotationResponse>(request, KmsMeta.enableKeyRotation, hcClient);
     }
 
     /**
@@ -248,6 +469,17 @@ public class KmsClient {
     }
 
     /**
+     * 加密数据
+     * - 功能介绍：加密数据，用指定的用户主密钥加密数据。
+     *
+     * @param EncryptDataRequest 请求对象
+     * @return SyncInvoker<EncryptDataRequest, EncryptDataResponse>
+     */
+    public SyncInvoker<EncryptDataRequest, EncryptDataResponse> encryptDataInvoker(EncryptDataRequest request) {
+        return new SyncInvoker<EncryptDataRequest, EncryptDataResponse>(request, KmsMeta.encryptData, hcClient);
+    }
+
+    /**
      * 加密数据密钥
      * - 功能介绍：加密数据密钥，用指定的主密钥加密数据密钥。
      *
@@ -256,6 +488,17 @@ public class KmsClient {
      */
     public EncryptDatakeyResponse encryptDatakey(EncryptDatakeyRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.encryptDatakey);
+    }
+
+    /**
+     * 加密数据密钥
+     * - 功能介绍：加密数据密钥，用指定的主密钥加密数据密钥。
+     *
+     * @param EncryptDatakeyRequest 请求对象
+     * @return SyncInvoker<EncryptDatakeyRequest, EncryptDatakeyResponse>
+     */
+    public SyncInvoker<EncryptDatakeyRequest, EncryptDatakeyResponse> encryptDatakeyInvoker(EncryptDatakeyRequest request) {
+        return new SyncInvoker<EncryptDatakeyRequest, EncryptDatakeyResponse>(request, KmsMeta.encryptDatakey, hcClient);
     }
 
     /**
@@ -270,6 +513,17 @@ public class KmsClient {
     }
 
     /**
+     * 导入密钥材料
+     * - 功能介绍：导入密钥材料。
+     *
+     * @param ImportKeyMaterialRequest 请求对象
+     * @return SyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse>
+     */
+    public SyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse> importKeyMaterialInvoker(ImportKeyMaterialRequest request) {
+        return new SyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse>(request, KmsMeta.importKeyMaterial, hcClient);
+    }
+
+    /**
      * 查询授权列表
      * - 功能介绍：查询密钥的授权列表。
      *
@@ -278,6 +532,17 @@ public class KmsClient {
      */
     public ListGrantsResponse listGrants(ListGrantsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listGrants);
+    }
+
+    /**
+     * 查询授权列表
+     * - 功能介绍：查询密钥的授权列表。
+     *
+     * @param ListGrantsRequest 请求对象
+     * @return SyncInvoker<ListGrantsRequest, ListGrantsResponse>
+     */
+    public SyncInvoker<ListGrantsRequest, ListGrantsResponse> listGrantsInvoker(ListGrantsRequest request) {
+        return new SyncInvoker<ListGrantsRequest, ListGrantsResponse>(request, KmsMeta.listGrants, hcClient);
     }
 
     /**
@@ -292,6 +557,17 @@ public class KmsClient {
     }
 
     /**
+     * 查询密钥信息
+     * - 功能介绍：查询密钥详细信息。
+     *
+     * @param ListKeyDetailRequest 请求对象
+     * @return SyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse>
+     */
+    public SyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse> listKeyDetailInvoker(ListKeyDetailRequest request) {
+        return new SyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse>(request, KmsMeta.listKeyDetail, hcClient);
+    }
+
+    /**
      * 查询密钥列表
      * - 功能介绍：查询用户所有密钥列表。
      *
@@ -300,6 +576,17 @@ public class KmsClient {
      */
     public ListKeysResponse listKeys(ListKeysRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listKeys);
+    }
+
+    /**
+     * 查询密钥列表
+     * - 功能介绍：查询用户所有密钥列表。
+     *
+     * @param ListKeysRequest 请求对象
+     * @return SyncInvoker<ListKeysRequest, ListKeysResponse>
+     */
+    public SyncInvoker<ListKeysRequest, ListKeysResponse> listKeysInvoker(ListKeysRequest request) {
+        return new SyncInvoker<ListKeysRequest, ListKeysResponse>(request, KmsMeta.listKeys, hcClient);
     }
 
     /**
@@ -314,6 +601,17 @@ public class KmsClient {
     }
 
     /**
+     * 查询密钥实例
+     * - 功能介绍：查询密钥实例。通过标签过滤，查询指定用户主密钥的详细信息。
+     *
+     * @param ListKmsByTagsRequest 请求对象
+     * @return SyncInvoker<ListKmsByTagsRequest, ListKmsByTagsResponse>
+     */
+    public SyncInvoker<ListKmsByTagsRequest, ListKmsByTagsResponse> listKmsByTagsInvoker(ListKmsByTagsRequest request) {
+        return new SyncInvoker<ListKmsByTagsRequest, ListKmsByTagsResponse>(request, KmsMeta.listKmsByTags, hcClient);
+    }
+
+    /**
      * 查询项目标签
      * - 功能介绍：查询用户在指定项目下的所有标签集合。
      *
@@ -322,6 +620,17 @@ public class KmsClient {
      */
     public ListKmsTagsResponse listKmsTags(ListKmsTagsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.listKmsTags);
+    }
+
+    /**
+     * 查询项目标签
+     * - 功能介绍：查询用户在指定项目下的所有标签集合。
+     *
+     * @param ListKmsTagsRequest 请求对象
+     * @return SyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse>
+     */
+    public SyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse> listKmsTagsInvoker(ListKmsTagsRequest request) {
+        return new SyncInvoker<ListKmsTagsRequest, ListKmsTagsResponse>(request, KmsMeta.listKmsTags, hcClient);
     }
 
     /**
@@ -336,6 +645,17 @@ public class KmsClient {
     }
 
     /**
+     * 查询可退役授权列表
+     * - 功能介绍：查询用户可以退役的授权列表。
+     *
+     * @param ListRetirableGrantsRequest 请求对象
+     * @return SyncInvoker<ListRetirableGrantsRequest, ListRetirableGrantsResponse>
+     */
+    public SyncInvoker<ListRetirableGrantsRequest, ListRetirableGrantsResponse> listRetirableGrantsInvoker(ListRetirableGrantsRequest request) {
+        return new SyncInvoker<ListRetirableGrantsRequest, ListRetirableGrantsResponse>(request, KmsMeta.listRetirableGrants, hcClient);
+    }
+
+    /**
      * 查询密钥轮换状态
      * - 功能介绍：查询用户主密钥轮换状态。
      *
@@ -344,6 +664,17 @@ public class KmsClient {
      */
     public ShowKeyRotationStatusResponse showKeyRotationStatus(ShowKeyRotationStatusRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showKeyRotationStatus);
+    }
+
+    /**
+     * 查询密钥轮换状态
+     * - 功能介绍：查询用户主密钥轮换状态。
+     *
+     * @param ShowKeyRotationStatusRequest 请求对象
+     * @return SyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse>
+     */
+    public SyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> showKeyRotationStatusInvoker(ShowKeyRotationStatusRequest request) {
+        return new SyncInvoker<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse>(request, KmsMeta.showKeyRotationStatus, hcClient);
     }
 
     /**
@@ -358,6 +689,17 @@ public class KmsClient {
     }
 
     /**
+     * 查询密钥标签
+     * - 功能介绍：查询密钥标签。
+     *
+     * @param ShowKmsTagsRequest 请求对象
+     * @return SyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse>
+     */
+    public SyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse> showKmsTagsInvoker(ShowKmsTagsRequest request) {
+        return new SyncInvoker<ShowKmsTagsRequest, ShowKmsTagsResponse>(request, KmsMeta.showKmsTags, hcClient);
+    }
+
+    /**
      * 查询实例数
      * - 功能介绍：查询实例数，获取用户已经创建的用户主密钥数量。
      *
@@ -366,6 +708,17 @@ public class KmsClient {
      */
     public ShowUserInstancesResponse showUserInstances(ShowUserInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showUserInstances);
+    }
+
+    /**
+     * 查询实例数
+     * - 功能介绍：查询实例数，获取用户已经创建的用户主密钥数量。
+     *
+     * @param ShowUserInstancesRequest 请求对象
+     * @return SyncInvoker<ShowUserInstancesRequest, ShowUserInstancesResponse>
+     */
+    public SyncInvoker<ShowUserInstancesRequest, ShowUserInstancesResponse> showUserInstancesInvoker(ShowUserInstancesRequest request) {
+        return new SyncInvoker<ShowUserInstancesRequest, ShowUserInstancesResponse>(request, KmsMeta.showUserInstances, hcClient);
     }
 
     /**
@@ -380,6 +733,17 @@ public class KmsClient {
     }
 
     /**
+     * 查询配额
+     * - 功能介绍：查询配额，查询用户可以创建的用户主密钥配额总数及当前使用量信息。
+     *
+     * @param ShowUserQuotasRequest 请求对象
+     * @return SyncInvoker<ShowUserQuotasRequest, ShowUserQuotasResponse>
+     */
+    public SyncInvoker<ShowUserQuotasRequest, ShowUserQuotasResponse> showUserQuotasInvoker(ShowUserQuotasRequest request) {
+        return new SyncInvoker<ShowUserQuotasRequest, ShowUserQuotasResponse>(request, KmsMeta.showUserQuotas, hcClient);
+    }
+
+    /**
      * 修改密钥别名
      * - 功能介绍：修改用户主密钥别名。 - 说明：    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。    - 密钥处于“计划删除”状态，密钥别名不可以修改。
      *
@@ -388,6 +752,17 @@ public class KmsClient {
      */
     public UpdateKeyAliasResponse updateKeyAlias(UpdateKeyAliasRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyAlias);
+    }
+
+    /**
+     * 修改密钥别名
+     * - 功能介绍：修改用户主密钥别名。 - 说明：    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。    - 密钥处于“计划删除”状态，密钥别名不可以修改。
+     *
+     * @param UpdateKeyAliasRequest 请求对象
+     * @return SyncInvoker<UpdateKeyAliasRequest, UpdateKeyAliasResponse>
+     */
+    public SyncInvoker<UpdateKeyAliasRequest, UpdateKeyAliasResponse> updateKeyAliasInvoker(UpdateKeyAliasRequest request) {
+        return new SyncInvoker<UpdateKeyAliasRequest, UpdateKeyAliasResponse>(request, KmsMeta.updateKeyAlias, hcClient);
     }
 
     /**
@@ -402,6 +777,17 @@ public class KmsClient {
     }
 
     /**
+     * 修改密钥描述
+     * - 功能介绍：修改用户主密钥描述信息。 - 说明：    - 服务默认主密钥（密钥别名后缀为“/default”）不可以修改。    - 密钥处于“计划删除”状态，密钥描述不可以修改。
+     *
+     * @param UpdateKeyDescriptionRequest 请求对象
+     * @return SyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse>
+     */
+    public SyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> updateKeyDescriptionInvoker(UpdateKeyDescriptionRequest request) {
+        return new SyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse>(request, KmsMeta.updateKeyDescription, hcClient);
+    }
+
+    /**
      * 修改密钥轮换周期
      * - 功能介绍：修改用户主密钥轮换周期。
      *
@@ -410,6 +796,17 @@ public class KmsClient {
      */
     public UpdateKeyRotationIntervalResponse updateKeyRotationInterval(UpdateKeyRotationIntervalRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyRotationInterval);
+    }
+
+    /**
+     * 修改密钥轮换周期
+     * - 功能介绍：修改用户主密钥轮换周期。
+     *
+     * @param UpdateKeyRotationIntervalRequest 请求对象
+     * @return SyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse>
+     */
+    public SyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> updateKeyRotationIntervalInvoker(UpdateKeyRotationIntervalRequest request) {
+        return new SyncInvoker<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse>(request, KmsMeta.updateKeyRotationInterval, hcClient);
     }
 
     /**
@@ -424,6 +821,17 @@ public class KmsClient {
     }
 
     /**
+     * 查询指定版本信息
+     * - 功能介绍：查指定API版本信息。
+     *
+     * @param ShowVersionRequest 请求对象
+     * @return SyncInvoker<ShowVersionRequest, ShowVersionResponse>
+     */
+    public SyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionInvoker(ShowVersionRequest request) {
+        return new SyncInvoker<ShowVersionRequest, ShowVersionResponse>(request, KmsMeta.showVersion, hcClient);
+    }
+
+    /**
      * 查询版本信息列表
      * - 功能介绍：查询API版本信息列表。
      *
@@ -432,6 +840,17 @@ public class KmsClient {
      */
     public ShowVersionsResponse showVersions(ShowVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, KmsMeta.showVersions);
+    }
+
+    /**
+     * 查询版本信息列表
+     * - 功能介绍：查询API版本信息列表。
+     *
+     * @param ShowVersionsRequest 请求对象
+     * @return SyncInvoker<ShowVersionsRequest, ShowVersionsResponse>
+     */
+    public SyncInvoker<ShowVersionsRequest, ShowVersionsResponse> showVersionsInvoker(ShowVersionsRequest request) {
+        return new SyncInvoker<ShowVersionsRequest, ShowVersionsResponse>(request, KmsMeta.showVersions, hcClient);
     }
 
 }

@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.ces.v1.model.*;
 
 public class CesAsyncClient {
@@ -31,6 +31,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 批量查询监控数据
+     * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持10指标的批量查询。
+     *
+     * @param BatchListMetricDataRequest 请求对象
+     * @return AsyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse>
+     */
+    public AsyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse> batchListMetricDataAsyncInvoker(BatchListMetricDataRequest request) {
+        return new AsyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse>(request, CesMeta.batchListMetricData, hcClient);
+    }
+
+    /**
      * 创建告警规则
      * 创建一条告警规则。
      *
@@ -39,6 +50,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<CreateAlarmResponse> createAlarmAsync(CreateAlarmRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.createAlarm);
+    }
+
+    /**
+     * 创建告警规则
+     * 创建一条告警规则。
+     *
+     * @param CreateAlarmRequest 请求对象
+     * @return AsyncInvoker<CreateAlarmRequest, CreateAlarmResponse>
+     */
+    public AsyncInvoker<CreateAlarmRequest, CreateAlarmResponse> createAlarmAsyncInvoker(CreateAlarmRequest request) {
+        return new AsyncInvoker<CreateAlarmRequest, CreateAlarmResponse>(request, CesMeta.createAlarm, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 创建自定义告警模板
+     * 创建自定义告警模板。
+     *
+     * @param CreateAlarmTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>
+     */
+    public AsyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> createAlarmTemplateAsyncInvoker(CreateAlarmTemplateRequest request) {
+        return new AsyncInvoker<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse>(request, CesMeta.createAlarmTemplate, hcClient);
+    }
+
+    /**
      * 上报事件
      * 上报自定义事件。
      *
@@ -61,6 +94,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<CreateEventsResponse> createEventsAsync(CreateEventsRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.createEvents);
+    }
+
+    /**
+     * 上报事件
+     * 上报自定义事件。
+     *
+     * @param CreateEventsRequest 请求对象
+     * @return AsyncInvoker<CreateEventsRequest, CreateEventsResponse>
+     */
+    public AsyncInvoker<CreateEventsRequest, CreateEventsResponse> createEventsAsyncInvoker(CreateEventsRequest request) {
+        return new AsyncInvoker<CreateEventsRequest, CreateEventsResponse>(request, CesMeta.createEvents, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 添加监控数据
+     * 添加一条或多条指标监控数据。
+     *
+     * @param CreateMetricDataRequest 请求对象
+     * @return AsyncInvoker<CreateMetricDataRequest, CreateMetricDataResponse>
+     */
+    public AsyncInvoker<CreateMetricDataRequest, CreateMetricDataResponse> createMetricDataAsyncInvoker(CreateMetricDataRequest request) {
+        return new AsyncInvoker<CreateMetricDataRequest, CreateMetricDataResponse>(request, CesMeta.createMetricData, hcClient);
+    }
+
+    /**
      * 创建资源分组
      * 创建资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
      *
@@ -83,6 +138,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<CreateResourceGroupResponse> createResourceGroupAsync(CreateResourceGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.createResourceGroup);
+    }
+
+    /**
+     * 创建资源分组
+     * 创建资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
+     *
+     * @param CreateResourceGroupRequest 请求对象
+     * @return AsyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>
+     */
+    public AsyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse> createResourceGroupAsyncInvoker(CreateResourceGroupRequest request) {
+        return new AsyncInvoker<CreateResourceGroupRequest, CreateResourceGroupResponse>(request, CesMeta.createResourceGroup, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 删除告警规则
+     * 删除一条告警规则。
+     *
+     * @param DeleteAlarmRequest 请求对象
+     * @return AsyncInvoker<DeleteAlarmRequest, DeleteAlarmResponse>
+     */
+    public AsyncInvoker<DeleteAlarmRequest, DeleteAlarmResponse> deleteAlarmAsyncInvoker(DeleteAlarmRequest request) {
+        return new AsyncInvoker<DeleteAlarmRequest, DeleteAlarmResponse>(request, CesMeta.deleteAlarm, hcClient);
+    }
+
+    /**
      * 删除自定义告警模板
      * 根据ID删除自定义告警模板。
      *
@@ -105,6 +182,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<DeleteAlarmTemplateResponse> deleteAlarmTemplateAsync(DeleteAlarmTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.deleteAlarmTemplate);
+    }
+
+    /**
+     * 删除自定义告警模板
+     * 根据ID删除自定义告警模板。
+     *
+     * @param DeleteAlarmTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse>
+     */
+    public AsyncInvoker<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> deleteAlarmTemplateAsyncInvoker(DeleteAlarmTemplateRequest request) {
+        return new AsyncInvoker<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse>(request, CesMeta.deleteAlarmTemplate, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 删除资源分组
+     * 删除一条资源分组。
+     *
+     * @param DeleteResourceGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteResourceGroupRequest, DeleteResourceGroupResponse>
+     */
+    public AsyncInvoker<DeleteResourceGroupRequest, DeleteResourceGroupResponse> deleteResourceGroupAsyncInvoker(DeleteResourceGroupRequest request) {
+        return new AsyncInvoker<DeleteResourceGroupRequest, DeleteResourceGroupResponse>(request, CesMeta.deleteResourceGroup, hcClient);
+    }
+
+    /**
      * 查询告警历史
      * 查询告警历史列表。
      *
@@ -127,6 +226,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<ListAlarmHistoriesResponse> listAlarmHistoriesAsync(ListAlarmHistoriesRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.listAlarmHistories);
+    }
+
+    /**
+     * 查询告警历史
+     * 查询告警历史列表。
+     *
+     * @param ListAlarmHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>
+     */
+    public AsyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> listAlarmHistoriesAsyncInvoker(ListAlarmHistoriesRequest request) {
+        return new AsyncInvoker<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse>(request, CesMeta.listAlarmHistories, hcClient);
     }
 
     /**
@@ -141,6 +251,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询自定义告警模板列表
+     * 查询自定义告警模板列表
+     *
+     * @param ListAlarmTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>
+     */
+    public AsyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> listAlarmTemplatesAsyncInvoker(ListAlarmTemplatesRequest request) {
+        return new AsyncInvoker<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse>(request, CesMeta.listAlarmTemplates, hcClient);
+    }
+
+    /**
      * 查询告警规则列表
      * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。
      *
@@ -149,6 +270,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<ListAlarmsResponse> listAlarmsAsync(ListAlarmsRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.listAlarms);
+    }
+
+    /**
+     * 查询告警规则列表
+     * 查询告警规则列表，可以指定分页条件限制结果数量，可以指定排序规则。
+     *
+     * @param ListAlarmsRequest 请求对象
+     * @return AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse>
+     */
+    public AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse> listAlarmsAsyncInvoker(ListAlarmsRequest request) {
+        return new AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse>(request, CesMeta.listAlarms, hcClient);
     }
 
     /**
@@ -163,6 +295,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询某一事件监控详情
+     * 根据事件监控名称，查询该事件发生的详细信息。
+     *
+     * @param ListEventDetailRequest 请求对象
+     * @return AsyncInvoker<ListEventDetailRequest, ListEventDetailResponse>
+     */
+    public AsyncInvoker<ListEventDetailRequest, ListEventDetailResponse> listEventDetailAsyncInvoker(ListEventDetailRequest request) {
+        return new AsyncInvoker<ListEventDetailRequest, ListEventDetailResponse>(request, CesMeta.listEventDetail, hcClient);
+    }
+
+    /**
      * 查询事件监控列表
      * 查询事件监控列表，包括系统事件和自定义事件。
      *
@@ -171,6 +314,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.listEvents);
+    }
+
+    /**
+     * 查询事件监控列表
+     * 查询事件监控列表，包括系统事件和自定义事件。
+     *
+     * @param ListEventsRequest 请求对象
+     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
+    public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
+        return new AsyncInvoker<ListEventsRequest, ListEventsResponse>(request, CesMeta.listEvents, hcClient);
     }
 
     /**
@@ -185,6 +339,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询指标列表
+     * 查询系统当前可监控指标列表，可以指定指标命名空间、指标名称、维度、排序方式，起始记录和最大记录条数过滤查询结果。
+     *
+     * @param ListMetricsRequest 请求对象
+     * @return AsyncInvoker<ListMetricsRequest, ListMetricsResponse>
+     */
+    public AsyncInvoker<ListMetricsRequest, ListMetricsResponse> listMetricsAsyncInvoker(ListMetricsRequest request) {
+        return new AsyncInvoker<ListMetricsRequest, ListMetricsResponse>(request, CesMeta.listMetrics, hcClient);
+    }
+
+    /**
      * 查询所有资源分组
      * 查询所创建的所有资源分组。
      *
@@ -193,6 +358,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<ListResourceGroupResponse> listResourceGroupAsync(ListResourceGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.listResourceGroup);
+    }
+
+    /**
+     * 查询所有资源分组
+     * 查询所创建的所有资源分组。
+     *
+     * @param ListResourceGroupRequest 请求对象
+     * @return AsyncInvoker<ListResourceGroupRequest, ListResourceGroupResponse>
+     */
+    public AsyncInvoker<ListResourceGroupRequest, ListResourceGroupResponse> listResourceGroupAsyncInvoker(ListResourceGroupRequest request) {
+        return new AsyncInvoker<ListResourceGroupRequest, ListResourceGroupResponse>(request, CesMeta.listResourceGroup, hcClient);
     }
 
     /**
@@ -207,6 +383,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询单条告警规则信息
+     * 根据告警ID查询告警规则信息。
+     *
+     * @param ShowAlarmRequest 请求对象
+     * @return AsyncInvoker<ShowAlarmRequest, ShowAlarmResponse>
+     */
+    public AsyncInvoker<ShowAlarmRequest, ShowAlarmResponse> showAlarmAsyncInvoker(ShowAlarmRequest request) {
+        return new AsyncInvoker<ShowAlarmRequest, ShowAlarmResponse>(request, CesMeta.showAlarm, hcClient);
+    }
+
+    /**
      * 查询主机配置数据
      * 查询指定时间范围指定事件类型的主机配置数据，可以通过参数指定需要查询的数据维度。注意：该接口提供给HANA场景下SAP Monitor查询主机配置数据，其他场景下查不到主机配置数据。
      *
@@ -215,6 +402,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<ShowEventDataResponse> showEventDataAsync(ShowEventDataRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.showEventData);
+    }
+
+    /**
+     * 查询主机配置数据
+     * 查询指定时间范围指定事件类型的主机配置数据，可以通过参数指定需要查询的数据维度。注意：该接口提供给HANA场景下SAP Monitor查询主机配置数据，其他场景下查不到主机配置数据。
+     *
+     * @param ShowEventDataRequest 请求对象
+     * @return AsyncInvoker<ShowEventDataRequest, ShowEventDataResponse>
+     */
+    public AsyncInvoker<ShowEventDataRequest, ShowEventDataResponse> showEventDataAsyncInvoker(ShowEventDataRequest request) {
+        return new AsyncInvoker<ShowEventDataRequest, ShowEventDataResponse>(request, CesMeta.showEventData, hcClient);
     }
 
     /**
@@ -229,6 +427,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询监控数据
+     * 查询指定时间范围指定指标的指定粒度的监控数据，可以通过参数指定需要查询的数据维度。
+     *
+     * @param ShowMetricDataRequest 请求对象
+     * @return AsyncInvoker<ShowMetricDataRequest, ShowMetricDataResponse>
+     */
+    public AsyncInvoker<ShowMetricDataRequest, ShowMetricDataResponse> showMetricDataAsyncInvoker(ShowMetricDataRequest request) {
+        return new AsyncInvoker<ShowMetricDataRequest, ShowMetricDataResponse>(request, CesMeta.showMetricData, hcClient);
+    }
+
+    /**
      * 查询配额
      * 查询用户可以创建的资源配额总数及当前使用量，当前仅有告警规则一种资源类型。
      *
@@ -237,6 +446,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     * 查询用户可以创建的资源配额总数及当前使用量，当前仅有告警规则一种资源类型。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
+        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, CesMeta.showQuotas, hcClient);
     }
 
     /**
@@ -251,6 +471,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询资源分组下的资源
+     * 根据资源分组ID查询资源分组下的资源。
+     *
+     * @param ShowResourceGroupRequest 请求对象
+     * @return AsyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>
+     */
+    public AsyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse> showResourceGroupAsyncInvoker(ShowResourceGroupRequest request) {
+        return new AsyncInvoker<ShowResourceGroupRequest, ShowResourceGroupResponse>(request, CesMeta.showResourceGroup, hcClient);
+    }
+
+    /**
      * 修改告警规则
      * 修改告警规则。
      *
@@ -259,6 +490,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<UpdateAlarmResponse> updateAlarmAsync(UpdateAlarmRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.updateAlarm);
+    }
+
+    /**
+     * 修改告警规则
+     * 修改告警规则。
+     *
+     * @param UpdateAlarmRequest 请求对象
+     * @return AsyncInvoker<UpdateAlarmRequest, UpdateAlarmResponse>
+     */
+    public AsyncInvoker<UpdateAlarmRequest, UpdateAlarmResponse> updateAlarmAsyncInvoker(UpdateAlarmRequest request) {
+        return new AsyncInvoker<UpdateAlarmRequest, UpdateAlarmResponse>(request, CesMeta.updateAlarm, hcClient);
     }
 
     /**
@@ -273,6 +515,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 启停告警规则
+     * 启动或停止一条告警规则。
+     *
+     * @param UpdateAlarmActionRequest 请求对象
+     * @return AsyncInvoker<UpdateAlarmActionRequest, UpdateAlarmActionResponse>
+     */
+    public AsyncInvoker<UpdateAlarmActionRequest, UpdateAlarmActionResponse> updateAlarmActionAsyncInvoker(UpdateAlarmActionRequest request) {
+        return new AsyncInvoker<UpdateAlarmActionRequest, UpdateAlarmActionResponse>(request, CesMeta.updateAlarmAction, hcClient);
+    }
+
+    /**
      * 更新自定义告警模板
      * 更新自定义告警模板。
      *
@@ -284,6 +537,17 @@ public class CesAsyncClient {
     }
 
     /**
+     * 更新自定义告警模板
+     * 更新自定义告警模板。
+     *
+     * @param UpdateAlarmTemplateRequest 请求对象
+     * @return AsyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>
+     */
+    public AsyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> updateAlarmTemplateAsyncInvoker(UpdateAlarmTemplateRequest request) {
+        return new AsyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>(request, CesMeta.updateAlarmTemplate, hcClient);
+    }
+
+    /**
      * 更新资源分组
      * 更新资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
      *
@@ -292,6 +556,17 @@ public class CesAsyncClient {
      */
     public CompletableFuture<UpdateResourceGroupResponse> updateResourceGroupAsync(UpdateResourceGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, CesMeta.updateResourceGroup);
+    }
+
+    /**
+     * 更新资源分组
+     * 更新资源分组，资源分组支持将各类资源按照业务集中进行分组管理，可以从分组角度查看监控与告警信息，以提升运维效率。
+     *
+     * @param UpdateResourceGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>
+     */
+    public AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse> updateResourceGroupAsyncInvoker(UpdateResourceGroupRequest request) {
+        return new AsyncInvoker<UpdateResourceGroupRequest, UpdateResourceGroupResponse>(request, CesMeta.updateResourceGroup, hcClient);
     }
 
 }

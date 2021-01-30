@@ -18,6 +18,7 @@ public class MrsMeta {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
+                .withName("CreateCluster")
                 .withUri("/v1.1/{project_id}/run-job-flow")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class MrsMeta {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
+                .withName("DeleteCluster")
                 .withUri("/v1.1/{project_id}/clusters/{cluster_id}")
                 .withContentType("application/json");
 

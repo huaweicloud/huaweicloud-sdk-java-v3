@@ -18,6 +18,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<CreateRecordConfigRequest, CreateRecordConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRecordConfigRequest.class, CreateRecordConfigResponse.class)
+                .withName("CreateRecordConfig")
                 .withUri("/v1/{project_id}/record/config")
                 .withContentType("application/json; charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateStreamForbiddenRequest.class, CreateStreamForbiddenResponse.class)
+                .withName("CreateStreamForbidden")
                 .withUri("/v1/{project_id}/stream/blocks")
                 .withContentType("application/json; charset=UTF-8");
 
@@ -74,6 +76,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTranscodingsTemplateRequest.class, CreateTranscodingsTemplateResponse.class)
+                .withName("CreateTranscodingsTemplate")
                 .withUri("/v1/{project_id}/template/transcodings")
                 .withContentType("application/json; charset=UTF-8");
 
@@ -98,6 +101,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<DeleteRecordConfigRequest, DeleteRecordConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordConfigRequest.class, DeleteRecordConfigResponse.class)
+                .withName("DeleteRecordConfig")
                 .withUri("/v1/{project_id}/record/config")
                 .withContentType("application/json");
 
@@ -130,6 +134,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteStreamForbiddenRequest.class, DeleteStreamForbiddenResponse.class)
+                .withName("DeleteStreamForbidden")
                 .withUri("/v1/{project_id}/stream/blocks")
                 .withContentType("application/json");
 
@@ -178,6 +183,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTranscodingsTemplateRequest.class, DeleteTranscodingsTemplateResponse.class)
+                .withName("DeleteTranscodingsTemplate")
                 .withUri("/v1/{project_id}/template/transcodings")
                 .withContentType("application/json");
 
@@ -210,6 +216,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveStreamsOnlineRequest.class, ListLiveStreamsOnlineResponse.class)
+                .withName("ListLiveStreamsOnline")
                 .withUri("/v1/{project_id}/realtime/streams")
                 .withContentType("application/json");
 
@@ -266,6 +273,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListRecordConfigsRequest, ListRecordConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordConfigsRequest.class, ListRecordConfigsResponse.class)
+                .withName("ListRecordConfigs")
                 .withUri("/v1/{project_id}/record/config")
                 .withContentType("application/json");
 
@@ -330,6 +338,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListStreamForbiddenRequest, ListStreamForbiddenResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStreamForbiddenRequest.class, ListStreamForbiddenResponse.class)
+                .withName("ListStreamForbidden")
                 .withUri("/v1/{project_id}/stream/blocks")
                 .withContentType("application/json");
 
@@ -394,6 +403,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowBandwidthRequest, ShowBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthRequest.class, ShowBandwidthResponse.class)
+                .withName("ShowBandwidth")
                 .withUri("/v1/{project_id}/stream/bandwidth")
                 .withContentType("application/json");
 
@@ -442,6 +452,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowOnlineUsersRequest, ShowOnlineUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOnlineUsersRequest.class, ShowOnlineUsersResponse.class)
+                .withName("ShowOnlineUsers")
                 .withUri("/v1/{project_id}/stream/users")
                 .withContentType("application/json");
 
@@ -506,6 +517,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowTrafficRequest, ShowTrafficResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTrafficRequest.class, ShowTrafficResponse.class)
+                .withName("ShowTraffic")
                 .withUri("/v1/{project_id}/stream/traffic")
                 .withContentType("application/json");
 
@@ -554,6 +566,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTranscodingsTemplateRequest.class, ShowTranscodingsTemplateResponse.class)
+                .withName("ShowTranscodingsTemplate")
                 .withUri("/v1/{project_id}/template/transcodings")
                 .withContentType("application/json");
 
@@ -602,6 +615,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateStreamForbiddenRequest.class, UpdateStreamForbiddenResponse.class)
+                .withName("UpdateStreamForbidden")
                 .withUri("/v1/{project_id}/stream/blocks")
                 .withContentType("application/json; charset=UTF-8");
 
@@ -634,6 +648,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTranscodingsTemplateRequest.class, UpdateTranscodingsTemplateResponse.class)
+                .withName("UpdateTranscodingsTemplate")
                 .withUri("/v1/{project_id}/template/transcodings")
                 .withContentType("application/json; charset=UTF-8");
 

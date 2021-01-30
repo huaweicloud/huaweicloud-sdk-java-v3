@@ -18,6 +18,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateVolumeTagsRequest, BatchCreateVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateVolumeTagsRequest.class, BatchCreateVolumeTagsResponse.class)
+                .withName("BatchCreateVolumeTags")
                 .withUri("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -50,6 +51,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteVolumeTagsRequest, BatchDeleteVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteVolumeTagsRequest.class, BatchDeleteVolumeTagsResponse.class)
+                .withName("BatchDeleteVolumeTags")
                 .withUri("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -82,6 +84,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CinderExportToImageRequest, CinderExportToImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CinderExportToImageRequest.class, CinderExportToImageResponse.class)
+                .withName("CinderExportToImage")
                 .withUri("/v2/{project_id}/volumes/{volume_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -114,6 +117,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CinderListAvailabilityZonesRequest, CinderListAvailabilityZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CinderListAvailabilityZonesRequest.class, CinderListAvailabilityZonesResponse.class)
+                .withName("CinderListAvailabilityZones")
                 .withUri("/v2/{project_id}/os-availability-zone")
                 .withContentType("application/json");
 
@@ -130,6 +134,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CinderListQuotasRequest, CinderListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CinderListQuotasRequest.class, CinderListQuotasResponse.class)
+                .withName("CinderListQuotas")
                 .withUri("/v2/{project_id}/os-quota-sets/{target_project_id}")
                 .withContentType("application/json");
 
@@ -162,6 +167,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CinderListVolumeTypesRequest, CinderListVolumeTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CinderListVolumeTypesRequest.class, CinderListVolumeTypesResponse.class)
+                .withName("CinderListVolumeTypes")
                 .withUri("/v2/{project_id}/types")
                 .withContentType("application/json");
 
@@ -178,6 +184,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CreateSnapshotRequest, CreateSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSnapshotRequest.class, CreateSnapshotResponse.class)
+                .withName("CreateSnapshot")
                 .withUri("/v2/{project_id}/cloudsnapshots")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -202,6 +209,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<CreateVolumeRequest, CreateVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVolumeRequest.class, CreateVolumeResponse.class)
+                .withName("CreateVolume")
                 .withUri("/v2.1/{project_id}/cloudvolumes")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -226,6 +234,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<DeleteSnapshotRequest, DeleteSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSnapshotRequest.class, DeleteSnapshotResponse.class)
+                .withName("DeleteSnapshot")
                 .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}")
                 .withContentType("application/json");
 
@@ -250,6 +259,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<DeleteVolumeRequest, DeleteVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVolumeRequest.class, DeleteVolumeResponse.class)
+                .withName("DeleteVolume")
                 .withUri("/v2/{project_id}/cloudvolumes/{volume_id}")
                 .withContentType("application/json");
 
@@ -274,6 +284,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ListSnapshotsRequest, ListSnapshotsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotsRequest.class, ListSnapshotsResponse.class)
+                .withName("ListSnapshots")
                 .withUri("/v2/{project_id}/cloudsnapshots/detail")
                 .withContentType("application/json");
 
@@ -378,6 +389,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ListVolumeTagsRequest, ListVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumeTagsRequest.class, ListVolumeTagsResponse.class)
+                .withName("ListVolumeTags")
                 .withUri("/v2/{project_id}/cloudvolumes/tags")
                 .withContentType("application/json");
 
@@ -394,6 +406,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ListVolumesRequest, ListVolumesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVolumesRequest.class, ListVolumesResponse.class)
+                .withName("ListVolumes")
                 .withUri("/v2/{project_id}/cloudvolumes/detail")
                 .withContentType("application/json");
 
@@ -546,6 +559,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ListVolumesByTagsRequest, ListVolumesByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListVolumesByTagsRequest.class, ListVolumesByTagsResponse.class)
+                .withName("ListVolumesByTags")
                 .withUri("/v2/{project_id}/cloudvolumes/resource_instances/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -570,6 +584,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ResizeVolumeRequest, ResizeVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeVolumeRequest.class, ResizeVolumeResponse.class)
+                .withName("ResizeVolume")
                 .withUri("/v2.1/{project_id}/cloudvolumes/{volume_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -602,6 +617,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<RollbackSnapshotRequest, RollbackSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RollbackSnapshotRequest.class, RollbackSnapshotResponse.class)
+                .withName("RollbackSnapshot")
                 .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -634,6 +650,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
+                .withName("ShowJob")
                 .withUri("/v1/{project_id}/jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -658,6 +675,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowSnapshotRequest, ShowSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSnapshotRequest.class, ShowSnapshotResponse.class)
+                .withName("ShowSnapshot")
                 .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}")
                 .withContentType("application/json");
 
@@ -682,6 +700,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowVolumeRequest, ShowVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVolumeRequest.class, ShowVolumeResponse.class)
+                .withName("ShowVolume")
                 .withUri("/v2/{project_id}/cloudvolumes/{volume_id}")
                 .withContentType("application/json");
 
@@ -706,6 +725,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<ShowVolumeTagsRequest, ShowVolumeTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVolumeTagsRequest.class, ShowVolumeTagsResponse.class)
+                .withName("ShowVolumeTags")
                 .withUri("/v2/{project_id}/cloudvolumes/{volume_id}/tags")
                 .withContentType("application/json");
 
@@ -730,6 +750,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<UpdateSnapshotRequest, UpdateSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSnapshotRequest.class, UpdateSnapshotResponse.class)
+                .withName("UpdateSnapshot")
                 .withUri("/v2/{project_id}/cloudsnapshots/{snapshot_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -762,6 +783,7 @@ public class EvsMeta {
         // basic
         HttpRequestDef.Builder<UpdateVolumeRequest, UpdateVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVolumeRequest.class, UpdateVolumeResponse.class)
+                .withName("UpdateVolume")
                 .withUri("/v2/{project_id}/cloudvolumes/{volume_id}")
                 .withContentType("application/json;charset=UTF-8");
 

@@ -35,6 +35,12 @@ public class LoginTokenSecurityToken  {
     
     private String id;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="duration_seconds")
+    
+    private Integer durationSeconds = 600;
+
     public LoginTokenSecurityToken withAccess(String access) {
         this.access = access;
         return this;
@@ -94,6 +100,28 @@ public class LoginTokenSecurityToken  {
     public void setId(String id) {
         this.id = id;
     }
+
+    public LoginTokenSecurityToken withDurationSeconds(Integer durationSeconds) {
+        this.durationSeconds = durationSeconds;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 自定义代理登录票据logintoken的有效时间，时间单位为秒。默认10分钟，取值范围10min~12h，且取值不能大于临时安全凭证securitytoken的过期时间。
+     * minimum: 600
+     * maximum: 43200
+     * @return durationSeconds
+     */
+    public Integer getDurationSeconds() {
+        return durationSeconds;
+    }
+
+    public void setDurationSeconds(Integer durationSeconds) {
+        this.durationSeconds = durationSeconds;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,11 +133,12 @@ public class LoginTokenSecurityToken  {
         LoginTokenSecurityToken loginTokenSecurityToken = (LoginTokenSecurityToken) o;
         return Objects.equals(this.access, loginTokenSecurityToken.access) &&
             Objects.equals(this.secret, loginTokenSecurityToken.secret) &&
-            Objects.equals(this.id, loginTokenSecurityToken.id);
+            Objects.equals(this.id, loginTokenSecurityToken.id) &&
+            Objects.equals(this.durationSeconds, loginTokenSecurityToken.durationSeconds);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(access, secret, id);
+        return Objects.hash(access, secret, id, durationSeconds);
     }
     @Override
     public String toString() {
@@ -118,6 +147,7 @@ public class LoginTokenSecurityToken  {
         sb.append("    access: ").append(toIndentedString(access)).append("\n");
         sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

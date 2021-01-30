@@ -23,6 +23,7 @@ package com.huaweicloud.sdk.core.auth;
 
 import java.util.concurrent.CompletableFuture;
 
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 
@@ -30,11 +31,11 @@ public interface ICredential {
     /**
      * Handle endpoint resolver and fill projectId/domainId automatically.
      *
-     * @param httpClient instance of HttpClient
-     * @param regionId   region id such as "cn-north-4"
+     * @param hcClient instance of hcClient
+     * @param regionId region id such as "cn-north-4"
      * @return null
      */
-    CompletableFuture<ICredential> processAuthParams(HttpClient httpClient, String regionId);
+    CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId);
 
     /**
      * Handle auth request before sending to API Gateway.
@@ -44,4 +45,11 @@ public interface ICredential {
      * @return null
      */
     CompletableFuture<HttpRequest> processAuthRequest(HttpRequest httpRequest, HttpClient httpClient);
+
+    /**
+     * DeepClone Object
+     *
+     * @return ICredential
+     */
+    ICredential deepClone();
 }

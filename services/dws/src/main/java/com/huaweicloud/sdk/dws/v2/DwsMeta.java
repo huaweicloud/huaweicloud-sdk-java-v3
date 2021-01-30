@@ -18,6 +18,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<CreateClusterRequest, CreateClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateClusterRequest.class, CreateClusterResponse.class)
+                .withName("CreateCluster")
                 .withUri("/v1.0/{project_id}/clusters")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<CreateSnapshotRequest, CreateSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSnapshotRequest.class, CreateSnapshotResponse.class)
+                .withName("CreateSnapshot")
                 .withUri("/v1.0/{project_id}/snapshots")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -66,6 +68,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<DeleteClusterRequest, DeleteClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteClusterRequest.class, DeleteClusterResponse.class)
+                .withName("DeleteCluster")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -98,6 +101,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<DeleteSnapshotRequest, DeleteSnapshotResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSnapshotRequest.class, DeleteSnapshotResponse.class)
+                .withName("DeleteSnapshot")
                 .withUri("/v1.0/{project_id}/snapshots/{snapshot_id}")
                 .withContentType("application/json");
 
@@ -122,6 +126,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<ListClusterDetailsRequest, ListClusterDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClusterDetailsRequest.class, ListClusterDetailsResponse.class)
+                .withName("ListClusterDetails")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}")
                 .withContentType("application/json");
 
@@ -146,6 +151,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
+                .withName("ListClusters")
                 .withUri("/v1.0/{project_id}/clusters")
                 .withContentType("application/json");
 
@@ -162,6 +168,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<ListNodeTypesRequest, ListNodeTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNodeTypesRequest.class, ListNodeTypesResponse.class)
+                .withName("ListNodeTypes")
                 .withUri("/v1.0/{project_id}/node_types")
                 .withContentType("application/json");
 
@@ -178,6 +185,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotDetailsRequest.class, ListSnapshotDetailsResponse.class)
+                .withName("ListSnapshotDetails")
                 .withUri("/v1.0/{project_id}/snapshots/{snapshot_id}")
                 .withContentType("application/json");
 
@@ -202,6 +210,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<ListSnapshotsRequest, ListSnapshotsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotsRequest.class, ListSnapshotsResponse.class)
+                .withName("ListSnapshots")
                 .withUri("/v1.0/{project_id}/snapshots")
                 .withContentType("application/json");
 
@@ -218,6 +227,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPasswordRequest.class, ResetPasswordResponse.class)
+                .withName("ResetPassword")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/reset-password")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -250,6 +260,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<ResizeClusterRequest, ResizeClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeClusterRequest.class, ResizeClusterResponse.class)
+                .withName("ResizeCluster")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/resize")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -282,6 +293,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<RestartClusterRequest, RestartClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestartClusterRequest.class, RestartClusterResponse.class)
+                .withName("RestartCluster")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/restart")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -314,6 +326,7 @@ public class DwsMeta {
         // basic
         HttpRequestDef.Builder<RestoreClusterRequest, RestoreClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreClusterRequest.class, RestoreClusterResponse.class)
+                .withName("RestoreCluster")
                 .withUri("/v1.0/{project_id}/snapshots/{snapshot_id}/actions")
                 .withContentType("application/json;charset=UTF-8");
 

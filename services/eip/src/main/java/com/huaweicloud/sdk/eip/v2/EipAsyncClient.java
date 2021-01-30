@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.eip.v2.model.*;
 
 public class EipAsyncClient {
@@ -31,6 +31,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 共享带宽插入弹性公网IP
+     * 共享带宽插入弹性公网IP。
+     *
+     * @param AddPublicipsIntoSharedBandwidthRequest 请求对象
+     * @return AsyncInvoker<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse>
+     */
+    public AsyncInvoker<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse> addPublicipsIntoSharedBandwidthAsyncInvoker(AddPublicipsIntoSharedBandwidthRequest request) {
+        return new AsyncInvoker<AddPublicipsIntoSharedBandwidthRequest, AddPublicipsIntoSharedBandwidthResponse>(request, EipMeta.addPublicipsIntoSharedBandwidth, hcClient);
+    }
+
+    /**
      * 批量创建共享带宽
      * 批量创建共享带宽。
      *
@@ -39,6 +50,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<BatchCreateSharedBandwidthsResponse> batchCreateSharedBandwidthsAsync(BatchCreateSharedBandwidthsRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.batchCreateSharedBandwidths);
+    }
+
+    /**
+     * 批量创建共享带宽
+     * 批量创建共享带宽。
+     *
+     * @param BatchCreateSharedBandwidthsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse>
+     */
+    public AsyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse> batchCreateSharedBandwidthsAsyncInvoker(BatchCreateSharedBandwidthsRequest request) {
+        return new AsyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse>(request, EipMeta.batchCreateSharedBandwidths, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 创建共享带宽
+     * 创建共享带宽。
+     *
+     * @param CreateSharedBandwidthRequest 请求对象
+     * @return AsyncInvoker<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse>
+     */
+    public AsyncInvoker<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse> createSharedBandwidthAsyncInvoker(CreateSharedBandwidthRequest request) {
+        return new AsyncInvoker<CreateSharedBandwidthRequest, CreateSharedBandwidthResponse>(request, EipMeta.createSharedBandwidth, hcClient);
+    }
+
+    /**
      * 删除共享带宽
      * 删除共享带宽。
      *
@@ -61,6 +94,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<DeleteSharedBandwidthResponse> deleteSharedBandwidthAsync(DeleteSharedBandwidthRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.deleteSharedBandwidth);
+    }
+
+    /**
+     * 删除共享带宽
+     * 删除共享带宽。
+     *
+     * @param DeleteSharedBandwidthRequest 请求对象
+     * @return AsyncInvoker<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse>
+     */
+    public AsyncInvoker<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse> deleteSharedBandwidthAsyncInvoker(DeleteSharedBandwidthRequest request) {
+        return new AsyncInvoker<DeleteSharedBandwidthRequest, DeleteSharedBandwidthResponse>(request, EipMeta.deleteSharedBandwidth, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 查询带宽列表
+     * 查询带宽列表。
+     *
+     * @param ListBandwidthsRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>
+     */
+    public AsyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidthsAsyncInvoker(ListBandwidthsRequest request) {
+        return new AsyncInvoker<ListBandwidthsRequest, ListBandwidthsResponse>(request, EipMeta.listBandwidths, hcClient);
+    }
+
+    /**
      * 查询配额接口
      * 查询配额
      *
@@ -83,6 +138,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.listQuotas);
+    }
+
+    /**
+     * 查询配额接口
+     * 查询配额
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
+     */
+    public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
+        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, EipMeta.listQuotas, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 共享带宽移除弹性公网IP
+     * 共享带宽移除弹性公网IP。
+     *
+     * @param RemovePublicipsFromSharedBandwidthRequest 请求对象
+     * @return AsyncInvoker<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse>
+     */
+    public AsyncInvoker<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse> removePublicipsFromSharedBandwidthAsyncInvoker(RemovePublicipsFromSharedBandwidthRequest request) {
+        return new AsyncInvoker<RemovePublicipsFromSharedBandwidthRequest, RemovePublicipsFromSharedBandwidthResponse>(request, EipMeta.removePublicipsFromSharedBandwidth, hcClient);
+    }
+
+    /**
      * 查询带宽
      * 查询带宽
      *
@@ -105,6 +182,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<ShowBandwidthResponse> showBandwidthAsync(ShowBandwidthRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.showBandwidth);
+    }
+
+    /**
+     * 查询带宽
+     * 查询带宽
+     *
+     * @param ShowBandwidthRequest 请求对象
+     * @return AsyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>
+     */
+    public AsyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidthAsyncInvoker(ShowBandwidthRequest request) {
+        return new AsyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>(request, EipMeta.showBandwidth, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 更新带宽
+     * 更新带宽。
+     *
+     * @param UpdateBandwidthRequest 请求对象
+     * @return AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
+     */
+    public AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthAsyncInvoker(UpdateBandwidthRequest request) {
+        return new AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>(request, EipMeta.updateBandwidth, hcClient);
+    }
+
+    /**
      * 更新包周期带宽
      * 更新带宽。
      *
@@ -127,6 +226,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<UpdatePrePaidBandwidthResponse> updatePrePaidBandwidthAsync(UpdatePrePaidBandwidthRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.updatePrePaidBandwidth);
+    }
+
+    /**
+     * 更新包周期带宽
+     * 更新带宽。
+     *
+     * @param UpdatePrePaidBandwidthRequest 请求对象
+     * @return AsyncInvoker<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse>
+     */
+    public AsyncInvoker<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse> updatePrePaidBandwidthAsyncInvoker(UpdatePrePaidBandwidthRequest request) {
+        return new AsyncInvoker<UpdatePrePaidBandwidthRequest, UpdatePrePaidBandwidthResponse>(request, EipMeta.updatePrePaidBandwidth, hcClient);
     }
 
     /**
@@ -141,6 +251,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 批量创建弹性公网IP资源标签
+     * 为指定的弹性公网IP资源实例批量添加标签。
+     *
+     * @param BatchCreatePublicipTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse>
+     */
+    public AsyncInvoker<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse> batchCreatePublicipTagsAsyncInvoker(BatchCreatePublicipTagsRequest request) {
+        return new AsyncInvoker<BatchCreatePublicipTagsRequest, BatchCreatePublicipTagsResponse>(request, EipMeta.batchCreatePublicipTags, hcClient);
+    }
+
+    /**
      * 批量删除弹性公网IP资源标签
      * 为指定的弹性公网IP资源实例批量删除标签。
      *
@@ -149,6 +270,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<BatchDeletePublicipTagsResponse> batchDeletePublicipTagsAsync(BatchDeletePublicipTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.batchDeletePublicipTags);
+    }
+
+    /**
+     * 批量删除弹性公网IP资源标签
+     * 为指定的弹性公网IP资源实例批量删除标签。
+     *
+     * @param BatchDeletePublicipTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse>
+     */
+    public AsyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse> batchDeletePublicipTagsAsyncInvoker(BatchDeletePublicipTagsRequest request) {
+        return new AsyncInvoker<BatchDeletePublicipTagsRequest, BatchDeletePublicipTagsResponse>(request, EipMeta.batchDeletePublicipTags, hcClient);
     }
 
     /**
@@ -163,6 +295,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 申请包周期弹性公网IP
+     * 申请包年包月的弹性公网IP。
+     *
+     * @param CreatePrePaidPublicipRequest 请求对象
+     * @return AsyncInvoker<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse>
+     */
+    public AsyncInvoker<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse> createPrePaidPublicipAsyncInvoker(CreatePrePaidPublicipRequest request) {
+        return new AsyncInvoker<CreatePrePaidPublicipRequest, CreatePrePaidPublicipResponse>(request, EipMeta.createPrePaidPublicip, hcClient);
+    }
+
+    /**
      * 申请弹性公网IP
      * 申请弹性公网IP，支持IPv4和IPv6。  弹性公网IP（Elastic IP）提供独立的公网IP资源，包括公网IP地址与公网出口带宽服务。可以与弹性云服务器、裸金属服务器、虚拟IP、弹性负载均衡、NAT网关等资源灵活地绑定及解绑。拥有多种灵活的计费方式，可以满足各种业务场景的需要。
      *
@@ -171,6 +314,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<CreatePublicipResponse> createPublicipAsync(CreatePublicipRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.createPublicip);
+    }
+
+    /**
+     * 申请弹性公网IP
+     * 申请弹性公网IP，支持IPv4和IPv6。  弹性公网IP（Elastic IP）提供独立的公网IP资源，包括公网IP地址与公网出口带宽服务。可以与弹性云服务器、裸金属服务器、虚拟IP、弹性负载均衡、NAT网关等资源灵活地绑定及解绑。拥有多种灵活的计费方式，可以满足各种业务场景的需要。
+     *
+     * @param CreatePublicipRequest 请求对象
+     * @return AsyncInvoker<CreatePublicipRequest, CreatePublicipResponse>
+     */
+    public AsyncInvoker<CreatePublicipRequest, CreatePublicipResponse> createPublicipAsyncInvoker(CreatePublicipRequest request) {
+        return new AsyncInvoker<CreatePublicipRequest, CreatePublicipResponse>(request, EipMeta.createPublicip, hcClient);
     }
 
     /**
@@ -185,6 +339,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 创建弹性公网IP资源标签
+     * 给指定弹性IP资源实例增加标签信息。
+     *
+     * @param CreatePublicipTagRequest 请求对象
+     * @return AsyncInvoker<CreatePublicipTagRequest, CreatePublicipTagResponse>
+     */
+    public AsyncInvoker<CreatePublicipTagRequest, CreatePublicipTagResponse> createPublicipTagAsyncInvoker(CreatePublicipTagRequest request) {
+        return new AsyncInvoker<CreatePublicipTagRequest, CreatePublicipTagResponse>(request, EipMeta.createPublicipTag, hcClient);
+    }
+
+    /**
      * 删除弹性公网IP
      * 删除弹性公网IP,绑定状态eip不允许直接删除。
      *
@@ -193,6 +358,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<DeletePublicipResponse> deletePublicipAsync(DeletePublicipRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.deletePublicip);
+    }
+
+    /**
+     * 删除弹性公网IP
+     * 删除弹性公网IP,绑定状态eip不允许直接删除。
+     *
+     * @param DeletePublicipRequest 请求对象
+     * @return AsyncInvoker<DeletePublicipRequest, DeletePublicipResponse>
+     */
+    public AsyncInvoker<DeletePublicipRequest, DeletePublicipResponse> deletePublicipAsyncInvoker(DeletePublicipRequest request) {
+        return new AsyncInvoker<DeletePublicipRequest, DeletePublicipResponse>(request, EipMeta.deletePublicip, hcClient);
     }
 
     /**
@@ -207,6 +383,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 删除弹性公网IP的标签
+     * 删除指定弹性公网IP的标签信息。其中project_id是项目ID，publicip_id 是要操作的弹性公网IP的id。key是要删除标签的键。
+     *
+     * @param DeletePublicipTagRequest 请求对象
+     * @return AsyncInvoker<DeletePublicipTagRequest, DeletePublicipTagResponse>
+     */
+    public AsyncInvoker<DeletePublicipTagRequest, DeletePublicipTagResponse> deletePublicipTagAsyncInvoker(DeletePublicipTagRequest request) {
+        return new AsyncInvoker<DeletePublicipTagRequest, DeletePublicipTagResponse>(request, EipMeta.deletePublicipTag, hcClient);
+    }
+
+    /**
      * 查询租户的弹性公网IP标签
      * 查询租户在指定区域和实例类型的所有标签集合。
      *
@@ -215,6 +402,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<ListPublicipTagsResponse> listPublicipTagsAsync(ListPublicipTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.listPublicipTags);
+    }
+
+    /**
+     * 查询租户的弹性公网IP标签
+     * 查询租户在指定区域和实例类型的所有标签集合。
+     *
+     * @param ListPublicipTagsRequest 请求对象
+     * @return AsyncInvoker<ListPublicipTagsRequest, ListPublicipTagsResponse>
+     */
+    public AsyncInvoker<ListPublicipTagsRequest, ListPublicipTagsResponse> listPublicipTagsAsyncInvoker(ListPublicipTagsRequest request) {
+        return new AsyncInvoker<ListPublicipTagsRequest, ListPublicipTagsResponse>(request, EipMeta.listPublicipTags, hcClient);
     }
 
     /**
@@ -229,6 +427,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 查询弹性公网IP列表
+     * 查询弹性公网IP列表
+     *
+     * @param ListPublicipsRequest 请求对象
+     * @return AsyncInvoker<ListPublicipsRequest, ListPublicipsResponse>
+     */
+    public AsyncInvoker<ListPublicipsRequest, ListPublicipsResponse> listPublicipsAsyncInvoker(ListPublicipsRequest request) {
+        return new AsyncInvoker<ListPublicipsRequest, ListPublicipsResponse>(request, EipMeta.listPublicips, hcClient);
+    }
+
+    /**
      * 按标签查询弹性公网IP列表
      * 使用标签过滤弹性公网IP。
      *
@@ -237,6 +446,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<ListPublicipsByTagsResponse> listPublicipsByTagsAsync(ListPublicipsByTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.listPublicipsByTags);
+    }
+
+    /**
+     * 按标签查询弹性公网IP列表
+     * 使用标签过滤弹性公网IP。
+     *
+     * @param ListPublicipsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse>
+     */
+    public AsyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse> listPublicipsByTagsAsyncInvoker(ListPublicipsByTagsRequest request) {
+        return new AsyncInvoker<ListPublicipsByTagsRequest, ListPublicipsByTagsResponse>(request, EipMeta.listPublicipsByTags, hcClient);
     }
 
     /**
@@ -251,6 +471,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 查询弹性公网IP
+     * 查询指定的弹性公网IP。
+     *
+     * @param ShowPublicipRequest 请求对象
+     * @return AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse>
+     */
+    public AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse> showPublicipAsyncInvoker(ShowPublicipRequest request) {
+        return new AsyncInvoker<ShowPublicipRequest, ShowPublicipResponse>(request, EipMeta.showPublicip, hcClient);
+    }
+
+    /**
      * 查询弹性公网IP的标签
      * 查询指定弹性IP实例的标签信息。
      *
@@ -259,6 +490,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<ShowPublicipTagsResponse> showPublicipTagsAsync(ShowPublicipTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.showPublicipTags);
+    }
+
+    /**
+     * 查询弹性公网IP的标签
+     * 查询指定弹性IP实例的标签信息。
+     *
+     * @param ShowPublicipTagsRequest 请求对象
+     * @return AsyncInvoker<ShowPublicipTagsRequest, ShowPublicipTagsResponse>
+     */
+    public AsyncInvoker<ShowPublicipTagsRequest, ShowPublicipTagsResponse> showPublicipTagsAsyncInvoker(ShowPublicipTagsRequest request) {
+        return new AsyncInvoker<ShowPublicipTagsRequest, ShowPublicipTagsResponse>(request, EipMeta.showPublicipTags, hcClient);
     }
 
     /**
@@ -273,6 +515,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 更新弹性公网IP
+     * 更新弹性公网IP，将弹性公网IP跟一个网卡绑定或者解绑定，转换IP地址版本类型。
+     *
+     * @param UpdatePublicipRequest 请求对象
+     * @return AsyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>
+     */
+    public AsyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse> updatePublicipAsyncInvoker(UpdatePublicipRequest request) {
+        return new AsyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>(request, EipMeta.updatePublicip, hcClient);
+    }
+
+    /**
      * 创建浮动IP
      * 创建浮动IP的外部网络UUID，请使用GET /v2.0/networks?router:external&#x3D;True或neutron net-external-list方式获取。
      *
@@ -281,6 +534,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<NeutronCreateFloatingIpResponse> neutronCreateFloatingIpAsync(NeutronCreateFloatingIpRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.neutronCreateFloatingIp);
+    }
+
+    /**
+     * 创建浮动IP
+     * 创建浮动IP的外部网络UUID，请使用GET /v2.0/networks?router:external&#x3D;True或neutron net-external-list方式获取。
+     *
+     * @param NeutronCreateFloatingIpRequest 请求对象
+     * @return AsyncInvoker<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse>
+     */
+    public AsyncInvoker<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse> neutronCreateFloatingIpAsyncInvoker(NeutronCreateFloatingIpRequest request) {
+        return new AsyncInvoker<NeutronCreateFloatingIpRequest, NeutronCreateFloatingIpResponse>(request, EipMeta.neutronCreateFloatingIp, hcClient);
     }
 
     /**
@@ -295,6 +559,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 删除浮动IP
+     * 删除指定的浮动IP。
+     *
+     * @param NeutronDeleteFloatingIpRequest 请求对象
+     * @return AsyncInvoker<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse>
+     */
+    public AsyncInvoker<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse> neutronDeleteFloatingIpAsyncInvoker(NeutronDeleteFloatingIpRequest request) {
+        return new AsyncInvoker<NeutronDeleteFloatingIpRequest, NeutronDeleteFloatingIpResponse>(request, EipMeta.neutronDeleteFloatingIp, hcClient);
+    }
+
+    /**
      * 查询浮动IP列表
      * 查询提交请求的租户有权限操作的所有浮动IP地址。
      *
@@ -303,6 +578,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<NeutronListFloatingIpsResponse> neutronListFloatingIpsAsync(NeutronListFloatingIpsRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.neutronListFloatingIps);
+    }
+
+    /**
+     * 查询浮动IP列表
+     * 查询提交请求的租户有权限操作的所有浮动IP地址。
+     *
+     * @param NeutronListFloatingIpsRequest 请求对象
+     * @return AsyncInvoker<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse>
+     */
+    public AsyncInvoker<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse> neutronListFloatingIpsAsyncInvoker(NeutronListFloatingIpsRequest request) {
+        return new AsyncInvoker<NeutronListFloatingIpsRequest, NeutronListFloatingIpsResponse>(request, EipMeta.neutronListFloatingIps, hcClient);
     }
 
     /**
@@ -317,6 +603,17 @@ public class EipAsyncClient {
     }
 
     /**
+     * 查询浮动IP
+     * 查询浮动IP详情，包括浮动IP状态，浮动IP所属路由器ID，浮动IP的外部网络ID等等。
+     *
+     * @param NeutronShowFloatingIpRequest 请求对象
+     * @return AsyncInvoker<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse>
+     */
+    public AsyncInvoker<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse> neutronShowFloatingIpAsyncInvoker(NeutronShowFloatingIpRequest request) {
+        return new AsyncInvoker<NeutronShowFloatingIpRequest, NeutronShowFloatingIpResponse>(request, EipMeta.neutronShowFloatingIp, hcClient);
+    }
+
+    /**
      * 更新浮动IP
      * 更新浮动IP。  更新时需在URL中给出浮动IP地址的ID。  port_id 为空，则表示浮动IP从端口解绑。
      *
@@ -325,6 +622,17 @@ public class EipAsyncClient {
      */
     public CompletableFuture<NeutronUpdateFloatingIpResponse> neutronUpdateFloatingIpAsync(NeutronUpdateFloatingIpRequest request) {
         return hcClient.asyncInvokeHttp(request, EipMeta.neutronUpdateFloatingIp);
+    }
+
+    /**
+     * 更新浮动IP
+     * 更新浮动IP。  更新时需在URL中给出浮动IP地址的ID。  port_id 为空，则表示浮动IP从端口解绑。
+     *
+     * @param NeutronUpdateFloatingIpRequest 请求对象
+     * @return AsyncInvoker<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse>
+     */
+    public AsyncInvoker<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse> neutronUpdateFloatingIpAsyncInvoker(NeutronUpdateFloatingIpRequest request) {
+        return new AsyncInvoker<NeutronUpdateFloatingIpRequest, NeutronUpdateFloatingIpResponse>(request, EipMeta.neutronUpdateFloatingIp, hcClient);
     }
 
 }

@@ -119,6 +119,7 @@ public class TestHttpRequestDef {
     public static HttpRequestDef<TestRequest, TestResponse> buildHttpRequestDef() {
         HttpRequestDef.Builder<TestRequest, TestResponse> builder =
                 HttpRequestDef.builder(HttpMethod.GET, TestRequest.class, TestResponse.class)
+                        .withName("Test")
                         .withUri("/v2.1/{project_id}/servers")
                         .withContentType("application/json;charset=UTF-8");
 
@@ -155,6 +156,7 @@ public class TestHttpRequestDef {
             HttpRequestDef.builder(HttpMethod.POST,
                 TestUploadDownloadRequest.class,
                     TestUploadDownloadResponse.class)
+                    .withName("TestUploadDownload")
                     .withUri("/uploaddownload")
                     .withContentType("application/octet-stream");
         builder.withRequestField("id",
@@ -172,6 +174,7 @@ public class TestHttpRequestDef {
     public static HttpRequestDef<TestNoBodyRequest, TestResponse> buildHttpRequestNoRequestBodyDef() {
         HttpRequestDef.Builder<TestNoBodyRequest, TestResponse> builder =
                 HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)
+                        .withName("TestNoBody")
                         .withUri("/v2.1/{project_id}/servers")
                         .withContentType("application/json;charset=UTF-8");
 

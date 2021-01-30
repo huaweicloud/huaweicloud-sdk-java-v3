@@ -18,6 +18,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteInstanceTagRequest.class, BatchCreateOrDeleteInstanceTagResponse.class)
+                .withName("BatchCreateOrDeleteInstanceTag")
                 .withUri("/v2/{project_id}/kafka/{instance_id}/tags/action")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteInstanceTopicRequest.class, BatchDeleteInstanceTopicResponse.class)
+                .withName("BatchDeleteInstanceTopic")
                 .withUri("/v2/{project_id}/instances/{instance_id}/topics/delete")
                 .withContentType("application/json");
 
@@ -82,6 +84,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchRestartOrDeleteInstancesRequest.class, BatchRestartOrDeleteInstancesResponse.class)
+                .withName("BatchRestartOrDeleteInstances")
                 .withUri("/v2/{project_id}/instances/action")
                 .withContentType("application/json");
 
@@ -106,6 +109,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<CreateConnectorRequest, CreateConnectorResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConnectorRequest.class, CreateConnectorResponse.class)
+                .withName("CreateConnector")
                 .withUri("/v2/{project_id}/instances/{instance_id}/connector")
                 .withContentType("application/json");
 
@@ -138,6 +142,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<CreateInstanceTopicRequest, CreateInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceTopicRequest.class, CreateInstanceTopicResponse.class)
+                .withName("CreateInstanceTopic")
                 .withUri("/v2/{project_id}/instances/{instance_id}/topics")
                 .withContentType("application/json");
 
@@ -170,6 +175,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<CreatePartitionRequest, CreatePartitionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePartitionRequest.class, CreatePartitionResponse.class)
+                .withName("CreatePartition")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions-reassignment")
                 .withContentType("application/json");
 
@@ -210,6 +216,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
+                .withName("CreatePostPaidInstance")
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json");
 
@@ -234,6 +241,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<CreateSinkTaskRequest, CreateSinkTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSinkTaskRequest.class, CreateSinkTaskResponse.class)
+                .withName("CreateSinkTask")
                 .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks")
                 .withContentType("application/json");
 
@@ -266,6 +274,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
+                .withName("DeleteBackgroundTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -298,6 +307,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
+                .withName("DeleteInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -322,6 +332,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<DeleteSinkTaskRequest, DeleteSinkTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSinkTaskRequest.class, DeleteSinkTaskResponse.class)
+                .withName("DeleteSinkTask")
                 .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -354,6 +365,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
+                .withName("ListAvailableZones")
                 .withUri("/v2/available-zones")
                 .withContentType("application/json");
 
@@ -370,6 +382,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ListBackgroundTasksRequest, ListBackgroundTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTasksRequest.class, ListBackgroundTasksResponse.class)
+                .withName("ListBackgroundTasks")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks")
                 .withContentType("application/json");
 
@@ -426,6 +439,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ListInstanceTopicsRequest, ListInstanceTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTopicsRequest.class, ListInstanceTopicsResponse.class)
+                .withName("ListInstanceTopics")
                 .withUri("/v2/{project_id}/instances/{instance_id}/topics")
                 .withContentType("application/json");
 
@@ -450,6 +464,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
+                .withName("ListInstances")
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json");
 
@@ -522,6 +537,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
+                .withName("ListProducts")
                 .withUri("/v2/products")
                 .withContentType("application/json");
 
@@ -546,6 +562,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ListSinkTasksRequest, ListSinkTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSinkTasksRequest.class, ListSinkTasksResponse.class)
+                .withName("ListSinkTasks")
                 .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks")
                 .withContentType("application/json");
 
@@ -570,6 +587,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ResetManagerPasswordRequest, ResetManagerPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetManagerPasswordRequest.class, ResetManagerPasswordResponse.class)
+                .withName("ResetManagerPassword")
                 .withUri("/v2/{project_id}/instances/{instance_id}/kafka-manager-password")
                 .withContentType("application/json");
 
@@ -602,6 +620,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ResetMessageOffsetRequest, ResetMessageOffsetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetMessageOffsetRequest.class, ResetMessageOffsetResponse.class)
+                .withName("ResetMessageOffset")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/groups/{group}/reset-message-offset")
                 .withContentType("application/json");
 
@@ -642,6 +661,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPasswordRequest.class, ResetPasswordResponse.class)
+                .withName("ResetPassword")
                 .withUri("/v2/{project_id}/instances/{instance_id}/password")
                 .withContentType("application/json");
 
@@ -674,6 +694,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
+                .withName("ResizeInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}/extend")
                 .withContentType("application/json");
 
@@ -706,6 +727,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<RestartManagerRequest, RestartManagerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RestartManagerRequest.class, RestartManagerResponse.class)
+                .withName("RestartManager")
                 .withUri("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager")
                 .withContentType("application/json");
 
@@ -730,6 +752,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackgroundTaskRequest.class, ShowBackgroundTaskResponse.class)
+                .withName("ShowBackgroundTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -762,6 +785,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowCesHierarchyRequest, ShowCesHierarchyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCesHierarchyRequest.class, ShowCesHierarchyResponse.class)
+                .withName("ShowCesHierarchy")
                 .withUri("/v2/{project_id}/instances/{instance_id}/ces-hierarchy")
                 .withContentType("application/json");
 
@@ -786,6 +810,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowClusterRequest, ShowClusterResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterRequest.class, ShowClusterResponse.class)
+                .withName("ShowCluster")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/cluster")
                 .withContentType("application/json");
 
@@ -810,6 +835,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowCoordinatorsRequest, ShowCoordinatorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCoordinatorsRequest.class, ShowCoordinatorsResponse.class)
+                .withName("ShowCoordinators")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/coordinators")
                 .withContentType("application/json");
 
@@ -834,6 +860,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowGroupsRequest, ShowGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowGroupsRequest.class, ShowGroupsResponse.class)
+                .withName("ShowGroups")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/groups/{group}")
                 .withContentType("application/json");
 
@@ -866,6 +893,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
+                .withName("ShowInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -890,6 +918,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceExtendProductInfoRequest.class, ShowInstanceExtendProductInfoResponse.class)
+                .withName("ShowInstanceExtendProductInfo")
                 .withUri("/v2/{project_id}/instances/{instance_id}/extend")
                 .withContentType("application/json");
 
@@ -930,6 +959,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceTagsRequest, ShowInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTagsRequest.class, ShowInstanceTagsResponse.class)
+                .withName("ShowInstanceTags")
                 .withUri("/v2/{project_id}/kafka/{instance_id}/tags")
                 .withContentType("application/json");
 
@@ -954,6 +984,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTopicDetailRequest.class, ShowInstanceTopicDetailResponse.class)
+                .withName("ShowInstanceTopicDetail")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}")
                 .withContentType("application/json");
 
@@ -986,6 +1017,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMaintainWindowsRequest.class, ShowMaintainWindowsResponse.class)
+                .withName("ShowMaintainWindows")
                 .withUri("/v2/instances/maintain-windows")
                 .withContentType("application/json");
 
@@ -1002,6 +1034,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowMessagesRequest, ShowMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMessagesRequest.class, ShowMessagesResponse.class)
+                .withName("ShowMessages")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/messages")
                 .withContentType("application/json");
 
@@ -1074,6 +1107,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartitionBeginningMessageRequest.class, ShowPartitionBeginningMessageResponse.class)
+                .withName("ShowPartitionBeginningMessage")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/beginning-message")
                 .withContentType("application/json");
 
@@ -1114,6 +1148,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartitionEndMessageRequest.class, ShowPartitionEndMessageResponse.class)
+                .withName("ShowPartitionEndMessage")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/end-message")
                 .withContentType("application/json");
 
@@ -1154,6 +1189,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowPartitionMessageRequest, ShowPartitionMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartitionMessageRequest.class, ShowPartitionMessageResponse.class)
+                .withName("ShowPartitionMessage")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message")
                 .withContentType("application/json");
 
@@ -1202,6 +1238,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectTagsRequest, ShowProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsRequest.class, ShowProjectTagsResponse.class)
+                .withName("ShowProjectTags")
                 .withUri("/v2/{project_id}/kafka/tags")
                 .withContentType("application/json");
 
@@ -1218,6 +1255,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSinkTaskDetailRequest.class, ShowSinkTaskDetailResponse.class)
+                .withName("ShowSinkTaskDetail")
                 .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -1250,6 +1288,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
+                .withName("UpdateInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -1282,6 +1321,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateInstanceAutoCreateTopicRequest.class, UpdateInstanceAutoCreateTopicResponse.class)
+                .withName("UpdateInstanceAutoCreateTopic")
                 .withUri("/v2/{project_id}/instances/{instance_id}/autotopic")
                 .withContentType("application/json");
 
@@ -1314,6 +1354,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateInstanceCrossVpcIpRequest.class, UpdateInstanceCrossVpcIpResponse.class)
+                .withName("UpdateInstanceCrossVpcIp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/crossvpc/modify")
                 .withContentType("application/json");
 
@@ -1346,6 +1387,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceTopicRequest.class, UpdateInstanceTopicResponse.class)
+                .withName("UpdateInstanceTopic")
                 .withUri("/v2/{project_id}/instances/{instance_id}/topics")
                 .withContentType("application/json");
 
@@ -1378,6 +1420,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSinkTaskQuotaRequest.class, UpdateSinkTaskQuotaResponse.class)
+                .withName("UpdateSinkTaskQuota")
                 .withUri("/v2/{project_id}/connectors/{connector_id}/sink-tasks")
                 .withContentType("application/json");
 
@@ -1410,6 +1453,7 @@ public class KafkaMeta {
         // basic
         HttpRequestDef.Builder<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateTopicReplicaRequest.class, UpdateTopicReplicaResponse.class)
+                .withName("UpdateTopicReplica")
                 .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment")
                 .withContentType("application/json");
 

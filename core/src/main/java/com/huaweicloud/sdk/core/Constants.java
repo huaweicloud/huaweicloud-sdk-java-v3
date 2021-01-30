@@ -52,4 +52,7 @@ public class Constants {
     public static final String PROJECT_ID = "project_id";
     public static final String DOMAIN_ID = "domain_id";
 
+    public static final String SDK_EXCHANGE = "SDK_EXCHANGE";
+
+    public static final String DEFAULT_IAM_ENDPOINT = "https://iam.myhuaweicloud.com";
 }

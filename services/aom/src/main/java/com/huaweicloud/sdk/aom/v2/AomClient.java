@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.aom.v2;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.aom.v2.model.*;
 
 public class AomClient {
@@ -25,6 +26,17 @@ public class AomClient {
      */
     public ListSampleResponse listSample(ListSampleRequest request) {
         return hcClient.syncInvokeHttp(request, AomMeta.listSample);
+    }
+
+    /**
+     * 查询时序数据
+     * 该接口用于查询指定时间范围内的监控时序数据，可以通过参数指定需要查询的数据维度，数据周期等。
+     *
+     * @param ListSampleRequest 请求对象
+     * @return SyncInvoker<ListSampleRequest, ListSampleResponse>
+     */
+    public SyncInvoker<ListSampleRequest, ListSampleResponse> listSampleInvoker(ListSampleRequest request) {
+        return new SyncInvoker<ListSampleRequest, ListSampleResponse>(request, AomMeta.listSample, hcClient);
     }
 
 }

@@ -18,6 +18,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<CreateDefaultConfigRequest, CreateDefaultConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDefaultConfigRequest.class, CreateDefaultConfigResponse.class)
+                .withName("CreateDefaultConfig")
                 .withUri("/v1/{project_id}/antiddos/default-config")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDefaultConfigRequest.class, DeleteDefaultConfigResponse.class)
+                .withName("DeleteDefaultConfig")
                 .withUri("/v1/{project_id}/antiddos/default-config")
                 .withContentType("application/json");
 
@@ -58,6 +60,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ShowAlertConfigRequest, ShowAlertConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAlertConfigRequest.class, ShowAlertConfigResponse.class)
+                .withName("ShowAlertConfig")
                 .withUri("/v2/{project_id}/warnalert/alertconfig/query")
                 .withContentType("application/json");
 
@@ -74,6 +77,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ShowDefaultConfigRequest, ShowDefaultConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDefaultConfigRequest.class, ShowDefaultConfigResponse.class)
+                .withName("ShowDefaultConfig")
                 .withUri("/v1/{project_id}/antiddos/default-config")
                 .withContentType("application/json");
 
@@ -90,6 +94,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<UpdateAlertConfigRequest, UpdateAlertConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateAlertConfigRequest.class, UpdateAlertConfigResponse.class)
+                .withName("UpdateAlertConfig")
                 .withUri("/v2/{project_id}/warnalert/alertconfig/update")
                 .withContentType("application/json");
 
@@ -114,6 +119,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ListDDosStatusRequest, ListDDosStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDDosStatusRequest.class, ListDDosStatusResponse.class)
+                .withName("ListDDosStatus")
                 .withUri("/v1/{project_id}/antiddos")
                 .withContentType("application/json");
 
@@ -162,6 +168,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ListDailyLogRequest, ListDailyLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDailyLogRequest.class, ListDailyLogResponse.class)
+                .withName("ListDailyLog")
                 .withUri("/v1/{project_id}/antiddos/{floating_ip_id}/logs")
                 .withContentType("application/json");
 
@@ -218,6 +225,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ListDailyReportRequest, ListDailyReportResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDailyReportRequest.class, ListDailyReportResponse.class)
+                .withName("ListDailyReport")
                 .withUri("/v1/{project_id}/antiddos/{floating_ip_id}/daily")
                 .withContentType("application/json");
 
@@ -250,6 +258,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ListNewConfigsRequest, ListNewConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNewConfigsRequest.class, ListNewConfigsResponse.class)
+                .withName("ListNewConfigs")
                 .withUri("/v2/{project_id}/antiddos/query-config-list")
                 .withContentType("application/json");
 
@@ -266,6 +275,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ListWeeklyReportsRequest, ListWeeklyReportsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListWeeklyReportsRequest.class, ListWeeklyReportsResponse.class)
+                .withName("ListWeeklyReports")
                 .withUri("/v1/{project_id}/antiddos/weekly")
                 .withContentType("application/json");
 
@@ -290,6 +300,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ShowDDosRequest, ShowDDosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDDosRequest.class, ShowDDosResponse.class)
+                .withName("ShowDDos")
                 .withUri("/v1/{project_id}/antiddos/{floating_ip_id}")
                 .withContentType("application/json");
 
@@ -322,6 +333,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ShowDDosStatusRequest, ShowDDosStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDDosStatusRequest.class, ShowDDosStatusResponse.class)
+                .withName("ShowDDosStatus")
                 .withUri("/v1/{project_id}/antiddos/{floating_ip_id}/status")
                 .withContentType("application/json");
 
@@ -354,6 +366,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNewTaskStatusRequest.class, ShowNewTaskStatusResponse.class)
+                .withName("ShowNewTaskStatus")
                 .withUri("/v2/{project_id}/query-task-status")
                 .withContentType("application/json");
 
@@ -378,6 +391,7 @@ public class AntiDDoSMeta {
         // basic
         HttpRequestDef.Builder<UpdateDDosRequest, UpdateDDosResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDDosRequest.class, UpdateDDosResponse.class)
+                .withName("UpdateDDos")
                 .withUri("/v1/{project_id}/antiddos/{floating_ip_id}")
                 .withContentType("application/json");
 

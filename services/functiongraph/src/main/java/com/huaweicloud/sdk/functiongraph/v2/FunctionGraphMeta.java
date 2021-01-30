@@ -18,6 +18,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<AsyncInvokeFunctionRequest, AsyncInvokeFunctionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AsyncInvokeFunctionRequest.class, AsyncInvokeFunctionResponse.class)
+                .withName("AsyncInvokeFunction")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/invocations-async")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<CreateDependencyRequest, CreateDependencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDependencyRequest.class, CreateDependencyResponse.class)
+                .withName("CreateDependency")
                 .withUri("/v2/{project_id}/fgs/dependencies")
                 .withContentType("application/json");
 
@@ -74,6 +76,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<CreateEventRequest, CreateEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEventRequest.class, CreateEventResponse.class)
+                .withName("CreateEvent")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/events")
                 .withContentType("application/json");
 
@@ -106,6 +109,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<CreateFunctionRequest, CreateFunctionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFunctionRequest.class, CreateFunctionResponse.class)
+                .withName("CreateFunction")
                 .withUri("/v2/{project_id}/fgs/functions")
                 .withContentType("application/json");
 
@@ -130,6 +134,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<CreateFunctionVersionRequest, CreateFunctionVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFunctionVersionRequest.class, CreateFunctionVersionResponse.class)
+                .withName("CreateFunctionVersion")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/versions")
                 .withContentType("application/json");
 
@@ -162,6 +167,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<CreateVersionAliasRequest, CreateVersionAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVersionAliasRequest.class, CreateVersionAliasResponse.class)
+                .withName("CreateVersionAlias")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases")
                 .withContentType("application/json");
 
@@ -194,6 +200,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<DeleteDependencyRequest, DeleteDependencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDependencyRequest.class, DeleteDependencyResponse.class)
+                .withName("DeleteDependency")
                 .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
                 .withContentType("application/json");
 
@@ -218,6 +225,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<DeleteEventRequest, DeleteEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEventRequest.class, DeleteEventResponse.class)
+                .withName("DeleteEvent")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}")
                 .withContentType("application/json");
 
@@ -250,6 +258,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<DeleteFunctionRequest, DeleteFunctionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFunctionRequest.class, DeleteFunctionResponse.class)
+                .withName("DeleteFunction")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}")
                 .withContentType("application/json");
 
@@ -274,6 +283,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<DeleteVersionAliasRequest, DeleteVersionAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVersionAliasRequest.class, DeleteVersionAliasResponse.class)
+                .withName("DeleteVersionAlias")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}")
                 .withContentType("application/json");
 
@@ -306,6 +316,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<InvokeFunctionRequest, InvokeFunctionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InvokeFunctionRequest.class, InvokeFunctionResponse.class)
+                .withName("InvokeFunction")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/invocations")
                 .withContentType("application/json");
 
@@ -354,6 +365,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListDependenciesRequest, ListDependenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDependenciesRequest.class, ListDependenciesResponse.class)
+                .withName("ListDependencies")
                 .withUri("/v2/{project_id}/fgs/dependencies")
                 .withContentType("application/json");
 
@@ -410,6 +422,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEventsRequest.class, ListEventsResponse.class)
+                .withName("ListEvents")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/events")
                 .withContentType("application/json");
 
@@ -434,6 +447,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFunctionStatisticsRequest.class, ListFunctionStatisticsResponse.class)
+                .withName("ListFunctionStatistics")
                 .withUri("/v2/{project_id}/fgs/functions/{func_urn}/statistics/{period}")
                 .withContentType("application/json");
 
@@ -466,6 +480,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListFunctionVersionsRequest, ListFunctionVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFunctionVersionsRequest.class, ListFunctionVersionsResponse.class)
+                .withName("ListFunctionVersions")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/versions")
                 .withContentType("application/json");
 
@@ -506,6 +521,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListFunctionsRequest, ListFunctionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFunctionsRequest.class, ListFunctionsResponse.class)
+                .withName("ListFunctions")
                 .withUri("/v2/{project_id}/fgs/functions")
                 .withContentType("application/json");
 
@@ -538,6 +554,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withName("ListQuotas")
                 .withUri("/v2/{project_id}/fgs/quotas")
                 .withContentType("application/json");
 
@@ -554,6 +571,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListStatisticsRequest, ListStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStatisticsRequest.class, ListStatisticsResponse.class)
+                .withName("ListStatistics")
                 .withUri("/v2/{project_id}/fgs/functions/statistics")
                 .withContentType("application/json");
 
@@ -594,6 +612,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListVersionAliasesRequest, ListVersionAliasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVersionAliasesRequest.class, ListVersionAliasesResponse.class)
+                .withName("ListVersionAliases")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases")
                 .withContentType("application/json");
 
@@ -627,6 +646,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ShowDependencyRequest, ShowDependencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDependencyRequest.class, ShowDependencyResponse.class)
+                .withName("ShowDependency")
                 .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
                 .withContentType("application/json");
 
@@ -651,6 +671,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ShowEventRequest, ShowEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEventRequest.class, ShowEventResponse.class)
+                .withName("ShowEvent")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}")
                 .withContentType("application/json");
 
@@ -683,6 +704,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ShowFunctionCodeRequest, ShowFunctionCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFunctionCodeRequest.class, ShowFunctionCodeResponse.class)
+                .withName("ShowFunctionCode")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/code")
                 .withContentType("application/json");
 
@@ -707,6 +729,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ShowFunctionConfigRequest, ShowFunctionConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFunctionConfigRequest.class, ShowFunctionConfigResponse.class)
+                .withName("ShowFunctionConfig")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/config")
                 .withContentType("application/json");
 
@@ -731,6 +754,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ShowVersionAliasRequest, ShowVersionAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionAliasRequest.class, ShowVersionAliasResponse.class)
+                .withName("ShowVersionAlias")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}")
                 .withContentType("application/json");
 
@@ -763,6 +787,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<UpdateDependencyRequest, UpdateDependencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDependencyRequest.class, UpdateDependencyResponse.class)
+                .withName("UpdateDependency")
                 .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
                 .withContentType("application/json");
 
@@ -795,6 +820,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<UpdateEventRequest, UpdateEventResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEventRequest.class, UpdateEventResponse.class)
+                .withName("UpdateEvent")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}")
                 .withContentType("application/json");
 
@@ -835,6 +861,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFunctionCodeRequest.class, UpdateFunctionCodeResponse.class)
+                .withName("UpdateFunctionCode")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/code")
                 .withContentType("application/json");
 
@@ -867,6 +894,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<UpdateFunctionConfigRequest, UpdateFunctionConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFunctionConfigRequest.class, UpdateFunctionConfigResponse.class)
+                .withName("UpdateFunctionConfig")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/config")
                 .withContentType("application/json");
 
@@ -899,6 +927,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<UpdateFunctionReservedInstancesRequest, UpdateFunctionReservedInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateFunctionReservedInstancesRequest.class, UpdateFunctionReservedInstancesResponse.class)
+                .withName("UpdateFunctionReservedInstances")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances")
                 .withContentType("application/json");
 
@@ -931,6 +960,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<UpdateVersionAliasRequest, UpdateVersionAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVersionAliasRequest.class, UpdateVersionAliasResponse.class)
+                .withName("UpdateVersionAlias")
                 .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}")
                 .withContentType("application/json");
 
@@ -971,6 +1001,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteFunctionTriggersRequest, BatchDeleteFunctionTriggersResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteFunctionTriggersRequest.class, BatchDeleteFunctionTriggersResponse.class)
+                .withName("BatchDeleteFunctionTriggers")
                 .withUri("/v2/{project_id}/fgs/triggers/{function_urn}")
                 .withContentType("application/json");
 
@@ -995,6 +1026,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<CreateFunctionTriggerRequest, CreateFunctionTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFunctionTriggerRequest.class, CreateFunctionTriggerResponse.class)
+                .withName("CreateFunctionTrigger")
                 .withUri("/v2/{project_id}/fgs/triggers/{function_urn}")
                 .withContentType("application/json");
 
@@ -1027,6 +1059,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFunctionTriggerRequest.class, DeleteFunctionTriggerResponse.class)
+                .withName("DeleteFunctionTrigger")
                 .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}")
                 .withContentType("application/json");
 
@@ -1067,6 +1100,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ListFunctionTriggersRequest, ListFunctionTriggersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFunctionTriggersRequest.class, ListFunctionTriggersResponse.class)
+                .withName("ListFunctionTriggers")
                 .withUri("/v2/{project_id}/fgs/triggers/{function_urn}")
                 .withContentType("application/json");
 
@@ -1100,6 +1134,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFunctionTriggerRequest.class, ShowFunctionTriggerResponse.class)
+                .withName("ShowFunctionTrigger")
                 .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}")
                 .withContentType("application/json");
 
@@ -1140,6 +1175,7 @@ public class FunctionGraphMeta {
         // basic
         HttpRequestDef.Builder<UpdateTriggerRequest, UpdateTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTriggerRequest.class, UpdateTriggerResponse.class)
+                .withName("UpdateTrigger")
                 .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}")
                 .withContentType("application/json");
 

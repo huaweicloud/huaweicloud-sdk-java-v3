@@ -18,6 +18,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateImageSyncRepoRequest.class, CreateImageSyncRepoResponse.class)
+                .withName("CreateImageSyncRepo")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo")
                 .withContentType("application/json");
 
@@ -58,6 +59,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateNamespaceRequest, CreateNamespaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNamespaceRequest.class, CreateNamespaceResponse.class)
+                .withName("CreateNamespace")
                 .withUri("/v2/manage/namespaces")
                 .withContentType("application/json");
 
@@ -82,6 +84,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateNamespaceAuthRequest.class, CreateNamespaceAuthResponse.class)
+                .withName("CreateNamespaceAuth")
                 .withUri("/v2/manage/namespaces/{namespace}/access")
                 .withContentType("application/json");
 
@@ -114,6 +117,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateRepoDomainsRequest, CreateRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRepoDomainsRequest.class, CreateRepoDomainsResponse.class)
+                .withName("CreateRepoDomains")
                 .withUri("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains")
                 .withContentType("application/json");
 
@@ -154,6 +158,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateRetentionRequest, CreateRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRetentionRequest.class, CreateRetentionResponse.class)
+                .withName("CreateRetention")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions")
                 .withContentType("application/json");
 
@@ -194,6 +199,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateSecretRequest, CreateSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSecretRequest.class, CreateSecretResponse.class)
+                .withName("CreateSecret")
                 .withUri("/v2/manage/utils/secret")
                 .withContentType("application/json");
 
@@ -218,6 +224,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateTriggerRequest, CreateTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTriggerRequest.class, CreateTriggerResponse.class)
+                .withName("CreateTrigger")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers")
                 .withContentType("application/json");
 
@@ -258,6 +265,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUserRepositoryAuthRequest.class, CreateUserRepositoryAuthResponse.class)
+                .withName("CreateUserRepositoryAuth")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/access")
                 .withContentType("application/json");
 
@@ -298,6 +306,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteImageSyncRepoRequest.class, DeleteImageSyncRepoResponse.class)
+                .withName("DeleteImageSyncRepo")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo")
                 .withContentType("application/json");
 
@@ -338,6 +347,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNamespaceAuthRequest.class, DeleteNamespaceAuthResponse.class)
+                .withName("DeleteNamespaceAuth")
                 .withUri("/v2/manage/namespaces/{namespace}/access")
                 .withContentType("application/json");
 
@@ -370,6 +380,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteNamespacesRequest, DeleteNamespacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteNamespacesRequest.class, DeleteNamespacesResponse.class)
+                .withName("DeleteNamespaces")
                 .withUri("/v2/manage/namespaces/{namespace}")
                 .withContentType("application/json");
 
@@ -394,6 +405,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteRepoRequest, DeleteRepoResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepoRequest.class, DeleteRepoResponse.class)
+                .withName("DeleteRepo")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}")
                 .withContentType("application/json");
 
@@ -426,6 +438,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepoDomainsRequest.class, DeleteRepoDomainsResponse.class)
+                .withName("DeleteRepoDomains")
                 .withUri("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}")
                 .withContentType("application/json");
 
@@ -466,6 +479,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteRepoTagRequest, DeleteRepoTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRepoTagRequest.class, DeleteRepoTagResponse.class)
+                .withName("DeleteRepoTag")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}")
                 .withContentType("application/json");
 
@@ -506,6 +520,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteRetentionRequest, DeleteRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRetentionRequest.class, DeleteRetentionResponse.class)
+                .withName("DeleteRetention")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}")
                 .withContentType("application/json");
 
@@ -546,6 +561,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteTriggerRequest, DeleteTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTriggerRequest.class, DeleteTriggerResponse.class)
+                .withName("DeleteTrigger")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}")
                 .withContentType("application/json");
 
@@ -586,6 +602,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteUserRepositoryAuthRequest.class, DeleteUserRepositoryAuthResponse.class)
+                .withName("DeleteUserRepositoryAuth")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/access")
                 .withContentType("application/json");
 
@@ -626,6 +643,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListImageAutoSyncReposDetailsRequest.class, ListImageAutoSyncReposDetailsResponse.class)
+                .withName("ListImageAutoSyncReposDetails")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo")
                 .withContentType("application/json");
 
@@ -667,6 +685,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ListNamespacesRequest, ListNamespacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNamespacesRequest.class, ListNamespacesResponse.class)
+                .withName("ListNamespaces")
                 .withUri("/v2/manage/namespaces")
                 .withContentType("application/json");
 
@@ -691,6 +710,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ListRepoDomainsRequest, ListRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRepoDomainsRequest.class, ListRepoDomainsResponse.class)
+                .withName("ListRepoDomains")
                 .withUri("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains")
                 .withContentType("application/json");
 
@@ -732,6 +752,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ListRepositoryTagsRequest, ListRepositoryTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRepositoryTagsRequest.class, ListRepositoryTagsResponse.class)
+                .withName("ListRepositoryTags")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/tags")
                 .withContentType("application/json");
 
@@ -813,6 +834,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRetentionHistoriesRequest.class, ListRetentionHistoriesResponse.class)
+                .withName("ListRetentionHistories")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/histories")
                 .withContentType("application/json");
 
@@ -870,6 +892,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ListRetentionsRequest, ListRetentionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRetentionsRequest.class, ListRetentionsResponse.class)
+                .withName("ListRetentions")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions")
                 .withContentType("application/json");
 
@@ -911,6 +934,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ListTriggersDetailsRequest, ListTriggersDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTriggersDetailsRequest.class, ListTriggersDetailsResponse.class)
+                .withName("ListTriggersDetails")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers")
                 .withContentType("application/json");
 
@@ -952,6 +976,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowAccessDomainRequest, ShowAccessDomainResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccessDomainRequest.class, ShowAccessDomainResponse.class)
+                .withName("ShowAccessDomain")
                 .withUri("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}")
                 .withContentType("application/json");
 
@@ -992,6 +1017,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowNamespaceRequest, ShowNamespaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNamespaceRequest.class, ShowNamespaceResponse.class)
+                .withName("ShowNamespace")
                 .withUri("/v2/manage/namespaces/{namespace}")
                 .withContentType("application/json");
 
@@ -1016,6 +1042,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowNamespaceAuthRequest.class, ShowNamespaceAuthResponse.class)
+                .withName("ShowNamespaceAuth")
                 .withUri("/v2/manage/namespaces/{namespace}/access")
                 .withContentType("application/json");
 
@@ -1040,6 +1067,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowRepositoryRequest, ShowRepositoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRepositoryRequest.class, ShowRepositoryResponse.class)
+                .withName("ShowRepository")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}")
                 .withContentType("application/json");
 
@@ -1072,6 +1100,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowRetentionRequest, ShowRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRetentionRequest.class, ShowRetentionResponse.class)
+                .withName("ShowRetention")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}")
                 .withContentType("application/json");
 
@@ -1112,6 +1141,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowTriggerRequest, ShowTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTriggerRequest.class, ShowTriggerResponse.class)
+                .withName("ShowTrigger")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}")
                 .withContentType("application/json");
 
@@ -1152,6 +1182,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserRepositoryAuthRequest.class, ShowUserRepositoryAuthResponse.class)
+                .withName("ShowUserRepositoryAuth")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/access")
                 .withContentType("application/json");
 
@@ -1184,6 +1215,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateRepoDomainsRequest.class, UpdateRepoDomainsResponse.class)
+                .withName("UpdateRepoDomains")
                 .withUri("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}")
                 .withContentType("application/json");
 
@@ -1232,6 +1264,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<UpdateRetentionRequest, UpdateRetentionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateRetentionRequest.class, UpdateRetentionResponse.class)
+                .withName("UpdateRetention")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}")
                 .withContentType("application/json");
 
@@ -1280,6 +1313,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<UpdateTriggerRequest, UpdateTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateTriggerRequest.class, UpdateTriggerResponse.class)
+                .withName("UpdateTrigger")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}")
                 .withContentType("application/json");
 
@@ -1328,6 +1362,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateUserRepositoryAuthRequest.class, UpdateUserRepositoryAuthResponse.class)
+                .withName("UpdateUserRepositoryAuth")
                 .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/access")
                 .withContentType("application/json");
 
@@ -1368,6 +1403,7 @@ public class SwrMeta {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
+                .withName("ShowApiVersion")
                 .withUri("/{api_version}")
                 .withContentType("application/json");
 

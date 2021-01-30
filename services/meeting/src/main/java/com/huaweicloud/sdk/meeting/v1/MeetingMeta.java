@@ -18,6 +18,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddCorpRequest, AddCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddCorpRequest.class, AddCorpResponse.class)
+                .withName("AddCorp")
                 .withUri("/v1/usg/dcs/sp/corp")
                 .withContentType("application/json");
 
@@ -58,6 +59,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddCorpAdminRequest, AddCorpAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddCorpAdminRequest.class, AddCorpAdminResponse.class)
+                .withName("AddCorpAdmin")
                 .withUri("/v1/usg/dcs/corp/admin")
                 .withContentType("application/json");
 
@@ -106,6 +108,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddDepartmentRequest, AddDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDepartmentRequest.class, AddDepartmentResponse.class)
+                .withName("AddDepartment")
                 .withUri("/v1/usg/dcs/corp/dept")
                 .withContentType("application/json");
 
@@ -146,6 +149,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddDeviceRequest, AddDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDeviceRequest.class, AddDeviceResponse.class)
+                .withName("AddDevice")
                 .withUri("/v1/usg/dcs/corp/device")
                 .withContentType("application/json");
 
@@ -186,6 +190,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddProgramRequest, AddProgramResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddProgramRequest.class, AddProgramResponse.class)
+                .withName("AddProgram")
                 .withUri("/v1/usg/sss/programs")
                 .withContentType("application/json");
 
@@ -226,6 +231,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddPublicationRequest, AddPublicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddPublicationRequest.class, AddPublicationResponse.class)
+                .withName("AddPublication")
                 .withUri("/v1/usg/sss/publications")
                 .withContentType("application/json");
 
@@ -266,6 +272,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddResourceRequest, AddResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddResourceRequest.class, AddResourceResponse.class)
+                .withName("AddResource")
                 .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource")
                 .withContentType("application/json");
 
@@ -322,6 +329,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddToPersonalSpaceRequest, AddToPersonalSpaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddToPersonalSpaceRequest.class, AddToPersonalSpaceResponse.class)
+                .withName("AddToPersonalSpace")
                 .withUri("/v1/usg/sss/meeting-files/save-to-personal-space")
                 .withContentType("application/json");
 
@@ -362,6 +370,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AddUserRequest, AddUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddUserRequest.class, AddUserResponse.class)
+                .withName("AddUser")
                 .withUri("/v1/usg/dcs/corp/member")
                 .withContentType("application/json");
 
@@ -402,6 +411,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AllowGuestUnmuteRequest, AllowGuestUnmuteResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AllowGuestUnmuteRequest.class, AllowGuestUnmuteResponse.class)
+                .withName("AllowGuestUnmute")
                 .withUri("/v1/mmc/control/conferences/mute/guestUnMute")
                 .withContentType("application/json");
 
@@ -442,6 +452,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<AssociateVmrRequest, AssociateVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateVmrRequest.class, AssociateVmrResponse.class)
+                .withName("AssociateVmr")
                 .withUri("/v1/usg/dcs/corp/vmr/assign-to-member/{account}")
                 .withContentType("application/json");
 
@@ -498,6 +509,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteCorpAdminsRequest, BatchDeleteCorpAdminsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteCorpAdminsRequest.class, BatchDeleteCorpAdminsResponse.class)
+                .withName("BatchDeleteCorpAdmins")
                 .withUri("/v1/usg/dcs/corp/admin/delete")
                 .withContentType("application/json");
 
@@ -546,6 +558,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteDevicesRequest.class, BatchDeleteDevicesResponse.class)
+                .withName("BatchDeleteDevices")
                 .withUri("/v1/usg/dcs/corp/device/delete")
                 .withContentType("application/json");
 
@@ -586,6 +599,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteMaterialsRequest, BatchDeleteMaterialsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteMaterialsRequest.class, BatchDeleteMaterialsResponse.class)
+                .withName("BatchDeleteMaterials")
                 .withUri("/v1/usg/sss/materials/batch-delete")
                 .withContentType("application/json");
 
@@ -626,6 +640,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteProgramsRequest, BatchDeleteProgramsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteProgramsRequest.class, BatchDeleteProgramsResponse.class)
+                .withName("BatchDeletePrograms")
                 .withUri("/v1/usg/sss/programs/batch-delete")
                 .withContentType("application/json");
 
@@ -666,6 +681,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchDeletePublicationsRequest, BatchDeletePublicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeletePublicationsRequest.class, BatchDeletePublicationsResponse.class)
+                .withName("BatchDeletePublications")
                 .withUri("/v1/usg/sss/publications/batch-delete")
                 .withContentType("application/json");
 
@@ -706,6 +722,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteUsersRequest, BatchDeleteUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteUsersRequest.class, BatchDeleteUsersResponse.class)
+                .withName("BatchDeleteUsers")
                 .withUri("/v1/usg/dcs/corp/member/delete")
                 .withContentType("application/json");
 
@@ -754,6 +771,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateDevicesStatusRequest, BatchUpdateDevicesStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateDevicesStatusRequest.class, BatchUpdateDevicesStatusResponse.class)
+                .withName("BatchUpdateDevicesStatus")
                 .withUri("/v1/usg/dcs/corp/device/status/{value}")
                 .withContentType("application/json");
 
@@ -802,6 +820,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateUserStatusRequest, BatchUpdateUserStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateUserStatusRequest.class, BatchUpdateUserStatusResponse.class)
+                .withName("BatchUpdateUserStatus")
                 .withUri("/v1/usg/dcs/corp/member/status/{value}")
                 .withContentType("application/json");
 
@@ -858,6 +877,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<BroadcastParticipantRequest, BroadcastParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BroadcastParticipantRequest.class, BroadcastParticipantResponse.class)
+                .withName("BroadcastParticipant")
                 .withUri("/v1/mmc/control/conferences/participants/broadcast")
                 .withContentType("application/json");
 
@@ -898,6 +918,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CancelMeetingRequest, CancelMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelMeetingRequest.class, CancelMeetingResponse.class)
+                .withName("CancelMeeting")
                 .withUri("/v1/mmc/management/conferences")
                 .withContentType("application/json");
 
@@ -954,6 +975,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CheckSlideVerifyCodeRequest, CheckSlideVerifyCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CheckSlideVerifyCodeRequest.class, CheckSlideVerifyCodeResponse.class)
+                .withName("CheckSlideVerifyCode")
                 .withUri("/v1/usg/acs/auth/slideverifycode/check")
                 .withContentType("application/json");
 
@@ -994,6 +1016,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CheckTokenRequest, CheckTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckTokenRequest.class, CheckTokenResponse.class)
+                .withName("CheckToken")
                 .withUri("/v1/usg/acs/token/validate")
                 .withContentType("application/json");
 
@@ -1034,6 +1057,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CheckVeriCodeForUpdateUserInfoRequest, CheckVeriCodeForUpdateUserInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckVeriCodeForUpdateUserInfoRequest.class, CheckVeriCodeForUpdateUserInfoResponse.class)
+                .withName("CheckVeriCodeForUpdateUserInfo")
                 .withUri("/v1/usg/dcs/member/verification-code/verify")
                 .withContentType("application/json");
 
@@ -1074,6 +1098,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CheckVerifyCodeRequest, CheckVerifyCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CheckVerifyCodeRequest.class, CheckVerifyCodeResponse.class)
+                .withName("CheckVerifyCode")
                 .withUri("/v1/usg/acs/verifycode/check")
                 .withContentType("application/json");
 
@@ -1114,6 +1139,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CreateAnonymousAuthRandomRequest.class, CreateAnonymousAuthRandomResponse.class)
+                .withName("CreateAnonymousAuthRandom")
                 .withUri("/v1/mmc/management/conferences/anonymous/auth")
                 .withContentType("application/json");
 
@@ -1146,6 +1172,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CreateConfTokenRequest, CreateConfTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CreateConfTokenRequest.class, CreateConfTokenResponse.class)
+                .withName("CreateConfToken")
                 .withUri("/v1/mmc/control/conferences/token")
                 .withContentType("application/json");
 
@@ -1202,6 +1229,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CreateMeetingRequest, CreateMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMeetingRequest.class, CreateMeetingResponse.class)
+                .withName("CreateMeeting")
                 .withUri("/v1/mmc/management/conferences")
                 .withContentType("application/json");
 
@@ -1259,6 +1287,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<CreatePortalRefNonceRequest, CreatePortalRefNonceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePortalRefNonceRequest.class, CreatePortalRefNonceResponse.class)
+                .withName("CreatePortalRefNonce")
                 .withUri("/v1/usg/acs/auth/portal-ref-nonce")
                 .withContentType("application/json");
 
@@ -1291,6 +1320,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteAttendeesRequest, DeleteAttendeesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteAttendeesRequest.class, DeleteAttendeesResponse.class)
+                .withName("DeleteAttendees")
                 .withUri("/v1/mmc/control/conferences/attendees/delete")
                 .withContentType("application/json");
 
@@ -1331,6 +1361,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteCorpRequest, DeleteCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCorpRequest.class, DeleteCorpResponse.class)
+                .withName("DeleteCorp")
                 .withUri("/v1/usg/dcs/sp/corp/{id}")
                 .withContentType("application/json");
 
@@ -1379,6 +1410,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteCorpVmrRequest, DeleteCorpVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteCorpVmrRequest.class, DeleteCorpVmrResponse.class)
+                .withName("DeleteCorpVmr")
                 .withUri("/v1/usg/dcs/corp/vmr/delete")
                 .withContentType("application/json");
 
@@ -1419,6 +1451,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteDepartmentRequest, DeleteDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDepartmentRequest.class, DeleteDepartmentResponse.class)
+                .withName("DeleteDepartment")
                 .withUri("/v1/usg/dcs/corp/dept/{dept_code}")
                 .withContentType("application/json");
 
@@ -1459,6 +1492,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteRecordingsRequest, DeleteRecordingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordingsRequest.class, DeleteRecordingsResponse.class)
+                .withName("DeleteRecordings")
                 .withUri("/v1/mmc/management/record/files")
                 .withContentType("application/json");
 
@@ -1507,6 +1541,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DeleteResourceRequest, DeleteResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteResourceRequest.class, DeleteResourceResponse.class)
+                .withName("DeleteResource")
                 .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource/delete")
                 .withContentType("application/json");
 
@@ -1563,6 +1598,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<DisassociateVmrRequest, DisassociateVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisassociateVmrRequest.class, DisassociateVmrResponse.class)
+                .withName("DisassociateVmr")
                 .withUri("/v1/usg/dcs/corp/vmr/recycle-from-member/{account}")
                 .withContentType("application/json");
 
@@ -1619,6 +1655,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<EditMeetingRequest, EditMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, EditMeetingRequest.class, EditMeetingResponse.class)
+                .withName("EditMeeting")
                 .withUri("/v1/mmc/management/conferences")
                 .withContentType("application/json");
 
@@ -1675,6 +1712,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<HandRequest, HandResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, HandRequest.class, HandResponse.class)
+                .withName("Hand")
                 .withUri("/v1/mmc/control/conferences/participants/hands")
                 .withContentType("application/json");
 
@@ -1723,6 +1761,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<HangUpRequest, HangUpResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, HangUpRequest.class, HangUpResponse.class)
+                .withName("HangUp")
                 .withUri("/v1/mmc/control/conferences/participants/delete")
                 .withContentType("application/json");
 
@@ -1763,6 +1802,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<InviteParticipantRequest, InviteParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InviteParticipantRequest.class, InviteParticipantResponse.class)
+                .withName("InviteParticipant")
                 .withUri("/v1/mmc/control/conferences/participants")
                 .withContentType("application/json");
 
@@ -1803,6 +1843,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<InviteWithPwdRequest, InviteWithPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, InviteWithPwdRequest.class, InviteWithPwdResponse.class)
+                .withName("InviteWithPwd")
                 .withUri("/v1/mmc/control/conferences/inviteWithPwd")
                 .withContentType("application/json");
 
@@ -1835,6 +1876,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<LiveRequest, LiveResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, LiveRequest.class, LiveResponse.class)
+                .withName("Live")
                 .withUri("/v1/mmc/control/conferences/live")
                 .withContentType("application/json");
 
@@ -1875,6 +1917,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<LockMeetingRequest, LockMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, LockMeetingRequest.class, LockMeetingResponse.class)
+                .withName("LockMeeting")
                 .withUri("/v1/mmc/control/conferences/lock")
                 .withContentType("application/json");
 
@@ -1915,6 +1958,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<LockViewRequest, LockViewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, LockViewRequest.class, LockViewResponse.class)
+                .withName("LockView")
                 .withUri("/v1/mmc/control/conferences/lockView")
                 .withContentType("application/json");
 
@@ -1963,6 +2007,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<MuteMeetingRequest, MuteMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, MuteMeetingRequest.class, MuteMeetingResponse.class)
+                .withName("MuteMeeting")
                 .withUri("/v1/mmc/control/conferences/mute")
                 .withContentType("application/json");
 
@@ -2003,6 +2048,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<MuteParticipantRequest, MuteParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, MuteParticipantRequest.class, MuteParticipantResponse.class)
+                .withName("MuteParticipant")
                 .withUri("/v1/mmc/control/conferences/participants/mute")
                 .withContentType("application/json");
 
@@ -2051,6 +2097,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ProlongMeetingRequest, ProlongMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ProlongMeetingRequest.class, ProlongMeetingResponse.class)
+                .withName("ProlongMeeting")
                 .withUri("/v1/mmc/control/conferences/duration")
                 .withContentType("application/json");
 
@@ -2091,6 +2138,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<RecordRequest, RecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RecordRequest.class, RecordResponse.class)
+                .withName("Record")
                 .withUri("/v1/mmc/control/conferences/record")
                 .withContentType("application/json");
 
@@ -2131,6 +2179,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<RenameParticipantRequest, RenameParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RenameParticipantRequest.class, RenameParticipantResponse.class)
+                .withName("RenameParticipant")
                 .withUri("/v1/mmc/control/conferences/participants/name")
                 .withContentType("application/json");
 
@@ -2171,6 +2220,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ResetActivecodeRequest, ResetActivecodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetActivecodeRequest.class, ResetActivecodeResponse.class)
+                .withName("ResetActivecode")
                 .withUri("/v1/usg/dcs/corp/device/{sn}/activecode")
                 .withContentType("application/json");
 
@@ -2219,6 +2269,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ResetPwdRequest, ResetPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPwdRequest.class, ResetPwdResponse.class)
+                .withName("ResetPwd")
                 .withUri("/v1/usg/acs/password/reset")
                 .withContentType("application/json");
 
@@ -2259,6 +2310,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ResetPwdByAdminRequest, ResetPwdByAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPwdByAdminRequest.class, ResetPwdByAdminResponse.class)
+                .withName("ResetPwdByAdmin")
                 .withUri("/v1/usg/acs/password/admin/reset")
                 .withContentType("application/json");
 
@@ -2299,6 +2351,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<RollcallParticipantRequest, RollcallParticipantResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RollcallParticipantRequest.class, RollcallParticipantResponse.class)
+                .withName("RollcallParticipant")
                 .withUri("/v1/mmc/control/conferences/participants/rollCall")
                 .withContentType("application/json");
 
@@ -2339,6 +2392,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchAttendanceRecordsOfHisMeetingRequest, SearchAttendanceRecordsOfHisMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchAttendanceRecordsOfHisMeetingRequest.class, SearchAttendanceRecordsOfHisMeetingResponse.class)
+                .withName("SearchAttendanceRecordsOfHisMeeting")
                 .withUri("/v1/mmc/management/conferences/history/confAttendeeRecord")
                 .withContentType("application/json");
 
@@ -2419,6 +2473,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpRequest, SearchCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpRequest.class, SearchCorpResponse.class)
+                .withName("SearchCorp")
                 .withUri("/v1/usg/dcs/sp/corp")
                 .withContentType("application/json");
 
@@ -2475,6 +2530,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpAdminsRequest, SearchCorpAdminsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpAdminsRequest.class, SearchCorpAdminsResponse.class)
+                .withName("SearchCorpAdmins")
                 .withUri("/v1/usg/dcs/corp/admin")
                 .withContentType("application/json");
 
@@ -2531,6 +2587,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpDirRequest, SearchCorpDirResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpDirRequest.class, SearchCorpDirResponse.class)
+                .withName("SearchCorpDir")
                 .withUri("/v1/usg/abs/users")
                 .withContentType("application/json");
 
@@ -2611,6 +2668,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCorpVmrRequest, SearchCorpVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCorpVmrRequest.class, SearchCorpVmrResponse.class)
+                .withName("SearchCorpVmr")
                 .withUri("/v1/usg/dcs/corp/vmr")
                 .withContentType("application/json");
 
@@ -2675,6 +2733,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchCtlRecordsOfHisMeetingRequest, SearchCtlRecordsOfHisMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchCtlRecordsOfHisMeetingRequest.class, SearchCtlRecordsOfHisMeetingResponse.class)
+                .withName("SearchCtlRecordsOfHisMeeting")
                 .withUri("/v1/mmc/management/conferences/history/confCtlRecord")
                 .withContentType("application/json");
 
@@ -2747,6 +2806,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchDepartmentByNameRequest, SearchDepartmentByNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchDepartmentByNameRequest.class, SearchDepartmentByNameResponse.class)
+                .withName("SearchDepartmentByName")
                 .withUri("/v1/usg/dcs/member/dept")
                 .withContentType("application/json");
 
@@ -2796,6 +2856,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchDevicesRequest, SearchDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchDevicesRequest.class, SearchDevicesResponse.class)
+                .withName("SearchDevices")
                 .withUri("/v1/usg/dcs/corp/device")
                 .withContentType("application/json");
 
@@ -2876,6 +2937,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchHisMeetingsRequest, SearchHisMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchHisMeetingsRequest.class, SearchHisMeetingsResponse.class)
+                .withName("SearchHisMeetings")
                 .withUri("/v1/mmc/management/conferences/history")
                 .withContentType("application/json");
 
@@ -2972,6 +3034,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMaterialsRequest, SearchMaterialsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMaterialsRequest.class, SearchMaterialsResponse.class)
+                .withName("SearchMaterials")
                 .withUri("/v1/usg/sss/materials")
                 .withContentType("application/json");
 
@@ -3028,6 +3091,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMeetingFileListRequest, SearchMeetingFileListResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMeetingFileListRequest.class, SearchMeetingFileListResponse.class)
+                .withName("SearchMeetingFileList")
                 .withUri("/v1/usg/sss/meeting-files")
                 .withContentType("application/json");
 
@@ -3084,6 +3148,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMeetingsRequest, SearchMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMeetingsRequest.class, SearchMeetingsResponse.class)
+                .withName("SearchMeetings")
                 .withUri("/v1/mmc/management/conferences")
                 .withContentType("application/json");
 
@@ -3172,6 +3237,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchMemberVmrRequest, SearchMemberVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchMemberVmrRequest.class, SearchMemberVmrResponse.class)
+                .withName("SearchMemberVmr")
                 .withUri("/v1/usg/dcs/member/vmr")
                 .withContentType("application/json");
 
@@ -3236,6 +3302,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchOnlineMeetingsRequest.class, SearchOnlineMeetingsResponse.class)
+                .withName("SearchOnlineMeetings")
                 .withUri("/v1/mmc/management/conferences/online")
                 .withContentType("application/json");
 
@@ -3308,6 +3375,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchProgramsRequest, SearchProgramsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchProgramsRequest.class, SearchProgramsResponse.class)
+                .withName("SearchPrograms")
                 .withUri("/v1/usg/sss/programs")
                 .withContentType("application/json");
 
@@ -3364,6 +3432,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchPublicationsRequest, SearchPublicationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchPublicationsRequest.class, SearchPublicationsResponse.class)
+                .withName("SearchPublications")
                 .withUri("/v1/usg/sss/publications")
                 .withContentType("application/json");
 
@@ -3420,6 +3489,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchRecordingsRequest, SearchRecordingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchRecordingsRequest.class, SearchRecordingsResponse.class)
+                .withName("SearchRecordings")
                 .withUri("/v1/mmc/management/record/files")
                 .withContentType("application/json");
 
@@ -3516,6 +3586,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchResourceRequest, SearchResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchResourceRequest.class, SearchResourceResponse.class)
+                .withName("SearchResource")
                 .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource")
                 .withContentType("application/json");
 
@@ -3620,6 +3691,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchResourceOpRecordRequest.class, SearchResourceOpRecordResponse.class)
+                .withName("SearchResourceOpRecord")
                 .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource-record")
                 .withContentType("application/json");
 
@@ -3740,6 +3812,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SearchUsersRequest, SearchUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SearchUsersRequest.class, SearchUsersResponse.class)
+                .withName("SearchUsers")
                 .withUri("/v1/usg/dcs/corp/member")
                 .withContentType("application/json");
 
@@ -3860,6 +3933,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SendSlideVerifyCodeRequest, SendSlideVerifyCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendSlideVerifyCodeRequest.class, SendSlideVerifyCodeResponse.class)
+                .withName("SendSlideVerifyCode")
                 .withUri("/v1/usg/acs/auth/slideverifycode/send")
                 .withContentType("application/json");
 
@@ -3900,6 +3974,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SendVeriCodeForChangePwdRequest, SendVeriCodeForChangePwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendVeriCodeForChangePwdRequest.class, SendVeriCodeForChangePwdResponse.class)
+                .withName("SendVeriCodeForChangePwd")
                 .withUri("/v1/usg/acs/verifycode/send")
                 .withContentType("application/json");
 
@@ -3940,6 +4015,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SendVeriCodeForUpdateUserInfoRequest, SendVeriCodeForUpdateUserInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendVeriCodeForUpdateUserInfoRequest.class, SendVeriCodeForUpdateUserInfoResponse.class)
+                .withName("SendVeriCodeForUpdateUserInfo")
                 .withUri("/v1/usg/dcs/member/verification-code")
                 .withContentType("application/json");
 
@@ -3980,6 +4056,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetCustomMultiPictureRequest.class, SetCustomMultiPictureResponse.class)
+                .withName("SetCustomMultiPicture")
                 .withUri("/v1/mmc/control/conferences/display/customMultiPicture")
                 .withContentType("application/json");
 
@@ -4020,6 +4097,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SetHostViewRequest, SetHostViewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetHostViewRequest.class, SetHostViewResponse.class)
+                .withName("SetHostView")
                 .withUri("/v1/mmc/control/conferences/chairView")
                 .withContentType("application/json");
 
@@ -4060,6 +4138,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SetMultiPictureRequest, SetMultiPictureResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetMultiPictureRequest.class, SetMultiPictureResponse.class)
+                .withName("SetMultiPicture")
                 .withUri("/v1/mmc/control/conferences/display/multiPicture")
                 .withContentType("application/json");
 
@@ -4100,6 +4179,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SetParticipantViewRequest, SetParticipantViewResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetParticipantViewRequest.class, SetParticipantViewResponse.class)
+                .withName("SetParticipantView")
                 .withUri("/v1/mmc/control/conferences/partView")
                 .withContentType("application/json");
 
@@ -4148,6 +4228,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SetRoleRequest, SetRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetRoleRequest.class, SetRoleResponse.class)
+                .withName("SetRole")
                 .withUri("/v1/mmc/control/conferences/participants/role")
                 .withContentType("application/json");
 
@@ -4196,6 +4277,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowConfOrgRequest, ShowConfOrgResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfOrgRequest.class, ShowConfOrgResponse.class)
+                .withName("ShowConfOrg")
                 .withUri("/v1/mmc/management/conferences/confOrg")
                 .withContentType("application/json");
 
@@ -4220,6 +4302,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpRequest, ShowCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpRequest.class, ShowCorpResponse.class)
+                .withName("ShowCorp")
                 .withUri("/v1/usg/dcs/sp/corp/{id}")
                 .withContentType("application/json");
 
@@ -4260,6 +4343,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpAdminRequest, ShowCorpAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpAdminRequest.class, ShowCorpAdminResponse.class)
+                .withName("ShowCorpAdmin")
                 .withUri("/v1/usg/dcs/corp/admin/{account}")
                 .withContentType("application/json");
 
@@ -4308,6 +4392,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpBasicInfoRequest, ShowCorpBasicInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpBasicInfoRequest.class, ShowCorpBasicInfoResponse.class)
+                .withName("ShowCorpBasicInfo")
                 .withUri("/v1/usg/dcs/corp")
                 .withContentType("application/json");
 
@@ -4340,6 +4425,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowCorpResourceRequest, ShowCorpResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCorpResourceRequest.class, ShowCorpResourceResponse.class)
+                .withName("ShowCorpResource")
                 .withUri("/v1/usg/dcs/corp/resource")
                 .withContentType("application/json");
 
@@ -4372,6 +4458,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowDeptAndChildDeptRequest, ShowDeptAndChildDeptResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeptAndChildDeptRequest.class, ShowDeptAndChildDeptResponse.class)
+                .withName("ShowDeptAndChildDept")
                 .withUri("/v1/usg/dcs/member/dept/{dept_code}")
                 .withContentType("application/json");
 
@@ -4412,6 +4499,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceDetailRequest, ShowDeviceDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceDetailRequest.class, ShowDeviceDetailResponse.class)
+                .withName("ShowDeviceDetail")
                 .withUri("/v1/usg/dcs/corp/device/{sn}")
                 .withContentType("application/json");
 
@@ -4452,6 +4540,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceStatusRequest, ShowDeviceStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowDeviceStatusRequest.class, ShowDeviceStatusResponse.class)
+                .withName("ShowDeviceStatus")
                 .withUri("/v1/usg/acs/ap/userstatus")
                 .withContentType("application/json");
 
@@ -4501,6 +4590,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceTypesRequest, ShowDeviceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceTypesRequest.class, ShowDeviceTypesResponse.class)
+                .withName("ShowDeviceTypes")
                 .withUri("/v1/usg/dcs/termdevtype")
                 .withContentType("application/json");
 
@@ -4542,6 +4632,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowHisMeetingDetailRequest, ShowHisMeetingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHisMeetingDetailRequest.class, ShowHisMeetingDetailResponse.class)
+                .withName("ShowHisMeetingDetail")
                 .withUri("/v1/mmc/management/conferences/history/confDetail")
                 .withContentType("application/json");
 
@@ -4630,6 +4721,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowMeetingDetailRequest, ShowMeetingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeetingDetailRequest.class, ShowMeetingDetailResponse.class)
+                .withName("ShowMeetingDetail")
                 .withUri("/v1/mmc/management/conferences/confDetail")
                 .withContentType("application/json");
 
@@ -4718,6 +4810,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowMeetingFileRequest, ShowMeetingFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeetingFileRequest.class, ShowMeetingFileResponse.class)
+                .withName("ShowMeetingFile")
                 .withUri("/v1/usg/sss/meeting-files/{file_code}")
                 .withContentType("application/json");
 
@@ -4758,6 +4851,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowMeetingFileListRequest, ShowMeetingFileListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMeetingFileListRequest.class, ShowMeetingFileListResponse.class)
+                .withName("ShowMeetingFileList")
                 .withUri("/v1/usg/sss/meeting-files/open-meeting-file-list")
                 .withContentType("application/json");
 
@@ -4798,6 +4892,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowMyInfoRequest, ShowMyInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMyInfoRequest.class, ShowMyInfoResponse.class)
+                .withName("ShowMyInfo")
                 .withUri("/v1/usg/dcs/member")
                 .withContentType("application/json");
 
@@ -4830,6 +4925,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowOnlineMeetingDetailRequest, ShowOnlineMeetingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOnlineMeetingDetailRequest.class, ShowOnlineMeetingDetailResponse.class)
+                .withName("ShowOnlineMeetingDetail")
                 .withUri("/v1/mmc/management/conferences/online/confDetail")
                 .withContentType("application/json");
 
@@ -4918,6 +5014,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowOrgResRequest, ShowOrgResResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOrgResRequest.class, ShowOrgResResponse.class)
+                .withName("ShowOrgRes")
                 .withUri("/v1/mmc/management/orgRes")
                 .withContentType("application/json");
 
@@ -4934,6 +5031,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowProgramRequest, ShowProgramResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProgramRequest.class, ShowProgramResponse.class)
+                .withName("ShowProgram")
                 .withUri("/v1/usg/sss/programs/{id}")
                 .withContentType("application/json");
 
@@ -4974,6 +5072,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowPublicationRequest, ShowPublicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPublicationRequest.class, ShowPublicationResponse.class)
+                .withName("ShowPublication")
                 .withUri("/v1/usg/sss/publications/{id}")
                 .withContentType("application/json");
 
@@ -5014,6 +5113,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowRealTimeInfoOfMeetingRequest, ShowRealTimeInfoOfMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRealTimeInfoOfMeetingRequest.class, ShowRealTimeInfoOfMeetingResponse.class)
+                .withName("ShowRealTimeInfoOfMeeting")
                 .withUri("/v1/mmc/control/conferences/realTimeInfo")
                 .withContentType("application/json");
 
@@ -5046,6 +5146,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowRecordingDetailRequest, ShowRecordingDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRecordingDetailRequest.class, ShowRecordingDetailResponse.class)
+                .withName("ShowRecordingDetail")
                 .withUri("/v1/mmc/management/conferences/record/files")
                 .withContentType("application/json");
 
@@ -5094,6 +5195,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRegionInfoOfMeetingRequest.class, ShowRegionInfoOfMeetingResponse.class)
+                .withName("ShowRegionInfoOfMeeting")
                 .withUri("/v1/mmc/management/conferences/region/info")
                 .withContentType("application/json");
 
@@ -5118,6 +5220,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowSpResRequest, ShowSpResResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSpResRequest.class, ShowSpResResponse.class)
+                .withName("ShowSpRes")
                 .withUri("/v1/mmc/management/spRes")
                 .withContentType("application/json");
 
@@ -5134,6 +5237,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<ShowUserDetailRequest, ShowUserDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserDetailRequest.class, ShowUserDetailResponse.class)
+                .withName("ShowUserDetail")
                 .withUri("/v1/usg/dcs/corp/member/{account}")
                 .withContentType("application/json");
 
@@ -5182,6 +5286,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<StopMeetingRequest, StopMeetingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StopMeetingRequest.class, StopMeetingResponse.class)
+                .withName("StopMeeting")
                 .withUri("/v1/mmc/control/conferences/stop")
                 .withContentType("application/json");
 
@@ -5214,6 +5319,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<SwitchModeRequest, SwitchModeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SwitchModeRequest.class, SwitchModeResponse.class)
+                .withName("SwitchMode")
                 .withUri("/v1/mmc/control/conferences/display/mode")
                 .withContentType("application/json");
 
@@ -5254,6 +5360,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateContactRequest, UpdateContactResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateContactRequest.class, UpdateContactResponse.class)
+                .withName("UpdateContact")
                 .withUri("/v1/usg/dcs/member/contact")
                 .withContentType("application/json");
 
@@ -5294,6 +5401,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateCorpRequest, UpdateCorpResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCorpRequest.class, UpdateCorpResponse.class)
+                .withName("UpdateCorp")
                 .withUri("/v1/usg/dcs/sp/corp/{id}")
                 .withContentType("application/json");
 
@@ -5342,6 +5450,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateCorpBasicInfoRequest, UpdateCorpBasicInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCorpBasicInfoRequest.class, UpdateCorpBasicInfoResponse.class)
+                .withName("UpdateCorpBasicInfo")
                 .withUri("/v1/usg/dcs/corp")
                 .withContentType("application/json");
 
@@ -5382,6 +5491,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateDepartmentRequest, UpdateDepartmentResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDepartmentRequest.class, UpdateDepartmentResponse.class)
+                .withName("UpdateDepartment")
                 .withUri("/v1/usg/dcs/corp/dept/{dept_code}")
                 .withContentType("application/json");
 
@@ -5430,6 +5540,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateDeviceRequest, UpdateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceRequest.class, UpdateDeviceResponse.class)
+                .withName("UpdateDevice")
                 .withUri("/v1/usg/dcs/corp/device/{sn}")
                 .withContentType("application/json");
 
@@ -5478,6 +5589,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateMaterialRequest, UpdateMaterialResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMaterialRequest.class, UpdateMaterialResponse.class)
+                .withName("UpdateMaterial")
                 .withUri("/v1/usg/sss/materials/{id}")
                 .withContentType("application/json");
 
@@ -5526,6 +5638,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateMemberVmrRequest, UpdateMemberVmrResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMemberVmrRequest.class, UpdateMemberVmrResponse.class)
+                .withName("UpdateMemberVmr")
                 .withUri("/v1/usg/dcs/member/vmr/{id}")
                 .withContentType("application/json");
 
@@ -5574,6 +5687,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateMyInfoRequest, UpdateMyInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMyInfoRequest.class, UpdateMyInfoResponse.class)
+                .withName("UpdateMyInfo")
                 .withUri("/v1/usg/dcs/member")
                 .withContentType("application/json");
 
@@ -5614,6 +5728,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateProgramRequest, UpdateProgramResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProgramRequest.class, UpdateProgramResponse.class)
+                .withName("UpdateProgram")
                 .withUri("/v1/usg/sss/programs/{id}")
                 .withContentType("application/json");
 
@@ -5662,6 +5777,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdatePublicationRequest, UpdatePublicationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePublicationRequest.class, UpdatePublicationResponse.class)
+                .withName("UpdatePublication")
                 .withUri("/v1/usg/sss/publications/{id}")
                 .withContentType("application/json");
 
@@ -5710,6 +5826,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdatePwdRequest, UpdatePwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePwdRequest.class, UpdatePwdResponse.class)
+                .withName("UpdatePwd")
                 .withUri("/v1/usg/acs/password")
                 .withContentType("application/json");
 
@@ -5750,6 +5867,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateResourceRequest, UpdateResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResourceRequest.class, UpdateResourceResponse.class)
+                .withName("UpdateResource")
                 .withUri("/v1/usg/dcs/sp/corp/{corp_id}/resource")
                 .withContentType("application/json");
 
@@ -5806,6 +5924,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateTokenRequest, UpdateTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTokenRequest.class, UpdateTokenResponse.class)
+                .withName("UpdateToken")
                 .withUri("/v1/usg/acs/token")
                 .withContentType("application/json");
 
@@ -5838,6 +5957,7 @@ public class MeetingMeta {
         // basic
         HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
+                .withName("UpdateUser")
                 .withUri("/v1/usg/dcs/corp/member/{account}")
                 .withContentType("application/json");
 

@@ -18,6 +18,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, BatchShowPipelinesStatusRequest.class, BatchShowPipelinesStatusResponse.class)
+                .withName("BatchShowPipelinesStatus")
                 .withUri("/v3/pipelines/status")
                 .withContentType("application/json");
 
@@ -59,6 +60,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePipelineByTemplateRequest.class, CreatePipelineByTemplateResponse.class)
+                .withName("CreatePipelineByTemplate")
                 .withUri("/v3/templates/task")
                 .withContentType("application/json");
 
@@ -91,6 +93,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPipleineBuildResultRequest.class, ListPipleineBuildResultResponse.class)
+                .withName("ListPipleineBuildResult")
                 .withUri("/v3/pipelines/build-result")
                 .withContentType("application/json");
 
@@ -155,6 +158,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withName("ListTemplates")
                 .withUri("/v3/templates")
                 .withContentType("application/json");
 
@@ -235,6 +239,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<RegisterAgentRequest, RegisterAgentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RegisterAgentRequest.class, RegisterAgentResponse.class)
+                .withName("RegisterAgent")
                 .withUri("/agentregister/v1/agent/register")
                 .withContentType("application/json");
 
@@ -259,6 +264,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<RemovePipelineRequest, RemovePipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemovePipelineRequest.class, RemovePipelineResponse.class)
+                .withName("RemovePipeline")
                 .withUri("/v3/pipelines/{pipeline_id}")
                 .withContentType("application/json");
 
@@ -291,6 +297,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowAgentStatusRequest, ShowAgentStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgentStatusRequest.class, ShowAgentStatusResponse.class)
+                .withName("ShowAgentStatus")
                 .withUri("/v1/agents/{agent_id}/status")
                 .withContentType("application/json");
 
@@ -323,6 +330,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceStatusRequest, ShowInstanceStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceStatusRequest.class, ShowInstanceStatusResponse.class)
+                .withName("ShowInstanceStatus")
                 .withUri("/v3/templates/{task_id}/status")
                 .withContentType("application/json");
 
@@ -355,6 +363,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowPipleineStatusRequest, ShowPipleineStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPipleineStatusRequest.class, ShowPipleineStatusResponse.class)
+                .withName("ShowPipleineStatus")
                 .withUri("/v3/pipelines/{pipeline_id}/status")
                 .withContentType("application/json");
 
@@ -395,6 +404,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateDetailRequest, ShowTemplateDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateDetailRequest.class, ShowTemplateDetailResponse.class)
+                .withName("ShowTemplateDetail")
                 .withUri("/v3/templates/{template_id}")
                 .withContentType("application/json");
 
@@ -443,6 +453,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<StartNewPipelineRequest, StartNewPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartNewPipelineRequest.class, StartNewPipelineResponse.class)
+                .withName("StartNewPipeline")
                 .withUri("/v3/pipelines/{pipeline_id}/start")
                 .withContentType("application/json");
 
@@ -483,6 +494,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<StartPipelineRequest, StartPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartPipelineRequest.class, StartPipelineResponse.class)
+                .withName("StartPipeline")
                 .withUri("/v3/pipelines/start")
                 .withContentType("application/json");
 
@@ -523,6 +535,7 @@ public class CloudPipelineMeta {
         // basic
         HttpRequestDef.Builder<StopPipelineRequest, StopPipelineResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopPipelineRequest.class, StopPipelineResponse.class)
+                .withName("StopPipeline")
                 .withUri("/v3/pipelines/stop")
                 .withContentType("application/json");
 

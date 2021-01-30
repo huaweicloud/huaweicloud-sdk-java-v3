@@ -18,6 +18,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<CheckTargetRequest, CheckTargetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckTargetRequest.class, CheckTargetResponse.class)
+                .withName("CheckTarget")
                 .withUri("/v3/targetcheck")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<CreateMigprojectRequest, CreateMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMigprojectRequest.class, CreateMigprojectResponse.class)
+                .withName("CreateMigproject")
                 .withUri("/v3/migprojects")
                 .withContentType("application/json");
 
@@ -75,6 +77,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
+                .withName("CreateTask")
                 .withUri("/v3/tasks")
                 .withContentType("application/json");
 
@@ -99,6 +102,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
+                .withName("CreateTemplate")
                 .withUri("/v3/vm/templates")
                 .withContentType("application/json");
 
@@ -123,6 +127,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteMigprojectRequest, DeleteMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMigprojectRequest.class, DeleteMigprojectResponse.class)
+                .withName("DeleteMigproject")
                 .withUri("/v3/migprojects/{mig_project_id}")
                 .withContentType("application/json");
 
@@ -147,6 +152,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServerRequest, DeleteServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerRequest.class, DeleteServerResponse.class)
+                .withName("DeleteServer")
                 .withUri("/v3/sources/{source_id}")
                 .withContentType("application/json");
 
@@ -171,6 +177,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServersRequest, DeleteServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteServersRequest.class, DeleteServersResponse.class)
+                .withName("DeleteServers")
                 .withUri("/v3/sources/delete")
                 .withContentType("application/json");
 
@@ -195,6 +202,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
+                .withName("DeleteTask")
                 .withUri("/v3/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -219,6 +227,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTasksRequest, DeleteTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteTasksRequest.class, DeleteTasksResponse.class)
+                .withName("DeleteTasks")
                 .withUri("/v3/tasks/delete")
                 .withContentType("application/json");
 
@@ -243,6 +252,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTemplateRequest, DeleteTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateRequest.class, DeleteTemplateResponse.class)
+                .withName("DeleteTemplate")
                 .withUri("/v3/vm/templates/{id}")
                 .withContentType("application/json");
 
@@ -267,6 +277,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTemplatesRequest, DeleteTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteTemplatesRequest.class, DeleteTemplatesResponse.class)
+                .withName("DeleteTemplates")
                 .withUri("/v3/vm/templates/delete")
                 .withContentType("application/json");
 
@@ -291,6 +302,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListErrorServersRequest, ListErrorServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListErrorServersRequest.class, ListErrorServersResponse.class)
+                .withName("ListErrorServers")
                 .withUri("/v3/errors")
                 .withContentType("application/json");
 
@@ -331,6 +343,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListMigprojectsRequest, ListMigprojectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMigprojectsRequest.class, ListMigprojectsResponse.class)
+                .withName("ListMigprojects")
                 .withUri("/v3/migprojects")
                 .withContentType("application/json");
 
@@ -363,6 +376,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListServersRequest, ListServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServersRequest.class, ListServersResponse.class)
+                .withName("ListServers")
                 .withUri("/v3/sources")
                 .withContentType("application/json");
 
@@ -451,6 +465,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
+                .withName("ListTasks")
                 .withUri("/v3/tasks")
                 .withContentType("application/json");
 
@@ -515,6 +530,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ListTemplatesRequest, ListTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplatesRequest.class, ListTemplatesResponse.class)
+                .withName("ListTemplates")
                 .withUri("/v3/vm/templates")
                 .withContentType("application/json");
 
@@ -571,6 +587,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<RegisterServerRequest, RegisterServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RegisterServerRequest.class, RegisterServerResponse.class)
+                .withName("RegisterServer")
                 .withUri("/v3/sources")
                 .withContentType("application/json");
 
@@ -595,6 +612,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowCertKeyRequest, ShowCertKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCertKeyRequest.class, ShowCertKeyResponse.class)
+                .withName("ShowCertKey")
                 .withUri("/v3/tasks/{task_id}/certkey")
                 .withContentType("application/json");
 
@@ -619,6 +637,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowCommandRequest, ShowCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCommandRequest.class, ShowCommandResponse.class)
+                .withName("ShowCommand")
                 .withUri("/v3/sources/{server_id}/command")
                 .withContentType("application/json");
 
@@ -643,6 +662,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowMigprojectRequest, ShowMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMigprojectRequest.class, ShowMigprojectResponse.class)
+                .withName("ShowMigproject")
                 .withUri("/v3/migprojects/{mig_project_id}")
                 .withContentType("application/json");
 
@@ -667,6 +687,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerRequest, ShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerRequest.class, ShowServerResponse.class)
+                .withName("ShowServer")
                 .withUri("/v3/sources/{source_id}")
                 .withContentType("application/json");
 
@@ -691,6 +712,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
+                .withName("ShowTask")
                 .withUri("/v3/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -715,6 +737,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateRequest, ShowTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateRequest.class, ShowTemplateResponse.class)
+                .withName("ShowTemplate")
                 .withUri("/v3/vm/templates/{id}")
                 .withContentType("application/json");
 
@@ -739,6 +762,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowsSpeedLimitsRequest.class, ShowsSpeedLimitsResponse.class)
+                .withName("ShowsSpeedLimits")
                 .withUri("/v3/tasks/{task_id}/speed-limit")
                 .withContentType("application/json");
 
@@ -772,6 +796,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateCommandResultRequest, UpdateCommandResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateCommandResultRequest.class, UpdateCommandResultResponse.class)
+                .withName("UpdateCommandResult")
                 .withUri("/v3/sources/{server_id}/command-result")
                 .withContentType("application/json");
 
@@ -804,6 +829,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDefaultMigprojectRequest.class, UpdateDefaultMigprojectResponse.class)
+                .withName("UpdateDefaultMigproject")
                 .withUri("/v3/migprojects/{mig_project_id}/default")
                 .withContentType("application/json");
 
@@ -828,6 +854,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateDiskInfoRequest, UpdateDiskInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDiskInfoRequest.class, UpdateDiskInfoResponse.class)
+                .withName("UpdateDiskInfo")
                 .withUri("/v3/sources/{source_id}/diskinfo")
                 .withContentType("application/json");
 
@@ -860,6 +887,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateMigprojectRequest, UpdateMigprojectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMigprojectRequest.class, UpdateMigprojectResponse.class)
+                .withName("UpdateMigproject")
                 .withUri("/v3/migprojects/{mig_project_id}")
                 .withContentType("application/json");
 
@@ -901,6 +929,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateServerNameRequest, UpdateServerNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServerNameRequest.class, UpdateServerNameResponse.class)
+                .withName("UpdateServerName")
                 .withUri("/v3/sources/{source_id}")
                 .withContentType("application/json");
 
@@ -933,6 +962,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateSpeedRequest, UpdateSpeedResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSpeedRequest.class, UpdateSpeedResponse.class)
+                .withName("UpdateSpeed")
                 .withUri("/v3/tasks/{task_id}/speedlimit")
                 .withContentType("application/json");
 
@@ -965,6 +995,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskSpeedRequest.class, UpdateTaskSpeedResponse.class)
+                .withName("UpdateTaskSpeed")
                 .withUri("/v3/tasks/{task_id}/progress")
                 .withContentType("application/json");
 
@@ -997,6 +1028,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateTaskStatusRequest, UpdateTaskStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateTaskStatusRequest.class, UpdateTaskStatusResponse.class)
+                .withName("UpdateTaskStatus")
                 .withUri("/v3/tasks/{task_id}/action")
                 .withContentType("application/json");
 
@@ -1029,6 +1061,7 @@ public class SmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateTemplateRequest, UpdateTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTemplateRequest.class, UpdateTemplateResponse.class)
+                .withName("UpdateTemplate")
                 .withUri("/v3/vm/templates/{id}")
                 .withContentType("application/json");
 

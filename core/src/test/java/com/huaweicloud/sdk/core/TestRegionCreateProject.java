@@ -1,0 +1,113 @@
+package com.huaweicloud.sdk.core;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.utils.JsonUtils;
+
+import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
+
+public class TestRegionCreateProject {
+    private static final Logger logger = LoggerFactory.getLogger(TestRegionCreateProject.class);
+
+    private static final String EXPECTED_PROJECT_ID = "123456789";
+    private static final String IAM_ENDPOINT = "http://127.0.0.1:10086";
+    private static final BasicCredentials CREDENTIALS = new BasicCredentials().withAk("ak").withSk("sk")
+        .withIamEndpoint(IAM_ENDPOINT);
+    private final HttpConfig config = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
+
+    @Rule
+    public WireMockRule wireMockRule;
+
+    @Before
+    public void init() {
+        System.setProperty("org.eclipse.jetty.util.log.class", "org.eclipse.jetty.util.log.StdErrLog");
+        System.setProperty("org.eclipse.jetty.LEVEL", "OFF");
+
+        wireMockRule
+            = new WireMockRule(WireMockConfiguration.options().httpsPort(10010).port(10086).disableRequestJournal());
+
+        // mock request: GET /v3/projects
+        wireMockRule.stubFor(WireMock.get("/v3/projects?name=cn-north-201")
+            .willReturn(WireMock.aResponse()
+                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                .withBody("{\"projects\": []}")
+                .withStatus(200)
+            )
+        );
+        // mock request: GET /v3/regions
+        wireMockRule.stubFor(WireMock.get("/v3/regions")
+            .willReturn(WireMock.aResponse()
+                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                .withBody("{\"regions\": [{\"id\": \"cn-north-201\", \"type\": \"public\"}]}")
+                .withStatus(200)
+            )
+        );
+        // mock request: GET /v3/auth/domains
+        wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
+            .willReturn(WireMock.aResponse()
+                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                .withBody("{\"domains\": [{\"id\": \"987654321\"}]}")
+                .withStatus(200)
+            )
+        );
+        // mock request: POST /v3/projects
+        Map<String, String> map = new HashMap<String, String>(2) {
+            {
+                put("name", "cn-north-201");
+                put("domain_id", "987654321");
+            }
+        };
+        Map<String, Map<String, String>> body = new HashMap<String, Map<String, String>>(1) {
+            {
+                put("project", map);
+            }
+        };
+        String bodyStr = JsonUtils.toJSON(body);
+        wireMockRule.stubFor(WireMock.post(WireMock.urlEqualTo("/v3/projects"))
+            .withRequestBody(equalTo(bodyStr))
+            .willReturn(WireMock.aResponse()
+                .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                .withBody("{\"project\": {\"id\": \"123456789\"}}")
+                .withStatus(201)
+            )
+        );
+        wireMockRule.start();
+    }
+
+    @After
+    public void stop() {
+        wireMockRule.stop();
+    }
+
+    @Test
+    public void testCreateProject() {
+        TestServiceClient.newBuilder()
+            .withCredential(CREDENTIALS)
+            .withHttpConfig(config)
+            .withRegion(TestRegion.CN_NORTH_201)
+            .build();
+
+        try {
+            Field projectId = BasicCredentials.class.getDeclaredField("projectId");
+            projectId.setAccessible(true);
+            Assert.assertEquals(EXPECTED_PROJECT_ID, projectId.get(CREDENTIALS));
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            logger.error(e.getMessage());
+        }
+    }
+}

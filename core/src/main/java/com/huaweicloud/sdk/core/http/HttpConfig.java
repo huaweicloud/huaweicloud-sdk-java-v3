@@ -21,11 +21,11 @@
 
 package com.huaweicloud.sdk.core.http;
 
-import com.huaweicloud.sdk.core.HttpListener;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import com.huaweicloud.sdk.core.HttpListener;
 
 
 public class HttpConfig {

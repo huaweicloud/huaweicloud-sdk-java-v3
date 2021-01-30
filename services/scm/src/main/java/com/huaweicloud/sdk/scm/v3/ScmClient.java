@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.scm.v3;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.scm.v3.model.*;
 
 public class ScmClient {
@@ -28,6 +29,17 @@ public class ScmClient {
     }
 
     /**
+     * 删除证书
+     * 删除证书实例，即将证书资源从华为云系统中删除。
+     *
+     * @param DeleteCertificateRequest 请求对象
+     * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
+     */
+    public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(DeleteCertificateRequest request) {
+        return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, ScmMeta.deleteCertificate, hcClient);
+    }
+
+    /**
      * 导出证书
      * 导出证书。
      *
@@ -36,6 +48,17 @@ public class ScmClient {
      */
     public ExportCertificateResponse exportCertificate(ExportCertificateRequest request) {
         return hcClient.syncInvokeHttp(request, ScmMeta.exportCertificate);
+    }
+
+    /**
+     * 导出证书
+     * 导出证书。
+     *
+     * @param ExportCertificateRequest 请求对象
+     * @return SyncInvoker<ExportCertificateRequest, ExportCertificateResponse>
+     */
+    public SyncInvoker<ExportCertificateRequest, ExportCertificateResponse> exportCertificateInvoker(ExportCertificateRequest request) {
+        return new SyncInvoker<ExportCertificateRequest, ExportCertificateResponse>(request, ScmMeta.exportCertificate, hcClient);
     }
 
     /**
@@ -50,6 +73,17 @@ public class ScmClient {
     }
 
     /**
+     * 导入证书
+     * 导入证书到SCM服务管理。
+     *
+     * @param ImportCertificateRequest 请求对象
+     * @return SyncInvoker<ImportCertificateRequest, ImportCertificateResponse>
+     */
+    public SyncInvoker<ImportCertificateRequest, ImportCertificateResponse> importCertificateInvoker(ImportCertificateRequest request) {
+        return new SyncInvoker<ImportCertificateRequest, ImportCertificateResponse>(request, ScmMeta.importCertificate, hcClient);
+    }
+
+    /**
      * 查询证书列表
      * 根据证书名称或绑定域名查询证书列表。
      *
@@ -58,6 +92,17 @@ public class ScmClient {
      */
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
         return hcClient.syncInvokeHttp(request, ScmMeta.listCertificates);
+    }
+
+    /**
+     * 查询证书列表
+     * 根据证书名称或绑定域名查询证书列表。
+     *
+     * @param ListCertificatesRequest 请求对象
+     * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
+     */
+    public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(ListCertificatesRequest request) {
+        return new SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, ScmMeta.listCertificates, hcClient);
     }
 
     /**
@@ -72,6 +117,17 @@ public class ScmClient {
     }
 
     /**
+     * 推送证书
+     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
+     *
+     * @param PushCertificateRequest 请求对象
+     * @return SyncInvoker<PushCertificateRequest, PushCertificateResponse>
+     */
+    public SyncInvoker<PushCertificateRequest, PushCertificateResponse> pushCertificateInvoker(PushCertificateRequest request) {
+        return new SyncInvoker<PushCertificateRequest, PushCertificateResponse>(request, ScmMeta.pushCertificate, hcClient);
+    }
+
+    /**
      * 获取证书详情
      * 查询某张证书的详细信息。
      *
@@ -80,6 +136,17 @@ public class ScmClient {
      */
     public ShowCertificateResponse showCertificate(ShowCertificateRequest request) {
         return hcClient.syncInvokeHttp(request, ScmMeta.showCertificate);
+    }
+
+    /**
+     * 获取证书详情
+     * 查询某张证书的详细信息。
+     *
+     * @param ShowCertificateRequest 请求对象
+     * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
+     */
+    public SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateInvoker(ShowCertificateRequest request) {
+        return new SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, ScmMeta.showCertificate, hcClient);
     }
 
 }

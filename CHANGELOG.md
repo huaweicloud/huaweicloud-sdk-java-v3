@@ -1,4 +1,63 @@
-## 3.0.30-rc 2021-01-25
+## 3.0.32-rc 2021-01-30
+## HuaweiCloud SDK Core
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK CloudBuild
+- ### Features
+    - Support more interfaces: `ShowListPeriodHistory`.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK DAS
+- ### Features
+    - Support `Data Admin Service`.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK DNS
+- ### Features
+    - Support `Domain Name Service`.
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK ECS
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Change interface name from `UpdateAutoTerminateTimeServer` to `UpdateServerAutoTerminateTime`.
+
+## HuaweiCloud SDK EVS
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Interface `CinderCreateVolume` is supported to specify the id of dedicated storage pool using property `OS-SCH-HNT:scheduler_hints`.
+    - Modify property type of `allocated` of class `QuotaDetails` from `String` to `Integer`.
+
+## HuaweiCloud SDK IAM
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Increases the property `access_mode` of response class of interface `ShowUser`. 
+
+
+## 3.0.31-rc 2021-01-25
 ## HuaweiCloud SDK Core
 - ### Features
     - None

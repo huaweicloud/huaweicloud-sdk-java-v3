@@ -18,6 +18,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<AttachEipRequest, AttachEipResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AttachEipRequest.class, AttachEipResponse.class)
+                .withName("AttachEip")
                 .withUri("/v3/{project_id}/instances/{instance_id}/public-ip")
                 .withContentType("application/json");
 
@@ -58,6 +59,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<BatchTagActionRequest, BatchTagActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchTagActionRequest.class, BatchTagActionResponse.class)
+                .withName("BatchTagAction")
                 .withUri("/v3/{project_id}/instances/{instance_id}/tags/action")
                 .withContentType("application/json");
 
@@ -98,6 +100,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ChangeFailoverModeRequest, ChangeFailoverModeResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeFailoverModeRequest.class, ChangeFailoverModeResponse.class)
+                .withName("ChangeFailoverMode")
                 .withUri("/v3/{project_id}/instances/{instance_id}/failover/mode")
                 .withContentType("application/json");
 
@@ -138,6 +141,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ChangeFailoverStrategyRequest, ChangeFailoverStrategyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeFailoverStrategyRequest.class, ChangeFailoverStrategyResponse.class)
+                .withName("ChangeFailoverStrategy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/failover/strategy")
                 .withContentType("application/json");
 
@@ -178,6 +182,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ChangeOpsWindowRequest, ChangeOpsWindowResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeOpsWindowRequest.class, ChangeOpsWindowResponse.class)
+                .withName("ChangeOpsWindow")
                 .withUri("/v3/{project_id}/instances/{instance_id}/ops-window")
                 .withContentType("application/json");
 
@@ -218,6 +223,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<CreateConfigurationRequest, CreateConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConfigurationRequest.class, CreateConfigurationResponse.class)
+                .withName("CreateConfiguration")
                 .withUri("/v3/{project_id}/configurations")
                 .withContentType("application/json");
 
@@ -250,6 +256,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
+                .withName("CreateInstance")
                 .withUri("/v3/{project_id}/instances")
                 .withContentType("application/json");
 
@@ -282,6 +289,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteConfigurationRequest, DeleteConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteConfigurationRequest.class, DeleteConfigurationResponse.class)
+                .withName("DeleteConfiguration")
                 .withUri("/v3/{project_id}/configurations/{config_id}")
                 .withContentType("application/json");
 
@@ -314,6 +322,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
+                .withName("DeleteInstance")
                 .withUri("/v3/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -346,6 +355,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteManualBackupRequest, DeleteManualBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteManualBackupRequest.class, DeleteManualBackupResponse.class)
+                .withName("DeleteManualBackup")
                 .withUri("/v3/{project_id}/backups/{backup_id}")
                 .withContentType("application/json");
 
@@ -378,6 +388,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DoManualBackupRequest, DoManualBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DoManualBackupRequest.class, DoManualBackupResponse.class)
+                .withName("DoManualBackup")
                 .withUri("/v3/{project_id}/backups")
                 .withContentType("application/json");
 
@@ -410,6 +421,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DownloadSlowlogRequest, DownloadSlowlogResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DownloadSlowlogRequest.class, DownloadSlowlogResponse.class)
+                .withName("DownloadSlowlog")
                 .withUri("/v3/{project_id}/instances/{instance_id}/slowlog-download")
                 .withContentType("application/json");
 
@@ -450,6 +462,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<EnableConfigurationRequest, EnableConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, EnableConfigurationRequest.class, EnableConfigurationResponse.class)
+                .withName("EnableConfiguration")
                 .withUri("/v3/{project_id}/configurations/{config_id}/apply")
                 .withContentType("application/json");
 
@@ -490,6 +503,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListAuditlogsRequest, ListAuditlogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuditlogsRequest.class, ListAuditlogsResponse.class)
+                .withName("ListAuditlogs")
                 .withUri("/v3/{project_id}/instances/{instance_id}/auditlog")
                 .withContentType("application/json");
 
@@ -554,6 +568,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
+                .withName("ListBackups")
                 .withUri("/v3/{project_id}/backups")
                 .withContentType("application/json");
 
@@ -634,6 +649,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListCollationsRequest, ListCollationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCollationsRequest.class, ListCollationsResponse.class)
+                .withName("ListCollations")
                 .withUri("/v3/{project_id}/collations")
                 .withContentType("application/json");
 
@@ -658,6 +674,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListConfigurationsRequest, ListConfigurationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigurationsRequest.class, ListConfigurationsResponse.class)
+                .withName("ListConfigurations")
                 .withUri("/v3/{project_id}/configurations")
                 .withContentType("application/json");
 
@@ -682,6 +699,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListDatastoresRequest, ListDatastoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatastoresRequest.class, ListDatastoresResponse.class)
+                .withName("ListDatastores")
                 .withUri("/v3/{project_id}/datastores/{database_name}")
                 .withContentType("application/json");
 
@@ -714,6 +732,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListErrorLogsRequest, ListErrorLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListErrorLogsRequest.class, ListErrorLogsResponse.class)
+                .withName("ListErrorLogs")
                 .withUri("/v3/{project_id}/instances/{instance_id}/errorlog")
                 .withContentType("application/json");
 
@@ -786,6 +805,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
+                .withName("ListFlavors")
                 .withUri("/v3/{project_id}/flavors/{database_name}")
                 .withContentType("application/json");
 
@@ -834,6 +854,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
+                .withName("ListInstances")
                 .withUri("/v3/{project_id}/instances")
                 .withContentType("application/json");
 
@@ -930,6 +951,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListJobInfoRequest, ListJobInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobInfoRequest.class, ListJobInfoResponse.class)
+                .withName("ListJobInfo")
                 .withUri("/v3/{project_id}/jobs")
                 .withContentType("application/json");
 
@@ -962,6 +984,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListJobInfoDetailRequest, ListJobInfoDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobInfoDetailRequest.class, ListJobInfoDetailResponse.class)
+                .withName("ListJobInfoDetail")
                 .withUri("/v3/{project_id}/instances/{instance_id}/tasklist/detail")
                 .withContentType("application/json");
 
@@ -1010,6 +1033,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListOffSiteBackupsRequest, ListOffSiteBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOffSiteBackupsRequest.class, ListOffSiteBackupsResponse.class)
+                .withName("ListOffSiteBackups")
                 .withUri("/v3/{project_id}/offsite-backups")
                 .withContentType("application/json");
 
@@ -1090,6 +1114,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListOffSiteInstancesRequest, ListOffSiteInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOffSiteInstancesRequest.class, ListOffSiteInstancesResponse.class)
+                .withName("ListOffSiteInstances")
                 .withUri("/v3/backups/offsite-backup-instance")
                 .withContentType("application/json");
 
@@ -1114,6 +1139,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListOffSiteRestoreTimesRequest, ListOffSiteRestoreTimesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOffSiteRestoreTimesRequest.class, ListOffSiteRestoreTimesResponse.class)
+                .withName("ListOffSiteRestoreTimes")
                 .withUri("/v3/{project_id}/instances/{instance_id}/offsite-restore-time")
                 .withContentType("application/json");
 
@@ -1154,6 +1180,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
+                .withName("ListProjectTags")
                 .withUri("/v3/{project_id}/tags")
                 .withContentType("application/json");
 
@@ -1178,6 +1205,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListRestoreTimesRequest, ListRestoreTimesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRestoreTimesRequest.class, ListRestoreTimesResponse.class)
+                .withName("ListRestoreTimes")
                 .withUri("/v3/{project_id}/instances/{instance_id}/restore-time")
                 .withContentType("application/json");
 
@@ -1218,6 +1246,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListSlowLogsRequest, ListSlowLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSlowLogsRequest.class, ListSlowLogsResponse.class)
+                .withName("ListSlowLogs")
                 .withUri("/v3/{project_id}/instances/{instance_id}/slowlog")
                 .withContentType("application/json");
 
@@ -1290,6 +1319,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListSlowlogStatisticsRequest, ListSlowlogStatisticsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSlowlogStatisticsRequest.class, ListSlowlogStatisticsResponse.class)
+                .withName("ListSlowlogStatistics")
                 .withUri("/v3/{project_id}/instances/{instance_id}/slowlog/statistics")
                 .withContentType("application/json");
 
@@ -1362,6 +1392,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListStorageTypesRequest, ListStorageTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStorageTypesRequest.class, ListStorageTypesResponse.class)
+                .withName("ListStorageTypes")
                 .withUri("/v3/{project_id}/storage-type/{database_name}")
                 .withContentType("application/json");
 
@@ -1410,6 +1441,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<MigrateFollowerRequest, MigrateFollowerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateFollowerRequest.class, MigrateFollowerResponse.class)
+                .withName("MigrateFollower")
                 .withUri("/v3/{project_id}/instances/{instance_id}/migrateslave")
                 .withContentType("application/json");
 
@@ -1450,6 +1482,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ModifyConfigurationRequest, ModifyConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyConfigurationRequest.class, ModifyConfigurationResponse.class)
+                .withName("ModifyConfiguration")
                 .withUri("/v3/{project_id}/configurations/{config_id}")
                 .withContentType("application/json");
 
@@ -1490,6 +1523,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyInstanceConfigurationRequest.class, ModifyInstanceConfigurationResponse.class)
+                .withName("ModifyInstanceConfiguration")
                 .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
                 .withContentType("application/json");
 
@@ -1530,6 +1564,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ResetPwdRequest, ResetPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPwdRequest.class, ResetPwdResponse.class)
+                .withName("ResetPwd")
                 .withUri("/v3/{project_id}/instances/{instance_id}/password")
                 .withContentType("application/json");
 
@@ -1570,6 +1605,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<RestoreTablesRequest, RestoreTablesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreTablesRequest.class, RestoreTablesResponse.class)
+                .withName("RestoreTables")
                 .withUri("/v3/{project_id}/instances/{instance_id}/restore/tables")
                 .withContentType("application/json");
 
@@ -1610,6 +1646,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreToExistingInstanceRequest.class, RestoreToExistingInstanceResponse.class)
+                .withName("RestoreToExistingInstance")
                 .withUri("/v3/{project_id}/instances/recovery")
                 .withContentType("application/json");
 
@@ -1642,6 +1679,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetAuditlogPolicyRequest.class, SetAuditlogPolicyResponse.class)
+                .withName("SetAuditlogPolicy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/auditlog-policy")
                 .withContentType("application/json");
 
@@ -1682,6 +1720,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<SetBackupPolicyRequest, SetBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetBackupPolicyRequest.class, SetBackupPolicyResponse.class)
+                .withName("SetBackupPolicy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/backups/policy")
                 .withContentType("application/json");
 
@@ -1722,6 +1761,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetOffSiteBackupPolicyRequest.class, SetOffSiteBackupPolicyResponse.class)
+                .withName("SetOffSiteBackupPolicy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy")
                 .withContentType("application/json");
 
@@ -1762,6 +1802,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<SetSecurityGroupRequest, SetSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetSecurityGroupRequest.class, SetSecurityGroupResponse.class)
+                .withName("SetSecurityGroup")
                 .withUri("/v3/{project_id}/instances/{instance_id}/security-group")
                 .withContentType("application/json");
 
@@ -1802,6 +1843,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowAuditlogDownloadLinkRequest, ShowAuditlogDownloadLinkResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowAuditlogDownloadLinkRequest.class, ShowAuditlogDownloadLinkResponse.class)
+                .withName("ShowAuditlogDownloadLink")
                 .withUri("/v3/{project_id}/instances/{instance_id}/auditlog-links")
                 .withContentType("application/json");
 
@@ -1842,6 +1884,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuditlogPolicyRequest.class, ShowAuditlogPolicyResponse.class)
+                .withName("ShowAuditlogPolicy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/auditlog-policy")
                 .withContentType("application/json");
 
@@ -1874,6 +1917,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupDownloadLinkRequest.class, ShowBackupDownloadLinkResponse.class)
+                .withName("ShowBackupDownloadLink")
                 .withUri("/v3/{project_id}/backup-files")
                 .withContentType("application/json");
 
@@ -1906,6 +1950,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowBackupPolicyRequest, ShowBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupPolicyRequest.class, ShowBackupPolicyResponse.class)
+                .withName("ShowBackupPolicy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/backups/policy")
                 .withContentType("application/json");
 
@@ -1938,6 +1983,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowConfigurationRequest, ShowConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowConfigurationRequest.class, ShowConfigurationResponse.class)
+                .withName("ShowConfiguration")
                 .withUri("/v3/{project_id}/configurations/{config_id}")
                 .withContentType("application/json");
 
@@ -1970,6 +2016,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceConfigurationRequest.class, ShowInstanceConfigurationResponse.class)
+                .withName("ShowInstanceConfiguration")
                 .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
                 .withContentType("application/json");
 
@@ -2002,6 +2049,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ShowOffSiteBackupPolicyRequest, ShowOffSiteBackupPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOffSiteBackupPolicyRequest.class, ShowOffSiteBackupPolicyResponse.class)
+                .withName("ShowOffSiteBackupPolicy")
                 .withUri("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy")
                 .withContentType("application/json");
 
@@ -2034,6 +2082,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<StartFailoverRequest, StartFailoverResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StartFailoverRequest.class, StartFailoverResponse.class)
+                .withName("StartFailover")
                 .withUri("/v3/{project_id}/instances/{instance_id}/failover")
                 .withContentType("application/json");
 
@@ -2066,6 +2115,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<StartInstanceActionRequest, StartInstanceActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StartInstanceActionRequest.class, StartInstanceActionResponse.class)
+                .withName("StartInstanceAction")
                 .withUri("/v3/{project_id}/instances/{instance_id}/action")
                 .withContentType("application/json");
 
@@ -2106,6 +2156,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<SwitchSslRequest, SwitchSslResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SwitchSslRequest.class, SwitchSslResponse.class)
+                .withName("SwitchSsl")
                 .withUri("/v3/{project_id}/instances/{instance_id}/ssl")
                 .withContentType("application/json");
 
@@ -2146,6 +2197,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<UpdateDataIpRequest, UpdateDataIpResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDataIpRequest.class, UpdateDataIpResponse.class)
+                .withName("UpdateDataIp")
                 .withUri("/v3/{project_id}/instances/{instance_id}/ip")
                 .withContentType("application/json");
 
@@ -2186,6 +2238,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<UpdatePortRequest, UpdatePortResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePortRequest.class, UpdatePortResponse.class)
+                .withName("UpdatePort")
                 .withUri("/v3/{project_id}/instances/{instance_id}/port")
                 .withContentType("application/json");
 
@@ -2226,6 +2279,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<AllowDbUserPrivilegeRequest, AllowDbUserPrivilegeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AllowDbUserPrivilegeRequest.class, AllowDbUserPrivilegeResponse.class)
+                .withName("AllowDbUserPrivilege")
                 .withUri("/v3/{project_id}/instances/{instance_id}/db_privilege")
                 .withContentType("application/json");
 
@@ -2266,6 +2320,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<CreateDatabaseRequest, CreateDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatabaseRequest.class, CreateDatabaseResponse.class)
+                .withName("CreateDatabase")
                 .withUri("/v3/{project_id}/instances/{instance_id}/database")
                 .withContentType("application/json");
 
@@ -2306,6 +2361,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<CreateDbUserRequest, CreateDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDbUserRequest.class, CreateDbUserResponse.class)
+                .withName("CreateDbUser")
                 .withUri("/v3/{project_id}/instances/{instance_id}/db_user")
                 .withContentType("application/json");
 
@@ -2346,6 +2402,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
+                .withName("DeleteDatabase")
                 .withUri("/v3/{project_id}/instances/{instance_id}/database/{db_name}")
                 .withContentType("application/json");
 
@@ -2386,6 +2443,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<DeleteDbUserRequest, DeleteDbUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDbUserRequest.class, DeleteDbUserResponse.class)
+                .withName("DeleteDbUser")
                 .withUri("/v3/{project_id}/instances/{instance_id}/db_user/{user_name}")
                 .withContentType("application/json");
 
@@ -2426,6 +2484,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListAuthorizedDatabasesRequest, ListAuthorizedDatabasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorizedDatabasesRequest.class, ListAuthorizedDatabasesResponse.class)
+                .withName("ListAuthorizedDatabases")
                 .withUri("/v3/{project_id}/instances/{instance_id}/db_user/database")
                 .withContentType("application/json");
 
@@ -2482,6 +2541,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListAuthorizedDbUsersRequest, ListAuthorizedDbUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorizedDbUsersRequest.class, ListAuthorizedDbUsersResponse.class)
+                .withName("ListAuthorizedDbUsers")
                 .withUri("/v3/{project_id}/instances/{instance_id}/database/db_user")
                 .withContentType("application/json");
 
@@ -2538,6 +2598,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
+                .withName("ListDatabases")
                 .withUri("/v3/{project_id}/instances/{instance_id}/database/detail")
                 .withContentType("application/json");
 
@@ -2586,6 +2647,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<ListDbUsersRequest, ListDbUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDbUsersRequest.class, ListDbUsersResponse.class)
+                .withName("ListDbUsers")
                 .withUri("/v3/{project_id}/instances/{instance_id}/db_user/detail")
                 .withContentType("application/json");
 
@@ -2634,6 +2696,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<RevokeRequest, RevokeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RevokeRequest.class, RevokeResponse.class)
+                .withName("Revoke")
                 .withUri("/v3/{project_id}/instances/{instance_id}/db_privilege")
                 .withContentType("application/json");
 
@@ -2674,6 +2737,7 @@ public class RdsMeta {
         // basic
         HttpRequestDef.Builder<SetDbUserPwdRequest, SetDbUserPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SetDbUserPwdRequest.class, SetDbUserPwdResponse.class)
+                .withName("SetDbUserPwd")
                 .withUri("/v3/{project_id}/instances/{instance_id}/db_user/resetpwd")
                 .withContentType("application/json");
 

@@ -18,6 +18,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<AssociateAgencyWithAllProjectsPermissionRequest, AssociateAgencyWithAllProjectsPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AssociateAgencyWithAllProjectsPermissionRequest.class, AssociateAgencyWithAllProjectsPermissionResponse.class)
+                .withName("AssociateAgencyWithAllProjectsPermission")
                 .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -58,6 +59,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<AssociateAgencyWithDomainPermissionRequest, AssociateAgencyWithDomainPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AssociateAgencyWithDomainPermissionRequest.class, AssociateAgencyWithDomainPermissionResponse.class)
+                .withName("AssociateAgencyWithDomainPermission")
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -98,6 +100,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<AssociateAgencyWithProjectPermissionRequest, AssociateAgencyWithProjectPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AssociateAgencyWithProjectPermissionRequest.class, AssociateAgencyWithProjectPermissionResponse.class)
+                .withName("AssociateAgencyWithProjectPermission")
                 .withUri("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -138,6 +141,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CheckAllProjectsPermissionForAgencyRequest, CheckAllProjectsPermissionForAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.HEAD, CheckAllProjectsPermissionForAgencyRequest.class, CheckAllProjectsPermissionForAgencyResponse.class)
+                .withName("CheckAllProjectsPermissionForAgency")
                 .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -178,6 +182,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CheckDomainPermissionForAgencyRequest, CheckDomainPermissionForAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.HEAD, CheckDomainPermissionForAgencyRequest.class, CheckDomainPermissionForAgencyResponse.class)
+                .withName("CheckDomainPermissionForAgency")
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -218,6 +223,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CheckProjectPermissionForAgencyRequest, CheckProjectPermissionForAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.HEAD, CheckProjectPermissionForAgencyRequest.class, CheckProjectPermissionForAgencyResponse.class)
+                .withName("CheckProjectPermissionForAgency")
                 .withUri("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -258,6 +264,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
+                .withName("CreateAgency")
                 .withUri("/v3.0/OS-AGENCY/agencies")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -282,6 +289,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateAgencyCustomPolicyRequest, CreateAgencyCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAgencyCustomPolicyRequest.class, CreateAgencyCustomPolicyResponse.class)
+                .withName("CreateAgencyCustomPolicy")
                 .withUri("/v3.0/OS-ROLE/roles")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -306,6 +314,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCloudServiceCustomPolicyRequest.class, CreateCloudServiceCustomPolicyResponse.class)
+                .withName("CreateCloudServiceCustomPolicy")
                 .withUri("/v3.0/OS-ROLE/roles")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -330,6 +339,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateLoginTokenRequest, CreateLoginTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLoginTokenRequest.class, CreateLoginTokenResponse.class)
+                .withName("CreateLoginToken")
                 .withUri("/v3.0/OS-AUTH/securitytoken/logintokens")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -363,6 +373,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateMetadataRequest, CreateMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMetadataRequest.class, CreateMetadataResponse.class)
+                .withName("CreateMetadata")
                 .withUri("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -403,6 +414,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUnscopeTokenByIdpInitiatedRequest.class, CreateUnscopeTokenByIdpInitiatedResponse.class)
+                .withName("CreateUnscopeTokenByIdpInitiated")
                 .withUri("/v3.0/OS-FEDERATION/tokens")
                 .withContentType("application/x-www-form-urlencoded");
 
@@ -436,6 +448,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<DeleteAgencyRequest, DeleteAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgencyRequest.class, DeleteAgencyResponse.class)
+                .withName("DeleteAgency")
                 .withUri("/v3.0/OS-AGENCY/agencies/{agency_id}")
                 .withContentType("application/json");
 
@@ -460,6 +473,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomPolicyRequest.class, DeleteCustomPolicyResponse.class)
+                .withName("DeleteCustomPolicy")
                 .withUri("/v3.0/OS-ROLE/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -484,6 +498,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainGroupInheritedRoleRequest.class, DeleteDomainGroupInheritedRoleResponse.class)
+                .withName("DeleteDomainGroupInheritedRole")
                 .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -524,6 +539,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneAddUserToGroupRequest, KeystoneAddUserToGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, KeystoneAddUserToGroupRequest.class, KeystoneAddUserToGroupResponse.class)
+                .withName("KeystoneAddUserToGroup")
                 .withUri("/v3/groups/{group_id}/users/{user_id}")
                 .withContentType("application/json");
 
@@ -556,6 +572,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneAssociateGroupWithDomainPermissionRequest, KeystoneAssociateGroupWithDomainPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, KeystoneAssociateGroupWithDomainPermissionRequest.class, KeystoneAssociateGroupWithDomainPermissionResponse.class)
+                .withName("KeystoneAssociateGroupWithDomainPermission")
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -596,6 +613,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneAssociateGroupWithProjectPermissionRequest, KeystoneAssociateGroupWithProjectPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, KeystoneAssociateGroupWithProjectPermissionRequest.class, KeystoneAssociateGroupWithProjectPermissionResponse.class)
+                .withName("KeystoneAssociateGroupWithProjectPermission")
                 .withUri("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -636,6 +654,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCheckDomainPermissionForGroupRequest, KeystoneCheckDomainPermissionForGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.HEAD, KeystoneCheckDomainPermissionForGroupRequest.class, KeystoneCheckDomainPermissionForGroupResponse.class)
+                .withName("KeystoneCheckDomainPermissionForGroup")
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -676,6 +695,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCheckProjectPermissionForGroupRequest, KeystoneCheckProjectPermissionForGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.HEAD, KeystoneCheckProjectPermissionForGroupRequest.class, KeystoneCheckProjectPermissionForGroupResponse.class)
+                .withName("KeystoneCheckProjectPermissionForGroup")
                 .withUri("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -716,6 +736,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCheckUserInGroupRequest, KeystoneCheckUserInGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.HEAD, KeystoneCheckUserInGroupRequest.class, KeystoneCheckUserInGroupResponse.class)
+                .withName("KeystoneCheckUserInGroup")
                 .withUri("/v3/groups/{group_id}/users/{user_id}")
                 .withContentType("application/json");
 
@@ -748,6 +769,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCheckroleForGroupRequest, KeystoneCheckroleForGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.HEAD, KeystoneCheckroleForGroupRequest.class, KeystoneCheckroleForGroupResponse.class)
+                .withName("KeystoneCheckroleForGroup")
                 .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -788,6 +810,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateGroupRequest, KeystoneCreateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateGroupRequest.class, KeystoneCreateGroupResponse.class)
+                .withName("KeystoneCreateGroup")
                 .withUri("/v3/groups")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -812,6 +835,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateIdentityProviderRequest, KeystoneCreateIdentityProviderResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, KeystoneCreateIdentityProviderRequest.class, KeystoneCreateIdentityProviderResponse.class)
+                .withName("KeystoneCreateIdentityProvider")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -844,6 +868,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateMappingRequest, KeystoneCreateMappingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, KeystoneCreateMappingRequest.class, KeystoneCreateMappingResponse.class)
+                .withName("KeystoneCreateMapping")
                 .withUri("/v3/OS-FEDERATION/mappings/{id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -876,6 +901,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateProjectRequest.class, KeystoneCreateProjectResponse.class)
+                .withName("KeystoneCreateProject")
                 .withUri("/v3/projects")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -900,6 +926,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateProtocolRequest, KeystoneCreateProtocolResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, KeystoneCreateProtocolRequest.class, KeystoneCreateProtocolResponse.class)
+                .withName("KeystoneCreateProtocol")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -940,6 +967,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateScopedTokenRequest, KeystoneCreateScopedTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateScopedTokenRequest.class, KeystoneCreateScopedTokenResponse.class)
+                .withName("KeystoneCreateScopedToken")
                 .withUri("/v3/auth/tokens")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -973,6 +1001,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteGroupRequest, KeystoneDeleteGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteGroupRequest.class, KeystoneDeleteGroupResponse.class)
+                .withName("KeystoneDeleteGroup")
                 .withUri("/v3/groups/{group_id}")
                 .withContentType("application/json");
 
@@ -997,6 +1026,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteIdentityProviderRequest, KeystoneDeleteIdentityProviderResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteIdentityProviderRequest.class, KeystoneDeleteIdentityProviderResponse.class)
+                .withName("KeystoneDeleteIdentityProvider")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{id}")
                 .withContentType("application/json");
 
@@ -1021,6 +1051,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteMappingRequest, KeystoneDeleteMappingResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteMappingRequest.class, KeystoneDeleteMappingResponse.class)
+                .withName("KeystoneDeleteMapping")
                 .withUri("/v3/OS-FEDERATION/mappings/{id}")
                 .withContentType("application/json");
 
@@ -1045,6 +1076,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteProtocolRequest, KeystoneDeleteProtocolResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteProtocolRequest.class, KeystoneDeleteProtocolResponse.class)
+                .withName("KeystoneDeleteProtocol")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}")
                 .withContentType("application/json");
 
@@ -1077,6 +1109,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListAllProjectPermissionsForGroupRequest, KeystoneListAllProjectPermissionsForGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListAllProjectPermissionsForGroupRequest.class, KeystoneListAllProjectPermissionsForGroupResponse.class)
+                .withName("KeystoneListAllProjectPermissionsForGroup")
                 .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -1109,6 +1142,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListAuthDomainsRequest.class, KeystoneListAuthDomainsResponse.class)
+                .withName("KeystoneListAuthDomains")
                 .withUri("/v3/auth/domains")
                 .withContentType("application/json");
 
@@ -1125,6 +1159,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListAuthProjectsRequest, KeystoneListAuthProjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListAuthProjectsRequest.class, KeystoneListAuthProjectsResponse.class)
+                .withName("KeystoneListAuthProjects")
                 .withUri("/v3/auth/projects")
                 .withContentType("application/json");
 
@@ -1141,6 +1176,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListDomainPermissionsForGroupRequest, KeystoneListDomainPermissionsForGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListDomainPermissionsForGroupRequest.class, KeystoneListDomainPermissionsForGroupResponse.class)
+                .withName("KeystoneListDomainPermissionsForGroup")
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles")
                 .withContentType("application/json");
 
@@ -1173,6 +1209,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListEndpointsRequest, KeystoneListEndpointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListEndpointsRequest.class, KeystoneListEndpointsResponse.class)
+                .withName("KeystoneListEndpoints")
                 .withUri("/v3/endpoints")
                 .withContentType("application/json");
 
@@ -1205,6 +1242,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListGroupsRequest, KeystoneListGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListGroupsRequest.class, KeystoneListGroupsResponse.class)
+                .withName("KeystoneListGroups")
                 .withUri("/v3/groups")
                 .withContentType("application/json");
 
@@ -1237,6 +1275,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListIdentityProvidersRequest, KeystoneListIdentityProvidersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListIdentityProvidersRequest.class, KeystoneListIdentityProvidersResponse.class)
+                .withName("KeystoneListIdentityProviders")
                 .withUri("/v3/OS-FEDERATION/identity_providers")
                 .withContentType("application/json");
 
@@ -1253,6 +1292,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListMappingsRequest, KeystoneListMappingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListMappingsRequest.class, KeystoneListMappingsResponse.class)
+                .withName("KeystoneListMappings")
                 .withUri("/v3/OS-FEDERATION/mappings")
                 .withContentType("application/json");
 
@@ -1269,6 +1309,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListPermissionsRequest, KeystoneListPermissionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListPermissionsRequest.class, KeystoneListPermissionsResponse.class)
+                .withName("KeystoneListPermissions")
                 .withUri("/v3/roles")
                 .withContentType("application/json");
 
@@ -1317,6 +1358,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListProjectPermissionsForGroupRequest, KeystoneListProjectPermissionsForGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListProjectPermissionsForGroupRequest.class, KeystoneListProjectPermissionsForGroupResponse.class)
+                .withName("KeystoneListProjectPermissionsForGroup")
                 .withUri("/v3/projects/{project_id}/groups/{group_id}/roles")
                 .withContentType("application/json");
 
@@ -1349,6 +1391,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListProjectsRequest, KeystoneListProjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListProjectsRequest.class, KeystoneListProjectsResponse.class)
+                .withName("KeystoneListProjects")
                 .withUri("/v3/projects")
                 .withContentType("application/json");
 
@@ -1421,6 +1464,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListProjectsForUserRequest, KeystoneListProjectsForUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListProjectsForUserRequest.class, KeystoneListProjectsForUserResponse.class)
+                .withName("KeystoneListProjectsForUser")
                 .withUri("/v3/users/{user_id}/projects")
                 .withContentType("application/json");
 
@@ -1445,6 +1489,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListProtocolsRequest, KeystoneListProtocolsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListProtocolsRequest.class, KeystoneListProtocolsResponse.class)
+                .withName("KeystoneListProtocols")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols")
                 .withContentType("application/json");
 
@@ -1469,6 +1514,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListRegionsRequest, KeystoneListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListRegionsRequest.class, KeystoneListRegionsResponse.class)
+                .withName("KeystoneListRegions")
                 .withUri("/v3/regions")
                 .withContentType("application/json");
 
@@ -1485,6 +1531,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListServicesRequest, KeystoneListServicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListServicesRequest.class, KeystoneListServicesResponse.class)
+                .withName("KeystoneListServices")
                 .withUri("/v3/services")
                 .withContentType("application/json");
 
@@ -1509,6 +1556,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListUsersForGroupByAdminRequest.class, KeystoneListUsersForGroupByAdminResponse.class)
+                .withName("KeystoneListUsersForGroupByAdmin")
                 .withUri("/v3/groups/{group_id}/users")
                 .withContentType("application/json");
 
@@ -1533,6 +1581,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListVersionsRequest, KeystoneListVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListVersionsRequest.class, KeystoneListVersionsResponse.class)
+                .withName("KeystoneListVersions")
                 .withUri("/")
                 .withContentType("application/json");
 
@@ -1549,6 +1598,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneRemoveDomainPermissionFromGroupRequest, KeystoneRemoveDomainPermissionFromGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneRemoveDomainPermissionFromGroupRequest.class, KeystoneRemoveDomainPermissionFromGroupResponse.class)
+                .withName("KeystoneRemoveDomainPermissionFromGroup")
                 .withUri("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -1589,6 +1639,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneRemoveProjectPermissionFromGroupRequest, KeystoneRemoveProjectPermissionFromGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneRemoveProjectPermissionFromGroupRequest.class, KeystoneRemoveProjectPermissionFromGroupResponse.class)
+                .withName("KeystoneRemoveProjectPermissionFromGroup")
                 .withUri("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -1629,6 +1680,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneRemoveUserFromGroupRequest, KeystoneRemoveUserFromGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneRemoveUserFromGroupRequest.class, KeystoneRemoveUserFromGroupResponse.class)
+                .withName("KeystoneRemoveUserFromGroup")
                 .withUri("/v3/groups/{group_id}/users/{user_id}")
                 .withContentType("application/json");
 
@@ -1661,6 +1713,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowCatalogRequest, KeystoneShowCatalogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowCatalogRequest.class, KeystoneShowCatalogResponse.class)
+                .withName("KeystoneShowCatalog")
                 .withUri("/v3/auth/catalog")
                 .withContentType("application/json");
 
@@ -1677,6 +1730,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowEndpointRequest, KeystoneShowEndpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowEndpointRequest.class, KeystoneShowEndpointResponse.class)
+                .withName("KeystoneShowEndpoint")
                 .withUri("/v3/endpoints/{endpoint_id}")
                 .withContentType("application/json");
 
@@ -1701,6 +1755,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowGroupRequest, KeystoneShowGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowGroupRequest.class, KeystoneShowGroupResponse.class)
+                .withName("KeystoneShowGroup")
                 .withUri("/v3/groups/{group_id}")
                 .withContentType("application/json");
 
@@ -1725,6 +1780,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowIdentityProviderRequest, KeystoneShowIdentityProviderResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowIdentityProviderRequest.class, KeystoneShowIdentityProviderResponse.class)
+                .withName("KeystoneShowIdentityProvider")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{id}")
                 .withContentType("application/json");
 
@@ -1749,6 +1805,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowMappingRequest, KeystoneShowMappingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowMappingRequest.class, KeystoneShowMappingResponse.class)
+                .withName("KeystoneShowMapping")
                 .withUri("/v3/OS-FEDERATION/mappings/{id}")
                 .withContentType("application/json");
 
@@ -1773,6 +1830,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowPermissionRequest, KeystoneShowPermissionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowPermissionRequest.class, KeystoneShowPermissionResponse.class)
+                .withName("KeystoneShowPermission")
                 .withUri("/v3/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -1797,6 +1855,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowProjectRequest, KeystoneShowProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowProjectRequest.class, KeystoneShowProjectResponse.class)
+                .withName("KeystoneShowProject")
                 .withUri("/v3/projects/{project_id}")
                 .withContentType("application/json");
 
@@ -1821,6 +1880,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowProtocolRequest, KeystoneShowProtocolResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowProtocolRequest.class, KeystoneShowProtocolResponse.class)
+                .withName("KeystoneShowProtocol")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}")
                 .withContentType("application/json");
 
@@ -1853,6 +1913,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowRegionRequest, KeystoneShowRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowRegionRequest.class, KeystoneShowRegionResponse.class)
+                .withName("KeystoneShowRegion")
                 .withUri("/v3/regions/{region_id}")
                 .withContentType("application/json");
 
@@ -1877,6 +1938,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowSecurityComplianceRequest, KeystoneShowSecurityComplianceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowSecurityComplianceRequest.class, KeystoneShowSecurityComplianceResponse.class)
+                .withName("KeystoneShowSecurityCompliance")
                 .withUri("/v3/domains/{domain_id}/config/security_compliance")
                 .withContentType("application/json");
 
@@ -1901,6 +1963,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowSecurityComplianceByOptionRequest, KeystoneShowSecurityComplianceByOptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowSecurityComplianceByOptionRequest.class, KeystoneShowSecurityComplianceByOptionResponse.class)
+                .withName("KeystoneShowSecurityComplianceByOption")
                 .withUri("/v3/domains/{domain_id}/config/security_compliance/{option}")
                 .withContentType("application/json");
 
@@ -1933,6 +1996,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowServiceRequest, KeystoneShowServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowServiceRequest.class, KeystoneShowServiceResponse.class)
+                .withName("KeystoneShowService")
                 .withUri("/v3/services/{service_id}")
                 .withContentType("application/json");
 
@@ -1957,6 +2021,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowVersionRequest, KeystoneShowVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowVersionRequest.class, KeystoneShowVersionResponse.class)
+                .withName("KeystoneShowVersion")
                 .withUri("/v3")
                 .withContentType("application/json");
 
@@ -1973,6 +2038,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateGroupRequest, KeystoneUpdateGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateGroupRequest.class, KeystoneUpdateGroupResponse.class)
+                .withName("KeystoneUpdateGroup")
                 .withUri("/v3/groups/{group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2005,6 +2071,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateIdentityProviderRequest, KeystoneUpdateIdentityProviderResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateIdentityProviderRequest.class, KeystoneUpdateIdentityProviderResponse.class)
+                .withName("KeystoneUpdateIdentityProvider")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2037,6 +2104,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateMappingRequest, KeystoneUpdateMappingResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateMappingRequest.class, KeystoneUpdateMappingResponse.class)
+                .withName("KeystoneUpdateMapping")
                 .withUri("/v3/OS-FEDERATION/mappings/{id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2069,6 +2137,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateProjectRequest, KeystoneUpdateProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateProjectRequest.class, KeystoneUpdateProjectResponse.class)
+                .withName("KeystoneUpdateProject")
                 .withUri("/v3/projects/{project_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2101,6 +2170,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateProtocolRequest, KeystoneUpdateProtocolResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateProtocolRequest.class, KeystoneUpdateProtocolResponse.class)
+                .withName("KeystoneUpdateProtocol")
                 .withUri("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2141,6 +2211,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
+                .withName("ListAgencies")
                 .withUri("/v3.0/OS-AGENCY/agencies")
                 .withContentType("application/json");
 
@@ -2181,6 +2252,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListAllProjectsPermissionsForAgencyRequest, ListAllProjectsPermissionsForAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAllProjectsPermissionsForAgencyRequest.class, ListAllProjectsPermissionsForAgencyResponse.class)
+                .withName("ListAllProjectsPermissionsForAgency")
                 .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -2213,6 +2285,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListCustomPoliciesRequest, ListCustomPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomPoliciesRequest.class, ListCustomPoliciesResponse.class)
+                .withName("ListCustomPolicies")
                 .withUri("/v3.0/OS-ROLE/roles")
                 .withContentType("application/json");
 
@@ -2245,6 +2318,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListDomainPermissionsForAgencyRequest, ListDomainPermissionsForAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainPermissionsForAgencyRequest.class, ListDomainPermissionsForAgencyResponse.class)
+                .withName("ListDomainPermissionsForAgency")
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles")
                 .withContentType("application/json");
 
@@ -2277,6 +2351,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListProjectPermissionsForAgencyRequest, ListProjectPermissionsForAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectPermissionsForAgencyRequest.class, ListProjectPermissionsForAgencyResponse.class)
+                .withName("ListProjectPermissionsForAgency")
                 .withUri("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles")
                 .withContentType("application/json");
 
@@ -2309,6 +2384,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<RemoveAllProjectsPermissionFromAgencyRequest, RemoveAllProjectsPermissionFromAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemoveAllProjectsPermissionFromAgencyRequest.class, RemoveAllProjectsPermissionFromAgencyResponse.class)
+                .withName("RemoveAllProjectsPermissionFromAgency")
                 .withUri("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -2349,6 +2425,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<RemoveDomainPermissionFromAgencyRequest, RemoveDomainPermissionFromAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemoveDomainPermissionFromAgencyRequest.class, RemoveDomainPermissionFromAgencyResponse.class)
+                .withName("RemoveDomainPermissionFromAgency")
                 .withUri("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -2389,6 +2466,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<RemoveProjectPermissionFromAgencyRequest, RemoveProjectPermissionFromAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, RemoveProjectPermissionFromAgencyRequest.class, RemoveProjectPermissionFromAgencyResponse.class)
+                .withName("RemoveProjectPermissionFromAgency")
                 .withUri("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -2429,6 +2507,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
+                .withName("ShowAgency")
                 .withUri("/v3.0/OS-AGENCY/agencies/{agency_id}")
                 .withContentType("application/json");
 
@@ -2453,6 +2532,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowCustomPolicyRequest, ShowCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCustomPolicyRequest.class, ShowCustomPolicyResponse.class)
+                .withName("ShowCustomPolicy")
                 .withUri("/v3.0/OS-ROLE/roles/{role_id}")
                 .withContentType("application/json");
 
@@ -2477,6 +2557,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowDomainApiAclPolicyRequest, ShowDomainApiAclPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainApiAclPolicyRequest.class, ShowDomainApiAclPolicyResponse.class)
+                .withName("ShowDomainApiAclPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy")
                 .withContentType("application/json");
 
@@ -2501,6 +2582,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowDomainConsoleAclPolicyRequest, ShowDomainConsoleAclPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainConsoleAclPolicyRequest.class, ShowDomainConsoleAclPolicyResponse.class)
+                .withName("ShowDomainConsoleAclPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy")
                 .withContentType("application/json");
 
@@ -2525,6 +2607,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowDomainLoginPolicyRequest, ShowDomainLoginPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainLoginPolicyRequest.class, ShowDomainLoginPolicyResponse.class)
+                .withName("ShowDomainLoginPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy")
                 .withContentType("application/json");
 
@@ -2549,6 +2632,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowDomainPasswordPolicyRequest, ShowDomainPasswordPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainPasswordPolicyRequest.class, ShowDomainPasswordPolicyResponse.class)
+                .withName("ShowDomainPasswordPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy")
                 .withContentType("application/json");
 
@@ -2573,6 +2657,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowDomainProtectPolicyRequest, ShowDomainProtectPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainProtectPolicyRequest.class, ShowDomainProtectPolicyResponse.class)
+                .withName("ShowDomainProtectPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy")
                 .withContentType("application/json");
 
@@ -2597,6 +2682,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowDomainQuotaRequest, ShowDomainQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDomainQuotaRequest.class, ShowDomainQuotaResponse.class)
+                .withName("ShowDomainQuota")
                 .withUri("/v3.0/OS-QUOTA/domains/{domain_id}")
                 .withContentType("application/json");
 
@@ -2629,6 +2715,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowMetadataRequest, ShowMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMetadataRequest.class, ShowMetadataResponse.class)
+                .withName("ShowMetadata")
                 .withUri("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata")
                 .withContentType("application/json");
 
@@ -2661,6 +2748,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectDetailsAndStatusRequest, ShowProjectDetailsAndStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectDetailsAndStatusRequest.class, ShowProjectDetailsAndStatusResponse.class)
+                .withName("ShowProjectDetailsAndStatus")
                 .withUri("/v3-ext/projects/{project_id}")
                 .withContentType("application/json");
 
@@ -2685,6 +2773,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectQuotaRequest, ShowProjectQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectQuotaRequest.class, ShowProjectQuotaResponse.class)
+                .withName("ShowProjectQuota")
                 .withUri("/v3.0/OS-QUOTA/projects/{project_id}")
                 .withContentType("application/json");
 
@@ -2709,6 +2798,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateAgencyRequest, UpdateAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAgencyRequest.class, UpdateAgencyResponse.class)
+                .withName("UpdateAgency")
                 .withUri("/v3.0/OS-AGENCY/agencies/{agency_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2741,6 +2831,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateAgencyCustomPolicyRequest, UpdateAgencyCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateAgencyCustomPolicyRequest.class, UpdateAgencyCustomPolicyResponse.class)
+                .withName("UpdateAgencyCustomPolicy")
                 .withUri("/v3.0/OS-ROLE/roles/{role_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2773,6 +2864,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateCloudServiceCustomPolicyRequest, UpdateCloudServiceCustomPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateCloudServiceCustomPolicyRequest.class, UpdateCloudServiceCustomPolicyResponse.class)
+                .withName("UpdateCloudServiceCustomPolicy")
                 .withUri("/v3.0/OS-ROLE/roles/{role_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2805,6 +2897,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateDomainApiAclPolicyRequest, UpdateDomainApiAclPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainApiAclPolicyRequest.class, UpdateDomainApiAclPolicyResponse.class)
+                .withName("UpdateDomainApiAclPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2837,6 +2930,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateDomainConsoleAclPolicyRequest, UpdateDomainConsoleAclPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainConsoleAclPolicyRequest.class, UpdateDomainConsoleAclPolicyResponse.class)
+                .withName("UpdateDomainConsoleAclPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2869,6 +2963,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateDomainGroupInheritRoleRequest, UpdateDomainGroupInheritRoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainGroupInheritRoleRequest.class, UpdateDomainGroupInheritRoleResponse.class)
+                .withName("UpdateDomainGroupInheritRole")
                 .withUri("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects")
                 .withContentType("application/json");
 
@@ -2909,6 +3004,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateDomainLoginPolicyRequest, UpdateDomainLoginPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainLoginPolicyRequest.class, UpdateDomainLoginPolicyResponse.class)
+                .withName("UpdateDomainLoginPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2941,6 +3037,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateDomainPasswordPolicyRequest, UpdateDomainPasswordPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainPasswordPolicyRequest.class, UpdateDomainPasswordPolicyResponse.class)
+                .withName("UpdateDomainPasswordPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -2973,6 +3070,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateDomainProtectPolicyRequest, UpdateDomainProtectPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainProtectPolicyRequest.class, UpdateDomainProtectPolicyResponse.class)
+                .withName("UpdateDomainProtectPolicy")
                 .withUri("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3005,6 +3103,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateProjectStatusRequest, UpdateProjectStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProjectStatusRequest.class, UpdateProjectStatusResponse.class)
+                .withName("UpdateProjectStatus")
                 .withUri("/v3-ext/projects/{project_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3037,6 +3136,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreatePermanentAccessKeyRequest, CreatePermanentAccessKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePermanentAccessKeyRequest.class, CreatePermanentAccessKeyResponse.class)
+                .withName("CreatePermanentAccessKey")
                 .withUri("/v3.0/OS-CREDENTIAL/credentials")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3061,6 +3161,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateTemporaryAccessKeyByAgencyRequest, CreateTemporaryAccessKeyByAgencyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemporaryAccessKeyByAgencyRequest.class, CreateTemporaryAccessKeyByAgencyResponse.class)
+                .withName("CreateTemporaryAccessKeyByAgency")
                 .withUri("/v3.0/OS-CREDENTIAL/securitytokens")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3085,6 +3186,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateTemporaryAccessKeyByTokenRequest, CreateTemporaryAccessKeyByTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemporaryAccessKeyByTokenRequest.class, CreateTemporaryAccessKeyByTokenResponse.class)
+                .withName("CreateTemporaryAccessKeyByToken")
                 .withUri("/v3.0/OS-CREDENTIAL/securitytokens")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3109,6 +3211,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<DeletePermanentAccessKeyRequest, DeletePermanentAccessKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePermanentAccessKeyRequest.class, DeletePermanentAccessKeyResponse.class)
+                .withName("DeletePermanentAccessKey")
                 .withUri("/v3.0/OS-CREDENTIAL/credentials/{access_key}")
                 .withContentType("application/json");
 
@@ -3133,6 +3236,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListPermanentAccessKeysRequest, ListPermanentAccessKeysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPermanentAccessKeysRequest.class, ListPermanentAccessKeysResponse.class)
+                .withName("ListPermanentAccessKeys")
                 .withUri("/v3.0/OS-CREDENTIAL/credentials")
                 .withContentType("application/json");
 
@@ -3157,6 +3261,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowPermanentAccessKeyRequest, ShowPermanentAccessKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPermanentAccessKeyRequest.class, ShowPermanentAccessKeyResponse.class)
+                .withName("ShowPermanentAccessKey")
                 .withUri("/v3.0/OS-CREDENTIAL/credentials/{access_key}")
                 .withContentType("application/json");
 
@@ -3181,6 +3286,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdatePermanentAccessKeyRequest, UpdatePermanentAccessKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePermanentAccessKeyRequest.class, UpdatePermanentAccessKeyResponse.class)
+                .withName("UpdatePermanentAccessKey")
                 .withUri("/v3.0/OS-CREDENTIAL/credentials/{access_key}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3213,6 +3319,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateBindingDeviceRequest, CreateBindingDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateBindingDeviceRequest.class, CreateBindingDeviceResponse.class)
+                .withName("CreateBindingDevice")
                 .withUri("/v3.0/OS-MFA/mfa-devices/bind")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3237,6 +3344,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateMfaDeviceRequest, CreateMfaDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMfaDeviceRequest.class, CreateMfaDeviceResponse.class)
+                .withName("CreateMfaDevice")
                 .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3261,6 +3369,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<CreateUserRequest, CreateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateUserRequest.class, CreateUserResponse.class)
+                .withName("CreateUser")
                 .withUri("/v3.0/OS-USER/users")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3285,6 +3394,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, DeleteBindingDeviceRequest.class, DeleteBindingDeviceResponse.class)
+                .withName("DeleteBindingDevice")
                 .withUri("/v3.0/OS-MFA/mfa-devices/unbind")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3309,6 +3419,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMfaDeviceRequest.class, DeleteMfaDeviceResponse.class)
+                .withName("DeleteMfaDevice")
                 .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
                 .withContentType("application/json");
 
@@ -3341,6 +3452,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateUserRequest, KeystoneCreateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserRequest.class, KeystoneCreateUserResponse.class)
+                .withName("KeystoneCreateUser")
                 .withUri("/v3/users")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3365,6 +3477,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneDeleteUserRequest, KeystoneDeleteUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, KeystoneDeleteUserRequest.class, KeystoneDeleteUserResponse.class)
+                .withName("KeystoneDeleteUser")
                 .withUri("/v3/users/{user_id}")
                 .withContentType("application/json");
 
@@ -3389,6 +3502,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListGroupsForUserRequest, KeystoneListGroupsForUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListGroupsForUserRequest.class, KeystoneListGroupsForUserResponse.class)
+                .withName("KeystoneListGroupsForUser")
                 .withUri("/v3/users/{user_id}/groups")
                 .withContentType("application/json");
 
@@ -3413,6 +3527,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneListUsersRequest, KeystoneListUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneListUsersRequest.class, KeystoneListUsersResponse.class)
+                .withName("KeystoneListUsers")
                 .withUri("/v3/users")
                 .withContentType("application/json");
 
@@ -3461,6 +3576,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneShowUserRequest, KeystoneShowUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneShowUserRequest.class, KeystoneShowUserResponse.class)
+                .withName("KeystoneShowUser")
                 .withUri("/v3/users/{user_id}")
                 .withContentType("application/json");
 
@@ -3485,6 +3601,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateUserByAdminRequest, KeystoneUpdateUserByAdminResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, KeystoneUpdateUserByAdminRequest.class, KeystoneUpdateUserByAdminResponse.class)
+                .withName("KeystoneUpdateUserByAdmin")
                 .withUri("/v3/users/{user_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3517,6 +3634,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneUpdateUserPasswordRequest, KeystoneUpdateUserPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneUpdateUserPasswordRequest.class, KeystoneUpdateUserPasswordResponse.class)
+                .withName("KeystoneUpdateUserPassword")
                 .withUri("/v3/users/{user_id}/password")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3549,6 +3667,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListUserLoginProtectsRequest, ListUserLoginProtectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUserLoginProtectsRequest.class, ListUserLoginProtectsResponse.class)
+                .withName("ListUserLoginProtects")
                 .withUri("/v3.0/OS-USER/login-protects")
                 .withContentType("application/json");
 
@@ -3565,6 +3684,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ListUserMfaDevicesRequest, ListUserMfaDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUserMfaDevicesRequest.class, ListUserMfaDevicesResponse.class)
+                .withName("ListUserMfaDevices")
                 .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
                 .withContentType("application/json");
 
@@ -3581,6 +3701,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowUserRequest, ShowUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserRequest.class, ShowUserResponse.class)
+                .withName("ShowUser")
                 .withUri("/v3.0/OS-USER/users/{user_id}")
                 .withContentType("application/json");
 
@@ -3605,6 +3726,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowUserLoginProtectRequest, ShowUserLoginProtectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserLoginProtectRequest.class, ShowUserLoginProtectResponse.class)
+                .withName("ShowUserLoginProtect")
                 .withUri("/v3.0/OS-USER/users/{user_id}/login-protect")
                 .withContentType("application/json");
 
@@ -3629,6 +3751,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<ShowUserMfaDeviceRequest, ShowUserMfaDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserMfaDeviceRequest.class, ShowUserMfaDeviceResponse.class)
+                .withName("ShowUserMfaDevice")
                 .withUri("/v3.0/OS-MFA/users/{user_id}/virtual-mfa-device")
                 .withContentType("application/json");
 
@@ -3653,6 +3776,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateLoginProtectRequest, UpdateLoginProtectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLoginProtectRequest.class, UpdateLoginProtectResponse.class)
+                .withName("UpdateLoginProtect")
                 .withUri("/v3.0/OS-USER/users/{user_id}/login-protect")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3685,6 +3809,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateUserRequest, UpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUserRequest.class, UpdateUserResponse.class)
+                .withName("UpdateUser")
                 .withUri("/v3.0/OS-USER/users/{user_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3717,6 +3842,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<UpdateUserInformationRequest, UpdateUserInformationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateUserInformationRequest.class, UpdateUserInformationResponse.class)
+                .withName("UpdateUserInformation")
                 .withUri("/v3.0/OS-USER/users/{user_id}/info")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3749,6 +3875,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateAgencyTokenRequest, KeystoneCreateAgencyTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateAgencyTokenRequest.class, KeystoneCreateAgencyTokenResponse.class)
+                .withName("KeystoneCreateAgencyToken")
                 .withUri("/v3/auth/tokens")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3790,6 +3917,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateUserTokenByPasswordRequest, KeystoneCreateUserTokenByPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserTokenByPasswordRequest.class, KeystoneCreateUserTokenByPasswordResponse.class)
+                .withName("KeystoneCreateUserTokenByPassword")
                 .withUri("/v3/auth/tokens")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3831,6 +3959,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneCreateUserTokenByPasswordAndMfaRequest, KeystoneCreateUserTokenByPasswordAndMfaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateUserTokenByPasswordAndMfaRequest.class, KeystoneCreateUserTokenByPasswordAndMfaResponse.class)
+                .withName("KeystoneCreateUserTokenByPasswordAndMfa")
                 .withUri("/v3/auth/tokens")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3872,6 +4001,7 @@ public class IamMeta {
         // basic
         HttpRequestDef.Builder<KeystoneValidateTokenRequest, KeystoneValidateTokenResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, KeystoneValidateTokenRequest.class, KeystoneValidateTokenResponse.class)
+                .withName("KeystoneValidateToken")
                 .withUri("/v3/auth/tokens")
                 .withContentType("application/json");
 

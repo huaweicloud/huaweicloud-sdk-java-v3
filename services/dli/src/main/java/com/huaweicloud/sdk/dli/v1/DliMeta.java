@@ -18,6 +18,7 @@ public class DliMeta {
         // basic
         HttpRequestDef.Builder<CreateQueueRequest, CreateQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateQueueRequest.class, CreateQueueResponse.class)
+                .withName("CreateQueue")
                 .withUri("/v1.0/{project_id}/queues")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class DliMeta {
         // basic
         HttpRequestDef.Builder<ListQueuesRequest, ListQueuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQueuesRequest.class, ListQueuesResponse.class)
+                .withName("ListQueues")
                 .withUri("/v1.0/{project_id}/queues")
                 .withContentType("application/json");
 

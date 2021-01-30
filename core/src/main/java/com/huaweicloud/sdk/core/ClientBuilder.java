@@ -28,8 +28,8 @@ import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
-import com.huaweicloud.sdk.core.auth.AbstractCredentials;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.auth.EnvCredentials;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
@@ -84,22 +84,25 @@ public class ClientBuilder<T> {
         HttpClient httpClient = new DefaultHttpClient(this.httpConfig);
         HcClient hcClient = new HcClient(this.httpConfig, httpClient);
 
-        // apply credential to hcClient
+        // If credential hasn't been assigned when initialing, SDK will try to load credential from environment variable
         if (Objects.isNull(this.credential)) {
-            credential = AbstractCredentials.getCredentialFromEnvironment(creator.apply(hcClient),
-                credentialType.get(0));
+            credential = EnvCredentials.loadCredentialFromEnv(credentialType.get(0));
         }
 
-        if (Objects.nonNull(credential)) {
-            if (!credentialType.contains(credential.getClass().getSimpleName())) {
-                throw new SdkException("This client need input " + credentialType.toString() + " credential object");
-            }
+        if (Objects.isNull(this.credential)) {
+            throw new SdkException("credential can not be null, " + credentialType.toString()
+                + "credential objects are required");
+        }
+
+        if (!credentialType.contains(credential.getClass().getSimpleName())) {
+            throw new SdkException("credential type error, supported credential type is " + credentialType.toString());
         }
 
         if (Objects.nonNull(region)) {
             this.endpoint = region.getEndpoint();
             try {
-                this.credential = credential.processAuthParams(httpClient, region.getId()).get();
+                hcClient.withCredential(credential);
+                this.credential = credential.processAuthParams(hcClient, region.getId()).get();
             } catch (InterruptedException | ExecutionException e) {
                 throw new SdkException(e);
             }

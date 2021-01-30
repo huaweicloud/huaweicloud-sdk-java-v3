@@ -21,6 +21,8 @@
 
 package com.huaweicloud.sdk.core;
 
+import com.huaweicloud.sdk.core.exchange.SdkExchange;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -36,6 +38,8 @@ public interface HttpListener {
         Map<String, List<String>> headers();
 
         Optional<String> body();
+
+        SdkExchange exchange();
     }
 
     interface ResponseListener {
@@ -48,6 +52,8 @@ public interface HttpListener {
         Optional<String> body();
 
         int statusCode();
+
+        SdkExchange exchange();
     }
 
     default void preRequest(RequestListener requestListener) {

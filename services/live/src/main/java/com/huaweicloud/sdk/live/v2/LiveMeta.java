@@ -18,6 +18,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListBandwidthDetailRequest, ListBandwidthDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBandwidthDetailRequest.class, ListBandwidthDetailResponse.class)
+                .withName("ListBandwidthDetail")
                 .withUri("/v2/{project_id}/stats/bandwidth/detail")
                 .withContentType("application/json");
 
@@ -107,6 +108,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListDomainBandwidthPeakRequest, ListDomainBandwidthPeakResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainBandwidthPeakRequest.class, ListDomainBandwidthPeakResponse.class)
+                .withName("ListDomainBandwidthPeak")
                 .withUri("/v2/{project_id}/stats/bandwidth/peak")
                 .withContentType("application/json");
 
@@ -188,6 +190,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListDomainTrafficDetailRequest, ListDomainTrafficDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainTrafficDetailRequest.class, ListDomainTrafficDetailResponse.class)
+                .withName("ListDomainTrafficDetail")
                 .withUri("/v2/{project_id}/stats/traffic/detail")
                 .withContentType("application/json");
 
@@ -277,6 +280,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListDomainTrafficSummaryRequest, ListDomainTrafficSummaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDomainTrafficSummaryRequest.class, ListDomainTrafficSummaryResponse.class)
+                .withName("ListDomainTrafficSummary")
                 .withUri("/v2/{project_id}/stats/traffic/summary")
                 .withContentType("application/json");
 
@@ -358,6 +362,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListHistoryStreamsRequest, ListHistoryStreamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistoryStreamsRequest.class, ListHistoryStreamsResponse.class)
+                .withName("ListHistoryStreams")
                 .withUri("/v2/{project_id}/stats/history/streams")
                 .withContentType("application/json");
 
@@ -415,6 +420,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListQueryHttpCodeRequest, ListQueryHttpCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQueryHttpCodeRequest.class, ListQueryHttpCodeResponse.class)
+                .withName("ListQueryHttpCode")
                 .withUri("/v2/{project_id}/stats/httpcodes")
                 .withContentType("application/json");
 
@@ -488,6 +494,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListRecordDataRequest, ListRecordDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRecordDataRequest.class, ListRecordDataResponse.class)
+                .withName("ListRecordData")
                 .withUri("/v2/{project_id}/stats/record")
                 .withContentType("application/json");
 
@@ -529,6 +536,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListSnapshotDataRequest, ListSnapshotDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSnapshotDataRequest.class, ListSnapshotDataResponse.class)
+                .withName("ListSnapshotData")
                 .withUri("/v2/{project_id}/stats/snapshot")
                 .withContentType("application/json");
 
@@ -578,6 +586,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListTranscodeDataRequest, ListTranscodeDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTranscodeDataRequest.class, ListTranscodeDataResponse.class)
+                .withName("ListTranscodeData")
                 .withUri("/v2/{project_id}/stats/transcode")
                 .withContentType("application/json");
 
@@ -627,6 +636,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListUsersOfStreamRequest, ListUsersOfStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsersOfStreamRequest.class, ListUsersOfStreamResponse.class)
+                .withName("ListUsersOfStream")
                 .withUri("/v2/{project_id}/stats/user")
                 .withContentType("application/json");
 
@@ -716,6 +726,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowStreamCountRequest, ShowStreamCountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStreamCountRequest.class, ShowStreamCountResponse.class)
+                .withName("ShowStreamCount")
                 .withUri("/v2/{project_id}/stats/stream-count")
                 .withContentType("application/json");
 
@@ -765,6 +776,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowStreamPortraitRequest, ShowStreamPortraitResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowStreamPortraitRequest.class, ShowStreamPortraitResponse.class)
+                .withName("ShowStreamPortrait")
                 .withUri("/v2/{project_id}/stats/stream-portraits")
                 .withContentType("application/json");
 
@@ -814,6 +826,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ShowUpBandwidthRequest, ShowUpBandwidthResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUpBandwidthRequest.class, ShowUpBandwidthResponse.class)
+                .withName("ShowUpBandwidth")
                 .withUri("/v2/{project_id}/stats/up-bandwidth/detail")
                 .withContentType("application/json");
 
@@ -903,6 +916,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListSingleStreamBitrateRequest, ListSingleStreamBitrateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSingleStreamBitrateRequest.class, ListSingleStreamBitrateResponse.class)
+                .withName("ListSingleStreamBitrate")
                 .withUri("/v2/{project_id}/stats/stream/bitrate")
                 .withContentType("application/json");
 
@@ -968,6 +982,7 @@ public class LiveMeta {
         // basic
         HttpRequestDef.Builder<ListSingleStreamFramerateRequest, ListSingleStreamFramerateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSingleStreamFramerateRequest.class, ListSingleStreamFramerateResponse.class)
+                .withName("ListSingleStreamFramerate")
                 .withUri("/v2/{project_id}/stats/stream/framerate")
                 .withContentType("application/json");
 

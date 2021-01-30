@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.live.v1.model.*;
 
 public class LiveAsyncClient {
@@ -31,6 +31,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 创建录制配置
+     * 创建录制配置接口
+     *
+     * @param CreateRecordConfigRequest 请求对象
+     * @return AsyncInvoker<CreateRecordConfigRequest, CreateRecordConfigResponse>
+     */
+    public AsyncInvoker<CreateRecordConfigRequest, CreateRecordConfigResponse> createRecordConfigAsyncInvoker(CreateRecordConfigRequest request) {
+        return new AsyncInvoker<CreateRecordConfigRequest, CreateRecordConfigResponse>(request, LiveMeta.createRecordConfig, hcClient);
+    }
+
+    /**
      * 禁止直播推流
      * 禁止直播推流
      *
@@ -39,6 +50,17 @@ public class LiveAsyncClient {
      */
     public CompletableFuture<CreateStreamForbiddenResponse> createStreamForbiddenAsync(CreateStreamForbiddenRequest request) {
         return hcClient.asyncInvokeHttp(request, LiveMeta.createStreamForbidden);
+    }
+
+    /**
+     * 禁止直播推流
+     * 禁止直播推流
+     *
+     * @param CreateStreamForbiddenRequest 请求对象
+     * @return AsyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse>
+     */
+    public AsyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse> createStreamForbiddenAsyncInvoker(CreateStreamForbiddenRequest request) {
+        return new AsyncInvoker<CreateStreamForbiddenRequest, CreateStreamForbiddenResponse>(request, LiveMeta.createStreamForbidden, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 创建直播转码模板
+     * 创建直播转码模板
+     *
+     * @param CreateTranscodingsTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse>
+     */
+    public AsyncInvoker<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse> createTranscodingsTemplateAsyncInvoker(CreateTranscodingsTemplateRequest request) {
+        return new AsyncInvoker<CreateTranscodingsTemplateRequest, CreateTranscodingsTemplateResponse>(request, LiveMeta.createTranscodingsTemplate, hcClient);
+    }
+
+    /**
      * 删除录制配置
      * 删除录制配置接口
      *
@@ -61,6 +94,17 @@ public class LiveAsyncClient {
      */
     public CompletableFuture<DeleteRecordConfigResponse> deleteRecordConfigAsync(DeleteRecordConfigRequest request) {
         return hcClient.asyncInvokeHttp(request, LiveMeta.deleteRecordConfig);
+    }
+
+    /**
+     * 删除录制配置
+     * 删除录制配置接口
+     *
+     * @param DeleteRecordConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteRecordConfigRequest, DeleteRecordConfigResponse>
+     */
+    public AsyncInvoker<DeleteRecordConfigRequest, DeleteRecordConfigResponse> deleteRecordConfigAsyncInvoker(DeleteRecordConfigRequest request) {
+        return new AsyncInvoker<DeleteRecordConfigRequest, DeleteRecordConfigResponse>(request, LiveMeta.deleteRecordConfig, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 禁推恢复
+     * 恢复直播推流接口
+     *
+     * @param DeleteStreamForbiddenRequest 请求对象
+     * @return AsyncInvoker<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse>
+     */
+    public AsyncInvoker<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse> deleteStreamForbiddenAsyncInvoker(DeleteStreamForbiddenRequest request) {
+        return new AsyncInvoker<DeleteStreamForbiddenRequest, DeleteStreamForbiddenResponse>(request, LiveMeta.deleteStreamForbidden, hcClient);
+    }
+
+    /**
      * 删除直播转码模板
      * 删除直播转码模板
      *
@@ -83,6 +138,17 @@ public class LiveAsyncClient {
      */
     public CompletableFuture<DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplateAsync(DeleteTranscodingsTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, LiveMeta.deleteTranscodingsTemplate);
+    }
+
+    /**
+     * 删除直播转码模板
+     * 删除直播转码模板
+     *
+     * @param DeleteTranscodingsTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse>
+     */
+    public AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplateAsyncInvoker(DeleteTranscodingsTemplateRequest request) {
+        return new AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse>(request, LiveMeta.deleteTranscodingsTemplate, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询直播中的流信息
+     * 查询直播中的流信息
+     *
+     * @param ListLiveStreamsOnlineRequest 请求对象
+     * @return AsyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse>
+     */
+    public AsyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse> listLiveStreamsOnlineAsyncInvoker(ListLiveStreamsOnlineRequest request) {
+        return new AsyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse>(request, LiveMeta.listLiveStreamsOnline, hcClient);
+    }
+
+    /**
      * 查询录制配置
      * 查询录制配置接口
      *
@@ -105,6 +182,17 @@ public class LiveAsyncClient {
      */
     public CompletableFuture<ListRecordConfigsResponse> listRecordConfigsAsync(ListRecordConfigsRequest request) {
         return hcClient.asyncInvokeHttp(request, LiveMeta.listRecordConfigs);
+    }
+
+    /**
+     * 查询录制配置
+     * 查询录制配置接口
+     *
+     * @param ListRecordConfigsRequest 请求对象
+     * @return AsyncInvoker<ListRecordConfigsRequest, ListRecordConfigsResponse>
+     */
+    public AsyncInvoker<ListRecordConfigsRequest, ListRecordConfigsResponse> listRecordConfigsAsyncInvoker(ListRecordConfigsRequest request) {
+        return new AsyncInvoker<ListRecordConfigsRequest, ListRecordConfigsResponse>(request, LiveMeta.listRecordConfigs, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询禁止直播推流列表
+     * 查询禁播黑名单列表
+     *
+     * @param ListStreamForbiddenRequest 请求对象
+     * @return AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse>
+     */
+    public AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse> listStreamForbiddenAsyncInvoker(ListStreamForbiddenRequest request) {
+        return new AsyncInvoker<ListStreamForbiddenRequest, ListStreamForbiddenResponse>(request, LiveMeta.listStreamForbidden, hcClient);
+    }
+
+    /**
      * 查询直播加速的带宽数据
      * 查询直播加速的播流域名网络带宽监控数据
      *
@@ -127,6 +226,17 @@ public class LiveAsyncClient {
      */
     public CompletableFuture<ShowBandwidthResponse> showBandwidthAsync(ShowBandwidthRequest request) {
         return hcClient.asyncInvokeHttp(request, LiveMeta.showBandwidth);
+    }
+
+    /**
+     * 查询直播加速的带宽数据
+     * 查询直播加速的播流域名网络带宽监控数据
+     *
+     * @param ShowBandwidthRequest 请求对象
+     * @return AsyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>
+     */
+    public AsyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidthAsyncInvoker(ShowBandwidthRequest request) {
+        return new AsyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>(request, LiveMeta.showBandwidth, hcClient);
     }
 
     /**
@@ -141,6 +251,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询直播播放在线人数
+     * 查询加速的直播播放在线人数
+     *
+     * @param ShowOnlineUsersRequest 请求对象
+     * @return AsyncInvoker<ShowOnlineUsersRequest, ShowOnlineUsersResponse>
+     */
+    public AsyncInvoker<ShowOnlineUsersRequest, ShowOnlineUsersResponse> showOnlineUsersAsyncInvoker(ShowOnlineUsersRequest request) {
+        return new AsyncInvoker<ShowOnlineUsersRequest, ShowOnlineUsersResponse>(request, LiveMeta.showOnlineUsers, hcClient);
+    }
+
+    /**
      * 查询直播加速的流量数据
      * 查询直播加速的播流域名网络流量监控数据
      *
@@ -149,6 +270,17 @@ public class LiveAsyncClient {
      */
     public CompletableFuture<ShowTrafficResponse> showTrafficAsync(ShowTrafficRequest request) {
         return hcClient.asyncInvokeHttp(request, LiveMeta.showTraffic);
+    }
+
+    /**
+     * 查询直播加速的流量数据
+     * 查询直播加速的播流域名网络流量监控数据
+     *
+     * @param ShowTrafficRequest 请求对象
+     * @return AsyncInvoker<ShowTrafficRequest, ShowTrafficResponse>
+     */
+    public AsyncInvoker<ShowTrafficRequest, ShowTrafficResponse> showTrafficAsyncInvoker(ShowTrafficRequest request) {
+        return new AsyncInvoker<ShowTrafficRequest, ShowTrafficResponse>(request, LiveMeta.showTraffic, hcClient);
     }
 
     /**
@@ -163,6 +295,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询直播转码模板
+     * 查询直播转码模板
+     *
+     * @param ShowTranscodingsTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse>
+     */
+    public AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> showTranscodingsTemplateAsyncInvoker(ShowTranscodingsTemplateRequest request) {
+        return new AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse>(request, LiveMeta.showTranscodingsTemplate, hcClient);
+    }
+
+    /**
      * 修改禁推属性
      * 修改禁推属性
      *
@@ -174,6 +317,17 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 修改禁推属性
+     * 修改禁推属性
+     *
+     * @param UpdateStreamForbiddenRequest 请求对象
+     * @return AsyncInvoker<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse>
+     */
+    public AsyncInvoker<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse> updateStreamForbiddenAsyncInvoker(UpdateStreamForbiddenRequest request) {
+        return new AsyncInvoker<UpdateStreamForbiddenRequest, UpdateStreamForbiddenResponse>(request, LiveMeta.updateStreamForbidden, hcClient);
+    }
+
+    /**
      * 配置直播转码模板
      * 修改直播转码模板
      *
@@ -182,6 +336,17 @@ public class LiveAsyncClient {
      */
     public CompletableFuture<UpdateTranscodingsTemplateResponse> updateTranscodingsTemplateAsync(UpdateTranscodingsTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, LiveMeta.updateTranscodingsTemplate);
+    }
+
+    /**
+     * 配置直播转码模板
+     * 修改直播转码模板
+     *
+     * @param UpdateTranscodingsTemplateRequest 请求对象
+     * @return AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse>
+     */
+    public AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse> updateTranscodingsTemplateAsyncInvoker(UpdateTranscodingsTemplateRequest request) {
+        return new AsyncInvoker<UpdateTranscodingsTemplateRequest, UpdateTranscodingsTemplateResponse>(request, LiveMeta.updateTranscodingsTemplate, hcClient);
     }
 
 }

@@ -18,6 +18,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<CreatePlanRequest, CreatePlanResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePlanRequest.class, CreatePlanResponse.class)
+                .withName("CreatePlan")
                 .withUri("/v1/projects/{project_id}/plans")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<CreateTestCaseInPlanRequest, CreateTestCaseInPlanResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTestCaseInPlanRequest.class, CreateTestCaseInPlanResponse.class)
+                .withName("CreateTestCaseInPlan")
                 .withUri("/v1/projects/{project_id}/plans/{plan_id}/testcases/batch-add")
                 .withContentType("application/json");
 
@@ -90,6 +92,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<CreateServiceRequest, CreateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServiceRequest.class, CreateServiceResponse.class)
+                .withName("CreateService")
                 .withUri("/v1/services")
                 .withContentType("application/json");
 
@@ -114,6 +117,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<DeleteServiceRequest, DeleteServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceRequest.class, DeleteServiceResponse.class)
+                .withName("DeleteService")
                 .withUri("/v1/services/{service_id}")
                 .withContentType("application/json");
 
@@ -138,6 +142,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<ShowRegisterServiceRequest, ShowRegisterServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRegisterServiceRequest.class, ShowRegisterServiceResponse.class)
+                .withName("ShowRegisterService")
                 .withUri("/v1/services")
                 .withContentType("application/json");
 
@@ -154,6 +159,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<UpdateServiceRequest, UpdateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServiceRequest.class, UpdateServiceResponse.class)
+                .withName("UpdateService")
                 .withUri("/v1/services/{service_id}")
                 .withContentType("application/json");
 
@@ -186,6 +192,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteTestCaseRequest, BatchDeleteTestCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteTestCaseRequest.class, BatchDeleteTestCaseResponse.class)
+                .withName("BatchDeleteTestCase")
                 .withUri("/v1/projects/{project_id}/testcases/batch-delete")
                 .withContentType("application/json");
 
@@ -218,6 +225,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<CreateTestCaseRequest, CreateTestCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTestCaseRequest.class, CreateTestCaseResponse.class)
+                .withName("CreateTestCase")
                 .withUri("/v1/projects/{project_id}/testcases")
                 .withContentType("application/json");
 
@@ -250,6 +258,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<RunTestCaseRequest, RunTestCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTestCaseRequest.class, RunTestCaseResponse.class)
+                .withName("RunTestCase")
                 .withUri("/v1/projects/{project_id}/testcases/execution")
                 .withContentType("application/json");
 
@@ -282,6 +291,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTestCaseDetailRequest.class, ShowTestCaseDetailResponse.class)
+                .withName("ShowTestCaseDetail")
                 .withUri("/v1/projects/{project_id}/testcases/{testcase_id}")
                 .withContentType("application/json");
 
@@ -314,6 +324,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTestCaseDetailV2Request.class, ShowTestCaseDetailV2Response.class)
+                .withName("ShowTestCaseDetailV2")
                 .withUri("/v1/projects/{project_id}/testcase")
                 .withContentType("application/json");
 
@@ -354,6 +365,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<UpdateTestCaseRequest, UpdateTestCaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTestCaseRequest.class, UpdateTestCaseResponse.class)
+                .withName("UpdateTestCase")
                 .withUri("/v1/projects/{project_id}/testcases/{testcase_id}")
                 .withContentType("application/json");
 
@@ -394,6 +406,7 @@ public class CloudtestMeta {
         // basic
         HttpRequestDef.Builder<UpdateTestCaseResultRequest, UpdateTestCaseResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateTestCaseResultRequest.class, UpdateTestCaseResultResponse.class)
+                .withName("UpdateTestCaseResult")
                 .withUri("/v1/projects/{project_id}/testcases/result")
                 .withContentType("application/json");
 

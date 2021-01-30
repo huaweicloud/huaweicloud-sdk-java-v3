@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.dgc.v1.model.*;
 
 public class DgcAsyncClient {
@@ -31,6 +31,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 停止脚本实例的执行
+     * 
+     *
+     * @param CancelScriptRequest 请求对象
+     * @return AsyncInvoker<CancelScriptRequest, CancelScriptResponse>
+     */
+    public AsyncInvoker<CancelScriptRequest, CancelScriptResponse> cancelScriptAsyncInvoker(CancelScriptRequest request) {
+        return new AsyncInvoker<CancelScriptRequest, CancelScriptResponse>(request, DgcMeta.cancelScript, hcClient);
+    }
+
+    /**
      * 创建连接
      * 
      *
@@ -39,6 +50,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<CreateConnectionResponse> createConnectionAsync(CreateConnectionRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.createConnection);
+    }
+
+    /**
+     * 创建连接
+     * 
+     *
+     * @param CreateConnectionRequest 请求对象
+     * @return AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
+     */
+    public AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionAsyncInvoker(CreateConnectionRequest request) {
+        return new AsyncInvoker<CreateConnectionRequest, CreateConnectionResponse>(request, DgcMeta.createConnection, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 创建作业
+     * 
+     *
+     * @param CreateJobRequest 请求对象
+     * @return AsyncInvoker<CreateJobRequest, CreateJobResponse>
+     */
+    public AsyncInvoker<CreateJobRequest, CreateJobResponse> createJobAsyncInvoker(CreateJobRequest request) {
+        return new AsyncInvoker<CreateJobRequest, CreateJobResponse>(request, DgcMeta.createJob, hcClient);
+    }
+
+    /**
      * 创建资源
      * 
      *
@@ -61,6 +94,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<CreateResourceResponse> createResourceAsync(CreateResourceRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.createResource);
+    }
+
+    /**
+     * 创建资源
+     * 
+     *
+     * @param CreateResourceRequest 请求对象
+     * @return AsyncInvoker<CreateResourceRequest, CreateResourceResponse>
+     */
+    public AsyncInvoker<CreateResourceRequest, CreateResourceResponse> createResourceAsyncInvoker(CreateResourceRequest request) {
+        return new AsyncInvoker<CreateResourceRequest, CreateResourceResponse>(request, DgcMeta.createResource, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 创建脚本
+     * 
+     *
+     * @param CreateScriptRequest 请求对象
+     * @return AsyncInvoker<CreateScriptRequest, CreateScriptResponse>
+     */
+    public AsyncInvoker<CreateScriptRequest, CreateScriptResponse> createScriptAsyncInvoker(CreateScriptRequest request) {
+        return new AsyncInvoker<CreateScriptRequest, CreateScriptResponse>(request, DgcMeta.createScript, hcClient);
+    }
+
+    /**
      * 删除连接
      * 
      *
@@ -83,6 +138,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<DeleteConnctionResponse> deleteConnctionAsync(DeleteConnctionRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.deleteConnction);
+    }
+
+    /**
+     * 删除连接
+     * 
+     *
+     * @param DeleteConnctionRequest 请求对象
+     * @return AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>
+     */
+    public AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnctionAsyncInvoker(DeleteConnctionRequest request) {
+        return new AsyncInvoker<DeleteConnctionRequest, DeleteConnctionResponse>(request, DgcMeta.deleteConnction, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 删除作业
+     * 
+     *
+     * @param DeleteJobRequest 请求对象
+     * @return AsyncInvoker<DeleteJobRequest, DeleteJobResponse>
+     */
+    public AsyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobAsyncInvoker(DeleteJobRequest request) {
+        return new AsyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, DgcMeta.deleteJob, hcClient);
+    }
+
+    /**
      * 删除资源
      * 
      *
@@ -105,6 +182,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<DeleteResourceResponse> deleteResourceAsync(DeleteResourceRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.deleteResource);
+    }
+
+    /**
+     * 删除资源
+     * 
+     *
+     * @param DeleteResourceRequest 请求对象
+     * @return AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
+     */
+    public AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceAsyncInvoker(DeleteResourceRequest request) {
+        return new AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DgcMeta.deleteResource, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 删除脚本
+     * 
+     *
+     * @param DeleteScriptRequest 请求对象
+     * @return AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse>
+     */
+    public AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse> deleteScriptAsyncInvoker(DeleteScriptRequest request) {
+        return new AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse>(request, DgcMeta.deleteScript, hcClient);
+    }
+
+    /**
      * 执行脚本
      * 
      *
@@ -127,6 +226,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ExecuteScriptResponse> executeScriptAsync(ExecuteScriptRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.executeScript);
+    }
+
+    /**
+     * 执行脚本
+     * 
+     *
+     * @param ExecuteScriptRequest 请求对象
+     * @return AsyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>
+     */
+    public AsyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse> executeScriptAsyncInvoker(ExecuteScriptRequest request) {
+        return new AsyncInvoker<ExecuteScriptRequest, ExecuteScriptResponse>(request, DgcMeta.executeScript, hcClient);
     }
 
     /**
@@ -141,6 +251,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 导出连接
+     * 
+     *
+     * @param ExportConnectionsRequest 请求对象
+     * @return AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>
+     */
+    public AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse> exportConnectionsAsyncInvoker(ExportConnectionsRequest request) {
+        return new AsyncInvoker<ExportConnectionsRequest, ExportConnectionsResponse>(request, DgcMeta.exportConnections, hcClient);
+    }
+
+    /**
      * 导出作业
      * 
      *
@@ -149,6 +270,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ExportJobResponse> exportJobAsync(ExportJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.exportJob);
+    }
+
+    /**
+     * 导出作业
+     * 
+     *
+     * @param ExportJobRequest 请求对象
+     * @return AsyncInvoker<ExportJobRequest, ExportJobResponse>
+     */
+    public AsyncInvoker<ExportJobRequest, ExportJobResponse> exportJobAsyncInvoker(ExportJobRequest request) {
+        return new AsyncInvoker<ExportJobRequest, ExportJobResponse>(request, DgcMeta.exportJob, hcClient);
     }
 
     /**
@@ -163,6 +295,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 批量导出作业
+     * 
+     *
+     * @param ExportJobListRequest 请求对象
+     * @return AsyncInvoker<ExportJobListRequest, ExportJobListResponse>
+     */
+    public AsyncInvoker<ExportJobListRequest, ExportJobListResponse> exportJobListAsyncInvoker(ExportJobListRequest request) {
+        return new AsyncInvoker<ExportJobListRequest, ExportJobListResponse>(request, DgcMeta.exportJobList, hcClient);
+    }
+
+    /**
      * 导入连接
      * 
      *
@@ -171,6 +314,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ImportConnectionsResponse> importConnectionsAsync(ImportConnectionsRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.importConnections);
+    }
+
+    /**
+     * 导入连接
+     * 
+     *
+     * @param ImportConnectionsRequest 请求对象
+     * @return AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>
+     */
+    public AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse> importConnectionsAsyncInvoker(ImportConnectionsRequest request) {
+        return new AsyncInvoker<ImportConnectionsRequest, ImportConnectionsResponse>(request, DgcMeta.importConnections, hcClient);
     }
 
     /**
@@ -185,6 +339,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 导入作业
+     * 
+     *
+     * @param ImportJobRequest 请求对象
+     * @return AsyncInvoker<ImportJobRequest, ImportJobResponse>
+     */
+    public AsyncInvoker<ImportJobRequest, ImportJobResponse> importJobAsyncInvoker(ImportJobRequest request) {
+        return new AsyncInvoker<ImportJobRequest, ImportJobResponse>(request, DgcMeta.importJob, hcClient);
+    }
+
+    /**
      * 查询连接列表
      * 
      *
@@ -193,6 +358,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ListConnectionsResponse> listConnectionsAsync(ListConnectionsRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.listConnections);
+    }
+
+    /**
+     * 查询连接列表
+     * 
+     *
+     * @param ListConnectionsRequest 请求对象
+     * @return AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
+     */
+    public AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsAsyncInvoker(ListConnectionsRequest request) {
+        return new AsyncInvoker<ListConnectionsRequest, ListConnectionsResponse>(request, DgcMeta.listConnections, hcClient);
     }
 
     /**
@@ -207,6 +383,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 查询作业实例列表
+     * 
+     *
+     * @param ListJobInstancesRequest 请求对象
+     * @return AsyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>
+     */
+    public AsyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse> listJobInstancesAsyncInvoker(ListJobInstancesRequest request) {
+        return new AsyncInvoker<ListJobInstancesRequest, ListJobInstancesResponse>(request, DgcMeta.listJobInstances, hcClient);
+    }
+
+    /**
      * 查询作业列表
      * 
      *
@@ -215,6 +402,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.listJobs);
+    }
+
+    /**
+     * 查询作业列表
+     * 
+     *
+     * @param ListJobsRequest 请求对象
+     * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
+     */
+    public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
+        return new AsyncInvoker<ListJobsRequest, ListJobsResponse>(request, DgcMeta.listJobs, hcClient);
     }
 
     /**
@@ -229,6 +427,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 查询资源列表
+     * 
+     *
+     * @param ListResourcesRequest 请求对象
+     * @return AsyncInvoker<ListResourcesRequest, ListResourcesResponse>
+     */
+    public AsyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesAsyncInvoker(ListResourcesRequest request) {
+        return new AsyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, DgcMeta.listResources, hcClient);
+    }
+
+    /**
      * 查询脚本实例执行结果
      * 
      *
@@ -237,6 +446,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ListScriptResultsResponse> listScriptResultsAsync(ListScriptResultsRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.listScriptResults);
+    }
+
+    /**
+     * 查询脚本实例执行结果
+     * 
+     *
+     * @param ListScriptResultsRequest 请求对象
+     * @return AsyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>
+     */
+    public AsyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse> listScriptResultsAsyncInvoker(ListScriptResultsRequest request) {
+        return new AsyncInvoker<ListScriptResultsRequest, ListScriptResultsResponse>(request, DgcMeta.listScriptResults, hcClient);
     }
 
     /**
@@ -251,6 +471,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 查询脚本列表
+     * 
+     *
+     * @param ListScriptsRequest 请求对象
+     * @return AsyncInvoker<ListScriptsRequest, ListScriptsResponse>
+     */
+    public AsyncInvoker<ListScriptsRequest, ListScriptsResponse> listScriptsAsyncInvoker(ListScriptsRequest request) {
+        return new AsyncInvoker<ListScriptsRequest, ListScriptsResponse>(request, DgcMeta.listScripts, hcClient);
+    }
+
+    /**
      * 查询系统任务详情
      * 
      *
@@ -259,6 +490,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ListSystemTasksResponse> listSystemTasksAsync(ListSystemTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.listSystemTasks);
+    }
+
+    /**
+     * 查询系统任务详情
+     * 
+     *
+     * @param ListSystemTasksRequest 请求对象
+     * @return AsyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>
+     */
+    public AsyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasksAsyncInvoker(ListSystemTasksRequest request) {
+        return new AsyncInvoker<ListSystemTasksRequest, ListSystemTasksResponse>(request, DgcMeta.listSystemTasks, hcClient);
     }
 
     /**
@@ -273,6 +515,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 修改作业
+     * 
+     *
+     * @param ModifyJobRequest 请求对象
+     * @return AsyncInvoker<ModifyJobRequest, ModifyJobResponse>
+     */
+    public AsyncInvoker<ModifyJobRequest, ModifyJobResponse> modifyJobAsyncInvoker(ModifyJobRequest request) {
+        return new AsyncInvoker<ModifyJobRequest, ModifyJobResponse>(request, DgcMeta.modifyJob, hcClient);
+    }
+
+    /**
      * 修改资源
      * 
      *
@@ -281,6 +534,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ModifyResourceResponse> modifyResourceAsync(ModifyResourceRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.modifyResource);
+    }
+
+    /**
+     * 修改资源
+     * 
+     *
+     * @param ModifyResourceRequest 请求对象
+     * @return AsyncInvoker<ModifyResourceRequest, ModifyResourceResponse>
+     */
+    public AsyncInvoker<ModifyResourceRequest, ModifyResourceResponse> modifyResourceAsyncInvoker(ModifyResourceRequest request) {
+        return new AsyncInvoker<ModifyResourceRequest, ModifyResourceResponse>(request, DgcMeta.modifyResource, hcClient);
     }
 
     /**
@@ -295,6 +559,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 修改脚本内容
+     * 
+     *
+     * @param ModifyScriptRequest 请求对象
+     * @return AsyncInvoker<ModifyScriptRequest, ModifyScriptResponse>
+     */
+    public AsyncInvoker<ModifyScriptRequest, ModifyScriptResponse> modifyScriptAsyncInvoker(ModifyScriptRequest request) {
+        return new AsyncInvoker<ModifyScriptRequest, ModifyScriptResponse>(request, DgcMeta.modifyScript, hcClient);
+    }
+
+    /**
      * 重跑作业实例
      * 
      *
@@ -303,6 +578,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<RestoreJobInstanceResponse> restoreJobInstanceAsync(RestoreJobInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.restoreJobInstance);
+    }
+
+    /**
+     * 重跑作业实例
+     * 
+     *
+     * @param RestoreJobInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>
+     */
+    public AsyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstanceAsyncInvoker(RestoreJobInstanceRequest request) {
+        return new AsyncInvoker<RestoreJobInstanceRequest, RestoreJobInstanceResponse>(request, DgcMeta.restoreJobInstance, hcClient);
     }
 
     /**
@@ -317,6 +603,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 单次执行作业
+     * 
+     *
+     * @param RunOnceRequest 请求对象
+     * @return AsyncInvoker<RunOnceRequest, RunOnceResponse>
+     */
+    public AsyncInvoker<RunOnceRequest, RunOnceResponse> runOnceAsyncInvoker(RunOnceRequest request) {
+        return new AsyncInvoker<RunOnceRequest, RunOnceResponse>(request, DgcMeta.runOnce, hcClient);
+    }
+
+    /**
      * 查询连接详情
      * 
      *
@@ -325,6 +622,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ShowConnectionResponse> showConnectionAsync(ShowConnectionRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.showConnection);
+    }
+
+    /**
+     * 查询连接详情
+     * 
+     *
+     * @param ShowConnectionRequest 请求对象
+     * @return AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse>
+     */
+    public AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse> showConnectionAsyncInvoker(ShowConnectionRequest request) {
+        return new AsyncInvoker<ShowConnectionRequest, ShowConnectionResponse>(request, DgcMeta.showConnection, hcClient);
     }
 
     /**
@@ -339,6 +647,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 检查导入作业文件中的作业和脚本
+     * 
+     *
+     * @param ShowFileInfoRequest 请求对象
+     * @return AsyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>
+     */
+    public AsyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse> showFileInfoAsyncInvoker(ShowFileInfoRequest request) {
+        return new AsyncInvoker<ShowFileInfoRequest, ShowFileInfoResponse>(request, DgcMeta.showFileInfo, hcClient);
+    }
+
+    /**
      * 查询作业详情
      * 
      *
@@ -347,6 +666,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ShowJobResponse> showJobAsync(ShowJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.showJob);
+    }
+
+    /**
+     * 查询作业详情
+     * 
+     *
+     * @param ShowJobRequest 请求对象
+     * @return AsyncInvoker<ShowJobRequest, ShowJobResponse>
+     */
+    public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
+        return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, DgcMeta.showJob, hcClient);
     }
 
     /**
@@ -361,6 +691,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 查询作业实例详情
+     * 
+     *
+     * @param ShowJobInstanceRequest 请求对象
+     * @return AsyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>
+     */
+    public AsyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse> showJobInstanceAsyncInvoker(ShowJobInstanceRequest request) {
+        return new AsyncInvoker<ShowJobInstanceRequest, ShowJobInstanceResponse>(request, DgcMeta.showJobInstance, hcClient);
+    }
+
+    /**
      * 查询实时作业的运行状态
      * 
      *
@@ -369,6 +710,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ShowJobStatusResponse> showJobStatusAsync(ShowJobStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.showJobStatus);
+    }
+
+    /**
+     * 查询实时作业的运行状态
+     * 
+     *
+     * @param ShowJobStatusRequest 请求对象
+     * @return AsyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>
+     */
+    public AsyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatusAsyncInvoker(ShowJobStatusRequest request) {
+        return new AsyncInvoker<ShowJobStatusRequest, ShowJobStatusResponse>(request, DgcMeta.showJobStatus, hcClient);
     }
 
     /**
@@ -383,6 +735,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 查询资源详情
+     * 
+     *
+     * @param ShowResourceRequest 请求对象
+     * @return AsyncInvoker<ShowResourceRequest, ShowResourceResponse>
+     */
+    public AsyncInvoker<ShowResourceRequest, ShowResourceResponse> showResourceAsyncInvoker(ShowResourceRequest request) {
+        return new AsyncInvoker<ShowResourceRequest, ShowResourceResponse>(request, DgcMeta.showResource, hcClient);
+    }
+
+    /**
      * 查询脚本信息
      * 
      *
@@ -391,6 +754,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<ShowScriptResponse> showScriptAsync(ShowScriptRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.showScript);
+    }
+
+    /**
+     * 查询脚本信息
+     * 
+     *
+     * @param ShowScriptRequest 请求对象
+     * @return AsyncInvoker<ShowScriptRequest, ShowScriptResponse>
+     */
+    public AsyncInvoker<ShowScriptRequest, ShowScriptResponse> showScriptAsyncInvoker(ShowScriptRequest request) {
+        return new AsyncInvoker<ShowScriptRequest, ShowScriptResponse>(request, DgcMeta.showScript, hcClient);
     }
 
     /**
@@ -405,6 +779,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 启动作业
+     * 
+     *
+     * @param StartJobRequest 请求对象
+     * @return AsyncInvoker<StartJobRequest, StartJobResponse>
+     */
+    public AsyncInvoker<StartJobRequest, StartJobResponse> startJobAsyncInvoker(StartJobRequest request) {
+        return new AsyncInvoker<StartJobRequest, StartJobResponse>(request, DgcMeta.startJob, hcClient);
+    }
+
+    /**
      * 停止作业
      * 
      *
@@ -413,6 +798,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<StopJobResponse> stopJobAsync(StopJobRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.stopJob);
+    }
+
+    /**
+     * 停止作业
+     * 
+     *
+     * @param StopJobRequest 请求对象
+     * @return AsyncInvoker<StopJobRequest, StopJobResponse>
+     */
+    public AsyncInvoker<StopJobRequest, StopJobResponse> stopJobAsyncInvoker(StopJobRequest request) {
+        return new AsyncInvoker<StopJobRequest, StopJobResponse>(request, DgcMeta.stopJob, hcClient);
     }
 
     /**
@@ -427,6 +823,17 @@ public class DgcAsyncClient {
     }
 
     /**
+     * 停止作业实例
+     * 
+     *
+     * @param StopJobInstanceRequest 请求对象
+     * @return AsyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>
+     */
+    public AsyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstanceAsyncInvoker(StopJobInstanceRequest request) {
+        return new AsyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>(request, DgcMeta.stopJobInstance, hcClient);
+    }
+
+    /**
      * 修改连接
      * 
      *
@@ -435,6 +842,17 @@ public class DgcAsyncClient {
      */
     public CompletableFuture<UpdateConnectionResponse> updateConnectionAsync(UpdateConnectionRequest request) {
         return hcClient.asyncInvokeHttp(request, DgcMeta.updateConnection);
+    }
+
+    /**
+     * 修改连接
+     * 
+     *
+     * @param UpdateConnectionRequest 请求对象
+     * @return AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>
+     */
+    public AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionAsyncInvoker(UpdateConnectionRequest request) {
+        return new AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, DgcMeta.updateConnection, hcClient);
     }
 
 }

@@ -18,6 +18,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteInstanceTagRequest.class, BatchCreateOrDeleteInstanceTagResponse.class)
+                .withName("BatchCreateOrDeleteInstanceTag")
                 .withUri("/v2/{project_id}/rabbitmq/{instance_id}/tags/action")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchRestartOrDeleteInstancesRequest.class, BatchRestartOrDeleteInstancesResponse.class)
+                .withName("BatchRestartOrDeleteInstances")
                 .withUri("/v2/{project_id}/instances/action")
                 .withContentType("application/json");
 
@@ -74,6 +76,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
+                .withName("CreatePostPaidInstance")
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json");
 
@@ -98,6 +101,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
+                .withName("DeleteBackgroundTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -130,6 +134,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<DeleteInstanceRequest, DeleteInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteInstanceRequest.class, DeleteInstanceResponse.class)
+                .withName("DeleteInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -154,6 +159,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
+                .withName("ListAvailableZones")
                 .withUri("/v2/available-zones")
                 .withContentType("application/json");
 
@@ -170,6 +176,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ListBackgroundTasksRequest, ListBackgroundTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTasksRequest.class, ListBackgroundTasksResponse.class)
+                .withName("ListBackgroundTasks")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks")
                 .withContentType("application/json");
 
@@ -226,6 +233,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesDetailsRequest, ListInstancesDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesDetailsRequest.class, ListInstancesDetailsResponse.class)
+                .withName("ListInstancesDetails")
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json");
 
@@ -298,6 +306,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
+                .withName("ListPlugins")
                 .withUri("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins")
                 .withContentType("application/json");
 
@@ -322,6 +331,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
+                .withName("ListProducts")
                 .withUri("/v2/products")
                 .withContentType("application/json");
 
@@ -346,6 +356,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ResetPasswordRequest, ResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetPasswordRequest.class, ResetPasswordResponse.class)
+                .withName("ResetPassword")
                 .withUri("/v2/{project_id}/instances/{instance_id}/password")
                 .withContentType("application/json");
 
@@ -378,6 +389,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
+                .withName("ResizeInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}/extend")
                 .withContentType("application/json");
 
@@ -410,6 +422,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackgroundTaskRequest.class, ShowBackgroundTaskResponse.class)
+                .withName("ShowBackgroundTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -442,6 +455,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
+                .withName("ShowInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -466,6 +480,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceExtendProductInfoRequest.class, ShowInstanceExtendProductInfoResponse.class)
+                .withName("ShowInstanceExtendProductInfo")
                 .withUri("/v2/{project_id}/instances/{instance_id}/extend")
                 .withContentType("application/json");
 
@@ -506,6 +521,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceTagsRequest, ShowInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTagsRequest.class, ShowInstanceTagsResponse.class)
+                .withName("ShowInstanceTags")
                 .withUri("/v2/{project_id}/rabbitmq/{instance_id}/tags")
                 .withContentType("application/json");
 
@@ -530,6 +546,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMaintainWindowsRequest.class, ShowMaintainWindowsResponse.class)
+                .withName("ShowMaintainWindows")
                 .withUri("/v2/instances/maintain-windows")
                 .withContentType("application/json");
 
@@ -546,6 +563,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectTagsRequest, ShowProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsRequest.class, ShowProjectTagsResponse.class)
+                .withName("ShowProjectTags")
                 .withUri("/v2/{project_id}/rabbitmq/tags")
                 .withContentType("application/json");
 
@@ -562,6 +580,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
+                .withName("UpdateInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -594,6 +613,7 @@ public class RabbitMQMeta {
         // basic
         HttpRequestDef.Builder<UpdatePluginsRequest, UpdatePluginsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginsRequest.class, UpdatePluginsResponse.class)
+                .withName("UpdatePlugins")
                 .withUri("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins")
                 .withContentType("application/json");
 

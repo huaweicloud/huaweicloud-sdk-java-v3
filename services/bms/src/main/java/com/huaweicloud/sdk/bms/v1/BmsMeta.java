@@ -18,6 +18,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<AttachBaremetalServerVolumeRequest, AttachBaremetalServerVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachBaremetalServerVolumeRequest.class, AttachBaremetalServerVolumeResponse.class)
+                .withName("AttachBaremetalServerVolume")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/attachvolume")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -50,6 +51,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<BatchRebootBaremetalServersRequest, BatchRebootBaremetalServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchRebootBaremetalServersRequest.class, BatchRebootBaremetalServersResponse.class)
+                .withName("BatchRebootBaremetalServers")
                 .withUri("/v1/{project_id}/baremetalservers/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -74,6 +76,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<BatchStartBaremetalServersRequest, BatchStartBaremetalServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStartBaremetalServersRequest.class, BatchStartBaremetalServersResponse.class)
+                .withName("BatchStartBaremetalServers")
                 .withUri("/v1/{project_id}/baremetalservers/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -98,6 +101,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<BatchStopBaremetalServersRequest, BatchStopBaremetalServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStopBaremetalServersRequest.class, BatchStopBaremetalServersResponse.class)
+                .withName("BatchStopBaremetalServers")
                 .withUri("/v1/{project_id}/baremetalservers/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -122,6 +126,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ChangeBaremetalServerNameRequest, ChangeBaremetalServerNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeBaremetalServerNameRequest.class, ChangeBaremetalServerNameResponse.class)
+                .withName("ChangeBaremetalServerName")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -154,6 +159,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<CreateBareMetalServersRequest, CreateBareMetalServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBareMetalServersRequest.class, CreateBareMetalServersResponse.class)
+                .withName("CreateBareMetalServers")
                 .withUri("/v1/{project_id}/baremetalservers")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -178,6 +184,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DetachBaremetalServerVolumeRequest.class, DetachBaremetalServerVolumeResponse.class)
+                .withName("DetachBaremetalServerVolume")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/detachvolume/{attachment_id}")
                 .withContentType("application/json");
 
@@ -210,6 +217,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ListBareMetalServerDetailsRequest, ListBareMetalServerDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBareMetalServerDetailsRequest.class, ListBareMetalServerDetailsResponse.class)
+                .withName("ListBareMetalServerDetails")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}")
                 .withContentType("application/json");
 
@@ -234,6 +242,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ListBareMetalServersRequest, ListBareMetalServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBareMetalServersRequest.class, ListBareMetalServersResponse.class)
+                .withName("ListBareMetalServers")
                 .withUri("/v1/{project_id}/baremetalservers/detail")
                 .withContentType("application/json");
 
@@ -322,6 +331,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ListBaremetalFlavorDetailExtendsRequest, ListBaremetalFlavorDetailExtendsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBaremetalFlavorDetailExtendsRequest.class, ListBaremetalFlavorDetailExtendsResponse.class)
+                .withName("ListBaremetalFlavorDetailExtends")
                 .withUri("/v1/{project_id}/baremetalservers/flavors")
                 .withContentType("application/json");
 
@@ -346,6 +356,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ReinstallBaremetalServerOsRequest, ReinstallBaremetalServerOsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReinstallBaremetalServerOsRequest.class, ReinstallBaremetalServerOsResponse.class)
+                .withName("ReinstallBaremetalServerOs")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/reinstallos")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -378,6 +389,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ResetPwdOneClickRequest, ResetPwdOneClickResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetPwdOneClickRequest.class, ResetPwdOneClickResponse.class)
+                .withName("ResetPwdOneClick")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-reset-password")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -410,6 +422,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ShowBaremetalServerInterfaceAttachmentsRequest, ShowBaremetalServerInterfaceAttachmentsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBaremetalServerInterfaceAttachmentsRequest.class, ShowBaremetalServerInterfaceAttachmentsResponse.class)
+                .withName("ShowBaremetalServerInterfaceAttachments")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-interface")
                 .withContentType("application/json");
 
@@ -434,6 +447,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ShowBaremetalServerVolumeInfoRequest, ShowBaremetalServerVolumeInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBaremetalServerVolumeInfoRequest.class, ShowBaremetalServerVolumeInfoResponse.class)
+                .withName("ShowBaremetalServerVolumeInfo")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-volume_attachments")
                 .withContentType("application/json");
 
@@ -458,6 +472,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ShowResetPwdRequest, ShowResetPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResetPwdRequest.class, ShowResetPwdResponse.class)
+                .withName("ShowResetPwd")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-resetpwd-flag")
                 .withContentType("application/json");
 
@@ -482,6 +497,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ShowTenantQuotaRequest, ShowTenantQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTenantQuotaRequest.class, ShowTenantQuotaResponse.class)
+                .withName("ShowTenantQuota")
                 .withUri("/v1/{project_id}/baremetalservers/limits")
                 .withContentType("application/json");
 
@@ -498,6 +514,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ShowWindowsBaremetalServerPwdRequest, ShowWindowsBaremetalServerPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWindowsBaremetalServerPwdRequest.class, ShowWindowsBaremetalServerPwdResponse.class)
+                .withName("ShowWindowsBaremetalServerPwd")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-server-password")
                 .withContentType("application/json");
 
@@ -522,6 +539,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateBaremetalServerMetadataRequest.class, UpdateBaremetalServerMetadataResponse.class)
+                .withName("UpdateBaremetalServerMetadata")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/metadata")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -554,6 +572,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<WindowsBaremetalServerCleanPwdRequest, WindowsBaremetalServerCleanPwdResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, WindowsBaremetalServerCleanPwdRequest.class, WindowsBaremetalServerCleanPwdResponse.class)
+                .withName("WindowsBaremetalServerCleanPwd")
                 .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-server-password")
                 .withContentType("application/json");
 
@@ -578,6 +597,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ShowSpecifiedVersionRequest, ShowSpecifiedVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowSpecifiedVersionRequest.class, ShowSpecifiedVersionResponse.class)
+                .withName("ShowSpecifiedVersion")
                 .withUri("/{api_version}")
                 .withContentType("application/json");
 
@@ -602,6 +622,7 @@ public class BmsMeta {
         // basic
         HttpRequestDef.Builder<ShowJobInfosRequest, ShowJobInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobInfosRequest.class, ShowJobInfosResponse.class)
+                .withName("ShowJobInfos")
                 .withUri("/v1/{project_id}/jobs/{job_id}")
                 .withContentType("application/json");
 

@@ -18,6 +18,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<BatchAddMembersRequest, BatchAddMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddMembersRequest.class, BatchAddMembersResponse.class)
+                .withName("BatchAddMembers")
                 .withUri("/v1/cloudimages/members")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteMembersRequest, BatchDeleteMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteMembersRequest.class, BatchDeleteMembersResponse.class)
+                .withName("BatchDeleteMembers")
                 .withUri("/v1/cloudimages/members")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -66,6 +68,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateMembersRequest, BatchUpdateMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateMembersRequest.class, BatchUpdateMembersResponse.class)
+                .withName("BatchUpdateMembers")
                 .withUri("/v1/cloudimages/members")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -90,6 +93,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<CopyImageCrossRegionRequest, CopyImageCrossRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyImageCrossRegionRequest.class, CopyImageCrossRegionResponse.class)
+                .withName("CopyImageCrossRegion")
                 .withUri("/v1/cloudimages/{image_id}/cross_region_copy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -122,6 +126,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<CopyImageInRegionRequest, CopyImageInRegionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyImageInRegionRequest.class, CopyImageInRegionResponse.class)
+                .withName("CopyImageInRegion")
                 .withUri("/v1/cloudimages/{image_id}/copy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -154,6 +159,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<CreateDataImageRequest, CreateDataImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDataImageRequest.class, CreateDataImageResponse.class)
+                .withName("CreateDataImage")
                 .withUri("/v1/cloudimages/dataimages/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -178,6 +184,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<CreateImageRequest, CreateImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateImageRequest.class, CreateImageResponse.class)
+                .withName("CreateImage")
                 .withUri("/v2/cloudimages/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -202,6 +209,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateOrUpdateTagsRequest.class, CreateOrUpdateTagsResponse.class)
+                .withName("CreateOrUpdateTags")
                 .withUri("/v1/cloudimages/tags")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -226,6 +234,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<CreateWholeImageRequest, CreateWholeImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateWholeImageRequest.class, CreateWholeImageResponse.class)
+                .withName("CreateWholeImage")
                 .withUri("/v1/cloudimages/wholeimages/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -250,6 +259,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<ExportImageRequest, ExportImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportImageRequest.class, ExportImageResponse.class)
+                .withName("ExportImage")
                 .withUri("/v1/cloudimages/{image_id}/file")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -282,6 +292,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<ImportImageQuickRequest, ImportImageQuickResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportImageQuickRequest.class, ImportImageQuickResponse.class)
+                .withName("ImportImageQuick")
                 .withUri("/v2/cloudimages/quickimport/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -306,6 +317,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<ListImagesRequest, ListImagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListImagesRequest.class, ListImagesResponse.class)
+                .withName("ListImages")
                 .withUri("/v2/cloudimages")
                 .withContentType("application/json");
 
@@ -618,6 +630,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<ListOsVersionsRequest, ListOsVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOsVersionsRequest.class, ListOsVersionsResponse.class)
+                .withName("ListOsVersions")
                 .withUri("/v1/cloudimages/os_version")
                 .withContentType("application/json");
 
@@ -651,6 +664,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
                 .withUri("/v1/cloudimages/tags")
                 .withContentType("application/json");
 
@@ -787,6 +801,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<RegisterImageRequest, RegisterImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RegisterImageRequest.class, RegisterImageResponse.class)
+                .withName("RegisterImage")
                 .withUri("/v1/cloudimages/{image_id}/upload")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -819,6 +834,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<ShowImageQuotaRequest, ShowImageQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowImageQuotaRequest.class, ShowImageQuotaResponse.class)
+                .withName("ShowImageQuota")
                 .withUri("/v1/cloudimages/quota")
                 .withContentType("application/json");
 
@@ -835,6 +851,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<UpdateImageRequest, UpdateImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, UpdateImageRequest.class, UpdateImageResponse.class)
+                .withName("UpdateImage")
                 .withUri("/v2/cloudimages/{image_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -867,6 +884,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
+                .withName("ShowJob")
                 .withUri("/v1/{project_id}/jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -899,6 +917,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceAddImageMemberRequest, GlanceAddImageMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, GlanceAddImageMemberRequest.class, GlanceAddImageMemberResponse.class)
+                .withName("GlanceAddImageMember")
                 .withUri("/v2/images/{image_id}/members")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -931,6 +950,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceCreateImageMetadataRequest, GlanceCreateImageMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, GlanceCreateImageMetadataRequest.class, GlanceCreateImageMetadataResponse.class)
+                .withName("GlanceCreateImageMetadata")
                 .withUri("/v2/images")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -955,6 +975,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceCreateTagRequest, GlanceCreateTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, GlanceCreateTagRequest.class, GlanceCreateTagResponse.class)
+                .withName("GlanceCreateTag")
                 .withUri("/v2/images/{image_id}/tags/{tag}")
                 .withContentType("application/json");
 
@@ -987,6 +1008,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceDeleteImageRequest, GlanceDeleteImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, GlanceDeleteImageRequest.class, GlanceDeleteImageResponse.class)
+                .withName("GlanceDeleteImage")
                 .withUri("/v2/images/{image_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1019,6 +1041,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceDeleteImageMemberRequest, GlanceDeleteImageMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, GlanceDeleteImageMemberRequest.class, GlanceDeleteImageMemberResponse.class)
+                .withName("GlanceDeleteImageMember")
                 .withUri("/v2/images/{image_id}/members/{member_id}")
                 .withContentType("application/json");
 
@@ -1051,6 +1074,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceDeleteTagRequest, GlanceDeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, GlanceDeleteTagRequest.class, GlanceDeleteTagResponse.class)
+                .withName("GlanceDeleteTag")
                 .withUri("/v2/images/{image_id}/tags/{tag}")
                 .withContentType("application/json");
 
@@ -1083,6 +1107,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceListImageMemberSchemasRequest, GlanceListImageMemberSchemasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceListImageMemberSchemasRequest.class, GlanceListImageMemberSchemasResponse.class)
+                .withName("GlanceListImageMemberSchemas")
                 .withUri("/v2/schemas/members")
                 .withContentType("application/json");
 
@@ -1099,6 +1124,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceListImageMembersRequest, GlanceListImageMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceListImageMembersRequest.class, GlanceListImageMembersResponse.class)
+                .withName("GlanceListImageMembers")
                 .withUri("/v2/images/{image_id}/members")
                 .withContentType("application/json");
 
@@ -1123,6 +1149,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceListImageSchemasRequest, GlanceListImageSchemasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceListImageSchemasRequest.class, GlanceListImageSchemasResponse.class)
+                .withName("GlanceListImageSchemas")
                 .withUri("/v2/schemas/images")
                 .withContentType("application/json");
 
@@ -1139,6 +1166,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceListImagesRequest, GlanceListImagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceListImagesRequest.class, GlanceListImagesResponse.class)
+                .withName("GlanceListImages")
                 .withUri("/v2/images")
                 .withContentType("application/json");
 
@@ -1411,6 +1439,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceShowImageRequest, GlanceShowImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceShowImageRequest.class, GlanceShowImageResponse.class)
+                .withName("GlanceShowImage")
                 .withUri("/v2/images/{image_id}")
                 .withContentType("application/json");
 
@@ -1435,6 +1464,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceShowImageMemberRequest, GlanceShowImageMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceShowImageMemberRequest.class, GlanceShowImageMemberResponse.class)
+                .withName("GlanceShowImageMember")
                 .withUri("/v2/images/{image_id}/members/{member_id}")
                 .withContentType("application/json");
 
@@ -1467,6 +1497,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceShowImageMemberSchemasRequest, GlanceShowImageMemberSchemasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceShowImageMemberSchemasRequest.class, GlanceShowImageMemberSchemasResponse.class)
+                .withName("GlanceShowImageMemberSchemas")
                 .withUri("/v2/schemas/member")
                 .withContentType("application/json");
 
@@ -1483,6 +1514,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceShowImageSchemasRequest, GlanceShowImageSchemasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, GlanceShowImageSchemasRequest.class, GlanceShowImageSchemasResponse.class)
+                .withName("GlanceShowImageSchemas")
                 .withUri("/v2/schemas/image")
                 .withContentType("application/json");
 
@@ -1499,6 +1531,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceUpdateImageRequest, GlanceUpdateImageResponse> builder =
             HttpRequestDef.builder(HttpMethod.PATCH, GlanceUpdateImageRequest.class, GlanceUpdateImageResponse.class)
+                .withName("GlanceUpdateImage")
                 .withUri("/v2/images/{image_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1531,6 +1564,7 @@ public class ImsMeta {
         // basic
         HttpRequestDef.Builder<GlanceUpdateImageMemberRequest, GlanceUpdateImageMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, GlanceUpdateImageMemberRequest.class, GlanceUpdateImageMemberResponse.class)
+                .withName("GlanceUpdateImageMember")
                 .withUri("/v2/images/{image_id}/members/{member_id}")
                 .withContentType("application/json;charset=UTF-8");
 

@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.dcs.v2.model.*;
 
 public class DcsAsyncClient {
@@ -31,6 +31,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 批量添加或删除标签
+     * 为指定实例批量添加标签，或批量删除标签。
+     *
+     * @param BatchCreateOrDeleteTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsyncInvoker(BatchCreateOrDeleteTagsRequest request) {
+        return new AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>(request, DcsMeta.batchCreateOrDeleteTags, hcClient);
+    }
+
+    /**
      * 批量删除实例
      * 批量删除多个缓存实例。
      *
@@ -39,6 +50,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<BatchDeleteInstancesResponse> batchDeleteInstancesAsync(BatchDeleteInstancesRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.batchDeleteInstances);
+    }
+
+    /**
+     * 批量删除实例
+     * 批量删除多个缓存实例。
+     *
+     * @param BatchDeleteInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>
+     */
+    public AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstancesAsyncInvoker(BatchDeleteInstancesRequest request) {
+        return new AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse>(request, DcsMeta.batchDeleteInstances, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 主备切换
+     * 切换实例主备节点，只有主备实例支持该操作。
+     *
+     * @param ChangeMasterStandbyRequest 请求对象
+     * @return AsyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse>
+     */
+    public AsyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> changeMasterStandbyAsyncInvoker(ChangeMasterStandbyRequest request) {
+        return new AsyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse>(request, DcsMeta.changeMasterStandby, hcClient);
+    }
+
+    /**
      * 备份指定实例
      * 备份指定的缓存实例。 &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。 
      *
@@ -61,6 +94,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<CopyInstanceResponse> copyInstanceAsync(CopyInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.copyInstance);
+    }
+
+    /**
+     * 备份指定实例
+     * 备份指定的缓存实例。 &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。 
+     *
+     * @param CopyInstanceRequest 请求对象
+     * @return AsyncInvoker<CopyInstanceRequest, CopyInstanceResponse>
+     */
+    public AsyncInvoker<CopyInstanceRequest, CopyInstanceResponse> copyInstanceAsyncInvoker(CopyInstanceRequest request) {
+        return new AsyncInvoker<CopyInstanceRequest, CopyInstanceResponse>(request, DcsMeta.copyInstance, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 创建大key分析任务
+     * 为Redis实例创建大key分析任务。
+     *
+     * @param CreateBigkeyScanTaskRequest 请求对象
+     * @return AsyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse>
+     */
+    public AsyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> createBigkeyScanTaskAsyncInvoker(CreateBigkeyScanTaskRequest request) {
+        return new AsyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse>(request, DcsMeta.createBigkeyScanTask, hcClient);
+    }
+
+    /**
      * 创建热key分析任务
      * 创建热key分析任务，Redis 3.0 不支持热key分析。  热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。 
      *
@@ -83,6 +138,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<CreateHotkeyScanTaskResponse> createHotkeyScanTaskAsync(CreateHotkeyScanTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.createHotkeyScanTask);
+    }
+
+    /**
+     * 创建热key分析任务
+     * 创建热key分析任务，Redis 3.0 不支持热key分析。  热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。 
+     *
+     * @param CreateHotkeyScanTaskRequest 请求对象
+     * @return AsyncInvoker<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse>
+     */
+    public AsyncInvoker<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> createHotkeyScanTaskAsyncInvoker(CreateHotkeyScanTaskRequest request) {
+        return new AsyncInvoker<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse>(request, DcsMeta.createHotkeyScanTask, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 创建缓存实例
+     * 创建缓存实例，该接口创建的缓存实例支持按需计费和包周期两种方式。
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
+    public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(CreateInstanceRequest request) {
+        return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, DcsMeta.createInstance, hcClient);
+    }
+
+    /**
      * 创建数据迁移任务
      * 创建数据迁移任务。
      *
@@ -105,6 +182,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<CreateMigrationTaskResponse> createMigrationTaskAsync(CreateMigrationTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.createMigrationTask);
+    }
+
+    /**
+     * 创建数据迁移任务
+     * 创建数据迁移任务。
+     *
+     * @param CreateMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse>
+     */
+    public AsyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse> createMigrationTaskAsyncInvoker(CreateMigrationTaskRequest request) {
+        return new AsyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse>(request, DcsMeta.createMigrationTask, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 删除后台任务
+     * 删除后台任务
+     *
+     * @param DeleteBackgroundTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>
+     */
+    public AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTaskAsyncInvoker(DeleteBackgroundTaskRequest request) {
+        return new AsyncInvoker<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse>(request, DcsMeta.deleteBackgroundTask, hcClient);
+    }
+
+    /**
      * 删除备份文件
      * 删除缓存实例已备份的文件。
      *
@@ -127,6 +226,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<DeleteBackupFileResponse> deleteBackupFileAsync(DeleteBackupFileRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.deleteBackupFile);
+    }
+
+    /**
+     * 删除备份文件
+     * 删除缓存实例已备份的文件。
+     *
+     * @param DeleteBackupFileRequest 请求对象
+     * @return AsyncInvoker<DeleteBackupFileRequest, DeleteBackupFileResponse>
+     */
+    public AsyncInvoker<DeleteBackupFileRequest, DeleteBackupFileResponse> deleteBackupFileAsyncInvoker(DeleteBackupFileRequest request) {
+        return new AsyncInvoker<DeleteBackupFileRequest, DeleteBackupFileResponse>(request, DcsMeta.deleteBackupFile, hcClient);
     }
 
     /**
@@ -141,6 +251,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 删除大key分析记录
+     * 删除大key分析记录。
+     *
+     * @param DeleteBigkeyScanTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse>
+     */
+    public AsyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> deleteBigkeyScanTaskAsyncInvoker(DeleteBigkeyScanTaskRequest request) {
+        return new AsyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse>(request, DcsMeta.deleteBigkeyScanTask, hcClient);
+    }
+
+    /**
      * 删除热key分析任务
      * 删除热key分析任务。
      *
@@ -149,6 +270,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<DeleteHotkeyScanTaskResponse> deleteHotkeyScanTaskAsync(DeleteHotkeyScanTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.deleteHotkeyScanTask);
+    }
+
+    /**
+     * 删除热key分析任务
+     * 删除热key分析任务。
+     *
+     * @param DeleteHotkeyScanTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse>
+     */
+    public AsyncInvoker<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> deleteHotkeyScanTaskAsyncInvoker(DeleteHotkeyScanTaskRequest request) {
+        return new AsyncInvoker<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse>(request, DcsMeta.deleteHotkeyScanTask, hcClient);
     }
 
     /**
@@ -163,6 +295,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 域名摘除IP
+     * 将只读副本的IP从域名中摘除，摘除成功后，只读域名不会再解析到该副本IP。
+     *
+     * @param DeleteIpFromDomainNameRequest 请求对象
+     * @return AsyncInvoker<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse>
+     */
+    public AsyncInvoker<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> deleteIpFromDomainNameAsyncInvoker(DeleteIpFromDomainNameRequest request) {
+        return new AsyncInvoker<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse>(request, DcsMeta.deleteIpFromDomainName, hcClient);
+    }
+
+    /**
      * 删除数据迁移任务
      * 删除数据迁移任务。
      *
@@ -171,6 +314,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<DeleteMigrationTaskResponse> deleteMigrationTaskAsync(DeleteMigrationTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.deleteMigrationTask);
+    }
+
+    /**
+     * 删除数据迁移任务
+     * 删除数据迁移任务。
+     *
+     * @param DeleteMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse>
+     */
+    public AsyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> deleteMigrationTaskAsyncInvoker(DeleteMigrationTaskRequest request) {
+        return new AsyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse>(request, DcsMeta.deleteMigrationTask, hcClient);
     }
 
     /**
@@ -185,6 +339,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 删除实例
+     * 删除指定的缓存实例，释放该实例的所有资源。  &gt; 如果是删除按需资源，请按照本章节执行；如果是删除包周期资源，即退订，请参考[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html#section2)。 
+     *
+     * @param DeleteSingleInstanceRequest 请求对象
+     * @return AsyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse>
+     */
+    public AsyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> deleteSingleInstanceAsyncInvoker(DeleteSingleInstanceRequest request) {
+        return new AsyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse>(request, DcsMeta.deleteSingleInstance, hcClient);
+    }
+
+    /**
      * 查询可用区信息
      * 查询所在局点的可用区信息
      *
@@ -193,6 +358,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListAvailableZonesResponse> listAvailableZonesAsync(ListAvailableZonesRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listAvailableZones);
+    }
+
+    /**
+     * 查询可用区信息
+     * 查询所在局点的可用区信息
+     *
+     * @param ListAvailableZonesRequest 请求对象
+     * @return AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
+     */
+    public AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesAsyncInvoker(ListAvailableZonesRequest request) {
+        return new AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request, DcsMeta.listAvailableZones, hcClient);
     }
 
     /**
@@ -207,6 +383,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询后台任务列表
+     * 查询后台任务列表
+     *
+     * @param ListBackgroundTaskRequest 请求对象
+     * @return AsyncInvoker<ListBackgroundTaskRequest, ListBackgroundTaskResponse>
+     */
+    public AsyncInvoker<ListBackgroundTaskRequest, ListBackgroundTaskResponse> listBackgroundTaskAsyncInvoker(ListBackgroundTaskRequest request) {
+        return new AsyncInvoker<ListBackgroundTaskRequest, ListBackgroundTaskResponse>(request, DcsMeta.listBackgroundTask, hcClient);
+    }
+
+    /**
      * 获取备份文件下载链接
      * 获取指定实例的备份文件下载链接，下载备份文件。
      *
@@ -215,6 +402,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListBackupFileLinksResponse> listBackupFileLinksAsync(ListBackupFileLinksRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listBackupFileLinks);
+    }
+
+    /**
+     * 获取备份文件下载链接
+     * 获取指定实例的备份文件下载链接，下载备份文件。
+     *
+     * @param ListBackupFileLinksRequest 请求对象
+     * @return AsyncInvoker<ListBackupFileLinksRequest, ListBackupFileLinksResponse>
+     */
+    public AsyncInvoker<ListBackupFileLinksRequest, ListBackupFileLinksResponse> listBackupFileLinksAsyncInvoker(ListBackupFileLinksRequest request) {
+        return new AsyncInvoker<ListBackupFileLinksRequest, ListBackupFileLinksResponse>(request, DcsMeta.listBackupFileLinks, hcClient);
     }
 
     /**
@@ -229,6 +427,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询实例备份信息
+     * 查询指定缓存实例的备份信息列表。
+     *
+     * @param ListBackupRecordsRequest 请求对象
+     * @return AsyncInvoker<ListBackupRecordsRequest, ListBackupRecordsResponse>
+     */
+    public AsyncInvoker<ListBackupRecordsRequest, ListBackupRecordsResponse> listBackupRecordsAsyncInvoker(ListBackupRecordsRequest request) {
+        return new AsyncInvoker<ListBackupRecordsRequest, ListBackupRecordsResponse>(request, DcsMeta.listBackupRecords, hcClient);
+    }
+
+    /**
      * 查询大key分析任务列表
      * 查询大key分析任务列表。
      *
@@ -237,6 +446,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListBigkeyScanTasksResponse> listBigkeyScanTasksAsync(ListBigkeyScanTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listBigkeyScanTasks);
+    }
+
+    /**
+     * 查询大key分析任务列表
+     * 查询大key分析任务列表。
+     *
+     * @param ListBigkeyScanTasksRequest 请求对象
+     * @return AsyncInvoker<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse>
+     */
+    public AsyncInvoker<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> listBigkeyScanTasksAsyncInvoker(ListBigkeyScanTasksRequest request) {
+        return new AsyncInvoker<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse>(request, DcsMeta.listBigkeyScanTasks, hcClient);
     }
 
     /**
@@ -251,6 +471,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询实例配置参数
+     * 查询指定实例的配置参数信息。
+     *
+     * @param ListConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
+     */
+    public AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsAsyncInvoker(ListConfigurationsRequest request) {
+        return new AsyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request, DcsMeta.listConfigurations, hcClient);
+    }
+
+    /**
      * 查询产品规格
      * 在创建缓存实例时，需要配置订购的产品规格编码（spec_code），可通过该接口查询产品规格，查询条件不选时默认查询全部。
      *
@@ -259,6 +490,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListFlavorsResponse> listFlavorsAsync(ListFlavorsRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listFlavors);
+    }
+
+    /**
+     * 查询产品规格
+     * 在创建缓存实例时，需要配置订购的产品规格编码（spec_code），可通过该接口查询产品规格，查询条件不选时默认查询全部。
+     *
+     * @param ListFlavorsRequest 请求对象
+     * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
+     */
+    public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
+        return new AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, DcsMeta.listFlavors, hcClient);
     }
 
     /**
@@ -273,6 +515,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询分片信息
+     * 查询读写分离实例和集群实例的分片和副本信息，其中，读写分离实例仅Redis4.0和Redis5.0的主备实例支持。
+     *
+     * @param ListGroupReplicationInfoRequest 请求对象
+     * @return AsyncInvoker<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse>
+     */
+    public AsyncInvoker<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse> listGroupReplicationInfoAsyncInvoker(ListGroupReplicationInfoRequest request) {
+        return new AsyncInvoker<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse>(request, DcsMeta.listGroupReplicationInfo, hcClient);
+    }
+
+    /**
      * 查询热key分析任务列表
      * 查询热key分析历史记录。
      *
@@ -281,6 +534,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListHotKeyScanTasksResponse> listHotKeyScanTasksAsync(ListHotKeyScanTasksRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listHotKeyScanTasks);
+    }
+
+    /**
+     * 查询热key分析任务列表
+     * 查询热key分析历史记录。
+     *
+     * @param ListHotKeyScanTasksRequest 请求对象
+     * @return AsyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse>
+     */
+    public AsyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> listHotKeyScanTasksAsyncInvoker(ListHotKeyScanTasksRequest request) {
+        return new AsyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse>(request, DcsMeta.listHotKeyScanTasks, hcClient);
     }
 
     /**
@@ -295,6 +559,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询所有实例列表
+     * 查询租户的缓存实例列表，支持按照条件查询。
+     *
+     * @param ListInstancesRequest 请求对象
+     * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
+    public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(ListInstancesRequest request) {
+        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, DcsMeta.listInstances, hcClient);
+    }
+
+    /**
      * 查询维护时间窗时间段
      * 查询维护时间窗开始时间和结束时间。
      *
@@ -303,6 +578,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListMaintenanceWindowsResponse> listMaintenanceWindowsAsync(ListMaintenanceWindowsRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listMaintenanceWindows);
+    }
+
+    /**
+     * 查询维护时间窗时间段
+     * 查询维护时间窗开始时间和结束时间。
+     *
+     * @param ListMaintenanceWindowsRequest 请求对象
+     * @return AsyncInvoker<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>
+     */
+    public AsyncInvoker<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> listMaintenanceWindowsAsyncInvoker(ListMaintenanceWindowsRequest request) {
+        return new AsyncInvoker<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>(request, DcsMeta.listMaintenanceWindows, hcClient);
     }
 
     /**
@@ -317,6 +603,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询迁移任务列表
+     * 查询迁移任务列表。
+     *
+     * @param ListMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<ListMigrationTaskRequest, ListMigrationTaskResponse>
+     */
+    public AsyncInvoker<ListMigrationTaskRequest, ListMigrationTaskResponse> listMigrationTaskAsyncInvoker(ListMigrationTaskRequest request) {
+        return new AsyncInvoker<ListMigrationTaskRequest, ListMigrationTaskResponse>(request, DcsMeta.listMigrationTask, hcClient);
+    }
+
+    /**
      * 查询主维度信息列表
      * 查询主维度对象列表，主维度ID当前支持dcs_instance_id，dcs_memcached_instance_id。 &gt; 该接口当前仅在中国华南区开放。 
      *
@@ -325,6 +622,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListMonitoredObjectsResponse> listMonitoredObjectsAsync(ListMonitoredObjectsRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listMonitoredObjects);
+    }
+
+    /**
+     * 查询主维度信息列表
+     * 查询主维度对象列表，主维度ID当前支持dcs_instance_id，dcs_memcached_instance_id。 &gt; 该接口当前仅在中国华南区开放。 
+     *
+     * @param ListMonitoredObjectsRequest 请求对象
+     * @return AsyncInvoker<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse>
+     */
+    public AsyncInvoker<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> listMonitoredObjectsAsyncInvoker(ListMonitoredObjectsRequest request) {
+        return new AsyncInvoker<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse>(request, DcsMeta.listMonitoredObjects, hcClient);
     }
 
     /**
@@ -339,6 +647,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询单个主维度下子维度监控对象列表
+     * 查询主维度下子维度监控对象列表，当前支持子维度的主维度ID的有 dcs_instance_id &gt; 该接口当前仅在中国华南区开放。 
+     *
+     * @param ListMonitoredObjectsOfInstanceRequest 请求对象
+     * @return AsyncInvoker<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse>
+     */
+    public AsyncInvoker<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse> listMonitoredObjectsOfInstanceAsyncInvoker(ListMonitoredObjectsOfInstanceRequest request) {
+        return new AsyncInvoker<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse>(request, DcsMeta.listMonitoredObjectsOfInstance, hcClient);
+    }
+
+    /**
      * 查询实例状态
      * 查询该租户在当前区域下不同状态的实例数。
      *
@@ -347,6 +666,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListNumberOfInstancesInDifferentStatusResponse> listNumberOfInstancesInDifferentStatusAsync(ListNumberOfInstancesInDifferentStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listNumberOfInstancesInDifferentStatus);
+    }
+
+    /**
+     * 查询实例状态
+     * 查询该租户在当前区域下不同状态的实例数。
+     *
+     * @param ListNumberOfInstancesInDifferentStatusRequest 请求对象
+     * @return AsyncInvoker<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse>
+     */
+    public AsyncInvoker<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse> listNumberOfInstancesInDifferentStatusAsyncInvoker(ListNumberOfInstancesInDifferentStatusRequest request) {
+        return new AsyncInvoker<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse>(request, DcsMeta.listNumberOfInstancesInDifferentStatus, hcClient);
     }
 
     /**
@@ -361,6 +691,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询实例恢复记录
+     * 查询指定缓存实例的恢复记录列表。
+     *
+     * @param ListRestoreRecordsRequest 请求对象
+     * @return AsyncInvoker<ListRestoreRecordsRequest, ListRestoreRecordsResponse>
+     */
+    public AsyncInvoker<ListRestoreRecordsRequest, ListRestoreRecordsResponse> listRestoreRecordsAsyncInvoker(ListRestoreRecordsRequest request) {
+        return new AsyncInvoker<ListRestoreRecordsRequest, ListRestoreRecordsResponse>(request, DcsMeta.listRestoreRecords, hcClient);
+    }
+
+    /**
      * 查询慢日志
      * 查询慢日志。
      *
@@ -369,6 +710,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListSlowlogResponse> listSlowlogAsync(ListSlowlogRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listSlowlog);
+    }
+
+    /**
+     * 查询慢日志
+     * 查询慢日志。
+     *
+     * @param ListSlowlogRequest 请求对象
+     * @return AsyncInvoker<ListSlowlogRequest, ListSlowlogResponse>
+     */
+    public AsyncInvoker<ListSlowlogRequest, ListSlowlogResponse> listSlowlogAsyncInvoker(ListSlowlogRequest request) {
+        return new AsyncInvoker<ListSlowlogRequest, ListSlowlogResponse>(request, DcsMeta.listSlowlog, hcClient);
     }
 
     /**
@@ -383,6 +735,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询运行中实例的统计信息
+     * 查询当前租户下处于“运行中”状态的缓存实例的统计信息。
+     *
+     * @param ListStatisticsOfRunningInstancesRequest 请求对象
+     * @return AsyncInvoker<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse>
+     */
+    public AsyncInvoker<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse> listStatisticsOfRunningInstancesAsyncInvoker(ListStatisticsOfRunningInstancesRequest request) {
+        return new AsyncInvoker<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse>(request, DcsMeta.listStatisticsOfRunningInstances, hcClient);
+    }
+
+    /**
      * 查询租户所有标签
      * 查询租户在指定Project中实例类型的所有资源标签集合。
      *
@@ -391,6 +754,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ListTagsOfTenantResponse> listTagsOfTenantAsync(ListTagsOfTenantRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.listTagsOfTenant);
+    }
+
+    /**
+     * 查询租户所有标签
+     * 查询租户在指定Project中实例类型的所有资源标签集合。
+     *
+     * @param ListTagsOfTenantRequest 请求对象
+     * @return AsyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse>
+     */
+    public AsyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse> listTagsOfTenantAsyncInvoker(ListTagsOfTenantRequest request) {
+        return new AsyncInvoker<ListTagsOfTenantRequest, ListTagsOfTenantResponse>(request, DcsMeta.listTagsOfTenant, hcClient);
     }
 
     /**
@@ -405,6 +779,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 重启实例或清空数据
+     * 重启运行中的DCS缓存实例。  清空Redis4.0/Redis5.0的实例数据，数据清空后，无法撤销，且无法恢复，请谨慎操作。 
+     *
+     * @param RestartOrFlushInstancesRequest 请求对象
+     * @return AsyncInvoker<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse>
+     */
+    public AsyncInvoker<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> restartOrFlushInstancesAsyncInvoker(RestartOrFlushInstancesRequest request) {
+        return new AsyncInvoker<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse>(request, DcsMeta.restartOrFlushInstances, hcClient);
+    }
+
+    /**
      * 恢复指定实例
      * 恢复指定的缓存实例。 &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。 
      *
@@ -413,6 +798,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<RestoreInstanceResponse> restoreInstanceAsync(RestoreInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.restoreInstance);
+    }
+
+    /**
+     * 恢复指定实例
+     * 恢复指定的缓存实例。 &gt; 只有主备和集群类型的缓存实例支持备份恢复操作，单机实例不支持备份恢复操作。 
+     *
+     * @param RestoreInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>
+     */
+    public AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstanceAsyncInvoker(RestoreInstanceRequest request) {
+        return new AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>(request, DcsMeta.restoreInstance, hcClient);
     }
 
     /**
@@ -427,6 +823,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询大key自动分析配置
+     * 查询大key自动分析配置。
+     *
+     * @param ShowBigkeyAutoscanConfigRequest 请求对象
+     * @return AsyncInvoker<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse>
+     */
+    public AsyncInvoker<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> showBigkeyAutoscanConfigAsyncInvoker(ShowBigkeyAutoscanConfigRequest request) {
+        return new AsyncInvoker<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse>(request, DcsMeta.showBigkeyAutoscanConfig, hcClient);
+    }
+
+    /**
      * 查询大key分析详情
      * 查询大key分析详情。
      *
@@ -435,6 +842,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ShowBigkeyScanTaskDetailsResponse> showBigkeyScanTaskDetailsAsync(ShowBigkeyScanTaskDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.showBigkeyScanTaskDetails);
+    }
+
+    /**
+     * 查询大key分析详情
+     * 查询大key分析详情。
+     *
+     * @param ShowBigkeyScanTaskDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse>
+     */
+    public AsyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> showBigkeyScanTaskDetailsAsyncInvoker(ShowBigkeyScanTaskDetailsRequest request) {
+        return new AsyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse>(request, DcsMeta.showBigkeyScanTaskDetails, hcClient);
     }
 
     /**
@@ -449,6 +867,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询热key自动分析配置
+     * 查询热key自动分析配置。
+     *
+     * @param ShowHotkeyAutoscanConfigRequest 请求对象
+     * @return AsyncInvoker<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse>
+     */
+    public AsyncInvoker<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> showHotkeyAutoscanConfigAsyncInvoker(ShowHotkeyAutoscanConfigRequest request) {
+        return new AsyncInvoker<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse>(request, DcsMeta.showHotkeyAutoscanConfig, hcClient);
+    }
+
+    /**
      * 查询热key分析详情
      * 查询热key分析详情。
      *
@@ -457,6 +886,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ShowHotkeyTaskDetailsResponse> showHotkeyTaskDetailsAsync(ShowHotkeyTaskDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.showHotkeyTaskDetails);
+    }
+
+    /**
+     * 查询热key分析详情
+     * 查询热key分析详情。
+     *
+     * @param ShowHotkeyTaskDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse>
+     */
+    public AsyncInvoker<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> showHotkeyTaskDetailsAsyncInvoker(ShowHotkeyTaskDetailsRequest request) {
+        return new AsyncInvoker<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse>(request, DcsMeta.showHotkeyTaskDetails, hcClient);
     }
 
     /**
@@ -471,6 +911,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询指定实例
+     * 通过实例ID查询实例的详细信息。
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
+     */
+    public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(ShowInstanceRequest request) {
+        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DcsMeta.showInstance, hcClient);
+    }
+
+    /**
      * 查询迁移任务详情
      * 查询迁移任务详情。
      *
@@ -479,6 +930,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ShowMigrationTaskResponse> showMigrationTaskAsync(ShowMigrationTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.showMigrationTask);
+    }
+
+    /**
+     * 查询迁移任务详情
+     * 查询迁移任务详情。
+     *
+     * @param ShowMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<ShowMigrationTaskRequest, ShowMigrationTaskResponse>
+     */
+    public AsyncInvoker<ShowMigrationTaskRequest, ShowMigrationTaskResponse> showMigrationTaskAsyncInvoker(ShowMigrationTaskRequest request) {
+        return new AsyncInvoker<ShowMigrationTaskRequest, ShowMigrationTaskResponse>(request, DcsMeta.showMigrationTask, hcClient);
     }
 
     /**
@@ -493,6 +955,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询在线迁移进度明细
+     * 查询在线迁移进度明细。
+     *
+     * @param ShowMigrationTaskStatsRequest 请求对象
+     * @return AsyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse>
+     */
+    public AsyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> showMigrationTaskStatsAsyncInvoker(ShowMigrationTaskStatsRequest request) {
+        return new AsyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse>(request, DcsMeta.showMigrationTaskStats, hcClient);
+    }
+
+    /**
      * 查询租户配额
      * 查询租户默认可以创建的实例数和总内存的配额限制，以及可以申请配额的最大值和最小值。不同的租户在不同的区域配额可能不同。
      *
@@ -501,6 +974,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<ShowQuotaOfTenantResponse> showQuotaOfTenantAsync(ShowQuotaOfTenantRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.showQuotaOfTenant);
+    }
+
+    /**
+     * 查询租户配额
+     * 查询租户默认可以创建的实例数和总内存的配额限制，以及可以申请配额的最大值和最小值。不同的租户在不同的区域配额可能不同。
+     *
+     * @param ShowQuotaOfTenantRequest 请求对象
+     * @return AsyncInvoker<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse>
+     */
+    public AsyncInvoker<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> showQuotaOfTenantAsyncInvoker(ShowQuotaOfTenantRequest request) {
+        return new AsyncInvoker<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse>(request, DcsMeta.showQuotaOfTenant, hcClient);
     }
 
     /**
@@ -515,6 +999,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询单个实例标签
+     * 通过实例ID查询标签。
+     *
+     * @param ShowTagsRequest 请求对象
+     * @return AsyncInvoker<ShowTagsRequest, ShowTagsResponse>
+     */
+    public AsyncInvoker<ShowTagsRequest, ShowTagsResponse> showTagsAsyncInvoker(ShowTagsRequest request) {
+        return new AsyncInvoker<ShowTagsRequest, ShowTagsResponse>(request, DcsMeta.showTags, hcClient);
+    }
+
+    /**
      * 停止数据迁移任务
      * 停止数据迁移任务。
      *
@@ -523,6 +1018,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<StopMigrationTaskResponse> stopMigrationTaskAsync(StopMigrationTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.stopMigrationTask);
+    }
+
+    /**
+     * 停止数据迁移任务
+     * 停止数据迁移任务。
+     *
+     * @param StopMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse>
+     */
+    public AsyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse> stopMigrationTaskAsyncInvoker(StopMigrationTaskRequest request) {
+        return new AsyncInvoker<StopMigrationTaskRequest, StopMigrationTaskResponse>(request, DcsMeta.stopMigrationTask, hcClient);
     }
 
     /**
@@ -537,6 +1043,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 设置大key自动分析配置
+     * 设置大key自动分析配置。
+     *
+     * @param UpdateBigkeyAutoscanConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse>
+     */
+    public AsyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> updateBigkeyAutoscanConfigAsyncInvoker(UpdateBigkeyAutoscanConfigRequest request) {
+        return new AsyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse>(request, DcsMeta.updateBigkeyAutoscanConfig, hcClient);
+    }
+
+    /**
      * 修改实例配置参数
      * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
      *
@@ -545,6 +1062,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<UpdateConfigurationsResponse> updateConfigurationsAsync(UpdateConfigurationsRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.updateConfigurations);
+    }
+
+    /**
+     * 修改实例配置参数
+     * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
+     *
+     * @param UpdateConfigurationsRequest 请求对象
+     * @return AsyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse>
+     */
+    public AsyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse> updateConfigurationsAsyncInvoker(UpdateConfigurationsRequest request) {
+        return new AsyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse>(request, DcsMeta.updateConfigurations, hcClient);
     }
 
     /**
@@ -559,6 +1087,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 设置热key自动分析配置
+     * 设置热key自动分析配置。
+     *
+     * @param UpdateHotkeyAutoScanConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse>
+     */
+    public AsyncInvoker<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> updateHotkeyAutoScanConfigAsyncInvoker(UpdateHotkeyAutoScanConfigRequest request) {
+        return new AsyncInvoker<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse>(request, DcsMeta.updateHotkeyAutoScanConfig, hcClient);
+    }
+
+    /**
      * 修改实例信息
      * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
      *
@@ -567,6 +1106,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.updateInstance);
+    }
+
+    /**
+     * 修改实例信息
+     * 修改缓存实例的信息，可修改信息包括实例名称、描述、备份策略、维护时间窗开始和结束时间以及安全组。
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
+     */
+    public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(UpdateInstanceRequest request) {
+        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, DcsMeta.updateInstance, hcClient);
     }
 
     /**
@@ -581,6 +1131,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 修改密码
+     * 修改缓存实例的密码。
+     *
+     * @param UpdatePasswordRequest 请求对象
+     * @return AsyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse>
+     */
+    public AsyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse> updatePasswordAsyncInvoker(UpdatePasswordRequest request) {
+        return new AsyncInvoker<UpdatePasswordRequest, UpdatePasswordResponse>(request, DcsMeta.updatePassword, hcClient);
+    }
+
+    /**
      * 设置备节点优先级
      * 设置副本优先级，主节点故障时，权重越小的备节点切换为主节点的优先级越高。
      *
@@ -589,6 +1150,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<UpdateSlavePriorityResponse> updateSlavePriorityAsync(UpdateSlavePriorityRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.updateSlavePriority);
+    }
+
+    /**
+     * 设置备节点优先级
+     * 设置副本优先级，主节点故障时，权重越小的备节点切换为主节点的优先级越高。
+     *
+     * @param UpdateSlavePriorityRequest 请求对象
+     * @return AsyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse>
+     */
+    public AsyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> updateSlavePriorityAsyncInvoker(UpdateSlavePriorityRequest request) {
+        return new AsyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse>(request, DcsMeta.updateSlavePriority, hcClient);
     }
 
     /**
@@ -603,6 +1175,17 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询指定实例的IP白名单
+     * 查询指定实例的IP白名单。
+     *
+     * @param ShowIpWhitelistRequest 请求对象
+     * @return AsyncInvoker<ShowIpWhitelistRequest, ShowIpWhitelistResponse>
+     */
+    public AsyncInvoker<ShowIpWhitelistRequest, ShowIpWhitelistResponse> showIpWhitelistAsyncInvoker(ShowIpWhitelistRequest request) {
+        return new AsyncInvoker<ShowIpWhitelistRequest, ShowIpWhitelistResponse>(request, DcsMeta.showIpWhitelist, hcClient);
+    }
+
+    /**
      * 设置IP白名单分组
      * 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能
      *
@@ -611,6 +1194,17 @@ public class DcsAsyncClient {
      */
     public CompletableFuture<UpdateIpWhitelistResponse> updateIpWhitelistAsync(UpdateIpWhitelistRequest request) {
         return hcClient.asyncInvokeHttp(request, DcsMeta.updateIpWhitelist);
+    }
+
+    /**
+     * 设置IP白名单分组
+     * 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能
+     *
+     * @param UpdateIpWhitelistRequest 请求对象
+     * @return AsyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse>
+     */
+    public AsyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> updateIpWhitelistAsyncInvoker(UpdateIpWhitelistRequest request) {
+        return new AsyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse>(request, DcsMeta.updateIpWhitelist, hcClient);
     }
 
 }

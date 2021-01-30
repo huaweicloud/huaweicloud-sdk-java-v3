@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.dds.v3;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.dds.v3.model.*;
 
 public class DdsClient {
@@ -28,6 +29,17 @@ public class DdsClient {
     }
 
     /**
+     * 扩容指定集群实例的节点数量
+     * 扩容指定集群实例的节点数量。
+     *
+     * @param AddShardingNodeRequest 请求对象
+     * @return SyncInvoker<AddShardingNodeRequest, AddShardingNodeResponse>
+     */
+    public SyncInvoker<AddShardingNodeRequest, AddShardingNodeResponse> addShardingNodeInvoker(AddShardingNodeRequest request) {
+        return new SyncInvoker<AddShardingNodeRequest, AddShardingNodeResponse>(request, DdsMeta.addShardingNode, hcClient);
+    }
+
+    /**
      * 绑定节点的公网IP
      * 绑定节点的公网IP
      *
@@ -36,6 +48,17 @@ public class DdsClient {
      */
     public AttachEipResponse attachEip(AttachEipRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.attachEip);
+    }
+
+    /**
+     * 绑定节点的公网IP
+     * 绑定节点的公网IP
+     *
+     * @param AttachEipRequest 请求对象
+     * @return SyncInvoker<AttachEipRequest, AttachEipResponse>
+     */
+    public SyncInvoker<AttachEipRequest, AttachEipResponse> attachEipInvoker(AttachEipRequest request) {
+        return new SyncInvoker<AttachEipRequest, AttachEipResponse>(request, DdsMeta.attachEip, hcClient);
     }
 
     /**
@@ -50,6 +73,17 @@ public class DdsClient {
     }
 
     /**
+     * 修改实例内网IP
+     * 修改实例内网IP
+     *
+     * @param AttachInternalIpRequest 请求对象
+     * @return SyncInvoker<AttachInternalIpRequest, AttachInternalIpResponse>
+     */
+    public SyncInvoker<AttachInternalIpRequest, AttachInternalIpResponse> attachInternalIpInvoker(AttachInternalIpRequest request) {
+        return new SyncInvoker<AttachInternalIpRequest, AttachInternalIpResponse>(request, DdsMeta.attachInternalIp, hcClient);
+    }
+
+    /**
      * 批量添加或删除指定实例的标签
      * 批量添加或删除指定实例的标签。
      *
@@ -58,6 +92,17 @@ public class DdsClient {
      */
     public BatchTagActionResponse batchTagAction(BatchTagActionRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.batchTagAction);
+    }
+
+    /**
+     * 批量添加或删除指定实例的标签
+     * 批量添加或删除指定实例的标签。
+     *
+     * @param BatchTagActionRequest 请求对象
+     * @return SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
+     */
+    public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(BatchTagActionRequest request) {
+        return new SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request, DdsMeta.batchTagAction, hcClient);
     }
 
     /**
@@ -72,6 +117,39 @@ public class DdsClient {
     }
 
     /**
+     * 节点解绑公网IP
+     * 节点解绑公网IP
+     *
+     * @param CancelEipRequest 请求对象
+     * @return SyncInvoker<CancelEipRequest, CancelEipResponse>
+     */
+    public SyncInvoker<CancelEipRequest, CancelEipResponse> cancelEipInvoker(CancelEipRequest request) {
+        return new SyncInvoker<CancelEipRequest, CancelEipResponse>(request, DdsMeta.cancelEip, hcClient);
+    }
+
+    /**
+     * 检查数据库用户密码
+     * 检查数据库用户密码。
+     *
+     * @param CheckPasswordRequest 请求对象
+     * @return CheckPasswordResponse
+     */
+    public CheckPasswordResponse checkPassword(CheckPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.checkPassword);
+    }
+
+    /**
+     * 检查数据库用户密码
+     * 检查数据库用户密码。
+     *
+     * @param CheckPasswordRequest 请求对象
+     * @return SyncInvoker<CheckPasswordRequest, CheckPasswordResponse>
+     */
+    public SyncInvoker<CheckPasswordRequest, CheckPasswordResponse> checkPasswordInvoker(CheckPasswordRequest request) {
+        return new SyncInvoker<CheckPasswordRequest, CheckPasswordResponse>(request, DdsMeta.checkPassword, hcClient);
+    }
+
+    /**
      * 创建数据库角色
      * 创建数据库角色。
      *
@@ -80,6 +158,17 @@ public class DdsClient {
      */
     public CreateDatabaseRoleResponse createDatabaseRole(CreateDatabaseRoleRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.createDatabaseRole);
+    }
+
+    /**
+     * 创建数据库角色
+     * 创建数据库角色。
+     *
+     * @param CreateDatabaseRoleRequest 请求对象
+     * @return SyncInvoker<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse>
+     */
+    public SyncInvoker<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> createDatabaseRoleInvoker(CreateDatabaseRoleRequest request) {
+        return new SyncInvoker<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse>(request, DdsMeta.createDatabaseRole, hcClient);
     }
 
     /**
@@ -94,6 +183,17 @@ public class DdsClient {
     }
 
     /**
+     * 创建数据库用户
+     * 创建数据库用户。
+     *
+     * @param CreateDatabaseUserRequest 请求对象
+     * @return SyncInvoker<CreateDatabaseUserRequest, CreateDatabaseUserResponse>
+     */
+    public SyncInvoker<CreateDatabaseUserRequest, CreateDatabaseUserResponse> createDatabaseUserInvoker(CreateDatabaseUserRequest request) {
+        return new SyncInvoker<CreateDatabaseUserRequest, CreateDatabaseUserResponse>(request, DdsMeta.createDatabaseUser, hcClient);
+    }
+
+    /**
      * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
      * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
      *
@@ -102,6 +202,39 @@ public class DdsClient {
      */
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.createInstance);
+    }
+
+    /**
+     * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
+     * 创建文档数据库实例/恢复到新实例，包括集群实例、副本集实例、以及单节点实例。
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
+    public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(CreateInstanceRequest request) {
+        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, DdsMeta.createInstance, hcClient);
+    }
+
+    /**
+     * 打开集群的Shard/Config IP开关
+     * 打开集群的Shard/Config IP开关
+     *
+     * @param CreateIpRequest 请求对象
+     * @return CreateIpResponse
+     */
+    public CreateIpResponse createIp(CreateIpRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.createIp);
+    }
+
+    /**
+     * 打开集群的Shard/Config IP开关
+     * 打开集群的Shard/Config IP开关
+     *
+     * @param CreateIpRequest 请求对象
+     * @return SyncInvoker<CreateIpRequest, CreateIpResponse>
+     */
+    public SyncInvoker<CreateIpRequest, CreateIpResponse> createIpInvoker(CreateIpRequest request) {
+        return new SyncInvoker<CreateIpRequest, CreateIpResponse>(request, DdsMeta.createIp, hcClient);
     }
 
     /**
@@ -116,6 +249,17 @@ public class DdsClient {
     }
 
     /**
+     * 创建数据库实例的手动备份
+     * 创建数据库实例的手动备份。
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
+     */
+    public SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupInvoker(CreateManualBackupRequest request) {
+        return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request, DdsMeta.createManualBackup, hcClient);
+    }
+
+    /**
      * 删除数据库实例
      * 删除数据库实例。
      *
@@ -124,6 +268,17 @@ public class DdsClient {
      */
     public DeleteInstanceResponse deleteInstance(DeleteInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.deleteInstance);
+    }
+
+    /**
+     * 删除数据库实例
+     * 删除数据库实例。
+     *
+     * @param DeleteInstanceRequest 请求对象
+     * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
+     */
+    public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(DeleteInstanceRequest request) {
+        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, DdsMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -138,14 +293,58 @@ public class DdsClient {
     }
 
     /**
-     * 获取慢日志下载链接
-     * 获取慢日志下载链接。
+     * 删除数据库实例的手动备份
+     * 删除数据库实例的手动备份。
      *
-     * @param DownloadSlowlogRequest 请求对象
-     * @return DownloadSlowlogResponse
+     * @param DeleteManualBackupRequest 请求对象
+     * @return SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>
      */
-    public DownloadSlowlogResponse downloadSlowlog(DownloadSlowlogRequest request) {
-        return hcClient.syncInvokeHttp(request, DdsMeta.downloadSlowlog);
+    public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(DeleteManualBackupRequest request) {
+        return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request, DdsMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 生成审计日志下载链接
+     * 生成审计日志下载链接。
+     *
+     * @param ListAuditlogLinksRequest 请求对象
+     * @return ListAuditlogLinksResponse
+     */
+    public ListAuditlogLinksResponse listAuditlogLinks(ListAuditlogLinksRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listAuditlogLinks);
+    }
+
+    /**
+     * 生成审计日志下载链接
+     * 生成审计日志下载链接。
+     *
+     * @param ListAuditlogLinksRequest 请求对象
+     * @return SyncInvoker<ListAuditlogLinksRequest, ListAuditlogLinksResponse>
+     */
+    public SyncInvoker<ListAuditlogLinksRequest, ListAuditlogLinksResponse> listAuditlogLinksInvoker(ListAuditlogLinksRequest request) {
+        return new SyncInvoker<ListAuditlogLinksRequest, ListAuditlogLinksResponse>(request, DdsMeta.listAuditlogLinks, hcClient);
+    }
+
+    /**
+     * 获取审计日志列表
+     * 获取审计日志列表。
+     *
+     * @param ListAuditlogsRequest 请求对象
+     * @return ListAuditlogsResponse
+     */
+    public ListAuditlogsResponse listAuditlogs(ListAuditlogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listAuditlogs);
+    }
+
+    /**
+     * 获取审计日志列表
+     * 获取审计日志列表。
+     *
+     * @param ListAuditlogsRequest 请求对象
+     * @return SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse>
+     */
+    public SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse> listAuditlogsInvoker(ListAuditlogsRequest request) {
+        return new SyncInvoker<ListAuditlogsRequest, ListAuditlogsResponse>(request, DdsMeta.listAuditlogs, hcClient);
     }
 
     /**
@@ -160,6 +359,17 @@ public class DdsClient {
     }
 
     /**
+     * 根据指定条件查询备份列表
+     * 根据指定条件查询备份列表。
+     *
+     * @param ListBackupsRequest 请求对象
+     * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
+     */
+    public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
+        return new SyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, DdsMeta.listBackups, hcClient);
+    }
+
+    /**
      * 查询数据库角色列表
      * 查询数据库角色列表。
      *
@@ -168,6 +378,17 @@ public class DdsClient {
      */
     public ListDatabaseRolesResponse listDatabaseRoles(ListDatabaseRolesRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listDatabaseRoles);
+    }
+
+    /**
+     * 查询数据库角色列表
+     * 查询数据库角色列表。
+     *
+     * @param ListDatabaseRolesRequest 请求对象
+     * @return SyncInvoker<ListDatabaseRolesRequest, ListDatabaseRolesResponse>
+     */
+    public SyncInvoker<ListDatabaseRolesRequest, ListDatabaseRolesResponse> listDatabaseRolesInvoker(ListDatabaseRolesRequest request) {
+        return new SyncInvoker<ListDatabaseRolesRequest, ListDatabaseRolesResponse>(request, DdsMeta.listDatabaseRoles, hcClient);
     }
 
     /**
@@ -182,6 +403,17 @@ public class DdsClient {
     }
 
     /**
+     * 查询数据库用户列表
+     * 查询数据库用户列表。
+     *
+     * @param ListDatabaseUsersRequest 请求对象
+     * @return SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>
+     */
+    public SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsersInvoker(ListDatabaseUsersRequest request) {
+        return new SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>(request, DdsMeta.listDatabaseUsers, hcClient);
+    }
+
+    /**
      * 查询数据库版本信息
      * 查询指定实例类型的数据库版本信息。
      *
@@ -190,6 +422,39 @@ public class DdsClient {
      */
     public ListDatastoreVersionsResponse listDatastoreVersions(ListDatastoreVersionsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listDatastoreVersions);
+    }
+
+    /**
+     * 查询数据库版本信息
+     * 查询指定实例类型的数据库版本信息。
+     *
+     * @param ListDatastoreVersionsRequest 请求对象
+     * @return SyncInvoker<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse>
+     */
+    public SyncInvoker<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> listDatastoreVersionsInvoker(ListDatastoreVersionsRequest request) {
+        return new SyncInvoker<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse>(request, DdsMeta.listDatastoreVersions, hcClient);
+    }
+
+    /**
+     * 查询数据库错误日志
+     * 查询数据库错误信息。
+     *
+     * @param ListErrorLogsRequest 请求对象
+     * @return ListErrorLogsResponse
+     */
+    public ListErrorLogsResponse listErrorLogs(ListErrorLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listErrorLogs);
+    }
+
+    /**
+     * 查询数据库错误日志
+     * 查询数据库错误信息。
+     *
+     * @param ListErrorLogsRequest 请求对象
+     * @return SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>
+     */
+    public SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse> listErrorLogsInvoker(ListErrorLogsRequest request) {
+        return new SyncInvoker<ListErrorLogsRequest, ListErrorLogsResponse>(request, DdsMeta.listErrorLogs, hcClient);
     }
 
     /**
@@ -204,6 +469,17 @@ public class DdsClient {
     }
 
     /**
+     * 查询指定条件下的所有实例规格信息
+     * 查询指定条件下的所有实例规格信息。
+     *
+     * @param ListFlavorsRequest 请求对象
+     * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
+     */
+    public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
+        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, DdsMeta.listFlavors, hcClient);
+    }
+
+    /**
      * 查询指定实例的标签信息
      * 查询指定实例的标签信息。
      *
@@ -212,6 +488,17 @@ public class DdsClient {
      */
     public ListInstanceTagsResponse listInstanceTags(ListInstanceTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listInstanceTags);
+    }
+
+    /**
+     * 查询指定实例的标签信息
+     * 查询指定实例的标签信息。
+     *
+     * @param ListInstanceTagsRequest 请求对象
+     * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
+     */
+    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(ListInstanceTagsRequest request) {
+        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, DdsMeta.listInstanceTags, hcClient);
     }
 
     /**
@@ -226,6 +513,17 @@ public class DdsClient {
     }
 
     /**
+     * 根据指定条件查询实例列表
+     * 根据指定条件查询实例列表。
+     *
+     * @param ListInstancesRequest 请求对象
+     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
+    public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
+        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, DdsMeta.listInstances, hcClient);
+    }
+
+    /**
      * 根据标签查询指定的数据库实例
      * 根据标签查询指定的数据库实例。
      *
@@ -234,6 +532,17 @@ public class DdsClient {
      */
     public ListInstancesByTagsResponse listInstancesByTags(ListInstancesByTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listInstancesByTags);
+    }
+
+    /**
+     * 根据标签查询指定的数据库实例
+     * 根据标签查询指定的数据库实例。
+     *
+     * @param ListInstancesByTagsRequest 请求对象
+     * @return SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>
+     */
+    public SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTagsInvoker(ListInstancesByTagsRequest request) {
+        return new SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>(request, DdsMeta.listInstancesByTags, hcClient);
     }
 
     /**
@@ -248,6 +557,83 @@ public class DdsClient {
     }
 
     /**
+     * 查询指定project ID下实例的所有标签集合
+     * 查询指定project ID下实例的所有标签集合。
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(ListProjectTagsRequest request) {
+        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, DdsMeta.listProjectTags, hcClient);
+    }
+
+    /**
+     * 获取可恢复的数据库集合列表
+     * 获取可恢复的数据库集合列表。
+     *
+     * @param ListRestoreCollectionsRequest 请求对象
+     * @return ListRestoreCollectionsResponse
+     */
+    public ListRestoreCollectionsResponse listRestoreCollections(ListRestoreCollectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listRestoreCollections);
+    }
+
+    /**
+     * 获取可恢复的数据库集合列表
+     * 获取可恢复的数据库集合列表。
+     *
+     * @param ListRestoreCollectionsRequest 请求对象
+     * @return SyncInvoker<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse>
+     */
+    public SyncInvoker<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse> listRestoreCollectionsInvoker(ListRestoreCollectionsRequest request) {
+        return new SyncInvoker<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse>(request, DdsMeta.listRestoreCollections, hcClient);
+    }
+
+    /**
+     * 获取可恢复的数据库列表
+     * 获取可恢复的数据库列表。
+     *
+     * @param ListRestoreDatabasesRequest 请求对象
+     * @return ListRestoreDatabasesResponse
+     */
+    public ListRestoreDatabasesResponse listRestoreDatabases(ListRestoreDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listRestoreDatabases);
+    }
+
+    /**
+     * 获取可恢复的数据库列表
+     * 获取可恢复的数据库列表。
+     *
+     * @param ListRestoreDatabasesRequest 请求对象
+     * @return SyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>
+     */
+    public SyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabasesInvoker(ListRestoreDatabasesRequest request) {
+        return new SyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>(request, DdsMeta.listRestoreDatabases, hcClient);
+    }
+
+    /**
+     * 查询可恢复的时间段
+     * 查询实例的可恢复时间段。
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return ListRestoreTimesResponse
+     */
+    public ListRestoreTimesResponse listRestoreTimes(ListRestoreTimesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listRestoreTimes);
+    }
+
+    /**
+     * 查询可恢复的时间段
+     * 查询实例的可恢复时间段。
+     *
+     * @param ListRestoreTimesRequest 请求对象
+     * @return SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>
+     */
+    public SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesInvoker(ListRestoreTimesRequest request) {
+        return new SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request, DdsMeta.listRestoreTimes, hcClient);
+    }
+
+    /**
      * 查询数据库慢日志
      * 查询数据库慢日志信息。
      *
@@ -256,6 +642,17 @@ public class DdsClient {
      */
     public ListSlowLogsResponse listSlowLogs(ListSlowLogsRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.listSlowLogs);
+    }
+
+    /**
+     * 查询数据库慢日志
+     * 查询数据库慢日志信息。
+     *
+     * @param ListSlowLogsRequest 请求对象
+     * @return SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
+     */
+    public SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsInvoker(ListSlowLogsRequest request) {
+        return new SyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>(request, DdsMeta.listSlowLogs, hcClient);
     }
 
     /**
@@ -270,6 +667,17 @@ public class DdsClient {
     }
 
     /**
+     * 查询当前区域下的数据库磁盘类型
+     * 查询当前区域下的数据库磁盘类型。
+     *
+     * @param ListStorageTypeRequest 请求对象
+     * @return SyncInvoker<ListStorageTypeRequest, ListStorageTypeResponse>
+     */
+    public SyncInvoker<ListStorageTypeRequest, ListStorageTypeResponse> listStorageTypeInvoker(ListStorageTypeRequest request) {
+        return new SyncInvoker<ListStorageTypeRequest, ListStorageTypeResponse>(request, DdsMeta.listStorageType, hcClient);
+    }
+
+    /**
      * 修改数据库用户密码
      * 修改数据库用户密码。
      *
@@ -278,6 +686,17 @@ public class DdsClient {
      */
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.resetPassword);
+    }
+
+    /**
+     * 修改数据库用户密码
+     * 修改数据库用户密码。
+     *
+     * @param ResetPasswordRequest 请求对象
+     * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
+     */
+    public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
+        return new SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>(request, DdsMeta.resetPassword, hcClient);
     }
 
     /**
@@ -292,6 +711,17 @@ public class DdsClient {
     }
 
     /**
+     * 变更实例的规格
+     * 变更实例的规格。
+     *
+     * @param ResizeInstanceRequest 请求对象
+     * @return SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
+     */
+    public SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceInvoker(ResizeInstanceRequest request) {
+        return new SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, DdsMeta.resizeInstance, hcClient);
+    }
+
+    /**
      * 扩容实例相关的存储容量大小
      * 扩容实例相关的存储容量大小。
      *
@@ -300,6 +730,17 @@ public class DdsClient {
      */
     public ResizeInstanceVolumeResponse resizeInstanceVolume(ResizeInstanceVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.resizeInstanceVolume);
+    }
+
+    /**
+     * 扩容实例相关的存储容量大小
+     * 扩容实例相关的存储容量大小。
+     *
+     * @param ResizeInstanceVolumeRequest 请求对象
+     * @return SyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>
+     */
+    public SyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> resizeInstanceVolumeInvoker(ResizeInstanceVolumeRequest request) {
+        return new SyncInvoker<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse>(request, DdsMeta.resizeInstanceVolume, hcClient);
     }
 
     /**
@@ -314,6 +755,83 @@ public class DdsClient {
     }
 
     /**
+     * 重启实例的数据库服务
+     * 重启实例的数据库服务。
+     *
+     * @param RestartInstanceRequest 请求对象
+     * @return SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
+     */
+    public SyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceInvoker(RestartInstanceRequest request) {
+        return new SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request, DdsMeta.restartInstance, hcClient);
+    }
+
+    /**
+     * 恢复到当前实例
+     * 恢复到当前实例。
+     *
+     * @param RestoreInstanceRequest 请求对象
+     * @return RestoreInstanceResponse
+     */
+    public RestoreInstanceResponse restoreInstance(RestoreInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.restoreInstance);
+    }
+
+    /**
+     * 恢复到当前实例
+     * 恢复到当前实例。
+     *
+     * @param RestoreInstanceRequest 请求对象
+     * @return SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>
+     */
+    public SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstanceInvoker(RestoreInstanceRequest request) {
+        return new SyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse>(request, DdsMeta.restoreInstance, hcClient);
+    }
+
+    /**
+     * 库表级时间点恢复
+     * 库表级时间点恢复。
+     *
+     * @param RestoreInstanceFromCollectionRequest 请求对象
+     * @return RestoreInstanceFromCollectionResponse
+     */
+    public RestoreInstanceFromCollectionResponse restoreInstanceFromCollection(RestoreInstanceFromCollectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.restoreInstanceFromCollection);
+    }
+
+    /**
+     * 库表级时间点恢复
+     * 库表级时间点恢复。
+     *
+     * @param RestoreInstanceFromCollectionRequest 请求对象
+     * @return SyncInvoker<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse>
+     */
+    public SyncInvoker<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse> restoreInstanceFromCollectionInvoker(RestoreInstanceFromCollectionRequest request) {
+        return new SyncInvoker<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse>(request, DdsMeta.restoreInstanceFromCollection, hcClient);
+    }
+
+    /**
+     * 设置审计日志策略
+     * 设置审计日志策略。
+     *
+     * @param SetAuditlogPolicyRequest 请求对象
+     * @return SetAuditlogPolicyResponse
+     */
+    public SetAuditlogPolicyResponse setAuditlogPolicy(SetAuditlogPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.setAuditlogPolicy);
+    }
+
+    /**
+     * 设置审计日志策略
+     * 设置审计日志策略。
+     *
+     * @param SetAuditlogPolicyRequest 请求对象
+     * @return SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse>
+     */
+    public SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> setAuditlogPolicyInvoker(SetAuditlogPolicyRequest request) {
+        return new SyncInvoker<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse>(request, DdsMeta.setAuditlogPolicy, hcClient);
+    }
+
+    /**
      * 设置自动备份策略
      * 设置自动备份策略。
      *
@@ -322,6 +840,39 @@ public class DdsClient {
      */
     public SetBackupPolicyResponse setBackupPolicy(SetBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.setBackupPolicy);
+    }
+
+    /**
+     * 设置自动备份策略
+     * 设置自动备份策略。
+     *
+     * @param SetBackupPolicyRequest 请求对象
+     * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
+     */
+    public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(SetBackupPolicyRequest request) {
+        return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request, DdsMeta.setBackupPolicy, hcClient);
+    }
+
+    /**
+     * 查询审计日志策略
+     * 查询审计日志策略。
+     *
+     * @param ShowAuditlogPolicyRequest 请求对象
+     * @return ShowAuditlogPolicyResponse
+     */
+    public ShowAuditlogPolicyResponse showAuditlogPolicy(ShowAuditlogPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showAuditlogPolicy);
+    }
+
+    /**
+     * 查询审计日志策略
+     * 查询审计日志策略。
+     *
+     * @param ShowAuditlogPolicyRequest 请求对象
+     * @return SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse>
+     */
+    public SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicyInvoker(ShowAuditlogPolicyRequest request) {
+        return new SyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse>(request, DdsMeta.showAuditlogPolicy, hcClient);
     }
 
     /**
@@ -336,6 +887,17 @@ public class DdsClient {
     }
 
     /**
+     * 获取备份下载链接
+     * 获取备份下载链接。
+     *
+     * @param ShowBackupDownloadLinkRequest 请求对象
+     * @return SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse>
+     */
+    public SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLinkInvoker(ShowBackupDownloadLinkRequest request) {
+        return new SyncInvoker<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse>(request, DdsMeta.showBackupDownloadLink, hcClient);
+    }
+
+    /**
      * 查询自动备份策略
      * 查询自动备份策略。
      *
@@ -344,6 +906,17 @@ public class DdsClient {
      */
     public ShowBackupPolicyResponse showBackupPolicy(ShowBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.showBackupPolicy);
+    }
+
+    /**
+     * 查询自动备份策略
+     * 查询自动备份策略。
+     *
+     * @param ShowBackupPolicyRequest 请求对象
+     * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
+     */
+    public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(ShowBackupPolicyRequest request) {
+        return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, DdsMeta.showBackupPolicy, hcClient);
     }
 
     /**
@@ -358,6 +931,17 @@ public class DdsClient {
     }
 
     /**
+     * 切换mongodb实例的SSL开关
+     * 切换mongodb实例的SSL开关
+     *
+     * @param SwitchSslRequest 请求对象
+     * @return SyncInvoker<SwitchSslRequest, SwitchSslResponse>
+     */
+    public SyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslInvoker(SwitchSslRequest request) {
+        return new SyncInvoker<SwitchSslRequest, SwitchSslResponse>(request, DdsMeta.switchSsl, hcClient);
+    }
+
+    /**
      * 副本集主备倒换
      * 副本集主备倒换
      *
@@ -366,6 +950,17 @@ public class DdsClient {
      */
     public SwitchoverReplicaSetResponse switchoverReplicaSet(SwitchoverReplicaSetRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.switchoverReplicaSet);
+    }
+
+    /**
+     * 副本集主备倒换
+     * 副本集主备倒换
+     *
+     * @param SwitchoverReplicaSetRequest 请求对象
+     * @return SyncInvoker<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse>
+     */
+    public SyncInvoker<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> switchoverReplicaSetInvoker(SwitchoverReplicaSetRequest request) {
+        return new SyncInvoker<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse>(request, DdsMeta.switchoverReplicaSet, hcClient);
     }
 
     /**
@@ -380,6 +975,17 @@ public class DdsClient {
     }
 
     /**
+     * 修改实例名称
+     * 修改实例名称
+     *
+     * @param UpdateInstanceNameRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
+     */
+    public SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameInvoker(UpdateInstanceNameRequest request) {
+        return new SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request, DdsMeta.updateInstanceName, hcClient);
+    }
+
+    /**
      * 修改实例端口
      * 修改实例端口
      *
@@ -391,6 +997,17 @@ public class DdsClient {
     }
 
     /**
+     * 修改实例端口
+     * 修改实例端口
+     *
+     * @param UpdateInstancePortRequest 请求对象
+     * @return SyncInvoker<UpdateInstancePortRequest, UpdateInstancePortResponse>
+     */
+    public SyncInvoker<UpdateInstancePortRequest, UpdateInstancePortResponse> updateInstancePortInvoker(UpdateInstancePortRequest request) {
+        return new SyncInvoker<UpdateInstancePortRequest, UpdateInstancePortResponse>(request, DdsMeta.updateInstancePort, hcClient);
+    }
+
+    /**
      * 修改实例的安全组
      * 修改实例的安全组
      *
@@ -399,6 +1016,61 @@ public class DdsClient {
      */
     public UpdateSecurityGroupResponse updateSecurityGroup(UpdateSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, DdsMeta.updateSecurityGroup);
+    }
+
+    /**
+     * 修改实例的安全组
+     * 修改实例的安全组
+     *
+     * @param UpdateSecurityGroupRequest 请求对象
+     * @return SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>
+     */
+    public SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroupInvoker(UpdateSecurityGroupRequest request) {
+        return new SyncInvoker<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse>(request, DdsMeta.updateSecurityGroup, hcClient);
+    }
+
+    /**
+     * 查询当前支持的API版本信息列表
+     * 查询当前支持的API版本信息列表。
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return ListApiVersionResponse
+     */
+    public ListApiVersionResponse listApiVersion(ListApiVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listApiVersion);
+    }
+
+    /**
+     * 查询当前支持的API版本信息列表
+     * 查询当前支持的API版本信息列表。
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
+     */
+    public SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionInvoker(ListApiVersionRequest request) {
+        return new SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request, DdsMeta.listApiVersion, hcClient);
+    }
+
+    /**
+     * 查询指定API版本信息
+     * 查询指定API版本信息。
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return ShowApiVersionResponse
+     */
+    public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showApiVersion);
+    }
+
+    /**
+     * 查询指定API版本信息
+     * 查询指定API版本信息。
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
+     */
+    public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(ShowApiVersionRequest request) {
+        return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, DdsMeta.showApiVersion, hcClient);
     }
 
 }

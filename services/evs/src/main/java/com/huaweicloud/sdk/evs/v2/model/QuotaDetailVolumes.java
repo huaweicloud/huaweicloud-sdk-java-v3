@@ -40,7 +40,7 @@ public class QuotaDetailVolumes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allocated")
     
-    private String allocated;
+    private Integer allocated;
 
     public QuotaDetailVolumes withInUse(Integer inUse) {
         this.inUse = inUse;
@@ -102,7 +102,7 @@ public class QuotaDetailVolumes  {
         this.reserved = reserved;
     }
 
-    public QuotaDetailVolumes withAllocated(String allocated) {
+    public QuotaDetailVolumes withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
     }
@@ -114,11 +114,11 @@ public class QuotaDetailVolumes  {
      * 预留属性。
      * @return allocated
      */
-    public String getAllocated() {
+    public Integer getAllocated() {
         return allocated;
     }
 
-    public void setAllocated(String allocated) {
+    public void setAllocated(Integer allocated) {
         this.allocated = allocated;
     }
     @Override

@@ -53,11 +53,14 @@ public class TestHcClient {
 
         hcClient = new HcClient(new HttpConfig().withIgnoreSSLVerification(true).withTimeout(600)
                 .addHttpListener(HttpListener.forResponseListener(responseListener ->
-                        logger.debug("RESPONSE: {} {} {} {}",
+                        logger.debug("RESPONSE: [{} {}] {} {} {} {} {}ms",
+                                responseListener.exchange().getApiReference().getName(),
+                                responseListener.exchange().getApiReference().getUri(),
                                 responseListener.httpMethod(),
                                 responseListener.uri(),
                                 responseListener.statusCode(),
-                                responseListener.body().orElse(""))))
+                                responseListener.body().orElse(""),
+                                responseListener.exchange().getApiTimer().getDurationMs())))
                 .addHttpListener(HttpListener.forRequestListener(requestListener ->
                         logger.debug("REQUEST: {} {} {}",
                                 requestListener.httpMethod(),

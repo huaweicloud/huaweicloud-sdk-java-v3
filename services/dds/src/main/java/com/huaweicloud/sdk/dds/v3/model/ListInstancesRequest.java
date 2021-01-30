@@ -135,12 +135,18 @@ public class ListInstancesRequest  {
          */
         public static final DatastoreTypeEnum DDS_COMMUNITY = new DatastoreTypeEnum("DDS-Community");
         
+        /**
+         * Enum DDS_ENHANCED for value: "DDS-Enhanced"
+         */
+        public static final DatastoreTypeEnum DDS_ENHANCED = new DatastoreTypeEnum("DDS-Enhanced");
+        
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreTypeEnum> createStaticFields() {
             Map<String, DatastoreTypeEnum> map = new HashMap<>();
             map.put("DDS-Community", DDS_COMMUNITY);
+            map.put("DDS-Enhanced", DDS_ENHANCED);
             return Collections.unmodifiableMap(map);
         }
 

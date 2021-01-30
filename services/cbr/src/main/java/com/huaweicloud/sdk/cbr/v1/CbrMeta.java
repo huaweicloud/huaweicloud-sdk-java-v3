@@ -18,6 +18,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<AddMemberRequest, AddMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddMemberRequest.class, AddMemberResponse.class)
+                .withName("AddMember")
                 .withUri("/v3/{project_id}/backups/{backup_id}/members")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -50,6 +51,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<AddVaultResourceRequest, AddVaultResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddVaultResourceRequest.class, AddVaultResourceResponse.class)
+                .withName("AddVaultResource")
                 .withUri("/v3/{project_id}/vaults/{vault_id}/addresources")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -82,6 +84,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<AssociateVaultPolicyRequest, AssociateVaultPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateVaultPolicyRequest.class, AssociateVaultPolicyResponse.class)
+                .withName("AssociateVaultPolicy")
                 .withUri("/v3/{project_id}/vaults/{vault_id}/associatepolicy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -114,6 +117,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateAndDeleteVaultTagsRequest, BatchCreateAndDeleteVaultTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateAndDeleteVaultTagsRequest.class, BatchCreateAndDeleteVaultTagsResponse.class)
+                .withName("BatchCreateAndDeleteVaultTags")
                 .withUri("/v3/{project_id}/vault/{vault_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -146,6 +150,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<CopyBackupRequest, CopyBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyBackupRequest.class, CopyBackupResponse.class)
+                .withName("CopyBackup")
                 .withUri("/v3/{project_id}/backups/{backup_id}/replicate")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -178,6 +183,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<CopyCheckpointRequest, CopyCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyCheckpointRequest.class, CopyCheckpointResponse.class)
+                .withName("CopyCheckpoint")
                 .withUri("/v3/{project_id}/checkpoints/replicate")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -202,6 +208,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<CreateCheckpointRequest, CreateCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCheckpointRequest.class, CreateCheckpointResponse.class)
+                .withName("CreateCheckpoint")
                 .withUri("/v3/{project_id}/checkpoints")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -226,6 +233,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<CreatePolicyRequest, CreatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePolicyRequest.class, CreatePolicyResponse.class)
+                .withName("CreatePolicy")
                 .withUri("/v3/{project_id}/policies")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -250,6 +258,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<CreateVaultRequest, CreateVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVaultRequest.class, CreateVaultResponse.class)
+                .withName("CreateVault")
                 .withUri("/v3/{project_id}/vaults")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -274,6 +283,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<CreateVaultTagsRequest, CreateVaultTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVaultTagsRequest.class, CreateVaultTagsResponse.class)
+                .withName("CreateVaultTags")
                 .withUri("/v3/{project_id}/vault/{vault_id}/tags")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -306,6 +316,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<DeleteBackupRequest, DeleteBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackupRequest.class, DeleteBackupResponse.class)
+                .withName("DeleteBackup")
                 .withUri("/v3/{project_id}/backups/{backup_id}")
                 .withContentType("application/json");
 
@@ -330,6 +341,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<DeleteMemberRequest, DeleteMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMemberRequest.class, DeleteMemberResponse.class)
+                .withName("DeleteMember")
                 .withUri("/v3/{project_id}/backups/{backup_id}/members/{member_id}")
                 .withContentType("application/json");
 
@@ -362,6 +374,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<DeletePolicyRequest, DeletePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePolicyRequest.class, DeletePolicyResponse.class)
+                .withName("DeletePolicy")
                 .withUri("/v3/{project_id}/policies/{policy_id}")
                 .withContentType("application/json");
 
@@ -386,6 +399,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<DeleteVaultRequest, DeleteVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVaultRequest.class, DeleteVaultResponse.class)
+                .withName("DeleteVault")
                 .withUri("/v3/{project_id}/vaults/{vault_id}")
                 .withContentType("application/json");
 
@@ -410,6 +424,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<DeleteVaultTagRequest, DeleteVaultTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVaultTagRequest.class, DeleteVaultTagResponse.class)
+                .withName("DeleteVaultTag")
                 .withUri("/v3/{project_id}/vault/{vault_id}/tags/{key}")
                 .withContentType("application/json");
 
@@ -442,6 +457,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<DisassociateVaultPolicyRequest, DisassociateVaultPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisassociateVaultPolicyRequest.class, DisassociateVaultPolicyResponse.class)
+                .withName("DisassociateVaultPolicy")
                 .withUri("/v3/{project_id}/vaults/{vault_id}/dissociatepolicy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -474,6 +490,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ImportBackupRequest, ImportBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportBackupRequest.class, ImportBackupResponse.class)
+                .withName("ImportBackup")
                 .withUri("/v3/{project_id}/backups/sync")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -498,6 +515,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ListBackupsRequest, ListBackupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupsRequest.class, ListBackupsResponse.class)
+                .withName("ListBackups")
                 .withUri("/v3/{project_id}/backups")
                 .withContentType("application/json");
 
@@ -682,6 +700,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ListOpLogsRequest, ListOpLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOpLogsRequest.class, ListOpLogsResponse.class)
+                .withName("ListOpLogs")
                 .withUri("/v3/{project_id}/operation-logs")
                 .withContentType("application/json");
 
@@ -794,6 +813,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ListPoliciesRequest, ListPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPoliciesRequest.class, ListPoliciesResponse.class)
+                .withName("ListPolicies")
                 .withUri("/v3/{project_id}/policies")
                 .withContentType("application/json");
 
@@ -826,6 +846,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ListProtectableRequest, ListProtectableResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProtectableRequest.class, ListProtectableResponse.class)
+                .withName("ListProtectable")
                 .withUri("/v3/{project_id}/protectables/{protectable_type}/instances")
                 .withContentType("application/json");
 
@@ -906,6 +927,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ListVaultRequest, ListVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVaultRequest.class, ListVaultResponse.class)
+                .withName("ListVault")
                 .withUri("/v3/{project_id}/vaults")
                 .withContentType("application/json");
 
@@ -1010,6 +1032,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<MigrateVaultResourceRequest, MigrateVaultResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateVaultResourceRequest.class, MigrateVaultResourceResponse.class)
+                .withName("MigrateVaultResource")
                 .withUri("/v3/{project_id}/vaults/{vault_id}/migrateresources")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1042,6 +1065,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<RemoveVaultResourceRequest, RemoveVaultResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RemoveVaultResourceRequest.class, RemoveVaultResourceResponse.class)
+                .withName("RemoveVaultResource")
                 .withUri("/v3/{project_id}/vaults/{vault_id}/removeresources")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1074,6 +1098,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<RestoreBackupRequest, RestoreBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreBackupRequest.class, RestoreBackupResponse.class)
+                .withName("RestoreBackup")
                 .withUri("/v3/{project_id}/backups/{backup_id}/restore")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1106,6 +1131,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowBackupRequest, ShowBackupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBackupRequest.class, ShowBackupResponse.class)
+                .withName("ShowBackup")
                 .withUri("/v3/{project_id}/backups/{backup_id}")
                 .withContentType("application/json");
 
@@ -1130,6 +1156,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowCheckpointRequest, ShowCheckpointResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCheckpointRequest.class, ShowCheckpointResponse.class)
+                .withName("ShowCheckpoint")
                 .withUri("/v3/{project_id}/checkpoints/{checkpoint_id}")
                 .withContentType("application/json");
 
@@ -1154,6 +1181,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowMemberDetailRequest, ShowMemberDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMemberDetailRequest.class, ShowMemberDetailResponse.class)
+                .withName("ShowMemberDetail")
                 .withUri("/v3/{project_id}/backups/{backup_id}/members/{member_id}")
                 .withContentType("application/json");
 
@@ -1186,6 +1214,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowMembersDetailRequest, ShowMembersDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMembersDetailRequest.class, ShowMembersDetailResponse.class)
+                .withName("ShowMembersDetail")
                 .withUri("/v3/{project_id}/backups/{backup_id}/members")
                 .withContentType("application/json");
 
@@ -1274,6 +1303,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowOpLogRequest, ShowOpLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowOpLogRequest.class, ShowOpLogResponse.class)
+                .withName("ShowOpLog")
                 .withUri("/v3/{project_id}/operation-logs/{operation_log_id}")
                 .withContentType("application/json");
 
@@ -1298,6 +1328,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowPolicyRequest, ShowPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPolicyRequest.class, ShowPolicyResponse.class)
+                .withName("ShowPolicy")
                 .withUri("/v3/{project_id}/policies/{policy_id}")
                 .withContentType("application/json");
 
@@ -1322,6 +1353,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowProtectableRequest, ShowProtectableResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProtectableRequest.class, ShowProtectableResponse.class)
+                .withName("ShowProtectable")
                 .withUri("/v3/{project_id}/protectables/{protectable_type}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -1354,6 +1386,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowReplicationCapabilitiesRequest, ShowReplicationCapabilitiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowReplicationCapabilitiesRequest.class, ShowReplicationCapabilitiesResponse.class)
+                .withName("ShowReplicationCapabilities")
                 .withUri("/v3/{project_id}/replication-capabilities")
                 .withContentType("application/json");
 
@@ -1370,6 +1403,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowVaultRequest, ShowVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVaultRequest.class, ShowVaultResponse.class)
+                .withName("ShowVault")
                 .withUri("/v3/{project_id}/vaults/{vault_id}")
                 .withContentType("application/json");
 
@@ -1394,6 +1428,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowVaultProjectTagRequest, ShowVaultProjectTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVaultProjectTagRequest.class, ShowVaultProjectTagResponse.class)
+                .withName("ShowVaultProjectTag")
                 .withUri("/v3/{project_id}/vault/tags")
                 .withContentType("application/json");
 
@@ -1410,6 +1445,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowVaultResourceInstancesRequest, ShowVaultResourceInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowVaultResourceInstancesRequest.class, ShowVaultResourceInstancesResponse.class)
+                .withName("ShowVaultResourceInstances")
                 .withUri("/v3/{project_id}/vault/resource_instances/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1434,6 +1470,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<ShowVaultTagRequest, ShowVaultTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVaultTagRequest.class, ShowVaultTagResponse.class)
+                .withName("ShowVaultTag")
                 .withUri("/v3/{project_id}/vault/{vault_id}/tags")
                 .withContentType("application/json");
 
@@ -1458,6 +1495,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<UpdateMemberStatusRequest, UpdateMemberStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMemberStatusRequest.class, UpdateMemberStatusResponse.class)
+                .withName("UpdateMemberStatus")
                 .withUri("/v3/{project_id}/backups/{backup_id}/members/{member_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1498,6 +1536,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<UpdatePolicyRequest, UpdatePolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePolicyRequest.class, UpdatePolicyResponse.class)
+                .withName("UpdatePolicy")
                 .withUri("/v3/{project_id}/policies/{policy_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1530,6 +1569,7 @@ public class CbrMeta {
         // basic
         HttpRequestDef.Builder<UpdateVaultRequest, UpdateVaultResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVaultRequest.class, UpdateVaultResponse.class)
+                .withName("UpdateVault")
                 .withUri("/v3/{project_id}/vaults/{vault_id}")
                 .withContentType("application/json;charset=UTF-8");
 

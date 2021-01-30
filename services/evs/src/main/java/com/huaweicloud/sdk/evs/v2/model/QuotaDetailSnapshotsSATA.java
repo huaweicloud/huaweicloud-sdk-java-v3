@@ -40,7 +40,7 @@ public class QuotaDetailSnapshotsSATA  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allocated")
     
-    private String allocated;
+    private Integer allocated;
 
     public QuotaDetailSnapshotsSATA withInUse(Integer inUse) {
         this.inUse = inUse;
@@ -102,7 +102,7 @@ public class QuotaDetailSnapshotsSATA  {
         this.reserved = reserved;
     }
 
-    public QuotaDetailSnapshotsSATA withAllocated(String allocated) {
+    public QuotaDetailSnapshotsSATA withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
     }
@@ -114,11 +114,11 @@ public class QuotaDetailSnapshotsSATA  {
      * 预留属性。
      * @return allocated
      */
-    public String getAllocated() {
+    public Integer getAllocated() {
         return allocated;
     }
 
-    public void setAllocated(String allocated) {
+    public void setAllocated(Integer allocated) {
         this.allocated = allocated;
     }
     @Override

@@ -21,9 +21,9 @@ public class AddShardingNodeVolumeOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private String size;
 
-    public AddShardingNodeVolumeOption withSize(Integer size) {
+    public AddShardingNodeVolumeOption withSize(String size) {
         this.size = size;
         return this;
     }
@@ -35,11 +35,11 @@ public class AddShardingNodeVolumeOption  {
      * 指定新增的所有shard组的磁盘容量。取值范围：10GB~2000GB。
      * @return size
      */
-    public Integer getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
     @Override

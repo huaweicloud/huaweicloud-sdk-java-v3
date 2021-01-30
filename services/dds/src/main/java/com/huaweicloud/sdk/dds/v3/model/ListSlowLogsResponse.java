@@ -32,7 +32,7 @@ public class ListSlowLogsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_record")
     
-    private String totalRecord;
+    private Integer totalRecord;
 
     public ListSlowLogsResponse withSlowLogList(List<SlowlogResult> slowLogList) {
         this.slowLogList = slowLogList;
@@ -68,7 +68,7 @@ public class ListSlowLogsResponse extends SdkResponse {
         this.slowLogList = slowLogList;
     }
 
-    public ListSlowLogsResponse withTotalRecord(String totalRecord) {
+    public ListSlowLogsResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
     }
@@ -80,11 +80,11 @@ public class ListSlowLogsResponse extends SdkResponse {
      * 数据库版本总记录数。
      * @return totalRecord
      */
-    public String getTotalRecord() {
+    public Integer getTotalRecord() {
         return totalRecord;
     }
 
-    public void setTotalRecord(String totalRecord) {
+    public void setTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
     }
     @Override

@@ -18,6 +18,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchChangeDataRequest, BatchChangeDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchChangeDataRequest.class, BatchChangeDataResponse.class)
+                .withName("BatchChangeData")
                 .withUri("/v3/{project_id}/jobs/batch-transformation")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchCheckJobsRequest, BatchCheckJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCheckJobsRequest.class, BatchCheckJobsResponse.class)
+                .withName("BatchCheckJobs")
                 .withUri("/v3/{project_id}/jobs/batch-precheck")
                 .withContentType("application/json");
 
@@ -82,6 +84,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchCheckResultsRequest, BatchCheckResultsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCheckResultsRequest.class, BatchCheckResultsResponse.class)
+                .withName("BatchCheckResults")
                 .withUri("/v3/{project_id}/jobs/batch-precheck-result")
                 .withContentType("application/json");
 
@@ -114,6 +117,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateCompareTaskRequest, BatchCreateCompareTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateCompareTaskRequest.class, BatchCreateCompareTaskResponse.class)
+                .withName("BatchCreateCompareTask")
                 .withUri("/v3/{project_id}/jobs/batch-create-compare")
                 .withContentType("application/json");
 
@@ -146,6 +150,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateJobsRequest, BatchCreateJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateJobsRequest.class, BatchCreateJobsResponse.class)
+                .withName("BatchCreateJobs")
                 .withUri("/v3/{project_id}/jobs/batch-creation")
                 .withContentType("application/json");
 
@@ -178,6 +183,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteJobsRequest, BatchDeleteJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteJobsRequest.class, BatchDeleteJobsResponse.class)
+                .withName("BatchDeleteJobs")
                 .withUri("/v3/{project_id}/jobs/batch-jobs")
                 .withContentType("application/json");
 
@@ -210,6 +216,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchListCompareResultRequest, BatchListCompareResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListCompareResultRequest.class, BatchListCompareResultResponse.class)
+                .withName("BatchListCompareResult")
                 .withUri("/v3/{project_id}/jobs/batch-compare-result")
                 .withContentType("application/json");
 
@@ -242,6 +249,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchListJobDetailsRequest, BatchListJobDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListJobDetailsRequest.class, BatchListJobDetailsResponse.class)
+                .withName("BatchListJobDetails")
                 .withUri("/v3/{project_id}/jobs/batch-detail")
                 .withContentType("application/json");
 
@@ -274,6 +282,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchListJobStatusRequest, BatchListJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListJobStatusRequest.class, BatchListJobStatusResponse.class)
+                .withName("BatchListJobStatus")
                 .withUri("/v3/{project_id}/jobs/batch-status")
                 .withContentType("application/json");
 
@@ -306,6 +315,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchListProgressesRequest, BatchListProgressesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListProgressesRequest.class, BatchListProgressesResponse.class)
+                .withName("BatchListProgresses")
                 .withUri("/v3/{project_id}/jobs/batch-progress")
                 .withContentType("application/json");
 
@@ -338,6 +348,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchListRposAndRtosRequest, BatchListRposAndRtosResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListRposAndRtosRequest.class, BatchListRposAndRtosResponse.class)
+                .withName("BatchListRposAndRtos")
                 .withUri("/v3/{project_id}/jobs/batch-rpo-and-rto")
                 .withContentType("application/json");
 
@@ -370,6 +381,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchListStructDetailRequest, BatchListStructDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListStructDetailRequest.class, BatchListStructDetailResponse.class)
+                .withName("BatchListStructDetail")
                 .withUri("/v3/{project_id}/jobs/{type}/batch-struct-detail")
                 .withContentType("application/json");
 
@@ -410,6 +422,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchListStructProcessRequest, BatchListStructProcessResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchListStructProcessRequest.class, BatchListStructProcessResponse.class)
+                .withName("BatchListStructProcess")
                 .withUri("/v3/{project_id}/jobs/batch-struct-process")
                 .withContentType("application/json");
 
@@ -442,6 +455,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchResetPasswordRequest, BatchResetPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchResetPasswordRequest.class, BatchResetPasswordResponse.class)
+                .withName("BatchResetPassword")
                 .withUri("/v3/{project_id}/jobs/batch-modify-pwd")
                 .withContentType("application/json");
 
@@ -474,6 +488,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchRestoreTaskRequest, BatchRestoreTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchRestoreTaskRequest.class, BatchRestoreTaskResponse.class)
+                .withName("BatchRestoreTask")
                 .withUri("/v3/{project_id}/jobs/batch-retry-task")
                 .withContentType("application/json");
 
@@ -506,6 +521,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchSetDefinerRequest, BatchSetDefinerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSetDefinerRequest.class, BatchSetDefinerResponse.class)
+                .withName("BatchSetDefiner")
                 .withUri("/v3/{project_id}/jobs/batch-replace-definer")
                 .withContentType("application/json");
 
@@ -538,6 +554,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchSetObjectsRequest, BatchSetObjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchSetObjectsRequest.class, BatchSetObjectsResponse.class)
+                .withName("BatchSetObjects")
                 .withUri("/v3/{project_id}/jobs/batch-select-objects")
                 .withContentType("application/json");
 
@@ -570,6 +587,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchSetSpeedRequest, BatchSetSpeedResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchSetSpeedRequest.class, BatchSetSpeedResponse.class)
+                .withName("BatchSetSpeed")
                 .withUri("/v3/{project_id}/jobs/batch-limit-speed")
                 .withContentType("application/json");
 
@@ -602,6 +620,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchShowParamsRequest, BatchShowParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchShowParamsRequest.class, BatchShowParamsResponse.class)
+                .withName("BatchShowParams")
                 .withUri("/v3/{project_id}/jobs/batch-get-params")
                 .withContentType("application/json");
 
@@ -634,6 +653,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchStartJobsRequest, BatchStartJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStartJobsRequest.class, BatchStartJobsResponse.class)
+                .withName("BatchStartJobs")
                 .withUri("/v3/{project_id}/jobs/batch-starting")
                 .withContentType("application/json");
 
@@ -666,6 +686,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchStopJobsRequest, BatchStopJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStopJobsRequest.class, BatchStopJobsResponse.class)
+                .withName("BatchStopJobs")
                 .withUri("/v3/{project_id}/jobs/batch-pause-task")
                 .withContentType("application/json");
 
@@ -698,6 +719,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchSwitchoverRequest, BatchSwitchoverResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSwitchoverRequest.class, BatchSwitchoverResponse.class)
+                .withName("BatchSwitchover")
                 .withUri("/v3/{project_id}/jobs/batch-switchover")
                 .withContentType("application/json");
 
@@ -730,6 +752,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateJobRequest, BatchUpdateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateJobRequest.class, BatchUpdateJobResponse.class)
+                .withName("BatchUpdateJob")
                 .withUri("/v3/{project_id}/jobs/batch-modification")
                 .withContentType("application/json");
 
@@ -762,6 +785,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateUserRequest, BatchUpdateUserResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateUserRequest.class, BatchUpdateUserResponse.class)
+                .withName("BatchUpdateUser")
                 .withUri("/v3/{project_id}/jobs/batch-update-user")
                 .withContentType("application/json");
 
@@ -794,6 +818,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchValidateClustersConnectionsRequest, BatchValidateClustersConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchValidateClustersConnectionsRequest.class, BatchValidateClustersConnectionsResponse.class)
+                .withName("BatchValidateClustersConnections")
                 .withUri("/v3/{project_id}/jobs/cluster/batch-connection")
                 .withContentType("application/json");
 
@@ -826,6 +851,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchValidateConnectionsRequest.class, BatchValidateConnectionsResponse.class)
+                .withName("BatchValidateConnections")
                 .withUri("/v3/{project_id}/jobs/batch-connection")
                 .withContentType("application/json");
 
@@ -858,6 +884,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<ShowJobListRequest, ShowJobListResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowJobListRequest.class, ShowJobListResponse.class)
+                .withName("ShowJobList")
                 .withUri("/v3/{project_id}/jobs")
                 .withContentType("application/json");
 
@@ -890,6 +917,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<ShowMonitoringDataRequest, ShowMonitoringDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowMonitoringDataRequest.class, ShowMonitoringDataResponse.class)
+                .withName("ShowMonitoringData")
                 .withUri("/v3/{project_id}/jobs/disaster-recovery-monitoring-data")
                 .withContentType("application/json");
 
@@ -922,6 +950,7 @@ public class DrsMeta {
         // basic
         HttpRequestDef.Builder<UpdateParamsRequest, UpdateParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateParamsRequest.class, UpdateParamsResponse.class)
+                .withName("UpdateParams")
                 .withUri("/v3/{project_id}/jobs/{job_id}/params")
                 .withContentType("application/json");
 

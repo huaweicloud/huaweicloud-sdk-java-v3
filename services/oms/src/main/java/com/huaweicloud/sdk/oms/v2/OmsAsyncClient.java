@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.oms.v2.model.*;
 
 public class OmsAsyncClient {
@@ -31,6 +31,17 @@ public class OmsAsyncClient {
     }
 
     /**
+     * 创建迁移任务
+     * 创建迁移任务，创建成功后，任务会被自动启动，不需要额外调用启动任务命令。
+     *
+     * @param CreateTaskRequest 请求对象
+     * @return AsyncInvoker<CreateTaskRequest, CreateTaskResponse>
+     */
+    public AsyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskAsyncInvoker(CreateTaskRequest request) {
+        return new AsyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, OmsMeta.createTask, hcClient);
+    }
+
+    /**
      * 删除迁移任务
      * 调用该接口删除迁移任务。 正在运行的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      *
@@ -39,6 +50,17 @@ public class OmsAsyncClient {
      */
     public CompletableFuture<DeleteTaskResponse> deleteTaskAsync(DeleteTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, OmsMeta.deleteTask);
+    }
+
+    /**
+     * 删除迁移任务
+     * 调用该接口删除迁移任务。 正在运行的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
+     *
+     * @param DeleteTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
+     */
+    public AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskAsyncInvoker(DeleteTaskRequest request) {
+        return new AsyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, OmsMeta.deleteTask, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class OmsAsyncClient {
     }
 
     /**
+     * 查询迁移任务列表
+     * 查询用户账户下的所有任务信息。
+     *
+     * @param ListTasksRequest 请求对象
+     * @return AsyncInvoker<ListTasksRequest, ListTasksResponse>
+     */
+    public AsyncInvoker<ListTasksRequest, ListTasksResponse> listTasksAsyncInvoker(ListTasksRequest request) {
+        return new AsyncInvoker<ListTasksRequest, ListTasksResponse>(request, OmsMeta.listTasks, hcClient);
+    }
+
+    /**
      * 查询指定ID的任务详情
      * 查询指定ID的任务详情。
      *
@@ -61,6 +94,17 @@ public class OmsAsyncClient {
      */
     public CompletableFuture<ShowTaskResponse> showTaskAsync(ShowTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, OmsMeta.showTask);
+    }
+
+    /**
+     * 查询指定ID的任务详情
+     * 查询指定ID的任务详情。
+     *
+     * @param ShowTaskRequest 请求对象
+     * @return AsyncInvoker<ShowTaskRequest, ShowTaskResponse>
+     */
+    public AsyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskAsyncInvoker(ShowTaskRequest request) {
+        return new AsyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, OmsMeta.showTask, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class OmsAsyncClient {
     }
 
     /**
+     * 启动迁移任务
+     * 迁移任务暂停或失败后，调用该接口以启动任务。
+     *
+     * @param StartTaskRequest 请求对象
+     * @return AsyncInvoker<StartTaskRequest, StartTaskResponse>
+     */
+    public AsyncInvoker<StartTaskRequest, StartTaskResponse> startTaskAsyncInvoker(StartTaskRequest request) {
+        return new AsyncInvoker<StartTaskRequest, StartTaskResponse>(request, OmsMeta.startTask, hcClient);
+    }
+
+    /**
      * 暂停迁移任务
      * 当迁移任务处于迁移中时，调用该接口停止任务。
      *
@@ -83,6 +138,17 @@ public class OmsAsyncClient {
      */
     public CompletableFuture<StopTaskResponse> stopTaskAsync(StopTaskRequest request) {
         return hcClient.asyncInvokeHttp(request, OmsMeta.stopTask);
+    }
+
+    /**
+     * 暂停迁移任务
+     * 当迁移任务处于迁移中时，调用该接口停止任务。
+     *
+     * @param StopTaskRequest 请求对象
+     * @return AsyncInvoker<StopTaskRequest, StopTaskResponse>
+     */
+    public AsyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskAsyncInvoker(StopTaskRequest request) {
+        return new AsyncInvoker<StopTaskRequest, StopTaskResponse>(request, OmsMeta.stopTask, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class OmsAsyncClient {
     }
 
     /**
+     * 更新任务带宽策略
+     * 当迁移任务未执行完成时，修改迁移任务的流量控制策略。
+     *
+     * @param UpdateBandwidthPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>
+     */
+    public AsyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> updateBandwidthPolicyAsyncInvoker(UpdateBandwidthPolicyRequest request) {
+        return new AsyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>(request, OmsMeta.updateBandwidthPolicy, hcClient);
+    }
+
+    /**
      * 查询API版本信息列表
      * 查询对象存储迁移服务的API版本信息。
      *
@@ -108,6 +185,17 @@ public class OmsAsyncClient {
     }
 
     /**
+     * 查询API版本信息列表
+     * 查询对象存储迁移服务的API版本信息。
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
+     */
+    public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(ListApiVersionsRequest request) {
+        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, OmsMeta.listApiVersions, hcClient);
+    }
+
+    /**
      * 查询指定API版本信息
      * 查询对象存储迁移服务指定API版本信息。
      *
@@ -116,6 +204,17 @@ public class OmsAsyncClient {
      */
     public CompletableFuture<ShowApiInfoResponse> showApiInfoAsync(ShowApiInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, OmsMeta.showApiInfo);
+    }
+
+    /**
+     * 查询指定API版本信息
+     * 查询对象存储迁移服务指定API版本信息。
+     *
+     * @param ShowApiInfoRequest 请求对象
+     * @return AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>
+     */
+    public AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfoAsyncInvoker(ShowApiInfoRequest request) {
+        return new AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>(request, OmsMeta.showApiInfo, hcClient);
     }
 
 }

@@ -18,6 +18,7 @@ public class ScmMeta {
         // basic
         HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
+                .withName("DeleteCertificate")
                 .withUri("/v3/scm/certificates/{certificate_id}")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class ScmMeta {
         // basic
         HttpRequestDef.Builder<ExportCertificateRequest, ExportCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportCertificateRequest.class, ExportCertificateResponse.class)
+                .withName("ExportCertificate")
                 .withUri("/v3/scm/certificates/{certificate_id}/export")
                 .withContentType("application/json");
 
@@ -66,6 +68,7 @@ public class ScmMeta {
         // basic
         HttpRequestDef.Builder<ImportCertificateRequest, ImportCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportCertificateRequest.class, ImportCertificateResponse.class)
+                .withName("ImportCertificate")
                 .withUri("/v3/scm/certificates/import")
                 .withContentType("application/json");
 
@@ -90,6 +93,7 @@ public class ScmMeta {
         // basic
         HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
+                .withName("ListCertificates")
                 .withUri("/v3/scm/certificates")
                 .withContentType("application/json");
 
@@ -146,6 +150,7 @@ public class ScmMeta {
         // basic
         HttpRequestDef.Builder<PushCertificateRequest, PushCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PushCertificateRequest.class, PushCertificateResponse.class)
+                .withName("PushCertificate")
                 .withUri("/v3/scm/certificates/{certificate_id}/push")
                 .withContentType("application/json");
 
@@ -178,6 +183,7 @@ public class ScmMeta {
         // basic
         HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
+                .withName("ShowCertificate")
                 .withUri("/v3/scm/certificates/{certificate_id}")
                 .withContentType("application/json");
 

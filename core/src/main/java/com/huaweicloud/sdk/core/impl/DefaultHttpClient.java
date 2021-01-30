@@ -141,6 +141,7 @@ public class DefaultHttpClient implements HttpClient {
     }
 
     private Request buildOkHttpRequest(HttpRequest httpRequest) {
+
         Request.Builder requestBuilder = new Request.Builder();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(httpRequest.getEndpoint()
             + httpRequest.getPathParamsString()).newBuilder();

@@ -18,6 +18,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AddSubsetsToGatewayRequest, AddSubsetsToGatewayResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddSubsetsToGatewayRequest.class, AddSubsetsToGatewayResponse.class)
+                .withName("AddSubsetsToGateway")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/subsets")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -67,6 +68,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateAppsForAppQuotaRequest.class, AssociateAppsForAppQuotaResponse.class)
+                .withName("AssociateAppsForAppQuota")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas/{app_quota_id}/binding-apps")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -107,6 +109,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AssociateCertificateV2Request, AssociateCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateCertificateV2Request.class, AssociateCertificateV2Response.class)
+                .withName("AssociateCertificateV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificate")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -155,6 +158,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AssociateDomainV2Request, AssociateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateDomainV2Request.class, AssociateDomainV2Response.class)
+                .withName("AssociateDomainV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -195,6 +199,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateSignatureKeyV2Request.class, AssociateSignatureKeyV2Response.class)
+                .withName("AssociateSignatureKeyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/sign-bindings")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -227,6 +232,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchAddDeviceToGroupRequest, BatchAddDeviceToGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddDeviceToGroupRequest.class, BatchAddDeviceToGroupResponse.class)
+                .withName("BatchAddDeviceToGroup")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups/{group_id}/devices/batch-add")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -267,6 +273,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteDevicesRequest, BatchDeleteDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteDevicesRequest.class, BatchDeleteDevicesResponse.class)
+                .withName("BatchDeleteDevices")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -299,6 +306,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteMqsInstanceTopicRequest, BatchDeleteMqsInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteMqsInstanceTopicRequest.class, BatchDeleteMqsInstanceTopicResponse.class)
+                .withName("BatchDeleteMqsInstanceTopic")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics/delete")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -331,6 +339,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteRulesRequest, BatchDeleteRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteRulesRequest.class, BatchDeleteRulesResponse.class)
+                .withName("BatchDeleteRules")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/batch-delete")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -363,6 +372,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchFreezeDevicesRequest, BatchFreezeDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchFreezeDevicesRequest.class, BatchFreezeDevicesResponse.class)
+                .withName("BatchFreezeDevices")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/force-offline")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -395,6 +405,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckLivedataApisV2Request, CheckLivedataApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckLivedataApisV2Request.class, CheckLivedataApisV2Response.class)
+                .withName("CheckLivedataApisV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/check")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -427,6 +438,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CountDevicesRequest, CountDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CountDevicesRequest.class, CountDevicesResponse.class)
+                .withName("CountDevices")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/statistics/devices-count")
                 .withContentType("application/json");
 
@@ -451,6 +463,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateAppCodeAutoV2Request.class, CreateAppCodeAutoV2Response.class)
+                .withName("CreateAppCodeAutoV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-codes")
                 .withContentType("application/json");
 
@@ -483,6 +496,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateAppCodeV2Request, CreateAppCodeV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppCodeV2Request.class, CreateAppCodeV2Response.class)
+                .withName("CreateAppCodeV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-codes")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -523,6 +537,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateAppConfigV2Request, CreateAppConfigV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppConfigV2Request.class, CreateAppConfigV2Response.class)
+                .withName("CreateAppConfigV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/configs")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -563,6 +578,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateAppQuotaRequest, CreateAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAppQuotaRequest.class, CreateAppQuotaResponse.class)
+                .withName("CreateAppQuota")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -595,6 +611,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateCommandRequest, CreateCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCommandRequest.class, CreateCommandResponse.class)
+                .withName("CreateCommand")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -635,6 +652,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCustomAuthorizerV2Request.class, CreateCustomAuthorizerV2Response.class)
+                .withName("CreateCustomAuthorizerV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/authorizers")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -667,6 +685,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateDestinationRequest, CreateDestinationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDestinationRequest.class, CreateDestinationResponse.class)
+                .withName("CreateDestination")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}/destinations")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -707,6 +726,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateDeviceRequest, CreateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDeviceRequest.class, CreateDeviceResponse.class)
+                .withName("CreateDevice")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -739,6 +759,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateDeviceGroupRequest, CreateDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDeviceGroupRequest.class, CreateDeviceGroupResponse.class)
+                .withName("CreateDeviceGroup")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -771,6 +792,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentV2Request, CreateEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentV2Request.class, CreateEnvironmentV2Response.class)
+                .withName("CreateEnvironmentV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/envs")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -803,6 +825,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateEnvironmentVariableV2Request, CreateEnvironmentVariableV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentVariableV2Request.class, CreateEnvironmentVariableV2Response.class)
+                .withName("CreateEnvironmentVariableV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/env-variables")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -835,6 +858,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateFeatureV2Request, CreateFeatureV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateFeatureV2Request.class, CreateFeatureV2Response.class)
+                .withName("CreateFeatureV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/features")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -867,6 +891,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateLiveDataApiScriptV2Request, CreateLiveDataApiScriptV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLiveDataApiScriptV2Request.class, CreateLiveDataApiScriptV2Response.class)
+                .withName("CreateLiveDataApiScriptV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}/scripts")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -907,6 +932,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateLiveDataApiV2Request, CreateLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLiveDataApiV2Request.class, CreateLiveDataApiV2Response.class)
+                .withName("CreateLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -939,6 +965,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateMqsInstanceTopicRequest, CreateMqsInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMqsInstanceTopicRequest.class, CreateMqsInstanceTopicResponse.class)
+                .withName("CreateMqsInstanceTopic")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -971,6 +998,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateProductRequest, CreateProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductRequest.class, CreateProductResponse.class)
+                .withName("CreateProduct")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1003,6 +1031,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateProductTemplateRequest, CreateProductTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductTemplateRequest.class, CreateProductTemplateResponse.class)
+                .withName("CreateProductTemplate")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/product-templates")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1035,6 +1064,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateProductTopicRequest, CreateProductTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateProductTopicRequest.class, CreateProductTopicResponse.class)
+                .withName("CreateProductTopic")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/topics")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1075,6 +1105,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreatePropertyRequest, CreatePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePropertyRequest.class, CreatePropertyResponse.class)
+                .withName("CreateProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1115,6 +1146,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateRequestPropertyRequest, CreateRequestPropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRequestPropertyRequest.class, CreateRequestPropertyResponse.class)
+                .withName("CreateRequestProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/requests")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1163,6 +1195,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateRequestThrottlingPolicyV2Request, CreateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRequestThrottlingPolicyV2Request.class, CreateRequestThrottlingPolicyV2Response.class)
+                .withName("CreateRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1195,6 +1228,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateResponsePropertyRequest, CreateResponsePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateResponsePropertyRequest.class, CreateResponsePropertyResponse.class)
+                .withName("CreateResponseProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/responses")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1243,6 +1277,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateRuleRequest, CreateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRuleRequest.class, CreateRuleResponse.class)
+                .withName("CreateRule")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1275,6 +1310,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateServiceRequest, CreateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServiceRequest.class, CreateServiceResponse.class)
+                .withName("CreateService")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1307,6 +1343,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateSignatureKeyV2Request, CreateSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSignatureKeyV2Request.class, CreateSignatureKeyV2Response.class)
+                .withName("CreateSignatureKeyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/signs")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1339,6 +1376,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateSourceRequest, CreateSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSourceRequest.class, CreateSourceResponse.class)
+                .withName("CreateSource")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}/sources")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1379,6 +1417,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSpecialThrottlingConfigurationV2Request.class, CreateSpecialThrottlingConfigurationV2Response.class)
+                .withName("CreateSpecialThrottlingConfigurationV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles/{throttle_id}/throttle-specials")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1419,6 +1458,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DebugLiveDataApiV2Request, DebugLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugLiveDataApiV2Request.class, DebugLiveDataApiV2Response.class)
+                .withName("DebugLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}/test")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1459,6 +1499,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DebugRuleRequest, DebugRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugRuleRequest.class, DebugRuleResponse.class)
+                .withName("DebugRule")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rule-test")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1491,6 +1532,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteAppAclRequest, DeleteAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppAclRequest.class, DeleteAppAclResponse.class)
+                .withName("DeleteAppAcl")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-acl")
                 .withContentType("application/json");
 
@@ -1523,6 +1565,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteAppCodeV2Request, DeleteAppCodeV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppCodeV2Request.class, DeleteAppCodeV2Response.class)
+                .withName("DeleteAppCodeV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
                 .withContentType("application/json");
 
@@ -1563,6 +1606,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteAppConfigV2Request, DeleteAppConfigV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppConfigV2Request.class, DeleteAppConfigV2Response.class)
+                .withName("DeleteAppConfigV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/configs/{app_config_id}")
                 .withContentType("application/json");
 
@@ -1603,6 +1647,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteAppQuotaRequest, DeleteAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppQuotaRequest.class, DeleteAppQuotaResponse.class)
+                .withName("DeleteAppQuota")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas/{app_quota_id}")
                 .withContentType("application/json");
 
@@ -1635,6 +1680,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteCommandRequest, DeleteCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCommandRequest.class, DeleteCommandResponse.class)
+                .withName("DeleteCommand")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}")
                 .withContentType("application/json");
 
@@ -1675,6 +1721,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomAuthorizerV2Request.class, DeleteCustomAuthorizerV2Response.class)
+                .withName("DeleteCustomAuthorizerV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/authorizers/{authorizer_id}")
                 .withContentType("application/json");
 
@@ -1707,6 +1754,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteDestinationRequest, DeleteDestinationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDestinationRequest.class, DeleteDestinationResponse.class)
+                .withName("DeleteDestination")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}/destinations/{destination_id}")
                 .withContentType("application/json");
 
@@ -1747,6 +1795,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteDeviceRequest, DeleteDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceRequest.class, DeleteDeviceResponse.class)
+                .withName("DeleteDevice")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}")
                 .withContentType("application/json");
 
@@ -1779,6 +1828,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteDeviceFromGroupRequest, DeleteDeviceFromGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceFromGroupRequest.class, DeleteDeviceFromGroupResponse.class)
+                .withName("DeleteDeviceFromGroup")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups/{group_id}/devices/{device_id}")
                 .withContentType("application/json");
 
@@ -1819,6 +1869,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceGroupRequest.class, DeleteDeviceGroupResponse.class)
+                .withName("DeleteDeviceGroup")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups/{group_id}")
                 .withContentType("application/json");
 
@@ -1851,6 +1902,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentV2Request.class, DeleteEnvironmentV2Response.class)
+                .withName("DeleteEnvironmentV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/envs/{env_id}")
                 .withContentType("application/json");
 
@@ -1883,6 +1935,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteEnvironmentVariableV2Request, DeleteEnvironmentVariableV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentVariableV2Request.class, DeleteEnvironmentVariableV2Response.class)
+                .withName("DeleteEnvironmentVariableV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/env-variables/{env_variable_id}")
                 .withContentType("application/json");
 
@@ -1915,6 +1968,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteLiveDataApiV2Request, DeleteLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLiveDataApiV2Request.class, DeleteLiveDataApiV2Response.class)
+                .withName("DeleteLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}")
                 .withContentType("application/json");
 
@@ -1947,6 +2001,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteMqsInstanceTopicRequest, DeleteMqsInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMqsInstanceTopicRequest.class, DeleteMqsInstanceTopicResponse.class)
+                .withName("DeleteMqsInstanceTopic")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics")
                 .withContentType("application/json");
 
@@ -1979,6 +2034,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteProductRequest, DeleteProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductRequest.class, DeleteProductResponse.class)
+                .withName("DeleteProduct")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}")
                 .withContentType("application/json");
 
@@ -2011,6 +2067,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteProductTemplateRequest, DeleteProductTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductTemplateRequest.class, DeleteProductTemplateResponse.class)
+                .withName("DeleteProductTemplate")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/product-templates/{product_template_id}")
                 .withContentType("application/json");
 
@@ -2043,6 +2100,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteProductTopicRequest, DeleteProductTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteProductTopicRequest.class, DeleteProductTopicResponse.class)
+                .withName("DeleteProductTopic")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/topics/{topic_id}")
                 .withContentType("application/json");
 
@@ -2083,6 +2141,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeletePropertyRequest, DeletePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePropertyRequest.class, DeletePropertyResponse.class)
+                .withName("DeleteProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties/{property_id}")
                 .withContentType("application/json");
 
@@ -2123,6 +2182,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteRequestPropertyRequest, DeleteRequestPropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRequestPropertyRequest.class, DeleteRequestPropertyResponse.class)
+                .withName("DeleteRequestProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/requests/{property_id}")
                 .withContentType("application/json");
 
@@ -2171,6 +2231,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRequestThrottlingPolicyV2Request.class, DeleteRequestThrottlingPolicyV2Response.class)
+                .withName("DeleteRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles/{throttle_id}")
                 .withContentType("application/json");
 
@@ -2203,6 +2264,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteResponsePropertyRequest, DeleteResponsePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteResponsePropertyRequest.class, DeleteResponsePropertyResponse.class)
+                .withName("DeleteResponseProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/responses/{property_id}")
                 .withContentType("application/json");
 
@@ -2251,6 +2313,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteRuleRequest, DeleteRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRuleRequest.class, DeleteRuleResponse.class)
+                .withName("DeleteRule")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -2283,6 +2346,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteServiceRequest, DeleteServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServiceRequest.class, DeleteServiceResponse.class)
+                .withName("DeleteService")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}")
                 .withContentType("application/json");
 
@@ -2315,6 +2379,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSignatureKeyV2Request.class, DeleteSignatureKeyV2Response.class)
+                .withName("DeleteSignatureKeyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/signs/{sign_id}")
                 .withContentType("application/json");
 
@@ -2347,6 +2412,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteSourceRequest, DeleteSourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSourceRequest.class, DeleteSourceResponse.class)
+                .withName("DeleteSource")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}/sources/{source_id}")
                 .withContentType("application/json");
 
@@ -2387,6 +2453,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteSpecialThrottlingConfigurationV2Request, DeleteSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSpecialThrottlingConfigurationV2Request.class, DeleteSpecialThrottlingConfigurationV2Response.class)
+                .withName("DeleteSpecialThrottlingConfigurationV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles/{throttle_id}/throttle-specials/{strategy_id}")
                 .withContentType("application/json");
 
@@ -2427,6 +2494,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateAppQuotaWithAppRequest.class, DisassociateAppQuotaWithAppResponse.class)
+                .withName("DisassociateAppQuotaWithApp")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas/{app_quota_id}/bound-apps/{app_id}")
                 .withContentType("application/json");
 
@@ -2467,6 +2535,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DisassociateCertificateV2Request, DisassociateCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateCertificateV2Request.class, DisassociateCertificateV2Response.class)
+                .withName("DisassociateCertificateV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificate/{certificate_id}")
                 .withContentType("application/json");
 
@@ -2515,6 +2584,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DisassociateDomainV2Request, DisassociateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateDomainV2Request.class, DisassociateDomainV2Response.class)
+                .withName("DisassociateDomainV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}")
                 .withContentType("application/json");
 
@@ -2555,6 +2625,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DisassociateSignatureKeyV2Request, DisassociateSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateSignatureKeyV2Request.class, DisassociateSignatureKeyV2Response.class)
+                .withName("DisassociateSignatureKeyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/sign-bindings/{sign_bindings_id}")
                 .withContentType("application/json");
 
@@ -2587,6 +2658,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DownloadProductsRequest, DownloadProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadProductsRequest.class, DownloadProductsResponse.class)
+                .withName("DownloadProducts")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/export")
                 .withContentType("application/json");
 
@@ -2619,6 +2691,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ExportMqsInstanceTopicRequest, ExportMqsInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ExportMqsInstanceTopicRequest.class, ExportMqsInstanceTopicResponse.class)
+                .withName("ExportMqsInstanceTopic")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics/export")
                 .withContentType("application/json");
 
@@ -2651,6 +2724,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ImportMqsInstanceTopicRequest, ImportMqsInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportMqsInstanceTopicRequest.class, ImportMqsInstanceTopicResponse.class)
+                .withName("ImportMqsInstanceTopic")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics/import")
                 .withContentType("multipart/form-data");
 
@@ -2691,6 +2765,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisBindedToSignatureKeyV2Request, ListApisBindedToSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisBindedToSignatureKeyV2Request.class, ListApisBindedToSignatureKeyV2Response.class)
+                .withName("ListApisBindedToSignatureKeyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/sign-bindings/binded-apis")
                 .withContentType("application/json");
 
@@ -2771,6 +2846,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisNotBoundWithSignatureKeyV2Request, ListApisNotBoundWithSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisNotBoundWithSignatureKeyV2Request.class, ListApisNotBoundWithSignatureKeyV2Response.class)
+                .withName("ListApisNotBoundWithSignatureKeyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/sign-bindings/unbinded-apis")
                 .withContentType("application/json");
 
@@ -2851,6 +2927,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppCodesV2Request, ListAppCodesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppCodesV2Request.class, ListAppCodesV2Response.class)
+                .withName("ListAppCodesV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-codes")
                 .withContentType("application/json");
 
@@ -2899,6 +2976,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppConfigsV2Request, ListAppConfigsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppConfigsV2Request.class, ListAppConfigsV2Response.class)
+                .withName("ListAppConfigsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/configs")
                 .withContentType("application/json");
 
@@ -2963,6 +3041,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppQuotaBindableAppsRequest.class, ListAppQuotaBindableAppsResponse.class)
+                .withName("ListAppQuotaBindableApps")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas/{app_quota_id}/bindable-apps")
                 .withContentType("application/json");
 
@@ -3019,6 +3098,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppQuotaBoundAppsRequest.class, ListAppQuotaBoundAppsResponse.class)
+                .withName("ListAppQuotaBoundApps")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas/{app_quota_id}/bound-apps")
                 .withContentType("application/json");
 
@@ -3075,6 +3155,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppQuotasRequest, ListAppQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppQuotasRequest.class, ListAppQuotasResponse.class)
+                .withName("ListAppQuotas")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas")
                 .withContentType("application/json");
 
@@ -3123,6 +3204,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppUsagesTopNRequest.class, ListAppUsagesTopNResponse.class)
+                .withName("ListAppUsagesTopN")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/app-usages")
                 .withContentType("application/json");
 
@@ -3203,6 +3285,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppsV2Request, ListAppsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsV2Request.class, ListAppsV2Response.class)
+                .withName("ListAppsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps")
                 .withContentType("application/json");
 
@@ -3283,6 +3366,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListCommandsRequest, ListCommandsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCommandsRequest.class, ListCommandsResponse.class)
+                .withName("ListCommands")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands")
                 .withContentType("application/json");
 
@@ -3347,6 +3431,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomAuthorizersV2Request.class, ListCustomAuthorizersV2Response.class)
+                .withName("ListCustomAuthorizersV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/authorizers")
                 .withContentType("application/json");
 
@@ -3411,6 +3496,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListDestinationsRequest, ListDestinationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDestinationsRequest.class, ListDestinationsResponse.class)
+                .withName("ListDestinations")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}/destinations")
                 .withContentType("application/json");
 
@@ -3459,6 +3545,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListDevicesRequest, ListDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDevicesRequest.class, ListDevicesResponse.class)
+                .withName("ListDevices")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices")
                 .withContentType("application/json");
 
@@ -3587,6 +3674,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListDevicesInProductRequest, ListDevicesInProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDevicesInProductRequest.class, ListDevicesInProductResponse.class)
+                .withName("ListDevicesInProduct")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/devices-summary")
                 .withContentType("application/json");
 
@@ -3619,6 +3707,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListEnvironmentVariablesV2Request, ListEnvironmentVariablesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentVariablesV2Request.class, ListEnvironmentVariablesV2Response.class)
+                .withName("ListEnvironmentVariablesV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/env-variables")
                 .withContentType("application/json");
 
@@ -3691,6 +3780,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListEnvironmentsV2Request, ListEnvironmentsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsV2Request.class, ListEnvironmentsV2Response.class)
+                .withName("ListEnvironmentsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/envs")
                 .withContentType("application/json");
 
@@ -3739,6 +3829,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListFeaturesV2Request, ListFeaturesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFeaturesV2Request.class, ListFeaturesV2Response.class)
+                .withName("ListFeaturesV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/features")
                 .withContentType("application/json");
 
@@ -3779,6 +3870,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListLatelyApiStatisticsV2Request, ListLatelyApiStatisticsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLatelyApiStatisticsV2Request.class, ListLatelyApiStatisticsV2Response.class)
+                .withName("ListLatelyApiStatisticsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/api/latest")
                 .withContentType("application/json");
 
@@ -3819,6 +3911,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListLiveDataApiDeploymentHistoryV2Request, ListLiveDataApiDeploymentHistoryV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveDataApiDeploymentHistoryV2Request.class, ListLiveDataApiDeploymentHistoryV2Response.class)
+                .withName("ListLiveDataApiDeploymentHistoryV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}/deploy")
                 .withContentType("application/json");
 
@@ -3851,6 +3944,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListLiveDataApiTestHistoryV2Request, ListLiveDataApiTestHistoryV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveDataApiTestHistoryV2Request.class, ListLiveDataApiTestHistoryV2Response.class)
+                .withName("ListLiveDataApiTestHistoryV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}/test")
                 .withContentType("application/json");
 
@@ -3883,6 +3977,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListLiveDataApiV2Request, ListLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveDataApiV2Request.class, ListLiveDataApiV2Response.class)
+                .withName("ListLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis")
                 .withContentType("application/json");
 
@@ -3971,6 +4066,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListLiveDataDataSourcesV2Request, ListLiveDataDataSourcesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveDataDataSourcesV2Request.class, ListLiveDataDataSourcesV2Response.class)
+                .withName("ListLiveDataDataSourcesV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/data-sources")
                 .withContentType("application/json");
 
@@ -4011,6 +4107,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListLiveDataQuotaV2Request, ListLiveDataQuotaV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLiveDataQuotaV2Request.class, ListLiveDataQuotaV2Response.class)
+                .withName("ListLiveDataQuotaV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-quota")
                 .withContentType("application/json");
 
@@ -4035,6 +4132,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListMonitorInfosRequest, ListMonitorInfosResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMonitorInfosRequest.class, ListMonitorInfosResponse.class)
+                .withName("ListMonitorInfos")
                 .withUri("/v2/{project_id}/fdi/instances/{instance_id}/task-monitors")
                 .withContentType("application/json");
 
@@ -4091,6 +4189,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListMonitorLogRequest, ListMonitorLogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMonitorLogRequest.class, ListMonitorLogResponse.class)
+                .withName("ListMonitorLog")
                 .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}/monitor-logs")
                 .withContentType("application/json");
 
@@ -4155,6 +4254,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListMqsInstanceTopicsRequest, ListMqsInstanceTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMqsInstanceTopicsRequest.class, ListMqsInstanceTopicsResponse.class)
+                .withName("ListMqsInstanceTopics")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics")
                 .withContentType("application/json");
 
@@ -4211,6 +4311,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListProductTemplatesRequest, ListProductTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductTemplatesRequest.class, ListProductTemplatesResponse.class)
+                .withName("ListProductTemplates")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/product-templates")
                 .withContentType("application/json");
 
@@ -4299,6 +4400,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListProductTopicsRequest, ListProductTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductTopicsRequest.class, ListProductTopicsResponse.class)
+                .withName("ListProductTopics")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/topics")
                 .withContentType("application/json");
 
@@ -4347,6 +4449,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListProductsRequest, ListProductsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductsRequest.class, ListProductsResponse.class)
+                .withName("ListProducts")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products")
                 .withContentType("application/json");
 
@@ -4459,6 +4562,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListProjectCofigsV2Request, ListProjectCofigsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProjectCofigsV2Request.class, ListProjectCofigsV2Response.class)
+                .withName("ListProjectCofigsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/project/configs")
                 .withContentType("application/json");
 
@@ -4499,6 +4603,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListPropertiesRequest, ListPropertiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPropertiesRequest.class, ListPropertiesResponse.class)
+                .withName("ListProperties")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties")
                 .withContentType("application/json");
 
@@ -4563,6 +4668,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListRequestPropertiesRequest, ListRequestPropertiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRequestPropertiesRequest.class, ListRequestPropertiesResponse.class)
+                .withName("ListRequestProperties")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/requests")
                 .withContentType("application/json");
 
@@ -4635,6 +4741,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPolicyV2Request, ListRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRequestThrottlingPolicyV2Request.class, ListRequestThrottlingPolicyV2Response.class)
+                .withName("ListRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles")
                 .withContentType("application/json");
 
@@ -4699,6 +4806,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListResponsePropertiesRequest, ListResponsePropertiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResponsePropertiesRequest.class, ListResponsePropertiesResponse.class)
+                .withName("ListResponseProperties")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/responses")
                 .withContentType("application/json");
 
@@ -4771,6 +4879,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRomaAppUsagesTopNRequest.class, ListRomaAppUsagesTopNResponse.class)
+                .withName("ListRomaAppUsagesTopN")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/roma-app-usages")
                 .withContentType("application/json");
 
@@ -4827,6 +4936,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListRulesRequest, ListRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRulesRequest.class, ListRulesResponse.class)
+                .withName("ListRules")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules")
                 .withContentType("application/json");
 
@@ -4883,6 +4993,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListServicesRequest, ListServicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServicesRequest.class, ListServicesResponse.class)
+                .withName("ListServices")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services")
                 .withContentType("application/json");
 
@@ -4979,6 +5090,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListShadowsRequest, ListShadowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListShadowsRequest.class, ListShadowsResponse.class)
+                .withName("ListShadows")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/shadow")
                 .withContentType("application/json");
 
@@ -5020,6 +5132,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysBindedToApiV2Request, ListSignatureKeysBindedToApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSignatureKeysBindedToApiV2Request.class, ListSignatureKeysBindedToApiV2Response.class)
+                .withName("ListSignatureKeysBindedToApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/sign-bindings/binded-signs")
                 .withContentType("application/json");
 
@@ -5092,6 +5205,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListSignatureKeysV2Request, ListSignatureKeysV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSignatureKeysV2Request.class, ListSignatureKeysV2Response.class)
+                .withName("ListSignatureKeysV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/signs")
                 .withContentType("application/json");
 
@@ -5156,6 +5270,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListSourcesRequest, ListSourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSourcesRequest.class, ListSourcesResponse.class)
+                .withName("ListSources")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}/sources")
                 .withContentType("application/json");
 
@@ -5204,6 +5319,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListSpecialThrottlingConfigurationsV2Request, ListSpecialThrottlingConfigurationsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSpecialThrottlingConfigurationsV2Request.class, ListSpecialThrottlingConfigurationsV2Response.class)
+                .withName("ListSpecialThrottlingConfigurationsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles/{throttle_id}/throttle-specials")
                 .withContentType("application/json");
 
@@ -5268,6 +5384,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListStatisticsApiRequest, ListStatisticsApiResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStatisticsApiRequest.class, ListStatisticsApiResponse.class)
+                .withName("ListStatisticsApi")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/api")
                 .withContentType("application/json");
 
@@ -5348,6 +5465,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStatisticsConsumerAppForSplitRomaAppsRequest.class, ListStatisticsConsumerAppForSplitRomaAppsResponse.class)
+                .withName("ListStatisticsConsumerAppForSplitRomaApps")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/apps/{consumer_app_id}/roma-apps")
                 .withContentType("application/json");
 
@@ -5420,6 +5538,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStatisticsRomaAppRequest.class, ListStatisticsRomaAppResponse.class)
+                .withName("ListStatisticsRomaApp")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/roma-app")
                 .withContentType("application/json");
 
@@ -5500,6 +5619,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListSubsetsRequest, ListSubsetsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubsetsRequest.class, ListSubsetsResponse.class)
+                .withName("ListSubsets")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/subsets")
                 .withContentType("application/json");
 
@@ -5572,6 +5692,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListTagsV2Request, ListTagsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsV2Request.class, ListTagsV2Response.class)
+                .withName("ListTagsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/tags")
                 .withContentType("application/json");
 
@@ -5612,6 +5733,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListTopicsRequest, ListTopicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTopicsRequest.class, ListTopicsResponse.class)
+                .withName("ListTopics")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/topics")
                 .withContentType("application/json");
 
@@ -5660,6 +5782,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<PublishLiveDataApiV2Request, PublishLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, PublishLiveDataApiV2Request.class, PublishLiveDataApiV2Response.class)
+                .withName("PublishLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}/deploy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -5700,6 +5823,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ResetAuthenticationRequest, ResetAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetAuthenticationRequest.class, ResetAuthenticationResponse.class)
+                .withName("ResetAuthentication")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/authentication")
                 .withContentType("application/json");
 
@@ -5732,6 +5856,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ResetMessagesRequest, ResetMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetMessagesRequest.class, ResetMessagesResponse.class)
+                .withName("ResetMessages")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/messages/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -5772,6 +5897,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ResetProductAuthenticationRequest, ResetProductAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetProductAuthenticationRequest.class, ResetProductAuthenticationResponse.class)
+                .withName("ResetProductAuthentication")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/authentication")
                 .withContentType("application/json");
 
@@ -5804,6 +5930,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<RunTaskRequest, RunTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTaskRequest.class, RunTaskResponse.class)
+                .withName("RunTask")
                 .withUri("/v2/{project_id}/fdi/instances/{instance_id}/tasks/{task_id}/run")
                 .withContentType("application/json");
 
@@ -5836,6 +5963,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<SendCommandRequest, SendCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendCommandRequest.class, SendCommandResponse.class)
+                .withName("SendCommand")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/send-command")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -5876,6 +6004,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppBoundAppQuotaRequest.class, ShowAppBoundAppQuotaResponse.class)
+                .withName("ShowAppBoundAppQuota")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/bound-quota")
                 .withContentType("application/json");
 
@@ -5908,6 +6037,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowAppQuotaRequest, ShowAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAppQuotaRequest.class, ShowAppQuotaResponse.class)
+                .withName("ShowAppQuota")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas/{app_quota_id}")
                 .withContentType("application/json");
 
@@ -5940,6 +6070,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowAuthenticationRequest, ShowAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuthenticationRequest.class, ShowAuthenticationResponse.class)
+                .withName("ShowAuthentication")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}/authentication")
                 .withContentType("application/json");
 
@@ -5972,6 +6103,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowCommandRequest, ShowCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCommandRequest.class, ShowCommandResponse.class)
+                .withName("ShowCommand")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}")
                 .withContentType("application/json");
 
@@ -6012,6 +6144,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppAclRequest.class, ShowDetailsOfAppAclResponse.class)
+                .withName("ShowDetailsOfAppAcl")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-acl")
                 .withContentType("application/json");
 
@@ -6044,6 +6177,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppCodeV2Request.class, ShowDetailsOfAppCodeV2Response.class)
+                .withName("ShowDetailsOfAppCodeV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
                 .withContentType("application/json");
 
@@ -6084,6 +6218,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppConfigV2Request, ShowDetailsOfAppConfigV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppConfigV2Request.class, ShowDetailsOfAppConfigV2Response.class)
+                .withName("ShowDetailsOfAppConfigV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/configs/{app_config_id}")
                 .withContentType("application/json");
 
@@ -6124,6 +6259,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppV2Request.class, ShowDetailsOfAppV2Response.class)
+                .withName("ShowDetailsOfAppV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}")
                 .withContentType("application/json");
 
@@ -6156,6 +6292,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfCustomAuthorizersV2Request.class, ShowDetailsOfCustomAuthorizersV2Response.class)
+                .withName("ShowDetailsOfCustomAuthorizersV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/authorizers/{authorizer_id}")
                 .withContentType("application/json");
 
@@ -6188,6 +6325,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfDomainNameCertificateV2Request, ShowDetailsOfDomainNameCertificateV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfDomainNameCertificateV2Request.class, ShowDetailsOfDomainNameCertificateV2Response.class)
+                .withName("ShowDetailsOfDomainNameCertificateV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificate/{certificate_id}")
                 .withContentType("application/json");
 
@@ -6236,6 +6374,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfEnvironmentVariableV2Request, ShowDetailsOfEnvironmentVariableV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfEnvironmentVariableV2Request.class, ShowDetailsOfEnvironmentVariableV2Response.class)
+                .withName("ShowDetailsOfEnvironmentVariableV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/env-variables/{env_variable_id}")
                 .withContentType("application/json");
 
@@ -6268,6 +6407,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfInstanceV2Request.class, ShowDetailsOfInstanceV2Response.class)
+                .withName("ShowDetailsOfInstanceV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -6292,6 +6432,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfRequestThrottlingPolicyV2Request.class, ShowDetailsOfRequestThrottlingPolicyV2Response.class)
+                .withName("ShowDetailsOfRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles/{throttle_id}")
                 .withContentType("application/json");
 
@@ -6324,6 +6465,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceRequest, ShowDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceRequest.class, ShowDeviceResponse.class)
+                .withName("ShowDevice")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}")
                 .withContentType("application/json");
 
@@ -6356,6 +6498,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceGroupRequest, ShowDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceGroupRequest.class, ShowDeviceGroupResponse.class)
+                .withName("ShowDeviceGroup")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups/{group_id}")
                 .withContentType("application/json");
 
@@ -6388,6 +6531,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDeviceGroupTreeRequest, ShowDeviceGroupTreeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDeviceGroupTreeRequest.class, ShowDeviceGroupTreeResponse.class)
+                .withName("ShowDeviceGroupTree")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups")
                 .withContentType("application/json");
 
@@ -6420,6 +6564,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDevicesInGroupRequest.class, ShowDevicesInGroupResponse.class)
+                .withName("ShowDevicesInGroup")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups/{group_id}/devices")
                 .withContentType("application/json");
 
@@ -6484,6 +6629,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowLiveDataApiV2Request, ShowLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLiveDataApiV2Request.class, ShowLiveDataApiV2Response.class)
+                .withName("ShowLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}")
                 .withContentType("application/json");
 
@@ -6516,6 +6662,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowMqsInstanceMessagesRequest, ShowMqsInstanceMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMqsInstanceMessagesRequest.class, ShowMqsInstanceMessagesResponse.class)
+                .withName("ShowMqsInstanceMessages")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/messages")
                 .withContentType("application/json");
 
@@ -6612,6 +6759,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowMqsInstanceTopicAccessPolicyRequest, ShowMqsInstanceTopicAccessPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMqsInstanceTopicAccessPolicyRequest.class, ShowMqsInstanceTopicAccessPolicyResponse.class)
+                .withName("ShowMqsInstanceTopicAccessPolicy")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics/{topic_name}/accesspolicy")
                 .withContentType("application/json");
 
@@ -6660,6 +6808,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowProductRequest, ShowProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductRequest.class, ShowProductResponse.class)
+                .withName("ShowProduct")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}")
                 .withContentType("application/json");
 
@@ -6692,6 +6841,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowProductAuthenticationRequest, ShowProductAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductAuthenticationRequest.class, ShowProductAuthenticationResponse.class)
+                .withName("ShowProductAuthentication")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/authentication")
                 .withContentType("application/json");
 
@@ -6724,6 +6874,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowProductTemplateRequest, ShowProductTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProductTemplateRequest.class, ShowProductTemplateResponse.class)
+                .withName("ShowProductTemplate")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/product-templates/{product_template_id}")
                 .withContentType("application/json");
 
@@ -6756,6 +6907,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowPropertyRequest, ShowPropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPropertyRequest.class, ShowPropertyResponse.class)
+                .withName("ShowProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties/{property_id}")
                 .withContentType("application/json");
 
@@ -6796,6 +6948,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowRequestPropertyRequest, ShowRequestPropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRequestPropertyRequest.class, ShowRequestPropertyResponse.class)
+                .withName("ShowRequestProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/requests/{property_id}")
                 .withContentType("application/json");
 
@@ -6844,6 +6997,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowResponsePropertyRequest, ShowResponsePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResponsePropertyRequest.class, ShowResponsePropertyResponse.class)
+                .withName("ShowResponseProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/responses/{property_id}")
                 .withContentType("application/json");
 
@@ -6892,6 +7046,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRestrictionOfInstanceV2Request.class, ShowRestrictionOfInstanceV2Response.class)
+                .withName("ShowRestrictionOfInstanceV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/restriction")
                 .withContentType("application/json");
 
@@ -6916,6 +7071,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowRuleRequest, ShowRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRuleRequest.class, ShowRuleResponse.class)
+                .withName("ShowRule")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}")
                 .withContentType("application/json");
 
@@ -6948,6 +7104,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowServiceRequest, ShowServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServiceRequest.class, ShowServiceResponse.class)
+                .withName("ShowService")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}")
                 .withContentType("application/json");
 
@@ -6980,6 +7137,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UnpublishLiveDataApiV2Request, UnpublishLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, UnpublishLiveDataApiV2Request.class, UnpublishLiveDataApiV2Response.class)
+                .withName("UnpublishLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}/undeploy")
                 .withContentType("application/json");
 
@@ -7012,6 +7170,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateAppAclRequest, UpdateAppAclResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppAclRequest.class, UpdateAppAclResponse.class)
+                .withName("UpdateAppAcl")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/app-acl")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7052,6 +7211,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateAppConfigV2Request, UpdateAppConfigV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppConfigV2Request.class, UpdateAppConfigV2Response.class)
+                .withName("UpdateAppConfigV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apps/{app_id}/configs/{app_config_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7100,6 +7260,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateAppQuotaRequest, UpdateAppQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAppQuotaRequest.class, UpdateAppQuotaResponse.class)
+                .withName("UpdateAppQuota")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-quotas/{app_quota_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7140,6 +7301,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateCommandRequest, UpdateCommandResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCommandRequest.class, UpdateCommandResponse.class)
+                .withName("UpdateCommand")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7188,6 +7350,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateCustomAuthorizerV2Request.class, UpdateCustomAuthorizerV2Response.class)
+                .withName("UpdateCustomAuthorizerV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/authorizers/{authorizer_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7228,6 +7391,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateDeviceRequest, UpdateDeviceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceRequest.class, UpdateDeviceResponse.class)
+                .withName("UpdateDevice")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/devices/{device_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7268,6 +7432,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceGroupRequest.class, UpdateDeviceGroupResponse.class)
+                .withName("UpdateDeviceGroup")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/device-groups/{group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7308,6 +7473,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateDomainV2Request, UpdateDomainV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainV2Request.class, UpdateDomainV2Response.class)
+                .withName("UpdateDomainV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7356,6 +7522,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEnvironmentV2Request.class, UpdateEnvironmentV2Response.class)
+                .withName("UpdateEnvironmentV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/envs/{env_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7396,6 +7563,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateEnvironmentVariableV2Request.class, UpdateEnvironmentVariableV2Response.class)
+                .withName("UpdateEnvironmentVariableV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/env-variables/{env_variable_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7436,6 +7604,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateLiveDataApiV2Request, UpdateLiveDataApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLiveDataApiV2Request.class, UpdateLiveDataApiV2Response.class)
+                .withName("UpdateLiveDataApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/livedata-apis/{ld_api_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7476,6 +7645,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateMqsInstanceTopicRequest, UpdateMqsInstanceTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateMqsInstanceTopicRequest.class, UpdateMqsInstanceTopicResponse.class)
+                .withName("UpdateMqsInstanceTopic")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7508,6 +7678,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateProductRequest, UpdateProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProductRequest.class, UpdateProductResponse.class)
+                .withName("UpdateProduct")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7548,6 +7719,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateProductTemplateRequest, UpdateProductTemplateResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProductTemplateRequest.class, UpdateProductTemplateResponse.class)
+                .withName("UpdateProductTemplate")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/product-templates/{product_template_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7588,6 +7760,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateProductTopicRequest, UpdateProductTopicResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateProductTopicRequest.class, UpdateProductTopicResponse.class)
+                .withName("UpdateProductTopic")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/{product_id}/topics/{topic_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7636,6 +7809,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdatePropertyRequest, UpdatePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePropertyRequest.class, UpdatePropertyResponse.class)
+                .withName("UpdateProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/properties/{property_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7684,6 +7858,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateRequestPropertyRequest, UpdateRequestPropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRequestPropertyRequest.class, UpdateRequestPropertyResponse.class)
+                .withName("UpdateRequestProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/requests/{property_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7740,6 +7915,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateRequestThrottlingPolicyV2Request, UpdateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRequestThrottlingPolicyV2Request.class, UpdateRequestThrottlingPolicyV2Response.class)
+                .withName("UpdateRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles/{throttle_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7780,6 +7956,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateResponsePropertyRequest, UpdateResponsePropertyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateResponsePropertyRequest.class, UpdateResponsePropertyResponse.class)
+                .withName("UpdateResponseProperty")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}/commands/{command_id}/responses/{property_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7836,6 +8013,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateRuleRequest, UpdateRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRuleRequest.class, UpdateRuleResponse.class)
+                .withName("UpdateRule")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/rules/{rule_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7876,6 +8054,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateServiceRequest, UpdateServiceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServiceRequest.class, UpdateServiceResponse.class)
+                .withName("UpdateService")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/services/{service_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7916,6 +8095,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateSignatureKeyV2Request, UpdateSignatureKeyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSignatureKeyV2Request.class, UpdateSignatureKeyV2Response.class)
+                .withName("UpdateSignatureKeyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/signs/{sign_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -7956,6 +8136,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateSpecialThrottlingConfigurationV2Request, UpdateSpecialThrottlingConfigurationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateSpecialThrottlingConfigurationV2Request.class, UpdateSpecialThrottlingConfigurationV2Response.class)
+                .withName("UpdateSpecialThrottlingConfigurationV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttles/{throttle_id}/throttle-specials/{strategy_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8004,6 +8185,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateTopicAccessPolicyRequest.class, UpdateTopicAccessPolicyResponse.class)
+                .withName("UpdateTopicAccessPolicy")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}/topics/accesspolicy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8036,6 +8218,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UploadProductRequest, UploadProductResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadProductRequest.class, UploadProductResponse.class)
+                .withName("UploadProduct")
                 .withUri("/v2/{project_id}/link/instances/{instance_id}/products/import")
                 .withContentType("multipart/form-data");
 
@@ -8060,6 +8243,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteAclV2Request, BatchDeleteAclV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchDeleteAclV2Request.class, BatchDeleteAclV2Response.class)
+                .withName("BatchDeleteAclV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acls")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8100,6 +8284,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateAclStrategyV2Request, CreateAclStrategyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAclStrategyV2Request.class, CreateAclStrategyV2Response.class)
+                .withName("CreateAclStrategyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acls")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8132,6 +8317,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteAclV2Request, DeleteAclV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAclV2Request.class, DeleteAclV2Response.class)
+                .withName("DeleteAclV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acls/{acl_id}")
                 .withContentType("application/json");
 
@@ -8164,6 +8350,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAclStrategiesV2Request, ListAclStrategiesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAclStrategiesV2Request.class, ListAclStrategiesV2Response.class)
+                .withName("ListAclStrategiesV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acls")
                 .withContentType("application/json");
 
@@ -8244,6 +8431,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfAclPolicyV2Request, ShowDetailsOfAclPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAclPolicyV2Request.class, ShowDetailsOfAclPolicyV2Response.class)
+                .withName("ShowDetailsOfAclPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acls/{acl_id}")
                 .withContentType("application/json");
 
@@ -8276,6 +8464,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateAclStrategyV2Request, UpdateAclStrategyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAclStrategyV2Request.class, UpdateAclStrategyV2Response.class)
+                .withName("UpdateAclStrategyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acls/{acl_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8316,6 +8505,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AssociateRequestThrottlingPolicyV2Request, AssociateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AssociateRequestThrottlingPolicyV2Request.class, AssociateRequestThrottlingPolicyV2Response.class)
+                .withName("AssociateRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttle-bindings")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8348,6 +8538,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchDisassociateThrottlingPolicyV2Request, BatchDisassociateThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchDisassociateThrottlingPolicyV2Request.class, BatchDisassociateThrottlingPolicyV2Response.class)
+                .withName("BatchDisassociateThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttle-bindings")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8388,6 +8579,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchPublishOrOfflineApiV2Request.class, BatchPublishOrOfflineApiV2Response.class)
+                .withName("BatchPublishOrOfflineApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/publish")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8428,6 +8620,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ChangeApiVersionV2Request, ChangeApiVersionV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeApiVersionV2Request.class, ChangeApiVersionV2Response.class)
+                .withName("ChangeApiVersionV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/publish/{api_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8468,6 +8661,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckApiGroupsV2Request, CheckApiGroupsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckApiGroupsV2Request.class, CheckApiGroupsV2Response.class)
+                .withName("CheckApiGroupsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/check")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8500,6 +8694,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckApisV2Request, CheckApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckApisV2Request.class, CheckApisV2Response.class)
+                .withName("CheckApisV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/check")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8532,6 +8727,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckBackendConnectivityRequest.class, CheckBackendConnectivityResponse.class)
+                .withName("CheckBackendConnectivity")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/backend/connectivity/check")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8564,6 +8760,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateApiGroupV2Request, CreateApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiGroupV2Request.class, CreateApiGroupV2Response.class)
+                .withName("CreateApiGroupV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8596,6 +8793,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateApiV2Request, CreateApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiV2Request.class, CreateApiV2Response.class)
+                .withName("CreateApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8628,6 +8826,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateOrDeletePublishRecordForApiV2Request, CreateOrDeletePublishRecordForApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateOrDeletePublishRecordForApiV2Request.class, CreateOrDeletePublishRecordForApiV2Response.class)
+                .withName("CreateOrDeletePublishRecordForApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8660,6 +8859,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DebugApiV2Request, DebugApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, DebugApiV2Request.class, DebugApiV2Response.class)
+                .withName("DebugApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/debug/{api_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -8700,6 +8900,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiByVersionIdV2Request.class, DeleteApiByVersionIdV2Response.class)
+                .withName("DeleteApiByVersionIdV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/versions/{version_id}")
                 .withContentType("application/json");
 
@@ -8732,6 +8933,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteApiGroupV2Request, DeleteApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiGroupV2Request.class, DeleteApiGroupV2Response.class)
+                .withName("DeleteApiGroupV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}")
                 .withContentType("application/json");
 
@@ -8764,6 +8966,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteApiV2Request, DeleteApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiV2Request.class, DeleteApiV2Response.class)
+                .withName("DeleteApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/{api_id}")
                 .withContentType("application/json");
 
@@ -8796,6 +8999,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DisassociateRequestThrottlingPolicyV2Request, DisassociateRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DisassociateRequestThrottlingPolicyV2Request.class, DisassociateRequestThrottlingPolicyV2Response.class)
+                .withName("DisassociateRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttle-bindings/{throttle_binding_id}")
                 .withContentType("application/json");
 
@@ -8828,6 +9032,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApiGroupsV2Request, ListApiGroupsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiGroupsV2Request.class, ListApiGroupsV2Response.class)
+                .withName("ListApiGroupsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups")
                 .withContentType("application/json");
 
@@ -8900,6 +9105,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApiRuntimeDefinitionV2Request, ListApiRuntimeDefinitionV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiRuntimeDefinitionV2Request.class, ListApiRuntimeDefinitionV2Response.class)
+                .withName("ListApiRuntimeDefinitionV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/runtime/{api_id}")
                 .withContentType("application/json");
 
@@ -8940,6 +9146,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionDetailV2Request, ListApiVersionDetailV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionDetailV2Request.class, ListApiVersionDetailV2Response.class)
+                .withName("ListApiVersionDetailV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/versions/{version_id}")
                 .withContentType("application/json");
 
@@ -8972,6 +9179,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionsV2Request, ListApiVersionsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsV2Request.class, ListApiVersionsV2Response.class)
+                .withName("ListApiVersionsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/publish/{api_id}")
                 .withContentType("application/json");
 
@@ -9036,6 +9244,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisBindedToRequestThrottlingPolicyV2Request, ListApisBindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisBindedToRequestThrottlingPolicyV2Request.class, ListApisBindedToRequestThrottlingPolicyV2Response.class)
+                .withName("ListApisBindedToRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttle-bindings/binded-apis")
                 .withContentType("application/json");
 
@@ -9116,6 +9325,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToRequestThrottlingPolicyV2Request, ListApisUnbindedToRequestThrottlingPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisUnbindedToRequestThrottlingPolicyV2Request.class, ListApisUnbindedToRequestThrottlingPolicyV2Response.class)
+                .withName("ListApisUnbindedToRequestThrottlingPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttle-bindings/unbinded-apis")
                 .withContentType("application/json");
 
@@ -9196,6 +9406,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisV2Request, ListApisV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisV2Request.class, ListApisV2Response.class)
+                .withName("ListApisV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis")
                 .withContentType("application/json");
 
@@ -9316,6 +9527,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListRequestThrottlingPoliciesBindedToApiV2Request, ListRequestThrottlingPoliciesBindedToApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRequestThrottlingPoliciesBindedToApiV2Request.class, ListRequestThrottlingPoliciesBindedToApiV2Response.class)
+                .withName("ListRequestThrottlingPoliciesBindedToApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/throttle-bindings/binded-throttles")
                 .withContentType("application/json");
 
@@ -9388,6 +9600,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiGroupV2Request, ShowDetailsOfApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfApiGroupV2Request.class, ShowDetailsOfApiGroupV2Response.class)
+                .withName("ShowDetailsOfApiGroupV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}")
                 .withContentType("application/json");
 
@@ -9420,6 +9633,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfApiV2Request, ShowDetailsOfApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfApiV2Request.class, ShowDetailsOfApiV2Response.class)
+                .withName("ShowDetailsOfApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/{api_id}")
                 .withContentType("application/json");
 
@@ -9452,6 +9666,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateApiGroupV2Request, UpdateApiGroupV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApiGroupV2Request.class, UpdateApiGroupV2Response.class)
+                .withName("UpdateApiGroupV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -9492,6 +9707,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateApiV2Request, UpdateApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateApiV2Request.class, UpdateApiV2Response.class)
+                .withName("UpdateApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/{api_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -9532,6 +9748,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteApiAclBindingV2Request, BatchDeleteApiAclBindingV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchDeleteApiAclBindingV2Request.class, BatchDeleteApiAclBindingV2Response.class)
+                .withName("BatchDeleteApiAclBindingV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acl-bindings")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -9572,6 +9789,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateApiAclBindingV2Request, CreateApiAclBindingV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateApiAclBindingV2Request.class, CreateApiAclBindingV2Response.class)
+                .withName("CreateApiAclBindingV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acl-bindings")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -9604,6 +9822,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteApiAclBindingV2Request, DeleteApiAclBindingV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteApiAclBindingV2Request.class, DeleteApiAclBindingV2Response.class)
+                .withName("DeleteApiAclBindingV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acl-bindings/{acl_bindings_id}")
                 .withContentType("application/json");
 
@@ -9636,6 +9855,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAclPolicyBindedToApiV2Request, ListAclPolicyBindedToApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAclPolicyBindedToApiV2Request.class, ListAclPolicyBindedToApiV2Response.class)
+                .withName("ListAclPolicyBindedToApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acl-bindings/binded-acls")
                 .withContentType("application/json");
 
@@ -9716,6 +9936,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisBindedToAclPolicyV2Request, ListApisBindedToAclPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisBindedToAclPolicyV2Request.class, ListApisBindedToAclPolicyV2Response.class)
+                .withName("ListApisBindedToAclPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acl-bindings/binded-apis")
                 .withContentType("application/json");
 
@@ -9788,6 +10009,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToAclPolicyV2Request, ListApisUnbindedToAclPolicyV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisUnbindedToAclPolicyV2Request.class, ListApisUnbindedToAclPolicyV2Response.class)
+                .withName("ListApisUnbindedToAclPolicyV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/acl-bindings/unbinded-apis")
                 .withContentType("application/json");
 
@@ -9868,6 +10090,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CancelingAuthorizationV2Request, CancelingAuthorizationV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelingAuthorizationV2Request.class, CancelingAuthorizationV2Response.class)
+                .withName("CancelingAuthorizationV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-auths/{app_auth_id}")
                 .withContentType("application/json");
 
@@ -9900,6 +10123,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAuthorizingAppsV2Request.class, CreateAuthorizingAppsV2Response.class)
+                .withName("CreateAuthorizingAppsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-auths")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -9932,6 +10156,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisBindedToAppV2Request, ListApisBindedToAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisBindedToAppV2Request.class, ListApisBindedToAppV2Response.class)
+                .withName("ListApisBindedToAppV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-auths/binded-apis")
                 .withContentType("application/json");
 
@@ -10020,6 +10245,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListApisUnbindedToAppV2Request, ListApisUnbindedToAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApisUnbindedToAppV2Request.class, ListApisUnbindedToAppV2Response.class)
+                .withName("ListApisUnbindedToAppV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-auths/unbinded-apis")
                 .withContentType("application/json");
 
@@ -10100,6 +10326,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAppsBindedToApiV2Request.class, ListAppsBindedToApiV2Response.class)
+                .withName("ListAppsBindedToApiV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-auths/binded-apps")
                 .withContentType("application/json");
 
@@ -10172,6 +10399,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListDuplicateApisForAppV2Request, ListDuplicateApisForAppV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDuplicateApisForAppV2Request.class, ListDuplicateApisForAppV2Response.class)
+                .withName("ListDuplicateApisForAppV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/app-auths/duplicate-apis")
                 .withContentType("application/json");
 
@@ -10204,6 +10432,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AddUserToAppRequest, AddUserToAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, AddUserToAppRequest.class, AddUserToAppResponse.class)
+                .withName("AddUserToApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/users")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -10244,6 +10473,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckAuthUsersOfAppRequest, CheckAuthUsersOfAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckAuthUsersOfAppRequest.class, CheckAuthUsersOfAppResponse.class)
+                .withName("CheckAuthUsersOfApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/users")
                 .withContentType("application/json");
 
@@ -10284,6 +10514,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckCanAuthUsersOfAppRequest, CheckCanAuthUsersOfAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckCanAuthUsersOfAppRequest.class, CheckCanAuthUsersOfAppResponse.class)
+                .withName("CheckCanAuthUsersOfApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/candidates")
                 .withContentType("application/json");
 
@@ -10324,6 +10555,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckRomaAppDetailsRequest, CheckRomaAppDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckRomaAppDetailsRequest.class, CheckRomaAppDetailsResponse.class)
+                .withName("CheckRomaAppDetails")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}")
                 .withContentType("application/json");
 
@@ -10356,6 +10588,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckRomaAppSecretRequest, CheckRomaAppSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckRomaAppSecretRequest.class, CheckRomaAppSecretResponse.class)
+                .withName("CheckRomaAppSecret")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/secret")
                 .withContentType("application/json");
 
@@ -10388,6 +10621,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateRomaAppRequest, CreateRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRomaAppRequest.class, CreateRomaAppResponse.class)
+                .withName("CreateRomaApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -10420,6 +10654,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteRomaAppRequest, DeleteRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRomaAppRequest.class, DeleteRomaAppResponse.class)
+                .withName("DeleteRomaApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}")
                 .withContentType("application/json");
 
@@ -10452,6 +10687,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListRomaAppRequest, ListRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRomaAppRequest.class, ListRomaAppResponse.class)
+                .withName("ListRomaApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps")
                 .withContentType("application/json");
 
@@ -10532,6 +10768,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ResetRomaAppSecretRequest, ResetRomaAppSecretResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetRomaAppSecretRequest.class, ResetRomaAppSecretResponse.class)
+                .withName("ResetRomaAppSecret")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}/secret")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -10572,6 +10809,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateRomaAppRequest, UpdateRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateRomaAppRequest.class, UpdateRomaAppResponse.class)
+                .withName("UpdateRomaApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/apps/{app_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -10612,6 +10850,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ValidateRomaAppRequest, ValidateRomaAppResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ValidateRomaAppRequest.class, ValidateRomaAppResponse.class)
+                .withName("ValidateRomaApp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/validate-apps")
                 .withContentType("application/json");
 
@@ -10660,6 +10899,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckAssetJobStatusRequest, CheckAssetJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckAssetJobStatusRequest.class, CheckAssetJobStatusResponse.class)
+                .withName("CheckAssetJobStatus")
                 .withUri("/v2/{project_id}/instances/{instance_id}/assets/jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -10692,6 +10932,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CheckDictionaryRequest, CheckDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckDictionaryRequest.class, CheckDictionaryResponse.class)
+                .withName("CheckDictionary")
                 .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json");
 
@@ -10724,6 +10965,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateDictionaryRequest, CreateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDictionaryRequest.class, CreateDictionaryResponse.class)
+                .withName("CreateDictionary")
                 .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -10756,6 +10998,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteDictionaryRequest, DeleteDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDictionaryRequest.class, DeleteDictionaryResponse.class)
+                .withName("DeleteDictionary")
                 .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json");
 
@@ -10788,6 +11031,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListDictionaryRequest, ListDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDictionaryRequest.class, ListDictionaryResponse.class)
+                .withName("ListDictionary")
                 .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries")
                 .withContentType("application/json");
 
@@ -10852,6 +11096,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateDictionaryRequest, UpdateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateDictionaryRequest.class, UpdateDictionaryResponse.class)
+                .withName("UpdateDictionary")
                 .withUri("/v2/{project_id}/instances/{instance_id}/dictionaries/{dict_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -10892,6 +11137,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ValidateDictionaryRequest, ValidateDictionaryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ValidateDictionaryRequest.class, ValidateDictionaryResponse.class)
+                .withName("ValidateDictionary")
                 .withUri("/v2/{project_id}/instances/{instance_id}/validate-dictionaries")
                 .withContentType("application/json");
 
@@ -10932,6 +11178,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListMqsInstanceRequest, ListMqsInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMqsInstanceRequest.class, ListMqsInstanceResponse.class)
+                .withName("ListMqsInstance")
                 .withUri("/v2/{project_id}/mqs/instances")
                 .withContentType("application/json");
 
@@ -10948,6 +11195,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowMqsInstanceRequest, ShowMqsInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMqsInstanceRequest.class, ShowMqsInstanceResponse.class)
+                .withName("ShowMqsInstance")
                 .withUri("/v2/{project_id}/mqs/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -10972,6 +11220,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ExportApiDefinitionsV2Request, ExportApiDefinitionsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportApiDefinitionsV2Request.class, ExportApiDefinitionsV2Response.class)
+                .withName("ExportApiDefinitionsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/openapi/export")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -11004,6 +11253,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ExportLiveDataApiDefinitionsV2Request, ExportLiveDataApiDefinitionsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExportLiveDataApiDefinitionsV2Request.class, ExportLiveDataApiDefinitionsV2Response.class)
+                .withName("ExportLiveDataApiDefinitionsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/openapi/livedata-apis/export")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -11036,6 +11286,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportApiDefinitionsV2Request.class, ImportApiDefinitionsV2Response.class)
+                .withName("ImportApiDefinitionsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/openapi/import")
                 .withContentType("multipart/form-data");
 
@@ -11060,6 +11311,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportLiveDataApiDefinitionsV2Request.class, ImportLiveDataApiDefinitionsV2Response.class)
+                .withName("ImportLiveDataApiDefinitionsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/openapi/livedata-apis/import")
                 .withContentType("multipart/form-data");
 
@@ -11084,6 +11336,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<AddingBackendInstancesV2Request, AddingBackendInstancesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddingBackendInstancesV2Request.class, AddingBackendInstancesV2Response.class)
+                .withName("AddingBackendInstancesV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -11124,6 +11377,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<CreateVpcChannelV2Request, CreateVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateVpcChannelV2Request.class, CreateVpcChannelV2Response.class)
+                .withName("CreateVpcChannelV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -11156,6 +11410,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteBackendInstanceV2Request, DeleteBackendInstanceV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackendInstanceV2Request.class, DeleteBackendInstanceV2Response.class)
+                .withName("DeleteBackendInstanceV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members/{member_id}")
                 .withContentType("application/json");
 
@@ -11196,6 +11451,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<DeleteVpcChannelV2Request, DeleteVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVpcChannelV2Request.class, DeleteVpcChannelV2Response.class)
+                .withName("DeleteVpcChannelV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}")
                 .withContentType("application/json");
 
@@ -11228,6 +11484,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListBackendInstancesV2Request, ListBackendInstancesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackendInstancesV2Request.class, ListBackendInstancesV2Response.class)
+                .withName("ListBackendInstancesV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}/members")
                 .withContentType("application/json");
 
@@ -11284,6 +11541,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ListVpcChannelsV2Request, ListVpcChannelsV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVpcChannelsV2Request.class, ListVpcChannelsV2Response.class)
+                .withName("ListVpcChannelsV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels")
                 .withContentType("application/json");
 
@@ -11356,6 +11614,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<ShowDetailsOfVpcChannelV2Request, ShowDetailsOfVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfVpcChannelV2Request.class, ShowDetailsOfVpcChannelV2Response.class)
+                .withName("ShowDetailsOfVpcChannelV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}")
                 .withContentType("application/json");
 
@@ -11388,6 +11647,7 @@ public class RomaMeta {
         // basic
         HttpRequestDef.Builder<UpdateVpcChannelV2Request, UpdateVpcChannelV2Response> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVpcChannelV2Request.class, UpdateVpcChannelV2Response.class)
+                .withName("UpdateVpcChannelV2")
                 .withUri("/v2/{project_id}/apic/instances/{instance_id}/vpc-channels/{vpc_channel_id}")
                 .withContentType("application/json;charset=UTF-8");
 

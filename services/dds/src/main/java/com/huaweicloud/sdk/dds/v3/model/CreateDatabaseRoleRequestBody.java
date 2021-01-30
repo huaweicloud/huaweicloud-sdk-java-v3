@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dds.v3.model.RolesOption;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,8 +36,8 @@ public class CreateDatabaseRoleRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roles")
     
-    private RolesOption roles = null;
-
+    private List<RolesOption> roles = null;
+    
     public CreateDatabaseRoleRequestBody withRoleName(String roleName) {
         this.roleName = roleName;
         return this;
@@ -76,30 +78,37 @@ public class CreateDatabaseRoleRequestBody  {
         this.dbName = dbName;
     }
 
-    public CreateDatabaseRoleRequestBody withRoles(RolesOption roles) {
+    public CreateDatabaseRoleRequestBody withRoles(List<RolesOption> roles) {
         this.roles = roles;
         return this;
     }
 
-    public CreateDatabaseRoleRequestBody withRoles(Consumer<RolesOption> rolesSetter) {
-        if(this.roles == null ){
-            this.roles = new RolesOption();
-            rolesSetter.accept(this.roles);
+    
+    public CreateDatabaseRoleRequestBody addRolesItem(RolesOption rolesItem) {
+        if (this.roles == null) {
+            this.roles = new ArrayList<>();
         }
-        
+        this.roles.add(rolesItem);
         return this;
     }
 
+    public CreateDatabaseRoleRequestBody withRoles(Consumer<List<RolesOption>> rolesSetter) {
+        if(this.roles == null ){
+            this.roles = new ArrayList<>();
+        }
+        rolesSetter.accept(this.roles);
+        return this;
+    }
 
     /**
-     * Get roles
+     * 新用户所拥有的角色。
      * @return roles
      */
-    public RolesOption getRoles() {
+    public List<RolesOption> getRoles() {
         return roles;
     }
 
-    public void setRoles(RolesOption roles) {
+    public void setRoles(List<RolesOption> roles) {
         this.roles = roles;
     }
     @Override

@@ -18,6 +18,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListClassroomMembersRequest, ListClassroomMembersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClassroomMembersRequest.class, ListClassroomMembersResponse.class)
+                .withName("ListClassroomMembers")
                 .withUri("/v3/classrooms/{classroom_id}/members")
                 .withContentType("application/json");
 
@@ -66,6 +67,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListClassroomsRequest, ListClassroomsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClassroomsRequest.class, ListClassroomsResponse.class)
+                .withName("ListClassrooms")
                 .withUri("/v3/classrooms")
                 .withContentType("application/json");
 
@@ -106,6 +108,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ShowClassroomDetailRequest, ShowClassroomDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClassroomDetailRequest.class, ShowClassroomDetailResponse.class)
+                .withName("ShowClassroomDetail")
                 .withUri("/v3/classrooms/{classroom_id}")
                 .withContentType("application/json");
 
@@ -130,6 +133,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListClassroomMemberJobsRequest.class, ListClassroomMemberJobsResponse.class)
+                .withName("ListClassroomMemberJobs")
                 .withUri("/v3/classrooms/{classroom_id}/jobs")
                 .withContentType("application/json");
 
@@ -178,6 +182,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
+                .withName("ListJobs")
                 .withUri("/v3/jobs")
                 .withContentType("application/json");
 
@@ -226,6 +231,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMemberJobRecordsRequest.class, ListMemberJobRecordsResponse.class)
+                .withName("ListMemberJobRecords")
                 .withUri("/v3/jobs/{job_id}/exercises/{exercise_id}/records")
                 .withContentType("application/json");
 
@@ -282,6 +288,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
+                .withName("ShowJobDetail")
                 .withUri("/v3/jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -306,6 +313,7 @@ public class ClassroomMeta {
         // basic
         HttpRequestDef.Builder<ShowJobExercisesRequest, ShowJobExercisesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobExercisesRequest.class, ShowJobExercisesResponse.class)
+                .withName("ShowJobExercises")
                 .withUri("/v3/jobs/{job_id}/exercises")
                 .withContentType("application/json");
 

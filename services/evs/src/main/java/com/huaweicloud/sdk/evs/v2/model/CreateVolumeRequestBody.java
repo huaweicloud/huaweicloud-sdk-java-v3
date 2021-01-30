@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.evs.v2.model.BssParamForCreateVolume;
 import com.huaweicloud.sdk.evs.v2.model.CreateVolumeOption;
+import com.huaweicloud.sdk.evs.v2.model.CreateVolumeSchedulerHints;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -36,6 +37,12 @@ public class CreateVolumeRequestBody  {
     @JsonProperty(value="server_id")
     
     private String serverId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="OS-SCH-HNT:scheduler_hints")
+    
+    private CreateVolumeSchedulerHints osSCHHNTSchedulerHints = null;
 
     public CreateVolumeRequestBody withBssParam(BssParamForCreateVolume bssParam) {
         this.bssParam = bssParam;
@@ -110,6 +117,33 @@ public class CreateVolumeRequestBody  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
+
+    public CreateVolumeRequestBody withOsSCHHNTSchedulerHints(CreateVolumeSchedulerHints osSCHHNTSchedulerHints) {
+        this.osSCHHNTSchedulerHints = osSCHHNTSchedulerHints;
+        return this;
+    }
+
+    public CreateVolumeRequestBody withOsSCHHNTSchedulerHints(Consumer<CreateVolumeSchedulerHints> osSCHHNTSchedulerHintsSetter) {
+        if(this.osSCHHNTSchedulerHints == null ){
+            this.osSCHHNTSchedulerHints = new CreateVolumeSchedulerHints();
+            osSCHHNTSchedulerHintsSetter.accept(this.osSCHHNTSchedulerHints);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get osSCHHNTSchedulerHints
+     * @return osSCHHNTSchedulerHints
+     */
+    public CreateVolumeSchedulerHints getOsSCHHNTSchedulerHints() {
+        return osSCHHNTSchedulerHints;
+    }
+
+    public void setOsSCHHNTSchedulerHints(CreateVolumeSchedulerHints osSCHHNTSchedulerHints) {
+        this.osSCHHNTSchedulerHints = osSCHHNTSchedulerHints;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -121,11 +155,12 @@ public class CreateVolumeRequestBody  {
         CreateVolumeRequestBody createVolumeRequestBody = (CreateVolumeRequestBody) o;
         return Objects.equals(this.bssParam, createVolumeRequestBody.bssParam) &&
             Objects.equals(this.volume, createVolumeRequestBody.volume) &&
-            Objects.equals(this.serverId, createVolumeRequestBody.serverId);
+            Objects.equals(this.serverId, createVolumeRequestBody.serverId) &&
+            Objects.equals(this.osSCHHNTSchedulerHints, createVolumeRequestBody.osSCHHNTSchedulerHints);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bssParam, volume, serverId);
+        return Objects.hash(bssParam, volume, serverId, osSCHHNTSchedulerHints);
     }
     @Override
     public String toString() {
@@ -134,6 +169,7 @@ public class CreateVolumeRequestBody  {
         sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    osSCHHNTSchedulerHints: ").append(toIndentedString(osSCHHNTSchedulerHints)).append("\n");
         sb.append("}");
         return sb.toString();
     }

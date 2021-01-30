@@ -18,6 +18,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteQueueTagRequest, BatchCreateOrDeleteQueueTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteQueueTagRequest.class, BatchCreateOrDeleteQueueTagResponse.class)
+                .withName("BatchCreateOrDeleteQueueTag")
                 .withUri("/v2/{project_id}/queue/{queue_id}/tags/action")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ConfirmConsumptionMessagesRequest, ConfirmConsumptionMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ConfirmConsumptionMessagesRequest.class, ConfirmConsumptionMessagesResponse.class)
+                .withName("ConfirmConsumptionMessages")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/ack")
                 .withContentType("application/json");
 
@@ -90,6 +92,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ConfirmDeadLettersMessagesRequest, ConfirmDeadLettersMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ConfirmDeadLettersMessagesRequest.class, ConfirmDeadLettersMessagesResponse.class)
+                .withName("ConfirmDeadLettersMessages")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/deadletters/ack")
                 .withContentType("application/json");
 
@@ -130,6 +133,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ConsumeDeadlettersMessageRequest.class, ConsumeDeadlettersMessageResponse.class)
+                .withName("ConsumeDeadlettersMessage")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/deadletters")
                 .withContentType("application/json");
 
@@ -195,6 +199,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ConsumeMessagesRequest, ConsumeMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ConsumeMessagesRequest.class, ConsumeMessagesResponse.class)
+                .withName("ConsumeMessages")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/messages")
                 .withContentType("application/json");
 
@@ -276,6 +281,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<CreateConsumerGroupRequest, CreateConsumerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateConsumerGroupRequest.class, CreateConsumerGroupResponse.class)
+                .withName("CreateConsumerGroup")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups")
                 .withContentType("application/json");
 
@@ -308,6 +314,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<CreateQueueRequest, CreateQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateQueueRequest.class, CreateQueueResponse.class)
+                .withName("CreateQueue")
                 .withUri("/v2/{project_id}/queues")
                 .withContentType("application/json");
 
@@ -332,6 +339,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteQueueRequest, DeleteQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteQueueRequest.class, DeleteQueueResponse.class)
+                .withName("DeleteQueue")
                 .withUri("/v2/{project_id}/queues/{queue_id}")
                 .withContentType("application/json");
 
@@ -356,6 +364,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSpecifiedConsumerGroupRequest.class, DeleteSpecifiedConsumerGroupResponse.class)
+                .withName("DeleteSpecifiedConsumerGroup")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{group_id}")
                 .withContentType("application/json");
 
@@ -388,6 +397,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ListConsumerGroupsRequest, ListConsumerGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConsumerGroupsRequest.class, ListConsumerGroupsResponse.class)
+                .withName("ListConsumerGroups")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups")
                 .withContentType("application/json");
 
@@ -444,6 +454,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ListQueuesRequest, ListQueuesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQueuesRequest.class, ListQueuesResponse.class)
+                .withName("ListQueues")
                 .withUri("/v2/{project_id}/queues")
                 .withContentType("application/json");
 
@@ -468,6 +479,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<SendMessagesRequest, SendMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendMessagesRequest.class, SendMessagesResponse.class)
+                .withName("SendMessages")
                 .withUri("/v2/{project_id}/queues/{queue_id}/messages")
                 .withContentType("application/json");
 
@@ -500,6 +512,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowProjectTagsRequest, ShowProjectTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsRequest.class, ShowProjectTagsResponse.class)
+                .withName("ShowProjectTags")
                 .withUri("/v2/{project_id}/queue/tags")
                 .withContentType("application/json");
 
@@ -516,6 +529,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowQueueRequest, ShowQueueResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQueueRequest.class, ShowQueueResponse.class)
+                .withName("ShowQueue")
                 .withUri("/v2/{project_id}/queues/{queue_id}")
                 .withContentType("application/json");
 
@@ -548,6 +562,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowQueueTagsRequest, ShowQueueTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQueueTagsRequest.class, ShowQueueTagsResponse.class)
+                .withName("ShowQueueTags")
                 .withUri("/v2/{project_id}/queue/{queue_id}/tags")
                 .withContentType("application/json");
 
@@ -572,6 +587,7 @@ public class DmsMeta {
         // basic
         HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
                 .withUri("/v2/{project_id}/quotas")
                 .withContentType("application/json");
 

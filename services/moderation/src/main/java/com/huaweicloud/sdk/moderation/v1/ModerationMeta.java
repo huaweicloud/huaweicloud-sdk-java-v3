@@ -18,6 +18,7 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunCheckResultRequest, RunCheckResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, RunCheckResultRequest.class, RunCheckResultResponse.class)
+                .withName("RunCheckResult")
                 .withUri("/v1.0/moderation/image/batch")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunCheckTaskJobsRequest, RunCheckTaskJobsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, RunCheckTaskJobsRequest.class, RunCheckTaskJobsResponse.class)
+                .withName("RunCheckTaskJobs")
                 .withUri("/v1.0/moderation/image/batch/jobs")
                 .withContentType("application/json");
 
@@ -66,6 +68,7 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunImageBatchModerationRequest, RunImageBatchModerationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunImageBatchModerationRequest.class, RunImageBatchModerationResponse.class)
+                .withName("RunImageBatchModeration")
                 .withUri("/v1.0/moderation/image/batch")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -90,6 +93,7 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunImageModerationRequest, RunImageModerationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunImageModerationRequest.class, RunImageModerationResponse.class)
+                .withName("RunImageModeration")
                 .withUri("/v1.0/moderation/image")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -114,6 +118,7 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunTaskSumbitRequest, RunTaskSumbitResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTaskSumbitRequest.class, RunTaskSumbitResponse.class)
+                .withName("RunTaskSumbit")
                 .withUri("/v1.0/moderation/image/batch/jobs")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -138,6 +143,7 @@ public class ModerationMeta {
         // basic
         HttpRequestDef.Builder<RunTextModerationRequest, RunTextModerationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunTextModerationRequest.class, RunTextModerationResponse.class)
+                .withName("RunTextModeration")
                 .withUri("/v1.0/moderation/text")
                 .withContentType("application/json;charset=UTF-8");
 

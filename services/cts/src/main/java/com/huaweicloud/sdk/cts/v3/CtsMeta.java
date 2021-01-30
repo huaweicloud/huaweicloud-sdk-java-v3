@@ -18,6 +18,7 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<CreateTrackerRequest, CreateTrackerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTrackerRequest.class, CreateTrackerResponse.class)
+                .withName("CreateTracker")
                 .withUri("/v3/{project_id}/tracker")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTrackerRequest, DeleteTrackerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTrackerRequest.class, DeleteTrackerResponse.class)
+                .withName("DeleteTracker")
                 .withUri("/v3/{project_id}/trackers")
                 .withContentType("application/json");
 
@@ -74,6 +76,7 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withName("ListQuotas")
                 .withUri("/v3/{project_id}/quotas")
                 .withContentType("application/json");
 
@@ -90,6 +93,7 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<ListTracesRequest, ListTracesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTracesRequest.class, ListTracesResponse.class)
+                .withName("ListTraces")
                 .withUri("/v3/{project_id}/traces")
                 .withContentType("application/json");
 
@@ -218,6 +222,7 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<ListTrackersRequest, ListTrackersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTrackersRequest.class, ListTrackersResponse.class)
+                .withName("ListTrackers")
                 .withUri("/v3/{project_id}/trackers")
                 .withContentType("application/json");
 
@@ -250,6 +255,7 @@ public class CtsMeta {
         // basic
         HttpRequestDef.Builder<UpdateTrackerRequest, UpdateTrackerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTrackerRequest.class, UpdateTrackerResponse.class)
+                .withName("UpdateTracker")
                 .withUri("/v3/{project_id}/tracker")
                 .withContentType("application/json;charset=UTF-8");
 

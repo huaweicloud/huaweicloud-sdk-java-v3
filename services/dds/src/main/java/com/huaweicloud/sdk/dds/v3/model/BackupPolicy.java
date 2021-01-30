@@ -21,7 +21,7 @@ public class BackupPolicy  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="keep_days")
     
-    private Integer keepDays;
+    private String keepDays;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,7 +35,7 @@ public class BackupPolicy  {
     
     private String period;
 
-    public BackupPolicy withKeepDays(Integer keepDays) {
+    public BackupPolicy withKeepDays(String keepDays) {
         this.keepDays = keepDays;
         return this;
     }
@@ -47,11 +47,11 @@ public class BackupPolicy  {
      * 指定已生成的备份文件可以保存的天数。 取值范围：0～732。取0值，表示关闭自动备份策略。
      * @return keepDays
      */
-    public Integer getKeepDays() {
+    public String getKeepDays() {
         return keepDays;
     }
 
-    public void setKeepDays(Integer keepDays) {
+    public void setKeepDays(String keepDays) {
         this.keepDays = keepDays;
     }
 

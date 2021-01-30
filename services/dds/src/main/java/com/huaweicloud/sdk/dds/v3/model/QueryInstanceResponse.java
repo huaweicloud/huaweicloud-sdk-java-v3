@@ -44,7 +44,7 @@ public class QueryInstanceResponse  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    private Integer port;
+    private String port;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -226,7 +226,7 @@ public class QueryInstanceResponse  {
         this.status = status;
     }
 
-    public QueryInstanceResponse withPort(Integer port) {
+    public QueryInstanceResponse withPort(String port) {
         this.port = port;
         return this;
     }
@@ -238,11 +238,11 @@ public class QueryInstanceResponse  {
      * 数据库端口号。文档数据库实例支持的端口号范围为2100～9500。
      * @return port
      */
-    public Integer getPort() {
+    public String getPort() {
         return port;
     }
 
-    public void setPort(Integer port) {
+    public void setPort(String port) {
         this.port = port;
     }
 

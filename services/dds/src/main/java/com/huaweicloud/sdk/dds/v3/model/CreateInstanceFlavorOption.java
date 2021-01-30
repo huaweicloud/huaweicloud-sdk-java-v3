@@ -127,7 +127,7 @@ public class CreateInstanceFlavorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="num")
     
-    private Integer num;
+    private String num;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -139,7 +139,7 @@ public class CreateInstanceFlavorOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private String size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -167,7 +167,7 @@ public class CreateInstanceFlavorOption  {
         this.type = type;
     }
 
-    public CreateInstanceFlavorOption withNum(Integer num) {
+    public CreateInstanceFlavorOption withNum(String num) {
         this.num = num;
         return this;
     }
@@ -179,11 +179,11 @@ public class CreateInstanceFlavorOption  {
      * 节点数量。 取值：   - 集群实例下“mongos”类型的节点数量可取2~16。   - 集群实例下“shard”类型的组数量可取2~16。   - “shard”类型的组数量可取2~16，恢复到新实例不传该参数。   - “config”类型的组数量只能取1。   - “replica”类型的组数量只能取1。   - “single”类型的节点数量只能取1。
      * @return num
      */
-    public Integer getNum() {
+    public String getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(String num) {
         this.num = num;
     }
 
@@ -207,7 +207,7 @@ public class CreateInstanceFlavorOption  {
         this.storage = storage;
     }
 
-    public CreateInstanceFlavorOption withSize(Integer size) {
+    public CreateInstanceFlavorOption withSize(String size) {
         this.size = size;
         return this;
     }
@@ -219,11 +219,11 @@ public class CreateInstanceFlavorOption  {
      * 磁盘大小。 取值：必须为10的整数倍。单位为GB。   - 对于集群实例，shard组可取10GB~2000GB，config组仅可取20GB。mongos节点不涉及选择磁盘，该参数无意义。   - 对于副本集实例，可取10GB~2000GB。   - 对于单节点实例，可取10GB~1000GB。
      * @return size
      */
-    public Integer getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

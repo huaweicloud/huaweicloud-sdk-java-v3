@@ -18,6 +18,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateDirectConnectRequest, BatchCreateDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateDirectConnectRequest.class, BatchCreateDirectConnectResponse.class)
+                .withName("BatchCreateDirectConnect")
                 .withUri("/v3/{project_id}/dcaas/direct-connects")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateVirtualGatewaysRequest, BatchCreateVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateVirtualGatewaysRequest.class, BatchCreateVirtualGatewaysResponse.class)
+                .withName("BatchCreateVirtualGateways")
                 .withUri("/v3/{project_id}/dcaas/virtual-gateways")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -66,6 +68,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateVirtualInterfaceRequest, BatchCreateVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateVirtualInterfaceRequest.class, BatchCreateVirtualInterfaceResponse.class)
+                .withName("BatchCreateVirtualInterface")
                 .withUri("/v3/{project_id}/dcaas/virtual-interfaces")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -90,6 +93,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteDirectConnectRequest, BatchDeleteDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteDirectConnectRequest.class, BatchDeleteDirectConnectResponse.class)
+                .withName("BatchDeleteDirectConnect")
                 .withUri("/v3/{project_id}/dcaas/direct-connects/{id}")
                 .withContentType("application/json");
 
@@ -123,6 +127,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteVirtualGatewaysRequest, BatchDeleteVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteVirtualGatewaysRequest.class, BatchDeleteVirtualGatewaysResponse.class)
+                .withName("BatchDeleteVirtualGateways")
                 .withUri("/v3/{project_id}/dcaas/virtual-gateways/{id}")
                 .withContentType("application/json");
 
@@ -156,6 +161,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteVirtualInterfaceRequest, BatchDeleteVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteVirtualInterfaceRequest.class, BatchDeleteVirtualInterfaceResponse.class)
+                .withName("BatchDeleteVirtualInterface")
                 .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{id}")
                 .withContentType("application/json");
 
@@ -189,6 +195,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateDirectConnectRequest, BatchUpdateDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateDirectConnectRequest.class, BatchUpdateDirectConnectResponse.class)
+                .withName("BatchUpdateDirectConnect")
                 .withUri("/v3/{project_id}/dcaas/direct-connects/{id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -221,6 +228,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateVirtualGatewaysRequest, BatchUpdateVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateVirtualGatewaysRequest.class, BatchUpdateVirtualGatewaysResponse.class)
+                .withName("BatchUpdateVirtualGateways")
                 .withUri("/v3/{project_id}/dcaas/virtual-gateways/{id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -253,6 +261,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<BatchUpdateVirtualInterfaceRequest, BatchUpdateVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, BatchUpdateVirtualInterfaceRequest.class, BatchUpdateVirtualInterfaceResponse.class)
+                .withName("BatchUpdateVirtualInterface")
                 .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -285,6 +294,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ListDirectConnectRequest, ListDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListDirectConnectRequest.class, ListDirectConnectResponse.class)
+                .withName("ListDirectConnect")
                 .withUri("/v3/{project_id}/dcaas/direct-connects")
                 .withContentType("application/json");
 
@@ -301,6 +311,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ListVirtualGatewaysRequest, ListVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVirtualGatewaysRequest.class, ListVirtualGatewaysResponse.class)
+                .withName("ListVirtualGateways")
                 .withUri("/v3/{project_id}/dcaas/virtual-gateways")
                 .withContentType("application/json");
 
@@ -317,6 +328,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ListVirtualInterfaceRequest, ListVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListVirtualInterfaceRequest.class, ListVirtualInterfaceResponse.class)
+                .withName("ListVirtualInterface")
                 .withUri("/v3/{project_id}/dcaas/virtual-interfaces")
                 .withContentType("application/json");
 
@@ -333,6 +345,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ShowDirectConnectRequest, ShowDirectConnectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowDirectConnectRequest.class, ShowDirectConnectResponse.class)
+                .withName("ShowDirectConnect")
                 .withUri("/v3/{project_id}/dcaas/direct-connects/{id}")
                 .withContentType("application/json");
 
@@ -357,6 +370,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ShowVirtualGatewaysRequest, ShowVirtualGatewaysResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVirtualGatewaysRequest.class, ShowVirtualGatewaysResponse.class)
+                .withName("ShowVirtualGateways")
                 .withUri("/v3/{project_id}/dcaas/virtual-gateways/{id}")
                 .withContentType("application/json");
 
@@ -381,6 +395,7 @@ public class DcMeta {
         // basic
         HttpRequestDef.Builder<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVirtualInterfaceRequest.class, ShowVirtualInterfaceResponse.class)
+                .withName("ShowVirtualInterface")
                 .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{id}")
                 .withContentType("application/json");
 

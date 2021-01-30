@@ -22,57 +22,31 @@
 package com.huaweicloud.sdk.core.auth;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
+import com.huaweicloud.sdk.core.internal.InnerIamMeta;
+import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectRequest;
+import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectResponse;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsRequest;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsResponse;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsRequest;
+import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
-public class BasicCredentials extends AbstractCredentials {
+public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     private String projectId;
-
-    /**
-     * IAM endpoint to get auth domains information.
-     */
-    private String iamEndpoint;
-
-    public BasicCredentials withAk(String ak) {
-        setAk(ak);
-        return this;
-    }
-
-    public BasicCredentials withSk(String sk) {
-        setSk(sk);
-        return this;
-    }
-
-    public BasicCredentials withSecurityToken(String securityToken) {
-        setSecurityToken(securityToken);
-        return this;
-    }
-
-    public String getIamEndpoint() {
-        return iamEndpoint;
-    }
-
-    public void setIamEndpoint(String iamEndpoint) {
-        this.iamEndpoint = iamEndpoint;
-    }
-
-    /**
-     * @param iamEndpoint endpoint can be override when using development environment.
-     * @return BasicCredentials with override endpoint.
-     */
-    public BasicCredentials withIamEndpoint(String iamEndpoint) {
-        setIamEndpoint(iamEndpoint);
-        return this;
-    }
 
     public String getProjectId() {
         return projectId;
@@ -96,27 +70,94 @@ public class BasicCredentials extends AbstractCredentials {
     }
 
     @Override
-    public CompletableFuture<ICredential> processAuthParams(HttpClient httpClient, String regionId) {
+    public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
         if (!StringUtils.isEmpty(this.projectId)) {
             return CompletableFuture.completedFuture(this);
         }
 
-        HttpRequest signedRequest;
-        try {
-            // When using `getCredentialFromEnvironment`, iamEndpoint will lose while initializing Credentials.
-            iamEndpoint = Objects.nonNull(iamEndpoint) ? iamEndpoint : IamService.DEFAULT_IAM_ENDPOINT;
-            signedRequest = this.processAuthRequest(
-                IamService.getKeystoneListProjectsRequest(regionId, iamEndpoint), httpClient).get();
-        } catch (InterruptedException | ExecutionException e) {
-            throw new SdkException(e);
+        // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
+        String akWithName = getAk() + regionId;
+        if (Objects.nonNull(AuthCache.getAuth(akWithName)) && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
+            this.projectId = AuthCache.getAuth(akWithName);
+            return CompletableFuture.completedFuture(this);
         }
 
-        try {
-            this.projectId = IamService.keystoneListProjects(httpClient, signedRequest);
-            return CompletableFuture.completedFuture(this);
-        } catch (SdkException e) {
-            throw new SdkException("Failed to get project id, " + e.getMessage());
+        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
+        HcClient inner = hcClient.overrideEndpoint(iamEndpoint);
+
+        KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
+        KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
+        if (Objects.isNull(response)) {
+            throw new SdkException("failed to get project id");
         }
+        if (response.getProjects().size() == 1) {
+            this.projectId = response.getProjects().get(0).getId();
+        } else {
+            this.projectId = keystoneCreateProject(inner, regionId);
+        }
+        AuthCache.putAuth(akWithName, projectId);
+        return CompletableFuture.completedFuture(this);
+    }
+
+    private String keystoneCreateProject(HcClient client, String regionId) {
+        List<String> supportedRegions = getSupportedRegions(client);
+        if (Objects.isNull(supportedRegions) || supportedRegions.size() == 0) {
+            throw new SdkException("failed to list regions");
+        }
+        if (!supportedRegions.contains(regionId)) {
+            throw new SdkException("the region input is not supported to create project automatically");
+        }
+
+        String domainId = getDomainId(client);
+        if (StringUtils.isEmpty(domainId)) {
+            throw new SdkException("failed to get domain id");
+        }
+
+        return getCreateProjectId(client, regionId, domainId);
+    }
+
+    private List<String> getSupportedRegions(HcClient hcClient) {
+        KeystoneListRegionsRequest request = new KeystoneListRegionsRequest();
+        KeystoneListRegionsResponse response = hcClient.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_REGIONS);
+        if (Objects.isNull(response)) {
+            throw new SdkException("failed to list all regions");
+        }
+
+        return response.getRegions().stream().map(region -> {
+            if ("public".equals(region.getType())) {
+                return region.getId();
+            }
+            return null;
+        }).filter(Objects::nonNull).collect(Collectors.toList());
+    }
+
+    private String getDomainId(HcClient hcClient) {
+        KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
+        KeystoneListAuthDomainsResponse response =
+            hcClient.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+        if (Objects.isNull(response)) {
+            throw new SdkException("failed to get domain id");
+        }
+        return response.getDomains().get(0).getId();
+    }
+
+    private String getCreateProjectId(HcClient hcClient, String regionId, String domainId) {
+        GlobalCredentials globalCredentials = new GlobalCredentials().withAk(getAk()).withSk(getSk())
+            .withDomainId(domainId);
+        HcClient innerGlobal = hcClient.overrideCredential(globalCredentials);
+        KeystoneCreateProjectRequest request = new KeystoneCreateProjectRequest().withBody(body -> {
+            body.withProject(project -> {
+                project.withName(regionId);
+                project.withDomainId(domainId);
+            });
+        });
+        KeystoneCreateProjectResponse response =
+            innerGlobal.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_CREATE_PROJECT);
+
+        if (Objects.isNull(response.getProject())) {
+            throw new SdkException("failed to create project");
+        }
+        return response.getProject().getId();
     }
 
     @Override
@@ -142,6 +183,16 @@ public class BasicCredentials extends AbstractCredentials {
 
             return builder.build();
         });
+    }
+
+    @Override
+    public BasicCredentials deepClone() {
+        return new BasicCredentials()
+                .withProjectId(this.projectId)
+                .withAk(this.getAk())
+                .withSk(this.getSk())
+                .withIamEndpoint(this.getIamEndpoint())
+                .withSecurityToken(this.getSecurityToken());
     }
 
 }

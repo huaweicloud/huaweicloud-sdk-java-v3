@@ -4,7 +4,7 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.cloudide.v2.model.*;
 
 public class CloudIDEAsyncClient {
@@ -31,6 +31,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 查询技术栈模板工程
+     * 查询技术栈模板工程
+     *
+     * @param ListProjectTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse>
+     */
+    public AsyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse> listProjectTemplatesAsyncInvoker(ListProjectTemplatesRequest request) {
+        return new AsyncInvoker<ListProjectTemplatesRequest, ListProjectTemplatesResponse>(request, CloudIDEMeta.listProjectTemplates, hcClient);
+    }
+
+    /**
      * 获取标签所有技术栈
      * 获取标签所有技术栈
      *
@@ -39,6 +50,17 @@ public class CloudIDEAsyncClient {
      */
     public CompletableFuture<ListStacksByTagResponse> listStacksByTagAsync(ListStacksByTagRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.listStacksByTag);
+    }
+
+    /**
+     * 获取标签所有技术栈
+     * 获取标签所有技术栈
+     *
+     * @param ListStacksByTagRequest 请求对象
+     * @return AsyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse>
+     */
+    public AsyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse> listStacksByTagAsyncInvoker(ListStacksByTagRequest request) {
+        return new AsyncInvoker<ListStacksByTagRequest, ListStacksByTagResponse>(request, CloudIDEMeta.listStacksByTag, hcClient);
     }
 
     /**
@@ -53,6 +75,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 查询当前账号访问权限
+     * 查询当前账号访问权限
+     *
+     * @param ShowAccountStatusRequest 请求对象
+     * @return AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>
+     */
+    public AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse> showAccountStatusAsyncInvoker(ShowAccountStatusRequest request) {
+        return new AsyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>(request, CloudIDEMeta.showAccountStatus, hcClient);
+    }
+
+    /**
      * 获取技术栈计费信息
      * 获取技术栈计费信息
      *
@@ -61,6 +94,17 @@ public class CloudIDEAsyncClient {
      */
     public CompletableFuture<ShowPriceResponse> showPriceAsync(ShowPriceRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.showPrice);
+    }
+
+    /**
+     * 获取技术栈计费信息
+     * 获取技术栈计费信息
+     *
+     * @param ShowPriceRequest 请求对象
+     * @return AsyncInvoker<ShowPriceRequest, ShowPriceResponse>
+     */
+    public AsyncInvoker<ShowPriceRequest, ShowPriceResponse> showPriceAsyncInvoker(ShowPriceRequest request) {
+        return new AsyncInvoker<ShowPriceRequest, ShowPriceResponse>(request, CloudIDEMeta.showPrice, hcClient);
     }
 
     /**
@@ -75,6 +119,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 查询IDE实例名是否重复
+     * 查询IDE实例名是否重复
+     *
+     * @param CheckNameRequest 请求对象
+     * @return AsyncInvoker<CheckNameRequest, CheckNameResponse>
+     */
+    public AsyncInvoker<CheckNameRequest, CheckNameResponse> checkNameAsyncInvoker(CheckNameRequest request) {
+        return new AsyncInvoker<CheckNameRequest, CheckNameResponse>(request, CloudIDEMeta.checkName, hcClient);
+    }
+
+    /**
      * 创建IDE实例
      * 创建IDE实例
      *
@@ -83,6 +138,17 @@ public class CloudIDEAsyncClient {
      */
     public CompletableFuture<CreateInstanceResponse> createInstanceAsync(CreateInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.createInstance);
+    }
+
+    /**
+     * 创建IDE实例
+     * 创建IDE实例
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
+    public AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceAsyncInvoker(CreateInstanceRequest request) {
+        return new AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, CloudIDEMeta.createInstance, hcClient);
     }
 
     /**
@@ -97,6 +163,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 外部第三方集成商创建IDE实例
+     * 创建IDE实例
+     *
+     * @param CreateInstanceBy3rdRequest 请求对象
+     * @return AsyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse>
+     */
+    public AsyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse> createInstanceBy3rdAsyncInvoker(CreateInstanceBy3rdRequest request) {
+        return new AsyncInvoker<CreateInstanceBy3rdRequest, CreateInstanceBy3rdResponse>(request, CloudIDEMeta.createInstanceBy3rd, hcClient);
+    }
+
+    /**
      * 删除IDE实例
      * 删除IDE实例（同时删除磁盘数据）
      *
@@ -105,6 +182,17 @@ public class CloudIDEAsyncClient {
      */
     public CompletableFuture<DeleteInstanceResponse> deleteInstanceAsync(DeleteInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.deleteInstance);
+    }
+
+    /**
+     * 删除IDE实例
+     * 删除IDE实例（同时删除磁盘数据）
+     *
+     * @param DeleteInstanceRequest 请求对象
+     * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
+     */
+    public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(DeleteInstanceRequest request) {
+        return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, CloudIDEMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -119,6 +207,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 查询IDE实例列表
+     * 查询IDE实例列表
+     *
+     * @param ListInstancesRequest 请求对象
+     * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
+    public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(ListInstancesRequest request) {
+        return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, CloudIDEMeta.listInstances, hcClient);
+    }
+
+    /**
      * 查询某个组织下的IDE实例列表
      * 查询某个组织下的IDE实例列表
      *
@@ -127,6 +226,17 @@ public class CloudIDEAsyncClient {
      */
     public CompletableFuture<ListOrgInstancesResponse> listOrgInstancesAsync(ListOrgInstancesRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.listOrgInstances);
+    }
+
+    /**
+     * 查询某个组织下的IDE实例列表
+     * 查询某个组织下的IDE实例列表
+     *
+     * @param ListOrgInstancesRequest 请求对象
+     * @return AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse>
+     */
+    public AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse> listOrgInstancesAsyncInvoker(ListOrgInstancesRequest request) {
+        return new AsyncInvoker<ListOrgInstancesRequest, ListOrgInstancesResponse>(request, CloudIDEMeta.listOrgInstances, hcClient);
     }
 
     /**
@@ -141,6 +251,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 查询某个IDE实例
+     * 查询某个IDE实例
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
+     */
+    public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(ShowInstanceRequest request) {
+        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, CloudIDEMeta.showInstance, hcClient);
+    }
+
+    /**
      * 启动IDE实例
      * 启动IDE实例
      *
@@ -149,6 +270,17 @@ public class CloudIDEAsyncClient {
      */
     public CompletableFuture<StartInstanceResponse> startInstanceAsync(StartInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.startInstance);
+    }
+
+    /**
+     * 启动IDE实例
+     * 启动IDE实例
+     *
+     * @param StartInstanceRequest 请求对象
+     * @return AsyncInvoker<StartInstanceRequest, StartInstanceResponse>
+     */
+    public AsyncInvoker<StartInstanceRequest, StartInstanceResponse> startInstanceAsyncInvoker(StartInstanceRequest request) {
+        return new AsyncInvoker<StartInstanceRequest, StartInstanceResponse>(request, CloudIDEMeta.startInstance, hcClient);
     }
 
     /**
@@ -163,6 +295,17 @@ public class CloudIDEAsyncClient {
     }
 
     /**
+     * 停止IDE实例
+     * 停止IDE实例（不删除磁盘数据）
+     *
+     * @param StopInstanceRequest 请求对象
+     * @return AsyncInvoker<StopInstanceRequest, StopInstanceResponse>
+     */
+    public AsyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceAsyncInvoker(StopInstanceRequest request) {
+        return new AsyncInvoker<StopInstanceRequest, StopInstanceResponse>(request, CloudIDEMeta.stopInstance, hcClient);
+    }
+
+    /**
      * 修改IDE实例
      * 修改IDE实例
      *
@@ -171,6 +314,17 @@ public class CloudIDEAsyncClient {
      */
     public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CloudIDEMeta.updateInstance);
+    }
+
+    /**
+     * 修改IDE实例
+     * 修改IDE实例
+     *
+     * @param UpdateInstanceRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
+     */
+    public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(UpdateInstanceRequest request) {
+        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, CloudIDEMeta.updateInstance, hcClient);
     }
 
 }

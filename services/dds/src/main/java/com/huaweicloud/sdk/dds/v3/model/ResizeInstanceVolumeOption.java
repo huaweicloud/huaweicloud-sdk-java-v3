@@ -27,7 +27,7 @@ public class ResizeInstanceVolumeOption  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private String size;
 
     public ResizeInstanceVolumeOption withGroupId(String groupId) {
         this.groupId = groupId;
@@ -49,7 +49,7 @@ public class ResizeInstanceVolumeOption  {
         this.groupId = groupId;
     }
 
-    public ResizeInstanceVolumeOption withSize(Integer size) {
+    public ResizeInstanceVolumeOption withSize(String size) {
         this.size = size;
         return this;
     }
@@ -61,11 +61,11 @@ public class ResizeInstanceVolumeOption  {
      * 待扩容到的磁盘容量。取值为10的整数倍，并且大于当前磁盘容量。 - 对于集群实例，表示扩容到的单个shard组的磁盘容量。取值范围：10GB~2000GB。 - 对于副本集实例，表示扩容到的实例的磁盘容量，取值范围：10GB~2000GB。 - 对于单节点实例，表示扩容到的实例的磁盘容量，取值范围：10GB~1000GB。
      * @return size
      */
-    public Integer getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
     @Override

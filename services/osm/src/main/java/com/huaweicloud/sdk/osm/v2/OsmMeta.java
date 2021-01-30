@@ -18,6 +18,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CheckHostsRequest, CheckHostsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckHostsRequest.class, CheckHostsResponse.class)
+                .withName("CheckHosts")
                 .withUri("/v2/servicerequest/authorizations/authorization-details/{authorization_detail_id}/verify-host")
                 .withContentType("application/json");
 
@@ -74,6 +75,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CheckNeedVerifyRequest, CheckNeedVerifyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, CheckNeedVerifyRequest.class, CheckNeedVerifyResponse.class)
+                .withName("CheckNeedVerify")
                 .withUri("/v2/servicerequest/verifycodes/need-verify")
                 .withContentType("application/json");
 
@@ -138,6 +140,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CheckVerifyCodesRequest, CheckVerifyCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckVerifyCodesRequest.class, CheckVerifyCodesResponse.class)
+                .withName("CheckVerifyCodes")
                 .withUri("/v2/servicerequest/verifycodes/")
                 .withContentType("application/json");
 
@@ -186,6 +189,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ConfirmAuthorizationsRequest, ConfirmAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ConfirmAuthorizationsRequest.class, ConfirmAuthorizationsResponse.class)
+                .withName("ConfirmAuthorizations")
                 .withUri("/v2/servicerequest/authorizations/{authorization_id}")
                 .withContentType("application/json");
 
@@ -242,6 +246,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreateCaseLabelsRequest, CreateCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCaseLabelsRequest.class, CreateCaseLabelsResponse.class)
+                .withName("CreateCaseLabels")
                 .withUri("/v2/servicerequest/cases/{case_id}/labels")
                 .withContentType("application/json");
 
@@ -298,6 +303,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreateCasesRequest, CreateCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateCasesRequest.class, CreateCasesResponse.class)
+                .withName("CreateCases")
                 .withUri("/v2/servicerequest/cases")
                 .withContentType("application/json");
 
@@ -362,6 +368,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreateLabelsRequest, CreateLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLabelsRequest.class, CreateLabelsResponse.class)
+                .withName("CreateLabels")
                 .withUri("/v2/servicerequest/labels")
                 .withContentType("application/json");
 
@@ -410,6 +417,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreateMessagesRequest, CreateMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMessagesRequest.class, CreateMessagesResponse.class)
+                .withName("CreateMessages")
                 .withUri("/v2/servicerequest/cases/{case_id}/message")
                 .withContentType("application/json");
 
@@ -466,6 +474,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreatePrivilegesRequest, CreatePrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePrivilegesRequest.class, CreatePrivilegesResponse.class)
+                .withName("CreatePrivileges")
                 .withUri("/v2/servicerequest/privileges")
                 .withContentType("application/json");
 
@@ -514,6 +523,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreateRelationsRequest, CreateRelationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRelationsRequest.class, CreateRelationsResponse.class)
+                .withName("CreateRelations")
                 .withUri("/v2/servicerequest/cases/{case_id}/relations")
                 .withContentType("application/json");
 
@@ -570,6 +580,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<CreateScoresRequest, CreateScoresResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScoresRequest.class, CreateScoresResponse.class)
+                .withName("CreateScores")
                 .withUri("/v2/servicerequest/cases/{case_id}/score")
                 .withContentType("application/json");
 
@@ -626,6 +637,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteAccessoriesRequest, DeleteAccessoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessoriesRequest.class, DeleteAccessoriesResponse.class)
+                .withName("DeleteAccessories")
                 .withUri("/v2/servicerequest/accessorys/{accessory_id}")
                 .withContentType("application/json");
 
@@ -674,6 +686,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteCaseLabelsRequest, DeleteCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteCaseLabelsRequest.class, DeleteCaseLabelsResponse.class)
+                .withName("DeleteCaseLabels")
                 .withUri("/v2/servicerequest/cases/{case_id}/labels")
                 .withContentType("application/json");
 
@@ -730,6 +743,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteLabelsRequest, DeleteLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLabelsRequest.class, DeleteLabelsResponse.class)
+                .withName("DeleteLabels")
                 .withUri("/v2/servicerequest/labels/{label_id}")
                 .withContentType("application/json");
 
@@ -778,6 +792,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DeleteRelationRequest, DeleteRelationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteRelationRequest.class, DeleteRelationResponse.class)
+                .withName("DeleteRelation")
                 .withUri("/v2/servicerequest/cases/{case_id}/relations")
                 .withContentType("application/json");
 
@@ -834,6 +849,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DownloadAccessoriesRequest, DownloadAccessoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadAccessoriesRequest.class, DownloadAccessoriesResponse.class)
+                .withName("DownloadAccessories")
                 .withUri("/v2/servicerequest/accessorys/{accessory_id}")
                 .withContentType("application/json");
 
@@ -890,6 +906,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DownloadCasesRequest, DownloadCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadCasesRequest.class, DownloadCasesResponse.class)
+                .withName("DownloadCases")
                 .withUri("/v2/servicerequest/cases/export")
                 .withContentType("application/json");
 
@@ -1034,6 +1051,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<DownloadImagesRequest, DownloadImagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadImagesRequest.class, DownloadImagesResponse.class)
+                .withName("DownloadImages")
                 .withUri("/v2/servicerequest/accessorys/{accessory_id}/image")
                 .withContentType("application/json");
 
@@ -1090,6 +1108,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAgenciesRequest, ListAgenciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAgenciesRequest.class, ListAgenciesResponse.class)
+                .withName("ListAgencies")
                 .withUri("/v2/servicerequest/agencies")
                 .withContentType("application/json");
 
@@ -1130,6 +1149,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAreaCodesRequest, ListAreaCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAreaCodesRequest.class, ListAreaCodesResponse.class)
+                .withName("ListAreaCodes")
                 .withUri("/v2/servicerequest/config/area-codes")
                 .withContentType("application/json");
 
@@ -1170,6 +1190,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListAuthorizationsRequest, ListAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAuthorizationsRequest.class, ListAuthorizationsResponse.class)
+                .withName("ListAuthorizations")
                 .withUri("/v2/servicerequest/authorizations")
                 .withContentType("application/json");
 
@@ -1266,6 +1287,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseCategoriesRequest, ListCaseCategoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCategoriesRequest.class, ListCaseCategoriesResponse.class)
+                .withName("ListCaseCategories")
                 .withUri("/v2/servicerequest/config/categories")
                 .withContentType("application/json");
 
@@ -1306,6 +1328,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseCcEmailsRequest, ListCaseCcEmailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCcEmailsRequest.class, ListCaseCcEmailsResponse.class)
+                .withName("ListCaseCcEmails")
                 .withUri("/v2/servicerequest/carbon-copy-emails")
                 .withContentType("application/json");
 
@@ -1346,6 +1369,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseCountsRequest, ListCaseCountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseCountsRequest.class, ListCaseCountsResponse.class)
+                .withName("ListCaseCounts")
                 .withUri("/v2/servicerequest/cases/count")
                 .withContentType("application/json");
 
@@ -1394,6 +1418,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseLabelsRequest, ListCaseLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseLabelsRequest.class, ListCaseLabelsResponse.class)
+                .withName("ListCaseLabels")
                 .withUri("/v2/servicerequest/cases/{case_id}/labels")
                 .withContentType("application/json");
 
@@ -1442,6 +1467,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseLimitsRequest, ListCaseLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseLimitsRequest.class, ListCaseLimitsResponse.class)
+                .withName("ListCaseLimits")
                 .withUri("/v2/servicerequest/config/limits")
                 .withContentType("application/json");
 
@@ -1482,6 +1508,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseOperateLogsRequest, ListCaseOperateLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseOperateLogsRequest.class, ListCaseOperateLogsResponse.class)
+                .withName("ListCaseOperateLogs")
                 .withUri("/v2/servicerequest/cases/{case_id}/operate-logs")
                 .withContentType("application/json");
 
@@ -1554,6 +1581,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseQuotasRequest, ListCaseQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseQuotasRequest.class, ListCaseQuotasResponse.class)
+                .withName("ListCaseQuotas")
                 .withUri("/v2/servicerequest/quotas")
                 .withContentType("application/json");
 
@@ -1610,6 +1638,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCaseTemplatesRequest, ListCaseTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCaseTemplatesRequest.class, ListCaseTemplatesResponse.class)
+                .withName("ListCaseTemplates")
                 .withUri("/v2/servicerequest/config/templates")
                 .withContentType("application/json");
 
@@ -1658,6 +1687,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListCasesRequest, ListCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCasesRequest.class, ListCasesResponse.class)
+                .withName("ListCases")
                 .withUri("/v2/servicerequest/cases")
                 .withContentType("application/json");
 
@@ -1802,6 +1832,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListExtendsParamsRequest, ListExtendsParamsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListExtendsParamsRequest.class, ListExtendsParamsResponse.class)
+                .withName("ListExtendsParams")
                 .withUri("/v2/servicerequest/config/extends-map")
                 .withContentType("application/json");
 
@@ -1866,6 +1897,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListHasVerifiedContactsRequest, ListHasVerifiedContactsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHasVerifiedContactsRequest.class, ListHasVerifiedContactsResponse.class)
+                .withName("ListHasVerifiedContacts")
                 .withUri("/v2/servicerequest/verifycodes/has-verified")
                 .withContentType("application/json");
 
@@ -1978,6 +2010,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListHistoryOperateLogsRequest, ListHistoryOperateLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistoryOperateLogsRequest.class, ListHistoryOperateLogsResponse.class)
+                .withName("ListHistoryOperateLogs")
                 .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/sessions/{session_id}/operation-logs")
                 .withContentType("application/json");
 
@@ -2074,6 +2107,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListHistorySessionsRequest, ListHistorySessionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHistorySessionsRequest.class, ListHistorySessionsResponse.class)
+                .withName("ListHistorySessions")
                 .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/history-sessions")
                 .withContentType("application/json");
 
@@ -2154,6 +2188,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListLabelsRequest, ListLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLabelsRequest.class, ListLabelsResponse.class)
+                .withName("ListLabels")
                 .withUri("/v2/servicerequest/labels")
                 .withContentType("application/json");
 
@@ -2226,6 +2261,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListMessagesRequest, ListMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMessagesRequest.class, ListMessagesResponse.class)
+                .withName("ListMessages")
                 .withUri("/v2/servicerequest/cases/{case_id}/messages")
                 .withContentType("application/json");
 
@@ -2298,6 +2334,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListMoreInstantMessagesRequest, ListMoreInstantMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMoreInstantMessagesRequest.class, ListMoreInstantMessagesResponse.class)
+                .withName("ListMoreInstantMessages")
                 .withUri("/v2/servicerequest/cases/{case_id}/instant-messages/more")
                 .withContentType("application/json");
 
@@ -2378,6 +2415,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListNewInstantMessagesRequest, ListNewInstantMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNewInstantMessagesRequest.class, ListNewInstantMessagesResponse.class)
+                .withName("ListNewInstantMessages")
                 .withUri("/v2/servicerequest/cases/instant-messages")
                 .withContentType("application/json");
 
@@ -2442,6 +2480,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListPrivilegesRequest, ListPrivilegesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPrivilegesRequest.class, ListPrivilegesResponse.class)
+                .withName("ListPrivileges")
                 .withUri("/v2/servicerequest/privileges")
                 .withContentType("application/json");
 
@@ -2490,6 +2529,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListProblemTypesRequest, ListProblemTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProblemTypesRequest.class, ListProblemTypesResponse.class)
+                .withName("ListProblemTypes")
                 .withUri("/v2/servicerequest/config/problems")
                 .withContentType("application/json");
 
@@ -2538,6 +2578,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListProductCategoriesRequest, ListProductCategoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProductCategoriesRequest.class, ListProductCategoriesResponse.class)
+                .withName("ListProductCategories")
                 .withUri("/v2/servicerequest/config/product-categories")
                 .withContentType("application/json");
 
@@ -2586,6 +2627,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
+                .withName("ListRegions")
                 .withUri("/v2/servicerequest/config/regions")
                 .withContentType("application/json");
 
@@ -2626,6 +2668,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListRelationRequest, ListRelationResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRelationRequest.class, ListRelationResponse.class)
+                .withName("ListRelation")
                 .withUri("/v2/servicerequest/cases/{case_id}/relations")
                 .withContentType("application/json");
 
@@ -2674,6 +2717,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListSatisfactionDimensionsRequest, ListSatisfactionDimensionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSatisfactionDimensionsRequest.class, ListSatisfactionDimensionsResponse.class)
+                .withName("ListSatisfactionDimensions")
                 .withUri("/v2/servicerequest/config/satisfaction-dimensions")
                 .withContentType("application/json");
 
@@ -2714,6 +2758,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListSeveritiesRequest, ListSeveritiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSeveritiesRequest.class, ListSeveritiesResponse.class)
+                .withName("ListSeverities")
                 .withUri("/v2/servicerequest/config/severities")
                 .withContentType("application/json");
 
@@ -2770,6 +2815,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListSubCustomersRequest, ListSubCustomersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubCustomersRequest.class, ListSubCustomersResponse.class)
+                .withName("ListSubCustomers")
                 .withUri("/v2/servicerequest/customers/sub-customers")
                 .withContentType("application/json");
 
@@ -2826,6 +2872,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListTransportHistoriesRequest, ListTransportHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTransportHistoriesRequest.class, ListTransportHistoriesResponse.class)
+                .withName("ListTransportHistories")
                 .withUri("/v2/servicerequest/authorizations/{authorization_id}/authorization-details/{authorization_detail_id}/sessions/{session_id}/operation-file-logs")
                 .withContentType("application/json");
 
@@ -2922,6 +2969,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ListUnreadNewInstantMessagesRequest, ListUnreadNewInstantMessagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUnreadNewInstantMessagesRequest.class, ListUnreadNewInstantMessagesResponse.class)
+                .withName("ListUnreadNewInstantMessages")
                 .withUri("/v2/servicerequest/cases/instant-messages/unread")
                 .withContentType("application/json");
 
@@ -2978,6 +3026,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<SendVerifyCodesRequest, SendVerifyCodesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, SendVerifyCodesRequest.class, SendVerifyCodesResponse.class)
+                .withName("SendVerifyCodes")
                 .withUri("/v2/servicerequest/verifycodes/")
                 .withContentType("application/json");
 
@@ -3042,6 +3091,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowAccessoryLimitsRequest, ShowAccessoryLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAccessoryLimitsRequest.class, ShowAccessoryLimitsResponse.class)
+                .withName("ShowAccessoryLimits")
                 .withUri("/v2/servicerequest/accessorys/limits")
                 .withContentType("application/json");
 
@@ -3082,6 +3132,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowAuthorizationDetailRequest, ShowAuthorizationDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAuthorizationDetailRequest.class, ShowAuthorizationDetailResponse.class)
+                .withName("ShowAuthorizationDetail")
                 .withUri("/v2/servicerequest/authorizations/{authorization_id}")
                 .withContentType("application/json");
 
@@ -3138,6 +3189,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowCaseDetailRequest, ShowCaseDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCaseDetailRequest.class, ShowCaseDetailResponse.class)
+                .withName("ShowCaseDetail")
                 .withUri("/v2/servicerequest/cases/{case_id}")
                 .withContentType("application/json");
 
@@ -3194,6 +3246,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowCaseStatusRequest, ShowCaseStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCaseStatusRequest.class, ShowCaseStatusResponse.class)
+                .withName("ShowCaseStatus")
                 .withUri("/v2/servicerequest/cases/{case_id}/status")
                 .withContentType("application/json");
 
@@ -3242,6 +3295,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowPartnersCasesPrivilegeRequest, ShowPartnersCasesPrivilegeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartnersCasesPrivilegeRequest.class, ShowPartnersCasesPrivilegeResponse.class)
+                .withName("ShowPartnersCasesPrivilege")
                 .withUri("/v2/servicerequest/cases/partners/privilege/cases-processing")
                 .withContentType("application/json");
 
@@ -3282,6 +3336,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<ShowPartnersServiceInfoRequest, ShowPartnersServiceInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPartnersServiceInfoRequest.class, ShowPartnersServiceInfoResponse.class)
+                .withName("ShowPartnersServiceInfo")
                 .withUri("/v2/servicerequest/cases/partners/service-info")
                 .withContentType("application/json");
 
@@ -3338,6 +3393,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<UpdateAuthorizationsRequest, UpdateAuthorizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAuthorizationsRequest.class, UpdateAuthorizationsResponse.class)
+                .withName("UpdateAuthorizations")
                 .withUri("/v2/servicerequest/authorizations/{authorization_id}/action")
                 .withContentType("application/json");
 
@@ -3402,6 +3458,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<UpdateCasesRequest, UpdateCasesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateCasesRequest.class, UpdateCasesResponse.class)
+                .withName("UpdateCases")
                 .withUri("/v2/servicerequest/cases/{case_id}/action")
                 .withContentType("application/json");
 
@@ -3466,6 +3523,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<UpdateLabelsRequest, UpdateLabelsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLabelsRequest.class, UpdateLabelsResponse.class)
+                .withName("UpdateLabels")
                 .withUri("/v2/servicerequest/labels/{label_id}")
                 .withContentType("application/json");
 
@@ -3522,6 +3580,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateNewInstantMessagesReadRequest.class, UpdateNewInstantMessagesReadResponse.class)
+                .withName("UpdateNewInstantMessagesRead")
                 .withUri("/v2/servicerequest/cases/{case_id}/instant-messages/unread")
                 .withContentType("application/json");
 
@@ -3578,6 +3637,7 @@ public class OsmMeta {
         // basic
         HttpRequestDef.Builder<UploadJsonAccessoriesRequest, UploadJsonAccessoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UploadJsonAccessoriesRequest.class, UploadJsonAccessoriesResponse.class)
+                .withName("UploadJsonAccessories")
                 .withUri("/v2/servicerequest/accessorys/json-format-content")
                 .withContentType("application/json");
 

@@ -18,6 +18,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<DownloadApplicationCodeRequest, DownloadApplicationCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadApplicationCodeRequest.class, DownloadApplicationCodeResponse.class)
+                .withName("DownloadApplicationCode")
                 .withUri("/v1/application-codes")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<RunCodehubTemplateJobRequest, RunCodehubTemplateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunCodehubTemplateJobRequest.class, RunCodehubTemplateJobResponse.class)
+                .withName("RunCodehubTemplateJob")
                 .withUri("/v1/jobs/codehub")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -82,6 +84,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<RunDevstarTemplateJobRequest, RunDevstarTemplateJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunDevstarTemplateJobRequest.class, RunDevstarTemplateJobResponse.class)
+                .withName("RunDevstarTemplateJob")
                 .withUri("/v1/jobs/template")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -114,6 +117,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
+                .withName("ShowJobDetail")
                 .withUri("/v1/jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -146,6 +150,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateFileRequest, ShowTemplateFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateFileRequest.class, ShowTemplateFileResponse.class)
+                .withName("ShowTemplateFile")
                 .withUri("/v1/templates/{template_id}/files")
                 .withContentType("application/json");
 
@@ -194,6 +199,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<CreateTemplateViewHistoriesRequest, CreateTemplateViewHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTemplateViewHistoriesRequest.class, CreateTemplateViewHistoriesResponse.class)
+                .withName("CreateTemplateViewHistories")
                 .withUri("/v1/templates/view-histories")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -226,6 +232,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPublishedTemplatesRequest.class, ListPublishedTemplatesResponse.class)
+                .withName("ListPublishedTemplates")
                 .withUri("/v1/templates")
                 .withContentType("application/json");
 
@@ -274,6 +281,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ListTemplateViewHistoriesRequest, ListTemplateViewHistoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTemplateViewHistoriesRequest.class, ListTemplateViewHistoriesResponse.class)
+                .withName("ListTemplateViewHistories")
                 .withUri("/v1/templates/view-histories")
                 .withContentType("application/json");
 
@@ -306,6 +314,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ListTemplatesV2Request, ListTemplatesV2Response> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListTemplatesV2Request.class, ListTemplatesV2Response.class)
+                .withName("ListTemplatesV2")
                 .withUri("/v2/templates/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -346,6 +355,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateV3Request, ShowTemplateV3Response> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateV3Request.class, ShowTemplateV3Response.class)
+                .withName("ShowTemplateV3")
                 .withUri("/v3/templates/{template_id}")
                 .withContentType("application/json");
 
@@ -378,6 +388,7 @@ public class DevStarMeta {
         // basic
         HttpRequestDef.Builder<ShowTemplateDetailRequest, ShowTemplateDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTemplateDetailRequest.class, ShowTemplateDetailResponse.class)
+                .withName("ShowTemplateDetail")
                 .withUri("/v1/templates/{template_id}")
                 .withContentType("application/json");
 

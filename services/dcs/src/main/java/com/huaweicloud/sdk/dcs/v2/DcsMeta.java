@@ -18,6 +18,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteTagsRequest.class, BatchCreateOrDeleteTagsResponse.class)
+                .withName("BatchCreateOrDeleteTags")
                 .withUri("/v2/{project_id}/dcs/{instance_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -50,6 +51,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteInstancesRequest.class, BatchDeleteInstancesResponse.class)
+                .withName("BatchDeleteInstances")
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -82,6 +84,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeMasterStandbyRequest.class, ChangeMasterStandbyResponse.class)
+                .withName("ChangeMasterStandby")
                 .withUri("/v2/{project_id}/instances/{instance_id}/swap")
                 .withContentType("application/json");
 
@@ -106,6 +109,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<CopyInstanceRequest, CopyInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CopyInstanceRequest.class, CopyInstanceResponse.class)
+                .withName("CopyInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}/backups")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -138,6 +142,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateBigkeyScanTaskRequest.class, CreateBigkeyScanTaskResponse.class)
+                .withName("CreateBigkeyScanTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-task")
                 .withContentType("application/json");
 
@@ -162,6 +167,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateHotkeyScanTaskRequest.class, CreateHotkeyScanTaskResponse.class)
+                .withName("CreateHotkeyScanTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-task")
                 .withContentType("application/json");
 
@@ -186,6 +192,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
+                .withName("CreateInstance")
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -210,6 +217,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<CreateMigrationTaskRequest, CreateMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMigrationTaskRequest.class, CreateMigrationTaskResponse.class)
+                .withName("CreateMigrationTask")
                 .withUri("/v2/{project_id}/migration-task")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -234,6 +242,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
+                .withName("DeleteBackgroundTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
                 .withContentType("application/json");
 
@@ -266,6 +275,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteBackupFileRequest, DeleteBackupFileResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackupFileRequest.class, DeleteBackupFileResponse.class)
+                .withName("DeleteBackupFile")
                 .withUri("/v2/{project_id}/instances/{instance_id}/backups/{backup_id}")
                 .withContentType("application/json");
 
@@ -298,6 +308,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteBigkeyScanTaskRequest.class, DeleteBigkeyScanTaskResponse.class)
+                .withName("DeleteBigkeyScanTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}")
                 .withContentType("application/json");
 
@@ -330,6 +341,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteHotkeyScanTaskRequest, DeleteHotkeyScanTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteHotkeyScanTaskRequest.class, DeleteHotkeyScanTaskResponse.class)
+                .withName("DeleteHotkeyScanTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}")
                 .withContentType("application/json");
 
@@ -362,6 +374,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteIpFromDomainNameRequest.class, DeleteIpFromDomainNameResponse.class)
+                .withName("DeleteIpFromDomainName")
                 .withUri("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}/remove-ip")
                 .withContentType("application/json");
 
@@ -402,6 +415,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMigrationTaskRequest.class, DeleteMigrationTaskResponse.class)
+                .withName("DeleteMigrationTask")
                 .withUri("/v2/{project_id}/migration-tasks/delete")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -426,6 +440,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteSingleInstanceRequest.class, DeleteSingleInstanceResponse.class)
+                .withName("DeleteSingleInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -450,6 +465,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListAvailableZonesRequest, ListAvailableZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAvailableZonesRequest.class, ListAvailableZonesResponse.class)
+                .withName("ListAvailableZones")
                 .withUri("/v2/available-zones")
                 .withContentType("application/json");
 
@@ -466,6 +482,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListBackgroundTaskRequest, ListBackgroundTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackgroundTaskRequest.class, ListBackgroundTaskResponse.class)
+                .withName("ListBackgroundTask")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tasks")
                 .withContentType("application/json");
 
@@ -522,6 +539,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListBackupFileLinksRequest, ListBackupFileLinksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListBackupFileLinksRequest.class, ListBackupFileLinksResponse.class)
+                .withName("ListBackupFileLinks")
                 .withUri("/v2/{project_id}/instances/{instance_id}/backups/{backup_id}/links")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -562,6 +580,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListBackupRecordsRequest, ListBackupRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBackupRecordsRequest.class, ListBackupRecordsResponse.class)
+                .withName("ListBackupRecords")
                 .withUri("/v2/{project_id}/instances/{instance_id}/backups")
                 .withContentType("application/json");
 
@@ -618,6 +637,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListBigkeyScanTasksRequest, ListBigkeyScanTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListBigkeyScanTasksRequest.class, ListBigkeyScanTasksResponse.class)
+                .withName("ListBigkeyScanTasks")
                 .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-tasks")
                 .withContentType("application/json");
 
@@ -666,6 +686,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListConfigurationsRequest, ListConfigurationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConfigurationsRequest.class, ListConfigurationsResponse.class)
+                .withName("ListConfigurations")
                 .withUri("/v2/{project_id}/instances/{instance_id}/configs")
                 .withContentType("application/json");
 
@@ -690,6 +711,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
+                .withName("ListFlavors")
                 .withUri("/v2/{project_id}/flavors")
                 .withContentType("application/json");
 
@@ -754,6 +776,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListGroupReplicationInfoRequest, ListGroupReplicationInfoResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListGroupReplicationInfoRequest.class, ListGroupReplicationInfoResponse.class)
+                .withName("ListGroupReplicationInfo")
                 .withUri("/v2/{project_id}/instance/{instance_id}/groups")
                 .withContentType("application/json");
 
@@ -778,6 +801,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHotKeyScanTasksRequest.class, ListHotKeyScanTasksResponse.class)
+                .withName("ListHotKeyScanTasks")
                 .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-tasks")
                 .withContentType("application/json");
 
@@ -826,6 +850,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
+                .withName("ListInstances")
                 .withUri("/v2/{project_id}/instances")
                 .withContentType("application/json");
 
@@ -914,6 +939,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMaintenanceWindowsRequest.class, ListMaintenanceWindowsResponse.class)
+                .withName("ListMaintenanceWindows")
                 .withUri("/v2/instances/maintain-windows")
                 .withContentType("application/json");
 
@@ -930,6 +956,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListMigrationTaskRequest, ListMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMigrationTaskRequest.class, ListMigrationTaskResponse.class)
+                .withName("ListMigrationTask")
                 .withUri("/v2/{project_id}/migration-tasks")
                 .withContentType("application/json");
 
@@ -970,6 +997,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListMonitoredObjectsRequest, ListMonitoredObjectsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMonitoredObjectsRequest.class, ListMonitoredObjectsResponse.class)
+                .withName("ListMonitoredObjects")
                 .withUri("/v2/{project_id}/dims/monitored-objects")
                 .withContentType("application/json");
 
@@ -1010,6 +1038,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListMonitoredObjectsOfInstanceRequest, ListMonitoredObjectsOfInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMonitoredObjectsOfInstanceRequest.class, ListMonitoredObjectsOfInstanceResponse.class)
+                .withName("ListMonitoredObjectsOfInstance")
                 .withUri("/v2/{project_id}/dims/monitored-objects/{instance_id}")
                 .withContentType("application/json");
 
@@ -1042,6 +1071,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListNumberOfInstancesInDifferentStatusRequest, ListNumberOfInstancesInDifferentStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListNumberOfInstancesInDifferentStatusRequest.class, ListNumberOfInstancesInDifferentStatusResponse.class)
+                .withName("ListNumberOfInstancesInDifferentStatus")
                 .withUri("/v2/{project_id}/instances/status")
                 .withContentType("application/json");
 
@@ -1066,6 +1096,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListRestoreRecordsRequest, ListRestoreRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListRestoreRecordsRequest.class, ListRestoreRecordsResponse.class)
+                .withName("ListRestoreRecords")
                 .withUri("/v2/{project_id}/instances/{instance_id}/restores")
                 .withContentType("application/json");
 
@@ -1122,6 +1153,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListSlowlogRequest, ListSlowlogResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSlowlogRequest.class, ListSlowlogResponse.class)
+                .withName("ListSlowlog")
                 .withUri("/v2/{project_id}/instances/{instance_id}/slowlog")
                 .withContentType("application/json");
 
@@ -1194,6 +1226,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListStatisticsOfRunningInstancesRequest, ListStatisticsOfRunningInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListStatisticsOfRunningInstancesRequest.class, ListStatisticsOfRunningInstancesResponse.class)
+                .withName("ListStatisticsOfRunningInstances")
                 .withUri("/v2/{project_id}/instances/statistic")
                 .withContentType("application/json");
 
@@ -1210,6 +1243,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ListTagsOfTenantRequest, ListTagsOfTenantResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTagsOfTenantRequest.class, ListTagsOfTenantResponse.class)
+                .withName("ListTagsOfTenant")
                 .withUri("/v2/{project_id}/dcs/tags")
                 .withContentType("application/json");
 
@@ -1226,6 +1260,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, RestartOrFlushInstancesRequest.class, RestartOrFlushInstancesResponse.class)
+                .withName("RestartOrFlushInstances")
                 .withUri("/v2/{project_id}/instances/status")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1250,6 +1285,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<RestoreInstanceRequest, RestoreInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RestoreInstanceRequest.class, RestoreInstanceResponse.class)
+                .withName("RestoreInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}/restores")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1282,6 +1318,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBigkeyAutoscanConfigRequest.class, ShowBigkeyAutoscanConfigResponse.class)
+                .withName("ShowBigkeyAutoscanConfig")
                 .withUri("/v2/{project_id}/instances/{instance_id}/bigkey/autoscan")
                 .withContentType("application/json");
 
@@ -1306,6 +1343,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowBigkeyScanTaskDetailsRequest.class, ShowBigkeyScanTaskDetailsResponse.class)
+                .withName("ShowBigkeyScanTaskDetails")
                 .withUri("/v2/{project_id}/instances/{instance_id}/bigkey-task/{bigkey_id}")
                 .withContentType("application/json");
 
@@ -1338,6 +1376,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowHotkeyAutoscanConfigRequest, ShowHotkeyAutoscanConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHotkeyAutoscanConfigRequest.class, ShowHotkeyAutoscanConfigResponse.class)
+                .withName("ShowHotkeyAutoscanConfig")
                 .withUri("/v2/{project_id}/instances/{instance_id}/hotkey/autoscan")
                 .withContentType("application/json");
 
@@ -1362,6 +1401,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowHotkeyTaskDetailsRequest, ShowHotkeyTaskDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowHotkeyTaskDetailsRequest.class, ShowHotkeyTaskDetailsResponse.class)
+                .withName("ShowHotkeyTaskDetails")
                 .withUri("/v2/{project_id}/instances/{instance_id}/hotkey-task/{hotkey_id}")
                 .withContentType("application/json");
 
@@ -1394,6 +1434,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
+                .withName("ShowInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json");
 
@@ -1418,6 +1459,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowMigrationTaskRequest, ShowMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMigrationTaskRequest.class, ShowMigrationTaskResponse.class)
+                .withName("ShowMigrationTask")
                 .withUri("/v2/{project_id}/migration-task/{task_id}")
                 .withContentType("application/json");
 
@@ -1442,6 +1484,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMigrationTaskStatsRequest.class, ShowMigrationTaskStatsResponse.class)
+                .withName("ShowMigrationTaskStats")
                 .withUri("/v2/{project_id}/migration-task/{task_id}/stats")
                 .withContentType("application/json");
 
@@ -1466,6 +1509,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaOfTenantRequest.class, ShowQuotaOfTenantResponse.class)
+                .withName("ShowQuotaOfTenant")
                 .withUri("/v2/{project_id}/quota")
                 .withContentType("application/json");
 
@@ -1482,6 +1526,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTagsRequest.class, ShowTagsResponse.class)
+                .withName("ShowTags")
                 .withUri("/v2/{project_id}/instances/{instance_id}/tags")
                 .withContentType("application/json");
 
@@ -1506,6 +1551,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<StopMigrationTaskRequest, StopMigrationTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, StopMigrationTaskRequest.class, StopMigrationTaskResponse.class)
+                .withName("StopMigrationTask")
                 .withUri("/v2/{project_id}/migration-task/{task_id}/stop")
                 .withContentType("application/json");
 
@@ -1530,6 +1576,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateBigkeyAutoscanConfigRequest.class, UpdateBigkeyAutoscanConfigResponse.class)
+                .withName("UpdateBigkeyAutoscanConfig")
                 .withUri("/v2/{project_id}/instances/{instance_id}/bigkey/autoscan")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1562,6 +1609,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<UpdateConfigurationsRequest, UpdateConfigurationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateConfigurationsRequest.class, UpdateConfigurationsResponse.class)
+                .withName("UpdateConfigurations")
                 .withUri("/v2/{project_id}/instances/{instance_id}/configs")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1594,6 +1642,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<UpdateHotkeyAutoScanConfigRequest, UpdateHotkeyAutoScanConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateHotkeyAutoScanConfigRequest.class, UpdateHotkeyAutoScanConfigResponse.class)
+                .withName("UpdateHotkeyAutoScanConfig")
                 .withUri("/v2/{project_id}/instances/{instance_id}/hotkey/autoscan")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1626,6 +1675,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<UpdateInstanceRequest, UpdateInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceRequest.class, UpdateInstanceResponse.class)
+                .withName("UpdateInstance")
                 .withUri("/v2/{project_id}/instances/{instance_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1658,6 +1708,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<UpdatePasswordRequest, UpdatePasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePasswordRequest.class, UpdatePasswordResponse.class)
+                .withName("UpdatePassword")
                 .withUri("/v2/{project_id}/instances/{instance_id}/password")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1690,6 +1741,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateSlavePriorityRequest.class, UpdateSlavePriorityResponse.class)
+                .withName("UpdateSlavePriority")
                 .withUri("/v2/{project_id}/instances/{instance_id}/groups/{group_id}/replications/{node_id}/slave-priority")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1738,6 +1790,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<ShowIpWhitelistRequest, ShowIpWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowIpWhitelistRequest.class, ShowIpWhitelistResponse.class)
+                .withName("ShowIpWhitelist")
                 .withUri("/v2/{project_id}/instance/{instance_id}/whitelist")
                 .withContentType("application/json");
 
@@ -1762,6 +1815,7 @@ public class DcsMeta {
         // basic
         HttpRequestDef.Builder<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateIpWhitelistRequest.class, UpdateIpWhitelistResponse.class)
+                .withName("UpdateIpWhitelist")
                 .withUri("/v2/{project_id}/instance/{instance_id}/whitelist")
                 .withContentType("application/json;charset=UTF-8");
 

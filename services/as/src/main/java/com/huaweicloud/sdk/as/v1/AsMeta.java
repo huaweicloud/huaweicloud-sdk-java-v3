@@ -18,6 +18,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteScalingConfigsRequest.class, BatchDeleteScalingConfigsResponse.class)
+                .withName("BatchDeleteScalingConfigs")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_configurations")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<CompleteLifecycleActionRequest, CompleteLifecycleActionResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CompleteLifecycleActionRequest.class, CompleteLifecycleActionResponse.class)
+                .withName("CompleteLifecycleAction")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -74,6 +76,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateLifyCycleHookRequest.class, CreateLifyCycleHookResponse.class)
+                .withName("CreateLifyCycleHook")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -106,6 +109,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<CreateScalingConfigRequest, CreateScalingConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingConfigRequest.class, CreateScalingConfigResponse.class)
+                .withName("CreateScalingConfig")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_configuration")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -130,6 +134,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<CreateScalingGroupRequest, CreateScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingGroupRequest.class, CreateScalingGroupResponse.class)
+                .withName("CreateScalingGroup")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -154,6 +159,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<CreateScalingNotificationRequest, CreateScalingNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CreateScalingNotificationRequest.class, CreateScalingNotificationResponse.class)
+                .withName("CreateScalingNotification")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -186,6 +192,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<CreateScalingPolicyRequest, CreateScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingPolicyRequest.class, CreateScalingPolicyResponse.class)
+                .withName("CreateScalingPolicy")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_policy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -210,6 +217,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<CreateScalingTagsRequest, CreateScalingTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateScalingTagsRequest.class, CreateScalingTagsResponse.class)
+                .withName("CreateScalingTags")
                 .withUri("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -250,6 +258,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<DeleteLifecycleHookRequest, DeleteLifecycleHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteLifecycleHookRequest.class, DeleteLifecycleHookResponse.class)
+                .withName("DeleteLifecycleHook")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}")
                 .withContentType("application/json");
 
@@ -282,6 +291,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<DeleteScalingConfigRequest, DeleteScalingConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScalingConfigRequest.class, DeleteScalingConfigResponse.class)
+                .withName("DeleteScalingConfig")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}")
                 .withContentType("application/json");
 
@@ -306,6 +316,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<DeleteScalingGroupRequest, DeleteScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScalingGroupRequest.class, DeleteScalingGroupResponse.class)
+                .withName("DeleteScalingGroup")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}")
                 .withContentType("application/json");
 
@@ -338,6 +349,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<DeleteScalingInstanceRequest, DeleteScalingInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScalingInstanceRequest.class, DeleteScalingInstanceResponse.class)
+                .withName("DeleteScalingInstance")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{instance_id}")
                 .withContentType("application/json");
 
@@ -370,6 +382,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<DeleteScalingNotificationRequest, DeleteScalingNotificationResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScalingNotificationRequest.class, DeleteScalingNotificationResponse.class)
+                .withName("DeleteScalingNotification")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}/{topic_urn}")
                 .withContentType("application/json");
 
@@ -402,6 +415,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteScalingPolicyRequest.class, DeleteScalingPolicyResponse.class)
+                .withName("DeleteScalingPolicy")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}")
                 .withContentType("application/json");
 
@@ -426,6 +440,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<DeleteScalingTagsRequest, DeleteScalingTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteScalingTagsRequest.class, DeleteScalingTagsResponse.class)
+                .withName("DeleteScalingTags")
                 .withUri("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -466,6 +481,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<EnableOrDisableScalingGroupRequest, EnableOrDisableScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableOrDisableScalingGroupRequest.class, EnableOrDisableScalingGroupResponse.class)
+                .withName("EnableOrDisableScalingGroup")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -498,6 +514,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ExecuteScalingPolicyRequest.class, ExecuteScalingPolicyResponse.class)
+                .withName("ExecuteScalingPolicy")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -530,6 +547,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListHookInstancesRequest, ListHookInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListHookInstancesRequest.class, ListHookInstancesResponse.class)
+                .withName("ListHookInstances")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/list")
                 .withContentType("application/json");
 
@@ -562,6 +580,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListLifeCycleHooksRequest, ListLifeCycleHooksResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListLifeCycleHooksRequest.class, ListLifeCycleHooksResponse.class)
+                .withName("ListLifeCycleHooks")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/list")
                 .withContentType("application/json");
 
@@ -586,6 +605,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
+                .withName("ListResourceInstances")
                 .withUri("/autoscaling-api/v1/{project_id}/{resource_type}/resource_instances/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -618,6 +638,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingActivityLogsRequest, ListScalingActivityLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingActivityLogsRequest.class, ListScalingActivityLogsResponse.class)
+                .withName("ListScalingActivityLogs")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_activity_log/{scaling_group_id}")
                 .withContentType("application/json");
 
@@ -674,6 +695,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingConfigsRequest, ListScalingConfigsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingConfigsRequest.class, ListScalingConfigsResponse.class)
+                .withName("ListScalingConfigs")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_configuration")
                 .withContentType("application/json");
 
@@ -722,6 +744,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingGroupsRequest, ListScalingGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingGroupsRequest.class, ListScalingGroupsResponse.class)
+                .withName("ListScalingGroups")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group")
                 .withContentType("application/json");
 
@@ -778,6 +801,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingInstancesRequest, ListScalingInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingInstancesRequest.class, ListScalingInstancesResponse.class)
+                .withName("ListScalingInstances")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/list")
                 .withContentType("application/json");
 
@@ -842,6 +866,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingNotificationsRequest, ListScalingNotificationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingNotificationsRequest.class, ListScalingNotificationsResponse.class)
+                .withName("ListScalingNotifications")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_notification/{scaling_group_id}")
                 .withContentType("application/json");
 
@@ -866,6 +891,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingPoliciesRequest, ListScalingPoliciesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingPoliciesRequest.class, ListScalingPoliciesResponse.class)
+                .withName("ListScalingPolicies")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_group_id}/list")
                 .withContentType("application/json");
 
@@ -930,6 +956,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingPolicyExecuteLogsRequest, ListScalingPolicyExecuteLogsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingPolicyExecuteLogsRequest.class, ListScalingPolicyExecuteLogsResponse.class)
+                .withName("ListScalingPolicyExecuteLogs")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_policy_execute_log/{scaling_policy_id}")
                 .withContentType("application/json");
 
@@ -1018,6 +1045,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingTagInfosByResourceIdRequest, ListScalingTagInfosByResourceIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingTagInfosByResourceIdRequest.class, ListScalingTagInfosByResourceIdResponse.class)
+                .withName("ListScalingTagInfosByResourceId")
                 .withUri("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags")
                 .withContentType("application/json");
 
@@ -1050,6 +1078,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ListScalingTagInfosByTenantIdRequest, ListScalingTagInfosByTenantIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListScalingTagInfosByTenantIdRequest.class, ListScalingTagInfosByTenantIdResponse.class)
+                .withName("ListScalingTagInfosByTenantId")
                 .withUri("/autoscaling-api/v1/{project_id}/{resource_type}/tags")
                 .withContentType("application/json");
 
@@ -1074,6 +1103,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ShowLifeCycleHookRequest, ShowLifeCycleHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowLifeCycleHookRequest.class, ShowLifeCycleHookResponse.class)
+                .withName("ShowLifeCycleHook")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}")
                 .withContentType("application/json");
 
@@ -1106,6 +1136,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ShowPolicyAndInstanceQuotaRequest, ShowPolicyAndInstanceQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowPolicyAndInstanceQuotaRequest.class, ShowPolicyAndInstanceQuotaResponse.class)
+                .withName("ShowPolicyAndInstanceQuota")
                 .withUri("/autoscaling-api/v1/{project_id}/quotas/{scaling_group_id}")
                 .withContentType("application/json");
 
@@ -1130,6 +1161,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ShowResourceQuotaRequest, ShowResourceQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResourceQuotaRequest.class, ShowResourceQuotaResponse.class)
+                .withName("ShowResourceQuota")
                 .withUri("/autoscaling-api/v1/{project_id}/quotas")
                 .withContentType("application/json");
 
@@ -1146,6 +1178,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ShowScalingConfigRequest, ShowScalingConfigResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScalingConfigRequest.class, ShowScalingConfigResponse.class)
+                .withName("ShowScalingConfig")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configuration_id}")
                 .withContentType("application/json");
 
@@ -1170,6 +1203,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ShowScalingGroupRequest, ShowScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScalingGroupRequest.class, ShowScalingGroupResponse.class)
+                .withName("ShowScalingGroup")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}")
                 .withContentType("application/json");
 
@@ -1194,6 +1228,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<ShowScalingPolicyRequest, ShowScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowScalingPolicyRequest.class, ShowScalingPolicyResponse.class)
+                .withName("ShowScalingPolicy")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}")
                 .withContentType("application/json");
 
@@ -1218,6 +1253,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<UpdateLifeCycleHookRequest, UpdateLifeCycleHookResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLifeCycleHookRequest.class, UpdateLifeCycleHookResponse.class)
+                .withName("UpdateLifeCycleHook")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1258,6 +1294,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<UpdateScalingGroupRequest, UpdateScalingGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateScalingGroupRequest.class, UpdateScalingGroupResponse.class)
+                .withName("UpdateScalingGroup")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1290,6 +1327,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<UpdateScalingGroupInstanceRequest, UpdateScalingGroupInstanceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateScalingGroupInstanceRequest.class, UpdateScalingGroupInstanceResponse.class)
+                .withName("UpdateScalingGroupInstance")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1322,6 +1360,7 @@ public class AsMeta {
         // basic
         HttpRequestDef.Builder<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateScalingPolicyRequest.class, UpdateScalingPolicyResponse.class)
+                .withName("UpdateScalingPolicy")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}")
                 .withContentType("application/json;charset=UTF-8");
 

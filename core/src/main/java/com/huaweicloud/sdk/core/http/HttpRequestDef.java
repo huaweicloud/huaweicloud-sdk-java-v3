@@ -66,6 +66,9 @@ public interface HttpRequestDef<ReqT, ResT> {
     String getUri();
 
     @JsonIgnore
+    String getName();
+
+    @JsonIgnore
     List<Field<ReqT, ?>> getRequestFields();
 
     @JsonIgnore
@@ -110,6 +113,11 @@ public interface HttpRequestDef<ReqT, ResT> {
 
         public Builder<R, T> withUri(String path) {
             impl.uri = path;
+            return this;
+        }
+
+        public Builder<R, T> withName(String name) {
+            impl.name = name;
             return this;
         }
 
@@ -169,6 +177,7 @@ public interface HttpRequestDef<ReqT, ResT> {
         Class<R> requestClass;
         Class<T> responseClass;
 
+        String name;
         String uri;
         HttpMethod method;
         String contentType;
@@ -177,6 +186,7 @@ public interface HttpRequestDef<ReqT, ResT> {
 
         List<Field<T, ?>> responseFields = new ArrayList<>();
         Map<String, Field<T, ?>> responseFieldsMap;
+
 
         @Override
         public Class<T> getResponseType() {
@@ -201,6 +211,11 @@ public interface HttpRequestDef<ReqT, ResT> {
         @Override
         public String getUri() {
             return uri;
+        }
+
+        @Override
+        public String getName() {
+            return name;
         }
 
         @Override

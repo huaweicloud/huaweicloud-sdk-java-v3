@@ -18,6 +18,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<AddServerGroupMemberRequest, AddServerGroupMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddServerGroupMemberRequest.class, AddServerGroupMemberResponse.class)
+                .withName("AddServerGroupMember")
                 .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -50,6 +51,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<AttachServerVolumeRequest, AttachServerVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AttachServerVolumeRequest.class, AttachServerVolumeResponse.class)
+                .withName("AttachServerVolume")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/attachvolume")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -82,6 +84,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<BatchAddServerNicsRequest, BatchAddServerNicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchAddServerNicsRequest.class, BatchAddServerNicsResponse.class)
+                .withName("BatchAddServerNics")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/nics")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -114,6 +117,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateServerTagsRequest.class, BatchCreateServerTagsResponse.class)
+                .withName("BatchCreateServerTags")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -146,6 +150,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteServerNicsRequest.class, BatchDeleteServerNicsResponse.class)
+                .withName("BatchDeleteServerNics")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/nics/delete")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -178,6 +183,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchDeleteServerTagsRequest.class, BatchDeleteServerTagsResponse.class)
+                .withName("BatchDeleteServerTags")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -210,6 +216,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<BatchRebootServersRequest, BatchRebootServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchRebootServersRequest.class, BatchRebootServersResponse.class)
+                .withName("BatchRebootServers")
                 .withUri("/v1/{project_id}/cloudservers/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -234,6 +241,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<BatchStartServersRequest, BatchStartServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStartServersRequest.class, BatchStartServersResponse.class)
+                .withName("BatchStartServers")
                 .withUri("/v1/{project_id}/cloudservers/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -258,6 +266,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<BatchStopServersRequest, BatchStopServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchStopServersRequest.class, BatchStopServersResponse.class)
+                .withName("BatchStopServers")
                 .withUri("/v1/{project_id}/cloudservers/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -282,6 +291,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ChangeServerOsWithCloudInitRequest.class, ChangeServerOsWithCloudInitResponse.class)
+                .withName("ChangeServerOsWithCloudInit")
                 .withUri("/v2/{project_id}/cloudservers/{server_id}/changeos")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -314,6 +324,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<CreatePostPaidServersRequest, CreatePostPaidServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidServersRequest.class, CreatePostPaidServersResponse.class)
+                .withName("CreatePostPaidServers")
                 .withUri("/v1/{project_id}/cloudservers")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -338,6 +349,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<CreateServerGroupRequest, CreateServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServerGroupRequest.class, CreateServerGroupResponse.class)
+                .withName("CreateServerGroup")
                 .withUri("/v1/{project_id}/cloudservers/os-server-groups")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -362,6 +374,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<CreateServersRequest, CreateServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateServersRequest.class, CreateServersResponse.class)
+                .withName("CreateServers")
                 .withUri("/v1.1/{project_id}/cloudservers")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -386,6 +399,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServerGroupRequest, DeleteServerGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerGroupRequest.class, DeleteServerGroupResponse.class)
+                .withName("DeleteServerGroup")
                 .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}")
                 .withContentType("application/json");
 
@@ -410,6 +424,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteServerGroupMemberRequest.class, DeleteServerGroupMemberResponse.class)
+                .withName("DeleteServerGroupMember")
                 .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -442,6 +457,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServerMetadataRequest, DeleteServerMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerMetadataRequest.class, DeleteServerMetadataResponse.class)
+                .withName("DeleteServerMetadata")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata/{key}")
                 .withContentType("application/json");
 
@@ -474,6 +490,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DeleteServersRequest, DeleteServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteServersRequest.class, DeleteServersResponse.class)
+                .withName("DeleteServers")
                 .withUri("/v1/{project_id}/cloudservers/delete")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -498,6 +515,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<DetachServerVolumeRequest, DetachServerVolumeResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DetachServerVolumeRequest.class, DetachServerVolumeResponse.class)
+                .withName("DetachServerVolume")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/detachvolume/{volume_id}")
                 .withContentType("application/json");
 
@@ -538,6 +556,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
+                .withName("ListFlavors")
                 .withUri("/v1/{project_id}/cloudservers/flavors")
                 .withContentType("application/json");
 
@@ -562,6 +581,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListResizeFlavorsRequest, ListResizeFlavorsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResizeFlavorsRequest.class, ListResizeFlavorsResponse.class)
+                .withName("ListResizeFlavors")
                 .withUri("/v1/{project_id}/cloudservers/resize_flavors")
                 .withContentType("application/json");
 
@@ -634,6 +654,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServerBlockDevicesRequest.class, ListServerBlockDevicesResponse.class)
+                .withName("ListServerBlockDevices")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/block_device")
                 .withContentType("application/json");
 
@@ -658,6 +679,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListServerInterfacesRequest, ListServerInterfacesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServerInterfacesRequest.class, ListServerInterfacesResponse.class)
+                .withName("ListServerInterfaces")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface")
                 .withContentType("application/json");
 
@@ -682,6 +704,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ListServersDetailsRequest, ListServersDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServersDetailsRequest.class, ListServersDetailsResponse.class)
+                .withName("ListServersDetails")
                 .withUri("/v1/{project_id}/cloudservers/detail")
                 .withContentType("application/json");
 
@@ -778,6 +801,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, NovaAssociateSecurityGroupRequest.class, NovaAssociateSecurityGroupResponse.class)
+                .withName("NovaAssociateSecurityGroup")
                 .withUri("/v2.1/{project_id}/servers/{server_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -810,6 +834,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaCreateKeypairRequest, NovaCreateKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, NovaCreateKeypairRequest.class, NovaCreateKeypairResponse.class)
+                .withName("NovaCreateKeypair")
                 .withUri("/v2.1/{project_id}/os-keypairs")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -842,6 +867,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaCreateServersRequest, NovaCreateServersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, NovaCreateServersRequest.class, NovaCreateServersResponse.class)
+                .withName("NovaCreateServers")
                 .withUri("/v2.1/{project_id}/servers")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -874,6 +900,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NovaDeleteKeypairRequest.class, NovaDeleteKeypairResponse.class)
+                .withName("NovaDeleteKeypair")
                 .withUri("/v2.1/{project_id}/os-keypairs/{keypair_name}")
                 .withContentType("application/json");
 
@@ -898,6 +925,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaDeleteServerRequest, NovaDeleteServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, NovaDeleteServerRequest.class, NovaDeleteServerResponse.class)
+                .withName("NovaDeleteServer")
                 .withUri("/v2.1/{project_id}/servers/{server_id}")
                 .withContentType("application/json");
 
@@ -922,6 +950,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, NovaDisassociateSecurityGroupRequest.class, NovaDisassociateSecurityGroupResponse.class)
+                .withName("NovaDisassociateSecurityGroup")
                 .withUri("/v2.1/{project_id}/servers/{server_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -954,6 +983,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListAvailabilityZonesRequest.class, NovaListAvailabilityZonesResponse.class)
+                .withName("NovaListAvailabilityZones")
                 .withUri("/v2.1/{project_id}/os-availability-zone")
                 .withContentType("application/json");
 
@@ -970,6 +1000,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListKeypairsRequest, NovaListKeypairsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListKeypairsRequest.class, NovaListKeypairsResponse.class)
+                .withName("NovaListKeypairs")
                 .withUri("/v2.1/{project_id}/os-keypairs")
                 .withContentType("application/json");
 
@@ -1010,6 +1041,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListServerSecurityGroupsRequest.class, NovaListServerSecurityGroupsResponse.class)
+                .withName("NovaListServerSecurityGroups")
                 .withUri("/v2.1/{project_id}/servers/{server_id}/os-security-groups")
                 .withContentType("application/json");
 
@@ -1034,6 +1066,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaListServersDetailsRequest, NovaListServersDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaListServersDetailsRequest.class, NovaListServersDetailsResponse.class)
+                .withName("NovaListServersDetails")
                 .withUri("/v2.1/{project_id}/servers/detail")
                 .withContentType("application/json");
 
@@ -1154,6 +1187,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaShowKeypairRequest, NovaShowKeypairResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaShowKeypairRequest.class, NovaShowKeypairResponse.class)
+                .withName("NovaShowKeypair")
                 .withUri("/v2.1/{project_id}/os-keypairs/{keypair_name}")
                 .withContentType("application/json");
 
@@ -1186,6 +1220,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<NovaShowServerRequest, NovaShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, NovaShowServerRequest.class, NovaShowServerResponse.class)
+                .withName("NovaShowServer")
                 .withUri("/v2.1/{project_id}/servers/{server_id}")
                 .withContentType("application/json");
 
@@ -1218,6 +1253,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReinstallServerWithCloudInitRequest.class, ReinstallServerWithCloudInitResponse.class)
+                .withName("ReinstallServerWithCloudInit")
                 .withUri("/v2/{project_id}/cloudservers/{server_id}/reinstallos")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1250,6 +1286,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ResetServerPasswordRequest, ResetServerPasswordResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetServerPasswordRequest.class, ResetServerPasswordResponse.class)
+                .withName("ResetServerPassword")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/os-reset-password")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1282,6 +1319,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ResizePostPaidServerRequest, ResizePostPaidServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizePostPaidServerRequest.class, ResizePostPaidServerResponse.class)
+                .withName("ResizePostPaidServer")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/resize")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1314,6 +1352,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ResizeServerRequest, ResizeServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResizeServerRequest.class, ResizeServerResponse.class)
+                .withName("ResizeServer")
                 .withUri("/v1.1/{project_id}/cloudservers/{server_id}/resize")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1346,6 +1385,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowResetPasswordFlagRequest.class, ShowResetPasswordFlagResponse.class)
+                .withName("ShowResetPasswordFlag")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/os-resetpwd-flag")
                 .withContentType("application/json");
 
@@ -1370,6 +1410,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerRequest, ShowServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerRequest.class, ShowServerResponse.class)
+                .withName("ShowServer")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}")
                 .withContentType("application/json");
 
@@ -1394,6 +1435,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerLimitsRequest, ShowServerLimitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerLimitsRequest.class, ShowServerLimitsResponse.class)
+                .withName("ShowServerLimits")
                 .withUri("/v1/{project_id}/cloudservers/limits")
                 .withContentType("application/json");
 
@@ -1410,6 +1452,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowServerRemoteConsoleRequest.class, ShowServerRemoteConsoleResponse.class)
+                .withName("ShowServerRemoteConsole")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/remote_console")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1442,6 +1485,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowServerTagsRequest, ShowServerTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowServerTagsRequest.class, ShowServerTagsResponse.class)
+                .withName("ShowServerTags")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/tags")
                 .withContentType("application/json");
 
@@ -1460,44 +1504,13 @@ public class EcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAutoTerminateTimeServerRequest, UpdateAutoTerminateTimeServerResponse> updateAutoTerminateTimeServer = genForupdateAutoTerminateTimeServer();
-
-    private static HttpRequestDef<UpdateAutoTerminateTimeServerRequest, UpdateAutoTerminateTimeServerResponse> genForupdateAutoTerminateTimeServer() {
-        // basic
-        HttpRequestDef.Builder<UpdateAutoTerminateTimeServerRequest, UpdateAutoTerminateTimeServerResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateAutoTerminateTimeServerRequest.class, UpdateAutoTerminateTimeServerResponse.class)
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/actions/update-auto-terminate-time")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateAutoTerminateTimeServerRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateAutoTerminateTimeServerRequestBody.class,
-            f -> f.withMarshaller(UpdateAutoTerminateTimeServerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<UpdateServerRequest, UpdateServerResponse> updateServer = genForupdateServer();
 
     private static HttpRequestDef<UpdateServerRequest, UpdateServerResponse> genForupdateServer() {
         // basic
         HttpRequestDef.Builder<UpdateServerRequest, UpdateServerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateServerRequest.class, UpdateServerResponse.class)
+                .withName("UpdateServer")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1524,12 +1537,46 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> updateServerAutoTerminateTime = genForupdateServerAutoTerminateTime();
+
+    private static HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> genForupdateServerAutoTerminateTime() {
+        // basic
+        HttpRequestDef.Builder<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateServerAutoTerminateTimeRequest.class, UpdateServerAutoTerminateTimeResponse.class)
+                .withName("UpdateServerAutoTerminateTime")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/actions/update-auto-terminate-time")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateServerAutoTerminateTimeRequestBody.class,
+            f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> updateServerMetadata = genForupdateServerMetadata();
 
     private static HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> genForupdateServerMetadata() {
         // basic
         HttpRequestDef.Builder<UpdateServerMetadataRequest, UpdateServerMetadataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateServerMetadataRequest.class, UpdateServerMetadataResponse.class)
+                .withName("UpdateServerMetadata")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1562,6 +1609,7 @@ public class EcsMeta {
         // basic
         HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
+                .withName("ShowJob")
                 .withUri("/v1/{project_id}/jobs/{job_id}")
                 .withContentType("application/json");
 

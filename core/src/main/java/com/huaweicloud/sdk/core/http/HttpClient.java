@@ -22,7 +22,6 @@
 package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.exception.ConnectionException;
-
 import java.util.concurrent.CompletableFuture;
 
 public interface HttpClient {

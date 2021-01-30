@@ -18,6 +18,7 @@ public class AomMeta {
         // basic
         HttpRequestDef.Builder<ListSampleRequest, ListSampleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSampleRequest.class, ListSampleResponse.class)
+                .withName("ListSample")
                 .withUri("/v2/{project_id}/samples")
                 .withContentType("application/json");
 

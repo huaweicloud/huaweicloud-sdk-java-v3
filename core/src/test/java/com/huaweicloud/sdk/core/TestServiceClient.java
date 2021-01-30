@@ -1,7 +1,7 @@
 package com.huaweicloud.sdk.core;
 
 /**
- * TestServiceClient 为基础类，被 TestRegionWithProjectId 和 TestRegionWithNoProjectId 用例使用
+ * TestServiceClient 为基础类，被 TestRegionEndpoint 和 TestRegionWithoutId 用例使用
  */
 public class TestServiceClient {
     protected HcClient hcClient;
@@ -11,6 +11,6 @@ public class TestServiceClient {
     }
 
     public static ClientBuilder<TestServiceClient> newBuilder() {
-        return new ClientBuilder<>(TestServiceClient::new);
+        return new ClientBuilder<>(TestServiceClient::new, "GlobalCredentials,BasicCredentials");
     }
 }

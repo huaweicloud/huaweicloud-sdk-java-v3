@@ -9,6 +9,7 @@ import java.util.concurrent.CompletableFuture;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.auth.ICredential;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
@@ -36,7 +37,7 @@ public class MeetingCredentials implements ICredential {
     private final static int EXPIRE_HOUR_HALF = EXPIRE_HOUR / 2;
 
     @Override
-    public CompletableFuture<ICredential> processAuthParams(HttpClient httpClient, String regionId) {
+    public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
         return CompletableFuture.completedFuture(this);
     }
 
@@ -81,6 +82,14 @@ public class MeetingCredentials implements ICredential {
             }
             return builder.build();
         });
+    }
+
+    @Override
+    public MeetingCredentials deepClone() {
+        return new MeetingCredentials()
+                .withToken(this.token)
+                .withUserName(this.userName)
+                .withUserPassword(this.userPassword);
     }
 
     private CompletableFuture<String> createToken(HttpRequest httpRequest, HttpClient httpClient) {

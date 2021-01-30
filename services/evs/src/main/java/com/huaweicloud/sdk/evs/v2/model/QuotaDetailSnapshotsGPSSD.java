@@ -40,7 +40,7 @@ public class QuotaDetailSnapshotsGPSSD  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="allocated")
     
-    private String allocated;
+    private Integer allocated;
 
     public QuotaDetailSnapshotsGPSSD withInUse(Integer inUse) {
         this.inUse = inUse;
@@ -102,7 +102,7 @@ public class QuotaDetailSnapshotsGPSSD  {
         this.reserved = reserved;
     }
 
-    public QuotaDetailSnapshotsGPSSD withAllocated(String allocated) {
+    public QuotaDetailSnapshotsGPSSD withAllocated(Integer allocated) {
         this.allocated = allocated;
         return this;
     }
@@ -114,11 +114,11 @@ public class QuotaDetailSnapshotsGPSSD  {
      * 预留属性。
      * @return allocated
      */
-    public String getAllocated() {
+    public Integer getAllocated() {
         return allocated;
     }
 
-    public void setAllocated(String allocated) {
+    public void setAllocated(Integer allocated) {
         this.allocated = allocated;
     }
     @Override

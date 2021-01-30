@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.oms.v2;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.oms.v2.model.*;
 
 public class OmsClient {
@@ -28,6 +29,17 @@ public class OmsClient {
     }
 
     /**
+     * 创建迁移任务
+     * 创建迁移任务，创建成功后，任务会被自动启动，不需要额外调用启动任务命令。
+     *
+     * @param CreateTaskRequest 请求对象
+     * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse>
+     */
+    public SyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskInvoker(CreateTaskRequest request) {
+        return new SyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, OmsMeta.createTask, hcClient);
+    }
+
+    /**
      * 删除迁移任务
      * 调用该接口删除迁移任务。 正在运行的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
      *
@@ -36,6 +48,17 @@ public class OmsClient {
      */
     public DeleteTaskResponse deleteTask(DeleteTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.deleteTask);
+    }
+
+    /**
+     * 删除迁移任务
+     * 调用该接口删除迁移任务。 正在运行的任务不允许删除，如果删除会返回失败；若要删除，请先行暂停任务。
+     *
+     * @param DeleteTaskRequest 请求对象
+     * @return SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>
+     */
+    public SyncInvoker<DeleteTaskRequest, DeleteTaskResponse> deleteTaskInvoker(DeleteTaskRequest request) {
+        return new SyncInvoker<DeleteTaskRequest, DeleteTaskResponse>(request, OmsMeta.deleteTask, hcClient);
     }
 
     /**
@@ -50,6 +73,17 @@ public class OmsClient {
     }
 
     /**
+     * 查询迁移任务列表
+     * 查询用户账户下的所有任务信息。
+     *
+     * @param ListTasksRequest 请求对象
+     * @return SyncInvoker<ListTasksRequest, ListTasksResponse>
+     */
+    public SyncInvoker<ListTasksRequest, ListTasksResponse> listTasksInvoker(ListTasksRequest request) {
+        return new SyncInvoker<ListTasksRequest, ListTasksResponse>(request, OmsMeta.listTasks, hcClient);
+    }
+
+    /**
      * 查询指定ID的任务详情
      * 查询指定ID的任务详情。
      *
@@ -58,6 +92,17 @@ public class OmsClient {
      */
     public ShowTaskResponse showTask(ShowTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.showTask);
+    }
+
+    /**
+     * 查询指定ID的任务详情
+     * 查询指定ID的任务详情。
+     *
+     * @param ShowTaskRequest 请求对象
+     * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
+     */
+    public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
+        return new SyncInvoker<ShowTaskRequest, ShowTaskResponse>(request, OmsMeta.showTask, hcClient);
     }
 
     /**
@@ -72,6 +117,17 @@ public class OmsClient {
     }
 
     /**
+     * 启动迁移任务
+     * 迁移任务暂停或失败后，调用该接口以启动任务。
+     *
+     * @param StartTaskRequest 请求对象
+     * @return SyncInvoker<StartTaskRequest, StartTaskResponse>
+     */
+    public SyncInvoker<StartTaskRequest, StartTaskResponse> startTaskInvoker(StartTaskRequest request) {
+        return new SyncInvoker<StartTaskRequest, StartTaskResponse>(request, OmsMeta.startTask, hcClient);
+    }
+
+    /**
      * 暂停迁移任务
      * 当迁移任务处于迁移中时，调用该接口停止任务。
      *
@@ -80,6 +136,17 @@ public class OmsClient {
      */
     public StopTaskResponse stopTask(StopTaskRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.stopTask);
+    }
+
+    /**
+     * 暂停迁移任务
+     * 当迁移任务处于迁移中时，调用该接口停止任务。
+     *
+     * @param StopTaskRequest 请求对象
+     * @return SyncInvoker<StopTaskRequest, StopTaskResponse>
+     */
+    public SyncInvoker<StopTaskRequest, StopTaskResponse> stopTaskInvoker(StopTaskRequest request) {
+        return new SyncInvoker<StopTaskRequest, StopTaskResponse>(request, OmsMeta.stopTask, hcClient);
     }
 
     /**
@@ -94,6 +161,17 @@ public class OmsClient {
     }
 
     /**
+     * 更新任务带宽策略
+     * 当迁移任务未执行完成时，修改迁移任务的流量控制策略。
+     *
+     * @param UpdateBandwidthPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>
+     */
+    public SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> updateBandwidthPolicyInvoker(UpdateBandwidthPolicyRequest request) {
+        return new SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse>(request, OmsMeta.updateBandwidthPolicy, hcClient);
+    }
+
+    /**
      * 查询API版本信息列表
      * 查询对象存储迁移服务的API版本信息。
      *
@@ -105,6 +183,17 @@ public class OmsClient {
     }
 
     /**
+     * 查询API版本信息列表
+     * 查询对象存储迁移服务的API版本信息。
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
+     */
+    public SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsInvoker(ListApiVersionsRequest request) {
+        return new SyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, OmsMeta.listApiVersions, hcClient);
+    }
+
+    /**
      * 查询指定API版本信息
      * 查询对象存储迁移服务指定API版本信息。
      *
@@ -113,6 +202,17 @@ public class OmsClient {
      */
     public ShowApiInfoResponse showApiInfo(ShowApiInfoRequest request) {
         return hcClient.syncInvokeHttp(request, OmsMeta.showApiInfo);
+    }
+
+    /**
+     * 查询指定API版本信息
+     * 查询对象存储迁移服务指定API版本信息。
+     *
+     * @param ShowApiInfoRequest 请求对象
+     * @return SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>
+     */
+    public SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfoInvoker(ShowApiInfoRequest request) {
+        return new SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>(request, OmsMeta.showApiInfo, hcClient);
     }
 
 }

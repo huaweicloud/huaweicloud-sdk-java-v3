@@ -23,6 +23,8 @@ package com.huaweicloud.sdk.core.impl;
 
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HttpListener;
+import com.huaweicloud.sdk.core.exchange.SdkExchange;
+import com.huaweicloud.sdk.core.exchange.SdkExchangeCache;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -36,6 +38,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
+
 public class DefaultHttpListener implements Interceptor {
     private List<HttpListener> httpListeners;
 
@@ -45,20 +49,31 @@ public class DefaultHttpListener implements Interceptor {
 
     @Override
     public Response intercept(Chain chain) throws IOException {
+
         Request request = chain.request();
-        if (Objects.nonNull(httpListeners)) {
-            preRequest(request);
-        }
-        Response response = chain.proceed(request);
+        SdkExchange exchange = SdkExchangeCache.getExchange(request.header(SDK_EXCHANGE));
+        exchange = Objects.isNull(exchange) ? new SdkExchange() : exchange;
+        request = request.newBuilder().removeHeader(SDK_EXCHANGE).build();
+
+        exchange.withApiTimer(apiMeasurement -> apiMeasurement.start());
 
         if (Objects.nonNull(httpListeners)) {
-            return postResponse(response);
+            preRequest(request, exchange);
+        }
+        Response response = chain.proceed(request.newBuilder().removeHeader(SDK_EXCHANGE).build());
+
+        exchange.withApiTimer(apiMeasurement -> {
+            apiMeasurement.end();
+        });
+
+        if (Objects.nonNull(httpListeners)) {
+            return postResponse(response, exchange);
         }
 
         return response;
     }
 
-    public void preRequest(Request request) throws IOException {
+    public void preRequest(Request request, SdkExchange sdkExchange) throws IOException {
 
         String reqBody = null;
         if (Objects.nonNull(request.body()) && Objects.nonNull(request.body().contentType())
@@ -96,12 +111,17 @@ public class DefaultHttpListener implements Interceptor {
             public Optional<String> body() {
                 return Objects.isNull(finalReqBody) ? Optional.empty() : Optional.of(finalReqBody);
             }
+
+            @Override
+            public SdkExchange exchange() {
+                return sdkExchange;
+            }
         };
         this.httpListeners.forEach(httpListener -> httpListener.preRequest(requestListener));
 
     }
 
-    public Response postResponse(Response response) throws IOException {
+    public Response postResponse(Response response, SdkExchange sdkExchange) throws IOException {
 
         Request request = response.request();
         Response.Builder responseBuilder = response.newBuilder();
@@ -144,6 +164,11 @@ public class DefaultHttpListener implements Interceptor {
             @Override
             public int statusCode() {
                 return response.code();
+            }
+
+            @Override
+            public SdkExchange exchange() {
+                return sdkExchange;
             }
         };
         this.httpListeners.forEach(httpListener -> httpListener.postResponse(responseListener));

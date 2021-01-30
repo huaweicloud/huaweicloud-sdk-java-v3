@@ -18,6 +18,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchCreateKmsTagsRequest.class, BatchCreateKmsTagsResponse.class)
+                .withName("BatchCreateKmsTags")
                 .withUri("/{version_id}/{project_id}/kms/{key_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -58,6 +59,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CancelGrantRequest, CancelGrantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelGrantRequest.class, CancelGrantResponse.class)
+                .withName("CancelGrant")
                 .withUri("/{version_id}/{project_id}/kms/revoke-grant")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -90,6 +92,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CancelKeyDeletionRequest, CancelKeyDeletionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelKeyDeletionRequest.class, CancelKeyDeletionResponse.class)
+                .withName("CancelKeyDeletion")
                 .withUri("/{version_id}/{project_id}/kms/cancel-key-deletion")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -122,6 +125,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CancelSelfGrantRequest, CancelSelfGrantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelSelfGrantRequest.class, CancelSelfGrantResponse.class)
+                .withName("CancelSelfGrant")
                 .withUri("/{version_id}/{project_id}/kms/retire-grant")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -154,6 +158,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CreateDatakeyRequest, CreateDatakeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatakeyRequest.class, CreateDatakeyResponse.class)
+                .withName("CreateDatakey")
                 .withUri("/{version_id}/{project_id}/kms/create-datakey")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -186,6 +191,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CreateDatakeyWithoutPlaintextRequest, CreateDatakeyWithoutPlaintextResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateDatakeyWithoutPlaintextRequest.class, CreateDatakeyWithoutPlaintextResponse.class)
+                .withName("CreateDatakeyWithoutPlaintext")
                 .withUri("/{version_id}/{project_id}/kms/create-datakey-without-plaintext")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -218,6 +224,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CreateGrantRequest, CreateGrantResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateGrantRequest.class, CreateGrantResponse.class)
+                .withName("CreateGrant")
                 .withUri("/{version_id}/{project_id}/kms/create-grant")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -250,6 +257,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CreateKeyRequest, CreateKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateKeyRequest.class, CreateKeyResponse.class)
+                .withName("CreateKey")
                 .withUri("/{version_id}/{project_id}/kms/create-key")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -282,6 +290,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CreateKmsTagRequest, CreateKmsTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateKmsTagRequest.class, CreateKmsTagResponse.class)
+                .withName("CreateKmsTag")
                 .withUri("/{version_id}/{project_id}/kms/{key_id}/tags")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -322,6 +331,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CreateParametersForImportRequest, CreateParametersForImportResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateParametersForImportRequest.class, CreateParametersForImportResponse.class)
+                .withName("CreateParametersForImport")
                 .withUri("/{version_id}/{project_id}/kms/get-parameters-for-import")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -354,6 +364,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<CreateRandomRequest, CreateRandomResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRandomRequest.class, CreateRandomResponse.class)
+                .withName("CreateRandom")
                 .withUri("/{version_id}/{project_id}/kms/gen-random")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -386,6 +397,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DecryptDataRequest, DecryptDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DecryptDataRequest.class, DecryptDataResponse.class)
+                .withName("DecryptData")
                 .withUri("/{version_id}/{project_id}/kms/decrypt-data")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -418,6 +430,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DecryptDatakeyRequest, DecryptDatakeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DecryptDatakeyRequest.class, DecryptDatakeyResponse.class)
+                .withName("DecryptDatakey")
                 .withUri("/{version_id}/{project_id}/kms/decrypt-datakey")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -450,6 +463,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteImportedKeyMaterialRequest.class, DeleteImportedKeyMaterialResponse.class)
+                .withName("DeleteImportedKeyMaterial")
                 .withUri("/{version_id}/{project_id}/kms/delete-imported-key-material")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -482,6 +496,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteKeyRequest, DeleteKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteKeyRequest.class, DeleteKeyResponse.class)
+                .withName("DeleteKey")
                 .withUri("/{version_id}/{project_id}/kms/schedule-key-deletion")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -514,6 +529,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
+                .withName("DeleteTag")
                 .withUri("/{version_id}/{project_id}/kms/{key_id}/tags/{key}")
                 .withContentType("application/json");
 
@@ -554,6 +570,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DisableKeyRequest, DisableKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableKeyRequest.class, DisableKeyResponse.class)
+                .withName("DisableKey")
                 .withUri("/{version_id}/{project_id}/kms/disable-key")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -586,6 +603,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<DisableKeyRotationRequest, DisableKeyRotationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableKeyRotationRequest.class, DisableKeyRotationResponse.class)
+                .withName("DisableKeyRotation")
                 .withUri("/{version_id}/{project_id}/kms/disable-key-rotation")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -618,6 +636,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<EnableKeyRequest, EnableKeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableKeyRequest.class, EnableKeyResponse.class)
+                .withName("EnableKey")
                 .withUri("/{version_id}/{project_id}/kms/enable-key")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -650,6 +669,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<EnableKeyRotationRequest, EnableKeyRotationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableKeyRotationRequest.class, EnableKeyRotationResponse.class)
+                .withName("EnableKeyRotation")
                 .withUri("/{version_id}/{project_id}/kms/enable-key-rotation")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -682,6 +702,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<EncryptDataRequest, EncryptDataResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EncryptDataRequest.class, EncryptDataResponse.class)
+                .withName("EncryptData")
                 .withUri("/{version_id}/{project_id}/kms/encrypt-data")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -714,6 +735,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<EncryptDatakeyRequest, EncryptDatakeyResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EncryptDatakeyRequest.class, EncryptDatakeyResponse.class)
+                .withName("EncryptDatakey")
                 .withUri("/{version_id}/{project_id}/kms/encrypt-datakey")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -746,6 +768,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ImportKeyMaterialRequest, ImportKeyMaterialResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ImportKeyMaterialRequest.class, ImportKeyMaterialResponse.class)
+                .withName("ImportKeyMaterial")
                 .withUri("/{version_id}/{project_id}/kms/import-key-material")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -778,6 +801,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ListGrantsRequest, ListGrantsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListGrantsRequest.class, ListGrantsResponse.class)
+                .withName("ListGrants")
                 .withUri("/{version_id}/{project_id}/kms/list-grants")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -810,6 +834,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ListKeyDetailRequest, ListKeyDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListKeyDetailRequest.class, ListKeyDetailResponse.class)
+                .withName("ListKeyDetail")
                 .withUri("/{version_id}/{project_id}/kms/describe-key")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -842,6 +867,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ListKeysRequest, ListKeysResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListKeysRequest.class, ListKeysResponse.class)
+                .withName("ListKeys")
                 .withUri("/{version_id}/{project_id}/kms/list-keys")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -874,6 +900,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ListKmsByTagsRequest, ListKmsByTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListKmsByTagsRequest.class, ListKmsByTagsResponse.class)
+                .withName("ListKmsByTags")
                 .withUri("/{version_id}/{project_id}/kms/{resource_instances}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -914,6 +941,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ListKmsTagsRequest, ListKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListKmsTagsRequest.class, ListKmsTagsResponse.class)
+                .withName("ListKmsTags")
                 .withUri("/{version_id}/{project_id}/kms/tags")
                 .withContentType("application/json");
 
@@ -938,6 +966,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ListRetirableGrantsRequest, ListRetirableGrantsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListRetirableGrantsRequest.class, ListRetirableGrantsResponse.class)
+                .withName("ListRetirableGrants")
                 .withUri("/{version_id}/{project_id}/kms/list-retirable-grants")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -970,6 +999,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowKeyRotationStatusRequest.class, ShowKeyRotationStatusResponse.class)
+                .withName("ShowKeyRotationStatus")
                 .withUri("/{version_id}/{project_id}/kms/get-key-rotation-status")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1002,6 +1032,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowKmsTagsRequest, ShowKmsTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowKmsTagsRequest.class, ShowKmsTagsResponse.class)
+                .withName("ShowKmsTags")
                 .withUri("/{version_id}/{project_id}/kms/{key_id}/tags")
                 .withContentType("application/json");
 
@@ -1034,6 +1065,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowUserInstancesRequest, ShowUserInstancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserInstancesRequest.class, ShowUserInstancesResponse.class)
+                .withName("ShowUserInstances")
                 .withUri("/{version_id}/{project_id}/kms/user-instances")
                 .withContentType("application/json");
 
@@ -1058,6 +1090,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowUserQuotasRequest, ShowUserQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowUserQuotasRequest.class, ShowUserQuotasResponse.class)
+                .withName("ShowUserQuotas")
                 .withUri("/{version_id}/{project_id}/kms/user-quotas")
                 .withContentType("application/json");
 
@@ -1082,6 +1115,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateKeyAliasRequest, UpdateKeyAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateKeyAliasRequest.class, UpdateKeyAliasResponse.class)
+                .withName("UpdateKeyAlias")
                 .withUri("/{version_id}/{project_id}/kms/update-key-alias")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1114,6 +1148,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateKeyDescriptionRequest.class, UpdateKeyDescriptionResponse.class)
+                .withName("UpdateKeyDescription")
                 .withUri("/{version_id}/{project_id}/kms/update-key-description")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1146,6 +1181,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<UpdateKeyRotationIntervalRequest, UpdateKeyRotationIntervalResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateKeyRotationIntervalRequest.class, UpdateKeyRotationIntervalResponse.class)
+                .withName("UpdateKeyRotationInterval")
                 .withUri("/{version_id}/{project_id}/kms/update-key-rotation-interval")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -1178,6 +1214,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
+                .withName("ShowVersion")
                 .withUri("/{version_id}")
                 .withContentType("application/json");
 
@@ -1202,6 +1239,7 @@ public class KmsMeta {
         // basic
         HttpRequestDef.Builder<ShowVersionsRequest, ShowVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionsRequest.class, ShowVersionsResponse.class)
+                .withName("ShowVersions")
                 .withUri("/")
                 .withContentType("application/json");
 

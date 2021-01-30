@@ -18,6 +18,7 @@ public class CloudBuildMeta {
         // basic
         HttpRequestDef.Builder<DownloadKeystoreRequest, DownloadKeystoreResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, DownloadKeystoreRequest.class, DownloadKeystoreResponse.class)
+                .withName("DownloadKeystore")
                 .withUri("/v3/keystore")
                 .withContentType("application/json");
 
@@ -50,6 +51,7 @@ public class CloudBuildMeta {
         // basic
         HttpRequestDef.Builder<RunJobRequest, RunJobResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RunJobRequest.class, RunJobResponse.class)
+                .withName("RunJob")
                 .withUri("/v3/jobs/build")
                 .withContentType("application/json");
 
@@ -74,6 +76,7 @@ public class CloudBuildMeta {
         // basic
         HttpRequestDef.Builder<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobListByProjectIdRequest.class, ShowJobListByProjectIdResponse.class)
+                .withName("ShowJobListByProjectId")
                 .withUri("/v3/{project_id}/jobs")
                 .withContentType("application/json");
 
@@ -114,6 +117,7 @@ public class CloudBuildMeta {
         // basic
         HttpRequestDef.Builder<ShowJobStatusRequest, ShowJobStatusResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowJobStatusRequest.class, ShowJobStatusResponse.class)
+                .withName("ShowJobStatus")
                 .withUri("/v3/jobs/{job_id}/status")
                 .withContentType("application/json");
 
@@ -138,6 +142,7 @@ public class CloudBuildMeta {
         // basic
         HttpRequestDef.Builder<ShowListHistoryRequest, ShowListHistoryResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowListHistoryRequest.class, ShowListHistoryResponse.class)
+                .withName("ShowListHistory")
                 .withUri("/v3/jobs/{job_id}/history")
                 .withContentType("application/json");
 
@@ -172,6 +177,63 @@ public class CloudBuildMeta {
             Integer.class,
             f -> f.withMarshaller(ShowListHistoryRequest::getInterval, (req, v) -> {
                 req.setInterval(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> showListPeriodHistory = genForshowListPeriodHistory();
+
+    private static HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> genForshowListPeriodHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowListPeriodHistoryRequest.class, ShowListPeriodHistoryResponse.class)
+                .withName("ShowListPeriodHistory")
+                .withUri("/v3/jobs/{job_id}/period-history")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Integer.class,
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowListPeriodHistoryRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
             })
         );
 

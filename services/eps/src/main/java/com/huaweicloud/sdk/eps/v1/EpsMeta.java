@@ -18,6 +18,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<CreateEnterpriseProjectRequest, CreateEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnterpriseProjectRequest.class, CreateEnterpriseProjectResponse.class)
+                .withName("CreateEnterpriseProject")
                 .withUri("/v1.0/enterprise-projects")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -42,6 +43,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<DisableEnterpriseProjectRequest, DisableEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableEnterpriseProjectRequest.class, DisableEnterpriseProjectResponse.class)
+                .withName("DisableEnterpriseProject")
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -74,6 +76,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<EnableEnterpriseProjectRequest, EnableEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableEnterpriseProjectRequest.class, EnableEnterpriseProjectResponse.class)
+                .withName("EnableEnterpriseProject")
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -106,6 +109,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
+                .withName("ListApiVersions")
                 .withUri("/")
                 .withContentType("application/json");
 
@@ -122,6 +126,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ListEnterpriseProjectRequest, ListEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseProjectRequest.class, ListEnterpriseProjectResponse.class)
+                .withName("ListEnterpriseProject")
                 .withUri("/v1.0/enterprise-projects")
                 .withContentType("application/json");
 
@@ -194,6 +199,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<MigrateResourceRequest, MigrateResourceResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, MigrateResourceRequest.class, MigrateResourceResponse.class)
+                .withName("MigrateResource")
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}/resources-migrate")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -226,6 +232,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ModifyEnterpriseProjectRequest.class, ModifyEnterpriseProjectResponse.class)
+                .withName("ModifyEnterpriseProject")
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -258,6 +265,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
+                .withName("ShowApiVersion")
                 .withUri("/{api_version}")
                 .withContentType("application/json");
 
@@ -282,6 +290,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseProjectRequest, ShowEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnterpriseProjectRequest.class, ShowEnterpriseProjectResponse.class)
+                .withName("ShowEnterpriseProject")
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}")
                 .withContentType("application/json");
 
@@ -306,6 +315,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ShowEnterpriseProjectQuotaRequest, ShowEnterpriseProjectQuotaResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowEnterpriseProjectQuotaRequest.class, ShowEnterpriseProjectQuotaResponse.class)
+                .withName("ShowEnterpriseProjectQuota")
                 .withUri("/v1.0/enterprise-projects/quotas")
                 .withContentType("application/json");
 
@@ -322,6 +332,7 @@ public class EpsMeta {
         // basic
         HttpRequestDef.Builder<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowResourceBindEnterpriseProjectRequest.class, ShowResourceBindEnterpriseProjectResponse.class)
+                .withName("ShowResourceBindEnterpriseProject")
                 .withUri("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter")
                 .withContentType("application/json;charset=UTF-8");
 

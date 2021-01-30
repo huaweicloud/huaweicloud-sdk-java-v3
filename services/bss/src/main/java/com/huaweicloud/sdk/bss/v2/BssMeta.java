@@ -18,6 +18,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<AutoRenewalResourcesRequest, AutoRenewalResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AutoRenewalResourcesRequest.class, AutoRenewalResourcesResponse.class)
+                .withName("AutoRenewalResources")
                 .withUri("/v2/orders/subscriptions/resources/autorenew/{resource_id}")
                 .withContentType("application/json");
 
@@ -42,6 +43,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<BatchSetSubCustomerDiscountRequest, BatchSetSubCustomerDiscountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchSetSubCustomerDiscountRequest.class, BatchSetSubCustomerDiscountResponse.class)
+                .withName("BatchSetSubCustomerDiscount")
                 .withUri("/v2/partners/discounts")
                 .withContentType("application/json");
 
@@ -66,6 +68,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CancelAutoRenewalResourcesRequest, CancelAutoRenewalResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, CancelAutoRenewalResourcesRequest.class, CancelAutoRenewalResourcesResponse.class)
+                .withName("CancelAutoRenewalResources")
                 .withUri("/v2/orders/subscriptions/resources/autorenew/{resource_id}")
                 .withContentType("application/json");
 
@@ -90,6 +93,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CancelCustomerOrderRequest, CancelCustomerOrderResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, CancelCustomerOrderRequest.class, CancelCustomerOrderResponse.class)
+                .withName("CancelCustomerOrder")
                 .withUri("/v2/orders/customer-orders/cancel")
                 .withContentType("application/json");
 
@@ -114,6 +118,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CancelResourcesSubscriptionRequest, CancelResourcesSubscriptionResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CancelResourcesSubscriptionRequest.class, CancelResourcesSubscriptionResponse.class)
+                .withName("CancelResourcesSubscription")
                 .withUri("/v2/orders/subscriptions/resources/unsubscribe")
                 .withContentType("application/json");
 
@@ -138,6 +143,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ChangeEnterpriseRealnameAuthenticationRequest, ChangeEnterpriseRealnameAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ChangeEnterpriseRealnameAuthenticationRequest.class, ChangeEnterpriseRealnameAuthenticationResponse.class)
+                .withName("ChangeEnterpriseRealnameAuthentication")
                 .withUri("/v2/customers/realname-auths/enterprise")
                 .withContentType("application/json");
 
@@ -162,6 +168,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CheckUserIdentityRequest, CheckUserIdentityResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CheckUserIdentityRequest.class, CheckUserIdentityResponse.class)
+                .withName("CheckUserIdentity")
                 .withUri("/v2/partners/sub-customers/users/check-identity")
                 .withContentType("application/json");
 
@@ -186,6 +193,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CreateEnterpriseProjectAuthRequest, CreateEnterpriseProjectAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnterpriseProjectAuthRequest.class, CreateEnterpriseProjectAuthResponse.class)
+                .withName("CreateEnterpriseProjectAuth")
                 .withUri("/v2/enterprises/enterprise-projects/authority")
                 .withContentType("application/json");
 
@@ -202,6 +210,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CreateEnterpriseRealnameAuthenticationRequest, CreateEnterpriseRealnameAuthenticationResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateEnterpriseRealnameAuthenticationRequest.class, CreateEnterpriseRealnameAuthenticationResponse.class)
+                .withName("CreateEnterpriseRealnameAuthentication")
                 .withUri("/v2/customers/realname-auths/enterprise")
                 .withContentType("application/json");
 
@@ -226,6 +235,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CreatePartnerCouponsRequest, CreatePartnerCouponsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePartnerCouponsRequest.class, CreatePartnerCouponsResponse.class)
+                .withName("CreatePartnerCoupons")
                 .withUri("/v2/promotions/benefits/partner-coupons")
                 .withContentType("application/json");
 
@@ -250,6 +260,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CreatePersonalRealnameAuthRequest, CreatePersonalRealnameAuthResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePersonalRealnameAuthRequest.class, CreatePersonalRealnameAuthResponse.class)
+                .withName("CreatePersonalRealnameAuth")
                 .withUri("/v2/customers/realname-auths/individual")
                 .withContentType("application/json");
 
@@ -274,6 +285,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CreatePostalRequest, CreatePostalResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePostalRequest.class, CreatePostalResponse.class)
+                .withName("CreatePostal")
                 .withUri("/v2/customers/postal-addresses")
                 .withContentType("application/json");
 
@@ -306,6 +318,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CreateSubCustomerRequest, CreateSubCustomerResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubCustomerRequest.class, CreateSubCustomerResponse.class)
+                .withName("CreateSubCustomer")
                 .withUri("/v2/partners/sub-customers")
                 .withContentType("application/json");
 
@@ -330,6 +343,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateSubEnterpriseAccountRequest.class, CreateSubEnterpriseAccountResponse.class)
+                .withName("CreateSubEnterpriseAccount")
                 .withUri("/v2/enterprises/multi-accounts/sub-customers")
                 .withContentType("application/json");
 
@@ -354,6 +368,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<DeletePostalRequest, DeletePostalResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeletePostalRequest.class, DeletePostalResponse.class)
+                .withName("DeletePostal")
                 .withUri("/v2/customers/postal-addresses/{address_id}")
                 .withContentType("application/json");
 
@@ -378,6 +393,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCitiesRequest, ListCitiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCitiesRequest.class, ListCitiesResponse.class)
+                .withName("ListCities")
                 .withUri("/v2/systems/configs/cities")
                 .withContentType("application/json");
 
@@ -426,6 +442,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListConversionsRequest, ListConversionsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListConversionsRequest.class, ListConversionsResponse.class)
+                .withName("ListConversions")
                 .withUri("/v2/bases/conversions")
                 .withContentType("application/json");
 
@@ -458,6 +475,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCountiesRequest, ListCountiesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCountiesRequest.class, ListCountiesResponse.class)
+                .withName("ListCounties")
                 .withUri("/v2/systems/configs/counties")
                 .withContentType("application/json");
 
@@ -506,6 +524,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCouponQuotasRecordsRequest, ListCouponQuotasRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCouponQuotasRecordsRequest.class, ListCouponQuotasRecordsResponse.class)
+                .withName("ListCouponQuotasRecords")
                 .withUri("/v2/partners/coupon-quotas/records")
                 .withContentType("application/json");
 
@@ -586,6 +605,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCustomerBillsFeeRecordsRequest, ListCustomerBillsFeeRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomerBillsFeeRecordsRequest.class, ListCustomerBillsFeeRecordsResponse.class)
+                .withName("ListCustomerBillsFeeRecords")
                 .withUri("/v2/bills/customer-bills/fee-records")
                 .withContentType("application/json");
 
@@ -730,6 +750,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListCustomerOnDemandResourcesRequest.class, ListCustomerOnDemandResourcesResponse.class)
+                .withName("ListCustomerOnDemandResources")
                 .withUri("/v2/partners/sub-customers/on-demand-resources/query")
                 .withContentType("application/json");
 
@@ -762,6 +783,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCustomerOrdersRequest, ListCustomerOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomerOrdersRequest.class, ListCustomerOrdersResponse.class)
+                .withName("ListCustomerOrders")
                 .withUri("/v2/orders/customer-orders")
                 .withContentType("application/json");
 
@@ -882,6 +904,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCustomersBalancesDetailRequest, ListCustomersBalancesDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListCustomersBalancesDetailRequest.class, ListCustomersBalancesDetailResponse.class)
+                .withName("ListCustomersBalancesDetail")
                 .withUri("/v2/accounts/customer-accounts/balances/batch-query")
                 .withContentType("application/json");
 
@@ -906,6 +929,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCustomerselfResourceRecordDetailsRequest, ListCustomerselfResourceRecordDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListCustomerselfResourceRecordDetailsRequest.class, ListCustomerselfResourceRecordDetailsResponse.class)
+                .withName("ListCustomerselfResourceRecordDetails")
                 .withUri("/v2/bills/customer-bills/res-records/query")
                 .withContentType("application/json");
 
@@ -930,6 +954,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListCustomerselfResourceRecordsRequest.class, ListCustomerselfResourceRecordsResponse.class)
+                .withName("ListCustomerselfResourceRecords")
                 .withUri("/v2/bills/customer-bills/res-fee-records")
                 .withContentType("application/json");
 
@@ -1074,6 +1099,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListEnterpriseMultiAccountRequest, ListEnterpriseMultiAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseMultiAccountRequest.class, ListEnterpriseMultiAccountResponse.class)
+                .withName("ListEnterpriseMultiAccount")
                 .withUri("/v2/enterprises/multi-accounts/retrieve-amount")
                 .withContentType("application/json");
 
@@ -1122,6 +1148,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListEnterpriseOrganizationsRequest, ListEnterpriseOrganizationsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseOrganizationsRequest.class, ListEnterpriseOrganizationsResponse.class)
+                .withName("ListEnterpriseOrganizations")
                 .withUri("/v2/enterprises/multi-accounts/enterprise-organizations")
                 .withContentType("application/json");
 
@@ -1154,6 +1181,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListEnterpriseSubCustomersRequest.class, ListEnterpriseSubCustomersResponse.class)
+                .withName("ListEnterpriseSubCustomers")
                 .withUri("/v2/enterprises/multi-accounts/sub-customers")
                 .withContentType("application/json");
 
@@ -1218,6 +1246,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListIndirectPartnersRequest, ListIndirectPartnersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListIndirectPartnersRequest.class, ListIndirectPartnersResponse.class)
+                .withName("ListIndirectPartners")
                 .withUri("/v2/partners/indirect-partners/query")
                 .withContentType("application/json");
 
@@ -1242,6 +1271,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListIssuedCouponQuotasRequest, ListIssuedCouponQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIssuedCouponQuotasRequest.class, ListIssuedCouponQuotasResponse.class)
+                .withName("ListIssuedCouponQuotas")
                 .withUri("/v2/partners/issued-coupon-quotas")
                 .withContentType("application/json");
 
@@ -1298,6 +1328,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListIssuedPartnerCouponsRequest, ListIssuedPartnerCouponsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListIssuedPartnerCouponsRequest.class, ListIssuedPartnerCouponsResponse.class)
+                .withName("ListIssuedPartnerCoupons")
                 .withUri("/v2/promotions/benefits/partner-coupons")
                 .withContentType("application/json");
 
@@ -1426,6 +1457,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListMeasureUnitsRequest, ListMeasureUnitsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMeasureUnitsRequest.class, ListMeasureUnitsResponse.class)
+                .withName("ListMeasureUnits")
                 .withUri("/v2/bases/measurements")
                 .withContentType("application/json");
 
@@ -1450,6 +1482,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListOnDemandResourceRatingsRequest, ListOnDemandResourceRatingsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListOnDemandResourceRatingsRequest.class, ListOnDemandResourceRatingsResponse.class)
+                .withName("ListOnDemandResourceRatings")
                 .withUri("/v2/bills/ratings/on-demand-resources")
                 .withContentType("application/json");
 
@@ -1474,6 +1507,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListOrderCouponsByOrderIdRequest.class, ListOrderCouponsByOrderIdResponse.class)
+                .withName("ListOrderCouponsByOrderId")
                 .withUri("/v2/orders/customer-orders/order-coupons")
                 .withContentType("application/json");
 
@@ -1492,36 +1526,13 @@ public class BssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscounts = genForlistOrderDiscounts();
-
-    private static HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> genForlistOrderDiscounts() {
-        // basic
-        HttpRequestDef.Builder<ListOrderDiscountsRequest, ListOrderDiscountsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListOrderDiscountsRequest.class, ListOrderDiscountsResponse.class)
-                .withUri("/v2/orders/customer-orders/order-discounts")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("order_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListOrderDiscountsRequest::getOrderId, (req, v) -> {
-                req.setOrderId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> listPartnerAdjustRecords = genForlistPartnerAdjustRecords();
 
     private static HttpRequestDef<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> genForlistPartnerAdjustRecords() {
         // basic
         HttpRequestDef.Builder<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPartnerAdjustRecordsRequest.class, ListPartnerAdjustRecordsResponse.class)
+                .withName("ListPartnerAdjustRecords")
                 .withUri("/v2/accounts/partner-accounts/adjust-records")
                 .withContentType("application/json");
 
@@ -1602,6 +1613,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListPartnerBalancesRequest, ListPartnerBalancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPartnerBalancesRequest.class, ListPartnerBalancesResponse.class)
+                .withName("ListPartnerBalances")
                 .withUri("/v2/accounts/partner-accounts/balances")
                 .withContentType("application/json");
 
@@ -1626,6 +1638,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListPartnerCouponsRecordRequest, ListPartnerCouponsRecordResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPartnerCouponsRecordRequest.class, ListPartnerCouponsRecordResponse.class)
+                .withName("ListPartnerCouponsRecord")
                 .withUri("/v2/promotions/benefits/partner-coupons/records/query")
                 .withContentType("application/json");
 
@@ -1730,6 +1743,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListPartnerPayOrdersRequest, ListPartnerPayOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPartnerPayOrdersRequest.class, ListPartnerPayOrdersResponse.class)
+                .withName("ListPartnerPayOrders")
                 .withUri("/v2/orders/customer-orders/partner-pay-orders")
                 .withContentType("application/json");
 
@@ -1794,6 +1808,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListPayPerUseCustomerResourcesRequest.class, ListPayPerUseCustomerResourcesResponse.class)
+                .withName("ListPayPerUseCustomerResources")
                 .withUri("/v2/orders/suscriptions/resources/query")
                 .withContentType("application/json");
 
@@ -1818,6 +1833,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListPostalAddressRequest, ListPostalAddressResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListPostalAddressRequest.class, ListPostalAddressResponse.class)
+                .withName("ListPostalAddress")
                 .withUri("/v2/customers/postal-addresses")
                 .withContentType("application/json");
 
@@ -1850,6 +1866,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListProvincesRequest, ListProvincesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListProvincesRequest.class, ListProvincesResponse.class)
+                .withName("ListProvinces")
                 .withUri("/v2/systems/configs/provinces")
                 .withContentType("application/json");
 
@@ -1890,6 +1907,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListQuotaCouponsRequest, ListQuotaCouponsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListQuotaCouponsRequest.class, ListQuotaCouponsResponse.class)
+                .withName("ListQuotaCoupons")
                 .withUri("/v2/partners/coupon-quotas/query")
                 .withContentType("application/json");
 
@@ -1914,6 +1932,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListRateOnPeriodDetailRequest, ListRateOnPeriodDetailResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListRateOnPeriodDetailRequest.class, ListRateOnPeriodDetailResponse.class)
+                .withName("ListRateOnPeriodDetail")
                 .withUri("/v2/bills/ratings/period-resources/subscribe-rate")
                 .withContentType("application/json");
 
@@ -1938,6 +1957,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListResourceTypesRequest, ListResourceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListResourceTypesRequest.class, ListResourceTypesResponse.class)
+                .withName("ListResourceTypes")
                 .withUri("/v2/bases/resource-types")
                 .withContentType("application/json");
 
@@ -1970,6 +1990,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListResourceUsagesRequest, ListResourceUsagesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListResourceUsagesRequest.class, ListResourceUsagesResponse.class)
+                .withName("ListResourceUsages")
                 .withUri("/v2/payments/free-resources/usages/query")
                 .withContentType("application/json");
 
@@ -1994,6 +2015,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListServiceResourcesRequest, ListServiceResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceResourcesRequest.class, ListServiceResourcesResponse.class)
+                .withName("ListServiceResources")
                 .withUri("/v2/products/service-resources")
                 .withContentType("application/json");
 
@@ -2042,6 +2064,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListServiceTypesRequest, ListServiceTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListServiceTypesRequest.class, ListServiceTypesResponse.class)
+                .withName("ListServiceTypes")
                 .withUri("/v2/bases/service-types")
                 .withContentType("application/json");
 
@@ -2074,6 +2097,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListSkuInventoriesRequest, ListSkuInventoriesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSkuInventoriesRequest.class, ListSkuInventoriesResponse.class)
+                .withName("ListSkuInventories")
                 .withUri("/v2/orders/inventories/sku-inventories/query")
                 .withContentType("application/json");
 
@@ -2098,6 +2122,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubCustomerCouponsRequest.class, ListSubCustomerCouponsResponse.class)
+                .withName("ListSubCustomerCoupons")
                 .withUri("/v2/promotions/benefits/coupons")
                 .withContentType("application/json");
 
@@ -2202,6 +2227,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListSubCustomerDiscountsRequest, ListSubCustomerDiscountsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubCustomerDiscountsRequest.class, ListSubCustomerDiscountsResponse.class)
+                .withName("ListSubCustomerDiscounts")
                 .withUri("/v2/partners/discounts")
                 .withContentType("application/json");
 
@@ -2234,6 +2260,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListSubCustomerResFeeRecordsRequest, ListSubCustomerResFeeRecordsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubCustomerResFeeRecordsRequest.class, ListSubCustomerResFeeRecordsResponse.class)
+                .withName("ListSubCustomerResFeeRecords")
                 .withUri("/v2/bills/partner-bills/subcustomer-bills/res-fee-records")
                 .withContentType("application/json");
 
@@ -2338,6 +2365,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListSubCustomersRequest, ListSubCustomersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListSubCustomersRequest.class, ListSubCustomersResponse.class)
+                .withName("ListSubCustomers")
                 .withUri("/v2/partners/sub-customers/query")
                 .withContentType("application/json");
 
@@ -2362,6 +2390,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListSubcustomerMonthlyBillsRequest, ListSubcustomerMonthlyBillsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListSubcustomerMonthlyBillsRequest.class, ListSubcustomerMonthlyBillsResponse.class)
+                .withName("ListSubcustomerMonthlyBills")
                 .withUri("/v2/bills/partner-bills/subcustomer-bills/monthly-sum")
                 .withContentType("application/json");
 
@@ -2442,6 +2471,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ListUsageTypesRequest, ListUsageTypesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsageTypesRequest.class, ListUsageTypesResponse.class)
+                .withName("ListUsageTypes")
                 .withUri("/v2/products/usage-types")
                 .withContentType("application/json");
 
@@ -2490,6 +2520,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<PayOrdersRequest, PayOrdersResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PayOrdersRequest.class, PayOrdersResponse.class)
+                .withName("PayOrders")
                 .withUri("/v2/orders/customer-orders/pay")
                 .withContentType("application/json");
 
@@ -2514,6 +2545,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ReclaimCouponQuotasRequest, ReclaimCouponQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReclaimCouponQuotasRequest.class, ReclaimCouponQuotasResponse.class)
+                .withName("ReclaimCouponQuotas")
                 .withUri("/v2/partners/coupon-quotas/indirect-partner-reclaim")
                 .withContentType("application/json");
 
@@ -2538,6 +2570,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ReclaimIndirectPartnerAccountRequest, ReclaimIndirectPartnerAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReclaimIndirectPartnerAccountRequest.class, ReclaimIndirectPartnerAccountResponse.class)
+                .withName("ReclaimIndirectPartnerAccount")
                 .withUri("/v2/accounts/partner-accounts/indirect-partner-reclaim")
                 .withContentType("application/json");
 
@@ -2562,6 +2595,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ReclaimPartnerCouponsRequest, ReclaimPartnerCouponsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReclaimPartnerCouponsRequest.class, ReclaimPartnerCouponsResponse.class)
+                .withName("ReclaimPartnerCoupons")
                 .withUri("/v2/promotions/benefits/partner-coupons/reclaim")
                 .withContentType("application/json");
 
@@ -2586,6 +2620,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ReclaimSubEnterpriseAmountRequest, ReclaimSubEnterpriseAmountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReclaimSubEnterpriseAmountRequest.class, ReclaimSubEnterpriseAmountResponse.class)
+                .withName("ReclaimSubEnterpriseAmount")
                 .withUri("/v2/enterprises/multi-accounts/retrieve-amount")
                 .withContentType("application/json");
 
@@ -2610,6 +2645,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ReclaimToPartnerAccountRequest, ReclaimToPartnerAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ReclaimToPartnerAccountRequest.class, ReclaimToPartnerAccountResponse.class)
+                .withName("ReclaimToPartnerAccount")
                 .withUri("/v2/accounts/partner-accounts/reclaim")
                 .withContentType("application/json");
 
@@ -2634,6 +2670,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<RenewalResourcesRequest, RenewalResourcesResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RenewalResourcesRequest.class, RenewalResourcesResponse.class)
+                .withName("RenewalResources")
                 .withUri("/v2/orders/subscriptions/resources/renew")
                 .withContentType("application/json");
 
@@ -2658,6 +2695,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<SendSmsVerificationCodeRequest, SendSmsVerificationCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendSmsVerificationCodeRequest.class, SendSmsVerificationCodeResponse.class)
+                .withName("SendSmsVerificationCode")
                 .withUri("/v2/enterprises/multi-accounts/sm-verification-code")
                 .withContentType("application/json");
 
@@ -2682,6 +2720,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<SendVerificationMessageCodeRequest, SendVerificationMessageCodeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SendVerificationMessageCodeRequest.class, SendVerificationMessageCodeResponse.class)
+                .withName("SendVerificationMessageCode")
                 .withUri("/v2/bases/verificationcode/send")
                 .withContentType("application/json");
 
@@ -2706,6 +2745,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCustomerAccountBalancesRequest.class, ShowCustomerAccountBalancesResponse.class)
+                .withName("ShowCustomerAccountBalances")
                 .withUri("/v2/accounts/customer-accounts/balances")
                 .withContentType("application/json");
 
@@ -2722,6 +2762,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCustomerMonthlySumRequest.class, ShowCustomerMonthlySumResponse.class)
+                .withName("ShowCustomerMonthlySum")
                 .withUri("/v2/bills/customer-bills/monthly-sum")
                 .withContentType("application/json");
 
@@ -2794,6 +2835,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowCustomerOrderDetailsRequest.class, ShowCustomerOrderDetailsResponse.class)
+                .withName("ShowCustomerOrderDetails")
                 .withUri("/v2/orders/customer-orders/details/{order_id}")
                 .withContentType("application/json");
 
@@ -2842,6 +2884,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMultiAccountTransferAmountRequest.class, ShowMultiAccountTransferAmountResponse.class)
+                .withName("ShowMultiAccountTransferAmount")
                 .withUri("/v2/enterprises/multi-accounts/transfer-amount")
                 .withContentType("application/json");
 
@@ -2882,6 +2925,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ShowRealnameAuthenticationReviewResultRequest, ShowRealnameAuthenticationReviewResultResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRealnameAuthenticationReviewResultRequest.class, ShowRealnameAuthenticationReviewResultResponse.class)
+                .withName("ShowRealnameAuthenticationReviewResult")
                 .withUri("/v2/customers/realname-auths/result")
                 .withContentType("application/json");
 
@@ -2906,6 +2950,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<ShowRefundOrderDetailsRequest, ShowRefundOrderDetailsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRefundOrderDetailsRequest.class, ShowRefundOrderDetailsResponse.class)
+                .withName("ShowRefundOrderDetails")
                 .withUri("/v2/orders/customer-orders/refund-orders")
                 .withContentType("application/json");
 
@@ -2930,6 +2975,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<UpdateCouponQuotasRequest, UpdateCouponQuotasResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateCouponQuotasRequest.class, UpdateCouponQuotasResponse.class)
+                .withName("UpdateCouponQuotas")
                 .withUri("/v2/partners/coupon-quotas/indirect-partner-adjust")
                 .withContentType("application/json");
 
@@ -2954,6 +3000,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<UpdateCustomerAccountAmountRequest, UpdateCustomerAccountAmountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateCustomerAccountAmountRequest.class, UpdateCustomerAccountAmountResponse.class)
+                .withName("UpdateCustomerAccountAmount")
                 .withUri("/v2/accounts/partner-accounts/adjust-amount")
                 .withContentType("application/json");
 
@@ -2978,6 +3025,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<UpdateIndirectPartnerAccountRequest, UpdateIndirectPartnerAccountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateIndirectPartnerAccountRequest.class, UpdateIndirectPartnerAccountResponse.class)
+                .withName("UpdateIndirectPartnerAccount")
                 .withUri("/v2/accounts/partner-accounts/indirect-partner-adjust")
                 .withContentType("application/json");
 
@@ -3002,6 +3050,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdatePeriodToOnDemandRequest.class, UpdatePeriodToOnDemandResponse.class)
+                .withName("UpdatePeriodToOnDemand")
                 .withUri("/v2/orders/subscriptions/resources/to-on-demand")
                 .withContentType("application/json");
 
@@ -3026,6 +3075,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<UpdatePostalRequest, UpdatePostalResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdatePostalRequest.class, UpdatePostalResponse.class)
+                .withName("UpdatePostal")
                 .withUri("/v2/customers/postal-addresses")
                 .withContentType("application/json");
 
@@ -3058,6 +3108,7 @@ public class BssMeta {
         // basic
         HttpRequestDef.Builder<UpdateSubEnterpriseAmountRequest, UpdateSubEnterpriseAmountResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateSubEnterpriseAmountRequest.class, UpdateSubEnterpriseAmountResponse.class)
+                .withName("UpdateSubEnterpriseAmount")
                 .withUri("/v2/enterprises/multi-accounts/transfer-amount")
                 .withContentType("application/json");
 

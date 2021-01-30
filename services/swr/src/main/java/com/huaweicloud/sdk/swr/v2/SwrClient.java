@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.swr.v2;
 
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.swr.v2.model.*;
 
 public class SwrClient {
@@ -28,6 +29,17 @@ public class SwrClient {
     }
 
     /**
+     * 创建镜像自动同步任务
+     * 创建镜像自动同步任务
+     *
+     * @param CreateImageSyncRepoRequest 请求对象
+     * @return SyncInvoker<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse>
+     */
+    public SyncInvoker<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> createImageSyncRepoInvoker(CreateImageSyncRepoRequest request) {
+        return new SyncInvoker<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse>(request, SwrMeta.createImageSyncRepo, hcClient);
+    }
+
+    /**
      * 创建组织
      * 创建组织
      *
@@ -36,6 +48,17 @@ public class SwrClient {
      */
     public CreateNamespaceResponse createNamespace(CreateNamespaceRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.createNamespace);
+    }
+
+    /**
+     * 创建组织
+     * 创建组织
+     *
+     * @param CreateNamespaceRequest 请求对象
+     * @return SyncInvoker<CreateNamespaceRequest, CreateNamespaceResponse>
+     */
+    public SyncInvoker<CreateNamespaceRequest, CreateNamespaceResponse> createNamespaceInvoker(CreateNamespaceRequest request) {
+        return new SyncInvoker<CreateNamespaceRequest, CreateNamespaceResponse>(request, SwrMeta.createNamespace, hcClient);
     }
 
     /**
@@ -50,6 +73,17 @@ public class SwrClient {
     }
 
     /**
+     * 创建组织权限
+     * 创建组织权限
+     *
+     * @param CreateNamespaceAuthRequest 请求对象
+     * @return SyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse>
+     */
+    public SyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> createNamespaceAuthInvoker(CreateNamespaceAuthRequest request) {
+        return new SyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse>(request, SwrMeta.createNamespaceAuth, hcClient);
+    }
+
+    /**
      * 创建共享账号
      * 创建共享账号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
      *
@@ -58,6 +92,17 @@ public class SwrClient {
      */
     public CreateRepoDomainsResponse createRepoDomains(CreateRepoDomainsRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.createRepoDomains);
+    }
+
+    /**
+     * 创建共享账号
+     * 创建共享账号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
+     *
+     * @param CreateRepoDomainsRequest 请求对象
+     * @return SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse>
+     */
+    public SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse> createRepoDomainsInvoker(CreateRepoDomainsRequest request) {
+        return new SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse>(request, SwrMeta.createRepoDomains, hcClient);
     }
 
     /**
@@ -72,6 +117,17 @@ public class SwrClient {
     }
 
     /**
+     * 创建镜像老化规则
+     * 创建镜像老化规则
+     *
+     * @param CreateRetentionRequest 请求对象
+     * @return SyncInvoker<CreateRetentionRequest, CreateRetentionResponse>
+     */
+    public SyncInvoker<CreateRetentionRequest, CreateRetentionResponse> createRetentionInvoker(CreateRetentionRequest request) {
+        return new SyncInvoker<CreateRetentionRequest, CreateRetentionResponse>(request, SwrMeta.createRetention, hcClient);
+    }
+
+    /**
      * 生成临时登录指令
      * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成临时登录指令。
      *
@@ -80,6 +136,17 @@ public class SwrClient {
      */
     public CreateSecretResponse createSecret(CreateSecretRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.createSecret);
+    }
+
+    /**
+     * 生成临时登录指令
+     * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成临时登录指令。
+     *
+     * @param CreateSecretRequest 请求对象
+     * @return SyncInvoker<CreateSecretRequest, CreateSecretResponse>
+     */
+    public SyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretInvoker(CreateSecretRequest request) {
+        return new SyncInvoker<CreateSecretRequest, CreateSecretResponse>(request, SwrMeta.createSecret, hcClient);
     }
 
     /**
@@ -94,6 +161,17 @@ public class SwrClient {
     }
 
     /**
+     * 创建触发器
+     * 创建触发器
+     *
+     * @param CreateTriggerRequest 请求对象
+     * @return SyncInvoker<CreateTriggerRequest, CreateTriggerResponse>
+     */
+    public SyncInvoker<CreateTriggerRequest, CreateTriggerResponse> createTriggerInvoker(CreateTriggerRequest request) {
+        return new SyncInvoker<CreateTriggerRequest, CreateTriggerResponse>(request, SwrMeta.createTrigger, hcClient);
+    }
+
+    /**
      * 创建镜像权限
      * 创建镜像权限
      *
@@ -102,6 +180,17 @@ public class SwrClient {
      */
     public CreateUserRepositoryAuthResponse createUserRepositoryAuth(CreateUserRepositoryAuthRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.createUserRepositoryAuth);
+    }
+
+    /**
+     * 创建镜像权限
+     * 创建镜像权限
+     *
+     * @param CreateUserRepositoryAuthRequest 请求对象
+     * @return SyncInvoker<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse>
+     */
+    public SyncInvoker<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse> createUserRepositoryAuthInvoker(CreateUserRepositoryAuthRequest request) {
+        return new SyncInvoker<CreateUserRepositoryAuthRequest, CreateUserRepositoryAuthResponse>(request, SwrMeta.createUserRepositoryAuth, hcClient);
     }
 
     /**
@@ -116,6 +205,17 @@ public class SwrClient {
     }
 
     /**
+     * 删除镜像自动同步任务
+     * 删除镜像自动同步任务
+     *
+     * @param DeleteImageSyncRepoRequest 请求对象
+     * @return SyncInvoker<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse>
+     */
+    public SyncInvoker<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse> deleteImageSyncRepoInvoker(DeleteImageSyncRepoRequest request) {
+        return new SyncInvoker<DeleteImageSyncRepoRequest, DeleteImageSyncRepoResponse>(request, SwrMeta.deleteImageSyncRepo, hcClient);
+    }
+
+    /**
      * 删除组织权限
      * 删除组织权限
      *
@@ -124,6 +224,17 @@ public class SwrClient {
      */
     public DeleteNamespaceAuthResponse deleteNamespaceAuth(DeleteNamespaceAuthRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.deleteNamespaceAuth);
+    }
+
+    /**
+     * 删除组织权限
+     * 删除组织权限
+     *
+     * @param DeleteNamespaceAuthRequest 请求对象
+     * @return SyncInvoker<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse>
+     */
+    public SyncInvoker<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse> deleteNamespaceAuthInvoker(DeleteNamespaceAuthRequest request) {
+        return new SyncInvoker<DeleteNamespaceAuthRequest, DeleteNamespaceAuthResponse>(request, SwrMeta.deleteNamespaceAuth, hcClient);
     }
 
     /**
@@ -138,6 +249,17 @@ public class SwrClient {
     }
 
     /**
+     * 删除组织
+     * 删除组织
+     *
+     * @param DeleteNamespacesRequest 请求对象
+     * @return SyncInvoker<DeleteNamespacesRequest, DeleteNamespacesResponse>
+     */
+    public SyncInvoker<DeleteNamespacesRequest, DeleteNamespacesResponse> deleteNamespacesInvoker(DeleteNamespacesRequest request) {
+        return new SyncInvoker<DeleteNamespacesRequest, DeleteNamespacesResponse>(request, SwrMeta.deleteNamespaces, hcClient);
+    }
+
+    /**
      * 删除组织下的镜像仓库
      * 删除组织下的镜像仓库。
      *
@@ -146,6 +268,17 @@ public class SwrClient {
      */
     public DeleteRepoResponse deleteRepo(DeleteRepoRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.deleteRepo);
+    }
+
+    /**
+     * 删除组织下的镜像仓库
+     * 删除组织下的镜像仓库。
+     *
+     * @param DeleteRepoRequest 请求对象
+     * @return SyncInvoker<DeleteRepoRequest, DeleteRepoResponse>
+     */
+    public SyncInvoker<DeleteRepoRequest, DeleteRepoResponse> deleteRepoInvoker(DeleteRepoRequest request) {
+        return new SyncInvoker<DeleteRepoRequest, DeleteRepoResponse>(request, SwrMeta.deleteRepo, hcClient);
     }
 
     /**
@@ -160,6 +293,17 @@ public class SwrClient {
     }
 
     /**
+     * 删除共享账号
+     * 删除共享账号
+     *
+     * @param DeleteRepoDomainsRequest 请求对象
+     * @return SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse>
+     */
+    public SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse> deleteRepoDomainsInvoker(DeleteRepoDomainsRequest request) {
+        return new SyncInvoker<DeleteRepoDomainsRequest, DeleteRepoDomainsResponse>(request, SwrMeta.deleteRepoDomains, hcClient);
+    }
+
+    /**
      * 删除指定tag的镜像
      * 删除镜像仓库中指定tag的镜像
      *
@@ -168,6 +312,17 @@ public class SwrClient {
      */
     public DeleteRepoTagResponse deleteRepoTag(DeleteRepoTagRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.deleteRepoTag);
+    }
+
+    /**
+     * 删除指定tag的镜像
+     * 删除镜像仓库中指定tag的镜像
+     *
+     * @param DeleteRepoTagRequest 请求对象
+     * @return SyncInvoker<DeleteRepoTagRequest, DeleteRepoTagResponse>
+     */
+    public SyncInvoker<DeleteRepoTagRequest, DeleteRepoTagResponse> deleteRepoTagInvoker(DeleteRepoTagRequest request) {
+        return new SyncInvoker<DeleteRepoTagRequest, DeleteRepoTagResponse>(request, SwrMeta.deleteRepoTag, hcClient);
     }
 
     /**
@@ -182,6 +337,17 @@ public class SwrClient {
     }
 
     /**
+     * 删除镜像老化规则
+     * 删除镜像老化规则
+     *
+     * @param DeleteRetentionRequest 请求对象
+     * @return SyncInvoker<DeleteRetentionRequest, DeleteRetentionResponse>
+     */
+    public SyncInvoker<DeleteRetentionRequest, DeleteRetentionResponse> deleteRetentionInvoker(DeleteRetentionRequest request) {
+        return new SyncInvoker<DeleteRetentionRequest, DeleteRetentionResponse>(request, SwrMeta.deleteRetention, hcClient);
+    }
+
+    /**
      * 删除触发器
      * 删除触发器
      *
@@ -190,6 +356,17 @@ public class SwrClient {
      */
     public DeleteTriggerResponse deleteTrigger(DeleteTriggerRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.deleteTrigger);
+    }
+
+    /**
+     * 删除触发器
+     * 删除触发器
+     *
+     * @param DeleteTriggerRequest 请求对象
+     * @return SyncInvoker<DeleteTriggerRequest, DeleteTriggerResponse>
+     */
+    public SyncInvoker<DeleteTriggerRequest, DeleteTriggerResponse> deleteTriggerInvoker(DeleteTriggerRequest request) {
+        return new SyncInvoker<DeleteTriggerRequest, DeleteTriggerResponse>(request, SwrMeta.deleteTrigger, hcClient);
     }
 
     /**
@@ -204,6 +381,17 @@ public class SwrClient {
     }
 
     /**
+     * 删除镜像权限
+     * 删除镜像权限
+     *
+     * @param DeleteUserRepositoryAuthRequest 请求对象
+     * @return SyncInvoker<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse>
+     */
+    public SyncInvoker<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse> deleteUserRepositoryAuthInvoker(DeleteUserRepositoryAuthRequest request) {
+        return new SyncInvoker<DeleteUserRepositoryAuthRequest, DeleteUserRepositoryAuthResponse>(request, SwrMeta.deleteUserRepositoryAuth, hcClient);
+    }
+
+    /**
      * 获取镜像自动同步任务列表
      * 获取镜像自动同步任务列表
      *
@@ -212,6 +400,17 @@ public class SwrClient {
      */
     public ListImageAutoSyncReposDetailsResponse listImageAutoSyncReposDetails(ListImageAutoSyncReposDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.listImageAutoSyncReposDetails);
+    }
+
+    /**
+     * 获取镜像自动同步任务列表
+     * 获取镜像自动同步任务列表
+     *
+     * @param ListImageAutoSyncReposDetailsRequest 请求对象
+     * @return SyncInvoker<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse>
+     */
+    public SyncInvoker<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse> listImageAutoSyncReposDetailsInvoker(ListImageAutoSyncReposDetailsRequest request) {
+        return new SyncInvoker<ListImageAutoSyncReposDetailsRequest, ListImageAutoSyncReposDetailsResponse>(request, SwrMeta.listImageAutoSyncReposDetails, hcClient);
     }
 
     /**
@@ -226,6 +425,17 @@ public class SwrClient {
     }
 
     /**
+     * 查询组织列表
+     * 查询组织列表
+     *
+     * @param ListNamespacesRequest 请求对象
+     * @return SyncInvoker<ListNamespacesRequest, ListNamespacesResponse>
+     */
+    public SyncInvoker<ListNamespacesRequest, ListNamespacesResponse> listNamespacesInvoker(ListNamespacesRequest request) {
+        return new SyncInvoker<ListNamespacesRequest, ListNamespacesResponse>(request, SwrMeta.listNamespaces, hcClient);
+    }
+
+    /**
      * 获取共享账号列表
      * 获取共享账号列表
      *
@@ -234,6 +444,17 @@ public class SwrClient {
      */
     public ListRepoDomainsResponse listRepoDomains(ListRepoDomainsRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.listRepoDomains);
+    }
+
+    /**
+     * 获取共享账号列表
+     * 获取共享账号列表
+     *
+     * @param ListRepoDomainsRequest 请求对象
+     * @return SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse>
+     */
+    public SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse> listRepoDomainsInvoker(ListRepoDomainsRequest request) {
+        return new SyncInvoker<ListRepoDomainsRequest, ListRepoDomainsResponse>(request, SwrMeta.listRepoDomains, hcClient);
     }
 
     /**
@@ -248,6 +469,17 @@ public class SwrClient {
     }
 
     /**
+     * 查询镜像tag列表
+     * 查询镜像tag列表
+     *
+     * @param ListRepositoryTagsRequest 请求对象
+     * @return SyncInvoker<ListRepositoryTagsRequest, ListRepositoryTagsResponse>
+     */
+    public SyncInvoker<ListRepositoryTagsRequest, ListRepositoryTagsResponse> listRepositoryTagsInvoker(ListRepositoryTagsRequest request) {
+        return new SyncInvoker<ListRepositoryTagsRequest, ListRepositoryTagsResponse>(request, SwrMeta.listRepositoryTags, hcClient);
+    }
+
+    /**
      * 获取镜像老化记录
      * 获取镜像老化记录
      *
@@ -256,6 +488,17 @@ public class SwrClient {
      */
     public ListRetentionHistoriesResponse listRetentionHistories(ListRetentionHistoriesRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.listRetentionHistories);
+    }
+
+    /**
+     * 获取镜像老化记录
+     * 获取镜像老化记录
+     *
+     * @param ListRetentionHistoriesRequest 请求对象
+     * @return SyncInvoker<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse>
+     */
+    public SyncInvoker<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse> listRetentionHistoriesInvoker(ListRetentionHistoriesRequest request) {
+        return new SyncInvoker<ListRetentionHistoriesRequest, ListRetentionHistoriesResponse>(request, SwrMeta.listRetentionHistories, hcClient);
     }
 
     /**
@@ -270,6 +513,17 @@ public class SwrClient {
     }
 
     /**
+     * 获取镜像老化规则列表
+     * 获取镜像老化规则列表
+     *
+     * @param ListRetentionsRequest 请求对象
+     * @return SyncInvoker<ListRetentionsRequest, ListRetentionsResponse>
+     */
+    public SyncInvoker<ListRetentionsRequest, ListRetentionsResponse> listRetentionsInvoker(ListRetentionsRequest request) {
+        return new SyncInvoker<ListRetentionsRequest, ListRetentionsResponse>(request, SwrMeta.listRetentions, hcClient);
+    }
+
+    /**
      * 获取镜像仓库下的触发器列表
      * 获取镜像仓库下的触发器列表
      *
@@ -278,6 +532,17 @@ public class SwrClient {
      */
     public ListTriggersDetailsResponse listTriggersDetails(ListTriggersDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.listTriggersDetails);
+    }
+
+    /**
+     * 获取镜像仓库下的触发器列表
+     * 获取镜像仓库下的触发器列表
+     *
+     * @param ListTriggersDetailsRequest 请求对象
+     * @return SyncInvoker<ListTriggersDetailsRequest, ListTriggersDetailsResponse>
+     */
+    public SyncInvoker<ListTriggersDetailsRequest, ListTriggersDetailsResponse> listTriggersDetailsInvoker(ListTriggersDetailsRequest request) {
+        return new SyncInvoker<ListTriggersDetailsRequest, ListTriggersDetailsResponse>(request, SwrMeta.listTriggersDetails, hcClient);
     }
 
     /**
@@ -292,6 +557,17 @@ public class SwrClient {
     }
 
     /**
+     * 判断共享账号是否存在
+     * 判断共享租户是否存在
+     *
+     * @param ShowAccessDomainRequest 请求对象
+     * @return SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse>
+     */
+    public SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse> showAccessDomainInvoker(ShowAccessDomainRequest request) {
+        return new SyncInvoker<ShowAccessDomainRequest, ShowAccessDomainResponse>(request, SwrMeta.showAccessDomain, hcClient);
+    }
+
+    /**
      * 获取组织详情
      * 获取组织详情
      *
@@ -300,6 +576,17 @@ public class SwrClient {
      */
     public ShowNamespaceResponse showNamespace(ShowNamespaceRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.showNamespace);
+    }
+
+    /**
+     * 获取组织详情
+     * 获取组织详情
+     *
+     * @param ShowNamespaceRequest 请求对象
+     * @return SyncInvoker<ShowNamespaceRequest, ShowNamespaceResponse>
+     */
+    public SyncInvoker<ShowNamespaceRequest, ShowNamespaceResponse> showNamespaceInvoker(ShowNamespaceRequest request) {
+        return new SyncInvoker<ShowNamespaceRequest, ShowNamespaceResponse>(request, SwrMeta.showNamespace, hcClient);
     }
 
     /**
@@ -314,6 +601,17 @@ public class SwrClient {
     }
 
     /**
+     * 查询组织权限
+     * 查询组织权限
+     *
+     * @param ShowNamespaceAuthRequest 请求对象
+     * @return SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse>
+     */
+    public SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse> showNamespaceAuthInvoker(ShowNamespaceAuthRequest request) {
+        return new SyncInvoker<ShowNamespaceAuthRequest, ShowNamespaceAuthResponse>(request, SwrMeta.showNamespaceAuth, hcClient);
+    }
+
+    /**
      * 查询镜像概要信息
      * 查询镜像概要信息
      *
@@ -322,6 +620,17 @@ public class SwrClient {
      */
     public ShowRepositoryResponse showRepository(ShowRepositoryRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.showRepository);
+    }
+
+    /**
+     * 查询镜像概要信息
+     * 查询镜像概要信息
+     *
+     * @param ShowRepositoryRequest 请求对象
+     * @return SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse>
+     */
+    public SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse> showRepositoryInvoker(ShowRepositoryRequest request) {
+        return new SyncInvoker<ShowRepositoryRequest, ShowRepositoryResponse>(request, SwrMeta.showRepository, hcClient);
     }
 
     /**
@@ -336,6 +645,17 @@ public class SwrClient {
     }
 
     /**
+     * 获取镜像老化规则记录
+     * 获取镜像老化规则记录
+     *
+     * @param ShowRetentionRequest 请求对象
+     * @return SyncInvoker<ShowRetentionRequest, ShowRetentionResponse>
+     */
+    public SyncInvoker<ShowRetentionRequest, ShowRetentionResponse> showRetentionInvoker(ShowRetentionRequest request) {
+        return new SyncInvoker<ShowRetentionRequest, ShowRetentionResponse>(request, SwrMeta.showRetention, hcClient);
+    }
+
+    /**
      * 获取触发器详情
      * 获取触发器详情
      *
@@ -344,6 +664,17 @@ public class SwrClient {
      */
     public ShowTriggerResponse showTrigger(ShowTriggerRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.showTrigger);
+    }
+
+    /**
+     * 获取触发器详情
+     * 获取触发器详情
+     *
+     * @param ShowTriggerRequest 请求对象
+     * @return SyncInvoker<ShowTriggerRequest, ShowTriggerResponse>
+     */
+    public SyncInvoker<ShowTriggerRequest, ShowTriggerResponse> showTriggerInvoker(ShowTriggerRequest request) {
+        return new SyncInvoker<ShowTriggerRequest, ShowTriggerResponse>(request, SwrMeta.showTrigger, hcClient);
     }
 
     /**
@@ -358,6 +689,17 @@ public class SwrClient {
     }
 
     /**
+     * 查询镜像权限
+     * 查询镜像权限
+     *
+     * @param ShowUserRepositoryAuthRequest 请求对象
+     * @return SyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse>
+     */
+    public SyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> showUserRepositoryAuthInvoker(ShowUserRepositoryAuthRequest request) {
+        return new SyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse>(request, SwrMeta.showUserRepositoryAuth, hcClient);
+    }
+
+    /**
      * 更新共享账号
      * 更新共享账号
      *
@@ -366,6 +708,17 @@ public class SwrClient {
      */
     public UpdateRepoDomainsResponse updateRepoDomains(UpdateRepoDomainsRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.updateRepoDomains);
+    }
+
+    /**
+     * 更新共享账号
+     * 更新共享账号
+     *
+     * @param UpdateRepoDomainsRequest 请求对象
+     * @return SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse>
+     */
+    public SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse> updateRepoDomainsInvoker(UpdateRepoDomainsRequest request) {
+        return new SyncInvoker<UpdateRepoDomainsRequest, UpdateRepoDomainsResponse>(request, SwrMeta.updateRepoDomains, hcClient);
     }
 
     /**
@@ -380,6 +733,17 @@ public class SwrClient {
     }
 
     /**
+     * 修改镜像老化规则
+     * 修改镜像老化规则
+     *
+     * @param UpdateRetentionRequest 请求对象
+     * @return SyncInvoker<UpdateRetentionRequest, UpdateRetentionResponse>
+     */
+    public SyncInvoker<UpdateRetentionRequest, UpdateRetentionResponse> updateRetentionInvoker(UpdateRetentionRequest request) {
+        return new SyncInvoker<UpdateRetentionRequest, UpdateRetentionResponse>(request, SwrMeta.updateRetention, hcClient);
+    }
+
+    /**
      * 更新触发器配置
      * 更新触发器配置
      *
@@ -388,6 +752,17 @@ public class SwrClient {
      */
     public UpdateTriggerResponse updateTrigger(UpdateTriggerRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.updateTrigger);
+    }
+
+    /**
+     * 更新触发器配置
+     * 更新触发器配置
+     *
+     * @param UpdateTriggerRequest 请求对象
+     * @return SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>
+     */
+    public SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse> updateTriggerInvoker(UpdateTriggerRequest request) {
+        return new SyncInvoker<UpdateTriggerRequest, UpdateTriggerResponse>(request, SwrMeta.updateTrigger, hcClient);
     }
 
     /**
@@ -402,6 +777,17 @@ public class SwrClient {
     }
 
     /**
+     * 更新镜像权限
+     * 更新镜像权限
+     *
+     * @param UpdateUserRepositoryAuthRequest 请求对象
+     * @return SyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse>
+     */
+    public SyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> updateUserRepositoryAuthInvoker(UpdateUserRepositoryAuthRequest request) {
+        return new SyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse>(request, SwrMeta.updateUserRepositoryAuth, hcClient);
+    }
+
+    /**
      * 查询指定API版本信息
      * 查询指定API版本信息
      *
@@ -410,6 +796,17 @@ public class SwrClient {
      */
     public ShowApiVersionResponse showApiVersion(ShowApiVersionRequest request) {
         return hcClient.syncInvokeHttp(request, SwrMeta.showApiVersion);
+    }
+
+    /**
+     * 查询指定API版本信息
+     * 查询指定API版本信息
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
+     */
+    public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(ShowApiVersionRequest request) {
+        return new SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, SwrMeta.showApiVersion, hcClient);
     }
 
 }
