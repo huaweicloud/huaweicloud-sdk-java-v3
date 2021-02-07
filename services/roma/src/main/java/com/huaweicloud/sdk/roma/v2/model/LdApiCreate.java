@@ -69,6 +69,11 @@ public class LdApiCreate  {
          */
         public static final ContentTypeEnum XML = new ContentTypeEnum("xml");
         
+        /**
+         * Enum STREAM for value: "stream"
+         */
+        public static final ContentTypeEnum STREAM = new ContentTypeEnum("stream");
+        
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,6 +81,7 @@ public class LdApiCreate  {
             Map<String, ContentTypeEnum> map = new HashMap<>();
             map.put("json", JSON);
             map.put("xml", XML);
+            map.put("stream", STREAM);
             return Collections.unmodifiableMap(map);
         }
 

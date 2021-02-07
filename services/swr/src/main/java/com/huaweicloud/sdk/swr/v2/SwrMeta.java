@@ -53,6 +53,56 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> createManualImageSyncRepo = genForcreateManualImageSyncRepo();
+
+    private static HttpRequestDef<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> genForcreateManualImageSyncRepo() {
+        // basic
+        HttpRequestDef.Builder<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateManualImageSyncRepoRequest.class, CreateManualImageSyncRepoResponse.class)
+                .withName("CreateManualImageSyncRepo")
+                .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getRepository, (req, v) -> {
+                req.setRepository(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateManualImageSyncRepoRequestBody.class,
+            f -> f.withMarshaller(CreateManualImageSyncRepoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(CreateManualImageSyncRepoResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(String.class)
+        );
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateNamespaceRequest, CreateNamespaceResponse> createNamespace = genForcreateNamespace();
 
     private static HttpRequestDef<CreateNamespaceRequest, CreateNamespaceResponse> genForcreateNamespace() {
@@ -104,6 +154,39 @@ public class SwrMeta {
             f -> f.withMarshaller(CreateNamespaceAuthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(UserAuth.class)
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRepoRequest, CreateRepoResponse> createRepo = genForcreateRepo();
+
+    private static HttpRequestDef<CreateRepoRequest, CreateRepoResponse> genForcreateRepo() {
+        // basic
+        HttpRequestDef.Builder<CreateRepoRequest, CreateRepoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRepoRequest.class, CreateRepoResponse.class)
+                .withName("CreateRepo")
+                .withUri("/v2/manage/namespaces/{namespace}/repos")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateRepoRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateRepoRequestBody.class,
+            f -> f.withMarshaller(CreateRepoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
@@ -746,6 +829,73 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListReposDetailsRequest, ListReposDetailsResponse> listReposDetails = genForlistReposDetails();
+
+    private static HttpRequestDef<ListReposDetailsRequest, ListReposDetailsResponse> genForlistReposDetails() {
+        // basic
+        HttpRequestDef.Builder<ListReposDetailsRequest, ListReposDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListReposDetailsRequest.class, ListReposDetailsResponse.class)
+                .withName("ListReposDetails")
+                .withUri("/v2/manage/repos")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListReposDetailsRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListReposDetailsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListReposDetailsRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            })
+        );
+        builder.withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListReposDetailsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListReposDetailsResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(ShowReposResp.class)
+        );
+
+        builder.withResponseField(
+            "Content-Range",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                ListReposDetailsResponse::getContentRange,
+                ListReposDetailsResponse::setContentRange)
+        );
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRepositoryTagsRequest, ListRepositoryTagsResponse> listRepositoryTags = genForlistRepositoryTags();
 
     private static HttpRequestDef<ListRepositoryTagsRequest, ListRepositoryTagsResponse> genForlistRepositoryTags() {
@@ -925,6 +1075,49 @@ public class SwrMeta {
             }).withInnerContainerType(Retention.class)
         );
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> listSharedReposDetails = genForlistSharedReposDetails();
+
+    private static HttpRequestDef<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> genForlistSharedReposDetails() {
+        // basic
+        HttpRequestDef.Builder<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSharedReposDetailsRequest.class, ListSharedReposDetailsResponse.class)
+                .withName("ListSharedReposDetails")
+                .withUri("/v2/manage/shared-repositories")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSharedReposDetailsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListSharedReposDetailsResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(ShowReposResp.class)
+        );
+
+        builder.withResponseField(
+            "Content-Range",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                ListSharedReposDetailsResponse::getContentRange,
+                ListSharedReposDetailsResponse::setContentRange)
+        );
         return builder.build();
     }
 
@@ -1135,6 +1328,56 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSyncJobRequest, ShowSyncJobResponse> showSyncJob = genForshowSyncJob();
+
+    private static HttpRequestDef<ShowSyncJobRequest, ShowSyncJobResponse> genForshowSyncJob() {
+        // basic
+        HttpRequestDef.Builder<ShowSyncJobRequest, ShowSyncJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSyncJobRequest.class, ShowSyncJobResponse.class)
+                .withName("ShowSyncJob")
+                .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSyncJobRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSyncJobRequest::getRepository, (req, v) -> {
+                req.setRepository(v);
+            })
+        );
+        builder.withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowSyncJobRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ShowSyncJobResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(SyncJob.class)
+        );
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTriggerRequest, ShowTriggerResponse> showTrigger = genForshowTrigger();
 
     private static HttpRequestDef<ShowTriggerRequest, ShowTriggerResponse> genForshowTrigger() {
@@ -1201,6 +1444,80 @@ public class SwrMeta {
             String.class,
             f -> f.withMarshaller(ShowUserRepositoryAuthRequest::getRepository, (req, v) -> {
                 req.setRepository(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> updateNamespaceAuth = genForupdateNamespaceAuth();
+
+    private static HttpRequestDef<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> genForupdateNamespaceAuth() {
+        // basic
+        HttpRequestDef.Builder<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateNamespaceAuthRequest.class, UpdateNamespaceAuthResponse.class)
+                .withName("UpdateNamespaceAuth")
+                .withUri("/v2/manage/namespaces/{namespace}/access")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateNamespaceAuthRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            List.class,
+            f -> f.withMarshaller(UpdateNamespaceAuthRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(UserAuth.class)
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRepoRequest, UpdateRepoResponse> updateRepo = genForupdateRepo();
+
+    private static HttpRequestDef<UpdateRepoRequest, UpdateRepoResponse> genForupdateRepo() {
+        // basic
+        HttpRequestDef.Builder<UpdateRepoRequest, UpdateRepoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateRepoRequest.class, UpdateRepoResponse.class)
+                .withName("UpdateRepo")
+                .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRepoRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            })
+        );
+        builder.withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRepoRequest::getRepository, (req, v) -> {
+                req.setRepository(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateRepoRequestBody.class,
+            f -> f.withMarshaller(UpdateRepoRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -1391,6 +1708,23 @@ public class SwrMeta {
                 req.setBody(v);
             }).withInnerContainerType(UserAuth.class)
         );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions = genForlistApiVersions();
+
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
+                .withName("ListApiVersions")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

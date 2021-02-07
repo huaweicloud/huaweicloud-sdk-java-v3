@@ -56,6 +56,12 @@ public class CreateAppConfigV2Response extends SdkResponse {
     
     private OffsetDateTime updateTime = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public CreateAppConfigV2Response withId(String id) {
         this.id = id;
         return this;
@@ -175,6 +181,26 @@ public class CreateAppConfigV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    public CreateAppConfigV2Response withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用配置描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -189,11 +215,12 @@ public class CreateAppConfigV2Response extends SdkResponse {
             Objects.equals(this.configType, createAppConfigV2Response.configType) &&
             Objects.equals(this.configName, createAppConfigV2Response.configName) &&
             Objects.equals(this.configValue, createAppConfigV2Response.configValue) &&
-            Objects.equals(this.updateTime, createAppConfigV2Response.updateTime);
+            Objects.equals(this.updateTime, createAppConfigV2Response.updateTime) &&
+            Objects.equals(this.description, createAppConfigV2Response.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, appId, configType, configName, configValue, updateTime);
+        return Objects.hash(id, appId, configType, configName, configValue, updateTime, description);
     }
     @Override
     public String toString() {
@@ -205,6 +232,7 @@ public class CreateAppConfigV2Response extends SdkResponse {
         sb.append("    configName: ").append(toIndentedString(configName)).append("\n");
         sb.append("    configValue: ").append(toIndentedString(configValue)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -48,6 +48,12 @@ public class RoutingRuleAction  {
     
     private ChannelDetail channelDetail = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="batch")
+    
+    private Boolean batch;
+
     public RoutingRuleAction withActionId(String actionId) {
         this.actionId = actionId;
         return this;
@@ -117,7 +123,7 @@ public class RoutingRuleAction  {
 
 
     /**
-     * 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 
+     * 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。 
      * @return channel
      */
     public String getChannel() {
@@ -154,6 +160,26 @@ public class RoutingRuleAction  {
     public void setChannelDetail(ChannelDetail channelDetail) {
         this.channelDetail = channelDetail;
     }
+
+    public RoutingRuleAction withBatch(Boolean batch) {
+        this.batch = batch;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否支持批量接收推送消息。
+     * @return batch
+     */
+    public Boolean getBatch() {
+        return batch;
+    }
+
+    public void setBatch(Boolean batch) {
+        this.batch = batch;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -167,11 +193,12 @@ public class RoutingRuleAction  {
             Objects.equals(this.ruleId, routingRuleAction.ruleId) &&
             Objects.equals(this.appId, routingRuleAction.appId) &&
             Objects.equals(this.channel, routingRuleAction.channel) &&
-            Objects.equals(this.channelDetail, routingRuleAction.channelDetail);
+            Objects.equals(this.channelDetail, routingRuleAction.channelDetail) &&
+            Objects.equals(this.batch, routingRuleAction.batch);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(actionId, ruleId, appId, channel, channelDetail);
+        return Objects.hash(actionId, ruleId, appId, channel, channelDetail, batch);
     }
     @Override
     public String toString() {
@@ -182,6 +209,7 @@ public class RoutingRuleAction  {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
         sb.append("    channelDetail: ").append(toIndentedString(channelDetail)).append("\n");
+        sb.append("    batch: ").append(toIndentedString(batch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

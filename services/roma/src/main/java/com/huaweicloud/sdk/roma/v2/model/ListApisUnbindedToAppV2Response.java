@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppAuthUnBindedApiResp;
+import com.huaweicloud.sdk.roma.v2.model.ApiOutline;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apis")
     
-    private List<AppAuthUnBindedApiResp> apis = null;
+    private List<ApiOutline> apis = null;
     
     public ListApisUnbindedToAppV2Response withSize(Integer size) {
         this.size = size;
@@ -81,13 +81,13 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListApisUnbindedToAppV2Response withApis(List<AppAuthUnBindedApiResp> apis) {
+    public ListApisUnbindedToAppV2Response withApis(List<ApiOutline> apis) {
         this.apis = apis;
         return this;
     }
 
     
-    public ListApisUnbindedToAppV2Response addApisItem(AppAuthUnBindedApiResp apisItem) {
+    public ListApisUnbindedToAppV2Response addApisItem(ApiOutline apisItem) {
         if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApisUnbindedToAppV2Response withApis(Consumer<List<AppAuthUnBindedApiResp>> apisSetter) {
+    public ListApisUnbindedToAppV2Response withApis(Consumer<List<ApiOutline>> apisSetter) {
         if(this.apis == null ){
             this.apis = new ArrayList<>();
         }
@@ -107,11 +107,11 @@ public class ListApisUnbindedToAppV2Response extends SdkResponse {
      * 本次返回的API列表
      * @return apis
      */
-    public List<AppAuthUnBindedApiResp> getApis() {
+    public List<ApiOutline> getApis() {
         return apis;
     }
 
-    public void setApis(List<AppAuthUnBindedApiResp> apis) {
+    public void setApis(List<ApiOutline> apis) {
         this.apis = apis;
     }
     @Override

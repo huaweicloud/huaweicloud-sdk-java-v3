@@ -20,6 +20,7 @@ public class ResetDeviceSecret  {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="secret")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
     
     private String secret;
 
@@ -58,7 +59,7 @@ public class ResetDeviceSecret  {
 
 
     /**
-     * 是否强制断开设备的连接，当前仅限长连接。
+     * 是否强制断开设备的连接，当前仅限长连接。默认值false。
      * @return forceDisconnect
      */
     public Boolean getForceDisconnect() {
@@ -88,7 +89,7 @@ public class ResetDeviceSecret  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResetDeviceSecret {\n");
-        sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
+        sb.append("    secret: ").append(toIndentedString("******")).append("\n");
         sb.append("    forceDisconnect: ").append(toIndentedString(forceDisconnect)).append("\n");
         sb.append("}");
         return sb.toString();

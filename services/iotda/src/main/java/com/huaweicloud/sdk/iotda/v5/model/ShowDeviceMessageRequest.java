@@ -25,6 +25,13 @@ public class ShowDeviceMessageRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Stage-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String stageAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -53,6 +60,26 @@ public class ShowDeviceMessageRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
+    }
+
+    public ShowDeviceMessageRequest withStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get stageAuthToken
+     * @return stageAuthToken
+     */
+    public String getStageAuthToken() {
+        return stageAuthToken;
+    }
+
+    public void setStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
     }
 
     public ShowDeviceMessageRequest withInstanceId(String instanceId) {
@@ -104,18 +131,20 @@ public class ShowDeviceMessageRequest  {
         }
         ShowDeviceMessageRequest showDeviceMessageRequest = (ShowDeviceMessageRequest) o;
         return Objects.equals(this.deviceId, showDeviceMessageRequest.deviceId) &&
+            Objects.equals(this.stageAuthToken, showDeviceMessageRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, showDeviceMessageRequest.instanceId) &&
             Objects.equals(this.messageId, showDeviceMessageRequest.messageId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, instanceId, messageId);
+        return Objects.hash(deviceId, stageAuthToken, instanceId, messageId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDeviceMessageRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
         sb.append("}");

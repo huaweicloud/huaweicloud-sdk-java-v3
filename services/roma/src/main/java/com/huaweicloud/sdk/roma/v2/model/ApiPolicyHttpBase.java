@@ -245,6 +245,12 @@ public class ApiPolicyHttpBase  {
     
     private Integer timeout;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enable_client_ssl")
+    
+    private Boolean enableClientSsl;
+
     public ApiPolicyHttpBase withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -334,7 +340,7 @@ public class ApiPolicyHttpBase  {
 
 
     /**
-     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改  单位：毫秒。
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -343,6 +349,26 @@ public class ApiPolicyHttpBase  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    public ApiPolicyHttpBase withEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启双向认证
+     * @return enableClientSsl
+     */
+    public Boolean getEnableClientSsl() {
+        return enableClientSsl;
+    }
+
+    public void setEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -357,11 +383,12 @@ public class ApiPolicyHttpBase  {
             Objects.equals(this.reqProtocol, apiPolicyHttpBase.reqProtocol) &&
             Objects.equals(this.reqMethod, apiPolicyHttpBase.reqMethod) &&
             Objects.equals(this.reqUri, apiPolicyHttpBase.reqUri) &&
-            Objects.equals(this.timeout, apiPolicyHttpBase.timeout);
+            Objects.equals(this.timeout, apiPolicyHttpBase.timeout) &&
+            Objects.equals(this.enableClientSsl, apiPolicyHttpBase.enableClientSsl);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout);
+        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, enableClientSsl);
     }
     @Override
     public String toString() {
@@ -372,6 +399,7 @@ public class ApiPolicyHttpBase  {
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

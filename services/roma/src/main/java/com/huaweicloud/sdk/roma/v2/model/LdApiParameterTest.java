@@ -50,7 +50,7 @@ public class LdApiParameterTest  {
 
 
     /**
-     * 参数名称： - 参数位于Headers、 Parameters时，用户自行定义，支持英文、数字、点、中划线，且需要英文开头，长度限制32字符。 - 当参数位于Body时候，参数以application/json、application/xml、application/text为名，但实际是以请求body里的键值对作为参数名和参数值，比如请求消息样例，参数名为application/json，参数值为{\\\"table\\\":\\\"apic01\\\",\\\"id\\\":\\\"1\\\"}，后端取table：apic01，id：1这两个键值对作为入参。 - 注意：定义参数不要重名，否则会覆盖掉，当Headers、 Parameters重复时候，Parameters会被覆盖，当Parameters和Body里的键值对重复时候，Parameters会被覆盖。 
+     * 参数名称： - 参数位于Headers、 Parameters时，用户自行定义，支持英文、数字、点、中划线，且需要英文开头，长度限制32字符。 - 参数位于Body时候，参数以application/json、application/xml、application/text为名，但实际是以请求body里的键值对作为参数名和参数值，比如请求消息样例，参数名为application/json，参数值为{\\\"table\\\":\\\"apic01\\\",\\\"id\\\":\\\"1\\\"}，后端取table：apic01，id：1这两个键值对作为入参。 - 注意：定义参数不要重名，否则会覆盖掉，当Headers、 Parameters重复时候，Parameters会被覆盖，当Parameters和Body里的键值对重复时候，Parameters会被覆盖。 
      * @return name
      */
     public String getName() {

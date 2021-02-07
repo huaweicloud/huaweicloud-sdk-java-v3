@@ -19,6 +19,20 @@ public class ListDevicesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Sp-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String spAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Stage-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String stageAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -88,6 +102,46 @@ public class ListDevicesRequest  {
     @JsonProperty(value="app_id")
     
     private String appId;
+
+    public ListDevicesRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get spAuthToken
+     * @return spAuthToken
+     */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+    }
+
+    public ListDevicesRequest withStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get stageAuthToken
+     * @return stageAuthToken
+     */
+    public String getStageAuthToken() {
+        return stageAuthToken;
+    }
+
+    public void setStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+    }
 
     public ListDevicesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -341,7 +395,9 @@ public class ListDevicesRequest  {
             return false;
         }
         ListDevicesRequest listDevicesRequest = (ListDevicesRequest) o;
-        return Objects.equals(this.instanceId, listDevicesRequest.instanceId) &&
+        return Objects.equals(this.spAuthToken, listDevicesRequest.spAuthToken) &&
+            Objects.equals(this.stageAuthToken, listDevicesRequest.stageAuthToken) &&
+            Objects.equals(this.instanceId, listDevicesRequest.instanceId) &&
             Objects.equals(this.productId, listDevicesRequest.productId) &&
             Objects.equals(this.gatewayId, listDevicesRequest.gatewayId) &&
             Objects.equals(this.isCascadeQuery, listDevicesRequest.isCascadeQuery) &&
@@ -356,12 +412,14 @@ public class ListDevicesRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, productId, gatewayId, isCascadeQuery, nodeId, deviceName, limit, marker, offset, startTime, endTime, appId);
+        return Objects.hash(spAuthToken, stageAuthToken, instanceId, productId, gatewayId, isCascadeQuery, nodeId, deviceName, limit, marker, offset, startTime, endTime, appId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDevicesRequest {\n");
+        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
+        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");

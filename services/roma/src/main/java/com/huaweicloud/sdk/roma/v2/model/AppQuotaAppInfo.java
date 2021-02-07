@@ -127,7 +127,7 @@ public class AppQuotaAppInfo  {
 
 
     /**
-     * 客户端应用状态。1：启用；2：禁用
+     * 客户端应用状态： - 1：启用 - 2：禁用
      * @return status
      */
     public Integer getStatus() {

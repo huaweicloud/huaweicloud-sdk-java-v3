@@ -32,7 +32,7 @@ public class DebugApiReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="header")
     
-    private Map<String, String> header = null;
+    private Map<String, List<String>> header = null;
         /**
      * API的请求方法
      */
@@ -164,7 +164,7 @@ public class DebugApiReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="query")
     
-    private Map<String, String> query = null;
+    private Map<String, List<String>> query = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -216,14 +216,14 @@ public class DebugApiReq  {
         this.body = body;
     }
 
-    public DebugApiReq withHeader(Map<String, String> header) {
+    public DebugApiReq withHeader(Map<String, List<String>> header) {
         this.header = header;
         return this;
     }
 
     
 
-    public DebugApiReq putHeaderItem(String key, String headerItem) {
+    public DebugApiReq putHeaderItem(String key, List<String> headerItem) {
          if (this.header == null) {
             this.header = new HashMap<>();
          }
@@ -231,7 +231,7 @@ public class DebugApiReq  {
         return this;
     }
 
-    public DebugApiReq withHeader(Consumer<Map<String, String>> headerSetter) {
+    public DebugApiReq withHeader(Consumer<Map<String, List<String>>> headerSetter) {
         if(this.header == null ){
             this.header = new HashMap<>();
         }
@@ -242,11 +242,11 @@ public class DebugApiReq  {
      * 头域参数，每个参数值为字符串数组，每个参数名称有如下约束： - 英文字母、数字、点、中连线组成 - 必须以英文字母开头，最长32字节 - 不支持以\"X-Apig-\"或\"X-Sdk-\"开头，不区分大小写 - 不支持取值为\"X-Stage\"，不区分大小写 - mode为MARKET或CONSUMER时，不支持取值为\"X-Auth-Token\"和\"Authorization\"，不区分大小写 > 头域名称在使用前会被规范化，如：\"x-MY-hEaDer\"会被规范化为\"X-My-Header\"
      * @return header
      */
-    public Map<String, String> getHeader() {
+    public Map<String, List<String>> getHeader() {
         return header;
     }
 
-    public void setHeader(Map<String, String> header) {
+    public void setHeader(Map<String, List<String>> header) {
         this.header = header;
     }
 
@@ -310,14 +310,14 @@ public class DebugApiReq  {
         this.path = path;
     }
 
-    public DebugApiReq withQuery(Map<String, String> query) {
+    public DebugApiReq withQuery(Map<String, List<String>> query) {
         this.query = query;
         return this;
     }
 
     
 
-    public DebugApiReq putQueryItem(String key, String queryItem) {
+    public DebugApiReq putQueryItem(String key, List<String> queryItem) {
          if (this.query == null) {
             this.query = new HashMap<>();
          }
@@ -325,7 +325,7 @@ public class DebugApiReq  {
         return this;
     }
 
-    public DebugApiReq withQuery(Consumer<Map<String, String>> querySetter) {
+    public DebugApiReq withQuery(Consumer<Map<String, List<String>>> querySetter) {
         if(this.query == null ){
             this.query = new HashMap<>();
         }
@@ -336,11 +336,11 @@ public class DebugApiReq  {
      * 查询参数，每个参数值为字符串数组，每个参数名称有如下约束： - 英文字母、数字、点、下划线、中连线组成 - 必须以英文字母开头，最长32字节 - 不支持以\"X-Apig-\"或\"X-Sdk-\"开头，不区分大小写 - 不支持取值为\"X-Stage\"，不区分大小写
      * @return query
      */
-    public Map<String, String> getQuery() {
+    public Map<String, List<String>> getQuery() {
         return query;
     }
 
-    public void setQuery(Map<String, String> query) {
+    public void setQuery(Map<String, List<String>> query) {
         this.query = query;
     }
 

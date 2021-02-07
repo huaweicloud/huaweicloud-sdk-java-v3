@@ -31,6 +31,12 @@ public class ListRulesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="rule_type")
+    
+    private String ruleType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit")
     
     private Integer limit = 10;
@@ -85,6 +91,26 @@ public class ListRulesRequest  {
 
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public ListRulesRequest withRuleType(String ruleType) {
+        this.ruleType = ruleType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get ruleType
+     * @return ruleType
+     */
+    public String getRuleType() {
+        return ruleType;
+    }
+
+    public void setRuleType(String ruleType) {
+        this.ruleType = ruleType;
     }
 
     public ListRulesRequest withLimit(Integer limit) {
@@ -161,13 +187,14 @@ public class ListRulesRequest  {
         ListRulesRequest listRulesRequest = (ListRulesRequest) o;
         return Objects.equals(this.instanceId, listRulesRequest.instanceId) &&
             Objects.equals(this.appId, listRulesRequest.appId) &&
+            Objects.equals(this.ruleType, listRulesRequest.ruleType) &&
             Objects.equals(this.limit, listRulesRequest.limit) &&
             Objects.equals(this.marker, listRulesRequest.marker) &&
             Objects.equals(this.offset, listRulesRequest.offset);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appId, limit, marker, offset);
+        return Objects.hash(instanceId, appId, ruleType, limit, marker, offset);
     }
     @Override
     public String toString() {
@@ -175,6 +202,7 @@ public class ListRulesRequest  {
         sb.append("class ListRulesRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

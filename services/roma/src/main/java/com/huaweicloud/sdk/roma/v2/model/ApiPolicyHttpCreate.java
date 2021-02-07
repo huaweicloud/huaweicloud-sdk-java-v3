@@ -255,6 +255,12 @@ public class ApiPolicyHttpCreate  {
     @JsonProperty(value="timeout")
     
     private Integer timeout;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enable_client_ssl")
+    
+    private Boolean enableClientSsl;
     /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
@@ -543,7 +549,7 @@ public class ApiPolicyHttpCreate  {
 
 
     /**
-     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改  单位：毫秒。
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -552,6 +558,26 @@ public class ApiPolicyHttpCreate  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    public ApiPolicyHttpCreate withEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启双向认证
+     * @return enableClientSsl
+     */
+    public Boolean getEnableClientSsl() {
+        return enableClientSsl;
+    }
+
+    public void setEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
     }
 
     public ApiPolicyHttpCreate withEffectMode(EffectModeEnum effectMode) {
@@ -739,6 +765,7 @@ public class ApiPolicyHttpCreate  {
             Objects.equals(this.reqMethod, apiPolicyHttpCreate.reqMethod) &&
             Objects.equals(this.reqUri, apiPolicyHttpCreate.reqUri) &&
             Objects.equals(this.timeout, apiPolicyHttpCreate.timeout) &&
+            Objects.equals(this.enableClientSsl, apiPolicyHttpCreate.enableClientSsl) &&
             Objects.equals(this.effectMode, apiPolicyHttpCreate.effectMode) &&
             Objects.equals(this.name, apiPolicyHttpCreate.name) &&
             Objects.equals(this.backendParams, apiPolicyHttpCreate.backendParams) &&
@@ -749,7 +776,7 @@ public class ApiPolicyHttpCreate  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, effectMode, name, backendParams, conditions, authorizerId, vpcChannelInfo, vpcChannelStatus);
+        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, enableClientSsl, effectMode, name, backendParams, conditions, authorizerId, vpcChannelInfo, vpcChannelStatus);
     }
     @Override
     public String toString() {
@@ -760,6 +787,7 @@ public class ApiPolicyHttpCreate  {
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");

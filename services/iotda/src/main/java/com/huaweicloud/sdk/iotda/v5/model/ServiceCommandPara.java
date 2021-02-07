@@ -27,15 +27,15 @@ public class ServiceCommandPara  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="required")
-    
-    private Boolean required = false;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_type")
     
     private String dataType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="required")
+    
+    private Boolean required = false;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,26 +99,6 @@ public class ServiceCommandPara  {
         this.paraName = paraName;
     }
 
-    public ServiceCommandPara withRequired(Boolean required) {
-        this.required = required;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 参数是否必选。默认为false。
-     * @return required
-     */
-    public Boolean getRequired() {
-        return required;
-    }
-
-    public void setRequired(Boolean required) {
-        this.required = required;
-    }
-
     public ServiceCommandPara withDataType(String dataType) {
         this.dataType = dataType;
         return this;
@@ -137,6 +117,26 @@ public class ServiceCommandPara  {
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public ServiceCommandPara withRequired(Boolean required) {
+        this.required = required;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 参数是否必选。默认为false。
+     * @return required
+     */
+    public Boolean getRequired() {
+        return required;
+    }
+
+    public void setRequired(Boolean required) {
+        this.required = required;
     }
 
     public ServiceCommandPara withEnumList(List<String> enumList) {
@@ -302,8 +302,8 @@ public class ServiceCommandPara  {
         }
         ServiceCommandPara serviceCommandPara = (ServiceCommandPara) o;
         return Objects.equals(this.paraName, serviceCommandPara.paraName) &&
-            Objects.equals(this.required, serviceCommandPara.required) &&
             Objects.equals(this.dataType, serviceCommandPara.dataType) &&
+            Objects.equals(this.required, serviceCommandPara.required) &&
             Objects.equals(this.enumList, serviceCommandPara.enumList) &&
             Objects.equals(this.min, serviceCommandPara.min) &&
             Objects.equals(this.max, serviceCommandPara.max) &&
@@ -314,15 +314,15 @@ public class ServiceCommandPara  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(paraName, required, dataType, enumList, min, max, maxLength, step, unit, description);
+        return Objects.hash(paraName, dataType, required, enumList, min, max, maxLength, step, unit, description);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServiceCommandPara {\n");
         sb.append("    paraName: ").append(toIndentedString(paraName)).append("\n");
-        sb.append("    required: ").append(toIndentedString(required)).append("\n");
         sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
+        sb.append("    required: ").append(toIndentedString(required)).append("\n");
         sb.append("    enumList: ").append(toIndentedString(enumList)).append("\n");
         sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("    max: ").append(toIndentedString(max)).append("\n");

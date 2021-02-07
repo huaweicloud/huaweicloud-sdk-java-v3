@@ -270,7 +270,7 @@ public class BackendParamBase  {
 
 
     /**
-     * 描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * 描述。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {

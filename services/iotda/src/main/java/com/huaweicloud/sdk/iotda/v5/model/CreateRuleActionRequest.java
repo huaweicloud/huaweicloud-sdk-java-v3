@@ -33,6 +33,12 @@ public class CreateRuleActionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="x-LB-Service")
+    
+    private String xLBService = "L7Adapt4Out";
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private AddActionReq body = null;
@@ -77,6 +83,28 @@ public class CreateRuleActionRequest  {
         this.instanceId = instanceId;
     }
 
+    public CreateRuleActionRequest withXLBService(String xLBService) {
+        this.xLBService = xLBService;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get xLBService
+     * @return xLBService
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="x-LB-Service")
+    public String getXLBService() {
+        return xLBService;
+    }
+
+    public void setXLBService(String xLBService) {
+        this.xLBService = xLBService;
+    }
+
     public CreateRuleActionRequest withBody(AddActionReq body) {
         this.body = body;
         return this;
@@ -114,11 +142,12 @@ public class CreateRuleActionRequest  {
         CreateRuleActionRequest createRuleActionRequest = (CreateRuleActionRequest) o;
         return Objects.equals(this.stageAuthToken, createRuleActionRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, createRuleActionRequest.instanceId) &&
+            Objects.equals(this.xLBService, createRuleActionRequest.xLBService) &&
             Objects.equals(this.body, createRuleActionRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, body);
+        return Objects.hash(stageAuthToken, instanceId, xLBService, body);
     }
     @Override
     public String toString() {
@@ -126,6 +155,7 @@ public class CreateRuleActionRequest  {
         sb.append("class CreateRuleActionRequest {\n");
         sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    xLBService: ").append(toIndentedString(xLBService)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

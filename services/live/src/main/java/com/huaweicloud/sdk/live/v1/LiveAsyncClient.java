@@ -20,6 +20,50 @@ public class LiveAsyncClient {
 
 
     /**
+     * 创建直播域名
+     * 可单独创建直播播放域名或推流域名，每个租户最多可配置64条域名记录。 
+     *
+     * @param CreateDomainRequest 请求对象
+     * @return CompletableFuture<CreateDomainResponse>
+     */
+    public CompletableFuture<CreateDomainResponse> createDomainAsync(CreateDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createDomain);
+    }
+
+    /**
+     * 创建直播域名
+     * 可单独创建直播播放域名或推流域名，每个租户最多可配置64条域名记录。 
+     *
+     * @param CreateDomainRequest 请求对象
+     * @return AsyncInvoker<CreateDomainRequest, CreateDomainResponse>
+     */
+    public AsyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainAsyncInvoker(CreateDomainRequest request) {
+        return new AsyncInvoker<CreateDomainRequest, CreateDomainResponse>(request, LiveMeta.createDomain, hcClient);
+    }
+
+    /**
+     * 域名映射
+     * 将用户已创建的播放域名和推流域名建立域名映射关系
+     *
+     * @param CreateDomainMappingRequest 请求对象
+     * @return CompletableFuture<CreateDomainMappingResponse>
+     */
+    public CompletableFuture<CreateDomainMappingResponse> createDomainMappingAsync(CreateDomainMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createDomainMapping);
+    }
+
+    /**
+     * 域名映射
+     * 将用户已创建的播放域名和推流域名建立域名映射关系
+     *
+     * @param CreateDomainMappingRequest 请求对象
+     * @return AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse>
+     */
+    public AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse> createDomainMappingAsyncInvoker(CreateDomainMappingRequest request) {
+        return new AsyncInvoker<CreateDomainMappingRequest, CreateDomainMappingResponse>(request, LiveMeta.createDomainMapping, hcClient);
+    }
+
+    /**
      * 创建录制配置
      * 创建录制配置接口
      *
@@ -86,6 +130,50 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 删除直播域名
+     * 删除域名。只有在域名停用（off）状态时才能删除。
+     *
+     * @param DeleteDomainRequest 请求对象
+     * @return CompletableFuture<DeleteDomainResponse>
+     */
+    public CompletableFuture<DeleteDomainResponse> deleteDomainAsync(DeleteDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteDomain);
+    }
+
+    /**
+     * 删除直播域名
+     * 删除域名。只有在域名停用（off）状态时才能删除。
+     *
+     * @param DeleteDomainRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
+     */
+    public AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainAsyncInvoker(DeleteDomainRequest request) {
+        return new AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>(request, LiveMeta.deleteDomain, hcClient);
+    }
+
+    /**
+     * 删除直播域名映射关系
+     * 将播放域名和推流域名的域名映射关系删除
+     *
+     * @param DeleteDomainMappingRequest 请求对象
+     * @return CompletableFuture<DeleteDomainMappingResponse>
+     */
+    public CompletableFuture<DeleteDomainMappingResponse> deleteDomainMappingAsync(DeleteDomainMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteDomainMapping);
+    }
+
+    /**
+     * 删除直播域名映射关系
+     * 将播放域名和推流域名的域名映射关系删除
+     *
+     * @param DeleteDomainMappingRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse>
+     */
+    public AsyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse> deleteDomainMappingAsyncInvoker(DeleteDomainMappingRequest request) {
+        return new AsyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse>(request, LiveMeta.deleteDomainMapping, hcClient);
+    }
+
+    /**
      * 删除录制配置
      * 删除录制配置接口
      *
@@ -149,6 +237,28 @@ public class LiveAsyncClient {
      */
     public AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse> deleteTranscodingsTemplateAsyncInvoker(DeleteTranscodingsTemplateRequest request) {
         return new AsyncInvoker<DeleteTranscodingsTemplateRequest, DeleteTranscodingsTemplateResponse>(request, LiveMeta.deleteTranscodingsTemplate, hcClient);
+    }
+
+    /**
+     * 获取直播播放日志
+     * 获取直播播放日志，基于域名以5分钟粒度进行打包，日志内容以 \&quot;|\&quot; 进行分隔。 
+     *
+     * @param ListLiveSampleLogsRequest 请求对象
+     * @return CompletableFuture<ListLiveSampleLogsResponse>
+     */
+    public CompletableFuture<ListLiveSampleLogsResponse> listLiveSampleLogsAsync(ListLiveSampleLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listLiveSampleLogs);
+    }
+
+    /**
+     * 获取直播播放日志
+     * 获取直播播放日志，基于域名以5分钟粒度进行打包，日志内容以 \&quot;|\&quot; 进行分隔。 
+     *
+     * @param ListLiveSampleLogsRequest 请求对象
+     * @return AsyncInvoker<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse>
+     */
+    public AsyncInvoker<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> listLiveSampleLogsAsyncInvoker(ListLiveSampleLogsRequest request) {
+        return new AsyncInvoker<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse>(request, LiveMeta.listLiveSampleLogs, hcClient);
     }
 
     /**
@@ -240,6 +350,28 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 查询直播域名
+     * 查询直播域名
+     *
+     * @param ShowDomainRequest 请求对象
+     * @return CompletableFuture<ShowDomainResponse>
+     */
+    public CompletableFuture<ShowDomainResponse> showDomainAsync(ShowDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showDomain);
+    }
+
+    /**
+     * 查询直播域名
+     * 查询直播域名
+     *
+     * @param ShowDomainRequest 请求对象
+     * @return AsyncInvoker<ShowDomainRequest, ShowDomainResponse>
+     */
+    public AsyncInvoker<ShowDomainRequest, ShowDomainResponse> showDomainAsyncInvoker(ShowDomainRequest request) {
+        return new AsyncInvoker<ShowDomainRequest, ShowDomainResponse>(request, LiveMeta.showDomain, hcClient);
+    }
+
+    /**
      * 查询直播播放在线人数
      * 查询加速的直播播放在线人数
      *
@@ -303,6 +435,28 @@ public class LiveAsyncClient {
      */
     public AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse> showTranscodingsTemplateAsyncInvoker(ShowTranscodingsTemplateRequest request) {
         return new AsyncInvoker<ShowTranscodingsTemplateRequest, ShowTranscodingsTemplateResponse>(request, LiveMeta.showTranscodingsTemplate, hcClient);
+    }
+
+    /**
+     * 修改直播域名
+     * 修改直播播放、RTMP推流加速域名相关信息
+     *
+     * @param UpdateDomainRequest 请求对象
+     * @return CompletableFuture<UpdateDomainResponse>
+     */
+    public CompletableFuture<UpdateDomainResponse> updateDomainAsync(UpdateDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateDomain);
+    }
+
+    /**
+     * 修改直播域名
+     * 修改直播播放、RTMP推流加速域名相关信息
+     *
+     * @param UpdateDomainRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse>
+     */
+    public AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse> updateDomainAsyncInvoker(UpdateDomainRequest request) {
+        return new AsyncInvoker<UpdateDomainRequest, UpdateDomainResponse>(request, LiveMeta.updateDomain, hcClient);
     }
 
     /**

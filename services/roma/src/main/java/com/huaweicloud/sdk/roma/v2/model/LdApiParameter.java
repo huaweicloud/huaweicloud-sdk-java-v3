@@ -33,28 +33,22 @@ public class LdApiParameter  {
 
         
         /**
-         * Enum PATH for value: "path"
+         * Enum HEADERS for value: "Headers"
          */
-        public static final InEnum PATH = new InEnum("path");
+        public static final InEnum HEADERS = new InEnum("Headers");
         
         /**
-         * Enum HEADER for value: "header"
+         * Enum PARAMETERS for value: "Parameters"
          */
-        public static final InEnum HEADER = new InEnum("header");
-        
-        /**
-         * Enum QUERY for value: "query"
-         */
-        public static final InEnum QUERY = new InEnum("query");
+        public static final InEnum PARAMETERS = new InEnum("Parameters");
         
 
         private static final Map<String, InEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, InEnum> createStaticFields() {
             Map<String, InEnum> map = new HashMap<>();
-            map.put("path", PATH);
-            map.put("header", HEADER);
-            map.put("query", QUERY);
+            map.put("Headers", HEADERS);
+            map.put("Parameters", PARAMETERS);
             return Collections.unmodifiableMap(map);
         }
 

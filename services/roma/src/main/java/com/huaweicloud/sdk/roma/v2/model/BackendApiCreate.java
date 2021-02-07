@@ -279,7 +279,7 @@ public class BackendApiCreate  {
     
     private ApiBackendVpcReq vpcChannelInfo = null;
     /**
-     * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
+     * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      */
     public static final class VpcChannelStatusEnum {
 
@@ -432,7 +432,7 @@ public class BackendApiCreate  {
 
 
     /**
-     * 描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * 描述。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {
@@ -512,7 +512,7 @@ public class BackendApiCreate  {
 
 
     /**
-     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改  单位：毫秒。
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -579,7 +579,7 @@ public class BackendApiCreate  {
 
 
     /**
-     * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
+     * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      * @return vpcChannelStatus
      */
     public VpcChannelStatusEnum getVpcChannelStatus() {

@@ -22,15 +22,35 @@ public class ServiceCommandResponse  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="response_name")
+    
+    private String responseName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="paras")
     
     private List<ServiceCommandPara> paras = null;
     
+    public ServiceCommandResponse withResponseName(String responseName) {
+        this.responseName = responseName;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_name")
     
-    private String responseName;
+
+
+    /**
+     * 设备命令响应名称。
+     * @return responseName
+     */
+    public String getResponseName() {
+        return responseName;
+    }
+
+    public void setResponseName(String responseName) {
+        this.responseName = responseName;
+    }
 
     public ServiceCommandResponse withParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
@@ -65,26 +85,6 @@ public class ServiceCommandResponse  {
     public void setParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
     }
-
-    public ServiceCommandResponse withResponseName(String responseName) {
-        this.responseName = responseName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 设备命令响应名称。
-     * @return responseName
-     */
-    public String getResponseName() {
-        return responseName;
-    }
-
-    public void setResponseName(String responseName) {
-        this.responseName = responseName;
-    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,19 +94,19 @@ public class ServiceCommandResponse  {
             return false;
         }
         ServiceCommandResponse serviceCommandResponse = (ServiceCommandResponse) o;
-        return Objects.equals(this.paras, serviceCommandResponse.paras) &&
-            Objects.equals(this.responseName, serviceCommandResponse.responseName);
+        return Objects.equals(this.responseName, serviceCommandResponse.responseName) &&
+            Objects.equals(this.paras, serviceCommandResponse.paras);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(paras, responseName);
+        return Objects.hash(responseName, paras);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServiceCommandResponse {\n");
-        sb.append("    paras: ").append(toIndentedString(paras)).append("\n");
         sb.append("    responseName: ").append(toIndentedString(responseName)).append("\n");
+        sb.append("    paras: ").append(toIndentedString(paras)).append("\n");
         sb.append("}");
         return sb.toString();
     }

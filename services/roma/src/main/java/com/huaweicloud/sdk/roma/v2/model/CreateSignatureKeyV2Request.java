@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.SignatureReq;
+import com.huaweicloud.sdk.roma.v2.model.BaseSignature;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class CreateSignatureKeyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SignatureReq body = null;
+    private BaseSignature body = null;
 
     public CreateSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -50,14 +50,14 @@ public class CreateSignatureKeyV2Request  {
         this.instanceId = instanceId;
     }
 
-    public CreateSignatureKeyV2Request withBody(SignatureReq body) {
+    public CreateSignatureKeyV2Request withBody(BaseSignature body) {
         this.body = body;
         return this;
     }
 
-    public CreateSignatureKeyV2Request withBody(Consumer<SignatureReq> bodySetter) {
+    public CreateSignatureKeyV2Request withBody(Consumer<BaseSignature> bodySetter) {
         if(this.body == null ){
-            this.body = new SignatureReq();
+            this.body = new BaseSignature();
             bodySetter.accept(this.body);
         }
         
@@ -69,11 +69,11 @@ public class CreateSignatureKeyV2Request  {
      * Get body
      * @return body
      */
-    public SignatureReq getBody() {
+    public BaseSignature getBody() {
         return body;
     }
 
-    public void setBody(SignatureReq body) {
+    public void setBody(BaseSignature body) {
         this.body = body;
     }
     @Override

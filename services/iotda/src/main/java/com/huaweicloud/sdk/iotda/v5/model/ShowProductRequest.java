@@ -19,6 +19,20 @@ public class ShowProductRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Sp-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String spAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Stage-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String stageAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -34,6 +48,46 @@ public class ShowProductRequest  {
     @JsonProperty(value="app_id")
     
     private String appId;
+
+    public ShowProductRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get spAuthToken
+     * @return spAuthToken
+     */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+    }
+
+    public ShowProductRequest withStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get stageAuthToken
+     * @return stageAuthToken
+     */
+    public String getStageAuthToken() {
+        return stageAuthToken;
+    }
+
+    public void setStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+    }
 
     public ShowProductRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -103,18 +157,22 @@ public class ShowProductRequest  {
             return false;
         }
         ShowProductRequest showProductRequest = (ShowProductRequest) o;
-        return Objects.equals(this.instanceId, showProductRequest.instanceId) &&
+        return Objects.equals(this.spAuthToken, showProductRequest.spAuthToken) &&
+            Objects.equals(this.stageAuthToken, showProductRequest.stageAuthToken) &&
+            Objects.equals(this.instanceId, showProductRequest.instanceId) &&
             Objects.equals(this.productId, showProductRequest.productId) &&
             Objects.equals(this.appId, showProductRequest.appId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, productId, appId);
+        return Objects.hash(spAuthToken, stageAuthToken, instanceId, productId, appId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowProductRequest {\n");
+        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
+        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

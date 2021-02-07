@@ -1143,7 +1143,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除环境
-     * 删除指定的环境。 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。
+     * 删除指定的环境。 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。环境上存在已发布的API时，该环境不能被删除。
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return CompletableFuture<DeleteEnvironmentV2Response>
@@ -1154,7 +1154,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除环境
-     * 删除指定的环境。 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。
+     * 删除指定的环境。 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。环境上存在已发布的API时，该环境不能被删除。
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return AsyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
@@ -1341,7 +1341,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除流控策略
-     * 删除指定的流控策略,以及该流控策略与API的所有绑定关系。
+     * 删除指定的流控策略。当该流控策略绑定了API时，需要先解除流控策略与API的所有绑定关系后再删除。
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return CompletableFuture<DeleteRequestThrottlingPolicyV2Response>
@@ -1352,7 +1352,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除流控策略
-     * 删除指定的流控策略,以及该流控策略与API的所有绑定关系。
+     * 删除指定的流控策略。当该流控策略绑定了API时，需要先解除流控策略与API的所有绑定关系后再删除。
      *
      * @param DeleteRequestThrottlingPolicyV2Request 请求对象
      * @return AsyncInvoker<DeleteRequestThrottlingPolicyV2Request, DeleteRequestThrottlingPolicyV2Response>
@@ -1429,7 +1429,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除签名密钥
-     * 删除指定的签名密钥,删除签名密钥时，其配置的绑定关系会一并删除，相应的签名密钥会失效。
+     * 删除指定的签名密钥。签名密钥绑定了API时无法删除，需要先解除与API的绑定关系后删除。
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return CompletableFuture<DeleteSignatureKeyV2Response>
@@ -1440,7 +1440,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除签名密钥
-     * 删除指定的签名密钥,删除签名密钥时，其配置的绑定关系会一并删除，相应的签名密钥会失效。
+     * 删除指定的签名密钥。签名密钥绑定了API时无法删除，需要先解除与API的绑定关系后删除。
      *
      * @param DeleteSignatureKeyV2Request 请求对象
      * @return AsyncInvoker<DeleteSignatureKeyV2Request, DeleteSignatureKeyV2Response>
@@ -1799,28 +1799,6 @@ public class RomaAsyncClient {
      */
     public AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotasAsyncInvoker(ListAppQuotasRequest request) {
         return new AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>(request, RomaMeta.listAppQuotas, hcClient);
-    }
-
-    /**
-     * 不同调用应用请求的指标统计值TopN
-     * 查询统计时长内所有、某个集成应用或者某个API被不同调用应用请求的指标统计值TopN。
-     *
-     * @param ListAppUsagesTopNRequest 请求对象
-     * @return CompletableFuture<ListAppUsagesTopNResponse>
-     */
-    public CompletableFuture<ListAppUsagesTopNResponse> listAppUsagesTopNAsync(ListAppUsagesTopNRequest request) {
-        return hcClient.asyncInvokeHttp(request, RomaMeta.listAppUsagesTopN);
-    }
-
-    /**
-     * 不同调用应用请求的指标统计值TopN
-     * 查询统计时长内所有、某个集成应用或者某个API被不同调用应用请求的指标统计值TopN。
-     *
-     * @param ListAppUsagesTopNRequest 请求对象
-     * @return AsyncInvoker<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse>
-     */
-    public AsyncInvoker<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> listAppUsagesTopNAsyncInvoker(ListAppUsagesTopNRequest request) {
-        return new AsyncInvoker<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse>(request, RomaMeta.listAppUsagesTopN, hcClient);
     }
 
     /**
@@ -2396,28 +2374,6 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 查询所有集成应用的指标统计值TopN
-     * 查询统计时长内所有集成应用的指标统计值TopN，要求主账号权限。
-     *
-     * @param ListRomaAppUsagesTopNRequest 请求对象
-     * @return CompletableFuture<ListRomaAppUsagesTopNResponse>
-     */
-    public CompletableFuture<ListRomaAppUsagesTopNResponse> listRomaAppUsagesTopNAsync(ListRomaAppUsagesTopNRequest request) {
-        return hcClient.asyncInvokeHttp(request, RomaMeta.listRomaAppUsagesTopN);
-    }
-
-    /**
-     * 查询所有集成应用的指标统计值TopN
-     * 查询统计时长内所有集成应用的指标统计值TopN，要求主账号权限。
-     *
-     * @param ListRomaAppUsagesTopNRequest 请求对象
-     * @return AsyncInvoker<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse>
-     */
-    public AsyncInvoker<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> listRomaAppUsagesTopNAsyncInvoker(ListRomaAppUsagesTopNRequest request) {
-        return new AsyncInvoker<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse>(request, RomaMeta.listRomaAppUsagesTopN, hcClient);
-    }
-
-    /**
      * 查询规则
      * 查询规则
      *
@@ -2591,50 +2547,6 @@ public class RomaAsyncClient {
      */
     public AsyncInvoker<ListStatisticsApiRequest, ListStatisticsApiResponse> listStatisticsApiAsyncInvoker(ListStatisticsApiRequest request) {
         return new AsyncInvoker<ListStatisticsApiRequest, ListStatisticsApiResponse>(request, RomaMeta.listStatisticsApi, hcClient);
-    }
-
-    /**
-     * 按照集成应用维度查询调用应用指标统计值
-     * 根据传入的当前时间和查询维度类型，查询统计时长内的某个应用请求不同API产品的指标统计值
-     *
-     * @param ListStatisticsConsumerAppForSplitRomaAppsRequest 请求对象
-     * @return CompletableFuture<ListStatisticsConsumerAppForSplitRomaAppsResponse>
-     */
-    public CompletableFuture<ListStatisticsConsumerAppForSplitRomaAppsResponse> listStatisticsConsumerAppForSplitRomaAppsAsync(ListStatisticsConsumerAppForSplitRomaAppsRequest request) {
-        return hcClient.asyncInvokeHttp(request, RomaMeta.listStatisticsConsumerAppForSplitRomaApps);
-    }
-
-    /**
-     * 按照集成应用维度查询调用应用指标统计值
-     * 根据传入的当前时间和查询维度类型，查询统计时长内的某个应用请求不同API产品的指标统计值
-     *
-     * @param ListStatisticsConsumerAppForSplitRomaAppsRequest 请求对象
-     * @return AsyncInvoker<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse>
-     */
-    public AsyncInvoker<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> listStatisticsConsumerAppForSplitRomaAppsAsyncInvoker(ListStatisticsConsumerAppForSplitRomaAppsRequest request) {
-        return new AsyncInvoker<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse>(request, RomaMeta.listStatisticsConsumerAppForSplitRomaApps, hcClient);
-    }
-
-    /**
-     * 查询应用请求的指标统计值
-     * 查询统计时长内所有或某个应用请求的指标统计值。
-     *
-     * @param ListStatisticsRomaAppRequest 请求对象
-     * @return CompletableFuture<ListStatisticsRomaAppResponse>
-     */
-    public CompletableFuture<ListStatisticsRomaAppResponse> listStatisticsRomaAppAsync(ListStatisticsRomaAppRequest request) {
-        return hcClient.asyncInvokeHttp(request, RomaMeta.listStatisticsRomaApp);
-    }
-
-    /**
-     * 查询应用请求的指标统计值
-     * 查询统计时长内所有或某个应用请求的指标统计值。
-     *
-     * @param ListStatisticsRomaAppRequest 请求对象
-     * @return AsyncInvoker<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse>
-     */
-    public AsyncInvoker<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> listStatisticsRomaAppAsyncInvoker(ListStatisticsRomaAppRequest request) {
-        return new AsyncInvoker<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse>(request, RomaMeta.listStatisticsRomaApp, hcClient);
     }
 
     /**
@@ -3405,28 +3317,6 @@ public class RomaAsyncClient {
      */
     public AsyncInvoker<ShowResponsePropertyRequest, ShowResponsePropertyResponse> showResponsePropertyAsyncInvoker(ShowResponsePropertyRequest request) {
         return new AsyncInvoker<ShowResponsePropertyRequest, ShowResponsePropertyResponse>(request, RomaMeta.showResponseProperty, hcClient);
-    }
-
-    /**
-     * 查看ROMA Connect实例约束信息
-     * 查看ROMA Connect实例约束信息
-     *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
-     * @return CompletableFuture<ShowRestrictionOfInstanceV2Response>
-     */
-    public CompletableFuture<ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Async(ShowRestrictionOfInstanceV2Request request) {
-        return hcClient.asyncInvokeHttp(request, RomaMeta.showRestrictionOfInstanceV2);
-    }
-
-    /**
-     * 查看ROMA Connect实例约束信息
-     * 查看ROMA Connect实例约束信息
-     *
-     * @param ShowRestrictionOfInstanceV2Request 请求对象
-     * @return AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>
-     */
-    public AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2AsyncInvoker(ShowRestrictionOfInstanceV2Request request) {
-        return new AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>(request, RomaMeta.showRestrictionOfInstanceV2, hcClient);
     }
 
     /**
@@ -4310,28 +4200,6 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 后端连通性检测接口
-     * 后端连通性检测接口
-     *
-     * @param CheckBackendConnectivityRequest 请求对象
-     * @return CompletableFuture<CheckBackendConnectivityResponse>
-     */
-    public CompletableFuture<CheckBackendConnectivityResponse> checkBackendConnectivityAsync(CheckBackendConnectivityRequest request) {
-        return hcClient.asyncInvokeHttp(request, RomaMeta.checkBackendConnectivity);
-    }
-
-    /**
-     * 后端连通性检测接口
-     * 后端连通性检测接口
-     *
-     * @param CheckBackendConnectivityRequest 请求对象
-     * @return AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse>
-     */
-    public AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivityAsyncInvoker(CheckBackendConnectivityRequest request) {
-        return new AsyncInvoker<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse>(request, RomaMeta.checkBackendConnectivity, hcClient);
-    }
-
-    /**
      * 创建API分组
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。 
      *
@@ -4421,7 +4289,7 @@ public class RomaAsyncClient {
 
     /**
      * 根据版本编号下线API
-     * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。  该接口供FunctionGraph服务使用。
+     * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return CompletableFuture<DeleteApiByVersionIdV2Response>
@@ -4432,7 +4300,7 @@ public class RomaAsyncClient {
 
     /**
      * 根据版本编号下线API
-     * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。  该接口供FunctionGraph服务使用。
+     * 对某个生效中的API版本进行下线操作，下线后，API在该版本生效的环境中将不再能够被调用。
      *
      * @param DeleteApiByVersionIdV2Request 请求对象
      * @return AsyncInvoker<DeleteApiByVersionIdV2Request, DeleteApiByVersionIdV2Response>
@@ -4443,7 +4311,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除API分组
-     * 删除指定的API分组。  删除时，会一并删除直接或间接关联到该分组下的所有资源，包括API、独立域名、SSL证书、上架信息、分组下所有API的授权信息、编排信息、白名单配置、认证增强信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
+     * 删除指定的API分组。 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return CompletableFuture<DeleteApiGroupV2Response>
@@ -4454,7 +4322,7 @@ public class RomaAsyncClient {
 
     /**
      * 删除API分组
-     * 删除指定的API分组。  删除时，会一并删除直接或间接关联到该分组下的所有资源，包括API、独立域名、SSL证书、上架信息、分组下所有API的授权信息、编排信息、白名单配置、认证增强信息等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
+     * 删除指定的API分组。 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      *
      * @param DeleteApiGroupV2Request 请求对象
      * @return AsyncInvoker<DeleteApiGroupV2Request, DeleteApiGroupV2Response>

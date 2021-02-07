@@ -1,7 +1,41 @@
+## 3.0.33-rc 2021-02-07
+## HuaweiCloud SDK IMS
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Interface `ListOsVersions` adjustment: change the data type of `os_bit` which is the property of response of the interface from string to integer.
+
+## HuaweiCloud SDK IoTDA
+- ### Features
+    - Support more interfaces: ListAsyncCommands, ListAsyncHistoryCommands, CreateAppCertificate, ListAppCertificates, ShowAppCertificate, UpdateAppCertificate, DeleteAppCertificate
+- ### Bug Fix
+    - None
+- ### Change
+    - SDK of interface `DeviceManagement` deprecated.(It's not supported any more in SDK, but you can also using it by customized coding using API.)
+
+## HuaweiCloud SDK Live
+- ### Features
+    - Support more interfaces: ListLiveSampleLogs, CreateDomain, DeleteDomain, UpdateDomain, ShowDomain, CreateDomainMapping, DeleteDomainMapping
+- ### Bug Fix
+    - None
+- ### Change
+    - None
+
+## HuaweiCloud SDK ROMA
+- ### Features
+    - None
+- ### Bug Fix
+    - None
+- ### Change
+    - Adjust response structure and name of response class of several interfaces.
+
+
 ## 3.0.32-rc 2021-01-30
 ## HuaweiCloud SDK Core
 - ### Features
-    - None
+    - Support to create project id in default region if there is no project id when using feature region management.
 - ### Bug Fix
     - None
 - ### Change

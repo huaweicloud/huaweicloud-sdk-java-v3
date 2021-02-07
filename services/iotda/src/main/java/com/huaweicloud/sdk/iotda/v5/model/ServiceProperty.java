@@ -27,15 +27,15 @@ public class ServiceProperty  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="required")
-    
-    private Boolean required = false;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="data_type")
     
     private String dataType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="required")
+    
+    private Boolean required = false;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,26 +111,6 @@ public class ServiceProperty  {
         this.propertyName = propertyName;
     }
 
-    public ServiceProperty withRequired(Boolean required) {
-        this.required = required;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 设备属性是否必选。默认为false。
-     * @return required
-     */
-    public Boolean getRequired() {
-        return required;
-    }
-
-    public void setRequired(Boolean required) {
-        this.required = required;
-    }
-
     public ServiceProperty withDataType(String dataType) {
         this.dataType = dataType;
         return this;
@@ -149,6 +129,26 @@ public class ServiceProperty  {
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
+    }
+
+    public ServiceProperty withRequired(Boolean required) {
+        this.required = required;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 设备属性是否必选。默认为false。
+     * @return required
+     */
+    public Boolean getRequired() {
+        return required;
+    }
+
+    public void setRequired(Boolean required) {
+        this.required = required;
     }
 
     public ServiceProperty withEnumList(List<String> enumList) {
@@ -354,8 +354,8 @@ public class ServiceProperty  {
         }
         ServiceProperty serviceProperty = (ServiceProperty) o;
         return Objects.equals(this.propertyName, serviceProperty.propertyName) &&
-            Objects.equals(this.required, serviceProperty.required) &&
             Objects.equals(this.dataType, serviceProperty.dataType) &&
+            Objects.equals(this.required, serviceProperty.required) &&
             Objects.equals(this.enumList, serviceProperty.enumList) &&
             Objects.equals(this.min, serviceProperty.min) &&
             Objects.equals(this.max, serviceProperty.max) &&
@@ -368,15 +368,15 @@ public class ServiceProperty  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(propertyName, required, dataType, enumList, min, max, maxLength, step, unit, method, description, defaultValue);
+        return Objects.hash(propertyName, dataType, required, enumList, min, max, maxLength, step, unit, method, description, defaultValue);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServiceProperty {\n");
         sb.append("    propertyName: ").append(toIndentedString(propertyName)).append("\n");
-        sb.append("    required: ").append(toIndentedString(required)).append("\n");
         sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
+        sb.append("    required: ").append(toIndentedString(required)).append("\n");
         sb.append("    enumList: ").append(toIndentedString(enumList)).append("\n");
         sb.append("    min: ").append(toIndentedString(min)).append("\n");
         sb.append("    max: ").append(toIndentedString(max)).append("\n");

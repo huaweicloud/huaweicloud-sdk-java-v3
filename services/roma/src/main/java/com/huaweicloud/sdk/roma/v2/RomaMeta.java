@@ -215,7 +215,7 @@ public class RomaMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SignBindingReq.class,
+            SignApiBinding.class,
             f -> f.withMarshaller(AssociateSignatureKeyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1211,7 +1211,7 @@ public class RomaMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ThrottleReq.class,
+            ThrottleBaseInfo.class,
             f -> f.withMarshaller(CreateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1359,7 +1359,7 @@ public class RomaMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SignatureReq.class,
+            BaseSignature.class,
             f -> f.withMarshaller(CreateSignatureKeyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -3198,87 +3198,6 @@ public class RomaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> listAppUsagesTopN = genForlistAppUsagesTopN();
-
-    private static HttpRequestDef<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> genForlistAppUsagesTopN() {
-        // basic
-        HttpRequestDef.Builder<ListAppUsagesTopNRequest, ListAppUsagesTopNResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAppUsagesTopNRequest.class, ListAppUsagesTopNResponse.class)
-                .withName("ListAppUsagesTopN")
-                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/app-usages")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("mode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListAppUsagesTopNRequest.ModeEnum.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getMode, (req, v) -> {
-                req.setMode(v);
-            })
-        );
-        builder.withRequestField("roma_app_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            })
-        );
-        builder.withRequestField("api_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getApiId, (req, v) -> {
-                req.setApiId(v);
-            })
-        );
-        builder.withRequestField("cycle",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListAppUsagesTopNRequest.CycleEnum.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getCycle, (req, v) -> {
-                req.setCycle(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("duration",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAppUsagesTopNRequest::getDuration, (req, v) -> {
-                req.setDuration(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListAppsV2Request, ListAppsV2Response> listAppsV2 = genForlistAppsV2();
 
     private static HttpRequestDef<ListAppsV2Request, ListAppsV2Response> genForlistAppsV2() {
@@ -4873,63 +4792,6 @@ public class RomaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> listRomaAppUsagesTopN = genForlistRomaAppUsagesTopN();
-
-    private static HttpRequestDef<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> genForlistRomaAppUsagesTopN() {
-        // basic
-        HttpRequestDef.Builder<ListRomaAppUsagesTopNRequest, ListRomaAppUsagesTopNResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListRomaAppUsagesTopNRequest.class, ListRomaAppUsagesTopNResponse.class)
-                .withName("ListRomaAppUsagesTopN")
-                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/roma-app-usages")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("cycle",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListRomaAppUsagesTopNRequest.CycleEnum.class,
-            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getCycle, (req, v) -> {
-                req.setCycle(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("duration",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListRomaAppUsagesTopNRequest::getDuration, (req, v) -> {
-                req.setDuration(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListRulesRequest, ListRulesResponse> listRules = genForlistRules();
 
     private static HttpRequestDef<ListRulesRequest, ListRulesResponse> genForlistRules() {
@@ -5450,160 +5312,6 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ListStatisticsApiRequest::getDuration, (req, v) -> {
-                req.setDuration(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> listStatisticsConsumerAppForSplitRomaApps = genForlistStatisticsConsumerAppForSplitRomaApps();
-
-    private static HttpRequestDef<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> genForlistStatisticsConsumerAppForSplitRomaApps() {
-        // basic
-        HttpRequestDef.Builder<ListStatisticsConsumerAppForSplitRomaAppsRequest, ListStatisticsConsumerAppForSplitRomaAppsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListStatisticsConsumerAppForSplitRomaAppsRequest.class, ListStatisticsConsumerAppForSplitRomaAppsResponse.class)
-                .withName("ListStatisticsConsumerAppForSplitRomaApps")
-                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/apps/{consumer_app_id}/roma-apps")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("consumer_app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getConsumerAppId, (req, v) -> {
-                req.setConsumerAppId(v);
-            })
-        );
-        builder.withRequestField("roma_app_ids",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getRomaAppIds, (req, v) -> {
-                req.setRomaAppIds(v);
-            })
-        );
-        builder.withRequestField("cycle",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListStatisticsConsumerAppForSplitRomaAppsRequest.CycleEnum.class,
-            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getCycle, (req, v) -> {
-                req.setCycle(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("duration",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsConsumerAppForSplitRomaAppsRequest::getDuration, (req, v) -> {
-                req.setDuration(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> listStatisticsRomaApp = genForlistStatisticsRomaApp();
-
-    private static HttpRequestDef<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> genForlistStatisticsRomaApp() {
-        // basic
-        HttpRequestDef.Builder<ListStatisticsRomaAppRequest, ListStatisticsRomaAppResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListStatisticsRomaAppRequest.class, ListStatisticsRomaAppResponse.class)
-                .withName("ListStatisticsRomaApp")
-                .withUri("/v2/{project_id}/apic/instances/{instance_id}/statistics/roma-app")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("mode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListStatisticsRomaAppRequest.ModeEnum.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getMode, (req, v) -> {
-                req.setMode(v);
-            })
-        );
-        builder.withRequestField("consumer_app_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getConsumerAppId, (req, v) -> {
-                req.setConsumerAppId(v);
-            })
-        );
-        builder.withRequestField("roma_app_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getRomaAppId, (req, v) -> {
-                req.setRomaAppId(v);
-            })
-        );
-        builder.withRequestField("cycle",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ListStatisticsRomaAppRequest.CycleEnum.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getCycle, (req, v) -> {
-                req.setCycle(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("duration",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListStatisticsRomaAppRequest::getDuration, (req, v) -> {
                 req.setDuration(v);
             })
         );
@@ -7040,31 +6748,6 @@ public class RomaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2 = genForshowRestrictionOfInstanceV2();
-
-    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForshowRestrictionOfInstanceV2() {
-        // basic
-        HttpRequestDef.Builder<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowRestrictionOfInstanceV2Request.class, ShowRestrictionOfInstanceV2Response.class)
-                .withName("ShowRestrictionOfInstanceV2")
-                .withUri("/v2/{project_id}/apic/instances/{instance_id}/restriction")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowRuleRequest, ShowRuleResponse> showRule = genForshowRule();
 
     private static HttpRequestDef<ShowRuleRequest, ShowRuleResponse> genForshowRule() {
@@ -7939,7 +7622,7 @@ public class RomaMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ThrottleReq.class,
+            ThrottleBaseInfo.class,
             f -> f.withMarshaller(UpdateRequestThrottlingPolicyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -8119,7 +7802,7 @@ public class RomaMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SignatureReq.class,
+            BaseSignature.class,
             f -> f.withMarshaller(UpdateSignatureKeyV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -8712,39 +8395,6 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ApiCheckInfo.class,
             f -> f.withMarshaller(CheckApisV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> checkBackendConnectivity = genForcheckBackendConnectivity();
-
-    private static HttpRequestDef<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> genForcheckBackendConnectivity() {
-        // basic
-        HttpRequestDef.Builder<CheckBackendConnectivityRequest, CheckBackendConnectivityResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CheckBackendConnectivityRequest.class, CheckBackendConnectivityResponse.class)
-                .withName("CheckBackendConnectivity")
-                .withUri("/v2/{project_id}/apic/instances/{instance_id}/backend/connectivity/check")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(CheckBackendConnectivityRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            CheckBackendConnectivityReq.class,
-            f -> f.withMarshaller(CheckBackendConnectivityRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.SignatureCreateResp;
+import com.huaweicloud.sdk.roma.v2.model.SignatureWithBindNum;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class ListSignatureKeysV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="signs")
     
-    private List<SignatureCreateResp> signs = null;
+    private List<SignatureWithBindNum> signs = null;
     
     public ListSignatureKeysV2Response withSize(Integer size) {
         this.size = size;
@@ -81,13 +81,13 @@ public class ListSignatureKeysV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListSignatureKeysV2Response withSigns(List<SignatureCreateResp> signs) {
+    public ListSignatureKeysV2Response withSigns(List<SignatureWithBindNum> signs) {
         this.signs = signs;
         return this;
     }
 
     
-    public ListSignatureKeysV2Response addSignsItem(SignatureCreateResp signsItem) {
+    public ListSignatureKeysV2Response addSignsItem(SignatureWithBindNum signsItem) {
         if (this.signs == null) {
             this.signs = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class ListSignatureKeysV2Response extends SdkResponse {
         return this;
     }
 
-    public ListSignatureKeysV2Response withSigns(Consumer<List<SignatureCreateResp>> signsSetter) {
+    public ListSignatureKeysV2Response withSigns(Consumer<List<SignatureWithBindNum>> signsSetter) {
         if(this.signs == null ){
             this.signs = new ArrayList<>();
         }
@@ -107,11 +107,11 @@ public class ListSignatureKeysV2Response extends SdkResponse {
      * 本次查询到的签名密钥列表
      * @return signs
      */
-    public List<SignatureCreateResp> getSigns() {
+    public List<SignatureWithBindNum> getSigns() {
         return signs;
     }
 
-    public void setSigns(List<SignatureCreateResp> signs) {
+    public void setSigns(List<SignatureWithBindNum> signs) {
         this.signs = signs;
     }
     @Override

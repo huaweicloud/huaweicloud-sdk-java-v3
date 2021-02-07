@@ -19,6 +19,20 @@ public class ShowSubscriptionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Sp-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String spAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Stage-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String stageAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -28,6 +42,46 @@ public class ShowSubscriptionRequest  {
     @JsonProperty(value="subscription_id")
     
     private String subscriptionId;
+
+    public ShowSubscriptionRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get spAuthToken
+     * @return spAuthToken
+     */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+    }
+
+    public ShowSubscriptionRequest withStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get stageAuthToken
+     * @return stageAuthToken
+     */
+    public String getStageAuthToken() {
+        return stageAuthToken;
+    }
+
+    public void setStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+    }
 
     public ShowSubscriptionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -77,17 +131,21 @@ public class ShowSubscriptionRequest  {
             return false;
         }
         ShowSubscriptionRequest showSubscriptionRequest = (ShowSubscriptionRequest) o;
-        return Objects.equals(this.instanceId, showSubscriptionRequest.instanceId) &&
+        return Objects.equals(this.spAuthToken, showSubscriptionRequest.spAuthToken) &&
+            Objects.equals(this.stageAuthToken, showSubscriptionRequest.stageAuthToken) &&
+            Objects.equals(this.instanceId, showSubscriptionRequest.instanceId) &&
             Objects.equals(this.subscriptionId, showSubscriptionRequest.subscriptionId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, subscriptionId);
+        return Objects.hash(spAuthToken, stageAuthToken, instanceId, subscriptionId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowSubscriptionRequest {\n");
+        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
+        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
         sb.append("}");

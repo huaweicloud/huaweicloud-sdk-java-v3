@@ -7,6 +7,8 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -149,12 +151,84 @@ public class AppInfo  {
     @JsonProperty(value="register_time")
     
     private OffsetDateTime registerTime = null;
+    /**
+     * 状态   - 1： 有效
+     */
+    public static final class StatusEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+        
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status;
+    private StatusEnum status;
     /**
      * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用
      */
@@ -239,6 +313,12 @@ public class AppInfo  {
     @JsonProperty(value="app_type")
     
     private AppTypeEnum appType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="roma_app_type")
+    
+    private Object romaAppType = null;
 
     public AppInfo withCreator(CreatorEnum creator) {
         this.creator = creator;
@@ -400,7 +480,7 @@ public class AppInfo  {
         this.registerTime = registerTime;
     }
 
-    public AppInfo withStatus(Integer status) {
+    public AppInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -409,14 +489,14 @@ public class AppInfo  {
 
 
     /**
-     * 状态
+     * 状态   - 1： 有效
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -439,6 +519,26 @@ public class AppInfo  {
     public void setAppType(AppTypeEnum appType) {
         this.appType = appType;
     }
+
+    public AppInfo withRomaAppType(Object romaAppType) {
+        this.romaAppType = romaAppType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
+     * @return romaAppType
+     */
+    public Object getRomaAppType() {
+        return romaAppType;
+    }
+
+    public void setRomaAppType(Object romaAppType) {
+        this.romaAppType = romaAppType;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -457,11 +557,12 @@ public class AppInfo  {
             Objects.equals(this.appSecret, appInfo.appSecret) &&
             Objects.equals(this.registerTime, appInfo.registerTime) &&
             Objects.equals(this.status, appInfo.status) &&
-            Objects.equals(this.appType, appInfo.appType);
+            Objects.equals(this.appType, appInfo.appType) &&
+            Objects.equals(this.romaAppType, appInfo.romaAppType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creator, updateTime, appKey, name, remark, id, appSecret, registerTime, status, appType);
+        return Objects.hash(creator, updateTime, appKey, name, remark, id, appSecret, registerTime, status, appType, romaAppType);
     }
     @Override
     public String toString() {
@@ -477,6 +578,7 @@ public class AppInfo  {
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    romaAppType: ").append(toIndentedString(romaAppType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -50,7 +50,7 @@ public class ApiMockCreate  {
 
 
     /**
-     * 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
+     * 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {

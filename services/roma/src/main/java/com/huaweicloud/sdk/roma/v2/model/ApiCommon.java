@@ -15,6 +15,8 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -707,12 +709,84 @@ public class ApiCommon  {
     @JsonProperty(value="id")
     
     private String id;
+    /**
+     * API状态   - 1： 有效
+     */
+    public static final class StatusEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+        
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status;
+    private StatusEnum status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -761,6 +835,18 @@ public class ApiCommon  {
     @JsonProperty(value="publish_id")
     
     private String publishId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="roma_app_name")
+    
+    private String romaAppName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ld_api_id")
+    
+    private String ldApiId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -907,7 +993,7 @@ public class ApiCommon  {
 
 
     /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。  支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
      * @return reqUri
      */
     public String getReqUri() {
@@ -1034,7 +1120,7 @@ public class ApiCommon  {
 
 
     /**
-     * API描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * API描述。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {
@@ -1188,7 +1274,7 @@ public class ApiCommon  {
 
 
     /**
-     * 分组自定义响应ID
+     * 分组自定义响应ID  暂不支持
      * @return responseId
      */
     public String getResponseId() {
@@ -1279,7 +1365,7 @@ public class ApiCommon  {
         this.id = id;
     }
 
-    public ApiCommon withStatus(Integer status) {
+    public ApiCommon withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -1288,14 +1374,14 @@ public class ApiCommon  {
 
 
     /**
-     * API的状态
+     * API状态   - 1： 有效
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -1457,6 +1543,46 @@ public class ApiCommon  {
 
     public void setPublishId(String publishId) {
         this.publishId = publishId;
+    }
+
+    public ApiCommon withRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * API归属的集成应用名称
+     * @return romaAppName
+     */
+    public String getRomaAppName() {
+        return romaAppName;
+    }
+
+    public void setRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+    }
+
+    public ApiCommon withLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当API的后端为自定义后端时，对应的自定义后端API编号
+     * @return ldApiId
+     */
+    public String getLdApiId() {
+        return ldApiId;
+    }
+
+    public void setLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
     }
 
     public ApiCommon withFuncInfo(ApiFunc funcInfo) {
@@ -1689,6 +1815,8 @@ public class ApiCommon  {
             Objects.equals(this.runEnvId, apiCommon.runEnvId) &&
             Objects.equals(this.runEnvName, apiCommon.runEnvName) &&
             Objects.equals(this.publishId, apiCommon.publishId) &&
+            Objects.equals(this.romaAppName, apiCommon.romaAppName) &&
+            Objects.equals(this.ldApiId, apiCommon.ldApiId) &&
             Objects.equals(this.funcInfo, apiCommon.funcInfo) &&
             Objects.equals(this.mockInfo, apiCommon.mockInfo) &&
             Objects.equals(this.reqParams, apiCommon.reqParams) &&
@@ -1698,7 +1826,7 @@ public class ApiCommon  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, id, status, arrangeNecessary, registerTime, updateTime, groupName, groupVersion, runEnvId, runEnvName, publishId, funcInfo, mockInfo, reqParams, backendParams, policyFunctions, policyMocks);
+        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, id, status, arrangeNecessary, registerTime, updateTime, groupName, groupVersion, runEnvId, runEnvName, publishId, romaAppName, ldApiId, funcInfo, mockInfo, reqParams, backendParams, policyFunctions, policyMocks);
     }
     @Override
     public String toString() {
@@ -1736,6 +1864,8 @@ public class ApiCommon  {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
+        sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
+        sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
         sb.append("    funcInfo: ").append(toIndentedString(funcInfo)).append("\n");
         sb.append("    mockInfo: ").append(toIndentedString(mockInfo)).append("\n");
         sb.append("    reqParams: ").append(toIndentedString(reqParams)).append("\n");

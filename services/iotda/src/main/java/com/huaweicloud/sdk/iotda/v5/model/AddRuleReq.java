@@ -60,6 +60,12 @@ public class AddRuleReq  {
     
     private String where;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="data_version")
+    
+    private String dataVersion;
+
     public AddRuleReq withRuleName(String ruleName) {
         this.ruleName = ruleName;
         return this;
@@ -206,6 +212,26 @@ public class AddRuleReq  {
     public void setWhere(String where) {
         this.where = where;
     }
+
+    public AddRuleReq withDataVersion(String dataVersion) {
+        this.dataVersion = dataVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 规则推送消息的消息格式版本，租户无需设置，仅供内部兼容历史推送消息使用，iocsa的历史推送消息版本为V5.0.1
+     * @return dataVersion
+     */
+    public String getDataVersion() {
+        return dataVersion;
+    }
+
+    public void setDataVersion(String dataVersion) {
+        this.dataVersion = dataVersion;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -221,11 +247,12 @@ public class AddRuleReq  {
             Objects.equals(this.appType, addRuleReq.appType) &&
             Objects.equals(this.appId, addRuleReq.appId) &&
             Objects.equals(this.select, addRuleReq.select) &&
-            Objects.equals(this.where, addRuleReq.where);
+            Objects.equals(this.where, addRuleReq.where) &&
+            Objects.equals(this.dataVersion, addRuleReq.dataVersion);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ruleName, description, subject, appType, appId, select, where);
+        return Objects.hash(ruleName, description, subject, appType, appId, select, where, dataVersion);
     }
     @Override
     public String toString() {
@@ -238,6 +265,7 @@ public class AddRuleReq  {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    select: ").append(toIndentedString(select)).append("\n");
         sb.append("    where: ").append(toIndentedString(where)).append("\n");
+        sb.append("    dataVersion: ").append(toIndentedString(dataVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

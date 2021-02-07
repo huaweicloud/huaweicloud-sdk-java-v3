@@ -38,7 +38,7 @@ public class AuthInfoWithoutSecret  {
 
 
     /**
-     * 指设备是否通过安全协议方式接入，默认值为true。 - true：通过安全协议方式接入。 - false：通过非安全协议方式接入。 
+     * 指设备是否通过安全协议方式接入，默认值为true。 - true：通过安全协议方式接入。 - false：通过非安全协议方式接入。非安全接入的设备存在被仿冒等安全风险，请谨慎使用。 
      * @return secureAccess
      */
     public Boolean getSecureAccess() {
@@ -58,7 +58,7 @@ public class AuthInfoWithoutSecret  {
 
 
     /**
-     * 设备验证码的有效时间，单位：秒，默认值：0 若设备在有效时间内未接入物联网平台并激活，则平台会删除该设备的注册信息。若设置为“0”，则表示设备验证码不会失效（建议填写为“0”）。 
+     * 设备接入的有效时间，单位：秒，默认值：0 若设备在有效时间内未接入物联网平台并激活，则平台会删除该设备的注册信息。若设置为“0”，则表示平台不会删除该设备的注册信息（建议填写为“0”）。 
      * minimum: 0
      * maximum: 2147483647
      * @return timeout

@@ -370,6 +370,12 @@ public class ApiPolicyHttpResp  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enable_client_ssl")
+    
+    private Boolean enableClientSsl;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_info")
     
     private VpcInfo vpcChannelInfo = null;
@@ -614,7 +620,7 @@ public class ApiPolicyHttpResp  {
 
 
     /**
-     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改  单位：毫秒。
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -623,6 +629,26 @@ public class ApiPolicyHttpResp  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    public ApiPolicyHttpResp withEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启双向认证
+     * @return enableClientSsl
+     */
+    public Boolean getEnableClientSsl() {
+        return enableClientSsl;
+    }
+
+    public void setEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
     }
 
     public ApiPolicyHttpResp withVpcChannelInfo(VpcInfo vpcChannelInfo) {
@@ -691,12 +717,13 @@ public class ApiPolicyHttpResp  {
             Objects.equals(this.reqMethod, apiPolicyHttpResp.reqMethod) &&
             Objects.equals(this.reqUri, apiPolicyHttpResp.reqUri) &&
             Objects.equals(this.timeout, apiPolicyHttpResp.timeout) &&
+            Objects.equals(this.enableClientSsl, apiPolicyHttpResp.enableClientSsl) &&
             Objects.equals(this.vpcChannelInfo, apiPolicyHttpResp.vpcChannelInfo) &&
             Objects.equals(this.vpcChannelStatus, apiPolicyHttpResp.vpcChannelStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, effectMode, name, backendParams, conditions, authorizerId, urlDomain, reqProtocol, reqMethod, reqUri, timeout, vpcChannelInfo, vpcChannelStatus);
+        return Objects.hash(id, effectMode, name, backendParams, conditions, authorizerId, urlDomain, reqProtocol, reqMethod, reqUri, timeout, enableClientSsl, vpcChannelInfo, vpcChannelStatus);
     }
     @Override
     public String toString() {
@@ -713,6 +740,7 @@ public class ApiPolicyHttpResp  {
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("    vpcChannelInfo: ").append(toIndentedString(vpcChannelInfo)).append("\n");
         sb.append("    vpcChannelStatus: ").append(toIndentedString(vpcChannelStatus)).append("\n");
         sb.append("}");

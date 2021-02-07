@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.TriggerHistorys;
+import com.huaweicloud.sdk.swr.v2.model.TriggerHistories;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -96,7 +96,7 @@ public class Trigger  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_history")
     
-    private List<TriggerHistorys> triggerHistory = new ArrayList<>();
+    private List<TriggerHistories> triggerHistory = new ArrayList<>();
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -350,18 +350,18 @@ public class Trigger  {
         this.name = name;
     }
 
-    public Trigger withTriggerHistory(List<TriggerHistorys> triggerHistory) {
+    public Trigger withTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
         return this;
     }
 
     
-    public Trigger addTriggerHistoryItem(TriggerHistorys triggerHistoryItem) {
+    public Trigger addTriggerHistoryItem(TriggerHistories triggerHistoryItem) {
         this.triggerHistory.add(triggerHistoryItem);
         return this;
     }
 
-    public Trigger withTriggerHistory(Consumer<List<TriggerHistorys>> triggerHistorySetter) {
+    public Trigger withTriggerHistory(Consumer<List<TriggerHistories>> triggerHistorySetter) {
         if(this.triggerHistory == null ){
             this.triggerHistory = new ArrayList<>();
         }
@@ -373,11 +373,11 @@ public class Trigger  {
      * 触发器历史
      * @return triggerHistory
      */
-    public List<TriggerHistorys> getTriggerHistory() {
+    public List<TriggerHistories> getTriggerHistory() {
         return triggerHistory;
     }
 
-    public void setTriggerHistory(List<TriggerHistorys> triggerHistory) {
+    public void setTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
     }
 

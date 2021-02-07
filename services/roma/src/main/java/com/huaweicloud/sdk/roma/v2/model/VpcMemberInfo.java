@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.MemberInfo;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -53,7 +54,7 @@ public class VpcMemberInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status;
+    private BigDecimal status = null;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -167,7 +168,7 @@ public class VpcMemberInfo  {
         this.id = id;
     }
 
-    public VpcMemberInfo withStatus(Integer status) {
+    public VpcMemberInfo withStatus(BigDecimal status) {
         this.status = status;
         return this;
     }
@@ -176,14 +177,14 @@ public class VpcMemberInfo  {
 
 
     /**
-     * 后端实例对象的状态
+     * 后端实例对象的状态   - 1： 有效
      * @return status
      */
-    public Integer getStatus() {
+    public BigDecimal getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(BigDecimal status) {
         this.status = status;
     }
 

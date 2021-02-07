@@ -203,7 +203,7 @@ public class UpdateProductResponse extends SdkResponse {
 
 
     /**
-     * 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF。
+     * 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA。
      * @return protocolType
      */
     public String getProtocolType() {

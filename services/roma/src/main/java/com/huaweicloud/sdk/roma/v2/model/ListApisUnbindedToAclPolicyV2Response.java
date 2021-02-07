@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.UnbindApiForAclPageApisResp;
+import com.huaweicloud.sdk.roma.v2.model.UnbindApiForAcl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class ListApisUnbindedToAclPolicyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apis")
     
-    private List<UnbindApiForAclPageApisResp> apis = null;
+    private List<UnbindApiForAcl> apis = null;
     
     public ListApisUnbindedToAclPolicyV2Response withSize(Integer size) {
         this.size = size;
@@ -81,13 +81,13 @@ public class ListApisUnbindedToAclPolicyV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListApisUnbindedToAclPolicyV2Response withApis(List<UnbindApiForAclPageApisResp> apis) {
+    public ListApisUnbindedToAclPolicyV2Response withApis(List<UnbindApiForAcl> apis) {
         this.apis = apis;
         return this;
     }
 
     
-    public ListApisUnbindedToAclPolicyV2Response addApisItem(UnbindApiForAclPageApisResp apisItem) {
+    public ListApisUnbindedToAclPolicyV2Response addApisItem(UnbindApiForAcl apisItem) {
         if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class ListApisUnbindedToAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApisUnbindedToAclPolicyV2Response withApis(Consumer<List<UnbindApiForAclPageApisResp>> apisSetter) {
+    public ListApisUnbindedToAclPolicyV2Response withApis(Consumer<List<UnbindApiForAcl>> apisSetter) {
         if(this.apis == null ){
             this.apis = new ArrayList<>();
         }
@@ -107,11 +107,11 @@ public class ListApisUnbindedToAclPolicyV2Response extends SdkResponse {
      * 本次查询返回的API列表
      * @return apis
      */
-    public List<UnbindApiForAclPageApisResp> getApis() {
+    public List<UnbindApiForAcl> getApis() {
         return apis;
     }
 
-    public void setApis(List<UnbindApiForAclPageApisResp> apis) {
+    public void setApis(List<UnbindApiForAcl> apis) {
         this.apis = apis;
     }
     @Override

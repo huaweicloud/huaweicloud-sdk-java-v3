@@ -151,7 +151,7 @@ public class IoTDAClient {
 
     /**
      * 删除资源空间
-     * 删除指定资源空间。删除资源空间属于高危操作，删除资源空间后，该空间下的产品、设备等资源将不可用，同时影响其他引用其下设备资源的服务，请谨慎操作！
+     * 删除指定资源空间。删除资源空间属于高危操作，删除资源空间后，该空间下的产品、设备等资源将不可用，请谨慎操作！
      *
      * @param DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
@@ -162,7 +162,7 @@ public class IoTDAClient {
 
     /**
      * 删除资源空间
-     * 删除指定资源空间。删除资源空间属于高危操作，删除资源空间后，该空间下的产品、设备等资源将不可用，同时影响其他引用其下设备资源的服务，请谨慎操作！
+     * 删除指定资源空间。删除资源空间属于高危操作，删除资源空间后，该空间下的产品、设备等资源将不可用，请谨慎操作！
      *
      * @param DeleteApplicationRequest 请求对象
      * @return SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
@@ -217,7 +217,7 @@ public class IoTDAClient {
 
     /**
      * 下发异步设备命令
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步返回。注意：此接口适用于NB设备异步命令下发，暂不支持其他协议类型设备命令下发。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)。注意：此接口适用于NB设备异步命令下发，暂不支持其他协议类型设备命令下发。 
      *
      * @param CreateAsyncCommandRequest 请求对象
      * @return CreateAsyncCommandResponse
@@ -228,13 +228,57 @@ public class IoTDAClient {
 
     /**
      * 下发异步设备命令
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步返回。注意：此接口适用于NB设备异步命令下发，暂不支持其他协议类型设备命令下发。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)。注意：此接口适用于NB设备异步命令下发，暂不支持其他协议类型设备命令下发。 
      *
      * @param CreateAsyncCommandRequest 请求对象
      * @return SyncInvoker<CreateAsyncCommandRequest, CreateAsyncCommandResponse>
      */
     public SyncInvoker<CreateAsyncCommandRequest, CreateAsyncCommandResponse> createAsyncCommandInvoker(CreateAsyncCommandRequest request) {
         return new SyncInvoker<CreateAsyncCommandRequest, CreateAsyncCommandResponse>(request, IoTDAMeta.createAsyncCommand, hcClient);
+    }
+
+    /**
+     * 查询设备下队列中的命令
+     * 查询设备下队列中的命（处理中的命令），包含PENDING,SENT,DELIVERED三种状态，注意：DELIVERED状态的命令经过系统设定的一段时间（具体以系统配置为准）仍然没有更新，就会从队列中移除，变为历史命令。 
+     *
+     * @param ListAsyncCommandsRequest 请求对象
+     * @return ListAsyncCommandsResponse
+     */
+    public ListAsyncCommandsResponse listAsyncCommands(ListAsyncCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listAsyncCommands);
+    }
+
+    /**
+     * 查询设备下队列中的命令
+     * 查询设备下队列中的命（处理中的命令），包含PENDING,SENT,DELIVERED三种状态，注意：DELIVERED状态的命令经过系统设定的一段时间（具体以系统配置为准）仍然没有更新，就会从队列中移除，变为历史命令。 
+     *
+     * @param ListAsyncCommandsRequest 请求对象
+     * @return SyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse>
+     */
+    public SyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse> listAsyncCommandsInvoker(ListAsyncCommandsRequest request) {
+        return new SyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse>(request, IoTDAMeta.listAsyncCommands, hcClient);
+    }
+
+    /**
+     * 查询设备下的历史命令
+     * 查询设备下发的历史异步命令。 
+     *
+     * @param ListAsyncHistoryCommandsRequest 请求对象
+     * @return ListAsyncHistoryCommandsResponse
+     */
+    public ListAsyncHistoryCommandsResponse listAsyncHistoryCommands(ListAsyncHistoryCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listAsyncHistoryCommands);
+    }
+
+    /**
+     * 查询设备下的历史命令
+     * 查询设备下发的历史异步命令。 
+     *
+     * @param ListAsyncHistoryCommandsRequest 请求对象
+     * @return SyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse>
+     */
+    public SyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> listAsyncHistoryCommandsInvoker(ListAsyncHistoryCommandsRequest request) {
+        return new SyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse>(request, IoTDAMeta.listAsyncHistoryCommands, hcClient);
     }
 
     /**
@@ -261,7 +305,7 @@ public class IoTDAClient {
 
     /**
      * 创建批量任务
-     * 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结设备、批量解冻设备。
+     * 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结设备、批量解冻设备、批量创建命令任务。
      *
      * @param CreateBatchTaskRequest 请求对象
      * @return CreateBatchTaskResponse
@@ -272,7 +316,7 @@ public class IoTDAClient {
 
     /**
      * 创建批量任务
-     * 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结设备、批量解冻设备。
+     * 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结设备、批量解冻设备、批量创建命令任务。
      *
      * @param CreateBatchTaskRequest 请求对象
      * @return SyncInvoker<CreateBatchTaskRequest, CreateBatchTaskResponse>
@@ -458,8 +502,118 @@ public class IoTDAClient {
     }
 
     /**
+     * 上传应用侧CA证书
+     * 上传应用侧CA证书
+     *
+     * @param CreateAppCertificateRequest 请求对象
+     * @return CreateAppCertificateResponse
+     */
+    public CreateAppCertificateResponse createAppCertificate(CreateAppCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.createAppCertificate);
+    }
+
+    /**
+     * 上传应用侧CA证书
+     * 上传应用侧CA证书
+     *
+     * @param CreateAppCertificateRequest 请求对象
+     * @return SyncInvoker<CreateAppCertificateRequest, CreateAppCertificateResponse>
+     */
+    public SyncInvoker<CreateAppCertificateRequest, CreateAppCertificateResponse> createAppCertificateInvoker(CreateAppCertificateRequest request) {
+        return new SyncInvoker<CreateAppCertificateRequest, CreateAppCertificateResponse>(request, IoTDAMeta.createAppCertificate, hcClient);
+    }
+
+    /**
+     * 删除应用侧CA证书
+     * 删除应用侧CA证书
+     *
+     * @param DeleteAppCertificateRequest 请求对象
+     * @return DeleteAppCertificateResponse
+     */
+    public DeleteAppCertificateResponse deleteAppCertificate(DeleteAppCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteAppCertificate);
+    }
+
+    /**
+     * 删除应用侧CA证书
+     * 删除应用侧CA证书
+     *
+     * @param DeleteAppCertificateRequest 请求对象
+     * @return SyncInvoker<DeleteAppCertificateRequest, DeleteAppCertificateResponse>
+     */
+    public SyncInvoker<DeleteAppCertificateRequest, DeleteAppCertificateResponse> deleteAppCertificateInvoker(DeleteAppCertificateRequest request) {
+        return new SyncInvoker<DeleteAppCertificateRequest, DeleteAppCertificateResponse>(request, IoTDAMeta.deleteAppCertificate, hcClient);
+    }
+
+    /**
+     * 查询应用侧CA证书列表
+     * 查询应用侧CA证书列表
+     *
+     * @param ListAppCertificatesRequest 请求对象
+     * @return ListAppCertificatesResponse
+     */
+    public ListAppCertificatesResponse listAppCertificates(ListAppCertificatesRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listAppCertificates);
+    }
+
+    /**
+     * 查询应用侧CA证书列表
+     * 查询应用侧CA证书列表
+     *
+     * @param ListAppCertificatesRequest 请求对象
+     * @return SyncInvoker<ListAppCertificatesRequest, ListAppCertificatesResponse>
+     */
+    public SyncInvoker<ListAppCertificatesRequest, ListAppCertificatesResponse> listAppCertificatesInvoker(ListAppCertificatesRequest request) {
+        return new SyncInvoker<ListAppCertificatesRequest, ListAppCertificatesResponse>(request, IoTDAMeta.listAppCertificates, hcClient);
+    }
+
+    /**
+     * 查询应用侧CA证书
+     * 查询应用侧CA证书
+     *
+     * @param ShowAppCertificateRequest 请求对象
+     * @return ShowAppCertificateResponse
+     */
+    public ShowAppCertificateResponse showAppCertificate(ShowAppCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showAppCertificate);
+    }
+
+    /**
+     * 查询应用侧CA证书
+     * 查询应用侧CA证书
+     *
+     * @param ShowAppCertificateRequest 请求对象
+     * @return SyncInvoker<ShowAppCertificateRequest, ShowAppCertificateResponse>
+     */
+    public SyncInvoker<ShowAppCertificateRequest, ShowAppCertificateResponse> showAppCertificateInvoker(ShowAppCertificateRequest request) {
+        return new SyncInvoker<ShowAppCertificateRequest, ShowAppCertificateResponse>(request, IoTDAMeta.showAppCertificate, hcClient);
+    }
+
+    /**
+     * 更新应用侧CA证书
+     * 更新应用侧CA证书
+     *
+     * @param UpdateAppCertificateRequest 请求对象
+     * @return UpdateAppCertificateResponse
+     */
+    public UpdateAppCertificateResponse updateAppCertificate(UpdateAppCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.updateAppCertificate);
+    }
+
+    /**
+     * 更新应用侧CA证书
+     * 更新应用侧CA证书
+     *
+     * @param UpdateAppCertificateRequest 请求对象
+     * @return SyncInvoker<UpdateAppCertificateRequest, UpdateAppCertificateResponse>
+     */
+    public SyncInvoker<UpdateAppCertificateRequest, UpdateAppCertificateResponse> updateAppCertificateInvoker(UpdateAppCertificateRequest request) {
+        return new SyncInvoker<UpdateAppCertificateRequest, UpdateAppCertificateResponse>(request, IoTDAMeta.updateAppCertificate, hcClient);
+    }
+
+    /**
      * 下发设备命令
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备异步命令下发。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时，平台超时间是25秒。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备命令下发。 
      *
      * @param CreateCommandRequest 请求对象
      * @return CreateCommandResponse
@@ -470,7 +624,7 @@ public class IoTDAClient {
 
     /**
      * 下发设备命令
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备异步命令下发。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时，平台超时间是25秒。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备命令下发。 
      *
      * @param CreateCommandRequest 请求对象
      * @return SyncInvoker<CreateCommandRequest, CreateCommandResponse>
@@ -855,7 +1009,7 @@ public class IoTDAClient {
 
     /**
      * 下发设备消息
-     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。 
+     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。注意：此接口适用于MQTT设备消息下发，暂不支持其他协议接入的设备消息下发。 
      *
      * @param CreateMessageRequest 请求对象
      * @return CreateMessageResponse
@@ -866,7 +1020,7 @@ public class IoTDAClient {
 
     /**
      * 下发设备消息
-     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。 
+     * 物联网平台可向设备下发消息，应用服务器可调用此接口向指定设备下发消息，以实现对设备的控制。应用将消息下发给平台后，平台返回应用响应结果，平台再将消息发送给设备。注意：此接口适用于MQTT设备消息下发，暂不支持其他协议接入的设备消息下发。 
      *
      * @param CreateMessageRequest 请求对象
      * @return SyncInvoker<CreateMessageRequest, CreateMessageResponse>
@@ -1031,7 +1185,7 @@ public class IoTDAClient {
 
     /**
      * 查询设备属性
-     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口查询指定设备下属性。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口查询指定设备下属性。注意：此接口适用于MQTT设备，暂不支持NB-IoT设备。 
      *
      * @param ListPropertiesRequest 请求对象
      * @return ListPropertiesResponse
@@ -1042,7 +1196,7 @@ public class IoTDAClient {
 
     /**
      * 查询设备属性
-     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口查询指定设备下属性。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口查询指定设备下属性。注意：此接口适用于MQTT设备，暂不支持NB-IoT设备。 
      *
      * @param ListPropertiesRequest 请求对象
      * @return SyncInvoker<ListPropertiesRequest, ListPropertiesResponse>
@@ -1053,7 +1207,7 @@ public class IoTDAClient {
 
     /**
      * 修改设备属性
-     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口向指定设备下属性。平台负责将属性以同步方式发送给设备，并将设备执行属性结果同步返回。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口向指定设备下属性。平台负责将属性以同步方式发送给设备，并将设备执行属性结果同步返回。注意：此接口适用于MQTT设备，暂不支持NB-IoT设备。 
      *
      * @param UpdatePropertiesRequest 请求对象
      * @return UpdatePropertiesResponse
@@ -1064,7 +1218,7 @@ public class IoTDAClient {
 
     /**
      * 修改设备属性
-     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口向指定设备下属性。平台负责将属性以同步方式发送给设备，并将设备执行属性结果同步返回。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的属性，应用服务器可调用此接口向指定设备下属性。平台负责将属性以同步方式发送给设备，并将设备执行属性结果同步返回。注意：此接口适用于MQTT设备，暂不支持NB-IoT设备。 
      *
      * @param UpdatePropertiesRequest 请求对象
      * @return SyncInvoker<UpdatePropertiesRequest, UpdatePropertiesResponse>

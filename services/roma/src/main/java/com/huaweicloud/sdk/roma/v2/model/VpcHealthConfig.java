@@ -24,7 +24,7 @@ import java.util.Objects;
 public class VpcHealthConfig  {
 
     /**
-     * 使用以下协议，对VPC中主机执行健康检查。
+     * 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS
      */
     public static final class ProtocolEnum {
 
@@ -131,9 +131,9 @@ public class VpcHealthConfig  {
         public static final MethodEnum GET = new MethodEnum("GET");
         
         /**
-         * Enum HEADER for value: "HEADER"
+         * Enum HEAD for value: "HEAD"
          */
-        public static final MethodEnum HEADER = new MethodEnum("HEADER");
+        public static final MethodEnum HEAD = new MethodEnum("HEAD");
         
 
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
@@ -141,7 +141,7 @@ public class VpcHealthConfig  {
         private static Map<String, MethodEnum> createStaticFields() {
             Map<String, MethodEnum> map = new HashMap<>();
             map.put("GET", GET);
-            map.put("HEADER", HEADER);
+            map.put("HEAD", HEAD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -255,7 +255,7 @@ public class VpcHealthConfig  {
 
 
     /**
-     * 使用以下协议，对VPC中主机执行健康检查。
+     * 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -275,7 +275,7 @@ public class VpcHealthConfig  {
 
 
     /**
-     * 健康检查时的目标路径。protocol = http时必选
+     * 健康检查时的目标路径。protocol = http或https时必选
      * @return path
      */
     public String getPath() {

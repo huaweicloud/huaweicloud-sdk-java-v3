@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiGroupDetailResp;
+import com.huaweicloud.sdk.roma.v2.model.ApiGroupInfo;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class ListApiGroupsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="groups")
     
-    private List<ApiGroupDetailResp> groups = null;
+    private List<ApiGroupInfo> groups = null;
     
     public ListApiGroupsV2Response withSize(Integer size) {
         this.size = size;
@@ -81,13 +81,13 @@ public class ListApiGroupsV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListApiGroupsV2Response withGroups(List<ApiGroupDetailResp> groups) {
+    public ListApiGroupsV2Response withGroups(List<ApiGroupInfo> groups) {
         this.groups = groups;
         return this;
     }
 
     
-    public ListApiGroupsV2Response addGroupsItem(ApiGroupDetailResp groupsItem) {
+    public ListApiGroupsV2Response addGroupsItem(ApiGroupInfo groupsItem) {
         if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class ListApiGroupsV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApiGroupsV2Response withGroups(Consumer<List<ApiGroupDetailResp>> groupsSetter) {
+    public ListApiGroupsV2Response withGroups(Consumer<List<ApiGroupInfo>> groupsSetter) {
         if(this.groups == null ){
             this.groups = new ArrayList<>();
         }
@@ -107,11 +107,11 @@ public class ListApiGroupsV2Response extends SdkResponse {
      * 分组列表
      * @return groups
      */
-    public List<ApiGroupDetailResp> getGroups() {
+    public List<ApiGroupInfo> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<ApiGroupDetailResp> groups) {
+    public void setGroups(List<ApiGroupInfo> groups) {
         this.groups = groups;
     }
     @Override

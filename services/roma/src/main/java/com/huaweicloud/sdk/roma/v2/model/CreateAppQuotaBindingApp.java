@@ -23,7 +23,7 @@ public class CreateAppQuotaBindingApp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_ids")
     
-    private List<String> appIds = null;
+    private List<String> appIds = new ArrayList<>();
     
     public CreateAppQuotaBindingApp withAppIds(List<String> appIds) {
         this.appIds = appIds;
@@ -32,9 +32,6 @@ public class CreateAppQuotaBindingApp  {
 
     
     public CreateAppQuotaBindingApp addAppIdsItem(String appIdsItem) {
-        if (this.appIds == null) {
-            this.appIds = new ArrayList<>();
-        }
         this.appIds.add(appIdsItem);
         return this;
     }

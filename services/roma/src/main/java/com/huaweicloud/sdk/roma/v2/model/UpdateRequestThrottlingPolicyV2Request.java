@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ThrottleReq;
+import com.huaweicloud.sdk.roma.v2.model.ThrottleBaseInfo;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class UpdateRequestThrottlingPolicyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ThrottleReq body = null;
+    private ThrottleBaseInfo body = null;
 
     public UpdateRequestThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -76,14 +76,14 @@ public class UpdateRequestThrottlingPolicyV2Request  {
         this.throttleId = throttleId;
     }
 
-    public UpdateRequestThrottlingPolicyV2Request withBody(ThrottleReq body) {
+    public UpdateRequestThrottlingPolicyV2Request withBody(ThrottleBaseInfo body) {
         this.body = body;
         return this;
     }
 
-    public UpdateRequestThrottlingPolicyV2Request withBody(Consumer<ThrottleReq> bodySetter) {
+    public UpdateRequestThrottlingPolicyV2Request withBody(Consumer<ThrottleBaseInfo> bodySetter) {
         if(this.body == null ){
-            this.body = new ThrottleReq();
+            this.body = new ThrottleBaseInfo();
             bodySetter.accept(this.body);
         }
         
@@ -95,11 +95,11 @@ public class UpdateRequestThrottlingPolicyV2Request  {
      * Get body
      * @return body
      */
-    public ThrottleReq getBody() {
+    public ThrottleBaseInfo getBody() {
         return body;
     }
 
-    public void setBody(ThrottleReq body) {
+    public void setBody(ThrottleBaseInfo body) {
         this.body = body;
     }
     @Override

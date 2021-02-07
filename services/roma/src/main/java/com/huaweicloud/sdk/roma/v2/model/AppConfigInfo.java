@@ -54,6 +54,12 @@ public class AppConfigInfo  {
     
     private OffsetDateTime updateTime = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public AppConfigInfo withId(String id) {
         this.id = id;
         return this;
@@ -173,6 +179,26 @@ public class AppConfigInfo  {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    public AppConfigInfo withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用配置描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -187,11 +213,12 @@ public class AppConfigInfo  {
             Objects.equals(this.configType, appConfigInfo.configType) &&
             Objects.equals(this.configName, appConfigInfo.configName) &&
             Objects.equals(this.configValue, appConfigInfo.configValue) &&
-            Objects.equals(this.updateTime, appConfigInfo.updateTime);
+            Objects.equals(this.updateTime, appConfigInfo.updateTime) &&
+            Objects.equals(this.description, appConfigInfo.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, appId, configType, configName, configValue, updateTime);
+        return Objects.hash(id, appId, configType, configName, configValue, updateTime, description);
     }
     @Override
     public String toString() {
@@ -203,6 +230,7 @@ public class AppConfigInfo  {
         sb.append("    configName: ").append(toIndentedString(configName)).append("\n");
         sb.append("    configValue: ").append(toIndentedString(configValue)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

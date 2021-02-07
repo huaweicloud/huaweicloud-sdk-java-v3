@@ -38,7 +38,7 @@ public class ApiAuthVisitParam  {
 
 
     /**
-     * 需要授权的环境编号
+     * 需要授权的API编号
      * @return apiId
      */
     public String getApiId() {

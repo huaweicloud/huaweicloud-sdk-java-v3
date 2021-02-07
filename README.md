@@ -28,12 +28,12 @@ You could obtain and install Java SDK through following methods:
     <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>[3.0.1-beta, 3.1.0-beta)</version>
+        <version>[3.0.30-rc, 3.1.0-rc)</version>
     </dependency>
     <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-vpc</artifactId>
-        <version>[3.0.1-beta, 3.1.0-beta)</version>
+        <version>[3.0.30-rc, 3.1.0-rc)</version>
     </dependency>
     ```
 

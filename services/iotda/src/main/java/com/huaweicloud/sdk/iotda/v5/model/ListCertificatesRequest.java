@@ -19,6 +19,20 @@ public class ListCertificatesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Sp-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String spAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Stage-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String stageAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -46,6 +60,46 @@ public class ListCertificatesRequest  {
     @JsonProperty(value="offset")
     
     private Integer offset = 0;
+
+    public ListCertificatesRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get spAuthToken
+     * @return spAuthToken
+     */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+    }
+
+    public ListCertificatesRequest withStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get stageAuthToken
+     * @return stageAuthToken
+     */
+    public String getStageAuthToken() {
+        return stageAuthToken;
+    }
+
+    public void setStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+    }
 
     public ListCertificatesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -159,7 +213,9 @@ public class ListCertificatesRequest  {
             return false;
         }
         ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.instanceId, listCertificatesRequest.instanceId) &&
+        return Objects.equals(this.spAuthToken, listCertificatesRequest.spAuthToken) &&
+            Objects.equals(this.stageAuthToken, listCertificatesRequest.stageAuthToken) &&
+            Objects.equals(this.instanceId, listCertificatesRequest.instanceId) &&
             Objects.equals(this.appId, listCertificatesRequest.appId) &&
             Objects.equals(this.limit, listCertificatesRequest.limit) &&
             Objects.equals(this.marker, listCertificatesRequest.marker) &&
@@ -167,12 +223,14 @@ public class ListCertificatesRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appId, limit, marker, offset);
+        return Objects.hash(spAuthToken, stageAuthToken, instanceId, appId, limit, marker, offset);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCertificatesRequest {\n");
+        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
+        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

@@ -237,6 +237,14 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddApplicationRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -276,6 +284,14 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(DeleteApplicationRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteApplicationRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -320,6 +336,14 @@ public class IoTDAMeta {
                 req.setAppId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowApplicationRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -351,6 +375,14 @@ public class IoTDAMeta {
             Boolean.class,
             f -> f.withMarshaller(ShowApplicationsRequest::getDefaultApp, (req, v) -> {
                 req.setDefaultApp(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowApplicationsRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -408,6 +440,216 @@ public class IoTDAMeta {
             AsyncDeviceCommandRequest.class,
             f -> f.withMarshaller(CreateAsyncCommandRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAsyncCommandsRequest, ListAsyncCommandsResponse> listAsyncCommands = genForlistAsyncCommands();
+
+    private static HttpRequestDef<ListAsyncCommandsRequest, ListAsyncCommandsResponse> genForlistAsyncCommands() {
+        // basic
+        HttpRequestDef.Builder<ListAsyncCommandsRequest, ListAsyncCommandsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAsyncCommandsRequest.class, ListAsyncCommandsResponse.class)
+                .withName("ListAsyncCommands")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("command_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getCommandId, (req, v) -> {
+                req.setCommandId(v);
+            })
+        );
+        builder.withRequestField("command_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getCommandName, (req, v) -> {
+                req.setCommandName(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> listAsyncHistoryCommands = genForlistAsyncHistoryCommands();
+
+    private static HttpRequestDef<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> genForlistAsyncHistoryCommands() {
+        // basic
+        HttpRequestDef.Builder<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAsyncHistoryCommandsRequest.class, ListAsyncHistoryCommandsResponse.class)
+                .withName("ListAsyncHistoryCommands")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands-history")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("command_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getCommandId, (req, v) -> {
+                req.setCommandId(v);
+            })
+        );
+        builder.withRequestField("command_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getCommandName, (req, v) -> {
+                req.setCommandName(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             })
         );
 
@@ -476,6 +718,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateBatchTaskRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateBatchTaskRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -557,6 +815,22 @@ public class IoTDAMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBatchTasksRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBatchTasksRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -614,6 +888,22 @@ public class IoTDAMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBatchTaskRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBatchTaskRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -645,6 +935,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(DeleteBatchTaskFileRequest::getFileId, (req, v) -> {
                 req.setFileId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBatchTaskFileRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBatchTaskFileRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -681,6 +987,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBatchTaskFilesRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBatchTaskFilesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -706,6 +1028,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -753,6 +1091,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(CheckCertificateRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -803,6 +1157,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -871,11 +1241,274 @@ public class IoTDAMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCertificatesRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCertificatesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListCertificatesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAppCertificateRequest, CreateAppCertificateResponse> createAppCertificate = genForcreateAppCertificate();
+
+    private static HttpRequestDef<CreateAppCertificateRequest, CreateAppCertificateResponse> genForcreateAppCertificate() {
+        // basic
+        HttpRequestDef.Builder<CreateAppCertificateRequest, CreateAppCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAppCertificateRequest.class, CreateAppCertificateResponse.class)
+                .withName("CreateAppCertificate")
+                .withUri("/v5/iot/{project_id}/certificates/app-cert/")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAppCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAppCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAppCertificateRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppCertificateRequest, DeleteAppCertificateResponse> deleteAppCertificate = genFordeleteAppCertificate();
+
+    private static HttpRequestDef<DeleteAppCertificateRequest, DeleteAppCertificateResponse> genFordeleteAppCertificate() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppCertificateRequest, DeleteAppCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppCertificateRequest.class, DeleteAppCertificateResponse.class)
+                .withName("DeleteAppCertificate")
+                .withUri("/v5/iot/{project_id}/certificates/app-cert/{cert_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteAppCertificateRequest::getCertId, (req, v) -> {
+                req.setCertId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAppCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAppCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAppCertificateRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAppCertificateResponse::getBody, (response, data)->{
+                response.setBody(data);
+            })
+        );
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppCertificatesRequest, ListAppCertificatesResponse> listAppCertificates = genForlistAppCertificates();
+
+    private static HttpRequestDef<ListAppCertificatesRequest, ListAppCertificatesResponse> genForlistAppCertificates() {
+        // basic
+        HttpRequestDef.Builder<ListAppCertificatesRequest, ListAppCertificatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppCertificatesRequest.class, ListAppCertificatesResponse.class)
+                .withName("ListAppCertificates")
+                .withUri("/v5/iot/{project_id}/certificates/app-cert/")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppCertificatesRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppCertificatesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAppCertificatesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ListAppCertificatesResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(CertificateRspDTO.class)
+        );
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAppCertificateRequest, ShowAppCertificateResponse> showAppCertificate = genForshowAppCertificate();
+
+    private static HttpRequestDef<ShowAppCertificateRequest, ShowAppCertificateResponse> genForshowAppCertificate() {
+        // basic
+        HttpRequestDef.Builder<ShowAppCertificateRequest, ShowAppCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAppCertificateRequest.class, ShowAppCertificateResponse.class)
+                .withName("ShowAppCertificate")
+                .withUri("/v5/iot/{project_id}/certificates/{cert_id}/")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowAppCertificateRequest::getCertId, (req, v) -> {
+                req.setCertId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAppCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAppCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAppCertificateRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAppCertificateRequest, UpdateAppCertificateResponse> updateAppCertificate = genForupdateAppCertificate();
+
+    private static HttpRequestDef<UpdateAppCertificateRequest, UpdateAppCertificateResponse> genForupdateAppCertificate() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppCertificateRequest, UpdateAppCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppCertificateRequest.class, UpdateAppCertificateResponse.class)
+                .withName("UpdateAppCertificate")
+                .withUri("/v5/iot/{project_id}/certificates/app-cert/{cert_id}")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.withRequestField("cert_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateAppCertificateRequest::getCertId, (req, v) -> {
+                req.setCertId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAppCertificateRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAppCertificateRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAppCertificateRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );
@@ -902,6 +1535,14 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(CreateCommandRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateCommandRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -937,6 +1578,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddDeviceGroupRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddDeviceGroupRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -994,6 +1651,22 @@ public class IoTDAMeta {
                 req.setDeviceId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateOrDeleteDeviceInGroupRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateOrDeleteDeviceInGroupRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1034,6 +1707,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(DeleteDeviceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceGroupRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceGroupRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1110,6 +1799,22 @@ public class IoTDAMeta {
                 req.setAppId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDeviceGroupsRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDeviceGroupsRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1141,6 +1846,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(ShowDeviceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDeviceGroupRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDeviceGroupRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1200,6 +1921,22 @@ public class IoTDAMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDevicesInGroupRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1231,6 +1968,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(UpdateDeviceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDeviceGroupRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDeviceGroupRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1266,6 +2019,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1305,6 +2074,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1347,6 +2132,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(FreezeDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(FreezeDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(FreezeDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1471,6 +2272,22 @@ public class IoTDAMeta {
                 req.setAppId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDevicesRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDevicesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1510,6 +2327,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(ResetDeviceSecretRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetDeviceSecretRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetDeviceSecretRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1553,6 +2386,22 @@ public class IoTDAMeta {
                 req.setDeviceId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1584,6 +2433,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(UnfreezeDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnfreezeDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnfreezeDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1628,6 +2493,22 @@ public class IoTDAMeta {
                 req.setDeviceId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1669,6 +2550,22 @@ public class IoTDAMeta {
                 req.setDeviceId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDeviceShadowRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDeviceShadowRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1700,6 +2597,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(UpdateDeviceShadowDesiredDataRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDeviceShadowDesiredDataRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDeviceShadowDesiredDataRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1743,6 +2656,22 @@ public class IoTDAMeta {
                 req.setDeviceId(v);
             })
         );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateMessageRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateMessageRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1782,6 +2711,14 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(ListDeviceMessagesRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDeviceMessagesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1825,6 +2762,14 @@ public class IoTDAMeta {
                 req.setMessageId(v);
             })
         );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDeviceMessageRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1850,6 +2795,22 @@ public class IoTDAMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateProductRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateProductRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1897,6 +2858,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(DeleteProductRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteProductRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteProductRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -1965,6 +2942,22 @@ public class IoTDAMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProductsRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProductsRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2006,6 +2999,22 @@ public class IoTDAMeta {
                 req.setAppId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowProductRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowProductRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2037,6 +3046,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(UpdateProductRequest::getProductId, (req, v) -> {
                 req.setProductId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateProductRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateProductRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -2088,6 +3113,14 @@ public class IoTDAMeta {
                 req.setServiceId(v);
             })
         );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPropertiesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2119,6 +3152,14 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(UpdatePropertiesRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePropertiesRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -2209,6 +3250,14 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(CreateRuleActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("x-LB-Service",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRuleActionRequest::getXLBService, (req, v) -> {
+                req.setXLBService(v);
             })
         );
         builder.withRequestField("body",
@@ -2826,6 +3875,14 @@ public class IoTDAMeta {
                 req.setAppId(v);
             })
         );
+        builder.withRequestField("rule_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRulesRequest::getRuleType, (req, v) -> {
+                req.setRuleType(v);
+            })
+        );
         builder.withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2949,6 +4006,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSubscriptionRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSubscriptionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2988,6 +4061,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(DeleteSubscriptionRequest::getSubscriptionId, (req, v) -> {
                 req.setSubscriptionId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSubscriptionRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSubscriptionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -3088,6 +4177,22 @@ public class IoTDAMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSubscriptionsRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSubscriptionsRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3121,6 +4226,22 @@ public class IoTDAMeta {
                 req.setSubscriptionId(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSubscriptionRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSubscriptionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3152,6 +4273,22 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(UpdateSubscriptionRequest::getSubscriptionId, (req, v) -> {
                 req.setSubscriptionId(v);
+            })
+        );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSubscriptionRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSubscriptionRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -3211,6 +4348,22 @@ public class IoTDAMeta {
                 req.setOffset(v);
             })
         );
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListResourcesByTagsRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3244,6 +4397,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(TagDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(TagDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3286,6 +4455,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UntagDeviceRequest::getSpAuthToken, (req, v) -> {
+                req.setSpAuthToken(v);
+            })
+        );
+        builder.withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UntagDeviceRequest::getStageAuthToken, (req, v) -> {
+                req.setStageAuthToken(v);
+            })
+        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

@@ -7,6 +7,10 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -74,6 +78,11 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
          */
         public static final ContentTypeEnum XML = new ContentTypeEnum("xml");
         
+        /**
+         * Enum STREAM for value: "stream"
+         */
+        public static final ContentTypeEnum STREAM = new ContentTypeEnum("stream");
+        
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -81,6 +90,7 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
             Map<String, ContentTypeEnum> map = new HashMap<>();
             map.put("json", JSON);
             map.put("xml", XML);
+            map.put("stream", STREAM);
             return Collections.unmodifiableMap(map);
         }
 
@@ -178,18 +188,180 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
     @JsonProperty(value="instance")
     
     private String instance;
+    /**
+     * 后端API类型： - data：数据后端 - function： 函数后端
+     */
+    public static final class TypeEnum {
+
+        
+        /**
+         * Enum DATA for value: "data"
+         */
+        public static final TypeEnum DATA = new TypeEnum("data");
+        
+        /**
+         * Enum FUNCTION for value: "function"
+         */
+        public static final TypeEnum FUNCTION = new TypeEnum("function");
+        
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("data", DATA);
+            map.put("function", FUNCTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private String type;
+    private TypeEnum type;
+    /**
+     * 后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
+     */
+    public static final class StatusEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+        
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final StatusEnum NUMBER_3 = new StatusEnum(3);
+        
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final StatusEnum NUMBER_4 = new StatusEnum(4);
+        
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status;
+    private StatusEnum status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -458,7 +630,7 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
 
 
     /**
-     * 后端API所有者
+     * 后端API所属实例编号
      * @return instance
      */
     public String getInstance() {
@@ -469,7 +641,7 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
         this.instance = instance;
     }
 
-    public CreateLiveDataApiV2Response withType(String type) {
+    public CreateLiveDataApiV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -478,18 +650,18 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
 
 
     /**
-     * 后端API类型
+     * 后端API类型： - data：数据后端 - function： 函数后端
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
-    public CreateLiveDataApiV2Response withStatus(Integer status) {
+    public CreateLiveDataApiV2Response withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -498,14 +670,14 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
 
 
     /**
-     * 后端API状态
+     * 后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

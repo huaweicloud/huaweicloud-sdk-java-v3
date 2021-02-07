@@ -125,7 +125,7 @@ public class DeviceShadowData  {
 
 
     /**
-     * 设备影子的版本，携带改参数时平台会校验值必须等于当前影子版本，初始从0开始。
+     * 设备影子的版本，携带该参数时平台会校验值必须等于当前影子版本，初始从0开始。
      * @return version
      */
     public Long getVersion() {

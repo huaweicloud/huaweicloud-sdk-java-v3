@@ -164,7 +164,7 @@ public class ApiFuncCreate  {
 
 
     /**
-     * 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
+     * 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {
@@ -224,7 +224,7 @@ public class ApiFuncCreate  {
 
 
     /**
-     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改  单位：毫秒。
+     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {

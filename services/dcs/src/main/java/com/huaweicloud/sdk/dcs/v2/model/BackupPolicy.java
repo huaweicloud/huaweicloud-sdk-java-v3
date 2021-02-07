@@ -65,7 +65,7 @@ public class BackupPolicy  {
 
 
     /**
-     * 当backup_type设置为manual时，该参数为必填。 保留天数，单位：天，取值范围：1-7。 
+     * 当backup_type设置为auto时，该参数为必填。 保留天数，单位：天，取值范围：1-7。 
      * @return saveDays
      */
     public Integer getSaveDays() {

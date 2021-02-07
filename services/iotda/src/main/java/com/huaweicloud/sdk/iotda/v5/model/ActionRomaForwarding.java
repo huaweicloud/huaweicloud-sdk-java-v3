@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 转发ROMA服务消息结构
+ * 转发ROMA Connect服务消息结构
  */
 public class ActionRomaForwarding  {
 
@@ -44,7 +44,7 @@ public class ActionRomaForwarding  {
 
 
     /**
-     * ROMA服务对应的region区域
+     * ROMA Connect服务对应的region区域
      * @return regionName
      */
     public String getRegionName() {
@@ -64,7 +64,7 @@ public class ActionRomaForwarding  {
 
 
     /**
-     * ROMA服务对应的projectId信息
+     * ROMA Connect服务对应的projectId信息
      * @return projectId
      */
     public String getProjectId() {
@@ -84,7 +84,7 @@ public class ActionRomaForwarding  {
 
 
     /**
-     * ROMA服务对应参数类型
+     * ROMA Connect服务对应参数类型
      * @return romaPushType
      */
     public String getRomaPushType() {

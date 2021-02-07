@@ -19,6 +19,20 @@ public class DeleteCertificateRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Sp-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String spAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Stage-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String stageAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -28,6 +42,46 @@ public class DeleteCertificateRequest  {
     @JsonProperty(value="certificate_id")
     
     private String certificateId;
+
+    public DeleteCertificateRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get spAuthToken
+     * @return spAuthToken
+     */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+    }
+
+    public DeleteCertificateRequest withStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get stageAuthToken
+     * @return stageAuthToken
+     */
+    public String getStageAuthToken() {
+        return stageAuthToken;
+    }
+
+    public void setStageAuthToken(String stageAuthToken) {
+        this.stageAuthToken = stageAuthToken;
+    }
 
     public DeleteCertificateRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -77,17 +131,21 @@ public class DeleteCertificateRequest  {
             return false;
         }
         DeleteCertificateRequest deleteCertificateRequest = (DeleteCertificateRequest) o;
-        return Objects.equals(this.instanceId, deleteCertificateRequest.instanceId) &&
+        return Objects.equals(this.spAuthToken, deleteCertificateRequest.spAuthToken) &&
+            Objects.equals(this.stageAuthToken, deleteCertificateRequest.stageAuthToken) &&
+            Objects.equals(this.instanceId, deleteCertificateRequest.instanceId) &&
             Objects.equals(this.certificateId, deleteCertificateRequest.certificateId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, certificateId);
+        return Objects.hash(spAuthToken, stageAuthToken, instanceId, certificateId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteCertificateRequest {\n");
+        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
+        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("}");

@@ -88,7 +88,8 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
         KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
         if (Objects.isNull(response)) {
-            throw new SdkException("failed to get project id");
+            throw new SdkException("Failed to get project id, "
+                + "please input project id when initializing BasicCredentials");
         }
         if (response.getProjects().size() == 1) {
             this.projectId = response.getProjects().get(0).getId();
@@ -188,11 +189,11 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     @Override
     public BasicCredentials deepClone() {
         return new BasicCredentials()
-                .withProjectId(this.projectId)
-                .withAk(this.getAk())
-                .withSk(this.getSk())
-                .withIamEndpoint(this.getIamEndpoint())
-                .withSecurityToken(this.getSecurityToken());
+            .withProjectId(this.projectId)
+            .withAk(this.getAk())
+            .withSk(this.getSk())
+            .withIamEndpoint(this.getIamEndpoint())
+            .withSecurityToken(this.getSecurityToken());
     }
 
 }

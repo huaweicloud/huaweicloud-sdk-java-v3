@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.SignBindingReq;
+import com.huaweicloud.sdk.roma.v2.model.SignApiBinding;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class AssociateSignatureKeyV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private SignBindingReq body = null;
+    private SignApiBinding body = null;
 
     public AssociateSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -50,14 +50,14 @@ public class AssociateSignatureKeyV2Request  {
         this.instanceId = instanceId;
     }
 
-    public AssociateSignatureKeyV2Request withBody(SignBindingReq body) {
+    public AssociateSignatureKeyV2Request withBody(SignApiBinding body) {
         this.body = body;
         return this;
     }
 
-    public AssociateSignatureKeyV2Request withBody(Consumer<SignBindingReq> bodySetter) {
+    public AssociateSignatureKeyV2Request withBody(Consumer<SignApiBinding> bodySetter) {
         if(this.body == null ){
-            this.body = new SignBindingReq();
+            this.body = new SignApiBinding();
             bodySetter.accept(this.body);
         }
         
@@ -69,11 +69,11 @@ public class AssociateSignatureKeyV2Request  {
      * Get body
      * @return body
      */
-    public SignBindingReq getBody() {
+    public SignApiBinding getBody() {
         return body;
     }
 
-    public void setBody(SignBindingReq body) {
+    public void setBody(SignApiBinding body) {
         this.body = body;
     }
     @Override

@@ -42,6 +42,28 @@ public class SwrAsyncClient {
     }
 
     /**
+     * 手动同步镜像
+     * 手动同步镜像
+     *
+     * @param CreateManualImageSyncRepoRequest 请求对象
+     * @return CompletableFuture<CreateManualImageSyncRepoResponse>
+     */
+    public CompletableFuture<CreateManualImageSyncRepoResponse> createManualImageSyncRepoAsync(CreateManualImageSyncRepoRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.createManualImageSyncRepo);
+    }
+
+    /**
+     * 手动同步镜像
+     * 手动同步镜像
+     *
+     * @param CreateManualImageSyncRepoRequest 请求对象
+     * @return AsyncInvoker<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse>
+     */
+    public AsyncInvoker<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse> createManualImageSyncRepoAsyncInvoker(CreateManualImageSyncRepoRequest request) {
+        return new AsyncInvoker<CreateManualImageSyncRepoRequest, CreateManualImageSyncRepoResponse>(request, SwrMeta.createManualImageSyncRepo, hcClient);
+    }
+
+    /**
      * 创建组织
      * 创建组织
      *
@@ -83,6 +105,28 @@ public class SwrAsyncClient {
      */
     public AsyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse> createNamespaceAuthAsyncInvoker(CreateNamespaceAuthRequest request) {
         return new AsyncInvoker<CreateNamespaceAuthRequest, CreateNamespaceAuthResponse>(request, SwrMeta.createNamespaceAuth, hcClient);
+    }
+
+    /**
+     * 在组织下创建镜像仓库
+     * 在组织下创建镜像仓库。
+     *
+     * @param CreateRepoRequest 请求对象
+     * @return CompletableFuture<CreateRepoResponse>
+     */
+    public CompletableFuture<CreateRepoResponse> createRepoAsync(CreateRepoRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.createRepo);
+    }
+
+    /**
+     * 在组织下创建镜像仓库
+     * 在组织下创建镜像仓库。
+     *
+     * @param CreateRepoRequest 请求对象
+     * @return AsyncInvoker<CreateRepoRequest, CreateRepoResponse>
+     */
+    public AsyncInvoker<CreateRepoRequest, CreateRepoResponse> createRepoAsyncInvoker(CreateRepoRequest request) {
+        return new AsyncInvoker<CreateRepoRequest, CreateRepoResponse>(request, SwrMeta.createRepo, hcClient);
     }
 
     /**
@@ -460,6 +504,28 @@ public class SwrAsyncClient {
     }
 
     /**
+     * 查询镜像列表
+     * 查询镜像列表
+     *
+     * @param ListReposDetailsRequest 请求对象
+     * @return CompletableFuture<ListReposDetailsResponse>
+     */
+    public CompletableFuture<ListReposDetailsResponse> listReposDetailsAsync(ListReposDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listReposDetails);
+    }
+
+    /**
+     * 查询镜像列表
+     * 查询镜像列表
+     *
+     * @param ListReposDetailsRequest 请求对象
+     * @return AsyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse>
+     */
+    public AsyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse> listReposDetailsAsyncInvoker(ListReposDetailsRequest request) {
+        return new AsyncInvoker<ListReposDetailsRequest, ListReposDetailsResponse>(request, SwrMeta.listReposDetails, hcClient);
+    }
+
+    /**
      * 查询镜像tag列表
      * 查询镜像tag列表
      *
@@ -523,6 +589,28 @@ public class SwrAsyncClient {
      */
     public AsyncInvoker<ListRetentionsRequest, ListRetentionsResponse> listRetentionsAsyncInvoker(ListRetentionsRequest request) {
         return new AsyncInvoker<ListRetentionsRequest, ListRetentionsResponse>(request, SwrMeta.listRetentions, hcClient);
+    }
+
+    /**
+     * 查询共享镜像列表
+     * 查询共享镜像列表
+     *
+     * @param ListSharedReposDetailsRequest 请求对象
+     * @return CompletableFuture<ListSharedReposDetailsResponse>
+     */
+    public CompletableFuture<ListSharedReposDetailsResponse> listSharedReposDetailsAsync(ListSharedReposDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listSharedReposDetails);
+    }
+
+    /**
+     * 查询共享镜像列表
+     * 查询共享镜像列表
+     *
+     * @param ListSharedReposDetailsRequest 请求对象
+     * @return AsyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse>
+     */
+    public AsyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> listSharedReposDetailsAsyncInvoker(ListSharedReposDetailsRequest request) {
+        return new AsyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse>(request, SwrMeta.listSharedReposDetails, hcClient);
     }
 
     /**
@@ -658,6 +746,28 @@ public class SwrAsyncClient {
     }
 
     /**
+     * 获取镜像同步任务信息
+     * 获取镜像同步任务信息
+     *
+     * @param ShowSyncJobRequest 请求对象
+     * @return CompletableFuture<ShowSyncJobResponse>
+     */
+    public CompletableFuture<ShowSyncJobResponse> showSyncJobAsync(ShowSyncJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.showSyncJob);
+    }
+
+    /**
+     * 获取镜像同步任务信息
+     * 获取镜像同步任务信息
+     *
+     * @param ShowSyncJobRequest 请求对象
+     * @return AsyncInvoker<ShowSyncJobRequest, ShowSyncJobResponse>
+     */
+    public AsyncInvoker<ShowSyncJobRequest, ShowSyncJobResponse> showSyncJobAsyncInvoker(ShowSyncJobRequest request) {
+        return new AsyncInvoker<ShowSyncJobRequest, ShowSyncJobResponse>(request, SwrMeta.showSyncJob, hcClient);
+    }
+
+    /**
      * 获取触发器详情
      * 获取触发器详情
      *
@@ -699,6 +809,50 @@ public class SwrAsyncClient {
      */
     public AsyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse> showUserRepositoryAuthAsyncInvoker(ShowUserRepositoryAuthRequest request) {
         return new AsyncInvoker<ShowUserRepositoryAuthRequest, ShowUserRepositoryAuthResponse>(request, SwrMeta.showUserRepositoryAuth, hcClient);
+    }
+
+    /**
+     * 更新组织权限
+     * 更新组织权限
+     *
+     * @param UpdateNamespaceAuthRequest 请求对象
+     * @return CompletableFuture<UpdateNamespaceAuthResponse>
+     */
+    public CompletableFuture<UpdateNamespaceAuthResponse> updateNamespaceAuthAsync(UpdateNamespaceAuthRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.updateNamespaceAuth);
+    }
+
+    /**
+     * 更新组织权限
+     * 更新组织权限
+     *
+     * @param UpdateNamespaceAuthRequest 请求对象
+     * @return AsyncInvoker<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse>
+     */
+    public AsyncInvoker<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse> updateNamespaceAuthAsyncInvoker(UpdateNamespaceAuthRequest request) {
+        return new AsyncInvoker<UpdateNamespaceAuthRequest, UpdateNamespaceAuthResponse>(request, SwrMeta.updateNamespaceAuth, hcClient);
+    }
+
+    /**
+     * 更新镜像仓库的概要信息
+     * 更新租户命名空间下的镜像概要信息，包括镜像类型、是否公有、描述信息
+     *
+     * @param UpdateRepoRequest 请求对象
+     * @return CompletableFuture<UpdateRepoResponse>
+     */
+    public CompletableFuture<UpdateRepoResponse> updateRepoAsync(UpdateRepoRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.updateRepo);
+    }
+
+    /**
+     * 更新镜像仓库的概要信息
+     * 更新租户命名空间下的镜像概要信息，包括镜像类型、是否公有、描述信息
+     *
+     * @param UpdateRepoRequest 请求对象
+     * @return AsyncInvoker<UpdateRepoRequest, UpdateRepoResponse>
+     */
+    public AsyncInvoker<UpdateRepoRequest, UpdateRepoResponse> updateRepoAsyncInvoker(UpdateRepoRequest request) {
+        return new AsyncInvoker<UpdateRepoRequest, UpdateRepoResponse>(request, SwrMeta.updateRepo, hcClient);
     }
 
     /**
@@ -787,6 +941,28 @@ public class SwrAsyncClient {
      */
     public AsyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse> updateUserRepositoryAuthAsyncInvoker(UpdateUserRepositoryAuthRequest request) {
         return new AsyncInvoker<UpdateUserRepositoryAuthRequest, UpdateUserRepositoryAuthResponse>(request, SwrMeta.updateUserRepositoryAuth, hcClient);
+    }
+
+    /**
+     * 查询所有API版本信息
+     * 查询所有API版本信息
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return CompletableFuture<ListApiVersionsResponse>
+     */
+    public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listApiVersions);
+    }
+
+    /**
+     * 查询所有API版本信息
+     * 查询所有API版本信息
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
+     */
+    public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(ListApiVersionsRequest request) {
+        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, SwrMeta.listApiVersions, hcClient);
     }
 
     /**

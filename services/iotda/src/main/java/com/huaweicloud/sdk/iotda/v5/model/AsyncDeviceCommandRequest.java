@@ -56,7 +56,7 @@ public class AsyncDeviceCommandRequest  {
 
 
     /**
-     * 设备命令所属的设备服务ID，在设备关联的产品模型中定义。
+     * 设备命令所属的设备服务ID，在设备关联的产品模型中定义。如设备需要编解码插件来解析命令，此参数为必填项。
      * @return serviceId
      */
     public String getServiceId() {
@@ -76,7 +76,7 @@ public class AsyncDeviceCommandRequest  {
 
 
     /**
-     * 设备命令名称，在设备关联的产品模型中定义。
+     * 设备命令名称，在设备关联的产品模型中定义。如设备需要编解码插件来解析命令，此参数为必填项。
      * @return commandName
      */
     public String getCommandName() {
@@ -138,7 +138,7 @@ public class AsyncDeviceCommandRequest  {
 
 
     /**
-     * 下发策略， immediately表示立即下发，此时expire_time无效；delay表示缓存起来，等数据上报或者设备上线之后下发，默认缓存下发。
+     * 下发策略， immediately表示立即下发，此时expire_time无效；delay表示缓存下发，等数据上报或者设备上线之后下发，默认缓存下发。delay策略下，expire_time为0或空时，命令会默认缓存24小时。
      * @return sendStrategy
      */
     public String getSendStrategy() {

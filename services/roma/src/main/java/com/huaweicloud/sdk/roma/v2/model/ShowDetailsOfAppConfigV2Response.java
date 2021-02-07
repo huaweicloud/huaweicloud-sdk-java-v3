@@ -56,6 +56,12 @@ public class ShowDetailsOfAppConfigV2Response extends SdkResponse {
     
     private OffsetDateTime updateTime = null;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public ShowDetailsOfAppConfigV2Response withId(String id) {
         this.id = id;
         return this;
@@ -175,6 +181,26 @@ public class ShowDetailsOfAppConfigV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
+
+    public ShowDetailsOfAppConfigV2Response withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用配置描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -189,11 +215,12 @@ public class ShowDetailsOfAppConfigV2Response extends SdkResponse {
             Objects.equals(this.configType, showDetailsOfAppConfigV2Response.configType) &&
             Objects.equals(this.configName, showDetailsOfAppConfigV2Response.configName) &&
             Objects.equals(this.configValue, showDetailsOfAppConfigV2Response.configValue) &&
-            Objects.equals(this.updateTime, showDetailsOfAppConfigV2Response.updateTime);
+            Objects.equals(this.updateTime, showDetailsOfAppConfigV2Response.updateTime) &&
+            Objects.equals(this.description, showDetailsOfAppConfigV2Response.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, appId, configType, configName, configValue, updateTime);
+        return Objects.hash(id, appId, configType, configName, configValue, updateTime, description);
     }
     @Override
     public String toString() {
@@ -205,6 +232,7 @@ public class ShowDetailsOfAppConfigV2Response extends SdkResponse {
         sb.append("    configName: ").append(toIndentedString(configName)).append("\n");
         sb.append("    configValue: ").append(toIndentedString(configValue)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

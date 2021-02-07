@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.ApiMockCreate;
 import java.time.OffsetDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -54,12 +58,84 @@ public class ApiMock  {
     @JsonProperty(value="register_time")
     
     private OffsetDateTime registerTime = null;
+    /**
+     * 后端状态   - 1： 有效
+     */
+    public static final class StatusEnum {
+
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+        
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status;
+    private StatusEnum status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -76,7 +152,7 @@ public class ApiMock  {
 
 
     /**
-     * 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
+     * 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {
@@ -187,7 +263,7 @@ public class ApiMock  {
         this.registerTime = registerTime;
     }
 
-    public ApiMock withStatus(Integer status) {
+    public ApiMock withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -196,14 +272,14 @@ public class ApiMock  {
 
 
     /**
-     * 状态
+     * 后端状态   - 1： 有效
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

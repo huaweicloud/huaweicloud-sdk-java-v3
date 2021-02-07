@@ -168,7 +168,7 @@ public class RoutingRule  {
 
 
     /**
-     * 租户规则的生效范围，默认GLOBAL，取值如下： - GLOBAL：生效范围为租户级 - APP：生效范围为资源空间级。 
+     * 租户规则的生效范围，取值如下： - GLOBAL：生效范围为租户级 - APP：生效范围为资源空间级。 
      * @return appType
      */
     public String getAppType() {

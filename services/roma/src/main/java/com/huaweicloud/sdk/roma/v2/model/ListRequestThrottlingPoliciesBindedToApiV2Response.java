@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.ThrottleBindingThrottleResp;
+import com.huaweicloud.sdk.roma.v2.model.ThrottleForApi;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="throttles")
     
-    private List<ThrottleBindingThrottleResp> throttles = null;
+    private List<ThrottleForApi> throttles = null;
     
     public ListRequestThrottlingPoliciesBindedToApiV2Response withSize(Integer size) {
         this.size = size;
@@ -81,13 +81,13 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
         this.total = total;
     }
 
-    public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(List<ThrottleBindingThrottleResp> throttles) {
+    public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(List<ThrottleForApi> throttles) {
         this.throttles = throttles;
         return this;
     }
 
     
-    public ListRequestThrottlingPoliciesBindedToApiV2Response addThrottlesItem(ThrottleBindingThrottleResp throttlesItem) {
+    public ListRequestThrottlingPoliciesBindedToApiV2Response addThrottlesItem(ThrottleForApi throttlesItem) {
         if (this.throttles == null) {
             this.throttles = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
         return this;
     }
 
-    public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(Consumer<List<ThrottleBindingThrottleResp>> throttlesSetter) {
+    public ListRequestThrottlingPoliciesBindedToApiV2Response withThrottles(Consumer<List<ThrottleForApi>> throttlesSetter) {
         if(this.throttles == null ){
             this.throttles = new ArrayList<>();
         }
@@ -107,11 +107,11 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
      * 本次查询返回的流控策略列表
      * @return throttles
      */
-    public List<ThrottleBindingThrottleResp> getThrottles() {
+    public List<ThrottleForApi> getThrottles() {
         return throttles;
     }
 
-    public void setThrottles(List<ThrottleBindingThrottleResp> throttles) {
+    public void setThrottles(List<ThrottleForApi> throttles) {
         this.throttles = throttles;
     }
     @Override

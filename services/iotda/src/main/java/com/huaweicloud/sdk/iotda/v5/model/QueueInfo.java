@@ -32,7 +32,7 @@ public class QueueInfo  {
 
 
     /**
-     * 队列名称，同一租户不允许生重复。
+     * 队列名称，同一租户不允许重复。
      * @return queueName
      */
     public String getQueueName() {

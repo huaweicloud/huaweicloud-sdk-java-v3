@@ -39,7 +39,7 @@ public class OsVersionInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="os_bit")
     
-    private String osBit;
+    private Integer osBit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -107,7 +107,7 @@ public class OsVersionInfo  {
         this.osVersion = osVersion;
     }
 
-    public OsVersionInfo withOsBit(String osBit) {
+    public OsVersionInfo withOsBit(Integer osBit) {
         this.osBit = osBit;
         return this;
     }
@@ -119,11 +119,11 @@ public class OsVersionInfo  {
      * 操作系统的位数
      * @return osBit
      */
-    public String getOsBit() {
+    public Integer getOsBit() {
         return osBit;
     }
 
-    public void setOsBit(String osBit) {
+    public void setOsBit(Integer osBit) {
         this.osBit = osBit;
     }
 

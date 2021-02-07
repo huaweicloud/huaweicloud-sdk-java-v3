@@ -1,0 +1,226 @@
+package com.huaweicloud.sdk.live.v1.model;
+
+
+
+
+import java.util.Collections;
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.live.v1.model.DomainSourceInfo;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * LiveDomainModifyReq
+ */
+public class LiveDomainModifyReq  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain")
+    
+    private String domain;
+    /**
+     * 直播域名状态，通过修改此字段，实现域名的启用和停用。注意：域名处于“配置中”状态时，不允对该域名执行启停操作。
+     */
+    public static final class StatusEnum {
+
+        
+        /**
+         * Enum ON for value: "on"
+         */
+        public static final StatusEnum ON = new StatusEnum("on");
+        
+        /**
+         * Enum OFF for value: "off"
+         */
+        public static final StatusEnum OFF = new StatusEnum("off");
+        
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("on", ON);
+            map.put("off", OFF);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatusEnum(value);
+            }
+            return result;
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatusEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    private StatusEnum status;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_source")
+    
+    private DomainSourceInfo domainSource = null;
+
+    public LiveDomainModifyReq withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 直播域名，不允许修改
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public LiveDomainModifyReq withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 直播域名状态，通过修改此字段，实现域名的启用和停用。注意：域名处于“配置中”状态时，不允对该域名执行启停操作。
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
+    public LiveDomainModifyReq withDomainSource(DomainSourceInfo domainSource) {
+        this.domainSource = domainSource;
+        return this;
+    }
+
+    public LiveDomainModifyReq withDomainSource(Consumer<DomainSourceInfo> domainSourceSetter) {
+        if(this.domainSource == null ){
+            this.domainSource = new DomainSourceInfo();
+            domainSourceSetter.accept(this.domainSource);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get domainSource
+     * @return domainSource
+     */
+    public DomainSourceInfo getDomainSource() {
+        return domainSource;
+    }
+
+    public void setDomainSource(DomainSourceInfo domainSource) {
+        this.domainSource = domainSource;
+    }
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        LiveDomainModifyReq liveDomainModifyReq = (LiveDomainModifyReq) o;
+        return Objects.equals(this.domain, liveDomainModifyReq.domain) &&
+            Objects.equals(this.status, liveDomainModifyReq.status) &&
+            Objects.equals(this.domainSource, liveDomainModifyReq.domainSource);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(domain, status, domainSource);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class LiveDomainModifyReq {\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    domainSource: ").append(toIndentedString(domainSource)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

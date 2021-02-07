@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.ApiForSign;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.SignUnbindingApiResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apis")
     
-    private List<SignUnbindingApiResp> apis = null;
+    private List<ApiForSign> apis = null;
     
     public ListApisNotBoundWithSignatureKeyV2Response withSize(Integer size) {
         this.size = size;
@@ -81,13 +81,13 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
         this.total = total;
     }
 
-    public ListApisNotBoundWithSignatureKeyV2Response withApis(List<SignUnbindingApiResp> apis) {
+    public ListApisNotBoundWithSignatureKeyV2Response withApis(List<ApiForSign> apis) {
         this.apis = apis;
         return this;
     }
 
     
-    public ListApisNotBoundWithSignatureKeyV2Response addApisItem(SignUnbindingApiResp apisItem) {
+    public ListApisNotBoundWithSignatureKeyV2Response addApisItem(ApiForSign apisItem) {
         if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApisNotBoundWithSignatureKeyV2Response withApis(Consumer<List<SignUnbindingApiResp>> apisSetter) {
+    public ListApisNotBoundWithSignatureKeyV2Response withApis(Consumer<List<ApiForSign>> apisSetter) {
         if(this.apis == null ){
             this.apis = new ArrayList<>();
         }
@@ -107,11 +107,11 @@ public class ListApisNotBoundWithSignatureKeyV2Response extends SdkResponse {
      * 本次查询返回的API列表
      * @return apis
      */
-    public List<SignUnbindingApiResp> getApis() {
+    public List<ApiForSign> getApis() {
         return apis;
     }
 
-    public void setApis(List<SignUnbindingApiResp> apis) {
+    public void setApis(List<ApiForSign> apis) {
         this.apis = apis;
     }
     @Override

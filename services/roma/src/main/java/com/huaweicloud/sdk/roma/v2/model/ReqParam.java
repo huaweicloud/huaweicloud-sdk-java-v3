@@ -537,7 +537,7 @@ public class ReqParam  {
 
 
     /**
-     * 参数名称。 长度为1 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线、英文句号组成，且只能以英文开头。 
+     * 参数名称。 由英文字母、数字、中划线、下划线、英文句号组成，且只能以英文开头。 
      * @return name
      */
     public String getName() {
@@ -677,7 +677,7 @@ public class ReqParam  {
 
 
     /**
-     * 描述信息。长度不超过255个字符 > 中文字符必须为UTF-8或者unicode编码。
+     * 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {

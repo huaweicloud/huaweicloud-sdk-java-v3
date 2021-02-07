@@ -12,6 +12,64 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class LiveMeta {
 
+    public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForcreateDomain();
+
+    private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForcreateDomain() {
+        // basic
+        HttpRequestDef.Builder<CreateDomainRequest, CreateDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDomainRequest.class, CreateDomainResponse.class)
+                .withName("CreateDomain")
+                .withUri("/v1/{project_id}/domain")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            LiveDomainCreateReq.class,
+            f -> f.withMarshaller(CreateDomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDomainMappingRequest, CreateDomainMappingResponse> createDomainMapping = genForcreateDomainMapping();
+
+    private static HttpRequestDef<CreateDomainMappingRequest, CreateDomainMappingResponse> genForcreateDomainMapping() {
+        // basic
+        HttpRequestDef.Builder<CreateDomainMappingRequest, CreateDomainMappingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateDomainMappingRequest.class, CreateDomainMappingResponse.class)
+                .withName("CreateDomainMapping")
+                .withUri("/v1/{project_id}/domains_mapping")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.withRequestField("specify_project",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDomainMappingRequest::getSpecifyProject, (req, v) -> {
+                req.setSpecifyProject(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DomainMapping.class,
+            f -> f.withMarshaller(CreateDomainMappingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRecordConfigRequest, CreateRecordConfigResponse> createRecordConfig = genForcreateRecordConfig();
 
     private static HttpRequestDef<CreateRecordConfigRequest, CreateRecordConfigResponse> genForcreateRecordConfig() {
@@ -87,6 +145,72 @@ public class LiveMeta {
             StreamTranscodingTemplate.class,
             f -> f.withMarshaller(CreateTranscodingsTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genFordeleteDomain();
+
+    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genFordeleteDomain() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainRequest, DeleteDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainRequest.class, DeleteDomainResponse.class)
+                .withName("DeleteDomain")
+                .withUri("/v1/{project_id}/domain")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDomainMappingRequest, DeleteDomainMappingResponse> deleteDomainMapping = genFordeleteDomainMapping();
+
+    private static HttpRequestDef<DeleteDomainMappingRequest, DeleteDomainMappingResponse> genFordeleteDomainMapping() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainMappingRequest, DeleteDomainMappingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainMappingRequest.class, DeleteDomainMappingResponse.class)
+                .withName("DeleteDomainMapping")
+                .withUri("/v1/{project_id}/domains_mapping")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("specify_project",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainMappingRequest::getSpecifyProject, (req, v) -> {
+                req.setSpecifyProject(v);
+            })
+        );
+        builder.withRequestField("pull_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainMappingRequest::getPullDomain, (req, v) -> {
+                req.setPullDomain(v);
+            })
+        );
+        builder.withRequestField("push_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteDomainMappingRequest::getPushDomain, (req, v) -> {
+                req.setPushDomain(v);
             })
         );
 
@@ -202,6 +326,47 @@ public class LiveMeta {
             String.class,
             f -> f.withMarshaller(DeleteTranscodingsTemplateRequest::getAppName, (req, v) -> {
                 req.setAppName(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> listLiveSampleLogs = genForlistLiveSampleLogs();
+
+    private static HttpRequestDef<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> genForlistLiveSampleLogs() {
+        // basic
+        HttpRequestDef.Builder<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLiveSampleLogsRequest.class, ListLiveSampleLogsResponse.class)
+                .withName("ListLiveSampleLogs")
+                .withUri("/v1/{project_id}/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("play_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListLiveSampleLogsRequest::getPlayDomain, (req, v) -> {
+                req.setPlayDomain(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            OffsetDateTime.class,
+            f -> f.withMarshaller(ListLiveSampleLogsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            OffsetDateTime.class,
+            f -> f.withMarshaller(ListLiveSampleLogsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
             })
         );
 
@@ -446,6 +611,31 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForshowDomain();
+
+    private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForshowDomain() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainRequest, ShowDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainRequest.class, ShowDomainResponse.class)
+                .withName("ShowDomain")
+                .withUri("/v1/{project_id}/domain")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDomainRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowOnlineUsersRequest, ShowOnlineUsersResponse> showOnlineUsers = genForshowOnlineUsers();
 
     private static HttpRequestDef<ShowOnlineUsersRequest, ShowOnlineUsersResponse> genForshowOnlineUsers() {
@@ -601,6 +791,31 @@ public class LiveMeta {
             Integer.class,
             f -> f.withMarshaller(ShowTranscodingsTemplateRequest::getSize, (req, v) -> {
                 req.setSize(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> updateDomain = genForupdateDomain();
+
+    private static HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> genForupdateDomain() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainRequest, UpdateDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainRequest.class, UpdateDomainResponse.class)
+                .withName("UpdateDomain")
+                .withUri("/v1/{project_id}/domain")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            LiveDomainModifyReq.class,
+            f -> f.withMarshaller(UpdateDomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

@@ -35,6 +35,12 @@ public class ActionDisForwarding  {
     
     private String streamName;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="stream_id")
+    
+    private String streamId;
+
     public ActionDisForwarding withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
@@ -84,7 +90,7 @@ public class ActionDisForwarding  {
 
 
     /**
-     * DIS服务对应的通道名称
+     * DIS服务对应的通道名称，和通道ID参数中至少一个不为空，和通道ID参数都存在时，以通道ID参数值为准。通过调用DIS服务 [查询通道列表](https://support.huaweicloud.com/api-dis/dis_02_0024.html)接口获取。
      * @return streamName
      */
     public String getStreamName() {
@@ -93,6 +99,26 @@ public class ActionDisForwarding  {
 
     public void setStreamName(String streamName) {
         this.streamName = streamName;
+    }
+
+    public ActionDisForwarding withStreamId(String streamId) {
+        this.streamId = streamId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * DIS服务对应的通道ID，和通道名称参数中至少一个不为空，和通道名称参数都存在时，以本参数值为准。通过调用DIS服务 [查询通道详情](https://support.huaweicloud.com/api-dis/dis_02_0025.html)接口获取。
+     * @return streamId
+     */
+    public String getStreamId() {
+        return streamId;
+    }
+
+    public void setStreamId(String streamId) {
+        this.streamId = streamId;
     }
     @Override
     public boolean equals(java.lang.Object o) {
@@ -105,11 +131,12 @@ public class ActionDisForwarding  {
         ActionDisForwarding actionDisForwarding = (ActionDisForwarding) o;
         return Objects.equals(this.regionName, actionDisForwarding.regionName) &&
             Objects.equals(this.projectId, actionDisForwarding.projectId) &&
-            Objects.equals(this.streamName, actionDisForwarding.streamName);
+            Objects.equals(this.streamName, actionDisForwarding.streamName) &&
+            Objects.equals(this.streamId, actionDisForwarding.streamId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(regionName, projectId, streamName);
+        return Objects.hash(regionName, projectId, streamName, streamId);
     }
     @Override
     public String toString() {
@@ -118,6 +145,7 @@ public class ActionDisForwarding  {
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
+        sb.append("    streamId: ").append(toIndentedString(streamId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

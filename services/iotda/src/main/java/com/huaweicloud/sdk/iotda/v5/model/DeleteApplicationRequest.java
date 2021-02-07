@@ -19,6 +19,13 @@ public class DeleteApplicationRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Sp-Auth-Token")
+    @com.huaweicloud.sdk.core.json.JsonSensitive
+    
+    private String spAuthToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -28,6 +35,26 @@ public class DeleteApplicationRequest  {
     @JsonProperty(value="app_id")
     
     private String appId;
+
+    public DeleteApplicationRequest withSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get spAuthToken
+     * @return spAuthToken
+     */
+    public String getSpAuthToken() {
+        return spAuthToken;
+    }
+
+    public void setSpAuthToken(String spAuthToken) {
+        this.spAuthToken = spAuthToken;
+    }
 
     public DeleteApplicationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -77,17 +104,19 @@ public class DeleteApplicationRequest  {
             return false;
         }
         DeleteApplicationRequest deleteApplicationRequest = (DeleteApplicationRequest) o;
-        return Objects.equals(this.instanceId, deleteApplicationRequest.instanceId) &&
+        return Objects.equals(this.spAuthToken, deleteApplicationRequest.spAuthToken) &&
+            Objects.equals(this.instanceId, deleteApplicationRequest.instanceId) &&
             Objects.equals(this.appId, deleteApplicationRequest.appId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appId);
+        return Objects.hash(spAuthToken, instanceId, appId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteApplicationRequest {\n");
+        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("}");

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.VersionsDetail;
+import com.huaweicloud.sdk.swr.v2.model.VersionDetail;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,16 +24,16 @@ public class ShowApiVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    private VersionsDetail version = null;
+    private VersionDetail version = null;
 
-    public ShowApiVersionResponse withVersion(VersionsDetail version) {
+    public ShowApiVersionResponse withVersion(VersionDetail version) {
         this.version = version;
         return this;
     }
 
-    public ShowApiVersionResponse withVersion(Consumer<VersionsDetail> versionSetter) {
+    public ShowApiVersionResponse withVersion(Consumer<VersionDetail> versionSetter) {
         if(this.version == null ){
-            this.version = new VersionsDetail();
+            this.version = new VersionDetail();
             versionSetter.accept(this.version);
         }
         
@@ -45,11 +45,11 @@ public class ShowApiVersionResponse extends SdkResponse {
      * Get version
      * @return version
      */
-    public VersionsDetail getVersion() {
+    public VersionDetail getVersion() {
         return version;
     }
 
-    public void setVersion(VersionsDetail version) {
+    public void setVersion(VersionDetail version) {
         this.version = version;
     }
     @Override

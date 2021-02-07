@@ -803,7 +803,7 @@ public class ApiBaseInfo  {
 
 
     /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。  支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
      * @return reqUri
      */
     public String getReqUri() {
@@ -930,7 +930,7 @@ public class ApiBaseInfo  {
 
 
     /**
-     * API描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * API描述。 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {
@@ -1084,7 +1084,7 @@ public class ApiBaseInfo  {
 
 
     /**
-     * 分组自定义响应ID
+     * 分组自定义响应ID  暂不支持
      * @return responseId
      */
     public String getResponseId() {

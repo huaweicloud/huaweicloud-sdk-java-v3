@@ -80,8 +80,9 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
         KeystoneListAuthDomainsResponse response =
             inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
-        if (Objects.isNull(response)) {
-            throw new SdkException("failed to get domain id");
+        if (Objects.isNull(response) || Objects.isNull(response.getDomains()) || response.getDomains().size() == 0) {
+            throw new SdkException("Failed to get domain id automatically, "
+                + "please input domain id when initializing GlobalCredentials");
         }
         this.domainId = response.getDomains().get(0).getId();
         AuthCache.putAuth(akWithName, domainId);
@@ -116,11 +117,11 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
     @Override
     public GlobalCredentials deepClone() {
         return new GlobalCredentials()
-                .withDomainId(this.domainId)
-                .withAk(this.getAk())
-                .withSk(this.getSk())
-                .withIamEndpoint(this.getIamEndpoint())
-                .withSecurityToken(this.getSecurityToken());
+            .withDomainId(this.domainId)
+            .withAk(this.getAk())
+            .withSk(this.getSk())
+            .withIamEndpoint(this.getIamEndpoint())
+            .withSecurityToken(this.getSecurityToken());
     }
 
 }

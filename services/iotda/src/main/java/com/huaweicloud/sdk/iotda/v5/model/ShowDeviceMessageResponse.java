@@ -35,7 +35,19 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message")
     
-    private String message;
+    private Object message = null;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="encoding")
+    
+    private String encoding;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="payload_format")
+    
+    private String payloadFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -101,7 +113,7 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         this.name = name;
     }
 
-    public ShowDeviceMessageResponse withMessage(String message) {
+    public ShowDeviceMessageResponse withMessage(Object message) {
         this.message = message;
         return this;
     }
@@ -110,15 +122,55 @@ public class ShowDeviceMessageResponse extends SdkResponse {
 
 
     /**
-     * 消息内容
+     * 消息内容。 
      * @return message
      */
-    public String getMessage() {
+    public Object getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(Object message) {
         this.message = message;
+    }
+
+    public ShowDeviceMessageResponse withEncoding(String encoding) {
+        this.encoding = encoding;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 消息内容编码格式，取值范围none|base64,默认值none, base64格式仅支持透传。 
+     * @return encoding
+     */
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
+    }
+
+    public ShowDeviceMessageResponse withPayloadFormat(String payloadFormat) {
+        this.payloadFormat = payloadFormat;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 有效负载格式，在消息内容编码格式为none时有效，取值范围standard|raw，默认值standard（平台封装的标准格式），取值为raw时直接将消息内容作为有效负载下发。 
+     * @return payloadFormat
+     */
+    public String getPayloadFormat() {
+        return payloadFormat;
+    }
+
+    public void setPayloadFormat(String payloadFormat) {
+        this.payloadFormat = payloadFormat;
     }
 
     public ShowDeviceMessageResponse withTopic(String topic) {
@@ -212,6 +264,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         return Objects.equals(this.messageId, showDeviceMessageResponse.messageId) &&
             Objects.equals(this.name, showDeviceMessageResponse.name) &&
             Objects.equals(this.message, showDeviceMessageResponse.message) &&
+            Objects.equals(this.encoding, showDeviceMessageResponse.encoding) &&
+            Objects.equals(this.payloadFormat, showDeviceMessageResponse.payloadFormat) &&
             Objects.equals(this.topic, showDeviceMessageResponse.topic) &&
             Objects.equals(this.status, showDeviceMessageResponse.status) &&
             Objects.equals(this.createdTime, showDeviceMessageResponse.createdTime) &&
@@ -219,7 +273,7 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(messageId, name, message, topic, status, createdTime, finishedTime);
+        return Objects.hash(messageId, name, message, encoding, payloadFormat, topic, status, createdTime, finishedTime);
     }
     @Override
     public String toString() {
@@ -228,6 +282,8 @@ public class ShowDeviceMessageResponse extends SdkResponse {
         sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    encoding: ").append(toIndentedString(encoding)).append("\n");
+        sb.append("    payloadFormat: ").append(toIndentedString(payloadFormat)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.TriggerHistorys;
+import com.huaweicloud.sdk.swr.v2.model.TriggerHistories;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -98,7 +98,7 @@ public class ShowTriggerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="trigger_history")
     
-    private List<TriggerHistorys> triggerHistory = null;
+    private List<TriggerHistories> triggerHistory = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -352,13 +352,13 @@ public class ShowTriggerResponse extends SdkResponse {
         this.name = name;
     }
 
-    public ShowTriggerResponse withTriggerHistory(List<TriggerHistorys> triggerHistory) {
+    public ShowTriggerResponse withTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
         return this;
     }
 
     
-    public ShowTriggerResponse addTriggerHistoryItem(TriggerHistorys triggerHistoryItem) {
+    public ShowTriggerResponse addTriggerHistoryItem(TriggerHistories triggerHistoryItem) {
         if (this.triggerHistory == null) {
             this.triggerHistory = new ArrayList<>();
         }
@@ -366,7 +366,7 @@ public class ShowTriggerResponse extends SdkResponse {
         return this;
     }
 
-    public ShowTriggerResponse withTriggerHistory(Consumer<List<TriggerHistorys>> triggerHistorySetter) {
+    public ShowTriggerResponse withTriggerHistory(Consumer<List<TriggerHistories>> triggerHistorySetter) {
         if(this.triggerHistory == null ){
             this.triggerHistory = new ArrayList<>();
         }
@@ -378,11 +378,11 @@ public class ShowTriggerResponse extends SdkResponse {
      * 触发器历史
      * @return triggerHistory
      */
-    public List<TriggerHistorys> getTriggerHistory() {
+    public List<TriggerHistories> getTriggerHistory() {
         return triggerHistory;
     }
 
-    public void setTriggerHistory(List<TriggerHistorys> triggerHistory) {
+    public void setTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
     }
 
