@@ -19,7 +19,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class ListMenbersResponse extends SdkResponse {
+public class ListMembersResponse extends SdkResponse {
 
 
 
@@ -28,13 +28,13 @@ public class ListMenbersResponse extends SdkResponse {
     
     private List<MemberResp> members = null;
     
-    public ListMenbersResponse withMembers(List<MemberResp> members) {
+    public ListMembersResponse withMembers(List<MemberResp> members) {
         this.members = members;
         return this;
     }
 
     
-    public ListMenbersResponse addMembersItem(MemberResp membersItem) {
+    public ListMembersResponse addMembersItem(MemberResp membersItem) {
         if (this.members == null) {
             this.members = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ListMenbersResponse extends SdkResponse {
         return this;
     }
 
-    public ListMenbersResponse withMembers(Consumer<List<MemberResp>> membersSetter) {
+    public ListMembersResponse withMembers(Consumer<List<MemberResp>> membersSetter) {
         if(this.members == null ){
             this.members = new ArrayList<>();
         }
@@ -69,8 +69,8 @@ public class ListMenbersResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListMenbersResponse listMenbersResponse = (ListMenbersResponse) o;
-        return Objects.equals(this.members, listMenbersResponse.members);
+        ListMembersResponse listMembersResponse = (ListMembersResponse) o;
+        return Objects.equals(this.members, listMembersResponse.members);
     }
     @Override
     public int hashCode() {
@@ -79,7 +79,7 @@ public class ListMenbersResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListMenbersResponse {\n");
+        sb.append("class ListMembersResponse {\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("}");
         return sb.toString();

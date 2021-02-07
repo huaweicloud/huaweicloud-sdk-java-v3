@@ -485,22 +485,22 @@ public class ElbAsyncClient {
      * 查询后端云服务器列表
      * 添加属于某个后端云服务器组的后端云服务器。
      *
-     * @param ListMenbersRequest 请求对象
-     * @return CompletableFuture<ListMenbersResponse>
+     * @param ListMembersRequest 请求对象
+     * @return CompletableFuture<ListMembersResponse>
      */
-    public CompletableFuture<ListMenbersResponse> listMenbersAsync(ListMenbersRequest request) {
-        return hcClient.asyncInvokeHttp(request, ElbMeta.listMenbers);
+    public CompletableFuture<ListMembersResponse> listMembersAsync(ListMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listMembers);
     }
 
     /**
      * 查询后端云服务器列表
      * 添加属于某个后端云服务器组的后端云服务器。
      *
-     * @param ListMenbersRequest 请求对象
-     * @return AsyncInvoker<ListMenbersRequest, ListMenbersResponse>
+     * @param ListMembersRequest 请求对象
+     * @return AsyncInvoker<ListMembersRequest, ListMembersResponse>
      */
-    public AsyncInvoker<ListMenbersRequest, ListMenbersResponse> listMenbersAsyncInvoker(ListMenbersRequest request) {
-        return new AsyncInvoker<ListMenbersRequest, ListMenbersResponse>(request, ElbMeta.listMenbers, hcClient);
+    public AsyncInvoker<ListMembersRequest, ListMembersResponse> listMembersAsyncInvoker(ListMembersRequest request) {
+        return new AsyncInvoker<ListMembersRequest, ListMembersResponse>(request, ElbMeta.listMembers, hcClient);
     }
 
     /**

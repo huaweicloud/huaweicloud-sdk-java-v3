@@ -483,22 +483,22 @@ public class ElbClient {
      * 查询后端云服务器列表
      * 添加属于某个后端云服务器组的后端云服务器。
      *
-     * @param ListMenbersRequest 请求对象
-     * @return ListMenbersResponse
+     * @param ListMembersRequest 请求对象
+     * @return ListMembersResponse
      */
-    public ListMenbersResponse listMenbers(ListMenbersRequest request) {
-        return hcClient.syncInvokeHttp(request, ElbMeta.listMenbers);
+    public ListMembersResponse listMembers(ListMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.listMembers);
     }
 
     /**
      * 查询后端云服务器列表
      * 添加属于某个后端云服务器组的后端云服务器。
      *
-     * @param ListMenbersRequest 请求对象
-     * @return SyncInvoker<ListMenbersRequest, ListMenbersResponse>
+     * @param ListMembersRequest 请求对象
+     * @return SyncInvoker<ListMembersRequest, ListMembersResponse>
      */
-    public SyncInvoker<ListMenbersRequest, ListMenbersResponse> listMenbersInvoker(ListMenbersRequest request) {
-        return new SyncInvoker<ListMenbersRequest, ListMenbersResponse>(request, ElbMeta.listMenbers, hcClient);
+    public SyncInvoker<ListMembersRequest, ListMembersResponse> listMembersInvoker(ListMembersRequest request) {
+        return new SyncInvoker<ListMembersRequest, ListMembersResponse>(request, ElbMeta.listMembers, hcClient);
     }
 
     /**

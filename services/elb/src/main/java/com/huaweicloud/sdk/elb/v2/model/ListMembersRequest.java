@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class ListMenbersRequest  {
+public class ListMembersRequest  {
 
 
 
@@ -83,7 +83,7 @@ public class ListMenbersRequest  {
     
     private Integer weight;
 
-    public ListMenbersRequest withPoolId(String poolId) {
+    public ListMembersRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
@@ -103,7 +103,7 @@ public class ListMenbersRequest  {
         this.poolId = poolId;
     }
 
-    public ListMenbersRequest withLimit(Integer limit) {
+    public ListMembersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -125,7 +125,7 @@ public class ListMenbersRequest  {
         this.limit = limit;
     }
 
-    public ListMenbersRequest withMarker(String marker) {
+    public ListMembersRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
@@ -145,7 +145,7 @@ public class ListMenbersRequest  {
         this.marker = marker;
     }
 
-    public ListMenbersRequest withPageReverse(Boolean pageReverse) {
+    public ListMembersRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
     }
@@ -165,7 +165,7 @@ public class ListMenbersRequest  {
         this.pageReverse = pageReverse;
     }
 
-    public ListMenbersRequest withId(String id) {
+    public ListMembersRequest withId(String id) {
         this.id = id;
         return this;
     }
@@ -185,7 +185,7 @@ public class ListMenbersRequest  {
         this.id = id;
     }
 
-    public ListMenbersRequest withName(String name) {
+    public ListMembersRequest withName(String name) {
         this.name = name;
         return this;
     }
@@ -205,7 +205,7 @@ public class ListMenbersRequest  {
         this.name = name;
     }
 
-    public ListMenbersRequest withAddress(String address) {
+    public ListMembersRequest withAddress(String address) {
         this.address = address;
         return this;
     }
@@ -225,7 +225,7 @@ public class ListMenbersRequest  {
         this.address = address;
     }
 
-    public ListMenbersRequest withProtocolPort(Integer protocolPort) {
+    public ListMembersRequest withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
@@ -245,7 +245,7 @@ public class ListMenbersRequest  {
         this.protocolPort = protocolPort;
     }
 
-    public ListMenbersRequest withSubnetId(String subnetId) {
+    public ListMembersRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
@@ -265,7 +265,7 @@ public class ListMenbersRequest  {
         this.subnetId = subnetId;
     }
 
-    public ListMenbersRequest withAdminStateUp(Boolean adminStateUp) {
+    public ListMembersRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
@@ -285,7 +285,7 @@ public class ListMenbersRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    public ListMenbersRequest withWeight(Integer weight) {
+    public ListMembersRequest withWeight(Integer weight) {
         this.weight = weight;
         return this;
     }
@@ -312,18 +312,18 @@ public class ListMenbersRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListMenbersRequest listMenbersRequest = (ListMenbersRequest) o;
-        return Objects.equals(this.poolId, listMenbersRequest.poolId) &&
-            Objects.equals(this.limit, listMenbersRequest.limit) &&
-            Objects.equals(this.marker, listMenbersRequest.marker) &&
-            Objects.equals(this.pageReverse, listMenbersRequest.pageReverse) &&
-            Objects.equals(this.id, listMenbersRequest.id) &&
-            Objects.equals(this.name, listMenbersRequest.name) &&
-            Objects.equals(this.address, listMenbersRequest.address) &&
-            Objects.equals(this.protocolPort, listMenbersRequest.protocolPort) &&
-            Objects.equals(this.subnetId, listMenbersRequest.subnetId) &&
-            Objects.equals(this.adminStateUp, listMenbersRequest.adminStateUp) &&
-            Objects.equals(this.weight, listMenbersRequest.weight);
+        ListMembersRequest listMembersRequest = (ListMembersRequest) o;
+        return Objects.equals(this.poolId, listMembersRequest.poolId) &&
+            Objects.equals(this.limit, listMembersRequest.limit) &&
+            Objects.equals(this.marker, listMembersRequest.marker) &&
+            Objects.equals(this.pageReverse, listMembersRequest.pageReverse) &&
+            Objects.equals(this.id, listMembersRequest.id) &&
+            Objects.equals(this.name, listMembersRequest.name) &&
+            Objects.equals(this.address, listMembersRequest.address) &&
+            Objects.equals(this.protocolPort, listMembersRequest.protocolPort) &&
+            Objects.equals(this.subnetId, listMembersRequest.subnetId) &&
+            Objects.equals(this.adminStateUp, listMembersRequest.adminStateUp) &&
+            Objects.equals(this.weight, listMembersRequest.weight);
     }
     @Override
     public int hashCode() {
@@ -332,7 +332,7 @@ public class ListMenbersRequest  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListMenbersRequest {\n");
+        sb.append("class ListMembersRequest {\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
