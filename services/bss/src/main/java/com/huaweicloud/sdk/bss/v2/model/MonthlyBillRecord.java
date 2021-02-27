@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -106,73 +105,73 @@ public class MonthlyBillRecord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_amount")
     
-    private BigDecimal officialAmount = null;
+    private Double officialAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_discount_amount")
     
-    private BigDecimal officialDiscountAmount = null;
+    private Double officialDiscountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="erase_amount")
     
-    private BigDecimal eraseAmount = null;
+    private Double eraseAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consume_amount")
     
-    private BigDecimal consumeAmount = null;
+    private Double consumeAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cash_amount")
     
-    private BigDecimal cashAmount = null;
+    private Double cashAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit_amount")
     
-    private BigDecimal creditAmount = null;
+    private Double creditAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coupon_amount")
     
-    private BigDecimal couponAmount = null;
+    private Double couponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flexipurchase_coupon_amount")
     
-    private BigDecimal flexipurchaseCouponAmount = null;
+    private Double flexipurchaseCouponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stored_value_card_amount")
     
-    private BigDecimal storedValueCardAmount = null;
+    private Double storedValueCardAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bonus_amount")
     
-    private BigDecimal bonusAmount = null;
+    private Double bonusAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
-    private BigDecimal debtAmount = null;
+    private Double debtAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="writeoff_amount")
     
-    private BigDecimal writeoffAmount = null;
+    private Double writeoffAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -189,7 +188,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：账期，格式固定为YYYY-MM。| |参数约束及描述：账期，格式固定为YYYY-MM。|
+     * 流水账单所在账期，格式为YYYY-MM。
      * @return billCycle
      */
     public String getBillCycle() {
@@ -209,7 +208,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：消费的客户账号ID。如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。| |参数约束及描述：消费的客户账号ID。如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。|
+     * 消费的客户账号ID。 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
      * @return customerId
      */
     public String getCustomerId() {
@@ -229,7 +228,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -249,7 +248,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型| |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型|
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -269,7 +268,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * @return regionCode
      */
     public String getRegionCode() {
@@ -289,7 +288,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：企业项目标识| |参数约束及描述：企业项目标识|
+     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -309,7 +308,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：企业项目名称| |参数约束及描述：企业项目名称|
+     * 企业项目的名称。
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {
@@ -329,7 +328,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：计费模式1、包周期；3、按需；10、预留实例| |参数的约束及描述：计费模式1、包周期；3、按需；10、预留实例|
+     * 计费模式。 1：包年/包月3：按需10：预留实例
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -349,7 +348,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：| |参数名称：消费时间，包周期和预留实例订购场景下为订单支付时间，按需场景下为话单生失效时间||参数约束及描述：| |参数名称：消费时间，包周期和预留实例订购场景下为订单支付时间，按需场景下为话单生失效时间|
+     * 消费时间。 计费模式为包年/包月和预留实例场景时为订单的支付时间。计费模式为按需场景时为话单的生/失效时间。
      * @return consumeTime
      */
     public String getConsumeTime() {
@@ -369,7 +368,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：| |参数名称：交易时间| |参数约束及描述：交易时间，某条消费记录对应的扣费时间||参数约束及描述：| |参数名称：交易时间| |参数约束及描述：交易时间，某条消费记录对应的扣费时间|
+     * 交易时间，某条消费记录对应的扣费时间。
      * @return tradeTime
      */
     public String getTradeTime() {
@@ -389,7 +388,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：服务商1：华为云2：云市场| |参数的约束及描述：服务商1：华为云2：云市场|
+     * 服务商。 1：华为云2：云市场
      * @return providerType
      */
     public Integer getProviderType() {
@@ -409,7 +408,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：订单ID 或 交易ID，扣费维度的唯一标识| |参数约束及描述：订单ID 或 交易ID，扣费维度的唯一标识|
+     * 订单ID或交易ID，扣费维度的唯一标识。
      * @return tradeId
      */
     public String getTradeId() {
@@ -429,7 +428,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：账单类型1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费16：调账-扣费| |参数的约束及描述：账单类型1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费16：调账-扣费|
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费
      * @return billType
      */
     public Integer getBillType() {
@@ -449,7 +448,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：支付状态1：已支付2：未结清3：未结算| |参数的约束及描述：支付状态1：已支付2：未结清3：未结算|
+     * 支付状态。 1：已支付2：未结清3：未结算
      * @return status
      */
     public Integer getStatus() {
@@ -460,7 +459,7 @@ public class MonthlyBillRecord  {
         this.status = status;
     }
 
-    public MonthlyBillRecord withOfficialAmount(BigDecimal officialAmount) {
+    public MonthlyBillRecord withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -469,18 +468,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：官网价。单位为元说明：official_amount等于official_discount_amount和erase_amount和consume_amount的和。| |参数的约束及描述：官网价。单位为元说明：official_amount等于official_discount_amount和erase_amount和consume_amount的和。|
+     * 官网价。单位：元。  说明： official_amount = official_discount_amount + erase_amount + consume_amount
      * @return officialAmount
      */
-    public BigDecimal getOfficialAmount() {
+    public Double getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(BigDecimal officialAmount) {
+    public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public MonthlyBillRecord withOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
+    public MonthlyBillRecord withOfficialDiscountAmount(Double officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
         return this;
     }
@@ -489,18 +488,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：折扣金额。单位为元| |参数的约束及描述：折扣金额。单位为元|
+     * 折扣金额。单位：元。
      * @return officialDiscountAmount
      */
-    public BigDecimal getOfficialDiscountAmount() {
+    public Double getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
 
-    public void setOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
+    public void setOfficialDiscountAmount(Double officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
     }
 
-    public MonthlyBillRecord withEraseAmount(BigDecimal eraseAmount) {
+    public MonthlyBillRecord withEraseAmount(Double eraseAmount) {
         this.eraseAmount = eraseAmount;
         return this;
     }
@@ -509,18 +508,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：抹零金额。单位为元| |参数的约束及描述：抹零金额。单位为元|
+     * 抹零金额。单位：元。
      * @return eraseAmount
      */
-    public BigDecimal getEraseAmount() {
+    public Double getEraseAmount() {
         return eraseAmount;
     }
 
-    public void setEraseAmount(BigDecimal eraseAmount) {
+    public void setEraseAmount(Double eraseAmount) {
         this.eraseAmount = eraseAmount;
     }
 
-    public MonthlyBillRecord withConsumeAmount(BigDecimal consumeAmount) {
+    public MonthlyBillRecord withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -529,18 +528,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：应付金额，包括现金券和储值卡和代金券金额。单位为元说明：（1）consume_amount的值包含cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，writeoff_amount的和| |参数的约束及描述：应付金额，包括现金券和储值卡和代金券金额。单位为元说明：（1）consume_amount的值包含cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，writeoff_amount的和|
+     * 应付金额，包括现金券和储值卡和代金券金额。单位：元。  说明： consume_amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_value_card_amount，bonus_amount，debt_amount，writeoff_amount的总和。
      * @return consumeAmount
      */
-    public BigDecimal getConsumeAmount() {
+    public Double getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(BigDecimal consumeAmount) {
+    public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public MonthlyBillRecord withCashAmount(BigDecimal cashAmount) {
+    public MonthlyBillRecord withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -549,18 +548,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：现金支付金额。单位为元| |参数的约束及描述：现金支付金额。单位为元|
+     * 现金支付金额。单位：元.
      * @return cashAmount
      */
-    public BigDecimal getCashAmount() {
+    public Double getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(BigDecimal cashAmount) {
+    public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public MonthlyBillRecord withCreditAmount(BigDecimal creditAmount) {
+    public MonthlyBillRecord withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -569,18 +568,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：信用额度支付金额。单位为元| |参数的约束及描述：信用额度支付金额。单位为元|
+     * 信用额度支付金额。单位：元。
      * @return creditAmount
      */
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
 
-    public MonthlyBillRecord withCouponAmount(BigDecimal couponAmount) {
+    public MonthlyBillRecord withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -589,18 +588,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：代金券支付金额。单位为元| |参数的约束及描述：代金券支付金额。单位为元|
+     * 代金券支付金额。单位：元。
      * @return couponAmount
      */
-    public BigDecimal getCouponAmount() {
+    public Double getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(BigDecimal couponAmount) {
+    public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public MonthlyBillRecord withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public MonthlyBillRecord withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -609,18 +608,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：现金券支付金额。单位为元| |参数的约束及描述：现金券支付金额。单位为元|
+     * 现金券支付金额。单位：元。
      * @return flexipurchaseCouponAmount
      */
-    public BigDecimal getFlexipurchaseCouponAmount() {
+    public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public MonthlyBillRecord withStoredValueCardAmount(BigDecimal storedValueCardAmount) {
+    public MonthlyBillRecord withStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
     }
@@ -629,18 +628,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：储值卡支付金额。单位为元| |参数的约束及描述：储值卡支付金额。单位为元|
+     * 储值卡支付金额。单位：元。
      * @return storedValueCardAmount
      */
-    public BigDecimal getStoredValueCardAmount() {
+    public Double getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
 
-    public void setStoredValueCardAmount(BigDecimal storedValueCardAmount) {
+    public void setStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
-    public MonthlyBillRecord withBonusAmount(BigDecimal bonusAmount) {
+    public MonthlyBillRecord withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
     }
@@ -649,18 +648,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：奖励金支付金额（奖励金已经下市，用于现网客户未使用完的奖励金）。单位为元| |参数的约束及描述：奖励金支付金额（奖励金已经下市，用于现网客户未使用完的奖励金）。单位为元|
+     * 奖励金支付金额（奖励金已经下线，目前用于现网客户未使用完的奖励金）。单位：元。
      * @return bonusAmount
      */
-    public BigDecimal getBonusAmount() {
+    public Double getBonusAmount() {
         return bonusAmount;
     }
 
-    public void setBonusAmount(BigDecimal bonusAmount) {
+    public void setBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
 
-    public MonthlyBillRecord withDebtAmount(BigDecimal debtAmount) {
+    public MonthlyBillRecord withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -669,18 +668,18 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：欠费金额。单位为元| |参数的约束及描述：欠费金额。单位为元|
+     * 欠费金额。单位：元。  说明： 对于月结客户，欠费金额即页面上的月度结算金额。
      * @return debtAmount
      */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public MonthlyBillRecord withWriteoffAmount(BigDecimal writeoffAmount) {
+    public MonthlyBillRecord withWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
         return this;
     }
@@ -689,14 +688,14 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：欠费核销金额。单位为元| |参数的约束及描述：欠费核销金额。单位为元|
+     * 欠费核销金额。单位：元。
      * @return writeoffAmount
      */
-    public BigDecimal getWriteoffAmount() {
+    public Double getWriteoffAmount() {
         return writeoffAmount;
     }
 
-    public void setWriteoffAmount(BigDecimal writeoffAmount) {
+    public void setWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
     }
 
@@ -709,7 +708,7 @@ public class MonthlyBillRecord  {
 
 
     /**
-     * |参数名称：云服务区名称| |参数的约束及描述：云服务区名称|
+     * 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
      * @return regionName
      */
     public String getRegionName() {

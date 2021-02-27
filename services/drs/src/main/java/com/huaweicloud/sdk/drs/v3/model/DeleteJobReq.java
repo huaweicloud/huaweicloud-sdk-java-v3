@@ -21,34 +21,34 @@ import java.util.Objects;
 public class DeleteJobReq  {
 
     /**
-     * 
+     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
      */
     public static final class DeleteTypeEnum {
 
         
         /**
-         * Enum TERMINATE_ for value: "terminate:结束迁移任务"
+         * Enum TERMINATE for value: "terminate"
          */
-        public static final DeleteTypeEnum TERMINATE_ = new DeleteTypeEnum("terminate:结束迁移任务");
+        public static final DeleteTypeEnum TERMINATE = new DeleteTypeEnum("terminate");
         
         /**
-         * Enum FORCE_TERMINATE_ for value: "force_terminate:强制结束迁移任务"
+         * Enum FORCE_TERMINATE for value: "force_terminate"
          */
-        public static final DeleteTypeEnum FORCE_TERMINATE_ = new DeleteTypeEnum("force_terminate:强制结束迁移任务");
+        public static final DeleteTypeEnum FORCE_TERMINATE = new DeleteTypeEnum("force_terminate");
         
         /**
-         * Enum DELETE_ for value: "delete:删除迁移任务"
+         * Enum DELETE for value: "delete"
          */
-        public static final DeleteTypeEnum DELETE_ = new DeleteTypeEnum("delete:删除迁移任务");
+        public static final DeleteTypeEnum DELETE = new DeleteTypeEnum("delete");
         
 
         private static final Map<String, DeleteTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DeleteTypeEnum> createStaticFields() {
             Map<String, DeleteTypeEnum> map = new HashMap<>();
-            map.put("terminate:结束迁移任务", TERMINATE_);
-            map.put("force_terminate:强制结束迁移任务", FORCE_TERMINATE_);
-            map.put("delete:删除迁移任务", DELETE_);
+            map.put("terminate", TERMINATE);
+            map.put("force_terminate", FORCE_TERMINATE);
+            map.put("delete", DELETE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -126,7 +126,7 @@ public class DeleteJobReq  {
 
 
     /**
-     * 
+     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
      * @return deleteType
      */
     public DeleteTypeEnum getDeleteType() {

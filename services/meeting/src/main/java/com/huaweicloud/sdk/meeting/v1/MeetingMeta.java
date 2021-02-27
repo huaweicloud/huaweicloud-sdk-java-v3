@@ -1649,63 +1649,6 @@ public class MeetingMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<EditMeetingRequest, EditMeetingResponse> editMeeting = genForeditMeeting();
-
-    private static HttpRequestDef<EditMeetingRequest, EditMeetingResponse> genForeditMeeting() {
-        // basic
-        HttpRequestDef.Builder<EditMeetingRequest, EditMeetingResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, EditMeetingRequest.class, EditMeetingResponse.class)
-                .withName("EditMeeting")
-                .withUri("/v1/mmc/management/conferences")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("conferenceID",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(EditMeetingRequest::getConferenceID, (req, v) -> {
-                req.setConferenceID(v);
-            })
-        );
-        builder.withRequestField("userUUID",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(EditMeetingRequest::getUserUUID, (req, v) -> {
-                req.setUserUUID(v);
-            })
-        );
-        builder.withRequestField("X-Authorization-Type",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(EditMeetingRequest::getXAuthorizationType, (req, v) -> {
-                req.setXAuthorizationType(v);
-            })
-        );
-        builder.withRequestField("X-Site-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(EditMeetingRequest::getXSiteId, (req, v) -> {
-                req.setXSiteId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            RestScheduleConfDTO.class,
-            f -> f.withMarshaller(EditMeetingRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<HandRequest, HandResponse> hand = genForhand();
 
     private static HttpRequestDef<HandRequest, HandResponse> genForhand() {
@@ -5623,6 +5566,63 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateMaterialRequestDTO.class,
             f -> f.withMarshaller(UpdateMaterialRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMeetingRequest, UpdateMeetingResponse> updateMeeting = genForupdateMeeting();
+
+    private static HttpRequestDef<UpdateMeetingRequest, UpdateMeetingResponse> genForupdateMeeting() {
+        // basic
+        HttpRequestDef.Builder<UpdateMeetingRequest, UpdateMeetingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMeetingRequest.class, UpdateMeetingResponse.class)
+                .withName("UpdateMeeting")
+                .withUri("/v1/mmc/management/conferences")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateMeetingRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            })
+        );
+        builder.withRequestField("userUUID",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateMeetingRequest::getUserUUID, (req, v) -> {
+                req.setUserUUID(v);
+            })
+        );
+        builder.withRequestField("X-Authorization-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateMeetingRequest::getXAuthorizationType, (req, v) -> {
+                req.setXAuthorizationType(v);
+            })
+        );
+        builder.withRequestField("X-Site-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateMeetingRequest::getXSiteId, (req, v) -> {
+                req.setXSiteId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RestScheduleConfDTO.class,
+            f -> f.withMarshaller(UpdateMeetingRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

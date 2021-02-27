@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,13 +27,13 @@ public class CustomerBalancesV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
-    private BigDecimal debtAmount = null;
+    private Double debtAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +56,7 @@ public class CustomerBalancesV2  {
 
 
     /**
-     * |参数名称：客户的客户ID。| |参数约束及描述：客户的客户ID。|
+     * 客户账号ID。
      * @return customerId
      */
     public String getCustomerId() {
@@ -68,7 +67,7 @@ public class CustomerBalancesV2  {
         this.customerId = customerId;
     }
 
-    public CustomerBalancesV2 withDebtAmount(BigDecimal debtAmount) {
+    public CustomerBalancesV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -77,18 +76,18 @@ public class CustomerBalancesV2  {
 
 
     /**
-     * |参数名称：客户欠款总额度。| |参数约束及描述： 客户欠款总额度。|
+     * 客户欠款总额度。
      * @return debtAmount
      */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public CustomerBalancesV2 withAmount(BigDecimal amount) {
+    public CustomerBalancesV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -97,14 +96,14 @@ public class CustomerBalancesV2  {
 
 
     /**
-     * |参数名称：客户可用总额度。| |参数约束及描述： 客户可用总额度。|
+     * 客户可用总额度。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -117,7 +116,7 @@ public class CustomerBalancesV2  {
 
 
     /**
-     * |参数名称：币种。| |参数约束及描述：币种。|
+     * 币种。 CNY：人民币。
      * @return currency
      */
     public String getCurrency() {
@@ -137,7 +136,7 @@ public class CustomerBalancesV2  {
 
 
     /**
-     * |参数名称：度量单位：1：元；2：角；3：分。| |参数的约束及描述：度量单位：1：元；2：角；3：分。|
+     * 度量单位： 1：元
      * @return measureId
      */
     public Integer getMeasureId() {

@@ -51,7 +51,7 @@ public class ListServiceTypesResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：返回数据| |参数约束以及描述：返回数据|
+     * 返回的云服务类型信息，具体参见表3。
      * @return serviceTypes
      */
     public List<ServiceType> getServiceTypes() {

@@ -39,6 +39,7 @@ public class BandwidthInfo  {
 
     /**
      * 带宽峰值，单位：bps
+     * minimum: 0
      * @return bwBps
      */
     public Integer getBwBps() {

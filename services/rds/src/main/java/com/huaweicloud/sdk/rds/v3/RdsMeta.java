@@ -283,6 +283,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackup = genForcreateManualBackup();
+
+    private static HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> genForcreateManualBackup() {
+        // basic
+        HttpRequestDef.Builder<CreateManualBackupRequest, CreateManualBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateManualBackupRequest.class, CreateManualBackupResponse.class)
+                .withName("CreateManualBackup")
+                .withUri("/v3/{project_id}/backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateManualBackupRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateManualBackupRequestBody.class,
+            f -> f.withMarshaller(CreateManualBackupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfiguration = genFordeleteConfiguration();
 
     private static HttpRequestDef<DeleteConfigurationRequest, DeleteConfigurationResponse> genFordeleteConfiguration() {
@@ -374,39 +407,6 @@ public class RdsMeta {
             String.class,
             f -> f.withMarshaller(DeleteManualBackupRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DoManualBackupRequest, DoManualBackupResponse> doManualBackup = genFordoManualBackup();
-
-    private static HttpRequestDef<DoManualBackupRequest, DoManualBackupResponse> genFordoManualBackup() {
-        // basic
-        HttpRequestDef.Builder<DoManualBackupRequest, DoManualBackupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DoManualBackupRequest.class, DoManualBackupResponse.class)
-                .withName("DoManualBackup")
-                .withUri("/v3/{project_id}/backups")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DoManualBackupRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            DoManualBackupRequestBody.class,
-            f -> f.withMarshaller(DoManualBackupRequest::getBody, (req, v) -> {
-                req.setBody(v);
             })
         );
 
@@ -1476,88 +1476,6 @@ public class RdsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ModifyConfigurationRequest, ModifyConfigurationResponse> modifyConfiguration = genFormodifyConfiguration();
-
-    private static HttpRequestDef<ModifyConfigurationRequest, ModifyConfigurationResponse> genFormodifyConfiguration() {
-        // basic
-        HttpRequestDef.Builder<ModifyConfigurationRequest, ModifyConfigurationResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyConfigurationRequest.class, ModifyConfigurationResponse.class)
-                .withName("ModifyConfiguration")
-                .withUri("/v3/{project_id}/configurations/{config_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("config_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ModifyConfigurationRequest::getConfigId, (req, v) -> {
-                req.setConfigId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ModifyConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ConfigurationForUpdate.class,
-            f -> f.withMarshaller(ModifyConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> modifyInstanceConfiguration = genFormodifyInstanceConfiguration();
-
-    private static HttpRequestDef<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> genFormodifyInstanceConfiguration() {
-        // basic
-        HttpRequestDef.Builder<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyInstanceConfigurationRequest.class, ModifyInstanceConfigurationResponse.class)
-                .withName("ModifyInstanceConfiguration")
-                .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ModifyInstanceConfigurationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ModifyInstanceConfigurationRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ModifyInstanceConfigurationRequest.class,
-            f -> f.withMarshaller(ModifyInstanceConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForresetPwd();
 
     private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForresetPwd() {
@@ -2191,6 +2109,47 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfiguration = genForupdateConfiguration();
+
+    private static HttpRequestDef<UpdateConfigurationRequest, UpdateConfigurationResponse> genForupdateConfiguration() {
+        // basic
+        HttpRequestDef.Builder<UpdateConfigurationRequest, UpdateConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateConfigurationRequest.class, UpdateConfigurationResponse.class)
+                .withName("UpdateConfiguration")
+                .withUri("/v3/{project_id}/configurations/{config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateConfigurationRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ConfigurationForUpdate.class,
+            f -> f.withMarshaller(UpdateConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDataIpRequest, UpdateDataIpResponse> updateDataIp = genForupdateDataIp();
 
     private static HttpRequestDef<UpdateDataIpRequest, UpdateDataIpResponse> genForupdateDataIp() {
@@ -2223,6 +2182,47 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             DataIpRequest.class,
             f -> f.withMarshaller(UpdateDataIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfiguration = genForupdateInstanceConfiguration();
+
+    private static HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> genForupdateInstanceConfiguration() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceConfigurationRequest.class, UpdateInstanceConfigurationResponse.class)
+                .withName("UpdateInstanceConfiguration")
+                .withUri("/v3/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateInstanceConfigurationRequestBody.class,
+            f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

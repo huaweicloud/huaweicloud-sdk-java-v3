@@ -150,28 +150,6 @@ public class EpsClient {
     }
 
     /**
-     * 修改企业项目
-     * 修改企业项目。当前仅支持修改名称和描述。
-     *
-     * @param ModifyEnterpriseProjectRequest 请求对象
-     * @return ModifyEnterpriseProjectResponse
-     */
-    public ModifyEnterpriseProjectResponse modifyEnterpriseProject(ModifyEnterpriseProjectRequest request) {
-        return hcClient.syncInvokeHttp(request, EpsMeta.modifyEnterpriseProject);
-    }
-
-    /**
-     * 修改企业项目
-     * 修改企业项目。当前仅支持修改名称和描述。
-     *
-     * @param ModifyEnterpriseProjectRequest 请求对象
-     * @return SyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse>
-     */
-    public SyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> modifyEnterpriseProjectInvoker(ModifyEnterpriseProjectRequest request) {
-        return new SyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse>(request, EpsMeta.modifyEnterpriseProject, hcClient);
-    }
-
-    /**
      * 查询API版本号详情
      * 查询指定的企业项目API版本号详情
      *
@@ -257,6 +235,28 @@ public class EpsClient {
      */
     public SyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectInvoker(ShowResourceBindEnterpriseProjectRequest request) {
         return new SyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>(request, EpsMeta.showResourceBindEnterpriseProject, hcClient);
+    }
+
+    /**
+     * 修改企业项目
+     * 修改企业项目。当前仅支持修改名称和描述。
+     *
+     * @param UpdateEnterpriseProjectRequest 请求对象
+     * @return UpdateEnterpriseProjectResponse
+     */
+    public UpdateEnterpriseProjectResponse updateEnterpriseProject(UpdateEnterpriseProjectRequest request) {
+        return hcClient.syncInvokeHttp(request, EpsMeta.updateEnterpriseProject);
+    }
+
+    /**
+     * 修改企业项目
+     * 修改企业项目。当前仅支持修改名称和描述。
+     *
+     * @param UpdateEnterpriseProjectRequest 请求对象
+     * @return SyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse>
+     */
+    public SyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> updateEnterpriseProjectInvoker(UpdateEnterpriseProjectRequest request) {
+        return new SyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse>(request, EpsMeta.updateEnterpriseProject, hcClient);
     }
 
 }

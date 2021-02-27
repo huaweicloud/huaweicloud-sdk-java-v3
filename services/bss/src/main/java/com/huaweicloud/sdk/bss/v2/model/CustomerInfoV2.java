@@ -32,7 +32,7 @@ public class CustomerInfoV2  {
 
 
     /**
-     * |参数名称：客户的客户ID。| |参数约束及描述：客户的客户ID。|
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {

@@ -673,6 +673,39 @@ public class EcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroups = genForlistServerGroups();
+
+    private static HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> genForlistServerGroups() {
+        // basic
+        HttpRequestDef.Builder<ListServerGroupsRequest, ListServerGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListServerGroupsRequest.class, ListServerGroupsResponse.class)
+                .withName("ListServerGroups")
+                .withUri("/v1/{project_id}/cloudservers/os-server-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListServerGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListServerGroupsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> listServerInterfaces = genForlistServerInterfaces();
 
     private static HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> genForlistServerInterfaces() {
@@ -1421,6 +1454,31 @@ public class EcsMeta {
             String.class,
             f -> f.withMarshaller(ShowServerRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroup = genForshowServerGroup();
+
+    private static HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> genForshowServerGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowServerGroupRequest, ShowServerGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowServerGroupRequest.class, ShowServerGroupResponse.class)
+                .withName("ShowServerGroup")
+                .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowServerGroupRequest::getServerGroupId, (req, v) -> {
+                req.setServerGroupId(v);
             })
         );
 

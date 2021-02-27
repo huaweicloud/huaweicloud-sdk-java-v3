@@ -51,7 +51,7 @@ public class ReclaimCouponQuotasReq  {
     }
 
     /**
-     * |参数名称：被回收的代金券额度的ID。| |参数约束以及描述：被回收的代金券额度的ID。|
+     * 被回收的精英服务商的代金券额度ID。
      * @return quotaIds
      */
     public List<String> getQuotaIds() {
@@ -71,7 +71,7 @@ public class ReclaimCouponQuotasReq  {
 
 
     /**
-     * |参数名称：回收时候的备注| |参数约束及描述：回收时候的备注|
+     * 回收时的备注。
      * @return remark
      */
     public String getRemark() {

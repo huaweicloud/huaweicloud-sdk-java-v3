@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 批量查询任务请求体
+ * 查询任务请求体
  */
 public class BatchQueryJobReq  {
 
@@ -45,7 +45,7 @@ public class BatchQueryJobReq  {
     }
 
     /**
-     * 批量查询任务请求体
+     * 查询任务请求体
      * @return jobs
      */
     public List<String> getJobs() {

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ public class SetSubCustomerDiscountV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount")
     
-    private BigDecimal discount = null;
+    private Double discount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -51,7 +50,7 @@ public class SetSubCustomerDiscountV2  {
 
 
     /**
-     * |参数名称：客户ID| |参数约束及描述：客户ID|
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -62,7 +61,7 @@ public class SetSubCustomerDiscountV2  {
         this.customerId = customerId;
     }
 
-    public SetSubCustomerDiscountV2 withDiscount(BigDecimal discount) {
+    public SetSubCustomerDiscountV2 withDiscount(Double discount) {
         this.discount = discount;
         return this;
     }
@@ -71,14 +70,14 @@ public class SetSubCustomerDiscountV2  {
 
 
     /**
-     * |参数名称：折扣率，最高精确到4位小数。折扣范围：0.8~1。如果折扣率是85%，则折扣率写成0.85。注意：折扣为1表示不打折，相当于删除伙伴折扣。| |参数的约束及描述：折扣率，最高精确到4位小数。折扣范围：0.8~1。如果折扣率是85%，则折扣率写成0.85。注意：折扣为1表示不打折，相当于删除伙伴折扣。|
+     * 折扣率，最高精确到2位小数。 折扣范围：0.8~1。 如果折扣率是85%，则折扣率写成0.85。 说明： 折扣为1表示不打折，相当于删除伙伴折扣。
      * @return discount
      */
-    public BigDecimal getDiscount() {
+    public Double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(BigDecimal discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 
@@ -91,7 +90,7 @@ public class SetSubCustomerDiscountV2  {
 
 
     /**
-     * |参数名称：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+     * 生效时间。discount=1时无需填写。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return effectiveTime
      */
     public String getEffectiveTime() {
@@ -111,7 +110,7 @@ public class SetSubCustomerDiscountV2  {
 
 
     /**
-     * |参数名称：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
+     * 失效时间。discount=1时无需填写。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return expireTime
      */
     public String getExpireTime() {

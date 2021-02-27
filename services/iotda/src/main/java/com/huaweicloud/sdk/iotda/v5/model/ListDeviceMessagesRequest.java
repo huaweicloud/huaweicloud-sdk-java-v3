@@ -25,13 +25,6 @@ public class ListDeviceMessagesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -54,26 +47,6 @@ public class ListDeviceMessagesRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    public ListDeviceMessagesRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     public ListDeviceMessagesRequest withInstanceId(String instanceId) {
@@ -105,19 +78,17 @@ public class ListDeviceMessagesRequest  {
         }
         ListDeviceMessagesRequest listDeviceMessagesRequest = (ListDeviceMessagesRequest) o;
         return Objects.equals(this.deviceId, listDeviceMessagesRequest.deviceId) &&
-            Objects.equals(this.stageAuthToken, listDeviceMessagesRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, listDeviceMessagesRequest.instanceId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, stageAuthToken, instanceId);
+        return Objects.hash(deviceId, instanceId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDeviceMessagesRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();

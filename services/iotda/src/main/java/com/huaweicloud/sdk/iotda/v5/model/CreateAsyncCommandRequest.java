@@ -26,13 +26,6 @@ public class CreateAsyncCommandRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -61,26 +54,6 @@ public class CreateAsyncCommandRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    public CreateAsyncCommandRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     public CreateAsyncCommandRequest withInstanceId(String instanceId) {
@@ -139,20 +112,18 @@ public class CreateAsyncCommandRequest  {
         }
         CreateAsyncCommandRequest createAsyncCommandRequest = (CreateAsyncCommandRequest) o;
         return Objects.equals(this.deviceId, createAsyncCommandRequest.deviceId) &&
-            Objects.equals(this.stageAuthToken, createAsyncCommandRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, createAsyncCommandRequest.instanceId) &&
             Objects.equals(this.body, createAsyncCommandRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, stageAuthToken, instanceId, body);
+        return Objects.hash(deviceId, instanceId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAsyncCommandRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

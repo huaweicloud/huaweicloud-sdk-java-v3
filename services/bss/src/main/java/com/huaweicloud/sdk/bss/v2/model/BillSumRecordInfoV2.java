@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -46,67 +45,67 @@ public class BillSumRecordInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_amount")
     
-    private BigDecimal officialAmount = null;
+    private Double officialAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_discount_amount")
     
-    private BigDecimal officialDiscountAmount = null;
+    private Double officialDiscountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="truncated_amount")
     
-    private BigDecimal truncatedAmount = null;
+    private Double truncatedAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consume_amount")
     
-    private BigDecimal consumeAmount = null;
+    private Double consumeAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coupon_amount")
     
-    private BigDecimal couponAmount = null;
+    private Double couponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flexipurchase_coupon_amount")
     
-    private BigDecimal flexipurchaseCouponAmount = null;
+    private Double flexipurchaseCouponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stored_value_card_amount")
     
-    private BigDecimal storedValueCardAmount = null;
+    private Double storedValueCardAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
-    private BigDecimal debtAmount = null;
+    private Double debtAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="writeoff_amount")
     
-    private BigDecimal writeoffAmount = null;
+    private Double writeoffAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cash_amount")
     
-    private BigDecimal cashAmount = null;
+    private Double cashAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit_amount")
     
-    private BigDecimal creditAmount = null;
+    private Double creditAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -135,7 +134,7 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：账期，格式为YYYY-MM| |参数约束及描述：账期，格式为YYYY-MM|
+     * 消费汇总数据所在账期，格式：YYYY-MM。
      * @return billCycle
      */
     public String getBillCycle() {
@@ -155,7 +154,7 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。| |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -175,7 +174,7 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型|
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -195,7 +194,7 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：计费模式1：包周期；3：按需；10：预留实例| |参数约束及描述：计费模式1：包周期；3：按需；10：预留实例|
+     * 计费模式。 1：包年/包月3：按需10：预留实例
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -206,7 +205,7 @@ public class BillSumRecordInfoV2  {
         this.chargingMode = chargingMode;
     }
 
-    public BillSumRecordInfoV2 withOfficialAmount(BigDecimal officialAmount) {
+    public BillSumRecordInfoV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -215,18 +214,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：官网价| |参数的约束及描述：官网价|
+     * 官网价。
      * @return officialAmount
      */
-    public BigDecimal getOfficialAmount() {
+    public Double getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(BigDecimal officialAmount) {
+    public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public BillSumRecordInfoV2 withOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
+    public BillSumRecordInfoV2 withOfficialDiscountAmount(Double officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
         return this;
     }
@@ -235,18 +234,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：折扣金额| |参数的约束及描述：折扣金额|
+     * 折扣金额。
      * @return officialDiscountAmount
      */
-    public BigDecimal getOfficialDiscountAmount() {
+    public Double getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
 
-    public void setOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
+    public void setOfficialDiscountAmount(Double officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
     }
 
-    public BillSumRecordInfoV2 withTruncatedAmount(BigDecimal truncatedAmount) {
+    public BillSumRecordInfoV2 withTruncatedAmount(Double truncatedAmount) {
         this.truncatedAmount = truncatedAmount;
         return this;
     }
@@ -255,18 +254,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：抹零金额| |参数的约束及描述：抹零金额|
+     * 抹零金额。
      * @return truncatedAmount
      */
-    public BigDecimal getTruncatedAmount() {
+    public Double getTruncatedAmount() {
         return truncatedAmount;
     }
 
-    public void setTruncatedAmount(BigDecimal truncatedAmount) {
+    public void setTruncatedAmount(Double truncatedAmount) {
         this.truncatedAmount = truncatedAmount;
     }
 
-    public BillSumRecordInfoV2 withConsumeAmount(BigDecimal consumeAmount) {
+    public BillSumRecordInfoV2 withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -275,18 +274,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：应付金额，应付金额 = 官网价-折扣金额-抹零金额| |参数的约束及描述：应付金额，应付金额 = 官网价-折扣金额-抹零金额|
+     * 应付金额。 应付金额=官网价-折扣金额-抹零金额
      * @return consumeAmount
      */
-    public BigDecimal getConsumeAmount() {
+    public Double getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(BigDecimal consumeAmount) {
+    public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public BillSumRecordInfoV2 withCouponAmount(BigDecimal couponAmount) {
+    public BillSumRecordInfoV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -295,18 +294,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：代金券金额。| |参数的约束及描述：代金券金额。|
+     * 代金券金额。
      * @return couponAmount
      */
-    public BigDecimal getCouponAmount() {
+    public Double getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(BigDecimal couponAmount) {
+    public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public BillSumRecordInfoV2 withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public BillSumRecordInfoV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -315,18 +314,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：现金券金额，预留。| |参数的约束及描述：现金券金额，预留。|
+     * 现金券金额，预留。
      * @return flexipurchaseCouponAmount
      */
-    public BigDecimal getFlexipurchaseCouponAmount() {
+    public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public BillSumRecordInfoV2 withStoredValueCardAmount(BigDecimal storedValueCardAmount) {
+    public BillSumRecordInfoV2 withStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
     }
@@ -335,18 +334,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：储值卡金额，预留。| |参数的约束及描述：储值卡金额，预留。|
+     * 储值卡金额，预留。
      * @return storedValueCardAmount
      */
-    public BigDecimal getStoredValueCardAmount() {
+    public Double getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
 
-    public void setStoredValueCardAmount(BigDecimal storedValueCardAmount) {
+    public void setStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
-    public BillSumRecordInfoV2 withDebtAmount(BigDecimal debtAmount) {
+    public BillSumRecordInfoV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -355,18 +354,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：欠费金额，即从客户账户扣费的时候，客户账户金额不足，欠费的金额。| |参数的约束及描述：欠费金额，即从客户账户扣费的时候，客户账户金额不足，欠费的金额。|
+     * 欠费金额。即伙伴从客户账户扣费时，客户账户金额不足，欠费的金额。
      * @return debtAmount
      */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public BillSumRecordInfoV2 withWriteoffAmount(BigDecimal writeoffAmount) {
+    public BillSumRecordInfoV2 withWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
         return this;
     }
@@ -375,18 +374,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：欠费核销金额| |参数的约束及描述：欠费核销金额|
+     * 欠费核销金额。
      * @return writeoffAmount
      */
-    public BigDecimal getWriteoffAmount() {
+    public Double getWriteoffAmount() {
         return writeoffAmount;
     }
 
-    public void setWriteoffAmount(BigDecimal writeoffAmount) {
+    public void setWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
     }
 
-    public BillSumRecordInfoV2 withCashAmount(BigDecimal cashAmount) {
+    public BillSumRecordInfoV2 withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -395,18 +394,18 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：现金账户金额。| |参数的约束及描述：现金账户金额。|
+     * 现金账户金额。
      * @return cashAmount
      */
-    public BigDecimal getCashAmount() {
+    public Double getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(BigDecimal cashAmount) {
+    public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public BillSumRecordInfoV2 withCreditAmount(BigDecimal creditAmount) {
+    public BillSumRecordInfoV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -415,14 +414,14 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：信用账户金额。| |参数的约束及描述：信用账户金额。|
+     * 信用账户金额。
      * @return creditAmount
      */
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
 
@@ -435,7 +434,7 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：金额单位。1：元| |参数的约束及描述：金额单位。1：元|
+     * 金额单位。 1：元
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -455,7 +454,7 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：消费类型：1：消费2：退款3：调账| |参数的约束及描述：消费类型：1：消费2：退款3：调账|
+     * 账单类型。 1：消费2：退款3：调账
      * @return billType
      */
     public Integer getBillType() {
@@ -475,7 +474,7 @@ public class BillSumRecordInfoV2  {
 
 
     /**
-     * |参数名称：消费的客户账号ID。| |参数约束及描述：如果是查询自己，这个地方是自身的ID; 如果是查询某个企业子客户，这个地方是企业子客户ID如果是查询以及下面的所有子客户，这个地方是消费的实际客户ID; 如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。|
+     * 消费的客户账号ID。 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
      * @return customerId
      */
     public String getCustomerId() {

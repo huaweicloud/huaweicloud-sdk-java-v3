@@ -44,6 +44,7 @@ public class ShowOnlineUsersResponse extends SdkResponse {
 
     /**
      * 查询结果的总元素数量
+     * minimum: 0
      * @return total
      */
     public Integer getTotal() {

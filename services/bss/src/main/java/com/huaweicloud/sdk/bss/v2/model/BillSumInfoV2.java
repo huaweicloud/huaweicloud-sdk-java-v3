@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.bss.v2.model.BalanceTypeDeductSumV2;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -49,25 +48,25 @@ public class BillSumInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
-    private BigDecimal debtAmount = null;
+    private Double debtAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjustment_amount")
     
-    private BigDecimal adjustmentAmount = null;
+    private Double adjustmentAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_amount")
     
-    private BigDecimal discountAmount = null;
+    private Double discountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,7 +95,7 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * 客户账号ID。
      * @return customerId
      */
     public String getCustomerId() {
@@ -116,7 +115,7 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型。|
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -136,7 +135,7 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：费用类型。0：消费；1：退订；2：华为核销。| |参数约束及描述：费用类型。0：消费；1：退订；2：华为核销。|
+     * 账单类型。 0：正常1：退订2：华为核销
      * @return billType
      */
     public String getBillType() {
@@ -156,7 +155,7 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：消费类型。1：包周期；3: 按需。| |参数约束及描述：消费类型。1：包周期；3: 按需。|
+     * 计费模式。 1：包年/包月3: 按需
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -167,7 +166,7 @@ public class BillSumInfoV2  {
         this.chargeMode = chargeMode;
     }
 
-    public BillSumInfoV2 withAmount(BigDecimal amount) {
+    public BillSumInfoV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -176,18 +175,18 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：消费的金额，即从客户账户实际扣除的金额。对于billType=1或者2的账单，该金额为负值。| |参数的约束及描述：消费的金额，即从客户账户实际扣除的金额。对于billType=1或者2的账单，该金额为负值。|
+     * 金额。 对于billType=1或者2的账单，该金额为负值。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public BillSumInfoV2 withDebtAmount(BigDecimal debtAmount) {
+    public BillSumInfoV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -196,18 +195,18 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：欠费金额，指从客户账户扣费的时候，客户账户金额不足，欠费的金额，华为核销或者退订的时候没有该字段。| |参数的约束及描述：欠费金额，指从客户账户扣费的时候，客户账户金额不足，欠费的金额，华为核销或者退订的时候没有该字段。|
+     * 欠费金额，指从客户账户扣费的时候，客户账户金额不足，欠费的金额，华为核销或者退订的时候没有该字段。
      * @return debtAmount
      */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public BillSumInfoV2 withAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public BillSumInfoV2 withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
     }
@@ -216,18 +215,18 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：核销欠款，华为核销或者退订的时候没有该字段。| |参数的约束及描述：核销欠款，华为核销或者退订的时候没有该字段。|
+     * 核销欠款，华为核销或者退订的时候没有该字段。
      * @return adjustmentAmount
      */
-    public BigDecimal getAdjustmentAmount() {
+    public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
 
-    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public void setAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
     }
 
-    public BillSumInfoV2 withDiscountAmount(BigDecimal discountAmount) {
+    public BillSumInfoV2 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -236,14 +235,14 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：折扣金额，华为核销或者退订的时候没有该字段。| |参数的约束及描述：折扣金额，华为核销或者退订的时候没有该字段。|
+     * 折扣金额，华为核销或者退订的时候没有该字段。
      * @return discountAmount
      */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
@@ -256,7 +255,7 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：金额单位。1：元| |参数的约束及描述：金额单位。1：元|
+     * 金额单位。 1：元
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -290,7 +289,7 @@ public class BillSumInfoV2  {
     }
 
     /**
-     * |参数名称：按不同账户消费类型和付费方式区分的支付总金额。具体请参见表 BalanceTypeDeductSum。| |参数约束以及描述：按不同账户消费类型和付费方式区分的支付总金额。具体请参见表 BalanceTypeDeductSum。|
+     * 按不同账户消费类型和付费方式区分的支付总金额。 具体请参见表3。
      * @return accountDetails
      */
     public List<BalanceTypeDeductSumV2> getAccountDetails() {
@@ -310,7 +309,7 @@ public class BillSumInfoV2  {
 
 
     /**
-     * |参数名称：资源类型编码| |参数约束及描述：资源类型编码|
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {

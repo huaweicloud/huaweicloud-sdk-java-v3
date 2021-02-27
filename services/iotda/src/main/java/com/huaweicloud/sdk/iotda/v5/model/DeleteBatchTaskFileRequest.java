@@ -19,20 +19,6 @@ public class DeleteBatchTaskFileRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sp-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String spAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -42,46 +28,6 @@ public class DeleteBatchTaskFileRequest  {
     @JsonProperty(value="file_id")
     
     private String fileId;
-
-    public DeleteBatchTaskFileRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get spAuthToken
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
-    public DeleteBatchTaskFileRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public DeleteBatchTaskFileRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -131,21 +77,17 @@ public class DeleteBatchTaskFileRequest  {
             return false;
         }
         DeleteBatchTaskFileRequest deleteBatchTaskFileRequest = (DeleteBatchTaskFileRequest) o;
-        return Objects.equals(this.spAuthToken, deleteBatchTaskFileRequest.spAuthToken) &&
-            Objects.equals(this.stageAuthToken, deleteBatchTaskFileRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, deleteBatchTaskFileRequest.instanceId) &&
+        return Objects.equals(this.instanceId, deleteBatchTaskFileRequest.instanceId) &&
             Objects.equals(this.fileId, deleteBatchTaskFileRequest.fileId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, stageAuthToken, instanceId, fileId);
+        return Objects.hash(instanceId, fileId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteBatchTaskFileRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
         sb.append("}");

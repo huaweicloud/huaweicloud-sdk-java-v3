@@ -26,7 +26,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchChangeDataRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchChangeDataRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -59,7 +59,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchCheckJobsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchCheckJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -92,7 +92,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchCheckResultsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchCheckResultsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -102,39 +102,6 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchQueryPrecheckResultReq.class,
             f -> f.withMarshaller(BatchCheckResultsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchCreateCompareTaskRequest, BatchCreateCompareTaskResponse> batchCreateCompareTask = genForbatchCreateCompareTask();
-
-    private static HttpRequestDef<BatchCreateCompareTaskRequest, BatchCreateCompareTaskResponse> genForbatchCreateCompareTask() {
-        // basic
-        HttpRequestDef.Builder<BatchCreateCompareTaskRequest, BatchCreateCompareTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateCompareTaskRequest.class, BatchCreateCompareTaskResponse.class)
-                .withName("BatchCreateCompareTask")
-                .withUri("/v3/{project_id}/jobs/batch-create-compare")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(BatchCreateCompareTaskRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateCompareTaskReq.class,
-            f -> f.withMarshaller(BatchCreateCompareTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -158,7 +125,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchCreateJobsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchCreateJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -191,7 +158,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchDeleteJobsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchDeleteJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -201,39 +168,6 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchDeleteJobReq.class,
             f -> f.withMarshaller(BatchDeleteJobsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchListCompareResultRequest, BatchListCompareResultResponse> batchListCompareResult = genForbatchListCompareResult();
-
-    private static HttpRequestDef<BatchListCompareResultRequest, BatchListCompareResultResponse> genForbatchListCompareResult() {
-        // basic
-        HttpRequestDef.Builder<BatchListCompareResultRequest, BatchListCompareResultResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchListCompareResultRequest.class, BatchListCompareResultResponse.class)
-                .withName("BatchListCompareResult")
-                .withUri("/v3/{project_id}/jobs/batch-compare-result")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(BatchListCompareResultRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            BatchQueryCompareResultReq.class,
-            f -> f.withMarshaller(BatchListCompareResultRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -257,7 +191,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchListJobDetailsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchListJobDetailsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -290,7 +224,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchListJobStatusRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchListJobStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -323,7 +257,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchListProgressesRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchListProgressesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -356,7 +290,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchListRposAndRtosRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchListRposAndRtosRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -397,7 +331,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchListStructDetailRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchListStructDetailRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -430,7 +364,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchListStructProcessRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchListStructProcessRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -463,7 +397,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchResetPasswordRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchResetPasswordRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -496,7 +430,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchRestoreTaskRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchRestoreTaskRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -529,7 +463,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchSetDefinerRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchSetDefinerRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -562,7 +496,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchSetObjectsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchSetObjectsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -595,7 +529,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchSetSpeedRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchSetSpeedRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -628,7 +562,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchShowParamsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchShowParamsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -661,7 +595,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchStartJobsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchStartJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -694,7 +628,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchStopJobsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchStopJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -727,7 +661,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchSwitchoverRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchSwitchoverRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -760,7 +694,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchUpdateJobRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchUpdateJobRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -793,7 +727,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchUpdateUserRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchUpdateUserRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -826,7 +760,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchValidateClustersConnectionsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchValidateClustersConnectionsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -859,7 +793,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            BatchValidateConnectionsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(BatchValidateConnectionsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -870,6 +804,113 @@ public class DrsMeta {
             BatchTestConnectionReq.class,
             f -> f.withMarshaller(BatchValidateConnectionsRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTask = genForcreateCompareTask();
+
+    private static HttpRequestDef<CreateCompareTaskRequest, CreateCompareTaskResponse> genForcreateCompareTask() {
+        // basic
+        HttpRequestDef.Builder<CreateCompareTaskRequest, CreateCompareTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCompareTaskRequest.class, CreateCompareTaskResponse.class)
+                .withName("CreateCompareTask")
+                .withUri("/v3/{project_id}/jobs/create-compare-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateCompareTaskRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(CreateCompareTaskRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateCompareTaskReq.class,
+            f -> f.withMarshaller(CreateCompareTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCompareResultRequest, ListCompareResultResponse> listCompareResult = genForlistCompareResult();
+
+    private static HttpRequestDef<ListCompareResultRequest, ListCompareResultResponse> genForlistCompareResult() {
+        // basic
+        HttpRequestDef.Builder<ListCompareResultRequest, ListCompareResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListCompareResultRequest.class, ListCompareResultResponse.class)
+                .withName("ListCompareResult")
+                .withUri("/v3/{project_id}/jobs/query-compare-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListCompareResultRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ListCompareResultRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            QueryCompareResultReq.class,
+            f -> f.withMarshaller(ListCompareResultRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForlistUsers();
+
+    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForlistUsers() {
+        // basic
+        HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
+                .withName("ListUsers")
+                .withUri("/v3/{projectId}/jobs/{jobId}/getSrcUsers")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("projectId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListUsersRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("jobId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListUsersRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListUsersRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ListUsersRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 
@@ -892,7 +933,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            ShowJobListRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ShowJobListRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -925,7 +966,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            ShowMonitoringDataRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ShowMonitoringDataRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
@@ -966,7 +1007,7 @@ public class DrsMeta {
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            UpdateParamsRequest.XLanguageEnum.class,
             f -> f.withMarshaller(UpdateParamsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })

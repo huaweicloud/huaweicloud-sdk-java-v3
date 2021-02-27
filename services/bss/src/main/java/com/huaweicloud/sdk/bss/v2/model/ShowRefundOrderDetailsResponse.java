@@ -43,7 +43,7 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：总记录数。| |参数的约束及描述：总记录数。|
+     * 查询总数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：资源信息列表。具体请参见表2 OrderRefundInfoV2。| |参数约束以及描述：资源信息列表。具体请参见表2 OrderRefundInfoV2。|
+     * 资源信息列表。 具体请参见表2。
      * @return refundInfos
      */
     public List<OrderRefundInfoV2> getRefundInfos() {

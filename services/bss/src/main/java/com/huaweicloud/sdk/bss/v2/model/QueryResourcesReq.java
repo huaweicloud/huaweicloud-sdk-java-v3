@@ -78,7 +78,7 @@ public class QueryResourcesReq  {
     }
 
     /**
-     * |参数名称：资源ID列表。查询指定资源ID的资源（当only_main_resource=0时，查询指定资源及其附属资源）。最大支持50个ID同时作为条件查询。| |参数约束以及描述：资源ID列表。查询指定资源ID的资源（当only_main_resource=0时，查询指定资源及其附属资源）。最大支持50个ID同时作为条件查询。|
+     * 资源ID列表。 查询指定资源ID的资源（当only_main_resource=0时，查询指定资源及其附属资源）。最大支持50个ID同时作为条件查询，多个ID以英文逗号分隔。  说明： 资源ID是指开通资源以后，云服务针对该资源分配的标志，譬如云主机ECS的资源ID是server_id。
      * @return resourceIds
      */
     public List<String> getResourceIds() {
@@ -98,7 +98,7 @@ public class QueryResourcesReq  {
 
 
     /**
-     * |参数名称：订单号。查询指定订单下的资源。| |参数约束及描述：订单号。查询指定订单下的资源。|
+     * 订单号。 查询指定订单下的资源。
      * @return orderId
      */
     public String getOrderId() {
@@ -118,7 +118,7 @@ public class QueryResourcesReq  {
 
 
     /**
-     * |参数名称：是否只查询主资源。0：查询主资源及附属资源。1：只查询主资源。默认值为0。| |参数的约束及描述：是否只查询主资源。0：查询主资源及附属资源。1：只查询主资源。默认值为0。|
+     * 是否只查询主资源，该参数对于请求参数是子资源ID的时候无效，如果resource_ids是子资源ID，只能查询自己。 0：查询主资源及附属资源。1：只查询主资源。 默认值为0。  说明： 主资源是指有关联的几个资源中，处于主导位置的资源。 对于ECS而言，虚拟机VM是主资源，磁盘EVS是辅资源。对于VPC而言，共享带宽的情况下，带宽为主资源，对应的从资源为弹性IP（可能包含多个IP）；独享带宽的情况下，弹性IP为主资源，对应的从资源为带宽。
      * minimum: 0
      * maximum: 1
      * @return onlyMainResource
@@ -154,7 +154,7 @@ public class QueryResourcesReq  {
     }
 
     /**
-     * |参数名称：资源状态。查询指定状态的资源。1：初始化2：已生效3：已过期4：已冻结5：宽限期6：冻结中7：冻结恢复中（预留，未启用）8：正在关闭| |参数约束以及描述：资源状态。查询指定状态的资源。1：初始化2：已生效3：已过期4：已冻结5：宽限期6：冻结中7：冻结恢复中（预留，未启用）8：正在关闭|
+     * 资源状态。 查询指定状态的资源。多个状态以英文逗号分隔。 2：已生效4：已冻结
      * @return statusList
      */
     public List<Integer> getStatusList() {
@@ -174,7 +174,7 @@ public class QueryResourcesReq  {
 
 
     /**
-     * |参数名称：偏移量，从0开始默认值是0。| |参数的约束及描述：偏移量，从0开始默认值是0。|
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -196,7 +196,7 @@ public class QueryResourcesReq  {
 
 
     /**
-     * |参数名称：每次查询的条数。默认值是10。最大值是500。| |参数的约束及描述：每次查询的条数。默认值是10。最大值是500。|
+     * 每次查询的条数。默认值为10。
      * minimum: 1
      * maximum: 500
      * @return limit

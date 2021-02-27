@@ -93,7 +93,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：订购实例ID| |参数的约束及描述：订购实例ID|
+     * 订购实例ID。
      * @return orderInstanceId
      */
     public String getOrderInstanceId() {
@@ -113,7 +113,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：资源类型名称| |参数的约束及描述：资源类型名称|
+     * 资源类型名称。
      * @return resourceTypeName
      */
     public String getResourceTypeName() {
@@ -133,7 +133,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：重用模式| |参数的约束及描述：重用模式: 1：可重用2：不可重用|
+     * 使用模式。 1：可重用表示购买的按需资源包能够按照一定的周期恢复使用量。例如购买一个1年的按需资源包，使用量是40G，可重置，重置周期为1个月，表示1年内每个月会给予40G的使用量。 2：不可重用。表示购买的按需套餐包的使用量不会恢复。例如购买一个1年的按需资源包，使用量是40G，不可重置，表示1年内一共给予40G的使用量。
      * @return quotaReuseMode
      */
     public Integer getQuotaReuseMode() {
@@ -153,7 +153,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：重用周期| |参数的约束及描述：重用周期，只有quotaReuseMode为可重用，该字段才有意义.1：小时2：天3：周4：月5：年|
+     * 重用周期，只有quotaReuseMode为可重用，该字段才有意义。 1：小时2：天3：周4：月5：年
      * @return quotaReuseCycle
      */
     public Integer getQuotaReuseCycle() {
@@ -173,7 +173,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：重用周期类别| |参数的约束及描述：重置周期类别，只有quotaReuseMode为可重用，该字段才有意义1：按自然周期重置2：按订购周期重置|
+     * 重用周期类别，只有quotaReuseMode为可重用，该字段才有意义。 1：按自然周期重用是指重置周期是按照自然月/年来重置，例如如果周期是月，按自然周期重置，表示每个月的1号重置。 2：按订购周期重用。是指重置周期是按照订购时间来重置，例如如果周期是月，按订购周期重置，15号订购了该套餐，表示每个月的15号重置。
      * @return quotaReuseCycleType
      */
     public Integer getQuotaReuseCycleType() {
@@ -193,7 +193,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：开始时间，格式UTC| |参数的约束及描述：1）如果quotaReuseMode为可重用，则此时间为当前时间所在的重用周期的开始时间2）如果quotaReuseMode为不可重用，则此时间为订购实例的生效时间，|
+     * 开始时间，格式UTC。 如果quotaReuseMode为可重用，则此时间为当前时间所在的重用周期的开始时间。如果quotaReuseMode为不可重用，则此时间为订购实例的生效时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -213,7 +213,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：结束时间，格式UTC| |参数的约束及描述：1）如果quotaReuseMode为可重用，则此时间为当前时间所在的重用周期的结束时间2）如果quotaReuseMode为不可重用，则此时间为订购实例的失效时间|
+     * 结束时间，格式UTC。 如果quotaReuseMode为可重用，则此时间为当前时间所在的重用周期的结束时间。如果quotaReuseMode为不可重用，则此时间为订购实例的失效时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -233,7 +233,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：套餐包内资源剩余量| |参数的约束及描述：套餐包内资源剩余量|
+     * 套餐包内资源剩余量。
      * @return balance
      */
     public BigDecimal getBalance() {
@@ -253,7 +253,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：套餐包的资源总量| |参数的约束及描述：套餐包的资源总量|
+     * 套餐包的资源总量。
      * @return total
      */
     public BigDecimal getTotal() {
@@ -273,7 +273,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：套餐包资源的度量单位名称| |参数的约束及描述：套餐包资源的度量单位名称|
+     * 套餐包资源的度量单位名称。
      * @return measurementName
      */
     public String getMeasurementName() {
@@ -293,7 +293,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * |参数名称：区域编码| |参数的约束及描述：区域编码|
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * @return regionCode
      */
     public String getRegionCode() {

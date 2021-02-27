@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.bssintl.v2.model.DemandDiscountRatingResult;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -37,19 +36,19 @@ public class DemandProductRatingResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_amount")
     
-    private BigDecimal discountAmount = null;
+    private Double discountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_website_amount")
     
-    private BigDecimal officialWebsiteAmount = null;
+    private Double officialWebsiteAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,7 +102,7 @@ public class DemandProductRatingResult  {
         this.productId = productId;
     }
 
-    public DemandProductRatingResult withAmount(BigDecimal amount) {
+    public DemandProductRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -115,15 +114,15 @@ public class DemandProductRatingResult  {
      * |参数名称：总额| |参数约束及描述：即最终优惠的金额|
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public DemandProductRatingResult withDiscountAmount(BigDecimal discountAmount) {
+    public DemandProductRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -135,15 +134,15 @@ public class DemandProductRatingResult  {
      * |参数名称：优惠额（官网价和总价的差）| |参数约束及描述：优惠额（官网价和总价的差）|
      * @return discountAmount
      */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public DemandProductRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public DemandProductRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
@@ -155,11 +154,11 @@ public class DemandProductRatingResult  {
      * |参数名称：官网价| |参数约束及描述：官网价|
      * @return officialWebsiteAmount
      */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 

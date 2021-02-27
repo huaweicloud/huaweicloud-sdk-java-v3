@@ -174,6 +174,28 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 创建手动备份
+     * 创建手动备份。
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return CompletableFuture<CreateManualBackupResponse>
+     */
+    public CompletableFuture<CreateManualBackupResponse> createManualBackupAsync(CreateManualBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createManualBackup);
+    }
+
+    /**
+     * 创建手动备份
+     * 创建手动备份。
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return AsyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
+     */
+    public AsyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupAsyncInvoker(CreateManualBackupRequest request) {
+        return new AsyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request, RdsMeta.createManualBackup, hcClient);
+    }
+
+    /**
      * 删除参数模板
      * 删除参数模板。
      *
@@ -237,28 +259,6 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupAsyncInvoker(DeleteManualBackupRequest request) {
         return new AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request, RdsMeta.deleteManualBackup, hcClient);
-    }
-
-    /**
-     * 创建手动备份
-     * 创建手动备份。
-     *
-     * @param DoManualBackupRequest 请求对象
-     * @return CompletableFuture<DoManualBackupResponse>
-     */
-    public CompletableFuture<DoManualBackupResponse> doManualBackupAsync(DoManualBackupRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.doManualBackup);
-    }
-
-    /**
-     * 创建手动备份
-     * 创建手动备份。
-     *
-     * @param DoManualBackupRequest 请求对象
-     * @return AsyncInvoker<DoManualBackupRequest, DoManualBackupResponse>
-     */
-    public AsyncInvoker<DoManualBackupRequest, DoManualBackupResponse> doManualBackupAsyncInvoker(DoManualBackupRequest request) {
-        return new AsyncInvoker<DoManualBackupRequest, DoManualBackupResponse>(request, RdsMeta.doManualBackup, hcClient);
     }
 
     /**
@@ -724,50 +724,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 修改参数模板参数
-     * 修改参数模板参数。
-     *
-     * @param ModifyConfigurationRequest 请求对象
-     * @return CompletableFuture<ModifyConfigurationResponse>
-     */
-    public CompletableFuture<ModifyConfigurationResponse> modifyConfigurationAsync(ModifyConfigurationRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.modifyConfiguration);
-    }
-
-    /**
-     * 修改参数模板参数
-     * 修改参数模板参数。
-     *
-     * @param ModifyConfigurationRequest 请求对象
-     * @return AsyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse>
-     */
-    public AsyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse> modifyConfigurationAsyncInvoker(ModifyConfigurationRequest request) {
-        return new AsyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse>(request, RdsMeta.modifyConfiguration, hcClient);
-    }
-
-    /**
-     * 修改指定实例的参数
-     * 修改指定实例的参数。
-     *
-     * @param ModifyInstanceConfigurationRequest 请求对象
-     * @return CompletableFuture<ModifyInstanceConfigurationResponse>
-     */
-    public CompletableFuture<ModifyInstanceConfigurationResponse> modifyInstanceConfigurationAsync(ModifyInstanceConfigurationRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.modifyInstanceConfiguration);
-    }
-
-    /**
-     * 修改指定实例的参数
-     * 修改指定实例的参数。
-     *
-     * @param ModifyInstanceConfigurationRequest 请求对象
-     * @return AsyncInvoker<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse>
-     */
-    public AsyncInvoker<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> modifyInstanceConfigurationAsyncInvoker(ModifyInstanceConfigurationRequest request) {
-        return new AsyncInvoker<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse>(request, RdsMeta.modifyInstanceConfiguration, hcClient);
-    }
-
-    /**
      * 重置数据库密码
      * 重置数据库密码.
      *
@@ -1142,6 +1098,28 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改参数模板参数
+     * 修改参数模板参数。
+     *
+     * @param UpdateConfigurationRequest 请求对象
+     * @return CompletableFuture<UpdateConfigurationResponse>
+     */
+    public CompletableFuture<UpdateConfigurationResponse> updateConfigurationAsync(UpdateConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateConfiguration);
+    }
+
+    /**
+     * 修改参数模板参数
+     * 修改参数模板参数。
+     *
+     * @param UpdateConfigurationRequest 请求对象
+     * @return AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
+     */
+    public AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationAsyncInvoker(UpdateConfigurationRequest request) {
+        return new AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request, RdsMeta.updateConfiguration, hcClient);
+    }
+
+    /**
      * 修改内网地址
      * 修改内网地址
      *
@@ -1161,6 +1139,28 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse> updateDataIpAsyncInvoker(UpdateDataIpRequest request) {
         return new AsyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse>(request, RdsMeta.updateDataIp, hcClient);
+    }
+
+    /**
+     * 修改指定实例的参数
+     * 修改指定实例的参数。
+     *
+     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceConfigurationResponse>
+     */
+    public CompletableFuture<UpdateInstanceConfigurationResponse> updateInstanceConfigurationAsync(UpdateInstanceConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateInstanceConfiguration);
+    }
+
+    /**
+     * 修改指定实例的参数
+     * 修改指定实例的参数。
+     *
+     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
+     */
+    public AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationAsyncInvoker(UpdateInstanceConfigurationRequest request) {
+        return new AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request, RdsMeta.updateInstanceConfiguration, hcClient);
     }
 
     /**

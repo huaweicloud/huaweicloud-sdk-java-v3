@@ -41,7 +41,7 @@ public class QuotaLimitInfo  {
 
 
     /**
-     * |参数名称：属性key值| |参数约束及描述：属性key值|
+     * 属性key值。
      * @return limitKey
      */
     public String getLimitKey() {
@@ -75,7 +75,7 @@ public class QuotaLimitInfo  {
     }
 
     /**
-     * |参数名称：属性值| |参数约束以及描述：属性值|
+     * 属性值，具体参见表4。
      * @return limitValues
      */
     public List<LimitValue> getLimitValues() {

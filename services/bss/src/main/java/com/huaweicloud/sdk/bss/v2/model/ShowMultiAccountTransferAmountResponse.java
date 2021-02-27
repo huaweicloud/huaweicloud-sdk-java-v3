@@ -43,7 +43,7 @@ public class ShowMultiAccountTransferAmountResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：记录条数。| |参数的约束及描述：记录条数。|
+     * 记录条数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ShowMultiAccountTransferAmountResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：可拨款余额信息，如果是余额账户，只会有一条记录。具体请参见表 TransferAmountInfoV2。| |参数约束以及描述：可拨款余额信息，如果是余额账户，只会有一条记录。具体请参见表 TransferAmountInfoV2。|
+     * 可拨款余额信息，如果是余额账户，只会有一条记录。 具体请参见表2。
      * @return amountInfos
      */
     public List<TransferAmountInfoV2> getAmountInfos() {

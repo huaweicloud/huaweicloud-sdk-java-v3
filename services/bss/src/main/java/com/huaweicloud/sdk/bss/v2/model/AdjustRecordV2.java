@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -40,7 +39,7 @@ public class AdjustRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,7 +80,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：合作伙伴关联的客户的客户ID。| |参数约束及描述：合作伙伴关联的客户的客户ID。|
+     * 客户账号ID。
      * @return customerId
      */
     public String getCustomerId() {
@@ -101,7 +100,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：合作伙伴关联的客户的客户名。| |参数约束及描述：合作伙伴关联的客户的客户名。|
+     * 客户名称。
      * @return customerName
      */
     public String getCustomerName() {
@@ -121,7 +120,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：调账类型。0：授信1：回收2：解绑回收| |参数约束及描述：调账类型。0：授信1：回收2：解绑回收|
+     * 调账类型。 SOURCE_OPERATION_BEADJUST：拨款SOURCE_OPERATION_BERETRIEVE：回收SOURCE_OPERATION_BEUNBIND：解绑回收
      * @return operationType
      */
     public String getOperationType() {
@@ -132,7 +131,7 @@ public class AdjustRecordV2  {
         this.operationType = operationType;
     }
 
-    public AdjustRecordV2 withAmount(BigDecimal amount) {
+    public AdjustRecordV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -141,14 +140,14 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：调账/回收总额。| |参数的约束及描述：调账/回收总额。|
+     * 调账的总金额。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -161,7 +160,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：币种。当前固定为CNY。| |参数约束及描述：币种。当前固定为CNY。|
+     * 币种。 CNY：人民币
      * @return currency
      */
     public String getCurrency() {
@@ -181,7 +180,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：使用场景。| |参数约束及描述：使用场景。|
+     * 使用场景。
      * @return applyScene
      */
     public String getApplyScene() {
@@ -201,7 +200,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：调账时间。UTC时间，格式为：2016-03-28T14:45:38Z| |参数约束及描述：调账时间。UTC时间，格式为：2016-03-28T14:45:38Z|
+     * 调账操作的时间。 UTC时间，格式为：2016-03-28T14:45:38Z
      * @return operationTime
      */
     public String getOperationTime() {
@@ -221,7 +220,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：度量单位。1：元| |参数的约束及描述：度量单位。1：元|
+     * 调账单位。 1：元
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -241,7 +240,7 @@ public class AdjustRecordV2  {
 
 
     /**
-     * |参数名称：事务ID，只有在调用3-向客户账户拨款或4-回收客户账户余额接口时，响应消息中返回的该记录存在事务ID“trans_id”字段，这个地方才可能有值。| |参数约束及描述：事务ID，只有在调用3-向客户账户拨款或4-回收客户账户余额接口时，响应消息中返回的该记录存在事务ID“trans_id”字段，这个地方才可能有值。|
+     * 事务ID。
      * @return transId
      */
     public String getTransId() {

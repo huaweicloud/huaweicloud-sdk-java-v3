@@ -5,11 +5,15 @@ package com.huaweicloud.sdk.swr.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -36,12 +40,96 @@ public class ShowNamespaceResponse extends SdkResponse {
     @JsonProperty(value="creator_name")
     
     private String creatorName;
+    /**
+     * 用户权限。7表示管理权限，3表示编辑权限，1表示读取权限。
+     */
+    public static final class AuthEnum {
+
+        
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
+        public static final AuthEnum NUMBER_7 = new AuthEnum(7);
+        
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final AuthEnum NUMBER_3 = new AuthEnum(3);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final AuthEnum NUMBER_1 = new AuthEnum(1);
+        
+
+        private static final Map<Integer, AuthEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, AuthEnum> createStaticFields() {
+            Map<Integer, AuthEnum> map = new HashMap<>();
+            map.put(7, NUMBER_7);
+            map.put(3, NUMBER_3);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        AuthEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AuthEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            AuthEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new AuthEnum(value);
+            }
+            return result;
+        }
+
+        public static AuthEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            AuthEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof AuthEnum) {
+                return this.value.equals(((AuthEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth")
     
-    private Integer auth;
+    private AuthEnum auth;
 
     public ShowNamespaceResponse withId(Integer id) {
         this.id = id;
@@ -103,7 +191,7 @@ public class ShowNamespaceResponse extends SdkResponse {
         this.creatorName = creatorName;
     }
 
-    public ShowNamespaceResponse withAuth(Integer auth) {
+    public ShowNamespaceResponse withAuth(AuthEnum auth) {
         this.auth = auth;
         return this;
     }
@@ -115,11 +203,11 @@ public class ShowNamespaceResponse extends SdkResponse {
      * 用户权限。7表示管理权限，3表示编辑权限，1表示读取权限。
      * @return auth
      */
-    public Integer getAuth() {
+    public AuthEnum getAuth() {
         return auth;
     }
 
-    public void setAuth(Integer auth) {
+    public void setAuth(AuthEnum auth) {
         this.auth = auth;
     }
     @Override

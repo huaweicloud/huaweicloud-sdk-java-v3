@@ -277,28 +277,28 @@ public class TestEndPoint  {
     
     private String subnetId;
     /**
-     * 
+     * 源库：so,目标库：ta
      */
     public static final class EndPointTypeEnum {
 
         
         /**
-         * Enum _SO for value: "源库：so"
+         * Enum SO for value: "so"
          */
-        public static final EndPointTypeEnum _SO = new EndPointTypeEnum("源库：so");
+        public static final EndPointTypeEnum SO = new EndPointTypeEnum("so");
         
         /**
-         * Enum _TA for value: "目标库：ta"
+         * Enum TA for value: "ta"
          */
-        public static final EndPointTypeEnum _TA = new EndPointTypeEnum("目标库：ta");
+        public static final EndPointTypeEnum TA = new EndPointTypeEnum("ta");
         
 
         private static final Map<String, EndPointTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EndPointTypeEnum> createStaticFields() {
             Map<String, EndPointTypeEnum> map = new HashMap<>();
-            map.put("源库：so", _SO);
-            map.put("目标库：ta", _TA);
+            map.put("so", SO);
+            map.put("ta", TA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -468,7 +468,7 @@ public class TestEndPoint  {
 
 
     /**
-     * 数据库端口，DDS为0
+     * 数据库端口，Mongo、DDS必填为0。
      * @return dbPort
      */
     public Integer getDbPort() {
@@ -688,7 +688,7 @@ public class TestEndPoint  {
 
 
     /**
-     * 
+     * 源库：so,目标库：ta
      * @return endPointType
      */
     public EndPointTypeEnum getEndPointType() {

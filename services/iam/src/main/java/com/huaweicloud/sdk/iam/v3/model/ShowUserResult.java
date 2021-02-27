@@ -104,9 +104,9 @@ public class ShowUserResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pwd_stength")
+    @JsonProperty(value="pwd_strength")
     
-    private String pwdStength;
+    private String pwdStrength;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -413,8 +413,8 @@ public class ShowUserResult  {
         this.lastLoginTime = lastLoginTime;
     }
 
-    public ShowUserResult withPwdStength(String pwdStength) {
-        this.pwdStength = pwdStength;
+    public ShowUserResult withPwdStrength(String pwdStrength) {
+        this.pwdStrength = pwdStrength;
         return this;
     }
 
@@ -423,14 +423,14 @@ public class ShowUserResult  {
 
     /**
      * IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
-     * @return pwdStength
+     * @return pwdStrength
      */
-    public String getPwdStength() {
-        return pwdStength;
+    public String getPwdStrength() {
+        return pwdStrength;
     }
 
-    public void setPwdStength(String pwdStength) {
-        this.pwdStength = pwdStength;
+    public void setPwdStrength(String pwdStrength) {
+        this.pwdStrength = pwdStrength;
     }
 
     public ShowUserResult withIsDomainOwner(Boolean isDomainOwner) {
@@ -515,14 +515,14 @@ public class ShowUserResult  {
             Objects.equals(this.updateTime, showUserResult.updateTime) &&
             Objects.equals(this.createTime, showUserResult.createTime) &&
             Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime) &&
-            Objects.equals(this.pwdStength, showUserResult.pwdStength) &&
+            Objects.equals(this.pwdStrength, showUserResult.pwdStrength) &&
             Objects.equals(this.isDomainOwner, showUserResult.isDomainOwner) &&
             Objects.equals(this.accessMode, showUserResult.accessMode) &&
             Objects.equals(this.description, showUserResult.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStength, isDomainOwner, accessMode, description);
+        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStrength, isDomainOwner, accessMode, description);
     }
     @Override
     public String toString() {
@@ -542,7 +542,7 @@ public class ShowUserResult  {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    lastLoginTime: ").append(toIndentedString(lastLoginTime)).append("\n");
-        sb.append("    pwdStength: ").append(toIndentedString(pwdStength)).append("\n");
+        sb.append("    pwdStrength: ").append(toIndentedString(pwdStrength)).append("\n");
         sb.append("    isDomainOwner: ").append(toIndentedString(isDomainOwner)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

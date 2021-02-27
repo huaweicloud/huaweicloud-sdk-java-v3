@@ -104,7 +104,7 @@ public class QueryRoleDetailResp  {
 
 
     /**
-     * 是否迁移。
+     * 是否支持迁移。
      * @return isTransfer
      */
     public Boolean getIsTransfer() {
@@ -124,7 +124,7 @@ public class QueryRoleDetailResp  {
 
 
     /**
-     * 权限。
+     * 角色权限。
      * @return privileges
      */
     public String getPrivileges() {

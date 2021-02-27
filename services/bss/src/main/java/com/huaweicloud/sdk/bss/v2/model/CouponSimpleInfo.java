@@ -38,7 +38,7 @@ public class CouponSimpleInfo  {
 
 
     /**
-     * |参数名称：批量发放成功客户ID。| |参数约束及描述：批量发放成功客户ID。|
+     * 批量发放优惠券成功的客户ID。
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class CouponSimpleInfo  {
 
 
     /**
-     * |参数名称：发放成功的券ID| |参数约束及描述：发放成功的券ID|
+     * 发放成功的券ID。
      * @return couponId
      */
     public String getCouponId() {

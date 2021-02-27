@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ public class OrderRefundInfoV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +74,7 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：该记录的ID。| |参数约束及描述：该记录的ID。|
+     * 该记录的ID。
      * @return id
      */
     public String getId() {
@@ -86,7 +85,7 @@ public class OrderRefundInfoV2  {
         this.id = id;
     }
 
-    public OrderRefundInfoV2 withAmount(BigDecimal amount) {
+    public OrderRefundInfoV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -95,14 +94,14 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：金额。金额为负数，表示退订金额。金额为正数，表示已消费金额或收取的退订手续费。| |参数的约束及描述：金额。金额为负数，表示退订金额。金额为正数，表示已消费金额或收取的退订手续费。|
+     * 金额。 金额为负数，表示退订金额。金额为正数，表示已消费金额或收取的退订手续费。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -115,7 +114,7 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：度量单位。1：元| |参数约束及描述：度量单位。1：元|
+     * 金额的度量单位。 1：元
      * @return measureId
      */
     public String getMeasureId() {
@@ -135,7 +134,7 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * 客户账号ID。
      * @return customerId
      */
     public String getCustomerId() {
@@ -155,7 +154,7 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。| |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -175,7 +174,7 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -195,7 +194,7 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * @return regionCode
      */
     public String getRegionCode() {
@@ -215,7 +214,7 @@ public class OrderRefundInfoV2  {
 
 
     /**
-     * |参数名称：退订金额、已消费金额或收取退订手续费对应的原订单ID。| |参数约束及描述：退订金额、已消费金额或收取退订手续费对应的原订单ID。|
+     * 退订金额、已消费金额或收取退订手续费对应的原订单ID。
      * @return baseOrderId
      */
     public String getBaseOrderId() {

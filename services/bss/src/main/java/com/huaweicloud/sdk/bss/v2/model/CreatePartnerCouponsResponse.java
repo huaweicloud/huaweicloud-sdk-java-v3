@@ -58,7 +58,7 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：错误的客户列表和错误信息| |参数约束以及描述：错误的客户列表和错误信息|
+     * 错误的客户列表和错误信息，只有HTTP 200的时候才会返回这个结构体，具体参见表1。
      * @return errorDetails
      */
     public List<ErrorDetail> getErrorDetails() {
@@ -92,7 +92,7 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：成功的客户ID和对应的券ID列表| |参数约束以及描述：成功的客户ID和对应的券ID列表|
+     * 成功的客户ID和对应的券ID列表，只有HTTP 200的时候才会返回这个结构体，具体参见表2。
      * @return couponInfos
      */
     public List<CouponSimpleInfo> getCouponInfos() {

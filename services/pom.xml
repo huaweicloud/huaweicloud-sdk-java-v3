@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.33-rc</version>
+        <version>3.0.34-rc</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.33-rc</version>
+    <version>3.0.34-rc</version>
     <packaging>pom</packaging>
     <name>Huaweicloud SDK for Java Services</name>
     <description>Services code for Huaweicloud SDK for Java</description>
@@ -55,7 +55,6 @@
         <module>dli</module>
         <module>ces</module>
         <module>kafka</module>
-        <module>dc</module>
         <module>dcs</module>
         <module>bssintl</module>
         <module>eps</module>

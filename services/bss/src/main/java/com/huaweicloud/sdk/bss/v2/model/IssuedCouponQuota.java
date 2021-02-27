@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.bss.v2.model.QuotaLimitInfo;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -49,7 +48,7 @@ public class IssuedCouponQuota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_value")
     
-    private BigDecimal quotaValue = null;
+    private Double quotaValue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,7 +60,7 @@ public class IssuedCouponQuota  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="balance")
     
-    private BigDecimal balance = null;
+    private Double balance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -126,7 +125,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：额度ID。| |参数约束及描述：额度ID。|
+     * 已发放的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -146,7 +145,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：额度类型：0：代金券额度；| |参数的约束及描述：额度类型：0：代金券额度；|
+     * 额度类型： 0：代金券额度
      * @return quotaType
      */
     public Integer getQuotaType() {
@@ -166,7 +165,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -186,7 +185,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：最后一次更新时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：最后一次更新时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 最后一次更新时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -197,7 +196,7 @@ public class IssuedCouponQuota  {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    public IssuedCouponQuota withQuotaValue(BigDecimal quotaValue) {
+    public IssuedCouponQuota withQuotaValue(Double quotaValue) {
         this.quotaValue = quotaValue;
         return this;
     }
@@ -206,14 +205,14 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：代金券额度的值，精确到小数点后2位。| |参数的约束及描述：代金券额度的值，精确到小数点后2位。|
+     * 代金券额度的值，精确到小数点后2位。
      * @return quotaValue
      */
-    public BigDecimal getQuotaValue() {
+    public Double getQuotaValue() {
         return quotaValue;
     }
 
-    public void setQuotaValue(BigDecimal quotaValue) {
+    public void setQuotaValue(Double quotaValue) {
         this.quotaValue = quotaValue;
     }
 
@@ -226,7 +225,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：状态：0：正常；3：失效（过期失效和人工设置失效）；4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放代金券）。5：冻结6：回收| |参数的约束及描述：状态：0：正常；3：失效（过期失效和人工设置失效）；4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放代金券）。5：冻结6：回收|
+     * 代金券额度的状态： 0：正常3：失效（包括过期失效和人工设置失效）4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放代金券）5：冻结6：回收
      * @return quotaStatus
      */
     public Integer getQuotaStatus() {
@@ -237,7 +236,7 @@ public class IssuedCouponQuota  {
         this.quotaStatus = quotaStatus;
     }
 
-    public IssuedCouponQuota withBalance(BigDecimal balance) {
+    public IssuedCouponQuota withBalance(Double balance) {
         this.balance = balance;
         return this;
     }
@@ -246,14 +245,14 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：剩余的代金券额度，精确到小数点后2位。| |参数的约束及描述：剩余的代金券额度，精确到小数点后2位。|
+     * 剩余的代金券额度，精确到小数点后2位。
      * @return balance
      */
-    public BigDecimal getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
@@ -266,7 +265,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：面额单位。1：元。| |参数的约束及描述：面额单位。1：元。|
+     * 代金券额度的单位。 1：元。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -286,7 +285,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：币种。当前仅有CNY。| |参数约束及描述：币种。当前仅有CNY。|
+     * 币种。 CNY：人民币
      * @return currency
      */
     public String getCurrency() {
@@ -306,7 +305,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return effectiveTime
      */
     public String getEffectiveTime() {
@@ -326,7 +325,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return expireTime
      */
     public String getExpireTime() {
@@ -360,7 +359,7 @@ public class IssuedCouponQuota  {
     }
 
     /**
-     * |参数名称：额度上的限制属性| |参数约束以及描述：额度上的限制属性|
+     * 代金券额度上的限制属性，具体参见表3。
      * @return limitInfos
      */
     public List<QuotaLimitInfo> getLimitInfos() {
@@ -380,7 +379,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：二级经销商ID|
+     * 精英服务商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -400,7 +399,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：二级经销商账号名称| |参数约束及描述：二级经销商账号名称|
+     * 精英服务商账号名。
      * @return indirectPartnerAccountName
      */
     public String getIndirectPartnerAccountName() {
@@ -420,7 +419,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：二级经销商名称| |参数约束及描述：二级经销商名称|
+     * 精英服务商名称。
      * @return indirectPartnerName
      */
     public String getIndirectPartnerName() {
@@ -440,7 +439,7 @@ public class IssuedCouponQuota  {
 
 
     /**
-     * |参数名称：父额度ID，一级经销商用于发给二级经销商额度的额度ID。| |参数约束及描述：父额度ID，一级经销商用于发给二级经销商额度的额度ID。|
+     * 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
      * @return parentQuotaId
      */
     public String getParentQuotaId() {

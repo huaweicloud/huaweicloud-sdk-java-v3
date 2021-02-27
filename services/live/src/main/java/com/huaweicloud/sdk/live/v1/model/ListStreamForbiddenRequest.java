@@ -143,6 +143,7 @@ public class ListStreamForbiddenRequest  {
 
     /**
      * Get page
+     * minimum: 0
      * @return page
      */
     public Integer getPage() {

@@ -26,12 +26,6 @@ public class CreateMessageV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
-    private Integer type;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
@@ -63,28 +57,6 @@ public class CreateMessageV2Req  {
         this.message = message;
     }
 
-    public CreateMessageV2Req withType(Integer type) {
-        this.type = type;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 类型
-     * minimum: 0
-     * maximum: 1
-     * @return type
-     */
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
     public CreateMessageV2Req withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -114,19 +86,17 @@ public class CreateMessageV2Req  {
         }
         CreateMessageV2Req createMessageV2Req = (CreateMessageV2Req) o;
         return Objects.equals(this.message, createMessageV2Req.message) &&
-            Objects.equals(this.type, createMessageV2Req.type) &&
             Objects.equals(this.groupId, createMessageV2Req.groupId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(message, type, groupId);
+        return Objects.hash(message, groupId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMessageV2Req {\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();

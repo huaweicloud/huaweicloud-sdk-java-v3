@@ -43,7 +43,7 @@ public class ListCitiesResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：查询个数，成功的时候返回| |参数的约束及描述：查询个数，成功的时候返回|
+     * 查询个数，成功的时候返回。
      * minimum: 0
      * maximum: 1000
      * @return count
@@ -79,7 +79,7 @@ public class ListCitiesResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：城市信息列表，成功的时候返回| |参数约束以及描述：城市信息列表，成功的时候返回|
+     * 城市信息列表，成功的时候返回，具体参见表2。
      * @return cities
      */
     public List<City> getCities() {

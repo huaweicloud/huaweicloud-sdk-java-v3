@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -118,7 +117,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_size")
     
-    private BigDecimal specSize = null;
+    private Double specSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -172,7 +171,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="usage")
     
-    private BigDecimal usage = null;
+    private Double usage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -184,7 +183,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="free_resource_usage")
     
-    private BigDecimal freeResourceUsage = null;
+    private Double freeResourceUsage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -196,7 +195,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ri_usage")
     
-    private BigDecimal riUsage = null;
+    private Double riUsage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -208,7 +207,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit_price")
     
-    private BigDecimal unitPrice = null;
+    private Double unitPrice;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -220,67 +219,67 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_amount")
     
-    private BigDecimal officialAmount = null;
+    private Double officialAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_amount")
     
-    private BigDecimal discountAmount = null;
+    private Double discountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cash_amount")
     
-    private BigDecimal cashAmount = null;
+    private Double cashAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit_amount")
     
-    private BigDecimal creditAmount = null;
+    private Double creditAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coupon_amount")
     
-    private BigDecimal couponAmount = null;
+    private Double couponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flexipurchase_coupon_amount")
     
-    private BigDecimal flexipurchaseCouponAmount = null;
+    private Double flexipurchaseCouponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stored_card_amount")
     
-    private BigDecimal storedCardAmount = null;
+    private Double storedCardAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bonus_amount")
     
-    private BigDecimal bonusAmount = null;
+    private Double bonusAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
-    private BigDecimal debtAmount = null;
+    private Double debtAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjustment_amount")
     
-    private BigDecimal adjustmentAmount = null;
+    private Double adjustmentAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -297,7 +296,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：消费记录日期：格式：YYYY-MM-DD。按照东八区截取| |参数约束及描述：消费记录日期：格式：YYYY-MM-DD。按照东八区截取|
+     * 资源消费记录的日期。 格式：YYYY-MM-DD。按照东八区截取。
      * @return billDate
      */
     public String getBillDate() {
@@ -317,7 +316,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费16：调账-扣费| |参数的约束及描述：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费 15消费-税金16：调账-扣费17：消费-保底差额 100：退款-退订税金 101：调账-补偿税金 102：调账-扣费税金|
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费
      * @return billType
      */
     public Integer getBillType() {
@@ -337,7 +336,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：消费的客户账号ID。| |参数约束及描述：如果是查询自己，这个地方是自身的ID; 如果是查询某个企业子客户，这个地方是企业子客户ID如果是查询以及下面的所有子客户，这个地方是消费的实际客户ID; 如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。|
+     * 消费的客户账号ID。 如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。
      * @return customerId
      */
     public String getCustomerId() {
@@ -357,7 +356,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * @return region
      */
     public String getRegion() {
@@ -377,7 +376,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：云服务区名称| |参数约束及描述：云服务区名称|
+     * 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
      * @return regionName
      */
     public String getRegionName() {
@@ -397,7 +396,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -417,7 +416,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。| |参数约束及描述：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。具体请参见资源类型资源类型资源类型资源类型。|
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * @return resourceType
      */
     public String getResourceType() {
@@ -437,7 +436,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：费用对应的资源使用的开始时间，按需有效，包周期该字段保留。| |参数约束及描述：费用对应的资源使用的开始时间，按需有效，包周期该字段保留。|
+     * 费用对应的资源使用的开始时间，按需有效，包年/包月该字段保留。
      * @return effectiveTime
      */
     public String getEffectiveTime() {
@@ -457,7 +456,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：费用对应的资源使用的结束时间，按需有效，包周期该字段保留。| |参数约束及描述：费用对应的资源使用的结束时间，按需有效，包周期该字段保留。|
+     * 费用对应的资源使用的结束时间，按需有效，包年/包月该字段保留。
      * @return expireTime
      */
     public String getExpireTime() {
@@ -477,7 +476,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：资源ID。| |参数约束及描述：资源ID。|
+     * 资源ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -497,7 +496,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：资源名称。| |参数约束及描述：资源名称。|
+     * 资源名称。
      * @return resourceName
      */
     public String getResourceName() {
@@ -517,7 +516,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：资源标签。| |参数约束及描述：资源标签。|
+     * 资源标签。
      * @return resourceTag
      */
     public String getResourceTag() {
@@ -537,7 +536,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：产品ID。| |参数约束及描述：产品ID。|
+     * 产品ID。
      * @return productId
      */
     public String getProductId() {
@@ -557,7 +556,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：产品名称。| |参数约束及描述：产品名称。|
+     * 产品名称。
      * @return productName
      */
     public String getProductName() {
@@ -577,7 +576,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：产品规格描述。| |参数约束及描述：产品规格描述，举例为：普通IO|100.0GB。|
+     * 产品的规格描述。
      * @return productSpecDesc
      */
     public String getProductSpecDesc() {
@@ -597,7 +596,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：sku编码| |参数约束及描述：sku编码|
+     * SKU编码，在账单中唯一标识一个资源的规格。
      * @return skuCode
      */
     public String getSkuCode() {
@@ -608,7 +607,7 @@ public class ResFeeRecordV2  {
         this.skuCode = skuCode;
     }
 
-    public ResFeeRecordV2 withSpecSize(BigDecimal specSize) {
+    public ResFeeRecordV2 withSpecSize(Double specSize) {
         this.specSize = specSize;
         return this;
     }
@@ -617,14 +616,14 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：线性大小| |参数约束及描述： 线性大小|
+     * 产品的实例大小，仅线性产品有效。 线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。
      * @return specSize
      */
-    public BigDecimal getSpecSize() {
+    public Double getSpecSize() {
         return specSize;
     }
 
-    public void setSpecSize(BigDecimal specSize) {
+    public void setSpecSize(Double specSize) {
         this.specSize = specSize;
     }
 
@@ -637,7 +636,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：线性大小单位| |参数的约束及描述：线性大小单位|
+     * 产品实例大小的单位，仅线性产品有该字段。 您可以调用查询使用量单位列表接口获取。
      * @return specSizeMeasureId
      */
     public Integer getSpecSizeMeasureId() {
@@ -657,7 +656,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：订单ID 或 交易ID，扣费维度的唯一标识| |参数约束及描述：订单ID 或 交易ID，扣费维度的唯一标识|
+     * 订单ID或交易ID，扣费维度的唯一标识。
      * @return tradeId
      */
     public String getTradeId() {
@@ -677,7 +676,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：企业项目ID。| |参数约束及描述：企业项目ID。|
+     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -697,7 +696,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：企业项目名称。| |参数约束及描述：企业项目名称。|
+     * 企业项目的名称。
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {
@@ -717,7 +716,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：1 : 包周期；3: 按需。10: 预留实例。| |参数约束及描述：1 : 包周期；3: 按需。10: 预留实例。|
+     * 计费模式。 1：包年/包月3：按需10：预留实例
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -737,7 +736,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：订单ID，包周期资源使用记录才有该字段，按需资源为空。| |参数约束及描述：订单ID，包周期资源使用记录才有该字段，按需资源为空。|
+     * 订单ID。  说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
      * @return orderId
      */
     public String getOrderId() {
@@ -757,7 +756,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：周期类型：19：年；20：月；24：天；25：小时；5：分钟；6：秒。| |参数约束及描述：周期类型：19：年；20：月；24：天；25：小时；5：分钟；6：秒。|
+     * 周期类型： 19：年20：月24：天25：小时5：一次性
      * @return periodType
      */
     public String getPeriodType() {
@@ -777,7 +776,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：使用量类型| |参数约束及描述：使用量类型|
+     * 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
      * @return usageType
      */
     public String getUsageType() {
@@ -788,7 +787,7 @@ public class ResFeeRecordV2  {
         this.usageType = usageType;
     }
 
-    public ResFeeRecordV2 withUsage(BigDecimal usage) {
+    public ResFeeRecordV2 withUsage(Double usage) {
         this.usage = usage;
         return this;
     }
@@ -797,14 +796,14 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：使用量。| |参数约束及描述： 使用量。|
+     * 资源的使用量。
      * @return usage
      */
-    public BigDecimal getUsage() {
+    public Double getUsage() {
         return usage;
     }
 
-    public void setUsage(BigDecimal usage) {
+    public void setUsage(Double usage) {
         this.usage = usage;
     }
 
@@ -817,7 +816,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：使用量度量单位| |参数的约束及描述：使用量度量单位|
+     * 资源使用量的度量单位，您可以调用查询使用量单位列表接口获取。
      * @return usageMeasureId
      */
     public Integer getUsageMeasureId() {
@@ -828,7 +827,7 @@ public class ResFeeRecordV2  {
         this.usageMeasureId = usageMeasureId;
     }
 
-    public ResFeeRecordV2 withFreeResourceUsage(BigDecimal freeResourceUsage) {
+    public ResFeeRecordV2 withFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
         return this;
     }
@@ -837,14 +836,14 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：套餐内使用量。| |参数约束及描述： 套餐内使用量。|
+     * 套餐内使用量。
      * @return freeResourceUsage
      */
-    public BigDecimal getFreeResourceUsage() {
+    public Double getFreeResourceUsage() {
         return freeResourceUsage;
     }
 
-    public void setFreeResourceUsage(BigDecimal freeResourceUsage) {
+    public void setFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
     }
 
@@ -857,7 +856,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：套餐内使用量单位，具体枚举参考：usageMeasureId| |参数的约束及描述：套餐内使用量单位，具体枚举参考：usageMeasureId|
+     * 套餐内使用量的度量单位，您可以调用查询使用量单位列表接口获取。
      * @return freeResourceMeasureId
      */
     public Integer getFreeResourceMeasureId() {
@@ -868,7 +867,7 @@ public class ResFeeRecordV2  {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
 
-    public ResFeeRecordV2 withRiUsage(BigDecimal riUsage) {
+    public ResFeeRecordV2 withRiUsage(Double riUsage) {
         this.riUsage = riUsage;
         return this;
     }
@@ -877,14 +876,14 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：预留实例使用量。| |参数约束及描述： 预留实例使用量。|
+     * 预留实例使用量。
      * @return riUsage
      */
-    public BigDecimal getRiUsage() {
+    public Double getRiUsage() {
         return riUsage;
     }
 
-    public void setRiUsage(BigDecimal riUsage) {
+    public void setRiUsage(Double riUsage) {
         this.riUsage = riUsage;
     }
 
@@ -897,7 +896,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：预留实例使用量单位。| |参数的约束及描述：预留实例使用量单位。|
+     * 预留实例使用量单位。
      * @return riUsageMeasureId
      */
     public Integer getRiUsageMeasureId() {
@@ -908,7 +907,7 @@ public class ResFeeRecordV2  {
         this.riUsageMeasureId = riUsageMeasureId;
     }
 
-    public ResFeeRecordV2 withUnitPrice(BigDecimal unitPrice) {
+    public ResFeeRecordV2 withUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
         return this;
     }
@@ -917,14 +916,14 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：单价| |参数约束及描述：单价|
+     * 资源的单价。
      * @return unitPrice
      */
-    public BigDecimal getUnitPrice() {
+    public Double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(BigDecimal unitPrice) {
+    public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
     }
 
@@ -937,7 +936,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：单价单位| |参数约束及描述：单价单位|
+     * 资源的单价单位。
      * @return unit
      */
     public String getUnit() {
@@ -948,7 +947,7 @@ public class ResFeeRecordV2  {
         this.unit = unit;
     }
 
-    public ResFeeRecordV2 withOfficialAmount(BigDecimal officialAmount) {
+    public ResFeeRecordV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -957,18 +956,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：官网价。| |参数约束及描述： 官网价。|
+     * 官网价。
      * @return officialAmount
      */
-    public BigDecimal getOfficialAmount() {
+    public Double getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(BigDecimal officialAmount) {
+    public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public ResFeeRecordV2 withDiscountAmount(BigDecimal discountAmount) {
+    public ResFeeRecordV2 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -977,18 +976,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：折扣金额| |参数约束及描述： 折扣金额|
+     * 折扣金额。
      * @return discountAmount
      */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public ResFeeRecordV2 withAmount(BigDecimal amount) {
+    public ResFeeRecordV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -997,18 +996,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：消费金额，包括现金券和代金券金额，精确到小数点后2位。| |参数约束及描述： 消费金额，包括现金券和代金券金额，精确到小数点后2位。|
+     * 消费金额，包括现金券和储值卡和代金券金额，精确到小数点后2位。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public ResFeeRecordV2 withCashAmount(BigDecimal cashAmount) {
+    public ResFeeRecordV2 withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -1017,18 +1016,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：现金支付金额| |参数约束及描述： 现金支付金额|
+     * 现金支付金额。
      * @return cashAmount
      */
-    public BigDecimal getCashAmount() {
+    public Double getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(BigDecimal cashAmount) {
+    public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public ResFeeRecordV2 withCreditAmount(BigDecimal creditAmount) {
+    public ResFeeRecordV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -1037,18 +1036,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：信用额度支付金额。| |参数约束及描述： 信用额度支付金额。|
+     * 信用额度支付金额。
      * @return creditAmount
      */
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
 
-    public ResFeeRecordV2 withCouponAmount(BigDecimal couponAmount) {
+    public ResFeeRecordV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -1057,18 +1056,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：代金券支付金额。| |参数约束及描述： 代金券支付金额。|
+     * 代金券支付金额。
      * @return couponAmount
      */
-    public BigDecimal getCouponAmount() {
+    public Double getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(BigDecimal couponAmount) {
+    public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public ResFeeRecordV2 withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public ResFeeRecordV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -1077,18 +1076,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：现金券支付金额。| |参数约束及描述： 现金券支付金额。|
+     * 现金券支付金额。
      * @return flexipurchaseCouponAmount
      */
-    public BigDecimal getFlexipurchaseCouponAmount() {
+    public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public ResFeeRecordV2 withStoredCardAmount(BigDecimal storedCardAmount) {
+    public ResFeeRecordV2 withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
     }
@@ -1097,18 +1096,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：储值卡支付金额。| |参数约束及描述： 储值卡支付金额。|
+     * 储值卡支付金额。
      * @return storedCardAmount
      */
-    public BigDecimal getStoredCardAmount() {
+    public Double getStoredCardAmount() {
         return storedCardAmount;
     }
 
-    public void setStoredCardAmount(BigDecimal storedCardAmount) {
+    public void setStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
     }
 
-    public ResFeeRecordV2 withBonusAmount(BigDecimal bonusAmount) {
+    public ResFeeRecordV2 withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
     }
@@ -1117,18 +1116,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：奖励金支付金额（用于现网未清干净的奖励金）。| |参数约束及描述： 奖励金支付金额（用于现网未清干净的奖励金）。|
+     * 奖励金支付金额（用于现网客户未使用完的奖励金）。
      * @return bonusAmount
      */
-    public BigDecimal getBonusAmount() {
+    public Double getBonusAmount() {
         return bonusAmount;
     }
 
-    public void setBonusAmount(BigDecimal bonusAmount) {
+    public void setBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
 
-    public ResFeeRecordV2 withDebtAmount(BigDecimal debtAmount) {
+    public ResFeeRecordV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -1137,18 +1136,18 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：欠费金额。| |参数约束及描述： 欠费金额。|
+     * 欠费金额。
      * @return debtAmount
      */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public ResFeeRecordV2 withAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public ResFeeRecordV2 withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
     }
@@ -1157,14 +1156,14 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：欠费核销金额。| |参数约束及描述： 欠费核销金额。|
+     * 欠费核销金额。
      * @return adjustmentAmount
      */
-    public BigDecimal getAdjustmentAmount() {
+    public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
 
-    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public void setAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
     }
 
@@ -1177,7 +1176,7 @@ public class ResFeeRecordV2  {
 
 
     /**
-     * |参数名称：金额单位：1：元| |参数的约束及描述：金额单位：1：元|
+     * 金额单位。 1：元
      * @return measureId
      */
     public Integer getMeasureId() {

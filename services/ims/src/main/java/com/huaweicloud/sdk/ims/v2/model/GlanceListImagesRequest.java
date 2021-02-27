@@ -601,7 +601,7 @@ public class GlanceListImagesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_format")
     
-    private DiskFormatEnum diskFormat = DiskFormatEnum.VHD;
+    private DiskFormatEnum diskFormat;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)

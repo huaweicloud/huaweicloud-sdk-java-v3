@@ -46,7 +46,7 @@ public class QuerySkuInventoriesReq  {
     }
 
     /**
-     * |参数名称：待查询库存项| |参数约束以及描述：待查询库存项|
+     * 待查询库存项，参见表1。
      * @return skuItems
      */
     public List<SkuItem> getSkuItems() {

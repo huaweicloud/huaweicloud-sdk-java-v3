@@ -40,34 +40,34 @@ public class QueryJobsReq  {
     
     private Integer perPage;
     /**
-     * 迁移场景
+     * 迁移场景，migration:实时迁移,sync:实时同步,cloudDataGuard:实时灾备
      */
     public static final class DbUseTypeEnum {
 
         
         /**
-         * Enum MIGRATION_ for value: "migration:实时迁移"
+         * Enum MIGRATION for value: "migration"
          */
-        public static final DbUseTypeEnum MIGRATION_ = new DbUseTypeEnum("migration:实时迁移");
+        public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
         
         /**
-         * Enum SYNC_ for value: "sync:实时同步"
+         * Enum SYNC for value: "sync"
          */
-        public static final DbUseTypeEnum SYNC_ = new DbUseTypeEnum("sync:实时同步");
+        public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
         
         /**
-         * Enum CLOUDDATAGUARD_ for value: "cloudDataGuard:实时灾备"
+         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
          */
-        public static final DbUseTypeEnum CLOUDDATAGUARD_ = new DbUseTypeEnum("cloudDataGuard:实时灾备");
+        public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
         
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbUseTypeEnum> createStaticFields() {
             Map<String, DbUseTypeEnum> map = new HashMap<>();
-            map.put("migration:实时迁移", MIGRATION_);
-            map.put("sync:实时同步", SYNC_);
-            map.put("cloudDataGuard:实时灾备", CLOUDDATAGUARD_);
+            map.put("migration", MIGRATION);
+            map.put("sync", SYNC);
+            map.put("cloudDataGuard", CLOUDDATAGUARD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -130,46 +130,34 @@ public class QueryJobsReq  {
     
     private DbUseTypeEnum dbUseType;
     /**
-     * 引擎类型
+     * 引擎类型,mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用。
      */
     public static final class EngineTypeEnum {
 
         
         /**
-         * Enum CLOUDDATAGUARD_CASSANDRA for value: "cloudDataGuard-cassandra"
+         * Enum MYSQL for value: "mysql"
          */
-        public static final EngineTypeEnum CLOUDDATAGUARD_CASSANDRA = new EngineTypeEnum("cloudDataGuard-cassandra");
+        public static final EngineTypeEnum MYSQL = new EngineTypeEnum("mysql");
         
         /**
-         * Enum CLOUDDATAGUARD_DDM for value: "cloudDataGuard-ddm"
+         * Enum MONGODB for value: "mongodb"
          */
-        public static final EngineTypeEnum CLOUDDATAGUARD_DDM = new EngineTypeEnum("cloudDataGuard-ddm");
-        
-        /**
-         * Enum CLOUDDATAGUARD_TAURUS_TO_MYSQL for value: "cloudDataGuard-taurus-to-mysql"
-         */
-        public static final EngineTypeEnum CLOUDDATAGUARD_TAURUS_TO_MYSQL = new EngineTypeEnum("cloudDataGuard-taurus-to-mysql");
+        public static final EngineTypeEnum MONGODB = new EngineTypeEnum("mongodb");
         
         /**
          * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
          */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
         
-        /**
-         * Enum CLOUDDATAGUARD_MYSQL_TO_TAURUS for value: "cloudDataGuard-mysql-to-taurus"
-         */
-        public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL_TO_TAURUS = new EngineTypeEnum("cloudDataGuard-mysql-to-taurus");
-        
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineTypeEnum> createStaticFields() {
             Map<String, EngineTypeEnum> map = new HashMap<>();
-            map.put("cloudDataGuard-cassandra", CLOUDDATAGUARD_CASSANDRA);
-            map.put("cloudDataGuard-ddm", CLOUDDATAGUARD_DDM);
-            map.put("cloudDataGuard-taurus-to-mysql", CLOUDDATAGUARD_TAURUS_TO_MYSQL);
+            map.put("mysql", MYSQL);
+            map.put("mongodb", MONGODB);
             map.put("cloudDataGuard-mysql", CLOUDDATAGUARD_MYSQL);
-            map.put("cloudDataGuard-mysql-to-taurus", CLOUDDATAGUARD_MYSQL_TO_TAURUS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -333,155 +321,149 @@ public class QueryJobsReq  {
     @JsonProperty(value="net_type")
     
     private NetTypeEnum netType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_name")
-    
-    private String serviceName;
     /**
-     * 状态
+     * 状态，CREATING：创建中,CREATE_FAILED: 创建失败,CONFIGURATION: 配置中,STARTJOBING: 启动中,WAITING_FOR_START：等待启动中,START_JOB_FAILED：任务启动失败,FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化,FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败,FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成,INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中,INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常,RELEASE_RESOURCE_STARTED：结束任务中,RELEASE_RESOURCE_FAILED：结束任务失败,RELEASE_RESOURCE_COMPLETE：已结束,CHANGE_JOB_STARTED：任务变更中,CHANGE_JOB_FAILED：任务变更失败,CHILD_TRANSFER_STARTING：子任务启动中,CHILD_TRANSFER_STARTED：子任务迁移中,CHILD_TRANSFER_COMPLETE：子任务迁移完成,CHILD_TRANSFER_FAILED：子任务迁移失败,RELEASE_CHILD_TRANSFER_STARTED：子任务结束中,RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束
      */
     public static final class StatusEnum {
 
         
         /**
-         * Enum CREATING_ for value: "CREATING：创建中"
+         * Enum CREATING for value: "CREATING"
          */
-        public static final StatusEnum CREATING_ = new StatusEnum("CREATING：创建中");
+        public static final StatusEnum CREATING = new StatusEnum("CREATING");
         
         /**
-         * Enum CREATE_FAILED_ for value: "CREATE_FAILED: 创建失败"
+         * Enum CREATE_FAILED for value: "CREATE_FAILED"
          */
-        public static final StatusEnum CREATE_FAILED_ = new StatusEnum("CREATE_FAILED: 创建失败");
+        public static final StatusEnum CREATE_FAILED = new StatusEnum("CREATE_FAILED");
         
         /**
-         * Enum CONFIGURATION_ for value: "CONFIGURATION: 配置中"
+         * Enum CONFIGURATION for value: "CONFIGURATION"
          */
-        public static final StatusEnum CONFIGURATION_ = new StatusEnum("CONFIGURATION: 配置中");
+        public static final StatusEnum CONFIGURATION = new StatusEnum("CONFIGURATION");
         
         /**
-         * Enum STARTJOBING_ for value: "STARTJOBING: 启动中"
+         * Enum STARTJOBING for value: "STARTJOBING"
          */
-        public static final StatusEnum STARTJOBING_ = new StatusEnum("STARTJOBING: 启动中");
+        public static final StatusEnum STARTJOBING = new StatusEnum("STARTJOBING");
         
         /**
-         * Enum WAITING_FOR_START_ for value: "WAITING_FOR_START：等待启动中"
+         * Enum WAITING_FOR_START for value: "WAITING_FOR_START"
          */
-        public static final StatusEnum WAITING_FOR_START_ = new StatusEnum("WAITING_FOR_START：等待启动中");
+        public static final StatusEnum WAITING_FOR_START = new StatusEnum("WAITING_FOR_START");
         
         /**
-         * Enum START_JOB_FAILED_ for value: "START_JOB_FAILED：任务启动失败"
+         * Enum START_JOB_FAILED for value: "START_JOB_FAILED"
          */
-        public static final StatusEnum START_JOB_FAILED_ = new StatusEnum("START_JOB_FAILED：任务启动失败");
+        public static final StatusEnum START_JOB_FAILED = new StatusEnum("START_JOB_FAILED");
         
         /**
-         * Enum FULL_TRANSFER_STARTED_ for value: "FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化"
+         * Enum FULL_TRANSFER_STARTED for value: "FULL_TRANSFER_STARTED"
          */
-        public static final StatusEnum FULL_TRANSFER_STARTED_ = new StatusEnum("FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化");
+        public static final StatusEnum FULL_TRANSFER_STARTED = new StatusEnum("FULL_TRANSFER_STARTED");
         
         /**
-         * Enum FULL_TRANSFER_FAILED_ for value: "FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败"
+         * Enum FULL_TRANSFER_FAILED for value: "FULL_TRANSFER_FAILED"
          */
-        public static final StatusEnum FULL_TRANSFER_FAILED_ = new StatusEnum("FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败");
+        public static final StatusEnum FULL_TRANSFER_FAILED = new StatusEnum("FULL_TRANSFER_FAILED");
         
         /**
-         * Enum FULL_TRANSFER_COMPLETE_ for value: "FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成"
+         * Enum FULL_TRANSFER_COMPLETE for value: "FULL_TRANSFER_COMPLETE"
          */
-        public static final StatusEnum FULL_TRANSFER_COMPLETE_ = new StatusEnum("FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成");
+        public static final StatusEnum FULL_TRANSFER_COMPLETE = new StatusEnum("FULL_TRANSFER_COMPLETE");
         
         /**
-         * Enum INCRE_TRANSFER_STARTED_ for value: "INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中"
+         * Enum INCRE_TRANSFER_STARTED for value: "INCRE_TRANSFER_STARTED"
          */
-        public static final StatusEnum INCRE_TRANSFER_STARTED_ = new StatusEnum("INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中");
+        public static final StatusEnum INCRE_TRANSFER_STARTED = new StatusEnum("INCRE_TRANSFER_STARTED");
         
         /**
-         * Enum INCRE_TRANSFER_FAILED_ for value: "INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常"
+         * Enum INCRE_TRANSFER_FAILED for value: "INCRE_TRANSFER_FAILED"
          */
-        public static final StatusEnum INCRE_TRANSFER_FAILED_ = new StatusEnum("INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常");
+        public static final StatusEnum INCRE_TRANSFER_FAILED = new StatusEnum("INCRE_TRANSFER_FAILED");
         
         /**
-         * Enum RELEASE_RESOURCE_STARTED_ for value: "RELEASE_RESOURCE_STARTED：结束任务中"
+         * Enum RELEASE_RESOURCE_STARTED for value: "RELEASE_RESOURCE_STARTED"
          */
-        public static final StatusEnum RELEASE_RESOURCE_STARTED_ = new StatusEnum("RELEASE_RESOURCE_STARTED：结束任务中");
+        public static final StatusEnum RELEASE_RESOURCE_STARTED = new StatusEnum("RELEASE_RESOURCE_STARTED");
         
         /**
-         * Enum RELEASE_RESOURCE_FAILED_ for value: "RELEASE_RESOURCE_FAILED：结束任务失败"
+         * Enum RELEASE_RESOURCE_FAILED for value: "RELEASE_RESOURCE_FAILED"
          */
-        public static final StatusEnum RELEASE_RESOURCE_FAILED_ = new StatusEnum("RELEASE_RESOURCE_FAILED：结束任务失败");
+        public static final StatusEnum RELEASE_RESOURCE_FAILED = new StatusEnum("RELEASE_RESOURCE_FAILED");
         
         /**
-         * Enum RELEASE_RESOURCE_COMPLETE_ for value: "RELEASE_RESOURCE_COMPLETE：已结束"
+         * Enum RELEASE_RESOURCE_COMPLETE for value: "RELEASE_RESOURCE_COMPLETE"
          */
-        public static final StatusEnum RELEASE_RESOURCE_COMPLETE_ = new StatusEnum("RELEASE_RESOURCE_COMPLETE：已结束");
+        public static final StatusEnum RELEASE_RESOURCE_COMPLETE = new StatusEnum("RELEASE_RESOURCE_COMPLETE");
         
         /**
-         * Enum CHANGE_JOB_STARTED_ for value: "CHANGE_JOB_STARTED：任务变更中"
+         * Enum CHANGE_JOB_STARTED for value: "CHANGE_JOB_STARTED"
          */
-        public static final StatusEnum CHANGE_JOB_STARTED_ = new StatusEnum("CHANGE_JOB_STARTED：任务变更中");
+        public static final StatusEnum CHANGE_JOB_STARTED = new StatusEnum("CHANGE_JOB_STARTED");
         
         /**
-         * Enum CHANGE_JOB_FAILED_ for value: "CHANGE_JOB_FAILED：任务变更失败"
+         * Enum CHANGE_JOB_FAILED for value: "CHANGE_JOB_FAILED"
          */
-        public static final StatusEnum CHANGE_JOB_FAILED_ = new StatusEnum("CHANGE_JOB_FAILED：任务变更失败");
+        public static final StatusEnum CHANGE_JOB_FAILED = new StatusEnum("CHANGE_JOB_FAILED");
         
         /**
-         * Enum CHILD_TRANSFER_STARTING_ for value: "CHILD_TRANSFER_STARTING：子任务启动中"
+         * Enum CHILD_TRANSFER_STARTING for value: "CHILD_TRANSFER_STARTING"
          */
-        public static final StatusEnum CHILD_TRANSFER_STARTING_ = new StatusEnum("CHILD_TRANSFER_STARTING：子任务启动中");
+        public static final StatusEnum CHILD_TRANSFER_STARTING = new StatusEnum("CHILD_TRANSFER_STARTING");
         
         /**
-         * Enum CHILD_TRANSFER_STARTED_ for value: "CHILD_TRANSFER_STARTED：子任务迁移中"
+         * Enum CHILD_TRANSFER_STARTED for value: "CHILD_TRANSFER_STARTED"
          */
-        public static final StatusEnum CHILD_TRANSFER_STARTED_ = new StatusEnum("CHILD_TRANSFER_STARTED：子任务迁移中");
+        public static final StatusEnum CHILD_TRANSFER_STARTED = new StatusEnum("CHILD_TRANSFER_STARTED");
         
         /**
-         * Enum CHILD_TRANSFER_COMPLETE_ for value: "CHILD_TRANSFER_COMPLETE：子任务迁移完成"
+         * Enum CHILD_TRANSFER_COMPLETE for value: "CHILD_TRANSFER_COMPLETE"
          */
-        public static final StatusEnum CHILD_TRANSFER_COMPLETE_ = new StatusEnum("CHILD_TRANSFER_COMPLETE：子任务迁移完成");
+        public static final StatusEnum CHILD_TRANSFER_COMPLETE = new StatusEnum("CHILD_TRANSFER_COMPLETE");
         
         /**
-         * Enum CHILD_TRANSFER_FAILED_ for value: "CHILD_TRANSFER_FAILED：子任务迁移失败"
+         * Enum CHILD_TRANSFER_FAILED for value: "CHILD_TRANSFER_FAILED"
          */
-        public static final StatusEnum CHILD_TRANSFER_FAILED_ = new StatusEnum("CHILD_TRANSFER_FAILED：子任务迁移失败");
+        public static final StatusEnum CHILD_TRANSFER_FAILED = new StatusEnum("CHILD_TRANSFER_FAILED");
         
         /**
-         * Enum RELEASE_CHILD_TRANSFER_STARTED_ for value: "RELEASE_CHILD_TRANSFER_STARTED：子任务结束中"
+         * Enum RELEASE_CHILD_TRANSFER_STARTED for value: "RELEASE_CHILD_TRANSFER_STARTED"
          */
-        public static final StatusEnum RELEASE_CHILD_TRANSFER_STARTED_ = new StatusEnum("RELEASE_CHILD_TRANSFER_STARTED：子任务结束中");
+        public static final StatusEnum RELEASE_CHILD_TRANSFER_STARTED = new StatusEnum("RELEASE_CHILD_TRANSFER_STARTED");
         
         /**
-         * Enum RELEASE_CHILD_TRANSFER_COMPLETE_ for value: "RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束"
+         * Enum RELEASE_CHILD_TRANSFER_COMPLETE for value: "RELEASE_CHILD_TRANSFER_COMPLETE"
          */
-        public static final StatusEnum RELEASE_CHILD_TRANSFER_COMPLETE_ = new StatusEnum("RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束");
+        public static final StatusEnum RELEASE_CHILD_TRANSFER_COMPLETE = new StatusEnum("RELEASE_CHILD_TRANSFER_COMPLETE");
         
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("CREATING：创建中", CREATING_);
-            map.put("CREATE_FAILED: 创建失败", CREATE_FAILED_);
-            map.put("CONFIGURATION: 配置中", CONFIGURATION_);
-            map.put("STARTJOBING: 启动中", STARTJOBING_);
-            map.put("WAITING_FOR_START：等待启动中", WAITING_FOR_START_);
-            map.put("START_JOB_FAILED：任务启动失败", START_JOB_FAILED_);
-            map.put("FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化", FULL_TRANSFER_STARTED_);
-            map.put("FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败", FULL_TRANSFER_FAILED_);
-            map.put("FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成", FULL_TRANSFER_COMPLETE_);
-            map.put("INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中", INCRE_TRANSFER_STARTED_);
-            map.put("INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常", INCRE_TRANSFER_FAILED_);
-            map.put("RELEASE_RESOURCE_STARTED：结束任务中", RELEASE_RESOURCE_STARTED_);
-            map.put("RELEASE_RESOURCE_FAILED：结束任务失败", RELEASE_RESOURCE_FAILED_);
-            map.put("RELEASE_RESOURCE_COMPLETE：已结束", RELEASE_RESOURCE_COMPLETE_);
-            map.put("CHANGE_JOB_STARTED：任务变更中", CHANGE_JOB_STARTED_);
-            map.put("CHANGE_JOB_FAILED：任务变更失败", CHANGE_JOB_FAILED_);
-            map.put("CHILD_TRANSFER_STARTING：子任务启动中", CHILD_TRANSFER_STARTING_);
-            map.put("CHILD_TRANSFER_STARTED：子任务迁移中", CHILD_TRANSFER_STARTED_);
-            map.put("CHILD_TRANSFER_COMPLETE：子任务迁移完成", CHILD_TRANSFER_COMPLETE_);
-            map.put("CHILD_TRANSFER_FAILED：子任务迁移失败", CHILD_TRANSFER_FAILED_);
-            map.put("RELEASE_CHILD_TRANSFER_STARTED：子任务结束中", RELEASE_CHILD_TRANSFER_STARTED_);
-            map.put("RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束", RELEASE_CHILD_TRANSFER_COMPLETE_);
+            map.put("CREATING", CREATING);
+            map.put("CREATE_FAILED", CREATE_FAILED);
+            map.put("CONFIGURATION", CONFIGURATION);
+            map.put("STARTJOBING", STARTJOBING);
+            map.put("WAITING_FOR_START", WAITING_FOR_START);
+            map.put("START_JOB_FAILED", START_JOB_FAILED);
+            map.put("FULL_TRANSFER_STARTED", FULL_TRANSFER_STARTED);
+            map.put("FULL_TRANSFER_FAILED", FULL_TRANSFER_FAILED);
+            map.put("FULL_TRANSFER_COMPLETE", FULL_TRANSFER_COMPLETE);
+            map.put("INCRE_TRANSFER_STARTED", INCRE_TRANSFER_STARTED);
+            map.put("INCRE_TRANSFER_FAILED", INCRE_TRANSFER_FAILED);
+            map.put("RELEASE_RESOURCE_STARTED", RELEASE_RESOURCE_STARTED);
+            map.put("RELEASE_RESOURCE_FAILED", RELEASE_RESOURCE_FAILED);
+            map.put("RELEASE_RESOURCE_COMPLETE", RELEASE_RESOURCE_COMPLETE);
+            map.put("CHANGE_JOB_STARTED", CHANGE_JOB_STARTED);
+            map.put("CHANGE_JOB_FAILED", CHANGE_JOB_FAILED);
+            map.put("CHILD_TRANSFER_STARTING", CHILD_TRANSFER_STARTING);
+            map.put("CHILD_TRANSFER_STARTED", CHILD_TRANSFER_STARTED);
+            map.put("CHILD_TRANSFER_COMPLETE", CHILD_TRANSFER_COMPLETE);
+            map.put("CHILD_TRANSFER_FAILED", CHILD_TRANSFER_FAILED);
+            map.put("RELEASE_CHILD_TRANSFER_STARTED", RELEASE_CHILD_TRANSFER_STARTED);
+            map.put("RELEASE_CHILD_TRANSFER_COMPLETE", RELEASE_CHILD_TRANSFER_COMPLETE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -601,7 +583,7 @@ public class QueryJobsReq  {
 
 
     /**
-     * 迁移场景
+     * 迁移场景，migration:实时迁移,sync:实时同步,cloudDataGuard:实时灾备
      * @return dbUseType
      */
     public DbUseTypeEnum getDbUseType() {
@@ -621,7 +603,7 @@ public class QueryJobsReq  {
 
 
     /**
-     * 引擎类型
+     * 引擎类型,mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用。
      * @return engineType
      */
     public EngineTypeEnum getEngineType() {
@@ -692,26 +674,6 @@ public class QueryJobsReq  {
         this.netType = netType;
     }
 
-    public QueryJobsReq withServiceName(String serviceName) {
-        this.serviceName = serviceName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 服务名称
-     * @return serviceName
-     */
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-
     public QueryJobsReq withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -721,7 +683,7 @@ public class QueryJobsReq  {
 
 
     /**
-     * 状态
+     * 状态，CREATING：创建中,CREATE_FAILED: 创建失败,CONFIGURATION: 配置中,STARTJOBING: 启动中,WAITING_FOR_START：等待启动中,START_JOB_FAILED：任务启动失败,FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化,FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败,FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成,INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中,INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常,RELEASE_RESOURCE_STARTED：结束任务中,RELEASE_RESOURCE_FAILED：结束任务失败,RELEASE_RESOURCE_COMPLETE：已结束,CHANGE_JOB_STARTED：任务变更中,CHANGE_JOB_FAILED：任务变更失败,CHILD_TRANSFER_STARTING：子任务启动中,CHILD_TRANSFER_STARTED：子任务迁移中,CHILD_TRANSFER_COMPLETE：子任务迁移完成,CHILD_TRANSFER_FAILED：子任务迁移失败,RELEASE_CHILD_TRANSFER_STARTED：子任务结束中,RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束
      * @return status
      */
     public StatusEnum getStatus() {
@@ -781,13 +743,12 @@ public class QueryJobsReq  {
             Objects.equals(this.enterpriseProjectId, queryJobsReq.enterpriseProjectId) &&
             Objects.equals(this.name, queryJobsReq.name) &&
             Objects.equals(this.netType, queryJobsReq.netType) &&
-            Objects.equals(this.serviceName, queryJobsReq.serviceName) &&
             Objects.equals(this.status, queryJobsReq.status) &&
             Objects.equals(this.tags, queryJobsReq.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(curPage, perPage, dbUseType, engineType, enterpriseProjectId, name, netType, serviceName, status, tags);
+        return Objects.hash(curPage, perPage, dbUseType, engineType, enterpriseProjectId, name, netType, status, tags);
     }
     @Override
     public String toString() {
@@ -800,7 +761,6 @@ public class QueryJobsReq  {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    netType: ").append(toIndentedString(netType)).append("\n");
-        sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");

@@ -62,7 +62,7 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：发送类型：1：发送短信验证码。2：发送邮件验证码。| |参数的约束及描述：发送类型：1：发送短信验证码。2：发送邮件验证码。|
+     * 发送验证码的类型： 1：发送短信验证码
      * minimum: 1
      * maximum: 2
      * @return receiverType
@@ -84,7 +84,7 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| |参数的约束及描述：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟|
+     * 发送验证码的超时时间。 如果不填的话，采用系统默认超时时间5分钟。 单位：分钟
      * minimum: 1
      * maximum: 2147483647
      * @return timeout
@@ -106,7 +106,7 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：手机号。目前系统只支持中国手机，必须全部是数字。示例：13XXXXXXXXX| |参数约束及描述：手机号。目前系统只支持中国手机，必须全部是数字。示例：13XXXXXXXXX|
+     * 指定发送验证码的手机号。 目前系统只支持中国手机号。 示例：13XXXXXXXXX
      * @return mobilePhone
      */
     public String getMobilePhone() {
@@ -126,7 +126,7 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。| |参数约束及描述：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。|
+     * 根据该参数的取值选择发送短信验证码的语言。 zh-cn：中文en-us：英文
      * @return lang
      */
     public String getLang() {
@@ -146,7 +146,7 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：场景| |参数的约束及描述：该参数非必填，29：注册；18：实名认证个人银行卡认证；不填写默认为29|
+     * 验证码使用的场景，目前支持如下场景： 29：注册场景18：个人银行卡实名认证场景 不填写默认为29。
      * minimum: 18
      * maximum: 29
      * @return scene
@@ -168,7 +168,7 @@ public class SendVerificationCodeV2Req  {
 
 
     /**
-     * |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。 如果scene=18的时候必填。
      * @return customerId
      */
     public String getCustomerId() {

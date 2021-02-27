@@ -44,7 +44,7 @@ public class ResourceType  {
 
 
     /**
-     * |参数名称：资源类型编码| |参数约束及描述：资源类型编码|
+     * 资源类型的编码。例如ECS的VM为“hws.resource.type.vm”。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -64,7 +64,7 @@ public class ResourceType  {
 
 
     /**
-     * |参数名称：资源类型名称| |参数约束及描述：资源类型名称|
+     * 资源类型的名称。
      * @return resourceTypeName
      */
     public String getResourceTypeName() {
@@ -84,7 +84,7 @@ public class ResourceType  {
 
 
     /**
-     * |参数名称：资源类型描述| |参数约束及描述：资源类型描述|
+     * 资源类型的描述。
      * @return resourceTypeDesc
      */
     public String getResourceTypeDesc() {

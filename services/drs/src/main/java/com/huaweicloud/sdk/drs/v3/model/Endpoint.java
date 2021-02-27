@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -230,6 +232,84 @@ public class Endpoint  {
     @JsonProperty(value="topic")
     
     private String topic;
+    /**
+     * MongDB集群4.0及以上版本，当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写，值为：Sharding4.0+。
+     */
+    public static final class ClusterModeEnum {
+
+        
+        /**
+         * Enum SHARDING4_0_ for value: "Sharding4.0+"
+         */
+        public static final ClusterModeEnum SHARDING4_0_ = new ClusterModeEnum("Sharding4.0+");
+        
+
+        private static final Map<String, ClusterModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ClusterModeEnum> createStaticFields() {
+            Map<String, ClusterModeEnum> map = new HashMap<>();
+            map.put("Sharding4.0+", SHARDING4_0_);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ClusterModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ClusterModeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ClusterModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ClusterModeEnum(value);
+            }
+            return result;
+        }
+
+        public static ClusterModeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ClusterModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ClusterModeEnum) {
+                return this.value.equals(((ClusterModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cluster_mode")
+    
+    private ClusterModeEnum clusterMode = ClusterModeEnum.SHARDING4_0_;
 
     public Endpoint withDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
@@ -280,7 +360,7 @@ public class Endpoint  {
 
 
     /**
-     * RDS实例所在region，数据库为rds时必填。
+     * RDS实例所在Region，数据库为RDS实例时必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
      * @return region
      */
     public String getRegion() {
@@ -300,7 +380,7 @@ public class Endpoint  {
 
 
     /**
-     * RDS实例id，数据库为RDS实例必填。
+     * RDS实例ID，数据库为RDS实例必填（灾备场景下job_direction为down时source_endpoint中该值为必填，job_direction为up时target_endpoint中该值为必填）。
      * @return instId
      */
     public String getInstId() {
@@ -670,6 +750,26 @@ public class Endpoint  {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    public Endpoint withClusterMode(ClusterModeEnum clusterMode) {
+        this.clusterMode = clusterMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * MongDB集群4.0及以上版本，当集群实例无法获取到分片节点的IP时，source_endpoint中需要填写，值为：Sharding4.0+。
+     * @return clusterMode
+     */
+    public ClusterModeEnum getClusterMode() {
+        return clusterMode;
+    }
+
+    public void setClusterMode(ClusterModeEnum clusterMode) {
+        this.clusterMode = clusterMode;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -700,11 +800,12 @@ public class Endpoint  {
             Objects.equals(this.sslCertKey, endpoint.sslCertKey) &&
             Objects.equals(this.sslCertName, endpoint.sslCertName) &&
             Objects.equals(this.sslLink, endpoint.sslLink) &&
-            Objects.equals(this.topic, endpoint.topic);
+            Objects.equals(this.topic, endpoint.topic) &&
+            Objects.equals(this.clusterMode, endpoint.clusterMode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(dbType, azCode, region, instId, vpcId, subnetId, securityGroupId, projectId, dbName, dbPassword, dbPort, dbUser, instName, ip, mongoHaMode, safeMode, sslCertPassword, sslCertCheckSum, sslCertKey, sslCertName, sslLink, topic);
+        return Objects.hash(dbType, azCode, region, instId, vpcId, subnetId, securityGroupId, projectId, dbName, dbPassword, dbPort, dbUser, instName, ip, mongoHaMode, safeMode, sslCertPassword, sslCertCheckSum, sslCertKey, sslCertName, sslLink, topic, clusterMode);
     }
     @Override
     public String toString() {
@@ -732,6 +833,7 @@ public class Endpoint  {
         sb.append("    sslCertName: ").append(toIndentedString(sslCertName)).append("\n");
         sb.append("    sslLink: ").append(toIndentedString(sslLink)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+        sb.append("    clusterMode: ").append(toIndentedString(clusterMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

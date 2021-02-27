@@ -199,6 +199,7 @@ public class ListRecordConfigsRequest  {
 
     /**
      * Get page
+     * minimum: 0
      * @return page
      */
     public Integer getPage() {

@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.bss.v2.model.DemandProductRatingResult;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -27,19 +26,19 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_amount")
     
-    private BigDecimal discountAmount = null;
+    private Double discountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_website_amount")
     
-    private BigDecimal officialWebsiteAmount = null;
+    private Double officialWebsiteAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,7 +58,7 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     
     private List<DemandProductRatingResult> productRatingResults = null;
     
-    public ListOnDemandResourceRatingsResponse withAmount(BigDecimal amount) {
+    public ListOnDemandResourceRatingsResponse withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -68,18 +67,18 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：总额| |参数约束及描述：即最终优惠后的金额|
+     * 折扣的金额。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public ListOnDemandResourceRatingsResponse withDiscountAmount(BigDecimal discountAmount) {
+    public ListOnDemandResourceRatingsResponse withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -88,18 +87,18 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：优惠额| |参数约束及描述：（官网价和总价的差）|
+     * 优惠额（官网价和总价的差）。
      * @return discountAmount
      */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public ListOnDemandResourceRatingsResponse withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public ListOnDemandResourceRatingsResponse withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
@@ -108,14 +107,14 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：官网价| |参数约束及描述：官网价|
+     * 按需产品的官网价。
      * @return officialWebsiteAmount
      */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
@@ -128,7 +127,7 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：度量单位标识| |参数约束及描述：1：元|
+     * 度量单位标识。 1：元
      * minimum: 1
      * maximum: 4
      * @return measureId
@@ -150,7 +149,7 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：币种| |参数约束及描述：比如CNY|
+     * 币种。 CNY：人民币。 值为空代表人民币。
      * @return currency
      */
     public String getCurrency() {
@@ -184,7 +183,7 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：产品询价结果| |参数的约束及描述：产品询价结果|
+     * 产品询价结果，具体参见表2。
      * @return productRatingResults
      */
     public List<DemandProductRatingResult> getProductRatingResults() {

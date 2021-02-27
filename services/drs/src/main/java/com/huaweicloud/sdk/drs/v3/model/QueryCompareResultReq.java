@@ -142,7 +142,7 @@ public class QueryCompareResultReq  {
 
 
     /**
-     * 分页查询的当前页码，对所有查询结果生效。
+     * 分页查询的当前页码，对查询对比任务的结果生效。
      * @return currentPage
      */
     public Integer getCurrentPage() {
@@ -162,7 +162,7 @@ public class QueryCompareResultReq  {
 
 
     /**
-     * 分页查询的每页个数，对所有查询结果生效。
+     * 分页查询的每页个数，对查询对比任务的结果生效。
      * @return perPage
      */
     public Integer getPerPage() {

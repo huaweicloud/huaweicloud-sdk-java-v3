@@ -29,28 +29,28 @@ import java.util.Objects;
 public class CreateDataLevelCompareReq  {
 
     /**
-     * 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。
+     * 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。cancel-取消后重新创建,keep-保持未完成的不再创建。
      */
     public static final class ConflictPolicyEnum {
 
         
         /**
-         * Enum CANCEL_ for value: "cancel-取消后重新创建"
+         * Enum CANCEL for value: "cancel"
          */
-        public static final ConflictPolicyEnum CANCEL_ = new ConflictPolicyEnum("cancel-取消后重新创建");
+        public static final ConflictPolicyEnum CANCEL = new ConflictPolicyEnum("cancel");
         
         /**
-         * Enum KEEP_ for value: "keep-保持未完成的不再创建"
+         * Enum KEEP for value: "keep"
          */
-        public static final ConflictPolicyEnum KEEP_ = new ConflictPolicyEnum("keep-保持未完成的不再创建");
+        public static final ConflictPolicyEnum KEEP = new ConflictPolicyEnum("keep");
         
 
         private static final Map<String, ConflictPolicyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ConflictPolicyEnum> createStaticFields() {
             Map<String, ConflictPolicyEnum> map = new HashMap<>();
-            map.put("cancel-取消后重新创建", CANCEL_);
-            map.put("keep-保持未完成的不再创建", KEEP_);
+            map.put("cancel", CANCEL);
+            map.put("keep", KEEP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -113,28 +113,28 @@ public class CreateDataLevelCompareReq  {
     
     private ConflictPolicyEnum conflictPolicy;
     /**
-     * 数据级对比类型。
+     * 数据级对比类型，lines-行对比,contents-内容对比。
      */
     public static final class CompareTypeEnum {
 
         
         /**
-         * Enum LINES_ for value: "lines-行对比"
+         * Enum LINES for value: "lines"
          */
-        public static final CompareTypeEnum LINES_ = new CompareTypeEnum("lines-行对比");
+        public static final CompareTypeEnum LINES = new CompareTypeEnum("lines");
         
         /**
-         * Enum CONTENTS_ for value: "contents-内容对比"
+         * Enum CONTENTS for value: "contents"
          */
-        public static final CompareTypeEnum CONTENTS_ = new CompareTypeEnum("contents-内容对比");
+        public static final CompareTypeEnum CONTENTS = new CompareTypeEnum("contents");
         
 
         private static final Map<String, CompareTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CompareTypeEnum> createStaticFields() {
             Map<String, CompareTypeEnum> map = new HashMap<>();
-            map.put("lines-行对比", LINES_);
-            map.put("contents-内容对比", CONTENTS_);
+            map.put("lines", LINES);
+            map.put("contents", CONTENTS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -197,22 +197,22 @@ public class CreateDataLevelCompareReq  {
     
     private CompareTypeEnum compareType;
     /**
-     * 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息。
+     * 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息，quick_comparison-快速对比，需要加入该功能的白名单才能使用。
      */
     public static final class CompareModeEnum {
 
         
         /**
-         * Enum QUICK_COMPARISON_ for value: "quick_comparison-快速对比，需要加入该功能的白名单才能使用"
+         * Enum QUICK_COMPARISON for value: "quick_comparison"
          */
-        public static final CompareModeEnum QUICK_COMPARISON_ = new CompareModeEnum("quick_comparison-快速对比，需要加入该功能的白名单才能使用");
+        public static final CompareModeEnum QUICK_COMPARISON = new CompareModeEnum("quick_comparison");
         
 
         private static final Map<String, CompareModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CompareModeEnum> createStaticFields() {
             Map<String, CompareModeEnum> map = new HashMap<>();
-            map.put("quick_comparison-快速对比，需要加入该功能的白名单才能使用", QUICK_COMPARISON_);
+            map.put("quick_comparison", QUICK_COMPARISON);
             return Collections.unmodifiableMap(map);
         }
 
@@ -273,7 +273,7 @@ public class CreateDataLevelCompareReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="compare_mode")
     
-    private CompareModeEnum compareMode;
+    private CompareModeEnum compareMode = CompareModeEnum.QUICK_COMPARISON;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -302,7 +302,7 @@ public class CreateDataLevelCompareReq  {
 
 
     /**
-     * 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。
+     * 一个任务只允许有一个未完成的数据级对比任务，该字段决定对未完成数据级对比任务的处理方式。cancel-取消后重新创建,keep-保持未完成的不再创建。
      * @return conflictPolicy
      */
     public ConflictPolicyEnum getConflictPolicy() {
@@ -322,7 +322,7 @@ public class CreateDataLevelCompareReq  {
 
 
     /**
-     * 数据级对比类型。
+     * 数据级对比类型，lines-行对比,contents-内容对比。
      * @return compareType
      */
     public CompareTypeEnum getCompareType() {
@@ -342,7 +342,7 @@ public class CreateDataLevelCompareReq  {
 
 
     /**
-     * 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息。
+     * 数据级对比模式，取值为空时需要在compare_object_infos或者compare_object_infos_with_token传对象信息，quick_comparison-快速对比，需要加入该功能的白名单才能使用。
      * @return compareMode
      */
     public CompareModeEnum getCompareMode() {

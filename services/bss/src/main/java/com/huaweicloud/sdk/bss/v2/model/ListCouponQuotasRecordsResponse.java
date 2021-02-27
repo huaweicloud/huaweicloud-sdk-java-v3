@@ -43,7 +43,7 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：查询总数。| |参数的约束及描述：查询总数。|
+     * 返回总条数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ListCouponQuotasRecordsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：记录列表。具体请参见表 QuotaRecord。| |参数约束以及描述：记录列表。具体请参见表 QuotaRecord。|
+     * 记录列表。 具体请参见表2。
      * @return records
      */
     public List<QuotaRecord> getRecords() {

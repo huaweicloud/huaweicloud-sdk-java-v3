@@ -62,7 +62,7 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：登录名称| |参数约束及描述：登录名称|
+     * 精英服务商伙伴的账号名。
      * @return accountName
      */
     public String getAccountName() {
@@ -82,7 +82,7 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：关联开始时间，UTC时间（包括时区），比如2016-03-28T00:00:00Z| |参数约束及描述：关联开始时间，UTC时间（包括时区），比如2016-03-28T00:00:00Z|
+     * 精英服务商关联华为云伙伴能力中心的开始时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
      * @return associatedOnBegin
      */
     public String getAssociatedOnBegin() {
@@ -102,7 +102,7 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：关联结束时间，UTC时间（包括时区），比如2016-03-28T00:00:00Z| |参数约束及描述：关联结束时间，UTC时间（包括时区），比如2016-03-28T00:00:00Z|
+     * 精英服务商关联华为云伙伴能力中心的结束时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
      * @return associatedOnEnd
      */
     public String getAssociatedOnEnd() {
@@ -122,7 +122,7 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：偏移量，从0开始，默认是0| |参数的约束及描述：偏移量，从0开始，默认是0|
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -144,7 +144,7 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：最大100，默认为10| |参数的约束及描述：最大100，默认为10|
+     * 每次查询的数量限制。默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -166,7 +166,7 @@ public class QueryIndirectPartnersReq  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：二级经销商ID|
+     * 精英服务商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

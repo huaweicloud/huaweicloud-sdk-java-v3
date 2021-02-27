@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +33,7 @@ public class PeriodProductOfficialRatingResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_website_amount")
     
-    private BigDecimal officialWebsiteAmount = null;
+    private Double officialWebsiteAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,7 +81,7 @@ public class PeriodProductOfficialRatingResult  {
         this.productId = productId;
     }
 
-    public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
@@ -94,11 +93,11 @@ public class PeriodProductOfficialRatingResult  {
      * |参数名称：官网价| |参数约束及描述：官网价|
      * @return officialWebsiteAmount
      */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 

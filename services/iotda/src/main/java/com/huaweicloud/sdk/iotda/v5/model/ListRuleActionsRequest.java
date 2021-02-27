@@ -19,13 +19,6 @@ public class ListRuleActionsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -71,26 +64,6 @@ public class ListRuleActionsRequest  {
     @JsonProperty(value="offset")
     
     private Integer offset = 0;
-
-    public ListRuleActionsRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public ListRuleActionsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -264,8 +237,7 @@ public class ListRuleActionsRequest  {
             return false;
         }
         ListRuleActionsRequest listRuleActionsRequest = (ListRuleActionsRequest) o;
-        return Objects.equals(this.stageAuthToken, listRuleActionsRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, listRuleActionsRequest.instanceId) &&
+        return Objects.equals(this.instanceId, listRuleActionsRequest.instanceId) &&
             Objects.equals(this.ruleId, listRuleActionsRequest.ruleId) &&
             Objects.equals(this.channel, listRuleActionsRequest.channel) &&
             Objects.equals(this.appType, listRuleActionsRequest.appType) &&
@@ -276,13 +248,12 @@ public class ListRuleActionsRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, ruleId, channel, appType, appId, limit, marker, offset);
+        return Objects.hash(instanceId, ruleId, channel, appType, appId, limit, marker, offset);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRuleActionsRequest {\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    channel: ").append(toIndentedString(channel)).append("\n");

@@ -41,7 +41,7 @@ public class SetPartnerDiscountsReq  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：一级经销商给二级经销商的子客户设置折扣时需要携带这个字段。|
+     * 精英服务商（二级经销商）ID。 精英服务商（二级经销商）给子客户设置折扣时需要携带这个字段。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -72,7 +72,7 @@ public class SetPartnerDiscountsReq  {
     }
 
     /**
-     * |参数名称：客户折扣信息列表，最大支持10个。| |参数约束以及描述：客户折扣信息列表，最大支持10个。|
+     * 客户折扣信息列表，最大支持10个。 具体请参见表1。
      * @return subCustomerDiscounts
      */
     public List<SetSubCustomerDiscountV2> getSubCustomerDiscounts() {

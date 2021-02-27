@@ -19,13 +19,6 @@ public class ShowRuleActionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -35,26 +28,6 @@ public class ShowRuleActionRequest  {
     @JsonProperty(value="action_id")
     
     private String actionId;
-
-    public ShowRuleActionRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public ShowRuleActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -104,19 +77,17 @@ public class ShowRuleActionRequest  {
             return false;
         }
         ShowRuleActionRequest showRuleActionRequest = (ShowRuleActionRequest) o;
-        return Objects.equals(this.stageAuthToken, showRuleActionRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, showRuleActionRequest.instanceId) &&
+        return Objects.equals(this.instanceId, showRuleActionRequest.instanceId) &&
             Objects.equals(this.actionId, showRuleActionRequest.actionId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, actionId);
+        return Objects.hash(instanceId, actionId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRuleActionRequest {\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");
         sb.append("}");

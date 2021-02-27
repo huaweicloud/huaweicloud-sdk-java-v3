@@ -38,7 +38,7 @@ public class TemplateArgs  {
 
 
     /**
-     * |参数名称：模板参数名目前仅仅支持sub_customer_name：表明企业主创建企业子的名字| |参数约束及描述：模板参数名目前仅仅支持sub_customer_name：表明企业主创建企业子的名字|
+     * 模板参数名。 目前仅支持sub_customer_name：表明企业主创建企业子的名字
      * @return key
      */
     public String getKey() {
@@ -58,7 +58,7 @@ public class TemplateArgs  {
 
 
     /**
-     * |参数名称：模板参数值key对应的取值| |参数约束及描述：模板参数值key对应的取值|
+     * 模板参数值。 key对应的取值。
      * @return value
      */
     public String getValue() {

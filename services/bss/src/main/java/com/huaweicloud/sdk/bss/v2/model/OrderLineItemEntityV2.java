@@ -123,7 +123,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：订单项Id。| |参数约束及描述：订单项Id。|
+     * 订单项Id。
      * @return orderLineItemId
      */
     public String getOrderLineItemId() {
@@ -143,7 +143,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -163,7 +163,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：产品ID。| |参数约束及描述：产品ID。|
+     * 产品ID。
      * @return productId
      */
     public String getProductId() {
@@ -183,7 +183,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：产品规格描述。| |参数约束及描述：产品规格描述。|
+     * 产品规格描述。
      * @return productSpecDesc
      */
     public String getProductSpecDesc() {
@@ -203,7 +203,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：周期类型。0：天；1：周；2：月；3：年；4：小时；5：一次性；6：按需（预留）；7：按用量报表使用（预留）。| |参数的约束及描述：周期类型。0：天；1：周；2：月；3：年；4：小时；5：一次性；6：按需（预留）；7：按用量报表使用（预留）。|
+     * 周期类型。 0：天1：周2：月3：年4：小时5：一次性6：按需（预留）7：按用量报表使用（预留）
      * @return periodType
      */
     public Integer getPeriodType() {
@@ -223,7 +223,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：周期数量。| |参数的约束及描述：周期数量。|
+     * 周期数量。
      * @return periodNum
      */
     public Integer getPeriodNum() {
@@ -243,7 +243,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * @return effectiveTime
      */
     public String getEffectiveTime() {
@@ -263,7 +263,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * @return expireTime
      */
     public String getExpireTime() {
@@ -283,7 +283,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：订购数量。| |参数的约束及描述：订购数量。|
+     * 订购数量。
      * @return subscriptionNum
      */
     public Integer getSubscriptionNum() {
@@ -303,7 +303,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：订单优惠后金额（实付价格，不含券不含卡）。| |参数的约束及描述：订单优惠后金额（实付价格，不含券不含卡）。|
+     * 订单优惠后金额（实付价格，不含券不含卡）。
      * @return amountAfterDiscount
      */
     public Double getAmountAfterDiscount() {
@@ -323,7 +323,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：订单金额（官网价）。退订订单中，该金额等于currencyAfterDiscount。| |参数的约束及描述：订单金额（官网价）。退订订单中，该金额等于currencyAfterDiscount。|
+     * 订单金额（官网价）。 退订订单中，该金额等于currencyAfterDiscount。
      * @return officialAmount
      */
     public Double getOfficialAmount() {
@@ -370,7 +370,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：货币编码。| |参数约束及描述：货币编码。如CNY|
+     * 货币编码。
      * @return currency
      */
     public String getCurrency() {
@@ -390,7 +390,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：产品目录编码。| |参数约束及描述：产品目录编码。|
+     * 产品目录编码。
      * @return categoryCode
      */
     public String getCategoryCode() {
@@ -410,7 +410,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：产品归属的云服务类型编码。| |参数约束及描述：产品归属的云服务类型编码。|
+     * 产品归属的云服务类型编码。 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return productOwnerService
      */
     public String getProductOwnerService() {
@@ -430,7 +430,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * |参数名称：商务归属的资源类型编码。| |参数约束及描述：商务归属的资源类型编码。|
+     * 商务归属的资源类型编码。 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * @return commercialResource
      */
     public String getCommercialResource() {

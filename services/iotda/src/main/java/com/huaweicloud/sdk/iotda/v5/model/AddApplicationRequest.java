@@ -20,13 +20,6 @@ public class AddApplicationRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sp-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String spAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -36,26 +29,6 @@ public class AddApplicationRequest  {
     @JsonProperty(value="body")
     
     private AddApplication body = null;
-
-    public AddApplicationRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get spAuthToken
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
 
     public AddApplicationRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -112,19 +85,17 @@ public class AddApplicationRequest  {
             return false;
         }
         AddApplicationRequest addApplicationRequest = (AddApplicationRequest) o;
-        return Objects.equals(this.spAuthToken, addApplicationRequest.spAuthToken) &&
-            Objects.equals(this.instanceId, addApplicationRequest.instanceId) &&
+        return Objects.equals(this.instanceId, addApplicationRequest.instanceId) &&
             Objects.equals(this.body, addApplicationRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, instanceId, body);
+        return Objects.hash(instanceId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddApplicationRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

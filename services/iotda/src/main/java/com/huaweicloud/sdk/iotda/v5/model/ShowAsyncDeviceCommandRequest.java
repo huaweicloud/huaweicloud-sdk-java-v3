@@ -25,13 +25,6 @@ public class ShowAsyncDeviceCommandRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -60,26 +53,6 @@ public class ShowAsyncDeviceCommandRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    public ShowAsyncDeviceCommandRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     public ShowAsyncDeviceCommandRequest withInstanceId(String instanceId) {
@@ -131,20 +104,18 @@ public class ShowAsyncDeviceCommandRequest  {
         }
         ShowAsyncDeviceCommandRequest showAsyncDeviceCommandRequest = (ShowAsyncDeviceCommandRequest) o;
         return Objects.equals(this.deviceId, showAsyncDeviceCommandRequest.deviceId) &&
-            Objects.equals(this.stageAuthToken, showAsyncDeviceCommandRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, showAsyncDeviceCommandRequest.instanceId) &&
             Objects.equals(this.commandId, showAsyncDeviceCommandRequest.commandId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, stageAuthToken, instanceId, commandId);
+        return Objects.hash(deviceId, instanceId, commandId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAsyncDeviceCommandRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    commandId: ").append(toIndentedString(commandId)).append("\n");
         sb.append("}");

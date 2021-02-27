@@ -57,7 +57,7 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：客户按需资源列表。CustomerOnDemandResource| |参数约束以及描述：客户按需资源列表。CustomerOnDemandResource|
+     * 客户资源列表。 具体参见表2。
      * @return resources
      */
     public List<CustomerOnDemandResource> getResources() {
@@ -77,7 +77,7 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：查询总数| |参数的约束及描述：查询总数|
+     * 查询总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

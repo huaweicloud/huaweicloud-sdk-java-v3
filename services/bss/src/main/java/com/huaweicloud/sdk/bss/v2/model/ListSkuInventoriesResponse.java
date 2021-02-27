@@ -51,7 +51,7 @@ public class ListSkuInventoriesResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：总记录数| |参数约束以及描述：总记录数|
+     * 库存的查询结果详情，具体参见表2。
      * @return skuInventories
      */
     public List<SkuInventory> getSkuInventories() {

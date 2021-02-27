@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +33,7 @@ public class DemandDiscountRatingResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +56,7 @@ public class DemandDiscountRatingResult  {
 
 
     /**
-     * |参数名称：优惠标识ID| |参数约束及描述：优惠标识ID|
+     * 优惠标识ID。
      * @return discountId
      */
     public String getDiscountId() {
@@ -77,7 +76,7 @@ public class DemandDiscountRatingResult  {
 
 
     /**
-     * |参数名称：合同商务优惠类型：基于官网价计算优惠605 华为云商务-折扣率，一口价，华为云用户606 渠道商务-折扣率，一口价，BP用户伙伴折扣优惠类型：基于官网价计算优惠607 合作伙伴授予折扣-折扣率|
+     * 折扣优惠类型。 合同商务折扣：605：华为云BE场景下的合同商务折扣606：分销商BE场景下的合同商务折扣 伙伴授予折扣：607：合作伙伴授予折扣-折扣率
      * @return discountType
      */
     public Integer getDiscountType() {
@@ -88,7 +87,7 @@ public class DemandDiscountRatingResult  {
         this.discountType = discountType;
     }
 
-    public DemandDiscountRatingResult withAmount(BigDecimal amount) {
+    public DemandDiscountRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -97,14 +96,14 @@ public class DemandDiscountRatingResult  {
 
 
     /**
-     * 优惠金额
+     * 折扣的金额。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -117,7 +116,7 @@ public class DemandDiscountRatingResult  {
 
 
     /**
-     * |参数名称：度量单位标识| |参数约束及描述：1：元|
+     * 度量单位标识。 1：元
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -137,7 +136,7 @@ public class DemandDiscountRatingResult  {
 
 
     /**
-     * |参数名称：折扣名称| |参数约束及描述：折扣名称|
+     * 折扣名称。
      * @return discountName
      */
     public String getDiscountName() {

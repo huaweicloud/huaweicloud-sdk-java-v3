@@ -22,12 +22,6 @@ public class UpdateProduct  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_capabilities")
-    
-    private List<ServiceCapability> serviceCapabilities = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
     private String appId;
@@ -58,6 +52,12 @@ public class UpdateProduct  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="service_capabilities")
+    
+    private List<ServiceCapability> serviceCapabilities = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="manufacturer_name")
     
     private String manufacturerName;
@@ -73,40 +73,6 @@ public class UpdateProduct  {
     @JsonProperty(value="description")
     
     private String description;
-
-    public UpdateProduct withServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
-        this.serviceCapabilities = serviceCapabilities;
-        return this;
-    }
-
-    
-    public UpdateProduct addServiceCapabilitiesItem(ServiceCapability serviceCapabilitiesItem) {
-        if (this.serviceCapabilities == null) {
-            this.serviceCapabilities = new ArrayList<>();
-        }
-        this.serviceCapabilities.add(serviceCapabilitiesItem);
-        return this;
-    }
-
-    public UpdateProduct withServiceCapabilities(Consumer<List<ServiceCapability>> serviceCapabilitiesSetter) {
-        if(this.serviceCapabilities == null ){
-            this.serviceCapabilities = new ArrayList<>();
-        }
-        serviceCapabilitiesSetter.accept(this.serviceCapabilities);
-        return this;
-    }
-
-    /**
-     * 设备的服务能力列表。
-     * @return serviceCapabilities
-     */
-    public List<ServiceCapability> getServiceCapabilities() {
-        return serviceCapabilities;
-    }
-
-    public void setServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
-        this.serviceCapabilities = serviceCapabilities;
-    }
 
     public UpdateProduct withAppId(String appId) {
         this.appId = appId;
@@ -208,6 +174,40 @@ public class UpdateProduct  {
         this.dataFormat = dataFormat;
     }
 
+    public UpdateProduct withServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
+        this.serviceCapabilities = serviceCapabilities;
+        return this;
+    }
+
+    
+    public UpdateProduct addServiceCapabilitiesItem(ServiceCapability serviceCapabilitiesItem) {
+        if (this.serviceCapabilities == null) {
+            this.serviceCapabilities = new ArrayList<>();
+        }
+        this.serviceCapabilities.add(serviceCapabilitiesItem);
+        return this;
+    }
+
+    public UpdateProduct withServiceCapabilities(Consumer<List<ServiceCapability>> serviceCapabilitiesSetter) {
+        if(this.serviceCapabilities == null ){
+            this.serviceCapabilities = new ArrayList<>();
+        }
+        serviceCapabilitiesSetter.accept(this.serviceCapabilities);
+        return this;
+    }
+
+    /**
+     * 设备的服务能力列表。
+     * @return serviceCapabilities
+     */
+    public List<ServiceCapability> getServiceCapabilities() {
+        return serviceCapabilities;
+    }
+
+    public void setServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
+        this.serviceCapabilities = serviceCapabilities;
+    }
+
     public UpdateProduct withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
@@ -276,30 +276,30 @@ public class UpdateProduct  {
             return false;
         }
         UpdateProduct updateProduct = (UpdateProduct) o;
-        return Objects.equals(this.serviceCapabilities, updateProduct.serviceCapabilities) &&
-            Objects.equals(this.appId, updateProduct.appId) &&
+        return Objects.equals(this.appId, updateProduct.appId) &&
             Objects.equals(this.name, updateProduct.name) &&
             Objects.equals(this.deviceType, updateProduct.deviceType) &&
             Objects.equals(this.protocolType, updateProduct.protocolType) &&
             Objects.equals(this.dataFormat, updateProduct.dataFormat) &&
+            Objects.equals(this.serviceCapabilities, updateProduct.serviceCapabilities) &&
             Objects.equals(this.manufacturerName, updateProduct.manufacturerName) &&
             Objects.equals(this.industry, updateProduct.industry) &&
             Objects.equals(this.description, updateProduct.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(serviceCapabilities, appId, name, deviceType, protocolType, dataFormat, manufacturerName, industry, description);
+        return Objects.hash(appId, name, deviceType, protocolType, dataFormat, serviceCapabilities, manufacturerName, industry, description);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateProduct {\n");
-        sb.append("    serviceCapabilities: ").append(toIndentedString(serviceCapabilities)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
         sb.append("    protocolType: ").append(toIndentedString(protocolType)).append("\n");
         sb.append("    dataFormat: ").append(toIndentedString(dataFormat)).append("\n");
+        sb.append("    serviceCapabilities: ").append(toIndentedString(serviceCapabilities)).append("\n");
         sb.append("    manufacturerName: ").append(toIndentedString(manufacturerName)).append("\n");
         sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

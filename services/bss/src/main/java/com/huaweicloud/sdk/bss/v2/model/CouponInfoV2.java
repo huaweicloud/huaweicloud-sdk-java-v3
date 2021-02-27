@@ -137,7 +137,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：优惠券实例ID。| |参数约束及描述：优惠券实例ID。|
+     * 优惠券实例ID。
      * @return couponId
      */
     public String getCouponId() {
@@ -157,7 +157,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：优惠券编码。| |参数约束及描述：优惠券编码。|
+     * 优惠券编码。
      * @return couponCode
      */
     public String getCouponCode() {
@@ -177,7 +177,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：优惠券状态：2：待使用。| |参数的约束及描述：优惠券状态：2：待使用。|
+     * 优惠券状态： 1：未激活2：待使用
      * @return status
      */
     public Integer getStatus() {
@@ -197,7 +197,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：优惠券类型：301：代金券；302：现金券。| |参数的约束及描述：优惠券类型：301：代金券；302：现金券。|
+     * 优惠券类型： 300：折扣券301：代金券302：现金券303：储值卡
      * @return couponType
      */
     public Integer getCouponType() {
@@ -217,7 +217,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：面额单位：1：元。| |参数的约束及描述：面额单位：1：元。|
+     * 面额单位： 1：元。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -237,7 +237,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：优惠券金额。| |参数的约束及描述：优惠券金额。|
+     * 面值。
      * @return faceValue
      */
     public Double getFaceValue() {
@@ -257,7 +257,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：生效时间。UTC时间，格式：yyyy-MM-dTHH:mm:ssZ，如2019-05-06T08:05:01Z。| |参数约束及描述：生效时间。UTC时间，格式：yyyy-MM-dTHH:mm:ssZ，如2019-05-06T08:05:01Z。|
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return effectiveTime
      */
     public String getEffectiveTime() {
@@ -277,7 +277,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。| |参数约束及描述：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。|
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return expireTime
      */
     public String getExpireTime() {
@@ -297,7 +297,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：促销计划名称。| |参数约束及描述：促销计划名称。|
+     * 促销计划名称。
      * @return planName
      */
     public String getPlanName() {
@@ -317,7 +317,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：促销计划描述。| |参数约束及描述：促销计划描述。|
+     * 促销计划描述。
      * @return planDesc
      */
     public String getPlanDesc() {
@@ -351,7 +351,7 @@ public class CouponInfoV2  {
     }
 
     /**
-     * |参数名称：优惠券限制。具体请参见表 LimitInfo。| |参数约束以及描述：优惠券限制。具体请参见表 LimitInfo。|
+     * 优惠券限制。 具体请参见表3。
      * @return useLimits
      */
     public List<LimitInfoV2> getUseLimits() {
@@ -371,7 +371,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。| |参数约束及描述：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。|
+     * 激活时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return activeTime
      */
     public String getActiveTime() {
@@ -391,7 +391,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：上一次使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。| |参数约束及描述：上一次使用时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。|
+     * 上一次使用时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return lastUsedTime
      */
     public String getLastUsedTime() {
@@ -411,7 +411,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。| |参数约束及描述：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如2019-05-06T08:05:01Z。|
+     * 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -431,7 +431,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：优惠券版本。1：老版本（原本分为三种：代金券/折扣券/奖金券）；2：新版本（只有代金券）。| |参数的约束及描述：优惠券版本。1：老版本（原本分为三种：代金券/折扣券/奖金券）；2：新版本（只有代金券）。|
+     * 优惠券版本。 1：老版本（包含三种：代金券、折扣券和奖金券）2：新版本（只有代金券）
      * @return couponVersion
      */
     public Integer getCouponVersion() {
@@ -451,7 +451,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：余额。| |参数约束及描述： 余额。|
+     * 余额。
      * @return balance
      */
     public Double getBalance() {
@@ -471,7 +471,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：使用优惠券的订单ID，表示正在有另外一张订单正在使用这个优惠券。正在锁定的时候，只有锁定优惠券的订单才能使用这个优惠券，其他订单不能使用该优惠券。| |参数约束及描述：使用优惠券的订单ID，表示正在有另外一张订单正在使用这个优惠券。正在锁定的时候，只有锁定优惠券的订单才能使用这个优惠券，其他订单不能使用该优惠券。|
+     * 使用优惠券的订单ID，表示正在有另外一张订单正在使用这个优惠券。正在锁定的时候，只有锁定优惠券的订单才能使用这个优惠券，其他订单不能使用该优惠券。
      * @return usedByOrderId
      */
     public String getUsedByOrderId() {
@@ -491,7 +491,7 @@ public class CouponInfoV2  {
 
 
     /**
-     * |参数名称：优惠券用途。| |参数约束及描述：优惠券用途。|
+     * 优惠券用途。
      * @return couponUsage
      */
     public String getCouponUsage() {

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ public class QuotaReclaim  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_balance")
     
-    private BigDecimal quotaBalance = null;
+    private Double quotaBalance;
 
     public QuotaReclaim withQuotaId(String quotaId) {
         this.quotaId = quotaId;
@@ -39,7 +38,7 @@ public class QuotaReclaim  {
 
 
     /**
-     * |参数名称：被回收的二级经销商代金券额度ID| |参数约束及描述：被回收的二级经销商代金券额度ID|
+     * 被回收的精英服务商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -50,7 +49,7 @@ public class QuotaReclaim  {
         this.quotaId = quotaId;
     }
 
-    public QuotaReclaim withQuotaBalance(BigDecimal quotaBalance) {
+    public QuotaReclaim withQuotaBalance(Double quotaBalance) {
         this.quotaBalance = quotaBalance;
         return this;
     }
@@ -59,14 +58,14 @@ public class QuotaReclaim  {
 
 
     /**
-     * |参数名称：被回收的代金券的余额| |参数的约束及描述：被回收的代金券的余额|
+     * 被回收额度后的代金券额度余额。单位：元。
      * @return quotaBalance
      */
-    public BigDecimal getQuotaBalance() {
+    public Double getQuotaBalance() {
         return quotaBalance;
     }
 
-    public void setQuotaBalance(BigDecimal quotaBalance) {
+    public void setQuotaBalance(Double quotaBalance) {
         this.quotaBalance = quotaBalance;
     }
     @Override

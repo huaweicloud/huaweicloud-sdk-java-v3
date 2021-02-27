@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ public class AdjustToIndirectPartnerReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
     public AdjustToIndirectPartnerReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
@@ -39,7 +38,7 @@ public class AdjustToIndirectPartnerReq  {
 
 
     /**
-     * |参数名称：合作伙伴关联的二级经销商伙伴ID。| |参数约束及描述：必填，最大长度64，合作伙伴关联的二级经销商伙伴ID。|
+     * 精英服务商ID。您可以调用查询精英服务商列表接口获取。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -50,7 +49,7 @@ public class AdjustToIndirectPartnerReq  {
         this.indirectPartnerId = indirectPartnerId;
     }
 
-    public AdjustToIndirectPartnerReq withAmount(BigDecimal amount) {
+    public AdjustToIndirectPartnerReq withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -59,16 +58,16 @@ public class AdjustToIndirectPartnerReq  {
 
 
     /**
-     * |参数名称：授信金额。单位为元不能为负数，精确到小数点后两位。| |参数的约束及描述：授信金额。单位为元不能为负数，精确到小数点后两位。|
+     * 华为云伙伴能力中心向精英服务商拨款的金额。 单位：元。取值大于0且精确到小数点后2位。
      * minimum: 0
      * maximum: 999999999.99
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
     @Override

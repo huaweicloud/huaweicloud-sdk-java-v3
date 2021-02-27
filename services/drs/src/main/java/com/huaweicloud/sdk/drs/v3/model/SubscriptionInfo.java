@@ -29,28 +29,28 @@ public class SubscriptionInfo  {
     
     private List<String> endpoints = new ArrayList<>();
         /**
-     * 收件方式
+     * 收件方式，sms：短信,email：邮件
      */
     public static final class ProtocolEnum {
 
         
         /**
-         * Enum SMS_ for value: "sms：短信"
+         * Enum SMS for value: "sms"
          */
-        public static final ProtocolEnum SMS_ = new ProtocolEnum("sms：短信");
+        public static final ProtocolEnum SMS = new ProtocolEnum("sms");
         
         /**
-         * Enum EMAIL_ for value: "email：邮件"
+         * Enum EMAIL for value: "email"
          */
-        public static final ProtocolEnum EMAIL_ = new ProtocolEnum("email：邮件");
+        public static final ProtocolEnum EMAIL = new ProtocolEnum("email");
         
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProtocolEnum> createStaticFields() {
             Map<String, ProtocolEnum> map = new HashMap<>();
-            map.put("sms：短信", SMS_);
-            map.put("email：邮件", EMAIL_);
+            map.put("sms", SMS);
+            map.put("email", EMAIL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -153,7 +153,7 @@ public class SubscriptionInfo  {
 
 
     /**
-     * 收件方式
+     * 收件方式，sms：短信,email：邮件
      * @return protocol
      */
     public ProtocolEnum getProtocol() {

@@ -58,7 +58,7 @@ public class StartInfo  {
 
 
     /**
-     * 任务启动时间，时间戳格式，取值为空代表立即启动。
+     * 任务启动时间，时间戳格式精确到秒，例如：1614078283，取值为空代表立即启动。
      * @return startTime
      */
     public String getStartTime() {

@@ -92,7 +92,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：邮寄地址ID。| |参数约束及描述：邮寄地址ID。|
+     * 邮寄地址ID。
      * @return addressId
      */
     public String getAddressId() {
@@ -112,7 +112,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：收件人姓名。| |参数约束及描述：收件人姓名。|
+     * 收件人姓名。
      * @return recipient
      */
     public String getRecipient() {
@@ -132,7 +132,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：国家。例如：中国| |参数约束及描述：国家。例如：中国|
+     * 国家。例如：中国
      * @return nationality
      */
     public String getNationality() {
@@ -152,7 +152,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：省/自治区/直辖市。例如：江苏省。| |参数约束及描述：省/自治区/直辖市。例如：江苏省。|
+     * 省/自治区/直辖市。例如：江苏省。
      * @return province
      */
     public String getProvince() {
@@ -172,7 +172,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：市/区。例如：南京市。| |参数约束及描述：市/区。例如：南京市。|
+     * 市/区。例如：南京市。
      * @return city
      */
     public String getCity() {
@@ -192,7 +192,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：区。例如：雨花区。| |参数约束及描述：区。例如：雨花区。|
+     * 区。例如：雨花区。
      * @return district
      */
     public String getDistrict() {
@@ -212,7 +212,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：邮寄详细地址。| |参数约束及描述：邮寄详细地址。|
+     * 邮寄详细地址。
      * @return address
      */
     public String getAddress() {
@@ -232,7 +232,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：邮编。| |参数约束及描述：邮编。|
+     * 邮编。
      * @return zipcode
      */
     public String getZipcode() {
@@ -252,7 +252,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：国家码，例如：中国：0086| |参数约束及描述：国家码，例如：中国：0086|
+     * 国家码。例如： 中国：0086
      * @return areacode
      */
     public String getAreacode() {
@@ -272,7 +272,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：手机号码，不带国家码。| |参数约束及描述：手机号码，不带国家码。|
+     * 手机号码，不带国家码。
      * @return mobilePhone
      */
     public String getMobilePhone() {
@@ -292,7 +292,7 @@ public class CustomerPostalAddressV2  {
 
 
     /**
-     * |参数名称：是否默认地址，默认为0。1：默认地址0：非默认地址| |参数的约束及描述：是否默认地址，默认为0。1：默认地址0：非默认地址|
+     * 是否默认地址，默认为0。 1：默认地址0：非默认地址
      * @return isDefault
      */
     public Integer getIsDefault() {

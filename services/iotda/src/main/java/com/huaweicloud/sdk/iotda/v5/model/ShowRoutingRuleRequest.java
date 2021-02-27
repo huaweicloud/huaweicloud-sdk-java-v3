@@ -19,13 +19,6 @@ public class ShowRoutingRuleRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -35,26 +28,6 @@ public class ShowRoutingRuleRequest  {
     @JsonProperty(value="rule_id")
     
     private String ruleId;
-
-    public ShowRoutingRuleRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public ShowRoutingRuleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -104,19 +77,17 @@ public class ShowRoutingRuleRequest  {
             return false;
         }
         ShowRoutingRuleRequest showRoutingRuleRequest = (ShowRoutingRuleRequest) o;
-        return Objects.equals(this.stageAuthToken, showRoutingRuleRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, showRoutingRuleRequest.instanceId) &&
+        return Objects.equals(this.instanceId, showRoutingRuleRequest.instanceId) &&
             Objects.equals(this.ruleId, showRoutingRuleRequest.ruleId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, ruleId);
+        return Objects.hash(instanceId, ruleId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRoutingRuleRequest {\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("}");

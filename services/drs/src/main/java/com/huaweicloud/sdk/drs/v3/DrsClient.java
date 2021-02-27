@@ -84,28 +84,6 @@ public class DrsClient {
     }
 
     /**
-     * 批量创建对比任务
-     * 批量创建对比任务。
-     *
-     * @param BatchCreateCompareTaskRequest 请求对象
-     * @return BatchCreateCompareTaskResponse
-     */
-    public BatchCreateCompareTaskResponse batchCreateCompareTask(BatchCreateCompareTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, DrsMeta.batchCreateCompareTask);
-    }
-
-    /**
-     * 批量创建对比任务
-     * 批量创建对比任务。
-     *
-     * @param BatchCreateCompareTaskRequest 请求对象
-     * @return SyncInvoker<BatchCreateCompareTaskRequest, BatchCreateCompareTaskResponse>
-     */
-    public SyncInvoker<BatchCreateCompareTaskRequest, BatchCreateCompareTaskResponse> batchCreateCompareTaskInvoker(BatchCreateCompareTaskRequest request) {
-        return new SyncInvoker<BatchCreateCompareTaskRequest, BatchCreateCompareTaskResponse>(request, DrsMeta.batchCreateCompareTask, hcClient);
-    }
-
-    /**
      * 批量创建任务
      * 根据请求参数不同，可以批量创建实时迁移、实时同步、实时灾备任务。
      *
@@ -147,28 +125,6 @@ public class DrsClient {
      */
     public SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsInvoker(BatchDeleteJobsRequest request) {
         return new SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>(request, DrsMeta.batchDeleteJobs, hcClient);
-    }
-
-    /**
-     * 批量查询对比结果
-     * 批量查询对比结果。
-     *
-     * @param BatchListCompareResultRequest 请求对象
-     * @return BatchListCompareResultResponse
-     */
-    public BatchListCompareResultResponse batchListCompareResult(BatchListCompareResultRequest request) {
-        return hcClient.syncInvokeHttp(request, DrsMeta.batchListCompareResult);
-    }
-
-    /**
-     * 批量查询对比结果
-     * 批量查询对比结果。
-     *
-     * @param BatchListCompareResultRequest 请求对象
-     * @return SyncInvoker<BatchListCompareResultRequest, BatchListCompareResultResponse>
-     */
-    public SyncInvoker<BatchListCompareResultRequest, BatchListCompareResultResponse> batchListCompareResultInvoker(BatchListCompareResultRequest request) {
-        return new SyncInvoker<BatchListCompareResultRequest, BatchListCompareResultResponse>(request, DrsMeta.batchListCompareResult, hcClient);
     }
 
     /**
@@ -587,6 +543,72 @@ public class DrsClient {
      */
     public SyncInvoker<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse> batchValidateConnectionsInvoker(BatchValidateConnectionsRequest request) {
         return new SyncInvoker<BatchValidateConnectionsRequest, BatchValidateConnectionsResponse>(request, DrsMeta.batchValidateConnections, hcClient);
+    }
+
+    /**
+     * 创建对比任务
+     * 创建对比任务。
+     *
+     * @param CreateCompareTaskRequest 请求对象
+     * @return CreateCompareTaskResponse
+     */
+    public CreateCompareTaskResponse createCompareTask(CreateCompareTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.createCompareTask);
+    }
+
+    /**
+     * 创建对比任务
+     * 创建对比任务。
+     *
+     * @param CreateCompareTaskRequest 请求对象
+     * @return SyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse>
+     */
+    public SyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse> createCompareTaskInvoker(CreateCompareTaskRequest request) {
+        return new SyncInvoker<CreateCompareTaskRequest, CreateCompareTaskResponse>(request, DrsMeta.createCompareTask, hcClient);
+    }
+
+    /**
+     * 查询对比结果
+     * 查询对比结果。
+     *
+     * @param ListCompareResultRequest 请求对象
+     * @return ListCompareResultResponse
+     */
+    public ListCompareResultResponse listCompareResult(ListCompareResultRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.listCompareResult);
+    }
+
+    /**
+     * 查询对比结果
+     * 查询对比结果。
+     *
+     * @param ListCompareResultRequest 请求对象
+     * @return SyncInvoker<ListCompareResultRequest, ListCompareResultResponse>
+     */
+    public SyncInvoker<ListCompareResultRequest, ListCompareResultResponse> listCompareResultInvoker(ListCompareResultRequest request) {
+        return new SyncInvoker<ListCompareResultRequest, ListCompareResultResponse>(request, DrsMeta.listCompareResult, hcClient);
+    }
+
+    /**
+     * 获取源库迁移用户列表
+     * 数据库的迁移过程中，迁移用户需要进行单独处理，该接口可以查询源库的用户信息。
+     *
+     * @param ListUsersRequest 请求对象
+     * @return ListUsersResponse
+     */
+    public ListUsersResponse listUsers(ListUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.listUsers);
+    }
+
+    /**
+     * 获取源库迁移用户列表
+     * 数据库的迁移过程中，迁移用户需要进行单独处理，该接口可以查询源库的用户信息。
+     *
+     * @param ListUsersRequest 请求对象
+     * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
+     */
+    public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
+        return new SyncInvoker<ListUsersRequest, ListUsersResponse>(request, DrsMeta.listUsers, hcClient);
     }
 
     /**

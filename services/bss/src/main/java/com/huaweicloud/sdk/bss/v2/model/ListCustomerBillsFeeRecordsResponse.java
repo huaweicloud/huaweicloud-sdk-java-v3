@@ -49,7 +49,7 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：总条数，必须大于等于0。| |参数的约束及描述：总条数，必须大于等于0。|
+     * 结果集数量，只有成功才返回这个参数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -83,7 +83,7 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：资源费用记录数据。具体请参见表 MonthlyBillRes。| |参数约束以及描述：资源费用记录数据。具体请参见表 MonthlyBillRes。|
+     * 资源费用记录数据。 具体请参见表2。
      * @return records
      */
     public List<MonthlyBillRecord> getRecords() {
@@ -103,7 +103,7 @@ public class ListCustomerBillsFeeRecordsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：币种。| |参数约束及描述：币种。|
+     * 币种。 CNY：人民币
      * @return currency
      */
     public String getCurrency() {

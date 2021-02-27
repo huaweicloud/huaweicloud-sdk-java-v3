@@ -40,6 +40,7 @@ public class TrafficInfo  {
 
     /**
      * 采样周期内的总流量，单位：byte
+     * minimum: 0
      * @return traffic
      */
     public Integer getTraffic() {

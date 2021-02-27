@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -58,7 +57,7 @@ public class CouponRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="operation_amount")
     
-    private BigDecimal operationAmount = null;
+    private Double operationAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -87,7 +86,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：唯一ID。| |参数约束及描述：唯一ID。|
+     * 该记录的ID。
      * @return id
      */
     public String getId() {
@@ -107,7 +106,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：操作类型：1：发放；2：手动回收；3：解绑自动回收| |参数约束及描述：操作类型：1：发放；2：手动回收；3：解绑自动回收|
+     * 操作类型。 1：发放2：手动回收3：解绑自动回收
      * @return operationType
      */
     public String getOperationType() {
@@ -127,7 +126,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：额度ID。| |参数约束及描述：额度ID。|
+     * 额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -147,7 +146,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：操作类型：1：发放；2：手动回收；3：解绑自动回收。| |参数的约束及描述：操作类型：1：发放；2：手动回收；3：解绑自动回收。|
+     * 额度类型。 0：代金券额度1：现金券额度
      * @return quotaType
      */
     public Integer getQuotaType() {
@@ -167,7 +166,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：代金券ID。| |参数约束及描述：代金券ID。|
+     * 代金券ID。
      * @return couponId
      */
     public String getCouponId() {
@@ -187,7 +186,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * 客户账号ID。
      * @return customerId
      */
     public String getCustomerId() {
@@ -198,7 +197,7 @@ public class CouponRecordV2  {
         this.customerId = customerId;
     }
 
-    public CouponRecordV2 withOperationAmount(BigDecimal operationAmount) {
+    public CouponRecordV2 withOperationAmount(Double operationAmount) {
         this.operationAmount = operationAmount;
         return this;
     }
@@ -207,14 +206,14 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：操作的面额值。发放时，等于面额值；回收时，指每次回收的具体值。| |参数的约束及描述：操作的面额值。发放时，等于面额值；回收时，指每次回收的具体值。|
+     * 操作的面额值。单位：元。 发放时，等于面额值；回收时，指每次回收的具体值。
      * @return operationAmount
      */
-    public BigDecimal getOperationAmount() {
+    public Double getOperationAmount() {
         return operationAmount;
     }
 
-    public void setOperationAmount(BigDecimal operationAmount) {
+    public void setOperationAmount(Double operationAmount) {
         this.operationAmount = operationAmount;
     }
 
@@ -227,7 +226,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：操作时间。| |参数约束及描述：操作时间。|
+     * 操作时间。
      * @return operationTime
      */
     public String getOperationTime() {
@@ -247,7 +246,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：操作结果：0：成功；其他：失败（直接记录错误码）。|参数约束及描述：操作结果：0：成功；其他：失败（直接记录错误码）。|
+     * 操作结果。 0：成功-1：失败
      * @return result
      */
     public String getResult() {
@@ -267,7 +266,7 @@ public class CouponRecordV2  {
 
 
     /**
-     * |参数名称：操作记录中的备注| |参数约束及描述：操作记录中的备注|
+     * 操作记录中的备注。
      * @return remark
      */
     public String getRemark() {

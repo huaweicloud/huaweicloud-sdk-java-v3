@@ -3,12 +3,16 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.drs.v3.model.BatchDataTransformationReq;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -17,12 +21,90 @@ import java.util.Objects;
  */
 public class BatchChangeDataRequest  {
 
+    /**
+     * Gets or Sets xLanguage
+     */
+    public static final class XLanguageEnum {
+
+        
+        /**
+         * Enum EN_US for value: "en-us"
+         */
+        public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
+        
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
+        public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+        
+
+        private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, XLanguageEnum> createStaticFields() {
+            Map<String, XLanguageEnum> map = new HashMap<>();
+            map.put("en-us", EN_US);
+            map.put("zh-cn", ZH_CN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        XLanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static XLanguageEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            XLanguageEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new XLanguageEnum(value);
+            }
+            return result;
+        }
+
+        public static XLanguageEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            XLanguageEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof XLanguageEnum) {
+                return this.value.equals(((XLanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
     
-    private String xLanguage;
+    private XLanguageEnum xLanguage = XLanguageEnum.EN_US;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,7 +112,7 @@ public class BatchChangeDataRequest  {
     
     private BatchDataTransformationReq body = null;
 
-    public BatchChangeDataRequest withXLanguage(String xLanguage) {
+    public BatchChangeDataRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
@@ -44,11 +126,11 @@ public class BatchChangeDataRequest  {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Language")
-    public String getXLanguage() {
+    public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
 
-    public void setXLanguage(String xLanguage) {
+    public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
 

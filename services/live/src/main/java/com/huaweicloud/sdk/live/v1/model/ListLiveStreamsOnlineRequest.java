@@ -97,6 +97,7 @@ public class ListLiveStreamsOnlineRequest  {
 
     /**
      * Get offset
+     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {

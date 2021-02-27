@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ public class ModSubCustomerBudgetReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="budget_amount")
     
-    private BigDecimal budgetAmount = null;
+    private Double budgetAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -56,7 +55,7 @@ public class ModSubCustomerBudgetReq  {
         this.customerId = customerId;
     }
 
-    public ModSubCustomerBudgetReq withBudgetAmount(BigDecimal budgetAmount) {
+    public ModSubCustomerBudgetReq withBudgetAmount(Double budgetAmount) {
         this.budgetAmount = budgetAmount;
         return this;
     }
@@ -68,11 +67,11 @@ public class ModSubCustomerBudgetReq  {
      * |参数名称：调整的目标金额，可精确至小数点后面2位。| |参数的约束及描述：调整的目标金额，可精确至小数点后面2位。|
      * @return budgetAmount
      */
-    public BigDecimal getBudgetAmount() {
+    public Double getBudgetAmount() {
         return budgetAmount;
     }
 
-    public void setBudgetAmount(BigDecimal budgetAmount) {
+    public void setBudgetAmount(Double budgetAmount) {
         this.budgetAmount = budgetAmount;
     }
 

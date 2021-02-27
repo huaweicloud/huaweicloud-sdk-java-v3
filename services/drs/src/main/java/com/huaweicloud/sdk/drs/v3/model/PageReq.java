@@ -38,7 +38,7 @@ public class PageReq  {
 
 
     /**
-     * 当前页, 不能超过传入jobID数量除每页任务数量的最大页，填0获取全部item 
+     * 当前页, 不能超过item除每页任务数量的最大页 
      * @return curPage
      */
     public Integer getCurPage() {

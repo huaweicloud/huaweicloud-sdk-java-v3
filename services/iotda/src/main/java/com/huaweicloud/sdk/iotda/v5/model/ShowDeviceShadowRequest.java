@@ -19,20 +19,6 @@ public class ShowDeviceShadowRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sp-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String spAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -42,46 +28,6 @@ public class ShowDeviceShadowRequest  {
     @JsonProperty(value="device_id")
     
     private String deviceId;
-
-    public ShowDeviceShadowRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get spAuthToken
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
-    public ShowDeviceShadowRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public ShowDeviceShadowRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -131,21 +77,17 @@ public class ShowDeviceShadowRequest  {
             return false;
         }
         ShowDeviceShadowRequest showDeviceShadowRequest = (ShowDeviceShadowRequest) o;
-        return Objects.equals(this.spAuthToken, showDeviceShadowRequest.spAuthToken) &&
-            Objects.equals(this.stageAuthToken, showDeviceShadowRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, showDeviceShadowRequest.instanceId) &&
+        return Objects.equals(this.instanceId, showDeviceShadowRequest.instanceId) &&
             Objects.equals(this.deviceId, showDeviceShadowRequest.deviceId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, stageAuthToken, instanceId, deviceId);
+        return Objects.hash(instanceId, deviceId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDeviceShadowRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("}");

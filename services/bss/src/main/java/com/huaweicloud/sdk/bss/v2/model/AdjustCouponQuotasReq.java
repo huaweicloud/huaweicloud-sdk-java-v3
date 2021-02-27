@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -36,7 +35,7 @@ public class AdjustCouponQuotasReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_amount")
     
-    private BigDecimal quotaAmount = null;
+    private Double quotaAmount;
 
     public AdjustCouponQuotasReq withQuotaId(String quotaId) {
         this.quotaId = quotaId;
@@ -47,7 +46,7 @@ public class AdjustCouponQuotasReq  {
 
 
     /**
-     * |参数名称：优惠券额度ID。| |参数约束及描述：优惠券额度ID。|
+     * 华为云伙伴能力中心发放的代金券额度的ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -78,7 +77,7 @@ public class AdjustCouponQuotasReq  {
     }
 
     /**
-     * |参数名称：二级分销商伙伴id列表。最大100条| |参数约束以及描述：二级分销商伙伴id列表。最大100条|
+     * 精英服务商ID列表。
      * @return indirectPartnerIds
      */
     public List<String> getIndirectPartnerIds() {
@@ -89,7 +88,7 @@ public class AdjustCouponQuotasReq  {
         this.indirectPartnerIds = indirectPartnerIds;
     }
 
-    public AdjustCouponQuotasReq withQuotaAmount(BigDecimal quotaAmount) {
+    public AdjustCouponQuotasReq withQuotaAmount(Double quotaAmount) {
         this.quotaAmount = quotaAmount;
         return this;
     }
@@ -98,16 +97,16 @@ public class AdjustCouponQuotasReq  {
 
 
     /**
-     * |参数名称：额度值。保留小数点后2位| |参数的约束及描述：额度值。保留小数点后2位|
+     * 华为云伙伴能力中心向精英服务商发放的代金券额度值。 单位：元。取值大于0且精确到小数点后2位。
      * minimum: 0.01
      * maximum: 1E+8
      * @return quotaAmount
      */
-    public BigDecimal getQuotaAmount() {
+    public Double getQuotaAmount() {
         return quotaAmount;
     }
 
-    public void setQuotaAmount(BigDecimal quotaAmount) {
+    public void setQuotaAmount(Double quotaAmount) {
         this.quotaAmount = quotaAmount;
     }
     @Override

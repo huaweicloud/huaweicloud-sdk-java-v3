@@ -20,13 +20,6 @@ public class CreateRoutingRuleRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -36,26 +29,6 @@ public class CreateRoutingRuleRequest  {
     @JsonProperty(value="body")
     
     private AddRuleReq body = null;
-
-    public CreateRoutingRuleRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public CreateRoutingRuleRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -112,19 +85,17 @@ public class CreateRoutingRuleRequest  {
             return false;
         }
         CreateRoutingRuleRequest createRoutingRuleRequest = (CreateRoutingRuleRequest) o;
-        return Objects.equals(this.stageAuthToken, createRoutingRuleRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, createRoutingRuleRequest.instanceId) &&
+        return Objects.equals(this.instanceId, createRoutingRuleRequest.instanceId) &&
             Objects.equals(this.body, createRoutingRuleRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, body);
+        return Objects.hash(instanceId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRoutingRuleRequest {\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

@@ -49,7 +49,7 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：根节点ID，如果请求有parent_id，则该参数无值。| |参数约束及描述：根节点ID，如果请求有parent_id，则该参数无值。|
+     * 根节点ID，如果请求有parent_id，则该参数无值。
      * @return rootId
      */
     public String getRootId() {
@@ -69,7 +69,7 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：根节点名称，如果请求有parent_id，则该参数无值。注：组织根节点没有设置组织名称时，可能为空。| |参数约束及描述：根节点名称，如果请求有parent_id，则该参数无值。注：组织根节点没有设置组织名称时，可能为空。|
+     * 根节点名称，如果请求有parent_id，则该参数无值。  说明： 组织根节点没有设置组织名称时，可能为空。
      * @return rootName
      */
     public String getRootName() {
@@ -103,7 +103,7 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：企业管理子Party节点列表。注：每一层的节点列表需要按relation_type升序排序。| |参数约束以及描述：企业管理子Party节点列表。注：每一层的节点列表需要按relation_type升序排序。|
+     * 子节点列表。
      * @return childNodes
      */
     public List<EmChildNodeV2> getChildNodes() {

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -106,67 +105,67 @@ public class MonthlyBillRes  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consume_amount")
     
-    private BigDecimal consumeAmount = null;
+    private Double consumeAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cash_amount")
     
-    private BigDecimal cashAmount = null;
+    private Double cashAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit_amount")
     
-    private BigDecimal creditAmount = null;
+    private Double creditAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coupon_amount")
     
-    private BigDecimal couponAmount = null;
+    private Double couponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flexipurchase_coupon_amount")
     
-    private BigDecimal flexipurchaseCouponAmount = null;
+    private Double flexipurchaseCouponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stored_card_amount")
     
-    private BigDecimal storedCardAmount = null;
+    private Double storedCardAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bonus_amount")
     
-    private BigDecimal bonusAmount = null;
+    private Double bonusAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
-    private BigDecimal debtAmount = null;
+    private Double debtAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjustment_amount")
     
-    private BigDecimal adjustmentAmount = null;
+    private Double adjustmentAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_amount")
     
-    private BigDecimal officialAmount = null;
+    private Double officialAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_amount")
     
-    private BigDecimal discountAmount = null;
+    private Double discountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -454,7 +453,7 @@ public class MonthlyBillRes  {
         this.chargeMode = chargeMode;
     }
 
-    public MonthlyBillRes withConsumeAmount(BigDecimal consumeAmount) {
+    public MonthlyBillRes withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -466,15 +465,15 @@ public class MonthlyBillRes  {
      * |参数名称：客户购买云服务类型的消费金额| |参数的约束及描述：该参数非必填，包含代金券，大陆站还包含现金券，大陆站精确到小数点后8位，国际站精确到小数点后2位。|
      * @return consumeAmount
      */
-    public BigDecimal getConsumeAmount() {
+    public Double getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(BigDecimal consumeAmount) {
+    public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public MonthlyBillRes withCashAmount(BigDecimal cashAmount) {
+    public MonthlyBillRes withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -486,15 +485,15 @@ public class MonthlyBillRes  {
      * |参数名称：现金支付金额| |参数的约束及描述：该参数非必填|
      * @return cashAmount
      */
-    public BigDecimal getCashAmount() {
+    public Double getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(BigDecimal cashAmount) {
+    public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public MonthlyBillRes withCreditAmount(BigDecimal creditAmount) {
+    public MonthlyBillRes withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -506,15 +505,15 @@ public class MonthlyBillRes  {
      * |参数名称：信用额度支付金额| |参数的约束及描述：该参数非必填|
      * @return creditAmount
      */
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
 
-    public MonthlyBillRes withCouponAmount(BigDecimal couponAmount) {
+    public MonthlyBillRes withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -526,15 +525,15 @@ public class MonthlyBillRes  {
      * |参数名称：代金券支付金额| |参数的约束及描述：该参数非必填。|
      * @return couponAmount
      */
-    public BigDecimal getCouponAmount() {
+    public Double getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(BigDecimal couponAmount) {
+    public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public MonthlyBillRes withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public MonthlyBillRes withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -546,15 +545,15 @@ public class MonthlyBillRes  {
      * |参数名称：现金券支付金额| |参数的约束及描述：该参数非必填。|
      * @return flexipurchaseCouponAmount
      */
-    public BigDecimal getFlexipurchaseCouponAmount() {
+    public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public MonthlyBillRes withStoredCardAmount(BigDecimal storedCardAmount) {
+    public MonthlyBillRes withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
     }
@@ -566,15 +565,15 @@ public class MonthlyBillRes  {
      * |参数名称：储值卡支付金额| |参数的约束及描述：该参数非必填。|
      * @return storedCardAmount
      */
-    public BigDecimal getStoredCardAmount() {
+    public Double getStoredCardAmount() {
         return storedCardAmount;
     }
 
-    public void setStoredCardAmount(BigDecimal storedCardAmount) {
+    public void setStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
     }
 
-    public MonthlyBillRes withBonusAmount(BigDecimal bonusAmount) {
+    public MonthlyBillRes withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
     }
@@ -586,15 +585,15 @@ public class MonthlyBillRes  {
      * |参数名称：奖励金支付金额（用于现网未清干净的奖励金）| |参数的约束及描述：该参数非必填。|
      * @return bonusAmount
      */
-    public BigDecimal getBonusAmount() {
+    public Double getBonusAmount() {
         return bonusAmount;
     }
 
-    public void setBonusAmount(BigDecimal bonusAmount) {
+    public void setBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
 
-    public MonthlyBillRes withDebtAmount(BigDecimal debtAmount) {
+    public MonthlyBillRes withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -606,15 +605,15 @@ public class MonthlyBillRes  {
      * |参数名称：欠费金额| |参数的约束及描述：该参数非必填。|
      * @return debtAmount
      */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public MonthlyBillRes withAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public MonthlyBillRes withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
     }
@@ -626,15 +625,15 @@ public class MonthlyBillRes  {
      * |参数名称：欠费核销金额| |参数的约束及描述：该参数非必填。|
      * @return adjustmentAmount
      */
-    public BigDecimal getAdjustmentAmount() {
+    public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
 
-    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public void setAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
     }
 
-    public MonthlyBillRes withOfficialAmount(BigDecimal officialAmount) {
+    public MonthlyBillRes withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -646,15 +645,15 @@ public class MonthlyBillRes  {
      * |参数名称：官网价| |参数的约束及描述：该参数非必填。|
      * @return officialAmount
      */
-    public BigDecimal getOfficialAmount() {
+    public Double getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(BigDecimal officialAmount) {
+    public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public MonthlyBillRes withDiscountAmount(BigDecimal discountAmount) {
+    public MonthlyBillRes withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -666,11 +665,11 @@ public class MonthlyBillRes  {
      * |参数名称：对应官网价折扣金额| |参数的约束及描述：该参数非必填。|
      * @return discountAmount
      */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 

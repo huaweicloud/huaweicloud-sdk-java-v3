@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ public class BalanceTypeDeductSumV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,7 +44,7 @@ public class BalanceTypeDeductSumV2  {
 
 
     /**
-     * |参数名称：账户类型。BALANCE_TYPE_DEBIT：余额BALANCE_TYPE_CREDIT：信用BALANCE_TYPE_BONUS：奖励BALANCE_TYPE_COUPON：代金券BALANCE_TYPE_RCASH_COUPON 现金券。BALANCE_TYPE_STORED_VALUE_CARD：储值卡消费| |参数约束及描述：账户类型。BALANCE_TYPE_DEBIT：余额BALANCE_TYPE_CREDIT：信用BALANCE_TYPE_BONUS：奖励BALANCE_TYPE_COUPON：代金券BALANCE_TYPE_RCASH_COUPON 现金券。BALANCE_TYPE_STORED_VALUE_CARD：储值卡消费|
+     * 账户类型。 BALANCE_TYPE_DEBIT：现金BALANCE_TYPE_CREDIT：信用BALANCE_TYPE_BONUS：奖励BALANCE_TYPE_COUPON：代金券BALANCE_TYPE_RCASH_COUPON 现金券。BALANCE_TYPE_STORED_VALUE_CARD：储值卡消费
      * @return balanceType
      */
     public String getBalanceType() {
@@ -56,7 +55,7 @@ public class BalanceTypeDeductSumV2  {
         this.balanceType = balanceType;
     }
 
-    public BalanceTypeDeductSumV2 withAmount(BigDecimal amount) {
+    public BalanceTypeDeductSumV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -65,14 +64,14 @@ public class BalanceTypeDeductSumV2  {
 
 
     /**
-     * |参数名称：金额。对于billType=1或者2的账单，该金额为负值。| |参数的约束及描述：金额。对于billType=1或者2的账单，该金额为负值。|
+     * 金额。 对于billType=1或者2的账单，该金额为负值。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -85,7 +84,7 @@ public class BalanceTypeDeductSumV2  {
 
 
     /**
-     * |参数名称：费用类型。0：正常；1：退订；2：华为核销。| |参数约束及描述：费用类型。0：正常；1：退订；2：华为核销。|
+     * 账单类型。 0：正常1：退订2：华为核销
      * @return billType
      */
     public String getBillType() {

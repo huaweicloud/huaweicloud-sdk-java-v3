@@ -34,7 +34,7 @@ public class ReclaimToPartnerAccountResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：事务流水ID，只有成功响应才会返回。| |参数约束及描述：事务流水ID，只有成功响应才会返回。|
+     * 事务流水ID，只有成功响应才会返回。
      * @return transId
      */
     public String getTransId() {

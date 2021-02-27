@@ -62,7 +62,7 @@ public class SubCustomerInfoV2  {
 
 
     /**
-     * |参数名称：企业子账号的客户ID。| |参数约束及描述：企业子账号的客户ID。|
+     * 企业子账号的客户ID。
      * @return id
      */
     public String getId() {
@@ -82,7 +82,7 @@ public class SubCustomerInfoV2  {
 
 
     /**
-     * |参数名称：企业子账号的用户名。| |参数约束及描述：企业子账号的用户名。|
+     * 企业子账号的用户名。
      * @return name
      */
     public String getName() {
@@ -102,7 +102,7 @@ public class SubCustomerInfoV2  {
 
 
     /**
-     * |参数名称：企业子账号的显示名称。不限制特殊字符。| |参数约束及描述：企业子账号的显示名称。不限制特殊字符。|
+     * 企业子账号的显示名称。 不限制特殊字符。
      * @return displayName
      */
     public String getDisplayName() {
@@ -122,7 +122,7 @@ public class SubCustomerInfoV2  {
 
 
     /**
-     * |参数名称：子账号状态：1：正常；2：创建中；3：关闭中；4：已关闭；101：子账号注册中；102：子账号待激活。| |参数的约束及描述：子账号状态：1：正常；2：创建中；3：关闭中；4：已关闭；101：子账号注册中；102：子账号待激活。|
+     * 子账号状态： 1：正常2：创建中3：关闭中4：已关闭101：子账号注册中102：子账号待激活
      * @return status
      */
     public Integer getStatus() {
@@ -142,7 +142,7 @@ public class SubCustomerInfoV2  {
 
 
     /**
-     * |参数名称：子账号归属的组织单元ID| |参数约束及描述：子账号归属的组织单元ID|
+     * 子账号归属的组织单元ID。
      * @return orgId
      */
     public String getOrgId() {
@@ -162,7 +162,7 @@ public class SubCustomerInfoV2  {
 
 
     /**
-     * |参数名称：子账号归属的组织单元名称注：当子账号归属的组织是企业组织根节点时，本属性可能为空。| |参数约束及描述：子账号归属的组织单元名称注：当子账号归属的组织是企业组织根节点时，本属性可能为空。|
+     * 子账号归属的组织单元名称。  说明： 当子账号归属的组织是企业组织根节点时，本属性可能为空。
      * @return orgName
      */
     public String getOrgName() {

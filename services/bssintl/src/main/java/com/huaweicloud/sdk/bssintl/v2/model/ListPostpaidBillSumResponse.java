@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,31 +29,31 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="initial_amount_due")
     
-    private BigDecimal initialAmountDue = null;
+    private Double initialAmountDue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="consume_amount")
     
-    private BigDecimal consumeAmount = null;
+    private Double consumeAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="refunds")
     
-    private BigDecimal refunds = null;
+    private Double refunds;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjustments")
     
-    private BigDecimal adjustments = null;
+    private Double adjustments;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tax_amount")
     
-    private BigDecimal taxAmount = null;
+    private Double taxAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -82,7 +81,7 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.billCycle = billCycle;
     }
 
-    public ListPostpaidBillSumResponse withInitialAmountDue(BigDecimal initialAmountDue) {
+    public ListPostpaidBillSumResponse withInitialAmountDue(Double initialAmountDue) {
         this.initialAmountDue = initialAmountDue;
         return this;
     }
@@ -94,15 +93,15 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
      * |参数名称：初始应还金额（含税）| |参数的约束及描述：初始应还金额（含税）|
      * @return initialAmountDue
      */
-    public BigDecimal getInitialAmountDue() {
+    public Double getInitialAmountDue() {
         return initialAmountDue;
     }
 
-    public void setInitialAmountDue(BigDecimal initialAmountDue) {
+    public void setInitialAmountDue(Double initialAmountDue) {
         this.initialAmountDue = initialAmountDue;
     }
 
-    public ListPostpaidBillSumResponse withConsumeAmount(BigDecimal consumeAmount) {
+    public ListPostpaidBillSumResponse withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
@@ -114,15 +113,15 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
      * |参数名称：消费金额| |参数的约束及描述：消费金额|
      * @return consumeAmount
      */
-    public BigDecimal getConsumeAmount() {
+    public Double getConsumeAmount() {
         return consumeAmount;
     }
 
-    public void setConsumeAmount(BigDecimal consumeAmount) {
+    public void setConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
     }
 
-    public ListPostpaidBillSumResponse withRefunds(BigDecimal refunds) {
+    public ListPostpaidBillSumResponse withRefunds(Double refunds) {
         this.refunds = refunds;
         return this;
     }
@@ -134,15 +133,15 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
      * |参数名称：退款| |参数的约束及描述：退款|
      * @return refunds
      */
-    public BigDecimal getRefunds() {
+    public Double getRefunds() {
         return refunds;
     }
 
-    public void setRefunds(BigDecimal refunds) {
+    public void setRefunds(Double refunds) {
         this.refunds = refunds;
     }
 
-    public ListPostpaidBillSumResponse withAdjustments(BigDecimal adjustments) {
+    public ListPostpaidBillSumResponse withAdjustments(Double adjustments) {
         this.adjustments = adjustments;
         return this;
     }
@@ -154,15 +153,15 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
      * |参数名称：调账| |参数的约束及描述：调账|
      * @return adjustments
      */
-    public BigDecimal getAdjustments() {
+    public Double getAdjustments() {
         return adjustments;
     }
 
-    public void setAdjustments(BigDecimal adjustments) {
+    public void setAdjustments(Double adjustments) {
         this.adjustments = adjustments;
     }
 
-    public ListPostpaidBillSumResponse withTaxAmount(BigDecimal taxAmount) {
+    public ListPostpaidBillSumResponse withTaxAmount(Double taxAmount) {
         this.taxAmount = taxAmount;
         return this;
     }
@@ -174,11 +173,11 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
      * |参数名称：销项税金额| |参数的约束及描述：销项税金额|
      * @return taxAmount
      */
-    public BigDecimal getTaxAmount() {
+    public Double getTaxAmount() {
         return taxAmount;
     }
 
-    public void setTaxAmount(BigDecimal taxAmount) {
+    public void setTaxAmount(Double taxAmount) {
         this.taxAmount = taxAmount;
     }
 

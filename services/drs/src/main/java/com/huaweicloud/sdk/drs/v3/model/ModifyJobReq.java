@@ -60,7 +60,7 @@ public class ModifyJobReq  {
     
     private AlarmNotifyInfo alarmNotify = null;
     /**
-     * 任务模式
+     * 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
      */
     public static final class TaskTypeEnum {
 
@@ -238,9 +238,9 @@ public class ModifyJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_type")
     
-    private NodeTypeEnum nodeType;
+    private NodeTypeEnum nodeType = NodeTypeEnum.HIGH;
     /**
-     * 引擎类型，测试连接之后修改调用时必填。
+     * 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
      */
     public static final class EngineTypeEnum {
 
@@ -438,28 +438,28 @@ public class ModifyJobReq  {
 
         
         /**
-         * Enum UP_ for value: "up 入云 灾备场景时对应本云为备"
+         * Enum UP for value: "up"
          */
-        public static final JobDirectionEnum UP_ = new JobDirectionEnum("up 入云 灾备场景时对应本云为备");
+        public static final JobDirectionEnum UP = new JobDirectionEnum("up");
         
         /**
-         * Enum DOWN_ for value: "down 出云 灾备场景时对应本云为主"
+         * Enum DOWN for value: "down"
          */
-        public static final JobDirectionEnum DOWN_ = new JobDirectionEnum("down 出云 灾备场景时对应本云为主");
+        public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
         
         /**
-         * Enum NON_DBS_ for value: "non-dbs 自建"
+         * Enum NON_DBS for value: "non-dbs"
          */
-        public static final JobDirectionEnum NON_DBS_ = new JobDirectionEnum("non-dbs 自建");
+        public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
         
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobDirectionEnum> createStaticFields() {
             Map<String, JobDirectionEnum> map = new HashMap<>();
-            map.put("up 入云 灾备场景时对应本云为备", UP_);
-            map.put("down 出云 灾备场景时对应本云为主", DOWN_);
-            map.put("non-dbs 自建", NON_DBS_);
+            map.put("up", UP);
+            map.put("down", DOWN);
+            map.put("non-dbs", NON_DBS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -540,34 +540,34 @@ public class ModifyJobReq  {
     
     private List<ResourceTag> tags = null;
         /**
-     * 迁移类型。
+     * 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
      */
     public static final class DbUseTypeEnum {
 
         
         /**
-         * Enum MIGRATION_ for value: "migration-实时迁移"
+         * Enum MIGRATION for value: "migration"
          */
-        public static final DbUseTypeEnum MIGRATION_ = new DbUseTypeEnum("migration-实时迁移");
+        public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
         
         /**
-         * Enum SYNC_ for value: "sync-实时同步"
+         * Enum SYNC for value: "sync"
          */
-        public static final DbUseTypeEnum SYNC_ = new DbUseTypeEnum("sync-实时同步");
+        public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
         
         /**
-         * Enum CLOUDDATAGUARD_ for value: "cloudDataGuard-实时灾备"
+         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
          */
-        public static final DbUseTypeEnum CLOUDDATAGUARD_ = new DbUseTypeEnum("cloudDataGuard-实时灾备");
+        public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
         
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbUseTypeEnum> createStaticFields() {
             Map<String, DbUseTypeEnum> map = new HashMap<>();
-            map.put("migration-实时迁移", MIGRATION_);
-            map.put("sync-实时同步", SYNC_);
-            map.put("cloudDataGuard-实时灾备", CLOUDDATAGUARD_);
+            map.put("migration", MIGRATION);
+            map.put("sync", SYNC);
+            map.put("cloudDataGuard", CLOUDDATAGUARD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -732,7 +732,7 @@ public class ModifyJobReq  {
 
 
     /**
-     * 任务模式
+     * 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
      * @return taskType
      */
     public TaskTypeEnum getTaskType() {
@@ -826,7 +826,7 @@ public class ModifyJobReq  {
 
 
     /**
-     * 引擎类型，测试连接之后修改调用时必填。
+     * 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
      * @return engineType
      */
     public EngineTypeEnum getEngineType() {
@@ -1000,7 +1000,7 @@ public class ModifyJobReq  {
 
 
     /**
-     * 迁移类型。
+     * 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
      * @return dbUseType
      */
     public DbUseTypeEnum getDbUseType() {
@@ -1020,7 +1020,7 @@ public class ModifyJobReq  {
 
 
     /**
-     * 租户在某一region下的project id
+     * 产品ID。
      * @return productId
      */
     public String getProductId() {

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -118,7 +117,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec_size")
     
-    private BigDecimal specSize = null;
+    private Double specSize;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -172,7 +171,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="usage")
     
-    private BigDecimal usage = null;
+    private Double usage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -184,7 +183,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="free_resource_usage")
     
-    private BigDecimal freeResourceUsage = null;
+    private Double freeResourceUsage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -196,7 +195,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ri_usage")
     
-    private BigDecimal riUsage = null;
+    private Double riUsage;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -208,7 +207,7 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="unit_price")
     
-    private BigDecimal unitPrice = null;
+    private Double unitPrice;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -220,67 +219,67 @@ public class ResFeeRecordV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_amount")
     
-    private BigDecimal officialAmount = null;
+    private Double officialAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="discount_amount")
     
-    private BigDecimal discountAmount = null;
+    private Double discountAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cash_amount")
     
-    private BigDecimal cashAmount = null;
+    private Double cashAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit_amount")
     
-    private BigDecimal creditAmount = null;
+    private Double creditAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="coupon_amount")
     
-    private BigDecimal couponAmount = null;
+    private Double couponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flexipurchase_coupon_amount")
     
-    private BigDecimal flexipurchaseCouponAmount = null;
+    private Double flexipurchaseCouponAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stored_card_amount")
     
-    private BigDecimal storedCardAmount = null;
+    private Double storedCardAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bonus_amount")
     
-    private BigDecimal bonusAmount = null;
+    private Double bonusAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="debt_amount")
     
-    private BigDecimal debtAmount = null;
+    private Double debtAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="adjustment_amount")
     
-    private BigDecimal adjustmentAmount = null;
+    private Double adjustmentAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -608,7 +607,7 @@ public class ResFeeRecordV2  {
         this.skuCode = skuCode;
     }
 
-    public ResFeeRecordV2 withSpecSize(BigDecimal specSize) {
+    public ResFeeRecordV2 withSpecSize(Double specSize) {
         this.specSize = specSize;
         return this;
     }
@@ -620,11 +619,11 @@ public class ResFeeRecordV2  {
      * |参数名称：线性大小| |参数约束及描述： 线性大小|
      * @return specSize
      */
-    public BigDecimal getSpecSize() {
+    public Double getSpecSize() {
         return specSize;
     }
 
-    public void setSpecSize(BigDecimal specSize) {
+    public void setSpecSize(Double specSize) {
         this.specSize = specSize;
     }
 
@@ -788,7 +787,7 @@ public class ResFeeRecordV2  {
         this.usageType = usageType;
     }
 
-    public ResFeeRecordV2 withUsage(BigDecimal usage) {
+    public ResFeeRecordV2 withUsage(Double usage) {
         this.usage = usage;
         return this;
     }
@@ -800,11 +799,11 @@ public class ResFeeRecordV2  {
      * |参数名称：使用量。| |参数约束及描述： 使用量。|
      * @return usage
      */
-    public BigDecimal getUsage() {
+    public Double getUsage() {
         return usage;
     }
 
-    public void setUsage(BigDecimal usage) {
+    public void setUsage(Double usage) {
         this.usage = usage;
     }
 
@@ -828,7 +827,7 @@ public class ResFeeRecordV2  {
         this.usageMeasureId = usageMeasureId;
     }
 
-    public ResFeeRecordV2 withFreeResourceUsage(BigDecimal freeResourceUsage) {
+    public ResFeeRecordV2 withFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
         return this;
     }
@@ -840,11 +839,11 @@ public class ResFeeRecordV2  {
      * |参数名称：套餐内使用量。| |参数约束及描述： 套餐内使用量。|
      * @return freeResourceUsage
      */
-    public BigDecimal getFreeResourceUsage() {
+    public Double getFreeResourceUsage() {
         return freeResourceUsage;
     }
 
-    public void setFreeResourceUsage(BigDecimal freeResourceUsage) {
+    public void setFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
     }
 
@@ -868,7 +867,7 @@ public class ResFeeRecordV2  {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
 
-    public ResFeeRecordV2 withRiUsage(BigDecimal riUsage) {
+    public ResFeeRecordV2 withRiUsage(Double riUsage) {
         this.riUsage = riUsage;
         return this;
     }
@@ -880,11 +879,11 @@ public class ResFeeRecordV2  {
      * |参数名称：预留实例使用量。| |参数约束及描述： 预留实例使用量。|
      * @return riUsage
      */
-    public BigDecimal getRiUsage() {
+    public Double getRiUsage() {
         return riUsage;
     }
 
-    public void setRiUsage(BigDecimal riUsage) {
+    public void setRiUsage(Double riUsage) {
         this.riUsage = riUsage;
     }
 
@@ -908,7 +907,7 @@ public class ResFeeRecordV2  {
         this.riUsageMeasureId = riUsageMeasureId;
     }
 
-    public ResFeeRecordV2 withUnitPrice(BigDecimal unitPrice) {
+    public ResFeeRecordV2 withUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
         return this;
     }
@@ -920,11 +919,11 @@ public class ResFeeRecordV2  {
      * |参数名称：单价| |参数约束及描述：单价|
      * @return unitPrice
      */
-    public BigDecimal getUnitPrice() {
+    public Double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(BigDecimal unitPrice) {
+    public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
     }
 
@@ -948,7 +947,7 @@ public class ResFeeRecordV2  {
         this.unit = unit;
     }
 
-    public ResFeeRecordV2 withOfficialAmount(BigDecimal officialAmount) {
+    public ResFeeRecordV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -960,15 +959,15 @@ public class ResFeeRecordV2  {
      * |参数名称：官网价。| |参数约束及描述： 官网价。|
      * @return officialAmount
      */
-    public BigDecimal getOfficialAmount() {
+    public Double getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(BigDecimal officialAmount) {
+    public void setOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public ResFeeRecordV2 withDiscountAmount(BigDecimal discountAmount) {
+    public ResFeeRecordV2 withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
@@ -980,15 +979,15 @@ public class ResFeeRecordV2  {
      * |参数名称：折扣金额| |参数约束及描述： 折扣金额|
      * @return discountAmount
      */
-    public BigDecimal getDiscountAmount() {
+    public Double getDiscountAmount() {
         return discountAmount;
     }
 
-    public void setDiscountAmount(BigDecimal discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 
-    public ResFeeRecordV2 withAmount(BigDecimal amount) {
+    public ResFeeRecordV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -1000,15 +999,15 @@ public class ResFeeRecordV2  {
      * |参数名称：消费金额，包括现金券和代金券金额，精确到小数点后2位。| |参数约束及描述： 消费金额，包括现金券和代金券金额，精确到小数点后2位。|
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public ResFeeRecordV2 withCashAmount(BigDecimal cashAmount) {
+    public ResFeeRecordV2 withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -1020,15 +1019,15 @@ public class ResFeeRecordV2  {
      * |参数名称：现金支付金额| |参数约束及描述： 现金支付金额|
      * @return cashAmount
      */
-    public BigDecimal getCashAmount() {
+    public Double getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(BigDecimal cashAmount) {
+    public void setCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public ResFeeRecordV2 withCreditAmount(BigDecimal creditAmount) {
+    public ResFeeRecordV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -1040,15 +1039,15 @@ public class ResFeeRecordV2  {
      * |参数名称：信用额度支付金额。| |参数约束及描述： 信用额度支付金额。|
      * @return creditAmount
      */
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
 
-    public ResFeeRecordV2 withCouponAmount(BigDecimal couponAmount) {
+    public ResFeeRecordV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -1060,15 +1059,15 @@ public class ResFeeRecordV2  {
      * |参数名称：代金券支付金额。| |参数约束及描述： 代金券支付金额。|
      * @return couponAmount
      */
-    public BigDecimal getCouponAmount() {
+    public Double getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(BigDecimal couponAmount) {
+    public void setCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public ResFeeRecordV2 withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public ResFeeRecordV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -1080,15 +1079,15 @@ public class ResFeeRecordV2  {
      * |参数名称：现金券支付金额。| |参数约束及描述： 现金券支付金额。|
      * @return flexipurchaseCouponAmount
      */
-    public BigDecimal getFlexipurchaseCouponAmount() {
+    public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public ResFeeRecordV2 withStoredCardAmount(BigDecimal storedCardAmount) {
+    public ResFeeRecordV2 withStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
         return this;
     }
@@ -1100,15 +1099,15 @@ public class ResFeeRecordV2  {
      * |参数名称：储值卡支付金额。| |参数约束及描述： 储值卡支付金额。|
      * @return storedCardAmount
      */
-    public BigDecimal getStoredCardAmount() {
+    public Double getStoredCardAmount() {
         return storedCardAmount;
     }
 
-    public void setStoredCardAmount(BigDecimal storedCardAmount) {
+    public void setStoredCardAmount(Double storedCardAmount) {
         this.storedCardAmount = storedCardAmount;
     }
 
-    public ResFeeRecordV2 withBonusAmount(BigDecimal bonusAmount) {
+    public ResFeeRecordV2 withBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
         return this;
     }
@@ -1120,15 +1119,15 @@ public class ResFeeRecordV2  {
      * |参数名称：奖励金支付金额（用于现网未清干净的奖励金）。| |参数约束及描述： 奖励金支付金额（用于现网未清干净的奖励金）。|
      * @return bonusAmount
      */
-    public BigDecimal getBonusAmount() {
+    public Double getBonusAmount() {
         return bonusAmount;
     }
 
-    public void setBonusAmount(BigDecimal bonusAmount) {
+    public void setBonusAmount(Double bonusAmount) {
         this.bonusAmount = bonusAmount;
     }
 
-    public ResFeeRecordV2 withDebtAmount(BigDecimal debtAmount) {
+    public ResFeeRecordV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -1140,15 +1139,15 @@ public class ResFeeRecordV2  {
      * |参数名称：欠费金额。| |参数约束及描述： 欠费金额。|
      * @return debtAmount
      */
-    public BigDecimal getDebtAmount() {
+    public Double getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(BigDecimal debtAmount) {
+    public void setDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public ResFeeRecordV2 withAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public ResFeeRecordV2 withAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
         return this;
     }
@@ -1160,11 +1159,11 @@ public class ResFeeRecordV2  {
      * |参数名称：欠费核销金额。| |参数约束及描述： 欠费核销金额。|
      * @return adjustmentAmount
      */
-    public BigDecimal getAdjustmentAmount() {
+    public Double getAdjustmentAmount() {
         return adjustmentAmount;
     }
 
-    public void setAdjustmentAmount(BigDecimal adjustmentAmount) {
+    public void setAdjustmentAmount(Double adjustmentAmount) {
         this.adjustmentAmount = adjustmentAmount;
     }
 

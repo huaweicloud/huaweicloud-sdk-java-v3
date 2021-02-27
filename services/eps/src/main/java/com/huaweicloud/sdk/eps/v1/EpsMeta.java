@@ -226,39 +226,6 @@ public class EpsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> modifyEnterpriseProject = genFormodifyEnterpriseProject();
-
-    private static HttpRequestDef<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> genFormodifyEnterpriseProject() {
-        // basic
-        HttpRequestDef.Builder<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyEnterpriseProjectRequest.class, ModifyEnterpriseProjectResponse.class)
-                .withName("ModifyEnterpriseProject")
-                .withUri("/v1.0/enterprise-projects/{enterprise_project_id}")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("enterprise_project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ModifyEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
-                req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            EnterpriseProject.class,
-            f -> f.withMarshaller(ModifyEnterpriseProjectRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion = genForshowApiVersion();
 
     private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
@@ -350,6 +317,39 @@ public class EpsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ResqEpResouce.class,
             f -> f.withMarshaller(ShowResourceBindEnterpriseProjectRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> updateEnterpriseProject = genForupdateEnterpriseProject();
+
+    private static HttpRequestDef<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> genForupdateEnterpriseProject() {
+        // basic
+        HttpRequestDef.Builder<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEnterpriseProjectRequest.class, UpdateEnterpriseProjectResponse.class)
+                .withName("UpdateEnterpriseProject")
+                .withUri("/v1.0/enterprise-projects/{enterprise_project_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateEnterpriseProjectRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            EnterpriseProject.class,
+            f -> f.withMarshaller(UpdateEnterpriseProjectRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

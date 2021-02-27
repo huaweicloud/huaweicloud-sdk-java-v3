@@ -152,28 +152,6 @@ public class EpsAsyncClient {
     }
 
     /**
-     * 修改企业项目
-     * 修改企业项目。当前仅支持修改名称和描述。
-     *
-     * @param ModifyEnterpriseProjectRequest 请求对象
-     * @return CompletableFuture<ModifyEnterpriseProjectResponse>
-     */
-    public CompletableFuture<ModifyEnterpriseProjectResponse> modifyEnterpriseProjectAsync(ModifyEnterpriseProjectRequest request) {
-        return hcClient.asyncInvokeHttp(request, EpsMeta.modifyEnterpriseProject);
-    }
-
-    /**
-     * 修改企业项目
-     * 修改企业项目。当前仅支持修改名称和描述。
-     *
-     * @param ModifyEnterpriseProjectRequest 请求对象
-     * @return AsyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse>
-     */
-    public AsyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse> modifyEnterpriseProjectAsyncInvoker(ModifyEnterpriseProjectRequest request) {
-        return new AsyncInvoker<ModifyEnterpriseProjectRequest, ModifyEnterpriseProjectResponse>(request, EpsMeta.modifyEnterpriseProject, hcClient);
-    }
-
-    /**
      * 查询API版本号详情
      * 查询指定的企业项目API版本号详情
      *
@@ -259,6 +237,28 @@ public class EpsAsyncClient {
      */
     public AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsyncInvoker(ShowResourceBindEnterpriseProjectRequest request) {
         return new AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>(request, EpsMeta.showResourceBindEnterpriseProject, hcClient);
+    }
+
+    /**
+     * 修改企业项目
+     * 修改企业项目。当前仅支持修改名称和描述。
+     *
+     * @param UpdateEnterpriseProjectRequest 请求对象
+     * @return CompletableFuture<UpdateEnterpriseProjectResponse>
+     */
+    public CompletableFuture<UpdateEnterpriseProjectResponse> updateEnterpriseProjectAsync(UpdateEnterpriseProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EpsMeta.updateEnterpriseProject);
+    }
+
+    /**
+     * 修改企业项目
+     * 修改企业项目。当前仅支持修改名称和描述。
+     *
+     * @param UpdateEnterpriseProjectRequest 请求对象
+     * @return AsyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse>
+     */
+    public AsyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse> updateEnterpriseProjectAsyncInvoker(UpdateEnterpriseProjectRequest request) {
+        return new AsyncInvoker<UpdateEnterpriseProjectRequest, UpdateEnterpriseProjectResponse>(request, EpsMeta.updateEnterpriseProject, hcClient);
     }
 
 }

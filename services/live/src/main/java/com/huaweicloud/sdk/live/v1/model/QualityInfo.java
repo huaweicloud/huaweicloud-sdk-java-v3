@@ -313,7 +313,7 @@ public class QualityInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_frame_rate")
     
-    private Integer videoFrameRate;
+    private Integer videoFrameRate = 0;
     /**
      * 转码输出支持的协议类型。当前只支持RTMP和HLS，且模板组里不同模板的输出协议类型必须相同。 - RTMP - HLS - DASH  默认为RTMP。 
      */
@@ -409,13 +409,13 @@ public class QualityInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="iFrameInterval")
     
-    private Integer iFrameInterval;
+    private Integer iFrameInterval = 0;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="gop")
     
-    private Integer gop;
+    private Integer gop = 0;
 
     public QualityInfo withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -527,6 +527,8 @@ public class QualityInfo  {
 
     /**
      * 视频宽度（单位：像素） - H264   取值范围：32-3840，必须为2的倍数 。 - H265   取值范围：320-3840 ，必须为4的倍数。 
+     * minimum: 32
+     * maximum: 3840
      * @return width
      */
     public Integer getWidth() {
@@ -547,6 +549,8 @@ public class QualityInfo  {
 
     /**
      * 视频高度（单位：像素） - H264   取值范围：32-2160，必须为2的倍数。 - H265   取值范围：240-2160，必须为4的倍数。 
+     * minimum: 32
+     * maximum: 3840
      * @return height
      */
     public Integer getHeight() {
@@ -567,6 +571,8 @@ public class QualityInfo  {
 
     /**
      * 转码视频的码率（单位：Kbps）。 取值范围：40-30000。 
+     * minimum: 40
+     * maximum: 30000
      * @return bitrate
      */
     public Integer getBitrate() {
@@ -587,6 +593,8 @@ public class QualityInfo  {
 
     /**
      * 转码视频帧率（单位：fps）。 取值范围：0-30，0表示保持帧率不变。 
+     * minimum: 0
+     * maximum: 30
      * @return videoFrameRate
      */
     public Integer getVideoFrameRate() {
@@ -627,6 +635,8 @@ public class QualityInfo  {
 
     /**
      * I帧间隔（单位：帧）。  取值范围：0-500。  默认为25。 
+     * minimum: 0
+     * maximum: 500
      * @return iFrameInterval
      */
     public Integer getIFrameInterval() {
@@ -647,6 +657,8 @@ public class QualityInfo  {
 
     /**
      * 按时间设置I帧间隔，与“iFrameInterval”选择一个设置即可。  取值范围：[0,10]  默认值：4 
+     * minimum: 0
+     * maximum: 10
      * @return gop
      */
     public Integer getGop() {

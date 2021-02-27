@@ -38,7 +38,7 @@ public class LimitValue  {
 
 
     /**
-     * |参数名称：属性值1| |参数约束及描述：属性值1|
+     * 属性值1。
      * @return value1
      */
     public String getValue1() {
@@ -58,7 +58,7 @@ public class LimitValue  {
 
 
     /**
-     * |参数名称：属性值2| |参数约束及描述：属性值2|
+     * 属性值2。
      * @return value2
      */
     public String getValue2() {

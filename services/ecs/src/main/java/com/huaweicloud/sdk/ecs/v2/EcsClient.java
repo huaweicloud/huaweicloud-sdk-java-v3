@@ -480,6 +480,28 @@ public class EcsClient {
     }
 
     /**
+     * 查询云服务器组列表
+     * 查询弹性云服务器组。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ListServerGroupsRequest 请求对象
+     * @return ListServerGroupsResponse
+     */
+    public ListServerGroupsResponse listServerGroups(ListServerGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listServerGroups);
+    }
+
+    /**
+     * 查询云服务器组列表
+     * 查询弹性云服务器组。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ListServerGroupsRequest 请求对象
+     * @return SyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse>
+     */
+    public SyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroupsInvoker(ListServerGroupsRequest request) {
+        return new SyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse>(request, EcsMeta.listServerGroups, hcClient);
+    }
+
+    /**
      * 查询云服务器网卡信息
      * 查询云服务器网卡信息。
      *
@@ -917,6 +939,28 @@ public class EcsClient {
      */
     public SyncInvoker<ShowServerRequest, ShowServerResponse> showServerInvoker(ShowServerRequest request) {
         return new SyncInvoker<ShowServerRequest, ShowServerResponse>(request, EcsMeta.showServer, hcClient);
+    }
+
+    /**
+     * 查询云服务器组详情
+     * 查询弹性云服务器组详情。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ShowServerGroupRequest 请求对象
+     * @return ShowServerGroupResponse
+     */
+    public ShowServerGroupResponse showServerGroup(ShowServerGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.showServerGroup);
+    }
+
+    /**
+     * 查询云服务器组详情
+     * 查询弹性云服务器组详情。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ShowServerGroupRequest 请求对象
+     * @return SyncInvoker<ShowServerGroupRequest, ShowServerGroupResponse>
+     */
+    public SyncInvoker<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroupInvoker(ShowServerGroupRequest request) {
+        return new SyncInvoker<ShowServerGroupRequest, ShowServerGroupResponse>(request, EcsMeta.showServerGroup, hcClient);
     }
 
     /**

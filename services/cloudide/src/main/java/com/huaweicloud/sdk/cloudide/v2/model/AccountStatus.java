@@ -70,7 +70,7 @@ public class AccountStatus  {
 
 
     /**
-     * 账号所属租户是否开通服务
+     * 帐号所属租户是否开通服务
      * @return curOrgOpen
      */
     public Boolean getCurOrgOpen() {

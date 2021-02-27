@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.InstanceRequestTags;
+import com.huaweicloud.sdk.rds.v3.model.TagWithKeyValue;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -30,7 +30,7 @@ public class BatchTagActionRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<InstanceRequestTags> tags = new ArrayList<>();
+    private List<TagWithKeyValue> tags = new ArrayList<>();
     
     public BatchTagActionRequestBody withAction(String action) {
         this.action = action;
@@ -52,18 +52,18 @@ public class BatchTagActionRequestBody  {
         this.action = action;
     }
 
-    public BatchTagActionRequestBody withTags(List<InstanceRequestTags> tags) {
+    public BatchTagActionRequestBody withTags(List<TagWithKeyValue> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public BatchTagActionRequestBody addTagsItem(InstanceRequestTags tagsItem) {
+    public BatchTagActionRequestBody addTagsItem(TagWithKeyValue tagsItem) {
         this.tags.add(tagsItem);
         return this;
     }
 
-    public BatchTagActionRequestBody withTags(Consumer<List<InstanceRequestTags>> tagsSetter) {
+    public BatchTagActionRequestBody withTags(Consumer<List<TagWithKeyValue>> tagsSetter) {
         if(this.tags == null ){
             this.tags = new ArrayList<>();
         }
@@ -75,11 +75,11 @@ public class BatchTagActionRequestBody  {
      * 标签列表。单个实例总标签数上限10个。
      * @return tags
      */
-    public List<InstanceRequestTags> getTags() {
+    public List<TagWithKeyValue> getTags() {
         return tags;
     }
 
-    public void setTags(List<InstanceRequestTags> tags) {
+    public void setTags(List<TagWithKeyValue> tags) {
         this.tags = tags;
     }
     @Override

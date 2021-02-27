@@ -52,7 +52,7 @@ public class EmChildNodeV2  {
 
 
     /**
-     * |参数名称：实体关系ID| |参数约束及描述：实体关系ID|
+     * 实体关系ID。
      * @return relationId
      */
     public String getRelationId() {
@@ -72,7 +72,7 @@ public class EmChildNodeV2  {
 
 
     /**
-     * |参数名称：节点ID| |参数约束及描述：节点ID|
+     * 节点ID。
      * @return id
      */
     public String getId() {
@@ -92,7 +92,7 @@ public class EmChildNodeV2  {
 
 
     /**
-     * |参数名称：节点名称| |参数约束及描述：节点名称|
+     * 节点名称。
      * @return name
      */
     public String getName() {
@@ -126,7 +126,7 @@ public class EmChildNodeV2  {
     }
 
     /**
-     * |参数名称：子节点列表| |参数约束以及描述：子节点列表|
+     * 子节点列表。
      * @return childNodes
      */
     public List<EmChildNodeV2> getChildNodes() {

@@ -304,6 +304,50 @@ public class DdsClient {
     }
 
     /**
+     * 获取错误日志下载链接
+     * 获取错误日志下载链接。
+     *
+     * @param DownloadErrorlogRequest 请求对象
+     * @return DownloadErrorlogResponse
+     */
+    public DownloadErrorlogResponse downloadErrorlog(DownloadErrorlogRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.downloadErrorlog);
+    }
+
+    /**
+     * 获取错误日志下载链接
+     * 获取错误日志下载链接。
+     *
+     * @param DownloadErrorlogRequest 请求对象
+     * @return SyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse>
+     */
+    public SyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse> downloadErrorlogInvoker(DownloadErrorlogRequest request) {
+        return new SyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse>(request, DdsMeta.downloadErrorlog, hcClient);
+    }
+
+    /**
+     * 获取慢日志下载链接
+     * 获取慢日志下载链接。
+     *
+     * @param DownloadSlowlogRequest 请求对象
+     * @return DownloadSlowlogResponse
+     */
+    public DownloadSlowlogResponse downloadSlowlog(DownloadSlowlogRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.downloadSlowlog);
+    }
+
+    /**
+     * 获取慢日志下载链接
+     * 获取慢日志下载链接。
+     *
+     * @param DownloadSlowlogRequest 请求对象
+     * @return SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>
+     */
+    public SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse> downloadSlowlogInvoker(DownloadSlowlogRequest request) {
+        return new SyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>(request, DdsMeta.downloadSlowlog, hcClient);
+    }
+
+    /**
      * 生成审计日志下载链接
      * 生成审计日志下载链接。
      *

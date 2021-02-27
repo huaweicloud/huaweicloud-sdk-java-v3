@@ -28,12 +28,6 @@ public class CreateScoreV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
-    private Integer type;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="incident_satisfaction_list")
     
     private List<IncidentSatisfactionV2Do> incidentSatisfactionList = new ArrayList<>();
@@ -62,28 +56,6 @@ public class CreateScoreV2Req  {
 
     public void setJudgement(String judgement) {
         this.judgement = judgement;
-    }
-
-    public CreateScoreV2Req withType(Integer type) {
-        this.type = type;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 类型
-     * minimum: 0
-     * maximum: 1
-     * @return type
-     */
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
     }
 
     public CreateScoreV2Req withIncidentSatisfactionList(List<IncidentSatisfactionV2Do> incidentSatisfactionList) {
@@ -146,20 +118,18 @@ public class CreateScoreV2Req  {
         }
         CreateScoreV2Req createScoreV2Req = (CreateScoreV2Req) o;
         return Objects.equals(this.judgement, createScoreV2Req.judgement) &&
-            Objects.equals(this.type, createScoreV2Req.type) &&
             Objects.equals(this.incidentSatisfactionList, createScoreV2Req.incidentSatisfactionList) &&
             Objects.equals(this.groupId, createScoreV2Req.groupId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(judgement, type, incidentSatisfactionList, groupId);
+        return Objects.hash(judgement, incidentSatisfactionList, groupId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateScoreV2Req {\n");
         sb.append("    judgement: ").append(toIndentedString(judgement)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    incidentSatisfactionList: ").append(toIndentedString(incidentSatisfactionList)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");

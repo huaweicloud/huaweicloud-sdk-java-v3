@@ -27,34 +27,28 @@ public class PauseInfo  {
     
     private String jobId;
     /**
-     * 暂停类型
+     * 暂停类型，target:停回放,all:停日志抓取和回放
      */
     public static final class PauseModeEnum {
 
         
         /**
-         * Enum SOURCE_ for value: "source:停日志抓取"
+         * Enum TARGET for value: "target"
          */
-        public static final PauseModeEnum SOURCE_ = new PauseModeEnum("source:停日志抓取");
+        public static final PauseModeEnum TARGET = new PauseModeEnum("target");
         
         /**
-         * Enum TARGET_ for value: "target:停回放"
+         * Enum ALL for value: "all"
          */
-        public static final PauseModeEnum TARGET_ = new PauseModeEnum("target:停回放");
-        
-        /**
-         * Enum ALL_ for value: "all:停日志抓取和回放"
-         */
-        public static final PauseModeEnum ALL_ = new PauseModeEnum("all:停日志抓取和回放");
+        public static final PauseModeEnum ALL = new PauseModeEnum("all");
         
 
         private static final Map<String, PauseModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PauseModeEnum> createStaticFields() {
             Map<String, PauseModeEnum> map = new HashMap<>();
-            map.put("source:停日志抓取", SOURCE_);
-            map.put("target:停回放", TARGET_);
-            map.put("all:停日志抓取和回放", ALL_);
+            map.put("target", TARGET);
+            map.put("all", ALL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -146,7 +140,7 @@ public class PauseInfo  {
 
 
     /**
-     * 暂停类型
+     * 暂停类型，target:停回放,all:停日志抓取和回放
      * @return pauseMode
      */
     public PauseModeEnum getPauseMode() {

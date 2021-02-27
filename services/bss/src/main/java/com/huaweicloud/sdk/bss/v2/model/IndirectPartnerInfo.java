@@ -62,7 +62,7 @@ public class IndirectPartnerInfo  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：二级经销商ID|
+     * 精英服务商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -82,7 +82,7 @@ public class IndirectPartnerInfo  {
 
 
     /**
-     * |参数名称：手机号码| |参数约束及描述：手机号码|
+     * 精英服务商的手机号码。
      * @return mobilePhone
      */
     public String getMobilePhone() {
@@ -102,7 +102,7 @@ public class IndirectPartnerInfo  {
 
 
     /**
-     * |参数名称：邮箱| |参数约束及描述：邮箱|
+     * 精英服务商的邮箱。
      * @return email
      */
     public String getEmail() {
@@ -122,7 +122,7 @@ public class IndirectPartnerInfo  {
 
 
     /**
-     * |参数名称：二级经销商的账户名| |参数约束及描述：二级经销商的账户名|
+     * 精英服务商的账户名。
      * @return accountName
      */
     public String getAccountName() {
@@ -142,7 +142,7 @@ public class IndirectPartnerInfo  {
 
 
     /**
-     * |参数名称：二级经销商名称| |参数约束及描述：二级经销商名称|
+     * 精英服务商的名称。
      * @return name
      */
     public String getName() {
@@ -162,7 +162,7 @@ public class IndirectPartnerInfo  {
 
 
     /**
-     * |参数名称：关联时间，UTC时间（包括时区），比如2016-03-28T00:00:00Z| |参数约束及描述：关联时间，UTC时间（包括时区），比如2016-03-28T00:00:00Z|
+     * 精英服务商关联华为云伙伴能力中心的时间。 UTC时间（包括时区），比如2016-03-28T00:00:00Z
      * @return associatedOn
      */
     public String getAssociatedOn() {

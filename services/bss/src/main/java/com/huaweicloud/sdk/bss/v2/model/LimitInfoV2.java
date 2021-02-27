@@ -68,7 +68,7 @@ public class LimitInfoV2  {
 
 
     /**
-     * |参数名称：使用限制ID，主键。| |参数约束及描述：使用限制ID，主键。|
+     * 使用限制ID，主键。
      * @return useLimitiInfoId
      */
     public String getUseLimitiInfoId() {
@@ -88,7 +88,7 @@ public class LimitInfoV2  {
 
 
     /**
-     * |参数名称：折扣限制，key的取值请参考表 ICouponUseLimitInfo的limit_key要求。| |参数约束及描述：折扣限制，key的取值请参考表 ICouponUseLimitInfo的limit_key要求。|
+     * 折扣限制，key的取值请参考表4。
      * @return limitKey
      */
     public String getLimitKey() {
@@ -108,7 +108,7 @@ public class LimitInfoV2  {
 
 
     /**
-     * |参数名称：value1。| |参数约束及描述：value1。|
+     * value1。
      * @return value1
      */
     public String getValue1() {
@@ -128,7 +128,7 @@ public class LimitInfoV2  {
 
 
     /**
-     * |参数名称：value2。| |参数约束及描述：value2。|
+     * value2。
      * @return value2
      */
     public String getValue2() {
@@ -148,7 +148,7 @@ public class LimitInfoV2  {
 
 
     /**
-     * |参数名称：value单位。| |参数约束及描述：value单位。|
+     * value单位。
      * @return valueUnit
      */
     public String getValueUnit() {
@@ -168,7 +168,7 @@ public class LimitInfoV2  {
 
 
     /**
-     * |参数名称：限制类型。| |参数约束及描述：限制类型。|
+     * 限制类型。
      * @return limitType
      */
     public String getLimitType() {
@@ -188,7 +188,7 @@ public class LimitInfoV2  {
 
 
     /**
-     * |参数名称：促销计划ID。| |参数约束及描述：促销计划ID。|
+     * 促销计划ID。
      * @return promotionPlanId
      */
     public String getPromotionPlanId() {

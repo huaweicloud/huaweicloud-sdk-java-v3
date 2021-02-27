@@ -43,7 +43,7 @@ public class ListEnterpriseSubCustomersResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：结果集数量，成功才有。| |参数的约束及描述：结果集数量，成功才有。|
+     * 结果集数量，成功才有。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ListEnterpriseSubCustomersResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：客户信息列表，成功才有。| |参数约束以及描述：客户信息列表，成功才有。|
+     * 客户信息列表，成功才有。 具体请参见表2。
      * @return subCustomerInfos
      */
     public List<SubCustomerInfoV2> getSubCustomerInfos() {

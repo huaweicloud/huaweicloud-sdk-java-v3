@@ -59,7 +59,7 @@ public class CreateSubCustomerReqV2  {
 
 
     /**
-     * |参数名称：子账号挂载的组织单元，填写组织单元的Party ID，通过查询企业组织结构接口的响应获得。| |参数约束及描述：子账号挂载的组织单元，填写组织单元的Party ID，通过查询企业组织结构接口的响应获得。|
+     * 企业子账号挂载的组织单元。 组织单元的Party ID，通过查询企业组织结构接口的响应获得。
      * @return partyId
      */
     public String getPartyId() {
@@ -79,7 +79,7 @@ public class CreateSubCustomerReqV2  {
 
 
     /**
-     * |参数名称：企业子账号的显示名称不限制特殊字符。| |参数约束及描述：企业子账号的显示名称不限制特殊字符。|
+     * 企业子账号的显示名称，不限制特殊字符。
      * @return displayName
      */
     public String getDisplayName() {
@@ -99,7 +99,7 @@ public class CreateSubCustomerReqV2  {
 
 
     /**
-     * |参数名称：子账号关联类型：1：同一法人。注：关联类型目前只能是同一法人。| |参数的约束及描述：子账号关联类型：1：同一法人。注：关联类型目前只能是同一法人。|
+     * 子账号关联类型：1：同一法人。 关联类型目前只能是同一法人。
      * minimum: -1
      * maximum: 1
      * @return subCustomerAssociationType
@@ -135,7 +135,7 @@ public class CreateSubCustomerReqV2  {
     }
 
     /**
-     * |参数名称：申请的权限列表。支持的权限项参见表 权限项定义列表| |参数约束以及描述：申请的权限列表。支持的权限项参见表 权限项定义列表|
+     * 申请的权限列表。 支持的权限项参见表2。
      * @return permissionIds
      */
     public List<String> getPermissionIds() {

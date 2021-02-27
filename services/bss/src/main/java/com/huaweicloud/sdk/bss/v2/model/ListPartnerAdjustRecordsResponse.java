@@ -43,7 +43,7 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：返回总条数。| |参数的约束及描述：返回总条数。|
+     * 返回总条数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：调账记录列表。具体请参见表 AdjustRecordV2。| |参数约束以及描述：调账记录列表。具体请参见表 AdjustRecordV2。|
+     * 调账记录列表。 具体请参见表2。
      * @return records
      */
     public List<AdjustRecordV2> getRecords() {

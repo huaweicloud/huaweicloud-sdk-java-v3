@@ -32,7 +32,7 @@ public class SkuItem  {
 
 
     /**
-     * |参数名称：产品ID| |参数约束及描述：产品ID|
+     * 库存产品的ID。
      * @return productId
      */
     public String getProductId() {

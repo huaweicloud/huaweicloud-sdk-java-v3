@@ -50,7 +50,7 @@ public class UsageType  {
 
 
     /**
-     * |参数名称：用量类型编码如：duration| |参数约束及描述：用量类型编码如：duration|
+     * 使用量类型编码。如：reqNumber。
      * @return code
      */
     public String getCode() {
@@ -70,7 +70,7 @@ public class UsageType  {
 
 
     /**
-     * |参数名称：用量类型名称| |参数约束及描述：用量类型名称|
+     * 使用量类型名称。如：调用次数。
      * @return name
      */
     public String getName() {
@@ -90,7 +90,7 @@ public class UsageType  {
 
 
     /**
-     * |参数名称：资源类型编码| |参数约束及描述：资源类型编码|
+     * 资源类型编码。例如ECS的VM为“hws.resource.type.vm”。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -110,7 +110,7 @@ public class UsageType  {
 
 
     /**
-     * |参数名称：服务类型编码| |参数约束及描述：服务类型编码|
+     * 云服务类型编码。例如ECS的云服务类型编码为“hws.service.type.ec2”。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {

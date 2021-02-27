@@ -136,7 +136,7 @@ public class QueryUserDetailResp  {
 
 
     /**
-     * 是否迁移
+     * 是否支持迁移
      * @return isTransfer
      */
     public Boolean getIsTransfer() {
@@ -224,7 +224,7 @@ public class QueryUserDetailResp  {
     }
 
     /**
-     * 拥有的角色
+     * 账号拥有的角色
      * @return roles
      */
     public List<String> getRoles() {

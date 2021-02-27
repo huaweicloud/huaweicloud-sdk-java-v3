@@ -482,6 +482,28 @@ public class EcsAsyncClient {
     }
 
     /**
+     * 查询云服务器组列表
+     * 查询弹性云服务器组。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ListServerGroupsRequest 请求对象
+     * @return CompletableFuture<ListServerGroupsResponse>
+     */
+    public CompletableFuture<ListServerGroupsResponse> listServerGroupsAsync(ListServerGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.listServerGroups);
+    }
+
+    /**
+     * 查询云服务器组列表
+     * 查询弹性云服务器组。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ListServerGroupsRequest 请求对象
+     * @return AsyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse>
+     */
+    public AsyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroupsAsyncInvoker(ListServerGroupsRequest request) {
+        return new AsyncInvoker<ListServerGroupsRequest, ListServerGroupsResponse>(request, EcsMeta.listServerGroups, hcClient);
+    }
+
+    /**
      * 查询云服务器网卡信息
      * 查询云服务器网卡信息。
      *
@@ -919,6 +941,28 @@ public class EcsAsyncClient {
      */
     public AsyncInvoker<ShowServerRequest, ShowServerResponse> showServerAsyncInvoker(ShowServerRequest request) {
         return new AsyncInvoker<ShowServerRequest, ShowServerResponse>(request, EcsMeta.showServer, hcClient);
+    }
+
+    /**
+     * 查询云服务器组详情
+     * 查询弹性云服务器组详情。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ShowServerGroupRequest 请求对象
+     * @return CompletableFuture<ShowServerGroupResponse>
+     */
+    public CompletableFuture<ShowServerGroupResponse> showServerGroupAsync(ShowServerGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.showServerGroup);
+    }
+
+    /**
+     * 查询云服务器组详情
+     * 查询弹性云服务器组详情。  与原生的创建云服务器组接口不同之处在于该接口支持企业项目细粒度权限的校验。
+     *
+     * @param ShowServerGroupRequest 请求对象
+     * @return AsyncInvoker<ShowServerGroupRequest, ShowServerGroupResponse>
+     */
+    public AsyncInvoker<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroupAsyncInvoker(ShowServerGroupRequest request) {
+        return new AsyncInvoker<ShowServerGroupRequest, ShowServerGroupResponse>(request, EcsMeta.showServerGroup, hcClient);
     }
 
     /**

@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.bss.v2.model.PeriodProductOfficialRatingResult;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -25,7 +24,7 @@ public class OfficialWebsiteRatingResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="official_website_amount")
     
-    private BigDecimal officialWebsiteAmount = null;
+    private Double officialWebsiteAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,7 +38,7 @@ public class OfficialWebsiteRatingResult  {
     
     private List<PeriodProductOfficialRatingResult> productRatingResults = null;
     
-    public OfficialWebsiteRatingResult withOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public OfficialWebsiteRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
@@ -48,14 +47,14 @@ public class OfficialWebsiteRatingResult  {
 
 
     /**
-     * |参数名称：官网价| |参数约束及描述：官网价|
+     * 包年/包月产品的官网价。
      * @return officialWebsiteAmount
      */
-    public BigDecimal getOfficialWebsiteAmount() {
+    public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
 
-    public void setOfficialWebsiteAmount(BigDecimal officialWebsiteAmount) {
+    public void setOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
@@ -68,7 +67,7 @@ public class OfficialWebsiteRatingResult  {
 
 
     /**
-     * |参数名称：度量单位标识1：元|
+     * 价格度量单位标识。 1：元
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -102,7 +101,7 @@ public class OfficialWebsiteRatingResult  {
     }
 
     /**
-     * |参数名称：产品询价结果| |参数的约束及描述：产品询价结果|
+     * 产品询价结果，具体参见表5。
      * @return productRatingResults
      */
     public List<PeriodProductOfficialRatingResult> getProductRatingResults() {

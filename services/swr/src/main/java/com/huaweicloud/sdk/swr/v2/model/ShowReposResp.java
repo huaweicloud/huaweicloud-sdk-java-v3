@@ -41,7 +41,7 @@ public class ShowReposResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Integer size;
+    private Long size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,13 +53,13 @@ public class ShowReposResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="num_images")
     
-    private Integer numImages;
+    private Long numImages;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="num_download")
     
-    private Integer numDownload;
+    private Long numDownload;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -125,7 +125,7 @@ public class ShowReposResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="total_range")
     
-    private Integer totalRange;
+    private Long totalRange;
 
     public ShowReposResp withName(String name) {
         this.name = name;
@@ -187,7 +187,7 @@ public class ShowReposResp  {
         this.description = description;
     }
 
-    public ShowReposResp withSize(Integer size) {
+    public ShowReposResp withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -199,11 +199,11 @@ public class ShowReposResp  {
      * 仓库大小 
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
@@ -227,7 +227,7 @@ public class ShowReposResp  {
         this.isPublic = isPublic;
     }
 
-    public ShowReposResp withNumImages(Integer numImages) {
+    public ShowReposResp withNumImages(Long numImages) {
         this.numImages = numImages;
         return this;
     }
@@ -239,15 +239,15 @@ public class ShowReposResp  {
      * 仓库中镜像个数，0 ~ 9223372036854775807
      * @return numImages
      */
-    public Integer getNumImages() {
+    public Long getNumImages() {
         return numImages;
     }
 
-    public void setNumImages(Integer numImages) {
+    public void setNumImages(Long numImages) {
         this.numImages = numImages;
     }
 
-    public ShowReposResp withNumDownload(Integer numDownload) {
+    public ShowReposResp withNumDownload(Long numDownload) {
         this.numDownload = numDownload;
         return this;
     }
@@ -259,11 +259,11 @@ public class ShowReposResp  {
      * 仓库下载次数
      * @return numDownload
      */
-    public Integer getNumDownload() {
+    public Long getNumDownload() {
         return numDownload;
     }
 
-    public void setNumDownload(Integer numDownload) {
+    public void setNumDownload(Long numDownload) {
         this.numDownload = numDownload;
     }
 
@@ -478,7 +478,7 @@ public class ShowReposResp  {
         this.status = status;
     }
 
-    public ShowReposResp withTotalRange(Integer totalRange) {
+    public ShowReposResp withTotalRange(Long totalRange) {
         this.totalRange = totalRange;
         return this;
     }
@@ -490,11 +490,11 @@ public class ShowReposResp  {
      * 
      * @return totalRange
      */
-    public Integer getTotalRange() {
+    public Long getTotalRange() {
         return totalRange;
     }
 
-    public void setTotalRange(Integer totalRange) {
+    public void setTotalRange(Long totalRange) {
         this.totalRange = totalRange;
     }
     @Override

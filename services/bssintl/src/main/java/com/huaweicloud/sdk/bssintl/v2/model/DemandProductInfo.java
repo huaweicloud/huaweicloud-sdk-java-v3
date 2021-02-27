@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -76,7 +75,7 @@ public class DemandProductInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="usage_value")
     
-    private BigDecimal usageValue = null;
+    private Double usageValue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -272,7 +271,7 @@ public class DemandProductInfo  {
         this.usageFactor = usageFactor;
     }
 
-    public DemandProductInfo withUsageValue(BigDecimal usageValue) {
+    public DemandProductInfo withUsageValue(Double usageValue) {
         this.usageValue = usageValue;
         return this;
     }
@@ -284,11 +283,11 @@ public class DemandProductInfo  {
      * |参数名称：使用量值| |参数约束及描述：例如按小时询价，使用量值为1，使用量单位为小时|
      * @return usageValue
      */
-    public BigDecimal getUsageValue() {
+    public Double getUsageValue() {
         return usageValue;
     }
 
-    public void setUsageValue(BigDecimal usageValue) {
+    public void setUsageValue(Double usageValue) {
         this.usageValue = usageValue;
     }
 

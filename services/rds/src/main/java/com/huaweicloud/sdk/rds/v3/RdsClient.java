@@ -172,6 +172,28 @@ public class RdsClient {
     }
 
     /**
+     * 创建手动备份
+     * 创建手动备份。
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return CreateManualBackupResponse
+     */
+    public CreateManualBackupResponse createManualBackup(CreateManualBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createManualBackup);
+    }
+
+    /**
+     * 创建手动备份
+     * 创建手动备份。
+     *
+     * @param CreateManualBackupRequest 请求对象
+     * @return SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
+     */
+    public SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupInvoker(CreateManualBackupRequest request) {
+        return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request, RdsMeta.createManualBackup, hcClient);
+    }
+
+    /**
      * 删除参数模板
      * 删除参数模板。
      *
@@ -235,28 +257,6 @@ public class RdsClient {
      */
     public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(DeleteManualBackupRequest request) {
         return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request, RdsMeta.deleteManualBackup, hcClient);
-    }
-
-    /**
-     * 创建手动备份
-     * 创建手动备份。
-     *
-     * @param DoManualBackupRequest 请求对象
-     * @return DoManualBackupResponse
-     */
-    public DoManualBackupResponse doManualBackup(DoManualBackupRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.doManualBackup);
-    }
-
-    /**
-     * 创建手动备份
-     * 创建手动备份。
-     *
-     * @param DoManualBackupRequest 请求对象
-     * @return SyncInvoker<DoManualBackupRequest, DoManualBackupResponse>
-     */
-    public SyncInvoker<DoManualBackupRequest, DoManualBackupResponse> doManualBackupInvoker(DoManualBackupRequest request) {
-        return new SyncInvoker<DoManualBackupRequest, DoManualBackupResponse>(request, RdsMeta.doManualBackup, hcClient);
     }
 
     /**
@@ -722,50 +722,6 @@ public class RdsClient {
     }
 
     /**
-     * 修改参数模板参数
-     * 修改参数模板参数。
-     *
-     * @param ModifyConfigurationRequest 请求对象
-     * @return ModifyConfigurationResponse
-     */
-    public ModifyConfigurationResponse modifyConfiguration(ModifyConfigurationRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.modifyConfiguration);
-    }
-
-    /**
-     * 修改参数模板参数
-     * 修改参数模板参数。
-     *
-     * @param ModifyConfigurationRequest 请求对象
-     * @return SyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse>
-     */
-    public SyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse> modifyConfigurationInvoker(ModifyConfigurationRequest request) {
-        return new SyncInvoker<ModifyConfigurationRequest, ModifyConfigurationResponse>(request, RdsMeta.modifyConfiguration, hcClient);
-    }
-
-    /**
-     * 修改指定实例的参数
-     * 修改指定实例的参数。
-     *
-     * @param ModifyInstanceConfigurationRequest 请求对象
-     * @return ModifyInstanceConfigurationResponse
-     */
-    public ModifyInstanceConfigurationResponse modifyInstanceConfiguration(ModifyInstanceConfigurationRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.modifyInstanceConfiguration);
-    }
-
-    /**
-     * 修改指定实例的参数
-     * 修改指定实例的参数。
-     *
-     * @param ModifyInstanceConfigurationRequest 请求对象
-     * @return SyncInvoker<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse>
-     */
-    public SyncInvoker<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse> modifyInstanceConfigurationInvoker(ModifyInstanceConfigurationRequest request) {
-        return new SyncInvoker<ModifyInstanceConfigurationRequest, ModifyInstanceConfigurationResponse>(request, RdsMeta.modifyInstanceConfiguration, hcClient);
-    }
-
-    /**
      * 重置数据库密码
      * 重置数据库密码.
      *
@@ -1140,6 +1096,28 @@ public class RdsClient {
     }
 
     /**
+     * 修改参数模板参数
+     * 修改参数模板参数。
+     *
+     * @param UpdateConfigurationRequest 请求对象
+     * @return UpdateConfigurationResponse
+     */
+    public UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateConfiguration);
+    }
+
+    /**
+     * 修改参数模板参数
+     * 修改参数模板参数。
+     *
+     * @param UpdateConfigurationRequest 请求对象
+     * @return SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>
+     */
+    public SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse> updateConfigurationInvoker(UpdateConfigurationRequest request) {
+        return new SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request, RdsMeta.updateConfiguration, hcClient);
+    }
+
+    /**
      * 修改内网地址
      * 修改内网地址
      *
@@ -1159,6 +1137,28 @@ public class RdsClient {
      */
     public SyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse> updateDataIpInvoker(UpdateDataIpRequest request) {
         return new SyncInvoker<UpdateDataIpRequest, UpdateDataIpResponse>(request, RdsMeta.updateDataIp, hcClient);
+    }
+
+    /**
+     * 修改指定实例的参数
+     * 修改指定实例的参数。
+     *
+     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @return UpdateInstanceConfigurationResponse
+     */
+    public UpdateInstanceConfigurationResponse updateInstanceConfiguration(UpdateInstanceConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateInstanceConfiguration);
+    }
+
+    /**
+     * 修改指定实例的参数
+     * 修改指定实例的参数。
+     *
+     * @param UpdateInstanceConfigurationRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
+     */
+    public SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationInvoker(UpdateInstanceConfigurationRequest request) {
+        return new SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request, RdsMeta.updateInstanceConfiguration, hcClient);
     }
 
     /**

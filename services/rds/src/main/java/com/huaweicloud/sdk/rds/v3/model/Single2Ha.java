@@ -35,6 +35,12 @@ public class Single2Ha  {
     
     private String dsspoolId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_auto_pay")
+    
+    private Boolean isAutoPay;
+
     public Single2Ha withAzCodeNewNode(String azCodeNewNode) {
         this.azCodeNewNode = azCodeNewNode;
         return this;
@@ -94,6 +100,26 @@ public class Single2Ha  {
     public void setDsspoolId(String dsspoolId) {
         this.dsspoolId = dsspoolId;
     }
+
+    public Single2Ha withIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 包周期实例单转主备时可指定，表示是否自动从客户的账户中支付。
+     * @return isAutoPay
+     */
+    public Boolean getIsAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setIsAutoPay(Boolean isAutoPay) {
+        this.isAutoPay = isAutoPay;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -105,11 +131,12 @@ public class Single2Ha  {
         Single2Ha single2Ha = (Single2Ha) o;
         return Objects.equals(this.azCodeNewNode, single2Ha.azCodeNewNode) &&
             Objects.equals(this.password, single2Ha.password) &&
-            Objects.equals(this.dsspoolId, single2Ha.dsspoolId);
+            Objects.equals(this.dsspoolId, single2Ha.dsspoolId) &&
+            Objects.equals(this.isAutoPay, single2Ha.isAutoPay);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(azCodeNewNode, password, dsspoolId);
+        return Objects.hash(azCodeNewNode, password, dsspoolId, isAutoPay);
     }
     @Override
     public String toString() {
@@ -118,6 +145,7 @@ public class Single2Ha  {
         sb.append("    azCodeNewNode: ").append(toIndentedString(azCodeNewNode)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    dsspoolId: ").append(toIndentedString(dsspoolId)).append("\n");
+        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

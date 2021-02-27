@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ public class ReclaimToPartnerAccountBalancesReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,7 +44,7 @@ public class ReclaimToPartnerAccountBalancesReq  {
 
 
     /**
-     * |参数名称：合作伙伴关联的客户的客户ID。| |参数约束及描述：合作伙伴关联的客户的客户ID。|
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -56,7 +55,7 @@ public class ReclaimToPartnerAccountBalancesReq  {
         this.customerId = customerId;
     }
 
-    public ReclaimToPartnerAccountBalancesReq withAmount(BigDecimal amount) {
+    public ReclaimToPartnerAccountBalancesReq withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -65,16 +64,16 @@ public class ReclaimToPartnerAccountBalancesReq  {
 
 
     /**
-     * |参数名称：回收金额。| |参数的约束及描述：单位为元不能为负数，精确到小数点后两位。|
+     * 回收的金额。 单位：元。取值大于0且精确到小数点后2位。
      * minimum: 0
      * maximum: 2147483647
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -87,7 +86,7 @@ public class ReclaimToPartnerAccountBalancesReq  {
 
 
     /**
-     * |参数名称：二级经销商ID。| |参数约束及描述：一级经销商回收二级经销商子客户余额时，需携带该字段。|
+     * 精英服务商ID。 华为云伙伴能力中心（一级经销商）回收精英服务商（二级经销商）的子客户账户余额时，需携带此参数；否则只能回收自己的子客户账户余额。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -19,13 +19,6 @@ public class ShowApplicationsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sp-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String spAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -35,26 +28,6 @@ public class ShowApplicationsRequest  {
     @JsonProperty(value="default_app")
     
     private Boolean defaultApp;
-
-    public ShowApplicationsRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get spAuthToken
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
 
     public ShowApplicationsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -104,19 +77,17 @@ public class ShowApplicationsRequest  {
             return false;
         }
         ShowApplicationsRequest showApplicationsRequest = (ShowApplicationsRequest) o;
-        return Objects.equals(this.spAuthToken, showApplicationsRequest.spAuthToken) &&
-            Objects.equals(this.instanceId, showApplicationsRequest.instanceId) &&
+        return Objects.equals(this.instanceId, showApplicationsRequest.instanceId) &&
             Objects.equals(this.defaultApp, showApplicationsRequest.defaultApp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, instanceId, defaultApp);
+        return Objects.hash(instanceId, defaultApp);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowApplicationsRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    defaultApp: ").append(toIndentedString(defaultApp)).append("\n");
         sb.append("}");

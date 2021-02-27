@@ -34,7 +34,7 @@ public class ReclaimIndirectPartnerAccountResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：回收流水| |参数约束及描述：回收流水|
+     * 事务流水ID，只有成功响应才会返回。
      * @return transId
      */
     public String getTransId() {

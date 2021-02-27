@@ -812,28 +812,6 @@ public class MeetingAsyncClient {
     }
 
     /**
-     * 编辑预约会议
-     * 编辑预约会议。会议开始后，不能被编辑。
-     *
-     * @param EditMeetingRequest 请求对象
-     * @return CompletableFuture<EditMeetingResponse>
-     */
-    public CompletableFuture<EditMeetingResponse> editMeetingAsync(EditMeetingRequest request) {
-        return hcClient.asyncInvokeHttp(request, MeetingMeta.editMeeting);
-    }
-
-    /**
-     * 编辑预约会议
-     * 编辑预约会议。会议开始后，不能被编辑。
-     *
-     * @param EditMeetingRequest 请求对象
-     * @return AsyncInvoker<EditMeetingRequest, EditMeetingResponse>
-     */
-    public AsyncInvoker<EditMeetingRequest, EditMeetingResponse> editMeetingAsyncInvoker(EditMeetingRequest request) {
-        return new AsyncInvoker<EditMeetingRequest, EditMeetingResponse>(request, MeetingMeta.editMeeting, hcClient);
-    }
-
-    /**
      * 举手
      * 所有来宾可以举手。来宾举手后，可以取消自己的举手。主持人可以取消所有来宾的举手。
      *
@@ -2481,6 +2459,28 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse> updateMaterialAsyncInvoker(UpdateMaterialRequest request) {
         return new AsyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse>(request, MeetingMeta.updateMaterial, hcClient);
+    }
+
+    /**
+     * 编辑预约会议
+     * 编辑预约会议。会议开始后，不能被编辑。
+     *
+     * @param UpdateMeetingRequest 请求对象
+     * @return CompletableFuture<UpdateMeetingResponse>
+     */
+    public CompletableFuture<UpdateMeetingResponse> updateMeetingAsync(UpdateMeetingRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.updateMeeting);
+    }
+
+    /**
+     * 编辑预约会议
+     * 编辑预约会议。会议开始后，不能被编辑。
+     *
+     * @param UpdateMeetingRequest 请求对象
+     * @return AsyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>
+     */
+    public AsyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse> updateMeetingAsyncInvoker(UpdateMeetingRequest request) {
+        return new AsyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>(request, MeetingMeta.updateMeeting, hcClient);
     }
 
     /**

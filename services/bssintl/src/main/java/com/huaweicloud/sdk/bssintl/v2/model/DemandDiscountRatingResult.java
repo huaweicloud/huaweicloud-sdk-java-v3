@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +33,7 @@ public class DemandDiscountRatingResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,7 +87,7 @@ public class DemandDiscountRatingResult  {
         this.discountType = discountType;
     }
 
-    public DemandDiscountRatingResult withAmount(BigDecimal amount) {
+    public DemandDiscountRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -100,11 +99,11 @@ public class DemandDiscountRatingResult  {
      * 优惠金额
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

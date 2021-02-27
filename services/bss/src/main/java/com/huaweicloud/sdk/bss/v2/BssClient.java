@@ -832,28 +832,6 @@ public class BssClient {
     }
 
     /**
-     * 查询伙伴代付订单列表
-     * 功能描述：伙伴在伙伴销售平台查询客户的代支付订单列表。
-     *
-     * @param ListPartnerPayOrdersRequest 请求对象
-     * @return ListPartnerPayOrdersResponse
-     */
-    public ListPartnerPayOrdersResponse listPartnerPayOrders(ListPartnerPayOrdersRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listPartnerPayOrders);
-    }
-
-    /**
-     * 查询伙伴代付订单列表
-     * 功能描述：伙伴在伙伴销售平台查询客户的代支付订单列表。
-     *
-     * @param ListPartnerPayOrdersRequest 请求对象
-     * @return SyncInvoker<ListPartnerPayOrdersRequest, ListPartnerPayOrdersResponse>
-     */
-    public SyncInvoker<ListPartnerPayOrdersRequest, ListPartnerPayOrdersResponse> listPartnerPayOrdersInvoker(ListPartnerPayOrdersRequest request) {
-        return new SyncInvoker<ListPartnerPayOrdersRequest, ListPartnerPayOrdersResponse>(request, BssMeta.listPartnerPayOrders, hcClient);
-    }
-
-    /**
      * 查询客户包年/包月资源列表
      * 功能描述：客户在客户自建平台查询某个或所有的包年/包月资源
      *

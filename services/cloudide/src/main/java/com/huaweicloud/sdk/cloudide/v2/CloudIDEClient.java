@@ -62,8 +62,8 @@ public class CloudIDEClient {
     }
 
     /**
-     * 查询当前账号访问权限
-     * 查询当前账号访问权限
+     * 查询当前帐号访问权限
+     * 查询当前帐号访问权限
      *
      * @param ShowAccountStatusRequest 请求对象
      * @return ShowAccountStatusResponse
@@ -73,8 +73,8 @@ public class CloudIDEClient {
     }
 
     /**
-     * 查询当前账号访问权限
-     * 查询当前账号访问权限
+     * 查询当前帐号访问权限
+     * 查询当前帐号访问权限
      *
      * @param ShowAccountStatusRequest 请求对象
      * @return SyncInvoker<ShowAccountStatusRequest, ShowAccountStatusResponse>

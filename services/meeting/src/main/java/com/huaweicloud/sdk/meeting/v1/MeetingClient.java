@@ -810,28 +810,6 @@ public class MeetingClient {
     }
 
     /**
-     * 编辑预约会议
-     * 编辑预约会议。会议开始后，不能被编辑。
-     *
-     * @param EditMeetingRequest 请求对象
-     * @return EditMeetingResponse
-     */
-    public EditMeetingResponse editMeeting(EditMeetingRequest request) {
-        return hcClient.syncInvokeHttp(request, MeetingMeta.editMeeting);
-    }
-
-    /**
-     * 编辑预约会议
-     * 编辑预约会议。会议开始后，不能被编辑。
-     *
-     * @param EditMeetingRequest 请求对象
-     * @return SyncInvoker<EditMeetingRequest, EditMeetingResponse>
-     */
-    public SyncInvoker<EditMeetingRequest, EditMeetingResponse> editMeetingInvoker(EditMeetingRequest request) {
-        return new SyncInvoker<EditMeetingRequest, EditMeetingResponse>(request, MeetingMeta.editMeeting, hcClient);
-    }
-
-    /**
      * 举手
      * 所有来宾可以举手。来宾举手后，可以取消自己的举手。主持人可以取消所有来宾的举手。
      *
@@ -2479,6 +2457,28 @@ public class MeetingClient {
      */
     public SyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse> updateMaterialInvoker(UpdateMaterialRequest request) {
         return new SyncInvoker<UpdateMaterialRequest, UpdateMaterialResponse>(request, MeetingMeta.updateMaterial, hcClient);
+    }
+
+    /**
+     * 编辑预约会议
+     * 编辑预约会议。会议开始后，不能被编辑。
+     *
+     * @param UpdateMeetingRequest 请求对象
+     * @return UpdateMeetingResponse
+     */
+    public UpdateMeetingResponse updateMeeting(UpdateMeetingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateMeeting);
+    }
+
+    /**
+     * 编辑预约会议
+     * 编辑预约会议。会议开始后，不能被编辑。
+     *
+     * @param UpdateMeetingRequest 请求对象
+     * @return SyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>
+     */
+    public SyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse> updateMeetingInvoker(UpdateMeetingRequest request) {
+        return new SyncInvoker<UpdateMeetingRequest, UpdateMeetingResponse>(request, MeetingMeta.updateMeeting, hcClient);
     }
 
     /**

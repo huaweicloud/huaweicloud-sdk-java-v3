@@ -50,7 +50,7 @@ public class ResourceBasicInfo  {
 
 
     /**
-     * |参数名称：资源类型编码| |参数约束及描述：资源类型编码|
+     * 资源类型编码。例如：hws.resource.type.general。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -70,7 +70,7 @@ public class ResourceBasicInfo  {
 
 
     /**
-     * |参数名称：资源类型归属的服务类型编码| |参数约束及描述：资源类型归属的服务类型编码|
+     * 资源类型归属的服务类型编码。例如：hws.service.type.offline。
      * @return productOwnerService
      */
     public String getProductOwnerService() {
@@ -90,7 +90,7 @@ public class ResourceBasicInfo  {
 
 
     /**
-     * |参数名称：资源名称，按照请求的X-Language返回对应语言的名称| |参数约束及描述：资源名称，按照请求的X-Language返回对应语言的名称|
+     * 资源类型名称。例如：通用规格。
      * @return name
      */
     public String getName() {
@@ -110,7 +110,7 @@ public class ResourceBasicInfo  {
 
 
     /**
-     * |参数名称：资源描述，按照请求的X-Language返回对应语言的描述| |参数约束及描述：资源描述，按照请求的X-Language返回对应语言的描述|
+     * 资源类型描述。
      * @return description
      */
     public String getDescription() {

@@ -19,13 +19,6 @@ public class ListRoutingRulesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -77,26 +70,6 @@ public class ListRoutingRulesRequest  {
     @JsonProperty(value="offset")
     
     private Integer offset = 0;
-
-    public ListRoutingRulesRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public ListRoutingRulesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -290,8 +263,7 @@ public class ListRoutingRulesRequest  {
             return false;
         }
         ListRoutingRulesRequest listRoutingRulesRequest = (ListRoutingRulesRequest) o;
-        return Objects.equals(this.stageAuthToken, listRoutingRulesRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, listRoutingRulesRequest.instanceId) &&
+        return Objects.equals(this.instanceId, listRoutingRulesRequest.instanceId) &&
             Objects.equals(this.resource, listRoutingRulesRequest.resource) &&
             Objects.equals(this.event, listRoutingRulesRequest.event) &&
             Objects.equals(this.appType, listRoutingRulesRequest.appType) &&
@@ -303,13 +275,12 @@ public class ListRoutingRulesRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, resource, event, appType, appId, ruleName, limit, marker, offset);
+        return Objects.hash(instanceId, resource, event, appType, appId, ruleName, limit, marker, offset);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRoutingRulesRequest {\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("    event: ").append(toIndentedString(event)).append("\n");

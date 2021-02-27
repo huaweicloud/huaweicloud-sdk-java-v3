@@ -43,7 +43,7 @@ public class ListIndirectPartnersResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：符合条件的记录个数，只有成功的时候出现| |参数的约束及描述：符合条件的记录个数，只有成功的时候出现|
+     * 符合条件的记录个数，只有成功的时候出现。
      * @return count
      */
     public Integer getCount() {
@@ -77,7 +77,7 @@ public class ListIndirectPartnersResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：二级渠道邀请记录列表| |参数约束以及描述：二级渠道邀请记录列表|
+     * 精英服务商列表，具体参见表1。
      * @return indirectPartners
      */
     public List<IndirectPartnerInfo> getIndirectPartners() {

@@ -178,6 +178,31 @@ public class BmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> deleteWindowsBareMetalServerPassword = genFordeleteWindowsBareMetalServerPassword();
+
+    private static HttpRequestDef<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> genFordeleteWindowsBareMetalServerPassword() {
+        // basic
+        HttpRequestDef.Builder<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWindowsBareMetalServerPasswordRequest.class, DeleteWindowsBareMetalServerPasswordResponse.class)
+                .withName("DeleteWindowsBareMetalServerPassword")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-server-password")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteWindowsBareMetalServerPasswordRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> detachBaremetalServerVolume = genFordetachBaremetalServerVolume();
 
     private static HttpRequestDef<DetachBaremetalServerVolumeRequest, DetachBaremetalServerVolumeResponse> genFordetachBaremetalServerVolume() {
@@ -558,31 +583,6 @@ public class BmsMeta {
             MetaData.class,
             f -> f.withMarshaller(UpdateBaremetalServerMetadataRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<WindowsBaremetalServerCleanPwdRequest, WindowsBaremetalServerCleanPwdResponse> windowsBaremetalServerCleanPwd = genForwindowsBaremetalServerCleanPwd();
-
-    private static HttpRequestDef<WindowsBaremetalServerCleanPwdRequest, WindowsBaremetalServerCleanPwdResponse> genForwindowsBaremetalServerCleanPwd() {
-        // basic
-        HttpRequestDef.Builder<WindowsBaremetalServerCleanPwdRequest, WindowsBaremetalServerCleanPwdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, WindowsBaremetalServerCleanPwdRequest.class, WindowsBaremetalServerCleanPwdResponse.class)
-                .withName("WindowsBaremetalServerCleanPwd")
-                .withUri("/v1/{project_id}/baremetalservers/{server_id}/os-server-password")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("server_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(WindowsBaremetalServerCleanPwdRequest::getServerId, (req, v) -> {
-                req.setServerId(v);
             })
         );
 

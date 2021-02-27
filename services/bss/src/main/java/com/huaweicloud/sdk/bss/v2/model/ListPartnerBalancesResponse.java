@@ -51,7 +51,7 @@ public class ListPartnerBalancesResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：总额，即最终优惠后的金额，| |参数约束以及描述：总额，即最终优惠后的金额，|
+     * 账户余额列表。 具体请参见表2
      * @return accountBalances
      */
     public List<AccountBalanceV2> getAccountBalances() {

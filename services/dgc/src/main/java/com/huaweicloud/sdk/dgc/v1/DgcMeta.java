@@ -547,105 +547,6 @@ public class DgcMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ModifyJobRequest, ModifyJobResponse> modifyJob = genFormodifyJob();
-
-    private static HttpRequestDef<ModifyJobRequest, ModifyJobResponse> genFormodifyJob() {
-        // basic
-        HttpRequestDef.Builder<ModifyJobRequest, ModifyJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyJobRequest.class, ModifyJobResponse.class)
-                .withName("ModifyJob")
-                .withUri("/v1/{project_id}/jobs/{job_name}")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("job_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ModifyJobRequest::getJobName, (req, v) -> {
-                req.setJobName(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            JobInfo.class,
-            f -> f.withMarshaller(ModifyJobRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ModifyResourceRequest, ModifyResourceResponse> modifyResource = genFormodifyResource();
-
-    private static HttpRequestDef<ModifyResourceRequest, ModifyResourceResponse> genFormodifyResource() {
-        // basic
-        HttpRequestDef.Builder<ModifyResourceRequest, ModifyResourceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyResourceRequest.class, ModifyResourceResponse.class)
-                .withName("ModifyResource")
-                .withUri("/v1/{project_id}/resources/{resource_id}")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ModifyResourceRequest::getResourceId, (req, v) -> {
-                req.setResourceId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            ResourceInfo.class,
-            f -> f.withMarshaller(ModifyResourceRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ModifyScriptRequest, ModifyScriptResponse> modifyScript = genFormodifyScript();
-
-    private static HttpRequestDef<ModifyScriptRequest, ModifyScriptResponse> genFormodifyScript() {
-        // basic
-        HttpRequestDef.Builder<ModifyScriptRequest, ModifyScriptResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyScriptRequest.class, ModifyScriptResponse.class)
-                .withName("ModifyScript")
-                .withUri("/v1/{project_id}/scripts/{script_name}")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("script_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ModifyScriptRequest::getScriptName, (req, v) -> {
-                req.setScriptName(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ScriptInfo.class,
-            f -> f.withMarshaller(ModifyScriptRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstance = genForrestoreJobInstance();
 
     private static HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> genForrestoreJobInstance() {
@@ -1010,6 +911,105 @@ public class DgcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ConnectionInfo.class,
             f -> f.withMarshaller(UpdateConnectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForupdateJob();
+
+    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForupdateJob() {
+        // basic
+        HttpRequestDef.Builder<UpdateJobRequest, UpdateJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateJobRequest.class, UpdateJobResponse.class)
+                .withName("UpdateJob")
+                .withUri("/v1/{project_id}/jobs/{job_name}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateJobRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            JobInfo.class,
+            f -> f.withMarshaller(UpdateJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> updateResource = genForupdateResource();
+
+    private static HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> genForupdateResource() {
+        // basic
+        HttpRequestDef.Builder<UpdateResourceRequest, UpdateResourceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateResourceRequest.class, UpdateResourceResponse.class)
+                .withName("UpdateResource")
+                .withUri("/v1/{project_id}/resources/{resource_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateResourceRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            ResourceInfo.class,
+            f -> f.withMarshaller(UpdateResourceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScriptRequest, UpdateScriptResponse> updateScript = genForupdateScript();
+
+    private static HttpRequestDef<UpdateScriptRequest, UpdateScriptResponse> genForupdateScript() {
+        // basic
+        HttpRequestDef.Builder<UpdateScriptRequest, UpdateScriptResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScriptRequest.class, UpdateScriptResponse.class)
+                .withName("UpdateScript")
+                .withUri("/v1/{project_id}/scripts/{script_name}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("script_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateScriptRequest::getScriptName, (req, v) -> {
+                req.setScriptName(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ScriptInfo.class,
+            f -> f.withMarshaller(UpdateScriptRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

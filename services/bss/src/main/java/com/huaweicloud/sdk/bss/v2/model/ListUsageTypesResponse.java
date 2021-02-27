@@ -43,7 +43,7 @@ public class ListUsageTypesResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：总条数，必须大于等于0。| |参数的约束及描述：总条数，必须大于等于0。|
+     * 总数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ListUsageTypesResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：用量类型列表| |参数约束以及描述：用量类型列表|
+     * 使用量类型列表，具体请参见表3。
      * @return usageTypes
      */
     public List<UsageType> getUsageTypes() {

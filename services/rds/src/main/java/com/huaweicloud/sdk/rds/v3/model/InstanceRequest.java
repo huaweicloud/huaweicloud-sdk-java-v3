@@ -12,8 +12,8 @@ import com.huaweicloud.sdk.rds.v3.model.BackupStrategy;
 import com.huaweicloud.sdk.rds.v3.model.ChargeInfo;
 import com.huaweicloud.sdk.rds.v3.model.Datastore;
 import com.huaweicloud.sdk.rds.v3.model.Ha;
-import com.huaweicloud.sdk.rds.v3.model.InstanceRequestTags;
 import com.huaweicloud.sdk.rds.v3.model.RestorePoint;
+import com.huaweicloud.sdk.rds.v3.model.TagWithKeyValue;
 import com.huaweicloud.sdk.rds.v3.model.Volume;
 import java.util.ArrayList;
 import java.util.List;
@@ -168,7 +168,7 @@ public class InstanceRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
-    private List<InstanceRequestTags> tags = null;
+    private List<TagWithKeyValue> tags = null;
     
     public InstanceRequest withName(String name) {
         this.name = name;
@@ -672,13 +672,13 @@ public class InstanceRequest  {
         this.collation = collation;
     }
 
-    public InstanceRequest withTags(List<InstanceRequestTags> tags) {
+    public InstanceRequest withTags(List<TagWithKeyValue> tags) {
         this.tags = tags;
         return this;
     }
 
     
-    public InstanceRequest addTagsItem(InstanceRequestTags tagsItem) {
+    public InstanceRequest addTagsItem(TagWithKeyValue tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -686,7 +686,7 @@ public class InstanceRequest  {
         return this;
     }
 
-    public InstanceRequest withTags(Consumer<List<InstanceRequestTags>> tagsSetter) {
+    public InstanceRequest withTags(Consumer<List<TagWithKeyValue>> tagsSetter) {
         if(this.tags == null ){
             this.tags = new ArrayList<>();
         }
@@ -698,11 +698,11 @@ public class InstanceRequest  {
      * 标签列表。单个实例总标签数上限10个。
      * @return tags
      */
-    public List<InstanceRequestTags> getTags() {
+    public List<TagWithKeyValue> getTags() {
         return tags;
     }
 
-    public void setTags(List<InstanceRequestTags> tags) {
+    public void setTags(List<TagWithKeyValue> tags) {
         this.tags = tags;
     }
     @Override

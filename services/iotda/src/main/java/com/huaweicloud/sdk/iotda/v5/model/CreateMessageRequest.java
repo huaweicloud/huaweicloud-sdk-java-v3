@@ -26,20 +26,6 @@ public class CreateMessageRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sp-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String spAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -68,46 +54,6 @@ public class CreateMessageRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    public CreateMessageRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
-
-    public CreateMessageRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get spAuthToken
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
     }
 
     public CreateMessageRequest withInstanceId(String instanceId) {
@@ -166,22 +112,18 @@ public class CreateMessageRequest  {
         }
         CreateMessageRequest createMessageRequest = (CreateMessageRequest) o;
         return Objects.equals(this.deviceId, createMessageRequest.deviceId) &&
-            Objects.equals(this.stageAuthToken, createMessageRequest.stageAuthToken) &&
-            Objects.equals(this.spAuthToken, createMessageRequest.spAuthToken) &&
             Objects.equals(this.instanceId, createMessageRequest.instanceId) &&
             Objects.equals(this.body, createMessageRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, stageAuthToken, spAuthToken, instanceId, body);
+        return Objects.hash(deviceId, instanceId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMessageRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
-        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

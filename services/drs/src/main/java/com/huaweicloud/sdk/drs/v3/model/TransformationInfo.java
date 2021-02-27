@@ -3,11 +3,15 @@ package com.huaweicloud.sdk.drs.v3.model;
 
 
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -16,12 +20,90 @@ import java.util.Objects;
  */
 public class TransformationInfo  {
 
+    /**
+     * - 生成加工规则值为contentConditionalFilter - 生成配置规则值为configConditionalFilter
+     */
+    public static final class TransformationTypeEnum {
+
+        
+        /**
+         * Enum CONTENTCONDITIONALFILTER for value: "contentConditionalFilter"
+         */
+        public static final TransformationTypeEnum CONTENTCONDITIONALFILTER = new TransformationTypeEnum("contentConditionalFilter");
+        
+        /**
+         * Enum CONFIGCONDITIONALFILTER for value: "configConditionalFilter"
+         */
+        public static final TransformationTypeEnum CONFIGCONDITIONALFILTER = new TransformationTypeEnum("configConditionalFilter");
+        
+
+        private static final Map<String, TransformationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TransformationTypeEnum> createStaticFields() {
+            Map<String, TransformationTypeEnum> map = new HashMap<>();
+            map.put("contentConditionalFilter", CONTENTCONDITIONALFILTER);
+            map.put("configConditionalFilter", CONFIGCONDITIONALFILTER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TransformationTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TransformationTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TransformationTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TransformationTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TransformationTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TransformationTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TransformationTypeEnum) {
+                return this.value.equals(((TransformationTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transformation_type")
     
-    private String transformationType;
+    private TransformationTypeEnum transformationType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,7 +111,7 @@ public class TransformationInfo  {
     
     private String value;
 
-    public TransformationInfo withTransformationType(String transformationType) {
+    public TransformationInfo withTransformationType(TransformationTypeEnum transformationType) {
         this.transformationType = transformationType;
         return this;
     }
@@ -41,11 +123,11 @@ public class TransformationInfo  {
      * - 生成加工规则值为contentConditionalFilter - 生成配置规则值为configConditionalFilter
      * @return transformationType
      */
-    public String getTransformationType() {
+    public TransformationTypeEnum getTransformationType() {
         return transformationType;
     }
 
-    public void setTransformationType(String transformationType) {
+    public void setTransformationType(TransformationTypeEnum transformationType) {
         this.transformationType = transformationType;
     }
 

@@ -504,72 +504,6 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 修改作业
-     * 
-     *
-     * @param ModifyJobRequest 请求对象
-     * @return CompletableFuture<ModifyJobResponse>
-     */
-    public CompletableFuture<ModifyJobResponse> modifyJobAsync(ModifyJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.modifyJob);
-    }
-
-    /**
-     * 修改作业
-     * 
-     *
-     * @param ModifyJobRequest 请求对象
-     * @return AsyncInvoker<ModifyJobRequest, ModifyJobResponse>
-     */
-    public AsyncInvoker<ModifyJobRequest, ModifyJobResponse> modifyJobAsyncInvoker(ModifyJobRequest request) {
-        return new AsyncInvoker<ModifyJobRequest, ModifyJobResponse>(request, DgcMeta.modifyJob, hcClient);
-    }
-
-    /**
-     * 修改资源
-     * 
-     *
-     * @param ModifyResourceRequest 请求对象
-     * @return CompletableFuture<ModifyResourceResponse>
-     */
-    public CompletableFuture<ModifyResourceResponse> modifyResourceAsync(ModifyResourceRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.modifyResource);
-    }
-
-    /**
-     * 修改资源
-     * 
-     *
-     * @param ModifyResourceRequest 请求对象
-     * @return AsyncInvoker<ModifyResourceRequest, ModifyResourceResponse>
-     */
-    public AsyncInvoker<ModifyResourceRequest, ModifyResourceResponse> modifyResourceAsyncInvoker(ModifyResourceRequest request) {
-        return new AsyncInvoker<ModifyResourceRequest, ModifyResourceResponse>(request, DgcMeta.modifyResource, hcClient);
-    }
-
-    /**
-     * 修改脚本内容
-     * 
-     *
-     * @param ModifyScriptRequest 请求对象
-     * @return CompletableFuture<ModifyScriptResponse>
-     */
-    public CompletableFuture<ModifyScriptResponse> modifyScriptAsync(ModifyScriptRequest request) {
-        return hcClient.asyncInvokeHttp(request, DgcMeta.modifyScript);
-    }
-
-    /**
-     * 修改脚本内容
-     * 
-     *
-     * @param ModifyScriptRequest 请求对象
-     * @return AsyncInvoker<ModifyScriptRequest, ModifyScriptResponse>
-     */
-    public AsyncInvoker<ModifyScriptRequest, ModifyScriptResponse> modifyScriptAsyncInvoker(ModifyScriptRequest request) {
-        return new AsyncInvoker<ModifyScriptRequest, ModifyScriptResponse>(request, DgcMeta.modifyScript, hcClient);
-    }
-
-    /**
      * 重跑作业实例
      * 
      *
@@ -853,6 +787,72 @@ public class DgcAsyncClient {
      */
     public AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionAsyncInvoker(UpdateConnectionRequest request) {
         return new AsyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, DgcMeta.updateConnection, hcClient);
+    }
+
+    /**
+     * 修改作业
+     * 
+     *
+     * @param UpdateJobRequest 请求对象
+     * @return CompletableFuture<UpdateJobResponse>
+     */
+    public CompletableFuture<UpdateJobResponse> updateJobAsync(UpdateJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DgcMeta.updateJob);
+    }
+
+    /**
+     * 修改作业
+     * 
+     *
+     * @param UpdateJobRequest 请求对象
+     * @return AsyncInvoker<UpdateJobRequest, UpdateJobResponse>
+     */
+    public AsyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobAsyncInvoker(UpdateJobRequest request) {
+        return new AsyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, DgcMeta.updateJob, hcClient);
+    }
+
+    /**
+     * 修改资源
+     * 
+     *
+     * @param UpdateResourceRequest 请求对象
+     * @return CompletableFuture<UpdateResourceResponse>
+     */
+    public CompletableFuture<UpdateResourceResponse> updateResourceAsync(UpdateResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DgcMeta.updateResource);
+    }
+
+    /**
+     * 修改资源
+     * 
+     *
+     * @param UpdateResourceRequest 请求对象
+     * @return AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
+     */
+    public AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceAsyncInvoker(UpdateResourceRequest request) {
+        return new AsyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, DgcMeta.updateResource, hcClient);
+    }
+
+    /**
+     * 修改脚本内容
+     * 
+     *
+     * @param UpdateScriptRequest 请求对象
+     * @return CompletableFuture<UpdateScriptResponse>
+     */
+    public CompletableFuture<UpdateScriptResponse> updateScriptAsync(UpdateScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, DgcMeta.updateScript);
+    }
+
+    /**
+     * 修改脚本内容
+     * 
+     *
+     * @param UpdateScriptRequest 请求对象
+     * @return AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse>
+     */
+    public AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse> updateScriptAsyncInvoker(UpdateScriptRequest request) {
+        return new AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse>(request, DgcMeta.updateScript, hcClient);
     }
 
 }

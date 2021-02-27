@@ -38,7 +38,7 @@ public class QuotaSimpleInfo  {
 
 
     /**
-     * |参数名称：批量发放成功客户ID。| |参数约束及描述：批量发放成功客户ID。|
+     * 精英服务商ID。
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class QuotaSimpleInfo  {
 
 
     /**
-     * |参数名称：发放成功的券ID| |参数约束及描述：发放成功的券ID|
+     * 分配给精英服务商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {

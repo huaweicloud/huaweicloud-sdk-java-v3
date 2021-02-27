@@ -43,7 +43,7 @@ public class ListIssuedPartnerCouponsResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：个数| |参数的约束及描述：个数|
+     * 总数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ListIssuedPartnerCouponsResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：优惠券记录。具体请参见表 IQueryUserCouponsResult。| |参数约束以及描述：优惠券记录。具体请参见表 IQueryUserCouponsResult。|
+     * 发放的优惠券记录。 具体请参见表2。
      * @return userCoupons
      */
     public List<IQueryUserPartnerCouponsResultV2> getUserCoupons() {

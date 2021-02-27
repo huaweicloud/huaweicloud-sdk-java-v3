@@ -41,34 +41,34 @@ public class CreateJobReq  {
     
     private Boolean bindEip;
     /**
-     * 迁移场景
+     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
      */
     public static final class DbUseTypeEnum {
 
         
         /**
-         * Enum MIGRATION_ for value: "migration-实时迁移"
+         * Enum MIGRATION for value: "migration"
          */
-        public static final DbUseTypeEnum MIGRATION_ = new DbUseTypeEnum("migration-实时迁移");
+        public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
         
         /**
-         * Enum SYNC_ for value: "sync-实时同步"
+         * Enum SYNC for value: "sync"
          */
-        public static final DbUseTypeEnum SYNC_ = new DbUseTypeEnum("sync-实时同步");
+        public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
         
         /**
-         * Enum CLOUDDATAGUARD_ for value: "cloudDataGuard-实时灾备"
+         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
          */
-        public static final DbUseTypeEnum CLOUDDATAGUARD_ = new DbUseTypeEnum("cloudDataGuard-实时灾备");
+        public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
         
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbUseTypeEnum> createStaticFields() {
             Map<String, DbUseTypeEnum> map = new HashMap<>();
-            map.put("migration-实时迁移", MIGRATION_);
-            map.put("sync-实时同步", SYNC_);
-            map.put("cloudDataGuard-实时灾备", CLOUDDATAGUARD_);
+            map.put("migration", MIGRATION);
+            map.put("sync", SYNC);
+            map.put("cloudDataGuard", CLOUDDATAGUARD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -143,7 +143,7 @@ public class CreateJobReq  {
     
     private String description;
     /**
-     * 引擎类型
+     * 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。
      */
     public static final class EngineTypeEnum {
 
@@ -237,36 +237,36 @@ public class CreateJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_target_readonly")
     
-    private String isTargetReadonly;
+    private Boolean isTargetReadonly;
     /**
-     * 迁移方向
+     * 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
      */
     public static final class JobDirectionEnum {
 
         
         /**
-         * Enum UP_ for value: "up 入云 灾备场景时对应本云为备"
+         * Enum UP for value: "up"
          */
-        public static final JobDirectionEnum UP_ = new JobDirectionEnum("up 入云 灾备场景时对应本云为备");
+        public static final JobDirectionEnum UP = new JobDirectionEnum("up");
         
         /**
-         * Enum DOWN_ for value: "down 出云 灾备场景时对应本云为主"
+         * Enum DOWN for value: "down"
          */
-        public static final JobDirectionEnum DOWN_ = new JobDirectionEnum("down 出云 灾备场景时对应本云为主");
+        public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
         
         /**
-         * Enum NON_DBS_ for value: "non-dbs 自建"
+         * Enum NON_DBS for value: "non-dbs"
          */
-        public static final JobDirectionEnum NON_DBS_ = new JobDirectionEnum("non-dbs 自建");
+        public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
         
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobDirectionEnum> createStaticFields() {
             Map<String, JobDirectionEnum> map = new HashMap<>();
-            map.put("up 入云 灾备场景时对应本云为备", UP_);
-            map.put("down 出云 灾备场景时对应本云为主", DOWN_);
-            map.put("non-dbs 自建", NON_DBS_);
+            map.put("up", UP);
+            map.put("down", DOWN);
+            map.put("non-dbs", NON_DBS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -507,7 +507,7 @@ public class CreateJobReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="node_type")
     
-    private NodeTypeEnum nodeType;
+    private NodeTypeEnum nodeType = NodeTypeEnum.HIGH;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -527,34 +527,34 @@ public class CreateJobReq  {
     
     private List<ResourceTag> tags = null;
         /**
-     * 迁移模式，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）  
+     * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）  
      */
     public static final class TaskTypeEnum {
 
         
         /**
-         * Enum FULL_TRANS_ for value: "FULL_TRANS 全量"
+         * Enum FULL_TRANS for value: "FULL_TRANS"
          */
-        public static final TaskTypeEnum FULL_TRANS_ = new TaskTypeEnum("FULL_TRANS 全量");
+        public static final TaskTypeEnum FULL_TRANS = new TaskTypeEnum("FULL_TRANS");
         
         /**
-         * Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS 全量+增量"
+         * Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS"
          */
-        public static final TaskTypeEnum FULL_INCR_TRANS_ = new TaskTypeEnum("FULL_INCR_TRANS 全量+增量");
+        public static final TaskTypeEnum FULL_INCR_TRANS = new TaskTypeEnum("FULL_INCR_TRANS");
         
         /**
-         * Enum INCR_TRANS_ for value: "INCR_TRANS 增量"
+         * Enum INCR_TRANS for value: "INCR_TRANS"
          */
-        public static final TaskTypeEnum INCR_TRANS_ = new TaskTypeEnum("INCR_TRANS 增量");
+        public static final TaskTypeEnum INCR_TRANS = new TaskTypeEnum("INCR_TRANS");
         
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TaskTypeEnum> createStaticFields() {
             Map<String, TaskTypeEnum> map = new HashMap<>();
-            map.put("FULL_TRANS 全量", FULL_TRANS_);
-            map.put("FULL_INCR_TRANS 全量+增量", FULL_INCR_TRANS_);
-            map.put("INCR_TRANS 增量", INCR_TRANS_);
+            map.put("FULL_TRANS", FULL_TRANS);
+            map.put("FULL_INCR_TRANS", FULL_INCR_TRANS);
+            map.put("INCR_TRANS", INCR_TRANS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -629,6 +629,30 @@ public class CreateJobReq  {
     
     private String productId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="master_az")
+    
+    private String masterAz;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="slave_az")
+    
+    private String slaveAz;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sys_tags")
+    
+    private List<ResourceTag> sysTags = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="expired_days")
+    
+    private String expiredDays;
+
     public CreateJobReq withBindEip(Boolean bindEip) {
         this.bindEip = bindEip;
         return this;
@@ -658,7 +682,7 @@ public class CreateJobReq  {
 
 
     /**
-     * 迁移场景
+     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
      * @return dbUseType
      */
     public DbUseTypeEnum getDbUseType() {
@@ -718,7 +742,7 @@ public class CreateJobReq  {
 
 
     /**
-     * 引擎类型
+     * 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。
      * @return engineType
      */
     public EngineTypeEnum getEngineType() {
@@ -729,7 +753,7 @@ public class CreateJobReq  {
         this.engineType = engineType;
     }
 
-    public CreateJobReq withIsTargetReadonly(String isTargetReadonly) {
+    public CreateJobReq withIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
         return this;
     }
@@ -738,14 +762,14 @@ public class CreateJobReq  {
 
 
     /**
-     * 指定目标实例是否限制为只读，灾备场景下为必填且为true。
+     * 指定目标实例是否限制为只读，MySQL迁移和灾备，且job_direction为up时设置有效。（灾备场景下，单主灾备且本云为备为必填且为true，不填默认设置为true）。
      * @return isTargetReadonly
      */
-    public String getIsTargetReadonly() {
+    public Boolean getIsTargetReadonly() {
         return isTargetReadonly;
     }
 
-    public void setIsTargetReadonly(String isTargetReadonly) {
+    public void setIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
     }
 
@@ -758,7 +782,7 @@ public class CreateJobReq  {
 
 
     /**
-     * 迁移方向
+     * 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
      * @return jobDirection
      */
     public JobDirectionEnum getJobDirection() {
@@ -818,7 +842,7 @@ public class CreateJobReq  {
 
 
     /**
-     * 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填。
+     * 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
      * minimum: 1
      * maximum: 32
      * @return nodeNum
@@ -948,7 +972,7 @@ public class CreateJobReq  {
 
 
     /**
-     * 迁移模式，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）  
+     * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）  
      * @return taskType
      */
     public TaskTypeEnum getTaskType() {
@@ -998,6 +1022,100 @@ public class CreateJobReq  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    public CreateJobReq withMasterAz(String masterAz) {
+        this.masterAz = masterAz;
+        return this;
+    }
+
+    
+
+
+    /**
+     * node跨AZ任务主节点AZ
+     * @return masterAz
+     */
+    public String getMasterAz() {
+        return masterAz;
+    }
+
+    public void setMasterAz(String masterAz) {
+        this.masterAz = masterAz;
+    }
+
+    public CreateJobReq withSlaveAz(String slaveAz) {
+        this.slaveAz = slaveAz;
+        return this;
+    }
+
+    
+
+
+    /**
+     * node跨AZ任务备节点AZ
+     * @return slaveAz
+     */
+    public String getSlaveAz() {
+        return slaveAz;
+    }
+
+    public void setSlaveAz(String slaveAz) {
+        this.slaveAz = slaveAz;
+    }
+
+    public CreateJobReq withSysTags(List<ResourceTag> sysTags) {
+        this.sysTags = sysTags;
+        return this;
+    }
+
+    
+    public CreateJobReq addSysTagsItem(ResourceTag sysTagsItem) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        this.sysTags.add(sysTagsItem);
+        return this;
+    }
+
+    public CreateJobReq withSysTags(Consumer<List<ResourceTag>> sysTagsSetter) {
+        if(this.sysTags == null ){
+            this.sysTags = new ArrayList<>();
+        }
+        sysTagsSetter.accept(this.sysTags);
+        return this;
+    }
+
+    /**
+     * 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能有一个企业项目。
+     * @return sysTags
+     */
+    public List<ResourceTag> getSysTags() {
+        return sysTags;
+    }
+
+    public void setSysTags(List<ResourceTag> sysTags) {
+        this.sysTags = sysTags;
+    }
+
+    public CreateJobReq withExpiredDays(String expiredDays) {
+        this.expiredDays = expiredDays;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 任务处于异常状态一段时间后，将会自动结束，单位为天。(范围14-100)，不传默认为14天。
+     * @return expiredDays
+     */
+    public String getExpiredDays() {
+        return expiredDays;
+    }
+
+    public void setExpiredDays(String expiredDays) {
+        this.expiredDays = expiredDays;
+    }
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1023,11 +1141,15 @@ public class CreateJobReq  {
             Objects.equals(this.tags, createJobReq.tags) &&
             Objects.equals(this.taskType, createJobReq.taskType) &&
             Objects.equals(this.customizeSutnetId, createJobReq.customizeSutnetId) &&
-            Objects.equals(this.productId, createJobReq.productId);
+            Objects.equals(this.productId, createJobReq.productId) &&
+            Objects.equals(this.masterAz, createJobReq.masterAz) &&
+            Objects.equals(this.slaveAz, createJobReq.slaveAz) &&
+            Objects.equals(this.sysTags, createJobReq.sysTags) &&
+            Objects.equals(this.expiredDays, createJobReq.expiredDays);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bindEip, dbUseType, name, description, engineType, isTargetReadonly, jobDirection, mutiWrite, netType, nodeNum, nodeType, sourceEndpoint, targetEndpoint, tags, taskType, customizeSutnetId, productId);
+        return Objects.hash(bindEip, dbUseType, name, description, engineType, isTargetReadonly, jobDirection, mutiWrite, netType, nodeNum, nodeType, sourceEndpoint, targetEndpoint, tags, taskType, customizeSutnetId, productId, masterAz, slaveAz, sysTags, expiredDays);
     }
     @Override
     public String toString() {
@@ -1050,6 +1172,10 @@ public class CreateJobReq  {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    customizeSutnetId: ").append(toIndentedString(customizeSutnetId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    masterAz: ").append(toIndentedString(masterAz)).append("\n");
+        sb.append("    slaveAz: ").append(toIndentedString(slaveAz)).append("\n");
+        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
+        sb.append("    expiredDays: ").append(toIndentedString(expiredDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,13 +19,6 @@ public class DeleteRuleActionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -35,26 +28,6 @@ public class DeleteRuleActionRequest  {
     @JsonProperty(value="action_id")
     
     private String actionId;
-
-    public DeleteRuleActionRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public DeleteRuleActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -104,19 +77,17 @@ public class DeleteRuleActionRequest  {
             return false;
         }
         DeleteRuleActionRequest deleteRuleActionRequest = (DeleteRuleActionRequest) o;
-        return Objects.equals(this.stageAuthToken, deleteRuleActionRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, deleteRuleActionRequest.instanceId) &&
+        return Objects.equals(this.instanceId, deleteRuleActionRequest.instanceId) &&
             Objects.equals(this.actionId, deleteRuleActionRequest.actionId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, actionId);
+        return Objects.hash(instanceId, actionId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteRuleActionRequest {\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");
         sb.append("}");

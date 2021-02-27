@@ -83,7 +83,7 @@ public class ShowRepositoryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="num_download")
     
-    private Integer numDownload;
+    private Long numDownload;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -315,7 +315,7 @@ public class ShowRepositoryResponse extends SdkResponse {
         this.numImages = numImages;
     }
 
-    public ShowRepositoryResponse withNumDownload(Integer numDownload) {
+    public ShowRepositoryResponse withNumDownload(Long numDownload) {
         this.numDownload = numDownload;
         return this;
     }
@@ -327,11 +327,11 @@ public class ShowRepositoryResponse extends SdkResponse {
      * 仓库下载次数
      * @return numDownload
      */
-    public Integer getNumDownload() {
+    public Long getNumDownload() {
         return numDownload;
     }
 
-    public void setNumDownload(Integer numDownload) {
+    public void setNumDownload(Long numDownload) {
         this.numDownload = numDownload;
     }
 

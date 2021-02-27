@@ -28,7 +28,7 @@ public class ModifyPwdEndPoint  {
     
     private String dbPassword;
     /**
-     * endpoint类型
+     * 类型，so：源库；ta：目标库。
      */
     public static final class EndPointTypeEnum {
 
@@ -120,12 +120,6 @@ public class ModifyPwdEndPoint  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="save_new_pwd")
-    
-    private Boolean saveNewPwd;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="kerberos")
     
     private KerberosVO kerberos = null;
@@ -159,7 +153,7 @@ public class ModifyPwdEndPoint  {
 
 
     /**
-     * endpoint类型
+     * 类型，so：源库；ta：目标库。
      * @return endPointType
      */
     public EndPointTypeEnum getEndPointType() {
@@ -188,26 +182,6 @@ public class ModifyPwdEndPoint  {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
-    }
-
-    public ModifyPwdEndPoint withSaveNewPwd(Boolean saveNewPwd) {
-        this.saveNewPwd = saveNewPwd;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否保存新密码, true为保存，false为不保存。
-     * @return saveNewPwd
-     */
-    public Boolean getSaveNewPwd() {
-        return saveNewPwd;
-    }
-
-    public void setSaveNewPwd(Boolean saveNewPwd) {
-        this.saveNewPwd = saveNewPwd;
     }
 
     public ModifyPwdEndPoint withKerberos(KerberosVO kerberos) {
@@ -248,12 +222,11 @@ public class ModifyPwdEndPoint  {
         return Objects.equals(this.dbPassword, modifyPwdEndPoint.dbPassword) &&
             Objects.equals(this.endPointType, modifyPwdEndPoint.endPointType) &&
             Objects.equals(this.jobId, modifyPwdEndPoint.jobId) &&
-            Objects.equals(this.saveNewPwd, modifyPwdEndPoint.saveNewPwd) &&
             Objects.equals(this.kerberos, modifyPwdEndPoint.kerberos);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(dbPassword, endPointType, jobId, saveNewPwd, kerberos);
+        return Objects.hash(dbPassword, endPointType, jobId, kerberos);
     }
     @Override
     public String toString() {
@@ -262,7 +235,6 @@ public class ModifyPwdEndPoint  {
         sb.append("    dbPassword: ").append(toIndentedString(dbPassword)).append("\n");
         sb.append("    endPointType: ").append(toIndentedString(endPointType)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    saveNewPwd: ").append(toIndentedString(saveNewPwd)).append("\n");
         sb.append("    kerberos: ").append(toIndentedString(kerberos)).append("\n");
         sb.append("}");
         return sb.toString();

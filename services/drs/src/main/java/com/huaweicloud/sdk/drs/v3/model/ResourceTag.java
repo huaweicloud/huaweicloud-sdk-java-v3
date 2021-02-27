@@ -38,7 +38,7 @@ public class ResourceTag  {
 
 
     /**
-     * 标签键
+     * 标签键，最大长度36，只能包含字母、数字、下划线、中划线和中文。
      * @return key
      */
     public String getKey() {
@@ -58,7 +58,7 @@ public class ResourceTag  {
 
 
     /**
-     * 标签值
+     * 标签值，最大长度43，只能包含字母、数字、下划线、中划线和中文。
      * @return value
      */
     public String getValue() {

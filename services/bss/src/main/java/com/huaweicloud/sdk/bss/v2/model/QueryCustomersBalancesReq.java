@@ -52,7 +52,7 @@ public class QueryCustomersBalancesReq  {
     }
 
     /**
-     * |参数名称：客户的客户信息列表。| |参数约束以及描述：客户的客户信息列表。|
+     * 客户信息列表。 具体请参见表1。
      * @return customerInfos
      */
     public List<CustomerInfoV2> getCustomerInfos() {
@@ -72,7 +72,7 @@ public class QueryCustomersBalancesReq  {
 
 
     /**
-     * |参数名称：二级经销商ID。| |参数约束及描述：查询二级经销商子客户的账户余额的时候，需要携带这个字段。|
+     * 精英服务商ID。 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）子客户的账户余额时，需要携带该参数。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

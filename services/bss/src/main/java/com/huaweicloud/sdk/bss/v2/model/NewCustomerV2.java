@@ -56,7 +56,7 @@ public class NewCustomerV2  {
 
 
     /**
-     * |参数名称：客户主账号登录名。| |参数约束及描述：客户主账号登录名。|
+     * 企业子账号登录名。
      * @return customerName
      */
     public String getCustomerName() {
@@ -76,7 +76,7 @@ public class NewCustomerV2  {
 
 
     /**
-     * |参数名称：管理员手机号码。如果usePriMobilePhone为Y，则这个参数无效，否则必选。| |参数约束及描述：管理员手机号码。如果usePriMobilePhone为Y，则这个参数无效，否则必选。|
+     * 企业管理员的手机号码。如果use_pri_mobile_phone取值为Y，则这个参数无效，否则必选。
      * @return mobilePhone
      */
     public String getMobilePhone() {
@@ -96,7 +96,7 @@ public class NewCustomerV2  {
 
 
     /**
-     * |参数名称：是否使用企业主账号手机号码作为子账号手机号码：Y：是；N：否（默认值）。注：当为Y时，mobilePhone输入无效。| |参数约束及描述：是否使用企业主账号手机号码作为子账号手机号码：Y：是；N：否（默认值）。注：当为Y时，mobilePhone输入无效。|
+     * 是否使用企业主账号手机号码作为子账号手机号码： Y：是N：否（默认值） 当为Y时，mobile_phone输入无效。
      * @return usePriMobilePhone
      */
     public String getUsePriMobilePhone() {
@@ -116,7 +116,7 @@ public class NewCustomerV2  {
 
 
     /**
-     * |参数名称：客户登录密码。注：usePriMobilePhone为Y时才支持| |参数约束及描述：客户登录密码。注：usePriMobilePhone为Y时才支持|
+     * 企业子账号的登录密码。
      * @return password
      */
     public String getPassword() {
@@ -136,7 +136,7 @@ public class NewCustomerV2  {
 
 
     /**
-     * |参数名称：验证码，只有输入企业子客户的手机号邮箱的情况下，才需要填写该字段| |参数约束及描述：验证码，只有输入企业子客户的手机号邮箱的情况下，才需要填写该字段|
+     * 验证码，只有输入企业子账号的手机号的情况下，才需要填写该字段。 具体请参见发送短信验证码。
      * @return verificationCode
      */
     public String getVerificationCode() {

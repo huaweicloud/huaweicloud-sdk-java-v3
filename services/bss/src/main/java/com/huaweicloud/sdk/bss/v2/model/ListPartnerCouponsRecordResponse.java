@@ -43,7 +43,7 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：查询记录总数。| |参数的约束及描述：查询记录总数。|
+     * 查询记录总数。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -77,7 +77,7 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：日志记录列表。具体请参见表2 CouponRecordV2。| |参数约束以及描述：日志记录列表。具体请参见表2 CouponRecordV2。|
+     * 日志记录列表。 具体请参见表2。
      * @return records
      */
     public List<CouponRecordV2> getRecords() {

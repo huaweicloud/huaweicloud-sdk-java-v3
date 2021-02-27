@@ -25,13 +25,6 @@ public class ListAsyncCommandsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -102,26 +95,6 @@ public class ListAsyncCommandsRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    public ListAsyncCommandsRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     public ListAsyncCommandsRequest withInstanceId(String instanceId) {
@@ -317,7 +290,6 @@ public class ListAsyncCommandsRequest  {
         }
         ListAsyncCommandsRequest listAsyncCommandsRequest = (ListAsyncCommandsRequest) o;
         return Objects.equals(this.deviceId, listAsyncCommandsRequest.deviceId) &&
-            Objects.equals(this.stageAuthToken, listAsyncCommandsRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, listAsyncCommandsRequest.instanceId) &&
             Objects.equals(this.limit, listAsyncCommandsRequest.limit) &&
             Objects.equals(this.marker, listAsyncCommandsRequest.marker) &&
@@ -330,14 +302,13 @@ public class ListAsyncCommandsRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, stageAuthToken, instanceId, limit, marker, offset, startTime, endTime, status, commandId, commandName);
+        return Objects.hash(deviceId, instanceId, limit, marker, offset, startTime, endTime, status, commandId, commandName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAsyncCommandsRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");

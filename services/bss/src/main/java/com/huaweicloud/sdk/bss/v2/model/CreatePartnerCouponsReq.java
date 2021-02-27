@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -36,7 +35,7 @@ public class CreatePartnerCouponsReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="face_value")
     
-    private BigDecimal faceValue = null;
+    private Double faceValue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,7 +82,7 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：优惠券额度ID优惠券的类型跟随额度中的类型。| |参数约束及描述：优惠券额度ID优惠券的类型跟随额度中的类型。|
+     * 优惠券额度ID。该值在查询优惠券额度接口的响应参数中获取。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -114,7 +113,7 @@ public class CreatePartnerCouponsReq  {
     }
 
     /**
-     * |参数名称：客户ID列表| |参数约束以及描述：客户ID列表|
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerIds
      */
     public List<String> getCustomerIds() {
@@ -125,7 +124,7 @@ public class CreatePartnerCouponsReq  {
         this.customerIds = customerIds;
     }
 
-    public CreatePartnerCouponsReq withFaceValue(BigDecimal faceValue) {
+    public CreatePartnerCouponsReq withFaceValue(Double faceValue) {
         this.faceValue = faceValue;
         return this;
     }
@@ -134,16 +133,16 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：优惠券的面值：小数点后2位。浮点数精度为：小数点后两位| |参数的约束及描述：优惠券的面值：小数点后2位|
+     * 代金券面值。 单位：元。取值大于0且精确到小数点后2位。
      * minimum: 0.01
      * maximum: 99999999999
      * @return faceValue
      */
-    public BigDecimal getFaceValue() {
+    public Double getFaceValue() {
         return faceValue;
     }
 
-    public void setFaceValue(BigDecimal faceValue) {
+    public void setFaceValue(Double faceValue) {
         this.faceValue = faceValue;
     }
 
@@ -156,7 +155,7 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：优惠券的生效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：优惠券的生效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ|
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return validTime
      */
     public String getValidTime() {
@@ -176,7 +175,7 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：优惠券的失效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ| |参数约束及描述：优惠券的失效时间,UTC格式：yyyy-MM-ddTHH:mm:ssZ|
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return expireTime
      */
     public String getExpireTime() {
@@ -210,7 +209,7 @@ public class CreatePartnerCouponsReq  {
     }
 
     /**
-     * |参数名称：云服务限制| |参数约束以及描述：云服务限制|
+     * 允许使用的云服务列表，您可以调用查询云服务类型列表接口获取。 多个云服务产品以“,”隔开，最多支持10个。 默认：空（继承额度上的限制） 说明： 如果额度上有限制云服务类型列表，则优惠券上的限制不能超过额度的限制。如果额度上没有限制，则优惠券上可以随意指定云服务类型。
      * @return cloudServiceTypes
      */
     public List<String> getCloudServiceTypes() {
@@ -244,7 +243,7 @@ public class CreatePartnerCouponsReq  {
     }
 
     /**
-     * |参数名称：产品限制| |参数约束以及描述：产品限制|
+     * 允许使用的产品列表。 多个产品以“,”隔开，最多支持10个。 默认：空（继承额度上的限制） 说明： 如果额度上有限制产品列表，则优惠券上的限制不能超过额度的限制。如果额度上没有限制，则优惠券上可以随意指定产品ID。 产品ID需要合作伙伴通过线下获得。
      * @return productIds
      */
     public List<String> getProductIds() {
@@ -264,7 +263,7 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：发券时的备注信息| |参数约束及描述：发券时的备注信息|
+     * 发券时的备注信息。
      * @return memo
      */
     public String getMemo() {
@@ -284,7 +283,7 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：如果一级经销商要给二级经销商的子客户设置折扣，需要携带这个字段|
+     * 精英服务商ID。 精英服务商给子客户发放优惠券时，需要携带该参数。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

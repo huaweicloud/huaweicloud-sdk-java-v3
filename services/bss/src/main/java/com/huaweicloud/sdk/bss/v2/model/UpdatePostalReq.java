@@ -80,7 +80,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：地址ID，地址的唯一索引| |参数约束及描述：地址ID，地址的唯一索引|
+     * 地址ID，地址的唯一索引。
      * @return addressId
      */
     public String getAddressId() {
@@ -100,7 +100,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：收件人姓名| |参数约束及描述：收件人姓名|
+     * 收件人姓名。
      * @return recipient
      */
     public String getRecipient() {
@@ -120,7 +120,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：省/自治区/直辖市。例如：江苏，不要写成：江苏省| |参数约束及描述：省/自治区/直辖市。例如：江苏，不要写成：江苏省|
+     * 省/自治区/直辖市。例如：江苏省。
      * @return province
      */
     public String getProvince() {
@@ -140,7 +140,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：市/区。例如：南京。| |参数约束及描述：市/区。例如：南京。|
+     * 市/区。例如：南京市。
      * @return city
      */
     public String getCity() {
@@ -160,7 +160,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：区。例如：雨花。| |参数约束及描述：区。例如：雨花。|
+     * 区。例如：雨花区。
      * @return district
      */
     public String getDistrict() {
@@ -180,7 +180,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：邮寄详细地址。| |参数约束及描述：邮寄详细地址。|
+     * 邮寄详细地址。
      * @return address
      */
     public String getAddress() {
@@ -200,7 +200,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：邮编| |参数约束及描述：邮编|
+     * 邮寄地址所在邮编。
      * @return zipcode
      */
     public String getZipcode() {
@@ -220,7 +220,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：手机号码，不带国家码| |参数约束及描述：手机号码，不带国家码|
+     * 手机号码，不带国家码。
      * @return mobilePhone
      */
     public String getMobilePhone() {
@@ -240,7 +240,7 @@ public class UpdatePostalReq  {
 
 
     /**
-     * |参数名称：是否默认地址| |参数约束及描述：是否默认地址，默认为0。1：默认地址0：非默认地址|
+     * 是否默认地址，默认为0。 1：默认地址0：非默认地址
      * minimum: 0
      * maximum: 1
      * @return isDefault

@@ -19,20 +19,6 @@ public class ListBatchTasksRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sp-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String spAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -72,46 +58,6 @@ public class ListBatchTasksRequest  {
     @JsonProperty(value="offset")
     
     private Integer offset = 0;
-
-    public ListBatchTasksRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get spAuthToken
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
-    public ListBatchTasksRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public ListBatchTasksRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -265,9 +211,7 @@ public class ListBatchTasksRequest  {
             return false;
         }
         ListBatchTasksRequest listBatchTasksRequest = (ListBatchTasksRequest) o;
-        return Objects.equals(this.spAuthToken, listBatchTasksRequest.spAuthToken) &&
-            Objects.equals(this.stageAuthToken, listBatchTasksRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, listBatchTasksRequest.instanceId) &&
+        return Objects.equals(this.instanceId, listBatchTasksRequest.instanceId) &&
             Objects.equals(this.appId, listBatchTasksRequest.appId) &&
             Objects.equals(this.taskType, listBatchTasksRequest.taskType) &&
             Objects.equals(this.status, listBatchTasksRequest.status) &&
@@ -277,14 +221,12 @@ public class ListBatchTasksRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, stageAuthToken, instanceId, appId, taskType, status, limit, marker, offset);
+        return Objects.hash(instanceId, appId, taskType, status, limit, marker, offset);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBatchTasksRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");

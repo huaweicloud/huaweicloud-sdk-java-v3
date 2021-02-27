@@ -34,7 +34,7 @@ public class CreatePostalResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：邮寄地址ID| |参数约束及描述：邮寄地址ID|
+     * 邮寄地址ID。
      * @return addressId
      */
     public String getAddressId() {

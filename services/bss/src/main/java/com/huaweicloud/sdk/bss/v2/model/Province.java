@@ -38,7 +38,7 @@ public class Province  {
 
 
     /**
-     * |参数名称：省份的编码| |参数约束及描述：省份的编码|
+     * 省份的编码。
      * @return code
      */
     public String getCode() {
@@ -58,7 +58,7 @@ public class Province  {
 
 
     /**
-     * |参数名称：省份的名称，根据请求的语言会传递回对应的语言的名称，目前仅支持中文| |参数约束及描述：省份的名称，根据请求的语言会传递回对应的语言的名称，目前仅支持中文|
+     * 省份的名称，根据请求的语言会传递回对应的语言的名称，目前仅支持中文。
      * @return name
      */
     public String getName() {

@@ -43,7 +43,7 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
 
 
     /**
-     * |参数名称：符合条件的记录总数。| |参数的约束及描述：符合条件的记录总数。|
+     * 查询总数。
      * @return count
      */
     public Integer getCount() {
@@ -77,7 +77,7 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：客户订单详情信息。具体请参见表 CustomerOrderV2| |参数约束以及描述：客户订单详情信息。具体请参见表 CustomerOrderV2|
+     * 可用的优惠券列表。 具体请参见表2。
      * @return userCoupons
      */
     public List<CouponInfoV2> getUserCoupons() {

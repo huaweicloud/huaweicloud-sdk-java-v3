@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +33,7 @@ public class AccountBalanceV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,13 +45,13 @@ public class AccountBalanceV3  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="designated_amount")
     
-    private BigDecimal designatedAmount = null;
+    private Double designatedAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="credit_amount")
     
-    private BigDecimal creditAmount = null;
+    private Double creditAmount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +68,7 @@ public class AccountBalanceV3  {
 
 
     /**
-     * |参数名称：账户标识。| |参数约束及描述：账户标识。|
+     * 账户标识。
      * @return accountId
      */
     public String getAccountId() {
@@ -89,7 +88,7 @@ public class AccountBalanceV3  {
 
 
     /**
-     * |参数名称：账户类型：1：余额2：信用5：奖励7：保证金8：可拨款| |参数的约束及描述：账户类型：1：余额2：信用5：奖励7：保证金8：可拨款|
+     * 账户类型。 1：余额2：信用5：奖励金
      * @return accountType
      */
     public Integer getAccountType() {
@@ -100,7 +99,7 @@ public class AccountBalanceV3  {
         this.accountType = accountType;
     }
 
-    public AccountBalanceV3 withAmount(BigDecimal amount) {
+    public AccountBalanceV3 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -109,14 +108,14 @@ public class AccountBalanceV3  {
 
 
     /**
-     * |参数名称：余额。| |参数的约束及描述：余额。|
+     * 账户余额。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -129,7 +128,7 @@ public class AccountBalanceV3  {
 
 
     /**
-     * |参数名称：币种。当前固定为CNY。| |参数约束及描述：币种。当前固定为CNY。|
+     * 币种。 CNY：人民币。
      * @return currency
      */
     public String getCurrency() {
@@ -140,7 +139,7 @@ public class AccountBalanceV3  {
         this.currency = currency;
     }
 
-    public AccountBalanceV3 withDesignatedAmount(BigDecimal designatedAmount) {
+    public AccountBalanceV3 withDesignatedAmount(Double designatedAmount) {
         this.designatedAmount = designatedAmount;
         return this;
     }
@@ -149,18 +148,18 @@ public class AccountBalanceV3  {
 
 
     /**
-     * |参数名称：专款专用余额。| |参数的约束及描述：专款专用余额。|
+     * 专款专用余额。
      * @return designatedAmount
      */
-    public BigDecimal getDesignatedAmount() {
+    public Double getDesignatedAmount() {
         return designatedAmount;
     }
 
-    public void setDesignatedAmount(BigDecimal designatedAmount) {
+    public void setDesignatedAmount(Double designatedAmount) {
         this.designatedAmount = designatedAmount;
     }
 
-    public AccountBalanceV3 withCreditAmount(BigDecimal creditAmount) {
+    public AccountBalanceV3 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -169,14 +168,14 @@ public class AccountBalanceV3  {
 
 
     /**
-     * |参数名称：总信用额度。只有账户类型是2:信用的时候才有该字段| |参数的约束及描述：总信用额度。只有账户类型是2:信用的时候才有该字段|
+     * 总信用额度，仅信用账户存在该字段。
      * @return creditAmount
      */
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
 
@@ -189,7 +188,7 @@ public class AccountBalanceV3  {
 
 
     /**
-     * |参数名称：度量单位。1：元。| |参数的约束及描述：度量单位。1：元。|
+     * 度量单位。 1：元
      * @return measureId
      */
     public Integer getMeasureId() {

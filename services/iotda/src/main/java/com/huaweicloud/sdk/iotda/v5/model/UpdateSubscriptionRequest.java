@@ -20,20 +20,6 @@ public class UpdateSubscriptionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sp-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String spAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -49,46 +35,6 @@ public class UpdateSubscriptionRequest  {
     @JsonProperty(value="body")
     
     private UpdateSubReq body = null;
-
-    public UpdateSubscriptionRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get spAuthToken
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
-    public UpdateSubscriptionRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public UpdateSubscriptionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -165,22 +111,18 @@ public class UpdateSubscriptionRequest  {
             return false;
         }
         UpdateSubscriptionRequest updateSubscriptionRequest = (UpdateSubscriptionRequest) o;
-        return Objects.equals(this.spAuthToken, updateSubscriptionRequest.spAuthToken) &&
-            Objects.equals(this.stageAuthToken, updateSubscriptionRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, updateSubscriptionRequest.instanceId) &&
+        return Objects.equals(this.instanceId, updateSubscriptionRequest.instanceId) &&
             Objects.equals(this.subscriptionId, updateSubscriptionRequest.subscriptionId) &&
             Objects.equals(this.body, updateSubscriptionRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(spAuthToken, stageAuthToken, instanceId, subscriptionId, body);
+        return Objects.hash(instanceId, subscriptionId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateSubscriptionRequest {\n");
-        sb.append("    spAuthToken: ").append(toIndentedString("******")).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

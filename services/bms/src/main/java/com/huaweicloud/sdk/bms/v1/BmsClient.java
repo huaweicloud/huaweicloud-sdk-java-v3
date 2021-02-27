@@ -150,6 +150,28 @@ public class BmsClient {
     }
 
     /**
+     * Windows裸金属服务器清除密码
+     * 清除Windows裸金属服务器初始安装时系统生成的密码记录。清除密码后，不影响裸金属服务器密码登录功能，但不能再使用获取密码功能来查询该裸金属服务器密码。如果裸金属服务器是通过私有镜像创建的，请确保已安装Cloudbase-init。公共镜像默认已安装该软件
+     *
+     * @param DeleteWindowsBareMetalServerPasswordRequest 请求对象
+     * @return DeleteWindowsBareMetalServerPasswordResponse
+     */
+    public DeleteWindowsBareMetalServerPasswordResponse deleteWindowsBareMetalServerPassword(DeleteWindowsBareMetalServerPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.deleteWindowsBareMetalServerPassword);
+    }
+
+    /**
+     * Windows裸金属服务器清除密码
+     * 清除Windows裸金属服务器初始安装时系统生成的密码记录。清除密码后，不影响裸金属服务器密码登录功能，但不能再使用获取密码功能来查询该裸金属服务器密码。如果裸金属服务器是通过私有镜像创建的，请确保已安装Cloudbase-init。公共镜像默认已安装该软件
+     *
+     * @param DeleteWindowsBareMetalServerPasswordRequest 请求对象
+     * @return SyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse>
+     */
+    public SyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse> deleteWindowsBareMetalServerPasswordInvoker(DeleteWindowsBareMetalServerPasswordRequest request) {
+        return new SyncInvoker<DeleteWindowsBareMetalServerPasswordRequest, DeleteWindowsBareMetalServerPasswordResponse>(request, BmsMeta.deleteWindowsBareMetalServerPassword, hcClient);
+    }
+
+    /**
      * 裸金属服务器卸载云磁盘
      * 将挂载至裸金属服务器中的磁盘卸载；对于挂载在系统盘盘位（也就是“/dev/sda”挂载点）上的磁盘，不允许执行卸载操作；对于挂载在数据盘盘位（非“/dev/sda”挂载点）上的磁盘，支持离线卸载和在线卸载（裸金属服务器处于“运行中”状态）磁盘
      *
@@ -411,28 +433,6 @@ public class BmsClient {
      */
     public SyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse> updateBaremetalServerMetadataInvoker(UpdateBaremetalServerMetadataRequest request) {
         return new SyncInvoker<UpdateBaremetalServerMetadataRequest, UpdateBaremetalServerMetadataResponse>(request, BmsMeta.updateBaremetalServerMetadata, hcClient);
-    }
-
-    /**
-     * Windows裸金属服务器清除密码
-     * 清除Windows裸金属服务器初始安装时系统生成的密码记录。清除密码后，不影响裸金属服务器密码登录功能，但不能再使用获取密码功能来查询该裸金属服务器密码。如果裸金属服务器是通过私有镜像创建的，请确保已安装Cloudbase-init。公共镜像默认已安装该软件
-     *
-     * @param WindowsBaremetalServerCleanPwdRequest 请求对象
-     * @return WindowsBaremetalServerCleanPwdResponse
-     */
-    public WindowsBaremetalServerCleanPwdResponse windowsBaremetalServerCleanPwd(WindowsBaremetalServerCleanPwdRequest request) {
-        return hcClient.syncInvokeHttp(request, BmsMeta.windowsBaremetalServerCleanPwd);
-    }
-
-    /**
-     * Windows裸金属服务器清除密码
-     * 清除Windows裸金属服务器初始安装时系统生成的密码记录。清除密码后，不影响裸金属服务器密码登录功能，但不能再使用获取密码功能来查询该裸金属服务器密码。如果裸金属服务器是通过私有镜像创建的，请确保已安装Cloudbase-init。公共镜像默认已安装该软件
-     *
-     * @param WindowsBaremetalServerCleanPwdRequest 请求对象
-     * @return SyncInvoker<WindowsBaremetalServerCleanPwdRequest, WindowsBaremetalServerCleanPwdResponse>
-     */
-    public SyncInvoker<WindowsBaremetalServerCleanPwdRequest, WindowsBaremetalServerCleanPwdResponse> windowsBaremetalServerCleanPwdInvoker(WindowsBaremetalServerCleanPwdRequest request) {
-        return new SyncInvoker<WindowsBaremetalServerCleanPwdRequest, WindowsBaremetalServerCleanPwdResponse>(request, BmsMeta.windowsBaremetalServerCleanPwd, hcClient);
     }
 
     /**

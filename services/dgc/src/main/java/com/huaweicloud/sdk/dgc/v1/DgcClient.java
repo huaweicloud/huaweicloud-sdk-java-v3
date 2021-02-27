@@ -502,72 +502,6 @@ public class DgcClient {
     }
 
     /**
-     * 修改作业
-     * 
-     *
-     * @param ModifyJobRequest 请求对象
-     * @return ModifyJobResponse
-     */
-    public ModifyJobResponse modifyJob(ModifyJobRequest request) {
-        return hcClient.syncInvokeHttp(request, DgcMeta.modifyJob);
-    }
-
-    /**
-     * 修改作业
-     * 
-     *
-     * @param ModifyJobRequest 请求对象
-     * @return SyncInvoker<ModifyJobRequest, ModifyJobResponse>
-     */
-    public SyncInvoker<ModifyJobRequest, ModifyJobResponse> modifyJobInvoker(ModifyJobRequest request) {
-        return new SyncInvoker<ModifyJobRequest, ModifyJobResponse>(request, DgcMeta.modifyJob, hcClient);
-    }
-
-    /**
-     * 修改资源
-     * 
-     *
-     * @param ModifyResourceRequest 请求对象
-     * @return ModifyResourceResponse
-     */
-    public ModifyResourceResponse modifyResource(ModifyResourceRequest request) {
-        return hcClient.syncInvokeHttp(request, DgcMeta.modifyResource);
-    }
-
-    /**
-     * 修改资源
-     * 
-     *
-     * @param ModifyResourceRequest 请求对象
-     * @return SyncInvoker<ModifyResourceRequest, ModifyResourceResponse>
-     */
-    public SyncInvoker<ModifyResourceRequest, ModifyResourceResponse> modifyResourceInvoker(ModifyResourceRequest request) {
-        return new SyncInvoker<ModifyResourceRequest, ModifyResourceResponse>(request, DgcMeta.modifyResource, hcClient);
-    }
-
-    /**
-     * 修改脚本内容
-     * 
-     *
-     * @param ModifyScriptRequest 请求对象
-     * @return ModifyScriptResponse
-     */
-    public ModifyScriptResponse modifyScript(ModifyScriptRequest request) {
-        return hcClient.syncInvokeHttp(request, DgcMeta.modifyScript);
-    }
-
-    /**
-     * 修改脚本内容
-     * 
-     *
-     * @param ModifyScriptRequest 请求对象
-     * @return SyncInvoker<ModifyScriptRequest, ModifyScriptResponse>
-     */
-    public SyncInvoker<ModifyScriptRequest, ModifyScriptResponse> modifyScriptInvoker(ModifyScriptRequest request) {
-        return new SyncInvoker<ModifyScriptRequest, ModifyScriptResponse>(request, DgcMeta.modifyScript, hcClient);
-    }
-
-    /**
      * 重跑作业实例
      * 
      *
@@ -851,6 +785,72 @@ public class DgcClient {
      */
     public SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse> updateConnectionInvoker(UpdateConnectionRequest request) {
         return new SyncInvoker<UpdateConnectionRequest, UpdateConnectionResponse>(request, DgcMeta.updateConnection, hcClient);
+    }
+
+    /**
+     * 修改作业
+     * 
+     *
+     * @param UpdateJobRequest 请求对象
+     * @return UpdateJobResponse
+     */
+    public UpdateJobResponse updateJob(UpdateJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DgcMeta.updateJob);
+    }
+
+    /**
+     * 修改作业
+     * 
+     *
+     * @param UpdateJobRequest 请求对象
+     * @return SyncInvoker<UpdateJobRequest, UpdateJobResponse>
+     */
+    public SyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobInvoker(UpdateJobRequest request) {
+        return new SyncInvoker<UpdateJobRequest, UpdateJobResponse>(request, DgcMeta.updateJob, hcClient);
+    }
+
+    /**
+     * 修改资源
+     * 
+     *
+     * @param UpdateResourceRequest 请求对象
+     * @return UpdateResourceResponse
+     */
+    public UpdateResourceResponse updateResource(UpdateResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, DgcMeta.updateResource);
+    }
+
+    /**
+     * 修改资源
+     * 
+     *
+     * @param UpdateResourceRequest 请求对象
+     * @return SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>
+     */
+    public SyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceInvoker(UpdateResourceRequest request) {
+        return new SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, DgcMeta.updateResource, hcClient);
+    }
+
+    /**
+     * 修改脚本内容
+     * 
+     *
+     * @param UpdateScriptRequest 请求对象
+     * @return UpdateScriptResponse
+     */
+    public UpdateScriptResponse updateScript(UpdateScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, DgcMeta.updateScript);
+    }
+
+    /**
+     * 修改脚本内容
+     * 
+     *
+     * @param UpdateScriptRequest 请求对象
+     * @return SyncInvoker<UpdateScriptRequest, UpdateScriptResponse>
+     */
+    public SyncInvoker<UpdateScriptRequest, UpdateScriptResponse> updateScriptInvoker(UpdateScriptRequest request) {
+        return new SyncInvoker<UpdateScriptRequest, UpdateScriptResponse>(request, DgcMeta.updateScript, hcClient);
     }
 
 }

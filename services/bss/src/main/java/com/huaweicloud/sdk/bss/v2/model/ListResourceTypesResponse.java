@@ -51,7 +51,7 @@ public class ListResourceTypesResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：返回数据| |参数约束以及描述：返回数据|
+     * 资源类型信息，具体参见表3。
      * @return resourceTypes
      */
     public List<ResourceType> getResourceTypes() {

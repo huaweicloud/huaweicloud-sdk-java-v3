@@ -50,7 +50,7 @@ public class BankCardInfoV2  {
 
 
     /**
-     * |参数名称：银行卡账号。当identifyType为4时，不能为空。银行账号输入规则：^[0-9a-zA-Z]，可以包含特殊横杠（-）字符。| |参数约束及描述：银行卡账号。当identifyType为4时，不能为空。银行账号输入规则：^[0-9a-zA-Z]，可以包含特殊横杠（-）字符。|
+     * 银行卡账号。 当identifyType为4时，不能为空。 银行账号输入规则：^[0-9a-zA-Z]，可以包含特殊横杠（-）字符。
      * @return bankAccount
      */
     public String getBankAccount() {
@@ -70,7 +70,7 @@ public class BankCardInfoV2  {
 
 
     /**
-     * |参数名称：国家/区号码。例如：0086：中国大陆区号码。| |参数约束及描述：国家/区号码。例如：0086：中国大陆区号码。|
+     * 国家/区号码。 例如：0086：中国大陆区号码。
      * @return areacode
      */
     public String getAreacode() {
@@ -90,7 +90,7 @@ public class BankCardInfoV2  {
 
 
     /**
-     * |参数名称：手机号码。| |参数约束及描述：手机号码。|
+     * 手机号码。
      * @return mobile
      */
     public String getMobile() {
@@ -110,7 +110,7 @@ public class BankCardInfoV2  {
 
 
     /**
-     * |参数名称：验证码。| |参数约束及描述：验证码。|
+     * 验证码。 请调用“发送验证码”接口获取。 如果手机号不存在，则不需要输入验证码。
      * @return verificationCode
      */
     public String getVerificationCode() {

@@ -306,6 +306,50 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 获取错误日志下载链接
+     * 获取错误日志下载链接。
+     *
+     * @param DownloadErrorlogRequest 请求对象
+     * @return CompletableFuture<DownloadErrorlogResponse>
+     */
+    public CompletableFuture<DownloadErrorlogResponse> downloadErrorlogAsync(DownloadErrorlogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.downloadErrorlog);
+    }
+
+    /**
+     * 获取错误日志下载链接
+     * 获取错误日志下载链接。
+     *
+     * @param DownloadErrorlogRequest 请求对象
+     * @return AsyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse>
+     */
+    public AsyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse> downloadErrorlogAsyncInvoker(DownloadErrorlogRequest request) {
+        return new AsyncInvoker<DownloadErrorlogRequest, DownloadErrorlogResponse>(request, DdsMeta.downloadErrorlog, hcClient);
+    }
+
+    /**
+     * 获取慢日志下载链接
+     * 获取慢日志下载链接。
+     *
+     * @param DownloadSlowlogRequest 请求对象
+     * @return CompletableFuture<DownloadSlowlogResponse>
+     */
+    public CompletableFuture<DownloadSlowlogResponse> downloadSlowlogAsync(DownloadSlowlogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.downloadSlowlog);
+    }
+
+    /**
+     * 获取慢日志下载链接
+     * 获取慢日志下载链接。
+     *
+     * @param DownloadSlowlogRequest 请求对象
+     * @return AsyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>
+     */
+    public AsyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse> downloadSlowlogAsyncInvoker(DownloadSlowlogRequest request) {
+        return new AsyncInvoker<DownloadSlowlogRequest, DownloadSlowlogResponse>(request, DdsMeta.downloadSlowlog, hcClient);
+    }
+
+    /**
      * 生成审计日志下载链接
      * 生成审计日志下载链接。
      *

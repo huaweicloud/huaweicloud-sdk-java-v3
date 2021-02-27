@@ -20,13 +20,6 @@ public class CreateRuleActionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -42,26 +35,6 @@ public class CreateRuleActionRequest  {
     @JsonProperty(value="body")
     
     private AddActionReq body = null;
-
-    public CreateRuleActionRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get stageAuthToken
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-    }
 
     public CreateRuleActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -140,20 +113,18 @@ public class CreateRuleActionRequest  {
             return false;
         }
         CreateRuleActionRequest createRuleActionRequest = (CreateRuleActionRequest) o;
-        return Objects.equals(this.stageAuthToken, createRuleActionRequest.stageAuthToken) &&
-            Objects.equals(this.instanceId, createRuleActionRequest.instanceId) &&
+        return Objects.equals(this.instanceId, createRuleActionRequest.instanceId) &&
             Objects.equals(this.xLBService, createRuleActionRequest.xLBService) &&
             Objects.equals(this.body, createRuleActionRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(stageAuthToken, instanceId, xLBService, body);
+        return Objects.hash(instanceId, xLBService, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRuleActionRequest {\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    xLBService: ").append(toIndentedString(xLBService)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

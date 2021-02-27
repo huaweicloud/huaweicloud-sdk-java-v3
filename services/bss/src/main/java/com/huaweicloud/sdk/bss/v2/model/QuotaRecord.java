@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.math.BigDecimal;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -52,7 +51,7 @@ public class QuotaRecord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="amount")
     
-    private BigDecimal amount = null;
+    private Double amount;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,7 +98,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：记录ID| |参数约束及描述：记录ID|
+     * 记录ID。
      * @return id
      */
     public String getId() {
@@ -119,7 +118,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：操作员额账号名称| |参数约束及描述：操作员额账号名称|
+     * 操作员的账号名称。
      * @return operator
      */
     public String getOperator() {
@@ -139,7 +138,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：操作类型10：发放额度11：回收额度| |参数约束及描述：操作类型10：发放额度11：回收额度|
+     * 操作类型。 10：发放额度11：回收额度
      * @return operationType
      */
     public String getOperationType() {
@@ -159,7 +158,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：额度ID，这里指的是一级经销商发给二级经销商额度时，产生的二级经销商的额度ID，或者从二级经销商回收的时候，二级经销商的额度ID| |参数约束及描述：额度ID，这里指的是一级经销商发给二级经销商额度时，产生的二级经销商的额度ID，或者从二级经销商回收的时候，二级经销商的额度ID|
+     * 精英服务商的代金券额度ID。 即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -179,7 +178,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：父额度ID，这里指的是一级经销商发给二级经销商额度时，一级经销商的额度ID，或者从二级经销商回收的时候，回收到的一级经销商的额度ID| |参数约束及描述：父额度ID，这里指的是一级经销商发给二级经销商额度时，一级经销商的额度ID，或者从二级经销商回收的时候，回收到的一级经销商的额度ID|
+     * 父额度ID。 这即华为云伙伴能力中心给精英服务商发放代金券额度时，华为云伙伴能力中心的额度ID，或者从精英服务商回收代金券额度时，回收的华为云伙伴能力中心的额度ID。
      * @return parentQuotaId
      */
     public String getParentQuotaId() {
@@ -190,7 +189,7 @@ public class QuotaRecord  {
         this.parentQuotaId = parentQuotaId;
     }
 
-    public QuotaRecord withAmount(BigDecimal amount) {
+    public QuotaRecord withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -199,14 +198,14 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：发放回收的金额，小数点后2位，单位元| |参数的约束及描述：发放回收的金额，小数点后2位，单位元|
+     * 发放回收的金额。 取值大于0且精确到小数点后2位，单位：元。
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -219,7 +218,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：操作时间，UTC时间，UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：操作时间，UTC时间，UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * 操作时间，UTC时间，UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * @return operationTime
      */
     public String getOperationTime() {
@@ -239,7 +238,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：操作结果0：成功-1：失败| |参数约束及描述：操作结果0：成功-1：失败|
+     * 操作结果。 0：成功-1：失败
      * @return result
      */
     public String getResult() {
@@ -259,7 +258,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：二级经销商的管理员账号名| |参数约束及描述：二级经销商的管理员账号名|
+     * 精英服务商的账号名。
      * @return indirectPartnerAccountName
      */
     public String getIndirectPartnerAccountName() {
@@ -279,7 +278,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：二级经销商ID| |参数约束及描述：二级经销商ID|
+     * 精英服务商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -299,7 +298,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：二级经销商的公司名称| |参数约束及描述：二级经销商的公司名称|
+     * 精英服务商的公司名称。
      * @return indirectPartnerName
      */
     public String getIndirectPartnerName() {
@@ -319,7 +318,7 @@ public class QuotaRecord  {
 
 
     /**
-     * |参数名称：备注| |参数约束及描述：备注|
+     * 备注。
      * @return remark
      */
     public String getRemark() {

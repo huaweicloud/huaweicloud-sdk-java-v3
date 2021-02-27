@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.bss.v2.model.QuotaLimitInfo;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -49,7 +48,7 @@ public class CouponQuotaV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="quota_value")
     
-    private BigDecimal quotaValue = null;
+    private Double quotaValue;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,7 +60,7 @@ public class CouponQuotaV2  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="balance")
     
-    private BigDecimal balance = null;
+    private Double balance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,7 +101,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：额度ID。| |参数约束及描述：额度ID。|
+     * 优惠券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -122,7 +121,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：额度类型：0：代金券额度；| |参数的约束及描述：额度类型：0：代金券额度；|
+     * 优惠券额度的类型： 0：代金券额度1：现金券额度
      * @return quotaType
      */
     public Integer getQuotaType() {
@@ -142,7 +141,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：创建时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 创建时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -162,7 +161,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：最后一次更新时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：最后一次更新时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 最后一次更新时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -173,7 +172,7 @@ public class CouponQuotaV2  {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    public CouponQuotaV2 withQuotaValue(BigDecimal quotaValue) {
+    public CouponQuotaV2 withQuotaValue(Double quotaValue) {
         this.quotaValue = quotaValue;
         return this;
     }
@@ -182,14 +181,14 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：代金券额度的值，精确到小数点后2位。| |参数的约束及描述：代金券额度的值，精确到小数点后2位。|
+     * 优惠券额度的值，精确到小数点后2位。
      * @return quotaValue
      */
-    public BigDecimal getQuotaValue() {
+    public Double getQuotaValue() {
         return quotaValue;
     }
 
-    public void setQuotaValue(BigDecimal quotaValue) {
+    public void setQuotaValue(Double quotaValue) {
         this.quotaValue = quotaValue;
     }
 
@@ -202,7 +201,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：状态：0：正常；3：失效（过期失效和人工设置失效）；4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放代金券）。5：冻结6：回收| |参数的约束及描述：状态：0：正常；3：失效（过期失效和人工设置失效）；4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放代金券）。5：冻结6：回收|
+     * 优惠券额度的状态： 0：正常3：失效（过期失效和人工设置失效）4：额度调整中（伙伴可以查看该额度，但不能使用该额度发放优惠券）5：冻结
      * @return quotaStatus
      */
     public Integer getQuotaStatus() {
@@ -213,7 +212,7 @@ public class CouponQuotaV2  {
         this.quotaStatus = quotaStatus;
     }
 
-    public CouponQuotaV2 withBalance(BigDecimal balance) {
+    public CouponQuotaV2 withBalance(Double balance) {
         this.balance = balance;
         return this;
     }
@@ -222,14 +221,14 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：剩余的代金券额度，精确到小数点后2位。| |参数的约束及描述：剩余的代金券额度，精确到小数点后2位。|
+     * 剩余的优惠券额度，精确到小数点后2位。
      * @return balance
      */
-    public BigDecimal getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
@@ -242,7 +241,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：面额单位。1：元。| |参数的约束及描述：面额单位。1：元。|
+     * 面额单位。 1：元。
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -262,7 +261,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：币种。当前仅有CNY。| |参数约束及描述：币种。当前仅有CNY。|
+     * 币种。 CNY：人民币
      * @return currency
      */
     public String getCurrency() {
@@ -282,7 +281,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：生效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 生效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return effectiveTime
      */
     public String getEffectiveTime() {
@@ -302,7 +301,7 @@ public class CouponQuotaV2  {
 
 
     /**
-     * |参数名称：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。| |参数约束及描述：失效时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。|
+     * 失效时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return expireTime
      */
     public String getExpireTime() {
@@ -336,7 +335,7 @@ public class CouponQuotaV2  {
     }
 
     /**
-     * |参数名称：额度上的限制属性| |参数约束以及描述：额度上的限制属性|
+     * 优惠券额度上的限制属性，具体参见表3。
      * @return limitInfos
      */
     public List<QuotaLimitInfo> getLimitInfos() {

@@ -44,7 +44,7 @@ public class ServiceType  {
 
 
     /**
-     * |参数名称：云服务类型名称| |参数约束及描述：云服务类型名称|
+     * 云服务类型的名称。
      * @return serviceTypeName
      */
     public String getServiceTypeName() {
@@ -64,7 +64,7 @@ public class ServiceType  {
 
 
     /**
-     * |参数名称：云服务类型编码| |参数约束及描述：云服务类型编码|
+     * 云服务类型的编码。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -84,7 +84,7 @@ public class ServiceType  {
 
 
     /**
-     * |参数名称：云服务缩写| |参数约束及描述：云服务缩写|
+     * 云服务类型的缩写。
      * @return abbreviation
      */
     public String getAbbreviation() {

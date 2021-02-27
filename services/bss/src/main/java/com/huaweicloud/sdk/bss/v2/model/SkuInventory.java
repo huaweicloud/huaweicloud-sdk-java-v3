@@ -44,7 +44,7 @@ public class SkuInventory  {
 
 
     /**
-     * |参数名称：产品ID| |参数约束及描述：产品ID|
+     * 产品的ID。
      * @return productId
      */
     public String getProductId() {
@@ -64,7 +64,7 @@ public class SkuInventory  {
 
 
     /**
-     * |参数名称：SKU编码| |参数约束及描述：SKU编码|
+     * SKU编码，唯一标识一个产品的规格。
      * @return skuCode
      */
     public String getSkuCode() {
@@ -84,7 +84,7 @@ public class SkuInventory  {
 
 
     /**
-     * |参数名称：可售库存数| |参数的约束及描述：可售库存数|
+     * 产品的可售库存数量。
      * minimum: 1
      * maximum: 100
      * @return saleableQuantity
